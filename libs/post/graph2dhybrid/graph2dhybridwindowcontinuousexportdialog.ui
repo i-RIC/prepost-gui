@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>357</width>
-    <height>593</height>
+    <width>322</width>
+    <height>684</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Snapshot Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QGroupBox" name="directoryGroupBox">
      <property name="title">
@@ -48,8 +48,8 @@
      <property name="title">
       <string>Region</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QCheckBox" name="currentRegionCheckBox">
@@ -80,141 +80,182 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="iMinLabel">
-        <property name="text">
-         <string>I Min:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="SliderWithValue" name="iMinSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="iMaxLabel">
-        <property name="text">
-         <string>I Max:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="SliderWithValue" name="iMaxSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="jMinLabel">
-        <property name="text">
-         <string>J Min:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="SliderWithValue" name="jMinSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="jMaxLabel">
-        <property name="text">
-         <string>J Max:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="SliderWithValue" name="jMaxSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="kMinLabel">
-        <property name="text">
-         <string>K Min:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="SliderWithValue" name="kMinSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="kMaxLabel">
-        <property name="text">
-         <string>K Max:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="SliderWithValue" name="kMaxSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="indexMinLabel">
-        <property name="text">
-         <string>Index Min:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="SliderWithValue" name="indexMinSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="indexMaxLabel">
-        <property name="text">
-         <string>Index Max:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="1">
-       <widget class="SliderWithValue" name="indexMaxSlider">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-       </widget>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="iMinLabel">
+          <property name="text">
+           <string>I Min:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="SliderWithValue" name="iMinSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="iMaxLabel">
+          <property name="text">
+           <string>I Max:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="SliderWithValue" name="iMaxSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="jMinLabel">
+          <property name="text">
+           <string>J Min:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="SliderWithValue" name="jMinSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="jMaxLabel">
+          <property name="text">
+           <string>J Max:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="SliderWithValue" name="jMaxSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="kMinLabel">
+          <property name="text">
+           <string>K Min:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="SliderWithValue" name="kMinSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="kMaxLabel">
+          <property name="text">
+           <string>K Max:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="SliderWithValue" name="kMaxSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="indexMinLabel">
+          <property name="text">
+           <string>Index Min:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="SliderWithValue" name="indexMinSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="indexMaxLabel">
+          <property name="text">
+           <string>Index Max:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="SliderWithValue" name="indexMaxSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="lineLabel">
+            <property name="text">
+             <string>Line:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="8" column="1">
+         <widget class="QListWidget" name="lineListWidget">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ExtendedSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -378,8 +419,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>227</x>
-     <y>569</y>
+     <x>236</x>
+     <y>674</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -394,8 +435,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>295</x>
-     <y>575</y>
+     <x>304</x>
+     <y>674</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -446,8 +487,8 @@
      <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>138</x>
-     <y>199</y>
+     <x>218</x>
+     <y>228</y>
     </hint>
    </hints>
   </connection>
@@ -494,8 +535,8 @@
      <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>258</x>
-     <y>297</y>
+     <x>301</x>
+     <y>327</y>
     </hint>
    </hints>
   </connection>
@@ -510,8 +551,8 @@
      <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>337</x>
-     <y>352</y>
+     <x>301</x>
+     <y>360</y>
     </hint>
    </hints>
   </connection>
@@ -538,12 +579,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>72</x>
-     <y>428</y>
+     <x>92</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>84</x>
-     <y>453</y>
+     <x>162</x>
+     <y>567</y>
     </hint>
    </hints>
   </connection>
@@ -554,12 +595,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>51</x>
-     <y>430</y>
+     <x>71</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>84</x>
-     <y>485</y>
+     <x>162</x>
+     <y>600</y>
     </hint>
    </hints>
   </connection>
@@ -570,12 +611,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>57</x>
-     <y>427</y>
+     <x>77</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>84</x>
-     <y>518</y>
+     <x>112</x>
+     <y>627</y>
     </hint>
    </hints>
   </connection>
@@ -586,12 +627,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>149</x>
-     <y>426</y>
+     <x>207</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>228</x>
-     <y>477</y>
+     <x>301</x>
+     <y>567</y>
     </hint>
    </hints>
   </connection>
@@ -602,12 +643,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>178</x>
-     <y>429</y>
+     <x>207</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>256</x>
-     <y>509</y>
+     <x>301</x>
+     <y>600</y>
     </hint>
    </hints>
   </connection>
@@ -618,12 +659,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>427</y>
+     <x>207</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
-     <x>95</x>
-     <y>527</y>
+     <x>112</x>
+     <y>627</y>
     </hint>
    </hints>
   </connection>
@@ -734,8 +775,8 @@
      <y>117</y>
     </hint>
     <hint type="destinationlabel">
-     <x>85</x>
-     <y>333</y>
+     <x>165</x>
+     <y>360</y>
     </hint>
    </hints>
   </connection>
@@ -750,8 +791,40 @@
      <y>117</y>
     </hint>
     <hint type="destinationlabel">
-     <x>82</x>
-     <y>363</y>
+     <x>162</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>currentRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineListWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>104</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullRegionCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineListWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>

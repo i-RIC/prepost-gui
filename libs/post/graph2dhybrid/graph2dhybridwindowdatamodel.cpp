@@ -133,6 +133,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	dialog.setKMax(m_kMax);
 	dialog.setIndexMin(m_indexMin);
 	dialog.setIndexMax(m_indexMax);
+	dialog.setLines(m_lines);
 	dialog.setTimeMode(m_timeMode);
 	dialog.setStartTimeStep(m_timeStart);
 	dialog.setEndTimeStep(m_timeEnd);
@@ -153,6 +154,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	m_kMax = dialog.kMax();
 	m_indexMin = dialog.indexMin();
 	m_indexMax = dialog.indexMax();
+	m_lines = dialog.lines();
 	m_timeMode = dialog.timeMode();
 	m_timeStart = dialog.startTimeStep();
 	m_timeEnd = dialog.endTimeStep();
@@ -179,6 +181,8 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 			dataCount = (m_jMax - m_jMin + 1);
 		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1);
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			dataCount = m_lines.size();
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -195,7 +199,11 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-		dataCount = (m_indexMax - m_indexMin + 1);
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+			dataCount = (m_indexMax - m_indexMin + 1);
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			dataCount = m_lines.size();
+		}
 		break;
 	}
 	QProgressDialog pdialog(mainWindow());
@@ -289,6 +297,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 						return;
 					}
 					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
 			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 				for (int i = m_iMin; i <= m_iMax; ++i) {
@@ -306,6 +315,25 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 						return;
 					}
 					++ imageIndex;
+					pdialog.setValue(imageIndex);
+				}
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+				for (auto l : m_lines) {
+					window->controlWidget()->setPolyline(l);
+					pixmap = window->snapshot();
+					filename = QDir(folder).absoluteFilePath(m_prefix);
+					filename.append(QString("_Time=%1_%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(l->name()));
+					ok = savePixmap(pixmap, filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
 			}
 			break;
@@ -402,22 +430,42 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 		case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-			for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
-				window->controlWidget()->setIndexValue(idx);
-				pixmap = window->snapshot();
-				filename = QDir(folder).absoluteFilePath(m_prefix);
-				filename.append(QString("_Time=%1_Index=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
-				ok = savePixmap(pixmap, filename);
-				if (! ok) {
-					showErrorMessage(filename);
-					return;
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
+					window->controlWidget()->setIndexValue(idx);
+					pixmap = window->snapshot();
+					filename = QDir(folder).absoluteFilePath(m_prefix);
+					filename.append(QString("_Time=%1_Index=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
+					ok = savePixmap(pixmap, filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
-				qApp->processEvents();
-				if (pdialog.wasCanceled()) {
-					return;
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+				for (auto l : m_lines) {
+					window->controlWidget()->setPolyline(l);
+					pixmap = window->snapshot();
+					filename = QDir(folder).absoluteFilePath(m_prefix);
+					filename.append(QString("_Time=%1_line=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(l->name()));
+					ok = savePixmap(pixmap, filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
-				++ imageIndex;
-				pdialog.setValue(imageIndex);
 			}
 			break;
 		}
@@ -447,6 +495,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	dialog.setKMax(m_kMax);
 	dialog.setIndexMin(m_indexMin);
 	dialog.setIndexMax(m_indexMax);
+	dialog.setLines(m_lines);
 	dialog.setTimeMode(m_timeMode);
 	dialog.setStartTimeStep(m_timeStart);
 	dialog.setEndTimeStep(m_timeEnd);
@@ -468,6 +517,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	m_kMax = dialog.kMax();
 	m_indexMin = dialog.indexMin();
 	m_indexMax = dialog.indexMax();
+	m_lines = dialog.lines();
 	m_timeMode = dialog.timeMode();
 	m_timeStart = dialog.startTimeStep();
 	m_timeEnd = dialog.endTimeStep();
@@ -496,6 +546,8 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			dataCount = (m_iMax - m_iMin + 1);
 		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLine) {
 			dataCount = 1;
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			dataCount = m_lines.size();
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -512,7 +564,11 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-		dataCount = (m_indexMax - m_indexMin + 1);
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+			dataCount = (m_indexMax - m_indexMin + 1);
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			dataCount = m_lines.size();
+		}
 		break;
 	}
 	QProgressDialog pdialog(mainWindow());
@@ -629,15 +685,22 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 				}
 				++ imageIndex;
 			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
-				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
-				auto lineName = m_setting.targetPolyLineGroupPolyLine()->name();
-				filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(lineName));
-				ok = exportCsv(filename);
-				if (! ok) {
-					showErrorMessage(filename);
-					return;
+				for (auto l : m_lines) {
+					window->controlWidget()->setPolyline(l);
+					filename = QDir(folder).absoluteFilePath(m_prefix);
+					filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(l->name()));
+					ok = exportCsv(filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
-				++ imageIndex;
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -729,21 +792,40 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 		case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-			for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
-				window->controlWidget()->setIndexValue(idx);
-				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
-				filename.append(QString("_Time=%1_Index=%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
-				ok = exportCsv(filename);
-				if (! ok) {
-					showErrorMessage(filename);
-					return;
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
+					window->controlWidget()->setIndexValue(idx);
+					filename = QDir(folder).absoluteFilePath(m_csvPrefix);
+					filename.append(QString("_Time=%1_Index=%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
+					ok = exportCsv(filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
-				qApp->processEvents();
-				if (pdialog.wasCanceled()) {
-					return;
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+				for (auto l : m_lines) {
+					window->controlWidget()->setPolyline(l);
+					filename = QDir(folder).absoluteFilePath(m_prefix);
+					filename.append(QString("_Time=%1_%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(l->name()));
+					ok = exportCsv(filename);
+					if (! ok) {
+						showErrorMessage(filename);
+						return;
+					}
+					qApp->processEvents();
+					if (pdialog.wasCanceled()) {
+						return;
+					}
+					++ imageIndex;
+					pdialog.setValue(imageIndex);
 				}
-				++ imageIndex;
-				pdialog.setValue(imageIndex);
 			}
 			break;
 		}
@@ -1430,6 +1512,20 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	}
 	updateData();
 	updateTime();
+
+	view()->replot();
+}
+
+void Graph2dHybridWindowDataModel::polyLineChanged()
+{
+	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
+	Graph2dHybridWindowControlWidget* c = w->controlWidget();
+
+	auto line = c->polyline();
+	if (line != nullptr) {
+		m_setting.setTargetPolyLineGroupPolyLine(line);
+	}
+	updateData();
 
 	view()->replot();
 }

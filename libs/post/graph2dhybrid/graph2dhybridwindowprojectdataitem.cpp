@@ -37,20 +37,20 @@ Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDa
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowPropertyDialog(QModelIndex)), w->m_dataModel, SLOT(showPropertyDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(pressed(QModelIndex,QPoint)), w->m_dataModel, SLOT(handleObjectBrowserPress(QModelIndex,QPoint)));
 
-	connect(w->m_controlWidget, SIGNAL(dataSourceButtonClicked()), w->m_dataModel, SLOT(dataSourceSetting()));
-	connect(w->m_controlWidget, SIGNAL(axisButtonClicked()), w->m_dataModel, SLOT(axisSetting()));
-	connect(w->m_controlWidget, SIGNAL(drawButtonClicked()), w->m_dataModel, SLOT(drawSetting()));
-	connect(w->m_controlWidget, SIGNAL(markerButtonClicked()), w->m_dataModel, SLOT(markerSettiing()));
-	connect(w->m_controlWidget, SIGNAL(fontButtonClicked()), w->m_dataModel, SLOT(fontSetting()));
-	connect(w->m_controlWidget, SIGNAL(snapshotButtonClicked()), w->m_dataModel, SLOT(specialSnapshot()));
-	connect(w->m_controlWidget, SIGNAL(copyButtonClicked()), w->m_dataModel, SLOT(copyCalculationResult()));
-//	connect(w->m_controlWidget, SIGNAL(csvExportButtonClicked()), w->m_dataModel, SLOT(exportCsv()));
-	connect(w->m_controlWidget, SIGNAL(csvExportButtonClicked()), w->m_dataModel, SLOT(specialCsvExport()));
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::dataSourceButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::dataSourceSetting);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::axisButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::axisSetting);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::drawButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::drawSetting);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::markerButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::markerSettiing);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::fontButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::fontSetting);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::snapshotButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::specialSnapshot);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::copyButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::copyCalculationResult);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::csvExportButtonClicked, w->m_dataModel, &Graph2dHybridWindowDataModel::specialCsvExport);
 
-	connect(w->controlWidget(), SIGNAL(indexValueChanged(int)), w->m_dataModel, SLOT(sliderChanged()));
-	connect(w->controlWidget(), SIGNAL(iValueChanged(int)), w->m_dataModel, SLOT(sliderChanged()));
-	connect(w->controlWidget(), SIGNAL(jValueChanged(int)), w->m_dataModel, SLOT(sliderChanged()));
-	connect(w->controlWidget(), SIGNAL(kValueChanged(int)), w->m_dataModel, SLOT(sliderChanged()));
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::indexValueChanged, w->m_dataModel, &Graph2dHybridWindowDataModel::sliderChanged);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::iValueChanged, w->m_dataModel, &Graph2dHybridWindowDataModel::sliderChanged);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::jValueChanged, w->m_dataModel, &Graph2dHybridWindowDataModel::sliderChanged);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::kValueChanged, w->m_dataModel, &Graph2dHybridWindowDataModel::sliderChanged);
+	connect(w->m_controlWidget, &Graph2dHybridWindowControlWidget::polyLineChanged, w->m_dataModel, &Graph2dHybridWindowDataModel::polyLineChanged);
 	delete oldCenter;
 }
 

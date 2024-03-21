@@ -2,13 +2,19 @@
 
 #include "graph2dhybridwindowcontinuousexportdialog.h"
 
+#include <geodata/polydatagroup/geodatapolydatagroup.h>
+#include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
+
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
 
+#include <unordered_set>
+
 Graph2dHybridWindowContinuousExportDialog::Graph2dHybridWindowContinuousExportDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::Graph2dHybridWindowContinuousExportDialog)
+	ui(new Ui::Graph2dHybridWindowContinuousExportDialog),
+	m_currentLine {nullptr}
 {
 	ui->setupUi(this);
 	connect(ui->currentRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(regionCurrentToggled(bool)));
@@ -45,10 +51,22 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 	ui->indexMinSlider->setRange(1, dim[3]);
 	ui->indexMaxSlider->setRange(1, dim[3]);
 
+	m_lines.clear();
+	ui->lineListWidget->clear();
+	auto line = setting.targetPolyLineGroupPolyLine();
+	if (line != nullptr) {
+		for (auto d : line->group()->allData()) {
+			auto l = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (d);
+			m_lines.push_back(l);
+			ui->lineListWidget->addItem(l->name());
+		}
+	}
+
 	m_i = setting.gridI();
 	m_j = setting.gridJ();
 	m_k = setting.gridK();
 	m_index = setting.gridIndex();
+	m_currentLine = const_cast<GeoDataPolyLineGroupPolyLine*> (setting.targetPolyLineGroupPolyLine());
 
 	ui->iMinLabel->hide();
 	ui->iMinSlider->hide();
@@ -66,6 +84,8 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 	ui->indexMinSlider->hide();
 	ui->indexMaxLabel->hide();
 	ui->indexMaxSlider->hide();
+	ui->lineLabel->hide();
+	ui->lineListWidget->hide();
 
 	if (info == nullptr) {return;}
 	switch (info->dataType) {
@@ -99,6 +119,9 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
 			ui->iMaxSlider->show();
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			ui->lineLabel->show();
+			ui->lineListWidget->show();
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -147,10 +170,15 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-		ui->indexMinLabel->show();
-		ui->indexMinSlider->show();
-		ui->indexMaxLabel->show();
-		ui->indexMaxSlider->show();
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+			ui->indexMinLabel->show();
+			ui->indexMinSlider->show();
+			ui->indexMaxLabel->show();
+			ui->indexMaxSlider->show();
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
+			ui->lineLabel->show();
+			ui->lineListWidget->show();
+		}
 		break;
 	}
 	adjustSize();
@@ -237,6 +265,26 @@ void Graph2dHybridWindowContinuousExportDialog::setIndexMax(int idxmax)
 {
 	if (regionMode() != rmCustom) {return;}
 	ui->indexMaxSlider->setValue(idxmax + 1);
+}
+
+void Graph2dHybridWindowContinuousExportDialog::setLines(const std::vector<GeoDataPolyLineGroupPolyLine*>& lines)
+{
+	if (ui->currentRegionCheckBox->isChecked()) {return;}
+	if (ui->fullRegionCheckBox->isChecked()) {return;}
+
+	std::unordered_set<GeoDataPolyLineGroupPolyLine*> set;
+	for (auto l : lines) {
+		set.insert(l);
+	}
+
+	ui->lineListWidget->clearSelection();
+	for (int i = 0; i < static_cast<int> (m_lines.size()); ++i) {
+		auto l = m_lines.at(i);
+		auto it = set.find(l);
+		if (it != set.end()) {
+			ui->lineListWidget->item(i)->setSelected(true);
+		}
+	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setTimeMode(TimeMode tm)
@@ -336,6 +384,25 @@ int Graph2dHybridWindowContinuousExportDialog::indexMax() const
 	return ui->indexMaxSlider->value() - 1;
 }
 
+std::vector<GeoDataPolyLineGroupPolyLine*> Graph2dHybridWindowContinuousExportDialog::lines() const
+{
+	std::vector<GeoDataPolyLineGroupPolyLine*> ret;
+	if (ui->currentRegionCheckBox->isChecked()) {
+		ret.push_back(m_currentLine);
+		return ret;
+	} else if (ui->fullRegionCheckBox->isChecked()) {
+		return m_lines;
+	} else {
+		for (int i = 0; i < static_cast<int>(m_lines.size()); ++i) {
+			if (ui->lineListWidget->item(i)->isSelected()) {
+				ret.push_back(m_lines.at(i));
+			}
+			return ret;
+		}
+	}
+	return ret;
+}
+
 Graph2dHybridWindowContinuousExportDialog::TimeMode Graph2dHybridWindowContinuousExportDialog::timeMode() const
 {
 	if (ui->timeCurrentOnlyCheckBox->isChecked()) {
@@ -389,6 +456,13 @@ void Graph2dHybridWindowContinuousExportDialog::regionCurrentToggled(bool toggle
 	ui->kMaxSlider->setValue(m_k + 1);
 	ui->indexMinSlider->setValue(m_index + 1);
 	ui->indexMaxSlider->setValue(m_index + 1);
+
+	if (m_currentLine != nullptr) {
+		ui->lineListWidget->clearSelection();
+		auto it = std::find(m_lines.begin(), m_lines.end(), m_currentLine);
+		auto index = it - m_lines.begin();
+		ui->lineListWidget->item(index)->setSelected(true);
+	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::fullRegionToggled(bool toggled)
@@ -404,6 +478,10 @@ void Graph2dHybridWindowContinuousExportDialog::fullRegionToggled(bool toggled)
 	ui->kMaxSlider->setValue(ui->kMaxSlider->maximum());
 	ui->indexMinSlider->setValue(ui->indexMinSlider->minimum());
 	ui->indexMaxSlider->setValue(ui->indexMaxSlider->maximum());
+
+	for (int i = 0; i < static_cast<int> (m_lines.size()); ++i) {
+		ui->lineListWidget->item(i)->setSelected(true);
+	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::iMinChanged(int imin)

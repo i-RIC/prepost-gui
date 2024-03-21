@@ -24,10 +24,12 @@ public:
 	void setJValue(int j);
 	void setKValue(int k);
 	void setIndexValue(int index);
+	void setPolyline(GeoDataPolyLineGroupPolyLine* line);
 	int iValue() const;
 	int jValue() const;
 	int kValue() const;
 	int indexValue() const;
+	GeoDataPolyLineGroupPolyLine* polyline() const;
 	void fitSize();
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer) const;
@@ -45,9 +47,11 @@ signals:
 	void jValueChanged(int j);
 	void kValueChanged(int k);
 	void indexValueChanged(int index);
+	void polyLineChanged();
 
 private:
 	bool m_setupFinished;
+	std::vector<GeoDataPolyLineGroupPolyLine*> m_lines;
 	Ui::Graph2dHybridWindowControlWidget* ui;
 };
 

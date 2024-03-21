@@ -9,13 +9,14 @@
 #include <QVector>
 
 class QwtPlotMarker;
-class PostSolutionInfo;
+class GeoDataPolyLineGroupPolyLine;
 class Graph2dHybridWindow;
 class Graph2dHybridWindowRootDataItem;
 class Graph2dHybridWindowView;
 class Graph2dHybridWindowObjectBrowser;
 class Graph2dHybridWindowObjectBrowserView;
 class Graph2dHybridWindowZoneDataItem;
+class PostSolutionInfo;
 
 /// This class handles ALL informations that are handled
 /// inside 2d post-processing window.
@@ -40,6 +41,7 @@ public:
 
 public slots:
 	void sliderChanged();
+	void polyLineChanged();
 	void dataSourceSetting();
 	void axisSetting();
 	void drawSetting();
@@ -91,6 +93,7 @@ private:
 	int m_kMax;
 	int m_indexMin;
 	int m_indexMax;
+	std::vector<GeoDataPolyLineGroupPolyLine*> m_lines;
 
 	Graph2dHybridWindowContinuousExportDialog::TimeMode m_timeMode;
 	int m_timeStart;
