@@ -33,6 +33,7 @@ public:
 	void setKMax(int kmax);
 	void setIndexMin(int idxmin);
 	void setIndexMax(int idxmax);
+	void setLines(const std::vector<GeoDataPolyLineGroupPolyLine*>& lines);
 	void setTimeMode(TimeMode tm);
 	void setStartTimeStep(int startstep);
 	void setEndTimeStep(int endstep);
@@ -49,6 +50,7 @@ public:
 	int kMax() const;
 	int indexMin() const;
 	int indexMax() const;
+	std::vector<GeoDataPolyLineGroupPolyLine*> lines() const;
 	TimeMode timeMode() const;
 	int startTimeStep() const;
 	int endTimeStep() const;
@@ -84,6 +86,8 @@ private:
 	int m_k;
 	int m_index;
 	int m_currentStep;
+	GeoDataPolyLineGroupPolyLine* m_currentLine;
+	std::vector<GeoDataPolyLineGroupPolyLine*> m_lines;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWCONTINUOUSEXPORTDIALOG_H
