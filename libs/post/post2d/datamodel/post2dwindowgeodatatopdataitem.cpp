@@ -65,6 +65,37 @@ void setupChildrenInGroups(
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
+
+	// iedge simple items
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
+		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+	// iedge complex items
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
+		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+
+	// jedge simple items
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
+		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+	// jedge complex items
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
+		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+
 	setupReferenceInformation(children, nameMap, refAtt, parent);
 }
 

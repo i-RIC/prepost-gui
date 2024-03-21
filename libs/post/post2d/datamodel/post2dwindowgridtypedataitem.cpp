@@ -389,7 +389,9 @@ ColorMapSettingToolBarWidgetController* Post2dWindowGridTypeDataItem::createTool
 void Post2dWindowGridTypeDataItem::applyColorMapSetting(const std::string& name)
 {
 	auto i = m_geoDataItem->groupDataItem(name);
-	i->applyColorMapSetting();
+	if (i != nullptr) {
+		i->applyColorMapSetting();
+	}
 
 	updateColorBarVisibility(name);
 }
