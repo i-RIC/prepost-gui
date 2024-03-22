@@ -31,10 +31,13 @@ public:
 	v4SolutionGrid* particleData() const;
 
 	v4SolutionGrid* particleGroup(const std::string& name) const;
-	const std::map<std::string, v4SolutionGrid*> particleGroupMap() const;
+	const std::map<std::string, v4SolutionGrid*>& particleGroupMap() const;
+
+	v4SolutionGrid* particleGroupImage(const std::string& name) const;
+	const std::map<std::string, v4SolutionGrid*>& particleGroupImageMap() const;
 
 	v4SolutionGrid* polyData(const std::string& name) const;
-	const std::map<std::string, v4SolutionGrid*> polyDataMap() const;
+	const std::map<std::string, v4SolutionGrid*>& polyDataMap() const;
 
 	int loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, bool disableCalculatedResult);
 	int loadIfEmpty(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath);
@@ -44,7 +47,7 @@ public:
 	std::vector<v4PostCalculatedResult*>& calculatedResults();
 	const std::vector<v4PostCalculatedResult*>& calculatedResults() const;
 	std::vector<v4PostCalculatedResult*> detachCalculatedResult();
-	void attachCalculatedResult(std::vector<v4PostCalculatedResult*> results);
+	void attachCalculatedResult(const std::vector<v4PostCalculatedResult*>& results);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

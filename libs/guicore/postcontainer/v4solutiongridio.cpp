@@ -14,6 +14,7 @@
 
 #include <h5cgnsbase.h>
 #include <h5cgnsgridcoordinates.h>
+#include <h5cgnsparticlegroupimagesolution.h>
 #include <h5cgnsparticlegroupsolution.h>
 #include <h5cgnsparticlesolution.h>
 #include <h5cgnspolydatasolution.h>
@@ -145,6 +146,64 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroups2d(So
 		auto reader = pSol->groupReader(groupName);
 		CgnsUtil::loadScalarData(&reader, pd);
 		CgnsUtil::loadVectorData(&reader, pd);
+		particles->vtkData()->updateValueRangeSet();
+
+		ret.insert({groupName, new v4SolutionGrid(gridType, particles)});
+	}
+	return ret;
+}
+
+std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroupImage2d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)
+{
+	std::map<std::string, v4SolutionGrid*> empty;
+	if (! zone->particleGroupImageSolutionExists()) {
+		*ier = IRIC_NO_ERROR;
+		return empty;
+	}
+
+	std::map<std::string, v4SolutionGrid*> ret;
+
+	auto pSol = zone->particleGroupImageSolution();
+	std::vector<std::string> groupNames;
+	*ier = pSol->readGroupNames(&groupNames);
+	if (*ier != IRIC_NO_ERROR) {return empty;}
+
+	for (const auto& groupName : groupNames) {
+		auto particles = new v4Particles2d();
+		auto polyData = particles->vtkConcreteData()->concreteData();
+
+		int numParticles;
+		*ier = pSol->count(groupName, &numParticles);
+		if (*ier != IRIC_NO_ERROR) {return empty;}
+
+		std::vector<double> dataX, dataY;
+		*ier = pSol->readCoordinatesX(groupName, &dataX);
+		if (*ier != IRIC_NO_ERROR) {return empty;}
+		*ier = pSol->readCoordinatesY(groupName, &dataY);
+		if (*ier != IRIC_NO_ERROR) {return empty;}
+
+		auto points = polyData->GetPoints();
+		auto verts = vtkSmartPointer<vtkCellArray>::New();
+		points->Allocate(dataX.size());
+		verts->Allocate(dataX.size());
+		for (int i = 0; i < numParticles; ++i) {
+			points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), 0);
+			vtkIdType pId = i;
+			verts->InsertNextCell(1, &pId);
+		}
+		polyData->SetPoints(points);
+		polyData->SetVerts(verts);
+		particles->pointsModified();
+
+		vtkPointData* pd = polyData->GetPointData();
+		std::vector<double> size, angle;
+		*ier = pSol->readSize(groupName, &size);
+		if (*ier != IRIC_NO_ERROR) {return empty;}
+		*ier = pSol->readAngle(groupName, &angle);
+		if (*ier != IRIC_NO_ERROR) {return empty;}
+
+		CgnsUtil::addScalarDataT<double, vtkDoubleArray>(size, "size", pd);
+		CgnsUtil::addScalarDataT<double, vtkDoubleArray>(angle, "angle", pd);
 		particles->vtkData()->updateValueRangeSet();
 
 		ret.insert({groupName, new v4SolutionGrid(gridType, particles)});

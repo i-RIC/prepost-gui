@@ -20,6 +20,7 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post2dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
+	Post2dWindowParticleImageTopDataItem* m_particleImageTopDataItem;
 	Post2dWindowPolyDataTopDataItem* m_polyDataDataItem;
 	Post2dWindowStringResultDataItem* m_stringDataItem;
 

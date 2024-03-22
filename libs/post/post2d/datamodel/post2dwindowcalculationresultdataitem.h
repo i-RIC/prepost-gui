@@ -15,6 +15,7 @@ class Post2dWindowNodeVectorArrowGroupTopDataItem;
 class Post2dWindowNodeVectorParticleGroupDataItem;
 class Post2dWindowNodeVectorStreamlineGroupDataItem;
 class Post2dWindowParticleGroupRootDataItem;
+class Post2dWindowParticleImageTopDataItem;
 class Post2dWindowParticlesTopDataItem;
 class Post2dWindowPolyDataTopDataItem;
 class Post2dWindowStringResultDataItem;
@@ -47,6 +48,7 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const;
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post2dWindowParticleGroupRootDataItem* particleGroupRootDataItem() const;
+	Post2dWindowParticleImageTopDataItem* particleImageTopDataItem() const;
 	Post2dWindowPolyDataTopDataItem* polyDataDataItem() const;
 	Post2dWindowStringResultDataItem* stringDataItem() const;
 

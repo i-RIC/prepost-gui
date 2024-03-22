@@ -19,6 +19,7 @@ public:
 	v4SolutionGrid* m_gridData;
 	v4SolutionGrid* m_particleData;
 	std::map<std::string, v4SolutionGrid*> m_particleGroupMap;
+	std::map<std::string, v4SolutionGrid*> m_particleGroupImageMap;
 	std::map<std::string, v4SolutionGrid*> m_polyDataMap;
 
 	std::vector<v4PostCalculatedResult*> m_calculatedResults;
