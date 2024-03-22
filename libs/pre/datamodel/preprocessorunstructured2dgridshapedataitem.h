@@ -5,6 +5,8 @@
 
 class PreProcessorUnstructured2dGridShapeDataItem : public PreProcessorGridShapeDataItem
 {
+	Q_OBJECT
+
 private:
 	static const int normalLineWidth = 1;
 
