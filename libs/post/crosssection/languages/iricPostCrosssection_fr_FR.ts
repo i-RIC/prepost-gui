@@ -3,34 +3,34 @@
     <name>PostCrosssectionInternalWindow</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>No data to draw available.</source>
-        <translation type="unfinished" />
+        <translation>Aucune donnée à dessiner disponible.</translation>
     </message>
     <message>
         <source>Select target grid</source>
-        <translation type="unfinished" />
+        <translation>Sélectionnez la grille cible</translation>
     </message>
     <message>
         <source>Please select the grid to visualize</source>
-        <translation type="unfinished" />
+        <translation>Veuillez sélectionner la grille à visualiser</translation>
     </message>
     <message>
         <source>(Input) </source>
-        <translation type="unfinished" />
+        <translation>(Saisir)</translation>
     </message>
 </context>
 <context>
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation type="unfinished" />
+        <translation>Post-coupe transversale : %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished" />
+        <translation>Manette</translation>
     </message>
 </context>
 </TS>

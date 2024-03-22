@@ -3,34 +3,34 @@
     <name>LogoDataItem</name>
     <message>
         <source>Logo</source>
-        <translation type="unfinished" />
+        <translation>Logo</translation>
     </message>
     <message>
         <source>Logo Setting</source>
-        <translation type="unfinished" />
+        <translation>Logo Ayarı</translation>
     </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished" />
+        <translation>Boyut</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation type="unfinished" />
+        <translation>Küçük</translation>
     </message>
     <message>
         <source>Standard</source>
-        <translation type="unfinished" />
+        <translation>Standart</translation>
     </message>
     <message>
         <source>Large</source>
-        <translation type="unfinished" />
+        <translation>Büyük</translation>
     </message>
 </context>
 </TS>

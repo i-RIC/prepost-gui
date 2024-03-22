@@ -3,34 +3,34 @@
     <name>PostCrosssectionInternalWindow</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>No data to draw available.</source>
-        <translation type="unfinished" />
+        <translation>Nėra duomenų, kuriuos būtų galima piešti.</translation>
     </message>
     <message>
         <source>Select target grid</source>
-        <translation type="unfinished" />
+        <translation>Pasirinkite tikslinį tinklelį</translation>
     </message>
     <message>
         <source>Please select the grid to visualize</source>
-        <translation type="unfinished" />
+        <translation>Pasirinkite tinklelį, kurį norite vizualizuoti</translation>
     </message>
     <message>
         <source>(Input) </source>
-        <translation type="unfinished" />
+        <translation>(Įvestis)</translation>
     </message>
 </context>
 <context>
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation type="unfinished" />
+        <translation>Pašto skerspjūvis: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished" />
+        <translation>Valdiklis</translation>
     </message>
 </context>
 </TS>

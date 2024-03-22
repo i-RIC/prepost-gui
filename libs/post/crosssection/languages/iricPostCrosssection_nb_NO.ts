@@ -3,34 +3,34 @@
     <name>PostCrosssectionInternalWindow</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>No data to draw available.</source>
-        <translation type="unfinished" />
+        <translation>Ingen data å tegne tilgjengelig.</translation>
     </message>
     <message>
         <source>Select target grid</source>
-        <translation type="unfinished" />
+        <translation>Velg målrutenett</translation>
     </message>
     <message>
         <source>Please select the grid to visualize</source>
-        <translation type="unfinished" />
+        <translation>Velg rutenettet du vil visualisere</translation>
     </message>
     <message>
         <source>(Input) </source>
-        <translation type="unfinished" />
+        <translation>(Inndata)</translation>
     </message>
 </context>
 <context>
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation type="unfinished" />
+        <translation>Post-tverrsnitt: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished" />
+        <translation>Kontroller</translation>
     </message>
 </context>
 </TS>

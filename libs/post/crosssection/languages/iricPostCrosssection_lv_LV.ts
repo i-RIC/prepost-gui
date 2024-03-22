@@ -3,34 +3,34 @@
     <name>PostCrosssectionInternalWindow</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>No data to draw available.</source>
-        <translation type="unfinished" />
+        <translation>Nav pieejami zīmējamie dati.</translation>
     </message>
     <message>
         <source>Select target grid</source>
-        <translation type="unfinished" />
+        <translation>Atlasiet mērķa režģi</translation>
     </message>
     <message>
         <source>Please select the grid to visualize</source>
-        <translation type="unfinished" />
+        <translation>Lūdzu, atlasiet vizualizējamo režģi</translation>
     </message>
     <message>
         <source>(Input) </source>
-        <translation type="unfinished" />
+        <translation>(Ievade)</translation>
     </message>
 </context>
 <context>
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation type="unfinished" />
+        <translation>Ziņas šķērsgriezums: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished" />
+        <translation>Kontrolieris</translation>
     </message>
 </context>
 </TS>

@@ -3,34 +3,34 @@
     <name>LogoDataItem</name>
     <message>
         <source>Logo</source>
-        <translation type="unfinished" />
+        <translation>شعار</translation>
     </message>
     <message>
         <source>Logo Setting</source>
-        <translation type="unfinished" />
+        <translation>إعداد الشعار</translation>
     </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished" />
+        <translation>مقاس</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation type="unfinished" />
+        <translation>صغير</translation>
     </message>
     <message>
         <source>Standard</source>
-        <translation type="unfinished" />
+        <translation>معيار</translation>
     </message>
     <message>
         <source>Large</source>
-        <translation type="unfinished" />
+        <translation>كبير</translation>
     </message>
 </context>
 </TS>

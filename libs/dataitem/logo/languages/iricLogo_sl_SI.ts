@@ -3,34 +3,34 @@
     <name>LogoDataItem</name>
     <message>
         <source>Logo</source>
-        <translation type="unfinished" />
+        <translation>Logotip</translation>
     </message>
     <message>
         <source>Logo Setting</source>
-        <translation type="unfinished" />
+        <translation>Nastavitev logotipa</translation>
     </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished" />
+        <translation>Velikost</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation type="unfinished" />
+        <translation>majhna</translation>
     </message>
     <message>
         <source>Standard</source>
-        <translation type="unfinished" />
+        <translation>Standardno</translation>
     </message>
     <message>
         <source>Large</source>
-        <translation type="unfinished" />
+        <translation>Velik</translation>
     </message>
 </context>
 </TS>

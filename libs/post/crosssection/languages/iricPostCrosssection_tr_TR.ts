@@ -3,34 +3,34 @@
     <name>PostCrosssectionInternalWindow</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>No data to draw available.</source>
-        <translation type="unfinished" />
+        <translation>Çizilecek veri yok.</translation>
     </message>
     <message>
         <source>Select target grid</source>
-        <translation type="unfinished" />
+        <translation>Hedef ızgarayı seçin</translation>
     </message>
     <message>
         <source>Please select the grid to visualize</source>
-        <translation type="unfinished" />
+        <translation>Lütfen görselleştirmek için ızgarayı seçin</translation>
     </message>
     <message>
         <source>(Input) </source>
-        <translation type="unfinished" />
+        <translation>(Giriş)</translation>
     </message>
 </context>
 <context>
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation type="unfinished" />
+        <translation>Mesaj Kesiti: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished" />
+        <translation>Denetleyici</translation>
     </message>
 </context>
 </TS>

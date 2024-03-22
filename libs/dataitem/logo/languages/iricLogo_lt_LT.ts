@@ -3,34 +3,34 @@
     <name>LogoDataItem</name>
     <message>
         <source>Logo</source>
-        <translation type="unfinished" />
+        <translation>Logotipas</translation>
     </message>
     <message>
         <source>Logo Setting</source>
-        <translation type="unfinished" />
+        <translation>Logotipo nustatymas</translation>
     </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished" />
+        <translation>Dydis</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation type="unfinished" />
+        <translation>Mažas</translation>
     </message>
     <message>
         <source>Standard</source>
-        <translation type="unfinished" />
+        <translation>Standartinis</translation>
     </message>
     <message>
         <source>Large</source>
-        <translation type="unfinished" />
+        <translation>Didelis</translation>
     </message>
 </context>
 </TS>

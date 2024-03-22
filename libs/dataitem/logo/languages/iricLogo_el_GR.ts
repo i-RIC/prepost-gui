@@ -3,34 +3,34 @@
     <name>LogoDataItem</name>
     <message>
         <source>Logo</source>
-        <translation type="unfinished" />
+        <translation>Λογότυπο</translation>
     </message>
     <message>
         <source>Logo Setting</source>
-        <translation type="unfinished" />
+        <translation>Ρύθμιση λογότυπου</translation>
     </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished" />
+        <translation>Μέγεθος</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation type="unfinished" />
+        <translation>Μικρό</translation>
     </message>
     <message>
         <source>Standard</source>
-        <translation type="unfinished" />
+        <translation>Πρότυπο</translation>
     </message>
     <message>
         <source>Large</source>
-        <translation type="unfinished" />
+        <translation>Μεγάλο</translation>
     </message>
 </context>
 </TS>

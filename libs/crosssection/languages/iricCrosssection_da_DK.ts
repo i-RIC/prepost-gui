@@ -1,418 +1,416 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>AbstractCrosssectionWindow</name>
     <message>
         <source>Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Tværsnitsvindue</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der opstod en fejl under fremstillingen %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand(m) fra %1</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis indstillingsværktøjslinje</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Værktøjslinje for displayindstilling</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk omskalering</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelsesforhold (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ret billedformat</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Fix region</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitter</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>vægt</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre/højre bankmarkører</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelsesforhold</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Displayindstilling</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstrøms/nedstrøms markører</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstrøms side</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedstrøms side</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Højre side</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre side</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter CSV-filer</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling</translation>
     </message>
     <message>
         <source>Value Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling for værdivisning (%1)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre bredside</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Højre bredside</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedstrøms</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstrøms</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelsesforhold (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Gem snapshots</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_Controller</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Retning</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>jeg</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Celleværdier</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstrøms side</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedstrøms side</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Snapshot (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV eksport (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling for visning af gitter tværsnitsvindue</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Baggrundsgitter</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjer</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikker</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandret</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>vægt</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Underskala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Lodret</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Vægt</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrifttype:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre/højre bankmarkører</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelsesforhold</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportindstilling</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappe og præfiks (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Folder:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Præfiks:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Tværsnit</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun nuværende</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Brugerdefinerede</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg er med:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spring over rate:</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Visningsindstilling for gitterattribut</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Grundlæggende</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Højdediagram</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Uafhængigt diagram</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Farvekort</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af højdekort</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linje farve:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjebredde:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis point</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktstørrelse</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis indekser</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrift farve:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrifttype:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spring over rate:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uafhængig diagramindstilling</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Korthøjde:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixels]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis titel</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titelskrifttype:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Akse farve:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Font:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af farvekort</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel farve</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Brug Colormap-fanen til at redigere farveindstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Brug indstillingen af ​​vinduet Forbehandling</translation>
     </message>
 </context>
 </TS>

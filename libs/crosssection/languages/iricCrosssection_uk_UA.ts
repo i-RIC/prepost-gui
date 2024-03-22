@@ -1,418 +1,416 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AbstractCrosssectionWindow</name>
     <message>
         <source>Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Вікно поперечного перерізу</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час створення сталася помилка %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Індекс</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань (м) від %1</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Перегляд панелі налаштувань</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель інструментів налаштування дисплея</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматичне масштабування</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін (В/Г): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправте співвідношення сторін</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправити регіон</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>масштаб</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери вгору/вниз за течією</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Верхня сторона</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Нижня сторона</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Права сторона</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Ліва сторона</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт файлів CSV</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Value Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення значення (%1)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Лівобережна сторона</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Правобережна сторона</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>За течією</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Вгору за течією</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін (В/Г): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти знімки</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_Controller</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Напрямок</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>я</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>Дж</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення клітинок</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Верхня сторона</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Нижня сторона</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Знімок (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення вікна поперечного перерізу сітки</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Фонова сітка</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Лінії</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Крапки</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Горизонтальний</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>масштаб</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Підшкала</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикальний</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>колір:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваги</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування експорту</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка та префікс (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікс:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечний переріз</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Лише поточний</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>всі</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Custom</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Я в:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Я Макс:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Швидкість пропуску:</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення атрибутів сітки</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Базовий</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Діаграма висот</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Незалежна діаграма</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Кольорова карта</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування діаграми висот</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір лінії:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина лінії:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати бали</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір точки</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати індекси</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір шрифту:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Швидкість пропуску:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Незалежне налаштування діаграми</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Висота діаграми:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation type="unfinished"></translation>
+        <translation>[пікселі]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати назву</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт заголовка:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір осі:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт Axis:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольорової карти</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір заголовка</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
     </message>
 </context>
 </TS>

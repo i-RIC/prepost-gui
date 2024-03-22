@@ -1,418 +1,416 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>AbstractCrosssectionWindow</name>
     <message>
         <source>Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Šķērsgriezuma logs</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidojot, radās kļūda %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Iestatījums</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādītājs</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālums (m) no %1</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skatīt iestatījumu rīkjoslu</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Displeja iestatīšanas rīkjosla</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Automātiska mērogošana</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Malu attiecība (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Labojiet malu attiecību</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Labot reģionu</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģis</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Mērogs</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreisā/labā krasta marķieri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Malu attiecība</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Displeja iestatījums</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Augšējā/lejpus straumes marķieri</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Augšpuse</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejas puse</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Labā puse</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreisā puse</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportēt CSV failus</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Redzams</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Vārds</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Iestatījums</translation>
     </message>
     <message>
         <source>Value Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtību displeja iestatījums (%1)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreisā krasta puse</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Labā krasta puse</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejup pa straumi</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Augštecē</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Malu attiecība (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Saglabājiet momentuzņēmumus</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_Controller</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Virziens</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>es</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>Dž</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozīcija</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Šūnu vērtības</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Augšpuse</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejpuse</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentuzņēmums (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV eksportēšana (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa šķērsgriezuma loga displeja iestatījums</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Fona režģis</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tips</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Līnijas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkti</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontāli</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Mērogs</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Apakšskala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikāli</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Svari</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonts:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreisā/labā krasta marķieri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Malu attiecība</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportēšanas iestatījums</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Mape un prefikss (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mape:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Priedēklis:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Šķērsgriezums</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai pašreizējais</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Visi</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Pielāgots</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>ES piedalos:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Es Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlaist likme:</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa atribūtu displeja iestatījums</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Redzams</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamata</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režīms</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Augstuma diagramma</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Neatkarīga diagramma</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsu karte</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pacēluma diagrammas iestatījums</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Līnijas krāsa:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Līnijas platums:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādīt punktus</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkta lielums</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādīt indeksus</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonta krāsa:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonts:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlaist likme:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Neatkarīgs diagrammas iestatījums</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagrammas augstums:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pikseļi]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādīt virsrakstu</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Virsraksta fonts:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ass krāsa:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ass fonts:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsu kartes iestatījums</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Virsraksta krāsa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Izmantojiet priekšapstrādes loga iestatījumu</translation>
     </message>
 </context>
 </TS>
