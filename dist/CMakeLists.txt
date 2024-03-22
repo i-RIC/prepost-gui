@@ -521,6 +521,45 @@ set(IRICLIB_DLLS
 
 # IRIC_DICS
 set(IRIC_DICS
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ar_EG.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_bg_BG.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_bs_BA.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ca_ES.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_cs_CZ.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_da_DK.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_de_DE.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_el_GR.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_es_ES.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_et_EE.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_eu_ES.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_fi_FI.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_fr_FR.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_gl_ES.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_hi_IN.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_hu_HU.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_id_ID.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_is_IS.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_it_IT.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ja_JP.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ko_KR.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ky_KG.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_lt_LT.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_lv_LV.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_nb_NO.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_nl_NL.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_pl_PL.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_pt_BR.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_pt_PT.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ro_RO.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_ru_RU.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_sl_SI.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_sv_SE.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_th_TH.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_tr_TR.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_uk_UA.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_vi_VN.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_zh_CN.qm
+  ${PREPOST_GUI}/libs/crosssection/languages/iricCrosssection_zh_TW.qm
   ${PREPOST_GUI}/libs/cs/languages/iricCs_ar_EG.qm
   ${PREPOST_GUI}/libs/cs/languages/iricCs_bg_BG.qm
   ${PREPOST_GUI}/libs/cs/languages/iricCs_bs_BA.qm
