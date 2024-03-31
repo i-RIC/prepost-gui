@@ -5,6 +5,8 @@
 
 class Post2dWindowGridAttributeIEdgeGroupDataItem : public Post2dWindowGridAttributeAbstractCellGroupDataItem
 {
+	Q_OBJECT
+
 public:
 	Post2dWindowGridAttributeIEdgeGroupDataItem(Post2dWindowDataItem* parent);
 

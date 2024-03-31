@@ -8,6 +8,8 @@ class Post2dWindowZoneDataItem;
 
 class Post2dWindowParticleImageTopDataItem : public Post2dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post2dWindowParticleImageTopDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowParticleImageTopDataItem();
