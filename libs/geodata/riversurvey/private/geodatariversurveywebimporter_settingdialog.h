@@ -28,8 +28,9 @@ private slots:
 	void handleDone();
 
 private:
-	void enableOkButton();
-	void disableOkButton();
+	void enableWidgets();
+	void disableWidgetsAndShowLoadingMessage();
+	void enableWidgetsOtherthanOkButtonAndShowMessage(const QString& message);
 
 	QStringList m_riverIds;
 	QStringList m_KPs;

@@ -55,7 +55,7 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readRiverIds()
 	QNetworkRequest request(url);
 	m_webReply = m_webAccessManager->get(request);
 	m_isWaitingHttpResponse = true;
-	disableOkButton();
+	disableWidgetsAndShowLoadingMessage();
 	connect(m_webReply, &QNetworkReply::finished, this, &SettingDialog::handleDone);
 	qApp->processEvents();
 
@@ -65,7 +65,9 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readRiverIds()
 	}
 
 	if (m_webReply->error() != QNetworkReply::NoError) {
-		QMessageBox::information(this, "Error",  m_webReply->errorString());
+		const auto message = QString(tr("Server returned error response: %1").arg(m_webReply->errorString()));
+		enableWidgetsOtherthanOkButtonAndShowMessage(message);
+		return;
 	}
 
 	auto buffer = m_webReply->readAll();
@@ -94,7 +96,7 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readRiverIds()
 
 	ui->riverComboBox->blockSignals(false);
 
-	enableOkButton();
+	enableWidgets();
 
 	readKPs();
 }
@@ -108,7 +110,7 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readKPs()
 	QNetworkRequest request(url);
 	m_webReply = m_webAccessManager->get(request);
 	m_isWaitingHttpResponse = true;
-	disableOkButton();
+	disableWidgetsAndShowLoadingMessage();
 	connect(m_webReply, &QNetworkReply::finished, this, &SettingDialog::handleDone);
 	qApp->processEvents();
 
@@ -118,7 +120,9 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readKPs()
 	}
 
 	if (m_webReply->error() != QNetworkReply::NoError) {
-		QMessageBox::information(this, "Error", m_webReply->errorString());
+		const auto message = QString(tr("Server returned error response: %1").arg(m_webReply->errorString()));
+		enableWidgetsOtherthanOkButtonAndShowMessage(message);
+		return;
 	}
 
 	auto buffer = QString(m_webReply->readAll());
@@ -128,13 +132,15 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readKPs()
 	auto data = QJsonDocument::fromJson(buffer2.toUtf8());
 	auto list = data["kplist"].toArray();
 
+	int minNonNegativeIndex = -1;
 	m_KPs.clear();
 	for (auto it = list.begin(); it != list.end(); ++it) {
 		auto kp = *it;
 		m_KPs.push_back(kp.toString());
+		if (minNonNegativeIndex < 0 && kp.toString().toFloat() >= 0) {
+			minNonNegativeIndex = m_KPs.size() - 1;
+		}
 	}
-
-	std::reverse(m_KPs.begin(), m_KPs.end());
 
 	ui->maxComboBox->blockSignals(true);
 	ui->minComboBox->blockSignals(true);
@@ -146,13 +152,13 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readKPs()
 		ui->maxComboBox->addItem(kp);
 	}
 
-	ui->maxComboBox->setCurrentIndex(0);
-	ui->minComboBox->setCurrentIndex(0);
+	ui->maxComboBox->setCurrentIndex(minNonNegativeIndex);
+	ui->minComboBox->setCurrentIndex(minNonNegativeIndex);
 
 	ui->minComboBox->blockSignals(false);
 	ui->maxComboBox->blockSignals(false);
 
-	enableOkButton();
+	enableWidgets();
 
 	readYears();
 }
@@ -165,10 +171,13 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readYears()
 
 	QUrl url("https://rivopen.ricplace2.org/api/riveryear/" + riverId + "/" + minKP + "/" + maxKP);
 
+	m_years.clear();
+	ui->yearComboBox->clear();
+
 	QNetworkRequest request(url);
 	m_webReply = m_webAccessManager->get(request);
 	m_isWaitingHttpResponse = true;
-	disableOkButton();
+	disableWidgetsAndShowLoadingMessage();
 	connect(m_webReply, &QNetworkReply::finished, this, &SettingDialog::handleDone);
 	qApp->processEvents();
 
@@ -178,7 +187,9 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readYears()
 	}
 
 	if (m_webReply->error() != QNetworkReply::NoError) {
-		QMessageBox::information(this, "Error", m_webReply->errorString());
+		const auto message = QString(tr("Server returned error response: %1").arg(m_webReply->errorString()));
+		enableWidgetsOtherthanOkButtonAndShowMessage(message);
+		return;
 	}
 
 	auto buffer = QString(m_webReply->readAll());
@@ -197,13 +208,13 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::readYears()
 		}
 	}
 
-	m_years.clear();
-	ui->yearComboBox->clear();
 	for (const auto& year : yearSet) {
 		m_years.push_back(year);
 		ui->yearComboBox->addItem(year);
 	}
-	enableOkButton();
+	ui->yearComboBox->setCurrentIndex(m_years.size() - 1);
+
+	enableWidgets();
 }
 
 void GeoDataRiverSurveyWebImporter::SettingDialog::handleDone()
@@ -211,14 +222,38 @@ void GeoDataRiverSurveyWebImporter::SettingDialog::handleDone()
 	m_isWaitingHttpResponse = false;
 }
 
-void GeoDataRiverSurveyWebImporter::SettingDialog::enableOkButton()
+void GeoDataRiverSurveyWebImporter::SettingDialog::enableWidgets()
 {
+	ui->riverComboBox->setEnabled(true);
+	ui->maxComboBox->setEnabled(true);
+	ui->minComboBox->setEnabled(true);
+	ui->yearComboBox->setEnabled(true);
 	auto okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
 	okButton->setEnabled(true);
+
+	ui->messageLabel->setText("");
 }
 
-void GeoDataRiverSurveyWebImporter::SettingDialog::disableOkButton()
+void GeoDataRiverSurveyWebImporter::SettingDialog::disableWidgetsAndShowLoadingMessage()
 {
+	ui->riverComboBox->setDisabled(true);
+	ui->maxComboBox->setDisabled(true);
+	ui->minComboBox->setDisabled(true);
+	ui->yearComboBox->setDisabled(true);
 	auto okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
 	okButton->setDisabled(true);
+
+	ui->messageLabel->setText(tr("Waiting for response from server..."));
+}
+
+void GeoDataRiverSurveyWebImporter::SettingDialog::enableWidgetsOtherthanOkButtonAndShowMessage(const QString& message)
+{
+	ui->riverComboBox->setEnabled(true);
+	ui->maxComboBox->setEnabled(true);
+	ui->minComboBox->setEnabled(true);
+	ui->yearComboBox->setEnabled(true);
+	auto okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
+	okButton->setDisabled(true);
+
+	ui->messageLabel->setText(message);
 }
