@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -72,17 +74,17 @@
         <translation>생성 시간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -353,6 +355,77 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostStringResultArgumentSettingEditDialog</name>
+    <message>
+        <source>Label Input Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeJ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable name is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
@@ -360,90 +433,228 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Move label</source>
-        <translation>라벨 이동</translation>
+        <translation type="vanished">라벨 이동</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation>레이블 크기 조정</translation>
+        <translation type="vanished">레이블 크기 조정</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>레이블 설정 편집</translation>
+        <translation type="vanished">레이블 설정 편집</translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultEngine</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>라벨 설정</translation>
+        <translation type="vanished">라벨 설정</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>환경</translation>
+        <translation type="vanished">환경</translation>
     </message>
     <message>
         <source>Position and Size</source>
-        <translation>위치 및 크기</translation>
+        <translation type="vanished">위치 및 크기</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation>여유</translation>
+        <translation type="vanished">여유</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>수평의</translation>
+        <translation type="vanished">수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>수직의</translation>
+        <translation type="vanished">수직의</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>위치</translation>
+        <translation type="vanished">위치</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation>왼쪽:</translation>
+        <translation type="vanished">왼쪽:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>맨 위:</translation>
+        <translation type="vanished">맨 위:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>크기</translation>
+        <translation type="vanished">크기</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>너비:</translation>
+        <translation type="vanished">너비:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>키:</translation>
+        <translation type="vanished">키:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation>글꼴 및 색상</translation>
+        <translation type="vanished">글꼴 및 색상</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>폰트:</translation>
+        <translation type="vanished">폰트:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
     <message>
         <source>Font color:</source>
-        <translation>글꼴 색상:</translation>
+        <translation type="vanished">글꼴 색상:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation>배경색:</translation>
+        <translation type="vanished">배경색:</translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value for Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">추가하다 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Definition of output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font and Color</source>
+        <translation type="unfinished">글꼴 및 색상</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished">폰트:</translation>
+    </message>
+    <message>
+        <source>Font color:</source>
+        <translation type="unfinished">글꼴 색상:</translation>
+    </message>
+    <message>
+        <source>Background color:</source>
+        <translation type="unfinished">배경색:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label setting (*.labelsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeJ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeK</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

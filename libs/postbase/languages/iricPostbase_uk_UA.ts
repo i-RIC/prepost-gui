@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -72,17 +74,17 @@
         <translation>Інтервал часу генерації</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -353,6 +355,77 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostStringResultArgumentSettingEditDialog</name>
+    <message>
+        <source>Label Input Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeJ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable name is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
@@ -360,90 +433,228 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Move label</source>
-        <translation>Перемістити мітку</translation>
+        <translation type="vanished">Перемістити мітку</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Змінити розмір мітки</translation>
+        <translation type="vanished">Змінити розмір мітки</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Змінити налаштування мітки</translation>
+        <translation type="vanished">Змінити налаштування мітки</translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultEngine</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Налаштування етикетки</translation>
+        <translation type="vanished">Налаштування етикетки</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Налаштування</translation>
+        <translation type="vanished">Налаштування</translation>
     </message>
     <message>
         <source>Position and Size</source>
-        <translation>Положення та розмір</translation>
+        <translation type="vanished">Положення та розмір</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation>Маржа</translation>
+        <translation type="vanished">Маржа</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтальні</translation>
+        <translation type="vanished">Горизонтальні</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикальні</translation>
+        <translation type="vanished">Вертикальні</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиція</translation>
+        <translation type="vanished">Позиція</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation>Зліва:</translation>
+        <translation type="vanished">Зліва:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Вгорі:</translation>
+        <translation type="vanished">Вгорі:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Розмір</translation>
+        <translation type="vanished">Розмір</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Висота:</translation>
+        <translation type="vanished">Висота:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation>Шрифт і колір</translation>
+        <translation type="vanished">Шрифт і колір</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Шрифт:</translation>
+        <translation type="vanished">Шрифт:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редагувати...</translation>
+        <translation type="vanished">Редагувати...</translation>
     </message>
     <message>
         <source>Font color:</source>
-        <translation>Колір шрифту:</translation>
+        <translation type="vanished">Колір шрифту:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation>Колір фону:</translation>
+        <translation type="vanished">Колір фону:</translation>
+    </message>
+</context>
+<context>
+    <name>PostStringResultSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value for Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Додати (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Definition of output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font and Color</source>
+        <translation type="unfinished">Шрифт і колір</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished">Шрифт:</translation>
+    </message>
+    <message>
+        <source>Font color:</source>
+        <translation type="unfinished">Колір шрифту:</translation>
+    </message>
+    <message>
+        <source>Background color:</source>
+        <translation type="unfinished">Колір фону:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label setting (*.labelsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeJ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EdgeK</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
