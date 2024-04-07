@@ -7,6 +7,8 @@
 
 class GD_POINTMAP_EXPORT GeoDataPointmapTINCreator : public GeoDataCreator
 {
+	Q_OBJECT
+
 public:
 	GeoDataPointmapTINCreator();
 
