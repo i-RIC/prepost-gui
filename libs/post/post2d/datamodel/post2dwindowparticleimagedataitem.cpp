@@ -48,6 +48,18 @@ QDialog* Post2dWindowParticleImageDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
+void Post2dWindowParticleImageDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(1);
+}
+
+void Post2dWindowParticleImageDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	for (auto actor : impl->m_actors) {
+		actor->SetPosition(0, 0, range.min());
+	}
+}
+
 void Post2dWindowParticleImageDataItem::showPropertyDialog()
 {
 	showPropertyDialogModeless();

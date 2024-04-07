@@ -18,6 +18,9 @@ public:
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 
+	void updateZDepthRangeItemCount() override;
+	void assignActorZValues(const ZDepthRange& range) override;
+
 public slots:
 	void showPropertyDialog() override;
 
