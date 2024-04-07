@@ -5,6 +5,8 @@
 
 class PreProcessorGridAttributeJEdgeGroupDataItem : public PreProcessorGridAttributeAbstractCellGroupDataItem
 {
+	Q_OBJECT
+
 public:
 	PreProcessorGridAttributeJEdgeGroupDataItem(PreProcessorDataItem* parent);
 
