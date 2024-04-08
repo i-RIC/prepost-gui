@@ -55,8 +55,12 @@ void Post2dWindowParticleImageDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowParticleImageDataItem::assignActorZValues(const ZDepthRange& range)
 {
+	impl->m_zDepth = range.min();
+	double pos[3];
 	for (auto actor : impl->m_actors) {
-		actor->SetPosition(0, 0, range.min());
+		actor->GetPosition(pos);
+		pos[2] = range.min();
+		actor->SetPosition(pos);
 	}
 }
 
@@ -117,7 +121,7 @@ void Post2dWindowParticleImageDataItem::updateActorSetting()
 		actor->SetTexture(texture);
 
 		auto bottomLeftCorner = impl->buildBottomLeftCorner(pos, val, angle);
-		actor->SetPosition(bottomLeftCorner.x(), bottomLeftCorner.y(), 0);
+		actor->SetPosition(bottomLeftCorner.x(), bottomLeftCorner.y(), impl->m_zDepth);
 		auto scale = impl->calcScale(val);
 		actor->SetScale(scale, scale, 1);
 		actor->SetOrientation(0, 0, angle);

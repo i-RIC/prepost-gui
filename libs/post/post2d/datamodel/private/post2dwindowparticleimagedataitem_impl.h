@@ -27,6 +27,7 @@ public:
 	std::vector<vtkActor*> m_actors;
 
 	Setting m_setting;
+	double m_zDepth;
 
 private:
 	std::vector<QPointF> buildCornerPointsCenter(const QPointF& point, const QPointF& dx, const QPointF& dy, double halfWidth, double halfHeight);
