@@ -853,7 +853,7 @@
     <name>Post2dWindowGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation>エッジ (I方向) 属性</translation>
+        <translation>エッジ (I方向) の属性</translation>
     </message>
 </context>
 <context>
@@ -867,7 +867,7 @@
     <name>Post2dWindowGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation>エッジ (J方向) 属性</translation>
+        <translation>エッジ (J方向) の属性</translation>
     </message>
 </context>
 <context>
