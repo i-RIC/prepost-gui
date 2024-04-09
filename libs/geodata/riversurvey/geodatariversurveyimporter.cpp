@@ -567,7 +567,7 @@ void GeoDataRiverSurveyImporter::removePointsWithoutAltitudes(std::vector<RivPat
 {
 	int idx = 0;
 	while (idx < points->size()) {
-		if (points->at(idx)->altitudes.size() == 0) {
+		if (points->at(idx)->altitudes.size() < 2) {
 			delete points->at(idx);
 			points->erase(points->begin() + idx);
 			continue;
