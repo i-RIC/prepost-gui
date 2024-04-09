@@ -369,7 +369,7 @@ void GeoDataPointmap::PointsManager::addActionsToMenu(QMenu* menu)
 	menu->addSeparator();
 
 	menu->addAction(m_actions->addPointsAction);
-	// menu->addAction(m_actions->interpolatePointsAction);
+	menu->addAction(m_actions->interpolatePointsAction);
 
 	menu->addSeparator();
 
@@ -506,7 +506,6 @@ void GeoDataPointmap::PointsManager::toggleAddPointsMode(bool on)
 	m_parent->renderGraphicsView();
 }
 
-/*
 void GeoDataPointmap::PointsManager::toggleInterpolatePointsMode(bool on)
 {
 	for (auto a : m_actions->checkableActions) {
@@ -525,7 +524,6 @@ void GeoDataPointmap::PointsManager::toggleInterpolatePointsMode(bool on)
 	m_activeController->activate(v);
 	m_parent->renderGraphicsView();
 }
-*/
 
 void GeoDataPointmap::PointsManager::editSelectedPoints()
 {
