@@ -1436,7 +1436,7 @@ void GeoDataRiverSurvey::updateSplineSolvers()
 
 void GeoDataRiverSurvey::updateBackgroundGrid()
 {
-	impl->m_backgroundGrid = impl->m_gridThread->grid();
+	impl->m_backgroundGrid->DeepCopy(impl->m_gridThread->grid());
 	impl->m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
 
 	GeoDataRiverPathPoint* p = m_headPoint->nextPoint();
