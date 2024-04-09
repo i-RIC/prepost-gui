@@ -40,6 +40,7 @@ public:
 	const std::vector<BreakLine*>& breakLines() const;
 
 	vtkPolyData* tin() const;
+	vtkPolyData* tinEdges() const;
 	vtkDoubleArray* values() const;
 	void setTinData(vtkPolyData* data, vtkDoubleArray* values);
 	void rebuildTinFromPointsIfNeeded();
@@ -83,6 +84,7 @@ private slots:
 
 private:
 	void setupActors();
+	void rebuildTinEdges();
 	void rebuildQTree();
 
 	class AddBreakLineController;

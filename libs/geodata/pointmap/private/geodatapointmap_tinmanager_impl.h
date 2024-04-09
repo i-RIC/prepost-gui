@@ -12,6 +12,7 @@ public:
 
 	std::vector<BreakLine*> m_breakLines;
 	vtkPolyData* m_tin;
+	vtkPolyData* m_tinEdges;
 	vtkLODActor* m_tinActor;
 	geos::index::quadtree::Quadtree* m_qTree;
 	bool m_needRebuild;

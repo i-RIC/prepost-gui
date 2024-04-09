@@ -9,6 +9,7 @@
 
 GeoDataPointmap::TINManager::Impl::Impl(TINManager* tinManager, GeoDataPointmap* parent) :
 	m_tin {vtkPolyData::New()},
+	m_tinEdges {vtkPolyData::New()},
 	m_tinActor {vtkLODActor::New()},
 	m_qTree {nullptr},
 	m_needRebuild {false},
@@ -26,6 +27,7 @@ GeoDataPointmap::TINManager::Impl::Impl(TINManager* tinManager, GeoDataPointmap*
 GeoDataPointmap::TINManager::Impl::~Impl()
 {
 	m_tin->Delete();
+	m_tinEdges->Delete();
 	m_tinActor->Delete();
 	delete m_qTree;
 

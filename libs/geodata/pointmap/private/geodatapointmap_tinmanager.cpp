@@ -16,6 +16,7 @@
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <misc/edge.h>
 #include <misc/iricundostack.h>
 #include <misc/mouseeventcontroller.h>
 
@@ -83,6 +84,11 @@ vtkPolyData* GeoDataPointmap::TINManager::tin() const
 	return impl->m_tin;
 }
 
+vtkPolyData* GeoDataPointmap::TINManager::tinEdges() const
+{
+	return impl->m_tinEdges;
+}
+
 vtkDoubleArray* GeoDataPointmap::TINManager::values() const
 {
 	return vtkDoubleArray::SafeDownCast(impl->m_tin->GetPointData()->GetArray(VALUES));
@@ -101,6 +107,7 @@ void GeoDataPointmap::TINManager::setTinData(vtkPolyData* data, vtkDoubleArray* 
 	impl->m_tin->GetPointData()->SetActiveScalars(VALUES);
 	impl->m_tin->BuildCells();
 
+	rebuildTinEdges();
 	rebuildQTree();
 }
 
@@ -133,6 +140,7 @@ bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
 		newCells->Delete();
 	}
 
+	rebuildTinEdges();
 	rebuildQTree();
 	iRICUndoStack::instance().clear();
 
@@ -509,6 +517,39 @@ void GeoDataPointmap::TINManager::setupActors()
 	auto prop = impl->m_tinActor->GetProperty();
 	prop->SetRepresentationToPoints();
 	prop->SetLighting(false);
+}
+
+void GeoDataPointmap::TINManager::rebuildTinEdges()
+{
+	std::unordered_set<Edge, Edge::HashFunction> edges;
+	auto polys = impl->m_tin->GetPolys();
+	polys->InitTraversal();
+
+	vtkIdType numPoints;
+	vtkIdType* points = nullptr;
+	while (polys->GetNextCell(numPoints, points) != 0) {
+		for (int i = 0; i < 3; ++i) {
+			vtkIdType v1 = *(points + i);
+			vtkIdType v2 = *(points + (i + 1) % 3);
+			Edge e(v1, v2);
+			edges.insert(e);
+		}
+	}
+
+	impl->m_tinEdges->Initialize();
+	impl->m_tinEdges->SetPoints(impl->m_tin->GetPoints());
+	auto vals = impl->m_tin->GetPointData()->GetArray(VALUES);
+	impl->m_tinEdges->GetPointData()->AddArray(vals);
+	impl->m_tinEdges->GetPointData()->SetActiveScalars(VALUES);
+
+	vtkIdType edgeArr[2];
+	auto edgeCellArray = vtkSmartPointer<vtkCellArray>::New();
+	for (const auto& e : edges) {
+		edgeArr[0] = e.vertex1();
+		edgeArr[1] = e.vertex2();
+		edgeCellArray->InsertNextCell(2, edgeArr);
+	}
+	impl->m_tinEdges->SetLines(edgeCellArray);
 }
 
 void GeoDataPointmap::TINManager::rebuildQTree()
