@@ -589,27 +589,28 @@ void GeoDataPointmap::updateActorSetting()
 
 		impl->m_pointsManager.setSelectedPointsSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
 	} else {
-		auto mapper = cs->buildPointDataMapper(impl->m_tinManager.tin());
-		auto actor = impl->m_tinManager.tinActor();
-		actor->SetMapper(mapper);
-		mapper->Delete();
 
-		actor->GetProperty()->SetPointSize(impl->m_displaySetting.tinPointSize * v->devicePixelRatioF());
-		actor->GetProperty()->SetLineWidth(impl->m_displaySetting.tinLineWidth * v->devicePixelRatioF());
+
+
+		auto actor = impl->m_tinManager.tinActor();
+		actor->GetProperty()->SetRepresentationToSurface();
+		if (impl->m_displaySetting.tinRepresentation.value() == DisplaySetting::TinRepresentation::Points) {
+			auto mapper = cs->buildPointDataMapper(impl->m_pointsManager.points());
+			actor->SetMapper(mapper);
+			mapper->Delete();
+			actor->GetProperty()->SetPointSize(impl->m_displaySetting.tinPointSize * v->devicePixelRatioF());
+		} else if (impl->m_displaySetting.tinRepresentation.value() == DisplaySetting::TinRepresentation::Wireframe) {
+			auto mapper = cs->buildPointDataMapper(impl->m_tinManager.tinEdges());
+			actor->SetMapper(mapper);
+			mapper->Delete();
+			actor->GetProperty()->SetLineWidth(impl->m_displaySetting.tinLineWidth * v->devicePixelRatioF());
+		} else if (impl->m_displaySetting.tinRepresentation.value() == DisplaySetting::TinRepresentation::Surface) {
+			auto mapper = cs->buildPointDataMapper(impl->m_tinManager.tin());
+			actor->SetMapper(mapper);
+			mapper->Delete();
+		}
 		actor->GetProperty()->SetOpacity(impl->m_displaySetting.tinOpacity);
 		actorCollection()->AddItem(actor);
-
-		switch (impl->m_displaySetting.tinRepresentation.value()) {
-		case DisplaySetting::TinRepresentation::Points:
-			actor->GetProperty()->SetRepresentationToPoints();
-			break;
-		case DisplaySetting::TinRepresentation::Wireframe:
-			actor->GetProperty()->SetRepresentationToWireframe();
-			break;
-		case DisplaySetting::TinRepresentation::Surface:
-			actor->GetProperty()->SetRepresentationToSurface();
-			break;
-		}
 	}
 
 	impl->m_tinManager.updateBreakLinesActorSettings();

@@ -14,6 +14,7 @@ public:
 
 	std::vector<BreakLine*> m_breakLines;
 	vtkPolyData* m_tin;
+	vtkPolyData* m_tinEdges;
 	vtkLODActor* m_tinActor;
 	vtkPointSetGeos2dIndex* m_index;
 	bool m_needRebuild;
