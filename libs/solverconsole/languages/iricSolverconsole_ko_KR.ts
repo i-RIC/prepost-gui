@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -101,7 +99,7 @@
     </message>
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 존재하지 않습니다. 기본 설정 대화 상자에서 유효한 Python 실행 파일 경로를 지정하세요.</translation>
     </message>
 </context>
 <context>

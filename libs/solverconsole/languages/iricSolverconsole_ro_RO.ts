@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>SolverConsoleWindow</name>
@@ -101,7 +99,7 @@
     </message>
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nu exista. Vă rugăm să specificați calea executabilă Python validă în dialogul Preferințe.</translation>
     </message>
 </context>
 <context>
