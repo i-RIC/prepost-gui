@@ -52,7 +52,7 @@ public:
 
 	void applyPreferenceSetting();
 
-	void startSolverSilently();
+	bool startSolverSilently();
 	void terminateSolverSilently();
 	void waitForSolverFinish();
 

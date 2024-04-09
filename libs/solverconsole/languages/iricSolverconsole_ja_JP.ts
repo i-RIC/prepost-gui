@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>QObject</name>
@@ -111,6 +113,10 @@
     <message>
         <source>Background Color Setting</source>
         <translation>背景色設定</translation>
+    </message>
+    <message>
+        <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
+        <translation>%1 が存在しません。設定ダイアログで、正しいPythonの実行プログラムのパスを指定してください。</translation>
     </message>
 </context>
 <context>
