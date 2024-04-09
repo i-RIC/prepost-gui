@@ -178,7 +178,11 @@ void SolverConsoleWindow::startSolver()
 	impl->m_projectDataItem->open();
 
 	impl->m_projectData->setIsSolverRunning(true);
-	startSolverSilently();
+	bool started = startSolverSilently();
+	if (! started) {
+		impl->m_projectDataItem->close();
+		return;
+	}
 
 	updateWindowTitle();
 	exportLogAction->setEnabled(true);
@@ -311,7 +315,7 @@ void SolverConsoleWindow::applyPreferenceSetting()
 	}
 }
 
-void SolverConsoleWindow::startSolverSilently()
+bool SolverConsoleWindow::startSolverSilently()
 {
 	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
@@ -351,7 +355,13 @@ void SolverConsoleWindow::startSolverSilently()
 	if (solverInfo.suffix() == "py" || solverInfo.suffix() == "pyc") {
 		// run python solver
 		QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();
-		auto pythonPathStr = iRIC::toStr(pythonPath);
+		QFile pythonFile(pythonPath);
+		if (! pythonFile.exists()) {
+			QMessageBox::critical(this, tr("Error"), tr("%1 does not exists. Please specify valid Python executable path in Preference dialog.").arg(QDir::toNativeSeparators(pythonPath)));
+			delete impl->m_process;
+			impl->m_process = nullptr;
+			return false;
+		}
 
 		QStringList args;
 		args << "-u" << solver << cgnsname;
@@ -380,6 +390,7 @@ void SolverConsoleWindow::startSolverSilently()
 		impl->m_process->setProcessEnvironment(env);
 		impl->m_process->start(solver, args);
 	}
+	return true;
 }
 
 void SolverConsoleWindow::terminateSolverSilently()
