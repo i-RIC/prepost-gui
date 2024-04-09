@@ -33,24 +33,24 @@
        </property>
        <layout class="QGridLayout" name="gridLayout" columnstretch="0,1">
         <item row="0" column="0">
-         <widget class="QLabel" name="maxlabel">
-          <property name="text">
-           <string>Upstream:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="maxComboBox"/>
-        </item>
-        <item row="1" column="0">
          <widget class="QLabel" name="minlabel">
           <property name="text">
            <string>Downstream:</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="0" column="1">
          <widget class="QComboBox" name="minComboBox"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="maxlabel">
+          <property name="text">
+           <string>Upstream:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="maxComboBox"/>
         </item>
        </layout>
       </widget>
