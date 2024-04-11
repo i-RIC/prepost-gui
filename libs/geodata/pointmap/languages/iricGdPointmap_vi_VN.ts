@@ -76,7 +76,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Nội suy điểm (&amp;I)</translation>
+        <translation>Nội suy điểm (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

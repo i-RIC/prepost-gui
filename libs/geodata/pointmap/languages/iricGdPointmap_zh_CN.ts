@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">插值点</translation>
+        <translation>插值点</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

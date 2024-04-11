@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Interpoliuoti taškus (&amp;I)</translation>
+        <translation>Interpoliuoti taškus (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

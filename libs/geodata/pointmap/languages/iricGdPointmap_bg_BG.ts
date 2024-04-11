@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Интерполирайте точки (&amp;I)</translation>
+        <translation>Интерполирайте точки (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
