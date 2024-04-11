@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Interpolați puncte (&amp;I)</translation>
+        <translation>Interpolați puncte (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

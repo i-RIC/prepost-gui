@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">&amp;Interpolar Puntos</translation>
+        <translation>&amp;Interpolar Puntos</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

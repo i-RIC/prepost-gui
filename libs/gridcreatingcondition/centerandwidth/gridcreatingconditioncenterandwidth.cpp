@@ -385,7 +385,7 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	impl->m_spline->Modified();
 	impl->m_splinePoints->Initialize();
 
-	//calculate the length of this spline
+	// calculate the length of this spline
 	int d = division * 5;
 	// It might not work well on a too large grid
 	double pre[3], dx, dy;
@@ -408,7 +408,7 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	}
 	impl->m_setting.length = length[d];
 
-	// diviede the spline at equal intervals
+	// divide the spline at equal intervals
 	impl->m_splinePoints->Initialize();
 	u[0] = 0.0;
 	impl->m_spline->Evaluate(u, Pt, Du);
