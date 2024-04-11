@@ -54,7 +54,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Interpoliranje tačaka (&amp;I)</translation>
+        <translation>Interpoliranje tačaka (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
