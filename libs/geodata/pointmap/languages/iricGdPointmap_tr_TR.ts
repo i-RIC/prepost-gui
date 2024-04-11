@@ -54,7 +54,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Enterpolasyon Noktaları (&amp;I)</translation>
+        <translation>Enterpolasyon Noktaları (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

@@ -54,7 +54,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">Greina stig (&amp;I)</translation>
+        <translation>Greina stig (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>

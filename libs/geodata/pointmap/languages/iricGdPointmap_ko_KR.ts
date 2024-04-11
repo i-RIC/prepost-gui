@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">포인트 보간 (&amp;I)</translation>
+        <translation>포인트 보간 (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
