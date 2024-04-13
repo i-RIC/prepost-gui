@@ -120,10 +120,9 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 		QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 line 1: Header does not contain enough data.").arg(fName));
 		return false;
 	}
-	int pointCount = tokens.at(6).toInt();
 
 	std::vector<int> indices;
-	for (int i = 0; i < pointCount; ++i) {
+	while (! f.atEnd()) {
 		QString line = f.readLine();
 
 		auto tokens = line.split(",", QString::KeepEmptyParts);
@@ -131,8 +130,13 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 
 		int flag = tokens.at(0).toInt(&ok);
 		if (! ok) {
-			// flag can be null string now
-			flag = 0;
+			if (tokens.at(0) == "") {
+				// flag can be null string now
+				flag = 0;
+			} else {
+				// it is assumed to be structure data
+				break;
+			}
 		}
 		double dist = tokens.at(1).toDouble(&ok);
 		if (! ok) {
@@ -144,16 +148,16 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 			QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 line %2: \"%3\": Elevation data is invalid.").arg(fName).arg(linenum).arg(tokens.at(2)));
 			return false;
 		}
-		GeoDataRiverSurveyImporter::Alt alt(point->altitudes.size(), dist, elev);
+		GeoDataRiverSurveyImporter::Alt alt(static_cast<int> (point->altitudes.size()), dist, elev);
 		point->altitudes.push_back(alt);
 		if (flag == 13) {
-			indices.push_back(point->altitudes.size());
+			indices.push_back(static_cast<int> (point->altitudes.size()));
 		}
 		++ linenum;
 	}
 	if (indices.size() == 2) {
 		point->divIndices[0] = 1;
-		point->divIndices[3] = point->altitudes.size();
+		point->divIndices[3] = static_cast<int> (point->altitudes.size());
 		point->divIndices[1] = indices[0];
 		point->divIndices[2] = indices[1];
 		*with4Points = true;
