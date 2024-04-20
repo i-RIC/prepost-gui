@@ -219,7 +219,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 				throw(ErrorMessage("Wrong valueType is set."));
 			}
 			if (widget != nullptr) {
-				addTooltip(widget, itemNode, t);
+				addTooltip(widget, defNode, t);
 				m_widgets.insert(parameterName, widget);
 			}
 		} else {
