@@ -81,6 +81,13 @@ Post2dWindowZoneDataItem* Post2dWindowParticleImageDataItem::zoneDataItem() cons
 
 void Post2dWindowParticleImageDataItem::updateActorSetting()
 {
+	for (auto a : impl->m_actors) {
+		renderer()->RemoveActor(a);
+		a->Delete();
+	}
+	impl->m_actors.clear();
+	m_actorCollection->RemoveAllItems();
+
 	auto texture = impl->buildTexture();
 	auto plane = impl->buildPlane();
 
@@ -90,6 +97,8 @@ void Post2dWindowParticleImageDataItem::updateActorSetting()
 	plane->Delete();
 
 	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr) {return;}
+
 	auto particles = cont->particleGroupImage(m_groupName);
 	if (particles == nullptr) {return;}
 
@@ -97,14 +106,6 @@ void Post2dWindowParticleImageDataItem::updateActorSetting()
 	auto points = pd->GetPoints();
 	auto vals = vtkDoubleArray::SafeDownCast(pd->GetPointData()->GetArray("size"));
 	auto angles = vtkDoubleArray::SafeDownCast(pd->GetPointData()->GetArray("angle"));
-
-
-	for (auto a : impl->m_actors) {
-		renderer()->RemoveActor(a);
-		a->Delete();
-	}
-	impl->m_actors.clear();
-	m_actorCollection->RemoveAllItems();
 
 	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		double v[3];

@@ -452,7 +452,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 	std::vector<std::string> namesToRemove;
 	for (auto it = calculatedResults->begin(); it != calculatedResults->end(); ++it) {
 		auto it2 = containerNameMap->find(it->first);
-		if (it2 == containerNameMap->end()) {
+		if (it2 != containerNameMap->end()) {
 			it2->second->attachCalculatedResult(it->second);
 			namesToRemove.push_back(it->first);
 		}
