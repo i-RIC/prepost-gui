@@ -48,6 +48,8 @@ void VTK2DGraphicsView::fitInView()
 
 	double w1 = bounds[1] - bounds[0];
 	double w2 = bounds[3] - bounds[2];
+	if (w1 < 0 || w2 < 0) {return;}
+
 	w1 *= w1;
 	w2 *= w2;
 	double radius = w1 + w2;
