@@ -64,7 +64,9 @@ VTKGraphicsView::Impl::Impl() :
 	m_interactive {false},
 	m_isViewChanging {false},
 	m_isRubberBandZooming {false}
-{}
+{
+	m_resizeTimer.setSingleShot(true);
+}
 
 VTKGraphicsView::Impl::~Impl()
 {
@@ -429,7 +431,7 @@ vtkCamera* VTKGraphicsView::camera() const
 void VTKGraphicsView::render()
 {
 	auto renderWindow = impl->m_mainRenderer->GetRenderWindow();
-	if (renderWindow != 0) {
+	if (renderWindow != nullptr) {
 		renderWindow->Render();
 	}
 }
