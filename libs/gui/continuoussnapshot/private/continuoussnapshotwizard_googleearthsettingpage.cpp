@@ -190,6 +190,9 @@ QPointF ContinuousSnapshotWizard::GoogleEarthSettingPage::snapshotToWorld(const 
 	double worldY = p.y() - offset.y();
 
 	view->viewportToWorld(worldX, worldY);
+	auto mf = m_mainWindow->projectData()->mainfile();
+	worldX += mf->offset().x();
+	worldY += mf->offset().y();
 
 	return QPointF(worldX, worldY);
 }
