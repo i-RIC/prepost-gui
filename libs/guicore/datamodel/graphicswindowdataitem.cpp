@@ -54,7 +54,8 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent) :
 	m_standardItemCopy {nullptr},
 	m_isDeletable {true},
 	m_isReorderable {false},
-	m_isExpanded {false},
+	m_isExpanded {"isExpanded", false},
+	m_checkState {"checkState", Qt::CheckState::Unchecked},
 	m_actorCollection {vtkActorCollection::New()},
 	m_actor2DCollection {vtkActor2DCollection::New()},
 	m_zDepthRange {},
@@ -226,8 +227,9 @@ void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 {
 	if (m_standardItem == nullptr) {return;}
 	if (m_standardItem->isCheckable()) {
-		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
-		m_standardItemCopy->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
+		m_checkState.load(node);
+		m_standardItem->setCheckState(m_checkState);
+		m_standardItemCopy->setCheckState(m_checkState);
 	}
 }
 
@@ -235,27 +237,21 @@ void GraphicsWindowDataItem::saveCheckState(QXmlStreamWriter& writer)
 {
 	if (m_standardItem == nullptr) {return;}
 	if (m_standardItem->isCheckable()) {
-		QString checkState;
-		checkState.setNum(m_standardItem->checkState());
-		writer.writeAttribute("checkState", checkState);
+		m_checkState = m_standardItem->checkState();
+		m_checkState.save(writer);
 	}
 }
 
 void GraphicsWindowDataItem::loadExpandState(const QDomNode& node)
 {
-	m_isExpanded = (node.toElement().attribute("isExpanded", "false") == "true");
+	m_isExpanded.load(node);
 }
 
 void GraphicsWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 {
-	QString strExpanded;
-	if (m_isExpanded) {
-		strExpanded = "true";
-	} else {
-		strExpanded = "false";
-	}
-	writer.writeAttribute("isExpanded", strExpanded);
+	m_isExpanded.save(writer);
 }
+
 void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 {
 	if (m_standardItem != nullptr) {
