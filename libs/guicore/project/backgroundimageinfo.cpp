@@ -292,11 +292,11 @@ QAction* BackgroundImageInfo::fixActionWithIcon() const
 	return impl->m_fixActionWithIcon;
 }
 
-QDialog* BackgroundImageInfo::propertyDialog()
+QDialog* BackgroundImageInfo::propertyDialog(QWidget* w)
 {
 	impl->m_settingBeforeMouseEventStarts = impl->m_setting;
 
-	auto dialog = new BackgroundImageInfoDialog(this);
+	auto dialog = new BackgroundImageInfoDialog(this, w);
 	dialog->setImageWidth(impl->m_originalImageWidth);
 	dialog->setSetting(impl->m_setting);
 	return dialog;

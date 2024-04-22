@@ -19,7 +19,7 @@ Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(Backgro
 	m_actor {},
 	m_imageInfo {image}
 {
-	setupStandardItem(NotChecked, Reorderable, NotDeletable, image->fileName());
+	setupStandardItem(NotChecked, Reorderable, Deletable, image->fileName());
 
 	image->setupActor(m_actor.actor());
 	image->setupMapper(m_actor.mapper());
@@ -73,6 +73,12 @@ void Post2dWindowBackgroundImageDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
+bool Post2dWindowBackgroundImageDataItem::addToolBarButtons(QToolBar* toolbar)
+{
+	toolbar->addAction(imageInfo()->fixActionWithIcon());
+	return true;
+}
+
 BackgroundImageInfo* Post2dWindowBackgroundImageDataItem::imageInfo() const
 {
 	return m_imageInfo;
@@ -95,9 +101,9 @@ void Post2dWindowBackgroundImageDataItem::assignActorZValues(const ZDepthRange& 
 	m_actor.actor()->SetPosition(position[0], position[1], range.min());
 }
 
-QDialog* Post2dWindowBackgroundImageDataItem::propertyDialog(QWidget* /*parent*/)
+QDialog* Post2dWindowBackgroundImageDataItem::propertyDialog(QWidget* parent)
 {
-	return m_imageInfo->propertyDialog();
+	return m_imageInfo->propertyDialog(parent);
 }
 
 void Post2dWindowBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* dialog)

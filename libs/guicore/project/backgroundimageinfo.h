@@ -52,7 +52,7 @@ public:
 	void setPreProcessorActor(vtkActor* actor);
 	void deleteImageFile();
 
-	QDialog* propertyDialog();
+	QDialog* propertyDialog(QWidget* w);
 	void handlePropertyDialogAccepted(QDialog* dialog);
 
 	void applyOffset(double x, double y);
