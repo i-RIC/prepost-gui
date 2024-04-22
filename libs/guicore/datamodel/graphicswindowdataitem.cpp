@@ -261,7 +261,7 @@ void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 	if (m_standardItem != nullptr) {
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateExpandState(view);
 	}
 }
@@ -271,7 +271,7 @@ void GraphicsWindowDataItem::reflectExpandState(QTreeView* view)
 	if (m_standardItem != nullptr) {
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->reflectExpandState(view);
 	}
 }
@@ -419,7 +419,7 @@ const std::vector<GraphicsWindowDataItem*>& GraphicsWindowDataItem::childItems()
 void GraphicsWindowDataItem::moveUp()
 {
 	// reorder the standard item.
-	QStandardItem* parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
+	auto parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
 	int currentRow = m_standardItem->row();
 	QList<QStandardItem*> items = parentItem->takeRow(currentRow);
 	parentItem->insertRows(currentRow - 1, items);
@@ -440,7 +440,7 @@ void GraphicsWindowDataItem::moveUp()
 void GraphicsWindowDataItem::moveDown()
 {
 	// reorder the standard item.
-	QStandardItem* parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
+	auto parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
 	int currentRow = m_standardItem->row();
 	QList<QStandardItem*> items = parentItem->takeRow(currentRow);
 	parentItem->insertRows(currentRow + 1, items);
@@ -555,7 +555,7 @@ QStringList GraphicsWindowDataItem::containedFiles() const
 {
 	QStringList ret;
 	ret << ProjectDataItem::containedFiles();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		ret << child->containedFiles();
 	}
 	return ret;
@@ -565,7 +565,7 @@ void GraphicsWindowDataItem::updateZDepthRangeItemCount()
 {
 	// update the ZDepthRange itemcount of child items first.
 	int sum = 0;
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateZDepthRangeItemCount();
 		sum += child->zDepthRange().itemCount();
 	}
@@ -583,7 +583,7 @@ void GraphicsWindowDataItem::setIsCommandExecuting(bool exec)
 void GraphicsWindowDataItem::update2Ds()
 {
 	innerUpdate2Ds();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->update2Ds();
 	}
 }
@@ -591,7 +591,7 @@ void GraphicsWindowDataItem::update2Ds()
 void GraphicsWindowDataItem::updateZScale(double scale)
 {
 	innerUpdateZScale(scale);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateZScale(scale);
 	}
 }
@@ -599,7 +599,7 @@ void GraphicsWindowDataItem::updateZScale(double scale)
 bool GraphicsWindowDataItem::hasTransparentPart()
 {
 	bool hasTransparent = myHasTransparentPart();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		hasTransparent = hasTransparent || child->hasTransparentPart();
 	}
 	return hasTransparent;
@@ -629,7 +629,7 @@ PostSolutionInfo* GraphicsWindowDataItem::postSolutionInfo()
 void GraphicsWindowDataItem::viewOperationEndedGlobal(VTKGraphicsView* v)
 {
 	doViewOperationEndedGlobal(v);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->viewOperationEndedGlobal(v);
 	}
 }
@@ -666,14 +666,14 @@ void GraphicsWindowDataItem::wheelEvent(QWheelEvent* /*event*/, VTKGraphicsView*
 void GraphicsWindowDataItem::applyOffset(double x, double y)
 {
 	doApplyOffset(x, y);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->applyOffset(x, y);
 	}
 }
 
 QPointF GraphicsWindowDataItem::getOffset()
 {
-	GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	auto p = dynamic_cast<GraphicsWindowDataItem*>(parent());
 	return p->getOffset();
 }
 
@@ -756,7 +756,7 @@ void GraphicsWindowDataItem::pushUpdateActorSettingRecursivelyCommand(QUndoComma
 
 void GraphicsWindowDataItem::showPropertyDialogModal()
 {
-	QDialog* propDialog = propertyDialog(mainWindow());
+	auto propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	int result = propDialog->exec();
 	if (result == QDialog::Accepted) {
@@ -767,7 +767,7 @@ void GraphicsWindowDataItem::showPropertyDialogModal()
 
 void GraphicsWindowDataItem::showPropertyDialogModeless()
 {
-	QDialog* propDialog = propertyDialog(mainWindow());
+	auto propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	propDialog->setAttribute(Qt::WA_DeleteOnClose);
 	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);

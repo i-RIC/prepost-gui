@@ -205,7 +205,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4Input
 
 	auto gtItem = gridTypeDataItem();
 	SolverDefinitionGridType* gt = gtItem->gridType();
-	QStandardItem* prevItem = 0;
+	QStandardItem* prevItem = nullptr;
 	if (gt->boundaryConditions().size() > 0) {
 		prevItem = m_bcSettingGroupDataItem->standardItem();
 	} else {
