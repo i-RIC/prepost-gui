@@ -1142,6 +1142,8 @@ void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProc
 
 void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
+	impl->m_keyboardModifiers = event->modifiers();
+
 	switch (impl->m_editMouseEventMode) {
 	case Impl::EditMouseEventMode::Normal:
 	case Impl::EditMouseEventMode::TranslatePrepare:
@@ -1152,7 +1154,6 @@ void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGra
 	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
-		impl->m_keyboardModifiers = event->modifiers();
 		impl->editModeUpdateMouseEventMode();
 		impl->editModeUpdateMouseCursor(v);
 		break;
@@ -1164,6 +1165,8 @@ void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGra
 
 void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
+	impl->m_keyboardModifiers = event->modifiers();
+
 	switch (impl->m_editMouseEventMode) {
 	case Impl::EditMouseEventMode::Normal:
 	case Impl::EditMouseEventMode::TranslatePrepare:
@@ -1174,7 +1177,6 @@ void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorG
 	case Impl::EditMouseEventMode::MoveExtensionEndPointPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareRight:
 	case Impl::EditMouseEventMode::ExpansionPrepareLeft:
-		impl->m_keyboardModifiers = event->modifiers();
 		impl->editModeUpdateMouseEventMode();
 		impl->editModeUpdateMouseCursor(v);
 		break;
