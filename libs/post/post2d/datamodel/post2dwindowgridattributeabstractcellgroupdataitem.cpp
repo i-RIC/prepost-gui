@@ -223,25 +223,6 @@ Post2dWindowGridAttributeAbstractCellDataItem* Post2dWindowGridAttributeAbstract
 	return it->second;
 }
 
-void Post2dWindowGridAttributeAbstractCellGroupDataItem::handleStandardItemChange()
-{
-	if (m_isCommandExecuting) {return;}
-
-	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
-	GraphicsWindowDataItem::handleStandardItemChange();
-	if (m_standardItem->checkState() == Qt::Checked) {
-		// uncheck other group dataitems
-		auto gItem = gridDataItem();
-		for (auto child : gItem->childItems()) {
-			if (child == this) {continue;}
-			if (child == gItem->gridShapeDataItem()) {continue;}
-
-			child->standardItem()->setCheckState(Qt::Unchecked);
-		}
-	}
-	iRICUndoStack::instance().endMacro();
-}
-
 IntContainer& Post2dWindowGridAttributeAbstractCellGroupDataItem::lineWidth()
 {
 	return impl->m_lineWidth;

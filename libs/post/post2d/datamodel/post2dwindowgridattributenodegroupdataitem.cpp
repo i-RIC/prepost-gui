@@ -2,6 +2,7 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowinputgriddataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
+#include "post2dwindowgridattributecellgroupdataitem.h"
 #include "post2dwindowgridattributenodedataitem.h"
 #include "post2dwindowgridattributenodegroupdataitem.h"
 #include "post2dwindowgridshapedataitem.h"
@@ -256,14 +257,9 @@ void Post2dWindowGridAttributeNodeGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
 	GraphicsWindowDataItem::handleStandardItemChange();
 	if (m_standardItem->checkState() == Qt::Checked) {
-		// uncheck other group dataitems
+		// uncheck node group dataitem
 		auto gItem = gridDataItem();
-		for (auto child : gItem->childItems()) {
-			if (child == this) {continue;}
-			if (child == gItem->gridShapeDataItem()) {continue;}
-
-			child->standardItem()->setCheckState(Qt::Unchecked);
-		}
+		gItem->cellGroupDataItem()->standardItem()->setCheckState(Qt::Unchecked);
 	}
 	iRICUndoStack::instance().endMacro();
 }
