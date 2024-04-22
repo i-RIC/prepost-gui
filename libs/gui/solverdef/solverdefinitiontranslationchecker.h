@@ -87,6 +87,8 @@ private:
 	/// Scan a DOM node in solver definition file recursively and
 	/// find strings to translate.
 	void scanDefinition(const QDomNode& node);
+	/// add text
+	void addText(const QString& text);
 	/// The dictionary in translation file.
 //	QHash<QString, QString> m_dictionary;
 	/// The words those has no correnponding translation in translation file.

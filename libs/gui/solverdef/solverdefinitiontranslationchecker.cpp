@@ -118,24 +118,34 @@ void SolverDefinitionTranslationChecker::scanDefinition(const QDomNode& node)
 {
 	if (! node.isElement()) {return;}
 	QDomElement elem = node.toElement();
+	QString text;
+
 	if (elem.hasAttribute("caption")) {
-		QString caption = elem.attribute("caption");
-		// Handle it only when it does not exists in m_dic.
-		if (! m_dic.contains(caption)) {
-			m_dic.insert(caption);
-			if (m_uselessTranslations.contains(caption)) {
-				// It already has translation.
-				m_messages.append(TranslationMessage(caption, m_uselessTranslations.value(caption)));
-				m_uselessTranslations.remove(caption);
-			} else {
-				// It does not has translation.
-				m_messages.append(TranslationMessage(caption));
-			}
-		}
+		addText(elem.attribute("caption"));
 	}
+	if (elem.hasAttribute("tooltips")) {
+		addText(elem.attribute("tooltips"));
+	}
+
 	QDomNodeList cnodes = node.childNodes();
 	for (int i = 0; i < cnodes.length(); ++i) {
 		scanDefinition(cnodes.item(i));
+	}
+}
+
+void SolverDefinitionTranslationChecker::addText(const QString& text)
+{
+	// Handle it only when it does not exists in m_dic.
+	if (! m_dic.contains(text)) {
+		m_dic.insert(text);
+		if (m_uselessTranslations.contains(text)) {
+			// It already has translation.
+			m_messages.append(TranslationMessage(text, m_uselessTranslations.value(text)));
+			m_uselessTranslations.remove(text);
+		} else {
+			// It does not has translation.
+			m_messages.append(TranslationMessage(text));
+		}
 	}
 }
 
