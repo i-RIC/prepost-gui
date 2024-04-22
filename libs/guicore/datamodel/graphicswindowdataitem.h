@@ -184,8 +184,6 @@ protected:
 
 public:
 	friend class BackgroundImageInfo;
-	friend class GraphicsWindowDrawOnRedo;
-	friend class GraphicsWindowDrawOnUndo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
 
 private:

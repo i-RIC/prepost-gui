@@ -199,7 +199,6 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowdataitemupdateactorsettingdialog.h \
            datamodel/graphicswindowdataitemupdateactorsettingrecursivelydialog.h \
            datamodel/graphicswindowdatamodel.h \
-           datamodel/graphicswindowdrawcommands.h \
            datamodel/graphicswindowrootdataitem.h \
            datamodel/graphicswindowsimpledatamodel.h \
            datamodel/modifycommandandrenderdialog.h \
@@ -794,7 +793,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/graphicswindowdataitemupdateactorsettingdialog.cpp \
            datamodel/graphicswindowdataitemupdateactorsettingrecursivelydialog.cpp \
            datamodel/graphicswindowdatamodel.cpp \
-           datamodel/graphicswindowdrawcommands.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
            datamodel/modifycommandandrenderdialog.cpp \
