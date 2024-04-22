@@ -60,7 +60,9 @@ VTKGraphicsView::Impl::Impl() :
 	m_interactive {false},
 	m_isViewChanging {false},
 	m_isRubberBandZooming {false}
-{}
+{
+	m_resizeTimer.setSingleShot(true);
+}
 
 VTKGraphicsView::Impl::~Impl()
 {
