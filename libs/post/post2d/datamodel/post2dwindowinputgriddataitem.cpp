@@ -92,6 +92,26 @@ Post2dWindowGridShapeDataItem* Post2dWindowInputGridDataItem::gridShapeDataItem(
 	return impl->m_gridShapeDataItem;
 }
 
+Post2dWindowGridAttributeNodeGroupDataItem* Post2dWindowInputGridDataItem::nodeGroupDataItem() const
+{
+	return impl->m_nodeGroupDataItem;
+}
+
+Post2dWindowGridAttributeCellGroupDataItem* Post2dWindowInputGridDataItem::cellGroupDataItem() const
+{
+	return impl->m_cellGroupDataItem;
+}
+
+Post2dWindowGridAttributeIEdgeGroupDataItem* Post2dWindowInputGridDataItem::iEdgeGroupDataItem() const
+{
+	return impl->m_iEdgeGroupDataItem;
+}
+
+Post2dWindowGridAttributeJEdgeGroupDataItem* Post2dWindowInputGridDataItem::jEdgeGroupDataItem() const
+{
+	return impl->m_jEdgeGroupDataItem;
+}
+
 void Post2dWindowInputGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");

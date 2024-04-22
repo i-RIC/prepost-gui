@@ -1,9 +1,11 @@
 #include "post2dwindowinputgriddataitem.h"
 #include "post2dwindowgridattributecelldataitem.h"
 #include "post2dwindowgridattributecellgroupdataitem.h"
+#include "post2dwindowgridattributenodegroupdataitem.h"
 
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
+#include <misc/iricundostack.h>
 
 Post2dWindowGridAttributeCellGroupDataItem::Post2dWindowGridAttributeCellGroupDataItem(Post2dWindowDataItem* parent) :
 	Post2dWindowGridAttributeAbstractCellGroupDataItem(tr("Cell attributes"), parent)
@@ -12,6 +14,20 @@ Post2dWindowGridAttributeCellGroupDataItem::Post2dWindowGridAttributeCellGroupDa
 vtkPointSetExtended* Post2dWindowGridAttributeCellGroupDataItem::data() const
 {
 	return gridDataItem()->grid()->vtkData();
+}
+
+void Post2dWindowGridAttributeCellGroupDataItem::handleStandardItemChange()
+{
+	if (m_isCommandExecuting) {return;}
+
+	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
+	GraphicsWindowDataItem::handleStandardItemChange();
+	if (m_standardItem->checkState() == Qt::Checked) {
+		// uncheck node group dataitems
+		auto gItem = gridDataItem();
+		gItem->nodeGroupDataItem()->standardItem()->setCheckState(Qt::Unchecked);
+	}
+	iRICUndoStack::instance().endMacro();
 }
 
 SolverDefinitionGridAttribute::Position Post2dWindowGridAttributeCellGroupDataItem::definitionPosition() const

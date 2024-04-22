@@ -11,6 +11,7 @@ public:
 	Post2dWindowGridAttributeCellGroupDataItem(Post2dWindowDataItem* parent);
 
 	vtkPointSetExtended* data() const override;
+	void handleStandardItemChange() override;
 
 private:
 	SolverDefinitionGridAttribute::Position definitionPosition() const override;

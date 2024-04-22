@@ -46,7 +46,6 @@ public:
 	void update();
 	std::vector<Post2dWindowGridAttributeAbstractCellDataItem*> conditions() const;
 	Post2dWindowGridAttributeAbstractCellDataItem* cellDataItem(const std::string& name) const;
-	void handleStandardItemChange() override;
 	IntContainer& lineWidth();
 	OpacityContainer& opacity();
 	OpacityContainerWidget* opacityWidget() const;
