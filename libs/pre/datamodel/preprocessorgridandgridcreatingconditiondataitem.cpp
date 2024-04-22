@@ -205,7 +205,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4Input
 
 	auto gtItem = gridTypeDataItem();
 	SolverDefinitionGridType* gt = gtItem->gridType();
-	QStandardItem* prevItem = 0;
+	QStandardItem* prevItem = nullptr;
 	if (gt->boundaryConditions().size() > 0) {
 		prevItem = m_bcSettingGroupDataItem->standardItem();
 	} else {
@@ -243,14 +243,13 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 
 	if (m_gridSetting != nullptr) {
 		m_gridDataItem->loadFromProjectMainFile(*m_gridSetting);
-		auto view = dataModel()->objectBrowserView();
-		m_gridDataItem->reflectExpandState(view);
 
 		delete m_gridSetting;
 		m_gridSetting = nullptr;
 	}
 
 	int ret = m_gridDataItem->loadFromCgnsFile();
+	m_gridDataItem->reflectExpandState(dataModel()->objectBrowserView());
 
 	return ret;
 }

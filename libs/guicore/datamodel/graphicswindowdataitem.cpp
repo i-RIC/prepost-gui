@@ -54,7 +54,8 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent) :
 	m_standardItemCopy {nullptr},
 	m_isDeletable {true},
 	m_isReorderable {false},
-	m_isExpanded {false},
+	m_isExpanded {"isExpanded", false},
+	m_checkState {"checkState", Qt::CheckState::Unchecked},
 	m_actorCollection {vtkActorCollection::New()},
 	m_actor2DCollection {vtkActor2DCollection::New()},
 	m_zDepthRange {},
@@ -226,8 +227,9 @@ void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 {
 	if (m_standardItem == nullptr) {return;}
 	if (m_standardItem->isCheckable()) {
-		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
-		m_standardItemCopy->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
+		m_checkState.load(node);
+		m_standardItem->setCheckState(m_checkState);
+		m_standardItemCopy->setCheckState(m_checkState);
 	}
 }
 
@@ -235,33 +237,27 @@ void GraphicsWindowDataItem::saveCheckState(QXmlStreamWriter& writer)
 {
 	if (m_standardItem == nullptr) {return;}
 	if (m_standardItem->isCheckable()) {
-		QString checkState;
-		checkState.setNum(m_standardItem->checkState());
-		writer.writeAttribute("checkState", checkState);
+		m_checkState = m_standardItem->checkState();
+		m_checkState.save(writer);
 	}
 }
 
 void GraphicsWindowDataItem::loadExpandState(const QDomNode& node)
 {
-	m_isExpanded = (node.toElement().attribute("isExpanded", "false") == "true");
+	m_isExpanded.load(node);
 }
 
 void GraphicsWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 {
-	QString strExpanded;
-	if (m_isExpanded) {
-		strExpanded = "true";
-	} else {
-		strExpanded = "false";
-	}
-	writer.writeAttribute("isExpanded", strExpanded);
+	m_isExpanded.save(writer);
 }
+
 void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 {
 	if (m_standardItem != nullptr) {
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateExpandState(view);
 	}
 }
@@ -271,7 +267,7 @@ void GraphicsWindowDataItem::reflectExpandState(QTreeView* view)
 	if (m_standardItem != nullptr) {
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->reflectExpandState(view);
 	}
 }
@@ -419,7 +415,7 @@ const std::vector<GraphicsWindowDataItem*>& GraphicsWindowDataItem::childItems()
 void GraphicsWindowDataItem::moveUp()
 {
 	// reorder the standard item.
-	QStandardItem* parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
+	auto parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
 	int currentRow = m_standardItem->row();
 	QList<QStandardItem*> items = parentItem->takeRow(currentRow);
 	parentItem->insertRows(currentRow - 1, items);
@@ -440,7 +436,7 @@ void GraphicsWindowDataItem::moveUp()
 void GraphicsWindowDataItem::moveDown()
 {
 	// reorder the standard item.
-	QStandardItem* parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
+	auto parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
 	int currentRow = m_standardItem->row();
 	QList<QStandardItem*> items = parentItem->takeRow(currentRow);
 	parentItem->insertRows(currentRow + 1, items);
@@ -555,7 +551,7 @@ QStringList GraphicsWindowDataItem::containedFiles() const
 {
 	QStringList ret;
 	ret << ProjectDataItem::containedFiles();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		ret << child->containedFiles();
 	}
 	return ret;
@@ -565,7 +561,7 @@ void GraphicsWindowDataItem::updateZDepthRangeItemCount()
 {
 	// update the ZDepthRange itemcount of child items first.
 	int sum = 0;
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateZDepthRangeItemCount();
 		sum += child->zDepthRange().itemCount();
 	}
@@ -583,7 +579,7 @@ void GraphicsWindowDataItem::setIsCommandExecuting(bool exec)
 void GraphicsWindowDataItem::update2Ds()
 {
 	innerUpdate2Ds();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->update2Ds();
 	}
 }
@@ -591,7 +587,7 @@ void GraphicsWindowDataItem::update2Ds()
 void GraphicsWindowDataItem::updateZScale(double scale)
 {
 	innerUpdateZScale(scale);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateZScale(scale);
 	}
 }
@@ -599,7 +595,7 @@ void GraphicsWindowDataItem::updateZScale(double scale)
 bool GraphicsWindowDataItem::hasTransparentPart()
 {
 	bool hasTransparent = myHasTransparentPart();
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		hasTransparent = hasTransparent || child->hasTransparentPart();
 	}
 	return hasTransparent;
@@ -629,7 +625,7 @@ PostSolutionInfo* GraphicsWindowDataItem::postSolutionInfo()
 void GraphicsWindowDataItem::viewOperationEndedGlobal(VTKGraphicsView* v)
 {
 	doViewOperationEndedGlobal(v);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->viewOperationEndedGlobal(v);
 	}
 }
@@ -666,14 +662,14 @@ void GraphicsWindowDataItem::wheelEvent(QWheelEvent* /*event*/, VTKGraphicsView*
 void GraphicsWindowDataItem::applyOffset(double x, double y)
 {
 	doApplyOffset(x, y);
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->applyOffset(x, y);
 	}
 }
 
 QPointF GraphicsWindowDataItem::getOffset()
 {
-	GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	auto p = dynamic_cast<GraphicsWindowDataItem*>(parent());
 	return p->getOffset();
 }
 
@@ -756,7 +752,7 @@ void GraphicsWindowDataItem::pushUpdateActorSettingRecursivelyCommand(QUndoComma
 
 void GraphicsWindowDataItem::showPropertyDialogModal()
 {
-	QDialog* propDialog = propertyDialog(mainWindow());
+	auto propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	int result = propDialog->exec();
 	if (result == QDialog::Accepted) {
@@ -767,7 +763,7 @@ void GraphicsWindowDataItem::showPropertyDialogModal()
 
 void GraphicsWindowDataItem::showPropertyDialogModeless()
 {
-	QDialog* propDialog = propertyDialog(mainWindow());
+	auto propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	propDialog->setAttribute(Qt::WA_DeleteOnClose);
 	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);

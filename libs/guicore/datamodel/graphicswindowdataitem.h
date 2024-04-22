@@ -5,6 +5,8 @@
 
 #include "../project/projectdataitem.h"
 
+#include <misc/boolcontainer.h>
+#include <misc/enumcontainert.h>
 #include <misc/zdepthrange.h>
 
 #include <vector>
@@ -169,7 +171,8 @@ protected:
 	QStandardItem* m_standardItemCopy;
 	bool m_isDeletable;
 	bool m_isReorderable;
-	bool m_isExpanded;
+	BoolContainer m_isExpanded;
+	EnumContainerT<Qt::CheckState> m_checkState;
 	vtkActorCollection* m_actorCollection;
 	vtkActor2DCollection* m_actor2DCollection;
 	ZDepthRange m_zDepthRange;
@@ -181,8 +184,6 @@ protected:
 
 public:
 	friend class BackgroundImageInfo;
-	friend class GraphicsWindowDrawOnRedo;
-	friend class GraphicsWindowDrawOnUndo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
 
 private:
