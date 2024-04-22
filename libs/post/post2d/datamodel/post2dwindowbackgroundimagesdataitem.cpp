@@ -28,14 +28,14 @@ Post2dWindowBackgroundImagesDataItem::Post2dWindowBackgroundImagesDataItem(Graph
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);
 
 	connect(m_addAction, SIGNAL(triggered()), projectData()->mainfile(), SLOT(addBackgroundImage()));
-	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageAdded()), this, SLOT(addChildItem()));
+	connect(m_deleteSelectedAction, &QAction::triggered, this, &Post2dWindowBackgroundImagesDataItem::deleteSelected);
+	connect(m_deleteAllAction, &QAction::triggered, this, &Post2dWindowBackgroundImagesDataItem::deleteAll);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageAdded, this, &Post2dWindowBackgroundImagesDataItem::addChildItem);
 	connect(this, SIGNAL(selectBackgroundImage(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageDeleted(int)), this, SLOT(deleteChildItem(int)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedUp(int)), this, SLOT(moveUpChildItem(int)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedDown(int)), this, SLOT(moveDownChildItem(int)));
-	connect(dynamic_cast<Post2dWindowRootDataItem*>(this->parent()), SIGNAL(standardModelSetuped()), this, SLOT(setupChildItem()));
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageDeleted, this, &Post2dWindowBackgroundImagesDataItem::deleteChildItem);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageMovedUp, this, &Post2dWindowBackgroundImagesDataItem::moveUpChildItem);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageMovedDown, this, &Post2dWindowBackgroundImagesDataItem::moveDownChildItem);
+	connect(dynamic_cast<Post2dWindowRootDataItem*>(this->parent()), &Post2dWindowRootDataItem::standardModelSetuped, this, &Post2dWindowBackgroundImagesDataItem::setupChildItem);
 	connect(this, SIGNAL(requestRemoveRenderer(vtkRenderer*)), projectData()->mainfile(), SLOT(removeRenderer(vtkRenderer*)));
 
 	projectData()->mainfile()->addRenderer(renderer());

@@ -106,8 +106,6 @@ public:
 	const std::vector<BackgroundImageInfo*>& backgroundImages() const;
 	/// Measured data
 	const std::vector<MeasuredData*>& measuredDatas() const;
-	/// Renderers for background images
-	const std::vector<vtkRenderer*>& renderers() const;
 
 	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
