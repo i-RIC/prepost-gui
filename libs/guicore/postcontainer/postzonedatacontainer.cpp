@@ -1037,7 +1037,9 @@ void PostZoneDataContainer::applyOffset(double x_diff, double y_diff)
 void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
 {
 	doApplyOffset(m_origData, x_diff, y_diff);
-	doApplyOffset(m_particleData->data(), x_diff, y_diff);
+	if (m_particleData != nullptr) {
+		doApplyOffset(m_particleData->data(), x_diff, y_diff);
+	}
 	for (auto pair : m_polyDataMap) {
 		doApplyOffset(pair.second->data(), x_diff, y_diff);
 	}
