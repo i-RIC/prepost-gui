@@ -8,10 +8,10 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-BackgroundImageInfoDialog::BackgroundImageInfoDialog(BackgroundImageInfo* info) :
-	QDialog(nullptr),
-	ui(new Ui::BackgroundImageInfoDialog),
-	m_info {info}
+BackgroundImageInfoDialog::BackgroundImageInfoDialog(BackgroundImageInfo* info, QWidget* widget) :
+	QDialog(widget),
+	m_info {info},
+	ui(new Ui::BackgroundImageInfoDialog)
 {
 	ui->setupUi(this);
 

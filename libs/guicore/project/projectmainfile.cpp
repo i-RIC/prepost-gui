@@ -642,11 +642,6 @@ const std::vector<MeasuredData*>& ProjectMainFile::measuredDatas() const
 	return impl->m_measuredDatas;
 }
 
-const std::vector<vtkRenderer*>& ProjectMainFile::renderers() const
-{
-	return m_renderers;
-}
-
 void ProjectMainFile::clearResults()
 {
 	impl->m_postSolutionInfo->close();

@@ -21,13 +21,13 @@ PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(Graph
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);
 
 	connect(m_addAction, SIGNAL(triggered()), projectData()->mainfile(), SLOT(addBackgroundImage()));
-	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageAdded()), this, SLOT(addChildItem()));
+	connect(m_deleteSelectedAction, &QAction::triggered, this, &PreProcessorBackgroundImagesDataItem::deleteSelected);
+	connect(m_deleteAllAction, &QAction::triggered, this, &PreProcessorBackgroundImagesDataItem::deleteAll);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageAdded, this, &PreProcessorBackgroundImagesDataItem::addChildItem);
 	connect(this, SIGNAL(selectBackgroundImage(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageDeleted(int)), this, SLOT(deleteChildItem(int)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedUp(int)), this, SLOT(moveUpChildItem(int)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedDown(int)), this, SLOT(moveDownChildItem(int)));
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageDeleted, this, &PreProcessorBackgroundImagesDataItem::deleteChildItem);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageMovedUp, this, &PreProcessorBackgroundImagesDataItem::moveUpChildItem);
+	connect(projectData()->mainfile(), &ProjectMainFile::backgroundImageMovedDown, this, &PreProcessorBackgroundImagesDataItem::moveDownChildItem);
 
 	projectData()->mainfile()->addRenderer(renderer());
 }

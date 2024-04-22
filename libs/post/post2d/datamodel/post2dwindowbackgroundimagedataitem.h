@@ -25,6 +25,8 @@ public:
 
 	void updateMoveUpDownActions(ObjectBrowserView* view) override;
 	void updateZDepthRangeItemCount() override;
+	bool addToolBarButtons(QToolBar* toolbar) override;
+
 	BackgroundImageInfo* imageInfo() const;
 
 private slots:

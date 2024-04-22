@@ -26,8 +26,6 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 
 	BackgroundImageInfo* imageInfo() const;
-	QAction* fixAction();
-	void handleStandardItemChange() override;
 
 private slots:
 	void applyImageChange();

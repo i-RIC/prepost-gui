@@ -89,20 +89,10 @@ BackgroundImageInfo* PreProcessorBackgroundImageDataItem::imageInfo() const
 	return m_imageInfo;
 }
 
-QAction* PreProcessorBackgroundImageDataItem::fixAction()
-{
-	return imageInfo()->fixAction();
-}
-
 bool PreProcessorBackgroundImageDataItem::addToolBarButtons(QToolBar* toolbar)
 {
 	toolbar->addAction(imageInfo()->fixActionWithIcon());
 	return true;
-}
-
-void PreProcessorBackgroundImageDataItem::handleStandardItemChange()
-{
-	GraphicsWindowDataItem::handleStandardItemChange();
 }
 
 void PreProcessorBackgroundImageDataItem::applyImageChange()
@@ -111,9 +101,9 @@ void PreProcessorBackgroundImageDataItem::applyImageChange()
 	updateVisibility();
 }
 
-QDialog* PreProcessorBackgroundImageDataItem::propertyDialog(QWidget* /*parent*/)
+QDialog* PreProcessorBackgroundImageDataItem::propertyDialog(QWidget* parent)
 {
-	return m_imageInfo->propertyDialog();
+	return m_imageInfo->propertyDialog(parent);
 }
 
 void PreProcessorBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* dialog)
