@@ -32,7 +32,7 @@ void ContinuousSnapshotWizard::GoogleEarthSettingPage::calculateKMLInformation()
 	auto setting = m_wizard->setting();
 
 	QPointF center, centerRight;
-	auto snapshotSize = targetSnapshotSize();
+	auto snapshotSize = targetSnapshotSize() * devicePixelRatioF();
 
 	center = QPointF(snapshotSize.width() / 2., snapshotSize.height() / 2.);
 	centerRight = QPointF(snapshotSize.width(), snapshotSize.height() / 2.);
