@@ -238,24 +238,6 @@ PreProcessorGridAttributeAbstractCellDataItem* PreProcessorGridAttributeAbstract
 	return it->second;
 }
 
-void PreProcessorGridAttributeAbstractCellGroupDataItem::handleStandardItemChange()
-{
-	if (m_isCommandExecuting) {return;}
-	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
-	GraphicsWindowDataItem::handleStandardItemChange();
-	if (m_standardItem->checkState() == Qt::Checked) {
-		// uncheck other group dataitems
-		auto gItem = gridDataItem();
-		for (auto child : gItem->childItems()) {
-			if (child == this) {continue;}
-			if (child == gItem->shapeDataItem()) {continue;}
-
-			child->standardItem()->setCheckState(Qt::Unchecked);
-		}
-	}
-	iRICUndoStack::instance().endMacro();
-}
-
 IntContainer& PreProcessorGridAttributeAbstractCellGroupDataItem::lineWidth()
 {
 	return m_lineWidth;

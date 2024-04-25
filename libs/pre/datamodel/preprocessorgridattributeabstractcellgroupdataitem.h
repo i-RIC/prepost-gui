@@ -45,7 +45,6 @@ public:
 	void informGridUpdate();
 	std::vector<PreProcessorGridAttributeAbstractCellDataItem*> conditions() const;
 	PreProcessorGridAttributeAbstractCellDataItem* cellDataItem(const std::string& name) const;
-	void handleStandardItemChange() override;
 	IntContainer& lineWidth();
 	OpacityContainer& opacity();
 	OpacityContainerWidget* opacityWidget() const;

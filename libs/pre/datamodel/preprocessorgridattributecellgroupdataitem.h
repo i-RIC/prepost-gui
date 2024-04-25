@@ -11,6 +11,7 @@ public:
 	PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* parent);
 
 	vtkPointSetExtended* data() const override;
+	void handleStandardItemChange() override;
 
 private:
 	SolverDefinitionGridAttribute::Position definitionPosition() const override;
