@@ -260,14 +260,9 @@ void PreProcessorGridAttributeNodeGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
 	GraphicsWindowDataItem::handleStandardItemChange();
 	if (m_standardItem->checkState() == Qt::Checked) {
-		// uncheck other group dataitems
+		// uncheck cell group dataitem
 		auto gItem = gridDataItem();
-		for (auto child : gItem->childItems()) {
-			if (child == this) {continue;}
-			if (child == gItem->shapeDataItem()) {continue;}
-
-			child->standardItem()->setCheckState(Qt::Unchecked);
-		}
+		gItem->cellGroupDataItem()->standardItem()->setCheckState(Qt::Unchecked);
 	}
 	iRICUndoStack::instance().endMacro();
 }
