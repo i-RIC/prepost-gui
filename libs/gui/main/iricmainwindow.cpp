@@ -161,7 +161,6 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	setMenuBar(m_actionManager->menuBar());
 	addToolBar(m_actionManager->mainToolBar());
 	addToolBar(Qt::LeftToolBarArea, m_actionManager->windowsToolBar());
-	addToolBarBreak(Qt::TopToolBarArea);
 
 	// Update "New" submenu using the solver definition list.
 	m_actionManager->updateSolverList(m_solverDefinitionList);
@@ -656,7 +655,6 @@ bool iRICMainWindow::closeProject()
 	}
 
 	m_actionManager->unregisterAdditionalToolBar();
-	addToolBarBreak(Qt::TopToolBarArea);
 	m_actionManager->projectFileClose();
 
 	auto preParent = m_preProcessorWindow->parentWidget();
@@ -698,7 +696,8 @@ void iRICMainWindow::setupForNewProjectData()
 	QToolBar* at = ac->animationToolBar();
 	if (at != nullptr) {
 		m_actionManager->setAnimationWidgets(ac->animationMenu(), at);
-		addToolBar(at);
+		addToolBarBreak(Qt::TopToolBarArea);
+		addToolBar(Qt::TopToolBarArea, at);
 	}
 	m_actionManager->updateMenuBar();
 
