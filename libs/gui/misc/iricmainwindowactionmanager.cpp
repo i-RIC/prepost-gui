@@ -813,11 +813,13 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(cameraYZPlaneAction);
 	m_mainToolBar->addAction(cameraZXPlaneAction);
 
+	/*
 	m_mainToolBar->addSeparator();
 	m_mainToolBar->addAction(cameraMoveLeftAction);
 	m_mainToolBar->addAction(cameraMoveRightAction);
 	m_mainToolBar->addAction(cameraMoveUpAction);
 	m_mainToolBar->addAction(cameraMoveDownAction);
+	*/
 
 	m_mainToolBar->addSeparator();
 	m_mainToolBar->addAction(cameraZoomInAction);
@@ -1018,8 +1020,8 @@ void iRICMainWindowActionManager::setAnimationWidgets(QMenu* m, QToolBar* t)
 	m_animationToolbar = t;
 	m_animationToolbar->setObjectName("iricAnimationToolBar");
 	disconnect(viewAnimationToolBarAction);
-	connect(viewAnimationToolBarAction, SIGNAL(toggled(bool)), m_animationToolbar, SLOT(setVisible(bool)));
-	connect(m_animationToolbar, SIGNAL(visibilityChanged(bool)), viewAnimationToolBarAction, SLOT(setChecked(bool)));
+	connect(viewAnimationToolBarAction, &QAction::toggled, m_animationToolbar, &QToolBar::setVisible);
+	connect(m_animationToolbar, &QToolBar::visibilityChanged, viewAnimationToolBarAction, &QAction::setChecked);
 }
 
 void iRICMainWindowActionManager::updateCameraConnections(QWidget* w)
