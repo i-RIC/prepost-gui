@@ -44,8 +44,6 @@
 
 #define _USE_MATH_DEFINES
 
-
-
 Post2dWindowDataModel::Post2dWindowDataModel(Post2dWindow* w, ProjectDataItem* parent) :
 	Graphics2DWindowDataModel(w, parent),
 	m_zScale {1}
@@ -324,7 +322,9 @@ void Post2dWindowDataModel::measuredDataVectorSetting()
 
 void Post2dWindowDataModel::applyOffset(double x, double y)
 {
+	graphicsView()->applyOffset(x, y);
 	m_rootDataItem->applyOffset(x, y);
+
 	m_rootDataItem->renderGraphicsView();
 }
 
