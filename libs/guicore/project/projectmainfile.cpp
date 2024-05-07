@@ -1126,9 +1126,9 @@ private:
 	ProjectMainFile* m_projectMainFile;
 };
 
-void ProjectMainFile::setupOffset()
+void ProjectMainFile::setupOffset(QWidget* w)
 {
-	OffsetSettingDialog dialog;
+	OffsetSettingDialog dialog(w);
 	dialog.setOffset(impl->m_offset.x(), impl->m_offset.y());
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
