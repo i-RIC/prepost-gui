@@ -9,6 +9,7 @@
 #include <vtkExtractCells.h>
 #include <vtkExtractGrid.h>
 #include <vtkIdList.h>
+#include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 
 v4Structured2dGrid::v4Structured2dGrid() :
@@ -230,6 +231,33 @@ vtkPointSet* v4Structured2dGrid::regionFilteredJEdgeData(int iMin, int iMax, int
 	auto ret = extract->GetOutput();
 
 	ret->Register(nullptr);
+	return ret;
+}
+
+vtkPolyData* v4Structured2dGrid::extractEdgeData(vtkIdType i, vtkIdType j) const
+{
+	auto ret = vtkPolyData::New();
+	ret->SetPoints(vtkConcreteData()->data()->GetPoints());
+
+	auto ca = vtkSmartPointer<vtkCellArray>::New();
+	std::vector<vtkIdType> ids;
+	if (i < 0) {
+		ids.reserve(dimensionI());
+		for (vtkIdType ii = 0; ii < dimensionI(); ++ii) {
+			vtkIdType index = pointIndex(ii, j);
+			ids.push_back(index);
+		}
+		ca->InsertNextCell(ids.size(), ids.data());
+	} else if (j < 0) {
+		ids.reserve(dimensionJ());
+		for (vtkIdType jj = 0; jj < dimensionJ(); ++jj) {
+			vtkIdType index = pointIndex(i, jj);
+			ids.push_back(index);
+		}
+		ca->InsertNextCell(ids.size(), ids.data());
+	}
+	ret->SetLines(ca);
+
 	return ret;
 }
 

@@ -11,6 +11,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkDataSetMapper.h>
 
+#include <memory>
 #include <string>
 
 class QSignalMapper;
@@ -27,7 +28,6 @@ class Post3dWindowNodeVectorParticleGroupDataItem;
 class Post3dWindowParticleGroupRootDataItem;
 class Post3dWindowParticlesTopDataItem;
 class Post3dWindowStringResultDataItem;
-class PostZoneDataContainer;
 class v4PostZoneDataContainer;
 
 class Post3dWindowZoneDataItem : public Post3dWindowDataItem, public PostZoneDataItem
@@ -35,7 +35,7 @@ class Post3dWindowZoneDataItem : public Post3dWindowDataItem, public PostZoneDat
 	Q_OBJECT
 
 public:
-	Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent);
+	Post3dWindowZoneDataItem(const std::string& zoneName, Post3dWindowDataItem* parent);
 	~Post3dWindowZoneDataItem() override;
 
 	// Standard mouse event handlers
@@ -43,8 +43,9 @@ public:
 	void informDeselection(VTKGraphicsView*) override;
 
 	v4PostZoneDataContainer* v4DataContainer() override;
-	int zoneNumber() const;
 	const std::string& zoneName() const;
+	void setEdgeFocus(vtkIdType i, vtkIdType j, vtkIdType k);
+	void clearEdgeFocus();
 	void update();
 
 	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
@@ -58,24 +59,12 @@ public:
 	Post3dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post3dWindowStringResultDataItem* stringDataItem() const;
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
-	Post3dWindowGridShapeDataItem* m_shapeDataItem;
-	Post3dWindowContourGroupTopDataItem* m_contourGroupTopItem;
-	Post3dWindowCellContourGroupTopDataItem* m_cellContourGroupTopItem;
-	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
-	Post3dWindowNodeVectorArrowTopDataItem* m_arrowTopDataItem;
-	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
-	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
-	Post3dWindowParticlesTopDataItem* m_particlesDataItem;
-	Post3dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
-	Post3dWindowStringResultDataItem* m_stringDataItem;
-
-	std::string m_zoneName;
-	int m_zoneNumber;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // POST3DWINDOWZONEDATAITEM_H

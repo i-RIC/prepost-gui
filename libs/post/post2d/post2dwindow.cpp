@@ -343,6 +343,16 @@ bool Post2dWindow::hasTransparentPart()
 	return rItem->hasTransparentPart();
 }
 
+void Post2dWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	m_dataModel->setEdgeFocus(zoneName, i, j);
+}
+
+void Post2dWindow::clearEdgeFocus()
+{
+	m_dataModel->clearEdgeFocus();
+}
+
 VTKGraphicsView* Post2dWindow::viewForBackgroundColor() const
 {
 	return m_dataModel->graphicsView();

@@ -3,11 +3,10 @@
 
 #include "post2dwindowdatamodel.h"
 
-#include <QMainWindow>
-#include <QByteArray>
-#include <QVector2D>
 #include <guicore/post/postprocessorwindow.h>
+
 #include <guicore/base/additionalmenuwindowi.h>
+#include <guicore/base/edge2dfocuswindowi.h>
 #include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
@@ -17,6 +16,8 @@
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
+
+#include <QByteArray>
 
 #include <string>
 
@@ -39,7 +40,8 @@ class Post2dWindow :
 	public SVKmlExportWindowI,
 	public BackgroundColorEditVtkI,
 	public AutoParticleWindowI,
-	public WindowWithVtkGraphicsViewI
+	public WindowWithVtkGraphicsViewI,
+	public Edge2dFocusWindowI
 {
 	Q_OBJECT
 
@@ -62,6 +64,8 @@ public:
 	QList<QString> particleDrawingZones() override;
 	std::vector<std::string> discreteColorDrawingZones() override;
 	bool hasTransparentPart();
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
+	void clearEdgeFocus() override;
 
 	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const std::string& zonename) override;
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;

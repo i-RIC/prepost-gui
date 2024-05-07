@@ -250,3 +250,37 @@ vtkPolyDataExtended3d* v4Structured3dGrid::vtkKFaceData() const
 {
 	return &impl->m_vtkKFaceData;
 }
+
+vtkPolyData* v4Structured3dGrid::extractEdgeData(vtkIdType i, vtkIdType j, vtkIdType k) const
+{
+	auto ret = vtkPolyData::New();
+	ret->SetPoints(vtkConcreteData()->data()->GetPoints());
+
+	auto ca = vtkSmartPointer<vtkCellArray>::New();
+	std::vector<vtkIdType> ids;
+	if (i < 0) {
+		ids.reserve(dimensionI());
+		for (vtkIdType ii = 0; ii < dimensionI(); ++ii) {
+			vtkIdType index = pointIndex(ii, j, k);
+			ids.push_back(index);
+		}
+		ca->InsertNextCell(ids.size(), ids.data());
+	} else if (j < 0) {
+		ids.reserve(dimensionJ());
+		for (vtkIdType jj = 0; jj < dimensionJ(); ++jj) {
+			vtkIdType index = pointIndex(i, jj, k);
+			ids.push_back(index);
+		}
+		ca->InsertNextCell(ids.size(), ids.data());
+	} else if (k < 0) {
+		ids.reserve(dimensionK());
+		for (vtkIdType kk = 0; kk < dimensionK(); ++kk) {
+			vtkIdType index = pointIndex(i, j, kk);
+			ids.push_back(index);
+		}
+		ca->InsertNextCell(ids.size(), ids.data());
+	}
+	ret->SetLines(ca);
+
+	return ret;
+}

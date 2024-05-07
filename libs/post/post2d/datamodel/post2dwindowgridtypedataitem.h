@@ -37,6 +37,8 @@ public:
 
 	SolverDefinitionGridType* gridType() const;
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 	ModifyCommandDialog* createApplyColorMapSettingDialog(const std::string& name, QWidget* parent) override;
 	QUndoCommand* createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply);
 

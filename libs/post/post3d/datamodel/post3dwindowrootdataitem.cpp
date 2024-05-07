@@ -135,6 +135,22 @@ PostTimeDataItem* Post3dWindowRootDataItem::timeDataItem() const
 	return m_timeDataItem;
 }
 
+void Post3dWindowRootDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k)
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->setEdgeFocus(zoneName, i, j, k);
+	}
+	renderGraphicsView();
+}
+
+void Post3dWindowRootDataItem::clearEdgeFocus()
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->clearEdgeFocus();
+	}
+	renderGraphicsView();
+}
+
 void Post3dWindowRootDataItem::updateZoneList()
 {
 	// When zone list is updated, post3d window used to update tree structure.

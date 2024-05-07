@@ -775,7 +775,6 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	iRICUndoStack::instance().clear();
 }
 
-
 PreProcessorGridTypeDataItem* PreProcessorGridDataItem::gridTypeDataItem() const
 {
 	return dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
@@ -1360,11 +1359,6 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 	actorCollection()->RemoveItem(impl->m_regionActor);
 	actorCollection()->AddItem(impl->m_regionActor);
 	updateVisibilityWithoutRendering();
-}
-
-void PreProcessorGridDataItem::renderGraphicsView()
-{
-	GraphicsWindowDataItem::renderGraphicsView();
 }
 
 void PreProcessorGridDataItem::doApplyOffset(double x, double y)

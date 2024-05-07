@@ -159,6 +159,22 @@ AttributeBrowserTargetDataItem* PreProcessorRootDataItem::attributeBrowserTarget
 	return m_attributeBrowserTargetDataItem;
 }
 
+void PreProcessorRootDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->setEdgeFocus(zoneName, i, j);
+	}
+	renderGraphicsView();
+}
+
+void PreProcessorRootDataItem::clearEdgeFocus()
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->clearEdgeFocus();
+	}
+	renderGraphicsView();
+}
+
 void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 {
 	model->clear();

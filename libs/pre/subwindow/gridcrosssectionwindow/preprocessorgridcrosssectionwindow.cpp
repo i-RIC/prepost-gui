@@ -51,6 +51,11 @@ QWidget* PreProcessorGridCrosssectionWindow::snapshotArea() const
 	return m_internalWindow->graphicsView();
 }
 
+void PreProcessorGridCrosssectionWindow::updateEdgeFocus()
+{
+	m_internalWindow->updateEdgeFocus();
+}
+
 void PreProcessorGridCrosssectionWindow::cameraFit()
 {
 	m_internalWindow->cameraFit();

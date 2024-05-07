@@ -3,8 +3,6 @@
 
 #include "../post3dwindowdataitem.h"
 
-Post3dWindowZoneDataItem;
-
 class Post3dWindowParticleGroupRootDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT

@@ -10,7 +10,9 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowinputgriddataitem_impl.h"
 
+#include <guibase/vtkgridedgeutil.h>
 #include <guicore/grid/v4grid2d.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
@@ -61,10 +63,16 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 	if (impl->m_jEdgeGroupDataItem->childItems().size() == 0) {
 		m_standardItem->takeRow(impl->m_jEdgeGroupDataItem->standardItem()->row());
 	}
+
+	vtkGridEdgeUtil::setupActor(impl->m_edgeActor);
+	impl->m_edgeActor->VisibilityOff();
+	renderer()->AddActor(impl->m_edgeActor);
 }
 
 Post2dWindowInputGridDataItem::~Post2dWindowInputGridDataItem()
-{}
+{
+	renderer()->RemoveActor(impl->m_edgeActor);
+}
 
 v4InputGrid* Post2dWindowInputGridDataItem::inputGrid() const
 {
@@ -80,6 +88,24 @@ v4Grid2d* Post2dWindowInputGridDataItem::grid() const
 	if (iGrid == nullptr) {return nullptr;}
 
 	return dynamic_cast<v4Grid2d*> (iGrid->grid());
+}
+
+void Post2dWindowInputGridDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
+{
+	auto g = grid();
+	if (g == nullptr) {return;}
+	auto g2 = dynamic_cast<v4Structured2dGrid*> (g);
+	if (g2 == nullptr) {return;}
+
+	auto polyData = g2->extractEdgeData(i, j);
+	impl->m_edgeMapper->SetInputData(polyData);
+	polyData->Delete();
+	impl->m_edgeActor->VisibilityOn();
+}
+
+void Post2dWindowInputGridDataItem::clearEdgeFocus()
+{
+	impl->m_edgeActor->VisibilityOff();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowInputGridDataItem::zoneDataItem() const
@@ -174,4 +200,11 @@ bool Post2dWindowInputGridDataItem::colorBarShouldBeVisible(const std::string& n
 		return impl->m_jEdgeGroupDataItem->colorBarShouldBeVisible(name);
 	}
 	return false;
+}
+
+void Post2dWindowInputGridDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	impl->m_edgeActor->SetPosition(0, 0, range.max());
+
+	GraphicsWindowDataItem::assignActorZValues(range);
 }

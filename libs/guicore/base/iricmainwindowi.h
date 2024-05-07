@@ -2,6 +2,9 @@
 #define IRICMAINWINDOWI_H
 
 #include "../guicore_global.h"
+
+#include <vtkIdList.h>
+
 #include <QMainWindow>
 
 class AnimationControllerI;
@@ -46,6 +49,9 @@ public:
 	virtual QStringList containedFiles() const = 0;
 	virtual ProjectWorkspace* workspace() = 0;
 	virtual const VersionNumber& versionNumber() const = 0;
+	virtual void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) = 0;
+	virtual void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) = 0;
+	virtual void clearEdgeFocus() = 0;
 
 	virtual ProjectData* projectData() const = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;

@@ -12,6 +12,10 @@ class Post2dWindowInputGridDataItem::Impl
 {
 public:
 	Impl();
+	~Impl();
+
+	vtkPolyDataMapper* m_edgeMapper;
+	vtkActor* m_edgeActor;
 
 	Post2dWindowGridShapeDataItem* m_gridShapeDataItem;
 	Post2dWindowGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;

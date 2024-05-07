@@ -3,6 +3,9 @@
 
 #include "pre_global.h"
 #include <guicore/pre/base/preprocessordatamodeli.h>
+
+#include <vtkIdList.h>
+
 #include <QList>
 #include <QMap>
 
@@ -57,10 +60,10 @@ public:
 	bool isGridEdited() const;
 	void setGridEdited();
 	bool isInputConditionSet();
-	MouseBoundingBox* mouseBoundingBox() override {return m_mouseBoundingBox;}
-	const QList<QMenu*>& additionalMenus() const {
-		return m_additionalMenus;
-	}
+	MouseBoundingBox* mouseBoundingBox() override;
+	const QList<QMenu*>& additionalMenus() const;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 	void addGridCreatingConditionImportMenu(QMenu* menu);
 	void addGridCreatingConditionExportMenu(QMenu* menu);
 	void addGridImportMenu(QMenu* menu);

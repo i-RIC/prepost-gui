@@ -1365,6 +1365,43 @@ const Graph2dHybridWindowResultSetting& Graph2dHybridWindowDataModel::setting() 
 	return m_setting;
 }
 
+void Graph2dHybridWindowDataModel::setOrClearEdgeFocus()
+{
+	bool clear = true;
+	auto mw = iricMainWindow();
+
+	auto tinfo = m_setting.targetDataTypeInfo();
+	if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
+			mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ());
+			clear = false;
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
+			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1);
+			clear = false;
+		}
+	} else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
+			mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ(), m_setting.gridK());
+			clear = false;
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
+			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1, m_setting.gridK());
+			clear = false;
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaK) {
+			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), m_setting.gridJ(), -1);
+			clear = false;
+		}
+	}
+
+	if (clear) {
+		mw->clearEdgeFocus();
+	}
+}
+
+void Graph2dHybridWindowDataModel::clearEdgeFocus()
+{
+	iricMainWindow()->clearEdgeFocus();
+}
+
 void Graph2dHybridWindowDataModel::updateTime()
 {
 	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
@@ -1512,8 +1549,8 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	}
 	updateData();
 	updateTime();
-
 	view()->replot();
+	setOrClearEdgeFocus();
 }
 
 void Graph2dHybridWindowDataModel::polyLineChanged()
@@ -1580,6 +1617,7 @@ void Graph2dHybridWindowDataModel::applySettings()
 
 	updateData();
 	updateTime();
+	setOrClearEdgeFocus();
 
 	int dims[4];
 	getDims(dims);

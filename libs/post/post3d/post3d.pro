@@ -144,6 +144,7 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowstringresultdataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
            datamodel/post3dwindowzonedataitem.h \
+           datamodel/private/post3dwindoezonedataitem_impl.h \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setrangescommand.h \
            datamodel/private/post3dwindowcellcontourgroupdataitem_settingeditwidget.h \
            datamodel/private/post3dwindowcontourgroupdataitem_impl.h \
