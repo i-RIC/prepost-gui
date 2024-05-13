@@ -17,6 +17,8 @@
 #include <misc/windowgeometrycontainer.h>
 #include <misc/xmlsupport.h>
 
+#include <QMdiSubWindow>
+
 AbstractCrosssectionWindow::AbstractCrosssectionWindow(QWidget *parent) :
 	QWidget {parent},
 	impl {new Impl {this, parent}},
@@ -43,7 +45,7 @@ AbstractCrosssectionWindow::~AbstractCrosssectionWindow()
 void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 {
 	WindowGeometryContainer geometry;
-	geometry.setWidget(dynamic_cast<QWidget*> (parent()));
+	geometry.setWidget(mdiSubWindow());
 	geometry.load(node);
 
 	impl->m_tmpDirection = static_cast<Direction> (iRIC::getIntAttribute(node, "direction"));
@@ -76,7 +78,7 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	WindowGeometryContainer geometry;
-	geometry.setWidget(dynamic_cast<QWidget*> (parent()));
+	geometry.setWidget(mdiSubWindow());
 	geometry.save(writer);
 
 	iRIC::setIntAttribute(writer, "direction", static_cast<int>(impl->m_controller->targetDirection()));

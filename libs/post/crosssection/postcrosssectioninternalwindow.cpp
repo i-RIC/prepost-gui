@@ -12,6 +12,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
+#include <QMdiSubWindow>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
@@ -99,6 +100,12 @@ void PostCrosssectionInternalWindow::saveToProjectMainFile(QXmlStreamWriter& wri
 	writer.writeAttribute("zoneName", m_zoneName.c_str());
 
 	AbstractCrosssectionWindow::saveToProjectMainFile(writer);
+}
+
+QMdiSubWindow* PostCrosssectionInternalWindow::mdiSubWindow() const
+{
+	auto w = dynamic_cast<PostCrosssectionWindow*> (parentWidget());
+	return dynamic_cast<QMdiSubWindow*> (w->parentWidget());
 }
 
 v4Structured2dGrid* PostCrosssectionInternalWindow::grid()
