@@ -86,7 +86,6 @@ QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	impl->m_setting.startPositions.clear();
 	impl->m_setting.load(node);
 
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);

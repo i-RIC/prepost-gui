@@ -56,6 +56,8 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::copyValue
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::load(const QDomNode& node)
 {
+	startPositions.clear();
+
 	CompositeContainer::load(node);
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
