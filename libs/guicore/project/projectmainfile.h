@@ -154,7 +154,7 @@ public slots:
 	void removeRenderer(vtkRenderer* ren);
 
 	void clearModified();
-	void setupOffset();
+	void setupOffset(QWidget* w);
 
 signals:
 	void backgroundImageAdded();

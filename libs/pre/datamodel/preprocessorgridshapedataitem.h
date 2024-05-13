@@ -43,9 +43,12 @@ private slots:
 	void openCrossSectionWindow();
 	void openVerticalCrossSectionWindow();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
+
+protected:
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
 
 	GridShapeSettingContainer m_setting;

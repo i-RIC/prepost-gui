@@ -1480,7 +1480,9 @@ PreProcessorGridAndGridCreatingConditionDataItemI* PreProcessorDataModel::getGri
 
 void PreProcessorDataModel::applyOffset(double x, double y)
 {
+	graphicsView()->applyOffset(x, y);
 	m_rootDataItem->applyOffset(x, y);
+
 	m_rootDataItem->renderGraphicsView();
 }
 
