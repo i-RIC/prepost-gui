@@ -102,7 +102,7 @@ void PreProcessorDataModel::init()
 	m_geoDataAddSignalMapper = nullptr;
 	root->setZDepthRange(m_dataRange);
 	root->setupStandardModel(m_itemModel);
-	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
+	connect(m_itemModel, &QStandardItemModel::itemChanged, this, &PreProcessorDataModel::handleObjectBrowserChange);
 	connect(this, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), mainWindow(), SLOT(handleAdditionalMenusUpdate(QList<QMenu*>)));
 
 	m_graphicsView->setActiveDataItem(root);
