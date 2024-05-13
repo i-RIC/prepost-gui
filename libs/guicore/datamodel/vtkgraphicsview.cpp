@@ -574,10 +574,15 @@ void VTKGraphicsView::applyCameraSetting()
 
 void VTKGraphicsView::cameraFit()
 {
+	cameraFitWithoutRendering();
+	render();
+}
+
+void VTKGraphicsView::cameraFitWithoutRendering()
+{
 	fitInView();
 	emit scaleChanged(getScale());
 	impl->m_model->viewOperationEndedGlobal();
-	render();
 }
 
 void VTKGraphicsView::cameraZoomIn()

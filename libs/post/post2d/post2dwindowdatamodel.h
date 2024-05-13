@@ -37,6 +37,7 @@ public:
 	void clearEdgeFocus();
 
 	void updateTmsList();
+	void cameraFit();
 
 public slots:
 	void addContour();

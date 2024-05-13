@@ -75,6 +75,7 @@ public slots:
 	void render();
 
 	void cameraFit();
+	void cameraFitWithoutRendering();
 	void cameraZoomIn();
 	void cameraZoomOut();
 	void cameraMoveLeft();
