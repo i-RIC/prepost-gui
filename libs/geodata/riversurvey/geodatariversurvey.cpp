@@ -1072,10 +1072,10 @@ void GeoDataRiverSurvey::createModeKeyPressEvent(QKeyEvent* event, PreProcessorG
 	finishDefiningLine();
 }
 
-void GeoDataRiverSurvey::createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
+void GeoDataRiverSurvey::createModeKeyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GeoDataRiverSurvey::createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
+void GeoDataRiverSurvey::createModeMouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_createMouseEventMode == Impl::CreateMouseEventMode::Defining) {
 		finishDefiningLine();
@@ -1139,8 +1139,8 @@ void GeoDataRiverSurvey::createModeMousePressEvent(QMouseEvent* event, PreProces
 		impl->createModeUpdateMouseCursor(v);
 		impl->updateActionStatus();
 	}
-
 	impl->m_currentPoint = event->pos();
+	impl->m_dragStartPoint = event->pos();
 }
 
 void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
@@ -1156,6 +1156,7 @@ void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProc
 			impl->setupMenu();
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
+			impl->m_createMouseEventMode = Impl::CreateMouseEventMode::Normal;
 		}
 	}
 }
@@ -1398,6 +1399,7 @@ void GeoDataRiverSurvey::editModeMouseReleaseEvent(QMouseEvent* event, PreProces
 			impl->setupMenu();
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
+			impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
 		}
 	}
 }
