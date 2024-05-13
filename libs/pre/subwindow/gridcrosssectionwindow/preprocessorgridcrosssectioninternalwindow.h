@@ -13,6 +13,7 @@ public:
 	PreProcessorGridCrosssectionInternalWindow(PreProcessorGridDataItem* item, QWidget *parent);
 	~PreProcessorGridCrosssectionInternalWindow();
 
+	QMdiSubWindow* mdiSubWindow() const override;
 	v4Structured2dGrid* grid() override;
 	void updateEdgeFocus() override;
 

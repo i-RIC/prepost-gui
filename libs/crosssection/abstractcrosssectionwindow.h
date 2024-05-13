@@ -15,6 +15,7 @@ class ColorMapSettingContainerI;
 class v4Structured2dGrid;
 
 class QDomNode;
+class QMdiSubWindow;
 class QToolBar;
 class QUndoCommand;
 class QXmlStreamWriter;
@@ -46,6 +47,7 @@ public:
 	QToolBar* viewToolBar() const;
 	QToolBar* displayToolBar() const;
 
+	virtual QMdiSubWindow* mdiSubWindow() const = 0;
 	virtual v4Structured2dGrid* grid() = 0;
 	virtual v4Structured2dGrid* additionalGrid();
 	virtual QString additionalGridPrefix();

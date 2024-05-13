@@ -1,4 +1,5 @@
 #include "preprocessorgridcrosssectioninternalwindow.h"
+#include "preprocessorgridcrosssectionwindow.h"
 #include "../../datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 #include "../../datamodel/preprocessorgriddataitem.h"
 #include "../../datamodel/preprocessorgridtypedataitem.h"
@@ -15,6 +16,12 @@ PreProcessorGridCrosssectionInternalWindow::PreProcessorGridCrosssectionInternal
 
 PreProcessorGridCrosssectionInternalWindow::~PreProcessorGridCrosssectionInternalWindow()
 {}
+
+QMdiSubWindow* PreProcessorGridCrosssectionInternalWindow::mdiSubWindow() const
+{
+	auto w = dynamic_cast<PreProcessorGridCrosssectionWindow*> (parentWidget());
+	return dynamic_cast<QMdiSubWindow*> (w->parentWidget());
+}
 
 v4Structured2dGrid* PreProcessorGridCrosssectionInternalWindow::grid()
 {
