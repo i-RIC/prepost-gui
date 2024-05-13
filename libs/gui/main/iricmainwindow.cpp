@@ -28,6 +28,9 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowi.h>
+#include <guicore/base/edge2dfocuswindowi.h>
+#include <guicore/base/edge3dfocuswindowi.h>
+#include <guicore/base/edgevisualizewindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
 #include <guicore/base/qmainwindowwithsnapshotresizewidget.h>
 #include <guicore/base/windowwithtmsi.h>
@@ -155,8 +158,8 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	// setup action manager
 	m_actionManager = new iRICMainWindowActionManager(this);
 	m_actionManager->projectFileClose();
-	connect(m_animationController, SIGNAL(indexChanged(uint)), this, SLOT(setCurrentStep(uint)));
-	connect(this, SIGNAL(allPostProcessorsUpdated()), m_animationController, SLOT(handleRenderingEnded()));
+	connect(m_animationController, &AnimationController::indexChanged, this, &iRICMainWindow::setCurrentStep);
+	connect(this, &iRICMainWindow::allPostProcessorsUpdated, m_animationController, &AnimationController::handleRenderingEnded);
 
 	setMenuBar(m_actionManager->menuBar());
 	addToolBar(m_actionManager->mainToolBar());
@@ -173,7 +176,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	updatePostActionStatus();
 	setupAboutDialog();
 	updateWindowTitle();
-	connect(m_centralWidget, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(ActiveSubwindowChanged(QMdiSubWindow*)));
+	connect(m_centralWidget, &QMdiArea::subWindowActivated, this, &iRICMainWindow::activeSubwindowChanged);
 
 	restoreWindowState();
 	setupProcessEnvironment();
@@ -666,7 +669,7 @@ bool iRICMainWindow::closeProject()
 	consoleParent->hide();
 
 	m_postWindowFactory->resetWindowCounts();
-	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
+	activeSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
 	m_projectData = nullptr;
 	m_mousePositionWidget->setProjectData(nullptr);
@@ -705,12 +708,13 @@ void iRICMainWindow::setupForNewProjectData()
 	updateWindowTitle();
 }
 
-void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
+void iRICMainWindow::activeSubwindowChanged(QMdiSubWindow* newActiveWindow)
 {
 	if (m_projectData == nullptr) {
 		// project is not open.
 		return;
 	}
+	clearEdgeFocus();
 	m_actionManager->updateWindowList();
 	if (newActiveWindow == nullptr) {
 		// Window of other program is activated.
@@ -750,6 +754,10 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 	} else {
 		m_resizeWidget->setWindow(nullptr);
 	}
+	auto evw = dynamic_cast<EdgeVisualizeWindowI*> (innerWindow);
+	if (evw != nullptr) {
+		evw->updateEdgeFocus();
+	}
 
 	m_mousePositionWidget->clear();
 	connect(innerWindow, SIGNAL(worldPositionChangedForStatusBar(QPointF)), m_mousePositionWidget, SLOT(updatePosition(QPointF)));
@@ -761,7 +769,7 @@ void iRICMainWindow::focusPreProcessorWindow()
 	QWidget* parent = m_preProcessorWindow->parentWidget();
 	parent->show();
 	parent->setFocus();
-	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
+	activeSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
 }
 
 void iRICMainWindow::focusSolverConsoleWindow()
@@ -769,7 +777,7 @@ void iRICMainWindow::focusSolverConsoleWindow()
 	QWidget* parent = m_solverConsoleWindow->parentWidget();
 	parent->show();
 	parent->setFocus();
-	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
+	activeSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
 }
 
 bool iRICMainWindow::saveProjectAsFile()
@@ -1363,6 +1371,45 @@ ProjectWorkspace* iRICMainWindow::workspace()
 const VersionNumber& iRICMainWindow::versionNumber() const
 {
 	return m_versionNumber;
+}
+
+void iRICMainWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+		auto e2 = dynamic_cast<Edge2dFocusWindowI*> (w->widget());
+		auto e3 = dynamic_cast<Edge3dFocusWindowI*> (w->widget());
+		if (e2 != nullptr) {
+			e2->setEdgeFocus(zoneName, i, j);
+		} else if (e3 != nullptr) {
+			e3->clearEdgeFocus();
+		}
+	}
+}
+
+void iRICMainWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k)
+{
+	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+		auto e2 = dynamic_cast<Edge2dFocusWindowI*> (w->widget());
+		auto e3 = dynamic_cast<Edge3dFocusWindowI*> (w->widget());
+		if (e3 != nullptr) {
+			e3->setEdgeFocus(zoneName, i, j, k);
+		} else if (e2 != nullptr) {
+			e2->clearEdgeFocus();
+		}
+	}
+}
+
+void iRICMainWindow::clearEdgeFocus()
+{
+	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+		auto e2 = dynamic_cast<Edge2dFocusWindowI*> (w->widget());
+		auto e3 = dynamic_cast<Edge3dFocusWindowI*> (w->widget());
+		if (e2 != nullptr) {
+			e2->clearEdgeFocus();
+		} else if (e3 != nullptr) {
+			e3->clearEdgeFocus();
+		}
+	}
 }
 
 void iRICMainWindow::setupAnimationToolbar()

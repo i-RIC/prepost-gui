@@ -44,6 +44,8 @@ public:
 	vtkPolyDataExtended3d* vtkJFaceData() const;
 	vtkPolyDataExtended3d* vtkKFaceData() const;
 
+	vtkPolyData* extractEdgeData(vtkIdType i, vtkIdType j, vtkIdType k) const;
+
 private:
 	class Impl;
 	std::unique_ptr<Impl> impl;

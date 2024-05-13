@@ -272,7 +272,8 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_attributebrowsercontroller.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_impl.h \
-           datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.h
+           datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.h \
+           datamodel/private/post2dwindowzonedataitem_impl.h
 FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowgraphsettingdialog.ui \
          datamodel/private/post2dwindowabstractcellscalargroupdataitem_settingeditwidget.ui \

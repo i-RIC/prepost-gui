@@ -93,6 +93,24 @@ SolverDefinitionGridType* Post3dWindowGridTypeDataItem::gridType() const
 	return m_gridType;
 }
 
+void Post3dWindowGridTypeDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k)
+{
+	for (auto data : m_zoneDatas) {
+		if (data->zoneName() == zoneName) {
+			data->setEdgeFocus(i, j, k);
+		} else {
+			data->clearEdgeFocus();
+		}
+	}
+}
+
+void Post3dWindowGridTypeDataItem::clearEdgeFocus()
+{
+	for (auto data : m_zoneDatas) {
+		data->clearEdgeFocus();
+	}
+}
+
 const ValueRangeContainer& Post3dWindowGridTypeDataItem::nodeValueRange(const std::string& name) const
 {
 	const auto it = m_nodeValueRanges.find(name);
@@ -150,7 +168,7 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 		if (cont->gridData() == nullptr) {continue;}
 		if (cont->gridType() != m_gridType) {continue;}
 
-		auto zdata = new Post3dWindowZoneDataItem(cont->zoneName(), num++, this);
+		auto zdata = new Post3dWindowZoneDataItem(cont->zoneName(), this);
 		m_zoneDatas.push_back(zdata);
 		m_zoneDataNameMap.insert({cont->zoneName(), zdata});
 		m_childItems.push_back(zdata);

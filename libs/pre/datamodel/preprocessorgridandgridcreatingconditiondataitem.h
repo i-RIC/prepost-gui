@@ -37,6 +37,8 @@ public:
 	void handleStandardItemChange() override;
 	bool isGridEdited() const  override;
 	void setGridEdited() override;
+	void setEdgeFocus(vtkIdType i, vtkIdType j) override;
+	void clearEdgeFocus() override;
 	void setupGridDataItem(v4InputGrid* grid);
 	int loadFromCgnsFile() override;
 

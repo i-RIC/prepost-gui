@@ -178,6 +178,9 @@ HEADERS += guicore_global.h \
            base/additionalmenuwindowi.h \
            base/animationcontrolleri.h \
            base/clipboardoperatablewindowi.h \
+           base/edge2dfocuswindowi.h \
+           base/edge3dfocuswindowi.h \
+           base/edgevisualizewindowi.h \
            base/iricmainwindowi.h \
            base/propertybrowser.h \
            base/qmainwindowwithsnapshot.h \

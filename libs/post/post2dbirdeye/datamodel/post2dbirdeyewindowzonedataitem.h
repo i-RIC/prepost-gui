@@ -3,13 +3,12 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-class QSignalMapper;
+#include <memory>
 
 class Post2dBirdEyeWindowGridShapeDataItem;
 class Post2dBirdEyeWindowGridTypeDataItem;
 class Post2dBirdEyeWindowCellScalarGroupTopDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
-class PostZoneDataContainer;
 class v4PostZoneDataContainer;
 
 class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
@@ -17,7 +16,7 @@ class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
 	Q_OBJECT
 
 public:
-	Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent);
+	Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, GraphicsWindowDataItem* parent);
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
@@ -25,7 +24,6 @@ public:
 	void informDeselection(VTKGraphicsView* v) override;
 
 	v4PostZoneDataContainer* v4DataContainer();
-	int zoneNumber() const;
 	std::string zoneName() const;
 
 	void update();
@@ -39,12 +37,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Post2dBirdEyeWindowGridShapeDataItem* m_shapeDataItem;
-	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
-	Post2dBirdEyeWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
-
-	std::string m_zoneName;
-	int m_zoneNumber;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // POST2DWINDOWZONEDATAITEM_H

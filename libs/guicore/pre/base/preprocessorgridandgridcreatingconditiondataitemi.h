@@ -22,6 +22,8 @@ public:
 	virtual PreProcessorGridCreatingConditionDataItemI* creatingConditionDataItem() const = 0;
 	virtual bool isGridEdited() const = 0;
 	virtual void setGridEdited() = 0;
+	virtual void setEdgeFocus(vtkIdType i, vtkIdType j) = 0;
+	virtual void clearEdgeFocus() = 0;
 };
 
 #endif // PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEMI_H

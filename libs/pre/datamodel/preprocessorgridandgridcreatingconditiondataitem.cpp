@@ -174,6 +174,22 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setGridEdited()
 	g->setIsModified(true);
 }
 
+void PreProcessorGridAndGridCreatingConditionDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
+{
+	auto gItem = dynamic_cast<PreProcessorStructured2dGridDataItem*> (m_gridDataItem);
+	if (gItem == nullptr) {return;}
+
+	gItem->setEdgeFocus(i, j);
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::clearEdgeFocus()
+{
+	auto gItem = dynamic_cast<PreProcessorStructured2dGridDataItem*> (m_gridDataItem);
+	if (gItem == nullptr) {return;}
+
+	gItem->clearEdgeFocus();
+}
+
 void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4InputGrid* grid)
 {
 	if (grid == nullptr) {return;}

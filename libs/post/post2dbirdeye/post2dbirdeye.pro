@@ -129,7 +129,8 @@ HEADERS += post2dbirdeye_global.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_impl.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setting.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_settingeditwidget.h \
-           datamodel/private/post2dbirdeyewindownodescalargroupdataitem_updatesettingcommand.h
+           datamodel/private/post2dbirdeyewindownodescalargroupdataitem_updatesettingcommand.h \
+           datamodel/private/post2dbirdeyewindowzonedataitem_impl.h
 FORMS += datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dbirdeyewindowgridshapedataitem_settingeditwidget.ui \
          datamodel/private/post2dbirdeyewindownodescalargroupdataitem_settingeditwidget.ui

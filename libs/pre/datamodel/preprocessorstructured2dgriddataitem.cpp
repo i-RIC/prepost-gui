@@ -6,13 +6,21 @@
 #include "preprocessorstructured2dgriddataitem.h"
 #include "preprocessorstructured2dgridshapedataitem.h"
 
+#include <guibase/vtkgridedgeutil.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+
+#include <vtkActor.h>
+#include <vtkPolyDataMapper.h>
 
 #include <QAction>
 #include <QMenu>
 
 PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridDataItem {parent},
+	m_edgeMapper {vtkPolyDataMapper::New()},
+	m_edgeActor {vtkActor::New()},
 	m_selectMenu {nullptr}
 {
 	m_shapeDataItem = new PreProcessorStructured2dGridShapeDataItem(this);
@@ -22,10 +30,33 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 	m_regionSelectAction->setDisabled(true);
 	setupMenu();
 	updateObjectBrowserTree();
+
+	vtkGridEdgeUtil::setupActor(m_edgeActor);
+	m_edgeActor->SetMapper(m_edgeMapper);
+	m_edgeActor->VisibilityOff();
+	renderer()->AddActor(m_edgeActor);
 }
 
 PreProcessorStructured2dGridDataItem::~PreProcessorStructured2dGridDataItem()
-{}
+{
+	renderer()->RemoveActor(m_edgeActor);
+
+	m_edgeMapper->Delete();
+	m_edgeActor->Delete();
+}
+
+void PreProcessorStructured2dGridDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
+{
+	auto g = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+	auto polyData = g->extractEdgeData(i, j);
+	m_edgeMapper->SetInputData(polyData);
+	polyData->Delete();
+	m_edgeActor->VisibilityOn();
+}
+void PreProcessorStructured2dGridDataItem::clearEdgeFocus()
+{
+	m_edgeActor->VisibilityOff();
+}
 
 void PreProcessorStructured2dGridDataItem::setupMenu()
 {
@@ -44,6 +75,13 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 	m_displayMenu->addAction(displaySettingAction());
 	m_displayMenu->addAction(nodeDisplaySettingAction());
 	m_displayMenu->addAction(cellDisplaySettingAction());
+}
+
+void PreProcessorStructured2dGridDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	m_edgeActor->SetPosition(0, 0, range.max());
+
+	PreProcessorGridDataItem::assignActorZValues(range);
 }
 
 void PreProcessorStructured2dGridDataItem::updateActionStatus()

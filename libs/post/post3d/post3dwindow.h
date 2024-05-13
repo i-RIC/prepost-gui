@@ -5,6 +5,7 @@
 
 #include <QMainWindow>
 #include <QByteArray>
+#include <guicore/base/edge3dfocuswindowi.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowseri.h>
@@ -28,7 +29,8 @@ class Post3dWindow :
 	public ParticleExportWindowI,
 	public BackgroundColorEditVtkI,
 	public AutoParticleWindowI,
-	public WindowWithVtkGraphicsViewI
+	public WindowWithVtkGraphicsViewI,
+	public Edge3dFocusWindowI
 {
 	Q_OBJECT
 
@@ -40,6 +42,8 @@ public:
 	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) override;
+	void clearEdgeFocus() override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;

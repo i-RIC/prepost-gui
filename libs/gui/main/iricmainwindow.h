@@ -70,6 +70,9 @@ public:
 	void warnSolverRunning() const override;
 	ProjectWorkspace* workspace() override;
 	const VersionNumber& versionNumber() const override;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) override;
+	void clearEdgeFocus() override;
 	void setDebugMode(bool debug);
 	bool isDebugMode() const;
 	bool continuousSnapshotInProgress() const override;
@@ -165,7 +168,7 @@ public slots:
 	void exportVisGraphSetting();
 
 	void checkCgnsStepsUpdate();
-	void ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow);
+	void activeSubwindowChanged(QMdiSubWindow* newActiveWindow);
 	/// Do the tasks to do when the CGNS file is switched.
 	void handleCgnsSwitch();
 	void focusPreProcessorWindow();

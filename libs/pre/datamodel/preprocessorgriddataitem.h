@@ -95,6 +95,7 @@ public:
 	void silentDeleteGrid() override;
 
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
+	PreProcessorGridAndGridCreatingConditionDataItem* gridAndGridCreatingConditionDataItem() const;
 	PreProcessorGridShapeDataItem* shapeDataItem() const;
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
 	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
@@ -161,7 +162,6 @@ private slots:
 	void launchAttributeGenerator();
 
 private:
-	PreProcessorGridAndGridCreatingConditionDataItem* gridAndGridCreatingConditionDataItem() const;
 	vtkPolyData* buildEdges() const;
 	void setupActors();
 	void setupActions();
@@ -172,6 +172,8 @@ private:
 	void closeCrosssectionWindows();
 
 protected:
+	void assignActorZValues(const ZDepthRange& range) override;
+
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
 	PreProcessorGridAttributeCellGroupDataItem* m_cellGroupDataItem;
@@ -182,9 +184,6 @@ protected:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void assignActorZValues(const ZDepthRange& range) override;
-
-	void renderGraphicsView();
 
 	void doApplyOffset(double x, double y) override;
 	virtual void setupMenu() = 0;

@@ -91,6 +91,11 @@ const std::shared_ptr<QToolBar>& Graph2dHybridWindow::getAdditionalToolBar() con
 	return m_toolBar;
 }
 
+void Graph2dHybridWindow::updateEdgeFocus()
+{
+	m_dataModel->setOrClearEdgeFocus();
+}
+
 Graph2dHybridWindowControlWidget* Graph2dHybridWindow::controlWidget() const
 {
 	return m_controlWidget;

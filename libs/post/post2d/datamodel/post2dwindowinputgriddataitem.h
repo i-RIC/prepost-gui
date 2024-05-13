@@ -23,6 +23,8 @@ public:
 
 	v4InputGrid* inputGrid() const;
 	v4Grid2d* grid() const override;
+	void setEdgeFocus(vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
@@ -33,6 +35,7 @@ public:
 
 	void update();
 	bool colorBarShouldBeVisible(const std::string& name) const;
+	void assignActorZValues(const ZDepthRange& range) override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -109,6 +109,24 @@ PreProcessorGridAndGridCreatingConditionDataItemI* PreProcessorGridTypeDataItem:
 	return nullptr;
 }
 
+void PreProcessorGridTypeDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	for (auto cond : m_conditions) {
+		if (cond->zoneName() == zoneName) {
+			cond->setEdgeFocus(i, j);
+		} else {
+			cond->clearEdgeFocus();
+		}
+	}
+}
+
+void PreProcessorGridTypeDataItem::clearEdgeFocus()
+{
+	for (auto cond : m_conditions) {
+		cond->clearEdgeFocus();
+	}
+}
+
 bool PreProcessorGridTypeDataItem::isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemI * /*child*/) const
 {
 	// if this gridtype is not optional and there is only one

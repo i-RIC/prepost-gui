@@ -3,6 +3,7 @@
 
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
+#include <guicore/base/edgevisualizewindowi.h>
 
 class ObjectBrowser;
 class Graph2dHybridWindowObjectBrowser;
@@ -13,7 +14,8 @@ class Graph2dHybridWindowControlWidget;
 
 class Graph2dHybridWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindowI
+	public AdditionalMenuWindowI,
+	public EdgeVisualizeWindowI
 {
 	Q_OBJECT
 
@@ -25,6 +27,7 @@ public:
 	QWidget* snapshotArea() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
+	void updateEdgeFocus() override;
 
 	Graph2dHybridWindowControlWidget* controlWidget() const;
 

@@ -30,6 +30,8 @@ public:
 
 	SolverDefinitionGridType* gridType() const;
 	bool isChildCaptionAvailable(const QString& caption);
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k);
+	void clearEdgeFocus();
 
 	const ValueRangeContainer& nodeValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;

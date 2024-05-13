@@ -33,6 +33,8 @@ public:
 	double zScale() const;
 	void applyOffset(double x, double y);
 	void initCollapseState();
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 
 	void updateTmsList();
 
