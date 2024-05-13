@@ -255,7 +255,7 @@ const std::shared_ptr<QToolBar>& PreProcessorWindow::getAdditionalToolBar() cons
 
 void PreProcessorWindow::cameraFit()
 {
-	m_dataModel->graphicsView()->cameraFit();
+	m_dataModel->cameraFit();
 }
 
 void PreProcessorWindow::cameraResetRotation()

@@ -31,6 +31,7 @@ public:
 
 	QPointF m_imageLowerLeft;
 	double m_imageScale;
+	bool m_actorIsVisible;
 
 	QPointF m_offset;
 

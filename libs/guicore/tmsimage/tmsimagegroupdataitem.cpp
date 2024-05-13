@@ -143,6 +143,7 @@ void calcImageParameters(QPointF* center, QSize* size, double* requestScale, QPo
 TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_tmsLoader {parent->iricMainWindow()},
 	m_tmsRequestId {-1},
+	m_actorIsVisible {false},
 	m_offset {parent->offset().x(), parent->offset().y()},
 	m_parent {parent}
 {
@@ -243,6 +244,19 @@ void TmsImageGroupDataItem::rebuildChildItems()
 void TmsImageGroupDataItem::viewOperationEndedGlobal(VTKGraphicsView*)
 {
 	requestImage();
+}
+
+void TmsImageGroupDataItem::disableActor()
+{
+	impl->m_actorIsVisible = impl->m_actor->GetVisibility();
+	impl->m_actor->VisibilityOff();
+}
+
+void TmsImageGroupDataItem::restoreActor()
+{
+	if (impl->m_actorIsVisible) {
+		impl->m_actor->VisibilityOn();
+	}
 }
 
 void TmsImageGroupDataItem::updateZDepthRangeItemCount()

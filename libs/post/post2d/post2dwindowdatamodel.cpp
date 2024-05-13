@@ -131,6 +131,16 @@ void Post2dWindowDataModel::updateTmsList()
 	rootDataItem()->tmsGroupDataItem()->rebuildChildItems();
 }
 
+void Post2dWindowDataModel::cameraFit()
+{
+	auto tmsItem = rootDataItem()->tmsGroupDataItem();
+	tmsItem->disableActor();
+	graphicsView()->cameraFitWithoutRendering();
+	tmsItem->restoreActor();
+
+	graphicsView()->render();
+}
+
 void Post2dWindowDataModel::gridShapeSetting()
 {
 	auto zItem = getZoneDataItem();

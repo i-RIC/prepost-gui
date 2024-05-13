@@ -22,6 +22,9 @@ public:
 
 	void viewOperationEndedGlobal(VTKGraphicsView* v) override;
 
+	void disableActor();
+	void restoreActor();
+
 	void updateZDepthRangeItemCount() override;
 
 public slots:
