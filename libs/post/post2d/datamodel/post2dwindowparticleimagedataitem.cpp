@@ -134,6 +134,8 @@ void Post2dWindowParticleImageDataItem::updateActorSetting()
 	}
 
 	texture->Delete();
+
+	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowParticleImageDataItem::doLoadFromProjectMainFile(const QDomNode& node)
