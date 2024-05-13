@@ -327,10 +327,9 @@ void Post2dWindowRootDataItem::update()
 
 Post2dWindowZoneDataItem* Post2dWindowRootDataItem::zoneDataItem(const std::string& name)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		Post2dWindowGridTypeDataItem* gtItem = *it;
-		Post2dWindowZoneDataItem* i = gtItem->zoneData(name);
+	for (auto gtItem : m_gridTypeDataItems) {
+		auto i = gtItem->zoneData(name);
 		if (i != 0) {return i;}
 	}
-	return 0;
+	return nullptr;
 }

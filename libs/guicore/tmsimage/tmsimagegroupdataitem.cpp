@@ -301,6 +301,10 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 
 	impl->m_actor->SetScale(impl->m_imageScale);
 	impl->m_actor->SetOrientation(0, 0, 0);
+
+	auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
+	view->ResetCameraClippingRange();
+
 	updateVisibility();
 }
 
