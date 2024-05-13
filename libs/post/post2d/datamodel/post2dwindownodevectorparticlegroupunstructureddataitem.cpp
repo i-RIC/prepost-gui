@@ -103,7 +103,6 @@ QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	impl->m_setting.startPositions.clear();
 	impl->m_setting.load(node);
 
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);
