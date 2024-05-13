@@ -201,6 +201,11 @@ void Post2dWindowParticlesBaseTopDataItem::doLoadFromProjectMainFile(const QDomN
 		}
 	}
 	if (impl->m_vectorGroupDataItem != nullptr) {
+		QDomNode vectorTopNode = iRIC::getChildNode(node, "VectorGroupTop");
+		if (! vectorTopNode.isNull()) {
+			impl->m_vectorGroupDataItem->loadFromProjectMainFile(vectorTopNode);
+		}
+
 		QDomNode vectorNode = iRIC::getChildNode(node, "VectorGroup");
 		if (! vectorNode.isNull()) {
 			impl->m_vectorGroupDataItem->loadFromProjectMainFile(vectorNode);
@@ -216,7 +221,7 @@ void Post2dWindowParticlesBaseTopDataItem::doSaveToProjectMainFile(QXmlStreamWri
 		writer.writeEndElement();
 	}
 	if (impl->m_vectorGroupDataItem != nullptr) {
-		writer.writeStartElement("VectorGroup");
+		writer.writeStartElement("VectorGroupTop");
 		impl->m_vectorGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
