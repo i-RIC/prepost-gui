@@ -160,7 +160,7 @@ bool GridCreatingConditionLaplace::create(QWidget* parent)
 	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
 	if (! ok) {return false;}
 
-	v4Structured2dGrid* grid = impl->createGrid();
+	auto grid = impl->createGrid();
 	if (grid == nullptr) {
 		return false;
 	}
