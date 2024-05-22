@@ -48,11 +48,11 @@ Post2dWindowBackgroundImagesDataItem::~Post2dWindowBackgroundImagesDataItem()
 
 void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 {
-	if (projectData()->mainfile()->backgroundImages().size() == 0) { return; }
+	if (projectData()->mainfile()->backgroundImages().size() == 0) {return;}
 
 	const auto& images = projectData()->mainfile()->backgroundImages();
 	for (auto it = images.begin(); it != images.end(); ++it) {
-		Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(*it, this);
+		auto iItem = new Post2dWindowBackgroundImageDataItem(*it, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(iItem);
 	}
@@ -66,7 +66,7 @@ void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 void Post2dWindowBackgroundImagesDataItem::addChildItem()
 {
 	BackgroundImageInfo* image = *(projectData()->mainfile()->backgroundImages().begin());
-	Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(image, this);
+	auto iItem = new Post2dWindowBackgroundImageDataItem(image, this);
 	// make the standard item top.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(iItem->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
@@ -77,6 +77,7 @@ void Post2dWindowBackgroundImagesDataItem::addChildItem()
 
 	dataModel()->objectBrowserView()->select(iItem->standardItem()->index());
 	dataModel()->graphicsView()->ResetCameraClippingRange();
+
 	emit selectBackgroundImage(iItem->standardItem()->index());
 	setModified();
 }
