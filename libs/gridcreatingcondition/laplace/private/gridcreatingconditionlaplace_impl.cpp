@@ -462,6 +462,7 @@ v4Structured2dGrid* GridCreatingConditionLaplace::Impl::createGrid()
 	}
 
 	auto grid = new v4Structured2dGrid();
+	grid->setDimensions(iMax, jMax);
 
 	// Set CtrlPoints
 	int jIdx = 0;
