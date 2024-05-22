@@ -128,7 +128,7 @@ void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()
 
 void ProjectPropertyBasicInfoWidget::showSetOffsetDialog()
 {
-	m_projectData->mainfile()->setupOffset();
+	m_projectData->mainfile()->setupOffset(this);
 	updateCoordinateOffset();
 }
 

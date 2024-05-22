@@ -325,4 +325,7 @@ void PreProcessorGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wr
 	m_setting.save(writer);
 }
 
-
+void PreProcessorGridShapeDataItem::doApplyOffset(double /*x*/, double /*y*/)
+{
+	updateActorSetting();
+}

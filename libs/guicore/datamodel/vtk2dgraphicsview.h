@@ -23,6 +23,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void ResetCameraClippingRange();
 	double stdRadius(int pixels) const;
+	void applyOffset(double x, double y);
 	void translate(int x, int y) override;
 	void panTo(double x, double y);
 	void emitPosition(int x, int y);

@@ -1357,8 +1357,6 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 	impl->m_regionPolyData->SetPolys(cells);
 	impl->m_regionPolyData->Modified();
 
-	actorCollection()->RemoveItem(impl->m_regionActor);
-	actorCollection()->AddItem(impl->m_regionActor);
 	updateVisibilityWithoutRendering();
 }
 
@@ -1374,5 +1372,5 @@ void PreProcessorGridDataItem::doApplyOffset(double x, double y)
 	impl->m_grid->grid()->applyOffset(QPointF(x, y));
 	impl->m_grid->setIsModified(true);
 
-	this->updateRegionPolyData();
+	updateVtkObjectsForDrawing();
 }

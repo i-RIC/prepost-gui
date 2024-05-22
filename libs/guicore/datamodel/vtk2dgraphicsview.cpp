@@ -255,6 +255,24 @@ void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 	VTKGraphicsView::mouseMoveEvent(event);
 }
 
+void VTK2DGraphicsView::applyOffset(double x, double y)
+{
+	auto camera = mainRenderer()->GetActiveCamera();
+
+	double position[3], focalPoint[3];
+
+	camera->GetPosition(position);
+	camera->GetFocalPoint(focalPoint);
+
+	position[0] -= x;
+	position[1] -= y;
+	focalPoint[0] -= x;
+	focalPoint[1] -= y;
+
+	camera->SetPosition(position);
+	camera->SetFocalPoint(focalPoint);
+}
+
 void VTK2DGraphicsView::translate(int x, int y)
 {
 	auto r = mainRenderer();
