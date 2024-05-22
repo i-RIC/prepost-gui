@@ -61,6 +61,8 @@ public:
 	vtkPointSet* regionFilteredIEdgeData(int iMin, int iMax, int jMin, int jMax);
 	vtkPointSet* regionFilteredJEdgeData(int iMin, int iMax, int jMin, int jMax);
 
+	vtkPolyData* extractEdgeData(vtkIdType i, vtkIdType j) const;
+
 	void updateCellIndex() override;
 	void updateFilteredData(double xMin, double xMax, double yMin, double yMax) override;
 

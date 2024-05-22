@@ -254,7 +254,7 @@ Post2dWindowStringResultDataItem* Post2dWindowCalculationResultDataItem::stringD
 
 void Post2dWindowCalculationResultDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	int itemCount = m_childItems.size();
+	int itemCount = static_cast<int> (m_childItems.size());
 	int gapCount = itemCount - 1;
 	float gapRate = .1; // the rate of gap width againt data width.
 

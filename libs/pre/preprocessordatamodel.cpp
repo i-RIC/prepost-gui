@@ -162,6 +162,32 @@ bool PreProcessorDataModel::isInputConditionSet()
 	return root->m_inputConditionDataItem->isSet();
 }
 
+MouseBoundingBox* PreProcessorDataModel::mouseBoundingBox()
+{
+	return m_mouseBoundingBox;
+}
+
+const QList<QMenu*>& PreProcessorDataModel::additionalMenus() const
+{
+	return m_additionalMenus;
+}
+
+void PreProcessorDataModel::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	auto r = rootDataItem();
+	if (r == nullptr) {return;}
+
+	r->setEdgeFocus(zoneName, i, j);
+}
+
+void PreProcessorDataModel::clearEdgeFocus()
+{
+	auto r = rootDataItem();
+	if (r == nullptr) {return;}
+
+	r->clearEdgeFocus();
+}
+
 void PreProcessorDataModel::showCalcConditionDialog()
 {
 	iRICMainWindowI* mainW = iricMainWindow();
@@ -1308,6 +1334,8 @@ void PreProcessorDataModel::disableGridMenu()
 
 PreProcessorRootDataItem* PreProcessorDataModel::rootDataItem() const
 {
+	if (m_rootDataItem == nullptr) {return nullptr;}
+
 	return dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
 }
 

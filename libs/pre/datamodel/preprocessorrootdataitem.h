@@ -39,6 +39,8 @@ public:
 	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const;
 	PreProcessorInputConditionDataItem* inputConditionDataItem() const;
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 
 	void setupStandardModel(QStandardItemModel* model);
 

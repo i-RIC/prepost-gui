@@ -141,6 +141,24 @@ Post2dWindowGeoDataTopDataItem* Post2dWindowGridTypeDataItem::geoDataItem() cons
 	return m_geoDataItem;
 }
 
+void Post2dWindowGridTypeDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	for (auto data : m_zoneDatas) {
+		if (data->zoneName() == zoneName) {
+			data->setEdgeFocus(i, j);
+		} else {
+			data->clearEdgeFocus();
+		}
+	}
+}
+
+void Post2dWindowGridTypeDataItem::clearEdgeFocus()
+{
+	for (auto data : m_zoneDatas) {
+		data->clearEdgeFocus();
+	}
+}
+
 ModifyCommandDialog* Post2dWindowGridTypeDataItem::createApplyColorMapSettingDialog(const std::string& name, QWidget* parent)
 {
 	return new ApplyColorMapSettingDialog(name, parent, this);

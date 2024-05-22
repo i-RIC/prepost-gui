@@ -3,6 +3,8 @@
 
 #include "crosssection_global.h"
 
+#include <guicore/base/edgevisualizewindowi.h>
+
 #include <QWidget>
 
 namespace Ui {
@@ -18,7 +20,7 @@ class QToolBar;
 class QUndoCommand;
 class QXmlStreamWriter;
 
-class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow : public QWidget
+class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow : public QWidget, public EdgeVisualizeWindowI
 {
 	Q_OBJECT
 

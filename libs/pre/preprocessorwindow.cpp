@@ -232,6 +232,20 @@ QWidget* PreProcessorWindow::snapshotArea() const
 	return m_graphicsView;
 }
 
+void PreProcessorWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	if (m_dataModel == nullptr) { return; }
+
+	m_dataModel->setEdgeFocus(zoneName, i, j);
+}
+
+void PreProcessorWindow::clearEdgeFocus()
+{
+	if (m_dataModel == nullptr) {return;}
+
+	m_dataModel->clearEdgeFocus();
+}
+
 vtkRenderWindow* PreProcessorWindow::getVtkRenderWindow() const
 {
 	vtkRenderer* r = const_cast<vtkRenderer*> (m_graphicsView->mainRenderer());

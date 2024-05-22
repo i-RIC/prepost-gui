@@ -79,10 +79,12 @@ PostSolutionInfo* Post3dWindowDataModel::postSolutionInfo()
 
 void Post3dWindowDataModel::gridShapeSetting()
 {
-	Post3dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post3dWindowGridShapeDataItem* item = zItem->gridShapeDataItem();
+
+	auto item = zItem->gridShapeDataItem();
 	if (item == nullptr) {return;}
+
 	item->showPropertyDialog();
 }
 
@@ -96,18 +98,18 @@ void Post3dWindowDataModel::surfaceSetting()
 
 void Post3dWindowDataModel::addContour()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	auto item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowContourGroupTopDataItem* citem = item->contourGroupTopItem();
-	citem->showAddDialog();
+
+	item->contourGroupTopItem()->showAddDialog();
 }
 
 void Post3dWindowDataModel::addIsosurface()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	auto item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowNodeScalarGroupTopDataItem* citem = item->scalarGroupDataItem();
-	citem->showAddDialog();
+
+	item->scalarGroupDataItem()->showAddDialog();
 }
 
 void Post3dWindowDataModel::contourSetting()
@@ -117,26 +119,26 @@ void Post3dWindowDataModel::contourSetting()
 
 void Post3dWindowDataModel::arrowSetting()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	auto item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowNodeVectorArrowTopDataItem* aitem = item->arrowTopDataItem();
-	aitem->showAddDialog();
+
+	item->arrowTopDataItem()->showAddDialog();
 }
 
 void Post3dWindowDataModel::streamlineSetting()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	auto item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowNodeVectorStreamlineGroupDataItem* sitem = item->streamlineGroupDataItem();
-	sitem->showPropertyDialog();
+
+	item->streamlineGroupDataItem()->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::particleSetting()
 {
-	Post3dWindowZoneDataItem* item = getZoneDataItem();
+	auto item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowNodeVectorParticleGroupDataItem* pitem = item->particleGroupDataItem();
-	pitem->showPropertyDialog();
+
+	item->particleGroupDataItem()->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::isosurfaceSetting()
@@ -162,6 +164,8 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers3D();
 	if (containers.count() == 0) {return nullptr;}
+
+	auto root = rootDataItem();
 	if (containers.count() > 1) {
 		PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
@@ -169,11 +173,9 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 		if (ret != QDialog::Accepted) {return nullptr;}
 		std::string gridType = dialog.gridTypeName();
 		std::string zone = dialog.zoneName();
-		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		Post3dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		return gt->zoneData(zone);
 	} else {
-		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		QList<Post3dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post3dWindowGridTypeDataItem* gt = list.at(0);
 		auto zoneList = gt->zoneDatas();
@@ -181,16 +183,29 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	}
 }
 
+Post3dWindowRootDataItem* Post3dWindowDataModel::rootDataItem() const
+{
+	return dynamic_cast<Post3dWindowRootDataItem*> (m_rootDataItem);
+}
+
 void Post3dWindowDataModel::titleSetting()
 {
-	Post3dWindowRootDataItem* r = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
-	r->titleDataItem()->showPropertyDialog();
+	rootDataItem()->titleDataItem()->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::timeSetting()
 {
-	Post3dWindowRootDataItem* r = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
-	r->timeDataItem()->showPropertyDialog();
+	rootDataItem()->timeDataItem()->showPropertyDialog();
+}
+
+void Post3dWindowDataModel::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k)
+{
+	rootDataItem()->setEdgeFocus(zoneName, i, j, k);
+}
+
+void Post3dWindowDataModel::clearEdgeFocus()
+{
+	rootDataItem()->clearEdgeFocus();
 }
 
 void Post3dWindowDataModel::editZScale()

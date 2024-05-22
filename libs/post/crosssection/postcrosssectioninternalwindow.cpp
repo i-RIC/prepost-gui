@@ -2,6 +2,8 @@
 #include "postcrosssectionwindow.h"
 #include "postcrosssectionwindowprojectdataitem.h"
 
+#include <crosssection/public/abstractcrosssectionwindow_controller.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -144,6 +146,21 @@ v4Structured2dGrid* PostCrosssectionInternalWindow::additionalGrid()
 QString PostCrosssectionInternalWindow::additionalGridPrefix()
 {
 	return tr("(Input) ");
+}
+
+void PostCrosssectionInternalWindow::updateEdgeFocus()
+{
+	vtkIdType i = 0, j = 0;
+	auto c = controller();
+	if (c->targetDirection() == Direction::I) {
+		i = c->targetIndex();
+		j = -1;
+	} else if (c->targetDirection() == Direction::J) {
+		i = -1;
+		j = c->targetIndex();
+	}
+
+	window()->m_projectDataItem->iricMainWindow()->setEdgeFocus(m_zoneName, i, j);
 }
 
 PostCrosssectionWindow* PostCrosssectionInternalWindow::window() const

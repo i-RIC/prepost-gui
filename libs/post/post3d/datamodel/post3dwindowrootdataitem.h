@@ -32,6 +32,8 @@ public:
 
 	PostTitleDataItem* titleDataItem() const;
 	PostTimeDataItem* timeDataItem() const;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k);
+	void clearEdgeFocus();
 
 private slots:
 	void updateZoneList();

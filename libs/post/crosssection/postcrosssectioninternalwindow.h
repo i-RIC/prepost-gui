@@ -21,6 +21,7 @@ public:
 	v4Structured2dGrid* grid() override;
 	v4Structured2dGrid* additionalGrid() override;
 	QString additionalGridPrefix() override;
+	void updateEdgeFocus() override;
 
 private:
 	PostCrosssectionWindow* window() const;

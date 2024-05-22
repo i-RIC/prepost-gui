@@ -93,6 +93,16 @@ VTKGraphicsView* Post3dWindow::getVtkGraphicsView() const
 	return m_dataModel->graphicsView();
 }
 
+void Post3dWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k)
+{
+	m_dataModel->setEdgeFocus(zoneName, i, j, k);
+}
+
+void Post3dWindow::clearEdgeFocus()
+{
+	m_dataModel->clearEdgeFocus();
+}
+
 QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;

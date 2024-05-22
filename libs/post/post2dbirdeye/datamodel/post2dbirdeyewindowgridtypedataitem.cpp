@@ -163,7 +163,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 		if (cont->gridData() == nullptr) {continue;}
 		if (cont->gridType() != m_gridType) {continue;}
 
-		auto zdata = new Post2dBirdEyeWindowZoneDataItem(cont->zoneName(), num++, this);
+		auto zdata = new Post2dBirdEyeWindowZoneDataItem(cont->zoneName(), this);
 		m_zoneDatas.push_back(zdata);
 		m_zoneDataNameMap.insert({cont->zoneName(), zdata});
 		m_childItems.push_back(zdata);

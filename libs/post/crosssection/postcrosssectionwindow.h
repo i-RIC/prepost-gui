@@ -3,11 +3,12 @@
 
 #include "postcrosssection_global.h"
 
+#include <guicore/base/edgevisualizewindowi.h>
 #include <guicore/post/postprocessorwindow.h>
 
 class PostCrosssectionInternalWindow;
 
-class PostCrosssectionWindow : public PostProcessorWindow
+class PostCrosssectionWindow : public PostProcessorWindow, public EdgeVisualizeWindowI
 {
 	Q_OBJECT
 
@@ -18,6 +19,7 @@ public:
 
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
+	void updateEdgeFocus() override;
 
 public slots:
 	void cameraFit();

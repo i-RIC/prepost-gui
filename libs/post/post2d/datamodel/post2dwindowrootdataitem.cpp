@@ -154,6 +154,22 @@ AttributeBrowserTargetDataItem* Post2dWindowRootDataItem::attributeBrowserTarget
 	return m_attributeBrowserTargetDataItem;
 }
 
+void Post2dWindowRootDataItem::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->setEdgeFocus(zoneName, i, j);
+	}
+	renderGraphicsView();
+}
+
+void Post2dWindowRootDataItem::clearEdgeFocus()
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->clearEdgeFocus();
+	}
+	renderGraphicsView();
+}
+
 void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 {
 	model->clear();

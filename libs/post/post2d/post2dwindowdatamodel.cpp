@@ -360,3 +360,13 @@ void Post2dWindowDataModel::initCollapseState()
 		}
 	}
 }
+
+void Post2dWindowDataModel::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j)
+{
+	rootDataItem()->setEdgeFocus(zoneName, i, j);
+}
+
+void Post2dWindowDataModel::clearEdgeFocus()
+{
+	rootDataItem()->clearEdgeFocus();
+}

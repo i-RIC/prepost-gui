@@ -105,6 +105,7 @@ HEADERS += colortool.h \
            vtkCustomScalarBarActor.h \
            vtkCustomStreamTracer.h \
            vtkdatasetattributestool.h \
+           vtkgridedgeutil.h \
            vtklegendboxrepresentation.h \
            vtklegendboxwidget.h \
            vtklinestylecontainer.h \
@@ -260,6 +261,7 @@ SOURCES += colortool.cpp \
            vtkCustomScalarBarActor.cxx \
            vtkCustomStreamTracer.cxx \
            vtkdatasetattributestool.cpp \
+           vtkgridedgeutil.cpp \
            vtklegendboxrepresentation.cpp \
            vtklegendboxwidget.cpp \
            vtklinestylecontainer.cpp \

@@ -38,6 +38,8 @@ public:
 	const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& conditions() const override;
 	PreProcessorGridAndGridCreatingConditionDataItemI* condition(const std::string& name) const;
 
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemI* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);

@@ -147,6 +147,8 @@ void AbstractCrosssectionWindow::handleSettingChange()
 	if (impl->m_displaySetting.enableAutoRescale && ! impl->m_displaySetting.fixRegion) {
 		cameraFit();
 	}
+
+	updateEdgeFocus();
 }
 
 void AbstractCrosssectionWindow::applyColorMapSetting(const std::string& name)

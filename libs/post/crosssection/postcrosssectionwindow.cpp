@@ -46,6 +46,11 @@ QWidget* PostCrosssectionWindow::snapshotArea() const
 	return m_internalWindow->graphicsView();
 }
 
+void PostCrosssectionWindow::updateEdgeFocus()
+{
+	m_internalWindow->updateEdgeFocus();
+}
+
 void PostCrosssectionWindow::cameraFit()
 {
 	m_internalWindow->cameraFit();

@@ -38,6 +38,8 @@ public:
 	void getXAxisValueRange(double* min, double* max);
 	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
 	const Graph2dHybridWindowResultSetting& setting() const;
+	void setOrClearEdgeFocus();
+	void clearEdgeFocus();
 
 public slots:
 	void sliderChanged();

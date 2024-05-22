@@ -4,6 +4,7 @@
 #include "pre_global.h"
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/base/additionalmenuwindowi.h>
+#include <guicore/base/edge2dfocuswindowi.h>
 #include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
@@ -13,13 +14,10 @@
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/bgcolor/backgroundcoloreditvtki.h>
 
-#include <QCloseEvent>
+#include <vtkIdList.h>
+
 #include <QByteArray>
 
-class QMenu;
-class QAction;
-class QModelIndex;
-class QToolBar;
 class PreObjectBrowser;
 class PrePropertyBrowser;
 class ProjectData;
@@ -29,10 +27,17 @@ class PreProcessorDataModel;
 class PreProcessorWindowActionManager;
 class PreProcessorGraphicsView;
 
+class QAction;
+class QCloseEvent;
+class QMenu;
+class QModelIndex;
+class QToolBar;
+
 /// PreProcessorWindow class implements the main window of pre-processor.
 class PREDLL_EXPORT PreProcessorWindow :
 	public PreProcessorWindowI,
 	public AdditionalMenuWindowI,
+	public Edge2dFocusWindowI,
 	public WindowWithObjectBrowserI,
 	public WindowWithTmsI,
 	public WindowWithPropertyBrowser,
@@ -74,6 +79,8 @@ public:
 	void hideEvent(QHideEvent* e) override;
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
+	void clearEdgeFocus() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;

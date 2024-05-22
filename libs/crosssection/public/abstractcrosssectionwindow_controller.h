@@ -1,6 +1,7 @@
 #ifndef ABSTRACTCROSSSECTIONWINDOW_CONTROLLER_H
 #define ABSTRACTCROSSSECTIONWINDOW_CONTROLLER_H
 
+#include "../crosssection_global.h"
 #include "../abstractcrosssectionwindow.h"
 
 #include <QWidget>
@@ -9,7 +10,7 @@ namespace Ui {
 class AbstractCrosssectionWindow_Controller;
 }
 
-class AbstractCrosssectionWindow::Controller : public QWidget
+class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow::Controller : public QWidget
 {
 	Q_OBJECT
 

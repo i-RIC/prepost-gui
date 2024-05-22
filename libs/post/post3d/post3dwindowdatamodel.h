@@ -19,12 +19,14 @@ class Post3dWindowDataModel : public Graphics3DWindowDataModel
 
 public:
 	static const int MOVEWIDTH = 1;
-	/// Constructor
+
 	Post3dWindowDataModel(Post3dWindow* w, ProjectDataItem* parent);
 	~Post3dWindowDataModel();
-	/// The view to display 3d post-processor main region
+
 	Post3dWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
+	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k);
+	void clearEdgeFocus();
 	void editZScale();
 
 public slots:
@@ -40,11 +42,12 @@ public slots:
 	void titleSetting();
 	void timeSetting();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void init();
 	Post3dWindowZoneDataItem* getZoneDataItem();
+	Post3dWindowRootDataItem* rootDataItem() const;
 
 private:
 	double m_zScale;

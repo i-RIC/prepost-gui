@@ -5,22 +5,13 @@
 
 #include <guicore/post/postzonedataitem.h>
 
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkPolyData.h>
-#include <vtkDataSetMapper.h>
-
 #include <h5cgnszone.h>
 
-class QAction;
-class QSignalMapper;
+#include <memory>
 
 class Post2dWindowCalculationResultDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowInputGridDataItem;
-class PostZoneDataContainer;
 class v4PostZoneDataContainer;
 
 class Post2dWindowZoneDataItem : public Post2dWindowDataItem, public PostZoneDataItem
@@ -36,9 +27,10 @@ public:
 	void updateZDepthRangeItemCount() override;
 
 	v4PostZoneDataContainer* v4DataContainer() override;
-	bool isMasked() const;
 	std::string zoneName() const;
 	void update(bool noParticle = false);
+	void setEdgeFocus(vtkIdType i, vtkIdType j);
+	void clearEdgeFocus();
 
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowInputGridDataItem* inputGridDataItem() const;
@@ -54,15 +46,8 @@ private:
 
 	void setupActors();
 
-	Post2dWindowInputGridDataItem* m_inputGridDataItem;
-	Post2dWindowCalculationResultDataItem* m_resultDataItem;
-
-	vtkSmartPointer<vtkPolyData> m_regionPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
-	vtkSmartPointer<vtkActor> m_regionActor;
-
-	std::string m_zoneName;
-	bool m_isMasked;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // POST2DWINDOWZONEDATAITEM_H

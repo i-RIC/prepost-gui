@@ -15,6 +15,7 @@ public:
 
 	QMdiSubWindow* mdiSubWindow() const override;
 	v4Structured2dGrid* grid() override;
+	void updateEdgeFocus() override;
 
 private:
 	ColorMapSettingContainerI* preColorMapSetting(const std::string& name) const override;
