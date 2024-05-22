@@ -35,6 +35,7 @@ public:
 	void initCollapseState();
 
 	void updateTmsList();
+	void cameraFit();
 
 public slots:
 	void addContour();

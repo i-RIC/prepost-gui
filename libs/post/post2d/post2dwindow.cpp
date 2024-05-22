@@ -119,7 +119,7 @@ const std::shared_ptr<QToolBar>& Post2dWindow::getAdditionalToolBar() const
 
 void Post2dWindow::cameraFit()
 {
-	m_dataModel->graphicsView()->cameraFit();
+	m_dataModel->cameraFit();
 }
 
 void Post2dWindow::cameraResetRotation()

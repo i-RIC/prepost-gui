@@ -1488,3 +1488,13 @@ void PreProcessorDataModel::updateTmsList()
 {
 	rootDataItem()->tmsGroupDataItem()->rebuildChildItems();
 }
+
+void PreProcessorDataModel::cameraFit()
+{
+	auto tmsItem = rootDataItem()->tmsGroupDataItem();
+	tmsItem->disableActor();
+	graphicsView()->cameraFitWithoutRendering();
+	tmsItem->restoreActor();
+
+	graphicsView()->render();
+}
