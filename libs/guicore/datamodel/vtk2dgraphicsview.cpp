@@ -249,7 +249,9 @@ void VTK2DGraphicsView::setAngle(double angle)
 
 void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
-	emit worldPositionChangedForStatusBar(viewportToWorld((event->pos())));
+	auto event2 = createScaledEvent(*event);
+	emit worldPositionChangedForStatusBar(viewportToWorld(event2.pos()));
+
 	VTKGraphicsView::mouseMoveEvent(event);
 }
 
