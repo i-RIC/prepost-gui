@@ -26,22 +26,24 @@ void WindowGeometryContainer::load(const QDomNode& node)
 	size.setHeight(iRIC::getIntAttribute(node, "height", 480));
 	m_window->resize(size);
 
-	if (! m_ignoreMax && iRIC::getBooleanAttribute(node, "maximized")) {
-		m_window->showMaximized();
-	}
-	m_window->setVisible(iRIC::getBooleanAttribute(node, "visible"));
+	m_window->setWindowState(static_cast<Qt::WindowStates>(iRIC::getIntAttribute(node, "state", 0)));
 }
 
 void WindowGeometryContainer::save(QXmlStreamWriter& writer) const
 {
-	iRIC::setBooleanAttribute(writer, "visible", m_window->isVisible());
-	iRIC::setBooleanAttribute(writer, "maximized", m_window->isMaximized());
+	auto state = (m_window->windowState() & 7);
+	iRIC::setIntAttribute(writer, "state", static_cast<int> (state));
+	if (state != 0) {
+		m_window->setWindowState(Qt::WindowNoState);
+	}
 
 	QRect rect = m_window->frameGeometry();
 	iRIC::setIntAttribute(writer, "left", rect.left());
 	iRIC::setIntAttribute(writer, "top", rect.top());
 	iRIC::setIntAttribute(writer, "width", rect.width());
 	iRIC::setIntAttribute(writer, "height", rect.height());
+
+	m_window->setWindowState(state);
 }
 
 void WindowGeometryContainer::setWidget(QWidget* w)
