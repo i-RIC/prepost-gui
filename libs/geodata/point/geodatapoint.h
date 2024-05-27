@@ -60,7 +60,7 @@ signals:
 	void modified();
 
 public slots:
-	void restoreMouseEventMode();
+	void restoreMouseEventMode() override;
 
 private slots:
 	void editCoordinates();

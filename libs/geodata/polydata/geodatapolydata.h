@@ -45,6 +45,7 @@ public slots:
 	void editNameAndValue();
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
 	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
+	virtual void restoreMouseEventMode() = 0;
 
 private slots:
 	void editColorSetting();

@@ -224,6 +224,7 @@ void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGra
 		} else if (event->button() == Qt::RightButton) {
 			if (! iRIC::isNear(impl->m_dragStartPoint, event->pos())) {return;}
 
+			impl->m_editTargetData->restoreMouseEventMode();
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
 		}
