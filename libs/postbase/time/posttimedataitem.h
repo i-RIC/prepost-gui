@@ -37,25 +37,28 @@ public:
 		vtkTextPropertySettingContainer fontSetting;
 	};
 
-	/// Constructor
 	PostTimeDataItem(GraphicsWindowDataItem* parent);
-	virtual ~PostTimeDataItem();
+	~PostTimeDataItem() override;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void update();
 
-protected:
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+public slots:
+	void showPropertyDialog() override;
 
 private:
 	const static int FONTSIZE = 13;
+
+	QDialog* propertyDialog(QWidget* parent) override;
+
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	vtkSmartPointer<vtkTextActor> m_timeActor;
 	Setting m_setting;
 
+	class EditWidget;
 	class SetSettingCommand;
 };
 

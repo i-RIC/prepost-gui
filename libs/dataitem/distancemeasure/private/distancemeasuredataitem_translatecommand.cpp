@@ -55,6 +55,4 @@ void DistanceMeasureDataItem::TranslateCommand::applyPoints(const QPointF& p1, c
 {
 	m_item->impl->m_setting.point1 = p1;
 	m_item->impl->m_setting.point2 = p2;
-
-	m_item->updateActorSettings();
 }

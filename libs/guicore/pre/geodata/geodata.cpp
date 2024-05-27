@@ -38,7 +38,7 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 {
 	m_menu = new QMenu(projectData()->mainWindow());
 	m_editNameAction = new QAction(GeoData::tr("Edit &Name..."), this);
-	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
+	connect(m_editNameAction, &QAction::triggered, this, &GeoData::editName);
 }
 GeoData::~GeoData()
 {

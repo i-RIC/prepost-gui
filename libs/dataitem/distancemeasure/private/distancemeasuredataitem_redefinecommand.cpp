@@ -12,7 +12,6 @@ void DistanceMeasureDataItem::RedefineCommand::redo()
 	m_item->updateMouseCursor();
 
 	m_item->impl->m_setting.defined = false;
-	m_item->updateActorSettings();
 }
 
 void DistanceMeasureDataItem::RedefineCommand::undo()
@@ -21,5 +20,4 @@ void DistanceMeasureDataItem::RedefineCommand::undo()
 	m_item->updateMouseCursor();
 
 	m_item->impl->m_setting.defined = true;
-	m_item->updateActorSettings();
 }

@@ -1,8 +1,8 @@
 #include "posttimedataitem.h"
-#include "posttimeeditdialog.h"
-#include "private/posttimedataitem_setsettingcommand.h"
+#include "private/posttimedataitem_editwidget.h"
 
 #include <guibase/timeformat/timeformatutil.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -78,7 +78,7 @@ PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent) :
 	m_isDeletable = false;
 
 	setupActors();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 PostTimeDataItem::~PostTimeDataItem()
@@ -89,7 +89,7 @@ PostTimeDataItem::~PostTimeDataItem()
 void PostTimeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void PostTimeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -106,6 +106,11 @@ void PostTimeDataItem::setupActors()
 	actor2DCollection()->AddItem(m_timeActor);
 }
 
+void PostTimeDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
 QDialog* PostTimeDataItem::propertyDialog(QWidget* parent)
 {
 	auto mainFile = projectData()->mainfile();
@@ -116,24 +121,22 @@ QDialog* PostTimeDataItem::propertyDialog(QWidget* parent)
 		m_setting.showTimeZone = mainFile->showTimeZone();
 	}
 
-	PostTimeEditDialog* dialog = new PostTimeEditDialog(parent);
-	dialog->setActualTimeAvailable(! zeroDateTime.isNull());
-	dialog->setSetting(m_setting);
-	return dialog;
-}
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, parent);
+	auto widget = new EditWidget(this, dialog);
+	widget->setActualTimeAvailable(! zeroDateTime.isNull());
 
-void PostTimeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	PostTimeEditDialog* dialog = dynamic_cast<PostTimeEditDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Time Setting"));
+
+	return dialog;
 }
 
 void PostTimeDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void PostTimeDataItem::updateActorSettings()
+void PostTimeDataItem::updateActorSetting()
 {
 	auto mainFile = projectData()->mainfile();
 

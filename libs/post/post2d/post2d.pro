@@ -161,7 +161,6 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowgraphdataitem.h \
            datamodel/post2dwindowgraphgroupdataitem.h \
            datamodel/post2dwindowgraphsetting.h \
-           datamodel/post2dwindowgraphsettingdialog.h \
            datamodel/post2dwindowgridattributeabstractcelldataitem.h \
            datamodel/post2dwindowgridattributeabstractcellgroupdataitem.h \
            datamodel/post2dwindowgridattributecelldataitem.h \
@@ -217,10 +216,9 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowabstractcellscalargrouptopdataitem_attributebrowsercontroller.h \
            datamodel/private/post2dwindowcalculationresultdataitem_impl.h \
            datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h \
+           datamodel/private/post2dwindowgraphgroupdataitem_editwidget.h \
+           datamodel/private/post2dwindowgraphgroupdataitem_editwidget_customregiondialog.h \
            datamodel/private/post2dwindowgraphgroupdataitem_impl.h \
-           datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowgraphsettingcustomregiondialog.h \
-           datamodel/private/post2dwindowgraphsettingdialog_impl.h \
            datamodel/private/post2dwindowgridattributeabstractcelldataitem_propertydialog.h \
            datamodel/private/post2dwindowgridattributeabstractcellgroupdataitem_impl.h \
            datamodel/private/post2dwindowgridattributenodedataitem_propertydialog.h \
@@ -275,10 +273,10 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.h \
            datamodel/private/post2dwindowzonedataitem_impl.h
 FORMS += post2dgridregionselectdialog.ui \
-         datamodel/post2dwindowgraphsettingdialog.ui \
          datamodel/private/post2dwindowabstractcellscalargroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.ui \
-         datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui \
+         datamodel/private/post2dwindowgraphgroupdataitem_editwidget.ui \
+         datamodel/private/post2dwindowgraphgroupdataitem_editwidget_customregiondialog.ui \
          datamodel/private/post2dwindowgridattributeabstractcelldataitem_propertydialog.ui \
          datamodel/private/post2dwindowgridattributenodedataitem_propertydialog.ui \
          datamodel/private/post2dwindowgridshapedataitem_settingeditwidget.ui \
@@ -324,7 +322,6 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowgraphdataitem.cpp \
            datamodel/post2dwindowgraphgroupdataitem.cpp \
            datamodel/post2dwindowgraphsetting.cpp \
-           datamodel/post2dwindowgraphsettingdialog.cpp \
            datamodel/post2dwindowgridattributeabstractcelldataitem.cpp \
            datamodel/post2dwindowgridattributeabstractcellgroupdataitem.cpp \
            datamodel/post2dwindowgridattributecelldataitem.cpp \
@@ -380,8 +377,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowabstractcellscalargrouptopdataitem_attributebrowsercontroller.cpp \
            datamodel/private/post2dwindowcalculationresultdataitem_impl.cpp \
            datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.cpp \
-           datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowgraphsettingcustomregiondialog.cpp \
+           datamodel/private/post2dwindowgraphgroupdataitem_editwidget.cpp \
+           datamodel/private/post2dwindowgraphgroupdataitem_editwidget_customregiondialog.cpp \
            datamodel/private/post2dwindowgridattributeabstractcelldataitem_propertydialog.cpp \
            datamodel/private/post2dwindowgridattributenodedataitem_propertydialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_settingeditwidget.cpp \
