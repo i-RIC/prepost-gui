@@ -51,6 +51,4 @@ void DistanceMeasureDataItem::DefineCommand::apply(const QPointF& p1, const QPoi
 	m_item->impl->m_setting.defined = defined;
 
 	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
 }

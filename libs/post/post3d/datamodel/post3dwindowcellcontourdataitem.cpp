@@ -1,7 +1,7 @@
 #include "post3dwindowcellcontourdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
 
-#include <guicore/grid/v4structured3dgrid.h>u
+#include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>

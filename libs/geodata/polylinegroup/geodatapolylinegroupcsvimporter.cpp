@@ -52,7 +52,7 @@ const QStringList GeoDataPolyLineGroupCsvImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidget* w)
+bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto group = dynamic_cast<GeoDataPolyLineGroup*>(data);
 
@@ -219,7 +219,7 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidg
 }
 
 
-bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DistanceMeasurePropertyDialog</class>
- <widget class="QDialog" name="DistanceMeasurePropertyDialog">
+ <class>DistanceMeasureDataItem_EditWidget</class>
+ <widget class="QWidget" name="DistanceMeasureDataItem_EditWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>361</width>
-    <height>489</height>
+    <width>380</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Distance Measure Property</string>
+   <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -297,16 +297,6 @@
      </property>
     </spacer>
    </item>
-   <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <customwidgets>
@@ -331,66 +321,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>DistanceMeasurePropertyDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>266</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>DistanceMeasurePropertyDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>319</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>showLabelCheckBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>groupBox_2</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>59</x>
-     <y>106</y>
+     <x>32</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
-     <x>59</x>
-     <y>186</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>showLabelCheckBox</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupBox_3</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>40</x>
-     <y>106</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>50</x>
-     <y>285</y>
+     <x>30</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>
@@ -401,12 +343,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
-     <y>300</y>
+     <x>16</x>
+     <y>382</y>
     </hint>
     <hint type="destinationlabel">
-     <x>117</x>
-     <y>324</y>
+     <x>122</x>
+     <y>407</y>
     </hint>
    </hints>
   </connection>

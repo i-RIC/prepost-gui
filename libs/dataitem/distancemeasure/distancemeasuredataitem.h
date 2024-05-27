@@ -31,12 +31,15 @@ public:
 	void setPoints(const QPointF& v1, const QPointF& v2);
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 
+signals:
+	void startPointEdited(const QPointF& point);
+	void endPointEdited(const QPointF& point);
+
 public slots:
-	void showPropDialog();
+	void showPropertyDialog() override;
 	void redefine();
 
 private:
@@ -46,15 +49,16 @@ private:
 	QPointF updatePoint2ByShift(const QPointF& v1, const QPointF& v2);
 	void updateMouseEventMode(const QPointF& v, VTKGraphicsView* view);
 	void setupActors();
-	void updateActorSettings();
 	QString autoLabel() const;
 	void updateMouseCursor();
 	void updateMouseCursor(VTKGraphicsView* v);
+	void updateActorSetting() override;
 
 private:
 	class Impl;
 	Impl* impl;
 
+	class EditWidget;
 	class DefineCommand;
 	class MoveVertexCommand;
 	class RedefineCommand;

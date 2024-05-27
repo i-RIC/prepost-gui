@@ -185,6 +185,7 @@ protected:
 public:
 	friend class BackgroundImageInfo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
+	friend class GraphicsWindowDataItemStandardItemEditTextCommand;
 
 private:
 	class ModifyCommand;

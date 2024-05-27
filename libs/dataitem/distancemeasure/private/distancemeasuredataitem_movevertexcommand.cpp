@@ -57,6 +57,4 @@ void DistanceMeasureDataItem::MoveVertexCommand::apply(const QPointF& p, Impl::M
 	m_item->impl->m_mouseEventMode = mode;
 
 	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
 }
