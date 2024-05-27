@@ -80,7 +80,6 @@ HEADERS += autoparticlewindowi.h \
            time/posttimedataitem.h \
            time/posttimeeditdialog.h \
            title/posttitledataitem.h \
-           title/posttitleeditdialog.h \
            title/posttitlesetting.h \
            particle/private/particledatasettingeditwidget_modifycommand.h \
            polydata/private/polydatasettingeditwidget_modifycommand.h \
@@ -88,7 +87,7 @@ HEADERS += autoparticlewindowi.h \
            string/private/poststringresultengine_impl.h \
            string/public/poststringresultsettingcontainer_imagebuilder.h \
            time/private/posttimedataitem_setsettingcommand.h \
-           title/private/posttitledataitem_setsettingcommand.h
+           title/private/posttitledataitem_editwidget.h
 FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
          particle/particledatasettingeditwidget.ui \
@@ -98,7 +97,7 @@ FORMS += postallzoneselectingdialog.ui \
          string/poststringresultargumentsettingeditdialog.ui \
          string/poststringresultsettingeditwidget.ui \
          time/posttimeeditdialog.ui \
-         title/posttitleeditdialog.ui
+         title/private/posttitledataitem_editwidget.ui
 SOURCES += postallzoneselectingdialog.cpp \
            particle/particlearbitrarytimeeditdialog.cpp \
            particle/particledatasetting.cpp \
@@ -118,7 +117,6 @@ SOURCES += postallzoneselectingdialog.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \
-           title/posttitleeditdialog.cpp \
            title/posttitlesetting.cpp \
            particle/private/particledatasettingeditwidget_modifycommand.cpp \
            polydata/private/polydatasettingeditwidget_modifycommand.cpp \
@@ -126,7 +124,7 @@ SOURCES += postallzoneselectingdialog.cpp \
            string/private/poststringresultengine_impl.cpp \
            string/public/poststringresultsettingcontainer_imagebuilder.cpp \
            time/private/posttimedataitem_setsettingcommand.cpp \
-           title/private/posttitledataitem_setsettingcommand.cpp
+           title/private/posttitledataitem_editwidget.cpp
 TRANSLATIONS += languages/iricPostbase_ar_EG.ts \
                 languages/iricPostbase_bg_BG.ts \
                 languages/iricPostbase_bs_BA.ts \
