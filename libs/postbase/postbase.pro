@@ -78,7 +78,6 @@ HEADERS += autoparticlewindowi.h \
            string/poststringresultsettingcontainer.h \
            string/poststringresultsettingeditwidget.h \
            time/posttimedataitem.h \
-           time/posttimeeditdialog.h \
            title/posttitledataitem.h \
            title/posttitlesetting.h \
            particle/private/particledatasettingeditwidget_modifycommand.h \
@@ -86,7 +85,7 @@ HEADERS += autoparticlewindowi.h \
            string/private/poststringresultengine_argument.h \
            string/private/poststringresultengine_impl.h \
            string/public/poststringresultsettingcontainer_imagebuilder.h \
-           time/private/posttimedataitem_setsettingcommand.h \
+           time/private/posttimedataitem_editwidget.h \
            title/private/posttitledataitem_editwidget.h
 FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
@@ -96,7 +95,7 @@ FORMS += postallzoneselectingdialog.ui \
          polydata/polydatasettingtoolbarwidget.ui \
          string/poststringresultargumentsettingeditdialog.ui \
          string/poststringresultsettingeditwidget.ui \
-         time/posttimeeditdialog.ui \
+         time/private/posttimedataitem_editwidget.ui \
          title/private/posttitledataitem_editwidget.ui
 SOURCES += postallzoneselectingdialog.cpp \
            particle/particlearbitrarytimeeditdialog.cpp \
@@ -115,7 +114,6 @@ SOURCES += postallzoneselectingdialog.cpp \
            string/poststringresultsettingcontainer.cpp \
            string/poststringresultsettingeditwidget.cpp \
            time/posttimedataitem.cpp \
-           time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \
            title/posttitlesetting.cpp \
            particle/private/particledatasettingeditwidget_modifycommand.cpp \
@@ -123,7 +121,7 @@ SOURCES += postallzoneselectingdialog.cpp \
            string/private/poststringresultengine_argument.cpp \
            string/private/poststringresultengine_impl.cpp \
            string/public/poststringresultsettingcontainer_imagebuilder.cpp \
-           time/private/posttimedataitem_setsettingcommand.cpp \
+           time/private/posttimedataitem_editwidget.cpp \
            title/private/posttitledataitem_editwidget.cpp
 TRANSLATIONS += languages/iricPostbase_ar_EG.ts \
                 languages/iricPostbase_bg_BG.ts \
