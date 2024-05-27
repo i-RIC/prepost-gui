@@ -252,10 +252,6 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 	}
 
 	m_objectBrowserView->deleteAction()->setEnabled(dataItem->isDeletable());
-
-	auto dialog = dataItem->propertyDialog(mainWindow());
-	m_objectBrowserView->propertyAction()->setEnabled(dialog != nullptr);
-	delete dialog;
 }
 
 void GraphicsWindowDataModel::editLegendBulkSetting()
