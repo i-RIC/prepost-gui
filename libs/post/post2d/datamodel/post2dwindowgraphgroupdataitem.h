@@ -27,6 +27,7 @@ public:
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
+	void showPropertyDialog() override;
 
 private:
 	void setDefaultSetting();
@@ -37,17 +38,17 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	void assignActorZValues(const ZDepthRange& range) override;
 	void updateZDepthRangeItemCount() override;
 
 	void innerUpdateZScale(double scale) override;
+	void updateActorSetting() override;
 
 	class Impl;
 	std::unique_ptr<Impl> impl;
 
-	class SetSettingCommand;
+	class EditWidget;
 };
 
 #ifdef _DEBUG

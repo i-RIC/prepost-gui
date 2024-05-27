@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Post2dWindowGraphSettingDialog</class>
- <widget class="QDialog" name="Post2dWindowGraphSettingDialog">
+ <class>Post2dWindowGraphGroupDataItem_EditWidget</class>
+ <widget class="QWidget" name="Post2dWindowGraphGroupDataItem_EditWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>372</height>
+    <width>627</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Graph Setting</string>
+   <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
@@ -119,6 +119,9 @@
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
@@ -135,6 +138,9 @@
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
                 </property>
                </widget>
               </item>
@@ -439,16 +445,6 @@
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <customwidgets>
@@ -467,50 +463,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Post2dWindowGraphSettingDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>257</x>
-     <y>362</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>Post2dWindowGraphSettingDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>325</x>
-     <y>362</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>regionPartialRadioButton</sender>
    <signal>toggled(bool)</signal>
    <receiver>startSlider</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>82</x>
+     <x>101</x>
      <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>120</x>
-     <y>143</y>
+     <x>117</x>
+     <y>146</y>
     </hint>
    </hints>
   </connection>
@@ -521,12 +485,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>63</x>
-     <y>119</y>
+     <x>65</x>
+     <y>117</y>
     </hint>
     <hint type="destinationlabel">
-     <x>90</x>
-     <y>170</y>
+     <x>86</x>
+     <y>173</y>
     </hint>
    </hints>
   </connection>
@@ -537,12 +501,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>43</x>
-     <y>119</y>
+     <x>36</x>
+     <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>88</x>
-     <y>195</y>
+     <x>97</x>
+     <y>205</y>
     </hint>
    </hints>
   </connection>
@@ -553,12 +517,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>52</x>
+     <x>60</x>
      <y>229</y>
     </hint>
     <hint type="destinationlabel">
-     <x>103</x>
-     <y>227</y>
+     <x>104</x>
+     <y>232</y>
     </hint>
    </hints>
   </connection>
@@ -569,12 +533,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>301</x>
-     <y>39</y>
+     <x>500</x>
+     <y>40</y>
     </hint>
     <hint type="destinationlabel">
-     <x>300</x>
-     <y>59</y>
+     <x>350</x>
+     <y>65</y>
     </hint>
    </hints>
   </connection>

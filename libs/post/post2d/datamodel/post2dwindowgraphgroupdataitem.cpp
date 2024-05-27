@@ -1,12 +1,12 @@
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgraphdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
-#include "post2dwindowgraphsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindowgraphgroupdataitem_editwidget.h"
 #include "private/post2dwindowgraphgroupdataitem_impl.h"
-#include "private/post2dwindowgraphgroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/grid/public/v4grid_attributedataprovider.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
@@ -216,8 +216,6 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	impl->m_baseLinesPolyData->SetPoints(basePoints);
 
 	setDefaultSetting();
-
-	update();
 }
 
 Post2dWindowGraphGroupDataItem::~Post2dWindowGraphGroupDataItem()
@@ -228,6 +226,115 @@ Post2dWindowGraphGroupDataItem::~Post2dWindowGraphGroupDataItem()
 }
 
 void Post2dWindowGraphGroupDataItem::update()
+{
+	updateActorSetting();
+}
+
+std::string Post2dWindowGraphGroupDataItem::target() const
+{
+	return impl->m_setting.graphTarget;
+}
+
+void Post2dWindowGraphGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	impl->m_setting.graphTarget = QString(target.c_str());
+	update();
+}
+
+void Post2dWindowGraphGroupDataItem::setTargetWithoutSignal(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems, true);
+	impl->m_setting.graphTarget = QString(target.c_str());
+	update();
+}
+
+void Post2dWindowGraphGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
+{
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Graph Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
+}
+
+void Post2dWindowGraphGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
+void Post2dWindowGraphGroupDataItem::setDefaultSetting()
+{
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+	int dims[3];
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
+
+	auto& s = impl->m_setting;
+	s.direction = Post2dWindowGraphSetting::dirI;
+	s.regionStartIndex = 0;
+	s.regionEndIndex = dims[0] - 1;
+	s.regionSkipIndex = 1;
+	s.graphTarget = "";
+}
+
+Post2dWindowCalculationResultDataItem* Post2dWindowGraphGroupDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*> (parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowGraphGroupDataItem::zoneDataItem() const
+{
+	return resultDataItem()->zoneDataItem();
+}
+
+void Post2dWindowGraphGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	impl->m_setting.load(node);
+	setTargetWithoutSignal(impl->m_setting.graphTarget);
+}
+
+void Post2dWindowGraphGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	impl->m_setting.save(writer);
+}
+
+QDialog* Post2dWindowGraphGroupDataItem::propertyDialog(QWidget* p)
+{
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+	int dims[3];
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
+
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new EditWidget(this, dialog);
+	widget->setDimensions(dims[0], dims[1]);
+	widget->setTargets(vtkDataSetAttributesTool::getArrayNamesWithOneComponent(sGrid->vtkData()->data()->GetPointData()));
+	widget->setSetting(impl->m_setting);
+
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Graph Setting"));
+
+	return dialog;
+}
+
+void Post2dWindowGraphGroupDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	impl->m_baseLinesActor.actor()->SetPosition(0, 0, range.min());
+	impl->m_graphLinesActor.linesActor()->SetPosition(0, 0, range.max());
+}
+
+void Post2dWindowGraphGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
+void Post2dWindowGraphGroupDataItem::innerUpdateZScale(double scale)
+{
+	impl->m_baseLinesActor.actor()->SetScale(1, scale, 1);
+	impl->m_graphLinesActor.linesActor()->SetScale(1, scale, 1);
+}
+
+void Post2dWindowGraphGroupDataItem::updateActorSetting()
 {
 	auto col = actorCollection();
 	col->RemoveItem(impl->m_baseLinesActor.actor());
@@ -354,105 +461,4 @@ void Post2dWindowGraphGroupDataItem::update()
 	col->AddItem(impl->m_graphLinesActor.linesActor());
 
 	updateVisibilityWithoutRendering();
-}
-
-std::string Post2dWindowGraphGroupDataItem::target() const
-{
-	return impl->m_setting.graphTarget;
-}
-
-void Post2dWindowGraphGroupDataItem::setTarget(const std::string& target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	impl->m_setting.graphTarget = QString(target.c_str());
-	update();
-}
-
-void Post2dWindowGraphGroupDataItem::setTargetWithoutSignal(const std::string& target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems, true);
-	impl->m_setting.graphTarget = QString(target.c_str());
-	update();
-}
-
-void Post2dWindowGraphGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Graph Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
-}
-
-void Post2dWindowGraphGroupDataItem::setDefaultSetting()
-{
-	auto cont = zoneDataItem()->v4DataContainer();
-	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
-	int dims[3];
-	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
-
-	auto& s = impl->m_setting;
-	s.direction = Post2dWindowGraphSetting::dirI;
-	s.regionStartIndex = 0;
-	s.regionEndIndex = dims[0] - 1;
-	s.regionSkipIndex = 1;
-	s.graphTarget = "";
-}
-
-Post2dWindowCalculationResultDataItem* Post2dWindowGraphGroupDataItem::resultDataItem() const
-{
-	return dynamic_cast<Post2dWindowCalculationResultDataItem*> (parent());
-}
-
-Post2dWindowZoneDataItem* Post2dWindowGraphGroupDataItem::zoneDataItem() const
-{
-	return resultDataItem()->zoneDataItem();
-}
-
-void Post2dWindowGraphGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	impl->m_setting.load(node);
-	setTargetWithoutSignal(impl->m_setting.graphTarget);
-}
-
-void Post2dWindowGraphGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	impl->m_setting.save(writer);
-}
-
-QDialog* Post2dWindowGraphGroupDataItem::propertyDialog(QWidget* p)
-{
-	auto cont = zoneDataItem()->v4DataContainer();
-	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
-	int dims[3];
-	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
-
-	auto dialog = new Post2dWindowGraphSettingDialog(p);
-	dialog->setDimensions(dims[0], dims[1]);
-	dialog->setTargets(vtkDataSetAttributesTool::getArrayNamesWithOneComponent(sGrid->vtkData()->data()->GetPointData()));
-
-	dialog->setSetting(impl->m_setting);
-	return dialog;
-}
-
-void Post2dWindowGraphGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<Post2dWindowGraphSettingDialog*> (propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
-}
-
-void Post2dWindowGraphGroupDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	impl->m_baseLinesActor.actor()->SetPosition(0, 0, range.min());
-	impl->m_graphLinesActor.linesActor()->SetPosition(0, 0, range.max());
-}
-
-void Post2dWindowGraphGroupDataItem::updateZDepthRangeItemCount()
-{
-	m_zDepthRange.setItemCount(2);
-}
-
-void Post2dWindowGraphGroupDataItem::innerUpdateZScale(double scale)
-{
-	impl->m_baseLinesActor.actor()->SetScale(1, scale, 1);
-	impl->m_graphLinesActor.linesActor()->SetScale(1, scale, 1);
 }
