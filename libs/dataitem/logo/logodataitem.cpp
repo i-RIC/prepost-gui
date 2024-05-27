@@ -66,6 +66,7 @@ void LogoDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 void LogoDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
+	updateActorSetting();
 }
 
 void LogoDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
