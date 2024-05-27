@@ -161,6 +161,7 @@ void Post2dWindowZoneDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
 
 void Post2dWindowZoneDataItem::clearEdgeFocus()
 {
+	if (impl->m_inputGridDataItem == nullptr) {return;}
 	impl->m_inputGridDataItem->clearEdgeFocus();
 }
 
