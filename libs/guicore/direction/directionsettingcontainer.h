@@ -34,17 +34,23 @@ public:
 	DirectionSettingContainer& operator=(const DirectionSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	vtkPolyData* buildDirectionPolygonData(vtkPointSet* data, SolverDefinitionGridAttribute* att, VTKGraphicsView* view) const;
+	std::vector<vtkIdType> findWrongPoints(vtkPointSet* data);
+	std::vector<vtkIdType> findWrongPoints(vtkPointSet* data, vtkIdType downstreamPoint);
+	vtkIdType findDownstreamPoint(vtkPointSet* data);
+
+	void buildDirectionPolygonData(vtkPointSet* data, SolverDefinitionGridAttribute* att, VTKGraphicsView* view, const std::vector<vtkIdType>& wrongCells, vtkActor* actor, vtkActor* wrongActor) const;
 	void getDiff(int value, int* iDiff, int* jDiff) const;
 
 	EnumContainerT<Mode> mode;
 	ColorContainer color;
+	ColorContainer wrongColor;
 	OpacityContainer opacity;
 	IntContainer lineWidth;
 	IntContainer arrowSize;
 
 private:
 	vtkConeSource* buildConeSource(VTKGraphicsView* view) const;
+	void findWrongPointsRecursively(vtkIntArray* data, vtkIdType cellICount, vtkIdType cellJCount, vtkIdType current, std::vector<bool>* wrong);
 };
 
 #endif // DIRECTIONSETTINGCONTAINER_H
