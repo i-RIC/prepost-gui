@@ -226,6 +226,8 @@ QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* ne
 	container->setWindowIcon(newitem->window()->icon());
 
 	m_postProcessorWindows.push_back(newitem);
+	container->show();
+
 	return container;
 }
 

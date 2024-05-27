@@ -52,8 +52,6 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 	impl->m_tmpIndex = iRIC::getIntAttribute(node, "positionIndex");
 	impl->m_tmpCellSide = static_cast<Controller::CellSide> (iRIC::getIntAttribute(node, "cellside"));
 
-	impl->graphicsView()->loadFromProjectMainFile(node);
-
 	auto dsNode = iRIC::getChildNode(node, "DisplaySetting");
 	if (! dsNode.isNull()) {
 		impl->m_displaySetting.load(dsNode);
@@ -73,6 +71,9 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 	}
 
 	applyTmpTargetSetting();
+
+	impl->graphicsView()->loadFromProjectMainFile(node);
+	update();
 }
 
 void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
@@ -136,8 +137,6 @@ void AbstractCrosssectionWindow::update()
 	impl->updateColorMapValueRanges();
 	impl->m_displaySettingTableController->updateVisible();
 	impl->m_editTableController->applyToTable();
-
-	updateGraphicsView();
 }
 
 void AbstractCrosssectionWindow::handleSettingChange()
