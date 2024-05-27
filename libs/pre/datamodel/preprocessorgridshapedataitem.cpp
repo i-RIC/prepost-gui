@@ -158,8 +158,7 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;
 	} else if (event->button() == Qt::RightButton) {
-		QPoint releasePoint(event->x(), event->y());
-		if (iRIC::isNear(m_pressPoint, releasePoint)) {
+		if (iRIC::isNear(m_pressPoint, event->pos())) {
 			delete menu;
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
@@ -172,6 +171,8 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 				menu->addAction(m_openVXsectionWindowAction);
 			}
 
+			m_nearSelectedPoint = false;
+			m_draggingSelectedPoints = false;
 			menu->move(event->globalPos());
 			menu->show();
 		}

@@ -96,7 +96,7 @@ public:
 	class DisplaySettingWidget;
 
 public slots:
-	void restoreMouseEventMode();
+	void restoreMouseEventMode() override;
 
 private slots:
 	void addVertexMode(bool on);

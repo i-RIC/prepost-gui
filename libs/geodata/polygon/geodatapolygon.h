@@ -120,7 +120,7 @@ public:
 	class DisplaySettingWidget;
 
 public slots:
-	void restoreMouseEventMode();
+	void restoreMouseEventMode() override;
 
 private slots:
 	void updatePolyData(bool noDraw = false);
