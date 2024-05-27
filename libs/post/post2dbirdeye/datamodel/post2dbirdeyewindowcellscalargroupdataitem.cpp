@@ -50,7 +50,7 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::Post2dBirdEyeWindowCellScalarGroupDa
 		const auto& name = pair.first;
 		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
-	for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
+	for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges()) {
 		const auto& name = pair.first;
 		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
