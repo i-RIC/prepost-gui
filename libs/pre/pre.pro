@@ -298,6 +298,7 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -444,6 +445,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
+         datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
@@ -458,6 +460,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_settingeditwidget.ui \
          subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_settingeditwidget.ui
 SOURCES += preobjectbrowser.cpp \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \

@@ -4,6 +4,7 @@
 #include "preprocessorgridattributeabstractcellgroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorgridattributeabstractcelldataitem_propertydialog.h"
+#include "private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.h"
 #include "public/preprocessorgriddataitem_selectedcellscontroller.h"
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
@@ -49,7 +50,9 @@
 PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstractCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
 	m_directionSetting {},
+	m_wrongPoints {},
 	m_directionActor {vtkActor::New()},
+	m_wrongDirectionActor {vtkActor::New()},
 	m_condition {cond},
 	m_isCustomModified {"isCustomModified", false},
 	m_definingBoundingBox {false},
@@ -58,6 +61,7 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 	m_generatePointMapAction {new QAction(tr("Generate point cloud data"), this)},
 	m_editDifferenceAction {new QAction(tr("Edit value by specifying difference..."), this)},
 	m_editRatioAction {new QAction(tr("Edit value by specifying ratio..."), this)},
+	m_findWrongPointsAction {new QAction(tr("Find wrong direction points"), this)},
 	m_colorMapToolBarWidgetController {nullptr}
 {
 	m_editValueAction->setDisabled(true);
@@ -69,6 +73,7 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 	connect(m_generatePointMapAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::generatePointMap);
 	connect(m_editDifferenceAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::editDifference);
 	connect(m_editRatioAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::editRatio);
+	connect(m_findWrongPointsAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::findWrongPoints);
 
 	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
@@ -80,13 +85,18 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 
 	m_directionActor->GetProperty()->LightingOff();
 	renderer()->AddActor(m_directionActor);
+
+	m_wrongDirectionActor->GetProperty()->LightingOff();
+	renderer()->AddActor(m_wrongDirectionActor);
 }
 
 PreProcessorGridAttributeAbstractCellDataItem::~PreProcessorGridAttributeAbstractCellDataItem()
 {
 	renderer()->RemoveActor(m_directionActor);
+	renderer()->RemoveActor(m_wrongDirectionActor);
 
 	m_directionActor->Delete();
+	m_wrongDirectionActor->Delete();
 }
 
 QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* p)
@@ -181,18 +191,21 @@ void PreProcessorGridAttributeAbstractCellDataItem::updateActorSetting()
 		data->GetCellData()->SetActiveScalars(m_condition->name().c_str());
 
 		auto view = dataModel()->graphicsView();
-		auto polyData = m_directionSetting.buildDirectionPolygonData(data, m_condition, view);
+		m_directionSetting.buildDirectionPolygonData(data, m_condition, view, m_wrongPoints, m_directionActor, m_wrongDirectionActor);
+		/*
 		auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 		mapper->ScalarVisibilityOff();
 		mapper->SetInputData(polyData);
 		m_directionActor->SetMapper(mapper);
 		polyData->Delete();
-
 		m_directionActor->GetProperty()->SetColor(m_directionSetting.color);
 		m_directionActor->GetProperty()->SetOpacity(m_directionSetting.opacity);
 		m_directionActor->GetProperty()->SetLineWidth(m_directionSetting.lineWidth);
+		*/
 
 		m_actorCollection->AddItem(m_directionActor);
+		m_actorCollection->AddItem(m_wrongDirectionActor);
+
 		updateVisibilityWithoutRendering();
 	}
 }
@@ -266,6 +279,11 @@ void PreProcessorGridAttributeAbstractCellDataItem::mouseReleaseEvent(QMouseEven
 			menu->addAction(m_editRatioAction);
 			m_editRatioAction->setEnabled(cellSelected);
 		}
+
+		if (m_condition->isDirection()) {
+			menu->addSeparator();
+			menu->addAction(m_findWrongPointsAction);
+		}
 		menu->addSeparator();
 		menu->addAction(groupDataItem()->showAttributeBrowserAction());
 		menu->move(event->globalPos());
@@ -286,6 +304,9 @@ void PreProcessorGridAttributeAbstractCellDataItem::keyReleaseEvent(QKeyEvent* e
 void PreProcessorGridAttributeAbstractCellDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_generatePointMapAction);
+	if (condition()->isDirection()) {
+		menu->addAction(m_findWrongPointsAction);
+	}
 	menu->addSeparator();
 	menu->addAction(m_exportAction);
 	menu->addSeparator();
@@ -451,6 +472,24 @@ void PreProcessorGridAttributeAbstractCellDataItem::generatePointMap()
 	QMessageBox::information(mainWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
 }
 
+void PreProcessorGridAttributeAbstractCellDataItem::findWrongPoints()
+{
+	if (! m_condition->isDirection()) {return;}
+
+	auto data = groupDataItem()->data()->data();
+	data->GetCellData()->SetActiveScalars(m_condition->name().c_str());
+
+	auto wrongPoints = m_directionSetting.findWrongPoints(data);
+	m_wrongPoints = wrongPoints;
+	updateActorSetting();
+
+	auto dialog = new WrongPointListDialog(this, dataModel()->mainWindow());
+	dialog->setAttribute(Qt::WA_DeleteOnClose);
+	dialog->setPointList(wrongPoints);
+
+	dialog->show();
+}
+
 void PreProcessorGridAttributeAbstractCellDataItem::showPropertyDialog()
 {
 	showPropertyDialogModeless();
@@ -464,6 +503,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::updateZDepthRangeItemCount()
 void PreProcessorGridAttributeAbstractCellDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_directionActor->SetPosition(0, 0, range.min());
+	m_wrongDirectionActor->SetPosition(0, 0, range.min());
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::informSelection(VTKGraphicsView* /*v*/)

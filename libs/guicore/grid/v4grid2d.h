@@ -8,6 +8,8 @@
 class GUICOREDLL_EXPORT v4Grid2d : public v4Grid
 {
 public:
+	static const char* ORIGINAL_ID;
+
 	v4Grid2d(vtkPointSetExtended* data);
 	~v4Grid2d();
 

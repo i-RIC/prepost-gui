@@ -27,6 +27,7 @@ DirectionSettingContainer DirectionSettingEditWidget::setting() const
 		ret.mode = DirectionSettingContainer::Mode::Mode1to128;
 	}
 	ret.color = ui->colorWidget->color();
+	ret.wrongColor = ui->wrongColorWidget->color();
 	ret.opacity = ui->opacityWidget->opacity();
 	ret.arrowSize = ui->sizeSpinBox->value();
 	ret.lineWidth = ui->widthSpinBox->value();
@@ -42,6 +43,7 @@ void DirectionSettingEditWidget::setSetting(const DirectionSettingContainer& set
 		ui->mode1to128RadioButton->setChecked(true);
 	}
 	ui->colorWidget->setColor(setting.color);
+	ui->wrongColorWidget->setColor(setting.wrongColor);
 	ui->opacityWidget->setOpacity(setting.opacity);
 	ui->sizeSpinBox->setValue(setting.arrowSize);
 	ui->widthSpinBox->setValue(setting.lineWidth);
