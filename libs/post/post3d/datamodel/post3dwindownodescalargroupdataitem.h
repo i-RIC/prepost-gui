@@ -13,12 +13,12 @@
 
 #include <QColor>
 
+#include <memory>
+
 class NamedGraphicWindowDataItem;
 class Post3dWindowNodeScalarGroupTopDataItem;
 
-class vtkLODActor;
 class vtkActor;
-class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
@@ -35,54 +35,39 @@ private:
 
 public:
 	Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* parent);
+	Post3dWindowNodeScalarGroupDataItem(const std::string& target, Post3dWindowDataItem* parent);
 	~Post3dWindowNodeScalarGroupDataItem();
 
-	void updateActorSettings();
 	void informDataChange(const QString& name);
-	void setupActors();
 	void updateZDepthRangeItemCount() override;
-	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
 public slots:
+	void showPropertyDialog() override;
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void updateVisibility() override;
-	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
-	void updateColorSetting();
-	void validateRange();
 
 private:
+	void setupActors();
+	void updateActorSetting() override;
+
 	void setDefaultValues();
 	void setupIsosurfaceSetting();
 	Post3dWindowNodeScalarGroupTopDataItem* topDataItem() const;
 
-	std::string m_target;
-	bool m_fullRange;
-	StructuredGridRegion::Range3d m_range;
-	double m_isoValue;
-	QColor m_color;
-	OpacityContainer m_opacity;
-
-	vtkSmartPointer<vtkActor> m_isoSurfaceActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_isoSurfaceMapper;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 
 	class SetSettingCommand;
-
-public:
-	friend class Post3dWindowIsosurfaceSetProperty;
-	friend class Post3dWindowIsosurfaceSelectSolution;
-	friend class Post3dWindowNodeScalarGroupTopDataItem::CreateCommand;
-	friend class Post3dWindowNodeScalarGroupTopDataItem::DeleteCommand;
+	class Setting;
+	class SettingEditWidget;
 };
 
 #endif // POST3DWINDOWNODESCALARGROUPDATAITEM_H

@@ -35,9 +35,7 @@ public:
 	~Post3dWindowNodeScalarGroupTopDataItem();
 
 	Post3dWindowZoneDataItem* zoneDataItem() const;
-	void updateActorSettings();
 	void informDataChange(const QString& name);
-	void setupActors();
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
@@ -50,22 +48,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdateZScale(double scale) override;
 
-	void setDefaultValues();
-
-	std::string m_target;
-	bool m_fullRange;
-	StructuredGridRegion::Range3d m_range;
-	double m_isoValue;
 	double m_zScale;
-	QColor m_color;
-	vtkSmartPointer<vtkActor> m_isoSurfaceActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_isoSurfaceMapper;
-
-public:
-	class CreateCommand;
-	class DeleteCommand;
-	friend class Post3dWindowIsosurfaceSetProperty;
-	friend class Post3dWindowIsosurfaceSelectSolution;
 };
 
 #endif // POST3DWINDOWNODESCALARGROUPTOPDATAITEM_H
