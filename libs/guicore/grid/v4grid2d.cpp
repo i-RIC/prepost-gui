@@ -19,6 +19,8 @@ v4Grid2d::Impl::~Impl()
 	}
 }
 
+const char* v4Grid2d::ORIGINAL_ID = "_originial_id";
+
 v4Grid2d::v4Grid2d(vtkPointSetExtended* data) :
 	v4Grid {data},
 	impl {new Impl {}}
