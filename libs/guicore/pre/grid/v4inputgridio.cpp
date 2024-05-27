@@ -119,6 +119,7 @@ v4Unstructured2dGrid* v4InputGridIO::loadUnstructured2dGrid(const iRICLib::H5Cgn
 		vtkGrid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
 	}
 	vtkGrid->BuildLinks();
+	grid->pointsModified();
 
 	*ier = IRIC_NO_ERROR;
 	return grid;
@@ -166,6 +167,7 @@ v4Structured15dGridWithCrossSection* v4InputGridIO::loadStructured15DGridWithCro
 			cs->altitudeInfo().push_back(alt);
 		}
 	}
+	grid->pointsModified();
 
 	*ier = IRIC_NO_ERROR;
 	return grid;
