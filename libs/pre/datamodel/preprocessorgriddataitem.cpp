@@ -451,6 +451,7 @@ v4InputGrid* PreProcessorGridDataItem::grid() const
 bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid)
 {
 	newGrid->grid()->vtkData()->updateValueRangeSet();
+	newGrid->grid()->updateCellIndex();
 
 	delete impl->m_grid;
 	impl->m_grid = newGrid;
