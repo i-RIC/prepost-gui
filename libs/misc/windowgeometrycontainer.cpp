@@ -26,14 +26,24 @@ void WindowGeometryContainer::load(const QDomNode& node)
 	size.setHeight(iRIC::getIntAttribute(node, "height", 480));
 	m_window->resize(size);
 
-	m_window->setWindowState(static_cast<Qt::WindowStates>(iRIC::getIntAttribute(node, "state", 0)));
+	bool min = iRIC::getBooleanAttribute(node, "minimized", false);
+	bool max = iRIC::getBooleanAttribute(node, "maximized", false);
+	if (min) {
+		m_window->showMinimized();
+	} else if (max) {
+		m_window->showMaximized();
+	}
 }
 
 void WindowGeometryContainer::save(QXmlStreamWriter& writer) const
 {
-	auto state = (m_window->windowState() & 7);
-	iRIC::setIntAttribute(writer, "state", static_cast<int> (state));
-	if (state != 0) {
+	bool max = m_window->isMaximized();
+	bool min = m_window->isMinimized();
+
+	iRIC::setBooleanAttribute(writer, "minimized", min);
+	iRIC::setBooleanAttribute(writer, "maximized", max);
+
+	if (max || min) {
 		m_window->setWindowState(Qt::WindowNoState);
 	}
 
@@ -43,7 +53,11 @@ void WindowGeometryContainer::save(QXmlStreamWriter& writer) const
 	iRIC::setIntAttribute(writer, "width", rect.width());
 	iRIC::setIntAttribute(writer, "height", rect.height());
 
-	m_window->setWindowState(state);
+	if (min) {
+		m_window->showMinimized();
+	} else if (max) {
+		m_window->showMaximized();
+	}
 }
 
 void WindowGeometryContainer::setWidget(QWidget* w)
