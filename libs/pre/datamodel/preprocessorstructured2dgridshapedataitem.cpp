@@ -82,6 +82,7 @@ QDialog* PreProcessorStructured2dGridShapeDataItem::propertyDialog(QWidget* pare
 
 	widget->setSetting(&m_setting);
 	dialog->setWindowTitle(tr("Grid Shape Setting"));
+	dialog->resize(150, 150);
 
 	return dialog;
 }

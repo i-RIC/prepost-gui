@@ -1371,24 +1371,30 @@ void Graph2dHybridWindowDataModel::setOrClearEdgeFocus()
 	auto mw = iricMainWindow();
 
 	auto tinfo = m_setting.targetDataTypeInfo();
-	if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
-			mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ());
-			clear = false;
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
-			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1);
-			clear = false;
+	if (tinfo != nullptr) {
+		if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
+				mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ());
+				clear = false;
+			}
+			else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
+				mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1);
+				clear = false;
+			}
 		}
-	} else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
-			mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ(), m_setting.gridK());
-			clear = false;
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
-			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1, m_setting.gridK());
-			clear = false;
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaK) {
-			mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), m_setting.gridJ(), -1);
-			clear = false;
+		else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaI) {
+				mw->setEdgeFocus(tinfo->zoneName, -1, m_setting.gridJ(), m_setting.gridK());
+				clear = false;
+			}
+			else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaJ) {
+				mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), -1, m_setting.gridK());
+				clear = false;
+			}
+			else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::XAxisMode::xaK) {
+				mw->setEdgeFocus(tinfo->zoneName, m_setting.gridI(), m_setting.gridJ(), -1);
+				clear = false;
+			}
 		}
 	}
 
