@@ -97,7 +97,7 @@ void PreProcessorDataModel::init()
 	GeoDataFactorySetup::setup();
 
 	// setup the basic itemModel structure.
-	PreProcessorRootDataItem* root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(mainWindow()), this);
+	auto root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
 	m_geoDataAddSignalMapper = nullptr;
 	root->setZDepthRange(m_dataRange);
