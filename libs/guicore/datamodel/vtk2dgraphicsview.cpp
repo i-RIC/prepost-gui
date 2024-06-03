@@ -58,10 +58,10 @@ void VTK2DGraphicsView::fitInView()
 	// compute the radius of the enclosing sphere
 	radius = sqrt(radius)*0.5;
 	if (radius == 0) {radius = 1;}
+
 	renderer->GetActiveCamera()->SetParallelScale(radius);
-	QUndoCommand* com = new VTKGraphicsViewArbitraryMove(mainRenderer()->GetActiveCamera(), this);
-	com->redo();
-	delete com;
+	VTKGraphicsViewArbitraryMove com(mainRenderer()->GetActiveCamera(), this);
+	com.redo();
 
 	ResetCameraClippingRange();
 	update2Ds();
