@@ -53,6 +53,7 @@ private:
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemI *d) override;
 
 	class DisplaySetting;
+	class ScaleSizePair;
 
 	class Impl;
 	Impl* impl;

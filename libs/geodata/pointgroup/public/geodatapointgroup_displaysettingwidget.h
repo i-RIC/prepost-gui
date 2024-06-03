@@ -2,6 +2,7 @@
 #define GEODATAPOINTGROUP_DISPLAYSETTINGWIDGET_H
 
 #include "../geodatapointgroup.h"
+#include "../private/geodatapointgroup_displaysetting.h"
 
 #include <misc/modifycommandwidget.h>
 
@@ -11,6 +12,8 @@ namespace Ui {
 class GeoDataPointGroup_DisplaySettingWidget;
 }
 
+class QTableView;
+
 class GeoDataPointGroup::DisplaySettingWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
@@ -18,6 +21,9 @@ class GeoDataPointGroup::DisplaySettingWidget : public ModifyCommandWidget
 public:
 	explicit DisplaySettingWidget(QWidget *parent = nullptr);
 	~DisplaySettingWidget();
+
+	QTableView* sizesTable() const;
+	QPushButton* removeButton() const;
 
 	QUndoCommand* createModifyCommand(bool apply) override;
 
@@ -32,9 +38,17 @@ private slots:
 	void updateImage();
 	void clearImage();
 
+	void addValue();
+	void removeValue();
+
 private:
 	QPixmap m_pixmap;
 	DisplaySetting* m_displaySetting;
+	DisplaySetting m_copySetting;
+
+	class ScaleSizePairTableController;
+	ScaleSizePairTableController* m_scaleSizePairTableController;
+
 	Ui::GeoDataPointGroup_DisplaySettingWidget *ui;
 };
 

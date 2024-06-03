@@ -2,6 +2,7 @@
 #define GEODATAPOINTGROUP_DISPLAYSETTING_H
 
 #include "../geodatapointgroup.h"
+#include "geodatapointgroup_scalesizepair.h"
 
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
@@ -14,6 +15,17 @@ class GeoDataPointGroup::DisplaySetting : public CompositeContainer
 public:
 	enum class Mapping {Value, Arbitrary};
 	enum class Shape {Point, Image};
+	enum class AnchorPosition {
+		Center,
+		Top,
+		Bottom,
+		Left,
+		Right,
+		TopLeft,
+		TopRight,
+		BottomLeft,
+		BottomRight
+	};
 
 	DisplaySetting();
 	DisplaySetting(const DisplaySetting& s);
@@ -26,11 +38,14 @@ public:
 
 	EnumContainerT<Mapping> mapping;
 	EnumContainerT<Shape> shape;
+	EnumContainerT<AnchorPosition> anchorPosition;
 	ColorContainer color;
 	OpacityContainer opacity;
 	IntContainer pointSize;
 	QImage image;
 	IntContainer imageMaxSize;
+
+	std::vector<ScaleSizePair> scaleSizePairs;
 };
 
 #endif // GEODATAPOINTGROUP_DISPLAYSETTING_H

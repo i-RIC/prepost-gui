@@ -1,6 +1,7 @@
 #include "geodatapointgroup_displaysettingwidget.h"
 #include "../private/geodatapointgroup_impl.h"
 #include "../private/geodatapointgroup_displaysetting.h"
+#include "../private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller.h"
 #include "ui_geodatapointgroup_displaysettingwidget.h"
 
 #include <misc/lastiodirectory.h>
@@ -22,6 +23,16 @@ GeoDataPointGroup::DisplaySettingWidget::DisplaySettingWidget(QWidget *parent) :
 GeoDataPointGroup::DisplaySettingWidget::~DisplaySettingWidget()
 {
 	delete ui;
+}
+
+QTableView* GeoDataPointGroup::DisplaySettingWidget::sizesTable() const
+{
+	return ui->sizesTableView;
+}
+
+QPushButton* GeoDataPointGroup::DisplaySettingWidget::removeButton() const
+{
+	return ui->removeButton;
 }
 
 QUndoCommand* GeoDataPointGroup::DisplaySettingWidget::createModifyCommand(bool /*apply*/)
@@ -58,6 +69,8 @@ GeoDataPointGroup::DisplaySetting GeoDataPointGroup::DisplaySettingWidget::setti
 
 void GeoDataPointGroup::DisplaySettingWidget::setSetting(const DisplaySetting& setting)
 {
+	m_copySetting = setting;
+
 	if (setting.mapping == DisplaySetting::Mapping::Arbitrary) {
 		ui->arbitraryRadioButton->setChecked(true);
 	} else if (setting.mapping == DisplaySetting::Mapping::Value) {
@@ -68,6 +81,26 @@ void GeoDataPointGroup::DisplaySettingWidget::setSetting(const DisplaySetting& s
 	} else if (setting.shape == DisplaySetting::Shape::Image) {
 		ui->imagesRadioButton->setChecked(true);
 	}
+	if (setting.anchorPosition == DisplaySetting::AnchorPosition::Center) {
+		ui->anchorCenterRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::TopLeft) {
+		ui->anchorTopLeftRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::Top) {
+		ui->anchorTopRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::TopRight) {
+		ui->anchorTopRightRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::Left) {
+		ui->anchorLeftRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::Right) {
+		ui->anchorRightRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::BottomLeft) {
+		ui->anchorBottomLeftRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::Bottom) {
+		ui->anchorBottomRadioButton->setChecked(true);
+	} else if (setting.anchorPosition == DisplaySetting::AnchorPosition::BottomRight) {
+		ui->anchorBottomRightRadioButton->setChecked(true);
+	}
+
 	ui->colorEditWidget->setColor(setting.color);
 	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->pointSizeSpinBox->setValue(setting.pointSize);
@@ -77,6 +110,8 @@ void GeoDataPointGroup::DisplaySettingWidget::setSetting(const DisplaySetting& s
 	ui->maxSizeSpinBox->setValue(setting.imageMaxSize);
 
 	updateImage();
+
+	m_scaleSizePairTableController->applyToTable();
 }
 
 void GeoDataPointGroup::DisplaySettingWidget::setSetting(DisplaySetting* setting)
@@ -119,4 +154,50 @@ void GeoDataPointGroup::DisplaySettingWidget::clearImage()
 {
 	m_pixmap = QPixmap();
 	updateImage();
+}
+
+void GeoDataPointGroup::DisplaySettingWidget::addValue()
+{
+	int row = ui->sizesTableView->currentIndex().row();
+	if (row == -1) {return;}
+
+	auto& pairs = m_copySetting.scaleSizePairs;
+
+	if (row == static_cast<int> (pairs.size()) - 1) {
+		ScaleSizePair newPair;
+		newPair.scale = pairs.at(row).scale * 2 - pairs.at(row - 1).scale;
+		newPair.size = pairs.at(row).size * 2 - pairs.at(row - 1).size;
+		pairs.push_back(newPair);
+	} else {
+		ScaleSizePair newPair;
+		newPair.scale = (pairs.at(row).scale + pairs.at(row + 1).scale) * 0.5;
+		newPair.size = (pairs.at(row).size + pairs.at(row + 1).size) * 0.5;
+		pairs.insert(pairs.begin() + row + 1, newPair);
+	}
+
+	m_scaleSizePairTableController->applyToTable();
+}
+
+void GeoDataPointGroup::DisplaySettingWidget::removeValue()
+{
+	auto& pairs = m_copySetting.scaleSizePairs;
+	std::vector<ScaleSizePair> newPairs;
+
+	auto rows = ui->sizesTableView->selectionModel()->selectedRows();
+	std::unordered_set<unsigned int> rowSet;
+	for (auto r : rows) {
+		rowSet.insert(r.row());
+	}
+
+	for (unsigned int i = 0; i < pairs.size(); ++i) {
+		const auto& pair = pairs.at(i);
+		if (rowSet.find(i) != rowSet.end()) {
+			continue;
+		}
+		newPairs.push_back(pair);
+	}
+
+	pairs = newPairs;
+
+	m_scaleSizePairTableController->applyToTable();
 }

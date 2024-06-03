@@ -119,7 +119,10 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
            private/geodatapointgroup_displaysetting.h \
+           private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller.h \
+           private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller_delegate.h \
            private/geodatapointgroup_impl.h \
+           private/geodatapointgroup_scalesizepair.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
            private/geodatapointgroupnodemappert_detail.h \
@@ -143,7 +146,10 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
            private/geodatapointgroup_displaysetting.cpp \
+           private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller.cpp \
+           private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller_delegate.cpp \
            private/geodatapointgroup_impl.cpp \
+           private/geodatapointgroup_scalesizepair.cpp \
            private/geodatapointgroupproxy_displaysetting.cpp \
            private/geodatapointgroupproxy_displaysettingwidget.cpp \
            private/geodatapointgroupproxy_impl.cpp \
