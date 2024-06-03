@@ -23,10 +23,9 @@ vtkPointSet* vtkPointSetGeos2dIndex::data() const
 
 vtkIdType vtkPointSetGeos2dIndex::findCell(double x, double y, double radius, double* weights)
 {
-	auto env = new geos::geom::Envelope(x - radius, x + radius, y - radius, y + radius);
+	geos::geom::Envelope env(x - radius, x + radius, y - radius, y + radius);
 	std::vector<void*> ret;
-	impl->m_qTree->query(env, ret);
-	delete env;
+	impl->m_qTree->query(&env, ret);
 
 	double point[3], closestPoint[3], pcoords[3], dist2;
 	int subId;
