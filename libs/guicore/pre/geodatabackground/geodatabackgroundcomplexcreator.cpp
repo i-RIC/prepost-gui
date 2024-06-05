@@ -1,7 +1,9 @@
-#include "geodatabackgroundcomplexcreator.h"
-#include "geodatabackgroundnodemappert.h"
 #include "geodatabackgroundcellmappert.h"
 #include "geodatabackgroundcomplex.h"
+#include "geodatabackgroundcomplexcreator.h"
+#include "geodatabackgroundifacemappert.h"
+#include "geodatabackgroundjfacemappert.h"
+#include "geodatabackgroundnodemappert.h"
 
 GeoDataBackgroundComplexCreator* GeoDataBackgroundComplexCreator::m_instance = nullptr;
 
@@ -16,6 +18,10 @@ GeoData* GeoDataBackgroundComplexCreator::create(ProjectDataItem* parent, Solver
 		geodata->setMapper(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 		geodata->setMapper(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		geodata->setMapper(new GeoDataBackgroundIFaceMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		geodata->setMapper(new GeoDataBackgroundJFaceMapperT<int, vtkIntArray>(this));
 	}
 	return geodata;
 }
