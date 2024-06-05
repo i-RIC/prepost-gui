@@ -302,8 +302,10 @@ void DistanceMeasureDataItem::updateActorSetting()
 			actor2DCollection()->AddItem(impl->m_labelActor.actor());
 		}
 	}
-
 	updateVisibilityWithoutRendering();
+
+	auto v = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
+	v->ResetCameraClippingRange();
 }
 
 QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
