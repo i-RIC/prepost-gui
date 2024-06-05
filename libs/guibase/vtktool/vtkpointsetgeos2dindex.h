@@ -14,7 +14,7 @@ public:
 
 	vtkPointSet* data() const;
 
-        vtkIdType findCell(double x, double y, double radius, double* weights);
+	vtkIdType findCell(double x, double y, double radius, double* weights);
 
 private:
 	class Impl;
