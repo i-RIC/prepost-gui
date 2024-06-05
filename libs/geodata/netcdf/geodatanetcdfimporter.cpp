@@ -94,6 +94,8 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
 	for (auto cond : conds) {
 		auto grid = cond->gridDataItem()->grid();
+		if (grid == nullptr) {continue;}
+
 		auto att = grid->attribute(condition->name());
 		att->clearTemporaryData();
 		att->setDefaultValue();
