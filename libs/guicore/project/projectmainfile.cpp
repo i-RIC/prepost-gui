@@ -576,8 +576,11 @@ int ProjectMainFile::loadFromCgnsFile()
 		postSolutionInfo()->close();
 
 		int steps = postSolutionInfo()->stepCount();
-		iRICLib::H5CgnsFileSeparateSolutionUtil::rebuildBaseIterativeData(impl->m_cgnsManager->mainFileFullName(), steps);
-
+		try {
+			iRICLib::H5CgnsFileSeparateSolutionUtil::rebuildBaseIterativeData(impl->m_cgnsManager->mainFileFullName(), steps);
+		} catch (...) {
+			// do nothing
+		}
 		postSolutionInfo()->loadFromCgnsFile();
 	}
 
