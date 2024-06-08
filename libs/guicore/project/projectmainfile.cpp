@@ -543,23 +543,32 @@ int ProjectMainFile::loadFromCgnsFile()
 	bool rebuildNeeded = false;
 	std::string fname;
 	try {
-		auto version = m_projectData->mainfile()->iRICVersion();
-		if ((version.major() == 4 && version.minor() >= 1) || version.major() > 4) {
-			if (impl->m_cgnsManager->inputFileExists()) {
-				fname = impl->m_cgnsManager->inputFileFullName();
-			} else {
-				fname = impl->m_cgnsManager->mainFileFullName();
-			}
-		} else {
-			fname = impl->m_cgnsManager->mainFileFullName();
-		}
+		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 		int ier = m_projectData->mainWindow()->loadFromCgnsFile();
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg(QDir::toNativeSeparators(fname.c_str())));
-		return IRIC_H5_CALL_ERROR;
+		if (impl->m_cgnsManager->backupFileExists()) {
+			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1. iRIC tries to salvage data from %2.").arg("Case1.cgn", "Case1_input.cgn"));
+			// copy backup file.
+			QFile::remove(impl->m_cgnsManager->mainFileFullName().c_str());
+			QFile::copy(impl->m_cgnsManager->backupFileFullName().c_str(), impl->m_cgnsManager->mainFileFullName().c_str());
+			try {
+				auto fname = impl->m_cgnsManager->mainFileFullName();
+				iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+				ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+				int ier = m_projectData->mainWindow()->loadFromCgnsFile();
+				if (ier != IRIC_NO_ERROR) {return ier;}
+				rebuildNeeded = true;
+			}  catch (...) {
+				QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1_input.cgn"));
+				return IRIC_H5_CALL_ERROR;
+			}
+		} else {
+			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1.cgn"));
+			return IRIC_H5_CALL_ERROR;
+		}
 	}
 
 	postSolutionInfo()->loadFromCgnsFile();
@@ -581,7 +590,7 @@ int ProjectMainFile::saveToCgnsFile()
 	impl->m_postSolutionInfo->close();
 
 	try {
-		auto fname = impl->m_cgnsManager->inputFileFullName();
+		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::Create);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 
@@ -651,10 +660,8 @@ void ProjectMainFile::clearResults()
 	if (biFile.exists()) {biFile.remove();}
 
 	int ier = saveToCgnsFile();
-
 	if (ier != IRIC_NO_ERROR) {return;}
 
-	impl->m_cgnsManager->copyInputFileToMainFile();
 	impl->m_postSolutionInfo->checkCgnsStepsUpdate();
 }
 
