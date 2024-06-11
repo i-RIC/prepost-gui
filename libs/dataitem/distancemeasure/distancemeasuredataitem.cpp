@@ -277,7 +277,7 @@ void DistanceMeasureDataItem::updateActorSetting()
 	impl->m_labelActor.setLabelPosition(impl->m_setting.labelPosition);
 
 	vtkTextProperty* txtProp = impl->m_labelActor.labelTextProperty();
-	impl->m_setting.labelFontSetting.fontColor = impl->m_setting.color;
+	impl->m_setting.labelFontSetting.fontColor.setValue(impl->m_setting.color.value());
 	impl->m_setting.labelFontSetting.applySetting(txtProp);
 	impl->m_labelActor.actor()->GetProperty()->SetColor(impl->m_setting.color);
 
