@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPointGroup</name>
@@ -40,11 +38,11 @@
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaal</translation>
     </message>
     <message>
         <source>Size (%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurus (%)</translation>
     </message>
 </context>
 <context>
@@ -150,8 +148,8 @@
         <translation>Päise rea lugemisel ilmnes viga. Päises peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema &quot;%2&quot;, aga &quot;%3&quot;antakse.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema "%2", aga "%3"antakse.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -166,16 +164,16 @@
         <translation>Rida lugedes ilmnes viga %1. Andmetel peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Viga &quot;x&quot; väärtuse reas lugemisel ilmnes viga %1. &quot;x&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Viga "x" väärtuse reas lugemisel ilmnes viga %1. "x" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse &quot;y&quot; reas lugemisel ilmnes viga %1. &quot;y&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse "y" reas lugemisel ilmnes viga %1. "y" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. &quot;väärtus&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. "väärtus" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
 </context>
 <context>
@@ -278,19 +276,19 @@
     </message>
     <message>
         <source>Anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankur</translation>
     </message>
     <message>
         <source>Relationship between scale and size</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaala ja suuruse seos</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisama (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda (&amp;R)</translation>
     </message>
 </context>
 <context>

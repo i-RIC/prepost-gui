@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPointGroup</name>
@@ -40,11 +38,11 @@
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskala</translation>
     </message>
     <message>
         <source>Size (%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaina (%)</translation>
     </message>
 </context>
 <context>
@@ -150,8 +148,8 @@
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak gutxienez 4 zutabe izan behar ditu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -166,16 +164,16 @@
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 4 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
 </context>
 <context>
@@ -278,19 +276,19 @@
     </message>
     <message>
         <source>Anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>Aingura</translation>
     </message>
     <message>
         <source>Relationship between scale and size</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskala eta tamainaren arteko erlazioa</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu (&amp;R)</translation>
     </message>
 </context>
 <context>

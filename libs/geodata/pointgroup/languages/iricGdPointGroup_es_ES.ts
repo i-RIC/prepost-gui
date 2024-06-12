@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPointGroup</name>
@@ -40,11 +38,11 @@
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Size (%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño (%)</translation>
     </message>
 </context>
 <context>
@@ -150,8 +148,8 @@
         <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener 4 columnas como mínimo.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser &quot;%2&quot;, pero &quot;%3&quot; es dado.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -166,16 +164,16 @@
         <translation>Ocurrió un error al leer la línea %1. Los datos deben tener 4 columnas como mínimo.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Se produjo un error al leer el valor &quot;x&quot; en la línea %1. &quot;x&quot; debería ser un valor real pero &quot;%2&quot; está especificado.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Se produjo un error al leer el valor &quot;y&quot; en la línea %1. &quot;y&quot; debería ser un valor real pero &quot;%2&quot; está especificado.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Se produjo un error al leer el valor del &quot;valor&quot; en la línea %1. &quot;valor&quot; debe ser un valor real pero &quot;%2&quot; está especificado.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
     </message>
 </context>
 <context>
@@ -278,19 +276,19 @@
     </message>
     <message>
         <source>Anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancla</translation>
     </message>
     <message>
         <source>Relationship between scale and size</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación entre escala y tamaño</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
 </context>
 <context>
