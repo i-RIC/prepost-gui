@@ -9,6 +9,7 @@ class GeoData;
 class GraphicsWindowDataModel;
 class Post2dWindowGeoDataDataItemI;
 class Post2dWindowGridTypeDataItemI;
+class VTKGraphicsView;
 class ZDepthRange;
 
 class QDialog;
@@ -33,6 +34,8 @@ public:
 
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
 	virtual void assignActorZValues(const ZDepthRange& range);
+
+	virtual void viewOperationEndedGlobal(VTKGraphicsView* v);
 
 	GeoData* geoData() const;
 

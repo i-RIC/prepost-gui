@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataPointGroup</name>
@@ -35,6 +37,14 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Alle billeder (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,8 +150,8 @@
         <translation>Der opstod en fejl under læsning af overskriftslinje. Header skal mindst have 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være "%2", men "%3" er givet.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være &quot;%2&quot;, men &quot;%3&quot; er givet.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +166,16 @@
         <translation>Der opstod en fejl under læsning af linjen %1. Data skal mindst have 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "x" -værdien på linjen %1. "x" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;x&quot; -værdien på linjen %1. &quot;x&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "y" -værdien på linjen %1. "y" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;y&quot; -værdien på linjen %1. &quot;y&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af værdien "værdi" på linjen %1. "værdi" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af værdien &quot;værdi&quot; på linjen %1. &quot;værdi&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
 </context>
 <context>
@@ -265,6 +275,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

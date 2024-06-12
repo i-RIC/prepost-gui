@@ -24,6 +24,8 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void viewOperationEndedGlobal(PreProcessorGraphicsViewI* v) override;
+
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
 
@@ -53,6 +55,7 @@ private:
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemI *d) override;
 
 	class DisplaySetting;
+	class ScaleSizePair;
 
 	class Impl;
 	Impl* impl;

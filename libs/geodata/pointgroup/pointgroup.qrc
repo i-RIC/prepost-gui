@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/geodata/pointgroup">
+        <file>images/pointImage.png</file>
+    </qresource>
+</RCC>
