@@ -8,6 +8,8 @@
 #include "private/geodatapointgroupproxy_impl.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/graphicswindowdatamodel.h>
+#include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/pre/geodata/private/geodataproxy_propertydialog.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/zdepthrange.h>
@@ -68,6 +70,11 @@ QDialog* GeoDataPointGroupProxy::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
+void GeoDataPointGroupProxy::viewOperationEndedGlobal(VTKGraphicsView* /*v*/)
+{
+	updateActorSetting();
+}
+
 void GeoDataPointGroupProxy::updateActorSetting()
 {
 	auto points = dynamic_cast<GeoDataPointGroup*> (geoData());
@@ -118,19 +125,23 @@ void GeoDataPointGroupProxy::updateActorSetting()
 
 		actorCollection()->AddItem(impl->m_pointsActor);
 	} else {
+		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 		auto pixmap = QPixmap::fromImage(ds.image);
-		impl->m_shrinkedImage = GeoDataPointGroup::Impl::shrinkPixmap(pixmap, ds.imageMaxSize).toImage();
+		auto shrinkedPixmap = GeoDataPointGroup::Impl::shrinkPixmap(pixmap, ds, view);
+		impl->m_shrinkedImage = shrinkedPixmap.toImage();
 		auto imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
 		imgToImg->SetQImage(&impl->m_shrinkedImage);
 		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
 		imageInfo->SetInputConnection(imgToImg->GetOutputPort());
 		imageInfo->CenterImageOn();
 		auto col = actor2DCollection();
-
 		const auto& data = points->data();
-		for (auto it =  data.rbegin(); it != data.rend(); ++it) {
+
+		for (auto it = data.rbegin(); it != data.rend(); ++it) {
 			auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
 			auto p = point->point();
+			auto p2 = GeoDataPointGroup::Impl::buildBottomLeftCorner(p, shrinkedPixmap, ds.anchorPosition, view);
+
 			auto mapper = vtkSmartPointer<vtkImageMapper>::New();
 			mapper->SetColorWindow(255);
 			mapper->SetColorLevel(127.5);
@@ -142,7 +153,7 @@ void GeoDataPointGroupProxy::updateActorSetting()
 
 			auto coord = actor->GetPositionCoordinate();
 			coord->SetCoordinateSystemToWorld();
-			coord->SetValue(p.x(), p.y(), 0);
+			coord->SetValue(p2.x(), p2.y(), 0);
 
 			r->AddActor2D(actor);
 			col->AddItem(actor);
