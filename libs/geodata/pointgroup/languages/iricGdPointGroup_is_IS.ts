@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataPointGroup</name>
@@ -35,6 +37,14 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Allar myndir (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,8 +150,8 @@
         <translation>Villa kom upp við lestur hauslínu. Haus ætti að hafa að minnsta kosti 4 dálka.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Villa kom upp við lestur hauslínu. Dálkur %1 ætti að vera "%2", en"%3" er gefin.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Villa kom upp við lestur hauslínu. Dálkur %1 ætti að vera &quot;%2&quot;, en&quot;%3&quot; er gefin.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,15 +166,15 @@
         <translation>Villa kom upp við lestur línu %1. Gögn ættu að hafa að minnsta kosti 4 dálka.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Villa kom upp við að lesa „x“ gildi í línu %1. "x" ætti að vera raungildi en " %2 “er tilgreint.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Villa kom upp við að lesa „x“ gildi í línu %1. &quot;x&quot; ætti að vera raungildi en &quot; %2 “er tilgreint.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>Villa kom upp við að lesa „y“ gildi í línu %1. „y“ ætti að vera raungildi en “ %2 “er tilgreint.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>Villa kom upp við að lesa „gildi“ gildi í línu %1. „gildi“ ætti að vera raungildi en „ %2 “er tilgreint.</translation>
     </message>
 </context>
@@ -265,6 +275,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

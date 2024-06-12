@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -35,6 +37,14 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Tüm resimler (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,8 +150,8 @@
         <translation>Başlık satırı okunurken hata oluştu. Başlıkta en az 4 sütun olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Başlık satırı okunurken hata oluştu. Kolon %1 olmalı "%2", ancak "%3" verilmiş.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Başlık satırı okunurken hata oluştu. Kolon %1 olmalı &quot;%2&quot;, ancak &quot;%3&quot; verilmiş.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +166,16 @@
         <translation>Satır okunurken hata oluştu %1. Veriler en az 4 sütuna sahip olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Satırda "x" değeri okunurken hata oluştu %1. "x" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Satırda &quot;x&quot; değeri okunurken hata oluştu %1. &quot;x&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Satırda "y" değeri okunurken hata oluştu %1. "y" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Satırda &quot;y&quot; değeri okunurken hata oluştu %1. &quot;y&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Satırda "değer" değeri okunurken hata oluştu %1. "değer" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Satırda &quot;değer&quot; değeri okunurken hata oluştu %1. &quot;değer&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
     </message>
 </context>
 <context>
@@ -265,6 +275,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
