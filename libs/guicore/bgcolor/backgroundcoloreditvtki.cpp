@@ -25,5 +25,5 @@ void BackgroundColorEditVtkI::setBackgroundColor(const QColor& color)
 	iRIC::QColorToVTKColor(color, vtkColor);
 	auto v = viewForBackgroundColor();
 	v->mainRenderer()->SetBackground(vtkColor);
-	v->update();
+	v->render();
 }
