@@ -58,6 +58,7 @@ private slots:
 	void showDisplaySettingDialog();
 	void exportToFile();
 	void generatePointMap();
+	void findWrongPoints();
 
 protected:
 	PreProcessorGridAttributeAbstractCellGroupDataItem* groupDataItem() const;
@@ -79,7 +80,10 @@ private:
 	virtual QString positionCaption() const = 0;
 
 	DirectionSettingContainer m_directionSetting;
+	std::vector<vtkIdType> m_wrongPoints;
 	vtkActor* m_directionActor;
+	vtkActor* m_wrongDirectionActor;
+
 	SolverDefinitionGridAttribute* m_condition;
 
 	BoolContainer m_isCustomModified;
@@ -90,8 +94,11 @@ private:
 	QAction* m_generatePointMapAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
+	QAction* m_findWrongPointsAction;
 
 	ColorMapSettingToolBarWidgetController* m_colorMapToolBarWidgetController;
+
+	class WrongPointListDialog;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTEABSTRACTCELLDATAITEM_H

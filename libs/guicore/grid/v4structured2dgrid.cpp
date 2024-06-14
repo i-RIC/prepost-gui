@@ -306,9 +306,31 @@ void v4Structured2dGrid::updateFilteredData(double xMin, double xMax, double yMi
 		return;
 	}
 
-	auto filteredGrid = vtkPointSetRegionAndCellSizeFilter::extract(vtkConcreteData()->concreteData(), iMin, iMax, jMin, jMax, rate);
+	auto concreteData = vtkConcreteData()->concreteData();
+
+	auto origPointIds = vtkSmartPointer<vtkIntArray>::New();
+	origPointIds->SetName(ORIGINAL_ID);
+	origPointIds->Allocate(concreteData->GetNumberOfPoints());
+	for (vtkIdType index = 0; index < concreteData->GetNumberOfPoints(); ++index) {
+		origPointIds->InsertNextValue(index);
+	}
+
+	auto origCellIds = vtkSmartPointer<vtkIntArray>::New();
+	origCellIds->SetName(ORIGINAL_ID);
+	origCellIds->Allocate(concreteData->GetNumberOfCells());
+	for (vtkIdType index = 0; index < concreteData->GetNumberOfCells(); ++index) {
+		origCellIds->InsertNextValue(index);
+	}
+
+	concreteData->GetPointData()->AddArray(origPointIds);
+	concreteData->GetCellData()->AddArray(origCellIds);
+
+	auto filteredGrid = vtkPointSetRegionAndCellSizeFilter::extract(concreteData, iMin, iMax, jMin, jMax, rate);
 	setFilteredData(filteredGrid);
 	filteredGrid->Delete();
+
+	concreteData->GetPointData()->RemoveArray(ORIGINAL_ID);
+	concreteData->GetCellData()->RemoveArray(ORIGINAL_ID);
 
 	impl->m_drawnIMin = iMin;
 	impl->m_drawnIMax = iMax;
