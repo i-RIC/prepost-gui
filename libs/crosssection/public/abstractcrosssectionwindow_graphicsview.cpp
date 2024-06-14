@@ -92,6 +92,11 @@ void AbstractCrosssectionWindow::GraphicsView::setImpl(Impl* impl)
 	m_impl = impl;
 }
 
+void AbstractCrosssectionWindow::GraphicsView::render()
+{
+	viewport()->update();
+}
+
 void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 {
 	if (m_impl->m_displaySetting.fixRegion) {return;}
@@ -190,7 +195,7 @@ void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 	}
 
 	m_impl->updateAspectRatioEdit();
-	viewport()->update();
+	render();
 }
 
 void AbstractCrosssectionWindow::GraphicsView::paintEvent(QPaintEvent* /*event*/)
