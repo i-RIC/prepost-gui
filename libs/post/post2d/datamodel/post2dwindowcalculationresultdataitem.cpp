@@ -18,6 +18,7 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowcalculationresultdataitem_impl.h"
 
+#include <guibase/vtkgridedgeutil.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
@@ -103,10 +104,16 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 	addChildItem(impl->m_stringDataItem);
 
 	updateZDepthRangeItemCount();
+
+	vtkGridEdgeUtil::setupActor(impl->m_edgeActor);
+	impl->m_edgeActor->VisibilityOff();
+	renderer()->AddActor(impl->m_edgeActor);
 }
 
 Post2dWindowCalculationResultDataItem::~Post2dWindowCalculationResultDataItem()
-{}
+{
+	renderer()->RemoveActor(impl->m_edgeActor);
+}
 
 void Post2dWindowCalculationResultDataItem::informSelection(VTKGraphicsView* v)
 {
@@ -175,6 +182,24 @@ v4Grid2d* Post2dWindowCalculationResultDataItem::grid() const
 	if (cont == nullptr) {return nullptr;}
 
 	return dynamic_cast<v4Grid2d*> (cont->gridData()->grid());
+}
+
+void Post2dWindowCalculationResultDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
+{
+	auto g = grid();
+	if (g == nullptr) {return;}
+	auto g2 = dynamic_cast<v4Structured2dGrid*> (g);
+	if (g2 == nullptr) {return;}
+
+	auto polyData = g2->extractEdgeData(i, j);
+	impl->m_edgeMapper->SetInputData(polyData);
+	polyData->Delete();
+	impl->m_edgeActor->VisibilityOn();
+}
+
+void Post2dWindowCalculationResultDataItem::clearEdgeFocus()
+{
+	impl->m_edgeActor->VisibilityOff();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowCalculationResultDataItem::zoneDataItem() const
@@ -383,6 +408,8 @@ void Post2dWindowCalculationResultDataItem::assignActorZValues(const ZDepthRange
 		r.setRange(min, max);
 		impl->m_jEdgeScalarGroupTopDataItem->setZDepthRange(r);
 	}
+
+	impl->m_edgeActor->SetPosition(0, 0, range.max());
 }
 
 void Post2dWindowCalculationResultDataItem::doLoadFromProjectMainFile(const QDomNode& node)

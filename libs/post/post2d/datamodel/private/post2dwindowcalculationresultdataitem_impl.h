@@ -9,6 +9,9 @@ public:
 	Impl(Post2dWindowCalculationResultDataItem* item);
 	~Impl();
 
+	vtkPolyDataMapper* m_edgeMapper;
+	vtkActor* m_edgeActor;
+
 	Post2dWindowGridShapeDataItem* m_gridShapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_nodeScalarGroupTopDataItem;
 	Post2dWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;

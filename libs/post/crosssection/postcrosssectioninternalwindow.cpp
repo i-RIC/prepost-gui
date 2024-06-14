@@ -140,7 +140,10 @@ v4Structured2dGrid* PostCrosssectionInternalWindow::additionalGrid()
 
 	if (container == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Structured2dGrid*> (container->inputGridData()->grid());
+	auto ig = container->inputGridData();
+	if (ig == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Structured2dGrid*> (ig->grid());
 }
 
 QString PostCrosssectionInternalWindow::additionalGridPrefix()

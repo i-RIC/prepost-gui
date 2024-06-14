@@ -156,13 +156,12 @@ void Post2dWindowZoneDataItem::update(bool noParticle)
 
 void Post2dWindowZoneDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
 {
-	impl->m_inputGridDataItem->setEdgeFocus(i, j);
+	impl->m_resultDataItem->setEdgeFocus(i, j);
 }
 
 void Post2dWindowZoneDataItem::clearEdgeFocus()
 {
-	if (impl->m_inputGridDataItem == nullptr) {return;}
-	impl->m_inputGridDataItem->clearEdgeFocus();
+	impl->m_resultDataItem->clearEdgeFocus();
 }
 
 Post2dWindowGridTypeDataItem* Post2dWindowZoneDataItem::gridTypeDataItem() const
