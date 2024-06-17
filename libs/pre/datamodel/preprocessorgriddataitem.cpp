@@ -813,16 +813,20 @@ PreProcessorBCGroupDataItem* PreProcessorGridDataItem::bcGroupDataItem() const
 
 bool PreProcessorGridDataItem::colorBarShouldBeVisible(const std::string& name) const
 {
+	bool visible = false;
 	if (m_nodeGroupDataItem->isChecked()) {
-		return m_nodeGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (m_cellGroupDataItem->isChecked()) {
-		return m_cellGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (m_iEdgeGroupDataItem->isChecked()) {
-		return m_iEdgeGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (m_jEdgeGroupDataItem->isChecked()) {
-		return m_jEdgeGroupDataItem->colorBarShouldBeVisible(name);
+		visible = visible || m_nodeGroupDataItem->colorBarShouldBeVisible(name);
 	}
-	return false;
+	if (m_cellGroupDataItem->isChecked()) {
+		visible = visible || m_cellGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	if (m_iEdgeGroupDataItem->isChecked()) {
+		visible = visible || m_iEdgeGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	if (m_jEdgeGroupDataItem->isChecked()) {
+		visible = visible || m_jEdgeGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	return visible;
 }
 
 void PreProcessorGridDataItem::updateAttributeActorSettings()
