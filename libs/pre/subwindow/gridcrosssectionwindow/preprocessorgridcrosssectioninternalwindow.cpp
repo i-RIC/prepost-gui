@@ -30,15 +30,18 @@ v4Structured2dGrid* PreProcessorGridCrosssectionInternalWindow::grid()
 
 void PreProcessorGridCrosssectionInternalWindow::updateEdgeFocus()
 {
+	auto c = controller();
+	auto ti = c->targetIndex();
+	if (ti == -1) {return;}
+
 	auto zoneName = m_item->gridAndGridCreatingConditionDataItem()->zoneName();
 	vtkIdType i = 0, j = 0;
-	auto c = controller();
 	if (c->targetDirection() == Direction::I) {
-		i = c->targetIndex();
+		i = ti;
 		j = -1;
 	} else if (c->targetDirection() == Direction::J) {
 		i = -1;
-		j = c->targetIndex();
+		j = ti;
 	}
 
 	m_item->iricMainWindow()->setEdgeFocus(zoneName, i, j);
