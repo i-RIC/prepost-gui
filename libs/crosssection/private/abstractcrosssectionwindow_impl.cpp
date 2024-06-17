@@ -68,7 +68,12 @@ void AbstractCrosssectionWindow::Impl::setupToolBars()
 	m_autoRescaleCheckBox = new QCheckBox(tr("Auto rescale"), w);
 	m_autoRescaleCheckBox->setChecked(true);
 	vt->addWidget(m_autoRescaleCheckBox);
-	connect(m_autoRescaleCheckBox, &QCheckBox::clicked, [=](bool checked){m_displaySetting.enableAutoRescale = checked;});
+	connect(m_autoRescaleCheckBox, &QCheckBox::clicked, [=](bool checked){
+		m_displaySetting.enableAutoRescale = checked;
+		if (checked) {
+			m_window->cameraFit();
+		}
+	});
 	connect(m_autoRescaleCheckBox, &QCheckBox::clicked, [=](bool){m_window->updateGraphicsView();});
 
 	vt->addWidget(createSpacer(w));
