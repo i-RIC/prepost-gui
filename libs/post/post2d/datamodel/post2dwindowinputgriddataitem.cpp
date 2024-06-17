@@ -190,16 +190,22 @@ void Post2dWindowInputGridDataItem::update()
 
 bool Post2dWindowInputGridDataItem::colorBarShouldBeVisible(const std::string& name) const
 {
+	bool visible = false;
+
 	if (impl->m_nodeGroupDataItem->isChecked()) {
-		return impl->m_nodeGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (impl->m_cellGroupDataItem->isChecked()) {
-		return impl->m_cellGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (impl->m_iEdgeGroupDataItem->isChecked()) {
-		return impl->m_iEdgeGroupDataItem->colorBarShouldBeVisible(name);
-	} else if (impl->m_jEdgeGroupDataItem->isChecked()) {
-		return impl->m_jEdgeGroupDataItem->colorBarShouldBeVisible(name);
+		visible = visible || impl->m_nodeGroupDataItem->colorBarShouldBeVisible(name);
 	}
-	return false;
+	if (impl->m_cellGroupDataItem->isChecked()) {
+		visible = visible || impl->m_cellGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	if (impl->m_iEdgeGroupDataItem->isChecked()) {
+		visible = visible || impl->m_iEdgeGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	if (impl->m_jEdgeGroupDataItem->isChecked()) {
+		visible = visible || impl->m_jEdgeGroupDataItem->colorBarShouldBeVisible(name);
+	}
+
+	return visible;
 }
 
 void Post2dWindowInputGridDataItem::assignActorZValues(const ZDepthRange& range)
