@@ -178,10 +178,9 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 				}
 			}
 		} else if (itemNode.nodeName() == "Output") {
-			auto defElement = iRIC::getChildNode(itemNode, "Definition").toElement();
-			auto option = defElement.attribute("option", "false");
+			auto defElem = iRIC::getChildNode(itemNode, "Definition").toElement();
 			SolverDefinitionGridOutput* output = nullptr;
-			if (option == "true") {
+			if (InputConditionWidget::hasEnums((defElem))) {
 				output = new SolverDefinitionGridOutputOption(itemNode.toElement(), solverDef, translator);
 			} else {
 				output = new SolverDefinitionGridOutput(itemNode.toElement(), solverDef, translator);
