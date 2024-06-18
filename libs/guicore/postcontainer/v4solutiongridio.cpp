@@ -65,6 +65,7 @@ v4SolutionGrid* v4SolutionGridIO::loadParticles2d(SolverDefinitionGridType* grid
 	if (! zone->particleSolutionExists()) {return nullptr;}
 
 	auto pSol = zone->particleSolution();
+	if (pSol == nullptr) {return nullptr;}
 
 	auto particles = new v4Particles2d();
 	auto polyData = particles->vtkConcreteData()->concreteData();
@@ -111,6 +112,11 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroups2d(So
 	std::map<std::string, v4SolutionGrid*> ret;
 
 	auto pSol = zone->particleGroupSolution();
+	if (pSol == nullptr) {
+		*ier = IRIC_NO_ERROR;
+		return empty;
+	}
+
 	std::vector<std::string> groupNames;
 	*ier = pSol->readGroupNames(&groupNames);
 	if (*ier != IRIC_NO_ERROR) {return empty;}
@@ -164,6 +170,11 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroupImage2
 	std::map<std::string, v4SolutionGrid*> ret;
 
 	auto pSol = zone->particleGroupImageSolution();
+	if (pSol == nullptr) {
+		*ier = IRIC_NO_ERROR;
+		return empty;
+	}
+
 	std::vector<std::string> groupNames;
 	*ier = pSol->readGroupNames(&groupNames);
 	if (*ier != IRIC_NO_ERROR) {return empty;}
@@ -216,6 +227,7 @@ v4SolutionGrid* v4SolutionGridIO::loadParticles3d(SolverDefinitionGridType* grid
 	if (! zone->particleSolutionExists()) {return nullptr;}
 
 	auto pSol = zone->particleSolution();
+	if (pSol == nullptr) {return nullptr;}
 
 	auto particles = new v4Particles3d();
 	auto polyData = particles->vtkConcreteData()->concreteData();
@@ -264,6 +276,10 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroups3d(So
 	std::map<std::string, v4SolutionGrid*> ret;
 
 	auto pSol = zone->particleGroupSolution();
+	if (pSol == nullptr) {
+		*ier = IRIC_NO_ERROR;
+		return empty;
+	}
 	std::vector<std::string> groupNames;
 	*ier = pSol->readGroupNames(&groupNames);
 	if (*ier != IRIC_NO_ERROR) {return empty;}
@@ -319,6 +335,11 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadPolyDataGroup2d(Sol
 	std::map<std::string, v4SolutionGrid*> ret;
 
 	auto pSol = zone->polyDataSolution();
+	if (pSol == nullptr) {
+		*ier = IRIC_NO_ERROR;
+		return empty;
+	}
+
 	std::vector<std::string> groupNames;
 	*ier = pSol->readGroupNames(&groupNames);
 	if (*ier != IRIC_NO_ERROR) {return empty;}
