@@ -171,7 +171,7 @@ std::vector<unsigned int> GeoDataPolyLineGroupPolyLine::lineEdges() const
 	geos::geom::LineString* ls= impl->m_polyLine.get();
 
 	unsigned int offset = 0;
-	for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 		ret.push_back(offset + i);
 		ret.push_back(offset + (i + 1));
 	}
