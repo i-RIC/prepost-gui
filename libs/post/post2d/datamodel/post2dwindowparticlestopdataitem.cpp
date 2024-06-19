@@ -15,7 +15,10 @@ v4Particles2d* Post2dWindowParticlesTopDataItem::particleData() const
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Particles2d*> (cont->particleData()->grid());
+	auto pd = cont->particleData();
+	if (pd == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Particles2d*> (pd->grid());
 }
 
 Post2dWindowCalculationResultDataItem* Post2dWindowParticlesTopDataItem::resultDataItem() const
