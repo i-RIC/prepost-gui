@@ -52,10 +52,12 @@ dist/_*
 # precompiled headers
 apps/iricgui/iricgui_pch.h.cpp
 apps/rivmaker/rivmaker_pch.h.cpp
+libs/crosssection/crosssection_pch.h.cpp
 libs/cs/cs_pch.h.cpp
 libs/dataitem/axis2d/axis2d_pch.h.cpp
 libs/dataitem/axis3d/axis3d_pch.h.cpp
 libs/dataitem/distancemeasure/distancemeasure_pch.h.cpp
+libs/dataitem/logo/logo_pch.h.cpp
 libs/geodata/netcdf/netcdf_pch.h.cpp
 libs/geodata/point/point_pch.h.cpp
 libs/geodata/pointgroup/pointgroup_pch.h.cpp
@@ -86,6 +88,7 @@ libs/guicore/guicore_pch.h.cpp
 libs/hydraulicdata/riversurveywaterelevation/riversurveywaterelevation_pch.h.cpp
 libs/iricpython/iricpython_pch.h.cpp
 libs/misc/misc_pch.h.cpp
+libs/post/crosssection/postcrosssection_pch.h.cpp
 libs/post/graph2d/graph2d_pch.h.cpp
 libs/post/graph2dhybrid/graph2dhybrid_pch.h.cpp
 libs/post/graph2dscattered/graph2dscattered_pch.h.cpp
@@ -106,6 +109,8 @@ plugins/gridexporter/unstructured2dgridvtkexporter/unstructured2dgridvtkexporter
 plugins/gridimporter/structured2dgridgdalimporter/structured2dgridgdalimporter_pch.h.cpp
 plugins/gridimporter/structured2dgridnayscsvimporter/structured2dgridnayscsvimporter_pch.h.cpp
 plugins/gridimporter/structured2dgridnaysgridimporter/structured2dgridnaysgridimporter_pch.h.cpp
+plugins/gridimporter/structured2dgridvtkimporter/structured2dgridvtkimporter_pch.h.cpp
 plugins/gridimporter/unstructured2dgridtriangleimporter/unstructured2dgridtriangleimporter_pch.h.cpp
+plugins/gridimporter/unstructured2dgridvtkimporter/unstructured2dgridvtkimporter_pch.h.cpp
 tests/geometry/geometry_pch.h.cpp
 tests/iricpython/iricpython_pch.h.cpp
