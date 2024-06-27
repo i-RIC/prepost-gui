@@ -34,11 +34,11 @@ void PreProcessorGridCrosssectionInternalWindow::updateEdgeFocus()
 	vtkIdType i = 0, j = 0;
 	auto c = controller();
 	if (c->targetDirection() == Direction::I) {
-		i = -1;
-		j = c->targetIndex();
-	} else if (c->targetDirection() == Direction::J) {
 		i = c->targetIndex();
 		j = -1;
+	} else if (c->targetDirection() == Direction::J) {
+		i = -1;
+		j = c->targetIndex();
 	}
 
 	m_item->iricMainWindow()->setEdgeFocus(zoneName, i, j);
