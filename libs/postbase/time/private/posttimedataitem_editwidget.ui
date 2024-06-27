@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PostTimeDataItem_EditWidget</class>
+ <widget class="QWidget" name="PostTimeDataItem_EditWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>365</width>
+    <height>130</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QCheckBox" name="useProjectSettingCheckBox">
+     <property name="text">
+      <string>Use project setting</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="formatGroupBox">
+     <property name="title">
+      <string>Time Format</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="TimeFormatEditWidget" name="timeFormatEditWidget" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="vtkTextPropertySettingWidget" name="fontSettingWidget" native="true"/>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>23</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>vtkTextPropertySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/vtktextpropertysettingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TimeFormatEditWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/timeformat/timeformateditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>useProjectSettingCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeFormatEditWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

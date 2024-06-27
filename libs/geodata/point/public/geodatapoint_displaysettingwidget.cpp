@@ -26,7 +26,7 @@ GeoDataPoint::DisplaySettingWidget::~DisplaySettingWidget()
 
 QUndoCommand* GeoDataPoint::DisplaySettingWidget::createModifyCommand(bool apply)
 {
-	return new ValueModifyCommmand<DisplaySetting>(iRIC::generateCommandId("GeoDataPoint::PropertyDialog::Basic"), true, setting(), m_displaySetting);
+	return new ValueModifyCommmand<DisplaySetting>(iRIC::generateCommandId("GeoDataPoint::PropertyDialog::Basic"), apply, setting(), m_displaySetting);
 }
 
 GeoDataPoint::DisplaySetting GeoDataPoint::DisplaySettingWidget::setting() const

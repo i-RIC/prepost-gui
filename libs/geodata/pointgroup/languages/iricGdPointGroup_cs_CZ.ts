@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Všechny obrázky (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Měřítko</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Velikost (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Kotva</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Vztah mezi měřítkem a velikostí</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
     </message>
 </context>
 <context>

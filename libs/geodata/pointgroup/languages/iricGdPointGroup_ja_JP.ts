@@ -52,6 +52,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>すべての画像(*.jpg *.jpeg *.png);;Jpeg 画像(*.jpg *.jpeg);;PNG 画像(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>縮尺</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>サイズ (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -344,6 +352,22 @@
     <message>
         <source>Custom Color</source>
         <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>アンカー</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>縮尺とサイズの関係</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>削除(&amp;R)</translation>
     </message>
 </context>
 <context>

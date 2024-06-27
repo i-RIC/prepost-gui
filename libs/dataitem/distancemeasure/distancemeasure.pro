@@ -58,25 +58,23 @@ win32 {
 HEADERS += distancemeasure_api.h \
            distancemeasuredataitem.h \
            distancemeasuregroupdataitem.h \
-           distancemeasurepropertydialog.h \
            distancemeasuresetting.h \
            private/distancemeasuredataitem_definecommand.h \
+           private/distancemeasuredataitem_editwidget.h \
            private/distancemeasuredataitem_impl.h \
            private/distancemeasuredataitem_movevertexcommand.h \
            private/distancemeasuredataitem_redefinecommand.h \
-           private/distancemeasuredataitem_setsettingcommand.h \
            private/distancemeasuredataitem_translatecommand.h \
            private/distancemeasuregroupdataitem_impl.h
-FORMS += distancemeasurepropertydialog.ui
-SOURCES += \
-           distancemeasuredataitem.cpp \
+FORMS += \
+         private/distancemeasuredataitem_editwidget.ui
+SOURCES += distancemeasuredataitem.cpp \
            distancemeasuregroupdataitem.cpp \
-           distancemeasurepropertydialog.cpp \
            distancemeasuresetting.cpp \
            private/distancemeasuredataitem_definecommand.cpp \
+           private/distancemeasuredataitem_editwidget.cpp \
            private/distancemeasuredataitem_movevertexcommand.cpp \
            private/distancemeasuredataitem_redefinecommand.cpp \
-           private/distancemeasuredataitem_setsettingcommand.cpp \
            private/distancemeasuredataitem_translatecommand.cpp
 TRANSLATIONS += languages/iricDistancemeasure_ar_EG.ts \
                 languages/iricDistancemeasure_bg_BG.ts \

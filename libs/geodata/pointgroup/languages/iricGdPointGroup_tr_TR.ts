@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Tüm resimler (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Ölçek</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Boyut (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Çapa</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Ölçek ve boyut arasındaki ilişki</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Eklemek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
 </context>
 <context>

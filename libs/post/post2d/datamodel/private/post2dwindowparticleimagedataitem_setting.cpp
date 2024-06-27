@@ -30,6 +30,7 @@ Post2dWindowParticleImageDataItem::Setting& Post2dWindowParticleImageDataItem::S
 {
 	copyValue(setting);
 	image = setting.image;
+	valueSizePairs = setting.valueSizePairs;
 	return *this;
 }
 

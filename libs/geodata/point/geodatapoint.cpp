@@ -360,7 +360,6 @@ void GeoDataPoint::updateScalarValues()
 
 void GeoDataPoint::updateActorSetting()
 {
-	auto r = renderer();
 	impl->m_actor->VisibilityOff();
 	impl->m_imageActor->VisibilityOff();
 

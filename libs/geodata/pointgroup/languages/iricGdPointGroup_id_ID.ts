@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Semua gambar (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Ukuran (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Jangkar</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Hubungan antara skala dan ukuran</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Menghapus (&amp;R)</translation>
     </message>
 </context>
 <context>

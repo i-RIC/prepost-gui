@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Visi attēli (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Mērogs</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Izmērs (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Enkurs</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Mēroga un lieluma saistība</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Pievienot (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
 </context>
 <context>

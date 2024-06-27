@@ -16,12 +16,14 @@ public:
 	PostTitleDataItem(GraphicsWindowDataItem* parent);
 	virtual ~PostTitleDataItem();
 
+public slots:
+	void showPropertyDialog() override;
+
 private:
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -29,6 +31,7 @@ private:
 	vtkSmartPointer<vtkTextActor> m_titleActor;
 	PostTitleSetting m_setting;
 
+	class EditWidget;
 	class SetSettingCommand;
 };
 

@@ -21,6 +21,8 @@ public:
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
 
+	void viewOperationEndedGlobal(VTKGraphicsView* v) override;
+
 public slots:
 	void updateActorSetting() override;
 

@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>ภาพทั้งหมด (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>มาตราส่วน</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>ขนาด (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>สมอ</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>ความสัมพันธ์ระหว่างขนาดและขนาด</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>เพิ่ม (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>ลบ (&amp;R)</translation>
     </message>
 </context>
 <context>

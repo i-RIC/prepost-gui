@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Alle afbeeldingen (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Schaal</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Maat (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Anker</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Verband tussen schaal en grootte</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Verwijderen (&amp;R)</translation>
     </message>
 </context>
 <context>

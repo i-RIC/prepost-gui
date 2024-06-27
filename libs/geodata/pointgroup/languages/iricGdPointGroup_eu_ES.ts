@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Irudi guztiak (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Eskala</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Tamaina (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Aingura</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Eskala eta tamainaren arteko erlazioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kendu (&amp;R)</translation>
     </message>
 </context>
 <context>

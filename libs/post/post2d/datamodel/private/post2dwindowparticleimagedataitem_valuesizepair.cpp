@@ -20,7 +20,6 @@ Post2dWindowParticleImageDataItem::ValueSizePair& Post2dWindowParticleImageDataI
 {
 	copyValue(c);
 	return *this;
-
 }
 
 XmlAttributeContainer& Post2dWindowParticleImageDataItem::ValueSizePair::operator=(const XmlAttributeContainer& c)

@@ -8,6 +8,9 @@
 
 #include <QImage>
 
+class VTKGraphicsView;
+class VTK2DGraphicsView;
+
 class vtkActor;
 class vtkActor2D;
 class vtkPoints;
@@ -19,7 +22,11 @@ public:
 	Impl(GeoDataPointGroup* group);
 	~Impl();
 
-	static QPixmap shrinkPixmap(const QPixmap pixmap, int maxSize);
+	static double calcImageScale(double scale, const DisplaySetting& s);
+	static QPixmap shrinkPixmap(const QPixmap& pixmap, const DisplaySetting& s, VTKGraphicsView* view);
+	static QPixmap shrinkPixmap(const QPixmap& pixmap, int maxSize);
+	static QPointF buildBottomLeftCorner(const QPointF& pos, const QPixmap& pixmap, DisplaySetting::AnchorPosition anchor, VTK2DGraphicsView* view);
+
 	void setupDummyPointForMenu();
 
 	vtkPoints* m_vtkPoints;
@@ -35,6 +42,9 @@ public:
 	QImage m_shrinkedImage;
 
 	DisplaySetting m_displaySetting;
+
+private:
+	GeoDataPointGroup* m_group;
 };
 
 #endif // GEODATAPOINTGROUP_IMPL_H

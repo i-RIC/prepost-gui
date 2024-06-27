@@ -1,35 +1,32 @@
 #include "../../../guibase/objectbrowserview.h"
 #include "../post3dwindowdatamodel.h"
 #include "post3dwindowgridtypedataitem.h"
-#include "post3dwindowisosurfacesettingdialog.h"
 #include "post3dwindownodescalargroupdataitem.h"
 #include "post3dwindownodescalargrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindownodescalargroupdataitem_impl.h"
 
+#include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/datamodel/graphicswindowrootdataitem.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <misc/iricundostack.h>
 #include <misc/opacitycontainer.h>
+#include <misc/orderedvalueselectdialog.h>
 
 Post3dWindowNodeScalarGroupTopDataItem::Post3dWindowNodeScalarGroupTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Isosurfaces"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	setDefaultValues();
 }
 
 Post3dWindowNodeScalarGroupTopDataItem::~Post3dWindowNodeScalarGroupTopDataItem()
 {}
-
-void Post3dWindowNodeScalarGroupTopDataItem::setDefaultValues()
-{
-	m_isoValue = 0.0;
-	m_fullRange = true;
-	m_color = Qt::white;
-}
 
 Post3dWindowZoneDataItem* Post3dWindowNodeScalarGroupTopDataItem::zoneDataItem() const
 {
@@ -86,27 +83,22 @@ QDialog* Post3dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
 	auto zItem = zoneDataItem();
 	auto gtItem = zItem->gridTypeDataItem();
+	auto gType = gtItem->gridType();
 	auto cont = zItem->v4DataContainer();
 
 	if (cont == nullptr || cont->gridData() == nullptr) {return nullptr;}
 
-	auto dialog = new Post3dWindowIsosurfaceSettingDialog(p);
-	dialog->setGridTypeDataItem(gtItem);
+	std::vector<std::string> solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData());
 
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& sol : solutions) {
+		auto c = gType->vectorOutputCaption(sol);
+		captions.insert({sol, c});
+	}
 
-	dialog->setEnabled(true);
-	dialog->setZoneData(cont);
-	dialog->setTarget(m_target);
-
-	// it's made enabled ALWAYS.
-	//	dialog->setEnabled(isEnabled());
-	dialog->setFullRange(m_fullRange);
-	dialog->setRange(m_range);
-
-	dialog->setIsoValue(m_isoValue);
-	dialog->setColor(this->m_color);
-
-	dialog->setColor(m_color);
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(solutions, captions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
 }
@@ -116,174 +108,24 @@ void Post3dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(dataModel()->objectBrowserView()->addAction());
 }
 
-
-class Post3dWindowNodeScalarGroupTopDataItem::CreateCommand : public QUndoCommand
-{
-public:
-	CreateCommand(
-		bool enabled, const std::string& sol,
-		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, const OpacityContainer& opacity, Post3dWindowNodeScalarGroupTopDataItem* topitem) :
-		QUndoCommand(QObject::tr("Create Isosurface"))
-	{
-		m_topItem = topitem;
-		m_item = new Post3dWindowNodeScalarGroupDataItem(m_topItem);
-		m_topItem->m_childItems.push_back(m_item);
-
-		m_item->setIsCommandExecuting(true);
-		m_item->updateZScale(m_topItem->m_zScale);
-		m_item->setEnabled(enabled);
-		m_item->setTarget(sol);
-		m_item->m_fullRange = fullrange;
-		m_item->m_range = range;
-		m_item->m_isoValue = isovalue;
-		m_item->m_color = color;
-		m_item->m_opacity = opacity;
-	}
-
-	void undo()
-	{
-		m_item->setIsCommandExecuting(true);
-		vtkRenderer* r = m_item->renderer();
-		r->RemoveActor(m_item->m_isoSurfaceActor);
-
-		QStandardItem* item = m_item->m_standardItem;
-		Q_ASSERT(item != nullptr);
-		if (item != nullptr) {
-			if (item->parent() == nullptr || item->parent()->row() == -1) {
-				// maybe this is the top level item of the model
-				QStandardItemModel* model = m_item->dataModel()->itemModel();
-				QStandardItem* i = model->item(item->row());
-				if (i == item) {
-					// yes, it is!
-					QStandardItem* clone = m_item->standardItem()->clone();
-					m_item->dataModel()->itemModel()->removeRow(item->row());
-					m_item->m_standardItem = clone;
-				}
-			} else {
-				if (item->parent() != nullptr) {
-					QStandardItem* i = item->parent()->child(item->row());
-					if (i == item) {
-						QStandardItem* clone = m_item->standardItem()->clone();
-						item->parent()->removeRow(item->row());
-						m_item->m_standardItem = clone;
-					}
-				}
-			}
-		}
-
-		m_item->updateActorSettings();
-		m_topItem->renderGraphicsView();
-		m_item->updateItemMap();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo()
-	{
-		m_item->setIsCommandExecuting(true);
-		if (m_item->standardItem()->parent() == nullptr) {
-			auto p = dynamic_cast<GraphicsWindowRootDataItem*>(m_topItem);
-			if (p == nullptr) {
-				auto p2 = dynamic_cast<GraphicsWindowDataItem*>(m_topItem);
-				p2->standardItem()->appendRow(m_item->standardItem());
-			}
-		}
-
-		vtkRenderer* r = m_item->renderer();
-		r->AddActor(m_item->m_isoSurfaceActor);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->updateItemMap();
-		m_item->setIsCommandExecuting(false);
-	}
-
-private:
-	Post3dWindowNodeScalarGroupDataItem* m_item;
-	Post3dWindowNodeScalarGroupTopDataItem* m_topItem;
-};
-
-class Post3dWindowNodeScalarGroupTopDataItem::DeleteCommand : public QUndoCommand
-{
-public:
-	DeleteCommand(
-		Post3dWindowNodeScalarGroupTopDataItem* topitem, Post3dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Delete Isosurface"))
-	{
-		m_topItem = topitem;
-		m_item = item;
-	}
-
-	void undo()
-	{
-		m_item->setIsCommandExecuting(true);
-		if (m_item->standardItem()->parent() == nullptr) {
-			auto p = dynamic_cast<GraphicsWindowRootDataItem*>(m_topItem);
-			if (p == nullptr) {
-				auto p2 = dynamic_cast<GraphicsWindowDataItem*>(m_topItem);
-				p2->standardItem()->appendRow(m_item->standardItem());
-			}
-		}
-
-		vtkRenderer* r = m_item->renderer();
-		r->AddActor(m_item->m_isoSurfaceActor);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->updateItemMap();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo()
-	{
-		m_item->setIsCommandExecuting(true);
-		vtkRenderer* r = m_item->renderer();
-		r->RemoveActor(m_item->m_isoSurfaceActor);
-
-		QStandardItem* item = m_item->m_standardItem;
-		Q_ASSERT(item != nullptr);
-		if (item != nullptr) {
-			if (item->parent() == nullptr || item->parent()->row() == -1) {
-				// maybe this is the top level item of the model
-				QStandardItemModel* model = m_item->dataModel()->itemModel();
-				QStandardItem* i = model->item(item->row());
-				if (i == item) {
-					// yes, it is!
-					QStandardItem* clone = m_item->standardItem()->clone();
-					m_item->dataModel()->itemModel()->removeRow(item->row());
-					m_item->m_standardItem = clone;
-				}
-			} else {
-				if (item->parent() != nullptr) {
-					QStandardItem* i = item->parent()->child(item->row());
-					if (i == item) {
-						QStandardItem* clone = m_item->standardItem()->clone();
-						item->parent()->removeRow(item->row());
-						m_item->m_standardItem = clone;
-					}
-				}
-			}
-		}
-
-		m_item->updateActorSettings();
-		m_topItem->renderGraphicsView();
-		m_item->updateItemMap();
-		m_item->setIsCommandExecuting(false);
-	}
-
-private:
-	Post3dWindowNodeScalarGroupDataItem* m_item;
-	Post3dWindowNodeScalarGroupTopDataItem* m_topItem;
-};
-
-
 void Post3dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(
-		new CreateCommand(
-			dialog->enabled(), dialog->target(),
-			dialog->fullRange(), dialog->range(),
-			dialog->isoValue(), dialog->color(), dialog->opacity(), this)
-			);
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
+		return;
+	}
+
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
+
+	auto newItem = new Post3dWindowNodeScalarGroupDataItem(sol, this);
+	newItem->updateZScale(m_zScale);
+
+	m_childItems.push_back(newItem);
+	updateItemMap();
+	iRICUndoStack::instance().clear();
+
+	newItem->showPropertyDialog();
 }
 
 void Post3dWindowNodeScalarGroupTopDataItem::innerUpdateZScale(double scale)

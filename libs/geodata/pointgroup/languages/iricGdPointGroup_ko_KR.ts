@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>모든 이미지 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>규모</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>크기(%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>닻</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>규모와 크기의 관계</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>제거하다 (&amp;R)</translation>
     </message>
 </context>
 <context>

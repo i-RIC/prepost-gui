@@ -1,20 +1,15 @@
 #include "posttitledataitem.h"
-#include "posttitleeditdialog.h"
-#include "private/posttitledataitem_setsettingcommand.h"
+#include "private/posttitledataitem_editwidget.h"
 
 #include <guibase/colortool.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
-#include <QDomElement>
 #include <QIcon>
-#include <QStandardItem>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
 #include <vtkRenderer.h>
-#include <vtkTextProperty.h>
 
 PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
@@ -24,17 +19,24 @@ PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
 }
 
 PostTitleDataItem::~PostTitleDataItem()
-{}
+{
+	renderer()->RemoveActor2D(m_titleActor);
+}
 
 void PostTitleDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void PostTitleDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.save(writer);
+}
+
+void PostTitleDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 void PostTitleDataItem::setupActors()
@@ -47,28 +49,27 @@ void PostTitleDataItem::setupActors()
 
 QDialog* PostTitleDataItem::propertyDialog(QWidget* parent)
 {
-	PostTitleEditDialog* dialog = new PostTitleEditDialog(parent);
-	dialog->setEnabled(isEnabled());
-	dialog->setSetting(m_setting);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, parent);
+	auto widget = new EditWidget(this, dialog);
+
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Title Setting"));
+
 	return dialog;
 }
 
-void PostTitleDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	PostTitleEditDialog* dialog = dynamic_cast<PostTitleEditDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->isEnabled(), dialog->setting(), this), this, true);
-}
-
-void PostTitleDataItem::updateActorSettings()
+void PostTitleDataItem::updateActorSetting()
 {
 	actor2DCollection()->RemoveAllItems();
+
 	// To avoid VTK warning
 	if (m_setting.title.value().isEmpty()) {
 		m_titleActor->VisibilityOff();
-		updateVisibilityWithoutRendering();
 		return;
 	}
+
 	actor2DCollection()->AddItem(m_titleActor);
+
 	m_titleActor->SetInput(iRIC::toStr(m_setting.title).c_str());
 	m_titleActor->SetTextScaleModeToNone();
 	m_titleActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
@@ -78,5 +79,6 @@ void PostTitleDataItem::updateActorSettings()
 	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToCentered();
 	prop->SetVerticalJustificationToTop();
+
 	updateVisibilityWithoutRendering();
 }

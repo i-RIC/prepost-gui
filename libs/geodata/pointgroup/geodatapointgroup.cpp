@@ -253,6 +253,11 @@ void GeoDataPointGroup::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedPointsPointsActor->SetPosition(0, 0, range.max());
 }
 
+void GeoDataPointGroup::viewOperationEndedGlobal(PreProcessorGraphicsViewI* /*v*/)
+{
+	updateActorSetting();
+}
+
 void GeoDataPointGroup::showPropertyDialog()
 {
 	showPropertyDialogModeless();
@@ -367,8 +372,10 @@ void GeoDataPointGroup::updateActorSetting()
 
 		actorCollection()->AddItem(impl->m_pointsActor);
 	} else {
+		auto view = dataModel()->graphicsView();
 		auto pixmap = QPixmap::fromImage(impl->m_displaySetting.image);
-		impl->m_shrinkedImage = Impl::shrinkPixmap(pixmap, impl->m_displaySetting.imageMaxSize).toImage();
+		auto shrinkedPixmap = Impl::shrinkPixmap(pixmap, impl->m_displaySetting, view);
+		impl->m_shrinkedImage = shrinkedPixmap.toImage();
 		auto imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
 		imgToImg->SetQImage(&impl->m_shrinkedImage);
 		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
@@ -379,6 +386,8 @@ void GeoDataPointGroup::updateActorSetting()
 		for (auto it = data().rbegin(); it != data().rend(); ++it) {
 			auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
 			auto p = point->point();
+			auto p2 = Impl::buildBottomLeftCorner(p, shrinkedPixmap, impl->m_displaySetting.anchorPosition, view);
+
 			auto mapper = vtkSmartPointer<vtkImageMapper>::New();
 			mapper->SetColorWindow(255);
 			mapper->SetColorLevel(127.5);
@@ -390,7 +399,7 @@ void GeoDataPointGroup::updateActorSetting()
 
 			auto coord = actor->GetPositionCoordinate();
 			coord->SetCoordinateSystemToWorld();
-			coord->SetValue(p.x(), p.y(), 0);
+			coord->SetValue(p2.x(), p2.y(), 0);
 
 			r->AddActor2D(actor);
 			col->AddItem(actor);

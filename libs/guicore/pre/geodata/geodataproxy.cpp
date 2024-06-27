@@ -134,6 +134,9 @@ void GeoDataProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 void GeoDataProxy::assignActorZValues(const ZDepthRange& /*range*/)
 {}
 
+void GeoDataProxy::viewOperationEndedGlobal(VTKGraphicsView* /*v*/)
+{}
+
 GeoData* GeoDataProxy::geoData() const
 {
 	return m_geoData;

@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Tỉ lệ</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Kích cỡ (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Mỏ neo</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Mối quan hệ giữa quy mô và kích thước</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Thêm vào (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Di dời (&amp;R)</translation>
     </message>
 </context>
 <context>

@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Toate imaginile (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Scară</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Mărimea (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Ancoră</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Relația dintre scară și dimensiune</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adăuga (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Elimina (&amp;R)</translation>
     </message>
 </context>
 <context>

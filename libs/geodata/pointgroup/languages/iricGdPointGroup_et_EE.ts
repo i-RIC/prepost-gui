@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Kõik pildid (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Kaal</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Suurus (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Ankur</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Skaala ja suuruse seos</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisama (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eemalda (&amp;R)</translation>
     </message>
 </context>
 <context>

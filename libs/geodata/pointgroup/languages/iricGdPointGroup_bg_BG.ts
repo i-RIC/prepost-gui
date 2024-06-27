@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Всички изображения (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Мащаб</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Размер (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>котва</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>Връзка между мащаб и размер</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
     </message>
 </context>
 <context>

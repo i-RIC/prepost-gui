@@ -103,3 +103,8 @@ void Post2dWindowGeoDataDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_geoDataProxy->assignActorZValues(range);
 }
+
+void Post2dWindowGeoDataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
+{
+	m_geoDataProxy->viewOperationEndedGlobal(v);
+}

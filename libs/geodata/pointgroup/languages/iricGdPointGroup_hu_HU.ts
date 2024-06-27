@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Minden kép (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skála</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>Méret (%)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>Horgony</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>A lépték és a méret kapcsolata</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Hozzáadás (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Távolítsa el (&amp;R)</translation>
     </message>
 </context>
 <context>

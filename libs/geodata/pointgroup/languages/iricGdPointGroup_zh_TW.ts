@@ -36,6 +36,14 @@
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>所有圖像 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
+    <message>
+        <source>Scale</source>
+        <translation>規模</translation>
+    </message>
+    <message>
+        <source>Size (%)</source>
+        <translation>尺寸 （％）</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroup::PropertyDialog</name>
@@ -265,6 +273,22 @@
     <message>
         <source>Custom Color</source>
         <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Anchor</source>
+        <translation>錨</translation>
+    </message>
+    <message>
+        <source>Relationship between scale and size</source>
+        <translation>比例尺與大小的關係</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
     </message>
 </context>
 <context>

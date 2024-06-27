@@ -1,45 +1,47 @@
-#include "post2dwindowgraphsettingdialog.h"
-#include "ui_post2dwindowgraphsettingdialog.h"
-#include "private/post2dwindowgraphsettingcustomregiondialog.h"
-#include "private/post2dwindowgraphsettingdialog_impl.h"
+#include "post2dwindowgraphgroupdataitem_editwidget.h"
+#include "post2dwindowgraphgroupdataitem_editwidget_customregiondialog.h"
+#include "post2dwindowgraphgroupdataitem_impl.h"
+#include "ui_post2dwindowgraphgroupdataitem_editwidget.h"
 
 #include <guibase/comboboxtool.h>
+#include <misc/qundocommandhelper.h>
+#include <misc/valuemodifycommandt.h>
 
-Post2dWindowGraphSettingDialog::Post2dWindowGraphSettingDialog(QWidget *parent) :
-	QDialog(parent),
-	ui(new Ui::Post2dWindowGraphSettingDialog),
-	impl {new Impl()}
+Post2dWindowGraphGroupDataItem::EditWidget::EditWidget(Post2dWindowGraphGroupDataItem* item, QWidget *parent) :
+	ModifyCommandWidget(parent),
+	m_item {item},
+	ui(new Ui::Post2dWindowGraphGroupDataItem_EditWidget)
 {
 	ui->setupUi(this);
 
-	connect(ui->iDirRadioButton, SIGNAL(toggled(bool)), this, SLOT(handleDirChange(bool)));
-	connect(ui->jDirRadioButton, SIGNAL(toggled(bool)), this, SLOT(handleDirChange(bool)));
+	connect(ui->iDirRadioButton, &QRadioButton::toggled, this, &EditWidget::handleDirChange);
+	connect(ui->jDirRadioButton, &QRadioButton::toggled, this, &EditWidget::handleDirChange);
 
-	connect(ui->startSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStartChange(int)));
-	connect(ui->endSlider, SIGNAL(valueChanged(int)), this, SLOT(handleEndChange(int)));
+	connect(ui->startSlider, &SliderWithValue::valueChanged, this, &EditWidget::handleStartChange);
+	connect(ui->endSlider, &SliderWithValue::valueChanged, this, &EditWidget::handleEndChange);
 
-	connect(ui->regionCustomSettingPushButton, SIGNAL(clicked(bool)), this, SLOT(editRegionCustomSetting()));
+	connect(ui->regionCustomSettingPushButton, &QPushButton::clicked, this, &EditWidget::editRegionCustomSetting);
 }
 
-Post2dWindowGraphSettingDialog::~Post2dWindowGraphSettingDialog()
+Post2dWindowGraphGroupDataItem::EditWidget::~EditWidget()
 {
 	delete ui;
 }
 
-void Post2dWindowGraphSettingDialog::setDimensions(int dimI, int dimJ)
+void Post2dWindowGraphGroupDataItem::EditWidget::setDimensions(int dimI, int dimJ)
 {
-	impl->m_dimI = dimI;
-	impl->m_dimJ = dimJ;
+	m_dimI = dimI;
+	m_dimJ = dimJ;
 }
 
-void Post2dWindowGraphSettingDialog::setTargets(const std::vector<std::string>& targets)
+void Post2dWindowGraphGroupDataItem::EditWidget::setTargets(const std::vector<std::string>& targets)
 {
 	ComboBoxTool::setupItems(targets, ui->targetComboBox);
 }
 
-Post2dWindowGraphSetting Post2dWindowGraphSettingDialog::setting() const
+Post2dWindowGraphSetting Post2dWindowGraphGroupDataItem::EditWidget::setting() const
 {
-	Post2dWindowGraphSetting ret = impl->m_setting;
+	Post2dWindowGraphSetting ret = m_setting;
 
 	if (ui->iDirRadioButton->isChecked()) {
 		ret.direction = Post2dWindowGraphSetting::dirI;
@@ -82,9 +84,9 @@ Post2dWindowGraphSetting Post2dWindowGraphSettingDialog::setting() const
 	return ret;
 }
 
-void Post2dWindowGraphSettingDialog::setSetting(const Post2dWindowGraphSetting& setting)
+void Post2dWindowGraphGroupDataItem::EditWidget::setSetting(const Post2dWindowGraphSetting& setting)
 {
-	impl->m_setting = setting;
+	m_setting = setting;
 
 	if (setting.direction == Post2dWindowGraphSetting::dirI) {
 		ui->iDirRadioButton->setChecked(true);
@@ -128,7 +130,12 @@ void Post2dWindowGraphSettingDialog::setSetting(const Post2dWindowGraphSetting& 
 	}
 }
 
-void Post2dWindowGraphSettingDialog::handleDirChange(bool checked)
+QUndoCommand* Post2dWindowGraphGroupDataItem::EditWidget::createModifyCommand(bool apply)
+{
+	return new ValueModifyCommmand<Post2dWindowGraphSetting>(iRIC::generateCommandId("Post2dWindowGraphGroupDataItem::EditWidget"), apply, setting(), &m_item->impl->m_setting);
+}
+
+void Post2dWindowGraphGroupDataItem::EditWidget::handleDirChange(bool checked)
 {
 	if (checked == false) {return;}
 
@@ -136,59 +143,58 @@ void Post2dWindowGraphSettingDialog::handleDirChange(bool checked)
 	resetRegionCustomSetting();
 }
 
-void Post2dWindowGraphSettingDialog::handleStartChange(int val)
+void Post2dWindowGraphGroupDataItem::EditWidget::handleStartChange(int val)
 {
 	if (ui->endSlider->value() < val){
 		ui->endSlider->setValue(val);
 	}
 }
 
-void Post2dWindowGraphSettingDialog::handleEndChange(int val)
+void Post2dWindowGraphGroupDataItem::EditWidget::handleEndChange(int val)
 {
 	if (ui->startSlider->value() > val) {
 		ui->startSlider->setValue(val);
 	}
 }
 
-void Post2dWindowGraphSettingDialog::editRegionCustomSetting()
+void Post2dWindowGraphGroupDataItem::EditWidget::editRegionCustomSetting()
 {
-	Post2dWindowGraphSettingCustomRegionDialog dialog(this);
+	CustomRegionDialog dialog(this);
 
 	if (ui->iDirRadioButton->isChecked()) {
-		dialog.setIndexCount(impl->m_dimI);
+		dialog.setIndexCount(m_dimI);
 	} else {
-		dialog.setIndexCount(impl->m_dimJ);
+		dialog.setIndexCount(m_dimJ);
 	}
-	dialog.setSetting(impl->m_setting.regionIndices);
+	dialog.setSetting(m_setting.regionIndices);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	impl->m_setting.regionIndices = dialog.setting();
+	m_setting.regionIndices = dialog.setting();
 }
 
-void Post2dWindowGraphSettingDialog::updateStartEndValueRange()
+void Post2dWindowGraphGroupDataItem::EditWidget::updateStartEndValueRange()
 {
 	if (ui->iDirRadioButton->isChecked()) {
-		ui->startSlider->setRange(0, impl->m_dimI - 1);
-		ui->endSlider->setRange(0, impl->m_dimI - 1);
+		ui->startSlider->setRange(0, m_dimI - 1);
+		ui->endSlider->setRange(0, m_dimI - 1);
 	} else {
-		ui->startSlider->setRange(0, impl->m_dimJ - 1);
-		ui->endSlider->setRange(0, impl->m_dimJ - 1);
+		ui->startSlider->setRange(0, m_dimJ - 1);
+		ui->endSlider->setRange(0, m_dimJ - 1);
 	}
 }
-
-void Post2dWindowGraphSettingDialog::resetRegionCustomSetting()
+void Post2dWindowGraphGroupDataItem::EditWidget::resetRegionCustomSetting()
 {
 	int size = 0;
 	if (ui->iDirRadioButton->isChecked()) {
-		size = impl->m_dimI;
+		size = m_dimI;
 	} else {
-		size = impl->m_dimJ;
+		size = m_dimJ;
 	}
 	std::vector<int> indices(size);
 	for (int i = 0; i < size; ++i) {
 		indices[i] = i;
 	}
-	impl->m_setting.regionIndices = indices;
+	m_setting.regionIndices = indices;
 }
