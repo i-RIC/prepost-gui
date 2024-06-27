@@ -645,7 +645,7 @@ bool GeoDataPolyLine::inNormalMode() const
 
 bool GeoDataPolyLine::isDefined() const
 {
-	return impl->m_mouseEventMode != meBeforeDefining;
+	return impl->m_polyLine->polyLine().size() >= 2;
 }
 
 void GeoDataPolyLine::updateScalarValues()
