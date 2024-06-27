@@ -23,8 +23,6 @@ public:
 
 	v4InputGrid* inputGrid() const;
 	v4Grid2d* grid() const override;
-	void setEdgeFocus(vtkIdType i, vtkIdType j);
-	void clearEdgeFocus();
 
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
