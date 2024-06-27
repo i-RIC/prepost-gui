@@ -17,6 +17,7 @@ public:
 
 	void setImpl(Impl* impl);
 
+	void render();
 	void cameraFit();
 	double aspectRatio() const;
 	void setAspectRatio(double ratio);

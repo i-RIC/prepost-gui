@@ -137,6 +137,7 @@ void AbstractCrosssectionWindow::update()
 	impl->updateColorMapValueRanges();
 	impl->m_displaySettingTableController->updateVisible();
 	impl->m_editTableController->applyToTable();
+	impl->graphicsView()->render();
 }
 
 void AbstractCrosssectionWindow::handleSettingChange()
@@ -175,7 +176,7 @@ QPixmap AbstractCrosssectionWindow::snapshot() const
 	QRect rect = pixmap.rect();
 	painter.fillRect(rect, brush);
 	QRegion region(0, 0, pixmap.width(), pixmap.height());
-	gv->render(&painter, QPoint(), region, QWidget::DrawChildren);
+	gv->QAbstractItemView::render(&painter, QPoint(), region, QWidget::DrawChildren);
 	painter.end();
 	return pixmap;
 }
