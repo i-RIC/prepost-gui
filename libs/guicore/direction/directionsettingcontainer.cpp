@@ -81,7 +81,9 @@ std::vector<vtkIdType> DirectionSettingContainer::findWrongPoints(vtkPointSet* d
 			wrong[i] = false;
 		}
 	}
-	findWrongPointsRecursively(vals, cellINum, cellJNum, downstreamPoint, &wrong);
+	std::unordered_set<vtkIdType> visited;
+
+	findWrongPointsRecursively(vals, cellINum, cellJNum, downstreamPoint, visited, &wrong);
 
 	std::vector<vtkIdType> ret;
 	for (vtkIdType i = 0; i < wrong.size(); ++i) {
@@ -99,11 +101,13 @@ vtkIdType DirectionSettingContainer::findDownstreamPoint(vtkPointSet* data)
 	auto grid = vtkStructuredGrid::SafeDownCast(data);
 	grid->GetDimensions(dims);
 	int cellINum = dims[0] - 1;
+	int cellJNum = dims[1] - 1;
 
 	auto numCells = data->GetNumberOfCells();
 	int testedCount = 0;
 	auto vals = vtkIntArray::SafeDownCast(data->GetCellData()->GetScalars());
 	while (testedCount < FIND_DOWNSTREAM_POINT_STARTPOINTCOUNT) {
+		std::unordered_set<vtkIdType> visited;
 		auto index = QRandomGenerator64::global()->generate64() % numCells;
 		auto value = vals->GetValue(index);
 		int iDiff, jDiff;
@@ -112,11 +116,16 @@ vtkIdType DirectionSettingContainer::findDownstreamPoint(vtkPointSet* data)
 			continue;
 		}
 
-		while (! (iDiff == 0 && jDiff == 0)) {
+		while ((! (iDiff == 0 && jDiff == 0)) && (visited.find(index) == visited.end())) {
+			visited.insert(index);
+
 			int i = index % cellINum;
 			int j = (index - i) / cellINum;
 			int new_i = i + iDiff;
 			int new_j = j + jDiff;
+			if (new_i < 0 || new_i >= cellINum || new_j < 0 || new_j >= cellJNum) {
+				break;
+			}
 			index = new_i + new_j * cellINum;
 
 			value = vals->GetValue(index);
@@ -340,8 +349,11 @@ vtkConeSource* DirectionSettingContainer::buildConeSource(VTKGraphicsView* view)
 	return source;
 }
 
-void DirectionSettingContainer::findWrongPointsRecursively(vtkIntArray* data, vtkIdType cellICount, vtkIdType cellJCount, vtkIdType current, std::vector<bool>* wrong)
+void DirectionSettingContainer::findWrongPointsRecursively(vtkIntArray* data, vtkIdType cellICount, vtkIdType cellJCount, vtkIdType current, std::unordered_set<vtkIdType> visited, std::vector<bool>* wrong)
 {
+	if (visited.find(current) != visited.end()) {return;}
+
+	visited.insert(current);
 	vtkIdType i = current % cellICount;
 	vtkIdType j = (current - i) / cellICount;
 
@@ -363,7 +375,7 @@ void DirectionSettingContainer::findWrongPointsRecursively(vtkIntArray* data, vt
 
 			if (iDiff + newIDiff == 0 && jDiff + newJDiff == 0) {
 				(*wrong)[newIndex] = false;
-				findWrongPointsRecursively(data, cellICount, cellJCount, newIndex, wrong);
+				findWrongPointsRecursively(data, cellICount, cellJCount, newIndex, visited, wrong);
 			}
 		}
 	}

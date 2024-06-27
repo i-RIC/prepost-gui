@@ -50,7 +50,7 @@ public:
 
 private:
 	vtkConeSource* buildConeSource(VTKGraphicsView* view) const;
-	void findWrongPointsRecursively(vtkIntArray* data, vtkIdType cellICount, vtkIdType cellJCount, vtkIdType current, std::vector<bool>* wrong);
+	void findWrongPointsRecursively(vtkIntArray* data, vtkIdType cellICount, vtkIdType cellJCount, vtkIdType current, std::unordered_set<vtkIdType> visited, std::vector<bool>* wrong);
 };
 
 #endif // DIRECTIONSETTINGCONTAINER_H
