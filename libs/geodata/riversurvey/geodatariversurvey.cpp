@@ -203,6 +203,7 @@ bool GeoDataRiverSurvey::addToolBarButtons(QToolBar* /*tb*/)
 void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewI*)
 {
 	allActorsOff();
+
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
 
@@ -233,7 +234,9 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewI*)
 		if (impl->m_displaySetting.showLines) {
 			col->AddItem(impl->m_verticalCrossSectionLinesActor);
 		}
-		col2->AddItem(impl->m_labelActor);
+		if (impl->m_displaySetting.showNames) {
+			col2->AddItem(impl->m_labelActor);
+		}
 	}
 
 	updateVisibilityWithoutRendering();
@@ -242,8 +245,10 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewI*)
 void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	allActorsOff();
+
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
+
 	col->RemoveAllItems();
 	col2->RemoveAllItems();
 
@@ -266,7 +271,9 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 		if (impl->m_displaySetting.showLines) {
 			col->AddItem(impl->m_verticalCrossSectionLinesActor);
 		}
-		col2->AddItem(impl->m_labelActor);
+		if (impl->m_displaySetting.showNames) {
+			col2->AddItem(impl->m_labelActor);
+		}
 	}
 
 	updateVisibilityWithoutRendering();
