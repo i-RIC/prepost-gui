@@ -50,7 +50,8 @@ init:
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
-  - Debug
+  # Remove this after testing
+  # - Debug
   - Release
 
 matrix:
@@ -324,6 +325,9 @@ on_success:
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update_v4 -ErrorAction Stop
+
+        # Remove this after testing
+        $branch = $True
 
         if ($branch) {
           # create branch when remote is not "i-RIC/prepost-gui"
