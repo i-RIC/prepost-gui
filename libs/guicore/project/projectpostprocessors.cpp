@@ -11,6 +11,7 @@
 
 #include <QDir>
 #include <QDomNode>
+#include <QFile>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QString>
@@ -213,8 +214,31 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node)
 void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	QDir workDir(projectData()->workDirectory());
-
 	saveToXmlFile(writer, workDir);
+
+	deleteGarbageFiles();
+}
+
+void ProjectPostProcessors::deleteGarbageFiles()
+{
+	std::unordered_set<QString> files;
+
+	QDir workDir(projectData()->workDirectory());
+	QDir subWindowsDir(workDir.absoluteFilePath(SUBWINDOWS));
+
+	for (auto w : m_postProcessorWindows) {
+		auto fileName = subWindowsDir.filePath(QString("%1.xml").arg(w->windowId()));
+		files.insert(fileName);
+	}
+	files.insert(subWindowsDir.filePath("preprocessor.xml"));
+
+	for (auto fileName : subWindowsDir.entryList(QDir::Files, QDir::NoSort)) {
+		auto fullName = subWindowsDir.absoluteFilePath(fileName);
+		if (files.find(fullName) == files.end()) {
+			QFile f(fullName);
+			f.remove();
+		}
+	}
 }
 
 QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* newitem)
