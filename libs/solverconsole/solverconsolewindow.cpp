@@ -157,13 +157,6 @@ void SolverConsoleWindow::startSolver()
 		return;
 	}
 
-	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
-	if (ret == QMessageBox::Yes) {
-		// save the project file.
-		if (! impl->m_projectData->mainWindow()->saveProject()) {return;}
-	} else if (ret == QMessageBox::Cancel) {
-		return;
-	}
 	clear();
 
 	// check solver executable existance
