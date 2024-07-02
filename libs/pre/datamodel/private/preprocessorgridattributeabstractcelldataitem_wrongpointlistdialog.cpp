@@ -9,8 +9,9 @@
 
 #include <vtkStructuredGrid.h>
 
-PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, QWidget *parent) :
+PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, vtkIdType ds, QWidget *parent) :
 	QDialog(parent),
+	m_downstream {ds},
 	m_item {item},
 	ui(new Ui::PreProcessorGridAttributeAbstractCellDataItem_WrongPointListDialog)
 {
@@ -58,7 +59,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::rechec
 	auto data = m_item->groupDataItem()->data()->data();
 	data->GetCellData()->SetActiveScalars(m_item->m_condition->name().c_str());
 
-	auto list = m_item->m_directionSetting.findWrongPoints(data);
+	auto list = m_item->m_directionSetting.findWrongPoints(data, m_downstream);
 	setPointList(list);
 
 	m_item->m_wrongPoints = list;
