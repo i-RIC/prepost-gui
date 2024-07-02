@@ -11,6 +11,7 @@ class GeoDataImporter;
 class GeoDataExporter;
 class GeoDataWebImporter;
 class GraphicsWindowDataItem;
+class ProjectData;
 class ProjectDataItem;
 class SolverDefinitionGridAttribute;
 
@@ -30,7 +31,7 @@ public:
 	virtual QString defaultCaption(unsigned int index) const = 0;
 	const QString& caption() const;
 
-	void setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem*>& list, GeoData* data);
+	void setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem*>& list, GeoData* data, ProjectData* projectData);
 	virtual bool requestCoordinateSystem() const;
 
 	/// Return true if the corresponding geo data can be used　for this grid related condition.

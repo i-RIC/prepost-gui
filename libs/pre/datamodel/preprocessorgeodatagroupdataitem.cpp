@@ -329,7 +329,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
 		// set name and caption
-		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		bool ret = importer->importData(geodata, i, wDialog);
@@ -603,7 +603,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 	item->setGeoData(geodata);
 	setupConnectionToGeoData(geodata);
 	// set name and caption
-	creator->setNameAndDefaultCaption(this->childItems(), geodata);
+	creator->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 	geodata->setupDataItem();
 
 	// the background item should be at the last always.
@@ -705,7 +705,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
 		// set name and caption
-		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		QWidget *w = wDialog;
@@ -1173,11 +1173,11 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 	GeoData* geodata = c->create(item, m_condition);
 	item->setGeoData(geodata);
 	// set name and caption
-	c->setNameAndDefaultCaption(this->childItems(), geodata);
+	c->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 	geodata->setupDataItem();
 
 	// now copy the grid shape.
-	GeoDataPolygon* newpol = dynamic_cast<GeoDataPolygon*>(geodata);
+	auto newpol = dynamic_cast<GeoDataPolygon*>(geodata);
 	newpol->copyShape(polygon);
 	setupConnectionToGeoData(newpol);
 

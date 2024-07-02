@@ -1630,7 +1630,7 @@ void GeoDataRiverSurvey::generatePointMap()
 
 	auto item = gItem->buildGeoDataDataItem();
 	GeoData* data = builder.end(item, creator, gItem->condition());
-	creator->setNameAndDefaultCaption(gItem->childItems(), data);
+	creator->setNameAndDefaultCaption(gItem->childItems(), data, geoDataDataItem()->projectData());
 
 	item->setGeoData(data);
 	gItem->addGeoData(item);
