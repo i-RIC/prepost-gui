@@ -375,7 +375,7 @@ void GridComplexConditionDialog::accept()
 	}
 
 	disconnect(this, SLOT(defaultChecked(bool)));
-	if (defIndex == -1) {
+	if (defIndex == -1 && m_widgets.size() > 0) {
 		// if no default specified and there is more than one widget, make the first one default.
 		m_widgets[0]->setIsDefault(true);
 	}
