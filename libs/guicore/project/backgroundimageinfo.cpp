@@ -30,8 +30,8 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, ProjectDataIte
 
 	m_hide = false; // for georeference
 
-	connect(impl->m_fixAction, SIGNAL(triggered()), this, SLOT(toggleFixState()));
-	connect(impl->m_fixActionWithIcon, SIGNAL(triggered()), this, SLOT(toggleFixState()));
+	connect(impl->m_fixAction, &QAction::triggered, this, &BackgroundImageInfo::toggleFixState);
+	connect(impl->m_fixActionWithIcon, &QAction::triggered, this, &BackgroundImageInfo::toggleFixState);
 	impl->updateFixActionIcon();
 
 	impl->loadImageData(filename);

@@ -707,27 +707,35 @@ void ProjectMainFile::addBackgroundImage()
 	if (fname == "") {return;}
 
 	QFileInfo finfo(fname);
+
+	QString ext = finfo.suffix().toLower();
+	if (! (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "tif")) {
+		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Invalid image file is specified. File suffix should be one of \"jpg\", \"jpeg\", \"png\", or \"tif\"."));
+	}
+
 	// check whether a image file with the same filename exists.
 	QString filename = finfo.fileName();
 	for (auto image : impl->m_backgroundImages) {
 		if (image->fileName().toLower() == filename.toLower()) {
 			// file with the same name already exists.
-			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("A background image with the same name already exists."));
+			QMessageBox::critical(iricMainWindow(), tr("Error"), tr("A background image with the same name already exists."));
 			return;
 		}
 	}
 
+	QDir workDir(projectData()->workDirectory());
 	// copy to the project file.
 	if (! mkdirBGDIR()) {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
+		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Error occured while creating folder %1").arg(workDir.absoluteFilePath(BGDIR)));
 		return;
 	}
 
 	QDir bgDir = QDir(projectData()->workDirectory());
 	bgDir.cd(BGDIR);
 
+
 	QString to = bgDir.absoluteFilePath(QFileInfo(fname).fileName());
-	if (!bgDir.exists(QFileInfo(fname).fileName())){
+	if (! bgDir.exists(QFileInfo(fname).fileName())){
 		if (! QFile::copy(fname, to)) {
 			QMessageBox::critical(iricMainWindow(), tr("Warning"),
 														tr("Copying image %1 to %2 failed.")
@@ -737,17 +745,12 @@ void ProjectMainFile::addBackgroundImage()
 		}
 	}
 
-	QString ext = finfo.suffix().toLower();
-	if (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "tif") {
-		try {
-			BackgroundImageInfo* image = new BackgroundImageInfo(to, this);
-			image->initializePosition(fname);
-			addBackgroundImage(image);
-		} catch (ErrorMessage m) {
-			QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
-		}
-	} else {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Invalid image file is specified."));
+	try {
+		BackgroundImageInfo* image = new BackgroundImageInfo(to, this);
+		image->initializePosition(fname);
+		addBackgroundImage(image);
+	} catch (ErrorMessage m) {
+		QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
 	}
 }
 
