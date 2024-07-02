@@ -482,6 +482,17 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	RecentProjectsManager::append(filename);
 	updatePostActionStatus();
+
+	// maximize sub window if needed
+	bool maximized = false;
+	for (auto w : m_centralWidget->subWindowList()) {
+		maximized = maximized || w->isMaximized();
+	}
+	if (maximized) {
+		auto active = m_centralWidget->activeSubWindow();
+		active->showNormal();
+		active->showMaximized();
+	}
 }
 
 void iRICMainWindow::importCalcCondition()
