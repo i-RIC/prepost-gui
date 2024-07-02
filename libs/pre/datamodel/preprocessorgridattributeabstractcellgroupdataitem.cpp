@@ -209,6 +209,8 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::mouseReleaseEvent(QMous
 void PreProcessorGridAttributeAbstractCellGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
+
+	GraphicsWindowDataItem::assignActorZValues(range);
 }
 
 void PreProcessorGridAttributeAbstractCellGroupDataItem::informGridUpdate()

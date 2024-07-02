@@ -364,7 +364,7 @@ void DirectionSettingContainer::findWrongPointsRecursively(vtkIntArray* data, vt
 			auto newI = i + iDiff;
 			if (newI < 0 || newI >= cellICount) {continue;}
 			auto newJ = j + jDiff;
-			if (newJ < 0 || newJ >= cellICount) {continue;}
+			if (newJ < 0 || newJ >= cellJCount) {continue;}
 
 			auto newIndex = newI + newJ * cellICount;
 			if (newIndex >= wrong->size()) {continue;}
