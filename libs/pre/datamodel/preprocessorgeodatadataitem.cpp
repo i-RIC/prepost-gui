@@ -312,12 +312,6 @@ void PreProcessorGeoDataDataItem::setDeleteSilently(bool silent)
 	m_deleteSilently = silent;
 }
 
-void PreProcessorGeoDataDataItem::removeFile()
-{
-	if (m_geoData->filename().isEmpty()) {return;}
-	QFile::remove(m_geoData->filename());
-}
-
 ColorMapSettingContainerI* PreProcessorGeoDataDataItem::colorMapSettingContainer() const
 {
 	auto groupdi = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent());

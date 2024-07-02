@@ -50,7 +50,6 @@ public:
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
 	void setDeleteSilently(bool silent) override;
-	void removeFile();
 
 	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
