@@ -496,6 +496,9 @@ void PreProcessorGridAttributeAbstractCellDataItem::findWrongPoints()
 	dialog->setPointList(wrongPoints);
 
 	dialog->show();
+
+	iricMainWindow()->enterModelessDialogMode();
+	connect(dialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::showPropertyDialog()
