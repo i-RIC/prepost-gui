@@ -54,6 +54,8 @@
 #include <h5cgnsgeographicdatagroup.h>
 #include <h5cgnsgeographicdatatop.h>
 
+#include <QDir>
+
 PreProcessorGeoDataGroupDataItem::VariationSetting::VariationSetting() :
 	CompositeContainer({&enabled, &activeVariation}),
 	enabled {"enabled", false},
@@ -327,7 +329,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
 		// set name and caption
-		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		bool ret = importer->importData(geodata, i, wDialog);
@@ -601,7 +603,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 	item->setGeoData(geodata);
 	setupConnectionToGeoData(geodata);
 	// set name and caption
-	creator->setNameAndDefaultCaption(this->childItems(), geodata);
+	creator->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 	geodata->setupDataItem();
 
 	// the background item should be at the last always.
@@ -703,7 +705,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
 		// set name and caption
-		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		QWidget *w = wDialog;
@@ -821,10 +823,27 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 	writer.writeAttribute("name", m_condition->name().c_str());
 	m_variationSetting.save(writer);
 
+	std::unordered_set<QString> files;
+	QDir workdir(projectData()->workDirectory());
+
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
+
+		for (auto file : child->containedFiles()) {
+			files.insert(workdir.absoluteFilePath(file));
+		}
+	}
+
+	QDir subDir(subPath());
+	auto allFiles = subDir.entryList(QDir::Files, QDir::NoSort);
+	for (auto file : allFiles) {
+		auto fullName = subDir.absoluteFilePath(file);
+		if (files.find(fullName) == files.end()) {
+			QFile f(fullName);
+			f.remove();
+		}
 	}
 }
 
@@ -1154,11 +1173,11 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 	GeoData* geodata = c->create(item, m_condition);
 	item->setGeoData(geodata);
 	// set name and caption
-	c->setNameAndDefaultCaption(this->childItems(), geodata);
+	c->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 	geodata->setupDataItem();
 
 	// now copy the grid shape.
-	GeoDataPolygon* newpol = dynamic_cast<GeoDataPolygon*>(geodata);
+	auto newpol = dynamic_cast<GeoDataPolygon*>(geodata);
 	newpol->copyShape(polygon);
 	setupConnectionToGeoData(newpol);
 

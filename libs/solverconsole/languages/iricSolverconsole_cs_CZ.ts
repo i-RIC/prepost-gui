@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulace má výsledek</translation>
+        <translation type="vanished">Simulace má výsledek</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Aktuální simulace již má data výsledků. Když spustíte řešič, aktuální data výsledku se zahodí.</translation>
+        <translation type="vanished">Aktuální simulace již má data výsledků. Když spustíte řešič, aktuální data výsledku se zahodí.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Před spuštěním řešiče doporučujeme projekt uložit. Chcete ušetřit?</translation>
+        <translation type="vanished">Před spuštěním řešiče doporučujeme projekt uložit. Chcete ušetřit?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 neexistuje. Zadejte platnou cestu ke spustitelnému souboru Pythonu v dialogovém okně Předvolby.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

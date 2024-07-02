@@ -207,9 +207,9 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoDataGroup");
-		(*it)->saveToProjectMainFile(writer);
+		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }

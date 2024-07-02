@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Симуляциянын натыйжасы бар</translation>
+        <translation type="vanished">Симуляциянын натыйжасы бар</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Учурдагы симуляцияда натыйжа маалыматы бар. Чечүүчү иштеткенде, учурдагы жыйынтык маалыматы жокко чыгарылат.</translation>
+        <translation type="vanished">Учурдагы симуляцияда натыйжа маалыматы бар. Чечүүчү иштеткенде, учурдагы жыйынтык маалыматы жокко чыгарылат.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Чечүүчүгө киришүүдөн мурун долбоорду сактап калууну сунуштайбыз. Сактагыңыз келеби?</translation>
+        <translation type="vanished">Чечүүчүгө киришүүдөн мурун долбоорду сактап калууну сунуштайбыз. Сактагыңыз келеби?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 жок. Сураныч, артыкчылык диалогунда жарактуу Python аткарылуучу жолду көрсөтүңүз.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

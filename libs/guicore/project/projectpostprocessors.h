@@ -35,6 +35,7 @@ private:
 	// Never used.
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void deleteGarbageFiles();
 
 	QList<PostProcessorWindowProjectDataItem*> m_postProcessorWindows;
 	PostProcessorWindowFactoryI* m_factory;

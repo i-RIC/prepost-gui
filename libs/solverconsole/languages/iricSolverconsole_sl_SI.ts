@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulacija je dala rezultat</translation>
+        <translation type="vanished">Simulacija je dala rezultat</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Trenutna simulacija že vsebuje podatke o rezultatih. Ko zaženete program za reševanje, se trenutni podatki o rezultatih zavržejo.</translation>
+        <translation type="vanished">Trenutna simulacija že vsebuje podatke o rezultatih. Ko zaženete program za reševanje, se trenutni podatki o rezultatih zavržejo.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Priporočamo, da projekt shranite pred zagonom reševalca. Ali želite shraniti?</translation>
+        <translation type="vanished">Priporočamo, da projekt shranite pred zagonom reševalca. Ali želite shraniti?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 ne obstaja. V pogovornem oknu Preference navedite veljavno pot do izvedljive datoteke Python.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

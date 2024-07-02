@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Моделювання дало результат</translation>
+        <translation type="vanished">Моделювання дало результат</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Поточне моделювання вже містить дані про результати. Під час запуску розв’язувача поточні дані результату відкидаються.</translation>
+        <translation type="vanished">Поточне моделювання вже містить дані про результати. Під час запуску розв’язувача поточні дані результату відкидаються.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Ми рекомендуємо вам зберегти проект перед початком розв’язувача. Ви хочете зберегти?</translation>
+        <translation type="vanished">Ми рекомендуємо вам зберегти проект перед початком розв’язувача. Ви хочете зберегти?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 не існує. Укажіть дійсний шлях до виконуваного файлу Python у діалоговому вікні налаштувань.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

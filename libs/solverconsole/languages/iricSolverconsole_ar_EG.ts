@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>المحاكاة لها نتيجة</translation>
+        <translation type="vanished">المحاكاة لها نتيجة</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>المحاكاة الحالية لديها بالفعل بيانات النتائج. عند تشغيل الحل ، يتم تجاهل بيانات النتيجة الحالية.</translation>
+        <translation type="vanished">المحاكاة الحالية لديها بالفعل بيانات النتائج. عند تشغيل الحل ، يتم تجاهل بيانات النتيجة الحالية.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>نوصي بحفظ المشروع قبل بدء الحل. هل تريد حفظ؟</translation>
+        <translation type="vanished">نوصي بحفظ المشروع قبل بدء الحل. هل تريد حفظ؟</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 ليس موجود. يرجى تحديد مسار Python صالح قابل للتنفيذ في مربع حوار التفضيلات.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

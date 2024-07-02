@@ -15,7 +15,7 @@
 class ProjectMainFile::Impl
 {
 public:
-	Impl(ProjectMainFile* parent);
+	Impl(ProjectData* data, ProjectMainFile* parent);
 	~Impl();
 
 	void loadMeasuredDatas(const QDomNode& node);
@@ -26,6 +26,7 @@ public:
 	void saveBackgrounds(QXmlStreamWriter& writer);
 	QStringList backgroundImageFiles() const;
 	void clearBackgroundImages();
+	void deleteGarbageBackgroundImages();
 
 	std::string m_solverName;
 	VersionNumber m_solverVersion;
@@ -36,6 +37,7 @@ public:
 	std::vector<BackgroundImageInfo*> m_backgroundImages;
 	PostSolutionInfo* m_postSolutionInfo;
 	ProjectPostProcessors* m_postProcessors;
+	ProjectData* m_projectData;
 
 	CoordinateSystem* m_coordinateSystem;
 	QDateTime m_zeroDateTime; // time that corresponds to t = 0

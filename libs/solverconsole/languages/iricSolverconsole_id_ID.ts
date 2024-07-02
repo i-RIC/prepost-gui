@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulasi memiliki hasil</translation>
+        <translation type="vanished">Simulasi memiliki hasil</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Simulasi saat ini sudah memiliki data hasil. Saat Anda menjalankan pemecah, data hasil saat ini dibuang.</translation>
+        <translation type="vanished">Simulasi saat ini sudah memiliki data hasil. Saat Anda menjalankan pemecah, data hasil saat ini dibuang.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Kami menyarankan Anda menyimpan proyek sebelum memulai pemecah masalah. Apakah Anda ingin menyimpan?</translation>
+        <translation type="vanished">Kami menyarankan Anda menyimpan proyek sebelum memulai pemecah masalah. Apakah Anda ingin menyimpan?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 tidak ada. Harap tentukan jalur eksekusi Python yang valid dalam dialog Preferensi.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

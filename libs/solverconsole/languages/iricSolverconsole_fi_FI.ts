@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulaatiolla on tulos</translation>
+        <translation type="vanished">Simulaatiolla on tulos</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Nykyisessä simulaatiossa on jo tulosdataa. Kun suoritat ratkaisijan, nykyinen tulosdata hylätään.</translation>
+        <translation type="vanished">Nykyisessä simulaatiossa on jo tulosdataa. Kun suoritat ratkaisijan, nykyinen tulosdata hylätään.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Suosittelemme, että tallennat projektin ennen ratkaisijan aloittamista. Haluatko säästää?</translation>
+        <translation type="vanished">Suosittelemme, että tallennat projektin ennen ratkaisijan aloittamista. Haluatko säästää?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 ei ole olemassa. Määritä kelvollinen Python-suorituspolku Asetukset-valintaikkunassa.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulazioak emaitza du</translation>
+        <translation type="vanished">Simulazioak emaitza du</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Uneko simulazioak dagoeneko emaitzen datuak ditu. Ebazten duzunean, uneko emaitzen datuak baztertu egiten dira.</translation>
+        <translation type="vanished">Uneko simulazioak dagoeneko emaitzen datuak ditu. Ebazten duzunean, uneko emaitzen datuak baztertu egiten dira.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Ebazten hasi aurretik proiektua gordetzea gomendatzen dizugu. Aurreztu nahi duzu?</translation>
+        <translation type="vanished">Ebazten hasi aurretik proiektua gordetzea gomendatzen dizugu. Aurreztu nahi duzu?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 ez da existitzen. Mesedez, zehaztu baliozko Python bide exekutagarria Hobespenen elkarrizketa-koadroan.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

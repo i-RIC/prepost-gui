@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>시뮬레이션 결과</translation>
+        <translation type="vanished">시뮬레이션 결과</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>현재 시뮬레이션에는 이미 결과 데이터가 있습니다. 솔버를 실행하면 현재 결과 데이터가 삭제됩니다.</translation>
+        <translation type="vanished">현재 시뮬레이션에는 이미 결과 데이터가 있습니다. 솔버를 실행하면 현재 결과 데이터가 삭제됩니다.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>솔버를 시작하기 전에 프로젝트를 저장하는 것이 좋습니다. 저장하시겠습니까?</translation>
+        <translation type="vanished">솔버를 시작하기 전에 프로젝트를 저장하는 것이 좋습니다. 저장하시겠습니까?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 존재하지 않습니다. 기본 설정 대화 상자에서 유효한 Python 실행 파일 경로를 지정하세요.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

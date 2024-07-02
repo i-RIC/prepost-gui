@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>A szimulációnak megvan az eredménye</translation>
+        <translation type="vanished">A szimulációnak megvan az eredménye</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>A jelenlegi szimuláció már tartalmaz eredményadatokat. A megoldó futtatásakor az aktuális eredményadatok elvetésre kerülnek.</translation>
+        <translation type="vanished">A jelenlegi szimuláció már tartalmaz eredményadatokat. A megoldó futtatásakor az aktuális eredményadatok elvetésre kerülnek.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Javasoljuk, hogy a megoldás mentése előtt mentse el a projektet. Menteni szeretne?</translation>
+        <translation type="vanished">Javasoljuk, hogy a megoldás mentése előtt mentse el a projektet. Menteni szeretne?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 nem létezik. Kérjük, adjon meg érvényes Python végrehajtható elérési utat a Beállítások párbeszédpanelen.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

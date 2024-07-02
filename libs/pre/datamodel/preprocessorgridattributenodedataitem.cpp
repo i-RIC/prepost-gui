@@ -425,7 +425,7 @@ void PreProcessorGridAttributeNodeDataItem::generatePointMap()
 
 	auto item = gItem->buildGeoDataDataItem();
 	GeoData* data = builder.end(item, creator, gItem->condition());
-	creator->setNameAndDefaultCaption(gItem->childItems(), data);
+	creator->setNameAndDefaultCaption(gItem->childItems(), data, projectData());
 
 	item->setGeoData(data);
 	gItem->addGeoData(item);

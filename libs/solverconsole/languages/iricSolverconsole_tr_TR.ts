@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simülasyon sonucu var</translation>
+        <translation type="vanished">Simülasyon sonucu var</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Mevcut simülasyon zaten sonuç verilerine sahip. Çözücüyü çalıştırdığınızda, mevcut sonuç verileri atılır.</translation>
+        <translation type="vanished">Mevcut simülasyon zaten sonuç verilerine sahip. Çözücüyü çalıştırdığınızda, mevcut sonuç verileri atılır.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Çözücüye başlamadan önce projeyi kaydetmenizi öneririz. kaydetmek istiyor musunuz?</translation>
+        <translation type="vanished">Çözücüye başlamadan önce projeyi kaydetmenizi öneririz. kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 Yok. Lütfen Tercih iletişim kutusunda geçerli Python çalıştırılabilir yolunu belirtin.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

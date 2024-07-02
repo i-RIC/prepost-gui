@@ -145,7 +145,7 @@ void SolverConsoleWindow::startSolver()
 		if (ret == QMessageBox::No) {return;}
 	}
 	// If the cgns file already has results, clear them first.
-	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("Warning"), tr("This project already has calculation result data. If you run the solver, it is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
 		return;
 	}
 	// discard result, and save now.
@@ -157,13 +157,6 @@ void SolverConsoleWindow::startSolver()
 		return;
 	}
 
-	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
-	if (ret == QMessageBox::Yes) {
-		// save the project file.
-		if (! impl->m_projectData->mainWindow()->saveProject()) {return;}
-	} else if (ret == QMessageBox::Cancel) {
-		return;
-	}
 	clear();
 
 	// check solver executable existance

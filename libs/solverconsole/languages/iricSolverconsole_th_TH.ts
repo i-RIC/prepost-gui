@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>การจำลองมีผล</translation>
+        <translation type="vanished">การจำลองมีผล</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>การจำลองปัจจุบันมีข้อมูลผลลัพธ์แล้ว เมื่อคุณเรียกใช้โปรแกรมแก้ปัญหา ข้อมูลผลลัพธ์ปัจจุบันจะถูกยกเลิก</translation>
+        <translation type="vanished">การจำลองปัจจุบันมีข้อมูลผลลัพธ์แล้ว เมื่อคุณเรียกใช้โปรแกรมแก้ปัญหา ข้อมูลผลลัพธ์ปัจจุบันจะถูกยกเลิก</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>เราขอแนะนำให้คุณบันทึกโครงการก่อนที่จะเริ่มโปรแกรมแก้ไข คุณต้องการที่จะบันทึก?</translation>
+        <translation type="vanished">เราขอแนะนำให้คุณบันทึกโครงการก่อนที่จะเริ่มโปรแกรมแก้ไข คุณต้องการที่จะบันทึก?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 ไม่มีอยู่จริง โปรดระบุเส้นทางปฏิบัติการ Python ที่ถูกต้องในกล่องโต้ตอบการตั้งค่า</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

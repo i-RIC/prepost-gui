@@ -29,6 +29,7 @@ HEADERS += anms.h \
            errormessage.h \
            fileremover.h \
            filesystemfunction.h \
+           folderbackup.h \
            folderremover.h \
            informationdialog.h \
            intarraycontainer.h \
@@ -130,6 +131,7 @@ SOURCES += anms.cpp \
            errormessage.cpp \
            fileremover.cpp \
            filesystemfunction.cpp \
+           folderbackup.cpp \
            folderremover.cpp \
            informationdialog.cpp \
            intarraycontainer.cpp \

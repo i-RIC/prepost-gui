@@ -39,7 +39,7 @@ PreProcessorGeoDataDataItemI* GeoDataWebImporter::import(SolverDefinitionGridAtt
 
 	auto ret = item->buildGeoDataDataItem();
 	GeoData* data = creator()->create(ret, condition);
-	creator()->setNameAndDefaultCaption(item->childItems(), data);
+	creator()->setNameAndDefaultCaption(item->childItems(), data, item->projectData());
 	ret->setGeoData(data);
 
 	ok = importData(data, 0, w);

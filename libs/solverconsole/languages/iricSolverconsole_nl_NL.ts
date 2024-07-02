@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>De simulatie heeft resultaat</translation>
+        <translation type="vanished">De simulatie heeft resultaat</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>De huidige simulatie heeft al resultaatgegevens. Wanneer u de oplosser uitvoert, worden de huidige resultaatgegevens weggegooid.</translation>
+        <translation type="vanished">De huidige simulatie heeft al resultaatgegevens. Wanneer u de oplosser uitvoert, worden de huidige resultaatgegevens weggegooid.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>We raden u aan het project op te slaan voordat u de oplosser start. Wil je bewaren?</translation>
+        <translation type="vanished">We raden u aan het project op te slaan voordat u de oplosser start. Wil je bewaren?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 bestaat niet. Geef een geldig uitvoerbaar pad voor Python op in het dialoogvenster Voorkeuren.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

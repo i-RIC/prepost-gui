@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -15,7 +17,7 @@
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation>Aquest projecte s'obre en mode només de publicació. No podeu executar el solucionador.</translation>
+        <translation>Aquest projecte s&apos;obre en mode només de publicació. No podeu executar el solucionador.</translation>
     </message>
     <message>
         <source>Show Detail</source>
@@ -31,19 +33,19 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>La simulació té resultat</translation>
+        <translation type="vanished">La simulació té resultat</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>La simulació actual ja té dades de resultats. Quan executeu el solucionador, es descarten les dades de resultats actuals.</translation>
+        <translation type="vanished">La simulació actual ja té dades de resultats. Quan executeu el solucionador, es descarten les dades de resultats actuals.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>S'ha produït un error. %1</translation>
+        <translation>S&apos;ha produït un error. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Us recomanem que deseu el projecte abans d'iniciar el solucionador. Voleu estalviar?</translation>
+        <translation type="vanished">Us recomanem que deseu el projecte abans d&apos;iniciar el solucionador. Voleu estalviar?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -101,6 +103,10 @@
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 no existeix. Especifiqueu un camí executable de Python vàlid al diàleg de preferències.</translation>
     </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -114,7 +120,7 @@
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation>S'està exportant el registre de la consola del solucionador...</translation>
+        <translation>S&apos;està exportant el registre de la consola del solucionador...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
@@ -126,7 +132,7 @@
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation>No s'ha pogut exportar el registre de la consola del solucionador.</translation>
+        <translation>No s&apos;ha pogut exportar el registre de la consola del solucionador.</translation>
     </message>
 </context>
 </TS>
