@@ -28,7 +28,7 @@ DoubleMappingSetting setupCellSetting(unsigned int target, vtkCell* cell, double
 
 bool isCenterInsideBounds(double point[3], double bounds[6])
 {
-	for (int i = 0; i < 3; ++i) {
+	for (int i = 0; i < 2; ++i) {
 		if (point[i] < bounds[i * 2]) {return false;}
 		if (point[i] > bounds[i * 2 + 1]) {return false;}
 	}
