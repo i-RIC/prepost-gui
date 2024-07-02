@@ -386,11 +386,6 @@ void iRICMainWindow::openProject(const QString& filename)
 
 			m_projectData = new ProjectData(filename, this);
 			m_projectData->setFilename(filename, true);
-
-			InformationDialog::warning(
-						this, tr("Warning"),
-						tr("The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. "
-							 "If you want to keep the current project, please save it to another project first."), "projectfolder_notice");
 		}
 	} else {
 		// Project file is opened.
@@ -626,8 +621,8 @@ bool iRICMainWindow::closeProject()
 	bool result = true;
 	if (! m_projectData->isPostOnlyMode() && m_projectData->mainfile()->isModified()) {
 		if (! m_projectData->isInWorkspace()) {
-			// always save.
-			result = saveProject();
+			// automatic save is now disabled
+			// result = saveProject();
 		} else {
 			QMessageBox::StandardButton button = QMessageBox::warning(
 				this,

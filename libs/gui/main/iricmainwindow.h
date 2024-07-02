@@ -121,7 +121,7 @@ private:
 	SolverConsoleWindow* m_solverConsoleWindow;
 
 protected:
-	void closeEvent(QCloseEvent*) override;
+	void closeEvent(QCloseEvent* event) override;
 
 public slots:
 	void openStartDialog();
