@@ -174,8 +174,6 @@ private:
 	ProjectData* projectData() const override;
 	QString relativeSubPath() const override;
 
-	/// ProjectData
-	ProjectData* m_projectData;
 	/// Renderers for background images
 	std::vector<vtkRenderer*> m_renderers;
 	void checkVersionCompatibility();

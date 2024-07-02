@@ -84,10 +84,11 @@ void copyCgnsFile(const QString& from, const QString& to)
 const QString ProjectMainFile::FILENAME = "project.xml";
 const QString ProjectMainFile::BGDIR = "backgroundimages";
 
-ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
+ProjectMainFile::Impl::Impl(ProjectData* data, ProjectMainFile *parent) :
 	m_cgnsManager {new ProjectCgnsManager(parent)},
 	m_postSolutionInfo {new PostSolutionInfo(parent)},
 	m_postProcessors {new ProjectPostProcessors(parent)},
+	m_projectData {data},
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
 	m_timeZone {QTimeZone::utc()},
@@ -187,15 +188,8 @@ QStringList ProjectMainFile::Impl::backgroundImageFiles() const
 {
 	QStringList ret;
 
-	QDir dir(m_parent->projectData()->workDirectory());
-	if (! dir.cd(BGDIR)) {return ret;}
-
-	QStringList list = dir.entryList(QDir::Files);
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		QString tmp = *it;
-		QString path(BGDIR);
-		path.append("/").append(tmp);
-		ret << path;
+	for (auto image : m_backgroundImages) {
+		ret << image->containedFiles();
 	}
 
 	return ret;
@@ -209,14 +203,34 @@ void ProjectMainFile::Impl::clearBackgroundImages()
 	m_backgroundImages.clear();
 }
 
+void ProjectMainFile::Impl::deleteGarbageBackgroundImages()
+{
+	std::unordered_set<QString> images;
+
+	QDir workDir(m_projectData->workDirectory());
+	QDir bgDir(workDir.absoluteFilePath(BGDIR));
+
+	for (auto image : m_backgroundImages) {
+		for (auto fileName : image->containedFiles()) {
+			images.insert(bgDir.absoluteFilePath(fileName));
+		}
+	}
+
+	for (auto fileName : bgDir.entryList(QDir::Files, QDir::NoSort)) {
+		auto fullName = bgDir.absoluteFilePath(fileName);
+		if (images.find(fullName) == images.end()) {
+			QFile f(fullName);
+			f.remove();
+		}
+	}
+}
+
 // public interfaces
 
 ProjectMainFile::ProjectMainFile(ProjectData* parent) :
 	ProjectDataItem(0),
-	impl {new Impl(this)}
-{
-	m_projectData = parent;
-}
+	impl {new Impl(parent, this)}
+{}
 
 ProjectMainFile::~ProjectMainFile()
 {
@@ -261,7 +275,7 @@ void ProjectMainFile::createMainCgnsFile()
 
 void ProjectMainFile::initForSolverDefinition()
 {
-	SolverDefinition* def = m_projectData->solverDefinition();
+	SolverDefinition* def = impl->m_projectData->solverDefinition();
 	impl->m_solverName = def->name();
 	impl->m_solverVersion = def->version();
 
@@ -271,12 +285,12 @@ void ProjectMainFile::initForSolverDefinition()
 
 QString ProjectMainFile::filename() const
 {
-	return m_projectData->absoluteFileName(ProjectMainFile::FILENAME);
+	return impl->m_projectData->absoluteFileName(ProjectMainFile::FILENAME);
 }
 
 QString ProjectMainFile::workDirectory() const
 {
-	return m_projectData->workDirectory();
+	return impl->m_projectData->workDirectory();
 }
 
 void ProjectMainFile::load()
@@ -411,7 +425,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! tmpNode.isNull()) {
 		impl->loadBackgrounds(tmpNode);
 	}
-	m_projectData->mainWindow()->loadSubWindowsFromProjectMainFile(node);
+	impl->m_projectData->mainWindow()->loadSubWindowsFromProjectMainFile(node);
 }
 
 void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -465,13 +479,14 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeStartElement("Backgrounds");
 	impl->saveBackgrounds(writer);
 	writer.writeEndElement();
+	impl->deleteGarbageBackgroundImages();
 
-	m_projectData->mainWindow()->saveSubWindowsToProjectMainFile(writer);
+	impl->m_projectData->mainWindow()->saveSubWindowsToProjectMainFile(writer);
 }
 
 ProjectData* ProjectMainFile::projectData() const
 {
-	return m_projectData;
+	return impl->m_projectData;
 }
 
 QString ProjectMainFile::relativeSubPath() const
@@ -494,7 +509,7 @@ QStringList ProjectMainFile::containedFiles() const
 	ret << impl->m_cgnsManager->containedFiles();
 
 	// Add External files in MainWindow
-	ret << m_projectData->mainWindow()->containedFiles();
+	ret << impl->m_projectData->mainWindow()->containedFiles();
 
 	// Add Background image files
 	ret << impl->backgroundImageFiles();
@@ -535,7 +550,7 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 
 QString ProjectMainFile::currentCgnsFileName() const
 {
-	return m_projectData->currentCgnsFileName();
+	return impl->m_projectData->currentCgnsFileName();
 }
 
 int ProjectMainFile::loadFromCgnsFile()
@@ -546,11 +561,11 @@ int ProjectMainFile::loadFromCgnsFile()
 		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
-		int ier = m_projectData->mainWindow()->loadFromCgnsFile();
+		int ier = impl->m_projectData->mainWindow()->loadFromCgnsFile();
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
 		if (impl->m_cgnsManager->backupFileExists()) {
-			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1. iRIC tries to salvage data from %2.").arg("Case1.cgn", "Case1_input.cgn"));
+			QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1. iRIC tries to salvage data from %2.").arg("Case1.cgn", "Case1_input.cgn"));
 			// copy backup file.
 			QFile::remove(impl->m_cgnsManager->mainFileFullName().c_str());
 			QFile::copy(impl->m_cgnsManager->backupFileFullName().c_str(), impl->m_cgnsManager->mainFileFullName().c_str());
@@ -558,15 +573,15 @@ int ProjectMainFile::loadFromCgnsFile()
 				auto fname = impl->m_cgnsManager->mainFileFullName();
 				iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 				ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
-				int ier = m_projectData->mainWindow()->loadFromCgnsFile();
+				int ier = impl->m_projectData->mainWindow()->loadFromCgnsFile();
 				if (ier != IRIC_NO_ERROR) {return ier;}
 				rebuildNeeded = true;
 			}  catch (...) {
-				QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1_input.cgn"));
+				QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1_input.cgn"));
 				return IRIC_H5_CALL_ERROR;
 			}
 		} else {
-			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1.cgn"));
+			QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1.cgn"));
 			return IRIC_H5_CALL_ERROR;
 		}
 	}
@@ -597,12 +612,12 @@ int ProjectMainFile::saveToCgnsFile()
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::Create);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 
-		int ier = ProjectCgnsFile::writeSolverInfo(&cgnsFile, m_projectData->solverDefinition()->abstract());
+		int ier = ProjectCgnsFile::writeSolverInfo(&cgnsFile, impl->m_projectData->solverDefinition()->abstract());
 		if (ier != IRIC_NO_ERROR) {return ier;}
 
-		return m_projectData->mainWindow()->saveToCgnsFile();
+		return impl->m_projectData->mainWindow()->saveToCgnsFile();
 	} catch (...) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
+		QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
 		return IRIC_H5_OPEN_FAIL;
 	}
 }
@@ -615,9 +630,9 @@ int ProjectMainFile::updateCgnsFileOtherThanGrids()
 		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenModify);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
-		return m_projectData->mainWindow()->updateCgnsFileOtherThanGrids();
+		return impl->m_projectData->mainWindow()->updateCgnsFileOtherThanGrids();
 	} catch (...) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
+		QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
 		return IRIC_H5_OPEN_FAIL;
 	}
 }
@@ -634,12 +649,12 @@ ProjectPostProcessors* ProjectMainFile::postProcessors() const
 
 void ProjectMainFile::toggleGridEditFlag()
 {
-	m_projectData->mainWindow()->toggleGridEditFlag();
+	impl->m_projectData->mainWindow()->toggleGridEditFlag();
 }
 
 void ProjectMainFile::closeCgnsFile()
 {
-	m_projectData->mainWindow()->closeCgnsFile();
+	impl->m_projectData->mainWindow()->closeCgnsFile();
 	impl->m_postSolutionInfo->closeCgnsFile();
 	impl->m_postSolutionInfo->close();
 }
@@ -733,7 +748,6 @@ void ProjectMainFile::addBackgroundImage()
 	QDir bgDir = QDir(projectData()->workDirectory());
 	bgDir.cd(BGDIR);
 
-
 	QString to = bgDir.absoluteFilePath(QFileInfo(fname).fileName());
 	if (! bgDir.exists(QFileInfo(fname).fileName())){
 		if (! QFile::copy(fname, to)) {
@@ -782,7 +796,6 @@ void ProjectMainFile::deleteImage(const QModelIndex& index)
 	auto it = impl->m_backgroundImages.begin();
 	BackgroundImageInfo* image = *(it + index.row());
 	impl->m_backgroundImages.erase(it + index.row());
-	image->deleteImageFile();
 	delete image;
 	emit backgroundImageDeleted(index.row());
 

@@ -50,7 +50,6 @@ public:
 
 	void applySettingToActor(vtkActor* actor);
 	void setPreProcessorActor(vtkActor* actor);
-	void deleteImageFile();
 
 	QDialog* propertyDialog(QWidget* w);
 	void handlePropertyDialogAccepted(QDialog* dialog);
@@ -66,6 +65,7 @@ public:
 
 	bool isVisible();
 	void showGeoreferenceDialog(vtkActor* actor, VTKGraphicsView* v, double minDepth, double maxDepth, QWidget* w);
+	QStringList containedFiles() const override;
 
 public slots:
 	void selectPoints(const std::unordered_set<std::vector<GcpTableRow>::size_type>& indices);

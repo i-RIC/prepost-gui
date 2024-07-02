@@ -269,19 +269,6 @@ void BackgroundImageInfo::setPreProcessorActor(vtkActor* actor)
 	impl->m_preProcessorActor = actor;
 }
 
-void BackgroundImageInfo::deleteImageFile()
-{
-	QFile imagefile(fullFileName());
-	if (imagefile.exists()) {
-		imagefile.remove();
-	}
-
-	QFile scaledImageFile(Impl::scaledImageFileName(fullFileName()));
-	if (scaledImageFile.exists()) {
-		scaledImageFile.remove();
-	}
-}
-
 QAction* BackgroundImageInfo::fixAction() const
 {
 	return impl->m_fixAction;
@@ -392,6 +379,14 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 	m_georeferenceDialog->show();
 	m_georeferenceDialog->raise();
 	m_georeferenceDialog->activateWindow();
+}
+
+QStringList BackgroundImageInfo::containedFiles() const
+{
+	QStringList ret;
+	ret << impl->m_setting.fileName;
+
+	return ret;
 }
 
 void BackgroundImageInfo::handleGeoreferenceDialogClosed()
