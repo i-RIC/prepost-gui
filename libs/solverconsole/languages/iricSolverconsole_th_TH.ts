@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>โครงการนี้มีข้อมูลผลการคำนวณอยู่แล้ว หากคุณรันโปรแกรมแก้ปัญหา มันจะถูกละทิ้ง</translation>
     </message>
 </context>
 <context>

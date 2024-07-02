@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>该项目已有计算结果数据。如果运行求解器，则会丢弃该数据。</translation>
     </message>
 </context>
 <context>

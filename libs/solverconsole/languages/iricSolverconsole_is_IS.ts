@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Þetta verkefni hefur nú þegar gögn um niðurstöður útreikninga. Ef þú keyrir leysirinn er honum hent.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>इस प्रोजेक्ट में पहले से ही गणना परिणाम डेटा मौजूद है। यदि आप सॉल्वर चलाते हैं, तो इसे त्याग दिया जाता है।</translation>
     </message>
 </context>
 <context>

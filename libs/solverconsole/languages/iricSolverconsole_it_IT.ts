@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>SolverConsoleWindow</name>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>C&apos;è stato un&apos;errore. %1</translation>
+        <translation>C'è stato un'errore. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo progetto contiene già i dati dei risultati di calcolo. Se esegui il risolutore, viene scartato.</translation>
     </message>
 </context>
 <context>

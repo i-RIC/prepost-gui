@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бул долбоордо эсептөө натыйжалары мурунтан эле бар. Эгерде сиз чечүүчүнү иштетсеңиз, ал жок кылынат.</translation>
     </message>
 </context>
 <context>
