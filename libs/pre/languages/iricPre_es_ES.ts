@@ -1214,6 +1214,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Find wrong direction points</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>To use this function, please select the most downstream point first.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
