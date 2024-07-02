@@ -11,6 +11,8 @@
 #include <QFile>
 #include <QMessageBox>
 
+#include <vtkCellData.h>
+#include <vtkPointData.h>
 #include <vtkPoints.h>
 #include <vtkSmartPointer.h>
 #include <vtkUnstructuredGridReader.h>
@@ -55,11 +57,29 @@ bool Unstructured2dGridVtkImporter::import(v4InputGrid* grid, const QString& fil
 	reader->Update();
 
 	auto grid2d = dynamic_cast<v4Unstructured2dGrid*> (grid->grid());
-	grid2d->vtkConcreteData()->concreteData()->DeepCopy(reader->GetOutput());
+	auto importedGrid = reader->GetOutput();
+	grid2d->vtkConcreteData()->concreteData()->DeepCopy(importedGrid);
 
 	QFile::remove(tempFile);
 
 	grid->allocateAttributes();
+
+	// copy attributes
+	for (int i = 0; i < importedGrid->GetPointData()->GetNumberOfArrays(); ++i) {
+		auto importedArray = importedGrid->GetPointData()->GetArray(i);
+		auto array = grid2d->vtkConcreteData()->concreteData()->GetPointData()->GetArray(importedArray->GetName());
+		if (array != nullptr) {
+			array->DeepCopy(importedArray);
+		}
+	}
+
+	for (int i = 0; i < importedGrid->GetCellData()->GetNumberOfArrays(); ++i) {
+		auto importedArray = importedGrid->GetCellData()->GetArray(i);
+		auto array = grid2d->vtkConcreteData()->concreteData()->GetCellData()->GetArray(importedArray->GetName());
+		if (array != nullptr) {
+			array->DeepCopy(importedArray);
+		}
+	}
 
 	return true;
 }
