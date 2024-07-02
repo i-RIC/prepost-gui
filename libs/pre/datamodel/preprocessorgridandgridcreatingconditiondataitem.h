@@ -5,6 +5,7 @@
 
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 
+class FolderBackup;
 class v4InputGrid;
 class GridImporterI;
 class PreProcessorGridCreatingConditionDataItem;
@@ -67,6 +68,7 @@ private:
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 	PreProcessorGridAttributeMappingSettingTopDataItem* m_mappingSettingDataItem;
 	PreProcessorGridDataItem* m_gridDataItem;
+	FolderBackup* m_backup;
 
 	QDomElement* m_gridSetting;
 };

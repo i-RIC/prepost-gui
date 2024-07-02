@@ -31,6 +31,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
+#include <misc/folderbackup.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -50,6 +51,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_bcSettingGroupDataItem {nullptr},
 	m_bcGroupDataItem {nullptr},
 	m_gridDataItem {nullptr},
+	m_backup {nullptr},
 	m_gridSetting {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -71,6 +73,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 			subdir1.rename("gridandgridcreatingconditiondataitem", m_zoneName.c_str());
 		}
 	}
+	m_backup = new FolderBackup(subdir2.absolutePath());
 
 	auto gType = gridTypeDataItem()->gridType();
 
@@ -104,6 +107,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 PreProcessorGridAndGridCreatingConditionDataItem::~PreProcessorGridAndGridCreatingConditionDataItem()
 {
 	delete m_gridSetting;
+	delete m_backup;
 }
 
 const QString& PreProcessorGridAndGridCreatingConditionDataItem::caption() const
@@ -314,6 +318,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(Q
 	writer.writeStartElement("Grid");
 	m_gridDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
+
+	m_backup->backup();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString&)
