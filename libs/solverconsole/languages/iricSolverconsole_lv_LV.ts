@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simulācijai ir rezultāts</translation>
+        <translation type="vanished">Simulācijai ir rezultāts</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Pašreizējā simulācijā jau ir rezultātu dati. Palaižot risinātāju, pašreizējie rezultātu dati tiek izmesti.</translation>
+        <translation type="vanished">Pašreizējā simulācijā jau ir rezultātu dati. Palaižot risinātāju, pašreizējie rezultātu dati tiek izmesti.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Mēs iesakām saglabāt projektu pirms risinātāja uzsākšanas. Vai vēlaties ietaupīt?</translation>
+        <translation type="vanished">Mēs iesakām saglabāt projektu pirms risinātāja uzsākšanas. Vai vēlaties ietaupīt?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 neeksistē. Lūdzu, dialoglodziņā Preference norādiet derīgu Python izpildāmā ceļu.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

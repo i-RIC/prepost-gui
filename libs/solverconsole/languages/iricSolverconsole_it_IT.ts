@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,19 +33,19 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>La simulazione ha esito</translation>
+        <translation type="vanished">La simulazione ha esito</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>La simulazione corrente ha già i dati dei risultati. Quando si esegue il risolutore, i dati del risultato corrente vengono eliminati.</translation>
+        <translation type="vanished">La simulazione corrente ha già i dati dei risultati. Quando si esegue il risolutore, i dati del risultato corrente vengono eliminati.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>C'è stato un'errore. %1</translation>
+        <translation>C&apos;è stato un&apos;errore. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Si consiglia di salvare il progetto prima di avviare il risolutore. Vuoi salvare?</translation>
+        <translation type="vanished">Si consiglia di salvare il progetto prima di avviare il risolutore. Vuoi salvare?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 non esiste. Specificare un percorso eseguibile Python valido nella finestra di dialogo Preferenze.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

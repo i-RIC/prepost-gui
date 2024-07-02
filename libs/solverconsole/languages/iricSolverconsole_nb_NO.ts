@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Simuleringen har resultat</translation>
+        <translation type="vanished">Simuleringen har resultat</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Gjeldende simulering har allerede resultatdata. Når du kjører løseren, blir gjeldende resultatdata kastet.</translation>
+        <translation type="vanished">Gjeldende simulering har allerede resultatdata. Når du kjører løseren, blir gjeldende resultatdata kastet.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Vi anbefaler at du lagrer prosjektet før du starter løseren. Vil du spare?</translation>
+        <translation type="vanished">Vi anbefaler at du lagrer prosjektet før du starter løseren. Vil du spare?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 finnes ikke. Vennligst spesifiser gyldig Python kjørbar bane i preferansedialogen.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

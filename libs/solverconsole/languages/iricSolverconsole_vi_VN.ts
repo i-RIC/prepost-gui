@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Mô phỏng có kết quả</translation>
+        <translation type="vanished">Mô phỏng có kết quả</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Mô phỏng hiện tại đã có dữ liệu kết quả. Khi bạn chạy trình giải, dữ liệu kết quả hiện tại sẽ bị loại bỏ.</translation>
+        <translation type="vanished">Mô phỏng hiện tại đã có dữ liệu kết quả. Khi bạn chạy trình giải, dữ liệu kết quả hiện tại sẽ bị loại bỏ.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Chúng tôi khuyên bạn nên lưu dự án trước khi bắt đầu trình giải. Bạn có muốn lưu không?</translation>
+        <translation type="vanished">Chúng tôi khuyên bạn nên lưu dự án trước khi bắt đầu trình giải. Bạn có muốn lưu không?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 Không tồn tại. Vui lòng chỉ định đường dẫn thực thi Python hợp lệ trong hộp thoại Tùy chọn.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

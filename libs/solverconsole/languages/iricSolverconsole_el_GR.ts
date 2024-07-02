@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Η προσομοίωση έχει αποτέλεσμα</translation>
+        <translation type="vanished">Η προσομοίωση έχει αποτέλεσμα</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Η τρέχουσα προσομοίωση έχει ήδη δεδομένα αποτελεσμάτων. Όταν εκτελείτε την επίλυση, τα τρέχοντα αποτελέσματα αποτελεσμάτων απορρίπτονται.</translation>
+        <translation type="vanished">Η τρέχουσα προσομοίωση έχει ήδη δεδομένα αποτελεσμάτων. Όταν εκτελείτε την επίλυση, τα τρέχοντα αποτελέσματα αποτελεσμάτων απορρίπτονται.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Σας συνιστούμε να αποθηκεύσετε το έργο πριν ξεκινήσετε την επίλυση. Θέλετε να αποθηκεύσετε;</translation>
+        <translation type="vanished">Σας συνιστούμε να αποθηκεύσετε το έργο πριν ξεκινήσετε την επίλυση. Θέλετε να αποθηκεύσετε;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,6 +102,10 @@
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 δεν υπάρχει. Προσδιορίστε έγκυρη εκτελέσιμη διαδρομή Python στο παράθυρο διαλόγου Preference.</translation>
+    </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
