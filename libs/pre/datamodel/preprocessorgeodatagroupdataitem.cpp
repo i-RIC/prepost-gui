@@ -54,6 +54,8 @@
 #include <h5cgnsgeographicdatagroup.h>
 #include <h5cgnsgeographicdatatop.h>
 
+#include <QDir>
+
 PreProcessorGeoDataGroupDataItem::VariationSetting::VariationSetting() :
 	CompositeContainer({&enabled, &activeVariation}),
 	enabled {"enabled", false},
@@ -821,10 +823,27 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 	writer.writeAttribute("name", m_condition->name().c_str());
 	m_variationSetting.save(writer);
 
+	std::unordered_set<QString> files;
+	QDir workdir(projectData()->workDirectory());
+
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
+
+		for (auto file : child->containedFiles()) {
+			files.insert(workdir.absoluteFilePath(file));
+		}
+	}
+
+	QDir subDir(subPath());
+	auto allFiles = subDir.entryList(QDir::Files, QDir::NoSort);
+	for (auto file : allFiles) {
+		auto fullName = subDir.absoluteFilePath(file);
+		if (files.find(fullName) == files.end()) {
+			QFile f(fullName);
+			f.remove();
+		}
 	}
 }
 
