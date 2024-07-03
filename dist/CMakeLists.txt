@@ -2361,14 +2361,6 @@ install(
 # python iriclib SDK src
 install(
   FILES
-    ${iriclib_DIR}/../../../src/iric.f90
-  DESTINATION
-    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/src
-)
-
-# python iriclib SDK src
-install(
-  FILES
     ${iriclib_DIR}/../../../bin/Lib/site-packages/iric.py
   DESTINATION
     ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/python
@@ -2378,8 +2370,8 @@ install(
 install(
   FILES
     ${iriclib_DIR}/../../../bin/Lib/site-packages/iric.py
-    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iric.cp38-win_amd64.pyd
-    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iricd.cp38-win_amd64.pyd
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iric.cp312-win_amd64.pyd
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iricd.cp312-win_amd64.pyd
   DESTINATION
     ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/miniconda/data
 )
