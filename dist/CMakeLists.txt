@@ -2375,3 +2375,13 @@ install(
   DESTINATION
     ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/miniconda/data
 )
+
+# miniconda.iriclib
+install(
+  FILES
+    ${iriclib_DIR}/../../../bin/iriclib.dll
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/iric.py
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iric.cp312-win_amd64.pyd
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/miniconda.iriclib/data
+)
