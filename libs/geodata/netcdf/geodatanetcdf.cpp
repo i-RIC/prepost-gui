@@ -443,16 +443,18 @@ void GeoDataNetcdf::doApplyOffset(double x, double y)
 	}
 	points->Modified();
 
-	auto sPoints = m_simplifiedGrid->GetPoints();
-	if (sPoints != nullptr) {
-		for (vtkIdType i = 0; i < sPoints->GetNumberOfPoints(); ++i) {
-			double p[3];
-			sPoints->GetPoint(i, p);
-			p[0] -= x;
-			p[1] -= y;
-			sPoints->SetPoint(i, p);
+	if (m_simplifiedGrid != nullptr) {
+		auto sPoints = m_simplifiedGrid->GetPoints();
+		if (sPoints != nullptr) {
+			for (vtkIdType i = 0; i < sPoints->GetNumberOfPoints(); ++i) {
+				double p[3];
+				sPoints->GetPoint(i, p);
+				p[0] -= x;
+				p[1] -= y;
+				sPoints->SetPoint(i, p);
+			}
+			sPoints->Modified();
 		}
-		sPoints->Modified();
 	}
 
 	updateRegionPolyData();
