@@ -292,6 +292,8 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	m_mousePositionWidget->setProjectData(m_projectData);
 	m_coordinateSystemWidget->setProjectData(m_projectData);
 
+	m_projectData->mainfile()->saveToCgnsFile();
+
 	setupForNewProjectData();
 
 	handleCgnsSwitch();
