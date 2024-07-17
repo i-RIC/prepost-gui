@@ -622,32 +622,27 @@ bool iRICMainWindow::closeProject()
 	if (m_projectData == nullptr) {return true;}
 	bool result = true;
 	if (! m_projectData->isPostOnlyMode() && m_projectData->mainfile()->isModified()) {
-		if (! m_projectData->isInWorkspace()) {
-			// automatic save is now disabled
-			// result = saveProject();
-		} else {
-			QMessageBox::StandardButton button = QMessageBox::warning(
-				this,
-				tr("Warning"),
-				tr("This Project is modified. Do you want to save?"),
-				QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
-				QMessageBox::Cancel
-					);
-			switch (button) {
-			case QMessageBox::Yes:
-				// save data.
-				result = saveProject();
-				break;
-			case QMessageBox::No:
-				// not needed to save.
-				result = true;
-				break;
-			case QMessageBox::Cancel:
-				result = false;
-				break;
-			default:
-				break;
-			}
+		QMessageBox::StandardButton button = QMessageBox::warning(
+			this,
+			tr("Warning"),
+			tr("This Project is modified. Do you want to save?"),
+			QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
+			QMessageBox::Cancel
+				);
+		switch (button) {
+		case QMessageBox::Yes:
+			// save data.
+			result = saveProject();
+			break;
+		case QMessageBox::No:
+			// not needed to save.
+			result = true;
+			break;
+		case QMessageBox::Cancel:
+			result = false;
+			break;
+		default:
+			break;
 		}
 	}
 	if (! result) {
