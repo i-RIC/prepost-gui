@@ -27,34 +27,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,1">
-     <item>
-      <widget class="TransparencyWidget" name="transparencyWidget" native="true"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="lineWidthLabel">
-       <property name="text">
-        <string>Line Width:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="lineWidthSpinBox"/>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+    <widget class="GridAttributeCellSettingEditWidget" name="gridCellSettingWidget" native="true"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -107,9 +80,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TransparencyWidget</class>
+   <class>GridAttributeCellSettingEditWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/widget/transparencywidget.h</header>
+   <header>guicore/gridatt/cell/gridattributecellsettingeditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

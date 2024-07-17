@@ -395,6 +395,10 @@ HEADERS += guicore_global.h \
            grid/private/v4structured2dgrid_structurechecker.h \
            grid/private/v4structured3dgrid_impl.h \
            grid/public/v4grid_attributedataprovider.h \
+           gridatt/cell/gridattributecellsetting.h \
+           gridatt/cell/gridattributecellsettingeditwidget.h \
+           gridatt/node/gridattributenodesetting.h \
+           gridatt/node/gridattributenodesettingeditwidget.h \
            image/private/imagesettingcontainer_movecommand.h \
            image/private/imagesettingcontainer_resizecommand.h \
            image/private/imagesettingcontainer_updatecommand.h \
@@ -752,6 +756,8 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          base/private/qmainwindowwithsnapshotresizewidget_editdialog.ui \
          datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.ui \
          datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.ui \
+         gridatt/cell/gridattributecellsettingeditwidget.ui \
+         gridatt/node/gridattributenodesettingeditwidget.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditiongrouprealeditwidget.ui \
@@ -972,6 +978,10 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            grid/private/v4structured2dgrid_impl.cpp \
            grid/private/v4structured2dgrid_structurechecker.cpp \
            grid/public/v4grid_attributedataprovider.cpp \
+           gridatt/cell/gridattributecellsetting.cpp \
+           gridatt/cell/gridattributecellsettingeditwidget.cpp \
+           gridatt/node/gridattributenodesetting.cpp \
+           gridatt/node/gridattributenodesettingeditwidget.cpp \
            image/private/imagesettingcontainer_movecommand.cpp \
            image/private/imagesettingcontainer_resizecommand.cpp \
            image/private/imagesettingcontainer_updatecommand.cpp \

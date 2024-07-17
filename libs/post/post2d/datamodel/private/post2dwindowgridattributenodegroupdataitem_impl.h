@@ -3,19 +3,22 @@
 
 #include "../post2dwindowgridattributenodegroupdataitem.h"
 
+#include <guicore/gridatt/node/gridattributenodesetting.h>
+
 class Post2dWindowGridAttributeNodeGroupDataItem::Impl
 {
 public:
 	Impl(Post2dWindowGridAttributeNodeGroupDataItem* item);
 	~Impl();
 
-	std::string m_target;
+	GridAttributeNodeSetting m_setting;
 
+	std::string m_target;
 	vtkActor* m_actor;
 
 	QAction* m_showAttributeBrowserAction;
-	OpacityContainer m_opacity;
 	bool m_attributeBrowserFixed;
+
 	std::unordered_map<std::string, Post2dWindowGridAttributeNodeDataItem*> m_nameMap;
 
 	OpacityContainerWidget* m_opacityWidget;

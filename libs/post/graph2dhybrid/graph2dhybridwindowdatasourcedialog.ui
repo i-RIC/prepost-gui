@@ -94,6 +94,9 @@
           <widget class="QComboBox" name="pointDataComboBox"/>
          </item>
          <item>
+          <widget class="QComboBox" name="pointGridLocationComboBox"/>
+         </item>
+         <item>
           <widget class="QListWidget" name="pointDataListWidget"/>
          </item>
          <item>

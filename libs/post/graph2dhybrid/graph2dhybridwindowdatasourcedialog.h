@@ -73,8 +73,8 @@ private:
 	void setupMainWidgets();
 	void enableMainWidgets(bool enable);
 
-	void setupWidgetForDim(QLabel* dataLabel, QComboBox* dataComboBox, QLabel* locationLabel, QComboBox* locationComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, const QList<Graph2dHybridWindowResultSetting::DataTypeInfo*>& dataList);
-	void handleDataComboBoxChange(int index, QComboBox* comboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType);
+	void setupWidgetForDim(QLabel* dataLabel, QComboBox* dataComboBox, QLabel* locationLabel, QComboBox* locationComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, const QList<Graph2dHybridWindowResultSetting::DataTypeInfo*>& dataList, Graph2dHybridWindowResultSetting::DimType dimType);
+	void handleDataComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType);
 	void handleLocationComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType);
 
 	void clearListSelectionExcept(QListWidget* listWidget);

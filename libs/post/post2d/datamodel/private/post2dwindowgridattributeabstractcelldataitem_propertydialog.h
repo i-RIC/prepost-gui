@@ -6,7 +6,7 @@
 #include <QDialog>
 
 class ColorMapSettingEditWidgetI;
-class OpacityContainer;
+class GridAttributeCellSetting;
 class Post2dWindowGridAttributeAbstractCellGroupDataItem;
 
 namespace Ui {
@@ -19,7 +19,6 @@ class Post2dWindowGridAttributeAbstractCellDataItem::PropertyDialog : public QDi
 
 public:
 	PropertyDialog(Post2dWindowGridAttributeAbstractCellGroupDataItem* item, QWidget *parent);
-
 	~PropertyDialog();
 
 	void hideLineWidth();
@@ -27,11 +26,7 @@ public:
 	ColorMapSettingEditWidgetI* widget() const;
 	void setWidget(ColorMapSettingEditWidgetI* w);
 
-	int lineWidth() const;
-	void setLineWidth(int lineWidth);
-
-	OpacityContainer opacity() const;
-	void setOpacity(const OpacityContainer& opacity);
+	void setSetting(GridAttributeCellSetting* setting);
 
 	void accept() override;
 	void reject() override;

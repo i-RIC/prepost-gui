@@ -1263,7 +1263,7 @@ void PreProcessorGridDataItem::unsetBCGroupDataItem()
 	if (m_bcGroupDataItem == 0) {return;}
 	auto it = std::find(m_childItems.begin(), m_childItems.end(), m_bcGroupDataItem);
 	if (it != m_childItems.end()) {m_childItems.erase(it);}
-	m_bcGroupDataItem->setParent(0);
+	m_bcGroupDataItem->setParent(nullptr);
 	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
 	m_bcGroupDataItem = nullptr;
 }

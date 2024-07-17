@@ -23,6 +23,11 @@ Post2dWindowGridAttributeNodeDataItem::PropertyDialog::~PropertyDialog()
 	delete ui;
 }
 
+void Post2dWindowGridAttributeNodeDataItem::PropertyDialog::hideLineWidth()
+{
+	ui->gridNodeSettingWidget->hideLineWidth();
+}
+
 ColorMapSettingEditWidgetI* Post2dWindowGridAttributeNodeDataItem::PropertyDialog::widget() const
 {
 	return dynamic_cast<ColorMapSettingEditWidgetI*> (ui->widgetContainer->widget());
@@ -35,14 +40,10 @@ void Post2dWindowGridAttributeNodeDataItem::PropertyDialog::setWidget(ColorMapSe
 	connect(ui->exportButton, &QPushButton::clicked, w, &ColorMapSettingEditWidgetI::exportSetting);
 }
 
-OpacityContainer Post2dWindowGridAttributeNodeDataItem::PropertyDialog::opacity() const
-{
-	return ui->transparencyWidget->opacity();
-}
 
-void Post2dWindowGridAttributeNodeDataItem::PropertyDialog::setOpacity(const OpacityContainer& opacity)
+void Post2dWindowGridAttributeNodeDataItem::PropertyDialog::setSetting(GridAttributeNodeSetting* setting)
 {
-	return ui->transparencyWidget->setOpacity(opacity);
+	ui->gridNodeSettingWidget->setSetting(setting);
 }
 
 void Post2dWindowGridAttributeNodeDataItem::PropertyDialog::accept()
@@ -77,7 +78,7 @@ QUndoCommand* Post2dWindowGridAttributeNodeDataItem::PropertyDialog::createModif
 {
 	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
 	ret->addCommand(widget()->createModifyCommand());
-	ret->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("Opacity"), apply, opacity(), &m_item->opacity()));
+	ret->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
 
 	return ret;
 }

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,0,0">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -104,24 +104,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
-     <item>
-      <widget class="TransparencyWidget" name="opacityWidget" native="true"/>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+    <widget class="GridAttributeNodeSettingEditWidget" name="gridNodeSettingWidget" native="true"/>
    </item>
   </layout>
  </widget>
@@ -133,9 +116,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TransparencyWidget</class>
+   <class>GridAttributeNodeSettingEditWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/widget/transparencywidget.h</header>
+   <header>guicore/gridatt/node/gridattributenodesettingeditwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

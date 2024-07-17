@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include <vector>
 
+class GridAttributeNodeSetting;
 class NamedGraphicWindowDataItem;
 class OpacityContainerWidget;
 class Post2dWindowGridAttributeNodeDataItem;
@@ -46,7 +47,7 @@ public:
 	std::vector<Post2dWindowGridAttributeNodeDataItem*> conditions() const;
 	Post2dWindowGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	OpacityContainer& opacity();
+	GridAttributeNodeSetting& setting();
 	OpacityContainerWidget* opacityWidget() const;
 	QWidgetContainer* colorMapWidgetContainer() const;
 	QAction* showAttributeBrowserAction() const;

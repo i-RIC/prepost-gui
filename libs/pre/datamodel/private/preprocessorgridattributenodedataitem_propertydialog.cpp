@@ -23,6 +23,11 @@ PreProcessorGridAttributeNodeDataItem::PropertyDialog::~PropertyDialog()
 	delete ui;
 }
 
+void PreProcessorGridAttributeNodeDataItem::PropertyDialog::hideLineWidth()
+{
+	ui->gridNodeSettingWidget->hideLineWidth();
+}
+
 ColorMapSettingEditWidgetI* PreProcessorGridAttributeNodeDataItem::PropertyDialog::widget() const
 {
 	return dynamic_cast<ColorMapSettingEditWidgetI*> (ui->widgetContainer->widget());
@@ -35,14 +40,9 @@ void PreProcessorGridAttributeNodeDataItem::PropertyDialog::setWidget(ColorMapSe
 	connect(ui->exportButton, &QPushButton::clicked, w, &ColorMapSettingEditWidgetI::exportSetting);
 }
 
-OpacityContainer PreProcessorGridAttributeNodeDataItem::PropertyDialog::opacity() const
+void PreProcessorGridAttributeNodeDataItem::PropertyDialog::setSetting(GridAttributeNodeSetting* setting)
 {
-	return ui->transparencyWidget->opacity();
-}
-
-void PreProcessorGridAttributeNodeDataItem::PropertyDialog::setOpacity(const OpacityContainer& opacity)
-{
-	return ui->transparencyWidget->setOpacity(opacity);
+	ui->gridNodeSettingWidget->setSetting(setting);
 }
 
 void PreProcessorGridAttributeNodeDataItem::PropertyDialog::accept()
@@ -77,7 +77,7 @@ QUndoCommand* PreProcessorGridAttributeNodeDataItem::PropertyDialog::createModif
 {
 	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
 	ret->addCommand(widget()->createModifyCommand());
-	ret->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("Opacity"), apply, opacity(), &m_item->opacity()));
+	ret->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
 
 	return ret;
 }

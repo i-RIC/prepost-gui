@@ -98,26 +98,51 @@ v4Unstructured2dGrid* v4InputGridIO::loadUnstructured2dGrid(const iRICLib::H5Cgn
 		points->InsertNextPoint(xVec[i] - offset.x(), yVec[i] - offset.y(), 0);
 	}
 
-	std::vector<int> indices;
-	*ier = zone.readTriangleElements(&indices);
+	iRICLib::H5CgnsZone::CellType ct;
+	*ier = zone.readUnstructuredGridCellType(&ct);
 	if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
 
-	unsigned int numCells = static_cast<unsigned int> (indices.size()) / 3;
 	auto vtkGrid = grid->vtkConcreteData()->concreteData();
-	vtkGrid->Allocate(numCells);
+	if (ct == iRICLib::H5CgnsZone::CellType::Triangle) {
+		std::vector<int> indices;
+		*ier = zone.readTriangleElements(&indices);
+		if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
 
-	auto triangle = vtkSmartPointer<vtkTriangle>::New();
+		unsigned int numCells = static_cast<unsigned int> (indices.size()) / 3;
+		vtkGrid->Allocate(numCells);
 
-	for (unsigned int i = 0; i < numCells; ++i) {
-		int id0 = indices.at(i * 3 + 0) - 1;
-		int id1 = indices.at(i * 3 + 1) - 1;
-		int id2 = indices.at(i * 3 + 2) - 1;
+		auto triangle = vtkSmartPointer<vtkTriangle>::New();
 
-		triangle->GetPointIds()->SetId(0, id0);
-		triangle->GetPointIds()->SetId(1, id1);
-		triangle->GetPointIds()->SetId(2, id2);
-		vtkGrid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
+		for (unsigned int i = 0; i < numCells; ++i) {
+			int id0 = indices.at(i * 3 + 0) - 1;
+			int id1 = indices.at(i * 3 + 1) - 1;
+			int id2 = indices.at(i * 3 + 2) - 1;
+
+			triangle->GetPointIds()->SetId(0, id0);
+			triangle->GetPointIds()->SetId(1, id1);
+			triangle->GetPointIds()->SetId(2, id2);
+			vtkGrid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
+		}
+	} else if (ct == iRICLib::H5CgnsZone::CellType::Line) {
+		std::vector<int> indices;
+		*ier = zone.readLineElements(&indices);
+		if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
+
+		unsigned int numCells = static_cast<unsigned int> (indices.size()) / 2;
+		vtkGrid->Allocate(numCells);
+
+		auto line = vtkSmartPointer<vtkLine>::New();
+
+		for (unsigned int i = 0; i < numCells; ++i) {
+			int id0 = indices.at(i * 2 + 0) - 1;
+			int id1 = indices.at(i * 2 + 1) - 1;
+
+			line->GetPointIds()->SetId(0, id0);
+			line->GetPointIds()->SetId(1, id1);
+			vtkGrid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+		}
 	}
+
 	vtkGrid->BuildLinks();
 	grid->pointsModified();
 
@@ -265,15 +290,25 @@ int v4InputGridIO::saveUnstructured2dGrid(v4Unstructured2dGrid* grid, iRICLib::H
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	// Save grid node connectivity data.
-	// Unstructured grid that consists of triangles is supported.
-	std::vector<int> indices(vtkGrid->GetNumberOfCells() * 3, 0);
-	for (int i = 0; i < vtkGrid->GetNumberOfCells(); ++i) {
-		vtkTriangle* tri = dynamic_cast<vtkTriangle*>(vtkGrid->GetCell(i));
-		indices[i * 3]     = tri->GetPointId(0) + 1;
-		indices[i * 3 + 1] = tri->GetPointId(1) + 1;
-		indices[i * 3 + 2] = tri->GetPointId(2) + 1;
+	auto firstCell = vtkGrid->GetCell(0);
+	if (firstCell->GetCellType() == VTK_LINE) {
+		std::vector<int> indices(vtkGrid->GetNumberOfCells() * 2, 0);
+		for (int i = 0; i < vtkGrid->GetNumberOfCells(); ++i) {
+			vtkLine* line = dynamic_cast<vtkLine*>(vtkGrid->GetCell(i));
+			indices[i * 2]     = line->GetPointId(0) + 1;
+			indices[i * 2 + 1] = line->GetPointId(1) + 1;
+		}
+		zone->writeLineElements(indices);
+	} else if (firstCell->GetCellType() == VTK_TRIANGLE) {
+		std::vector<int> indices(vtkGrid->GetNumberOfCells() * 3, 0);
+		for (int i = 0; i < vtkGrid->GetNumberOfCells(); ++i) {
+			vtkTriangle* tri = dynamic_cast<vtkTriangle*>(vtkGrid->GetCell(i));
+			indices[i * 3]     = tri->GetPointId(0) + 1;
+			indices[i * 3 + 1] = tri->GetPointId(1) + 1;
+			indices[i * 3 + 2] = tri->GetPointId(2) + 1;
+		}
+		zone->writeTriangleElements(indices);
 	}
-	zone->writeTriangleElements(indices);
 
 	*z = zone;
 	return IRIC_NO_ERROR;
