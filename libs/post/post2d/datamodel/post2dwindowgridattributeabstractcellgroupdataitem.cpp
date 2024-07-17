@@ -38,14 +38,12 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl::Impl(Post2dWindowGridA
 	m_target {},
 	m_actor {vtkActor::New()},
 	m_nameMap {},
-	m_lineWidth {"lineWidth", 5},
-	m_opacity {},
 	m_showAttributeBrowserAction {new QAction(Post2dWindowGridAttributeAbstractCellGroupDataItem::tr("Show Attribute Browser"), item)},
 	m_attributeBrowserFixed {false},
 	m_opacityWidget {new OpacityContainerWidget(item->mainWindow())},
 	m_colorMapWidgetContainer {new QWidgetContainer(item->mainWindow())}
 {
-	m_opacity = 50;
+	m_actor->GetProperty()->SetLighting(false);
 }
 
 Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl::~Impl()
@@ -65,7 +63,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 	impl->m_actor->GetProperty()->SetLineWidth(5);
 	renderer()->AddActor(impl->m_actor);
 
-	impl->m_opacityWidget->setContainer(&impl->m_opacity);
+	impl->m_opacityWidget->setContainer(&impl->m_setting.opacity);
 	impl->m_opacityWidget->hide();
 
 	connect(impl->m_opacityWidget, &OpacityContainerWidget::updated, [=]() {
@@ -151,8 +149,7 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 	impl->m_actor->SetMapper(mapper);
 	mapper->Delete();
 
-	impl->m_actor->GetProperty()->SetOpacity(impl->m_opacity);
-	impl->m_actor->GetProperty()->SetLineWidth(impl->m_lineWidth);
+	impl->m_setting.apply(impl->m_actor, dataModel()->graphicsView());
 
 	m_actorCollection->AddItem(impl->m_actor);
 	updateVisibilityWithoutRendering();
@@ -223,14 +220,9 @@ Post2dWindowGridAttributeAbstractCellDataItem* Post2dWindowGridAttributeAbstract
 	return it->second;
 }
 
-IntContainer& Post2dWindowGridAttributeAbstractCellGroupDataItem::lineWidth()
+GridAttributeCellSetting& Post2dWindowGridAttributeAbstractCellGroupDataItem::setting()
 {
-	return impl->m_lineWidth;
-}
-
-OpacityContainer& Post2dWindowGridAttributeAbstractCellGroupDataItem::opacity()
-{
-	return impl->m_opacity;
+	return impl->m_setting;
 }
 
 OpacityContainerWidget* Post2dWindowGridAttributeAbstractCellGroupDataItem::opacityWidget() const
@@ -437,7 +429,7 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::applyColorMapSetting(co
 
 void Post2dWindowGridAttributeAbstractCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	impl->m_opacity.load(node);
+	impl->m_setting.load(node);
 	for (auto item : conditions()) {
 		const auto& name = item->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "CellAttribute", "name", name.c_str());
@@ -453,7 +445,7 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::doLoadFromProjectMainFi
 
 void Post2dWindowGridAttributeAbstractCellGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	impl->m_opacity.save(writer);
+	impl->m_setting.save(writer);
 	for (auto item : conditions()) {
 		writer.writeStartElement("CellAttribute");
 		writer.writeAttribute("name", item->condition()->name().c_str());

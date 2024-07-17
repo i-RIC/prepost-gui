@@ -8,6 +8,7 @@
 
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 
@@ -19,7 +20,22 @@ QDialog* Post2dWindowCellScalarGroupDataItem::propertyDialog(QWidget* parent)
 {
 	auto dialog = dynamic_cast<GraphicsWindowDataItemUpdateActorSettingDialog*> (Post2dWindowAbstractCellScalarGroupDataItem::propertyDialog(parent));
 	auto widget = dynamic_cast<Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget*> (dialog->widget());
-	widget->hideLineWidth();
+
+	auto gridData = topDataItem()->zoneDataItem()->v4DataContainer()->gridData();
+	auto grid = gridData->grid();
+
+	if (dynamic_cast<v4Structured2dGrid*>(grid) != nullptr) {
+		widget->hideLineWidth();
+	} else {
+		auto ugrid = dynamic_cast<v4Structured2dGrid*>(grid);
+		if (ugrid != nullptr) {
+			auto vgrid = ugrid->vtkConcreteData()->data();
+			auto firstCell = vgrid->GetCell(0);
+			if (firstCell != nullptr && firstCell->GetCellType() == VTK_TRIANGLE) {
+				widget->hideLineWidth();
+			}
+		}
+	}
 
 	return dialog;
 }

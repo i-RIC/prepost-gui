@@ -43,7 +43,7 @@ Post2dWindowAbstractCellScalarGroupDataItem::Post2dWindowAbstractCellScalarGroup
 	});
 
 	impl->m_opacityToolBarWidget->hide();
-	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.opacity);
+	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.cellSetting.opacity);
 	connect(impl->m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
 		auto com = impl->m_opacityToolBarWidget->createModifyCommand();
 		pushUpdateActorSettingCommand(com, this, false);
@@ -98,8 +98,7 @@ void Post2dWindowAbstractCellScalarGroupDataItem::updateActorSetting()
 	mapper->Delete();
 
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
-	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
-	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.lineWidth);
+	impl->m_setting.cellSetting.apply(impl->m_actor, dataModel()->graphicsView());
 
 	m_actor2DCollection->RemoveAllItems();
 	if (impl->m_setting.colorMapSetting->legendSetting()->getVisible()) {
@@ -176,7 +175,7 @@ QDialog* Post2dWindowAbstractCellScalarGroupDataItem::propertyDialog(QWidget* p)
 bool Post2dWindowAbstractCellScalarGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
-	if (impl->m_setting.opacity == 100) {return false;}
+	if (impl->m_setting.cellSetting.opacity == 100) {return false;}
 
 	return true;
 }

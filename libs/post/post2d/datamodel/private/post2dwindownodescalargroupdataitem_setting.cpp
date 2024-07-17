@@ -3,11 +3,11 @@
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 
 Post2dWindowNodeScalarGroupDataItem::Setting::Setting() :
-	CompositeContainer {&regionSetting, &opacity, &contourSetting},
+	CompositeContainer {&regionSetting, &contourSetting, &nodeSetting},
 	colorMapSetting {nullptr},
 	regionSetting {},
 	contourSetting {},
-	opacity {"opacity", 50}
+	nodeSetting {}
 {}
 
 Post2dWindowNodeScalarGroupDataItem::Setting::Setting(const Setting& setting) :

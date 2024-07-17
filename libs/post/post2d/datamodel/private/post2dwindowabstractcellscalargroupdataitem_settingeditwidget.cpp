@@ -44,8 +44,7 @@ Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::SettingEditWidge
 
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	ui->rangeWidget->setSetting(&item->impl->m_setting.regionSetting);
-	ui->lineWidthSpinBox->setValue(item->impl->m_setting.lineWidth);
-	ui->opacityWidget->setOpacity(item->impl->m_setting.opacity);
+	ui->gridCellSettingWidget->setSetting(&item->impl->m_setting.cellSetting);
 }
 
 Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::~SettingEditWidget()
@@ -55,8 +54,7 @@ Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::~SettingEditWidg
 
 void Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::hideLineWidth()
 {
-	ui->lineWidthLabel->hide();
-	ui->lineWidthSpinBox->hide();
+	ui->gridCellSettingWidget->hideLineWidth();
 }
 
 QUndoCommand* Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::createModifyCommand(bool apply)
@@ -64,13 +62,7 @@ QUndoCommand* Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget::cr
 	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowCellScalarGroupDataItem::SetProperty"), apply);
 	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(ui->rangeWidget->createModifyCommand());
-
-	IntContainer lineWidth {"lineWidth", 3};
-	lineWidth.setValue(ui->lineWidthSpinBox->value());
-	command->addCommand(new ValueModifyCommmand<IntContainer>(iRIC::generateCommandId("ModifyLineWidth"), apply, lineWidth, &m_item->impl->m_setting.lineWidth));
-
-	OpacityContainer o = ui->opacityWidget->opacity();
-	command->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, o, &m_item->impl->m_setting.opacity));
+	command->addCommand(ui->gridCellSettingWidget->createModifyCommand(apply));
 
 	return command;
 }

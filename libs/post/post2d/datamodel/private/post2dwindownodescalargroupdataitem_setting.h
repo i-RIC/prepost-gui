@@ -3,6 +3,7 @@
 
 #include "../post2dwindownodescalargroupdataitem.h"
 
+#include <guicore/gridatt/node/gridattributenodesetting.h>
 #include <guicore/contour/contoursettingcontainer.h>
 #include <guicore/region/region2dsettingcontainer.h>
 #include <misc/compositecontainer.h>
@@ -26,7 +27,7 @@ public:
 	ColorMapSettingContainerI* colorMapSetting;
 	Region2dSettingContainer regionSetting;
 	ContourSettingContainer contourSetting;
-	OpacityContainer opacity;
+	GridAttributeNodeSetting nodeSetting;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPDATAITEM_SETTING_H

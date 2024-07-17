@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>948</width>
-    <height>608</height>
+    <height>495</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,24 +27,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
-     <item>
-      <widget class="TransparencyWidget" name="transparencyWidget" native="true"/>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+    <widget class="GridAttributeNodeSettingEditWidget" name="gridNodeSettingWidget" native="true"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -97,9 +80,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TransparencyWidget</class>
+   <class>GridAttributeNodeSettingEditWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/widget/transparencywidget.h</header>
+   <header>guicore/gridatt/node/gridattributenodesettingeditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

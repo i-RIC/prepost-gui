@@ -12,6 +12,7 @@
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
@@ -103,7 +104,23 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
 
-	dialog->setOpacity(gItem->opacity());
+	dialog->setSetting(&gItem->setting());
+
+	auto grid = groupDataItem()->gridDataItem()->grid()->grid();
+
+	if (dynamic_cast<v4Structured2dGrid*>(grid) != nullptr) {
+		dialog->hideLineWidth();
+	} else {
+		auto ugrid = dynamic_cast<v4Unstructured2dGrid*>(grid);
+		if (ugrid != nullptr) {
+			auto vgrid = ugrid->vtkConcreteData()->data();
+			auto firstCell = vgrid->GetCell(0);
+			if (firstCell != nullptr && firstCell->GetCellType() == VTK_TRIANGLE) {
+				dialog->hideLineWidth();
+			}
+		}
+	}
+
 	dialog->resize(900, 700);
 
 	return dialog;
