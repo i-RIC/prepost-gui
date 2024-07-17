@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -15,7 +17,7 @@
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation>Aquest projecte s'obre en mode només de publicació. No podeu executar el solucionador.</translation>
+        <translation>Aquest projecte s&apos;obre en mode només de publicació. No podeu executar el solucionador.</translation>
     </message>
     <message>
         <source>Show Detail</source>
@@ -39,11 +41,11 @@
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>S'ha produït un error. %1</translation>
+        <translation>S&apos;ha produït un error. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation type="vanished">Us recomanem que deseu el projecte abans d'iniciar el solucionador. Voleu estalviar?</translation>
+        <translation type="vanished">Us recomanem que deseu el projecte abans d&apos;iniciar el solucionador. Voleu estalviar?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -103,7 +105,7 @@
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation>Aquest projecte ja té dades de resultats de càlcul. Si executeu el solucionador, es descarta.</translation>
+        <translation type="vanished">Aquest projecte ja té dades de resultats de càlcul. Si executeu el solucionador, es descarta.</translation>
     </message>
 </context>
 <context>
@@ -118,7 +120,7 @@
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation>S'està exportant el registre de la consola del solucionador...</translation>
+        <translation>S&apos;està exportant el registre de la consola del solucionador...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
@@ -130,7 +132,26 @@
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation>No s'ha pogut exportar el registre de la consola del solucionador.</translation>
+        <translation>No s&apos;ha pogut exportar el registre de la consola del solucionador.</translation>
+    </message>
+</context>
+<context>
+    <name>SolverConsoleWindow_MessageDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advertiment</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;Please make sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
+&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
+&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
