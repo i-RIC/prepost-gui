@@ -88,9 +88,9 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 		m_childItems.push_back(m_bcSettingGroupDataItem);
 
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
-		connect(m_bcGroupDataItem, SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
-		connect(m_bcGroupDataItem, SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
-		m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
+		connect(m_bcGroupDataItem, &PreProcessorBCGroupDataItem::itemsUpdated, m_bcSettingGroupDataItem, &PreProcessorBCSettingGroupDataItem::updateItems);
+		connect(m_bcGroupDataItem, &PreProcessorBCGroupDataItem::itemsLoaded, m_bcSettingGroupDataItem, &PreProcessorBCSettingGroupDataItem::loadItems);
+		m_standardItem->takeRow(m_bcGroupDataItem->standardItem()->row());
 	}
 
 	m_deleteAction = new QAction(PreProcessorGridAndGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition and Grid Shape..."), this);
