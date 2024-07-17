@@ -26,7 +26,7 @@ public slots:
 
 private slots:
 	void recheck();
-	void handleSelectChange(int row);
+	void handleSelectChange();
 
 private:
 	vtkIdType m_downstream;

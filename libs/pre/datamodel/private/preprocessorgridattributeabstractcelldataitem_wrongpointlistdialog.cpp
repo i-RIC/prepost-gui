@@ -17,7 +17,7 @@ PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::WrongPointL
 {
 	ui->setupUi(this);
 	connect(ui->recheckButton, &QPushButton::clicked, this, &WrongPointListDialog::recheck);
-	connect(ui->listWidget, &QListWidget::currentRowChanged, this, &WrongPointListDialog::handleSelectChange);
+	connect(ui->listWidget, &QListWidget::clicked, this, &WrongPointListDialog::handleSelectChange);
 }
 
 PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::~WrongPointListDialog()
@@ -39,11 +39,6 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::setPoi
 		auto i = index % cellINum;
 		auto j = index / cellINum;
 		ui->listWidget->addItem(QString("(%1, %2)").arg(i).arg(j));
-	}
-	if (m_list.size() > 0) {
-		auto index = ui->listWidget->model()->index(0, 0);
-		ui->listWidget->selectionModel()->select(index, QItemSelectionModel::SelectionFlag::SelectCurrent);
-		handleSelectChange(0);
 	}
 }
 
@@ -67,10 +62,12 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::rechec
 	m_item->renderGraphicsView();
 }
 
-void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::handleSelectChange(int row)
+void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::handleSelectChange()
 {
-	if (row < 0) {return;}
+	auto sModel = ui->listWidget->selectionModel();
+	if (sModel->selectedRows().size() == 0) {return;}
 
+	auto row = sModel->selectedRows().at(0).row();
 	auto index = m_list.at(row);
 
 	std::vector<vtkIdType> ids;
