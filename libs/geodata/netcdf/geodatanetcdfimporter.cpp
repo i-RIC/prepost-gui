@@ -33,6 +33,11 @@ namespace {
 class nc_closer {
 public:
 	nc_closer(int id) {m_id = id;}
+
+	void close() {
+		nc_close(m_id);
+	}
+
 	~nc_closer()
 	{
 		nc_close(m_id);
@@ -387,6 +392,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	netcdf->outputDimensions(ncid_out, varIds);
 
 	ret = importValues(ncid_in, ncid_out, varOutId, m_xDimId, m_yDimId, m_lonDimId, m_latDimId, dimIds, netcdf);
+	closer_new.close();
 
 	netcdf->updateShapeData();
 	netcdf->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
