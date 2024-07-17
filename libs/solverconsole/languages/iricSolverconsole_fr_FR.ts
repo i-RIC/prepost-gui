@@ -103,10 +103,6 @@
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 N&apos;existe pas. Veuillez spécifier un chemin d&apos;accès exécutable Python valide dans la boîte de dialogue Préférences.</translation>
     </message>
-    <message>
-        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -133,6 +129,25 @@
     <message>
         <source>Exporting solver console log failed.</source>
         <translation>Échec de l&apos;exportation du journal de la console du solveur.</translation>
+    </message>
+</context>
+<context>
+    <name>SolverConsoleWindow_MessageDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Avertissement</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;Please make sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
+&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
+&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

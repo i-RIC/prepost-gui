@@ -87,6 +87,7 @@ private:
 	Impl* impl;
 
 	class SetBackgroundColorCommand;
+	class MessageDialog;
 
 public:
 	friend class SolverConsoleWindowProjectDataItem;

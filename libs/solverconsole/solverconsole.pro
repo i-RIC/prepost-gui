@@ -61,9 +61,12 @@ HEADERS += solverconsole_global.h \
            solverconsolewindow.h \
            solverconsolewindowprojectdataitem.h \
            private/solverconsolewindow_impl.h \
+           private/solverconsolewindow_messagedialog.h \
            private/solverconsolewindow_setbackgroundcolorcommand.h
+FORMS += private/solverconsolewindow_messagedialog.ui
 SOURCES += solverconsolewindow.cpp \
            solverconsolewindowprojectdataitem.cpp \
+           private/solverconsolewindow_messagedialog.cpp \
            private/solverconsolewindow_setbackgroundcolorcommand.cpp
 RESOURCES += solverconsole.qrc
 TRANSLATIONS += languages/iricSolverconsole_ar_EG.ts \

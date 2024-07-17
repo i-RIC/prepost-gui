@@ -1,6 +1,7 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
 #include "private/solverconsolewindow_impl.h"
+#include "private/solverconsolewindow_messagedialog.h"
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowi.h>
@@ -34,8 +35,8 @@ const int SOLVER_CANCEL_WAITTIME = 5;
 } // namespace
 
 SolverConsoleWindow::Impl::Impl(iRICMainWindowI* mainW, SolverConsoleWindow* w) :
-	m_iricMainWindow {mainW},
 	m_process {nullptr},
+	m_iricMainWindow {mainW},
 	m_window {w}
 {}
 
@@ -144,8 +145,10 @@ void SolverConsoleWindow::startSolver()
 		int ret = QMessageBox::warning(impl->m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
-	// If the cgns file already has results, clear them first.
-	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("Warning"), tr("This project already has calculation result data. If you run the solver, it is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+
+	MessageDialog dialog(this);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
 		return;
 	}
 	// discard result, and save now.
