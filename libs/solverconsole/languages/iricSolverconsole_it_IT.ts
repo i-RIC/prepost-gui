@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>SolverConsoleWindow</name>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>C&apos;è stato un&apos;errore. %1</translation>
+        <translation>C'è stato un'errore. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avvertimento</translation>
+        <translation>Avvertimento</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Assicurati che:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Se il risultato del calcolo esiste già, viene eliminato.&lt;/li&gt; &lt;li&gt;La condizione di calcolo e la griglia di input che puoi vedere nella finestra di pre-elaborazione è scritto in Case1.cgn.&lt;/li&gt; &lt;li&gt;Il risolutore leggerà i dati da Case1.cgn e inizierà a funzionare.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Sei sicuro che sia ok?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

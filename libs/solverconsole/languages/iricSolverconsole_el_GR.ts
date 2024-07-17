@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Βεβαιωθείτε ότι:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Εάν το αποτέλεσμα υπολογισμού υπάρχει ήδη, διαγράφεται.&lt;/li&gt; &lt;li&gt;Η συνθήκη υπολογισμού και το πλέγμα εισαγωγής. που μπορείτε να δείτε στο παράθυρο προεπεξεργασίας είναι γραμμένο στο Case1.cgn.&lt;/li&gt; &lt;li&gt;Ο λύτης θα διαβάσει τα δεδομένα από το Case1.cgn και θα ξεκινήσει να εκτελείται.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Είστε εσείς. σίγουρα είναι εντάξει;&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

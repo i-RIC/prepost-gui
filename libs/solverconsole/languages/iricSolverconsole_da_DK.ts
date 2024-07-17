@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Sørg venligst for:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Hvis beregningsresultatet allerede findes, slettes det.&lt;/li&gt; &lt;li&gt;Beregningsbetingelsen og inputgitteret som du kan se i forbehandlingsvinduet, er skrevet til Case1.cgn.&lt;/li&gt; &lt;li&gt;Løseren læser dataene fra Case1.cgn og begynder at køre.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Er du sikker på det er i orden?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

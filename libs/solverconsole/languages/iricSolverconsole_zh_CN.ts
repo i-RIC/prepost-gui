@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;请确保：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;如果计算结果已经存在，则删除。&lt;/li&gt; &lt;li&gt;在预处理窗口中看到的计算条件和输入网格已写入 Case1.cgn。&lt;/li&gt; &lt;li&gt;求解器将从 Case1.cgn 中读取数据并开始运行。&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;您确定没问题吗？&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

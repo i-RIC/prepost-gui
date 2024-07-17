@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Warnung</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Bitte stellen Sie Folgendes sicher:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Wenn das Berechnungsergebnis bereits vorhanden ist, wird es gelöscht.&lt;/li&gt; &lt;li&gt;Die Berechnungsbedingung und das Eingaberaster, die Sie im Vorverarbeitungsfenster sehen können, werden in Case1.cgn geschrieben.&lt;/li&gt; &lt;li&gt;Der Solver liest die Daten aus Case1.cgn und beginnt mit der Ausführung.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Sind Sie sicher, dass das in Ordnung ist?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

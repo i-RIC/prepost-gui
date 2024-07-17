@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Asegúrate de:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Se xa existe o resultado do cálculo, elimínase.&lt;/li&gt; &lt;li&gt;A condición de cálculo e a grella de entrada que podes ver na xanela de pre-procesamento está escrito en Case1.cgn.&lt;/li&gt; &lt;li&gt;O solucionador lerá os datos de Case1.cgn e comezará a executarse.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Estás seguro de que está ben?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

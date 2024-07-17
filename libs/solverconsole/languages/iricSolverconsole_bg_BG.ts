@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Внимание</translation>
+        <translation>Внимание</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Моля, уверете се, че:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Ако вече съществува резултат от изчислението, той се изтрива.&lt;/li&gt; &lt;li&gt;Условието за изчисление и мрежата за въвеждане което можете да видите в прозореца за предварителна обработка, е записано в Case1.cgn.&lt;/li&gt; &lt;li&gt;Солвърът ще прочете данните от Case1.cgn и ще започне да работи.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Вие ли сте сигурен ли си, че е наред?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

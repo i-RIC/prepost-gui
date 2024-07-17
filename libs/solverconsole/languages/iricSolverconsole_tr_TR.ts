@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Hesaplama sonucu zaten mevcutsa silinir.&lt;/li&gt; &lt;li&gt;Hesaplama koşulu ve giriş tablosu Ön işleme penceresinde görebileceğiniz Case1.cgn'ye yazılır.&lt;/li&gt; &lt;li&gt;Çözücü Case1.cgn'deki verileri okuyacak ve çalışmaya başlayacaktır.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Öyle misiniz? sorun olmadığından emin misin?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

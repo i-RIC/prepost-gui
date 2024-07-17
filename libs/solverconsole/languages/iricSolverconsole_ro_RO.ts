@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Vă rugăm să vă asigurați că:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Dacă rezultatul calculului există deja, acesta este șters.&lt;/li&gt; &lt;li&gt;Condiția de calcul și grila de intrare pe care îl puteți vedea în fereastra de preprocesare este scris în Case1.cgn.&lt;/li&gt; &lt;li&gt;Rezolvatorul va citi datele din Case1.cgn și va începe să ruleze.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Ești sigur că este în regulă?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

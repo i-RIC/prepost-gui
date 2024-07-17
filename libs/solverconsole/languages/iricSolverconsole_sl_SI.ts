@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Opozorilo</translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Prepričajte se, da:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Če rezultat izračuna že obstaja, se izbriše.&lt;/li&gt; &lt;li&gt;Pogoj izračuna in vnosna mreža ki ga lahko vidite v oknu za predprocesiranje, je zapisan v Case1.cgn.&lt;/li&gt; &lt;li&gt;Reševalec bo prebral podatke iz Case1.cgn in se začel izvajati.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Ali ste ste prepričani, da je v redu?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

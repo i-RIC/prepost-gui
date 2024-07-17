@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Zorg ervoor dat:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Als het berekeningsresultaat al bestaat, wordt het verwijderd.&lt;/li&gt; &lt;li&gt;De berekeningsvoorwaarde en het invoerraster die u in het voorverwerkingsvenster kunt zien, is naar Case1.cgn geschreven.&lt;/li&gt; &lt;li&gt;De oplosser leest de gegevens van Case1.cgn en begint te draaien.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Bent u dat? Weet je zeker dat het goed is?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

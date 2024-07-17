@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Cảnh báo</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Hãy đảm bảo:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Nếu kết quả tính toán đã tồn tại thì nó sẽ bị xóa.&lt;/li&gt; &lt;li&gt;Điều kiện tính toán và lưới đầu vào mà bạn có thể thấy trên cửa sổ tiền xử lý được ghi vào Case1.cgn.&lt;/li&gt; &lt;li&gt;Bộ giải sẽ đọc dữ liệu từ Case1.cgn và bắt đầu chạy.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Bạn có phải là chắc là ổn chứ?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

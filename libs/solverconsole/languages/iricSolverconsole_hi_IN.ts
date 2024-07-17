@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">चेतावनी</translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;कृपया सुनिश्चित करें:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;यदि गणना परिणाम पहले से मौजूद है, तो इसे हटा दिया जाता है।&lt;/li&gt; &lt;li&gt;गणना स्थिति और इनपुट ग्रिड जिसे आप प्री-प्रोसेसिंग विंडो पर देख सकते हैं, उसे Case1.cgn में लिखा जाता है।&lt;/li&gt; &lt;li&gt;सॉल्वर Case1.cgn से डेटा पढ़ेगा और चलना शुरू कर देगा।&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;क्या आप सुनिश्चित हैं कि यह ठीक है?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

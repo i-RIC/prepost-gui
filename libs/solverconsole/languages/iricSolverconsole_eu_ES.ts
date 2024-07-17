@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Ziurtatu:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Kalkulazioaren emaitza dagoeneko badago, ezabatu egingo da.&lt;/li&gt; &lt;li&gt;Kalkulu-baldintza eta sarrerako sarea aurreprozesatzeko leihoan ikus dezakezuna Case1.cgn-en idatzita dago.&lt;/li&gt; &lt;li&gt;Ebazleak Case1.cgn-ko datuak irakurriko ditu eta exekutatzen hasiko da.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Zu al zara ziur dago ondo dagoela?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

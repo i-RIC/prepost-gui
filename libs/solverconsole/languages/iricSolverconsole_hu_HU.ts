@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>SolverConsoleWindow</name>
@@ -139,7 +137,7 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelem</translation>
+        <translation>Figyelem</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -151,7 +149,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Győződjön meg a következőkről:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Ha már létezik számítási eredmény, akkor az törlődik.&lt;/li&gt; &lt;li&gt;A számítási feltétel és a beviteli rács amelyet az előfeldolgozási ablakban láthat, az a Case1.cgn fájlba van írva.&lt;/li&gt; &lt;li&gt;A megoldó beolvassa az adatokat a Case1.cgn fájlból, és elindul a futás.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Te vagy. biztos, hogy rendben van?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
