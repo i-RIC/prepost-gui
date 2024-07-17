@@ -11,5 +11,6 @@ SUBDIRS = \
 	structured2dgridnayscsvimporter \
 	structured2dgridnaysgridimporter \
 	structured2dgridvtkimporter \
+	unstructured2dgridsewerimporter \
 	unstructured2dgridtriangleimporter \
 	unstructured2dgridvtkimporter
