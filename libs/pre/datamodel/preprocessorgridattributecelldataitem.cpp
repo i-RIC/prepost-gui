@@ -9,13 +9,7 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* parent)
 {
-	auto dialog = PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(parent);
-	auto dialog2 = dynamic_cast<PropertyDialog*> (dialog);
-	if (dialog2 != nullptr) {
-		dialog2->hideLineWidth();
-	}
-
-	return dialog;
+	return PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(parent);
 }
 
 PreProcessorGridDataItem::SelectedDataWithIdController* PreProcessorGridAttributeCellDataItem::selectedDataController() const
