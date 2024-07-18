@@ -137,16 +137,16 @@ void AbstractCrosssectionWindow::update()
 	impl->updateColorMapValueRanges();
 	impl->m_displaySettingTableController->updateVisible();
 	impl->m_editTableController->applyToTable();
-	impl->graphicsView()->render();
+	if (impl->m_displaySetting.enableAutoRescale && ! impl->m_displaySetting.fixRegion) {
+		cameraFit();
+	} else {
+		impl->graphicsView()->render();
+	}
 }
 
 void AbstractCrosssectionWindow::handleSettingChange()
 {
 	update();
-
-	if (impl->m_displaySetting.enableAutoRescale && ! impl->m_displaySetting.fixRegion) {
-		cameraFit();
-	}
 
 	updateEdgeFocus();
 }
