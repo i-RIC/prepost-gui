@@ -146,6 +146,7 @@ void AbstractCrosssectionWindow::update()
 
 void AbstractCrosssectionWindow::handleSettingChange()
 {
+	impl->graphicsView()->clearSelection();
 	update();
 
 	updateEdgeFocus();

@@ -1,6 +1,7 @@
 #ifndef ABSTRACTCROSSSECTIONWINDOW_IMPL_H
 #define ABSTRACTCROSSSECTIONWINDOW_IMPL_H
 
+#include "../crosssection_global.h"
 #include "../abstractcrosssectionwindow.h"
 #include "../public/abstractcrosssectionwindow_controller.h"
 #include "abstractcrosssectionwindow_displaysettingcontainer.h"
@@ -17,7 +18,7 @@ class QLabel;
 class QToolBar;
 class QPushButton;
 
-class AbstractCrosssectionWindow::Impl
+class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow::Impl
 {
 public:
 	Impl(AbstractCrosssectionWindow* w, QWidget* parent);

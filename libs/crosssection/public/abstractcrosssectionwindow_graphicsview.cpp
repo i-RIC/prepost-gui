@@ -11,12 +11,20 @@
 
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditcommand.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/mergesupportedlistcommand.h>
 #include <misc/xmlsupport.h>
 
+#include <vtkCellData.h>
 #include <vtkExtractGrid.h>
 #include <vtkSmartPointer.h>
+#include <vtkPointData.h>
 #include <vtkPoints.h>
 
 #include <QPainter>
@@ -82,6 +90,12 @@ AbstractCrosssectionWindow::GraphicsView::GraphicsView(QWidget* w) :
 	m_movePixmap {":/libs/guibase/images/cursorMove.png"},
 	m_zoomCursor {m_zoomPixmap},
 	m_moveCursor {m_movePixmap},
+	m_editEnabled {false},
+	m_selectAreaStartPosition {},
+	m_selectAreaEndPosition {},
+	m_gridDataItem {nullptr},
+	m_dragStartPosition {},
+	m_elevationOffset {0},
 	m_impl {nullptr}
 {
 	setMouseTracking(true);
@@ -90,6 +104,16 @@ AbstractCrosssectionWindow::GraphicsView::GraphicsView(QWidget* w) :
 void AbstractCrosssectionWindow::GraphicsView::setImpl(Impl* impl)
 {
 	m_impl = impl;
+}
+
+void AbstractCrosssectionWindow::GraphicsView::setEditEnabled(bool enabled)
+{
+	m_editEnabled = enabled;
+}
+
+void AbstractCrosssectionWindow::GraphicsView::clearSelection()
+{
+	m_selectedIndices.clear();
 }
 
 void AbstractCrosssectionWindow::GraphicsView::render()
@@ -227,6 +251,7 @@ void AbstractCrosssectionWindow::GraphicsView::paintEvent(QPaintEvent* /*event*/
 
 	for (auto it = activeSettings.rbegin(); it != activeSettings.rend(); ++it) {
 		auto setting = *it;
+
 		int column = static_cast<int> (activeSettings.size()) - 1 - (it - activeSettings.rbegin());
 
 		if (setting->mode == GridAttributeDisplaySettingContainer::Mode::AsElevation) {
@@ -235,7 +260,13 @@ void AbstractCrosssectionWindow::GraphicsView::paintEvent(QPaintEvent* /*event*/
 			for (int i = 0; i < model.rowCount(); ++i) {
 				values.push_back(model.data(model.index(i, column), Qt::EditRole));
 			}
-			controller.paint(nodePositions, values, setting, m, &painter);
+
+			std::vector<unsigned int> selected;
+			auto it = m_selectedIndices.find(column);
+			if (it != m_selectedIndices.end()) {
+				selected = it->second;
+			}
+			controller.paint(nodePositions, values, selected, setting, m, m_elevationOffset, &painter);
 		} else if (setting->mode == GridAttributeDisplaySettingContainer::Mode::Chart) {
 			IndependentChartController controller(this);
 			std::vector<QVariant> values;
@@ -269,6 +300,7 @@ void AbstractCrosssectionWindow::GraphicsView::paintEvent(QPaintEvent* /*event*/
 		}
 	}
 	drawAspectRatio(&painter, elevationChartRegion.yMax);
+	drawSelectArea(&painter);
 }
 
 void AbstractCrosssectionWindow::GraphicsView::loadFromProjectMainFile(const QDomNode& node)
@@ -380,7 +412,10 @@ void AbstractCrosssectionWindow::GraphicsView::mouseMoveEvent(QMouseEvent* event
 			}
 			viewport()->update();
 		}
-	} else if (m_viewMouseEventMode == ViewMouseEventMode::Normal || m_viewMouseEventMode == ViewMouseEventMode::ChangeHeightPossible){
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::ChangingElevation) {
+		m_elevationOffset = event->y() - m_dragStartPosition.y();
+		viewport()->update();
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::Normal || m_viewMouseEventMode == ViewMouseEventMode::ChangeHeightPossible || m_viewMouseEventMode == ViewMouseEventMode::ChangingElevationPossible){
 		std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> colorMapRegions;
 		std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> independentChartRegions;
 		DrawRegionInformation elevationChartRegion;
@@ -401,18 +436,39 @@ void AbstractCrosssectionWindow::GraphicsView::mouseMoveEvent(QMouseEvent* event
 				break;
 			}
 		}
+
+		auto m = matrix(elevationChartRegion.yMax);
+		auto nodePositions = setupNodePositions();
+		const auto& model = m_impl->m_editTableController->model();
+		for (const auto& pair : m_selectedIndices) {
+			auto column = pair.first;
+			for (const auto& row : pair.second) {
+				auto value = model.data(model.index(row, column), Qt::EditRole).toDouble();
+				auto p = m.map(QPointF(nodePositions.at(row), value));
+				if (std::abs(p.x() - event->x()) < iRIC::nearRadius() && std::abs(p.y() - event->y()) < iRIC::nearRadius()) {
+					m_viewMouseEventMode = ViewMouseEventMode::ChangingElevationPossible;
+					break;
+				}
+			}
+		}
+
 		updateMouseCursor();
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::SelectingArea) {
+		m_selectAreaEndPosition = event->pos();
+		viewport()->update();
 	}
+
 	m_oldPosition = event->pos();
 }
 
 void AbstractCrosssectionWindow::GraphicsView::mousePressEvent(QMouseEvent* event)
 {
-	if (m_impl->m_displaySetting.fixRegion) {
-		return;
-	}
 
 	if (event->modifiers() == Qt::ControlModifier) {
+		if (m_impl->m_displaySetting.fixRegion) {
+			return;
+		}
+
 		switch (event->button()) {
 		case Qt::LeftButton:
 			m_viewMouseEventMode = ViewMouseEventMode::Translating;
@@ -426,16 +482,42 @@ void AbstractCrosssectionWindow::GraphicsView::mousePressEvent(QMouseEvent* even
 		m_oldPosition = event->pos();
 		updateMouseCursor();
 	} else {
-		if (m_viewMouseEventMode == ViewMouseEventMode::ChangeHeightPossible) {
-			m_viewMouseEventMode = ViewMouseEventMode::ChangingHeight;
+		if (event->button() == Qt::LeftButton) {
+			if (m_viewMouseEventMode == ViewMouseEventMode::ChangeHeightPossible) {
+				m_viewMouseEventMode = ViewMouseEventMode::ChangingHeight;
+				updateMouseCursor();
+			} else if (m_editEnabled) {
+				if (m_viewMouseEventMode == ViewMouseEventMode::ChangingElevationPossible) {
+					m_viewMouseEventMode = ViewMouseEventMode::ChangingElevation;
+					m_dragStartPosition = event->pos();
+					updateMouseCursor();
+				} else {
+					m_selectAreaStartPosition = event->pos();
+					m_selectAreaEndPosition = event->pos();
+					m_viewMouseEventMode = ViewMouseEventMode::SelectingArea;
+				}
+			}
 		}
 	}
 }
 
 void AbstractCrosssectionWindow::GraphicsView::mouseReleaseEvent(QMouseEvent* /*event*/)
 {
+	bool needRender = false;
+	if (m_viewMouseEventMode == ViewMouseEventMode::SelectingArea) {
+		updateSelectedIndices();
+		needRender = true;
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::ChangingElevation) {
+		pushElevationEditCommand();
+		m_elevationOffset = 0;
+	}
+
 	m_viewMouseEventMode = ViewMouseEventMode::Normal;
 	updateMouseCursor();
+
+	if (needRender) {
+		viewport()->update();
+	}
 }
 
 void AbstractCrosssectionWindow::GraphicsView::setupRegions(
@@ -509,6 +591,11 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 	}
 
 	return positions;
+}
+
+void AbstractCrosssectionWindow::GraphicsView::setGridDataItem(PreProcessorGridDataItemI* item)
+{
+	m_gridDataItem = item;
 }
 
 void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, const QMatrix& matrix, int ymax)
@@ -791,6 +878,28 @@ void AbstractCrosssectionWindow::GraphicsView::drawAspectRatio(QPainter* painter
 	painter->restore();
 }
 
+void AbstractCrosssectionWindow::GraphicsView::drawSelectArea(QPainter* painter)
+{
+	if (m_viewMouseEventMode != ViewMouseEventMode::SelectingArea) {return;}
+
+	double left = std::min(m_selectAreaStartPosition.x(), m_selectAreaEndPosition.x());
+	double right = std::max(m_selectAreaStartPosition.x(), m_selectAreaEndPosition.x());
+	double top = std::min(m_selectAreaStartPosition.y(), m_selectAreaEndPosition.y());
+	double bottom = std::max(m_selectAreaStartPosition.y(), m_selectAreaEndPosition.y());
+
+	QRectF rect(QPointF(left, top), QPointF(right, bottom));
+
+	painter->save();
+	QBrush brush(QColor(0, 0, 0, 128));
+	painter->fillRect(rect, brush);
+
+	QPen pen(Qt::black, 2);
+	painter->setPen(pen);
+	painter->drawRect(rect);
+
+	painter->restore();
+}
+
 double AbstractCrosssectionWindow::GraphicsView::aspectRatio() const
 {
 	return m_scaleY / m_scaleX;
@@ -831,9 +940,152 @@ void AbstractCrosssectionWindow::GraphicsView::updateMouseCursor()
 		setCursor(m_moveCursor);
 	} else if (m_viewMouseEventMode == ViewMouseEventMode::ChangeHeightPossible || m_viewMouseEventMode == ViewMouseEventMode::ChangingHeight) {
 		setCursor(Qt::SizeVerCursor);
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::ChangingElevationPossible) {
+		setCursor(Qt::OpenHandCursor);
+	} else if (m_viewMouseEventMode == ViewMouseEventMode::ChangingElevation) {
+		setCursor(Qt::ClosedHandCursor);
 	} else {
 		setCursor(Qt::ArrowCursor);
 	}
+}
+
+void AbstractCrosssectionWindow::GraphicsView::updateSelectedIndices()
+{
+	m_selectedIndices.clear();
+
+	double left = std::min(m_selectAreaStartPosition.x(), m_selectAreaEndPosition.x());
+	double right = std::max(m_selectAreaStartPosition.x(), m_selectAreaEndPosition.x());
+	double top = std::min(m_selectAreaStartPosition.y(), m_selectAreaEndPosition.y());
+	double bottom = std::max(m_selectAreaStartPosition.y(), m_selectAreaEndPosition.y());
+
+	std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> colorMapRegions;
+	std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> independentChartRegions;
+	DrawRegionInformation elevationChartRegion;
+
+	setupRegions(m_impl->m_displaySettings, &colorMapRegions, &independentChartRegions, &elevationChartRegion);
+
+	auto m = matrix(elevationChartRegion.yMax);
+
+	auto nodePositions = setupNodePositions();
+
+	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
+	for (auto& s : m_impl->m_displaySettings) {
+		if (! s.visible) {continue;}
+
+		activeSettings.push_back(&s);
+	}
+
+	const auto& model = m_impl->m_editTableController->model();
+	if (model.rowCount() == 0) {return;}
+	if (model.rowCount() != nodePositions.size()) {return;}
+
+	for (auto it = activeSettings.rbegin(); it != activeSettings.rend(); ++it) {
+		auto setting = *it;
+		unsigned int column = static_cast<int> (activeSettings.size()) - 1 - (it - activeSettings.rbegin());
+
+		if (setting->mode == GridAttributeDisplaySettingContainer::Mode::AsElevation) {
+			std::vector<QVariant> values;
+			for (int i = 0; i < model.rowCount(); ++i) {
+				values.push_back(model.data(model.index(i, column), Qt::EditRole));
+			}
+
+			std::vector<unsigned int> selected;
+			for (int i = 0; i < nodePositions.size(); ++i) {
+				auto p = m.map(QPointF(nodePositions.at(i), values.at(i).toDouble()));
+				if (p.x() >= left && p.x() <= right && p.y() >= top && p.y() <= bottom) {
+					selected.push_back(i);
+				}
+			}
+			if (selected.size() > 0) {
+				m_selectedIndices.insert({column, selected});
+			}
+		}
+	}
+}
+void AbstractCrosssectionWindow::GraphicsView::pushElevationEditCommand()
+{
+	std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> colorMapRegions;
+	std::unordered_map<GridAttributeDisplaySettingContainer*, DrawRegionInformation> independentChartRegions;
+	DrawRegionInformation elevationChartRegion;
+
+	setupRegions(m_impl->m_displaySettings, &colorMapRegions, &independentChartRegions, &elevationChartRegion);
+	auto m = matrix(elevationChartRegion.yMax);
+	double scale = 1 / m.m22();
+	double offset = scale * m_elevationOffset;
+
+	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
+	for (auto& s : m_impl->m_displaySettings) {
+		if (! s.visible) {continue;}
+
+		activeSettings.push_back(&s);
+	}
+
+	v4InputGrid* grid = m_gridDataItem->grid();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+
+	auto command = new MergeSupportedListCommand(0, false);
+	for (const auto& pair : m_selectedIndices) {
+		auto setting = activeSettings.at(pair.first);
+		auto att = grid->attribute(setting->attributeName());
+		auto realAtt = dynamic_cast<GridAttributeRealContainer*> (att);
+		if (realAtt == nullptr) {continue;}
+
+		auto def = att->gridAttribute();
+		auto pos = def->position();
+		auto c = m_impl->m_controller;
+
+		vtkDataSetAttributes* atts = nullptr;
+
+		auto oldData = realAtt->dataArrayCopy();
+		auto newData = realAtt->dataArrayCopy();
+
+		vtkIdType idx = 0;
+		int i, j;
+
+		if (pos == SolverDefinitionGridAttribute::Position::Node) {
+			atts = grid->grid()->vtkData()->data()->GetPointData();
+			for (unsigned int index : pair.second) {
+				if (c->targetDirection() == Direction::I) {
+					i = c->targetIndex();
+					j = index;
+				} else {
+					i = index;
+					j = c->targetIndex();
+				}
+				idx = i + sgrid->dimensionI() * j;
+				auto v = newData->GetValue(idx);
+				v += offset;
+				newData->SetValue(idx, v);
+			}
+		} else if (pos == SolverDefinitionGridAttribute::Position::CellCenter) {
+			atts = grid->grid()->vtkData()->data()->GetCellData();
+			for (unsigned int index : pair.second) {
+				if (c->targetDirection() == Direction::I) {
+					if (c->cellSide() == Controller::CellSide::Previous) {
+						i = c->targetIndex() - 1;
+					} else {
+						i = c->targetIndex();
+					}
+					j = index - 1;
+				} else {
+					i = index - 1;
+					if (c->cellSide() == Controller::CellSide::Previous) {
+						j = c->targetIndex() - 1;
+					} else {
+						j = c->targetIndex();
+					}
+				}
+				idx = i + (sgrid->dimensionI() - 1) * j;
+				auto v = newData->GetValue(idx);
+				v += offset;
+				newData->SetValue(idx, v);
+			}
+		}
+
+		auto com = new GridAttributeEditCommand(setting->attributeName(), newData, oldData, atts, m_gridDataItem);
+		command->addCommand(com);
+	}
+	iRICUndoStack::instance().push(command);
 }
 
 QMatrix AbstractCrosssectionWindow::GraphicsView::matrix(int chartHeight) const

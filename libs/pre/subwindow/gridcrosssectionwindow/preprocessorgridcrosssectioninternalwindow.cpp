@@ -6,6 +6,7 @@
 #include "../../datamodel/preprocessorgridtypedataitem.h"
 
 #include <crosssection/public/abstractcrosssectionwindow_controller.h>
+#include <crosssection/public/abstractcrosssectionwindow_graphicsview.h>
 #include <crosssection/private/abstractcrosssectionwindow_impl.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/grid/v4structured2dgrid.h>
@@ -17,6 +18,9 @@ PreProcessorGridCrosssectionInternalWindow::PreProcessorGridCrosssectionInternal
 {
 	delete impl->m_editTableController;
 	impl->m_editTableController = new EditTableController(editTable(), impl);
+
+	impl->graphicsView()->setEditEnabled(true);
+	impl->graphicsView()->setGridDataItem(item);
 }
 
 PreProcessorGridCrosssectionInternalWindow::~PreProcessorGridCrosssectionInternalWindow()
