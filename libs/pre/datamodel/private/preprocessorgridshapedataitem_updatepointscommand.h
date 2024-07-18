@@ -27,6 +27,7 @@ private:
 	vtkPoints* m_newPoints;
 	vtkPoints* m_oldPoints;
 
+	bool m_gridWasModified;
 	PreProcessorGridDataItem* m_item;
 };
 

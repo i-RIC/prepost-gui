@@ -147,9 +147,9 @@ public slots:
 	/// Close the current project.
 	bool closeProject();
 	/// Save current project
-	bool saveProject() override;
+	bool saveProject(bool noWarning) override;
 	/// Save current project
-	bool saveProject(const QString& name, bool asFolder);
+	bool saveProject(const QString& name, bool asFolder, bool noWarning);
 	/// Save current project. Show a dialog to select filename.
 	bool saveProjectAsFile();
 	/// Save current project. Show a dialog to select foldername.

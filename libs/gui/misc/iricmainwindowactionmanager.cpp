@@ -108,7 +108,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	saveAction->setShortcut(QKeySequence(tr("Ctrl+S")));
 	saveAction->setDisabled(true);
 	m_fileMenu->addAction(saveAction);
-	connect(saveAction, SIGNAL(triggered()), m_parent, SLOT(saveProject()));
+	connect(saveAction, &QAction::triggered, [=](){m_parent->saveProject(false);});
 
 	saveAsFileAction = new QAction(tr("Save &As File(*.ipro)..."), m_fileMenu);
 	saveAsFileAction->setDisabled(true);

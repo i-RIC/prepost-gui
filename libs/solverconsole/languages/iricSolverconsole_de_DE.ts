@@ -138,15 +138,7 @@
         <translation type="unfinished">Warnung</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;p&gt;Please make sure:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
-&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
-&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

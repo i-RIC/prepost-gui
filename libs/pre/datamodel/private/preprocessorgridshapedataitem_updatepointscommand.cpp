@@ -11,6 +11,7 @@ PreProcessorGridShapeDataItem::UpdatePointsCommand::UpdatePointsCommand(bool fin
 	m_finish {finish},
 	m_newPoints {newPoints},
 	m_oldPoints {vtkPoints::New()},
+	m_gridWasModified {item->grid()->isModified()},
 	m_item {item}
 {
 	m_newPoints->Register(nullptr);
@@ -26,11 +27,13 @@ PreProcessorGridShapeDataItem::UpdatePointsCommand::~UpdatePointsCommand()
 void PreProcessorGridShapeDataItem::UpdatePointsCommand::redo()
 {
 	setPoints(m_newPoints, m_finish);
+	m_item->grid()->setIsModified(true);
 }
 
 void PreProcessorGridShapeDataItem::UpdatePointsCommand::undo()
 {
 	setPoints(m_oldPoints, true);
+	m_item->grid()->setIsModified(m_gridWasModified);
 }
 
 int PreProcessorGridShapeDataItem::UpdatePointsCommand::id() const
