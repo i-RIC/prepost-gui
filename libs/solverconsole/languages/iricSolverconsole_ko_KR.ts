@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -149,7 +151,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;다음을 확인하세요:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;계산 결과가 이미 존재하는 경우 삭제됩니다.&lt;/li&gt; &lt;li&gt;계산 조건 및 입력 그리드 전처리 창에서 볼 수 있는 내용이 Case1.cgn에 기록됩니다.&lt;/li&gt; &lt;li&gt;솔버가 Case1.cgn에서 데이터를 읽고 실행을 시작합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;당신은 정말 괜찮나요?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;다음을 확인하세요:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;계산 결과가 이미 존재하는 경우 삭제됩니다.&lt;/li&gt; &lt;li&gt;계산 조건 및 입력 그리드 전처리 창에서 볼 수 있는 내용이 Case1.cgn에 기록됩니다.&lt;/li&gt; &lt;li&gt;솔버가 Case1.cgn에서 데이터를 읽고 실행을 시작합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;당신은 정말 괜찮나요?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

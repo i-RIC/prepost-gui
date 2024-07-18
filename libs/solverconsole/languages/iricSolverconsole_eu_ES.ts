@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -149,7 +151,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Ziurtatu:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Kalkulazioaren emaitza dagoeneko badago, ezabatu egingo da.&lt;/li&gt; &lt;li&gt;Kalkulu-baldintza eta sarrerako sarea aurreprozesatzeko leihoan ikus dezakezuna Case1.cgn-en idatzita dago.&lt;/li&gt; &lt;li&gt;Ebazleak Case1.cgn-ko datuak irakurriko ditu eta exekutatzen hasiko da.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Zu al zara ziur dago ondo dagoela?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Ziurtatu:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Kalkulazioaren emaitza dagoeneko badago, ezabatu egingo da.&lt;/li&gt; &lt;li&gt;Kalkulu-baldintza eta sarrerako sarea aurreprozesatzeko leihoan ikus dezakezuna Case1.cgn-en idatzita dago.&lt;/li&gt; &lt;li&gt;Ebazleak Case1.cgn-ko datuak irakurriko ditu eta exekutatzen hasiko da.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Zu al zara ziur dago ondo dagoela?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

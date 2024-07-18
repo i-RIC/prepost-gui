@@ -643,7 +643,7 @@ bool iRICMainWindow::closeProject()
 		switch (button) {
 		case QMessageBox::Yes:
 			// save data.
-			result = saveProject();
+			result = saveProject(false);
 			break;
 		case QMessageBox::No:
 			// not needed to save.
@@ -792,7 +792,7 @@ bool iRICMainWindow::saveProjectAsFile()
 	QString fname = QFileDialog::getSaveFileName(
 		this, tr("Save iRIC project file"), LastIODirectory::get(), tr("iRIC project file (*.ipro)"));
 	if (fname == "") {return false;}
-	return saveProject(fname, false);
+	return saveProject(fname, false, false);
 }
 
 bool iRICMainWindow::saveProjectAsFolder()
@@ -812,10 +812,10 @@ INPUTFOLDERNAME:
 		QMessageBox::critical(this, tr("Error"), tr("The project folder has to be empty."));
 		goto INPUTFOLDERNAME;
 	}
-	return saveProject(foldername, true);
+	return saveProject(foldername, true, false);
 }
 
-bool iRICMainWindow::saveProject()
+bool iRICMainWindow::saveProject(bool noWarning)
 {
 	if (isSolverRunning()) {
 		warnSolverRunning();
@@ -833,11 +833,11 @@ bool iRICMainWindow::saveProject()
 			return saveProjectAsFile();
 		}
 	} else {
-		return saveProject(m_projectData->filename(), m_projectData->folderProject());
+		return saveProject(m_projectData->filename(), m_projectData->folderProject(), noWarning);
 	}
 }
 
-bool iRICMainWindow::saveProject(const QString& filename, bool folder)
+bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWarning)
 {
 	ValueChangerT<bool> savingChanger(&m_isSaving, true);
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
@@ -855,8 +855,10 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 
 		if (gridEdited) {
 			if (hasResult) {
-				int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-				if (ret == QMessageBox::Cancel) {return false;}
+				if (! noWarning) {
+					int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+					if (ret == QMessageBox::Cancel) {return false;}
+				}
 
 				mainfile->clearResults();
 			} else {

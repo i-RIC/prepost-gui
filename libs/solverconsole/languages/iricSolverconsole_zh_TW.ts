@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>SolverConsoleWindow</name>
@@ -149,7 +151,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;請確認：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;如果計算結果已存在，則將其刪除。您可以在預處理視窗中看到的資料寫入Case1.cgn。您是嗎？</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;請確認：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;如果計算結果已存在，則將其刪除。您可以在預處理視窗中看到的資料寫入Case1.cgn。您是嗎？</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

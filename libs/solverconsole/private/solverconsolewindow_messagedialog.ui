@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
-    <height>153</height>
+    <width>393</width>
+    <height>137</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,20 +17,10 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="styleSheet">
-      <string notr="true">ul {
-  padding-left: 100px;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;p&gt;Please make sure:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
-&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
-&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
