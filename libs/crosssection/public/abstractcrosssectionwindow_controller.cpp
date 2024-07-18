@@ -18,7 +18,7 @@ AbstractCrosssectionWindow::Controller::Controller(AbstractCrosssectionWindow* w
 
 	connect(ui->iRadioButton, &QRadioButton::clicked, this, &Controller::handleSettingChange);
 	connect(ui->jRadioButton, &QRadioButton::clicked, this, &Controller::handleSettingChange);
-	connect(ui->positionSlider, &SliderWithValue::valueChanged, [=](int){handleSettingChange();});
+	connect(ui->positionSlider, &SliderWithValue::valueChanged, this, &Controller::handleSettingChange);
 	connect(ui->previousRadioButton, &QRadioButton::clicked, this, &Controller::handleSettingChange);
 	connect(ui->nextRadioButton, &QRadioButton::clicked, this, &Controller::handleSettingChange);
 
