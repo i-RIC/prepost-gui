@@ -90,12 +90,12 @@ bool Application::openProject(const std::string& filename)
 
 bool Application::saveProject()
 {
-	return impl->m_mainWindow.saveProject();
+	return impl->m_mainWindow.saveProject(false);
 }
 
 bool Application::saveProjectAs(const std::string& filename)
 {
-	return impl->m_mainWindow.saveProject(filename.c_str(), false);
+	return impl->m_mainWindow.saveProject(filename.c_str(), false, false);
 }
 
 bool Application::closeProject()

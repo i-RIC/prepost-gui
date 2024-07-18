@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>QObject</name>
@@ -26,11 +28,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>シミュレーションに結果があります</translation>
+        <translation type="vanished">シミュレーションに結果があります</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>このシミュレーションには既に結果データがあります。ソルバーを実行すると、現在の結果データは破棄されます。</translation>
+        <translation type="vanished">このシミュレーションには既に結果データがあります。ソルバーを実行すると、現在の結果データは破棄されます。</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>計算実行を開始する前に、プロジェクトを保存することをお勧めします。保存しますか?</translation>
+        <translation type="vanished">計算実行を開始する前に、プロジェクトを保存することをお勧めします。保存しますか?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -116,6 +118,10 @@
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 が存在しません。設定ダイアログで、正しいPythonの実行プログラムのパスを指定してください。</translation>
     </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="vanished">このプロジェクトには既に計算結果があります。ソルバを実行すると、現在の計算結果は破棄されます。</translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -142,6 +148,45 @@
     <message>
         <source>Exporting solver console log failed.</source>
         <translation>ソルバーログのエクスポートが失敗しました。</translation>
+    </message>
+</context>
+<context>
+    <name>SolverConsoleWindow_MessageDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;Please make sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
+&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
+&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;以下を確認してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;既存の計算結果は削除されます。&lt;/li&gt;
+&lt;li&gt;現在の計算条件、計算格子が Case1.cgn に格納されます。&lt;/li&gt;
+&lt;li&gt;ソルバーは Case1.cgn からそれらデータを読み込み計算を実行します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;よろしいですか?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it is deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;All calculation conditions are written to the Case1.cgn file.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下を確認してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;既存の計算結果は削除されます。&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;すべての計算条件が Case1.cgn に書き込まれます。&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;よろしいですか?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it is deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project is saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下を確認してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;既存の計算結果は削除されます。&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;プロジェクトが保存されます。&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;よろしいですか?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以下を確認してください。&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;既存の計算結果は削除されます。&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;プロジェクトが保存されます。&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;よろしいですか?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

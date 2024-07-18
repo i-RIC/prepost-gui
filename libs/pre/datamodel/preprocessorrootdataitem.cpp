@@ -294,7 +294,6 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item, bool noDraw)
 	PreProcessorGeoDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
 	if (dItem != nullptr) {
-		dItem->removeFile();
 		gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(dItem->parent());
 	}
 

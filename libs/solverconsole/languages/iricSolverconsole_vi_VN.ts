@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>Mô phỏng có kết quả</translation>
+        <translation type="vanished">Mô phỏng có kết quả</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Mô phỏng hiện tại đã có dữ liệu kết quả. Khi bạn chạy trình giải, dữ liệu kết quả hiện tại sẽ bị loại bỏ.</translation>
+        <translation type="vanished">Mô phỏng hiện tại đã có dữ liệu kết quả. Khi bạn chạy trình giải, dữ liệu kết quả hiện tại sẽ bị loại bỏ.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Chúng tôi khuyên bạn nên lưu dự án trước khi bắt đầu trình giải. Bạn có muốn lưu không?</translation>
+        <translation type="vanished">Chúng tôi khuyên bạn nên lưu dự án trước khi bắt đầu trình giải. Bạn có muốn lưu không?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -127,6 +129,17 @@
     <message>
         <source>Exporting solver console log failed.</source>
         <translation>Xuất nhật ký bảng điều khiển bộ giải không thành công.</translation>
+    </message>
+</context>
+<context>
+    <name>SolverConsoleWindow_MessageDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

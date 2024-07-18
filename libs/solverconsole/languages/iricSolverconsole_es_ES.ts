@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation>La simulacion tiene resultado</translation>
+        <translation type="vanished">La simulacion tiene resultado</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation>Simulacion presente ya tiene datos de resultados. Cuando ejecuta el solucionador, el resultado presente sera descartado.</translation>
+        <translation type="vanished">Simulacion presente ya tiene datos de resultados. Cuando ejecuta el solucionador, el resultado presente sera descartado.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Recomendamos que guardes el proyecto antes de empezar el solucionador. Quieres guardar?</translation>
+        <translation type="vanished">Recomendamos que guardes el proyecto antes de empezar el solucionador. Quieres guardar?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -127,6 +129,17 @@
     <message>
         <source>Exporting solver console log failed.</source>
         <translation>Exportando registro de consola de solucionador fallo.</translation>
+    </message>
+</context>
+<context>
+    <name>SolverConsoleWindow_MessageDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

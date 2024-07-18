@@ -604,7 +604,7 @@ void GeoDataPolyDataGroup::copy()
 		copyGroup->impl->m_data.push_back(data->copy(copyGroup));
 	}
 
-	creator()->setNameAndDefaultCaption(targetGroup->childItems(), copyGroup);
+	creator()->setNameAndDefaultCaption(targetGroup->childItems(), copyGroup, geoDataDataItem()->projectData());
 	if (! copyGroup->gridAttribute()->isReferenceInformation()) {
 		GeoDataPolyDataGroupCopySettingDialog dialog(this, copyGroup, preProcessorWindow());
 		int ret = dialog.exec();

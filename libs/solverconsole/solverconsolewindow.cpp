@@ -1,6 +1,7 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
 #include "private/solverconsolewindow_impl.h"
+#include "private/solverconsolewindow_messagedialog.h"
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowi.h>
@@ -34,8 +35,8 @@ const int SOLVER_CANCEL_WAITTIME = 5;
 } // namespace
 
 SolverConsoleWindow::Impl::Impl(iRICMainWindowI* mainW, SolverConsoleWindow* w) :
-	m_iricMainWindow {mainW},
 	m_process {nullptr},
+	m_iricMainWindow {mainW},
 	m_window {w}
 {}
 
@@ -144,26 +145,22 @@ void SolverConsoleWindow::startSolver()
 		int ret = QMessageBox::warning(impl->m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
-	// If the cgns file already has results, clear them first.
-	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+
+	MessageDialog dialog(this);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
 		return;
 	}
 	// discard result, and save now.
 	try {
-		impl->m_projectData->mainfile()->clearResults();
+		bool ok = impl->m_projectData->mainWindow()->saveProject(true);
+		if (! ok) {return;}
 		clear();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
 	}
 
-	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
-	if (ret == QMessageBox::Yes) {
-		// save the project file.
-		if (! impl->m_projectData->mainWindow()->saveProject()) {return;}
-	} else if (ret == QMessageBox::Cancel) {
-		return;
-	}
 	clear();
 
 	// check solver executable existance

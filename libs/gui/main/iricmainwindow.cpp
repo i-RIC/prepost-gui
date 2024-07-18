@@ -292,6 +292,8 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	m_mousePositionWidget->setProjectData(m_projectData);
 	m_coordinateSystemWidget->setProjectData(m_projectData);
 
+	m_projectData->mainfile()->saveToCgnsFile();
+
 	setupForNewProjectData();
 
 	handleCgnsSwitch();
@@ -386,11 +388,6 @@ void iRICMainWindow::openProject(const QString& filename)
 
 			m_projectData = new ProjectData(filename, this);
 			m_projectData->setFilename(filename, true);
-
-			InformationDialog::warning(
-						this, tr("Warning"),
-						tr("The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. "
-							 "If you want to keep the current project, please save it to another project first."), "projectfolder_notice");
 		}
 	} else {
 		// Project file is opened.
@@ -636,32 +633,27 @@ bool iRICMainWindow::closeProject()
 	if (m_projectData == nullptr) {return true;}
 	bool result = true;
 	if (! m_projectData->isPostOnlyMode() && m_projectData->mainfile()->isModified()) {
-		if (! m_projectData->isInWorkspace()) {
-			// always save.
-			result = saveProject();
-		} else {
-			QMessageBox::StandardButton button = QMessageBox::warning(
-				this,
-				tr("Warning"),
-				tr("This Project is modified. Do you want to save?"),
-				QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
-				QMessageBox::Cancel
-					);
-			switch (button) {
-			case QMessageBox::Yes:
-				// save data.
-				result = saveProject();
-				break;
-			case QMessageBox::No:
-				// not needed to save.
-				result = true;
-				break;
-			case QMessageBox::Cancel:
-				result = false;
-				break;
-			default:
-				break;
-			}
+		QMessageBox::StandardButton button = QMessageBox::warning(
+			this,
+			tr("Warning"),
+			tr("This Project is modified. Do you want to save?"),
+			QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
+			QMessageBox::Cancel
+				);
+		switch (button) {
+		case QMessageBox::Yes:
+			// save data.
+			result = saveProject(false);
+			break;
+		case QMessageBox::No:
+			// not needed to save.
+			result = true;
+			break;
+		case QMessageBox::Cancel:
+			result = false;
+			break;
+		default:
+			break;
 		}
 	}
 	if (! result) {
@@ -800,7 +792,7 @@ bool iRICMainWindow::saveProjectAsFile()
 	QString fname = QFileDialog::getSaveFileName(
 		this, tr("Save iRIC project file"), LastIODirectory::get(), tr("iRIC project file (*.ipro)"));
 	if (fname == "") {return false;}
-	return saveProject(fname, false);
+	return saveProject(fname, false, false);
 }
 
 bool iRICMainWindow::saveProjectAsFolder()
@@ -820,10 +812,10 @@ INPUTFOLDERNAME:
 		QMessageBox::critical(this, tr("Error"), tr("The project folder has to be empty."));
 		goto INPUTFOLDERNAME;
 	}
-	return saveProject(foldername, true);
+	return saveProject(foldername, true, false);
 }
 
-bool iRICMainWindow::saveProject()
+bool iRICMainWindow::saveProject(bool noWarning)
 {
 	if (isSolverRunning()) {
 		warnSolverRunning();
@@ -841,11 +833,11 @@ bool iRICMainWindow::saveProject()
 			return saveProjectAsFile();
 		}
 	} else {
-		return saveProject(m_projectData->filename(), m_projectData->folderProject());
+		return saveProject(m_projectData->filename(), m_projectData->folderProject(), noWarning);
 	}
 }
 
-bool iRICMainWindow::saveProject(const QString& filename, bool folder)
+bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWarning)
 {
 	ValueChangerT<bool> savingChanger(&m_isSaving, true);
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
@@ -858,8 +850,25 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		ret = mainfile->saveExceptCGNS();
 	} else {
 		auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-		int ier = mainfile->saveToCgnsFile();
-		ret = (ier == IRIC_NO_ERROR);
+		auto gridEdited = pre->projectDataItem()->isGridEdited();
+		auto hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
+
+		if (gridEdited) {
+			if (hasResult) {
+				if (! noWarning) {
+					int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+					if (ret == QMessageBox::Cancel) {return false;}
+				}
+
+				mainfile->clearResults();
+			} else {
+				int ier = mainfile->saveToCgnsFile();
+				ret = (ier == IRIC_NO_ERROR);
+			}
+		} else {
+			int ier = mainfile->updateCgnsFileOtherThanGrids();
+			ret = (ier == IRIC_NO_ERROR);
+		}
 
 		if (ret) {ret = mainfile->saveExceptCGNS();}
 		if (ret) {mainfile->setModified(false);}

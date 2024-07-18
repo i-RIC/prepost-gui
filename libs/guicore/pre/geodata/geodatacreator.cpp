@@ -1,13 +1,16 @@
 #include "../../datamodel/graphicswindowdataitem.h"
+#include "../../project/projectdata.h"
 #include "../base/preprocessorgeodatadataitemi.h"
+#include "../geodatabackground/geodatabackground.h"
 #include "geodata.h"
 #include "geodatacreator.h"
-#include "../geodatabackground/geodatabackground.h"
 #include "private/geodatacreator_impl.h"
 
 #include <QDomElement>
 #include <QDomNode>
-#include <QSet>
+#include <QFile>
+
+#include <unordered_set>
 
 GeoDataCreator::GeoDataCreator(const QString& typeName, const QString& caption) :
 	QObject(nullptr),
@@ -43,30 +46,49 @@ GeoData* GeoDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, 
 	return create(parent, condition);
 }
 
-void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem *> &list, GeoData* data)
+void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem *> &list, GeoData* data, ProjectData* projectData)
 {
-	QSet<QString> nameSet;
-	QSet<QString> captionSet;
+	std::unordered_set<QString> nameSet;
+	std::unordered_set<QString> captionSet;
 
 	// first, setup nameSet and captionSet.
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		GeoData* geodata = dynamic_cast<PreProcessorGeoDataDataItemI*>(*it)->geoData();
+	for (auto item : list) {
+		auto geodata = dynamic_cast<PreProcessorGeoDataDataItemI*>(item)->geoData();
 		if (dynamic_cast<GeoDataBackground*> (geodata) != nullptr) {continue;}
 
 		if (geodata->name() != "") {nameSet.insert(geodata->name());}
 		if (geodata->caption() != "") {captionSet.insert(geodata->caption());}
 	}
+
 	unsigned int idx = 1;
-	bool ok = false;
-	while (! ok) {
-		QString tmpname = data->creator()->name(idx);
-		QString tmpcap = data->creator()->defaultCaption(idx);
-		if (! nameSet.contains(tmpname) && ! captionSet.contains(tmpcap)) {
-			data->setName(tmpname);
-			data->setCaption(tmpcap);
-			ok = true;
+	QDir workDir(projectData->workDirectory());
+	while (true) {
+		QString tmpName = data->creator()->name(idx);
+		if (nameSet.find(tmpName) != nameSet.end()) {
+			++idx;
+			continue;
 		}
-		++idx;
+		data->setName(tmpName);
+		QFile f(workDir.absoluteFilePath(data->relativeFilename()));
+		if (f.exists()) {
+			++idx;
+			continue;
+		}
+		break;
+	}
+
+	// set caption
+	idx = 1;
+
+	while (true) {
+		QString tmpCaption = data->creator()->defaultCaption(idx);
+		if (captionSet.find(tmpCaption) != captionSet.end()) {
+			++idx;
+			continue;
+		}
+
+		data->setCaption(tmpCaption);
+		break;
 	}
 }
 

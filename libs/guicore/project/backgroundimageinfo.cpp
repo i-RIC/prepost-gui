@@ -30,8 +30,8 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, ProjectDataIte
 
 	m_hide = false; // for georeference
 
-	connect(impl->m_fixAction, SIGNAL(triggered()), this, SLOT(toggleFixState()));
-	connect(impl->m_fixActionWithIcon, SIGNAL(triggered()), this, SLOT(toggleFixState()));
+	connect(impl->m_fixAction, &QAction::triggered, this, &BackgroundImageInfo::toggleFixState);
+	connect(impl->m_fixActionWithIcon, &QAction::triggered, this, &BackgroundImageInfo::toggleFixState);
 	impl->updateFixActionIcon();
 
 	impl->loadImageData(filename);
@@ -269,19 +269,6 @@ void BackgroundImageInfo::setPreProcessorActor(vtkActor* actor)
 	impl->m_preProcessorActor = actor;
 }
 
-void BackgroundImageInfo::deleteImageFile()
-{
-	QFile imagefile(fullFileName());
-	if (imagefile.exists()) {
-		imagefile.remove();
-	}
-
-	QFile scaledImageFile(Impl::scaledImageFileName(fullFileName()));
-	if (scaledImageFile.exists()) {
-		scaledImageFile.remove();
-	}
-}
-
 QAction* BackgroundImageInfo::fixAction() const
 {
 	return impl->m_fixAction;
@@ -392,6 +379,14 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 	m_georeferenceDialog->show();
 	m_georeferenceDialog->raise();
 	m_georeferenceDialog->activateWindow();
+}
+
+QStringList BackgroundImageInfo::containedFiles() const
+{
+	QStringList ret;
+	ret << impl->m_setting.fileName;
+
+	return ret;
 }
 
 void BackgroundImageInfo::handleGeoreferenceDialogClosed()

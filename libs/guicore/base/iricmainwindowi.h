@@ -64,7 +64,7 @@ public:
 	virtual bool cuiMode() const = 0;
 
 public slots:
-	virtual bool saveProject() = 0;
+	virtual bool saveProject(bool noWarning) = 0;
 
 	virtual void enterModelessDialogMode() = 0;
 	virtual void exitModelessDialogMode() = 0;
