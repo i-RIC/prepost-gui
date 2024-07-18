@@ -384,7 +384,7 @@ void BackgroundImageInfo::showGeoreferenceDialog(vtkActor* actor, VTKGraphicsVie
 QStringList BackgroundImageInfo::containedFiles() const
 {
 	QStringList ret;
-	ret << impl->m_setting.fileName;
+	ret << QString("%1/%2").arg(ProjectMainFile::BGDIR).arg(impl->m_setting.fileName);
 
 	return ret;
 }

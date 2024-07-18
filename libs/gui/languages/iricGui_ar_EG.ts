@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>حدد Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر "موافق".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر &quot;موافق&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1487,8 +1489,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>هل أنت متأكد أنك تريد حذف "%1"؟</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>هل أنت متأكد أنك تريد حذف &quot;%1&quot;؟</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1732,9 +1734,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد "%1". تم تجاهل هذا الحل. %2</translation>
+        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد &quot;%1&quot;. تم تجاهل هذا الحل. %2</translation>
     </message>
 </context>
 <context>
@@ -1912,8 +1914,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>يبدو أن هذا المشروع قد تم فتحه بواسطة نافذة iRIC GUI أخرى. لا يمكنك فتح مجلد مشروع من نوافذ متعددة لواجهة المستخدم الرسومية.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation>لا يتم نسخ المشروع المفتوح إلى دليل العمل ، وستضطر إلى حفظ التعديلات التي تجريها على هذا المشروع. إذا كنت تريد الاحتفاظ بالمشروع الحالي ، فيرجى حفظه في مشروع آخر أولاً.</translation>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation type="vanished">لا يتم نسخ المشروع المفتوح إلى دليل العمل ، وستضطر إلى حفظ التعديلات التي تجريها على هذا المشروع. إذا كنت تريد الاحتفاظ بالمشروع الحالي ، فيرجى حفظه في مشروع آخر أولاً.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
@@ -1929,7 +1931,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation>تم تعديل هذا المشروع. هل تريد حفظ؟</translation>
+        <translation type="vanished">تم تعديل هذا المشروع. هل تريد حفظ؟</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
@@ -2072,8 +2074,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>لا تدعم النافذة الفرعية النشطة حاليًا تصدير الشكل المحيطي.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2129,7 +2131,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="vanished">يتم تحرير أو حذف الشبكات. عند الحفظ ، يتم تجاهل نتيجة الحساب.</translation>
+        <translation>يتم تحرير أو حذف الشبكات. عند الحفظ ، يتم تجاهل نتيجة الحساب.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
@@ -2213,8 +2215,8 @@ Option -&gt; Preferences</source>
         <translation>ملف الإعداد (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل وضع اللون إلى "الوضع المنفصل".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل وضع اللون إلى &quot;الوضع المنفصل&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2225,8 +2227,12 @@ Option -&gt; Preferences</source>
         <translation>حدد الشبكة لتصدير ملفات الشكل.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>لم يتم رسم كفاف في "الوضع المنفصل".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>لم يتم رسم كفاف في &quot;الوضع المنفصل&quot;.</translation>
+    </message>
+    <message>
+        <source>This project is modified. Do you want to save?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2573,7 +2579,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2600,7 +2606,7 @@ Option -&gt; Preferences</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>

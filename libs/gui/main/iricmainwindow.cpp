@@ -636,7 +636,7 @@ bool iRICMainWindow::closeProject()
 		QMessageBox::StandardButton button = QMessageBox::warning(
 			this,
 			tr("Warning"),
-			tr("This Project is modified. Do you want to save?"),
+			tr("This project is modified. Do you want to save?"),
 			QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
 			QMessageBox::Cancel
 				);
