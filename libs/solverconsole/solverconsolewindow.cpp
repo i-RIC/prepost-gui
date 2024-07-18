@@ -153,6 +153,7 @@ void SolverConsoleWindow::startSolver()
 	}
 	// discard result, and save now.
 	try {
+		impl->m_projectData->mainfile()->clearResults();
 		bool ok = impl->m_projectData->mainWindow()->saveProject(true);
 		if (! ok) {return;}
 		clear();
