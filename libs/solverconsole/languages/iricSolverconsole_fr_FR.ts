@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -17,7 +15,7 @@
     </message>
     <message>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
-        <translation>Les problèmes suivants trouvés dans la ou les grilles. Voulez-vous vraiment exécuter le solveur avec cette grille&#xa0;?</translation>
+        <translation>Les problèmes suivants trouvés dans la ou les grilles. Voulez-vous vraiment exécuter le solveur avec cette grille ?</translation>
     </message>
     <message>
         <source>The simulation has result</source>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation type="vanished">Nous vous recommandons d&apos;enregistrer le projet avant de lancer le solveur. Voulez-vous enregistrer?</translation>
+        <translation type="vanished">Nous vous recommandons d'enregistrer le projet avant de lancer le solveur. Voulez-vous enregistrer?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -49,7 +47,7 @@
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
-        <translation>Fichier exécutable du solveur %1 N&apos;existe pas.</translation>
+        <translation>Fichier exécutable du solveur %1 N'existe pas.</translation>
     </message>
     <message>
         <source>Confirm Solver Termination</source>
@@ -57,7 +55,7 @@
     </message>
     <message>
         <source>Do you really want to kill the solver?</source>
-        <translation>Voulez-vous vraiment tuer le solveur&#xa0;?</translation>
+        <translation>Voulez-vous vraiment tuer le solveur ?</translation>
     </message>
     <message>
         <source>Solver Finished</source>
@@ -69,7 +67,7 @@
     </message>
     <message>
         <source>The solver finished abnormally.</source>
-        <translation>Le solveur s&apos;est terminé de manière anormale.</translation>
+        <translation>Le solveur s'est terminé de manière anormale.</translation>
     </message>
     <message>
         <source>Solver Console</source>
@@ -89,19 +87,19 @@
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation>%1 secondes se sont écoulées, mais le solveur ne se termine pas. Voulez-vous tuer le solveur&#xa0;?</translation>
+        <translation>%1 secondes se sont écoulées, mais le solveur ne se termine pas. Voulez-vous tuer le solveur ?</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation>Couleur de l&apos;arrière plan</translation>
+        <translation>Couleur de l'arrière plan</translation>
     </message>
     <message>
         <source>Background Color Setting</source>
-        <translation>Réglage de la couleur d&apos;arrière-plan</translation>
+        <translation>Réglage de la couleur d'arrière-plan</translation>
     </message>
     <message>
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
-        <translation>%1 N&apos;existe pas. Veuillez spécifier un chemin d&apos;accès exécutable Python valide dans la boîte de dialogue Préférences.</translation>
+        <translation>%1 N'existe pas. Veuillez spécifier un chemin d'accès exécutable Python valide dans la boîte de dialogue Préférences.</translation>
     </message>
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation>Échec de l&apos;exportation du journal de la console du solveur.</translation>
+        <translation>Échec de l'exportation du journal de la console du solveur.</translation>
     </message>
 </context>
 <context>
@@ -151,11 +149,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Veuillez vous assurer&#xa0;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Si le résultat du calcul existe déjà, il est supprimé.&lt;/li&gt; &lt;li&gt;La condition de calcul et la grille de saisie que vous pouvez voir dans la fenêtre de prétraitement est écrit dans Case1.cgn.&lt;/li&gt; &lt;li&gt;Le solveur lira les données de Case1.cgn et commencera à s&apos;exécuter.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Êtes-vous tu es sûr que ça va ?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Veuillez vous assurer :&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Si le résultat du calcul existe déjà, il est supprimé.&lt;/li&gt; &lt;li&gt;La condition de calcul et la grille de saisie que vous pouvez voir dans la fenêtre de prétraitement est écrit dans Case1.cgn.&lt;/li&gt; &lt;li&gt;Le solveur lira les données de Case1.cgn et commencera à s'exécuter.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Êtes-vous tu es sûr que ça va ?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Veuillez vous assurer que :&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;Si le résultat du calcul existe déjà, il sera supprimé.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Le projet sera enregistré.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Êtes-vous sûr que tout va bien ?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

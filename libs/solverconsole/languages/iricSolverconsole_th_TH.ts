@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>SolverConsoleWindow</name>
@@ -154,8 +152,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;โปรดตรวจสอบให้แน่ใจว่า:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;หากผลการคำนวณมีอยู่แล้ว ผลการคำนวณนั้นจะถูกลบออก&lt;/li&gt; &lt;li&gt;เงื่อนไขการคำนวณและตารางอินพุต ที่คุณเห็นในหน้าต่างการประมวลผลล่วงหน้าจะถูกเขียนไปที่ Case1.cgn&lt;/li&gt; &lt;li&gt;ตัวแก้ปัญหาจะอ่านข้อมูลจาก Case1.cgn และเริ่มทำงาน&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;คุณคือใคร แน่ใจเหรอว่ามันโอเค?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;โปรดตรวจสอบให้แน่ใจว่า:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;หากผลการคำนวณมีอยู่แล้ว ผลการคำนวณจะถูกลบ&lt;/li&gt;&lt;li style="margin-top:8px"&gt;โปรเจ็กต์จะถูกบันทึกไว้&lt;/li&gt;&lt;li style="margin-top:8px; li&gt;&lt;/ul&gt;&lt;p&gt;คุณแน่ใจหรือว่าใช้ได้?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
