@@ -9,14 +9,15 @@
 
 #include <vtkStructuredGrid.h>
 
-PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, QWidget *parent) :
+PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, vtkIdType ds, QWidget *parent) :
 	QDialog(parent),
+	m_downstream {ds},
 	m_item {item},
 	ui(new Ui::PreProcessorGridAttributeAbstractCellDataItem_WrongPointListDialog)
 {
 	ui->setupUi(this);
 	connect(ui->recheckButton, &QPushButton::clicked, this, &WrongPointListDialog::recheck);
-	connect(ui->listWidget, &QListWidget::currentRowChanged, this, &WrongPointListDialog::handleSelectChange);
+	connect(ui->listWidget, &QListWidget::clicked, this, &WrongPointListDialog::handleSelectChange);
 }
 
 PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::~WrongPointListDialog()
@@ -39,11 +40,6 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::setPoi
 		auto j = index / cellINum;
 		ui->listWidget->addItem(QString("(%1, %2)").arg(i).arg(j));
 	}
-	if (m_list.size() > 0) {
-		auto index = ui->listWidget->model()->index(0, 0);
-		ui->listWidget->selectionModel()->select(index, QItemSelectionModel::SelectionFlag::SelectCurrent);
-		handleSelectChange(0);
-	}
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::accept()
@@ -58,7 +54,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::rechec
 	auto data = m_item->groupDataItem()->data()->data();
 	data->GetCellData()->SetActiveScalars(m_item->m_condition->name().c_str());
 
-	auto list = m_item->m_directionSetting.findWrongPoints(data);
+	auto list = m_item->m_directionSetting.findWrongPoints(data, m_downstream);
 	setPointList(list);
 
 	m_item->m_wrongPoints = list;
@@ -66,10 +62,12 @@ void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::rechec
 	m_item->renderGraphicsView();
 }
 
-void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::handleSelectChange(int row)
+void PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog::handleSelectChange()
 {
-	if (row < 0) {return;}
+	auto sModel = ui->listWidget->selectionModel();
+	if (sModel->selectedRows().size() == 0) {return;}
 
+	auto row = sModel->selectedRows().at(0).row();
 	auto index = m_list.at(row);
 
 	std::vector<vtkIdType> ids;

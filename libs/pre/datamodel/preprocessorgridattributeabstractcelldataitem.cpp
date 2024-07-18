@@ -476,14 +476,22 @@ void PreProcessorGridAttributeAbstractCellDataItem::findWrongPoints()
 {
 	if (! m_condition->isDirection()) {return;}
 
+	auto selectedCellIds = selectedDataController()->selectedDataIds();
+	if (selectedCellIds.size() != 1) {
+		QMessageBox::information(mainWindow(), tr("Information"), tr("To use this function, please select the most downstream point first."));
+		return;
+	}
+
+	vtkIdType downstreamPointId = selectedCellIds.at(0);
+
 	auto data = groupDataItem()->data()->data();
 	data->GetCellData()->SetActiveScalars(m_condition->name().c_str());
 
-	auto wrongPoints = m_directionSetting.findWrongPoints(data);
+	auto wrongPoints = m_directionSetting.findWrongPoints(data, downstreamPointId);
 	m_wrongPoints = wrongPoints;
 	updateActorSetting();
 
-	auto dialog = new WrongPointListDialog(this, dataModel()->mainWindow());
+	auto dialog = new WrongPointListDialog(this, downstreamPointId, dataModel()->mainWindow());
 	dialog->setAttribute(Qt::WA_DeleteOnClose);
 	dialog->setPointList(wrongPoints);
 

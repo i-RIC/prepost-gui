@@ -16,7 +16,7 @@ class PreProcessorGridAttributeAbstractCellDataItem::WrongPointListDialog : publ
 	Q_OBJECT
 
 public:
-	WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, QWidget *parent);
+	WrongPointListDialog(PreProcessorGridAttributeAbstractCellDataItem* item, vtkIdType ds, QWidget *parent);
 	~WrongPointListDialog();
 
 	void setPointList(const std::vector<vtkIdType>& list);
@@ -26,9 +26,10 @@ public slots:
 
 private slots:
 	void recheck();
-	void handleSelectChange(int row);
+	void handleSelectChange();
 
 private:
+	vtkIdType m_downstream;
 	std::vector<vtkIdType> m_list;
 	PreProcessorGridAttributeAbstractCellDataItem* m_item;
 	Ui::PreProcessorGridAttributeAbstractCellDataItem_WrongPointListDialog *ui;

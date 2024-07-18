@@ -1315,6 +1315,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Find wrong direction points</source>
         <translation>向きの不正なセルの確認</translation>
     </message>
+    <message>
+        <source>To use this function, please select the most downstream point first.</source>
+        <translation>この機能を使用するには、先に最下流点を選択してください。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
