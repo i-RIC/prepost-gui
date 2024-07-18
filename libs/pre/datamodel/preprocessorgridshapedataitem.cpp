@@ -58,6 +58,10 @@ void PreProcessorGridShapeDataItem::handleStandardItemDoubleClicked()
 
 void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto gItem = gridDataItem();
+	auto grid = gItem->grid();
+	if (grid == nullptr) {return;}
+
 	auto v2 = dynamic_cast<PreProcessorGraphicsViewI*>(v);
 	if (m_draggingSelectedPoints) {
 		auto gItem = gridDataItem();
@@ -119,6 +123,10 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 
 void PreProcessorGridShapeDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto gItem = gridDataItem();
+	auto grid = gItem->grid();
+	if (grid == nullptr) {return;}
+
 	PreProcessorGraphicsViewI* v2 = dynamic_cast<PreProcessorGraphicsViewI*>(v);
 	if (event->button() == Qt::LeftButton) {
 		if (m_nearSelectedPoint) {
@@ -147,9 +155,12 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 {
 	static QMenu* menu = nullptr;
 	auto gItem = gridDataItem();
+	auto grid = gItem->grid();
+	if (grid == nullptr) {return;}
+
 	if (event->button() == Qt::LeftButton) {
 		if (m_draggingSelectedPoints) {
-			auto newPoints = gItem->grid()->grid()->vtkData()->data()->GetPoints();
+			auto newPoints = grid->grid()->vtkData()->data()->GetPoints();
 			newPoints->Register(nullptr);
 			pushRenderCommand(new UpdatePointsCommand(true, newPoints, gItem), this);
 		} else if (m_definingBoundingBox) {
@@ -163,7 +174,7 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 
-			auto grid2d = dynamic_cast<v4Structured2dGrid*>(gItem->grid()->grid());
+			auto grid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
 			if (grid2d != nullptr) {
 				menu->addSeparator();
 
