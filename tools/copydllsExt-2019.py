@@ -23,7 +23,7 @@ config.read(configFile)
 sections = ["release", "debug"]
 # options  = ["cgnslib", "expat", "gdal", "geos", "hdf5", "iriclib", "netcdf", "openssl", "proj", "qwt", "shapelib", "szip", "udunits", "vtk", "yaml-cpp", "zlib"]
 ## options  = ["expat", "gdal", "geos", "hdf5", "iriclib", "libpng", "netcdf", "openssl", "poco", "proj", "qwt", "shapelib", "szip", "tiff", "udunits", "vtk", "yaml-cpp", "zlib"]
-options  = ["expat", "gdal", "geos", "hdf5", "iriclib", "libpng", "netcdf", "openssl", "poco", "proj", "qwt", "shapelib", "sqlite3", "tiff", "udunits", "vtk", "yaml-cpp"]
+options  = ["expat", "gdal", "geos", "hdf5", "iriclib", "libpng", "netcdf", "openssl", "poco", "proj", "qwt", "shapelib", "sqlite3", "tiff", "udunits", "vtk", "yaml-cpp", "zlib"]
 for section in sections:
   if (section in config.sections()):
     for option in options:
@@ -37,7 +37,7 @@ dirList = {}
 for section in sections:
   dirList[section] = []
   for option in options:
-    if ((option == "hdf5") or (option == "iriclib") or (option == "poco")  or (option == "qwt") ):
+    if ((option == "hdf5") or (option == "iriclib") or (option == "poco")  or (option == "qwt") or (option == "zlib") ):
       continue
     else:
       dirList[section].append(config.get(section, option))
@@ -51,8 +51,7 @@ fileList["release"] = [
   str(Path(config.get("release", "iriclib"), "iriclib.dll")),
   str(Path(config.get("release", "hdf5"),    "hdf5.dll")),
   str(Path(config.get("release", "hdf5"),    "hdf5_hl.dll")),
-  str(Path(config.get("release", "hdf5"),    "szip.dll")),
-  str(Path(config.get("release", "hdf5"),    "zlib.dll")),
+  str(Path(config.get("release", "zlib"),    "zlib.dll")),
   str(Path(config.get("release", "poco"),    "PocoFoundation.dll")),
   str(Path(config.get("release", "qwt"),     "qwt.dll"))
 ]
@@ -60,8 +59,7 @@ fileList["debug"] = [
   str(Path(config.get("debug",  "iriclib"),  "iriclibd.dll")),
   str(Path(config.get("debug",  "hdf5"),     "hdf5_D.dll")),
   str(Path(config.get("debug",  "hdf5"),     "hdf5_hl_D.dll")),
-  str(Path(config.get("debug",  "hdf5"),     "szip_D.dll")),
-  str(Path(config.get("debug",  "hdf5"),     "zlib_D.dll")),
+  str(Path(config.get("debug",  "zlib"),     "zlibd.dll")),
   str(Path(config.get("debug",  "poco"),     "PocoFoundationd.dll")),
   str(Path(config.get("debug",  "qwt"),      "qwtd.dll")),
 ]
