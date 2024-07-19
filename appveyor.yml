@@ -270,7 +270,7 @@ after_build:
         }
         Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
           if ($_ -match '^set HDF5_VER=(.*)$') {
-            $hdf5_DIR="c:/iricdev-2019/lib/install/hdf5-" + $matches[1] + "/cmake/hdf5"
+            $hdf5_DIR="c:/iricdev-2019/lib/install/hdf5-" + $matches[1] + "/share/cmake/hdf5"
           }
         }
         Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
@@ -368,7 +368,7 @@ on_success:
         }
 
         # distribute files built by prepost-gui
-        cmake --build $env:APPVEYOR_BUILD_FOLDER\dist\_build --config release --target install
+        cmake --install $env:APPVEYOR_BUILD_FOLDER\dist\_build --config release
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # read iriclib Version from $in
