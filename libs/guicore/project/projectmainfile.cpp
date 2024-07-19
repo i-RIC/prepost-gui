@@ -208,14 +208,14 @@ void ProjectMainFile::Impl::deleteGarbageBackgroundImages()
 	std::unordered_set<QString> images;
 
 	QDir workDir(m_projectData->workDirectory());
-	QDir bgDir(workDir.absoluteFilePath(BGDIR));
 
 	for (auto image : m_backgroundImages) {
 		for (auto fileName : image->containedFiles()) {
-			images.insert(bgDir.absoluteFilePath(fileName));
+			images.insert(workDir.absoluteFilePath(fileName));
 		}
 	}
 
+	QDir bgDir(workDir.absoluteFilePath(BGDIR));
 	for (auto fileName : bgDir.entryList(QDir::Files, QDir::NoSort)) {
 		auto fullName = bgDir.absoluteFilePath(fileName);
 		if (images.find(fullName) == images.end()) {
