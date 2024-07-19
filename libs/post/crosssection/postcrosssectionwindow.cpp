@@ -27,8 +27,8 @@ PostCrosssectionWindow::PostCrosssectionWindow(QWidget* parent, int index, PostP
 
 	addDockWidget(Qt::BottomDockWidgetArea, dockWidget);
 
-	connect(postSolutionInfo(), &PostSolutionInfo::updated, m_internalWindow, &PostCrosssectionInternalWindow::handleSettingChange);
-	connect(postSolutionInfo(), &PostSolutionInfo::currentStepUpdated, m_internalWindow, &PostCrosssectionInternalWindow::handleSettingChange);
+	connect(postSolutionInfo(), &PostSolutionInfo::updated, m_internalWindow, &PostCrosssectionInternalWindow::update);
+	connect(postSolutionInfo(), &PostSolutionInfo::currentStepUpdated, m_internalWindow, &PostCrosssectionInternalWindow::update);
 }
 
 PostCrosssectionInternalWindow* PostCrosssectionWindow::internalWindow() const
