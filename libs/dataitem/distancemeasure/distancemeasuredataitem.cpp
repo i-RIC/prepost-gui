@@ -214,7 +214,9 @@ void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsV
 		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
 			impl->m_redefineAction->setEnabled(impl->m_setting.defined);
 
-			impl->m_mouseEventMode = Impl::meNormal;
+			if (impl->m_mouseEventMode != Impl::meBeforeDefining && impl->m_mouseEventMode != Impl::meDefining) {
+				impl->m_mouseEventMode = Impl::meNormal;
+			}
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
 		}
