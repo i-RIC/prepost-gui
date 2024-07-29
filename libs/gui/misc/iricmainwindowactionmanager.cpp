@@ -1139,6 +1139,8 @@ void iRICMainWindowActionManager::updateWindowList()
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
 	m_windowsToolBar->clear();
 
+	if (! m_isProjectFileOpen) {return;}
+
 	int i = 1;
 	bool postOnly = true;
 	auto pd = m_parent->projectData();
@@ -1158,7 +1160,6 @@ void iRICMainWindowActionManager::updateWindowList()
 			title = tmp.arg("").arg(i);
 		}
 		QAction* a = new QAction(title, m_viewMenu);
-		a->setEnabled(m_isProjectFileOpen);
 
 		QPixmap iconWithShortcut(w->windowIcon().pixmap(iconSize));
 		painter.begin(&iconWithShortcut);

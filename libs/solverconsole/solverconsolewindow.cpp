@@ -108,8 +108,13 @@ SolverConsoleWindow::~SolverConsoleWindow()
 
 void SolverConsoleWindow::setProjectData(ProjectData* d)
 {
+	delete impl->m_projectDataItem;
+	impl->m_projectDataItem = nullptr;
+
+	if (d == nullptr) {return;}
+
 	impl->m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
-	connect(exportLogAction, SIGNAL(triggered()), impl->m_projectDataItem, SLOT(exportConsoleLog()));
+	connect(exportLogAction, &QAction::triggered, impl->m_projectDataItem, &SolverConsoleWindowProjectDataItem::exportConsoleLog);
 }
 
 SolverConsoleWindowProjectDataItem* SolverConsoleWindow::projectDataItem()
