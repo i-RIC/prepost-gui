@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>تحرير خاصية قياس المسافة</translation>
+        <translation type="vanished">تحرير خاصية قياس المسافة</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>ترجمة قياس المسافة</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">اسم:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">نقطة البداية:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">و</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">نقطة النهاية:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">ملصق</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">إظهار التسمية</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">المحتوى</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">آلي</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">مخصص</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">موقع</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">مركز الأعلى</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">وسط اليسار</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">وسط اليمين</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">وسط القاع</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">إعداد الخط</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">إظهار علامات النهاية</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">حجم العلامة:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">اللون:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>خاصية قياس المسافة</translation>
+        <translation type="vanished">خاصية قياس المسافة</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>اسم:</translation>
+        <translation type="vanished">اسم:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>نقطة البداية:</translation>
+        <translation type="vanished">نقطة البداية:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>و</translation>
+        <translation type="vanished">و</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>نقطة النهاية:</translation>
+        <translation type="vanished">نقطة النهاية:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>ملصق</translation>
+        <translation type="vanished">ملصق</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>إظهار التسمية</translation>
+        <translation type="vanished">إظهار التسمية</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>المحتوى</translation>
+        <translation type="vanished">المحتوى</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>آلي</translation>
+        <translation type="vanished">آلي</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>مخصص</translation>
+        <translation type="vanished">مخصص</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>موقع</translation>
+        <translation type="vanished">موقع</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>مركز الأعلى</translation>
+        <translation type="vanished">مركز الأعلى</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>وسط اليسار</translation>
+        <translation type="vanished">وسط اليسار</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>وسط اليمين</translation>
+        <translation type="vanished">وسط اليمين</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>وسط القاع</translation>
+        <translation type="vanished">وسط القاع</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>إعداد الخط</translation>
+        <translation type="vanished">إعداد الخط</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>إظهار علامات النهاية</translation>
+        <translation type="vanished">إظهار علامات النهاية</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>حجم العلامة:</translation>
+        <translation type="vanished">حجم العلامة:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>اللون:</translation>
+        <translation type="vanished">اللون:</translation>
     </message>
 </context>
 </TS>

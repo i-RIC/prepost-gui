@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Modifica proprietà misura distanza</translation>
+        <translation type="vanished">Modifica proprietà misura distanza</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Trasla misura della distanza</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Punto di partenza:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Punto finale:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etichetta</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Mostra etichetta</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Contenuto</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Costume</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posizione</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centro-In alto</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Centro-sinistra</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Medio-destra</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centro-Basso</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Impostazione carattere</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Mostra indicatori di fine</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Dimensione dell&apos;indicatore:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Colore:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Proprietà di misurazione della distanza</translation>
+        <translation type="vanished">Proprietà di misurazione della distanza</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation type="vanished">Nome:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Punto di partenza:</translation>
+        <translation type="vanished">Punto di partenza:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Punto finale:</translation>
+        <translation type="vanished">Punto finale:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etichetta</translation>
+        <translation type="vanished">Etichetta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Mostra etichetta</translation>
+        <translation type="vanished">Mostra etichetta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Contenuto</translation>
+        <translation type="vanished">Contenuto</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Costume</translation>
+        <translation type="vanished">Costume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posizione</translation>
+        <translation type="vanished">Posizione</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centro-In alto</translation>
+        <translation type="vanished">Centro-In alto</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Centro-sinistra</translation>
+        <translation type="vanished">Centro-sinistra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Medio-destra</translation>
+        <translation type="vanished">Medio-destra</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centro-Basso</translation>
+        <translation type="vanished">Centro-Basso</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Impostazione carattere</translation>
+        <translation type="vanished">Impostazione carattere</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Mostra indicatori di fine</translation>
+        <translation type="vanished">Mostra indicatori di fine</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Dimensione dell'indicatore:</translation>
+        <translation type="vanished">Dimensione dell&apos;indicatore:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Colore:</translation>
+        <translation type="vanished">Colore:</translation>
     </message>
 </context>
 </TS>

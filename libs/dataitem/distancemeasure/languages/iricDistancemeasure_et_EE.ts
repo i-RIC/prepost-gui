@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Muutke kauguse mõõtmise atribuuti</translation>
+        <translation type="vanished">Muutke kauguse mõõtmise atribuuti</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Tõlgi kauguse mõõt</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nimi:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Alguspunkt:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Lõpp -punkt:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Silt</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Kuva silt</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Sisu</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automaatne</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Kohandatud</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Asend</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Kesk-vasak</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Kesk-parem</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Keskel-all</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Fondi seadistamine</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Näita lõpumärke</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Markeri suurus:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Värv:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Vahemaa mõõtmine</translation>
+        <translation type="vanished">Vahemaa mõõtmine</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nimi:</translation>
+        <translation type="vanished">Nimi:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Alguspunkt:</translation>
+        <translation type="vanished">Alguspunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Lõpp -punkt:</translation>
+        <translation type="vanished">Lõpp -punkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Silt</translation>
+        <translation type="vanished">Silt</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Kuva silt</translation>
+        <translation type="vanished">Kuva silt</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Sisu</translation>
+        <translation type="vanished">Sisu</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automaatne</translation>
+        <translation type="vanished">Automaatne</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Kohandatud</translation>
+        <translation type="vanished">Kohandatud</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Asend</translation>
+        <translation type="vanished">Asend</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Kesk-vasak</translation>
+        <translation type="vanished">Kesk-vasak</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Kesk-parem</translation>
+        <translation type="vanished">Kesk-parem</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Keskel-all</translation>
+        <translation type="vanished">Keskel-all</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Fondi seadistamine</translation>
+        <translation type="vanished">Fondi seadistamine</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Näita lõpumärke</translation>
+        <translation type="vanished">Näita lõpumärke</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Markeri suurus:</translation>
+        <translation type="vanished">Markeri suurus:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Värv:</translation>
+        <translation type="vanished">Värv:</translation>
     </message>
 </context>
 </TS>

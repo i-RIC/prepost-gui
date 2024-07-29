@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Mesafe Ölçümü Özelliğini Düzenle</translation>
+        <translation type="vanished">Mesafe Ölçümü Özelliğini Düzenle</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Mesafe Ölçümünü Çevir</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">İsim:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Başlangıç noktası:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Bitiş Noktası:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiket</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Etiketi Göster</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">İçerik</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Oto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Gelenek</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Konum</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Orta Üst</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Orta-Sol</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Orta Sağ</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Orta-Alt</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Yazı Tipi Ayarı</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Bitiş İşaretlerini Göster</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">İşaret Boyutu:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Renk:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Mesafe Ölçü Özelliği</translation>
+        <translation type="vanished">Mesafe Ölçü Özelliği</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>İsim:</translation>
+        <translation type="vanished">İsim:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Başlangıç noktası:</translation>
+        <translation type="vanished">Başlangıç noktası:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Bitiş Noktası:</translation>
+        <translation type="vanished">Bitiş Noktası:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiket</translation>
+        <translation type="vanished">Etiket</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Etiketi Göster</translation>
+        <translation type="vanished">Etiketi Göster</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>İçerik</translation>
+        <translation type="vanished">İçerik</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Oto</translation>
+        <translation type="vanished">Oto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Gelenek</translation>
+        <translation type="vanished">Gelenek</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Konum</translation>
+        <translation type="vanished">Konum</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Orta Üst</translation>
+        <translation type="vanished">Orta Üst</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Orta-Sol</translation>
+        <translation type="vanished">Orta-Sol</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Orta Sağ</translation>
+        <translation type="vanished">Orta Sağ</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Orta-Alt</translation>
+        <translation type="vanished">Orta-Alt</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Yazı Tipi Ayarı</translation>
+        <translation type="vanished">Yazı Tipi Ayarı</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Bitiş İşaretlerini Göster</translation>
+        <translation type="vanished">Bitiş İşaretlerini Göster</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>İşaret Boyutu:</translation>
+        <translation type="vanished">İşaret Boyutu:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Rediger afstandsmålingsejendom</translation>
+        <translation type="vanished">Rediger afstandsmålingsejendom</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Oversæt Distance Measure</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Navn:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Startpunkt:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Slutpunkt:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiket</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Vis etiket</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Indhold</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Brugerdefinerede</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Midt-venstre</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Midt-højre</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Midt-bund</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Fontindstilling</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Vis slutmarkører</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Markørstørrelse:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Farve:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Afstandsmål Ejendom</translation>
+        <translation type="vanished">Afstandsmål Ejendom</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation type="vanished">Navn:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Startpunkt:</translation>
+        <translation type="vanished">Startpunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Slutpunkt:</translation>
+        <translation type="vanished">Slutpunkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiket</translation>
+        <translation type="vanished">Etiket</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Vis etiket</translation>
+        <translation type="vanished">Vis etiket</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Indhold</translation>
+        <translation type="vanished">Indhold</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Brugerdefinerede</translation>
+        <translation type="vanished">Brugerdefinerede</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Midt-venstre</translation>
+        <translation type="vanished">Midt-venstre</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Midt-højre</translation>
+        <translation type="vanished">Midt-højre</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Midt-bund</translation>
+        <translation type="vanished">Midt-bund</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Fontindstilling</translation>
+        <translation type="vanished">Fontindstilling</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Vis slutmarkører</translation>
+        <translation type="vanished">Vis slutmarkører</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Markørstørrelse:</translation>
+        <translation type="vanished">Markørstørrelse:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farve:</translation>
+        <translation type="vanished">Farve:</translation>
     </message>
 </context>
 </TS>

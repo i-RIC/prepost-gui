@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>거리 측정 속성 편집</translation>
+        <translation type="vanished">거리 측정 속성 편집</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>거리 측정 번역</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">이름:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">시작점:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">끝점:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">상표</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">레이블 표시</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">콘텐츠</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">자동</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">관습</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">위치</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">센터 탑</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">중간-왼쪽</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">가운데-오른쪽</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">중앙-하단</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">글꼴 설정</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">끝 마커 표시</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">마커 크기:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>거리 측정 속성</translation>
+        <translation type="vanished">거리 측정 속성</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>이름:</translation>
+        <translation type="vanished">이름:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>시작점:</translation>
+        <translation type="vanished">시작점:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>끝점:</translation>
+        <translation type="vanished">끝점:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>상표</translation>
+        <translation type="vanished">상표</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>레이블 표시</translation>
+        <translation type="vanished">레이블 표시</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>콘텐츠</translation>
+        <translation type="vanished">콘텐츠</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>관습</translation>
+        <translation type="vanished">관습</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>위치</translation>
+        <translation type="vanished">위치</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>센터 탑</translation>
+        <translation type="vanished">센터 탑</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>중간-왼쪽</translation>
+        <translation type="vanished">중간-왼쪽</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>가운데-오른쪽</translation>
+        <translation type="vanished">가운데-오른쪽</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>중앙-하단</translation>
+        <translation type="vanished">중앙-하단</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>글꼴 설정</translation>
+        <translation type="vanished">글꼴 설정</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>끝 마커 표시</translation>
+        <translation type="vanished">끝 마커 표시</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>마커 크기:</translation>
+        <translation type="vanished">마커 크기:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
 </context>
 </TS>

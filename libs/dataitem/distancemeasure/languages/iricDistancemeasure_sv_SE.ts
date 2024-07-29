@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Redigera egenskap för avståndsmätning</translation>
+        <translation type="vanished">Redigera egenskap för avståndsmätning</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Översätt Distance Measure</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Namn:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Startpunkt:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Slutpunkt:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Märka</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Visa etikett</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Innehåll</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Bil</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Beställnings</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Placera</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Mitten-vänster</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Mellan-höger</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Center-Bottom</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Teckensnittsinställning</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Visa slutmarkörer</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Markörstorlek:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Färg:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Avståndsmätning Egendom</translation>
+        <translation type="vanished">Avståndsmätning Egendom</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Namn:</translation>
+        <translation type="vanished">Namn:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Startpunkt:</translation>
+        <translation type="vanished">Startpunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Slutpunkt:</translation>
+        <translation type="vanished">Slutpunkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Märka</translation>
+        <translation type="vanished">Märka</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Visa etikett</translation>
+        <translation type="vanished">Visa etikett</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Innehåll</translation>
+        <translation type="vanished">Innehåll</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Bil</translation>
+        <translation type="vanished">Bil</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Beställnings</translation>
+        <translation type="vanished">Beställnings</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Placera</translation>
+        <translation type="vanished">Placera</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Mitten-vänster</translation>
+        <translation type="vanished">Mitten-vänster</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Mellan-höger</translation>
+        <translation type="vanished">Mellan-höger</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Center-Bottom</translation>
+        <translation type="vanished">Center-Bottom</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Teckensnittsinställning</translation>
+        <translation type="vanished">Teckensnittsinställning</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Visa slutmarkörer</translation>
+        <translation type="vanished">Visa slutmarkörer</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Markörstorlek:</translation>
+        <translation type="vanished">Markörstorlek:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
 </context>
 </TS>

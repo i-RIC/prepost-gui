@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Eigenschap afstandsmeting bewerken</translation>
+        <translation type="vanished">Eigenschap afstandsmeting bewerken</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Vertalen Afstandsmaat</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Startpunt:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Eindpunt:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Label</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Toon label</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Inhoud</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Aangepast</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Positie</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Midden-Links</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Midden-Rechts</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Midden-onder</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Lettertype-instelling</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Eindmarkeringen tonen</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Markeringsgrootte:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Afstand Maatregel Eigenschap</translation>
+        <translation type="vanished">Afstand Maatregel Eigenschap</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Naam:</translation>
+        <translation type="vanished">Naam:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Startpunt:</translation>
+        <translation type="vanished">Startpunt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Eindpunt:</translation>
+        <translation type="vanished">Eindpunt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation type="vanished">Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Toon label</translation>
+        <translation type="vanished">Toon label</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Inhoud</translation>
+        <translation type="vanished">Inhoud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Aangepast</translation>
+        <translation type="vanished">Aangepast</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Positie</translation>
+        <translation type="vanished">Positie</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Midden-Links</translation>
+        <translation type="vanished">Midden-Links</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Midden-Rechts</translation>
+        <translation type="vanished">Midden-Rechts</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Midden-onder</translation>
+        <translation type="vanished">Midden-onder</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Lettertype-instelling</translation>
+        <translation type="vanished">Lettertype-instelling</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Eindmarkeringen tonen</translation>
+        <translation type="vanished">Eindmarkeringen tonen</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Markeringsgrootte:</translation>
+        <translation type="vanished">Markeringsgrootte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
 </context>
 </TS>

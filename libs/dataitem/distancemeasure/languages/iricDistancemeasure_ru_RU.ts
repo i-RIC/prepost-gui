@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Изменить свойство измерения расстояния</translation>
+        <translation type="vanished">Изменить свойство измерения расстояния</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Перевести Distance Measure</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Имя:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Начальная точка:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Конечная точка:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Этикетка</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Показать этикетку</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Содержание</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Авто</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Обычай</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиция</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Центр-верх</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Средний левый</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Средний-правый</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Центр-низ</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Настройка шрифта</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Показать маркеры конца</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Размер маркера:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Свойство измерения расстояния</translation>
+        <translation type="vanished">Свойство измерения расстояния</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Имя:</translation>
+        <translation type="vanished">Имя:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Начальная точка:</translation>
+        <translation type="vanished">Начальная точка:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Конечная точка:</translation>
+        <translation type="vanished">Конечная точка:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Этикетка</translation>
+        <translation type="vanished">Этикетка</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Показать этикетку</translation>
+        <translation type="vanished">Показать этикетку</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Содержание</translation>
+        <translation type="vanished">Содержание</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Обычай</translation>
+        <translation type="vanished">Обычай</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Центр-верх</translation>
+        <translation type="vanished">Центр-верх</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Средний левый</translation>
+        <translation type="vanished">Средний левый</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Средний-правый</translation>
+        <translation type="vanished">Средний-правый</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Центр-низ</translation>
+        <translation type="vanished">Центр-низ</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Настройка шрифта</translation>
+        <translation type="vanished">Настройка шрифта</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Показать маркеры конца</translation>
+        <translation type="vanished">Показать маркеры конца</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Размер маркера:</translation>
+        <translation type="vanished">Размер маркера:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
 </context>
 </TS>

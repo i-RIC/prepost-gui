@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Rediģēt attāluma mērīšanas rekvizītu</translation>
+        <translation type="vanished">Rediģēt attāluma mērīšanas rekvizītu</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Tulkot attāluma mērījumu</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Vārds:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Sākuma punkts:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Beigu punkts:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Iezīme</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Rādīt iezīmi</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Saturs</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automātiski</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Pielāgots</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozīcija</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centrs-augšā</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Vidēji kreisais</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Vidēji pa labi</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centrs-apakšā</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Fonta iestatīšana</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Rādīt beigu marķierus</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Marķiera izmērs:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Krāsa:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Attāluma mērīšanas īpašums</translation>
+        <translation type="vanished">Attāluma mērīšanas īpašums</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Vārds:</translation>
+        <translation type="vanished">Vārds:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Sākuma punkts:</translation>
+        <translation type="vanished">Sākuma punkts:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Beigu punkts:</translation>
+        <translation type="vanished">Beigu punkts:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Iezīme</translation>
+        <translation type="vanished">Iezīme</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Rādīt iezīmi</translation>
+        <translation type="vanished">Rādīt iezīmi</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Saturs</translation>
+        <translation type="vanished">Saturs</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pielāgots</translation>
+        <translation type="vanished">Pielāgots</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozīcija</translation>
+        <translation type="vanished">Pozīcija</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centrs-augšā</translation>
+        <translation type="vanished">Centrs-augšā</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Vidēji kreisais</translation>
+        <translation type="vanished">Vidēji kreisais</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Vidēji pa labi</translation>
+        <translation type="vanished">Vidēji pa labi</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centrs-apakšā</translation>
+        <translation type="vanished">Centrs-apakšā</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Fonta iestatīšana</translation>
+        <translation type="vanished">Fonta iestatīšana</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Rādīt beigu marķierus</translation>
+        <translation type="vanished">Rādīt beigu marķierus</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Marķiera izmērs:</translation>
+        <translation type="vanished">Marķiera izmērs:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
 </context>
 </TS>
