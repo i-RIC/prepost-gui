@@ -277,6 +277,8 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 	if (requestId != impl->m_tmsRequestId) {return;}
 
 	auto cs = projectData()->mainfile()->coordinateSystem();
+	if (cs == nullptr) {return;}
+
 	if (cs->isLongLat()) {
 		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 		QRectF rect = calcRect(view, impl->m_offset);
