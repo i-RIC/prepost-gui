@@ -62,6 +62,9 @@ PreProcessorGridDataItem::Impl::Impl(PreProcessorGridDataItem* item) :
 	m_nodeDataItem {nullptr},
 	m_cellDataItem {nullptr},
 	m_birdEyeWindow {nullptr},
+	m_regionPolyData {vtkPolyData::New()},
+	m_regionMapper {vtkPolyDataMapper::New()},
+	m_regionActor {vtkActor::New()},
 	m_selectedNodesController {new SelectedNodesController {item}},
 	m_selectedCellsController {new SelectedCellsController {item}},
 	m_selectedIEdgesController {new SelectedIEdgesController {item}},
@@ -78,6 +81,10 @@ PreProcessorGridDataItem::Impl::Impl(PreProcessorGridDataItem* item) :
 
 PreProcessorGridDataItem::Impl::~Impl()
 {
+	m_regionPolyData->Delete();
+	m_regionMapper->Delete();
+	m_regionActor->Delete();
+
 	delete m_selectedNodesController;
 	delete m_selectedCellsController;
 	delete m_selectedIEdgesController;
@@ -128,6 +135,7 @@ PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent)
 PreProcessorGridDataItem::~PreProcessorGridDataItem()
 {
 	renderer()->RemoveActor(impl->m_regionActor);
+
 	closeBirdEyeWindow();
 	closeCrosssectionWindows();
 
@@ -544,21 +552,17 @@ PreProcessorGridDataItem::SelectedEdgesController* PreProcessorGridDataItem::sel
 
 void PreProcessorGridDataItem::setupActors()
 {
-	vtkProperty* prop;
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	impl->m_regionPolyData->SetPoints(points);
 
-	impl->m_regionPolyData = vtkSmartPointer<vtkPolyData>::New();
-	vtkSmartPointer<vtkPoints> tmppoints = vtkSmartPointer<vtkPoints>::New();
-	impl->m_regionPolyData->SetPoints(tmppoints);
-
-	impl->m_regionMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	impl->m_regionMapper->SetInputData(impl->m_regionPolyData);
 
-	impl->m_regionActor = vtkSmartPointer<vtkActor>::New();
 	impl->m_regionActor->SetMapper(impl->m_regionMapper);
-	prop = impl->m_regionActor->GetProperty();
+
+	auto prop = impl->m_regionActor->GetProperty();
 	prop->SetOpacity(0);
 	prop->SetColor(0, 0, 0);
-	impl->m_regionActor->VisibilityOff();
+
 	renderer()->AddActor(impl->m_regionActor);
 }
 
