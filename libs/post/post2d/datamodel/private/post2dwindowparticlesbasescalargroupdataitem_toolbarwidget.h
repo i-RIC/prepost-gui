@@ -17,8 +17,10 @@ public:
 	ToolBarWidget(Post2dWindowParticlesBaseScalarGroupDataItem* item, QWidget *parent = nullptr);
 	~ToolBarWidget();
 
-private slots:
+public slots:
 	void applySetting();
+
+private slots:
 	void updateActorSetting();
 
 private:
