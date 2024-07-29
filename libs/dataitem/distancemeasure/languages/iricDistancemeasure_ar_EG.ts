@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">اسم:</translation>
+        <translation>اسم:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">نقطة البداية:</translation>
+        <translation>نقطة البداية:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">و</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">نقطة النهاية:</translation>
+        <translation>نقطة النهاية:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">ملصق</translation>
+        <translation>ملصق</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">إظهار التسمية</translation>
+        <translation>إظهار الملصق</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">المحتوى</translation>
+        <translation>محتوى</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">آلي</translation>
+        <translation>آلي</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">مخصص</translation>
+        <translation>مخصص</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">موقع</translation>
+        <translation>موضع</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">مركز الأعلى</translation>
+        <translation>المركز-الأعلى</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">وسط اليسار</translation>
+        <translation>الوسط اليساري</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">وسط اليمين</translation>
+        <translation>يمين الوسط</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">وسط القاع</translation>
+        <translation>المركز-الأسفل</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">إعداد الخط</translation>
+        <translation>إعداد الخط</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">إظهار علامات النهاية</translation>
+        <translation>إظهار علامات النهاية</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">حجم العلامة:</translation>
+        <translation>حجم العلامة:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">اللون:</translation>
+        <translation>لون:</translation>
     </message>
 </context>
 <context>

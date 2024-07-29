@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nafn:</translation>
+        <translation>Nafn:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Upphafsstaður:</translation>
+        <translation>Upphafspunktur:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Endapunktur:</translation>
+        <translation>Lokapunktur:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Merki</translation>
+        <translation>Merki</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Sýna merki</translation>
+        <translation>Sýna merkimiða</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Innihald</translation>
+        <translation>Efni</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Sjálfvirk</translation>
+        <translation>Sjálfvirk</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Sérsniðin</translation>
+        <translation>Sérsniðin</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Staða</translation>
+        <translation>Staða</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Mið-efst</translation>
+        <translation>Mið-Topp</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Mið-vinstri</translation>
+        <translation>Mið-vinstri</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Mið-hægri</translation>
+        <translation>Mið-hægri</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Mið-botn</translation>
+        <translation>Mið-neðst</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Leturgerð</translation>
+        <translation>Leturstilling</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Sýna lokamerki</translation>
+        <translation>Sýna endamerki</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Stærð merkja:</translation>
+        <translation>Stærð merkimiða:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Litur:</translation>
+        <translation>Litur:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nama:</translation>
+        <translation>Nama:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Titik awal:</translation>
+        <translation>Titik awal:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>Bahasa Indonesia:</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Titik Akhir:</translation>
+        <translation>Titik Akhir:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Label</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Tampilkan Label</translation>
+        <translation>Tampilkan Label</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Isi</translation>
+        <translation>Isi</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Mobil</translation>
+        <translation>Mobil</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Kebiasaan</translation>
+        <translation>Kebiasaan</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posisi</translation>
+        <translation>Posisi</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Tengah-Atas</translation>
+        <translation>Tengah-Atas</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Kiri Tengah</translation>
+        <translation>Tengah-Kiri</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Kanan Tengah</translation>
+        <translation>Tengah-Kanan</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Tengah-Bawah</translation>
+        <translation>Tengah-Bawah</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Pengaturan Font</translation>
+        <translation>Pengaturan Font</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Tampilkan Penanda Akhir</translation>
+        <translation>Tampilkan Penanda Akhir</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Ukuran penanda:</translation>
+        <translation>Ukuran Penanda:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Warna:</translation>
+        <translation>Warna:</translation>
     </message>
 </context>
 <context>

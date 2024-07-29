@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>रूप</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">नाम:</translation>
+        <translation>नाम:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">प्रारंभ बिंदु:</translation>
+        <translation>प्रारंभ बिंदु:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">अंत बिंदु:</translation>
+        <translation>अंतिम बिंदु:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">लेबल</translation>
+        <translation>लेबल</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">लेबल दिखाएं</translation>
+        <translation>लेबल दिखाएं</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">विषय</translation>
+        <translation>सामग्री</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">ऑटो</translation>
+        <translation>ऑटो</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">रीति</translation>
+        <translation>रिवाज़</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">पद</translation>
+        <translation>पद</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">केंद्र-शीर्ष</translation>
+        <translation>केंद्र-शीर्ष</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">बीच-बाएँ</translation>
+        <translation>बीच-बाएँ</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">मध्यम सही</translation>
+        <translation>मध्य-सही</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">केंद्र-नीचे</translation>
+        <translation>मध्य-नीचे</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">फ़ॉन्ट सेटिंग</translation>
+        <translation>फ़ॉन्ट सेटिंग</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">अंतिम मार्कर दिखाएं</translation>
+        <translation>अंतिम मार्कर दिखाएं</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">मार्कर का आकार:</translation>
+        <translation>मार्कर का आकार:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">रंग:</translation>
+        <translation>रंग:</translation>
     </message>
 </context>
 <context>

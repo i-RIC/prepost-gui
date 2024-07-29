@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nume:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Punctul de inceput:</translation>
+        <translation>Punctul de inceput:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Punct final:</translation>
+        <translation>Punct final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Eticheta</translation>
+        <translation>Eticheta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Afișați eticheta</translation>
+        <translation>Afișați eticheta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Conţinut</translation>
+        <translation>Conţinut</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Personalizat</translation>
+        <translation>Personalizat</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Poziţie</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centrul de sus</translation>
+        <translation>Centru-Sus</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Stânga mijlocie</translation>
+        <translation>Mijloc-Stânga</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Mijlocul-dreapta</translation>
+        <translation>Mijloc-Dreapta</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centrul de jos</translation>
+        <translation>Centru-Jos</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Setarea fontului</translation>
+        <translation>Setarea fontului</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Afișați marcajele finale</translation>
+        <translation>Afișați marcatorii de sfârșit</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Dimensiunea marcatorului:</translation>
+        <translation>Dimensiunea markerului:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Culoare:</translation>
+        <translation>Culoare:</translation>
     </message>
 </context>
 <context>

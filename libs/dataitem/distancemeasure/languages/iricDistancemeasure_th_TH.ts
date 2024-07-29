@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">ชื่อ:</translation>
+        <translation>ชื่อ:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">จุดเริ่มต้น:</translation>
+        <translation>จุดเริ่มต้น:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">จุดสิ้นสุด:</translation>
+        <translation>จุดสิ้นสุด:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">ฉลาก</translation>
+        <translation>ฉลาก</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">แสดงฉลาก</translation>
+        <translation>แสดงฉลาก</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">เนื้อหา</translation>
+        <translation>เนื้อหา</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">รถยนต์</translation>
+        <translation>ออโต้</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">กำหนดเอง</translation>
+        <translation>กำหนดเอง</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">ตำแหน่ง</translation>
+        <translation>ตำแหน่ง</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">เซ็นเตอร์-ท็อป</translation>
+        <translation>ตรงกลางด้านบน</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">กลาง-ซ้าย</translation>
+        <translation>กลาง-ซ้าย</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">กลาง-ขวา</translation>
+        <translation>กลาง-ขวา</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">กลางล่าง</translation>
+        <translation>ตรงกลาง-ล่าง</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">การตั้งค่าแบบอักษร</translation>
+        <translation>การตั้งค่าแบบอักษร</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">แสดงเครื่องหมายสิ้นสุด</translation>
+        <translation>แสดงเครื่องหมายสิ้นสุด</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">ขนาดเครื่องหมาย:</translation>
+        <translation>ขนาดเครื่องหมาย:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
 </context>
 <context>

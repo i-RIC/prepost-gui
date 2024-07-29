@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nimi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Lähtöpiste:</translation>
+        <translation>Lähtöpiste:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Päätepiste:</translation>
+        <translation>Päätepiste:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiketti</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Näytä tunniste</translation>
+        <translation>Näytä etiketti</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Sisältö</translation>
+        <translation>Sisältö</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Mukautettu</translation>
+        <translation>Mukautettu</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Sijainti</translation>
+        <translation>asema</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Center-Top</translation>
+        <translation>Keski-Yläosa</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Keskimmäinen vasen</translation>
+        <translation>Keski-vasen</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Keskusta-oikea</translation>
+        <translation>Keski-oikea</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Keskellä-alhaalla</translation>
+        <translation>Keski-ala</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Fontin asetus</translation>
+        <translation>Fonttiasetus</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Näytä lopetusmerkit</translation>
+        <translation>Näytä loppumerkit</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Merkin koko:</translation>
+        <translation>Merkin koko:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Väri:</translation>
+        <translation>Väri:</translation>
     </message>
 </context>
 <context>

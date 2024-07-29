@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nimi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Alguspunkt:</translation>
+        <translation>Alguspunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Lõpp -punkt:</translation>
+        <translation>Lõpp-punkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Silt</translation>
+        <translation>Silt</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Kuva silt</translation>
+        <translation>Näita silti</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Sisu</translation>
+        <translation>Sisu</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automaatne</translation>
+        <translation>Automaatne</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Kohandatud</translation>
+        <translation>Kohandatud</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Asend</translation>
+        <translation>positsioon</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Center-Top</translation>
+        <translation>Kesk-ülemine</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Kesk-vasak</translation>
+        <translation>Kesk-vasak</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Kesk-parem</translation>
+        <translation>Kesk-parem</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Keskel-all</translation>
+        <translation>Kesk-alumine</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Fondi seadistamine</translation>
+        <translation>Fondi seadistus</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Näita lõpumärke</translation>
+        <translation>Näita lõpumärke</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Markeri suurus:</translation>
+        <translation>Markeri suurus:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Värv:</translation>
+        <translation>Värv:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Név:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Kezdőpont:</translation>
+        <translation>Kezdőpont:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Végpont:</translation>
+        <translation>Végpont:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Címke</translation>
+        <translation>Címke</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Címke megjelenítése</translation>
+        <translation>Címke megjelenítése</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Tartalom</translation>
+        <translation>Tartalom</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automatikus</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Egyedi</translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozíció</translation>
+        <translation>Pozíció</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Center-Top</translation>
+        <translation>Közép-Felső</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Közép-bal</translation>
+        <translation>Közép-Bal</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Közép-Jobb</translation>
+        <translation>Közép-jobb</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Közép-alul</translation>
+        <translation>Közép-Alsó</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Betűtípus beállítása</translation>
+        <translation>Betűtípus beállítása</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Végejelzők megjelenítése</translation>
+        <translation>Végjelzők megjelenítése</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Jelölő mérete:</translation>
+        <translation>Marker mérete:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Szín:</translation>
+        <translation>Szín:</translation>
     </message>
 </context>
 <context>

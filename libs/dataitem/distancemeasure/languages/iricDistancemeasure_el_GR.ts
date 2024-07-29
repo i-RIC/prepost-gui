@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Ονομα:</translation>
+        <translation>Ονομα:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Σημείο εκκίνησης:</translation>
+        <translation>Σημείο εκκίνησης:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Τελικό σημείο:</translation>
+        <translation>Τελικό Σημείο:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Επιγραφή</translation>
+        <translation>Επιγραφή</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Εμφάνιση ετικέτας</translation>
+        <translation>Εμφάνιση ετικέτας</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Περιεχόμενο</translation>
+        <translation>Περιεχόμενο</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Αυτο</translation>
+        <translation>Αυτο</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Εθιμο</translation>
+        <translation>Εθιμο</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Θέση</translation>
+        <translation>Θέση</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Κέντρο-Κορυφή</translation>
+        <translation>Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Μεσοαριστερά</translation>
+        <translation>Μέση-Αριστερά</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Μέση Δεξιά</translation>
+        <translation>Μεσοδεξιά</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Κέντρο-Κάτω</translation>
+        <translation>Κέντρο-Κάτω</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Ρύθμιση γραμματοσειράς</translation>
+        <translation>Ρύθμιση γραμματοσειράς</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Εμφάνιση τελικών δεικτών</translation>
+        <translation>Εμφάνιση δεικτών τέλους</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Μέγεθος δείκτη:</translation>
+        <translation>Μέγεθος δείκτη:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
 </context>
 <context>
