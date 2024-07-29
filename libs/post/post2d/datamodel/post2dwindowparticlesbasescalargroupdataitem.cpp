@@ -37,6 +37,7 @@ Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGro
 	QSettings settings;
 	m_setting.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();
 	m_setting.particleSize = settings.value("graphics/particle_size", ParticleDataSetting::DEFAULT_SIZE).toInt();
+	m_toolBarWidget->applySetting();
 
 	auto topItem = topDataItem();
 	auto cont = topItem->zoneDataItem()->v4DataContainer();
