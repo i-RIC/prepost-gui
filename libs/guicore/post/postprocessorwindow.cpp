@@ -45,6 +45,12 @@ void PostProcessorWindow::setIndex(int index)
 void PostProcessorWindow::applyOffset(double /*x_diff*/, double /*y_diff*/)
 {}
 
+void PostProcessorWindow::cameraFit()
+{}
+
+void PostProcessorWindow::update()
+{}
+
 PostSolutionInfo* PostProcessorWindow::postSolutionInfo()
 {
 	return m_projectDataItem->projectData()->mainfile()->postSolutionInfo();

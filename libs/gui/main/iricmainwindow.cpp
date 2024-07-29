@@ -1483,6 +1483,7 @@ void iRICMainWindow::create2dPostWindow()
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
+	item->window()->cameraFit();
 	++index;
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
@@ -1499,6 +1500,7 @@ void iRICMainWindow::create2dBirdEyePostWindow()
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
+	item->window()->cameraFit();
 	++index;
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
@@ -1515,6 +1517,7 @@ void iRICMainWindow::create3dPostWindow()
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
+	item->window()->cameraFit();
 	++index;
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
