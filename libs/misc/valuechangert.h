@@ -10,7 +10,9 @@ public:
 	ValueChangerT(T* pointer, T value);
 	~ValueChangerT();
 
-	private:
+	void restore();
+
+private:
 	T* m_pointer;
 	ValueRestorerT<T> m_restorer;
 };
