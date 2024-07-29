@@ -4,6 +4,7 @@
 #include "coordinatesystembuilder.h"
 #include "coordinatesystemselectdialog.h"
 
+#include <QKeyEvent>
 #include <QPushButton>
 
 CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
@@ -80,4 +81,13 @@ void CoordinateSystemSelectDialog::updateOkButtonStatus()
 	if (! m_forceSelect) {return;}
 
 	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(m_currentSystem != nullptr);
+}
+
+void CoordinateSystemSelectDialog::keyPressEvent(QKeyEvent* event)
+{
+	if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
+		return;
+	}
+
+	QDialog::keyPressEvent(event);
 }
