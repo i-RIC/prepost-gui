@@ -18,6 +18,8 @@ public:
 	void updateEdgeFocus() override;
 
 private:
+	class EditTableController;
+
 	ColorMapSettingContainerI* preColorMapSetting(const std::string& name) const override;
 
 	PreProcessorGridDataItem* m_item;

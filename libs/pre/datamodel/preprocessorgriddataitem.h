@@ -197,7 +197,6 @@ private:
 
 public:
 	friend class GridPointMouseMoveCommand;
-	friend class GridAttributeEditCommand;
 	friend class PreProcessorGridAndGridCreatingConditionDataItem;
 };
 

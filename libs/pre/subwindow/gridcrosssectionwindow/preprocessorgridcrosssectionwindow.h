@@ -17,6 +17,8 @@ public:
 
 	PreProcessorGridCrosssectionInternalWindow* internalWindow() const;
 
+	void update();
+
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
 	void updateEdgeFocus() override;

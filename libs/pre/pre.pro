@@ -425,6 +425,8 @@ HEADERS += pre_global.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.h \
+           subwindow/gridcrosssectionwindow/private/preprocessorgridcrosssectioninternalwindow_edittablecontroller.h \
+           subwindow/gridcrosssectionwindow/private/preprocessorgridcrosssectioninternalwindow_edittablecontroller_delegate.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/private/structured15dgridwithcrosssectioncrosssectionwindow_editcommand.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.h \
@@ -585,6 +587,8 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.cpp \
+           subwindow/gridcrosssectionwindow/private/preprocessorgridcrosssectioninternalwindow_edittablecontroller.cpp \
+           subwindow/gridcrosssectionwindow/private/preprocessorgridcrosssectioninternalwindow_edittablecontroller_delegate.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/private/structured15dgridwithcrosssectioncrosssectionwindow_editcommand.cpp \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.cpp \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.cpp \
