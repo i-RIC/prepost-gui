@@ -16,6 +16,7 @@ class v4Structured2dGrid;
 
 class QDomNode;
 class QMdiSubWindow;
+class QTableView;
 class QToolBar;
 class QUndoCommand;
 class QXmlStreamWriter;
@@ -66,28 +67,31 @@ public slots:
 	void saveSnapshots();
 	void exportCsvs();
 
+protected:
+	QTableView* editTable() const;
+
+	class EditTableController;
+	class GridAttributeDisplaySettingContainer;
+	class Impl;
+	Impl* impl;
+
+	Ui::AbstractCrosssectionWindow *ui;
+
 private:
 	void pushUpdateCommand(QUndoCommand* command);
 	void pushUpdateGraphicsViewCommand(QUndoCommand* command);
 
 	virtual ColorMapSettingContainerI* preColorMapSetting(const std::string& name) const;
 
-	class Impl;
-	Impl* impl;
-
 	class CsvExportController;
 	class DisplaySettingContainer;
 	class DisplaySettingDialog;
 	class DisplaySettingTableController;
-	class EditTableController;
 	class ExportSettingDialog;
-	class GridAttributeDisplaySettingContainer;
 	class GridAttributeDisplaySettingEditDialog;
 	class SnapshotSaveController;
 	class UpdateCommand;
 	class UpdateGraphicsViewCommand;
-
-	Ui::AbstractCrosssectionWindow *ui;
 };
 
 #endif // ABSTRACTCROSSSECTIONWINDOW_H

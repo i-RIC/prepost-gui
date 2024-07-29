@@ -19,6 +19,11 @@ QVariant v4SolutionGrid::AttributeDataProvider::attributeBrowserValue(const std:
 	return m_gridType->output(name)->attributeBrowserValue(value);
 }
 
+QWidget* v4SolutionGrid::AttributeDataProvider::attributeEditWidget(const std::string& /*name*/, QWidget* /*parent*/) const
+{
+	return nullptr;
+}
+
 ColorMapSettingContainerI* v4SolutionGrid::AttributeDataProvider::createColorMapSetting(const std::string& name) const
 {
 	return output(name)->createColorMapSettingContainer();

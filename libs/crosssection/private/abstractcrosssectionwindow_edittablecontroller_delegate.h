@@ -1,9 +1,10 @@
 #ifndef ABSTRACTCROSSSECTIONWINDOW_EDITTABLECONTROLLER_DELEGATE_H
 #define ABSTRACTCROSSSECTIONWINDOW_EDITTABLECONTROLLER_DELEGATE_H
 
+#include "../crosssection_global.h"
 #include "abstractcrosssectionwindow_edittablecontroller.h"
 
-class AbstractCrosssectionWindow::EditTableController::Delegate : public QItemDelegate
+class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow::EditTableController::Delegate : public QItemDelegate
 {
 public:
 	Delegate(EditTableController* controller);
@@ -11,7 +12,7 @@ public:
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 	QWidget* createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-private:
+protected:
 	EditTableController* m_controller;
 };
 

@@ -1,6 +1,7 @@
 #ifndef ABSTRACTCROSSSECTIONWINDOW_GRIDATTRIBUTEDISPLAYSETTINGCONTAINER_H
 #define ABSTRACTCROSSSECTIONWINDOW_GRIDATTRIBUTEDISPLAYSETTINGCONTAINER_H
 
+#include "../crosssection_global.h"
 #include "../abstractcrosssectionwindow.h"
 
 #include <guicore/grid/public/v4grid_attributedataprovider.h>
@@ -15,7 +16,7 @@ class ColorMapSettingContainerI;
 class SolverDefinitionGridAttribute;
 class v4Structured2dGrid;
 
-class AbstractCrosssectionWindow::GridAttributeDisplaySettingContainer : public CompositeContainer
+class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow::GridAttributeDisplaySettingContainer : public CompositeContainer
 {
 public:
 	static const int MIN_HEIGHT = 10;

@@ -247,6 +247,11 @@ void AbstractCrosssectionWindow::exportCsvs()
 	controller.save();
 }
 
+QTableView* AbstractCrosssectionWindow::editTable() const
+{
+	return ui->editTable;
+}
+
 void AbstractCrosssectionWindow::pushUpdateCommand(QUndoCommand* command)
 {
 	iRICUndoStack::instance().push(new UpdateCommand(command, this));

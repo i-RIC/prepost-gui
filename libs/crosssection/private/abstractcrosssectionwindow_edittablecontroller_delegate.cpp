@@ -15,7 +15,7 @@ AbstractCrosssectionWindow::EditTableController::Delegate::Delegate(EditTableCon
 void AbstractCrosssectionWindow::EditTableController::Delegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
 	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
-	for (auto& s : m_controller->m_impl->m_displaySettings) {
+	for (auto& s : m_controller->impl->m_displaySettings) {
 		if (! s.visible) {continue;}
 		activeSettings.push_back(&s);
 	}

@@ -15,9 +15,9 @@
 
 #include <vtkCellData.h>
 
-AbstractCrosssectionWindow::EditTableController::EditTableController(QTableView* view, Impl* impl) :
+AbstractCrosssectionWindow::EditTableController::EditTableController(QTableView* view, Impl* i) :
 	m_view {view},
-	m_impl {impl},
+	impl {i},
 	m_delegate {new Delegate {this}}
 {
 	view->setModel(&m_model);
@@ -35,7 +35,7 @@ bool AbstractCrosssectionWindow::EditTableController::saveCsvFile(const QString&
 	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
 	std::vector<GridAttributeStringConverter*> converters;
 
-	for (auto& s : m_impl->m_displaySettings) {
+	for (auto& s : impl->m_displaySettings) {
 		if (! s.visible) {continue;}
 
 		activeSettings.push_back(&s);
@@ -48,9 +48,9 @@ bool AbstractCrosssectionWindow::EditTableController::saveCsvFile(const QString&
 
 	QTextStream stream(&file);
 	QString originStr;
-	if (m_impl->m_controller->targetDirection() == Direction::I) {
+	if (impl->m_controller->targetDirection() == Direction::I) {
 		originStr = "J = 1";
-	} else if (m_impl->m_controller->targetDirection() == Direction::I) {
+	} else if (impl->m_controller->targetDirection() == Direction::I) {
 		originStr = "I = 1";
 	}
 
@@ -62,7 +62,7 @@ bool AbstractCrosssectionWindow::EditTableController::saveCsvFile(const QString&
 	}
 	stream << "\n";
 
-	auto nodePositions = m_impl->graphicsView()->setupNodePositions();
+	auto nodePositions = impl->graphicsView()->setupNodePositions();
 	for (int i = 0; i < m_model.rowCount(); ++i) {
 		stream << (i + 1)
 					 << "," << nodePositions.at(i);
@@ -87,10 +87,10 @@ bool AbstractCrosssectionWindow::EditTableController::saveCsvFile(const QString&
 
 void AbstractCrosssectionWindow::EditTableController::applyToTable()
 {
-	auto controller = m_impl->m_controller;
+	auto controller = impl->m_controller;
 
 	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
-	for (auto& s : m_impl->m_displaySettings) {
+	for (auto& s : impl->m_displaySettings) {
 		if (! s.visible) {continue;}
 
 		activeSettings.push_back(&s);
@@ -98,7 +98,7 @@ void AbstractCrosssectionWindow::EditTableController::applyToTable()
 
 	m_model.setColumnCount(static_cast<int> (activeSettings.size()));
 
-	auto grid = m_impl->m_window->grid();
+	auto grid = impl->m_window->grid();
 	if (grid == nullptr) {
 		m_model.setRowCount(0);
 		return;
@@ -130,7 +130,7 @@ void AbstractCrosssectionWindow::EditTableController::applyToTable()
 
 void AbstractCrosssectionWindow::EditTableController::setDataToModel(int col, const GridAttributeDisplaySettingContainer& s, int valueCount)
 {
-	auto controller = m_impl->m_controller;
+	auto controller = impl->m_controller;
 
 	auto grid = s.grid;
 
