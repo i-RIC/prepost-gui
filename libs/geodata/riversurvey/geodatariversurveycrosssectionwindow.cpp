@@ -761,7 +761,7 @@ bool GeoDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(GeoDataRive
 
 void GeoDataRiverSurveyCrosssectionWindow::informFocusIn()
 {
-	impl->m_targetRiverSurvey->setColoredPoints(impl->m_editTargetPoint);
+	impl->m_targetRiverSurvey->setFocusedPoint(impl->m_editTargetPoint);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs)

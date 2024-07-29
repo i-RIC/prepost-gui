@@ -74,8 +74,9 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_selectedCrossSectionLinesActor {vtkActor::New()},
 	m_verticalCrossSectionLines {vtkPolyData::New()},
 	m_verticalCrossSectionLinesActor {vtkActor::New()},
-	m_blackCrossSection {vtkPolyData::New()},
-	m_blackCrossSectionActor {vtkActor::New()},
+	m_focusedPoint {nullptr},
+	m_focusedCrossSection {vtkPolyData::New()},
+	m_focusedCrossSectionActor {vtkActor::New()},
 	m_rightBankPoints {vtkPoints::New()},
 	m_rightBankPointSet {vtkUnstructuredGrid::New()},
 	m_labelArray {vtkStringArray::New()},
@@ -163,7 +164,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	r->RemoveActor(m_selectedRightBankPointsActor);
 	r->RemoveActor(m_selectedCrossSectionLinesActor);
 	r->RemoveActor(m_verticalCrossSectionLinesActor);
-	r->RemoveActor(m_blackCrossSectionActor);
+	r->RemoveActor(m_focusedCrossSectionActor);
 	r->RemoveActor(m_labelActor);
 	r->RemoveActor(m_backgroundActor);
 
@@ -184,8 +185,8 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_selectedCrossSectionLinesActor->Delete();
 	m_verticalCrossSectionLines->Delete();
 	m_verticalCrossSectionLinesActor->Delete();
-	m_blackCrossSection->Delete();
-	m_blackCrossSectionActor->Delete();
+	m_focusedCrossSection->Delete();
+	m_focusedCrossSectionActor->Delete();
 	m_rightBankPoints->Delete();
 	m_rightBankPointSet->Delete();
 	m_labelArray->Delete();
@@ -346,14 +347,14 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 
 	// black cross section
 	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper->SetInputData(m_blackCrossSection);
-	m_blackCrossSectionActor->SetMapper(mapper);
-	prop = m_blackCrossSectionActor->GetProperty();
+	mapper->SetInputData(m_focusedCrossSection);
+	m_focusedCrossSectionActor->SetMapper(mapper);
+	prop = m_focusedCrossSectionActor->GetProperty();
 	prop->SetColor(0, 0, 0);
 	prop->SetLineWidth(7);
 	prop->SetOpacity(0.3);
-	m_blackCrossSectionActor->VisibilityOff();
-	r->AddActor(m_blackCrossSectionActor);
+	m_focusedCrossSectionActor->VisibilityOff();
+	r->AddActor(m_focusedCrossSectionActor);
 
 	// name label
 	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
@@ -502,6 +503,53 @@ void GeoDataRiverSurvey::Impl::updateLabelsAndSplines()
 	}
 
 	m_rs->updateVisibilityWithoutRendering();
+}
+
+void GeoDataRiverSurvey::Impl::setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p)
+{
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto cells = vtkSmartPointer<vtkCellArray>::New();
+
+	// left bank
+	auto point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+	points->InsertNextPoint(point.x(), point.y(), 0);
+
+	// left fixed point
+	if (p->crosssection().fixedPointLSet()) {
+		point = p->crosssectionPosition(p->crosssection().fixedPointL().position());
+	} else {
+		// use left bank.
+		point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
+	}
+	points->InsertNextPoint(point.x(), point.y(), 0);
+
+	// river center
+	point = p->position();
+	points->InsertNextPoint(point.x(), point.y(), 0);
+
+	// right fixed point
+	if (p->crosssection().fixedPointRSet()) {
+		point = p->crosssectionPosition(p->crosssection().fixedPointR().position());
+	} else {
+		// use right bank.
+		point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+	}
+	points->InsertNextPoint(point.x(), point.y(), 0);
+
+	// right bank
+	point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
+	points->InsertNextPoint(point.x(), point.y(), 0);
+
+	vtkIdType ids[5];
+	for (vtkIdType i = 0; i < 5; ++i) {
+		ids[i] = i;
+	}
+	cells->InsertNextCell(5, ids);
+
+	polyData->Initialize();
+	polyData->SetPoints(points);
+	polyData->SetLines(cells);
 }
 
 void GeoDataRiverSurvey::Impl::updateActionStatus()
@@ -789,6 +837,16 @@ void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 {
 	delete m_backgroundGridIndex;
 	m_backgroundGridIndex = new vtkPointSetGeos2dIndex(m_backgroundGrid);
+}
+
+void GeoDataRiverSurvey::Impl::updateVtkFocusedPointObjects()
+{
+	if (m_focusedPoint == nullptr) {
+		m_focusedCrossSectionActor->VisibilityOff();
+	} else {
+		setupLine(m_focusedCrossSection, m_focusedPoint);
+		m_focusedCrossSectionActor->VisibilityOn();
+	}
 }
 
 void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)

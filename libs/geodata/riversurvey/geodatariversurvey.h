@@ -70,7 +70,7 @@ public:
 	vtkStructuredGrid* backgroundGrid() const;
 	vtkCell* findBackgroundGridCell(double x, double y, double* weight) const;
 	void updateCrosssectionWindows();
-	void setColoredPoints(GeoDataRiverPathPoint* black);
+	void setFocusedPoint(GeoDataRiverPathPoint* point);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyI* cond);
 	GridCreatingConditionRiverSurveyI* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
@@ -146,7 +146,6 @@ private:
 	void finishDefiningLine();
 
 	GeoDataRiverPathPoint* singleSelectedPoint();
-	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);
 
 	void allActorsOff();
 	void updateSplineSolvers();
