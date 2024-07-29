@@ -299,7 +299,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	handleCgnsSwitch();
 
 	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
-	if (!ok) {
+	if (! ok) {
 		closeProject();
 		return;
 	}
@@ -631,6 +631,7 @@ void iRICMainWindow::reloadCgnsFile()
 bool iRICMainWindow::closeProject()
 {
 	if (m_projectData == nullptr) {return true;}
+
 	bool result = true;
 	if (! m_projectData->isPostOnlyMode() && m_projectData->mainfile()->isModified()) {
 		QMessageBox::StandardButton button = QMessageBox::warning(
@@ -673,10 +674,14 @@ bool iRICMainWindow::closeProject()
 
 	m_postWindowFactory->resetWindowCounts();
 	activeSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
+
+	m_solverConsoleWindow->setProjectData(nullptr);
 	delete m_projectData;
 	m_projectData = nullptr;
+
 	m_mousePositionWidget->setProjectData(nullptr);
 	m_coordinateSystemWidget->setProjectData(nullptr);
+
 	updateWindowTitle();
 	updatePostActionStatus();
 
