@@ -8,6 +8,8 @@ public:
 	ValueRestorerT(T* pointer, T value);
 	~ValueRestorerT();
 
+	void restore();
+
 private:
 	T* m_pointer;
 	T m_value;

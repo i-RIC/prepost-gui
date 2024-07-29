@@ -21,6 +21,10 @@ QMainWindowWithSnapshotResizeWidget::~QMainWindowWithSnapshotResizeWidget()
 
 void QMainWindowWithSnapshotResizeWidget::setWindow(QMainWindowWithSnapshot* window)
 {
+	if (m_window != nullptr) {
+		disconnect(m_window, &QMainWindowWithSnapshot::snapshotAreaResized, nullptr, nullptr);
+	}
+
 	m_window = window;
 	updateDisplay();
 
