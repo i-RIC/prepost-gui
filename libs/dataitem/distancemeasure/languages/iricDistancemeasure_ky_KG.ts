@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Дистанциялык өлчөө касиетин түзөтүү</translation>
+        <translation type="vanished">Дистанциялык өлчөө касиетин түзөтүү</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Которуу Distance Measure</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Аты:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Баштоо чекити:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Акыркы чекит:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Белги</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Белги көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Мазмун</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Авто</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Ыңгайлаштырылган</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиция</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Орто-Сол</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Орто-Оң</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Борбордун түбү</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Шрифт жөндөө</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Соңку маркерлерди көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Маркердин өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Түс:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Аралыкты өлчөө касиети</translation>
+        <translation type="vanished">Аралыкты өлчөө касиети</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Аты:</translation>
+        <translation type="vanished">Аты:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Баштоо чекити:</translation>
+        <translation type="vanished">Баштоо чекити:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Акыркы чекит:</translation>
+        <translation type="vanished">Акыркы чекит:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Белги</translation>
+        <translation type="vanished">Белги</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Белги көрсөтүү</translation>
+        <translation type="vanished">Белги көрсөтүү</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Мазмун</translation>
+        <translation type="vanished">Мазмун</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Ыңгайлаштырылган</translation>
+        <translation type="vanished">Ыңгайлаштырылган</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Орто-Сол</translation>
+        <translation type="vanished">Орто-Сол</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Орто-Оң</translation>
+        <translation type="vanished">Орто-Оң</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Борбордун түбү</translation>
+        <translation type="vanished">Борбордун түбү</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Шрифт жөндөө</translation>
+        <translation type="vanished">Шрифт жөндөө</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Соңку маркерлерди көрсөтүү</translation>
+        <translation type="vanished">Соңку маркерлерди көрсөтүү</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Маркердин өлчөмү:</translation>
+        <translation type="vanished">Маркердин өлчөмү:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
 </context>
 </TS>

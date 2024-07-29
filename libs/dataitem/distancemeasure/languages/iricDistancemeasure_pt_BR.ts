@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Edicao de propriedade para medicao de distancia</translation>
+        <translation type="vanished">Edicao de propriedade para medicao de distancia</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Remocao da medicao de distancia</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome :</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Ponto de inicio :</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">, </translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Ponto final :</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Rotulo  </translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Exibir o rotulo</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Conteudo de exibicao</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatico</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Manual</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posicao</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centro-superior</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Centro esquerdo</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Centro direito</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centro-inferior</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Configuracao de letras</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Exibir os marcadores de ambas as extremidades</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Dimensao do marcador:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Cor de exibicao:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Propriedade para medicao de distancia</translation>
+        <translation type="vanished">Propriedade para medicao de distancia</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nome :</translation>
+        <translation type="vanished">Nome :</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Ponto de inicio :</translation>
+        <translation type="vanished">Ponto de inicio :</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>, </translation>
+        <translation type="vanished">, </translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Ponto final :</translation>
+        <translation type="vanished">Ponto final :</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Rotulo  </translation>
+        <translation type="vanished">Rotulo  </translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Exibir o rotulo</translation>
+        <translation type="vanished">Exibir o rotulo</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Conteudo de exibicao</translation>
+        <translation type="vanished">Conteudo de exibicao</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatico</translation>
+        <translation type="vanished">Automatico</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Manual</translation>
+        <translation type="vanished">Manual</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posicao</translation>
+        <translation type="vanished">Posicao</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centro-superior</translation>
+        <translation type="vanished">Centro-superior</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Centro esquerdo</translation>
+        <translation type="vanished">Centro esquerdo</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Centro direito</translation>
+        <translation type="vanished">Centro direito</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centro-inferior</translation>
+        <translation type="vanished">Centro-inferior</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Configuracao de letras</translation>
+        <translation type="vanished">Configuracao de letras</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Exibir os marcadores de ambas as extremidades</translation>
+        <translation type="vanished">Exibir os marcadores de ambas as extremidades</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Dimensao do marcador:</translation>
+        <translation type="vanished">Dimensao do marcador:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
 </context>
 </TS>
