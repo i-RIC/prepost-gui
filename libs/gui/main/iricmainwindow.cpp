@@ -181,6 +181,8 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	restoreWindowState();
 	setupProcessEnvironment();
 
+	m_actionManager->informSubWindowChange(m_solverConsoleWindow);
+
 	statusBar()->showMessage(iRICMainWindow::tr("Ready"));
 }
 
