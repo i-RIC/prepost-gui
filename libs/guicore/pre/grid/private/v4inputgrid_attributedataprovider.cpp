@@ -58,7 +58,11 @@ QVariant v4InputGrid::AttributeDataProvider::attributeBrowserValue(const std::st
 
 QWidget* v4InputGrid::AttributeDataProvider::attributeEditWidget(const std::string& name, QWidget* parent) const
 {
-	return attribute(name)->editWidget(parent);
+	auto widget = attribute(name)->editWidget(parent);
+	auto group = m_geoDataTopDataItem->groupDataItem(name);
+	group->setupEditWidget(widget);
+
+	return widget;
 }
 
 ColorMapSettingContainerI* v4InputGrid::AttributeDataProvider::createColorMapSetting(const std::string& name) const
