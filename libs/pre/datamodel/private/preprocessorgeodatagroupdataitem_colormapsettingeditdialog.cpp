@@ -1,9 +1,12 @@
 #include "../preprocessorgridtypedataitem.h"
+#include "preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.h"
 #include "preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h"
 #include "ui_preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h"
 
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <misc/iricundostack.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 
 PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::ColorMapSettingEditDialog(PreProcessorGeoDataGroupDataItem* item, QWidget *parent) :
 	QDialog {parent},
@@ -44,14 +47,18 @@ void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::setSetting(Col
 	m_widget->setSetting(setting);
 }
 
-QUndoCommand* PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::createModifyCommand() const
+QUndoCommand* PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::createModifyCommand(bool apply) const
 {
-	return m_widget->createModifyCommand();
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog"), apply);
+	command->addCommand(m_widget->createModifyCommand());
+	command->addCommand(new ApplyScalarsToColorsSettingCommand(m_item));
+
+	return command;
 }
 
 void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::accept()
 {
-	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(), false));
+	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(false), false));
 
 	QDialog::accept();
 }
@@ -75,6 +82,6 @@ void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::handleButtonCl
 
 void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::apply()
 {
-	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(), true));
+	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(true), true));
 	m_applied = true;
 }

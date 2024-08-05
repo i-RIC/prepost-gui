@@ -16,7 +16,7 @@ class PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog : public QDial
 	Q_OBJECT
 
 public:
-	explicit ColorMapSettingEditDialog(PreProcessorGeoDataGroupDataItem* item, QWidget *parent = nullptr);
+	ColorMapSettingEditDialog(PreProcessorGeoDataGroupDataItem* item, QWidget *parent = nullptr);
 	~ColorMapSettingEditDialog();
 
 	ColorMapSettingEditWidgetI* widget();
@@ -25,7 +25,7 @@ public:
 	ColorMapSettingContainerI* setting() const;
 	void setSetting(ColorMapSettingContainerI* setting);
 
-	QUndoCommand* createModifyCommand() const;
+	QUndoCommand* createModifyCommand(bool apply) const;
 
 	void accept() override;
 	void reject() override;

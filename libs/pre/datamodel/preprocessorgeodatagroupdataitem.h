@@ -53,6 +53,8 @@ public:
 	SolverDefinitionGridAttribute* condition() override;
 	bool isChildCaptionAvailable(const QString& cap);
 	bool colorBarShouldBeVisible() const;
+	virtual void applyScalarsToColorsSetting();
+
 
 	int mappingCount() const;
 	void executeMapping(v4InputGrid* grid, WaitDialog* dialog);
@@ -158,6 +160,7 @@ private:
 
 	class ColorMapSettingEditDialog;
 	class VariationSettingDialog;
+	class ApplyScalarsToColorsSettingCommand;
 };
 
 #endif // PREPROCESSORGEODATAGROUPDATAITEM_H
