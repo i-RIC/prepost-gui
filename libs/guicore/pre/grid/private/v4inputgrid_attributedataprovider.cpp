@@ -88,7 +88,11 @@ ColorMapSettingToolBarWidget* v4InputGrid::AttributeDataProvider::createColorMap
 
 GridAttributeStringConverter* v4InputGrid::AttributeDataProvider::createStringConverter(const std::string& name) const
 {
-	return attribute(name)->stringConverter();
+	auto converter = attribute(name)->stringConverter();
+	auto group = m_geoDataTopDataItem->groupDataItem(name);
+	group->setupStringConverter(converter);
+
+	return converter;
 }
 
 SolverDefinitionGridAttribute* v4InputGrid::AttributeDataProvider::attribute(const std::string& name) const

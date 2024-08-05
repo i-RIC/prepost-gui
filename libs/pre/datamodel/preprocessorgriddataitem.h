@@ -95,6 +95,7 @@ public:
 	void silentDeleteGrid() override;
 
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
+	PreProcessorGeoDataTopDataItemI* geoDataTopDataItem() const override;
 	PreProcessorGridAndGridCreatingConditionDataItem* gridAndGridCreatingConditionDataItem() const;
 	PreProcessorGridShapeDataItem* shapeDataItem() const;
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
