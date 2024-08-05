@@ -32,13 +32,11 @@ public:
 	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 
-	void applyScalarsToColorsSetting();
+	void applyScalarsToColorsSetting() override;
 
 	void setupGroups(int count) override;
 	std::vector<GridComplexConditionGroup*> groups() const override;
 	bool addToolBarButtons(QToolBar* parent) override;
-
-	void showPropertyDialog() override;
 
 public slots:
 	void showEditGroupDialog();
