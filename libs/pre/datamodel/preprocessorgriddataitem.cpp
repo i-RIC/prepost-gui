@@ -815,6 +815,11 @@ PreProcessorBCGroupDataItem* PreProcessorGridDataItem::bcGroupDataItem() const
 	return m_bcGroupDataItem;
 }
 
+PreProcessorGeoDataTopDataItemI* PreProcessorGridDataItem::geoDataTopDataItem() const
+{
+	return gridTypeDataItem()->geoDataTop();
+}
+
 bool PreProcessorGridDataItem::colorBarShouldBeVisible(const std::string& name) const
 {
 	bool visible = false;

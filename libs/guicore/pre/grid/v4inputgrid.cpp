@@ -33,6 +33,7 @@ v4InputGrid::v4InputGrid(SolverDefinitionGridType* gridType, v4Grid* grid) :
 {
 	auto provider = new AttributeDataProvider(gridType);
 	grid->setAttributeDataProvider(provider);
+	impl->m_attributeDataProvider = provider;
 }
 
 v4InputGrid::~v4InputGrid()
@@ -119,4 +120,5 @@ void v4InputGrid::setGridDataItem(PreProcessorGridDataItemI* gridDataItem)
 	for (auto att : attributes()) {
 		att->setTemporaryDir(gridDataItem->subPath());
 	}
+	impl->m_attributeDataProvider->setGeoDataTopDataItem(gridDataItem->geoDataTopDataItem());
 }
