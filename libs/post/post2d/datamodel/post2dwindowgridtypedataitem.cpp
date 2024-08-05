@@ -374,6 +374,8 @@ void Post2dWindowGridTypeDataItem::update()
 	// update value range.
 	updateNodeValueRanges();
 	updateCellValueRanges();
+	updateIEdgeValueRanges();
+	updateJEdgeValueRanges();
 	updateParticleValueRanges();
 	updatePolyDataValueRanges();
 
