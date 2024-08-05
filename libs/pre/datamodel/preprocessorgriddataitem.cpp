@@ -257,6 +257,7 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 			auto container = dynamic_cast<QWidget*> (window->parent());
 			container->show();
 			addCrossSectionWindow(window);
+			window->internalWindow()->update();
 		}
 	}
 
