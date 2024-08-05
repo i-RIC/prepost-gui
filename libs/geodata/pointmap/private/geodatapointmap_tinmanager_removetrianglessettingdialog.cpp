@@ -27,7 +27,7 @@ GeoDataPointmap::TINManager::RemoveTrianglesSettingDialog::RemoveTrianglesSettin
 	setupTinActor();
 
 	auto& setting = tinManager->impl->m_removeTrianglesSetting;
-	if (setting.thresholdLength == 0) {
+	if (setting.thresholdLength == 0.0) {
 		setting.thresholdLength = TrianglesWithLongEdgeRemover::thresholdLength(m_tin, 0.999);
 	}
 

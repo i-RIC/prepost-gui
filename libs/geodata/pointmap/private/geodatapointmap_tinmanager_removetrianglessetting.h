@@ -5,7 +5,7 @@
 
 #include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
+#include <misc/doublecontainer.h>
 
 class GeoDataPointmap::TINManager::RemoveTrianglesSetting : public CompositeContainer
 {
@@ -17,7 +17,7 @@ public:
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	BoolContainer enabled;
-	IntContainer thresholdLength;
+	DoubleContainer thresholdLength;
 };
 
 #endif // GEODATAPOINTMAP_TINMANAGER_REMOVETRIANGLESSETTING_H
