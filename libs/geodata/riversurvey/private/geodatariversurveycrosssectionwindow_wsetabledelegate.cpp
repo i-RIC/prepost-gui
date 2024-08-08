@@ -18,7 +18,7 @@ void GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::setPoint(GeoDataRiv
 	m_point = point;
 }
 
-QWidget* GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const
+QWidget* GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& index) const
 {
 	if (index.column() == 1) {
 		QLineEdit* edit = new QLineEdit(parent);
@@ -53,7 +53,7 @@ void GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::setModelData(QWidge
 	}
 }
 
-void GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const
+void GeoDataRiverSurveyCrosssectionWindow::WseTableDelegate::updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& /*index*/) const
 {
 	editor->setGeometry(option.rect);
 }

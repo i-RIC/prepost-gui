@@ -556,6 +556,7 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->updateVtkSelectedObjects();
 	impl->updateVtkNameLabelObjects();
 	impl->updateVtkBackgroundObjects();
+	impl->updateVtkFocusedPointObjects();
 
 	updateActorSetting();
 
@@ -660,7 +661,7 @@ void GeoDataRiverSurvey::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedRightBankPointsActor->SetPosition(0, 0, points);
 	impl->m_selectedCrossSectionLinesActor->SetPosition(0, 0, lines);
 	impl->m_verticalCrossSectionLinesActor->SetPosition(0, 0, backlines);
-	impl->m_blackCrossSectionActor->SetPosition(0, 0, backlines);
+	impl->m_focusedCrossSectionActor->SetPosition(0, 0, backlines);
 	impl->m_backgroundActor->SetPosition(0, 0, background);
 }
 
@@ -1645,14 +1646,11 @@ void GeoDataRiverSurvey::generatePointMap()
 	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
 }
 
-void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)
+void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)
 {
-	if (black == nullptr) {
-		impl->m_blackCrossSectionActor->VisibilityOff();
-	} else {
-		setupLine(impl->m_blackCrossSection, black);
-		impl->m_blackCrossSectionActor->VisibilityOn();
-	}
+	impl->m_focusedPoint = point;
+	impl->updateVtkFocusedPointObjects();
+
 	renderGraphicsView();
 }
 
@@ -1664,53 +1662,6 @@ void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurv
 GridCreatingConditionRiverSurveyI* GeoDataRiverSurvey::gridCreatingCondition() const
 {
 	return impl->m_gridCreatingCondition;
-}
-
-void GeoDataRiverSurvey::setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p)
-{
-	auto points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	auto cells = vtkSmartPointer<vtkCellArray>::New();
-
-	// left bank
-	auto point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-	points->InsertNextPoint(point.x(), point.y(), 0);
-
-	// left fixed point
-	if (p->crosssection().fixedPointLSet()) {
-		point = p->crosssectionPosition(p->crosssection().fixedPointL().position());
-	} else {
-		// use left bank.
-		point = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-	}
-	points->InsertNextPoint(point.x(), point.y(), 0);
-
-	// river center
-	point = p->position();
-	points->InsertNextPoint(point.x(), point.y(), 0);
-
-	// right fixed point
-	if (p->crosssection().fixedPointRSet()) {
-		point = p->crosssectionPosition(p->crosssection().fixedPointR().position());
-	} else {
-		// use right bank.
-		point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-	}
-	points->InsertNextPoint(point.x(), point.y(), 0);
-
-	// right bank
-	point = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-	points->InsertNextPoint(point.x(), point.y(), 0);
-
-	vtkIdType ids[5];
-	for (vtkIdType i = 0; i < 5; ++i) {
-		ids[i] = i;
-	}
-	cells->InsertNextCell(5, ids);
-
-	polyData->Initialize();
-	polyData->SetPoints(points);
-	polyData->SetLines(cells);
 }
 
 void GeoDataRiverSurvey::useDivisionPointsForBackgroundGrid(bool use)

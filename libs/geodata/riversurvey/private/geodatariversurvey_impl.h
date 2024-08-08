@@ -86,6 +86,7 @@ public:
 	void setupEditModeMenu(QMenu* menu);
 
 	void updateLabelsAndSplines();
+	void setupLine(vtkPolyData* polyData, GeoDataRiverPathPoint* p);
 
 	void updateActionStatus();
 	void createModeUpdateActionStatus();
@@ -97,6 +98,7 @@ public:
 	void updateVtkVerticalCenterLinesObjects();
 	void updateVtkNameLabelObjects();
 	void updateVtkBackgroundObjects();
+	void updateVtkFocusedPointObjects();
 
 	void importLine(PolyLineController* line);
 	void exportLine(PolyLineController* line, const QString &lineName);
@@ -163,8 +165,9 @@ public:
 	vtkPolyData* m_verticalCrossSectionLines;
 	vtkActor* m_verticalCrossSectionLinesActor;
 
-	vtkPolyData* m_blackCrossSection;
-	vtkActor* m_blackCrossSectionActor;
+	GeoDataRiverPathPoint* m_focusedPoint;
+	vtkPolyData* m_focusedCrossSection;
+	vtkActor* m_focusedCrossSectionActor;
 
 	vtkPoints* m_rightBankPoints;
 	vtkUnstructuredGrid* m_rightBankPointSet;
