@@ -903,12 +903,13 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 	while (! csvStream.atEnd()) {
 		QString line = csvStream.readLine();
 		QList<QString> frags = iRIC::parseCSVLine(line);
-		for (int i = 0; i < frags.count(); ++i) {
-			QString f = frags[i].trimmed();
-			if (! f.isEmpty()) {
-				double val = f.toDouble();
-				values[i].push_back(val);
+		for (int i = 0; i < values.size(); ++i) {
+			double val = 0;
+			if (i < frags.size()) {
+				QString f = frags[i].trimmed();
+				val = f.toDouble();
 			}
+			values[i].push_back(val);
 		}
 	}
 	csvFile.close();
