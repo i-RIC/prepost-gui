@@ -34,6 +34,7 @@ private slots:
 
 private:
 	void updateOkButtonStatus();
+	void keyPressEvent(QKeyEvent* event) override;
 
 	CoordinateSystemBuilder* m_builder;
 
