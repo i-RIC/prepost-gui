@@ -56,7 +56,7 @@ public:
 	bool hasTransparentPart();
 
 public slots:
-	void cameraFit();
+	void cameraFit() override;
 	void cameraResetRotation();
 	void cameraRotate90();
 	void cameraZoomIn();

@@ -31,7 +31,8 @@ public:
 
 public slots:
 	// data is updated. re-render the graphics etc.
-	virtual void update() {}
+	virtual void cameraFit();
+	virtual void update();
 
 protected:
 	PostSolutionInfo* postSolutionInfo();

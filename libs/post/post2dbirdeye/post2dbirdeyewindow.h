@@ -44,7 +44,7 @@ public:
 	Post2dBirdEyeWindowDataModel* dataModel() const override;
 
 public slots:
-	void cameraFit();
+	void cameraFit() override;
 	void cameraZoomIn();
 	void cameraZoomOut();
 	void cameraMoveLeft();
