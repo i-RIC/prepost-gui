@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>दूरी माप संपत्ति संपादित करें</translation>
+        <translation type="vanished">दूरी माप संपत्ति संपादित करें</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>अनुवाद दूरी उपाय</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">नाम:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">प्रारंभ बिंदु:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">अंत बिंदु:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">लेबल</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">लेबल दिखाएं</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">विषय</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">ऑटो</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">रीति</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">पद</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">केंद्र-शीर्ष</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">बीच-बाएँ</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">मध्यम सही</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">केंद्र-नीचे</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">फ़ॉन्ट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">अंतिम मार्कर दिखाएं</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">मार्कर का आकार:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>दूरी उपाय संपत्ति</translation>
+        <translation type="vanished">दूरी उपाय संपत्ति</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>नाम:</translation>
+        <translation type="vanished">नाम:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>प्रारंभ बिंदु:</translation>
+        <translation type="vanished">प्रारंभ बिंदु:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>अंत बिंदु:</translation>
+        <translation type="vanished">अंत बिंदु:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>लेबल</translation>
+        <translation type="vanished">लेबल</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>लेबल दिखाएं</translation>
+        <translation type="vanished">लेबल दिखाएं</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>विषय</translation>
+        <translation type="vanished">विषय</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>रीति</translation>
+        <translation type="vanished">रीति</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>पद</translation>
+        <translation type="vanished">पद</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>केंद्र-शीर्ष</translation>
+        <translation type="vanished">केंद्र-शीर्ष</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>बीच-बाएँ</translation>
+        <translation type="vanished">बीच-बाएँ</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>मध्यम सही</translation>
+        <translation type="vanished">मध्यम सही</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>केंद्र-नीचे</translation>
+        <translation type="vanished">केंद्र-नीचे</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>फ़ॉन्ट सेटिंग</translation>
+        <translation type="vanished">फ़ॉन्ट सेटिंग</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>अंतिम मार्कर दिखाएं</translation>
+        <translation type="vanished">अंतिम मार्कर दिखाएं</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>मार्कर का आकार:</translation>
+        <translation type="vanished">मार्कर का आकार:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
 </context>
 </TS>

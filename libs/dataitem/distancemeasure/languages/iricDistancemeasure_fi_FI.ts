@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Muokkaa etäisyysmittausta</translation>
+        <translation type="vanished">Muokkaa etäisyysmittausta</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Käännä etäisyysmitta</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nimi:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Lähtöpiste:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Päätepiste:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiketti</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Näytä tunniste</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Sisältö</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Mukautettu</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Sijainti</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Keskimmäinen vasen</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Keskusta-oikea</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Keskellä-alhaalla</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Fontin asetus</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Näytä lopetusmerkit</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Merkin koko:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Väri:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Etäisyysmittausominaisuus</translation>
+        <translation type="vanished">Etäisyysmittausominaisuus</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nimi:</translation>
+        <translation type="vanished">Nimi:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Lähtöpiste:</translation>
+        <translation type="vanished">Lähtöpiste:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Päätepiste:</translation>
+        <translation type="vanished">Päätepiste:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiketti</translation>
+        <translation type="vanished">Etiketti</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Näytä tunniste</translation>
+        <translation type="vanished">Näytä tunniste</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Sisältö</translation>
+        <translation type="vanished">Sisältö</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Mukautettu</translation>
+        <translation type="vanished">Mukautettu</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Sijainti</translation>
+        <translation type="vanished">Sijainti</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Keskimmäinen vasen</translation>
+        <translation type="vanished">Keskimmäinen vasen</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Keskusta-oikea</translation>
+        <translation type="vanished">Keskusta-oikea</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Keskellä-alhaalla</translation>
+        <translation type="vanished">Keskellä-alhaalla</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Fontin asetus</translation>
+        <translation type="vanished">Fontin asetus</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Näytä lopetusmerkit</translation>
+        <translation type="vanished">Näytä lopetusmerkit</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Merkin koko:</translation>
+        <translation type="vanished">Merkin koko:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Edita la propietat de mesura de distància</translation>
+        <translation type="vanished">Edita la propietat de mesura de distància</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Tradueix la mesura de la distància</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nom:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Punt d&apos;inici:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Punt final:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiqueta</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Mostra l&apos;etiqueta</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Contingut</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automàtic</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Personalitzat</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posició</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centre-superior</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Mig-esquerra</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Mig dret</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centre-inferior</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Configuració del tipus de lletra</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Mostra els marcadors finals</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Mida del marcador:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Color:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Propietat de mesura de distància</translation>
+        <translation type="vanished">Propietat de mesura de distància</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nom:</translation>
+        <translation type="vanished">Nom:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Punt d'inici:</translation>
+        <translation type="vanished">Punt d&apos;inici:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Punt final:</translation>
+        <translation type="vanished">Punt final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiqueta</translation>
+        <translation type="vanished">Etiqueta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Mostra l'etiqueta</translation>
+        <translation type="vanished">Mostra l&apos;etiqueta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Contingut</translation>
+        <translation type="vanished">Contingut</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalitzat</translation>
+        <translation type="vanished">Personalitzat</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posició</translation>
+        <translation type="vanished">Posició</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centre-superior</translation>
+        <translation type="vanished">Centre-superior</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Mig-esquerra</translation>
+        <translation type="vanished">Mig-esquerra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Mig dret</translation>
+        <translation type="vanished">Mig dret</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centre-inferior</translation>
+        <translation type="vanished">Centre-inferior</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Configuració del tipus de lletra</translation>
+        <translation type="vanished">Configuració del tipus de lletra</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Mostra els marcadors finals</translation>
+        <translation type="vanished">Mostra els marcadors finals</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Mida del marcador:</translation>
+        <translation type="vanished">Mida del marcador:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Color:</translation>
+        <translation type="vanished">Color:</translation>
     </message>
 </context>
 </TS>

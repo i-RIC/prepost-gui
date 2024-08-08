@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Edit Properti Pengukur Jarak</translation>
+        <translation type="vanished">Edit Properti Pengukur Jarak</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Terjemahkan Pengukur Jarak</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nama:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Titik awal:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Titik Akhir:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Label</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Tampilkan Label</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Isi</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Mobil</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Kebiasaan</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posisi</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Tengah-Atas</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Kiri Tengah</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Kanan Tengah</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Tengah-Bawah</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Pengaturan Font</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Tampilkan Penanda Akhir</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Ukuran penanda:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Properti Pengukur Jarak</translation>
+        <translation type="vanished">Properti Pengukur Jarak</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation type="vanished">Nama:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Titik awal:</translation>
+        <translation type="vanished">Titik awal:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Titik Akhir:</translation>
+        <translation type="vanished">Titik Akhir:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation type="vanished">Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Tampilkan Label</translation>
+        <translation type="vanished">Tampilkan Label</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Isi</translation>
+        <translation type="vanished">Isi</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Kebiasaan</translation>
+        <translation type="vanished">Kebiasaan</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation type="vanished">Posisi</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Tengah-Atas</translation>
+        <translation type="vanished">Tengah-Atas</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Kiri Tengah</translation>
+        <translation type="vanished">Kiri Tengah</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Kanan Tengah</translation>
+        <translation type="vanished">Kanan Tengah</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Tengah-Bawah</translation>
+        <translation type="vanished">Tengah-Bawah</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation type="vanished">Pengaturan Font</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Tampilkan Penanda Akhir</translation>
+        <translation type="vanished">Tampilkan Penanda Akhir</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Ukuran penanda:</translation>
+        <translation type="vanished">Ukuran penanda:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
 </context>
 </TS>

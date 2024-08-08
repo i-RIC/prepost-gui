@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Redaguoti atstumo matavimo ypatybę</translation>
+        <translation type="vanished">Redaguoti atstumo matavimo ypatybę</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Išversti atstumo matą</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Vardas:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Pradinis taškas:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Pabaigos taškas:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiketė</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Rodyti etiketę</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Turinys</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatinis</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Pasirinktinis</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozicija</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centras-viršuje</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Vidurinė kairė</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Vidurio dešinėje</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centras-apačia</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Šrifto nustatymas</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Rodyti pabaigos žymeklius</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Žymeklio dydis:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Spalva:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Atstumo matavimo ypatybė</translation>
+        <translation type="vanished">Atstumo matavimo ypatybė</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Vardas:</translation>
+        <translation type="vanished">Vardas:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Pradinis taškas:</translation>
+        <translation type="vanished">Pradinis taškas:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Pabaigos taškas:</translation>
+        <translation type="vanished">Pabaigos taškas:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiketė</translation>
+        <translation type="vanished">Etiketė</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Rodyti etiketę</translation>
+        <translation type="vanished">Rodyti etiketę</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Turinys</translation>
+        <translation type="vanished">Turinys</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation type="vanished">Pasirinktinis</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozicija</translation>
+        <translation type="vanished">Pozicija</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centras-viršuje</translation>
+        <translation type="vanished">Centras-viršuje</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Vidurinė kairė</translation>
+        <translation type="vanished">Vidurinė kairė</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Vidurio dešinėje</translation>
+        <translation type="vanished">Vidurio dešinėje</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centras-apačia</translation>
+        <translation type="vanished">Centras-apačia</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Šrifto nustatymas</translation>
+        <translation type="vanished">Šrifto nustatymas</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Rodyti pabaigos žymeklius</translation>
+        <translation type="vanished">Rodyti pabaigos žymeklius</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Žymeklio dydis:</translation>
+        <translation type="vanished">Žymeklio dydis:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
 </context>
 </TS>

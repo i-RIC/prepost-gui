@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Távolságmérési tulajdonság szerkesztése</translation>
+        <translation type="vanished">Távolságmérési tulajdonság szerkesztése</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Fordítsa le a távolság mérését</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Név:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Kezdőpont:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Végpont:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Címke</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Címke megjelenítése</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Tartalom</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatikus</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Egyedi</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozíció</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Center-Top</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Közép-bal</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Közép-Jobb</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Közép-alul</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Betűtípus beállítása</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Végejelzők megjelenítése</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Jelölő mérete:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Szín:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Távolságmérő tulajdonság</translation>
+        <translation type="vanished">Távolságmérő tulajdonság</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Név:</translation>
+        <translation type="vanished">Név:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Kezdőpont:</translation>
+        <translation type="vanished">Kezdőpont:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Végpont:</translation>
+        <translation type="vanished">Végpont:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Címke</translation>
+        <translation type="vanished">Címke</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Címke megjelenítése</translation>
+        <translation type="vanished">Címke megjelenítése</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Tartalom</translation>
+        <translation type="vanished">Tartalom</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Egyedi</translation>
+        <translation type="vanished">Egyedi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozíció</translation>
+        <translation type="vanished">Pozíció</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Center-Top</translation>
+        <translation type="vanished">Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Közép-bal</translation>
+        <translation type="vanished">Közép-bal</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Közép-Jobb</translation>
+        <translation type="vanished">Közép-Jobb</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Közép-alul</translation>
+        <translation type="vanished">Közép-alul</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Betűtípus beállítása</translation>
+        <translation type="vanished">Betűtípus beállítása</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Végejelzők megjelenítése</translation>
+        <translation type="vanished">Végejelzők megjelenítése</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Jelölő mérete:</translation>
+        <translation type="vanished">Jelölő mérete:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
 </context>
 </TS>

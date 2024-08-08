@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Editați proprietatea de măsurare a distanței</translation>
+        <translation type="vanished">Editați proprietatea de măsurare a distanței</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Traduceți măsurarea distanței</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nume:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Punctul de inceput:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Punct final:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Eticheta</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Afișați eticheta</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Conţinut</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Personalizat</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Poziţie</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Centrul de sus</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Stânga mijlocie</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Mijlocul-dreapta</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Centrul de jos</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Setarea fontului</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Afișați marcajele finale</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Dimensiunea marcatorului:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Culoare:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Proprietatea de măsurare a distanței</translation>
+        <translation type="vanished">Proprietatea de măsurare a distanței</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nume:</translation>
+        <translation type="vanished">Nume:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Punctul de inceput:</translation>
+        <translation type="vanished">Punctul de inceput:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Punct final:</translation>
+        <translation type="vanished">Punct final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Eticheta</translation>
+        <translation type="vanished">Eticheta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Afișați eticheta</translation>
+        <translation type="vanished">Afișați eticheta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Conţinut</translation>
+        <translation type="vanished">Conţinut</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalizat</translation>
+        <translation type="vanished">Personalizat</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Poziţie</translation>
+        <translation type="vanished">Poziţie</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Centrul de sus</translation>
+        <translation type="vanished">Centrul de sus</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Stânga mijlocie</translation>
+        <translation type="vanished">Stânga mijlocie</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Mijlocul-dreapta</translation>
+        <translation type="vanished">Mijlocul-dreapta</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Centrul de jos</translation>
+        <translation type="vanished">Centrul de jos</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Setarea fontului</translation>
+        <translation type="vanished">Setarea fontului</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Afișați marcajele finale</translation>
+        <translation type="vanished">Afișați marcajele finale</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Dimensiunea marcatorului:</translation>
+        <translation type="vanished">Dimensiunea marcatorului:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
 </context>
 </TS>

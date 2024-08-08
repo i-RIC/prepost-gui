@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Upravit vlastnost Měření vzdálenosti</translation>
+        <translation type="vanished">Upravit vlastnost Měření vzdálenosti</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Přeložte měření vzdálenosti</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Název:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Startovní bod:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Koncový bod:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Označení</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Zobrazit štítek</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Obsah</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Zvyk</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozice</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Střed-nahoře</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Středolevý</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Střední pravice</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Střed-Dole</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Nastavení písma</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Zobrazit značky konce</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Velikost značky:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Barva:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Vlastnost měření vzdálenosti</translation>
+        <translation type="vanished">Vlastnost měření vzdálenosti</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation type="vanished">Název:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Startovní bod:</translation>
+        <translation type="vanished">Startovní bod:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Koncový bod:</translation>
+        <translation type="vanished">Koncový bod:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Označení</translation>
+        <translation type="vanished">Označení</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Zobrazit štítek</translation>
+        <translation type="vanished">Zobrazit štítek</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Obsah</translation>
+        <translation type="vanished">Obsah</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Zvyk</translation>
+        <translation type="vanished">Zvyk</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozice</translation>
+        <translation type="vanished">Pozice</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Střed-nahoře</translation>
+        <translation type="vanished">Střed-nahoře</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Středolevý</translation>
+        <translation type="vanished">Středolevý</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Střední pravice</translation>
+        <translation type="vanished">Střední pravice</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Střed-Dole</translation>
+        <translation type="vanished">Střed-Dole</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Nastavení písma</translation>
+        <translation type="vanished">Nastavení písma</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Zobrazit značky konce</translation>
+        <translation type="vanished">Zobrazit značky konce</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Velikost značky:</translation>
+        <translation type="vanished">Velikost značky:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
 </context>
 </TS>

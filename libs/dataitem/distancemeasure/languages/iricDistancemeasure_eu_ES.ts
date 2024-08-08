@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Editatu Distantzia Neurtzeko Propietatea</translation>
+        <translation type="vanished">Editatu Distantzia Neurtzeko Propietatea</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Itzuli Distantzia Neurria</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Izena:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Abiapuntua:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Amaiera puntua:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Etiketa</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Erakutsi Etiketa</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Edukia</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatikoa</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posizioa</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Erdigunea</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Erdi-Ezkerra</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Erdi-eskuina</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Erdialdeko behekoa</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Letra-tipoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Erakutsi amaiera markatzaileak</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Markagailuaren tamaina:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Distantzia Neurtzeko Jabetza</translation>
+        <translation type="vanished">Distantzia Neurtzeko Jabetza</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Izena:</translation>
+        <translation type="vanished">Izena:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Abiapuntua:</translation>
+        <translation type="vanished">Abiapuntua:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Amaiera puntua:</translation>
+        <translation type="vanished">Amaiera puntua:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etiketa</translation>
+        <translation type="vanished">Etiketa</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Erakutsi Etiketa</translation>
+        <translation type="vanished">Erakutsi Etiketa</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Edukia</translation>
+        <translation type="vanished">Edukia</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pertsonalizatua</translation>
+        <translation type="vanished">Pertsonalizatua</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posizioa</translation>
+        <translation type="vanished">Posizioa</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Erdigunea</translation>
+        <translation type="vanished">Erdigunea</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Erdi-Ezkerra</translation>
+        <translation type="vanished">Erdi-Ezkerra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Erdi-eskuina</translation>
+        <translation type="vanished">Erdi-eskuina</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Erdialdeko behekoa</translation>
+        <translation type="vanished">Erdialdeko behekoa</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Letra-tipoaren ezarpena</translation>
+        <translation type="vanished">Letra-tipoaren ezarpena</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Erakutsi amaiera markatzaileak</translation>
+        <translation type="vanished">Erakutsi amaiera markatzaileak</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Markagailuaren tamaina:</translation>
+        <translation type="vanished">Markagailuaren tamaina:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
 </context>
 </TS>

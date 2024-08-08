@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -23,11 +25,90 @@
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation>Επεξεργασία ιδιότητας μέτρησης απόστασης</translation>
+        <translation type="vanished">Επεξεργασία ιδιότητας μέτρησης απόστασης</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
         <translation>Μετάφραση Μέτρο Απόστασης</translation>
+    </message>
+</context>
+<context>
+    <name>DistanceMeasureDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Ονομα:</translation>
+    </message>
+    <message>
+        <source>Start Point:</source>
+        <translation type="unfinished">Σημείο εκκίνησης:</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>End Point:</source>
+        <translation type="unfinished">Τελικό σημείο:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished">Επιγραφή</translation>
+    </message>
+    <message>
+        <source>Show Label</source>
+        <translation type="unfinished">Εμφάνιση ετικέτας</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished">Περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Αυτο</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Εθιμο</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Θέση</translation>
+    </message>
+    <message>
+        <source>Center-Top</source>
+        <translation type="unfinished">Κέντρο-Κορυφή</translation>
+    </message>
+    <message>
+        <source>Middle-Left</source>
+        <translation type="unfinished">Μεσοαριστερά</translation>
+    </message>
+    <message>
+        <source>Middle-Right</source>
+        <translation type="unfinished">Μέση Δεξιά</translation>
+    </message>
+    <message>
+        <source>Center-Bottom</source>
+        <translation type="unfinished">Κέντρο-Κάτω</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished">Ρύθμιση γραμματοσειράς</translation>
+    </message>
+    <message>
+        <source>Show End Markers</source>
+        <translation type="unfinished">Εμφάνιση τελικών δεικτών</translation>
+    </message>
+    <message>
+        <source>Marker Size:</source>
+        <translation type="unfinished">Μέγεθος δείκτη:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Χρώμα:</translation>
     </message>
 </context>
 <context>
@@ -77,79 +158,79 @@
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation>Ιδιότητα μέτρησης απόστασης</translation>
+        <translation type="vanished">Ιδιότητα μέτρησης απόστασης</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ονομα:</translation>
+        <translation type="vanished">Ονομα:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation>Σημείο εκκίνησης:</translation>
+        <translation type="vanished">Σημείο εκκίνησης:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation>Τελικό σημείο:</translation>
+        <translation type="vanished">Τελικό σημείο:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Επιγραφή</translation>
+        <translation type="vanished">Επιγραφή</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Εμφάνιση ετικέτας</translation>
+        <translation type="vanished">Εμφάνιση ετικέτας</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Περιεχόμενο</translation>
+        <translation type="vanished">Περιεχόμενο</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Αυτο</translation>
+        <translation type="vanished">Αυτο</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Εθιμο</translation>
+        <translation type="vanished">Εθιμο</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Θέση</translation>
+        <translation type="vanished">Θέση</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation>Κέντρο-Κορυφή</translation>
+        <translation type="vanished">Κέντρο-Κορυφή</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation>Μεσοαριστερά</translation>
+        <translation type="vanished">Μεσοαριστερά</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation>Μέση Δεξιά</translation>
+        <translation type="vanished">Μέση Δεξιά</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation>Κέντρο-Κάτω</translation>
+        <translation type="vanished">Κέντρο-Κάτω</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Ρύθμιση γραμματοσειράς</translation>
+        <translation type="vanished">Ρύθμιση γραμματοσειράς</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation>Εμφάνιση τελικών δεικτών</translation>
+        <translation type="vanished">Εμφάνιση τελικών δεικτών</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation>Μέγεθος δείκτη:</translation>
+        <translation type="vanished">Μέγεθος δείκτη:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation type="vanished">Χρώμα:</translation>
     </message>
 </context>
 </TS>
