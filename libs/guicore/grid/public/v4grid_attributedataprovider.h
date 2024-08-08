@@ -19,6 +19,7 @@ public:
 
 	virtual QString caption(const std::string& name) const = 0;
 	virtual QVariant attributeBrowserValue(const std::string& name, double value) const = 0;
+	virtual QWidget* attributeEditWidget(const std::string& name, QWidget* parent) const = 0;
 	virtual ColorMapSettingContainerI* createColorMapSetting(const std::string& name) const = 0;
 	virtual ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer(const std::string& name) const = 0;
 	virtual ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(const std::string& name, QWidget* parent) const = 0;

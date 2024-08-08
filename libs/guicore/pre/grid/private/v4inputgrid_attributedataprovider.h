@@ -15,6 +15,7 @@ public:
 
 	QString caption(const std::string& name) const override;
 	QVariant attributeBrowserValue(const std::string& name, double value) const override;
+	QWidget* attributeEditWidget(const std::string& name, QWidget* parent) const override;
 	ColorMapSettingContainerI* createColorMapSetting(const std::string& name) const override;
 	ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer(const std::string& name) const override;
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(const std::string& name, QWidget* parent) const override;

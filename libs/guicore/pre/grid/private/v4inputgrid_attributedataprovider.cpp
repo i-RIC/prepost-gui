@@ -7,6 +7,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/complex/gridcomplexconditiongroup.h>
+#include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
@@ -53,6 +54,11 @@ QVariant v4InputGrid::AttributeDataProvider::attributeBrowserValue(const std::st
 		return g->caption();
 	}
 	return 0;
+}
+
+QWidget* v4InputGrid::AttributeDataProvider::attributeEditWidget(const std::string& name, QWidget* parent) const
+{
+	return attribute(name)->editWidget(parent);
 }
 
 ColorMapSettingContainerI* v4InputGrid::AttributeDataProvider::createColorMapSetting(const std::string& name) const

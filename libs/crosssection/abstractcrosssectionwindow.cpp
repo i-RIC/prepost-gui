@@ -146,6 +146,7 @@ void AbstractCrosssectionWindow::update()
 
 void AbstractCrosssectionWindow::handleSettingChange()
 {
+	impl->graphicsView()->clearSelection();
 	update();
 
 	updateEdgeFocus();
@@ -245,6 +246,11 @@ void AbstractCrosssectionWindow::exportCsvs()
 	static CsvExportController controller(this);
 
 	controller.save();
+}
+
+QTableView* AbstractCrosssectionWindow::editTable() const
+{
+	return ui->editTable;
 }
 
 void AbstractCrosssectionWindow::pushUpdateCommand(QUndoCommand* command)

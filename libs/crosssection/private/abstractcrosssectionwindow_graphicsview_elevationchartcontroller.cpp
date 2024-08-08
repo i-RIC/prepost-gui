@@ -17,18 +17,19 @@ AbstractCrosssectionWindow::GraphicsView::ElevationChartController::ElevationCha
 
 void AbstractCrosssectionWindow::GraphicsView::ElevationChartController::paint(
 		const std::vector<double>& nodePositions, const std::vector<QVariant>& values,
+		const std::vector<unsigned int>& selected,
 		GridAttributeDisplaySettingContainer* setting,
-		QMatrix& matrix, QPainter* painter)
+		QMatrix& matrix, int elevationOffset, QPainter* painter)
 {
 	painter->save();
 	QPen pen(setting->elevationChartLineColor.value(), setting->elevationChartLineWidth);
 	painter->setPen(pen);
 
 	for (int i = 0; i < static_cast<int> (nodePositions.size()) - 1; ++i) {
-		QPointF p1(nodePositions.at(i), values.at(i).toDouble());
-		QPointF p2(nodePositions.at(i + 1), values.at(i + 1).toDouble());
+		QPointF p1 = mappedPos(i, nodePositions, values, selected, elevationOffset, matrix);
+		QPointF p2 = mappedPos(i + 1, nodePositions, values, selected, elevationOffset, matrix);
 
-		painter->drawLine(matrix.map(p1), matrix.map(p2));
+		painter->drawLine(p1, p2);
 	}
 
 	if (setting->elevationChartShowPoint) {
@@ -38,7 +39,7 @@ void AbstractCrosssectionWindow::GraphicsView::ElevationChartController::paint(
 		QPointF offset(pointSize, pointSize);
 
 		for (int i = 0; i < nodePositions.size(); ++i) {
-			QPointF p1 = matrix.map(QPointF(nodePositions.at(i), values.at(i).toDouble()));
+			QPointF p1 = mappedPos(i, nodePositions, values, selected, elevationOffset, matrix);
 			QRectF rect(p1 - offset, p1 + offset);
 			painter->drawEllipse(rect);
 		}
@@ -60,5 +61,33 @@ void AbstractCrosssectionWindow::GraphicsView::ElevationChartController::paint(
 			}
 		}
 	}
+
+	// show selected points
+	QBrush brush(setting->elevationChartLineColor);
+	painter->setBrush(brush);
+	double pointSize = setting->elevationChartPointSize * 0.5 + 2;
+	QPointF offset(pointSize, pointSize);
+
+	for (auto i : selected) {
+		QPointF p1 = mappedPos(i, nodePositions, values, selected, elevationOffset, matrix);
+		QRectF rect(p1 - offset, p1 + offset);
+		painter->drawEllipse(rect);
+	}
+
 	painter->restore();
+}
+
+QPointF AbstractCrosssectionWindow::GraphicsView::ElevationChartController::mappedPos(unsigned int index, const std::vector<double>& nodePositions, const std::vector<QVariant>& values, const std::vector<unsigned int>& selected, int elevationOffset, const QMatrix& matrix)
+{
+	double x = nodePositions.at(index);
+	double y = values.at(index).toDouble();
+
+	auto ret = matrix.map(QPointF(x, y));
+	auto it = std::find(selected.begin(), selected.end(), index);
+
+	if (it != selected.end()) {
+		ret = QPoint(ret.x(), ret.y() + elevationOffset);
+	}
+
+	return ret;
 }

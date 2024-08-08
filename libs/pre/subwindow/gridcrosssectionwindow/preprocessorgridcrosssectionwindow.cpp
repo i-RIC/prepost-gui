@@ -41,6 +41,11 @@ PreProcessorGridCrosssectionInternalWindow* PreProcessorGridCrosssectionWindow::
 	return m_internalWindow;
 }
 
+void PreProcessorGridCrosssectionWindow::update()
+{
+	m_internalWindow->update();
+}
+
 QPixmap PreProcessorGridCrosssectionWindow::snapshot() const
 {
 	return m_internalWindow->snapshot();

@@ -1,6 +1,8 @@
 #ifndef GRIDATTRIBUTEEDITCOMMAND_H
 #define GRIDATTRIBUTEEDITCOMMAND_H
 
+#include "../../../guicore_global.h"
+
 #include <QUndoCommand>
 
 #include <vtkDataArray.h>
@@ -11,7 +13,7 @@
 
 class PreProcessorGridDataItemI;
 
-class GridAttributeEditCommand :  public QUndoCommand
+class GUICOREDLL_EXPORT GridAttributeEditCommand :  public QUndoCommand
 {
 public:
 	GridAttributeEditCommand(const std::string& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem);
