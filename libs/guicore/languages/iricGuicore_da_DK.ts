@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredde:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Rediger gitterattributværdier</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Maling</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Points</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredde:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstørrelse:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Baggrundsbilledet blev ikke tilføjet. Prøv igen.</translation>
+        <translation type="vanished">Baggrundsbilledet blev ikke tilføjet. Prøv igen.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Ugyldig billedfil er angivet.</translation>
+        <translation type="vanished">Ugyldig billedfil er angivet.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Der opstod en fejl under åbning %1. iRIC forsøger at redde data fra %2.</translation>
+        <translation>Der opstod en fejl under åbning %1. iRIC forsøger at redde data fra %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Alle billeder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Ugyldig billedfil er angivet. Filsuffiks skal være et af "jpg", "jpeg", "png" eller "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Der opstod en fejl under oprettelse af mappe %1</translation>
     </message>
 </context>
 <context>

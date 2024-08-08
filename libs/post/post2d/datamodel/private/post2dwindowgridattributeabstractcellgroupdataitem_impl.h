@@ -3,18 +3,21 @@
 
 #include "../post2dwindowgridattributeabstractcellgroupdataitem.h"
 
+#include <guicore/gridatt/cell/gridattributecellsetting.h>
+
 class Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl
 {
 public:
 	Impl(Post2dWindowGridAttributeAbstractCellGroupDataItem* item);
 	~Impl();
 
+	GridAttributeCellSetting m_setting;
+
 	std::string m_target;
 	vtkActor* m_actor;
+
 	std::unordered_map<std::string, Post2dWindowGridAttributeAbstractCellDataItem*> m_nameMap;
 
-	IntContainer m_lineWidth;
-	OpacityContainer m_opacity;
 	QAction* m_showAttributeBrowserAction;
 	bool m_attributeBrowserFixed;
 

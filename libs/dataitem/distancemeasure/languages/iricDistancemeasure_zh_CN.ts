@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
@@ -111,79 +109,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名：</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>起点：</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>，</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>终点：</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>标签</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished"></translation>
+        <translation>显示标签</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>内容</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>汽车</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>风俗</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">中上</translation>
+        <translation>中心顶部</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
+        <translation>中左翼</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
+        <translation>中右</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>中下</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">字体设置</translation>
+        <translation>字体设置</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>显示结束标记</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>标记尺寸：</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色：</translation>
     </message>
 </context>
 <context>

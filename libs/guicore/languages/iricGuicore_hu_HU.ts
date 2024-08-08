@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Rács attribútumérték (ek) szerkesztése</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Festék</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pontok</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pontméret:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>A háttérkép nem lett hozzáadva. Kérlek próbáld újra.</translation>
+        <translation type="vanished">A háttérkép nem lett hozzáadva. Kérlek próbáld újra.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Érvénytelen képfájl van megadva.</translation>
+        <translation type="vanished">Érvénytelen képfájl van megadva.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Hiba történt a nyitás során %1. Az iRIC megpróbálja kimenteni az adatokat %2.</translation>
+        <translation>Hiba történt a nyitás során %1. Az iRIC megpróbálja kimenteni az adatokat %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Minden kép (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Érvénytelen képfájl van megadva. A fájl utótagja legyen „jpg”, „jpeg”, „png” vagy „tif”.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Hiba történt a mappa létrehozásakor %1</translation>
     </message>
 </context>
 <context>

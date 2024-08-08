@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Název:</translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Startovní bod:</translation>
+        <translation>Startovní bod:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Koncový bod:</translation>
+        <translation>Koncový bod:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Označení</translation>
+        <translation>Označení</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Zobrazit štítek</translation>
+        <translation>Zobrazit štítek</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Obsah</translation>
+        <translation>Obsah</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Zvyk</translation>
+        <translation>Zvyk</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozice</translation>
+        <translation>Pozice</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Střed-nahoře</translation>
+        <translation>Střed-horní</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Středolevý</translation>
+        <translation>Střed-vlevo</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Střední pravice</translation>
+        <translation>Střed-pravý</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Střed-Dole</translation>
+        <translation>Střed-dole</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Nastavení písma</translation>
+        <translation>Nastavení písma</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Zobrazit značky konce</translation>
+        <translation>Zobrazit koncové značky</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Velikost značky:</translation>
+        <translation>Velikost značky:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Barva:</translation>
+        <translation>Barva:</translation>
     </message>
 </context>
 <context>

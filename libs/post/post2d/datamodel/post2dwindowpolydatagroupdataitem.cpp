@@ -353,7 +353,10 @@ v4PolyData2d* Post2dWindowPolyDataGroupDataItem::polyData() const
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4PolyData2d*> (cont->polyData(name())->grid());
+	auto pd = cont->polyData(name());
+	if (pd == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4PolyData2d*> (pd->grid());
 }
 
 void Post2dWindowPolyDataGroupDataItem::updateCheckState()

@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Edita els valors dels atributs de la quadrícula</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Pintura</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punts</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Mida del punt:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>La imatge de fons no s'ha afegit. Siusplau torna-ho a provar.</translation>
+        <translation type="vanished">La imatge de fons no s'ha afegit. Siusplau torna-ho a provar.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>S'ha especificat un fitxer d'imatge no vàlid.</translation>
+        <translation type="vanished">S'ha especificat un fitxer d'imatge no vàlid.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">S'ha produït un error en obrir %1. iRIC intenta recuperar dades de %2.</translation>
+        <translation>S'ha produït un error en obrir %1. iRIC intenta recuperar dades de %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Totes les imatges (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>S'ha especificat un fitxer d'imatge no vàlid. El sufix del fitxer hauria de ser "jpg", "jpeg", "png" o "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>S'ha produït un error en crear la carpeta %1</translation>
     </message>
 </context>
 <context>

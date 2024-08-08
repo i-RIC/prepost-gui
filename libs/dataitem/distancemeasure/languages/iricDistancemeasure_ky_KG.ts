@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Аты:</translation>
+        <translation>Аты-жөнү:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Баштоо чекити:</translation>
+        <translation>Башталыш чекити:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Акыркы чекит:</translation>
+        <translation>Аяктоо чекити:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Белги</translation>
+        <translation>Белги</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Белги көрсөтүү</translation>
+        <translation>Белги көрсөтүү</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Мазмун</translation>
+        <translation>Мазмун</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Авто</translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Ыңгайлаштырылган</translation>
+        <translation>Ыңгайлаштырылган</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиция</translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Center-Top</translation>
+        <translation>Борбордук-Жогору</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Орто-Сол</translation>
+        <translation>Орто-Сол</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Орто-Оң</translation>
+        <translation>Орто-оң</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Борбордун түбү</translation>
+        <translation>Борбордук-Төмөн</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Шрифт жөндөө</translation>
+        <translation>Font Setting</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Соңку маркерлерди көрсөтүү</translation>
+        <translation>Аяктоочу маркерлерди көрсөтүү</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Маркердин өлчөмү:</translation>
+        <translation>Маркер өлчөмү:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Түс:</translation>
+        <translation>Түс:</translation>
     </message>
 </context>
 <context>

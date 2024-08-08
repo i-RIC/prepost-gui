@@ -37,17 +37,16 @@
 #include <misc/xmlsupport.h>
 
 Post2dWindowGridAttributeNodeGroupDataItem::Impl::Impl(Post2dWindowGridAttributeNodeGroupDataItem* item) :
+	m_setting {},
 	m_target {},
 	m_actor {vtkActor::New()},
 	m_showAttributeBrowserAction {new QAction(Post2dWindowGridAttributeNodeGroupDataItem::tr("Show Attribute Browser"), item)},
-	m_opacity {},
 	m_attributeBrowserFixed {false},
 	m_nameMap {},
 	m_opacityWidget {new OpacityContainerWidget(item->mainWindow())},
 	m_colorMapWidgetContainer {new QWidgetContainer(item->mainWindow())}
 {
 	m_actor->GetProperty()->SetLighting(false);
-	m_opacity = 50;
 }
 
 Post2dWindowGridAttributeNodeGroupDataItem::Impl::~Impl()
@@ -86,7 +85,7 @@ Post2dWindowGridAttributeNodeGroupDataItem::Post2dWindowGridAttributeNodeGroupDa
 
 	renderer()->AddActor(impl->m_actor);
 
-	impl->m_opacityWidget->setContainer(&impl->m_opacity);
+	impl->m_opacityWidget->setContainer(&impl->m_setting.opacity);
 	impl->m_opacityWidget->hide();
 
 	connect(impl->m_opacityWidget, &OpacityContainerWidget::updated, [=]() {
@@ -150,7 +149,7 @@ void Post2dWindowGridAttributeNodeGroupDataItem::updateActorSetting()
 	impl->m_actor->SetMapper(mapper);
 	mapper->Delete();
 
-	impl->m_actor->GetProperty()->SetOpacity(impl->m_opacity);
+	impl->m_setting.apply(impl->m_actor, dataModel()->graphicsView());
 
 	m_actorCollection->AddItem(impl->m_actor);
 	updateVisibilityWithoutRendering();
@@ -158,7 +157,7 @@ void Post2dWindowGridAttributeNodeGroupDataItem::updateActorSetting()
 
 void Post2dWindowGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	impl->m_opacity.load(node);
+	impl->m_setting.load(node);
 	for (auto item : conditions()) {
 		const auto& name = item->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name.c_str());
@@ -176,7 +175,7 @@ void Post2dWindowGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 
 void Post2dWindowGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	impl->m_opacity.save(writer);
+	impl->m_setting.save(writer);
 	for (auto item : conditions()) {
 		writer.writeStartElement("NodeAttribute");
 		writer.writeAttribute("name", item->condition()->name().c_str());
@@ -264,9 +263,9 @@ void Post2dWindowGridAttributeNodeGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().endMacro();
 }
 
-OpacityContainer& Post2dWindowGridAttributeNodeGroupDataItem::opacity()
+GridAttributeNodeSetting& Post2dWindowGridAttributeNodeGroupDataItem::setting()
 {
-	return impl->m_opacity;
+	return impl->m_setting;
 }
 
 OpacityContainerWidget* Post2dWindowGridAttributeNodeGroupDataItem::opacityWidget() const

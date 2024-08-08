@@ -16,6 +16,7 @@ public:
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
+	GridAttributeStringConverter* stringConverter() const override;
 
 	QString undefinedString() const;
 	QString undefinedEnglishString() const;

@@ -50,8 +50,7 @@ QDialog* Post2dWindowGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
 
-	dialog->setLineWidth(gItem->lineWidth());
-	dialog->setOpacity(gItem->opacity());
+	dialog->setSetting(&gItem->setting());
 	dialog->resize(900, 700);
 
 	return dialog;

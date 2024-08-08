@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Vardas:</translation>
+        <translation>Vardas:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Pradinis taškas:</translation>
+        <translation>Pradinis taškas:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Pabaigos taškas:</translation>
+        <translation>Pabaigos taškas:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiketė</translation>
+        <translation>Etiketė</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Rodyti etiketę</translation>
+        <translation>Rodyti etiketę</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Turinys</translation>
+        <translation>Turinys</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automatinis</translation>
+        <translation>Automatinis</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Pasirinktinis</translation>
+        <translation>Pasirinktinis</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozicija</translation>
+        <translation>Padėtis</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centras-viršuje</translation>
+        <translation>Centras-Viršus</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Vidurinė kairė</translation>
+        <translation>Vidurio-kairės</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Vidurio dešinėje</translation>
+        <translation>Vidurinė dešinė</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centras-apačia</translation>
+        <translation>Centras-apačia</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Šrifto nustatymas</translation>
+        <translation>Šrifto nustatymas</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Rodyti pabaigos žymeklius</translation>
+        <translation>Rodyti pabaigos žymeklius</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Žymeklio dydis:</translation>
+        <translation>Žymeklio dydis:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Spalva:</translation>
+        <translation>Spalva:</translation>
     </message>
 </context>
 <context>

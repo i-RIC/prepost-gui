@@ -1,11 +1,10 @@
 #include "post2dwindowabstractcellscalargroupdataitem_setting.h"
 
 Post2dWindowAbstractCellScalarGroupDataItem::Setting::Setting() :
-	CompositeContainer {&regionSetting, &lineWidth, &opacity},
+	CompositeContainer {&regionSetting, &cellSetting},
 	colorMapSetting {nullptr},
 	regionSetting {},
-	lineWidth {"lineWidth", 5},
-	opacity {"opacity", 50}
+	cellSetting{}
 {}
 
 Post2dWindowAbstractCellScalarGroupDataItem::Setting::Setting(const Setting& setting) :

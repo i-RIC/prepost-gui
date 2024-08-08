@@ -1,14 +1,17 @@
 #ifndef PREPROCESSORGRIDATTRIBUTEABSTRACTCELLGROUPDATAITEM_H
 #define PREPROCESSORGRIDATTRIBUTEABSTRACTCELLGROUPDATAITEM_H
 
+#include <guicore/gridatt/cell/gridattributecellsetting.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/opacitycontainer.h>
 
+#include <memory>
 #include <unordered_map>
 #include <vector>
 
+class GridAttributeCellSetting;
 class NamedGraphicWindowDataItem;
 class OpacityContainerWidget;
 class PreProcessorGridAttributeAbstractCellDataItem;
@@ -45,8 +48,7 @@ public:
 	void informGridUpdate();
 	std::vector<PreProcessorGridAttributeAbstractCellDataItem*> conditions() const;
 	PreProcessorGridAttributeAbstractCellDataItem* cellDataItem(const std::string& name) const;
-	IntContainer& lineWidth();
-	OpacityContainer& opacity();
+	GridAttributeCellSetting& setting();
 	OpacityContainerWidget* opacityWidget() const;
 	QWidgetContainer* colorMapWidgetContainer() const;
 	QAction* showAttributeBrowserAction() const;
@@ -79,17 +81,8 @@ private:
 	virtual PreProcessorGridAttributeAbstractCellDataItem* createChild(SolverDefinitionGridAttribute* att) = 0;
 	virtual void getIJIndex(vtkIdType cellId, vtkIdType* i, vtkIdType* j) const = 0;
 
-	std::string m_target;
-	vtkActor* m_actor;
-	std::unordered_map<std::string, PreProcessorGridAttributeAbstractCellDataItem*> m_nameMap;
-
-	IntContainer m_lineWidth;
-	OpacityContainer m_opacity;
-	QAction* m_showAttributeBrowserAction;
-	bool m_attributeBrowserFixed;
-
-	OpacityContainerWidget* m_opacityWidget;
-	QWidgetContainer* m_colorMapWidgetContainer;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTEABSTRACTCELLGROUPDATAITEM_H

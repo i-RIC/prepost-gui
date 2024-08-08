@@ -19,6 +19,7 @@ public:
 	std::vector<GridAttributeContainer*> m_attributes;
 	std::unordered_map<std::string, GridAttributeContainer*> m_attributeNameMap;
 
+	AttributeDataProvider* m_attributeDataProvider;
 	PreProcessorGridDataItemI* m_gridDataItem;
 };
 

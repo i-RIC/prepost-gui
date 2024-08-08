@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Độ rộng dòng:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Chỉnh sửa (các) giá trị thuộc tính lưới</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Sơn</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Điểm</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Hình nền không được thêm vào. Vui lòng thử lại.</translation>
+        <translation type="vanished">Hình nền không được thêm vào. Vui lòng thử lại.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Tệp hình ảnh không hợp lệ được chỉ định.</translation>
+        <translation type="vanished">Tệp hình ảnh không hợp lệ được chỉ định.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Xảy ra lỗi khi mở %1. iRIC cố gắng cứu dữ liệu từ %2.</translation>
+        <translation>Xảy ra lỗi khi mở %1. iRIC cố gắng cứu dữ liệu từ %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Tệp hình ảnh không hợp lệ được chỉ định. Hậu tố tệp phải là một trong các "jpg", "jpeg", "png" hoặc "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Đã xảy ra lỗi khi tạo thư mục %1</translation>
     </message>
 </context>
 <context>

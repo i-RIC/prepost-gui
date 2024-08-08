@@ -25,8 +25,7 @@ PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::~PropertyDialog()
 
 void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::hideLineWidth()
 {
-	ui->lineWidthLabel->hide();
-	ui->lineWidthSpinBox->hide();
+	ui->gridCellSettingWidget->hideLineWidth();
 }
 
 ColorMapSettingEditWidgetI* PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::widget() const
@@ -41,24 +40,10 @@ void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::setWidget(Co
 	connect(ui->exportButton, &QPushButton::clicked, w, &ColorMapSettingEditWidgetI::exportSetting);
 }
 
-int PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::lineWidth() const
-{
-	return ui->lineWidthSpinBox->value();
-}
 
-void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::setLineWidth(int lineWidth)
+void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::setSetting(GridAttributeCellSetting* setting)
 {
-	ui->lineWidthSpinBox->setValue(lineWidth);
-}
-
-OpacityContainer PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::opacity() const
-{
-	return ui->transparencyWidget->opacity();
-}
-
-void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::setOpacity(const OpacityContainer& opacity)
-{
-	return ui->transparencyWidget->setOpacity(opacity);
+	ui->gridCellSettingWidget->setSetting(setting);
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::accept()
@@ -93,10 +78,7 @@ QUndoCommand* PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::cre
 {
 	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
 	ret->addCommand(widget()->createModifyCommand());
-	ret->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("Opacity"), apply, opacity(), &m_item->opacity()));
-	IntContainer width {"lineWidth"};
-	width.setValue(lineWidth());
-	ret->addCommand(new ValueModifyCommmand<IntContainer>(iRIC::generateCommandId("LineWidth"), apply, width, &m_item->lineWidth()));
+	ret->addCommand(ui->gridCellSettingWidget->createModifyCommand(apply));
 
 	return ret;
 }

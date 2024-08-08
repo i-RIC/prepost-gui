@@ -508,25 +508,49 @@ v4Unstructured2dGrid* v4SolutionGridIO::loadUnstructured2dGrid(iRICLib::H5CgnsZo
 		points->InsertNextPoint(0, 0, 0);
 	}
 
-	std::vector<int> indices;
-	*ier = zone->readTriangleElements(&indices);
+	iRICLib::H5CgnsZone::CellType ct;
+	*ier = zone->readUnstructuredGridCellType(&ct);
 	if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
 
-	unsigned int numCells = static_cast<unsigned int> (indices.size()) / 3;
 	auto vtkGrid = grid->vtkConcreteData()->concreteData();
-	vtkGrid->Allocate(numCells);
+	if (ct == iRICLib::H5CgnsZone::CellType::Triangle) {
+		std::vector<int> indices;
+		*ier = zone->readTriangleElements(&indices);
+		if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
 
-	auto triangle = vtkSmartPointer<vtkTriangle>::New();
+		unsigned int numCells = static_cast<unsigned int> (indices.size()) / 3;
+		vtkGrid->Allocate(numCells);
 
-	for (unsigned int i = 0; i < numCells; ++i) {
-		int id0 = indices.at(i * 3 + 0) - 1;
-		int id1 = indices.at(i * 3 + 1) - 1;
-		int id2 = indices.at(i * 3 + 2) - 1;
+		auto triangle = vtkSmartPointer<vtkTriangle>::New();
 
-		triangle->GetPointIds()->SetId(0, id0);
-		triangle->GetPointIds()->SetId(1, id1);
-		triangle->GetPointIds()->SetId(2, id2);
-		vtkGrid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
+		for (unsigned int i = 0; i < numCells; ++i) {
+			int id0 = indices.at(i * 3 + 0) - 1;
+			int id1 = indices.at(i * 3 + 1) - 1;
+			int id2 = indices.at(i * 3 + 2) - 1;
+
+			triangle->GetPointIds()->SetId(0, id0);
+			triangle->GetPointIds()->SetId(1, id1);
+			triangle->GetPointIds()->SetId(2, id2);
+			vtkGrid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
+		}
+	} else if (ct == iRICLib::H5CgnsZone::CellType::Line) {
+		std::vector<int> indices;
+		*ier = zone->readLineElements(&indices);
+		if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
+
+		unsigned int numCells = static_cast<unsigned int> (indices.size()) / 2;
+		vtkGrid->Allocate(numCells);
+
+		auto line = vtkSmartPointer<vtkLine>::New();
+
+		for (unsigned int i = 0; i < numCells; ++i) {
+			int id0 = indices.at(i * 2 + 0) - 1;
+			int id1 = indices.at(i * 2 + 1) - 1;
+
+			line->GetPointIds()->SetId(0, id0);
+			line->GetPointIds()->SetId(1, id1);
+			vtkGrid->InsertNextCell(line->GetCellType(), line->GetPointIds());
+		}
 	}
 	vtkGrid->BuildLinks();
 

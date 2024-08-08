@@ -249,7 +249,7 @@ void ColorMapEnumerateSettingContainer::paintNodeData(double x1, double x2, doub
 			c2 = pair.color;
 		}
 	}
-	if (! c1.isValid() || c2.isValid()) {return;}
+	if (! c1.isValid() || ! c2.isValid()) {return;}
 
 	QLinearGradient gradient(QPointF(x1, 0), QPointF(x2, 0));
 	gradient.setColorAt(0, c1);

@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>रूप</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>ग्रिड विशेषता मान संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>रूप</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>रँगना</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>अंक</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिन्दु आकार:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>पृष्ठभूमि छवि नहीं जोड़ी गई थी। कृपया पुन: प्रयास करें।</translation>
+        <translation type="vanished">पृष्ठभूमि छवि नहीं जोड़ी गई थी। कृपया पुन: प्रयास करें।</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>अमान्य छवि फ़ाइल निर्दिष्ट है।</translation>
+        <translation type="vanished">अमान्य छवि फ़ाइल निर्दिष्ट है।</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
+        <translation>खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>सभी छवियाँ (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>अमान्य छवि फ़ाइल निर्दिष्ट की गई है। फ़ाइल प्रत्यय "jpg", "jpeg", "png", या "tif" में से एक होना चाहिए।</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>फ़ोल्डर बनाते समय त्रुटि हुई %1</translation>
     </message>
 </context>
 <context>

@@ -68,7 +68,7 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	});
 
 	impl->m_opacityToolBarWidget->hide();
-	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.opacity);
+	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.nodeSetting.opacity);
 	connect(impl->m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
 		auto com = impl->m_opacityToolBarWidget->createModifyCommand();
 		pushUpdateActorSettingCommand(com, this, false);
@@ -129,8 +129,13 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	mapper->Delete();
 
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
-	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
-	impl->m_actor->GetProperty()->SetLineWidth(v->devicePixelRatioF() * impl->m_setting.contourSetting.contourLineWidth);
+	if (impl->m_setting.contourSetting.drawContourLines) {
+		impl->m_actor->GetProperty()->SetRepresentationToSurface();
+		impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.nodeSetting.opacity);
+		impl->m_actor->GetProperty()->SetLineWidth(v->devicePixelRatioF() * impl->m_setting.contourSetting.contourLineWidth);
+	} else {
+		impl->m_setting.nodeSetting.apply(impl->m_actor, dataModel()->graphicsView());
+	}
 
 	updateVisibilityWithoutRendering();
 }
@@ -204,7 +209,7 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
-	if (impl->m_setting.opacity == 100) {return false;}
+	if (impl->m_setting.nodeSetting.opacity == 100) {return false;}
 
 	return true;
 }

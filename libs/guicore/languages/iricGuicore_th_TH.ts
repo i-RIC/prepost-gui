@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>แก้ไขค่าแอตทริบิวต์กริด</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>คะแนน</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดจุด:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>ภาพพื้นหลังไม่ได้เพิ่ม กรุณาลองอีกครั้ง.</translation>
+        <translation type="vanished">ภาพพื้นหลังไม่ได้เพิ่ม กรุณาลองอีกครั้ง.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>มีการระบุไฟล์รูปภาพที่ไม่ถูกต้อง</translation>
+        <translation type="vanished">มีการระบุไฟล์รูปภาพที่ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">เกิดข้อผิดพลาดขณะเปิด %1. iRIC พยายามกอบกู้ข้อมูลจาก %2.</translation>
+        <translation>เกิดข้อผิดพลาดขณะเปิด %1. iRIC พยายามกอบกู้ข้อมูลจาก %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>ภาพทั้งหมด (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>ระบุไฟล์ภาพที่ไม่ถูกต้อง ส่วนต่อท้ายไฟล์ควรเป็นหนึ่งใน "jpg", "jpeg", "png" หรือ "tif"</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>เกิดข้อผิดพลาดขณะสร้างโฟลเดอร์ %1</translation>
     </message>
 </context>
 <context>

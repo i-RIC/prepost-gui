@@ -1,6 +1,7 @@
 #include "../pre/complex/gridcomplexconditiongrouprealeditwidget.h"
 #include "../pre/gridcond/complex/gridcomplexattributecontainer.h"
 #include "../pre/gridcond/complex/gridcomplexattributeeditwidget.h"
+#include "../pre/gridcond/stringconverter/gridattributestringconverterenumerate.h"
 #include "../pre/geodatabackground/geodatabackgroundcomplexcreator.h"
 #include "../scalarstocolors/colormapenumeratefactory.h"
 #include "solverdefinitiongridcomplexattribute.h"
@@ -51,6 +52,11 @@ GridAttributeVariationEditWidget* SolverDefinitionGridComplexAttribute::variatio
 GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDataItem* parent)
 {
 	return GeoDataBackgroundComplexCreator::instance()->create(parent, this);
+}
+
+GridAttributeStringConverter* SolverDefinitionGridComplexAttribute::stringConverter() const
+{
+	return new GridAttributeStringConverterEnumerate();
 }
 
 QString SolverDefinitionGridComplexAttribute::undefinedString() const

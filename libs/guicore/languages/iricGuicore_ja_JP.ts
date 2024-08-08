@@ -1915,6 +1915,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -2001,6 +2012,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>格子属性の編集</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>面塗り</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
     </message>
 </context>
 <context>
@@ -3911,11 +3945,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>背景画像は追加されませんでした。もう一度試してみてください。</translation>
+        <translation type="vanished">背景画像は追加されませんでした。もう一度試してみてください。</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>不正な画像ファイルが指定されました。</translation>
+        <translation type="vanished">不正な画像ファイルが指定されました。</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3967,7 +4001,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">%1 を開けませんでした。iRIC は %2 からのデータの復元を試みます。</translation>
+        <translation>%1 を開けませんでした。iRIC は %2 からのデータの復元を試みます。</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3976,6 +4010,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>すべての画像(*.jpg *.jpeg *.png *.tif *.tiff);;JPEG 画像(*.jpg *.jpeg);;PNG 画像(*.png);;TIFF 画像(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>不正な画像ファイルが指定されました。拡張子は "jpg", "jpeg", "png", "tif" のいずれかである必要があります。</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>フォルダ %1 の作成中にエラーが発生しました。</translation>
     </message>
 </context>
 <context>

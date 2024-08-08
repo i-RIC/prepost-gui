@@ -1528,6 +1528,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行宽：</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1600,6 +1611,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>编辑网格属性值(s)</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>画</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>积分</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行宽：</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点大小：</translation>
     </message>
 </context>
 <context>
@@ -3123,11 +3157,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>背景图片未被加载 请重试</translation>
+        <translation type="vanished">背景图片未被加载 请重试</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>指定了无效的图像文件。</translation>
+        <translation type="vanished">指定了无效的图像文件。</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3175,7 +3209,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">打开时发生错误 %1 。 iRIC 试图挽救数据 %2 。</translation>
+        <translation>打开时发生错误 %1 。 iRIC 试图挽救数据 %2 。</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3184,6 +3218,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>所有图片 (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>指定的图像文件无效。文件后缀应为“jpg”、“jpeg”、“png”或“tif”之一。</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>创建文件夹时出错 %1</translation>
     </message>
 </context>
 <context>
