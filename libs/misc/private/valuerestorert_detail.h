@@ -12,6 +12,12 @@ ValueRestorerT<T>::ValueRestorerT(T* pointer, T value) :
 template <typename T>
 ValueRestorerT<T>::~ValueRestorerT()
 {
+	restore();
+}
+
+template <typename T>
+void ValueRestorerT<T>::restore()
+{
 	*m_pointer = m_value;
 }
 

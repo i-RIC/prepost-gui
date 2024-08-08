@@ -358,7 +358,8 @@ void iRICMainWindow::openProject(const QString& filename)
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	ModelessDialogModeChanger modeChanger(this);
 
-	m_isOpening = true;
+	ValueChangerT<bool> isOpeningChanger(&m_isOpening, true);
+
 	// create projectdata
 	QFileInfo fileinfo(filename);
 	if (fileinfo.isDir()) {
@@ -473,7 +474,6 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	m_preProcessorWindow->setupCgnsFilesIfNeeded(false);
 
-	m_isOpening = false;
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
@@ -492,6 +492,10 @@ void iRICMainWindow::openProject(const QString& filename)
 		active->showNormal();
 		active->showMaximized();
 	}
+
+	isOpeningChanger.restore();
+
+	activeSubwindowChanged(m_centralWidget->activeSubWindow());
 }
 
 void iRICMainWindow::importCalcCondition()
@@ -526,7 +530,8 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	// close project first.
 	if (! closeProject()) {return;}
 
-	m_isOpening = true;
+	ValueChangerT<bool> isOpeningChanger(&m_isOpening, true);
+
 	// create projectdata
 	QString wFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
 	m_projectData = new ProjectData(wFolder, this);
@@ -581,7 +586,6 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 		m_solverConsoleWindow->parentWidget()->hide();
 	}
 
-	m_isOpening = false;
 	LastIODirectory::set(QFileInfo(fname).absolutePath());
 	m_projectData->mainfile()->setModified();
 
@@ -724,6 +728,8 @@ void iRICMainWindow::activeSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		// project is not open.
 		return;
 	}
+	if (m_isOpening) {return;}
+
 	clearEdgeFocus();
 	m_actionManager->updateWindowList();
 	if (newActiveWindow == nullptr) {

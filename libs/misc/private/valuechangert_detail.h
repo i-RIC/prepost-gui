@@ -15,4 +15,10 @@ template <typename T>
 ValueChangerT<T>::~ValueChangerT()
 {}
 
+template <typename T>
+void ValueChangerT<T>::restore()
+{
+	m_restorer.restore();
+}
+
 #endif // VALUECHANGERT_DETAIL_H
