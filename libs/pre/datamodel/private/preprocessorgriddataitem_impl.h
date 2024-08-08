@@ -3,11 +3,7 @@
 
 #include "../preprocessorgriddataitem.h"
 
-#include <vtkDataSetMapper.h>
 #include <vtkExtractCells.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkSmartPointer.h>
 
 #include <QDomNode>
 #include <QPixmap>
@@ -34,9 +30,9 @@ public:
 	GridBirdEyeWindowProjectDataItem* m_birdEyeWindow;
 	std::vector<PreProcessorGridCrosssectionWindow*> m_crosssectionWindows;
 
-	vtkSmartPointer<vtkPolyData> m_regionPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
-	vtkSmartPointer<vtkActor> m_regionActor;
+	vtkPolyData* m_regionPolyData;
+	vtkPolyDataMapper* m_regionMapper;
+	vtkActor* m_regionActor;
 
 	SelectedNodesController* m_selectedNodesController;
 	SelectedCellsController* m_selectedCellsController;
