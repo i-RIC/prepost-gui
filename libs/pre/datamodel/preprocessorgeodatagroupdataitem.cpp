@@ -870,6 +870,9 @@ bool PreProcessorGeoDataGroupDataItem::colorBarShouldBeVisible() const
 	return false;
 }
 
+void PreProcessorGeoDataGroupDataItem::applyScalarsToColorsSetting()
+{}
+
 int PreProcessorGeoDataGroupDataItem::mappingCount() const
 {
 	int dimCount = 1;
