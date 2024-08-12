@@ -1345,6 +1345,8 @@ void GridCreatingConditionLaplace::Impl::updateMouseEventMode(const QPoint& pos,
 			if (edge != nullptr && edge->isVertexSelectable(worldPos, radius, &m_hoveredVertexId)) {
 				if (m_hoveredVertexId != 0 && m_hoveredVertexId != edge->polyLine().size() - 1) {
 					m_regionDefinedMouseEventMode = RegionDefinedMouseEventMode::RemoveVertexPrepare;
+				} else {
+					m_regionDefinedMouseEventMode = RegionDefinedMouseEventMode::RemoveVertexNotPossible;
 				}
 			} else {
 				m_regionDefinedMouseEventMode = RegionDefinedMouseEventMode::RemoveVertexNotPossible;
