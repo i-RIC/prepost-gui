@@ -1748,7 +1748,7 @@ void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProces
 			newPolyLineController->setPolyLine(newLines.at(j));
 			insertEdgeLineCrossSection(newPolyLineController, m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1));
 			m_edgeInterpolationCrossSection.insert(m_edgeInterpolationCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), InterpolationType::Linear);
-			m_divModesCrossSection.insert(m_divModesCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), DivisionMode::Auto);
+			m_divModesCrossSection.insert(m_divModesCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), DivisionMode::Equally);
 			m_divCommonRatiosCrossSection.insert(m_divCommonRatiosCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), 1);
 
 			addEdgeLinesCrossSectionForSelectionAndPreview(renderer);
