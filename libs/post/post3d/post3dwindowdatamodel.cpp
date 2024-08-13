@@ -14,7 +14,7 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowi.h>
-#include <guicore/post/postzoneselectingdialog.h>
+#include <guicore/post/v4postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -162,22 +162,23 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	}
 	// no appropriate zonedatatem found.
 	PostSolutionInfo* info = postSolutionInfo();
-	QList<PostZoneDataContainer*> containers = info->zoneContainers3D();
-	if (containers.count() == 0) {return nullptr;}
+	auto containers = info->v4ZoneContainers3D();
+	if (containers.size() == 0) {return nullptr;}
 
 	auto root = rootDataItem();
-	if (containers.count() > 1) {
-		PostZoneSelectingDialog dialog(mainWindow());
+	if (containers.size() > 1) {
+		v4PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
 		if (ret != QDialog::Accepted) {return nullptr;}
+
 		std::string gridType = dialog.gridTypeName();
 		std::string zone = dialog.zoneName();
 		Post3dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		return gt->zoneData(zone);
 	} else {
-		QList<Post3dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
-		Post3dWindowGridTypeDataItem* gt = list.at(0);
+		auto list = root->gridTypeDataItems();
+		auto gt = list.at(0);
 		auto zoneList = gt->zoneDatas();
 		return zoneList.at(0);
 	}

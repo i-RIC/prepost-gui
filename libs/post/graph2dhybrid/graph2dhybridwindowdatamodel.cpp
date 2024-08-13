@@ -29,10 +29,14 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrolleri.h>
 #include <guicore/base/iricmainwindowi.h>
-#include <guicore/post/postzoneselectingdialog.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
@@ -1501,32 +1505,57 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	Graph2dHybridWindowControlWidget* c = w->controlWidget();
 	int index = 0;
 	PostSolutionInfo* sol = postSolutionInfo();
-	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
+	auto cont = sol->v4ZoneContainer(tinfo->dimension, tinfo->zoneName);
 	if (cont == nullptr) {return;}
-	switch (tinfo->dataType) {
-	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
+
+	auto grid = cont->gridData()->grid();
+
+	if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured) {
+		// not implemented yet
+		index = 0;
+	}	else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
+		auto grids2d = dynamic_cast<v4Structured2dGrid*> (grid);
+
 		switch (tinfo->gridLocation) {
 		case iRICLib::H5CgnsZone::SolutionPosition::Node:
-			index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
+			index = grids2d->pointIndex(c->iValue(), c->jValue());
 			break;
 		case iRICLib::H5CgnsZone::SolutionPosition::Cell:
-			index = cont->cellIndex(c->iValue(), c->jValue(), c->kValue());
+			index = grids2d->cellIndex(c->iValue(), c->jValue());
 			break;
 		case iRICLib::H5CgnsZone::SolutionPosition::IFace:
-			index = cont->ifaceIndex(c->iValue(), c->jValue(), c->kValue());
+			index = grids2d->iEdgeIndex(c->iValue(), c->jValue());
 			break;
 		case iRICLib::H5CgnsZone::SolutionPosition::JFace:
-			index = cont->jfaceIndex(c->iValue(), c->jValue(), c->kValue());
+			index = grids2d->jEdgeIndex(c->iValue(), c->jValue());
 			break;
 		default:
 			Q_ASSERT_X(false, "Graph2dHybridWindowDataModel::sliderChanged", "Unhandled GridLocation");
 			break;
 		}
-		break;
-	default:
-		break;
+	} else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
+		auto grids3d = dynamic_cast<v4Structured3dGrid*> (grid);
+
+		switch (tinfo->gridLocation) {
+		case iRICLib::H5CgnsZone::SolutionPosition::Node:
+			index = grids3d->pointIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case iRICLib::H5CgnsZone::SolutionPosition::Cell:
+			index = grids3d->cellIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case iRICLib::H5CgnsZone::SolutionPosition::IFace:
+			index = grids3d->iFaceIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case iRICLib::H5CgnsZone::SolutionPosition::JFace:
+			index = grids3d->jFaceIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		case iRICLib::H5CgnsZone::SolutionPosition::KFace:
+			index = grids3d->kFaceIndex(c->iValue(), c->jValue(), c->kValue());
+			break;
+		default:
+			Q_ASSERT_X(false, "Graph2dHybridWindowDataModel::sliderChanged", "Unhandled GridLocation");
+			break;
+		}
 	}
 
 	switch (tinfo->dataType) {
@@ -1582,30 +1611,74 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 {
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
+	auto cont = sol->v4ZoneContainer(tinfo->dimension, tinfo->zoneName);
 	if (cont != nullptr) {
-		auto sGrid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
-		if (sGrid != nullptr) {
-			// structured
-			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
-				sGrid->GetCellDims(dims);
+		auto grid = cont->gridData()->grid();
+		auto sgrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
+		auto sgrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
+		auto ugrid = dynamic_cast<v4Unstructured2dGrid*> (grid);
+		if (sgrid2d != nullptr) {
+			// structured 2d grid
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
+				dims[0] = sgrid2d->dimensionI();
+				dims[1] = sgrid2d->dimensionJ();
+				dims[2] = 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
+				dims[0] = sgrid2d->dimensionI() - 1;
+				dims[1] = sgrid2d->dimensionJ() - 1;
+				dims[2] = 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
+				dims[0] = sgrid2d->dimensionI();
+				dims[1] = sgrid2d->dimensionJ() - 1;
+				dims[2] = 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+				dims[0] = sgrid2d->dimensionI() - 1;
+				dims[1] = sgrid2d->dimensionJ();
+				dims[2] = 1;
+				dims[3] = 1;
 			}
-			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
-				cont->iFaceData()->concreteData()->GetDimensions(dims);
+		} else if (sgrid3d != nullptr) {
+			// structured 3d grid
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
+				dims[0] = sgrid3d->dimensionI();
+				dims[1] = sgrid3d->dimensionJ();
+				dims[2] = sgrid3d->dimensionK();
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
+				dims[0] = sgrid3d->dimensionI() - 1;
+				dims[1] = sgrid3d->dimensionJ() - 1;
+				dims[2] = sgrid3d->dimensionK() - 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
+				dims[0] = sgrid3d->dimensionI();
+				dims[1] = sgrid3d->dimensionJ() - 1;
+				dims[2] = sgrid3d->dimensionK() - 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+				dims[0] = sgrid3d->dimensionI() - 1;
+				dims[1] = sgrid3d->dimensionJ();
+				dims[2] = sgrid3d->dimensionK() - 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::KFace) {
+				dims[0] = sgrid3d->dimensionI() - 1;
+				dims[1] = sgrid3d->dimensionJ() - 1;
+				dims[2] = sgrid3d->dimensionK();
+				dims[3] = 1;
 			}
-			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
-				cont->jFaceData()->concreteData()->GetDimensions(dims);
-			}
-			dims[3] = 1;
-		} else {
-			// unstructured
-			dims[0] = 1;
-			dims[1] = 1;
-			dims[2] = 1;
-			dims[3] = cont->data()->data()->GetNumberOfPoints();
-			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
-				dims[3] = cont->data()->data()->GetNumberOfCells();
+		} else if (ugrid != nullptr) {
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
+				dims[0] = 1;
+				dims[1] = 1;
+				dims[2] = 1;
+				dims[3] = ugrid->nodeCount();
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
+				dims[0] = 1;
+				dims[1] = 1;
+				dims[2] = 1;
+				dims[3] = ugrid->cellCount();
 			}
 		}
 	} else {

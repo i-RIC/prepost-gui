@@ -1,4 +1,5 @@
 #include "../base/iricmainwindowi.h"
+#include "../grid/v4grid.h"
 #include "../pre/base/preprocessordatamodeli.h"
 #include "../pre/base/preprocessorwindowi.h"
 #include "../project/projectcgnsfile.h"
@@ -16,15 +17,15 @@
 #include "postcontainer/postbaseiterativerealdatacontainer.h"
 #include "postcontainer/postbaseiterativestringdatacontainer.h"
 #include "postcontainer/postbaseiterativevaluescontainer.h"
-#include "postcontainer/postcalculatedresult.h"
 #include "postcontainer/v4postzonedatacontainer.h"
+#include "postcontainer/v4solutiongrid.h"
 #include "postdataexportdialog.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
 #include "posttimesteps.h"
-#include "postzonedatacontainer.h"
 #include "private/postsolutioninfo_updateifneededthread.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
 #include <misc/filesystemfunction.h>
@@ -191,23 +192,6 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 	auto preModel = projectData()->mainWindow()->preProcessorWindow()->dataModel();
 	QDir wDir(projectData()->workDirectory());
 
-	for (auto zone : m_zoneContainers1D) {
-		auto z = f->base(1)->zone(zone->zoneName());
-		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
-	}
-	for (auto zone : m_zoneContainers2D) {
-		time.start();
-		auto z = f->base(2)->zone(zone->zoneName());
-		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
-		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
-	}
-	for (auto zone : m_zoneContainers3D) {
-		time.start();
-		auto z = f->base(3)->zone(zone->zoneName());
-		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
-		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
-	}
-
 	for (auto c : m_v4ZoneContainers1D) {
 		auto z = f->base(1)->zone(c->zoneName());
 		auto gtItem = preModel->gridTypeDataItem(c->gridType()->name());
@@ -252,105 +236,6 @@ void PostSolutionInfo::informStepsUpdated()
 
 	emit updated();
 	emit allPostProcessorsUpdated();
-}
-
-bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
-{
-	auto file = cgnsFile()->solutionReader()->targetFile();
-
-	if (! file->baseExists(dim)) {
-		clearContainers(containers);
-		containerNameMap->clear();
-		return true;
-	}
-
-	std::vector<std::string> zoneNames;
-	for (PostZoneDataContainer* c : *containers) {
-		zoneNames.push_back(c->zoneName());
-	}
-
-	auto base = file->base(dim);
-	std::vector<std::string> tmpZoneNames;
-
-	for (const auto& zName : base->zoneNames()) {
-		auto z = base->zone(zName);
-
-		bool solExists = false;
-		int ier = z->getSolutionExists(&solExists);
-		if (ier != IRIC_NO_ERROR) {return false;}
-
-		if (! solExists) {continue;}
-
-		tmpZoneNames.push_back(zName);
-	}
-
-	if (zoneNames == tmpZoneNames) {
-		// zone names are equal to those already read.
-		for (auto c : *containers) {
-			c->loadIfEmpty(base->zone(c->zoneName()));
-		}
-		return false;
-	}
-
-	zoneNames = tmpZoneNames;
-
-	// clear the current zone containers first.
-	for (auto c : *containers) {
-		results->insert(c->zoneName(), c->detachCalculatedResult());
-	}
-
-	clearContainers(containers);
-	containerNameMap->clear();
-	auto gtypes = projectData()->solverDefinition()->gridTypes();
-
-	int step = currentStep();
-
-	for (const auto& zoneName : zoneNames) {
-		bool found = false;
-		auto zone = base->zone(zoneName);
-		if (zoneName == "iRICZone") {
-			for (auto gridType : gtypes) {
-				if (gridType->isPrimary() && ! (gridType->isOptional())) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
-					cont->loadFromCgnsFile(zone, step);
-					containers->push_back(cont);
-					containerNameMap->insert(zoneName, cont);
-					found = true;
-					break;
-				}
-			}
-		} else {
-			for (auto gridType : gtypes) {
-				if (zoneName.find(gridType->name()) != std::string::npos) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
-					cont->loadFromCgnsFile(zone, step);
-					containers->append(cont);
-					containerNameMap->insert(zoneName, cont);
-					found = true;
-					break;
-				}
-			}
-		}
-		if (! found) {
-			// no appropriate gridtype found. use the dummy grid type.
-			PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, projectData()->solverDefinition()->dummyGridType(), this);
-			cont->loadFromCgnsFile(zone, step);
-			containers->append(cont);
-			containerNameMap->insert(zoneName, cont);
-		}
-	}
-	std::vector<std::string> namesToRemove;
-	for (auto it = results->begin(); it != results->end(); ++it) {
-		auto c = containerNameMap->value(it.key(), nullptr);
-		if (c != nullptr) {
-			c->attachCalculatedResult(it.value());
-			namesToRemove.push_back(it.key());
-		}
-	}
-	for (auto name : namesToRemove) {
-		results->remove(name);
-	}
-	return true;
 }
 
 bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<v4PostCalculatedResult*> > *calculatedResults)
@@ -524,15 +409,12 @@ void PostSolutionInfo::setupZoneDataContainers()
 	std::map<std::string, std::vector<PostCalculatedResult*> > dummy;
 
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	ret = innerSetupZoneDataContainers(1, &m_v4ZoneContainers1D, &m_v4ZoneContainerNameMap1D, &m_v4CalculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	ret = innerSetupZoneDataContainers(2, &m_v4ZoneContainers2D, &m_v4ZoneContainerNameMap2D, &m_v4CalculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	ret = innerSetupZoneDataContainers(3, &m_v4ZoneContainers3D, &m_v4ZoneContainerNameMap3D, &m_v4CalculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
@@ -697,12 +579,13 @@ int PostSolutionInfo::loadFromCgnsFile()
 void PostSolutionInfo::closeCgnsFile()
 {
 	// clear the current zone containers first.
-	clearContainers(&m_zoneContainers1D);
-	m_zoneContainerNameMap1D.clear();
-	clearContainers(&m_zoneContainers2D);
-	m_zoneContainerNameMap2D.clear();
-	clearContainers(&m_zoneContainers3D);
-	m_zoneContainerNameMap3D.clear();
+	clearContainers(&m_v4ZoneContainers1D);
+	m_v4ZoneContainerNameMap1D.clear();
+	clearContainers(&m_v4ZoneContainers2D);
+	m_v4ZoneContainerNameMap2D.clear();
+	clearContainers(&m_v4ZoneContainers3D);
+	m_v4ZoneContainerNameMap3D.clear();
+
 	emit zoneList1DUpdated();
 	emit zoneList2DUpdated();
 	emit zoneList3DUpdated();
@@ -769,34 +652,18 @@ v4PostZoneDataContainer* PostSolutionInfo::v4ZoneContainer(Dimension dim, const 
 	}
 }
 
-const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers1D() const
+v4PostZoneDataContainer* PostSolutionInfo::firstZoneContainer() const
 {
-	return m_zoneContainers1D;
-}
+	auto conts1d = v4ZoneContainers1D();
+	if (conts1d.size() > 0) {return *conts1d.begin();}
 
-const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers2D() const
-{
-	return m_zoneContainers2D;
-}
+	auto conts2d = v4ZoneContainers2D();
+	if (conts2d.size() > 0) {return *conts2d.begin();}
 
-const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers3D() const
-{
-	return m_zoneContainers3D;
-}
+	auto conts3d = v4ZoneContainers3D();
+	if (conts3d.size() > 0) {return *conts3d.begin();}
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer1D(const std::string& zoneName) const
-{
-	return m_zoneContainerNameMap1D.value(zoneName, 0);
-}
-
-PostZoneDataContainer* PostSolutionInfo::zoneContainer2D(const std::string& zoneName) const
-{
-	return m_zoneContainerNameMap2D.value(zoneName, 0);
-}
-
-PostZoneDataContainer* PostSolutionInfo::zoneContainer3D(const std::string& zoneName) const
-{
-	return m_zoneContainerNameMap3D.value(zoneName, 0);
+	return nullptr;
 }
 
 void PostSolutionInfo::informSolverStart()
@@ -831,17 +698,17 @@ bool PostSolutionInfo::isDataAvailableBase() const
 
 bool PostSolutionInfo::isDataAvailable1D() const
 {
-	return stepsExist() && (m_zoneContainers1D.count() > 0);
+	return stepsExist() && (m_v4ZoneContainers1D.size() > 0);
 }
 
 bool PostSolutionInfo::isDataAvailable2D() const
 {
-	return stepsExist() && (m_zoneContainers2D.count() > 0);
+	return stepsExist() && (m_v4ZoneContainers2D.size() > 0);
 }
 
 bool PostSolutionInfo::isDataAvailable3D() const
 {
-	return stepsExist() && (m_zoneContainers3D.count() > 0);
+	return stepsExist() && (m_v4ZoneContainers3D.size() > 0);
 }
 
 bool PostSolutionInfo::stepsExist() const
@@ -861,31 +728,6 @@ double PostSolutionInfo::currentTimeStep()
 	if (m_timeSteps == nullptr) {return 0;}
 	if (m_currentStep >= m_timeSteps->timesteps().count()) {return 0;}
 	return m_timeSteps->timesteps().at(m_currentStep);
-}
-
-const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers(Dimension dim) const
-{
-	if (dim == dim1D) {return zoneContainers1D();}
-	else if (dim == dim2D) {return zoneContainers2D();}
-	else {return zoneContainers3D();}
-}
-
-PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const std::string& zoneName) const
-{
-	if (dim == dim1D) {return zoneContainer1D(zoneName);}
-	else if (dim == dim2D) {return zoneContainer2D(zoneName);}
-	else {return zoneContainer3D(zoneName);}
-}
-
-PostZoneDataContainer* PostSolutionInfo::firstZoneContainer() const
-{
-	auto conts1d = zoneContainers1D();
-	if (conts1d.length() > 0) {return conts1d.first();}
-	auto conts2d = zoneContainers2D();
-	if (conts2d.length() > 0) {return conts2d.first();}
-	auto conts3d = zoneContainers3D();
-	if (conts3d.length() > 0) {return conts3d.first();}
-	return nullptr;
 }
 
 PostBaseIterativeValuesContainer* PostSolutionInfo::baseIterativeValuesContainer() const
@@ -1038,12 +880,13 @@ void PostSolutionInfo::exportCalculationResult()
 		dim = dialog.selectedPostDimension();
 	}
 	// select zone.
-	QList<PostZoneDataContainer*> containers = zoneContainers(dim);
-	std::vector<PostZoneDataContainer*> tmpContainers;
-	for (int i = 0; i < containers.count(); ++i) {
-		PostZoneDataContainer* cont = containers[i];
+	auto containers = v4ZoneContainers(dim);
+	std::vector<v4PostZoneDataContainer*> tmpContainers;
+	for (int i = 0; i < containers.size(); ++i) {
+		auto cont = containers[i];
 		tmpContainers.push_back(cont);
 	}
+
 	std::string zoneName;
 	if (tmpContainers.size() == 0) {
 		// No valid grid.
@@ -1064,14 +907,14 @@ void PostSolutionInfo::exportCalculationResult()
 		}
 		zoneName = iRIC::toStr(zonelist.at(dialog.selectedIndex()));
 	}
-	PostZoneDataContainer* zoneC = zoneContainer(dim, zoneName);
+	auto zoneC = v4ZoneContainer(dim, zoneName);
 	// show setting dialog
 	PostDataExportDialog expDialog(iricMainWindow());
 
 	expDialog.setFormat(m_exportFormat);
 	expDialog.setProjectMainFile(projectData()->mainfile());
 
-	auto sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data()->data());
+	auto sGrid = vtkStructuredGrid::SafeDownCast(zoneC->gridData()->grid()->vtkData()->data());
 	if (sGrid != nullptr) {
 		// structured grid
 		int dim[3];
@@ -1162,10 +1005,10 @@ void PostSolutionInfo::exportCalculationResult()
 
 void PostSolutionInfo::exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format)
 {
-	PostZoneDataContainer* cont = firstZoneContainer();
+	auto cont = firstZoneContainer();
 	int iMin, iMax, jMin, jMax, kMin, kMax;
 
-	auto sGrid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto sGrid = vtkStructuredGrid::SafeDownCast(cont->gridData()->grid()->vtkData()->data());
 	if (sGrid != nullptr) {
 		// structured grid
 		int dim[3];
@@ -1233,14 +1076,6 @@ int PostSolutionInfo::open()
 	}
 }
 
-void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)
-{
-	for (auto c : *conts) {
-		delete c;
-	}
-	conts->clear();
-}
-
 void PostSolutionInfo::clearContainers(std::vector<v4PostZoneDataContainer*>* conts)
 {
 	for (auto c : *conts) {
@@ -1251,16 +1086,6 @@ void PostSolutionInfo::clearContainers(std::vector<v4PostZoneDataContainer*>* co
 
 void PostSolutionInfo::applyOffset(double x_diff, double y_diff)
 {
-	for (auto& c1 : m_zoneContainers1D) {
-		c1->applyOffset(x_diff, y_diff);
-	}
-	for (auto& c2 : m_zoneContainers2D) {
-		c2->applyOffset(x_diff, y_diff);
-	}
-	for (auto& c3 : m_zoneContainers3D) {
-		c3->applyOffset(x_diff, y_diff);
-	}
-
 	QPointF offset(x_diff, y_diff);
 	for (auto& c : m_v4ZoneContainers1D) {
 		c->applyOffset(offset);

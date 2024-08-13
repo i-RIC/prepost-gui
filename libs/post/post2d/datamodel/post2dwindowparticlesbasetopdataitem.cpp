@@ -10,7 +10,6 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/grid/v4particles2d.h>
 #include <guicore/image/imagesettingcontainer.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

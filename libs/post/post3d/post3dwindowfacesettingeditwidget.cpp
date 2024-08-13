@@ -2,7 +2,10 @@
 #include "post3dwindowfacesettingeditwidget.h"
 #include "ui_post3dwindowfacesettingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 Post3dWindowFaceSettingEditWidget::Post3dWindowFaceSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
@@ -27,9 +30,9 @@ Post3dWindowFaceSettingEditWidget::~Post3dWindowFaceSettingEditWidget()
 	delete ui;
 }
 
-void Post3dWindowFaceSettingEditWidget::setZoneData(PostZoneDataContainer* zd)
+void Post3dWindowFaceSettingEditWidget::setZoneData(v4PostZoneDataContainer* zd)
 {
-	auto grid = dynamic_cast<vtkStructuredGrid*>(zd->data());
+	auto grid = dynamic_cast<vtkStructuredGrid*>(zd->gridData()->grid()->vtkData()->data());
 
 	setDimensions(grid->GetDimensions());
 }

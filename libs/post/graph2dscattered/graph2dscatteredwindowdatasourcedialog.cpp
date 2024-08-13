@@ -2,7 +2,10 @@
 
 #include "graph2dscatteredwindowdatasourcedialog.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QString>
@@ -33,7 +36,7 @@ void Graph2dScatteredWindowDataSourceDialog::setDimension(PostSolutionInfo::Dime
 	m_dimension = dim;
 }
 
-void Graph2dScatteredWindowDataSourceDialog::setZoneDataContainer(PostZoneDataContainer* cont)
+void Graph2dScatteredWindowDataSourceDialog::setZoneDataContainer(v4PostZoneDataContainer* cont)
 {
 	m_container = cont;
 	setup();
@@ -113,7 +116,7 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	m_yAxisValues.clear();
 
 	// add data values.
-	auto ps = m_container->data()->data();
+	auto ps = m_container->gridData()->grid()->vtkData()->data();
 	auto pd = ps->GetPointData();
 	auto dt = m_container->gridType();
 	int arrs = pd->GetNumberOfArrays();

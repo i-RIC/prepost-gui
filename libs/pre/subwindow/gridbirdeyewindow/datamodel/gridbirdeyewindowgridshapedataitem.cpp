@@ -4,10 +4,10 @@
 #include "private/gridbirdeyewindowgridshapedataitem_impl.h"
 #include "private/gridbirdeyewindowgridshapedataitem_settingeditwidget.h"
 
+#include <guicore/grid/v4gridutil.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
 
 #include <vtkWarpScalar.h>
@@ -87,9 +87,9 @@ void GridBirdEyeWindowGridShapeDataItem::updateActorSetting()
 	auto dummyLabelData = vtkSmartPointer<vtkPolyData>::New();
 
 	impl->m_setting.gridShape.update(actorCollection(), actor2DCollection(),
-									 m_gridWarp->GetOutput() , m_gridWarp->GetOutput(),
+									 m_gridWarp->GetOutput(), m_gridWarp->GetOutput(),
 									 dummyLabelData,
-									 iRIC::toStr(PostZoneDataContainer::labelName));
+									 v4GridUtil::LABEL_NAME);
 
 	updateVisibilityWithoutRendering();
 }

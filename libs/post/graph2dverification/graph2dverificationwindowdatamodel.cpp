@@ -13,9 +13,13 @@
 #include <qwt_plot_marker.h>
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/base/animationcontrolleri.h>
 #include <guicore/base/iricmainwindowi.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
@@ -28,9 +32,11 @@
 #include <QMessageBox>
 #include <QStandardItemModel>
 #include <QVector2D>
+
 #include <vtkCell.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
+#include <vtkPolyData.h>
 #include <vtkStructuredGrid.h>
 
 Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent) :
@@ -268,7 +274,7 @@ void Graph2dVerificationWindowDataModel::exportData()
 
 void Graph2dVerificationWindowDataModel::setType(int type)
 {
-	vtkPointSet* ps = m_setting.activePostData()->data()->data();
+	vtkPointSet* ps = m_setting.activePostData()->gridData()->grid()->vtkData()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
 	if (sgrid == nullptr) {
@@ -320,14 +326,15 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 
 	// setup measuredVals.
 	m_setting.updateActivePostData();
-	PostZoneDataContainer *cont = m_setting.activePostData();
+	auto cont = m_setting.activePostData();
 	if (cont == nullptr) {
 		return;
 	}
-	vtkPointSet* ps = m_setting.activePostData()->data()->data();
-	if (ps == nullptr) {
+	auto grid = m_setting.activePostData()->gridData()->grid();
+	if (grid == nullptr) {
 		return;
 	}
+	auto ps = grid->vtkData()->data();
 
 	vtkPolyData* pd = m_setting.activeMeasuredData()->pointData();
 	distanceVals.reserve(pd->GetNumberOfPoints());
@@ -339,21 +346,21 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	vtkDoubleArray* mvda = vtkDoubleArray::SafeDownCast(pd->GetPointData()->GetArray(iRIC::toStr(m_setting.activeValue()).c_str()));
 	vtkDoubleArray* crda = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.activeResult()).c_str()));
 
-	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid);
 	if (sgrid != nullptr) {
 		int dimensions[3];
-		sgrid->GetDimensions(dimensions);
+		sgrid->vtkConcreteData()->concreteData()->GetDimensions(dimensions);
 		int centerJ = dimensions[1] / 2;
 		stdDist.reserve(dimensions[0]);
 		double distance = 0;
 		double point[3];
 		QVector2D previousP, currentP;
-		vtkIdType index = m_setting.activePostData()->nodeIndex(0, centerJ, 0);
-		sgrid->GetPoint(index, point);
+		vtkIdType index = sgrid->pointIndex(0, centerJ);
+		sgrid->vtkData()->data()->GetPoint(index, point);
 		previousP = QVector2D(point[0], point[1]);
 		for (int i = 0; i < dimensions[0]; ++i) {
-			index = m_setting.activePostData()->nodeIndex(i, centerJ, 0);
-			sgrid->GetPoint(index, point);
+			index = sgrid->pointIndex(i, centerJ);
+			sgrid->vtkData()->data()->GetPoint(index, point);
 			currentP = QVector2D(point[0], point[1]);
 			distance += (currentP - previousP).length();
 			stdDist.append(distance);
@@ -394,11 +401,11 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 		meanMeasuredVal += mval;
 
 		if (sgrid != nullptr) {
-			int i, j, k;
+			vtkIdType i, j;
 			double dist = 0;
 			for (int l = 0; l < cell->GetNumberOfPoints(); ++l) {
 				vtkIdType vid = cell->GetPointId(l);
-				m_setting.activePostData()->getNodeIJKIndex(vid, &i, &j, &k);
+				sgrid->getPointIJIndex(vid, &i, &j);
 				double tmpdist = stdDist.at(i);
 				dist += *(weights + l) * tmpdist;
 			}

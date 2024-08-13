@@ -6,7 +6,6 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/grid/v4particles2d.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 

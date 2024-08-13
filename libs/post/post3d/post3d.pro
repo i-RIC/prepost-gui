@@ -117,7 +117,6 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowcontourgroupdataitem.h \
            datamodel/post3dwindowcontourgrouptopdataitem.h \
            datamodel/post3dwindowfacedataitem.h \
-           datamodel/post3dwindowfacesettingwidget.h \
            datamodel/post3dwindowgridshapedataitem.h \
            datamodel/post3dwindowgridtypedataitem.h \
            datamodel/post3dwindownodescalargroupdataitem.h \
@@ -173,7 +172,6 @@ FORMS += post3dwindowcellrangelistsettingeditwidget.ui \
          post3dwindowcellrangesettingeditwidget.ui \
          post3dwindowfacelistsettingeditwidget.ui \
          post3dwindowfacesettingeditwidget.ui \
-         datamodel/post3dwindowfacesettingwidget.ui \
          datamodel/private/post3dwindowcellcontourgroupdataitem_settingeditwidget.ui \
          datamodel/private/post3dwindowcontourgroupdataitem_settingeditwidget.ui \
          datamodel/private/post3dwindowgridshapedataitem_settingeditwidget.ui \
@@ -208,7 +206,6 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowcontourgroupdataitem.cpp \
            datamodel/post3dwindowcontourgrouptopdataitem.cpp \
            datamodel/post3dwindowfacedataitem.cpp \
-           datamodel/post3dwindowfacesettingwidget.cpp \
            datamodel/post3dwindowgridshapedataitem.cpp \
            datamodel/post3dwindowgridtypedataitem.cpp \
            datamodel/post3dwindownodescalargroupdataitem.cpp \

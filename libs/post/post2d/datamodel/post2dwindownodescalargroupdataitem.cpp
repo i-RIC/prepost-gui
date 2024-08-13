@@ -19,7 +19,6 @@
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>

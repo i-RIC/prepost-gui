@@ -24,7 +24,6 @@ class PostBaseIterativeValuesContainer;
 class PostCalculatedResult;
 class PostIterationSteps;
 class PostTimeSteps;
-class PostZoneDataContainer;
 class v4PostCalculatedResult;
 class v4PostZoneDataContainer;
 
@@ -65,16 +64,8 @@ public:
 	v4PostZoneDataContainer* v4ZoneContainer2D(const std::string& zoneName) const;
 	v4PostZoneDataContainer* v4ZoneContainer3D(const std::string& zoneName) const;
 	v4PostZoneDataContainer* v4ZoneContainer(Dimension dim, const std::string& zoneName) const;
+	v4PostZoneDataContainer* firstZoneContainer() const;
 
-	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
-	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
-	const QList<PostZoneDataContainer*>& zoneContainers3D() const;
-	const QList<PostZoneDataContainer*>& zoneContainers(Dimension dim) const;
-	PostZoneDataContainer* zoneContainer1D(const std::string& zoneName) const;
-	PostZoneDataContainer* zoneContainer2D(const std::string& zoneName) const;
-	PostZoneDataContainer* zoneContainer3D(const std::string& zoneName) const;
-	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
-	PostZoneDataContainer* firstZoneContainer() const;
 	PostBaseIterativeValuesContainer* baseIterativeValuesContainer() const;
 
 	const std::map<std::string, PostBaseIterativeStringDataContainer*>& baseIterativeStringResults() const;
@@ -136,7 +127,6 @@ private:
 	void loadDividedBaseIterativeData();
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
-	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
 	bool innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<v4PostCalculatedResult*> > *calculatedResults);
 
 	bool setupBaseIterativeResults();
@@ -146,7 +136,6 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void timerEvent(QTimerEvent*) override;
 
-	static void clearContainers(QList<PostZoneDataContainer*>* conts);
 	static void clearContainers(std::vector<v4PostZoneDataContainer*>* conts);
 
 	static const int TIMERINTERVAL = 500;
@@ -162,13 +151,6 @@ private:
 	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap1D;
 	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap2D;
 	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap3D;
-
-	QList<PostZoneDataContainer*> m_zoneContainers1D;
-	QList<PostZoneDataContainer*> m_zoneContainers2D;
-	QList<PostZoneDataContainer*> m_zoneContainers3D;
-	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap1D;
-	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
-	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
 	int m_timerId;
 	iRICLib::H5CgnsFile* m_cgnsFile;

@@ -3,8 +3,11 @@
 #include "../graph2dhybridwindow.h"
 #include "../graph2dhybridwindowcontrolwidget.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 
 #include <QStandardItem>
@@ -111,10 +114,10 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues()
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
 
 	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
-	PostZoneDataContainer* cont = postInfo->zoneContainer(info->dimension, info->zoneName);
-	if (cont == 0) {return;}
+	v4PostZoneDataContainer* cont = postInfo->v4ZoneContainer(info->dimension, info->zoneName);
+	if (cont == nullptr) {return;}
 
-	auto grid = cont->data()->data();
+	auto grid = cont->gridData()->grid()->vtkData()->data();
 
 	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		updateValuesVertex(grid);

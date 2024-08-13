@@ -2,8 +2,6 @@
 #include "post3dwindowcellrangesettingeditwidget.h"
 #include "ui_post3dwindowcellrangesettingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
 #include <vtkStructuredGrid.h>
 
 Post3dWindowCellRangeSettingEditWidget::Post3dWindowCellRangeSettingEditWidget(QWidget *parent) :
@@ -23,13 +21,6 @@ Post3dWindowCellRangeSettingEditWidget::Post3dWindowCellRangeSettingEditWidget(Q
 Post3dWindowCellRangeSettingEditWidget::~Post3dWindowCellRangeSettingEditWidget()
 {
 	delete ui;
-}
-
-void Post3dWindowCellRangeSettingEditWidget::setZoneData(PostZoneDataContainer* zd)
-{
-	auto grid = dynamic_cast<vtkStructuredGrid*>(zd->data());
-
-	setDimensions(grid->GetDimensions());
 }
 
 void Post3dWindowCellRangeSettingEditWidget::setDimensions(int* dims)

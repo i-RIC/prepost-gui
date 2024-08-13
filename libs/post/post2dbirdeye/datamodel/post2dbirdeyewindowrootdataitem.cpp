@@ -9,7 +9,7 @@
 #include <dataitem/logo/logodataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -27,7 +27,7 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	GraphicsWindowRootDataItem {window, parent}
 {
 	SolverDefinition* def = projectData()->solverDefinition();
-	PostSolutionInfo* post = dynamic_cast<Post2dBirdEyeWindowDataModel*>(dataModel())->postSolutionInfo();
+	auto post = dynamic_cast<Post2dBirdEyeWindowDataModel*>(dataModel())->postSolutionInfo();
 
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 	// build grid type data items.
@@ -38,7 +38,7 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	}
 	// create grid type data item for dummy grid type if needed.
 	bool needDummy = false;
-	for (PostZoneDataContainer* c : post->zoneContainers2D()) {
+	for (auto c : post->v4ZoneContainers2D()) {
 		needDummy = needDummy || (c->gridType() == def->dummyGridType());
 	}
 	if (needDummy) {

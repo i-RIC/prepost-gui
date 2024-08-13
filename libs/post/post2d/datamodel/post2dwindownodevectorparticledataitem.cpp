@@ -5,8 +5,6 @@
 #include "post2dwindownodevectorparticlegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
 #include <QAction>
 #include <QMenu>
 #include <QMouseEvent>
