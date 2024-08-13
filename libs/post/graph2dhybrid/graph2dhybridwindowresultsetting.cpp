@@ -1382,7 +1382,8 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 		info.loadFromProjectMainFile(typeNode);
 		for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 			DataTypeInfo& tmpInfo = m_dataTypeInfos[i];
-			if (tmpInfo == info) {
+			if (tmpInfo.zoneName == info.zoneName) {
+				tmpInfo.gridLocation = info.gridLocation;
 				Q_ASSERT(m_targetDataTypeInfo == nullptr);
 				m_targetDataTypeInfo = &tmpInfo;
 			}
