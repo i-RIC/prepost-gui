@@ -139,6 +139,7 @@ void Post2dWindowAbstractCellScalarGroupTopDataItem::handleAddDialogAccepted(QDi
 	auto sol = dialog->selectedValue();
 
 	auto newItem = createChild(sol);
+	newItem->updateActorSetting();
 
 	m_childItems.push_back(newItem);
 	updateItemMap();
