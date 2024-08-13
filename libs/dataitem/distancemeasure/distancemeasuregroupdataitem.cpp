@@ -116,6 +116,7 @@ void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	clearChildItems();
+	updateItemMap();
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
