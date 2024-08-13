@@ -8,7 +8,6 @@
 
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/postcontainer/postzonepointseriesdatacontainer.h>
 #include <misc/stringtool.h>
 

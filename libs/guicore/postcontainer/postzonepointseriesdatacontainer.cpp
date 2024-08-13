@@ -1,9 +1,9 @@
 #include "../project/projectcgnsfile.h"
-#include "postcalculatedresult.h"
-#include "postcalculatedresultargument.h"
 #include "postsolutioninfo.h"
-#include "postzonedatacontainer.h"
 #include "postzonepointseriesdatacontainer.h"
+#include "v4postcalculatedresult.h"
+#include "v4postcalculatedresultargument.h"
+#include "v4postzonedatacontainer.h"
 
 #include <misc/stringtool.h>
 
@@ -45,8 +45,8 @@ int PostZonePointSeriesDataContainer::pointIndex() const
 int PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib::H5CgnsZone* zone, double* value)
 {
 	auto zc = zoneDataContainer();
-	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
-	for (PostCalculatedResult* result : calcResults) {
+	auto calcResults = zc->calculatedResults();
+	for (auto result : calcResults) {
 		if (m_valueName == result->name()) {
 			return loadCalculatedData(result, zone, value);
 		}
@@ -54,10 +54,10 @@ int PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib:
 	return loadResultData(name, zone, value);
 }
 
-int PostZonePointSeriesDataContainer::loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value)
+int PostZonePointSeriesDataContainer::loadCalculatedData(v4PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value)
 {
 	std::vector<double> args;
-	for (PostCalculatedResultArgument* arg : result->arguments()) {
+	for (auto arg : result->arguments()) {
 		double argVal;
 		int ier = loadData(arg->name(), zone, &argVal);
 		if (! ier) {return ier;}
@@ -103,9 +103,9 @@ int PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iR
 	return IRIC_NO_ERROR;
 }
 
-PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() const
+v4PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() const
 {
-	return solutionInfo()->zoneContainer(m_dimension, m_zoneName);
+	return solutionInfo()->v4ZoneContainer(m_dimension, m_zoneName);
 }
 
 int PostZonePointSeriesDataContainer::loadData()
@@ -116,8 +116,8 @@ int PostZonePointSeriesDataContainer::loadData()
 		return IRIC_NO_ERROR;
 	}
 
-	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
-	for (PostCalculatedResult* r : calcResults) {
+	auto calcResults = zc->calculatedResults();
+	for (auto r : calcResults) {
 		r->updateFunction();
 	}
 

@@ -3,7 +3,6 @@
 
 #include <post/graph2d/graph2dwindowdatamodel.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-//#include "graph2dscatteredwindowcontinuousexportdialog.h"
 #include "graph2dscatteredwindowresultsetting.h"
 
 class QPixmap;
@@ -59,7 +58,6 @@ private:
 	bool savePixmap(const QPixmap& pixmap, const QString& filename);
 	void showErrorMessage(const QString& filename);
 	void updateTitle();
-	const QList<PostZoneDataContainer*>& zoneContainers();
 	QString formattedNumber(int number, int max);
 	bool exportCsv(const QString& filename) const;
 

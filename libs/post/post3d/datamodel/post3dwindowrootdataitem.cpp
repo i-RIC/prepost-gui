@@ -10,7 +10,7 @@
 #include <dataitem/logo/logodataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -31,7 +31,7 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 
 	const auto& types = def->gridTypes();
 	// build grid type data items.
-	const auto& conts = post->zoneContainers3D();
+	const auto& conts = post->v4ZoneContainers3D();
 	for (auto type : types) {
 		bool zoneExists = false;
 		for (auto c : conts) {

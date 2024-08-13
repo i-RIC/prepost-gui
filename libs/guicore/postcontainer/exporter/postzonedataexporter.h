@@ -7,14 +7,14 @@
 
 class QString;
 class ProjectData;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class PostZoneDataExporter
 {
 public:
 	virtual ~PostZoneDataExporter() {}
 	virtual QString filename(const QString& prefix, int index) const = 0;
-	virtual bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const = 0;
+	virtual bool exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const = 0;
 
 	template<typename T>
 	static T* applyOffset(T* src, vtkSmartPointer<T>& dest, const QPointF& offset)

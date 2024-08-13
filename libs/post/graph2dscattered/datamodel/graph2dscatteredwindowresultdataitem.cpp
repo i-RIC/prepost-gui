@@ -4,7 +4,6 @@
 #include "graph2dscatteredwindowresultgroupdataitem.h"
 
 #include <guibase/qwtplotcustomcurve.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
 
 #include <QStandardItem>

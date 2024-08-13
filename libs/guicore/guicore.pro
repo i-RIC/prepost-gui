@@ -260,7 +260,6 @@ HEADERS += guicore_global.h \
            post/postprocessorwindowfactoryi.h \
            post/postprocessorwindowprojectdataitem.h \
            post/postzonedataitem.h \
-           post/postzoneselectingdialog.h \
            post/v4postzoneselectingdialog.h \
            postcontainer/postabstractsteps.h \
            postcontainer/postbaseiterativedatacontainer.h \
@@ -271,11 +270,6 @@ HEADERS += guicore_global.h \
            postcontainer/postbaseiterativestringdatacontainer.h \
            postcontainer/postbaseiterativevaluescontainer.h \
            postcontainer/postbaseselectingdialog.h \
-           postcontainer/postcalculatedresult.h \
-           postcontainer/postcalculatedresultargument.h \
-           postcontainer/postcalculatedresultargumenteditdialog.h \
-           postcontainer/postcalculatedresulteditdialog.h \
-           postcontainer/postcalculatedresultlistdialog.h \
            postcontainer/postdatacontainer.h \
            postcontainer/postdataexportdialog.h \
            postcontainer/postexportsetting.h \
@@ -283,7 +277,6 @@ HEADERS += guicore_global.h \
            postcontainer/postseriesdatacontainer.h \
            postcontainer/postsolutioninfo.h \
            postcontainer/posttimesteps.h \
-           postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
            postcontainer/v4postcalculatedresult.h \
            postcontainer/v4postcalculatedresultargument.h \
@@ -427,12 +420,8 @@ HEADERS += guicore_global.h \
            postcontainer/private/postbaseiterativevaluescontainer_valuecontainer.h \
            postcontainer/private/postbaseiterativevaluescontainer_valuecontainert.h \
            postcontainer/private/postbaseiterativevaluescontainer_valuecontainert_detail.h \
-           postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
            postcontainer/private/postsolutioninfo_updateifneededthread.h \
            postcontainer/private/poststringresult_impl.h \
-           postcontainer/private/postzonedatacontainer_particlegrouploader.h \
-           postcontainer/private/postzonedatacontainer_particleloader.h \
-           postcontainer/private/postzonedatacontainer_polydataloader.h \
            postcontainer/private/v4postcalculatedresulteditdialog_tabledelegate.h \
            postcontainer/private/v4postzonedatacontainer_impl.h \
            postcontainer/private/v4solutiongrid_attributedataprovider.h \
@@ -728,12 +717,8 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          misc/cgnszoneselectdialog.ui \
          misc/coordinatesystemdisplaywidget.ui \
          misc/mousepositionwidget.ui \
-         post/postzoneselectingdialog.ui \
          post/v4postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
-         postcontainer/postcalculatedresultargumenteditdialog.ui \
-         postcontainer/postcalculatedresulteditdialog.ui \
-         postcontainer/postcalculatedresultlistdialog.ui \
          postcontainer/postdataexportdialog.ui \
          postcontainer/v4postcalculatedresultargumenteditdialog.ui \
          postcontainer/v4postcalculatedresulteditdialog.ui \
@@ -856,7 +841,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            post/postprocessorwindowfactoryi.cpp \
            post/postprocessorwindowprojectdataitem.cpp \
            post/postzonedataitem.cpp \
-           post/postzoneselectingdialog.cpp \
            post/v4postzoneselectingdialog.cpp \
            postcontainer/postabstractsteps.cpp \
            postcontainer/postbaseiterativedatacontainer.cpp \
@@ -867,11 +851,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/postbaseiterativestringdatacontainer.cpp \
            postcontainer/postbaseiterativevaluescontainer.cpp \
            postcontainer/postbaseselectingdialog.cpp \
-           postcontainer/postcalculatedresult.cpp \
-           postcontainer/postcalculatedresultargument.cpp \
-           postcontainer/postcalculatedresultargumenteditdialog.cpp \
-           postcontainer/postcalculatedresulteditdialog.cpp \
-           postcontainer/postcalculatedresultlistdialog.cpp \
            postcontainer/postdatacontainer.cpp \
            postcontainer/postdataexportdialog.cpp \
            postcontainer/postexportsetting.cpp \
@@ -879,7 +858,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/postseriesdatacontainer.cpp \
            postcontainer/postsolutioninfo.cpp \
            postcontainer/posttimesteps.cpp \
-           postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
            postcontainer/v4postcalculatedresult.cpp \
            postcontainer/v4postcalculatedresultargument.cpp \
@@ -1003,11 +981,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/private/postbaseiterativevaluescontainer_realvaluecontainer.cpp \
            postcontainer/private/postbaseiterativevaluescontainer_textio.cpp \
            postcontainer/private/postbaseiterativevaluescontainer_valuecontainer.cpp \
-           postcontainer/private/postcalculatedresulteditdialog_tabledelegate.cpp \
            postcontainer/private/postsolutioninfo_updateifneededthread.cpp \
-           postcontainer/private/postzonedatacontainer_particlegrouploader.cpp \
-           postcontainer/private/postzonedatacontainer_particleloader.cpp \
-           postcontainer/private/postzonedatacontainer_polydataloader.cpp \
            postcontainer/private/v4postcalculatedresulteditdialog_tabledelegate.cpp \
            postcontainer/private/v4postzonedatacontainer_impl.cpp \
            postcontainer/private/v4solutiongrid_attributedataprovider.cpp \

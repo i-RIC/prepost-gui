@@ -27,13 +27,13 @@ private:
 	int loadData() override;
 	int loadData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
 
-	int loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value);
+	int loadCalculatedData(v4PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value);
 	int loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	PostZoneDataContainer* zoneDataContainer() const;
+	v4PostZoneDataContainer* zoneDataContainer() const;
 
 protected:
 	std::string m_zoneName;

@@ -28,12 +28,12 @@ public:
 	void setMeasuredDatas(const std::vector<MeasuredData*>& data);
 
 	void setTimeStep(int step);
-	void setPostZoneDataContainer(PostZoneDataContainer* cont);
+	void setPostZoneDataContainer(v4PostZoneDataContainer* cont);
 	void setActiveResult(const QString& result);
 	void setActiveValue(const QString& value);
 
 	int timeStep() const;
-	PostZoneDataContainer* postZoneDataContainer() const;
+	v4PostZoneDataContainer* postZoneDataContainer() const;
 	QString activeResult() const;
 
 	MeasuredData* measuredData() const;

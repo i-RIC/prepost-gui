@@ -1,10 +1,13 @@
 #include "postzonedatashapeexporter.h"
-#include "../postzonedatacontainer.h"
+#include "../../grid/v4grid.h"
+#include "../v4solutiongrid.h"
+#include "../v4postzonedatacontainer.h"
 #include "misc/filesystemfunction.h"
 #include "misc/stringtool.h"
 #include "project/projectdata.h"
 #include "project/projectmainfile.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <cs/coordinatesystem.h>
 
 #include <QFileInfo>
@@ -222,11 +225,11 @@ QString PostZoneDataShapeExporter::filename(const QString& prefix, int index) co
 	return fname;
 }
 
-bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const
+bool PostZoneDataShapeExporter::exportToFile(v4PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 
-	vtkPointSet* ps = data->data()->data();
+	vtkPointSet* ps = data->gridData()->grid()->vtkData()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 	bool ok;
 	if (sgrid != 0) {

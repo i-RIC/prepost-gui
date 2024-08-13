@@ -234,7 +234,7 @@ bool Graph2dScatteredWindowDataModel::setupInitialSetting()
 
 	Graph2dScatteredWindowDataSourceDialog dialog(mainWindow());
 	dialog.setDimension(m_setting.dimension());
-	dialog.setZoneDataContainer(sInfo->zoneContainer(m_setting.dimension(), m_setting.zoneName()));
+	dialog.setZoneDataContainer(sInfo->v4ZoneContainer(m_setting.dimension(), m_setting.zoneName()));
 	dialog.setSetting(m_setting);
 
 	int ret = dialog.exec();
@@ -366,7 +366,7 @@ void Graph2dScatteredWindowDataModel::dataSourceSetting()
 
 	Graph2dScatteredWindowDataSourceDialog dialog(mainWindow());
 	dialog.setDimension(m_setting.dimension());
-	dialog.setZoneDataContainer(postSolutionInfo()->zoneContainer(m_setting.dimension(), m_setting.zoneName()));
+	dialog.setZoneDataContainer(postSolutionInfo()->v4ZoneContainer(m_setting.dimension(), m_setting.zoneName()));
 	dialog.setSetting(m_setting);
 
 	int ret = dialog.exec();

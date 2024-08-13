@@ -7,7 +7,6 @@
 
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

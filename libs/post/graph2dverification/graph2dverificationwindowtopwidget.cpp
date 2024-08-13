@@ -1,7 +1,10 @@
 #include "graph2dverificationwindowtopwidget.h"
 #include "ui_graph2dverificationwindowtopwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 
 #include <vtkPointSet.h>
 #include <vtkStructuredGrid.h>
@@ -24,7 +27,7 @@ void Graph2dVerificationWindowTopWidget::setSetting(const Graph2dVerificationWin
 {
 	if (setting.activePostData() == nullptr) return;
 
-	vtkPointSet* ps = setting.activePostData()->data()->data();
+	auto ps = setting.activePostData()->gridData()->grid()->vtkData()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
 	ui->typeComboBox->blockSignals(true);

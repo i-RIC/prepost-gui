@@ -2,8 +2,11 @@
 
 #include "postallzoneselectingdialog.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 PostAllZoneSelectingDialog::PostAllZoneSelectingDialog(QWidget* parent) :
@@ -26,9 +29,9 @@ bool PostAllZoneSelectingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	ui->dimensionComboBox->blockSignals(true);
 	if (info->isDataAvailable1D()) {
 		QList<SolverDefinitionGridType*> typeList;
-		QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > zoneMap;
+		QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> > zoneMap;
 
-		setupMaps(info->zoneContainers1D(), typeList, zoneMap);
+		setupMaps(info->v4ZoneContainers1D(), typeList, zoneMap);
 		m_gridTypeMap.insert(1, typeList);
 		m_zoneMap.insert(1, zoneMap);
 
@@ -37,9 +40,9 @@ bool PostAllZoneSelectingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	}
 	if (m_postSolutionInfo->isDataAvailable2D()) {
 		QList<SolverDefinitionGridType*> typeList;
-		QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > zoneMap;
+		QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> > zoneMap;
 
-		setupMaps(info->zoneContainers2D(), typeList, zoneMap);
+		setupMaps(info->v4ZoneContainers2D(), typeList, zoneMap);
 		m_gridTypeMap.insert(2, typeList);
 		m_zoneMap.insert(2, zoneMap);
 
@@ -48,9 +51,9 @@ bool PostAllZoneSelectingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	}
 	if (m_postSolutionInfo->isDataAvailable3D()) {
 		QList<SolverDefinitionGridType*> typeList;
-		QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > zoneMap;
+		QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> > zoneMap;
 
-		setupMaps(info->zoneContainers3D(), typeList, zoneMap);
+		setupMaps(info->v4ZoneContainers3D(), typeList, zoneMap);
 		m_gridTypeMap.insert(3, typeList);
 		m_zoneMap.insert(3, zoneMap);
 
@@ -77,7 +80,7 @@ bool PostAllZoneSelectingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	foreach(int dim, m_gridTypeMap.keys()) {
 		QList<SolverDefinitionGridType*> gridtypes = m_gridTypeMap.value(dim);
 		foreach(SolverDefinitionGridType* type, gridtypes) {
-			QList<PostZoneDataContainer*> zoneList = m_zoneMap.value(dim).value(type);
+			std::vector<v4PostZoneDataContainer*> zoneList = m_zoneMap.value(dim).value(type);
 			multiZones = multiZones || (zoneList.size() > 1);
 		}
 	}
@@ -93,18 +96,18 @@ bool PostAllZoneSelectingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	return m_dimensions.size() > 0;
 }
 
-void PostAllZoneSelectingDialog::setupMaps(const QList<PostZoneDataContainer*>& srcList, QList<SolverDefinitionGridType*>& typeList, QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> >& zoneMap)
+void PostAllZoneSelectingDialog::setupMaps(const std::vector<v4PostZoneDataContainer*>& srcList, QList<SolverDefinitionGridType*>& typeList, QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> >& zoneMap)
 {
 	for (int i = 0; i < srcList.size(); ++i) {
-		PostZoneDataContainer* cont = srcList.at(i);
+		v4PostZoneDataContainer* cont = srcList.at(i);
 		if (! typeList.contains(cont->gridType())) {
 			typeList.append(cont->gridType());
-			QList<PostZoneDataContainer*> newlist;
-			newlist.append(cont);
+			std::vector<v4PostZoneDataContainer*> newlist;
+			newlist.push_back(cont);
 			zoneMap.insert(cont->gridType(), newlist);
 		} else {
-			QList<PostZoneDataContainer*>& list = zoneMap[cont->gridType()];
-			list.append(cont);
+			std::vector<v4PostZoneDataContainer*>& list = zoneMap[cont->gridType()];
+			list.push_back(cont);
 		}
 	}
 }
@@ -125,10 +128,10 @@ void PostAllZoneSelectingDialog::setupZoneList(int index)
 {
 	int dimension = m_dimensions.at(ui->dimensionComboBox->currentIndex());
 	SolverDefinitionGridType* gt = m_gridTypes.at(index);
-	QList<PostZoneDataContainer*> zoneList = m_zoneMap.value(dimension).value(gt);
+	auto zoneList = m_zoneMap.value(dimension).value(gt);
 	ui->zoneList->clear();
 	for (int i = 0; i < zoneList.size(); ++i) {
-		PostZoneDataContainer* cont = zoneList.at(i);
+		v4PostZoneDataContainer* cont = zoneList.at(i);
 		ui->zoneList->addItem(cont->zoneName().c_str());
 	}
 	ui->zoneList->setCurrentRow(0);
@@ -139,11 +142,12 @@ PostSolutionInfo::Dimension PostAllZoneSelectingDialog::dimension()
 	return PostSolutionInfo::fromIntDimension(m_dimensions.at(ui->dimensionComboBox->currentIndex()));
 }
 
-PostZoneDataContainer* PostAllZoneSelectingDialog::container() const
+v4PostZoneDataContainer* PostAllZoneSelectingDialog::container() const
 {
 	int dimension = m_dimensions.at(ui->dimensionComboBox->currentIndex());
 	SolverDefinitionGridType* gt = m_gridTypes.at(ui->gridTypeComboBox->currentIndex());
-	QList<PostZoneDataContainer*> zoneList = m_zoneMap.value(dimension).value(gt);
-	PostZoneDataContainer* cont = zoneList.at(ui->zoneList->currentRow());
+	std::vector<v4PostZoneDataContainer*> zoneList = m_zoneMap.value(dimension).value(gt);
+	v4PostZoneDataContainer* cont = zoneList.at(ui->zoneList->currentRow());
+
 	return cont;
 }
