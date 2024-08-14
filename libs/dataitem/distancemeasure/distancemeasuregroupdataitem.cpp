@@ -30,12 +30,12 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
 
-	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
-	connect(impl->m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(impl->m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
+	connect(impl->m_addAction, &QAction::triggered, this, &DistanceMeasureGroupDataItem::addMeasure);
+	connect(impl->m_deleteSelectedAction, &QAction::triggered, this, &DistanceMeasureGroupDataItem::deleteSelected);
+	connect(impl->m_deleteAllAction, &QAction::triggered, this, &DistanceMeasureGroupDataItem::deleteAll);
 
 	// set up the first item.
-	addMeasure();
+	// addMeasure();
 }
 
 DistanceMeasureGroupDataItem::~DistanceMeasureGroupDataItem()
