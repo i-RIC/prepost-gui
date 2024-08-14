@@ -252,6 +252,12 @@ void GraphicsWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 	m_isExpanded.save(writer);
 }
 
+void GraphicsWindowDataItem::clearChildItemsAndUpdateItemMap()
+{
+	clearChildItems();
+	updateItemMap();
+}
+
 void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 {
 	if (m_standardItem != nullptr) {

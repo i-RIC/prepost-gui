@@ -62,6 +62,7 @@ public:
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer) override;
 	QStandardItem* standardItem() const;
 	virtual void updateItemMap();
+	void clearChildItemsAndUpdateItemMap();
 	virtual void updateExpandState(QTreeView* view);
 	virtual void reflectExpandState(QTreeView* view);
 	void innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map);
