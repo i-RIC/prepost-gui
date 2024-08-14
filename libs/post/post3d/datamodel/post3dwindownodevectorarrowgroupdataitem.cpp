@@ -175,8 +175,7 @@ std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> Post3dWindowNodeVector
 
 void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector<Post3dWindowNodeVectorArrowDataItem::Setting>& settings)
 {
-	clearChildItems();
-	updateItemMap();
+	clearChildItemsAndUpdateItemMap();
 
 	auto tItem = topDataItem();
 	int idx = 1;

@@ -130,7 +130,7 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::handleAddDialogAccepted(QDialo
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	clearChildItems();
+	clearChildItemsAndUpdateItemMap();
 
 	if (node.nodeName() == "ArrowGroupV4") {
 		// old style

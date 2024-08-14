@@ -102,7 +102,7 @@ void GridBirdEyeWindowCellScalarGroupTopDataItem::innerUpdateZScale(double scale
 
 void GridBirdEyeWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	clearChildItems();
+	clearChildItemsAndUpdateItemMap();
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
