@@ -2,6 +2,7 @@
 #include "gridcreatingconditionlaplacectrlpointsdialog.h"
 #include "gridcreatingconditionlaplacedeploysettingdialog.h"
 #include "gridcreatingconditionlaplacedivisionsettingdialog.h"
+#include "gridcreatingconditionlaplaceinterpolatesettingdialog.h"
 #include "gridcreatingconditionlaplacesubregiondeploysettingdialog.h"
 #include "gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h"
 #include "private/gridcreatingconditionlaplace_centerlinecoordinateseditor.h"
@@ -238,6 +239,7 @@ void GridCreatingConditionLaplace::setupMenu()
 		m->addAction(impl->m_removeVertexAction);
 		m->addSeparator();
 		m->addAction(impl->m_divisionSettingAction);
+		m->addAction(impl->m_interpolateSettingAction);
 		m->addAction(impl->m_deploySubRegionSettingAction);
 		m->addSeparator();
 		m->addAction(impl->m_clearDivisionSettingAction);
@@ -266,12 +268,37 @@ void GridCreatingConditionLaplace::viewOperationEnded(PreProcessorGraphicsViewI*
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
+void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (! iRIC::isEnterKey(event->key())) {return;}
 		if (impl->m_centerLineOnlyMouseEventMode != Impl::CenterLineOnlyMouseEventMode::Defining) {return;}
 		impl->pushCenterLineFinishDefinitionCommand();
+	}
+	if (impl->m_editMode == Impl::EditMode::RegionDefined) {
+		if (event->key() == Qt::Key_Escape) {
+			if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddEdgeLine ||
+					impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddEdgeLineFinishPrepare
+			) {
+				impl->m_newEdgeLine.clear();
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+				iRICUndoStack::instance().clear();
+			} else if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexNotPossible ||
+								 impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexPrepare
+			) {
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+			} else if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::RemoveVertexNotPossible ||
+								 impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::RemoveVertexPrepare
+			) {
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+			}
+		}
 	}
 }
 
@@ -497,16 +524,6 @@ void GridCreatingConditionLaplace::buildBankLines()
 	impl->buildBankLines();
 }
 
-void GridCreatingConditionLaplace::interpolateModeSprine()
-{
-	impl->pushEdgeSetInterpolationModeCommand(Impl::InterpolationType::Spline);
-}
-
-void GridCreatingConditionLaplace::interpolateModeLinear()
-{
-	impl->pushEdgeSetInterpolationModeCommand(Impl::InterpolationType::Linear);
-}
-
 void GridCreatingConditionLaplace::newEdgeMode(bool on)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {return;}
@@ -516,6 +533,9 @@ void GridCreatingConditionLaplace::newEdgeMode(bool on)
 	} else {
 		impl->m_newEdgeLine.clear();
 		impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+		impl->updateMouseCursor(dataModel()->graphicsView());
+		impl->updateActionStatus();
+		iRICUndoStack::instance().clear();
 	}
 }
 
@@ -710,6 +730,23 @@ void GridCreatingConditionLaplace::divisionSetting()
 		impl->pushDivisionSettingCommand(false, impl->m_selectedSectionId, dialog.divisionNumber(),
 																		 dialog.divisionMode(), dialog.commonRatio(), dialog.thisLineOnly());
 	}
+}
+
+void GridCreatingConditionLaplace::interpolateSetting()
+{
+	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::None) {return;}
+
+	GridCreatingConditionLaplaceInterpolateSettingDialog dialog(preProcessorWindow());
+	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
+		dialog.setInterpolationType(impl->m_edgeInterpolationStreamWise[impl->m_selectedSectionId]);
+	} else {
+		dialog.setInterpolationType(impl->m_edgeInterpolationCrossSection[impl->m_selectedSectionId]);
+	}
+
+	int result = dialog.exec();
+	if (result == QDialog::Rejected) {return;}
+
+	impl->pushEdgeSetInterpolationModeCommand(impl->m_selectedSectionEdgeType, impl->m_selectedSectionId, dialog.interpolationType(), dialog.thisLineOnly());
 }
 
 void GridCreatingConditionLaplace::deploySetting()

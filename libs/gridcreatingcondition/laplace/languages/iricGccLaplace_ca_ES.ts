@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>Podeu crear una forma de quadrícula suau que resolgui l'equació de laplace.</translation>
+        <translation>Podeu crear una forma de quadrícula suau que resolgui l&apos;equació de laplace.</translation>
     </message>
 </context>
 <context>
@@ -62,15 +64,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Mode d’interpolació (&amp;I)</translation>
+        <translation type="vanished">Mode d’interpolació (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Spline (&amp;S)</translation>
+        <translation type="vanished">Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Lineal (&amp;L)</translation>
+        <translation type="vanished">Lineal (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -106,7 +108,7 @@
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation>Configuració de desplegament per a l'àrea seleccionada (&amp;D)...</translation>
+        <translation>Configuració de desplegament per a l&apos;àrea seleccionada (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
@@ -142,7 +144,11 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>No s'han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
+        <translation>No s&apos;han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -249,7 +255,7 @@
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation>Desplegueu l'objectiu de configuració</translation>
+        <translation>Desplegueu l&apos;objectiu de configuració</translation>
     </message>
     <message>
         <source>This line only</source>
@@ -261,7 +267,42 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuració de desplegament s'aplica a totes les línies en posicions paral·leles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuració de desplegament s&apos;aplica a totes les línies en posicions paral·leles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Aquesta línia i línies en posicions paral·leles</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuració de desplegament s&apos;aplica a totes les línies en posicions paral·leles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Aquesta línia només</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -78,15 +80,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>보간 모드 (&amp;I)</translation>
+        <translation type="vanished">보간 모드 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>운형자 (&amp;S)</translation>
+        <translation type="vanished">운형자 (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>선의 (&amp;L)</translation>
+        <translation type="vanished">선의 (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -143,6 +145,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>단면 데이터를 찾을 수 없습니다. 중심선을 직접 정의하십시오.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -262,6 +268,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;배포 설정은 병렬 위치의 모든 라인에 적용됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">이 선과 선은 평행한 위치에 있습니다.</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;배포 설정은 병렬 위치의 모든 라인에 적용됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">이 라인만</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

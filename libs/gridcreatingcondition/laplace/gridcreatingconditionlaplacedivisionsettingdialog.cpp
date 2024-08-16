@@ -26,9 +26,7 @@ void GridCreatingConditionLaplaceDivisionSettingDialog::setDivisionNumber(int nu
 
 GridCreatingConditionLaplace::DivisionMode GridCreatingConditionLaplaceDivisionSettingDialog::divisionMode() const
 {
-	if (ui->autoRadioButton->isChecked()) {
-		return GridCreatingConditionLaplace::DivisionMode::Auto;
-	} else if (ui->equalRadioButton->isChecked()) {
+	if (ui->equalRadioButton->isChecked()) {
 		return GridCreatingConditionLaplace::DivisionMode::Equally;
 	} else if (ui->geometricRadioButton->isChecked()) {
 		return GridCreatingConditionLaplace::DivisionMode::Geometric;
@@ -38,7 +36,8 @@ GridCreatingConditionLaplace::DivisionMode GridCreatingConditionLaplaceDivisionS
 void GridCreatingConditionLaplaceDivisionSettingDialog::setDivisionMode(GridCreatingConditionLaplace::DivisionMode mode)
 {
 	if (mode == GridCreatingConditionLaplace::DivisionMode::Auto) {
-		ui->autoRadioButton->setChecked(true);
+		ui->equalRadioButton->setChecked(true);
+		// ui->autoRadioButton->setChecked(true);
 	} else if (mode == GridCreatingConditionLaplace::DivisionMode::Equally) {
 		ui->equalRadioButton->setChecked(true);
 	} else {

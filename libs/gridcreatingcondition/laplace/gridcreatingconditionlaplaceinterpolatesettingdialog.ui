@@ -1,50 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GridCreatingConditionLaplaceDivisionSettingDialog</class>
- <widget class="QDialog" name="GridCreatingConditionLaplaceDivisionSettingDialog">
+ <class>GridCreatingConditionLaplaceInterpolateSettingDialog</class>
+ <widget class="QDialog" name="GridCreatingConditionLaplaceInterpolateSettingDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>296</width>
-    <height>283</height>
+    <width>307</width>
+    <height>205</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Division Setting</string>
+   <string>Interpolate Setting</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
-     <item>
-      <widget class="QLabel" name="divisionNumberLabel">
-       <property name="text">
-        <string>Division Number:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="divisionNumberSpinBox">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <number>99999</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
     <widget class="QGroupBox" name="deploySettingGroupBox">
      <property name="title">
-      <string>Deploy Setting</string>
+      <string>Interpolate Setting</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QRadioButton" name="equalRadioButton">
+       <widget class="QRadioButton" name="splineRadioButton">
         <property name="text">
-         <string>Equally divided</string>
+         <string>Spline curve</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -52,70 +31,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="geometricRadioButton">
+       <widget class="QRadioButton" name="polylineRadioButton">
         <property name="text">
-         <string>Geometric division</string>
+         <string>Polyline</string>
         </property>
        </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="commonRatioLabel">
-          <property name="text">
-           <string>Common ratio:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="commonRatioSpinBox">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="decimals">
-           <number>6</number>
-          </property>
-          <property name="minimum">
-           <double>0.000001000000000</double>
-          </property>
-          <property name="maximum">
-           <double>99.999999000000003</double>
-          </property>
-          <property name="value">
-           <double>1.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
       </item>
      </layout>
     </widget>
@@ -123,7 +43,7 @@
    <item>
     <widget class="QGroupBox" name="deploySettingTargetGroupBox">
      <property name="title">
-      <string>Deploy Setting Target</string>
+      <string>Interpolate Setting Target</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
@@ -141,7 +61,7 @@
         <item>
          <widget class="TooltipLabel" name="thisAndParallelHelpLabel">
           <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
            <string/>
@@ -184,7 +104,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>1</height>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -215,7 +135,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>GridCreatingConditionLaplaceDivisionSettingDialog</receiver>
+   <receiver>GridCreatingConditionLaplaceInterpolateSettingDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -231,32 +151,16 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>GridCreatingConditionLaplaceDivisionSettingDialog</receiver>
+   <receiver>GridCreatingConditionLaplaceInterpolateSettingDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>286</x>
-     <y>273</y>
+     <x>316</x>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>geometricRadioButton</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>commonRatioSpinBox</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>81</x>
-     <y>113</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>158</x>
-     <y>136</y>
     </hint>
    </hints>
   </connection>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>È possibile creare una forma a griglia liscia risolvendo l'equazione di Laplace.</translation>
+        <translation>È possibile creare una forma a griglia liscia risolvendo l&apos;equazione di Laplace.</translation>
     </message>
 </context>
 <context>
@@ -26,7 +28,7 @@
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation>Seleziona una linea di confine all'interno della regione quando vuoi unire le regioni.</translation>
+        <translation>Seleziona una linea di confine all&apos;interno della regione quando vuoi unire le regioni.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
@@ -34,7 +36,7 @@
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation>Sei sicuro di voler cancellare l'impostazione della divisione?</translation>
+        <translation>Sei sicuro di voler cancellare l&apos;impostazione della divisione?</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
@@ -62,15 +64,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Modalità di interpolazione (&amp;I)</translation>
+        <translation type="vanished">Modalità di interpolazione (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Spline (&amp;S)</translation>
+        <translation type="vanished">Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Lineare (&amp;L)</translation>
+        <translation type="vanished">Lineare (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -94,7 +96,7 @@
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation>Impostazione della divisione per l'intera regione (&amp;W)...</translation>
+        <translation>Impostazione della divisione per l&apos;intera regione (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
@@ -106,7 +108,7 @@
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation>Impostazione di distribuzione per l'area selezionata (&amp;D)...</translation>
+        <translation>Impostazione di distribuzione per l&apos;area selezionata (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
@@ -143,6 +145,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>Dati della sezione trasversale non trovati. Si prega di definire la linea centrale da soli.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -249,7 +255,7 @@
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation>Distribuire l'impostazione dell'obiettivo</translation>
+        <translation>Distribuire l&apos;impostazione dell&apos;obiettivo</translation>
     </message>
     <message>
         <source>This line only</source>
@@ -261,7 +267,42 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;L'impostazione di distribuzione viene applicata a tutte le linee in posizioni parallele.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;L&apos;impostazione di distribuzione viene applicata a tutte le linee in posizioni parallele.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Questa linea e le linee in posizioni parallele</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;L&apos;impostazione di distribuzione viene applicata a tutte le linee in posizioni parallele.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Solo questa linea</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -291,7 +332,7 @@
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation>Impostazione della divisione per l'intera regione</translation>
+        <translation>Impostazione della divisione per l&apos;intera regione</translation>
     </message>
     <message>
         <source>m</source>

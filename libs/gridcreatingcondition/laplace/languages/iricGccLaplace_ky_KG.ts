@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -62,15 +64,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Интерполяция режими (&amp;I)</translation>
+        <translation type="vanished">Интерполяция режими (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Spline (&amp;S)</translation>
+        <translation type="vanished">Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Сызыктуу (&amp;L)</translation>
+        <translation type="vanished">Сызыктуу (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -142,7 +144,11 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line'ди өзүңүз аныктаңыз.</translation>
+        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line&apos;ди өзүңүз аныктаңыз.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -262,6 +268,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Орнотуу жөндөөсү параллель позициядагы бардык сызыктарга колдонулат. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Бул сызык жана параллелдүү позициядагы сызыктар</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Орнотуу жөндөөсү параллель позициядагы бардык сызыктарга колдонулат. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Бул линия гана</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

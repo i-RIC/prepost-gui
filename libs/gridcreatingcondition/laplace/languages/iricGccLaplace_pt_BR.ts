@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -82,15 +84,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Modo de interpolacao (&amp;I)</translation>
+        <translation type="vanished">Modo de interpolacao (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Interpolacao de Spline (&amp;S)</translation>
+        <translation type="vanished">Interpolacao de Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Interpolacao linear (&amp;I)</translation>
+        <translation type="vanished">Interpolacao linear (&amp;I)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -147,6 +149,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>Dados de seção transversal não encontrados. Defina você mesmo a Linha Central.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -237,7 +243,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatico</translation>
+        <translation type="vanished">Automatico</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -266,6 +272,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A configuracao de implantacao sera aplicada para todas as linhas em posicoes paralelas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Esta linha e a linha na posicao paralela</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A configuracao de implantacao sera aplicada para todas as linhas em posicoes paralelas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Somente esta linha</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

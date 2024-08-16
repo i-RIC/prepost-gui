@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>Możesz stworzyć gładką siatkę rozwiązując równanie Laplace'a.</translation>
+        <translation>Możesz stworzyć gładką siatkę rozwiązując równanie Laplace&apos;a.</translation>
     </message>
 </context>
 <context>
@@ -62,15 +64,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Tryb interpolacji (&amp;I)</translation>
+        <translation type="vanished">Tryb interpolacji (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Klin (&amp;S)</translation>
+        <translation type="vanished">Klin (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Liniowy (&amp;L)</translation>
+        <translation type="vanished">Liniowy (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -143,6 +145,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>Nie znaleziono danych przekroju. Proszę samodzielnie zdefiniować linię środkową.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatyczny</translation>
+        <translation type="vanished">Automatyczny</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -262,6 +268,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ustawienie wdrażania jest stosowane do wszystkich linii w pozycjach równoległych.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Ta linia i linie w równoległych pozycjach</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ustawienie wdrażania jest stosowane do wszystkich linii w pozycjach równoległych.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Tylko ta linia</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

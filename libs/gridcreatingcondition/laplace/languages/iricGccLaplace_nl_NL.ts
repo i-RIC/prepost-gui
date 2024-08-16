@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -26,11 +28,11 @@
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation>Selecteer een randlijn binnen de regio wanneer u regio's wilt samenvoegen.</translation>
+        <translation>Selecteer een randlijn binnen de regio wanneer u regio&apos;s wilt samenvoegen.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation>Weet u zeker dat u de regio's wilt samenvoegen die zijn gedeeld door de geselecteerde rand?</translation>
+        <translation>Weet u zeker dat u de regio&apos;s wilt samenvoegen die zijn gedeeld door de geselecteerde rand?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
@@ -62,15 +64,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>Interpolatiemodus (&amp;I)</translation>
+        <translation type="vanished">Interpolatiemodus (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>Spline (&amp;S)</translation>
+        <translation type="vanished">Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>Lineair (&amp;L)</translation>
+        <translation type="vanished">Lineair (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
@@ -143,6 +145,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>Doorsnedegegevens niet gevonden. Definieer zelf de middenlijn.</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,7 +239,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -262,6 +268,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;De implementatie-instelling wordt toegepast op alle lijnen in parallelle posities.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation type="unfinished">Deze lijn en lijnen in parallelle posities</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;De implementatie-instelling wordt toegepast op alle lijnen in parallelle posities.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation type="unfinished">Alleen deze regel</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
