@@ -1051,6 +1051,7 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLineStreamWise(int idx)
 	auto end3 = start3 + m_ctrlPointCountI;
 	m_ctrlPoints.erase(start3, end3);
 
+	m_divCountsCrossSection[idx - 1] += m_divCountsCrossSection[idx];
 	m_divCountsCrossSection.erase(m_divCountsCrossSection.begin() + idx);
 
 	auto r_start = m_subRegionDeployParameters.begin() + (m_ctrlPointCountI - 1) * idx;
@@ -1104,6 +1105,7 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLineCrossSection(int idx)
 		m_ctrlPoints.erase(m_ctrlPoints.begin() + m_ctrlPointCountI * (m_ctrlPointCountJ - 1 - j) + idx);
 	}
 
+	m_divCountsStreamWise[idx - 1] += m_divCountsStreamWise[idx];
 	m_divCountsStreamWise.erase(m_divCountsStreamWise.begin() + idx);
 
 	for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
