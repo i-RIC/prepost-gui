@@ -76,6 +76,7 @@ HEADERS += gcc_laplace_global.h \
            gridcreatingconditionlaplacectrlpointsdialog.h \
            gridcreatingconditionlaplacedeploysettingdialog.h \
            gridcreatingconditionlaplacedivisionsettingdialog.h \
+           gridcreatingconditionlaplaceinterpolatesettingdialog.h \
            gridcreatingconditionlaplacesubregiondeploysettingdialog.h \
            gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h \
            private/gridcreatingconditionlaplace_banklinesbuilder.h \
@@ -105,6 +106,7 @@ FORMS += gridcreatingconditionlaplacebuildbanklinesdialog.ui \
          gridcreatingconditionlaplacectrlpointsdialog.ui \
          gridcreatingconditionlaplacedeploysettingdialog.ui \
          gridcreatingconditionlaplacedivisionsettingdialog.ui \
+         gridcreatingconditionlaplaceinterpolatesettingdialog.ui \
          gridcreatingconditionlaplacesubregiondeploysettingdialog.ui \
          gridcreatingconditionlaplacewholeregiondivisionsettingdialog.ui
 SOURCES += gridcreatingconditioncreatorlaplace.cpp \
@@ -113,6 +115,7 @@ SOURCES += gridcreatingconditioncreatorlaplace.cpp \
            gridcreatingconditionlaplacectrlpointsdialog.cpp \
            gridcreatingconditionlaplacedeploysettingdialog.cpp \
            gridcreatingconditionlaplacedivisionsettingdialog.cpp \
+           gridcreatingconditionlaplaceinterpolatesettingdialog.cpp \
            gridcreatingconditionlaplacesubregiondeploysettingdialog.cpp \
            gridcreatingconditionlaplacewholeregiondivisionsettingdialog.cpp \
            private/gridcreatingconditionlaplace_banklinesbuilder.cpp \

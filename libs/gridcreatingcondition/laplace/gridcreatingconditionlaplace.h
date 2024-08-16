@@ -19,6 +19,12 @@ public:
 		Poisson,
 	};
 
+	enum class InterpolationType {
+		None,
+		Linear,
+		Spline,
+	};
+
 	class DeployParameter {
 	public:
 		DeploySetting setting;
@@ -64,8 +70,6 @@ public:
 
 private slots:
 	void buildBankLines();
-	void interpolateModeSprine();
-	void interpolateModeLinear();
 	void newEdgeMode(bool on);
 	void joinRegions();
 	void addVertexMode(bool on);
@@ -73,6 +77,7 @@ private slots:
 	void editCoorinates();
 	bool wholeRegionDivisionSetting(bool gridCreateButton = false);
 	void divisionSetting();
+	void interpolateSetting();
 	void deploySetting();
 	void subRegionDeploySetting();
 	void clearDivisionSetting();

@@ -2,6 +2,7 @@
 #include "gridcreatingconditionlaplacectrlpointsdialog.h"
 #include "gridcreatingconditionlaplacedeploysettingdialog.h"
 #include "gridcreatingconditionlaplacedivisionsettingdialog.h"
+#include "gridcreatingconditionlaplaceinterpolatesettingdialog.h"
 #include "gridcreatingconditionlaplacesubregiondeploysettingdialog.h"
 #include "gridcreatingconditionlaplacewholeregiondivisionsettingdialog.h"
 #include "private/gridcreatingconditionlaplace_centerlinecoordinateseditor.h"
@@ -238,6 +239,7 @@ void GridCreatingConditionLaplace::setupMenu()
 		m->addAction(impl->m_removeVertexAction);
 		m->addSeparator();
 		m->addAction(impl->m_divisionSettingAction);
+		m->addAction(impl->m_interpolateSettingAction);
 		m->addAction(impl->m_deploySubRegionSettingAction);
 		m->addSeparator();
 		m->addAction(impl->m_clearDivisionSettingAction);
@@ -497,16 +499,6 @@ void GridCreatingConditionLaplace::buildBankLines()
 	impl->buildBankLines();
 }
 
-void GridCreatingConditionLaplace::interpolateModeSprine()
-{
-	impl->pushEdgeSetInterpolationModeCommand(Impl::InterpolationType::Spline);
-}
-
-void GridCreatingConditionLaplace::interpolateModeLinear()
-{
-	impl->pushEdgeSetInterpolationModeCommand(Impl::InterpolationType::Linear);
-}
-
 void GridCreatingConditionLaplace::newEdgeMode(bool on)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {return;}
@@ -710,6 +702,23 @@ void GridCreatingConditionLaplace::divisionSetting()
 		impl->pushDivisionSettingCommand(false, impl->m_selectedSectionId, dialog.divisionNumber(),
 																		 dialog.divisionMode(), dialog.commonRatio(), dialog.thisLineOnly());
 	}
+}
+
+void GridCreatingConditionLaplace::interpolateSetting()
+{
+	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::None) {return;}
+
+	GridCreatingConditionLaplaceInterpolateSettingDialog dialog(preProcessorWindow());
+	if (impl->m_selectedSectionEdgeType == Impl::EdgeType::StreamWise) {
+		dialog.setInterpolationType(impl->m_edgeInterpolationStreamWise[impl->m_selectedSectionId]);
+	} else {
+		dialog.setInterpolationType(impl->m_edgeInterpolationCrossSection[impl->m_selectedSectionId]);
+	}
+
+	int result = dialog.exec();
+	if (result == QDialog::Rejected) {return;}
+
+	impl->pushEdgeSetInterpolationModeCommand(impl->m_selectedSectionEdgeType, impl->m_selectedSectionId, dialog.interpolationType(), dialog.thisLineOnly());
 }
 
 void GridCreatingConditionLaplace::deploySetting()

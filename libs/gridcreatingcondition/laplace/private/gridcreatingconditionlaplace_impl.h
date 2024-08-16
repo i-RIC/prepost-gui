@@ -54,12 +54,6 @@ public:
 		EditCoodinatesDialog,
 	};
 
-	enum class InterpolationType {
-		None,
-		Linear,
-		Spline,
-	};
-
 	enum class EdgeType {
 		None,
 		StreamWise,
@@ -160,9 +154,9 @@ public:
 	void pushEdgeAddVertexCommand(bool keyDown, const QPoint& pos);
 	void pushEdgeRemoveVertexCommand();
 	void pushCtrlPointMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, int pointId);
-	void pushEdgeSetInterpolationModeCommand(InterpolationType type);
 	void pushDeploySettingCommand(bool streamWise, int edgeId, DivisionMode mode, double commonRatio);
 	void pushDivisionSettingCommand(bool streamWise, int edgeId, int divNum, DivisionMode mode, double commonRatio, bool thisLineOnly);
+	void pushEdgeSetInterpolationModeCommand(EdgeType edgeType, int edgeId, InterpolationType type, bool thisLineOnly);
 	void pushWholeRegionDivisionSettingCommand(const std::vector<int>& streamWiseDivCounts, const std::vector<int>& crossSectionDivCounts);
 	void pushSubRegionDeploySettingCommand(const DeployParameter& param, int index);
 	void pushUpdateLineForEdgeSelectionCommand(QUndoCommand* comm, bool renderRedoOnly = false);
@@ -295,10 +289,6 @@ public:
 
 	QAction* m_buildBankLinesAction;
 
-	QMenu* m_interpolateMenu;
-	QAction* m_interpolateSplineAction;
-	QAction* m_interpolateLinearAction;
-
 	QAction* m_addNewEdgeAction;
 	QAction* m_joinRegionsAction;
 
@@ -309,6 +299,7 @@ public:
 	QAction* m_wholeRegionDivisionSettingAction;
 	QAction* m_divisionSettingAction;
 	QAction* m_deploySettingAction;
+	QAction* m_interpolateSettingAction;
 	QAction* m_deploySubRegionSettingAction;
 	QAction* m_clearDivisionSettingAction;
 
