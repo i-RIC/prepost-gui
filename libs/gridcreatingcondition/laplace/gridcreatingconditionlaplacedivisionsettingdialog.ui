@@ -42,22 +42,12 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QRadioButton" name="autoRadioButton">
-        <property name="text">
-         <string>Auto</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QRadioButton" name="equalRadioButton">
         <property name="text">
          <string>Equally divided</string>
         </property>
         <property name="checked">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -137,16 +127,6 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QRadioButton" name="thisOnlyRadioButton">
-        <property name="text">
-         <string>This line only</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QRadioButton" name="thisAndParallelRadioButton">
@@ -154,7 +134,7 @@
            <string>This line and lines in parallel positions</string>
           </property>
           <property name="checked">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -185,6 +165,13 @@
          </spacer>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="thisOnlyRadioButton">
+        <property name="text">
+         <string>This line only</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
