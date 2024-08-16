@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>Vous pouvez créer une forme de grille lisse en résolvant l&apos;équation de laplace.</translation>
+        <translation>Vous pouvez créer une forme de grille lisse en résolvant l'équation de laplace.</translation>
     </message>
 </context>
 <context>
@@ -24,19 +22,19 @@
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation>Pour diviser la région, cliquez d&apos;abord sur le bord de la région, puis cliquez sur le bord opposé.</translation>
+        <translation>Pour diviser la région, cliquez d'abord sur le bord de la région, puis cliquez sur le bord opposé.</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation>Veuillez sélectionner une ligne de bord à l&apos;intérieur de la région lorsque vous souhaitez joindre des régions.</translation>
+        <translation>Veuillez sélectionner une ligne de bord à l'intérieur de la région lorsque vous souhaitez joindre des régions.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation>Voulez-vous vraiment joindre les régions divisées par l&apos;arête sélectionnée&#xa0;?</translation>
+        <translation>Voulez-vous vraiment joindre les régions divisées par l'arête sélectionnée ?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation>Voulez-vous vraiment effacer le paramètre de division&#xa0;?</translation>
+        <translation>Voulez-vous vraiment effacer le paramètre de division ?</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
@@ -80,7 +78,7 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="vanished">Mode d&apos;interpolation (&amp;I)</translation>
+        <translation type="vanished">Mode d'interpolation (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
@@ -148,7 +146,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre d'interpolation des bords (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -159,7 +157,7 @@
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation>La ligne médiane n&apos;est pas encore définie.</translation>
+        <translation>La ligne médiane n'est pas encore définie.</translation>
     </message>
 </context>
 <context>
@@ -182,7 +180,7 @@
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation>Astuce&#xa0;: Les lignes de rive gauche et de rive droite sont créées sous forme de ligne composée de points éloignés de la ligne médiane vers la direction perpendiculaire à la ligne médiane.</translation>
+        <translation>Astuce : Les lignes de rive gauche et de rive droite sont créées sous forme de ligne composée de points éloignés de la ligne médiane vers la direction perpendiculaire à la ligne médiane.</translation>
     </message>
 </context>
 <context>
@@ -193,11 +191,11 @@
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation>Nombre de coupes transversales de contrôle&#xa0;:</translation>
+        <translation>Nombre de coupes transversales de contrôle :</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation>Conseils&#xa0;: Les sections transversales de contrôle sont les sections transversales dont les points centraux sont utilisés comme ligne centrale de la grille.</translation>
+        <translation>Conseils : Les sections transversales de contrôle sont les sections transversales dont les points centraux sont utilisés comme ligne centrale de la grille.</translation>
     </message>
 </context>
 <context>
@@ -220,7 +218,7 @@
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation>Rapport commun&#xa0;:</translation>
+        <translation>Rapport commun :</translation>
     </message>
 </context>
 <context>
@@ -231,7 +229,7 @@
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Numéro de division&#xa0;:</translation>
+        <translation>Numéro de division :</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
@@ -251,11 +249,11 @@
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation>Rapport commun&#xa0;:</translation>
+        <translation>Rapport commun :</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation>Déployer l&apos;objectif de définition</translation>
+        <translation>Déployer l'objectif de définition</translation>
     </message>
     <message>
         <source>This line only</source>
@@ -274,23 +272,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoler le réglage</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Courbe spline</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyligne</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoler la définition de la cible</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">Cette ligne et les lignes en positions parallèles</translation>
+        <translation>Cette ligne et les lignes en positions parallèles</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -298,11 +296,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">Cette ligne seulement</translation>
+        <translation>Cette ligne uniquement</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Le paramètre d'interpolation est appliqué à toutes les lignes en positions parallèles.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -321,7 +319,7 @@
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation>Sens du flux&#xa0;:</translation>
+        <translation>Sens du flux :</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
