@@ -285,6 +285,7 @@ void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorG
 				impl->updateMouseCursor(v);
 				impl->updateActionStatus();
 				iRICUndoStack::instance().clear();
+				renderGraphicsView();
 			} else if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexNotPossible ||
 								 impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexPrepare
 			) {
