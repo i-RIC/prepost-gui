@@ -268,12 +268,37 @@ void GridCreatingConditionLaplace::viewOperationEnded(PreProcessorGraphicsViewI*
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
+void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (! iRIC::isEnterKey(event->key())) {return;}
 		if (impl->m_centerLineOnlyMouseEventMode != Impl::CenterLineOnlyMouseEventMode::Defining) {return;}
 		impl->pushCenterLineFinishDefinitionCommand();
+	}
+	if (impl->m_editMode == Impl::EditMode::RegionDefined) {
+		if (event->key() == Qt::Key_Escape) {
+			if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddEdgeLine ||
+					impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddEdgeLineFinishPrepare
+			) {
+				impl->m_newEdgeLine.clear();
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+				iRICUndoStack::instance().clear();
+			} else if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexNotPossible ||
+								 impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::AddVertexPrepare
+			) {
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+			} else if (impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::RemoveVertexNotPossible ||
+								 impl->m_regionDefinedMouseEventMode == Impl::RegionDefinedMouseEventMode::RemoveVertexPrepare
+			) {
+				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+				impl->updateMouseCursor(v);
+				impl->updateActionStatus();
+			}
+		}
 	}
 }
 
@@ -508,6 +533,9 @@ void GridCreatingConditionLaplace::newEdgeMode(bool on)
 	} else {
 		impl->m_newEdgeLine.clear();
 		impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::Normal;
+		impl->updateMouseCursor(dataModel()->graphicsView());
+		impl->updateActionStatus();
+		iRICUndoStack::instance().clear();
 	}
 }
 
