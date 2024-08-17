@@ -59,7 +59,8 @@ QColor GridComplexConditionWidget::color() const
 
 void GridComplexConditionWidget::setColor(const QColor& color)
 {
-	return ui->colorWidget->setColor(color);
+	ui->colorWidget->setColor(color);
+	handleColorEdit(color);
 }
 
 bool GridComplexConditionWidget::isDefault() const
