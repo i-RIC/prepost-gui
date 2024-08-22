@@ -489,8 +489,10 @@ void iRICMainWindow::openProject(const QString& filename)
 	}
 	if (maximized) {
 		auto active = m_centralWidget->activeSubWindow();
-		active->showNormal();
-		active->showMaximized();
+		if (active != nullptr) {
+			active->showNormal();
+			active->showMaximized();
+		}
 	}
 
 	isOpeningChanger.restore();
