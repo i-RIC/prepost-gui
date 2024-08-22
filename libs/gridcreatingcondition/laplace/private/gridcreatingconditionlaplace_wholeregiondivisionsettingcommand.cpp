@@ -16,10 +16,10 @@ void GridCreatingConditionLaplace::WholeRegionDivisionSettingCommand::redo()
 	m_impl->m_divCountsCrossSection = m_newDivCountsCrossSection;
 
 	for (int i = 0; i < m_impl->m_divModesStreamWise.size(); ++i) {
-		m_impl->m_divModesStreamWise[i] = DivisionMode::Auto;
+		m_impl->m_divModesStreamWise[i] = DivisionMode::Equally;
 	}
 	for (int i = 0; i < m_impl->m_divModesCrossSection.size(); ++i) {
-		m_impl->m_divModesCrossSection[i] = DivisionMode::Auto;
+		m_impl->m_divModesCrossSection[i] = DivisionMode::Equally;
 	}
 }
 void GridCreatingConditionLaplace::WholeRegionDivisionSettingCommand::undo()
