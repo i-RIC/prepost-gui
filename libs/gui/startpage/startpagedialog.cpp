@@ -29,6 +29,8 @@ StartPageDialog::StartPageDialog(iRICMainWindow* parent) :
 	connect(ui->startTab, &StartPageLaunchTabWidget::newProjectButtonClicked, this, &StartPageDialog::handleNewProjectButtonClick);
 	connect(ui->startTab, &StartPageLaunchTabWidget::openProjectButtonClicked, this, &StartPageDialog::handleOpenProjectButtonClick);
 	connect(ui->launchMiGuiButton, &QPushButton::clicked, this, &StartPageDialog::handleLaunchMiGui);
+
+	ui->launchMiGuiButton->hide();
 }
 
 StartPageDialog::~StartPageDialog()

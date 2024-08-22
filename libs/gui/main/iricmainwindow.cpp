@@ -1474,7 +1474,10 @@ void iRICMainWindow::handleCgnsSwitch()
 void iRICMainWindow::setCurrentStep(unsigned int newstep)
 {
 	if (m_projectData != nullptr) {
-		m_projectData->mainfile()->postSolutionInfo()->setCurrentStep(newstep);
+		int ier = m_projectData->mainfile()->postSolutionInfo()->setCurrentStep(newstep);
+		if (ier != IRIC_NO_ERROR) {
+			QMessageBox::warning(this, tr("Warning"), tr("Failed to load calculation result"));
+		}
 	}
 }
 
