@@ -4,10 +4,25 @@
 #include <vtkDoubleArray.h>
 #include <vtkIntArray.h>
 
-bool CgnsUtil::isScalarName(const std::string& name)
+#include <unordered_set>
+
+bool CgnsUtil::isScalarName(const std::string& name, const std::unordered_set<std::string>& namesSet)
 {
 	char last = name.at(name.size() - 1);
-	return ! (last == 'X' || last == 'Y' || last == 'Z');
+	if (! (last == 'X' || last == 'Y' || last == 'Z')) {return true;}
+
+	auto nameSuffix = name.substr(0, name.size() - 1);
+	auto xName = nameSuffix;
+	xName.append("X");
+	auto yName = nameSuffix;
+	yName.append("Y");
+
+	auto x_it = namesSet.find(xName);
+	auto y_it = namesSet.find(yName);
+
+	bool isVector = (x_it != namesSet.end() && y_it != namesSet.end());
+
+	return ! isVector;
 }
 
 bool CgnsUtil::isGridLocation(const std::string& name)
@@ -21,8 +36,13 @@ int CgnsUtil::loadScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes
 	int ier = sol->readValueNames(&names);
 	if (ier != 0) {return ier;}
 
+	std::unordered_set<std::string> namesSet;
+	for (const auto& name : names) {
+		namesSet.insert(name);
+	}
+
 	for (const auto& n : names) {
-		if (! isScalarName(n)) {continue;}
+		if (! isScalarName(n, namesSet)) {continue;}
 		if (isGridLocation(n)) {continue;}
 
 		iRICLib::H5Util::DataArrayValueType type;
@@ -46,8 +66,13 @@ int CgnsUtil::loadEdgeIScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttri
 	int ier = sol->readValueNames(&names);
 	if (ier != 0) {return ier;}
 
+	std::unordered_set<std::string> namesSet;
+	for (const auto& name : names) {
+		namesSet.insert(name);
+	}
+
 	for (const auto& n : names) {
-		if (! isScalarName(n)) {continue;}
+		if (! isScalarName(n, namesSet)) {continue;}
 		if (isGridLocation(n)) {continue;}
 
 		iRICLib::H5Util::DataArrayValueType type;
@@ -71,8 +96,13 @@ int CgnsUtil::loadEdgeJScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttri
 	int ier = sol->readValueNames(&names);
 	if (ier != 0) {return ier;}
 
+	std::unordered_set<std::string> namesSet;
+	for (const auto& name : names) {
+		namesSet.insert(name);
+	}
+
 	for (const auto& n : names) {
-		if (! isScalarName(n)) {continue;}
+		if (! isScalarName(n, namesSet)) {continue;}
 		if (isGridLocation(n)) {continue;}
 
 		iRICLib::H5Util::DataArrayValueType type;
@@ -96,10 +126,17 @@ int CgnsUtil::loadVectorData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes
 	int ier = sol->readValueNames(&names);
 	if (ier != 0) {return ier;}
 
+	std::unordered_set<std::string> namesSet;
+	for (const auto& name : names) {
+		namesSet.insert(name);
+	}
+
 	for (const auto& n : names) {
 		if (isGridLocation(n)) {continue;}
 		char last = n.at(n.size() - 1);
 		if (last != 'X') {continue;}
+
+		if (isScalarName(n, namesSet)) {continue;}
 
 		iRICLib::H5Util::DataArrayValueType type;
 		ier = sol->readValueType(n, &type);
