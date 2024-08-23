@@ -98,7 +98,7 @@ void Post2dBirdEyeWindowCellScalarGroupTopDataItem::innerUpdateZScale(double sca
 
 void Post2dBirdEyeWindowCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	clearChildItems();
+	clearChildItemsAndUpdateItemMap();
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {

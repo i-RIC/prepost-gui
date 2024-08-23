@@ -224,8 +224,7 @@ void TmsImageGroupDataItem::rebuildChildItems()
 			dataModel()->graphicsView()->setActiveDataItem(nullptr);
 		}
 	}
-	clearChildItems();
-	updateItemMap();
+	clearChildItemsAndUpdateItemMap();
 
 	TmsImageSettingManager manager;
 	for (const auto& s : manager.settings()) {

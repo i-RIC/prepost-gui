@@ -199,8 +199,7 @@ std::vector<Post3dWindowCellRangeSettingContainer> Post3dWindowCellContourGroupD
 
 void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWindowCellRangeSettingContainer>& ranges)
 {
-	clearChildItems();
-	updateItemMap();
+	clearChildItemsAndUpdateItemMap();
 
 	auto tItem = dynamic_cast<Post3dWindowCellContourGroupTopDataItem*> (parent());
 	int idx = 1;

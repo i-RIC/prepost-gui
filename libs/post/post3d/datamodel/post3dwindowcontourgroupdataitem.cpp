@@ -221,8 +221,7 @@ std::vector<Post3dWindowFaceSettingContainer> Post3dWindowContourGroupDataItem::
 
 void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFaceSettingContainer>& faces)
 {
-	clearChildItems();
-	updateItemMap();
+	clearChildItemsAndUpdateItemMap();
 
 	auto tItem = dynamic_cast<Post3dWindowContourGroupTopDataItem*> (parent());
 	int idx = 1;

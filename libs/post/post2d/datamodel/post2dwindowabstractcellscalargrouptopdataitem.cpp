@@ -52,7 +52,7 @@ QAction* Post2dWindowAbstractCellScalarGroupTopDataItem::showAttributeBrowserAct
 
 void Post2dWindowAbstractCellScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	clearChildItems();
+	clearChildItemsAndUpdateItemMap();
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
