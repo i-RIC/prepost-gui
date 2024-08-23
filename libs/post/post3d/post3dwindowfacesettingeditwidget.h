@@ -9,7 +9,7 @@ namespace Ui {
 class Post3dWindowFaceSettingEditWidget;
 }
 
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class Post3dWindowFaceSettingEditWidget : public QWidget
 {
@@ -19,7 +19,7 @@ public:
 	explicit Post3dWindowFaceSettingEditWidget(QWidget *parent = nullptr);
 	~Post3dWindowFaceSettingEditWidget();
 
-	void setZoneData(PostZoneDataContainer* zd);
+	void setZoneData(v4PostZoneDataContainer* zd);
 	void setDimensions(int* dims);
 
 	Post3dWindowFaceSettingContainer setting() const;

@@ -7,11 +7,19 @@
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
@@ -29,7 +37,6 @@
 #endif
 
 #include <guibase/qwtplotcustomcurve.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 
 #if defined(_MSC_VER)
 // re-enable macro redefinition warnings
@@ -272,7 +279,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, SolverDefinit
 		// setup zone datas.
 		PostSolutionInfo::Dimension dim = PostSolutionInfo::fromIntDimension(base->dimension());
 
-		auto conts = sol->zoneContainers(dim);
+		auto conts = sol->v4ZoneContainers(dim);
 		for (auto cont : conts) {
 			DataTypeInfo ti;
 			ti.dimension = dim;
@@ -311,33 +318,52 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, SolverDefinit
 			}
 			ti.gridType = cont->gridType();
 			ti.zoneName = cont->zoneName();
-			if (cont->data() == nullptr) {return false;}
+			if (cont->gridData() == nullptr) {return false;}
 
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 				auto caption = ti.gridType->outputCaption(name);
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].push_back(name);
 				ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::Node].insert({name, caption});
 			}
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetCellData())) {
-				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetCellData())) {
 				auto caption = ti.gridType->outputCaption(name);
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].push_back(name);
 				ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].insert({name, caption});
 			}
-			auto edgeIData = cont->edgeIData();
-			if (edgeIData != nullptr) {
-				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->data()->GetPointData())) {
+			auto str2dGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+			if (str2dGrid != nullptr) {
+				auto edgeIData = str2dGrid->vtkIEdgeData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->data()->GetCellData())) {
 					auto caption = ti.gridType->outputCaption(name);
 					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].push_back(name);
 					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].insert({name, caption});
 				}
-			}
-			auto edgeJData = cont->edgeJData();
-			if (edgeJData != nullptr) {
-				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeJData->data()->GetPointData())) {
+				auto edgeJData = str2dGrid->vtkJEdgeData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeJData->data()->GetCellData())) {
 					auto caption = ti.gridType->outputCaption(name);
 					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].push_back(name);
 					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].insert({name, caption});
+				}
+			}
+			auto str3dGrid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid());
+			if (str3dGrid != nullptr) {
+				auto faceIData = str3dGrid->vtkIFaceData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(faceIData->data()->GetCellData())) {
+					auto caption = ti.gridType->outputCaption(name);
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].push_back(name);
+					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].insert({name, caption});
+				}
+				auto faceJData = str3dGrid->vtkJFaceData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(faceJData->data()->GetCellData())) {
+					auto caption = ti.gridType->outputCaption(name);
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].push_back(name);
+					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].insert({name, caption});
+				}
+				auto faceKData = str3dGrid->vtkKFaceData();
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(faceKData->data()->GetCellData())) {
+					auto caption = ti.gridType->outputCaption(name);
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::KFace].push_back(name);
+					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::KFace].insert({name, caption});
 				}
 			}
 			if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::Node) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].size() > 0) {
@@ -1356,7 +1382,8 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 		info.loadFromProjectMainFile(typeNode);
 		for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 			DataTypeInfo& tmpInfo = m_dataTypeInfos[i];
-			if (tmpInfo == info) {
+			if (tmpInfo.zoneName == info.zoneName) {
+				tmpInfo.gridLocation = info.gridLocation;
 				Q_ASSERT(m_targetDataTypeInfo == nullptr);
 				m_targetDataTypeInfo = &tmpInfo;
 			}

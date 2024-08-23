@@ -137,6 +137,11 @@ void Graph2dHybridWindowDataSourceDialog::handleSelectedDataListClick()
 void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowResultSetting& setting)
 {
 	m_setting = setting;
+	auto gridLocation = iRICLib::H5CgnsZone::SolutionPosition::Node;
+	auto targetDataInfo = setting.targetDataTypeInfo();
+	if (targetDataInfo != nullptr) {
+		gridLocation = targetDataInfo->gridLocation;
+	}
 
 	setupXAxisComboBox();
 	setupPolyLineGroupComboBox();
@@ -170,6 +175,8 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	updatePolyLineComboBoxVisibility();
 
 	if (info != nullptr) {
+		info->gridLocation = gridLocation;
+
 		switch (info->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			list = m[Graph2dHybridWindowResultSetting::dimBase];

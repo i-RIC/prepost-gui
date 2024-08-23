@@ -1,7 +1,11 @@
+#include "../../grid/v4grid.h"
+#include "../v4solutiongrid.h"
+#include "../v4postzonedatacontainer.h"
 #include "postzonedatavtkexporter.h"
-#include "../postzonedatacontainer.h"
-#include "misc/filesystemfunction.h"
-#include "misc/stringtool.h"
+
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
 
 #include <QFile>
 #include <QVector2D>
@@ -28,10 +32,10 @@ QString PostZoneDataVtkExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
+bool PostZoneDataVtkExporter::exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
-	auto ps = data->data()->data();
+	auto ps = data->gridData()->grid()->vtkData()->data();
 	auto sgrid = vtkStructuredGrid::SafeDownCast(ps);
 	auto ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
 	if (sgrid != 0) {

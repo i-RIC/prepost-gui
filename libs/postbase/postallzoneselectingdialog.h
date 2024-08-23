@@ -9,7 +9,7 @@
 #include <QList>
 
 class SolverDefinitionGridType;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 namespace Ui
 {
@@ -26,20 +26,20 @@ public:
 	bool setPostSolutionInfo(PostSolutionInfo* info);
 	bool needToSelect() const {return m_needToSelect;}
 	PostSolutionInfo::Dimension dimension();
-	PostZoneDataContainer* container() const;
+	v4PostZoneDataContainer* container() const;
 
 private slots:
 	void setupGridTypeCombobox(int index);
 	void setupZoneList(int index);
 
 private:
-	void setupMaps(const QList<PostZoneDataContainer*>& srcList, QList<SolverDefinitionGridType*>& typeList, QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> >& zoneMap);
+	void setupMaps(const std::vector<v4PostZoneDataContainer*>& srcList, QList<SolverDefinitionGridType*>& typeList, QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> >& zoneMap);
 
 	QList<int> m_dimensions;
 	QList<SolverDefinitionGridType*> m_gridTypes;
-	QList<PostZoneDataContainer*> m_containers;
+	std::vector<v4PostZoneDataContainer*> m_containers;
 	QMap<int, QList<SolverDefinitionGridType*> > m_gridTypeMap;
-	QMap<int, QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > > m_zoneMap;
+	QMap<int, QMap<SolverDefinitionGridType*, std::vector<v4PostZoneDataContainer*> > > m_zoneMap;
 
 	bool m_needToSelect;
 	PostSolutionInfo* m_postSolutionInfo;

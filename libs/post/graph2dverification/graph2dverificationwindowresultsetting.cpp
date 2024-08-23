@@ -4,7 +4,7 @@
 #include "graph2dverificationwindowresultsetting.h"
 
 #include <guicore/project/measured/measureddata.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -55,6 +55,56 @@ Graph2dVerificationWindowResultSetting& Graph2dVerificationWindowResultSetting::
 	return *this;
 }
 
+PostSolutionInfo* Graph2dVerificationWindowResultSetting::postSolutionInfo() const
+{
+	return m_postSolutionInfo;
+}
+
+std::vector<MeasuredData*> Graph2dVerificationWindowResultSetting::measuredData() const
+{
+	return m_measuredData;
+}
+
+Graph2dVerificationWindowResultSetting::GraphType Graph2dVerificationWindowResultSetting::graphType() const
+{
+	return m_graphType;
+}
+
+int Graph2dVerificationWindowResultSetting::timeStep() const
+{
+	return m_timeStep;
+}
+
+v4PostZoneDataContainer* Graph2dVerificationWindowResultSetting::activePostData() const
+{
+	return m_activePostData;
+}
+
+QString Graph2dVerificationWindowResultSetting::activeResult() const
+{
+	return m_activeResult;
+}
+
+MeasuredData* Graph2dVerificationWindowResultSetting::activeMeasuredData() const
+{
+	return m_activeMeasuredData;
+}
+
+QString Graph2dVerificationWindowResultSetting::activeValue() const
+{
+	return m_activeValue;
+}
+
+QString Graph2dVerificationWindowResultSetting::activeFile() const
+{
+	return m_activeFile;
+}
+
+QString Graph2dVerificationWindowResultSetting::activeZone() const
+{
+	return m_activeZone;
+}
+
 void Graph2dVerificationWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
@@ -87,7 +137,7 @@ void Graph2dVerificationWindowResultSetting::saveToProjectMainFile(QXmlStreamWri
 void Graph2dVerificationWindowResultSetting::updateActivePostData()
 {
 	m_activePostData = nullptr;
-	for (PostZoneDataContainer* cont : m_postSolutionInfo->zoneContainers2D()) {
+	for (auto cont : m_postSolutionInfo->v4ZoneContainers2D()) {
 		if (m_activeZone == cont->zoneName().c_str()) {
 			m_activePostData = cont;
 			break;
@@ -95,7 +145,42 @@ void Graph2dVerificationWindowResultSetting::updateActivePostData()
 	}
 }
 
-void Graph2dVerificationWindowResultSetting::setActivePostData(PostZoneDataContainer* postZoneDataContainer)
+void Graph2dVerificationWindowResultSetting::setActivePostData(v4PostZoneDataContainer* postZoneDataContainer)
 {
 	m_activePostData = postZoneDataContainer;
+}
+
+void Graph2dVerificationWindowResultSetting::setActiveMeasuredData(MeasuredData* activeMeasuredData)
+{
+	m_activeMeasuredData = activeMeasuredData;
+}
+
+void Graph2dVerificationWindowResultSetting::setActiveValue(QString activeValue)
+{
+	m_activeValue = activeValue;
+}
+
+void Graph2dVerificationWindowResultSetting::setActiveResult(QString activeResult)
+{
+	m_activeResult = activeResult;
+}
+
+void Graph2dVerificationWindowResultSetting::setGraphType(GraphType graphType)
+{
+	m_graphType = graphType;
+}
+
+void Graph2dVerificationWindowResultSetting::setTimeStep(int timestep)
+{
+	m_timeStep = timestep;
+}
+
+void Graph2dVerificationWindowResultSetting::setActiveFile(QString activeFile)
+{
+	m_activeFile = activeFile;
+}
+
+void Graph2dVerificationWindowResultSetting::setActiveZone(QString activeZone)
+{
+	m_activeZone = activeZone;
 }

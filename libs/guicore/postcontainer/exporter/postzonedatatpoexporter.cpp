@@ -1,49 +1,77 @@
+#include "../../grid/v4grid.h"
+#include "../../grid/v4structured2dgrid.h"
+#include "../../grid/v4structured3dgrid.h"
+#include "../../grid/v4unstructured2dgrid.h"
+#include "../v4solutiongrid.h"
+#include "../v4postzonedatacontainer.h"
 #include "postzonedatatpoexporter.h"
-#include "../postzonedatacontainer.h"
+
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsutil.h>
 
 #include <QFile>
 #include <QTextStream>
 #include <QVector2D>
 
-#include <vtkStructuredGrid.h>
-#include <vtkUnstructuredGrid.h>
 #include <vtkPointData.h>
 
 namespace {
 
-void exportPointToStream(QTextStream& stream, vtkPoints* points, vtkDataArray* da, vtkIdType index, int component = 0)
+void exportPointDataToStream(QTextStream& stream, vtkPointSet* ps, vtkDataArray* da, vtkIdType index, int component, const QPointF& offset)
 {
 	double v[3];
-	points->GetPoint(index, v);
+	ps->GetPoints()->GetPoint(index, v);
 	double* tuple = da->GetTuple(index);
 
-	stream << v[0] << "," << v[1] << "," << *(tuple + component) << "\r\n";
+	stream << v[0] + offset.x() << "," << v[1] + offset.y() << "," << *(tuple + component) << "\r\n";
 }
 
-void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int arrayid, int component, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
+void exportCellDataToStream(QTextStream& stream, vtkPointSet* ps, vtkDataArray* da, vtkIdType index, const QPointF& offset, int component = 0)
 {
-	vtkPoints* points = sgrid->GetPoints();
-	vtkDataArray* dataArray = sgrid->GetPointData()->GetArray(arrayid);
+	auto cell = ps->GetCell(index);
+	auto center = vtkPointsUtil::getCenter(cell);
+	double* tuple = da->GetTuple(index);
+
+	stream << center.x() + offset.x() << "," << center.y() + offset.y() << "," << *(tuple + component) << "\r\n";
+}
+
+void exportStructured2dGrid(QTextStream& stream, v4Structured2dGrid* grid, int arrayid, int component,
+														int imin, int imax, int jmin, int jmax, int kmin, int kmax, const QPointF& offset)
+{
+	vtkDataArray* dataArray = grid->vtkData()->data()->GetPointData()->GetArray(arrayid);
 	for (int k = kmin; k <= kmax; ++k){
 		for (int j = jmin; j <= jmax; ++j){
 			for (int i = imin; i <= imax; ++i){
-				vtkIdType index = c->nodeIndex(i, j, k);
-				exportPointToStream(stream, points, dataArray, index, component);
+				vtkIdType index = grid->pointIndex(i, j);
+				exportPointDataToStream(stream, grid->vtkData()->data(), dataArray, index, component, offset);
 			}
 		}
 	}
 }
 
-void exportUnstructuredGrid(QTextStream& stream, vtkUnstructuredGrid* sgrid, int arrayid, int component)
+void exportStructured3dGrid(QTextStream& stream, v4Structured3dGrid* grid, int arrayid, int component,
+														int imin, int imax, int jmin, int jmax, int kmin, int kmax, const QPointF& offset)
 {
-	vtkPoints* points = sgrid->GetPoints();
-	vtkDataArray* dataArray = sgrid->GetPointData()->GetArray(arrayid);
-	for (vtkIdType index = 0; index < points->GetNumberOfPoints(); ++index) {
-		exportPointToStream(stream, points, dataArray, index, component);
+	vtkDataArray* dataArray = grid->vtkData()->data()->GetPointData()->GetArray(arrayid);
+	for (int k = kmin; k <= kmax; ++k){
+		for (int j = jmin; j <= jmax; ++j){
+			for (int i = imin; i <= imax; ++i){
+				vtkIdType index = grid->pointIndex(i, j, k);
+				exportPointDataToStream(stream, grid->vtkData()->data(), dataArray, index, component, offset);
+			}
+		}
 	}
 }
 
-bool exportComoponentFile(PostZoneDataContainer* c, vtkPointSet* ps, const QString& filename, const QString& componentName, int arrayid, int component, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
+void exportUnstructuredGrid(QTextStream& stream, v4Unstructured2dGrid* grid, int arrayid, int component, const QPointF& offset)
+{
+	vtkDataArray* dataArray = grid->vtkData()->data()->GetPointData()->GetArray(arrayid);
+	for (vtkIdType index = 0; index < grid->nodeCount(); ++index) {
+		exportPointDataToStream(stream, grid->vtkData()->data(), dataArray, index, component, offset);
+	}
+}
+
+bool exportComoponentFile(v4Grid* grid, const QString& filename, const QString& componentName, int arrayid, int component, int imin, int imax, int jmin, int jmax, int kmin, int kmax, const QPointF& offset)
 {
 	QString fname2 = filename;
 	fname2.replace(".tpo", QString("_") + componentName + ".tpo");
@@ -54,19 +82,23 @@ bool exportComoponentFile(PostZoneDataContainer* c, vtkPointSet* ps, const QStri
 			return false;
 		}
 	}
+
 	QFile f(fname2);
 	bool ok = f.open(QIODevice::WriteOnly);
 	if (! ok) {return false;}
 	QTextStream stream(&f);
 	stream.setRealNumberPrecision(12);
 
-	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
+	auto sgrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
+	auto sgrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
+	auto ugrid = dynamic_cast<v4Unstructured2dGrid*> (grid);
 
-	if (sgrid != nullptr) {
-		exportStructuredGrid(c, stream, sgrid, arrayid, component, imin, imax, jmin, jmax, kmin, kmax);
-	} else {
-		exportUnstructuredGrid(stream, ugrid, arrayid, component);
+	if (sgrid2d != nullptr) {
+		exportStructured2dGrid(stream, sgrid2d, arrayid, component, imin, imax, jmin, jmax, kmin, kmax, offset);
+	} else if (sgrid3d != nullptr) {
+		exportStructured3dGrid(stream, sgrid3d, arrayid, component, imin, imax, jmin, jmax, kmin, kmax, offset);
+	} else if (ugrid != nullptr) {
+		exportUnstructuredGrid(stream, ugrid, arrayid, component, offset);
 	}
 
 	f.close();
@@ -88,23 +120,15 @@ QString PostZoneDataTpoExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* /*projectdata*/, const QPointF& offset) const
+bool PostZoneDataTpoExporter::exportToFile(v4PostZoneDataContainer* c, const QString& filename, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* /*projectdata*/, const QPointF& offset) const
 {
 	QString componentName;
 
-	vtkSmartPointer<vtkStructuredGrid> target_sgrid;
-	vtkSmartPointer<vtkUnstructuredGrid> target_ugrid;
-	vtkPointSet* ps = nullptr;
+	auto grid = c->gridData()->grid();
 
-	auto source_sgrid = vtkStructuredGrid::SafeDownCast(c->data()->data());
-	auto source_ugrid = vtkUnstructuredGrid::SafeDownCast(c->data()->data());
+	// currently calculation result defined at grid nodes are output
+	auto pd = grid->vtkData()->data()->GetPointData();
 
-	if (source_sgrid != nullptr) {
-		ps = applyOffset<vtkStructuredGrid>(source_sgrid, target_sgrid, offset);
-	} else if (source_ugrid != nullptr) {
-		ps = applyOffset<vtkUnstructuredGrid>(source_ugrid, target_ugrid, offset);
-	}
-	vtkPointData* pd = ps->GetPointData();
 	bool ok;
 	for (int i = 0; i < pd->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pd->GetArray(i);
@@ -114,29 +138,30 @@ bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QStri
 		int comps = array->GetNumberOfComponents();
 		if (comps == 1){
 			componentName = name;
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 		} else if (comps == 2){
 			componentName = name + "X";
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 
 			componentName = name + "Y";
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 1, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 1, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 		} else if (comps == 3){
 			componentName = name + "X";
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 0, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 
 			componentName = name + "Y";
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 1, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 1, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 
 			componentName = name + "Z";
-			ok = exportComoponentFile(c, ps, filename, componentName, i, 2, imin, imax, jmin, jmax, kmin, kmax);
+			ok = exportComoponentFile(grid, filename, componentName, i, 2, imin, imax, jmin, jmax, kmin, kmax, offset);
 			if (! ok){return false;}
 		}
 	}
+
 	return true;
 }

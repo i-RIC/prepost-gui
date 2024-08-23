@@ -17,7 +17,6 @@
 #include <guicore/grid/v4grid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>

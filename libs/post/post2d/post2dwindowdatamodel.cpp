@@ -25,8 +25,8 @@
 #include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guibase/objectbrowserview.h>
-#include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
+#include <guicore/post/v4postzoneselectingdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/tmsimage/tmsimagegroupdataitem.h>
@@ -244,24 +244,25 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 	}
 	// no appropriate zonedatatem found.
 	PostSolutionInfo* info = postSolutionInfo();
-	QList<PostZoneDataContainer*> containers = info->zoneContainers2D();
-	if (containers.count() == 0) {
+	auto containers = info->v4ZoneContainers2D();
+	if (containers.size() == 0) {
 		// No zone container exists.
 		return nullptr;
-	} else if (containers.count() > 1) {
+	} else if (containers.size() > 1) {
 		// Multiple zone containers found.
-		PostZoneSelectingDialog dialog(mainWindow());
+		v4PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
 		if (ret != QDialog::Accepted) {return nullptr;}
+
 		std::string gridType = dialog.gridTypeName();
 		std::string zone = dialog.zoneName();
 		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
 		Post2dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		return gt->zoneData(zone);
 	} else {
-		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
-		QList<Post2dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
+		auto root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
+		auto list = root->gridTypeDataItems();
 		Post2dWindowGridTypeDataItem* gt = list.at(0);
 		return gt->zoneDatas().at(0);
 	}

@@ -3,8 +3,8 @@
 #include "graph2dscatteredwindowresultsetting.h"
 
 #include <guibase/qwtplotcustomcurve.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/colorsource.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
 #include <postbase/postallzoneselectingdialog.h>
@@ -204,7 +204,7 @@ bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 		if (result == QDialog::Rejected) {return false;}
 	}
 	m_dimension = dialog.dimension();
-	PostZoneDataContainer* cont = dialog.container();
+	auto cont = dialog.container();
 	m_zoneName = cont->zoneName();
 	return true;
 }

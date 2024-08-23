@@ -18,7 +18,6 @@ public:
 	explicit Post3dWindowCellRangeSettingEditWidget(QWidget *parent = nullptr);
 	~Post3dWindowCellRangeSettingEditWidget();
 
-	void setZoneData(PostZoneDataContainer* zd);
 	void setDimensions(int* dims);
 
 	Post3dWindowCellRangeSettingContainer setting() const;

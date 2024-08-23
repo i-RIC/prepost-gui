@@ -4,9 +4,12 @@
 
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/project/measured/measureddata.h>
 
 #include <QMessageBox>
@@ -56,7 +59,7 @@ void Graph2dVerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* inf
 {
 	m_postSolutionInfo = info;
 	ui->gridComboBox->clear();
-	for (PostZoneDataContainer* cont : info->zoneContainers2D()) {
+	for (auto cont : info->v4ZoneContainers2D()) {
 		ui->gridComboBox->addItem(cont->zoneName().c_str());
 	}
 	selectZone(0);
@@ -89,10 +92,10 @@ void Graph2dVerificationSettingDialog::setTimeStep(int step)
 	ui->timestepSlider->setValue(step);
 }
 
-void Graph2dVerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* cont)
+void Graph2dVerificationSettingDialog::setPostZoneDataContainer(v4PostZoneDataContainer* cont)
 {
-	for (int i = 0; i < m_postSolutionInfo->zoneContainers2D().count(); ++i) {
-		PostZoneDataContainer* c = m_postSolutionInfo->zoneContainers2D().at(i);
+	for (int i = 0; i < m_postSolutionInfo->v4ZoneContainers2D().size(); ++i) {
+		auto c = m_postSolutionInfo->v4ZoneContainers2D().at(i);
 		if (c == cont) {
 			selectZone(i);
 			return;
@@ -139,10 +142,10 @@ int Graph2dVerificationSettingDialog::timeStep() const
 	return ui->timestepSlider->value();
 }
 
-PostZoneDataContainer* Graph2dVerificationSettingDialog::postZoneDataContainer() const
+v4PostZoneDataContainer* Graph2dVerificationSettingDialog::postZoneDataContainer() const
 {
 	int index = ui->gridComboBox->currentIndex();
-	return m_postSolutionInfo->zoneContainers2D().at(index);
+	return m_postSolutionInfo->v4ZoneContainers2D().at(index);
 }
 
 
@@ -175,8 +178,8 @@ QString Graph2dVerificationSettingDialog::activeZone() const
 void Graph2dVerificationSettingDialog::selectZone(int zoneid)
 {
 	ui->physicalValueComboBox->clear();
-	PostZoneDataContainer* cont = m_postSolutionInfo->zoneContainers2D().at(zoneid);
-	vtkPointData* pd = cont->data()->data()->GetPointData();
+	auto cont = m_postSolutionInfo->v4ZoneContainers2D().at(zoneid);
+	vtkPointData* pd = cont->gridData()->grid()->vtkData()->data()->GetPointData();
 
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		auto arr = pd->GetArray(name.c_str());

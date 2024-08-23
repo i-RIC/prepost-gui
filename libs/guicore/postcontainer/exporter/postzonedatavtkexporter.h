@@ -16,8 +16,9 @@ public:
 	PostZoneDataVtkExporter(const QString& workDir);
 	PostZoneDataVtkExporter(const QString& workDir, Mode mode);
 	~PostZoneDataVtkExporter() {}
+
 	QString filename(const QString& prefix, int index) const override;
-	bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const override;
+	bool exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const override;
 
 private:
 	void exportStructuredGrid(const char* filename, vtkStructuredGrid* sgrid, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax) const;

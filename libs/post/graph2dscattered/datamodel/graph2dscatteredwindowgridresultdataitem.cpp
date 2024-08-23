@@ -2,7 +2,10 @@
 #include "graph2dscatteredwindowgridresultdataitem.h"
 #include "graph2dscatteredwindowresultgroupdataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid2d.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <misc/stringtool.h>
 
 #include <vtkPointData.h>
@@ -33,10 +36,10 @@ void Graph2dScatteredWindowGridResultDataItem::updateValues()
 	const Graph2dScatteredWindowResultSetting& s = dataModel()->setting();
 
 	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
-	PostZoneDataContainer* cont = postInfo->zoneContainer(s.dimension(), s.zoneName());
+	v4PostZoneDataContainer* cont = postInfo->v4ZoneContainer(s.dimension(), s.zoneName());
 	if (cont == nullptr) {return;}
 
-	vtkPointSet* ps = cont->data()->data();
+	vtkPointSet* ps = cont->gridData()->grid()->vtkData()->data();
 
 	m_xValues.reserve(ps->GetNumberOfPoints());
 	m_yValues.reserve(ps->GetNumberOfPoints());

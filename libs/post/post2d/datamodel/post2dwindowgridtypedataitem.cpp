@@ -15,7 +15,6 @@
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>

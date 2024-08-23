@@ -57,7 +57,6 @@ private:
 
 	void init();
 	void applySettings();
-	const QList<PostZoneDataContainer*>& zoneContainers();
 
 	QwtPlotMarker* m_timeMarker;
 	Graph2dVerificationWindowResultSetting m_setting;

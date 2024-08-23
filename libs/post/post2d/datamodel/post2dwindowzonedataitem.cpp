@@ -14,7 +14,6 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
