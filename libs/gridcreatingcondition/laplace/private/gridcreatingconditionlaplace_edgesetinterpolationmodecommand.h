@@ -9,19 +9,20 @@
 class GridCreatingConditionLaplace::EdgeSetInterpolationModeCommand : public QUndoCommand
 {
 public:
-	EdgeSetInterpolationModeCommand(Impl::EdgeType edgeType, int edgeId, Impl::InterpolationType type, GridCreatingConditionLaplace::Impl* impl);
+	EdgeSetInterpolationModeCommand(Impl::EdgeType edgeType, std::vector<int> edgeIds, InterpolationType type, GridCreatingConditionLaplace::Impl* impl);
 
 	void redo() override;
 	void undo() override;
 
 private:
-	Impl::InterpolationType& targetType();
+	InterpolationType& targetType(int id);
 
-	Impl::InterpolationType m_newType;
-	Impl::InterpolationType m_oldType;
+	std::vector<InterpolationType> m_newTypes;
+	std::vector<InterpolationType> m_oldTypes;
 
 	Impl::EdgeType m_edgeType;
-	int m_edgeId;
+	std::vector<int> m_edgeIds;
+
 	Impl* m_impl;
 };
 

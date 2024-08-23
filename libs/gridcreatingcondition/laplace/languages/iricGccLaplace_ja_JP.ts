@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -110,15 +112,15 @@
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation>補間モード (&amp;I)</translation>
+        <translation type="vanished">補間モード (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation>スプライン補間 (&amp;S)</translation>
+        <translation type="vanished">スプライン補間 (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation>線形補間 (&amp;L)</translation>
+        <translation type="vanished">線形補間 (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Divide region</source>
@@ -211,6 +213,10 @@
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation>横断測量データが見つかりません。中心線を、自分で作成してください。</translation>
+    </message>
+    <message>
+        <source>Edge &amp;Interpolate Setting...</source>
+        <translation>選択した線の補間設定 (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -309,7 +315,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Equally divided</source>
@@ -338,6 +344,41 @@
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;配置設定は、並列した位置にある全ての線に適用されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
+    <message>
+        <source>Interpolate Setting</source>
+        <translation>補間設定</translation>
+    </message>
+    <message>
+        <source>Spline curve</source>
+        <translation>スプライン曲線</translation>
+    </message>
+    <message>
+        <source>Polyline</source>
+        <translation>折れ線</translation>
+    </message>
+    <message>
+        <source>Interpolate Setting Target</source>
+        <translation>補間設定対象</translation>
+    </message>
+    <message>
+        <source>This line and lines in parallel positions</source>
+        <translation>この線および並列した位置の線</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;配置設定は、並列した位置にある全ての線に適用されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>This line only</source>
+        <translation>この線のみ</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;補間設定は、並列した位置にある全ての線に適用されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

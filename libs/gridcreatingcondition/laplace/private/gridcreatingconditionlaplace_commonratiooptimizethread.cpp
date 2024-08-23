@@ -5,6 +5,19 @@
 
 #include <QMutexLocker>
 
+namespace {
+
+const double MAX_COMMON_RATIO = 1.5;
+
+double limitedCommonRatio(double r) {
+	if (r > MAX_COMMON_RATIO) { return MAX_COMMON_RATIO; }
+	if (r < 1 / MAX_COMMON_RATIO) { return 1 / MAX_COMMON_RATIO; }
+
+	return r;
+}
+
+} // namespace
+
 GridCreatingConditionLaplace::CommonRatioOptimizeThread::CommonRatioOptimizeThread(GridCreatingConditionLaplace::Impl* impl) :
 	QThread {},
 	m_restart {false},
@@ -109,7 +122,7 @@ void GridCreatingConditionLaplace::CommonRatioOptimizeThread::run()
 
 			auto ratios = optimizedCommonRatios(m_streamWiseParams.at(j));
 			for (int i = 0; i < ratios.size(); ++i) {
-				streamWiseCommonRatios[i + j * (m_impl->m_ctrlPointCountI - 1)] = ratios[i];
+				streamWiseCommonRatios[i + j * (m_impl->m_ctrlPointCountI - 1)] = limitedCommonRatio(ratios[i]);
 			}
 		}
 		auto crossSectionCount = m_crossSectionParams.size();
@@ -125,7 +138,7 @@ void GridCreatingConditionLaplace::CommonRatioOptimizeThread::run()
 
 			auto ratios = optimizedCommonRatios(m_crossSectionParams.at(i));
 			for (int j = 0; j < ratios.size(); ++j) {
-				crossSectionCommonRatios[i + j * m_impl->m_ctrlPointCountI] = ratios[j];
+				crossSectionCommonRatios[i + j * m_impl->m_ctrlPointCountI] = limitedCommonRatio(ratios[j]);
 			}
 		}
 
@@ -167,7 +180,7 @@ std::vector<double> GridCreatingConditionLaplace::CommonRatioOptimizeThread::opt
 	int idx = 0;
 	std::vector<double> ret;
 	for (int i = 0; i < p.divModes.size(); ++i) {
-		if (p.divModes[i]	== DivisionMode::Auto) {
+		if (p.divModes[i] == DivisionMode::Auto) {
 			ret.push_back(anms.xout.at(idx));
 			++ idx;
 		} else {
