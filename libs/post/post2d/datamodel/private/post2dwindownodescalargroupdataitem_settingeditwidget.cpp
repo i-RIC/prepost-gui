@@ -6,6 +6,7 @@
 #include "ui_post2dwindownodescalargroupdataitem_settingeditwidget.h"
 
 #include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
@@ -32,10 +33,20 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 	auto sGrid = dynamic_cast<v4Structured2dGrid*> (data);
 	if (sGrid == nullptr) {
 		ui->rangeWidget->hideCustom();
+
+		auto ugrid = dynamic_cast<v4Unstructured2dGrid*>(data);
+		if (ugrid != nullptr) {
+			auto vgrid = ugrid->vtkConcreteData()->data();
+			auto firstCell = vgrid->GetCell(0);
+			if (firstCell != nullptr && firstCell->GetCellType() == VTK_TRIANGLE) {
+				ui->gridNodeSettingWidget->hideLineWidth();
+			}
+		}
 	} else {
 		int dims[3];
 		sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 		ui->rangeWidget->setDimensions(dims[0], dims[1]);
+		ui->gridNodeSettingWidget->hideLineWidth();
 	}
 	auto output = item->topDataItem()->zoneDataItem()->gridTypeDataItem()->gridType()->output(item->target());
 
@@ -46,12 +57,17 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	ui->rangeWidget->setSetting(&item->impl->m_setting.regionSetting);
 	ui->contourWidget->setSetting(&item->impl->m_setting.contourSetting);
-	ui->opacityWidget->setOpacity(item->impl->m_setting.opacity);
+	ui->gridNodeSettingWidget->setSetting(&item->impl->m_setting.nodeSetting);
 
 	auto cs = dynamic_cast<ColorMapSettingContainer*> (item->impl->m_setting.colorMapSetting);
 	if (cs == nullptr) {
 		ui->contourWidget->disable();
 	}
+
+	auto grid = cont->gridData()->grid();
+
+
+
 }
 
 Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::~SettingEditWidget()
@@ -65,9 +81,7 @@ QUndoCommand* Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::createModi
 	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(ui->rangeWidget->createModifyCommand());
 	command->addCommand(ui->contourWidget->createModifyCommand(apply));
-
-	OpacityContainer o = ui->opacityWidget->opacity();
-	command->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, o, &m_item->impl->m_setting.opacity));
+	command->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
 
 	return command;
 }

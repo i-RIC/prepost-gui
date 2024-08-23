@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Breyta netgildi</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Mála</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Stig</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktastærð:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Bakgrunnsmyndinni var ekki bætt við. Vinsamlegast reyndu aftur.</translation>
+        <translation type="vanished">Bakgrunnsmyndinni var ekki bætt við. Vinsamlegast reyndu aftur.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Ógild myndaskrá er tilgreind.</translation>
+        <translation type="vanished">Ógild myndaskrá er tilgreind.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Villa kom upp við opnun %1. iRIC reynir að bjarga gögnum frá %2.</translation>
+        <translation>Villa kom upp við opnun %1. iRIC reynir að bjarga gögnum frá %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Allar myndir (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Ógild myndskrá er tilgreind. Skráarviðskeyti ætti að vera eitt af "jpg", "jpeg", "png" eða "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Villa kom upp við að búa til möppu %1</translation>
     </message>
 </context>
 <context>

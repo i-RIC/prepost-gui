@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Namn:</translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Startpunkt:</translation>
+        <translation>Startpunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Slutpunkt:</translation>
+        <translation>Slutpunkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Märka</translation>
+        <translation>Märka</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Visa etikett</translation>
+        <translation>Visa etikett</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Innehåll</translation>
+        <translation>Innehåll</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Bil</translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Beställnings</translation>
+        <translation>Beställnings</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Placera</translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Center-Top</translation>
+        <translation>Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Mitten-vänster</translation>
+        <translation>Mitt-vänster</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Mellan-höger</translation>
+        <translation>Mitten-höger</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Center-Bottom</translation>
+        <translation>Mitt-botten</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Teckensnittsinställning</translation>
+        <translation>Teckensnittsinställning</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Visa slutmarkörer</translation>
+        <translation>Visa slutmarkörer</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Markörstorlek:</translation>
+        <translation>Markörstorlek:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Färg:</translation>
+        <translation>Färg:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nom:</translation>
+        <translation>Nom:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Punt d&apos;inici:</translation>
+        <translation>Punt d'inici:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Punt final:</translation>
+        <translation>Punt final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiqueta</translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Mostra l&apos;etiqueta</translation>
+        <translation>Mostra l'etiqueta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Contingut</translation>
+        <translation>Contingut</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automàtic</translation>
+        <translation>Automàtic</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Personalitzat</translation>
+        <translation>Personalitzat</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posició</translation>
+        <translation>Posició</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centre-superior</translation>
+        <translation>Centre-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Mig-esquerra</translation>
+        <translation>Mitjà-esquerra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Mig dret</translation>
+        <translation>Mitjana-Dreta</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centre-inferior</translation>
+        <translation>Centre-Baix</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Configuració del tipus de lletra</translation>
+        <translation>Configuració del tipus de lletra</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Mostra els marcadors finals</translation>
+        <translation>Mostra els marcadors finals</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Mida del marcador:</translation>
+        <translation>Mida del marcador:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -166,7 +164,7 @@
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="vanished">Punt d&apos;inici:</translation>
+        <translation type="vanished">Punt d'inici:</translation>
     </message>
     <message>
         <source>, </source>
@@ -182,7 +180,7 @@
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="vanished">Mostra l&apos;etiqueta</translation>
+        <translation type="vanished">Mostra l'etiqueta</translation>
     </message>
     <message>
         <source>Content</source>

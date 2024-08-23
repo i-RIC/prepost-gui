@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Redaguoti tinklelio atributo vertę (-es)</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Dažyti</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Taškai</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Fono vaizdas nebuvo pridėtas. Prašau, pabandykite dar kartą.</translation>
+        <translation type="vanished">Fono vaizdas nebuvo pridėtas. Prašau, pabandykite dar kartą.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Nurodytas netinkamas vaizdo failas.</translation>
+        <translation type="vanished">Nurodytas netinkamas vaizdo failas.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Atidarant įvyko klaida %1. iRIC bando išgelbėti duomenis iš %2.</translation>
+        <translation>Atidarant įvyko klaida %1. iRIC bando išgelbėti duomenis iš %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Visi vaizdai (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Nurodytas netinkamas vaizdo failas. Failo priesaga turi būti viena iš „jpg“, „jpeg“, „png“ arba „tif“.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Kuriant aplanką įvyko klaida %1</translation>
     </message>
 </context>
 <context>

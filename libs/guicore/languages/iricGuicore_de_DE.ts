@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Bilden</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linienbreite:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Gitterattributwert(e) bearbeiten</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Bilden</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Malen</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punkte</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linienbreite:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktgröße:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Das Hintergrundbild wurde nicht hinzugefügt. Bitte versuche es erneut.</translation>
+        <translation type="vanished">Das Hintergrundbild wurde nicht hinzugefügt. Bitte versuche es erneut.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Ungültige Bilddatei wurde angegeben.</translation>
+        <translation type="vanished">Ungültige Bilddatei wurde angegeben.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Beim Öffnen ist ein Fehler aufgetreten %1. iRIC versucht, Daten zu retten %2.</translation>
+        <translation>Beim Öffnen ist ein Fehler aufgetreten %1. iRIC versucht, Daten zu retten %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Alle Bilder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Es wurde eine ungültige Bilddatei angegeben. Die Dateierweiterung sollte „jpg“, „jpeg“, „png“ oder „tif“ sein.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Beim Erstellen des Ordners ist ein Fehler aufgetreten %1</translation>
     </message>
 </context>
 <context>

@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredd:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Redigera nätverksattributvärde</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Måla</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poäng</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredd:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstorlek:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Bakgrundsbilden har inte lagts till. Var god försök igen.</translation>
+        <translation type="vanished">Bakgrundsbilden har inte lagts till. Var god försök igen.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Ogiltig bildfil har angetts.</translation>
+        <translation type="vanished">Ogiltig bildfil har angetts.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Ett fel uppstod vid öppning %1. iRIC försöker rädda data från %2.</translation>
+        <translation>Ett fel uppstod vid öppning %1. iRIC försöker rädda data från %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Alla bilder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Ogiltig bildfil har angetts. Filsuffix ska vara ett av "jpg", "jpeg", "png" eller "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Ett fel uppstod när mappen skapades %1</translation>
     </message>
 </context>
 <context>

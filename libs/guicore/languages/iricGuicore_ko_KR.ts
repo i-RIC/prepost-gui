@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>그리드 속성 값 편집</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>페인트</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>포인트들</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>배경 이미지가 추가되지 않았습니다. 다시 시도해 주세요.</translation>
+        <translation type="vanished">배경 이미지가 추가되지 않았습니다. 다시 시도해 주세요.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>잘못된 이미지 파일이 지정되었습니다.</translation>
+        <translation type="vanished">잘못된 이미지 파일이 지정되었습니다.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">여는 중 오류가 발생했습니다. %1. iRIC에서 데이터 복구 시도 %2.</translation>
+        <translation>여는 중 오류가 발생했습니다. %1. iRIC에서 데이터 복구 시도 %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>모든 이미지 (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>잘못된 이미지 파일이 지정되었습니다. 파일 접미사는 "jpg", "jpeg", "png" 또는 "tif" 중 하나여야 합니다.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>폴더를 생성하는 중 오류가 발생했습니다. %1</translation>
     </message>
 </context>
 <context>

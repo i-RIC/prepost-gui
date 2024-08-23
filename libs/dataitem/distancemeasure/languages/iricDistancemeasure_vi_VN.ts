@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Tên:</translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Điểm xuất phát:</translation>
+        <translation>Điểm bắt đầu:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Điểm cuối:</translation>
+        <translation>Điểm kết thúc:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Nhãn mác</translation>
+        <translation>Nhãn</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Hiển thị nhãn</translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Nội dung</translation>
+        <translation>Nội dung</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Tự động</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Tập quán</translation>
+        <translation>Phong tục</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Chức vụ</translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Trung tâm trên cùng</translation>
+        <translation>Trung tâm-Trên cùng</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Trung tâm bên trái</translation>
+        <translation>Trung tâm bên trái</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Trung phải</translation>
+        <translation>Giữa-Phải</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Center-Bottom</translation>
+        <translation>Giữa-Dưới</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Cài đặt Phông chữ</translation>
+        <translation>Cài đặt phông chữ</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Hiển thị điểm đánh dấu kết thúc</translation>
+        <translation>Hiển thị dấu kết thúc</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Kích thước điểm đánh dấu:</translation>
+        <translation>Kích thước điểm đánh dấu:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Màu sắc:</translation>
+        <translation>Màu sắc:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Izena:</translation>
+        <translation>Izena:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Abiapuntua:</translation>
+        <translation>Hasiera puntua:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Amaiera puntua:</translation>
+        <translation>Amaiera puntua:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiketa</translation>
+        <translation>Etiketa</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Erakutsi Etiketa</translation>
+        <translation>Erakutsi Etiketa</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Edukia</translation>
+        <translation>Edukia</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automatikoa</translation>
+        <translation>Autoa</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Pertsonalizatua</translation>
+        <translation>Pertsonalizatua</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizioa</translation>
+        <translation>Posizioa</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Erdigunea</translation>
+        <translation>Zentroa-Goikoa</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Erdi-Ezkerra</translation>
+        <translation>Erdi-Ezkerra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Erdi-eskuina</translation>
+        <translation>Erdi-eskuin</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Erdialdeko behekoa</translation>
+        <translation>Erdi-Behea</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Letra-tipoaren ezarpena</translation>
+        <translation>Letra-tipoaren ezarpena</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Erakutsi amaiera markatzaileak</translation>
+        <translation>Erakutsi amaiera-markatzaileak</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Markagailuaren tamaina:</translation>
+        <translation>Markagailuaren tamaina:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Kolore:</translation>
+        <translation>Kolore:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilden</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Startpunkt:</translation>
+        <translation>Startpunkt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Endpunkt:</translation>
+        <translation>Endpunkt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etikett</translation>
+        <translation>Etikett</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Label anzeigen</translation>
+        <translation>Beschriftung anzeigen</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Inhalt</translation>
+        <translation>Inhalt</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Benutzerdefiniert</translation>
+        <translation>Brauch</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Position</translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Mitte-Oberseite</translation>
+        <translation>Mitte-Oben</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Mitte-Links</translation>
+        <translation>Mitte-Links</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Mitte-Rechts</translation>
+        <translation>Mitte-Rechts</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Mitte-Unten</translation>
+        <translation>Mitte-Unten</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Schrifteinstellung</translation>
+        <translation>Schriftarteinstellung</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Endmarkierungen anzeigen</translation>
+        <translation>Endemarkierungen anzeigen</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Markergröße:</translation>
+        <translation>Markergröße:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
 </context>
 <context>

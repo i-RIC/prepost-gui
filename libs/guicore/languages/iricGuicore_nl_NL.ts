@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Rasterkenmerkwaarde(n) bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Verf</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punten</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>De achtergrondafbeelding is niet toegevoegd. Probeer het opnieuw.</translation>
+        <translation type="vanished">De achtergrondafbeelding is niet toegevoegd. Probeer het opnieuw.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Er is een ongeldig afbeeldingsbestand opgegeven.</translation>
+        <translation type="vanished">Er is een ongeldig afbeeldingsbestand opgegeven.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Er is een fout opgetreden tijdens het openen %1. iRIC probeert gegevens te redden van %2.</translation>
+        <translation>Er is een fout opgetreden tijdens het openen %1. iRIC probeert gegevens te redden van %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Alle afbeeldingen (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Er is een ongeldig afbeeldingsbestand opgegeven. Het bestandsachtervoegsel moet een van de volgende waarden zijn: "jpg", "jpeg", "png" of "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Er is een fout opgetreden bij het maken van de map %1</translation>
     </message>
 </context>
 <context>

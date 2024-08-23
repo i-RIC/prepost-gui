@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Urejanje vrednosti atributov mreže</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Točke</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost točke:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Slika ozadja ni bila dodana. Prosim poskusite ponovno.</translation>
+        <translation type="vanished">Slika ozadja ni bila dodana. Prosim poskusite ponovno.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Podana je neveljavna slikovna datoteka.</translation>
+        <translation type="vanished">Podana je neveljavna slikovna datoteka.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Pri odpiranju je prišlo do napake %1. iRIC poskuša rešiti podatke iz %2.</translation>
+        <translation>Pri odpiranju je prišlo do napake %1. iRIC poskuša rešiti podatke iz %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Vse slike (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Podana je neveljavna slikovna datoteka. Pripona datoteke mora biti ena od »jpg«, »jpeg«, »png« ali »tif«.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Med ustvarjanjem mape je prišlo do napake %1</translation>
     </message>
 </context>
 <context>

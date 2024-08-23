@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Редагувати значення атрибутів сітки</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Фарба</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Очки</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Розмір точки:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Фонове зображення не додано. Будь ласка спробуйте ще раз.</translation>
+        <translation type="vanished">Фонове зображення не додано. Будь ласка спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Вказано недійсний файл зображення.</translation>
+        <translation type="vanished">Вказано недійсний файл зображення.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Під час відкриття сталася помилка %1. iRIC намагається врятувати дані з %2.</translation>
+        <translation>Під час відкриття сталася помилка %1. iRIC намагається врятувати дані з %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Всі зображення (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Вказано недійсний файл зображення. Суфікс файлу має бути одним із таких: "jpg", "jpeg", "png" або "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Під час створення папки сталася помилка %1</translation>
     </message>
 </context>
 <context>

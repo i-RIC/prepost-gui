@@ -1214,7 +1214,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>To use this function, please select the most downstream point first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para utilizar esta función, seleccione primero el punto más abajo.</translation>
     </message>
 </context>
 <context>

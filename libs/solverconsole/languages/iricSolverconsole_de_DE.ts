@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>SolverConsoleWindow</name>
@@ -103,6 +101,10 @@
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 existiert nicht. Bitte geben Sie im Einstellungsdialogfeld einen gültigen ausführbaren Python-Pfad an.</translation>
     </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="vanished">Dieses Projekt enthält bereits Berechnungsergebnisdaten. Wenn Sie den Solver ausführen, werden diese verworfen.</translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -135,11 +137,23 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Warnung</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;Please make sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
+&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
+&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Bitte stellen Sie Folgendes sicher:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Wenn das Berechnungsergebnis bereits vorhanden ist, wird es gelöscht.&lt;/li&gt; &lt;li&gt;Die Berechnungsbedingung und das Eingaberaster, die Sie im Vorverarbeitungsfenster sehen können, werden in Case1.cgn geschrieben.&lt;/li&gt; &lt;li&gt;Der Solver liest die Daten aus Case1.cgn und beginnt mit der Ausführung.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Sind Sie sicher, dass das in Ordnung ist?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bitte stellen Sie Folgendes sicher:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;Wenn das Berechnungsergebnis bereits vorhanden ist, wird es gelöscht.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Das Projekt wird gespeichert.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Sind Sie sicher, dass das in Ordnung ist?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">İsim:</translation>
+        <translation>İsim:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Başlangıç noktası:</translation>
+        <translation>Başlangıç noktası:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Bitiş Noktası:</translation>
+        <translation>Bitiş Noktası:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiket</translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Etiketi Göster</translation>
+        <translation>Etiketi Göster</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">İçerik</translation>
+        <translation>İçerik</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Oto</translation>
+        <translation>Oto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Gelenek</translation>
+        <translation>Gelenek</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Konum</translation>
+        <translation>Konum</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Orta Üst</translation>
+        <translation>Orta-Üst</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Orta-Sol</translation>
+        <translation>Orta-Sol</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Orta Sağ</translation>
+        <translation>Orta-Sağ</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Orta-Alt</translation>
+        <translation>Orta-Alt</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Yazı Tipi Ayarı</translation>
+        <translation>Yazı Tipi Ayarı</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Bitiş İşaretlerini Göster</translation>
+        <translation>Bitiş İşaretlerini Göster</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">İşaret Boyutu:</translation>
+        <translation>Marker Boyutu:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
 </context>
 <context>

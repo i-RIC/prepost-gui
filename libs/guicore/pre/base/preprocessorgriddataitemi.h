@@ -9,6 +9,7 @@
 class v4InputGrid;
 class GridAttributeContainer;
 class PreProcessorBCGroupDataItem;
+class PreProcessorGeoDataTopDataItemI;
 
 class GUICOREDLL_EXPORT PreProcessorGridDataItemI : public PreProcessorDataItem
 {
@@ -18,6 +19,7 @@ public:
 
 	QString subPath() const;
 
+	virtual PreProcessorGeoDataTopDataItemI* geoDataTopDataItem() const = 0;
 	virtual void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) = 0;
 	virtual void informGridAttributeChange(const std::string& name) = 0;
 	virtual void updateAttributeActorSettings() = 0;

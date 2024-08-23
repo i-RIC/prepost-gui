@@ -6,12 +6,13 @@
 #include <QDialog>
 
 class ColorMapSettingEditWidgetI;
-class OpacityContainer;
+class GridAttributeNodeSetting;
 class PreProcessorGridAttributeNodeGroupDataItem;
 
 namespace Ui {
 class PreProcessorGridAttributeNodeDataItem_PropertyDialog;
 }
+
 
 class PreProcessorGridAttributeNodeDataItem::PropertyDialog : public QDialog
 {
@@ -21,11 +22,12 @@ public:
 	PropertyDialog(PreProcessorGridAttributeNodeGroupDataItem* item, QWidget *parent);
 	~PropertyDialog();
 
+	void hideLineWidth();
+
 	ColorMapSettingEditWidgetI* widget() const;
 	void setWidget(ColorMapSettingEditWidgetI* w);
 
-	OpacityContainer opacity() const;
-	void setOpacity(const OpacityContainer& opacity);
+	void setSetting(GridAttributeNodeSetting* setting);
 
 	void accept() override;
 	void reject() override;

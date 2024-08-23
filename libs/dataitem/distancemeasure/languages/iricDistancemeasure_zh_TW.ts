@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">姓名：</translation>
+        <translation>姓名：</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">起點：</translation>
+        <translation>起點：</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">終點：</translation>
+        <translation>終點：</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">標籤</translation>
+        <translation>標籤</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">顯示標籤</translation>
+        <translation>顯示標籤</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">內容</translation>
+        <translation>內容</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">汽車</translation>
+        <translation>汽車</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">風俗</translation>
+        <translation>風俗</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">中上</translation>
+        <translation>中心-頂部</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">中左</translation>
+        <translation>中左翼</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">中右</translation>
+        <translation>中右派</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">中底</translation>
+        <translation>中心-底部</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">字體設置</translation>
+        <translation>字體設定</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">顯示結束標記</translation>
+        <translation>顯示結束標記</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">標記尺寸：</translation>
+        <translation>標記尺寸：</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">顏色：</translation>
+        <translation>顏色：</translation>
     </message>
 </context>
 <context>

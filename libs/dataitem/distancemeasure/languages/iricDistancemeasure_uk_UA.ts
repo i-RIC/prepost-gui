@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Початкова точка:</translation>
+        <translation>Початкова точка:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Кінцева точка:</translation>
+        <translation>Кінцева точка:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Мітка</translation>
+        <translation>Мітка</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Показати мітку</translation>
+        <translation>Показати мітку</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Зміст</translation>
+        <translation>Зміст</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Авто</translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">На замовлення</translation>
+        <translation>Custom</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиція</translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">По центру</translation>
+        <translation>Центр-Верх</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Середній-лівий</translation>
+        <translation>Середній-лівий</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Середній-правий</translation>
+        <translation>Середній-правий</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">По центру-знизу</translation>
+        <translation>Центр-Внизу</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Налаштування шрифту</translation>
+        <translation>Налаштування шрифту</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Показати кінцеві маркери</translation>
+        <translation>Показати кінцеві маркери</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Розмір маркера:</translation>
+        <translation>Розмір маркера:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Колір:</translation>
+        <translation>колір:</translation>
     </message>
 </context>
 <context>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Ім&apos;я:</translation>
+        <translation type="vanished">Ім'я:</translation>
     </message>
     <message>
         <source>Start Point:</source>

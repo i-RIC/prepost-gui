@@ -3,12 +3,15 @@
 
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
+#include <misc/enumcontainert.h>
 #include <misc/opacitycontainer.h>
 
+#include <memory>
 #include <string>
 #include <unordered_map>
 #include <vector>
 
+class GridAttributeNodeSetting;
 class NamedGraphicWindowDataItem;
 class OpacityContainerWidget;
 class PreProcessorGridAttributeNodeDataItem;
@@ -16,7 +19,6 @@ class PreProcessorGridDataItem;
 class PreProcessorGridTypeDataItem;
 class QWidgetContainer;
 
-class vtkActor;
 class QAction;
 
 class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem , public TargetedItemI
@@ -45,7 +47,7 @@ public:
 	std::vector<PreProcessorGridAttributeNodeDataItem*> conditions() const;
 	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	OpacityContainer& opacity();
+	GridAttributeNodeSetting& setting();
 	OpacityContainerWidget* opacityWidget() const;
 	QWidgetContainer* colorMapWidgetContainer() const;
 	QAction* showAttributeBrowserAction() const;
@@ -58,6 +60,7 @@ public:
 	void applyColorMapSetting(const std::string& name);
 	PreProcessorGridDataItem* gridDataItem() const;
 	bool colorBarShouldBeVisible(const std::string& name) const;
+
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -72,17 +75,8 @@ private:
 
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 
-	std::string m_target;
-
-	vtkActor* m_actor;
-
-	QAction* m_showAttributeBrowserAction;
-	OpacityContainer m_opacity;
-	bool m_attributeBrowserFixed;
-	std::unordered_map<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
-
-	OpacityContainerWidget* m_opacityWidget;
-	QWidgetContainer* m_colorMapWidgetContainer;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTENODEGROUPDATAITEM_H

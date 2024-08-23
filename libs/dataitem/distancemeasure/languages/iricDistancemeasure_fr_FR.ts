@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nom:</translation>
+        <translation>Nom:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Point de départ:</translation>
+        <translation>Point de départ:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Point final&#xa0;:</translation>
+        <translation>Point final :</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Étiqueter</translation>
+        <translation>Étiquette</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Afficher l&apos;étiquette</translation>
+        <translation>Afficher l'étiquette</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Teneur</translation>
+        <translation>Contenu</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Personnalisé</translation>
+        <translation>Coutume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Position</translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centre-Top</translation>
+        <translation>Centre-Haut</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Milieu-Gauche</translation>
+        <translation>Milieu-gauche</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Milieu-Droite</translation>
+        <translation>Centre-droite</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centre-Bas</translation>
+        <translation>Centre-Bas</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Paramètre de police</translation>
+        <translation>Paramètre de police</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Afficher les marqueurs de fin</translation>
+        <translation>Afficher les marqueurs de fin</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Taille du marqueur&#xa0;:</translation>
+        <translation>Taille du marqueur :</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Couleur:</translation>
+        <translation>Couleur:</translation>
     </message>
 </context>
 <context>
@@ -139,7 +137,7 @@
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation>Il n&apos;y a pas de mesure de distance.</translation>
+        <translation>Il n'y a pas de mesure de distance.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
@@ -151,7 +149,7 @@
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation>Voulez-vous vraiment supprimer toutes les mesures de distance&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer toutes les mesures de distance ?</translation>
     </message>
 </context>
 <context>
@@ -174,7 +172,7 @@
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="vanished">Point final&#xa0;:</translation>
+        <translation type="vanished">Point final :</translation>
     </message>
     <message>
         <source>Label</source>
@@ -182,7 +180,7 @@
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="vanished">Afficher l&apos;étiquette</translation>
+        <translation type="vanished">Afficher l'étiquette</translation>
     </message>
     <message>
         <source>Content</source>
@@ -226,7 +224,7 @@
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="vanished">Taille du marqueur&#xa0;:</translation>
+        <translation type="vanished">Taille du marqueur :</translation>
     </message>
     <message>
         <source>Color:</source>

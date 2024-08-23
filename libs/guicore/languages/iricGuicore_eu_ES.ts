@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Editatu saretaren atributuaren balioa (k)</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Margotu</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntuak</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Atzeko planoko irudia ez da gehitu. Saiatu berriro mesedez.</translation>
+        <translation type="vanished">Atzeko planoko irudia ez da gehitu. Saiatu berriro mesedez.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Irudi fitxategi baliogabea zehazten da.</translation>
+        <translation type="vanished">Irudi fitxategi baliogabea zehazten da.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Errore bat gertatu da irekitzean %1. iRIC datuak berreskuratzen saiatzen da %2.</translation>
+        <translation>Errore bat gertatu da irekitzean %1. iRIC datuak berreskuratzen saiatzen da %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Irudi guztiak (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Irudi fitxategi baliogabea zehaztu da. Fitxategiaren atzizkiak "jpg", "jpeg", "png" edo "tif" hauetako bat izan behar du.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Errore bat gertatu da karpeta sortzean %1</translation>
     </message>
 </context>
 <context>

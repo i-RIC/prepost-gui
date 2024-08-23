@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Rediģēt režģa atribūta vērtību (-as)</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punkti</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkta lielums:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Fona attēls netika pievienots. Lūdzu mēģiniet vēlreiz.</translation>
+        <translation type="vanished">Fona attēls netika pievienots. Lūdzu mēģiniet vēlreiz.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Ir norādīts nederīgs attēla fails.</translation>
+        <translation type="vanished">Ir norādīts nederīgs attēla fails.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Atverot, radās kļūda %1. iRIC mēģina glābt datus no %2.</translation>
+        <translation>Atverot, radās kļūda %1. iRIC mēģina glābt datus no %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Visi attēli (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Ir norādīts nederīgs attēla fails. Faila sufiksam ir jābūt vienam no “jpg”, “jpeg”, “png” vai “tif”.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Veidojot mapi, radās kļūda %1</translation>
     </message>
 </context>
 <context>

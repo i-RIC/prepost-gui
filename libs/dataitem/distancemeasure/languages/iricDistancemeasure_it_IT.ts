@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulo</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nome:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Punto di partenza:</translation>
+        <translation>Punto di partenza:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Punto finale:</translation>
+        <translation>Punto finale:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etichetta</translation>
+        <translation>Etichetta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Mostra etichetta</translation>
+        <translation>Mostra etichetta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Contenuto</translation>
+        <translation>Contenuto</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Costume</translation>
+        <translation>Costume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizione</translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centro-In alto</translation>
+        <translation>Centro-Alto</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Centro-sinistra</translation>
+        <translation>Centro-sinistra</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Medio-destra</translation>
+        <translation>Centro-destra</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centro-Basso</translation>
+        <translation>Centro-basso</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Impostazione carattere</translation>
+        <translation>Impostazione del carattere</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Mostra indicatori di fine</translation>
+        <translation>Mostra marcatori di fine</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Dimensione dell&apos;indicatore:</translation>
+        <translation>Dimensione del pennarello:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Colore:</translation>
+        <translation>Colore:</translation>
     </message>
 </context>
 <context>
@@ -226,7 +224,7 @@
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="vanished">Dimensione dell&apos;indicatore:</translation>
+        <translation type="vanished">Dimensione dell'indicatore:</translation>
     </message>
     <message>
         <source>Color:</source>

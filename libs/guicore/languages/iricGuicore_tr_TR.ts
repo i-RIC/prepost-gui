@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Izgara özniteliği değerlerini düzenle</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Boyamak</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puanlar</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Nokta Boyutu:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Arka plan resmi eklenmedi. Lütfen tekrar deneyin.</translation>
+        <translation type="vanished">Arka plan resmi eklenmedi. Lütfen tekrar deneyin.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Geçersiz resim dosyası belirtildi.</translation>
+        <translation type="vanished">Geçersiz resim dosyası belirtildi.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Açılırken hata oluştu %1. iRIC, verileri kurtarmaya çalışır %2.</translation>
+        <translation>Açılırken hata oluştu %1. iRIC, verileri kurtarmaya çalışır %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Tüm resimler (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Geçersiz resim dosyası belirtildi. Dosya son eki "jpg", "jpeg", "png" veya "tif"ten biri olmalıdır.</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Klasör oluşturulurken hata oluştu %1</translation>
     </message>
 </context>
 <context>

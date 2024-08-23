@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Ime:</translation>
+        <translation>ime:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Početna tačka:</translation>
+        <translation>Početna tačka:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Krajnja tačka:</translation>
+        <translation>Krajnja tačka:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Label</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Show Label</translation>
+        <translation>Prikaži oznaku</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Sadržaj</translation>
+        <translation>Sadržaj</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automatski</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Prilagođeno</translation>
+        <translation>Custom</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozicija</translation>
+        <translation>Pozicija</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centar-vrh</translation>
+        <translation>Centar-vrh</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Srednji-lijevi</translation>
+        <translation>Srednje lijevo</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Srednje desno</translation>
+        <translation>Srednje desno</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centar-dno</translation>
+        <translation>Center-Bottom</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Podešavanje fonta</translation>
+        <translation>Font Setting</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Prikaži krajnje markere</translation>
+        <translation>Prikaži krajnje markere</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Veličina markera:</translation>
+        <translation>Veličina markera:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Boja:</translation>
+        <translation>Boja:</translation>
     </message>
 </context>
 <context>

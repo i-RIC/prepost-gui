@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -36,79 +34,79 @@
     <name>DistanceMeasureDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Vārds:</translation>
+        <translation>Vārds:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Sākuma punkts:</translation>
+        <translation>Sākuma punkts:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Beigu punkts:</translation>
+        <translation>Beigu punkts:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Iezīme</translation>
+        <translation>Etiķete</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Rādīt iezīmi</translation>
+        <translation>Rādīt etiķeti</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Saturs</translation>
+        <translation>Saturs</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Automātiski</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Pielāgots</translation>
+        <translation>Pielāgots</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozīcija</translation>
+        <translation>Pozīcija</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centrs-augšā</translation>
+        <translation>Centrs-augšpusē</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Vidēji kreisais</translation>
+        <translation>Vidējais kreisais</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Vidēji pa labi</translation>
+        <translation>Vidēji pa labi</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centrs-apakšā</translation>
+        <translation>Centrs-apakšā</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished">Fonta iestatīšana</translation>
+        <translation>Fonta iestatījums</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Rādīt beigu marķierus</translation>
+        <translation>Rādīt beigu marķierus</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Marķiera izmērs:</translation>
+        <translation>Marķiera izmērs:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
 </context>
 <context>

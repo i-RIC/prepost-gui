@@ -1532,6 +1532,17 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GridAttributeCellSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+</context>
+<context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
@@ -1604,6 +1615,29 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Edit grid attribute value(s)</source>
         <translation>Επεξεργασία τιμής (-ών) χαρακτηριστικού πλέγματος</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeNodeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Paint</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Πόντοι</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Μέγεθος σημείου:</translation>
     </message>
 </context>
 <context>
@@ -3084,11 +3118,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>Η εικόνα φόντου δεν προστέθηκε. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα.</translation>
+        <translation type="vanished">Η εικόνα φόντου δεν προστέθηκε. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>Έχει οριστεί μη έγκυρο αρχείο εικόνας.</translation>
+        <translation type="vanished">Έχει οριστεί μη έγκυρο αρχείο εικόνας.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -3136,7 +3170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1. Το iRIC προσπαθεί να σώσει δεδομένα από %2.</translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1. Το iRIC προσπαθεί να σώσει δεδομένα από %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3145,6 +3179,14 @@ Do you really want to import this file?</source>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
         <translation>Όλες οι εικόνες (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+    </message>
+    <message>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Καθορίζεται μη έγκυρο αρχείο εικόνας. Το επίθημα αρχείου πρέπει να είναι ένα από τα "jpg", "jpeg", "png" ή "tif".</translation>
+    </message>
+    <message>
+        <source>Error occured while creating folder %1</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη δημιουργία του φακέλου %1</translation>
     </message>
 </context>
 <context>

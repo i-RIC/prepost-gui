@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -103,6 +101,10 @@
         <source>%1 does not exists. Please specify valid Python executable path in Preference dialog.</source>
         <translation>%1 Yok. Lütfen Tercih iletişim kutusunda geçerli Python çalıştırılabilir yolunu belirtin.</translation>
     </message>
+    <message>
+        <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
+        <translation type="vanished">Bu projede zaten hesaplama sonucu verileri var. Çözücüyü çalıştırırsanız atılır.</translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -135,11 +137,23 @@
     <name>SolverConsoleWindow_MessageDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p&gt;Please make sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If calculation result already exists, it is deleted.&lt;/li&gt;
+&lt;li&gt;The calculation condition and input grid that you can see on pre-processing window is written to Case1.cgn.&lt;/li&gt;
+&lt;li&gt;The solver will read the data from Case1.cgn and start running.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you sure it is OK?&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Hesaplama sonucu zaten mevcutsa silinir.&lt;/li&gt; &lt;li&gt;Hesaplama koşulu ve giriş tablosu Ön işleme penceresinde görebileceğiniz Case1.cgn'ye yazılır.&lt;/li&gt; &lt;li&gt;Çözücü Case1.cgn'deki verileri okuyacak ve çalışmaya başlayacaktır.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Öyle misiniz? sorun olmadığından emin misin?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt;&lt;ul style="margin-top: 0px; marj-bottom: 0px; marj-left: 0px; marj-sağ: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Hesaplama sonucu zaten mevcutsa silinecektir.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Proje kaydedilecektir.&lt;/li&gt; li&gt;&lt;/ul&gt;&lt;p&gt;İyi olduğundan emin misiniz?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -3,6 +3,7 @@
 
 #include "../post2dwindowabstractcellscalargroupdataitem.h"
 
+#include <guicore/gridatt/cell/gridattributecellsetting.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/region/region2dsettingcontainer.h>
 #include <misc/compositecontainer.h>
@@ -23,8 +24,7 @@ public:
 
 	ColorMapSettingContainerI* colorMapSetting;
 	Region2dSettingContainer regionSetting;
-	IntContainer lineWidth;
-	OpacityContainer opacity;
+	GridAttributeCellSetting cellSetting;
 };
 
 #endif // POST2DWINDOWABSTRACTCELLSCALARGROUPDATAITEM_SETTING_H
