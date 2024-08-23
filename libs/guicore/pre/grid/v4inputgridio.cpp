@@ -35,19 +35,23 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGr
 	}
 	if (*ier != IRIC_NO_ERROR) {return nullptr;}
 
+	auto zoneAtts = zone.gridAttributes();
+	if (zoneAtts == nullptr) {delete grid; return nullptr;}
+
 	auto gridType = gtItem->gridType();
 	auto inputGrid = new v4InputGrid(gridType, grid);
 	gridType->buildGridAttributes(inputGrid);
 	inputGrid->allocateAttributes();
 
 	auto gdTop = gtItem->geoDataTop();
+
 	for (auto att : inputGrid->attributes()) {
 		auto gItem = gdTop->groupDataItem(att->name());
 		auto dims = gItem->dimensions();
 		att->setDimensions(dims);
 		att->setTemporaryDir(tmpPath);
-		*ier = att->loadFromCgnsFile(*zone.gridAttributes());
-		if (*ier != IRIC_NO_ERROR) {return nullptr;}
+		*ier = att->loadFromCgnsFile(*zoneAtts);
+		if (*ier != IRIC_NO_ERROR) {delete inputGrid; return nullptr;}
 	}
 	inputGrid->grid()->vtkData()->updateValueRangeSet();
 
@@ -64,6 +68,7 @@ v4Structured2dGrid* v4InputGridIO::loadStructured2dGrid(const iRICLib::H5CgnsZon
 
 	std::vector<double> xVec, yVec;
 	auto coords = zone.gridCoordinates();
+	if (coords == nullptr) {return nullptr;}
 
 	*ier = coords->readCoordinatesX(&xVec);
 	if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
@@ -86,6 +91,7 @@ v4Unstructured2dGrid* v4InputGridIO::loadUnstructured2dGrid(const iRICLib::H5Cgn
 	auto size = zone.size();
 	std::vector<double> xVec, yVec;
 	auto coords = zone.gridCoordinates();
+	if (coords == nullptr) {return nullptr;}
 
 	*ier = coords->readCoordinatesX(&xVec);
 	if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}
@@ -157,6 +163,7 @@ v4Structured15dGridWithCrossSection* v4InputGridIO::loadStructured15DGridWithCro
 	auto size = zone.size();
 	std::vector<double> xVec, yVec;
 	auto coords = zone.gridCoordinates();
+	if (coords == nullptr) {return nullptr;}
 
 	*ier = coords->readCoordinatesX(&xVec);
 	if (*ier != IRIC_NO_ERROR) {delete grid; return nullptr;}

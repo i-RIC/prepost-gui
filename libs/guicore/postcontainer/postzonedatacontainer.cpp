@@ -300,6 +300,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	} else {
 		coords = zone->gridCoordinates();
 	}
+	if (coords == nullptr) {return false;}
 
 	int ier;
 	ier = coords->readCoordinatesX(&dataX);
