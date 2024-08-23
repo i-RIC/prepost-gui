@@ -13,22 +13,28 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* parent)
 {
-	auto dialog = dynamic_cast<PreProcessorGridAttributeCellDataItem::PropertyDialog*> (PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(parent));
-	auto grid = groupDataItem()->gridDataItem()->grid()->grid();
-
-	if (dynamic_cast<v4Structured2dGrid*>(grid) != nullptr) {
-		dialog->hideLineWidth();
+	auto dialog = PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(parent);
+	auto standardDialog = dynamic_cast<PreProcessorGridAttributeCellDataItem::PropertyDialog*>(dialog);
+	if (standardDialog == nullptr) {
+		return dialog;
 	} else {
-		auto ugrid = dynamic_cast<v4Structured2dGrid*>(grid);
-		if (ugrid != nullptr) {
-			auto vgrid = ugrid->vtkConcreteData()->data();
-			auto firstCell = vgrid->GetCell(0);
-			if (firstCell != nullptr && firstCell->GetCellType() == VTK_TRIANGLE) {
-				dialog->hideLineWidth();
+		auto grid = groupDataItem()->gridDataItem()->grid()->grid();
+
+		if (dynamic_cast<v4Structured2dGrid*>(grid) != nullptr) {
+			standardDialog->hideLineWidth();
+		}
+		else {
+			auto ugrid = dynamic_cast<v4Structured2dGrid*>(grid);
+			if (ugrid != nullptr) {
+				auto vgrid = ugrid->vtkConcreteData()->data();
+				auto firstCell = vgrid->GetCell(0);
+				if (firstCell != nullptr && firstCell->GetCellType() == VTK_TRIANGLE) {
+					standardDialog->hideLineWidth();
+				}
 			}
 		}
+		return standardDialog;
 	}
-	return dialog;
 }
 
 PreProcessorGridDataItem::SelectedDataWithIdController* PreProcessorGridAttributeCellDataItem::selectedDataController() const
