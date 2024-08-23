@@ -288,12 +288,6 @@ void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditW
 	w->setDefaultIndex(defIndex);
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::showPropertyDialog()
-{
-	PreProcessorGeoDataGroupDataItem::showPropertyDialog();
-	applyScalarsToColorsSetting();
-}
-
 void PreProcessorGeoDataComplexGroupDataItem::applyScalarsToColorsSetting()
 {
 	auto s = gridTypeDataItem()->colorMapSetting(m_condition->name());

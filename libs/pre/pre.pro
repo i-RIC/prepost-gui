@@ -298,7 +298,6 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
-           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -376,9 +375,11 @@ HEADERS += pre_global.h \
            misc/preprocessorlegendboxeditdialog.h \
            datamodel/private/preprocessorbcdataitem_impl.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
+           datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
            datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.h \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.h \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            datamodel/private/preprocessorgriddataitem_cgnsexporter.h \
@@ -447,11 +448,11 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
-         datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
          datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.ui \
+         datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.ui \
          datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positioneditdialog.ui \
@@ -462,7 +463,6 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_settingeditwidget.ui \
          subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_settingeditwidget.ui
 SOURCES += preobjectbrowser.cpp \
-           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
@@ -538,9 +538,11 @@ SOURCES += preobjectbrowser.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \
            datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_wrongpointlistdialog.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
            datamodel/private/preprocessorgriddataitem_cgnsexporter.cpp \
            datamodel/private/preprocessorgriddataitem_cgnsimporter.cpp \
