@@ -5,8 +5,10 @@
 
 #include <guicore/gridatt/node/gridattributenodesetting.h>
 
-class QWidget;
 class vtkActor;
+class vtkActor2D;
+
+class QWidget;
 
 class PreProcessorGridAttributeNodeGroupDataItem::Impl
 {
@@ -18,6 +20,7 @@ public:
 
 	std::string m_target;
 	vtkActor* m_actor;
+	vtkActor2D* m_stringActor;
 
 	QAction* m_showAttributeBrowserAction;
 	bool m_attributeBrowserFixed;

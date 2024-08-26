@@ -25,6 +25,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -398,10 +399,12 @@ ColorMapSettingToolBarWidgetController* Post2dWindowGridTypeDataItem::createTool
 		att = m_gridType->gridComplexAttribute(name);
 		if (att == nullptr) {return nullptr;}
 	}
+	auto cm = colorMapSetting(name);
+	if (cm == nullptr) {return nullptr;}
 
 	auto widget = att->createColorMapSettingToolbarWidget(parent);
 	widget->hide();
-	widget->setSetting(m_colorMapSettingContainers.at(name)->customSetting);
+	widget->setSetting(cm->customSetting);
 	return new ToolBarWidgetController(name, widget, this);
 }
 
@@ -434,6 +437,9 @@ void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGr
 
 void Post2dWindowGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemI* item)
 {
+	auto stringAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (att);
+	if (stringAtt != nullptr) {return;}
+
 	auto r = renderer();
 	auto v = dataModel()->graphicsView();
 

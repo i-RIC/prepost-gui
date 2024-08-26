@@ -15,6 +15,7 @@ public:
 
 	std::string m_target;
 	vtkActor* m_actor;
+	vtkActor2D* m_stringActor;
 
 	QAction* m_showAttributeBrowserAction;
 	bool m_attributeBrowserFixed;

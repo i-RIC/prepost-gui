@@ -18,6 +18,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -396,6 +397,8 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 void PreProcessorGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att)
 {
 	auto r = renderer();
+	auto stringAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (att);
+	if (stringAtt != nullptr) {return;}
 
 	auto c = att->createColorMapSettingContainer();
 	c->legendSetting()->setVisible(true);
@@ -555,10 +558,12 @@ ColorMapSettingToolBarWidgetController* PreProcessorGridTypeDataItem::createTool
 		att = m_gridType->gridComplexAttribute(name);
 		if (att == nullptr) {return nullptr;}
 	}
+	auto cs = colorMapSetting(name);
+	if (cs == nullptr) {return nullptr;}
 
 	auto widget = att->createColorMapSettingToolbarWidget(parent);
 	widget->hide();
-	widget->setSetting(m_colorMapSettingContainers.at(name));
+	widget->setSetting(cs);
 	return new ToolBarWidgetController(name, widget, this);
 }
 

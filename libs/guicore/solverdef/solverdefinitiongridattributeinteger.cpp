@@ -1,9 +1,9 @@
-#include "solverdefinitiongridattributeinteger.h"
 #include "../pre/geodatabackground/geodatabackgroundintegercreator.h"
 #include "../pre/gridcond/container/gridattributeintegercontainer.h"
 #include "../pre/gridcond/editwidget/gridattributeintegereditwidget.h"
 #include "../pre/gridcond/editwidget/gridattributeintegervariationeditwidget.h"
 #include "../pre/gridcond/stringconverter/gridattributestringconverterinteger.h"
+#include "solverdefinitiongridattributeinteger.h"
 
 SolverDefinitionGridAttributeInteger::SolverDefinitionGridAttributeInteger() :
 	SolverDefinitionGridAttributeT<int> {}

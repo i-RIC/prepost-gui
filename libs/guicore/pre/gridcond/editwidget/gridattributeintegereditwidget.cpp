@@ -7,6 +7,8 @@
 GridAttributeIntegerEditWidget::GridAttributeIntegerEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
 	GridAttributeEditWidgetT<int, vtkIntArray>(parent, cond)
 {
+	m_value = 0;
+
 	m_widget = new IntegerNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
 	l->setMargin(0);

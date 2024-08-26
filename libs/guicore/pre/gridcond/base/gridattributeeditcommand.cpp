@@ -3,7 +3,7 @@
 #include "gridattributeeditwidget.h"
 #include "../../base/preprocessorgriddataitemi.h"
 
-GridAttributeEditCommand::GridAttributeEditCommand(const std::string& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem) :
+GridAttributeEditCommand::GridAttributeEditCommand(const std::string& name, vtkAbstractArray* newValues, vtkAbstractArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem) :
 	QUndoCommand(GridAttributeEditWidget::tr("Edit grid attribute value(s)")),
 	m_newValues {newValues},
 	m_oldValues {oldValues},
@@ -26,9 +26,9 @@ void GridAttributeEditCommand::undo()
 	copyValues(m_oldValues, m_oldCustomModified);
 }
 
-void GridAttributeEditCommand::copyValues(vtkDataArray* data, bool modified)
+void GridAttributeEditCommand::copyValues(vtkAbstractArray* data, bool modified)
 {
-	m_attributes->GetArray(m_name.c_str())->DeepCopy(data);
+	m_attributes->GetAbstractArray(m_name.c_str())->DeepCopy(data);
 	m_dataItem->updateSimplifiedGrid();
 	m_dataItem->informGridAttributeChange(m_name);
 	m_dataItem->grid()->setIsModified(true);

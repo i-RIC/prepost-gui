@@ -2,6 +2,7 @@
 #define GRIDATTRIBUTEINTEGEREDITWIDGET_H
 
 #include "../base/gridattributeeditwidgett.h"
+
 class IntegerNumberEditWidget;
 
 class GridAttributeIntegerEditWidget : public GridAttributeEditWidgetT<int, vtkIntArray>

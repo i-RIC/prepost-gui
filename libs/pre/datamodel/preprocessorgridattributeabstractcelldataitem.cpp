@@ -9,6 +9,7 @@
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktextpropertysettingwidget.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
@@ -34,6 +35,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
@@ -114,22 +116,34 @@ QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 		dialog->setWidget(widget);
 
 		return dialog;
-	} else {
-		auto setting = colorMapSettingContainer();
-		if (setting == nullptr) {return nullptr;}
-
-		auto gItem = groupDataItem();
-		auto dialog = new PropertyDialog(gItem, p);
-		dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
-		auto widget = m_condition->createColorMapSettingEditWidget(dialog);
+	}
+	auto strAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (m_condition);
+	if (strAtt != nullptr) {
+		auto setting = &(groupDataItem()->setting().stringSetting);
+		auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(groupDataItem(), p);
+		auto widget = new vtkTextPropertySettingWidget(dialog);
 		widget->setSetting(setting);
 		dialog->setWidget(widget);
-
-		dialog->setSetting(&gItem->setting());
-		dialog->resize(900, 700);
+		dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
+		dialog->resize(200, 80);
 
 		return dialog;
 	}
+
+	auto setting = colorMapSettingContainer();
+	if (setting == nullptr) {return nullptr;}
+
+	auto gItem = groupDataItem();
+	auto dialog = new PropertyDialog(gItem, p);
+	dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
+	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
+	widget->setSetting(setting);
+	dialog->setWidget(widget);
+
+	dialog->setSetting(&gItem->setting());
+	dialog->resize(900, 700);
+
+	return dialog;
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -597,13 +611,16 @@ bool PreProcessorGridAttributeAbstractCellDataItem::addToolBarButtons(QToolBar* 
 	opacityW->show();
 	toolBar->addWidget(opacityW);
 
-	toolBar->addSeparator();
+	auto cmtbw = m_colorMapToolBarWidgetController;
+	if (cmtbw != nullptr) {
+		toolBar->addSeparator();
 
-	auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
-	cmwContainer->setParent(toolBar);
-	cmwContainer->show();
-	toolBar->addWidget(cmwContainer);
-	cmwContainer->setWidget(m_colorMapToolBarWidgetController->widget());
+		auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
+		cmwContainer->setParent(toolBar);
+		cmwContainer->show();
+		toolBar->addWidget(cmwContainer);
+		cmwContainer->setWidget(cmtbw->widget());
+	}
 
 	v4InputGrid* grid = groupDataItem()->gridDataItem()->grid();
 	auto att = grid->attribute(condition()->name());

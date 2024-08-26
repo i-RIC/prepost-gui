@@ -35,6 +35,12 @@ QVariant GridAttributeEditWidgetT<V, DA>::variantValue() const
 	return QVariant(value());
 }
 
+template <>
+inline QVariant GridAttributeEditWidgetT<std::string, vtkStringArray>::variantValue() const
+{
+	return QVariant(value().c_str());
+}
+
 template <class V, class DA>
 void GridAttributeEditWidgetT<V, DA>::setVariantValue(const QVariant& v)
 {
@@ -80,7 +86,7 @@ void GridAttributeEditWidgetT<V, DA>::applyValue(GridAttributeContainer* contain
 	for (auto index : indices) {
 		c->setValue(index, val);
 	}
-	vtkDataArray* newValues = c->dataArrayCopy();
+	vtkAbstractArray* newValues = c->dataArrayCopy();
 	iRICUndoStack::instance().push(new GridAttributeEditCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));
 	oldValues->Delete();
 	newValues->Delete();

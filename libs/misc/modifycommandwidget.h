@@ -5,6 +5,8 @@
 
 #include <QWidget>
 
+class QUndoCommand;
+
 class MISCDLL_EXPORT ModifyCommandWidget : public QWidget
 {
 public:

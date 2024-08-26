@@ -28,6 +28,7 @@
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributestringcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -36,6 +37,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroption.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -47,6 +49,9 @@
 #include <misc/valuemodifycommandt.h>
 #include <misc/xmlsupport.h>
 
+#include <vtkCellCenters.h>
+#include <vtkLabeledDataMapper.h>
+
 PreProcessorGridAttributeAbstractCellGroupDataItem::PreProcessorGridAttributeAbstractCellGroupDataItem(const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorDataItem {caption, QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	impl {new Impl {mainWindow(), this}}
@@ -56,6 +61,7 @@ PreProcessorGridAttributeAbstractCellGroupDataItem::PreProcessorGridAttributeAbs
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellGroupDataItem::showAttributeBrowser);
 
 	renderer()->AddActor(impl->m_actor);
+	renderer()->AddActor2D(impl->m_stringActor);
 
 	impl->m_opacityWidget->setContainer(&impl->m_setting.opacity);
 	impl->m_opacityWidget->hide();
@@ -70,6 +76,7 @@ PreProcessorGridAttributeAbstractCellGroupDataItem::PreProcessorGridAttributeAbs
 PreProcessorGridAttributeAbstractCellGroupDataItem::~PreProcessorGridAttributeAbstractCellGroupDataItem()
 {
 	renderer()->RemoveActor(impl->m_actor);
+	renderer()->RemoveActor2D(impl->m_stringActor);
 }
 
 void PreProcessorGridAttributeAbstractCellGroupDataItem::setupChildren()
@@ -120,13 +127,16 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::handleNamedItemChange(N
 void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 {
 	auto actor = impl->m_actor;
+	auto stringActor = impl->m_stringActor;
 	const auto& target = impl->m_target;
 
 	impl->m_opacityWidget->setDisabled(true);
 	actor->VisibilityOff();
+	stringActor->VisibilityOff();
 
 	// make all the items invisible
 	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 	v4InputGrid* g = gridDataItem()->grid();
 	if (g == nullptr) {
 		// grid is not setup yet.
@@ -139,23 +149,43 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 	impl->m_opacityWidget->setEnabled(true);
 
 	auto cond = activeChildItem()->condition();
+
 	if (cond->isDirection()) {
 		// delegate to child
 		activeChildItem()->updateActorSetting();
 	} else {
-		auto cs = gridTypeDataItem()->colorMapSetting(target);
-
 		auto filteredGrid = filteredData();
-		vtkCellData* data = filteredGrid->GetCellData();
-		data->SetActiveScalars(target.c_str());
 
-		auto mapper = cs->buildCellDataMapper(filteredGrid, false);
-		actor->SetMapper(mapper);
-		mapper->Delete();
+		auto att = cellDataItem(target)->condition();
+		auto stringAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (att);
+		if (stringAtt != nullptr) {
+			// string attribute
+			auto mapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+			impl->m_setting.stringSetting.applySetting(mapper->GetLabelTextProperty());
+			auto cc = vtkSmartPointer<vtkCellCenters>::New();
+			cc->SetInputData(filteredGrid);
+			mapper->SetInputConnection(cc->GetOutputPort());
+			mapper->SetLabelModeToLabelFieldData();
+			mapper->SetFieldDataName(target.c_str());
 
-		impl->m_setting.apply(actor, dataModel()->graphicsView());
+			impl->m_stringActor->SetMapper(mapper);
 
-		m_actorCollection->AddItem(actor);
+			m_actor2DCollection->AddItem(impl->m_stringActor);
+		} else {
+			// integer or real
+			auto cs = gridTypeDataItem()->colorMapSetting(target);
+
+			vtkCellData* data = filteredGrid->GetCellData();
+			data->SetActiveScalars(target.c_str());
+
+			auto mapper = cs->buildCellDataMapper(filteredGrid, false);
+			actor->SetMapper(mapper);
+			mapper->Delete();
+
+			impl->m_setting.apply(actor, dataModel()->graphicsView());
+
+			m_actorCollection->AddItem(actor);
+		}
 		updateVisibilityWithoutRendering();
 	}
 }
@@ -338,6 +368,7 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 
 		auto iAtt = dynamic_cast<GridAttributeIntegerContainer*>(att);
 		auto rAtt = dynamic_cast<GridAttributeRealContainer*>(att);
+		auto sAtt = dynamic_cast<GridAttributeStringContainer*>(att);
 		auto cAtt = dynamic_cast<GridComplexAttributeContainer*>(att);
 
 		if (iAtt != nullptr) {
@@ -351,6 +382,9 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 			}
 		} else if (rAtt != nullptr) {
 			PropertyBrowserAttribute att(rAtt->gridAttribute()->caption(), rAtt->value(cellid));
+			atts.append(att);
+		} else if (sAtt!= nullptr) {
+			PropertyBrowserAttribute att(sAtt->gridAttribute()->caption(), QString(sAtt->value(cellid).c_str()));
 			atts.append(att);
 		} else if (cAtt != nullptr) {
 			auto group = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemI*>

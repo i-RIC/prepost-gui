@@ -15,6 +15,7 @@ public:
 
 	std::string m_target;
 	vtkActor* m_actor;
+	vtkActor2D* m_stringActor;
 
 	std::unordered_map<std::string, Post2dWindowGridAttributeAbstractCellDataItem*> m_nameMap;
 

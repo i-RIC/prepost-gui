@@ -6,6 +6,8 @@
 GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
 	GridAttributeEditWidgetT<double, vtkDoubleArray>(parent, cond)
 {
+	m_value = 0;
+
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 	QVBoxLayout* l = new QVBoxLayout();

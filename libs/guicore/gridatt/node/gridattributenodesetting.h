@@ -3,6 +3,7 @@
 
 #include "../../guicore_global.h"
 
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
@@ -27,6 +28,7 @@ public:
 	EnumContainerT<RenderMode> renderMode;
 	IntContainer lineWidth;
 	IntContainer pointSize;
+	vtkTextPropertySettingContainer stringSetting;
 	OpacityContainer opacity;
 };
 

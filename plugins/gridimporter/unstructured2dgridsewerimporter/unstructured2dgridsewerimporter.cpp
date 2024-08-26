@@ -19,6 +19,7 @@
 #include <vtkPoints.h>
 #include <vtkLine.h>
 #include <vtkSmartPointer.h>
+#include <vtkStringArray.h>
 
 Unstructured2dGridSewerImporter::Unstructured2dGridSewerImporter() :
 	QObject {nullptr},
@@ -63,7 +64,7 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 	std::vector<QVariant> empty;
 	std::vector<std::string> columnNames;
 
-	for (int i = 3; i < cols.size(); ++i) {
+	for (int i = 0; i < cols.size(); ++i) {
 		auto name = iRIC::toStr(cols.at(i));
 		manholeAtts.insert({name, empty});
 		columnNames.push_back(name);
@@ -86,7 +87,7 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 
 		for (unsigned int i = 0; i < columnNames.size(); ++i) {
 			auto &att = manholeAtts.at(columnNames.at(i));
-			att.push_back(vals.at(i + 3));
+			att.push_back(vals.at(i));
 		}
 		++ pointId;
 	}
@@ -100,7 +101,7 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 	cols = culvertTS.readLine().split(",");
 	columnNames.clear();
 
-	for (int i = 3; i < cols.size(); ++i) {
+	for (int i = 0; i < cols.size(); ++i) {
 		auto name = iRIC::toStr(cols.at(i));
 		culvertAtts.insert({name, empty});
 		columnNames.push_back(name);
@@ -127,7 +128,7 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 
 		for (unsigned int i = 0; i < columnNames.size(); ++i) {
 			auto &att = culvertAtts.at(columnNames.at(i));
-			att.push_back(vals.at(i + 3));
+			att.push_back(vals.at(i));
 		}
 	}
 
@@ -141,11 +142,12 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 	// write attribute values
 	auto pd = ugrid->GetPointData();
 	for (const auto& pair : manholeAtts) {
-		auto array = pd->GetArray(pair.first.c_str());
+		auto array = pd->GetAbstractArray(pair.first.c_str());
 		if (array == nullptr) {continue;}
 
 		auto intArray = vtkIntArray::SafeDownCast(array);
 		auto doubleArray = vtkDoubleArray::SafeDownCast(array);
+		auto stringArray = vtkStringArray::SafeDownCast(array);
 
 		if (intArray != nullptr) {
 			for (int i = 0; i < pair.second.size(); ++i) {
@@ -154,16 +156,21 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 		} else if (doubleArray != nullptr) {
 			for (int i = 0; i < pair.second.size(); ++i) {
 				doubleArray->SetValue(i, pair.second.at(i).toDouble());
+			}
+		} else if (stringArray != nullptr) {
+			for (int i = 0; i < pair.second.size(); ++i) {
+				stringArray->SetValue(i, iRIC::toStr(pair.second.at(i).toString()));
 			}
 		}
 	}
 	auto cd = ugrid->GetCellData();
 	for (const auto& pair : culvertAtts) {
-		auto array = cd->GetArray(pair.first.c_str());
+		auto array = cd->GetAbstractArray(pair.first.c_str());
 		if (array == nullptr) {continue;}
 
 		auto intArray = vtkIntArray::SafeDownCast(array);
 		auto doubleArray = vtkDoubleArray::SafeDownCast(array);
+		auto stringArray = vtkStringArray::SafeDownCast(array);
 
 		if (intArray != nullptr) {
 			for (int i = 0; i < pair.second.size(); ++i) {
@@ -172,6 +179,10 @@ bool Unstructured2dGridSewerImporter::import(v4InputGrid* grid, const QString& f
 		} else if (doubleArray != nullptr) {
 			for (int i = 0; i < pair.second.size(); ++i) {
 				doubleArray->SetValue(i, pair.second.at(i).toDouble());
+			}
+		} else if (stringArray != nullptr) {
+			for (int i = 0; i < pair.second.size(); ++i) {
+				stringArray->SetValue(i, iRIC::toStr(pair.second.at(i).toString()));
 			}
 		}
 	}
