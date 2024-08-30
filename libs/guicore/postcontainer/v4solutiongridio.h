@@ -5,6 +5,7 @@
 
 class v4Grid;
 class v4Grid2d;
+class v4Grid3d;
 class v4Particles2d;
 class v4Particles3d;
 class v4PolyData2d;;
@@ -45,7 +46,9 @@ private:
 
 	static v4Structured3dGrid* loadStructured3dGrid(iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);
 	static void loadStructured3dGrid(v4Structured3dGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier, bool forceLoadCoords = false);
+
 	static int loadCoordinates2d(v4Grid2d* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, bool forceLoadCoords);
+	static int loadCoordinates3d(v4Grid3d* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, bool forceLoadCoords);
 
 	v4SolutionGridIO();
 };

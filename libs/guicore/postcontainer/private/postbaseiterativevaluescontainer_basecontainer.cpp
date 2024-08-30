@@ -3,6 +3,7 @@
 #include "postbaseiterativevaluescontainer_realvaluecontainer.h"
 
 #include <h5cgnsbaseiterativedata.h>
+#include <iriclib_errorcodes.h>
 
 PostBaseIterativeValuesContainer::BaseContainer::BaseContainer() :
 	BaseContainer(0)
@@ -88,11 +89,14 @@ void PostBaseIterativeValuesContainer::BaseContainer::setupContainers(iRICLib::H
 	clear();
 
 	std::vector<std::string> names;
-	data->getResultNames(&names);
+	int ier = data->getResultNames(&names);
+	if (ier != IRIC_NO_ERROR) {return;}
 
-	for (auto name : names) {
+	for (const auto& name : names) {
 		iRICLib::H5Util::DataArrayValueType type;
-		data->readValueType(name, &type);
+		ier = data->readValueType(name, &type);
+		if (ier != IRIC_NO_ERROR) {continue;}
+
 		if (type == iRICLib::H5Util::DataArrayValueType::Int) {
 			auto c = new IntegerValueContainer(name);
 			m_integerContainers.push_back(c);
@@ -106,7 +110,9 @@ void PostBaseIterativeValuesContainer::BaseContainer::setupContainers(iRICLib::H
 
 	// try to read time
 	std::vector<double> timeVals;
-	data->readTime(&timeVals);
+	ier = data->readTime(&timeVals);
+	if (ier != IRIC_NO_ERROR) {return;}
+
 	if (timeVals.size() > 0) {
 		auto c = new RealValueContainer("TimeValues");
 		m_realContainers.push_back(c);
@@ -115,7 +121,9 @@ void PostBaseIterativeValuesContainer::BaseContainer::setupContainers(iRICLib::H
 
 	// try to read iteration
 	std::vector<int> iterVals;
-	data->readIteration(&iterVals);
+	ier = data->readIteration(&iterVals);
+	if (ier != IRIC_NO_ERROR) {return;}
+
 	if (iterVals.size() > 0) {
 		auto c = new IntegerValueContainer("IterationValues");
 		m_integerContainers.push_back(c);
