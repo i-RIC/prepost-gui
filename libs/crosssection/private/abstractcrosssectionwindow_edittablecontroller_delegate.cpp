@@ -28,7 +28,9 @@ void AbstractCrosssectionWindow::EditTableController::Delegate::paint(QPainter* 
 
 	auto converter = setting->attributeDataProvider()->createStringConverter(setting->attributeName());
 	QLineEdit edit;
-	edit.setText(converter->convert(data));
+	if (converter != nullptr) {
+		edit.setText(converter->convert(data));
+	}
 
 	edit.resize(option.rect.size());
 

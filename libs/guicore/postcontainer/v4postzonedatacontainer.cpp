@@ -1,6 +1,8 @@
 #include "../grid/v4grid.h"
 #include "../pre/grid/v4inputgrid.h"
 #include "../pre/grid/v4inputgridio.h"
+#include "../pre/base/preprocessorgridtypedataitemi.h"
+#include "../pre/base/preprocessorgridandgridcreatingconditiondataitemi.h"
 #include "v4solutiongrid.h"
 #include "v4solutiongridio.h"
 #include "v4postcalculatedresult.h"
@@ -99,6 +101,16 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProc
 	if (impl->m_inputGridData == nullptr && zone->base()->dimension() == 2 && gtItem != nullptr) {
 		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem, tmpPath, offset(), &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
+
+		const auto& conds = gtItem->conditions();
+		PreProcessorGridDataItemI* gridDataItem = nullptr;
+		for (const auto& cond : conds) {
+			if (cond->zoneName() == zone->name()) {
+				gridDataItem = cond->gridDataItem();
+			}
+		}
+
+		impl->m_inputGridData->setGridDataItem(gridDataItem);
 	}
 
 	if (impl->m_gridData == nullptr) {
