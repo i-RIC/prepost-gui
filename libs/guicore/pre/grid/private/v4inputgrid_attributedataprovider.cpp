@@ -92,6 +92,8 @@ ColorMapSettingToolBarWidget* v4InputGrid::AttributeDataProvider::createColorMap
 
 GridAttributeStringConverter* v4InputGrid::AttributeDataProvider::createStringConverter(const std::string& name) const
 {
+	if (m_geoDataTopDataItem == nullptr) {return nullptr;}
+
 	auto converter = attribute(name)->stringConverter();
 	auto group = m_geoDataTopDataItem->groupDataItem(name);
 	group->setupStringConverter(converter);
