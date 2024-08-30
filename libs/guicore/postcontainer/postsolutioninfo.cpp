@@ -179,6 +179,7 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 	auto f = cgnsFile();
 	f->solutionReader()->setSolutionId(step + 1);
 	f = f->solutionReader()->targetFile();
+	if (f == nullptr) { return IRIC_H5_OPEN_FAIL; }
 
 	time.start();
 	setupZoneDataContainers();

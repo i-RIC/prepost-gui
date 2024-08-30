@@ -471,6 +471,7 @@ v4Structured2dGrid* v4SolutionGridIO::loadStructured2dGrid(iRICLib::H5CgnsZone* 
 void v4SolutionGridIO::loadStructured2dGrid(v4Structured2dGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier, bool forceLoadCoords)
 {
 	*ier = loadCoordinates2d(grid, zone, offset, forceLoadCoords);
+	if (*ier != IRIC_NO_ERROR) {return;}
 
 	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		*ier = CgnsUtil::loadScalarData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData(), IBC);
@@ -566,6 +567,7 @@ v4Unstructured2dGrid* v4SolutionGridIO::loadUnstructured2dGrid(iRICLib::H5CgnsZo
 
 void v4SolutionGridIO::loadUnstructured2dGrid(v4Unstructured2dGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier, bool forceLoadCoords) {
 	*ier = loadCoordinates2d(grid, zone, offset, forceLoadCoords);
+	if (*ier != IRIC_NO_ERROR) {return;}
 
 	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		*ier = CgnsUtil::loadScalarData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData(), IBC);
@@ -600,28 +602,8 @@ v4Structured3dGrid* v4SolutionGridIO::loadStructured3dGrid(iRICLib::H5CgnsZone* 
 
 void v4SolutionGridIO::loadStructured3dGrid(v4Structured3dGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier, bool forceLoadCoords)
 {
-	iRICLib::H5CgnsGridCoordinates* coords = nullptr;
-	if (zone->gridCoordinatesForSolutionExists()) {
-		coords = zone->gridCoordinatesForSolution();
-	} else if (forceLoadCoords) {
-		coords = zone->gridCoordinates();
-	}
-
-	if (coords != nullptr) {
-		std::vector<double> xVec, yVec, zVec;
-		*ier = coords->readCoordinatesX(&xVec);
-		if (*ier != IRIC_NO_ERROR) {return;}
-		*ier = coords->readCoordinatesY(&yVec);
-		if (*ier != IRIC_NO_ERROR) {return;}
-		*ier = coords->readCoordinatesZ(&zVec);
-		if (*ier != IRIC_NO_ERROR) {return;}
-
-		auto points = grid->vtkData()->data()->GetPoints();
-		for (unsigned int i = 0; i < xVec.size(); ++i) {
-			points->SetPoint(i, xVec[i] - offset.x(), yVec[i] - offset.y(), zVec[i]);
-		}
-		grid->pointsModified();
-	}
+	*ier = loadCoordinates3d(grid, zone, offset, forceLoadCoords);
+	if (*ier != IRIC_NO_ERROR) {return;}
 
 	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		*ier = CgnsUtil::loadScalarData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData(), IBC);
@@ -661,20 +643,52 @@ int v4SolutionGridIO::loadCoordinates2d(v4Grid2d* grid, iRICLib::H5CgnsZone* zon
 		coords = zone->gridCoordinates();
 	}
 
-	if (coords != nullptr) {
-		int ier;
-
-		std::vector<double> xVec, yVec;
-		ier = coords->readCoordinatesX(&xVec);
-		if (ier != IRIC_NO_ERROR) {return ier;}
-		ier = coords->readCoordinatesY(&yVec);
-		if (ier != IRIC_NO_ERROR) {return ier;}
-
-		for (unsigned int i = 0; i < xVec.size(); ++i) {
-			grid->setPoint2d(i, QPointF(xVec[i] - offset.x(), yVec[i] - offset.y()));
-		}
-		grid->pointsModified();
+	if (coords == nullptr) {
+		return IRIC_NO_ERROR;
 	}
+
+	int ier;
+	std::vector<double> xVec, yVec;
+	ier = coords->readCoordinatesX(&xVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+	ier = coords->readCoordinatesY(&yVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	for (unsigned int i = 0; i < xVec.size(); ++i) {
+		grid->setPoint2d(i, QPointF(xVec[i] - offset.x(), yVec[i] - offset.y()));
+	}
+	grid->pointsModified();
+
+	return IRIC_NO_ERROR;
+}
+
+int v4SolutionGridIO::loadCoordinates3d(v4Grid3d* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, bool forceLoadCoords)
+{
+	iRICLib::H5CgnsGridCoordinates* coords = nullptr;
+	if (zone->gridCoordinatesForSolutionExists()) {
+		coords = zone->gridCoordinatesForSolution();
+	} else if (forceLoadCoords) {
+		coords = zone->gridCoordinates();
+	}
+
+	if (coords == nullptr) {
+		return IRIC_NO_ERROR;
+	}
+
+	int ier;
+	std::vector<double> xVec, yVec, zVec;
+	ier = coords->readCoordinatesX(&xVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+	ier = coords->readCoordinatesY(&yVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+	ier = coords->readCoordinatesZ(&zVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	auto points = grid->vtkData()->data()->GetPoints();
+	for (unsigned int i = 0; i < xVec.size(); ++i) {
+		points->SetPoint(i, xVec[i] - offset.x(), yVec[i] - offset.y(), zVec[i]);
+	}
+	grid->pointsModified();
 
 	return IRIC_NO_ERROR;
 }

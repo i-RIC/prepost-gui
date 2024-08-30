@@ -162,6 +162,8 @@ bool PostBaseIterativeValuesContainer::addValuesFor(int solId)
 		iRICLib::H5CgnsFile cgnsFile(cgnsName, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		for (auto c : impl->m_baseContainers) {
 			auto base = cgnsFile.baseById(c->baseId());
+			if (base == nullptr) {return false;}
+
 			c->addValues(base->biterData());
 		}
 		return true;
