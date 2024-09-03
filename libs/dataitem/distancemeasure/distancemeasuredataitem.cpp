@@ -147,7 +147,7 @@ void DistanceMeasureDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView
 		QPointF offset = globalPos - startGlobalPos;
 		emit startPointEdited(impl->m_dragStartPoint1 + offset);
 		emit endPointEdited(impl->m_dragStartPoint2 + offset);
-		pushRenderCommand(new TranslateCommand(impl->m_dragStartPoint1 + offset, impl->m_dragStartPoint2 + offset, false, this), this);
+		pushUpdateActorSettingCommand(new TranslateCommand(impl->m_dragStartPoint1 + offset, impl->m_dragStartPoint2 + offset, false, this), this);
 	} else {
 		updateMouseEventMode(globalPos, v);
 		updateMouseCursor();
