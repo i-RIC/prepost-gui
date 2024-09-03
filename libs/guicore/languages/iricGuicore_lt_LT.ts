@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1795,8 +1793,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Spalva:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1913,12 +1911,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Apibrėžimo mazgas nesaugomas</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Neteisingas valueType &quot;%1&quot;yra nustatytas.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Neteisingas valueType "%1"yra nustatytas.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Klaidinga būklėTipas &quot;%1&quot;yra nustatytas.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Klaidinga būklėTipas "%1"yra nustatytas.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1989,7 +1987,7 @@ Do you really want to import this file?</source>
         <translation>Nepavyko atidaryti CGNS failo.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <source>name attribute is not defined for "Item" element</source>
         <translation>pavadinimo atributas neapibrėžtas elementui „Prekė“.</translation>
     </message>
     <message>
@@ -2201,7 +2199,7 @@ Do you really want to import this file?</source>
         <translation>Failas %1 yra atnaujinamas importavus į skaičiavimo sąlygas %2. Ar norite importuoti atnaujintą failą?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Galite nukopijuoti ir įklijuoti vertes naudodami sparčiuosius klavišus „Ctrl + C“ ir „Ctrl + V“</translation>
     </message>
     <message>
@@ -2343,7 +2341,7 @@ Do you really want to import this file?</source>
         <translation>Atidarant failą įvyko klaida.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>Pirmieji du stulpeliai turi būti „X“ ir „Y“.</translation>
     </message>
     <message>
@@ -2505,8 +2503,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2584,8 +2582,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2946,8 +2944,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Išvesties apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3183,7 +3181,7 @@ Do you really want to import this file?</source>
         <translation>Visi vaizdai (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
         <translation>Nurodytas netinkamas vaizdo failas. Failo priesaga turi būti viena iš „jpg“, „jpeg“, „png“ arba „tif“.</translation>
     </message>
     <message>
@@ -3192,7 +3190,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas sugadintas, todėl negalima atidaryti projekto. Ar norite atmesti skaičiavimo rezultatą ir atkurti įvesties duomenis?</translation>
     </message>
 </context>
 <context>
@@ -3243,8 +3241,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Darbo vieta &quot;%1&quot;turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Darbo vieta "%1"turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3843,8 +3841,8 @@ Do you really want to import this file?</source>
         <translation>Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kintamąjį galite apibrėžti naudodami „JavaScript“ kalbą. Žr. tekstą &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; -dekoracija: pabraukite; spalva:#0000ff;&quot;&gt;čia&lt;/span&gt;&lt;/a&gt; daugiau informacijos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kintamąjį galite apibrėžti naudodami „JavaScript“ kalbą. Žr. tekstą &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -dekoracija: pabraukite; spalva:#0000ff;"&gt;čia&lt;/span&gt;&lt;/a&gt; daugiau informacijos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3934,8 +3932,8 @@ Do you really want to import this file?</source>
         <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba&lt;/span&gt;: tvarka sąraše yra svarbi. Apibrėžime kaip kintamąjį galite naudoti paprastų operacijų skaičiavimų reikšmę, kuri sąraše rodoma anksčiau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba&lt;/span&gt;: tvarka sąraše yra svarbi. Apibrėžime kaip kintamąjį galite naudoti paprastų operacijų skaičiavimų reikšmę, kuri sąraše rodoma anksčiau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
