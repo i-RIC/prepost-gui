@@ -2,6 +2,7 @@
 #define CGNSUTIL_H
 
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 namespace iRICLib {
@@ -13,7 +14,7 @@ class vtkDataSetAttributes;
 class CgnsUtil
 {
 public:
-	static bool isScalarName(const std::string& name);
+	static bool isScalarName(const std::string& name, const std::unordered_set<std::string>& namesSet);
 	static bool isGridLocation(const std::string& name);
 	static int loadScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts, const std::string& IBCName = "");
 	static int loadEdgeIScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts, const std::string& IBCName = "");
