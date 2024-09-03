@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Litur:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið: Þú getur aðeins notað ASCII stafi fyrir nafn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Athugið: Þú getur aðeins notað ASCII stafi fyrir nafn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Skilgreiningarhnútur er ekki geymdur</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation>Rangt valueType “ %1 “er stillt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Rangt ástandTegund " %1 “er stillt.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Rangt ástandTegund &quot; %1 “er stillt.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,7 +1989,7 @@ Do you really want to import this file?</source>
         <translation>Mistókst að opna CGNS skrána.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>nafneiginleiki er ekki skilgreindur fyrir „Item“ frumefni</translation>
     </message>
     <message>
@@ -2199,7 +2201,7 @@ Do you really want to import this file?</source>
         <translation>Skrá %1 er uppfærð eftir innflutning í reikningsskilyrði %2. Viltu flytja inn uppfærða skrá?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Þú getur afritað og límt gildin með flýtileiðinni „Ctrl + C“ og „Ctrl + V“</translation>
     </message>
     <message>
@@ -2341,7 +2343,7 @@ Do you really want to import this file?</source>
         <translation>Villa kom upp við opnun skráarinnar.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Fyrstu tveir dálkarnir verða að vera „X“ og „Y“.</translation>
     </message>
     <message>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Villa kom upp: %1</translation>
+        <translation type="vanished">Villa kom upp: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Athugar rök fyrir %1 mistókst. Ógild rök: %2.</translation>
+        <translation type="vanished">Athugar rök fyrir %1 mistókst. Ógild rök: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Breyta Einföld aðgerð Niðurstaðan breyt</translation>
+        <translation type="vanished">Breyta Einföld aðgerð Niðurstaðan breyt</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Niðurstaða útreikninga:</translation>
+        <translation type="vanished">Niðurstaða útreikninga:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Breytilegt nafn:</translation>
+        <translation type="vanished">Breytilegt nafn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Gildi fyrir prófun:</translation>
+        <translation type="vanished">Gildi fyrir prófun:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Breytingarheiti er ekki slegið inn.</translation>
+        <translation type="vanished">Breytingarheiti er ekki slegið inn.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Þetta breytuheiti er þegar notað</translation>
+        <translation type="vanished">Þetta breytuheiti er þegar notað</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Breyta niðurstöðu einfaldrar aðgerðar</translation>
+        <translation type="vanished">Breyta niðurstöðu einfaldrar aðgerðar</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nafn:</translation>
+        <translation type="vanished">Nafn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Staða:</translation>
+        <translation type="vanished">Staða:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Útreikningsniðurstöður fyrir inntak</translation>
+        <translation type="vanished">Útreikningsniðurstöður fyrir inntak</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Bæta við (&amp;A)...</translation>
+        <translation type="vanished">Bæta við (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Eyða (&amp;D)</translation>
+        <translation type="vanished">Eyða (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Skilgreining á breytu</translation>
+        <translation type="vanished">Skilgreining á breytu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -skreyting: undirstrikun; litur:#0000ff; "&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Próf</translation>
+        <translation type="vanished">Próf</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur prófað skilgreininguna með því að smella á þetta. Ef villa kemur upp við að flokka skilgreininguna birtast villuboðin. Þegar skilgreiningin hefur verið greind með góðum árangri reiknast gildið út með &amp; quot; Value for testingquot; fyrir hvert inntak er sýnt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur prófað skilgreininguna með því að smella á þetta. Ef villa kemur upp við að flokka skilgreininguna birtast villuboðin. Þegar skilgreiningin hefur verið greind með góðum árangri reiknast gildið út með &amp; quot; Value for testingquot; fyrir hvert inntak er sýnt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nafn niðurstaðna</translation>
+        <translation type="vanished">Nafn niðurstaðna</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Breytilegt nafn</translation>
+        <translation type="vanished">Breytilegt nafn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Gildi fyrir próf</translation>
+        <translation type="vanished">Gildi fyrir próf</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Grind hnút</translation>
+        <translation type="vanished">Grind hnút</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Grid cell</translation>
+        <translation type="vanished">Grid cell</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Agnir</translation>
+        <translation type="vanished">Agnir</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nafn er ekki slegið inn.</translation>
+        <translation type="vanished">Nafn er ekki slegið inn.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Þetta nafn er þegar notað</translation>
+        <translation type="vanished">Þetta nafn er þegar notað</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ertu viss um að þú viljir eyða %1 ?</translation>
+        <translation type="vanished">Ertu viss um að þú viljir eyða %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Einfaldur rekstrarniðurstöðurlisti</translation>
+        <translation type="vanished">Einfaldur rekstrarniðurstöðurlisti</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nafn</translation>
+        <translation type="vanished">Nafn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Staða</translation>
+        <translation type="vanished">Staða</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Upp (&amp;U)</translation>
+        <translation type="vanished">Upp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Niður (&amp;D)</translation>
+        <translation type="vanished">Niður (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Athugið &lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota verðmæti einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Athugið &lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota verðmæti einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Bæta við (&amp;A)...</translation>
+        <translation type="vanished">Bæta við (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Breyta (&amp;E)...</translation>
+        <translation type="vanished">Breyta (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Eyða (&amp;D)</translation>
+        <translation type="vanished">Eyða (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ertu viss um að þú viljir eyða %1 ?</translation>
+        <translation type="vanished">Ertu viss um að þú viljir eyða %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Grind hnút</translation>
+        <translation type="vanished">Grind hnút</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Grid cell</translation>
+        <translation type="vanished">Grid cell</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Agnir</translation>
+        <translation type="vanished">Agnir</translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2946,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Skilgreining á afköstum</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -skreyting: undirstrikun; litur:#0000ff; "&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3001,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Tegund rist:</translation>
+        <translation type="vanished">Tegund rist:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Svæði: (&amp;R)</translation>
+        <translation type="vanished">Svæði: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3172,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Villa kom upp við opnun %1. iRIC reynir að bjarga gögnum frá %2.</translation>
+        <translation type="vanished">Villa kom upp við opnun %1. iRIC reynir að bjarga gögnum frá %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3183,16 @@ Do you really want to import this file?</source>
         <translation>Allar myndir (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>Ógild myndskrá er tilgreind. Skráarviðskeyti ætti að vera eitt af "jpg", "jpeg", "png" eða "tif".</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>Ógild myndskrá er tilgreind. Skráarviðskeyti ætti að vera eitt af &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; eða &quot;tif&quot;.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Villa kom upp við að búa til möppu %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3243,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Vinnusvæði “ %1 "hefur %2 verkefnamöppur sem virðast ekki vera notaðar lengur. Viltu fjarlægja þá?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Vinnusvæði “ %1 &quot;hefur %2 verkefnamöppur sem virðast ekki vera notaðar lengur. Viltu fjarlægja þá?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3843,8 @@ Do you really want to import this file?</source>
         <translation>Skilgreining á breytu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Þú getur skilgreint breytuna með JavaScript tungumáli. Vinsamlegast sjáðu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" texti -decoration: underline; color:#0000ff;"&gt;hér&lt;/span&gt;&lt;/a&gt; fyrir smáatriði.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Þú getur skilgreint breytuna með JavaScript tungumáli. Vinsamlegast sjáðu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; texti -decoration: underline; color:#0000ff;&quot;&gt;hér&lt;/span&gt;&lt;/a&gt; fyrir smáatriði.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3934,8 @@ Do you really want to import this file?</source>
         <translation>Niður (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið&lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota gildi einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Athugið&lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota gildi einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
