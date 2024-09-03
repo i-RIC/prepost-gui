@@ -24,6 +24,8 @@ class QWidget;
 
 class v4PostCalculatedResult : public ProjectDataItem
 {
+	Q_OBJECT
+
 public:
 	enum DataType {
 		GridNode,

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Kleur:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking: u kunt alleen ASCII-tekens gebruiken voor Naam.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking: u kunt alleen ASCII-tekens gebruiken voor Naam.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitieknooppunt wordt niet opgeslagen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Verkeerde waardeType "%1" is ingesteld.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Verkeerde waardeType &quot;%1&quot; is ingesteld.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Verkeerde voorwaardeType "%1"staat.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Verkeerde voorwaardeType &quot;%1&quot;staat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,8 +1989,8 @@ Do you really want to import this file?</source>
         <translation>Het openen van het CGNS-bestand is mislukt.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>naamattribuut is niet gedefinieerd voor het element "Item".</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>naamattribuut is niet gedefinieerd voor het element &quot;Item&quot;.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2199,8 +2201,8 @@ Do you really want to import this file?</source>
         <translation>Bestand %1 wordt bijgewerkt nadat het is geïmporteerd naar de berekeningsconditie %2. Wilt u het bijgewerkte bestand importeren?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen "Ctrl + C" en "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen &quot;Ctrl + C&quot; en &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2341,8 +2343,8 @@ Do you really want to import this file?</source>
         <translation>Er is een fout opgetreden bij het openen van het bestand.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De eerste twee kolommen moeten "X" en "Y" zijn.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De eerste twee kolommen moeten &quot;X&quot; en &quot;Y&quot; zijn.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Fout opgetreden: %1</translation>
+        <translation type="vanished">Fout opgetreden: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Argument controleren voor %1 mislukt. Ongeldige argumenten: %2.</translation>
+        <translation type="vanished">Argument controleren voor %1 mislukt. Ongeldige argumenten: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Bewerk eenvoudige bewerking Resultaatvariabele</translation>
+        <translation type="vanished">Bewerk eenvoudige bewerking Resultaatvariabele</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Berekeningsresultaat:</translation>
+        <translation type="vanished">Berekeningsresultaat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Variabele naam:</translation>
+        <translation type="vanished">Variabele naam:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Waarde voor testen:</translation>
+        <translation type="vanished">Waarde voor testen:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Variabelenaam is niet ingevoerd.</translation>
+        <translation type="vanished">Variabelenaam is niet ingevoerd.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Deze variabelenaam wordt al gebruikt</translation>
+        <translation type="vanished">Deze variabelenaam wordt al gebruikt</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Bewerk het resultaat van een eenvoudige bewerking</translation>
+        <translation type="vanished">Bewerk het resultaat van een eenvoudige bewerking</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Naam:</translation>
+        <translation type="vanished">Naam:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Positie:</translation>
+        <translation type="vanished">Positie:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rekenresultaten voor invoer</translation>
+        <translation type="vanished">Rekenresultaten voor invoer</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Toevoegen (&amp;A)...</translation>
+        <translation type="vanished">Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Verwijderen (&amp;D)</translation>
+        <translation type="vanished">Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definitie van variabele</translation>
+        <translation type="vanished">Definitie van variabele</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Toets</translation>
+        <translation type="vanished">Toets</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de definitie testen door hierop te klikken. Als er een fout optreedt tijdens het ontleden van de definitie, wordt het foutbericht weergegeven. Wanneer de definitie met succes is geparseerd, wordt de waarde berekend met behulp van de &amp;quot;Value for testingquot; voor elke invoer wordt weergegeven.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de definitie testen door hierop te klikken. Als er een fout optreedt tijdens het ontleden van de definitie, wordt het foutbericht weergegeven. Wanneer de definitie met succes is geparseerd, wordt de waarde berekend met behulp van de &amp;quot;Value for testingquot; voor elke invoer wordt weergegeven.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultaat naam</translation>
+        <translation type="vanished">Resultaat naam</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabele naam</translation>
+        <translation type="vanished">Variabele naam</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Waarde voor testen</translation>
+        <translation type="vanished">Waarde voor testen</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rasterknooppunt</translation>
+        <translation type="vanished">Rasterknooppunt</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rastercel</translation>
+        <translation type="vanished">Rastercel</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Deeltje</translation>
+        <translation type="vanished">Deeltje</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Naam is niet ingevoerd.</translation>
+        <translation type="vanished">Naam is niet ingevoerd.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Deze naam wordt al gebruikt</translation>
+        <translation type="vanished">Deze naam wordt al gebruikt</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
+        <translation type="vanished">Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Lijst met eenvoudige bewerkingsresultaten</translation>
+        <translation type="vanished">Lijst met eenvoudige bewerkingsresultaten</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Naam</translation>
+        <translation type="vanished">Naam</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Positie</translation>
+        <translation type="vanished">Positie</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Omhoog (&amp;U)</translation>
+        <translation type="vanished">Omhoog (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Omlaag (&amp;D)</translation>
+        <translation type="vanished">Omlaag (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Toevoegen (&amp;A)...</translation>
+        <translation type="vanished">Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Bewerking (&amp;E)...</translation>
+        <translation type="vanished">Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Verwijderen (&amp;D)</translation>
+        <translation type="vanished">Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
+        <translation type="vanished">Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rasterknooppunt</translation>
+        <translation type="vanished">Rasterknooppunt</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rastercel</translation>
+        <translation type="vanished">Rastercel</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Deeltje</translation>
+        <translation type="vanished">Deeltje</translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2946,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definitie van output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3001,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Rastertype:</translation>
+        <translation type="vanished">Rastertype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regio: (&amp;R)</translation>
+        <translation type="vanished">Regio: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3172,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Er is een fout opgetreden tijdens het openen %1. iRIC probeert gegevens te redden van %2.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het openen %1. iRIC probeert gegevens te redden van %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3183,16 @@ Do you really want to import this file?</source>
         <translation>Alle afbeeldingen (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>Er is een ongeldig afbeeldingsbestand opgegeven. Het bestandsachtervoegsel moet een van de volgende waarden zijn: "jpg", "jpeg", "png" of "tif".</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>Er is een ongeldig afbeeldingsbestand opgegeven. Het bestandsachtervoegsel moet een van de volgende waarden zijn: &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; of &quot;tif&quot;.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Er is een fout opgetreden bij het maken van de map %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3243,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Werkruimte "%1" heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Werkruimte &quot;%1&quot; heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3843,8 @@ Do you really want to import this file?</source>
         <translation>Definitie van variabele</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3934,8 @@ Do you really want to import this file?</source>
         <translation>Omlaag (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: de volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: de volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

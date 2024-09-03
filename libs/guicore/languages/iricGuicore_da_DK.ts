@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Farve:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk: Du kan kun bruge ASCII-tegn til Navn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk: Du kan kun bruge ASCII-tegn til Navn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitionsnode gemmes ikke</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Forkert valueType "%1"er indstillet.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Forkert valueType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Forkert tilstandType "%1"er indstillet.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Forkert tilstandType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,8 +1989,8 @@ Do you really want to import this file?</source>
         <translation>Åbning af CGNS-filen mislykkedes.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>name attribut er ikke defineret for "Item" element</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>name attribut er ikke defineret for &quot;Item&quot; element</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2199,8 +2201,8 @@ Do you really want to import this file?</source>
         <translation>Fil %1 opdateres efter import til beregningstilstand %2. Vil du importere den opdaterede fil?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Du kan kopiere og indsætte værdierne med genvejen "Ctrl + C" og "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Du kan kopiere og indsætte værdierne med genvejen &quot;Ctrl + C&quot; og &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2341,8 +2343,8 @@ Do you really want to import this file?</source>
         <translation>Der opstod en fejl under åbning af filen.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De to første kolonner skal være "X" og "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De to første kolonner skal være &quot;X&quot; og &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Der opstod en fejl: %1</translation>
+        <translation type="vanished">Der opstod en fejl: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Kontrollerer argument for %1 mislykkedes. Ugyldige argumenter: %2.</translation>
+        <translation type="vanished">Kontrollerer argument for %1 mislykkedes. Ugyldige argumenter: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Rediger Enkel betjening Resultatvariabel</translation>
+        <translation type="vanished">Rediger Enkel betjening Resultatvariabel</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Beregningsresultat:</translation>
+        <translation type="vanished">Beregningsresultat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Variabelnavn:</translation>
+        <translation type="vanished">Variabelnavn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Værdi til test:</translation>
+        <translation type="vanished">Værdi til test:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Variabelnavn indtastes ikke.</translation>
+        <translation type="vanished">Variabelnavn indtastes ikke.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Dette variabelnavn er allerede brugt</translation>
+        <translation type="vanished">Dette variabelnavn er allerede brugt</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Rediger enkelt betjeningsresultat</translation>
+        <translation type="vanished">Rediger enkelt betjeningsresultat</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation type="vanished">Navn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Position:</translation>
+        <translation type="vanished">Position:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Beregningsresultater for input</translation>
+        <translation type="vanished">Beregningsresultater for input</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Tilføje (&amp;A)...</translation>
+        <translation type="vanished">Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Slet (&amp;D)</translation>
+        <translation type="vanished">Slet (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definition af variabel</translation>
+        <translation type="vanished">Definition af variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Prøve</translation>
+        <translation type="vanished">Prøve</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan teste definitionen ved at klikke på denne. Hvis der opstår fejl under parsing af definitionen, vises fejlmeddelelsen. Når definitionen analyseres korrekt, beregnes værdien ved hjælp af &amp; quot; Value for testingquot; for hvert input vises. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan teste definitionen ved at klikke på denne. Hvis der opstår fejl under parsing af definitionen, vises fejlmeddelelsen. Når definitionen analyseres korrekt, beregnes værdien ved hjælp af &amp; quot; Value for testingquot; for hvert input vises. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultatnavn</translation>
+        <translation type="vanished">Resultatnavn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabelnavn</translation>
+        <translation type="vanished">Variabelnavn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Værdi til test</translation>
+        <translation type="vanished">Værdi til test</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Gitterknude</translation>
+        <translation type="vanished">Gitterknude</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Gittercelle</translation>
+        <translation type="vanished">Gittercelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Navn er ikke indtastet.</translation>
+        <translation type="vanished">Navn er ikke indtastet.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Dette navn er allerede brugt</translation>
+        <translation type="vanished">Dette navn er allerede brugt</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Er du sikker på, at du vil slette %1 ?</translation>
+        <translation type="vanished">Er du sikker på, at du vil slette %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Enkel betjeningsresultatliste</translation>
+        <translation type="vanished">Enkel betjeningsresultatliste</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Navn</translation>
+        <translation type="vanished">Navn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Op (&amp;U)</translation>
+        <translation type="vanished">Op (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>ned (&amp;D)</translation>
+        <translation type="vanished">ned (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Tilføje (&amp;A)...</translation>
+        <translation type="vanished">Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redigere (&amp;E)...</translation>
+        <translation type="vanished">Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Slet (&amp;D)</translation>
+        <translation type="vanished">Slet (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Er du sikker på, at du vil slette %1 ?</translation>
+        <translation type="vanished">Er du sikker på, at du vil slette %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Gitterknude</translation>
+        <translation type="vanished">Gitterknude</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Gittercelle</translation>
+        <translation type="vanished">Gittercelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2946,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definition af output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3001,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Gittertype:</translation>
+        <translation type="vanished">Gittertype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Område: (&amp;R)</translation>
+        <translation type="vanished">Område: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3172,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Der opstod en fejl under åbning %1. iRIC forsøger at redde data fra %2.</translation>
+        <translation type="vanished">Der opstod en fejl under åbning %1. iRIC forsøger at redde data fra %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3183,16 @@ Do you really want to import this file?</source>
         <translation>Alle billeder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>Ugyldig billedfil er angivet. Filsuffiks skal være et af "jpg", "jpeg", "png" eller "tif".</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>Ugyldig billedfil er angivet. Filsuffiks skal være et af &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; eller &quot;tif&quot;.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Der opstod en fejl under oprettelse af mappe %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3243,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbejdsområde "%1"har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbejdsområde &quot;%1&quot;har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3843,8 @@ Do you really want to import this file?</source>
         <translation>Definition af variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definere variablen med JavaScript-sprog. Se venligst &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;her&lt;/span&gt;&lt;/a&gt; for detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definere variablen med JavaScript-sprog. Se venligst &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;her&lt;/span&gt;&lt;/a&gt; for detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3934,8 @@ Do you really want to import this file?</source>
         <translation>ned (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk&lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af ​​simple operationsberegninger som en variabel, der vises tidligere på listen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk&lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af ​​simple operationsberegninger som en variabel, der vises tidligere på listen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
