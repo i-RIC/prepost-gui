@@ -435,7 +435,12 @@ void iRICMainWindow::openProject(const QString& filename)
 	m_projectData->setVersion(m_versionNumber);
 	setupForNewProjectData();
 
-	m_projectData->mainfile()->loadFromCgnsFile();
+	int ier = m_projectData->mainfile()->loadFromCgnsFile();
+	if (ier != IRIC_NO_ERROR) {
+		closeProject();
+		return;
+	}
+
 	handleCgnsSwitch();
 
 	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);

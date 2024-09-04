@@ -242,6 +242,7 @@ void PostSolutionInfo::informStepsUpdated()
 bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<v4PostCalculatedResult*> > *calculatedResults)
 {
 	auto file = cgnsFile()->solutionReader()->targetFile();
+	if (file == nullptr) {return false;}
 
 	if (! file->baseExists(dimension)) {
 		clearContainers(containers);
