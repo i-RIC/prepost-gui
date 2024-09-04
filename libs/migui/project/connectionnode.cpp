@@ -1,4 +1,7 @@
 #include "connectionnode.h"
+#include "model.h"
+
+#include <guicore/solverdef/solverdefinitionabstract.h>
 
 ConnectionNode::ConnectionNode(const QString& caption, Model* model, ValueType valueType) :
 	ConnectionNode(caption, model, "", valueType)
@@ -44,6 +47,11 @@ Model* ConnectionNode::model() const
 void ConnectionNode::setModel(Model* model)
 {
 	m_model = model;
+}
+
+bool ConnectionNode::isDefaultGrid() const
+{
+	return (m_gridName == "" || m_gridName == m_model->solverDefinition()->name());
 }
 
 std::string ConnectionNode::gridName() const
@@ -99,7 +107,9 @@ void ConnectionNode::setValueType(ValueType valueType)
 bool ConnectionNode::operator==(const ConnectionNode& node)
 {
 	if (m_model != node.m_model) {return false;}
-	if (m_gridName != node.m_gridName) {return false;}
+	if (! (isDefaultGrid() && node.isDefaultGrid())) {
+		if (m_gridName != node.m_gridName) {return false;}
+	}
 	if (m_type != node.m_type) {return false;}
 	if (m_index != node.m_index) {return false;}
 	if (m_name != node.m_name) {return false;}

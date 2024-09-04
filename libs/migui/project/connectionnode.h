@@ -25,6 +25,7 @@ public:
 	Model* model() const;
 	void setModel(Model* model);
 
+	bool isDefaultGrid() const;
 	std::string gridName() const;
 	void setGridName(const std::string& name);
 

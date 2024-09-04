@@ -1,6 +1,7 @@
 #include "connectionoutput.h"
 #include "model.h"
 
+#include <guicore/solverdef/solverdefinitionabstract.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -99,7 +100,7 @@ void ConnectionOutput::save(QXmlStreamWriter& writer)
 	}
 	writer.writeAttribute("type", otype);
 	if (m_outputType == OutputType::BoundaryCondition || m_outputType == OutputType::GridAttributeComplex || m_outputType == OutputType::GridAttribute) {
-		if (m_gridName != "") {
+		if (! isDefaultGrid()) {
 			writer.writeAttribute("gridName", m_gridName.c_str());
 		}
 	}

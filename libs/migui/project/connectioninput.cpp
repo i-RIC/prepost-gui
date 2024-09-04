@@ -99,7 +99,7 @@ void ConnectionInput::save(QXmlStreamWriter& writer)
 	}
 	writer.writeAttribute("type", itype);
 	if (m_inputType == InputType::BoundaryCondition || m_inputType == InputType::GridAttributeComplex || m_inputType == InputType::GridAttribute) {
-		if (m_gridName != "") {
+		if (! isDefaultGrid()) {
 			writer.writeAttribute("gridName", m_gridName.c_str());
 		}
 	}
