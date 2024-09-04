@@ -36,7 +36,7 @@ public:
 private:
 	bool createEmptyProjectFile();
 	bool createEmptyCgnsFile();
-        void clearConnectionNodes();
+	void clearConnectionNodes();
 
 	std::string m_name;
 	const SolverDefinitionAbstract* m_solverDefinition;
