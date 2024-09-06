@@ -451,8 +451,12 @@ void PostSolutionInfo::loadDividedBaseIterativeData()
 
 	int invalidDataId = thread.invalidDataId();
 	if (invalidDataId != -1) {
-		// QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.").arg(invalidDataId + 1).arg(invalidDataId));
-		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?").arg(invalidDataId + 1).arg(invalidDataId), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = 0;
+		if (invalidDataId == 0) {
+			ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		} else {
+			ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?").arg(invalidDataId + 1).arg(invalidDataId), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		}
 		if (ret == QMessageBox::Yes) {
 			// remove the broken file
 			QDir workDir(mainFile()->workDirectory());
