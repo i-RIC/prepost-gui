@@ -3519,6 +3519,14 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>result/Solution%1.cgn からのデータの読み込みに失敗しました。Solution1.cgn から Solution%2.cgn までの計算結果を可視化できます。result/Solution%1.cgn を削除しますか?</translation>
     </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized.</source>
+        <translation type="vanished">result/Solution1.cgn からのデータの読み込みに失敗しました。可視化できる計算結果がありません。</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation>result/Solution1.cgn からのデータの読み込みに失敗しました。可視化できる計算結果がありません。result/Solution1.cgn を削除しますか?</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
