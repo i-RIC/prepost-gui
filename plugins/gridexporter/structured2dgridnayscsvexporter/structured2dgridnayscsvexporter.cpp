@@ -52,6 +52,37 @@ std::vector<V> buildCellAttributeValues(GridAttributeContainerT<V, DA>* c)
 	return ret;
 }
 
+template <typename V, typename DA>
+std::vector<V> buildIEdgeAttributeValues(GridAttributeContainerT<V, DA>* c)
+{
+	std::vector<V> ret;
+	ret.reserve(c->dataCount());
+	auto grid = dynamic_cast<v4Structured2dGrid*> (c->grid()->grid());
+	for (int j = 0; j < grid->dimensionJ() - 1; ++j) {
+		for (int i = 0; i < grid->dimensionI(); ++i) {
+			ret.push_back(c->value(grid->iEdgeIndex(i, j)));
+		}
+	}
+	for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
+		ret.push_back(0);
+	}
+	return ret;
+}
+
+template <typename V, typename DA>
+std::vector<V> buildJEdgeAttributeValues(GridAttributeContainerT<V, DA>* c)
+{
+	std::vector<V> ret;
+	ret.reserve(c->dataCount());
+	auto grid = dynamic_cast<v4Structured2dGrid*> (c->grid()->grid());
+	for (int j = 0; j < grid->dimensionJ(); ++j) {
+		for (int i = 0; i < grid->dimensionI() - 1; ++i) {
+			ret.push_back(c->value(grid->jEdgeIndex(i, j)));
+		}
+		ret.push_back(0);
+	}
+	return ret;
+}
 
 AttributeData buildNodeAttributeValues(GridAttributeContainer* c)
 {
@@ -81,6 +112,39 @@ AttributeData buildCellAttributeValues(GridAttributeContainer* c)
 	} else {
 		ret.valueType = AttributeData::Int;
 		ret.intValues = buildCellAttributeValues(intC);
+	}
+	return ret;
+}
+
+AttributeData buildIEdgeAttributeValues(GridAttributeContainer* c)
+{
+	AttributeData ret;
+	ret.name = QString("EI_%1").arg(c->name().c_str());
+	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
+	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
+	if (realC != nullptr) {
+		ret.valueType = AttributeData::Real;
+		ret.realValues = buildIEdgeAttributeValues(realC);
+	} else {
+		ret.valueType = AttributeData::Int;
+		ret.intValues = buildIEdgeAttributeValues(intC);
+	}
+	return ret;
+}
+
+
+AttributeData buildJEdgeAttributeValues(GridAttributeContainer* c)
+{
+	AttributeData ret;
+	ret.name = QString("EJ_%1").arg(c->name().c_str());
+	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
+	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
+	if (realC != nullptr) {
+		ret.valueType = AttributeData::Real;
+		ret.realValues = buildJEdgeAttributeValues(realC);
+	} else {
+		ret.valueType = AttributeData::Int;
+		ret.intValues = buildJEdgeAttributeValues(intC);
 	}
 	return ret;
 }
@@ -128,6 +192,10 @@ bool Structured2DGridNaysCSVExporter::doExport(v4InputGrid* grid, const QString&
 			attributeData.push_back(buildNodeAttributeValues(att));
 		} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 			attributeData.push_back(buildCellAttributeValues(att));
+		} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace) {
+			attributeData.push_back(buildIEdgeAttributeValues(att));
+		} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::JFace) {
+			attributeData.push_back(buildJEdgeAttributeValues(att));
 		}
 	}
 
