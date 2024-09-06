@@ -2142,7 +2142,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
+        <translation type="vanished">网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -2916,6 +2916,33 @@ Option -&gt; Preferences</source>
     <message>
         <source>Color Bar &amp;Bulk Setting...</source>
         <translation>彩条批量设置 (&amp;B)...</translation>
+    </message>
+</context>
+<context>
+    <name>iRICMainWindow_DiscardResultConfirmDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
+&lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
+&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard &amp;Grid Modification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard Calculation &amp;Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
