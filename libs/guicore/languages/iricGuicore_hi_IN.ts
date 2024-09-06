@@ -2812,7 +2812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>परिणाम/समाधान से डेटा पढ़ना %1.cgn विफल हुआ। आप Solution1.cgn में समाधान के लिए गणना परिणाम देख सकते हैं %2.cgn. क्या आप परिणाम/समाधान हटाना चाहते हैं %1.सीजीएन?</translation>
     </message>
 </context>
 <context>

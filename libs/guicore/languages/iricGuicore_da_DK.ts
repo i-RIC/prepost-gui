@@ -2812,7 +2812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aflæsning af data fra resultat/løsning %1.cgn mislykkedes. Du kan visualisere beregningsresultatet i Solution1.cgn til Solution %2.cgn. Ønsker du at slette resultat/Løsning %1.cgn?</translation>
     </message>
 </context>
 <context>
