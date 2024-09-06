@@ -2808,7 +2808,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Đọc dữ liệu từ kết quả/Giải pháp %1.cgn không thành công. Bạn có thể hình dung kết quả tính toán trong Solution1.cgn thành Solution %2.cgn.</translation>
+        <translation type="vanished">Đọc dữ liệu từ kết quả/Giải pháp %1.cgn không thành công. Bạn có thể hình dung kết quả tính toán trong Solution1.cgn thành Solution %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
