@@ -451,7 +451,15 @@ void PostSolutionInfo::loadDividedBaseIterativeData()
 
 	int invalidDataId = thread.invalidDataId();
 	if (invalidDataId != -1) {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.").arg(invalidDataId + 1).arg(invalidDataId));
+		// QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.").arg(invalidDataId + 1).arg(invalidDataId));
+		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?").arg(invalidDataId + 1).arg(invalidDataId), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret == QMessageBox::Yes) {
+			// remove the broken file
+			QDir workDir(mainFile()->workDirectory());
+			QString brokenFileName = workDir.absoluteFilePath(QString("result/Solution%1.cgn").arg(invalidDataId + 1));
+			QFile brokenFile(brokenFileName);
+			brokenFile.remove();
+		}
 	}
 }
 

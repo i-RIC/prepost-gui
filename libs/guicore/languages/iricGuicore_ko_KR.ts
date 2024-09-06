@@ -2810,7 +2810,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn의 계산 결과를 Solution으로 가시화할 수 있습니다. %2.cgn.</translation>
+        <translation type="vanished">결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn의 계산 결과를 Solution으로 가시화할 수 있습니다. %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
