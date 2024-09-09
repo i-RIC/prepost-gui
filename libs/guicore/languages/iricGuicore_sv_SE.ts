@@ -1,291 +1,291 @@
-<TS version="2.1" language="id_ID">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Anpassad färg</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>Efter skalärt värde</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>Sunting (&amp;E)</translation>
+        <translation>Redigera (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation>Pengaturan Peta Warna (%1)</translation>
+        <translation>Färgkarta inställning (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Anpassad färg</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>Efter skalärt värde</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="vanished">Impor (&amp;I)...</translation>
+        <translation type="vanished">Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="vanished">Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Exportera (&amp;E)...</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Peta warna</translation>
+        <translation>Färgkarta</translation>
     </message>
 </context>
 <context>
     <name>ArrowsGeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="obsolete">Membentuk</translation>
+        <translation type="obsolete">Form</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Teckensnittsinställning:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Längd</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Formatera:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Panjang:</translation>
+        <translation>Längd:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Bakgrund:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Storlek och position</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Rita gränsen</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Längd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation>Standardvärde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation>[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation>Längd på skärmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation>Minsta värde att rita:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="vanished">Nilai:</translation>
+        <translation type="vanished">Värde:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Längd Legend</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Dasar</translation>
+        <translation>Grundläggande</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">Peta warna</translation>
+        <translation type="vanished">Färgkarta</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Legend of Length</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Legenden om längden</translation>
     </message>
     <message>
         <source>(Custom Color)</source>
-        <translation>(Warna Kustom)</translation>
+        <translation>(Anpassad färg)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation>Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Pilstorlek:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Linjebredd:</translation>
     </message>
 </context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation>Harap tentukan poligon tertutup!</translation>
+        <translation>Ange en stängd polygon!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation>Tidak dapat membaca gambar %1</translation>
+        <translation>Det gick inte att läsa bilden %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">dalam file %1, kenaikan koordinat x per piksel dan kenaikan koordinat y per piksel tidak cocok. Itu dapat diterima, tetapi mungkin salah.</translation>
+        <translation type="vanished">I fil %1, x-koordinat-inkrement per pixel och y-koordinat-increment per pixel-felaktigheter. Det är acceptabelt, men det kan vara fel.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation>Pilih titik yang sesuai pada Jendela Utama.</translation>
+        <translation>Välj en motsvarande punkt i huvudfönstret.</translation>
     </message>
     <message>
         <source>Fix Image position</source>
-        <translation>Perbaiki posisi Gambar</translation>
+        <translation>Fixa bildposition</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation>Posisi Gambar Latar Belakang</translation>
+        <translation>Bakgrund Bild Position</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation>Metode penunjukan</translation>
+        <translation>Metod för beteckning</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Tentukan posisi vertex kiri bawah, skala, dan sudut putar</translation>
+        <translation>Ange nedre vänstra hörnposition, skala och vrid vinkel</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation>Tentukan posisi vertex kiri bawah dan kanan bawah</translation>
+        <translation>Ange toppunkten längst ner till vänster och längst ner till höger</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation>Titik kiri bawah</translation>
+        <translation>Nedre vänstra hörnet</translation>
     </message>
     <message>
         <source>X:</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation>Simpul kanan bawah</translation>
+        <translation>Nedre högra hörnet</translation>
     </message>
     <message>
         <source>Scale:</source>
@@ -305,116 +305,116 @@
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation>Putar Sudut:</translation>
+        <translation>Rotera vinkel:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tentukan jarak dalam meter yang sesuai dengan lebar satu piksel gambar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ange avståndet i meter som motsvarar bredden på en pixel på bilden. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menentukan sudut tepi bawah gambar terhadap sumbu X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ange bildens vinkel mot X-axeln. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation>Georeferensi</translation>
+        <translation>Georeferens</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation>Tekan tombol</translation>
+        <translation>Tryckknapp</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Bersembunyi</translation>
+        <translation>Dölj</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Menunjukkan</translation>
+        <translation>Show</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Pilih kisi yang akan diimpor</translation>
+        <translation>Välj rutnät att importera</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Silakan pilih grid mana yang akan diimpor</translation>
+        <translation>Välj vilket rutnät som ska importeras</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Teckensnittsinställning:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Etikettdisplay</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Märka:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Bakgrund:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Storlek och position</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Riktning:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -422,11 +422,11 @@
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Barbredd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>px</source>
@@ -434,204 +434,204 @@
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Vänster</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centrum</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Höger</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Rita gränsen</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Ignorera färgfältsinställningen vid import</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Färger</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Färgfältsinställning</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="vanished">Pengaturan peta warna (*.cmsetting)</translation>
+        <translation type="vanished">Färgkarta inställning (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Ange filnamn för export</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>Ett fel uppstod vid öppning %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Värde</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Transparent</translation>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Räkna upp färgkartainställningar (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Räkna upp färgkartainställningar (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>Ett fel uppstod vid import av inställning från %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Offentlig (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>privat (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Importera färgkarta-inställning</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Läge</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Välj bland standarder</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Välj fil</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Standarder</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Fil</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Attribut för import</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Riktning</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Teckensnittsinställning</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Etikettdisplay</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Märka</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Bakgrund</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Storlek och position</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Storlek</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Barbredd</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>Förhandsvisning</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="vanished">Diskriminasi rasial</translation>
+        <translation type="vanished">Färgfält</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="vanished">Horisontal</translation>
+        <translation type="vanished">Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -642,19 +642,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Umum</translation>
+        <translation>Allmänning</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Riktning:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -662,39 +662,39 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Font</source>
-        <translation>huruf</translation>
+        <translation>Font</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation>Label:</translation>
+        <translation>Etiketter:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Märka:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Bakgrund:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Gambarlah batas</translation>
+        <translation>Rita gränsen</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation>Batas</translation>
+        <translation>Marginal</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="obsolete">Batas Horisontal:</translation>
+        <translation type="obsolete">Horisontell marginal:</translation>
     </message>
     <message>
         <source>%</source>
@@ -702,55 +702,55 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="obsolete">Batas Vertikal:</translation>
+        <translation type="obsolete">Vertikal marginal:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Storlek</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Bredd:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation>piksel</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Höjd:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Barbredd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Vänster</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centrum</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Höger</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation>Posisi</translation>
+        <translation>Positioner</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation>Horisontal:</translation>
+        <translation>Horisontell:</translation>
     </message>
     <message>
         <source>Vertical:</source>
@@ -761,71 +761,71 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Pengaturan Fon:</translation>
+        <translation>Teckensnittsinställning:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Etikettdisplay</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Formatera:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Märka:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Bakgrund:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Storlek och position</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Riktning:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -833,19 +833,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Jumlah label:</translation>
+        <translation>Antal etiketter:</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Barbredd</translation>
     </message>
     <message>
         <source>px</source>
@@ -853,27 +853,27 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Vänster</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centrum</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Höger</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Rita gränsen</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation>Tingkat melewatkan:</translation>
+        <translation>Överhoppningsfrekvens:</translation>
     </message>
 </context>
 <context>
@@ -884,54 +884,54 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Exportera (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation>Inställning för färgkarta</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="vanished">Preset:</translation>
+        <translation type="vanished">Förinställningar:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Ignorera färgfältsinställningen vid import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation>Hubungan antara nilai dan warna</translation>
+        <translation>Samband mellan värden och färger</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation>Sesuaikan secara otomatis berdasarkan rentang nilai</translation>
+        <translation>Justera automatiskt baserat på värdeintervall</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation>Atur Secara Manual</translation>
+        <translation>Ställ in manuellt</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Värdeintervall</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Otomatis</translation>
+        <translation>Automatisk</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -939,173 +939,173 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Färger</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation>Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Isi area bawah</translation>
+        <translation>Fyll nedre området</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Isi area atas</translation>
+        <translation>Fyll det övre området</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Växla</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Färgfältsinställning</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Färgkarta inställning (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Ange filnamn för export</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>Ett fel uppstod vid öppning %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="vanished">(Silakan pilih item untuk diterapkan)</translation>
+        <translation type="vanished">(Välj objekt att ansöka om)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation>Beralih ke Mode Diskrit</translation>
+        <translation>Växla till diskret läge</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation>Beralih ke Mode Gradasi</translation>
+        <translation>Växla till graderingsläge</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Värde</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation>Nilai minimal</translation>
+        <translation>Minsta värde</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation>Nilai maks</translation>
+        <translation>Max värde</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Transparent</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="vanished">Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
+        <translation type="vanished">När du byter till graderingsläge ställs värdena till mittvärdet för varje sektion.</translation>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="vanished">Membalikkan warna (&amp;R)</translation>
+        <translation type="vanished">Omvända färger (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="vanished">Pembagian yang setara (&amp;E)</translation>
+        <translation type="vanished">Lika delning (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation>Warna Terbalik (&amp;R)</translation>
+        <translation>Omvända färger (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation>Divisi yang Setara (&amp;E)</translation>
+        <translation>Lika division (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation>Ubah Nomor. Warna</translation>
+        <translation>Ändra Num. Färger</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Färgkarta inställning (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>Ett fel uppstod vid import av inställning från %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Offentlig (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>privat (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Exportera (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation>Ubah Jumlah Warna</translation>
+        <translation>Ändra antalet färger</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Antal färger:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Värdeintervall</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -1113,113 +1113,113 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>alternativ</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Värde decimaler:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Importera färgkarta-inställning</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Läge</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Välj bland standarder</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Välj fil</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Standarder</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Fil</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Attribut för import</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Riktning</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Teckensnittsinställning</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Etikettdisplay</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation>Format</translation>
+        <translation>Formatera</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation>Jumlah label</translation>
+        <translation>Antal etiketter</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Märka</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Bakgrund</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Storlek och position</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Storlek</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Barbredd</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>Förhandsvisning</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation>Beralih ke Dialog Mode Diskrit</translation>
+        <translation>Växla till dialogrutan för diskret läge</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -1227,46 +1227,46 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="vanished">Jumlah warna untuk disisipkan di setiap bagian</translation>
+        <translation type="vanished">Antal färger som ska infogas vid varje sektion</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Värdeintervall</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Antal färger:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>alternativ</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Värde decimaler:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation>Skala log:</translation>
+        <translation>Loggskala:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Aktiverad</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Diskriminasi rasial</translation>
+        <translation>Färgfält</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -1277,30 +1277,30 @@ Parse error %2 at %3, column %4</source>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="vanished">Atribut</translation>
+        <translation type="vanished">Attribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Warna</translation>
+        <translation type="vanished">Färg</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Draw contour lines</source>
-        <translation>Menggambar garis kontur</translation>
+        <translation>Rita konturlinjer</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Linjebredd:</translation>
     </message>
     <message>
         <source>px</source>
@@ -1308,26 +1308,26 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Use values of colormap</source>
-        <translation>Gunakan nilai colormap</translation>
+        <translation>Använd värden för färgkarta</translation>
     </message>
     <message>
         <source>Specify division number</source>
-        <translation>Tentukan nomor divisi</translation>
+        <translation>Ange divisionsnummer</translation>
     </message>
 </context>
 <context>
     <name>CoordinateSystemDisplayWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>CS: (not specified)</source>
-        <translation>CS: (tidak ditentukan)</translation>
+        <translation>CS: (ej specificerat)</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(Tidak Ditentukan)</translation>
+        <translation>(Ej angivet)</translation>
     </message>
     <message>
         <source>CS: %1</source>
@@ -1338,46 +1338,46 @@ Parse error %2 at %3, column %4</source>
     <name>DelegatedColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Use Setting of Pre-processing Window</source>
-        <translation>Gunakan Pengaturan Jendela Pra-pemrosesan</translation>
+        <translation>Använd inställning av förbearbetningsfönstret</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Exportera (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>DirectionSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Pilstorlek:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Linjebredd:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Normal:</source>
-        <translation>Normal:</translation>
+        <translation>Vanligt:</translation>
     </message>
     <message>
         <source>Invalid:</source>
-        <translation>Tidak sah:</translation>
+        <translation>Ogiltig:</translation>
     </message>
 </context>
 <context>
@@ -1403,60 +1403,60 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Provtagning</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Alla hörn</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Samplingshastighet:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Tentukan jumlah simpul</translation>
+        <translation>Ange antal hörn</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Edit Nama (&amp;N)...</translation>
+        <translation>Redigera namn (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation>Bawaan</translation>
+        <translation>Standard</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation>Sunting nilai...</translation>
-    </message>
-    <message>
-        <source>Background edit value</source>
-        <translation>Nilai edit latar belakang</translation>
+        <translation>Redigera värde...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation>Sunting %1 nilai default</translation>
+        <translation>Redigera %1 standardvärde</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation>Harap masukkan nilai default baru.</translation>
+        <translation>Ange ett nytt standardvärde.</translation>
+    </message>
+    <message>
+        <source>Background edit value</source>
+        <translation>Redigera värde i bakgrunden</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Bakgrund</translation>
     </message>
 </context>
 <context>
@@ -1467,121 +1467,121 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation>Nilai minimum data geografis</translation>
+        <translation>Minsta värde för geografisk data</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation>Nilai maksimum data geografis</translation>
+        <translation>Maximalt värde för geografisk data</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation>Nilai khusus</translation>
+        <translation>Anpassat värde</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation>Tidak ada titik yang dipilih.</translation>
+        <translation>Ingen punkt väljs.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation>Tidak ada poin yang dapat dihapus lebih lanjut.</translation>
+        <translation>Ingen poäng kan raderas ytterligare.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation>Pilih titik pada dialog Georeferensi.</translation>
+        <translation>Välj en punkt i dialogrutan Georeferens.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Hapus Poin</translation>
+        <translation>Ta bort poäng</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation>Perubahan Item Browser Objek</translation>
+        <translation>Objektbläddrare Ändra objekt</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation>Bilah Alat Operasi</translation>
+        <translation>Verktygsfält</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation>Tidak ada Color Bar yang aktif</translation>
+        <translation>Det finns ingen aktiv Color Bar</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation>Pengaturan Massal Bilah Warna</translation>
+        <translation>Färgfält Bulk Inställning</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeCellSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Linjebredd:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation>label:</translation>
+        <translation>märka:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation>Langkah Mundur (&amp;B)</translation>
+        <translation>Gå bakåt (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation>Maju (&amp;F)</translation>
+        <translation>Stig fram (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>Mengatur ulang (&amp;R)</translation>
+        <translation>Återställa (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation>Pergi ke Langkah Terakhir (&amp;L)</translation>
+        <translation>Gå till sista steget (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation>Mulai/Hentikan Animasi (&amp;S)</translation>
+        <translation>Start/stopp animation (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation>Hentikan Animasi (&amp;T)</translation>
+        <translation>Stoppa animering (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation>Pengaturan Kecepatan Animasi (&amp;A)...</translation>
+        <translation>Inställning av animationshastighet (&amp;A)...</translation>
     </message>
 </context>
 <context>
@@ -1592,7 +1592,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
@@ -1603,41 +1603,41 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Redigera nätverksattributvärde</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeNodeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Paint</source>
-        <translation>Cat</translation>
+        <translation>Måla</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poin</translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Linjebredd:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Titik:</translation>
+        <translation>Punktstorlek:</translation>
     </message>
 </context>
 <context>
@@ -1648,14 +1648,14 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Redigera nätverksattributvärde</translation>
     </message>
 </context>
 <context>
@@ -1673,71 +1673,71 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Radera (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
-    </message>
-    <message>
-        <source>There must be one group at least.</source>
-        <translation>Setidaknya harus ada satu kelompok.</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation>Nama harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Namnet måste endast bestå av engelska tecken.</translation>
+    </message>
+    <message>
+        <source>There must be one group at least.</source>
+        <translation>Det måste finnas minst en grupp.</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Exportera (&amp;E)...</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Växla</translation>
     </message>
     <message>
         <source>Columns %1 are ignored. Expected names are %2</source>
-        <translation>Kolom %1 diabaikan. Nama yang diharapkan adalah %2</translation>
+        <translation>Kolumner %1 ignoreras. Förväntade namn är %2</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pilih file yang akan diimpor</translation>
+        <translation>Välj fil att importera</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>berkas CSV (*.csv)</translation>
+        <translation>CSV-fil (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation>Pembukaan %1 gagal.</translation>
+        <translation>Öppning %1 misslyckades.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation>Pilih file yang akan diekspor</translation>
+        <translation>Välj fil att exportera</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>namn</translation>
     </message>
     <message>
         <source>Switch to Table view</source>
-        <translation>Beralih ke tampilan Tabel</translation>
+        <translation>Växla till tabellvy</translation>
     </message>
     <message>
         <source>Switch to List view</source>
-        <translation>Beralih ke tampilan Daftar</translation>
+        <translation>Växla till listvy</translation>
     </message>
 </context>
 <context>
@@ -1748,60 +1748,60 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Target:</source>
-        <translation>Target:</translation>
+        <translation>Mål:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Ändringar du gjort kommer att kasseras.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation>Target</translation>
+        <translation>Mål</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Pengaturan</translation>
+        <translation>Miljö</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation>Gunakan sebagai Nilai Default</translation>
+        <translation>Använd som standardvärde</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs! Du kan endast använda ASCII-tecken för Namn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid (&amp;G)</translation>
+        <translation>Grid skapar villkor (&amp;G)</translation>
     </message>
 </context>
 <context>
@@ -1812,57 +1812,57 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="vanished">Pengaturan kontur</translation>
+        <translation type="vanished">Konturinställning</translation>
     </message>
 </context>
 <context>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation>Batas Horisontal:</translation>
+        <translation>Horisontell marginal:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation>Batas Vertikal:</translation>
+        <translation>Vertikal marginal:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Bredd:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Höjd:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation>Jarak dari kiri</translation>
+        <translation>Avstånd från vänster</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation>Jarak dari kanan</translation>
+        <translation>Avstånd från höger</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation>Jarak dari atas</translation>
+        <translation>Avstånd från toppen</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation>Jarak dari bawah</translation>
+        <translation>Avstånd från botten</translation>
     </message>
     <message>
         <source>%</source>
@@ -1874,143 +1874,143 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation>Ukuran Otomatis</translation>
+        <translation>Auto storlek</translation>
     </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
     <message>
         <source>Select Input CGNS File</source>
-        <translation>Pilih Masukkan File CGNS</translation>
+        <translation>Välj Mata in CGNS -fil</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Do you want to import grid from the CGNS file?</source>
-        <translation>Apakah Anda ingin mengimpor kisi dari file CGNS?</translation>
+        <translation>Vill du importera rutnät från CGNS -filen?</translation>
     </message>
     <message>
         <source>Select CGNS file</source>
-        <translation>Pilih file CGNS</translation>
+        <translation>Välj CGNS -fil</translation>
     </message>
     <message>
         <source>Please select from which CGNS file to read grid.</source>
-        <translation>Silakan pilih dari file CGNS mana yang akan dibaca grid.</translation>
+        <translation>Välj från vilken CGNS -fil du vill läsa rutnätet.</translation>
     </message>
     <message>
         <source>CGNS File</source>
-        <translation>File CGNS</translation>
+        <translation>CGNS-fil</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation>Node definisi tidak disimpan</translation>
+        <translation>Definitionsnod lagras inte</translation>
     </message>
     <message>
         <source>Wrong valueType "%1" is set.</source>
-        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
+        <translation>Fel valueType "%1"är inställt.</translation>
     </message>
     <message>
         <source>Wrong conditionType "%1"is set.</source>
-        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
+        <translation>Fel skickTyp "%1"är inställd.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>Ett fel uppstod när lösningsdefinitionsfilen skulle laddas. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDependency</name>
     <message>
         <source>Unhandled widget in ActionSetValue</source>
-        <translation>Widget tidak tertangani di ActionSetValue</translation>
+        <translation>Ohanterad widget i ActionSetValue</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Beräkningstillstånd</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">Simpan dan tutup (&amp;S)</translation>
+        <translation type="vanished">Spara och stäng (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation>File CGNS ini dibuat untuk %1 Versi: kapan %2. Ini tidak kompatibel dengan pemecah saat ini.</translation>
+        <translation>Denna CGNS -fil skapas för %1 version %2. Det är inte kompatibelt med den aktuella lösaren.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation>File CGNS ini tidak memiliki informasi pemecah masalah. Kami tidak dapat memeriksa apakah file CGNS ini kompatibel dengan solver. Jika tidak kompatibel, mungkin hanya sebagian dari kondisi yang akan diimpor. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation>Denna CGNS -fil har inte lösningsinformation. Vi kan inte kontrollera om denna CGNS -fil är kompatibel med lösaren. Om det inte är kompatibelt kanske bara en del av villkoren kommer att importeras. Vill du verkligen importera den här filen?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation>File CGNS ini tidak berisi data kondisi perhitungan.</translation>
+        <translation>Denna CGNS -fil innehåller inte beräkningstillståndsdata.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation>Apakah Anda yakin ingin mengatur ulang semua kondisi perhitungan ke nilai default?</translation>
+        <translation>Är du säker på att du vill återställa alla beräkningsvillkor till standardvärden?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation>Solver sedang berjalan saat ini, jadi Anda tidak dapat menyimpan kondisi perhitungan. Silakan tekan tombol Batal.</translation>
-    </message>
-    <message>
-        <source>Error occured while saving.</source>
-        <translation>Terjadi kesalahan saat menyimpan.</translation>
+        <translation>Lösaren körs för närvarande, så du kan inte spara beräkningsvillkor. Tryck på Avbryt -knappen.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Ändringar du gjort kommer att kasseras.</translation>
+    </message>
+    <message>
+        <source>Error occured while saving.</source>
+        <translation>Ett fel uppstod när du sparade.</translation>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>Gagal membuka file CGNS.</translation>
+        <translation>Det gick inte att öppna CGNS-filen.</translation>
     </message>
     <message>
         <source>name attribute is not defined for "Item" element</source>
-        <translation>Atribut nama tidak ditentukan untuk elemen "Item".</translation>
+        <translation>namnattribut är inte definierat för elementet "Artikel".</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Sunting %1</translation>
+        <translation>Redigera %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Redigera</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation>Grup</translation>
+        <translation>Grupper</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>...</source>
@@ -2018,7 +2018,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation>Nama Pemecah:</translation>
+        <translation>Lösarens namn:</translation>
     </message>
     <message>
         <source>---</source>
@@ -2026,64 +2026,64 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation>Versi Pemecah:</translation>
+        <translation>Lösningsversion:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis kisi:</translation>
+        <translation>Rutnätstyp:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation>Ukuran kisi:</translation>
+        <translation>Rutstorlek:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation>Jumlah hasil:</translation>
+        <translation>Antal resultat:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation>Tersusun</translation>
+        <translation>Strukturerad</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation>Tidak terstruktur</translation>
+        <translation>Ostrukturerad</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Välj fil</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Filnamnet måste bestå av endast engelska tecken.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation>(File CGNS tidak dipilih)</translation>
+        <translation>(CGNS -fil är inte vald)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation>(Tidak ada hasil)</translation>
+        <translation>(Det finns inget resultat)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Aktiverad</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Välj fil</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Filnamnet måste bestå av endast engelska tecken.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2094,11 +2094,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation>Pilih Direktori</translation>
+        <translation>Välj katalog</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation>Nama folder harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Mappnamnet måste bestå av endast engelska tecken.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2109,62 +2109,54 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Redigera</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Beräkningstillstånd</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Menambahkan</translation>
+        <translation>Lägg till</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Menghapus</translation>
+        <translation>Avlägsna</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Impor (&amp;I)</translation>
+        <translation>Importera (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation>Impor Web</translation>
+        <translation>Importera webb</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Exportera (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Jernih</translation>
+        <translation>Klar</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih kecil dari nilai minimum %4</translation>
+        <translation>%1 på rad %2 : Värdet %3 är mindre än minimivärdet %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih besar dari nilai maksimum %4</translation>
-    </message>
-    <message>
-        <source>Choose a text file</source>
-        <translation>Pilih file teks</translation>
-    </message>
-    <message>
-        <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation>File teks (*.csv *.txt);;All files (*.*)</translation>
+        <translation>%1 på rad %2 : Värdet %3 är större än maxvärdet %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>Ett fel uppstod när filen öppnades.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -2176,92 +2168,100 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 adalah nilai untuk bentang. Misalnya input nilai pada baris ke-2 adalah untuk rentang antara baris ke-1 dan baris ke-2.</translation>
+        <translation>%1 är värden för spann. Till exempel är värdeinmatning på andra raden för intervall mellan första raden och andra raden.</translation>
+    </message>
+    <message>
+        <source>Choose a text file</source>
+        <translation>Välj en textfil</translation>
+    </message>
+    <message>
+        <source>Text files (*.csv *.txt);;All files (*.*)</source>
+        <translation>Textfiler (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation>Tentukan nama file untuk disimpan</translation>
+        <translation>Ange filnamn som ska sparas</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation>file CSV (*.csv)</translation>
-    </message>
-    <message>
-        <source>Values are copied to clipboard.</source>
-        <translation>Nilai disalin ke papan klip.</translation>
-    </message>
-    <message>
-        <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>Mengajukan %1 diperbarui setelah diimpor ke kondisi perhitungan %2. Apakah Anda ingin mengimpor file yang diperbarui?</translation>
+        <translation>CSV -filer (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Information</translation>
+    </message>
+    <message>
+        <source>Values are copied to clipboard.</source>
+        <translation>Värden kopieras till Urklipp.</translation>
+    </message>
+    <message>
+        <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
+        <translation>Fil %1 uppdateras efter import till beräkningstillstånd %2. Vill du importera den uppdaterade filen?</translation>
     </message>
     <message>
         <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
+        <translation>Du kan kopiera och klistra in värdena med genvägen "Ctrl + C" och "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation>Masalah berikut ditemukan:</translation>
+        <translation>Följande problem hittades:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation>... dan lainnya %1 kesalahan</translation>
+        <translation>... och andra %1 fel</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation>Unduh</translation>
+        <translation>Ladda ner</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation>Nomor Situs:</translation>
+        <translation>Platsnummer:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Mulai tanggal:</translation>
+        <translation>Start datum:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation>Tanggal Akhir:</translation>
+        <translation>Slutdatum:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Testa</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation>Masukkan nomor situs.</translation>
+        <translation>Ange ett webbplatsnummer.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation>Nomor situs tidak valid.</translation>
+        <translation>Ogiltigt webbplatsnummer.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation>Tanggal mulai bukan sebelum tanggal akhir.</translation>
+        <translation>Startdatum inte före slutdatum.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation>Impor gagal</translation>
+        <translation>Importen misslyckades</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation>Tidak ada data untuk diimpor.</translation>
+        <translation>Inga data att importera.</translation>
     </message>
 </context>
 <context>
@@ -2269,45 +2269,45 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>Ett fel uppstod när lösningsdefinitionsfilen laddades. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation>(Pilih template untuk diimpor)</translation>
+        <translation>(Välj mall att importera)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>Konten di area teks akan ditimpa dengan template</translation>
+        <translation>Innehållet i textområdet skrivs över med mallen</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="vanished">Pengaturan Peta Warna</translation>
+        <translation type="vanished">Färgkarta -inställning</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="vanished">Rentang nilai</translation>
+        <translation type="vanished">Värdeintervall</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="vanished">Otomatis</translation>
+        <translation type="vanished">Automatisk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="vanished">Isi area atas</translation>
+        <translation type="vanished">Fyll det övre området</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -2315,49 +2315,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="vanished">Isi area bawah</translation>
+        <translation type="vanished">Fyll nedre området</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="vanished">Nomor Divisi:</translation>
+        <translation type="vanished">Avdelningsnummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">Maks:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">peta warna</translation>
+        <translation type="vanished">Färgkarta</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
+        <source>Importing Measured Data...</source>
+        <translation>Importera uppmätt data...</translation>
+    </message>
+    <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>Ett fel uppstod när filen öppnades.</translation>
     </message>
     <message>
         <source>The first two columns must be "X" and "Y".</source>
-        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
+        <translation>De två första kolumnerna måste vara "X" och "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation>File data harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Datafilen måste endast bestå av engelska tecken.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation>Data yang salah ditemukan: %1</translation>
-    </message>
-    <message>
-        <source>Importing Measured Data...</source>
-        <translation>Mengimpor Data Terukur...</translation>
+        <translation>Fel data hittades: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>X: </source>
@@ -2380,7 +2380,7 @@ Do you really want to import this file?</source>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation>Pengaturan Offset</translation>
+        <translation>Förskjutningsinställning</translation>
     </message>
     <message>
         <source>X:</source>
@@ -2392,127 +2392,127 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai X tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>X -värde är inte lämpligt. Ange mer enkelt värde.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai Y tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>Y -värdet är inte lämpligt. Ange mer enkelt värde.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation>Pilihan Hasil Perhitungan</translation>
+        <translation>Val av beräkningsresultat</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation>Silakan pilih hasil perhitungan yang akan digunakan.</translation>
+        <translation>Välj vilket beräkningsresultat du vill använda.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation>Perhitungan satu dimensi</translation>
+        <translation>Endimensionell beräkning</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation>Perhitungan dua dimensi</translation>
+        <translation>Tvådimensionell beräkning</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation>Perhitungan tiga dimensi</translation>
+        <translation>Tredimensionell beräkning</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Fel uppstod: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="vanished">Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
+        <translation type="vanished">Kontrollerar argument för %1 misslyckades. Ogiltiga argument: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="vanished">Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Redigera enkel drift Resultatvariabel</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="vanished">Hasil Perhitungan:</translation>
+        <translation type="vanished">Beräkningsresultat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="vanished">Nama variabel:</translation>
+        <translation type="vanished">Variabelnamn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="vanished">Nilai untuk pengujian:</translation>
+        <translation type="vanished">Värde för testning:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="vanished">Nama variabel tidak dimasukkan.</translation>
+        <translation type="vanished">Variabelnamn matas inte in.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="vanished">Nama variabel ini sudah digunakan</translation>
+        <translation type="vanished">Detta variabelnamn används redan</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="vanished">Edit Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Redigera enkel driftsresultat</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Nama:</translation>
+        <translation type="vanished">Namn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Placera:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Beräkningsresultat för inmatning</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Radera (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="vanished">Definisi variabel</translation>
+        <translation type="vanished">Definition av variabel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understrykning; färg:#0000ff; "&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Testa</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan testa definitionen genom att klicka på den här. Om ett fel uppstår när parametern analyseras visas felmeddelandet. När definitionen analyseras framgångsrikt beräknas värdet med &amp; quot; Value for testingquot; för varje ingång visas. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2520,23 +2520,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Resultatnamn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Variabelnamn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Värde för testning</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Gridnod</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Rutnätcell</translation>
     </message>
     <message>
         <source>Particle</source>
@@ -2544,74 +2544,74 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="vanished">Nama tidak dimasukkan.</translation>
+        <translation type="vanished">Namn är inte inmatat.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="vanished">Nama ini sudah digunakan</translation>
+        <translation type="vanished">Detta namn används redan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Är du säker att du vill radera %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="vanished">Daftar Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Enkel driftresultatlista</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="vanished">Nama</translation>
+        <translation type="vanished">namn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="vanished">Posisi</translation>
+        <translation type="vanished">Placera</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="vanished">Ke atas (&amp;U)</translation>
+        <translation type="vanished">Upp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="vanished">Turun (&amp;D)</translation>
+        <translation type="vanished">Ner (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla beräkningar som en variabel som visas tidigare i listan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Redigera (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Radera (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Är du säker att du vill radera %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Gridnod</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Rutnätcell</translation>
     </message>
     <message>
         <source>Particle</source>
@@ -2622,19 +2622,27 @@ Do you really want to import this file?</source>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Exportberäkningsresultat</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Formatera:</translation>
+    </message>
+    <message>
+        <source>VTK files (ASCII)</source>
+        <translation>VTK -filer (ASCII)</translation>
+    </message>
+    <message>
+        <source>VTK files (Binary)</source>
+        <translation>VTK -filer (binär)</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation>file CSV</translation>
+        <translation>CSV -filer</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation>File Topografi (*.tpo)</translation>
+        <translation>Topografiska filer (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
@@ -2642,63 +2650,55 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation>folder keluaran:</translation>
+        <translation>Utmatningsmapp:</translation>
     </message>
     <message>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
+        <source>Prefix:</source>
+        <translation>Prefix:</translation>
+    </message>
+    <message>
         <source>Output file:</source>
-        <translation>Berkas keluaran:</translation>
+        <translation>Utmatningsfil:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Waktu</translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation>Semua langkah waktu</translation>
+        <translation>Alla steg</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Awal:</translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Akhir:</translation>
+        <translation>Slutet:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Lewati tingkat:</translation>
-    </message>
-    <message>
-        <source>Prefix:</source>
-        <translation>Awalan:</translation>
-    </message>
-    <message>
-        <source>VTK files (ASCII)</source>
-        <translation>File VTK (ASCII)</translation>
-    </message>
-    <message>
-        <source>VTK files (Binary)</source>
-        <translation>File VTK (Binary)</translation>
+        <translation>Hoppa över hastighet:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Wilayah</translation>
+        <translation>Område</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Wilayah penuh</translation>
+        <translation>Hela regionen</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation>Jag är i</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation>I Max</translation>
     </message>
     <message>
         <source>J Min</source>
@@ -2718,23 +2718,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation>Tampilkan Detail (&amp;D)</translation>
+        <translation>Visa detaljer (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation>Pilih folder</translation>
+        <translation>Välj mapp</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation>Map %1 tidak ada.</translation>
+        <translation>Mapp %1 existerar inte.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation>Sembunyikan Detail (&amp;H)</translation>
+        <translation>Dölj detalj (&amp;H)</translation>
     </message>
     <message>
         <source>--</source>
@@ -2745,112 +2745,112 @@ Do you really want to import this file?</source>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Ett fel uppstod när beräkningsresultatet skulle laddas.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation>Ett fel uppstod när beräkningsresultatet skulle laddas.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation>Memuat hasil perhitungan untuk visualisasi gagal. Silakan coba lagi nanti, atau tunggu sampai akhir perhitungan.</translation>
+        <translation>Läser in beräkningsresultat för visualisering misslyckades. Försök igen senare, eller vänta tills beräkningen är slut.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Tidak ada hasil perhitungan.</translation>
+        <translation>Inget beräkningsresultat finns.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation>Hasil perhitungan tidak berisi data grid.</translation>
+        <translation>Beräkningsresultatet innehåller inte nätdata.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Exportberäkningsresultat</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file VTK...</translation>
+        <translation>Sparar beräkningsresultat som VTK -filer...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file CSV...</translation>
+        <translation>Sparar beräkningsresultat som CSV -filer...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation>Menyimpan hasil perhitungan sebagai ESRI Shapefiles...</translation>
+        <translation>Sparar beräkningsresultat som ESRI Shapefiles...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation>Terjadi kesalahan saat menyimpan %1</translation>
+        <translation>Ett fel uppstod när du sparade %1</translation>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file TPO...</translation>
+        <translation>Sparar beräkningsresultat som TPO-filer...</translation>
     </message>
     <message>
         <source>Reading time values...</source>
-        <translation>Membaca nilai waktu...</translation>
+        <translation>Läser tidsvärden...</translation>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Membaca data dari hasil/Solusi %1.cgn gagal. Anda dapat memvisualisasikan hasil perhitungan di Solution1.cgn ke Solution %2.cgn.</translation>
+        <translation>Läser data från resultat/lösning %1.cgn misslyckades. Du kan visualisera beräkningsresultat i Solution1.cgn till lösning %2.cgn.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Fel uppstod: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="vanished">I, J, K, indeks untuk label direset karena ukuran grid berubah.</translation>
+        <translation type="vanished">I, J, K, index för etikett återställs eftersom rutnätets storlek ändras.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="vanished">Edit Argumen Hasil String</translation>
+        <translation type="vanished">Redigera strängresultatargument</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Placera:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="vanished">Nama Hasil:</translation>
+        <translation type="vanished">Resultatnamn:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="vanished">Nama Variabel:</translation>
+        <translation type="vanished">Variabelnamn:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="vanished">SAYA:</translation>
+        <translation type="vanished">Jag:</translation>
     </message>
     <message>
         <source>J:</source>
@@ -2862,11 +2862,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="vanished">Indeks:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Värde för testning</translation>
     </message>
     <message>
         <source>Global</source>
@@ -2874,90 +2874,90 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nod</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="vanished">Nama variabel kosong.</translation>
+        <translation type="vanished">Variabelnamnet är tomt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Beräkningsresultat för inmatning</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="vanished">Jenis</translation>
+        <translation type="vanished">Typ</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Resultatnamn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Variabelnamn</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="vanished">Indeks</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="vanished">Nilai untuk Pengujian</translation>
+        <translation type="vanished">Värde för testning</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Redigera (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="vanished">Menghapus (&amp;D)...</translation>
+        <translation type="vanished">Radera (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="vanished">Definisi keluaran</translation>
+        <translation type="vanished">Definition av output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understrykning; färg:#0000ff; "&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Testa</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Är du säker att du vill radera %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
@@ -2965,34 +2965,34 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nod</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="vanished">tepiK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Ett fel uppstod när beräkningsresultatet skulle laddas.</translation>
     </message>
 </context>
 <context>
@@ -3003,268 +3003,268 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="vanished">Jenis kisi:</translation>
+        <translation type="vanished">Rutnätstyp:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="vanished">Wilayah: (&amp;R)</translation>
+        <translation type="vanished">Område: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation>kisi-kisi</translation>
+        <translation>Rutnät</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid</translation>
+        <translation>Grid Skapande skick</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="vanished">Kondisi Pembuatan Grid</translation>
+        <translation type="vanished">Grid skapar villkor</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation>Memuat file proyek...</translation>
+        <translation>Läser in projektfil...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation>Menyimpan file proyek...</translation>
+        <translation>Sparar projektfil...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation>Tidak dapat menimpa %1.</translation>
+        <translation>Det gick inte att skriva över %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation>Menyimpan proyek...</translation>
+        <translation>Sparar projekt...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation>Membuka proyek...</translation>
+        <translation>Öppnar projekt...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">Atribut grid elevasi tidak ditentukan untuk tipe grid %1. Fungsi grid I/O, fungsi pembuatan grid mungkin tidak bekerja dengan benar untuk tipe grid ini.</translation>
+        <translation type="vanished">Höjdenätattribut är inte definierat för rutnätstyp %1. Grid I/O -funktioner, nätverksskapande funktioner fungerar kanske inte korrekt för dessa ruttyper.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="vanished">Larutan %1 sudah ada.</translation>
+        <translation type="vanished">Lösning %1 existerar redan.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="vanished">File CGNS yang namanya mengandung karakter selain huruf dan angka tidak dapat diimpor.</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">CGNS -fil vars namn innehåller andra tecken än alfabet och siffror kan inte importeras.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="vanished">Ekspor file CGNS</translation>
+        <translation type="vanished">Exportera CGNS -fil</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="vanished">berkas CGNS (*.cgns)</translation>
+        <translation type="vanished">CGNS -fil (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="vanished">Mengekspor file CGNS gagal. File yang ditentukan dikunci oleh proses lain.</translation>
+        <translation type="vanished">Det gick inte att exportera CGNS -filen. Den angivna filen låses av en annan process.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka file CGNS di file proyek: %1</translation>
+        <translation type="vanished">Ett fel uppstod när CGNS -filen öppnades i projektfilen: %1</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="vanished">%1 Gagal menyimpan file proyek.</translation>
+        <translation type="vanished">%1 Det gick inte att spara projektfilen.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="vanished">Semua gambar (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
+        <translation type="vanished">Alla bilder (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation>Buka file Gambar</translation>
+        <translation>Öppna bildfil</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation>Gambar latar belakang dengan nama yang sama sudah ada.</translation>
+        <translation>Det finns redan en bakgrundsbild med samma namn.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="vanished">Gambar latar belakang tidak ditambahkan. Silakan coba lagi.</translation>
+        <translation type="vanished">Bakgrundsbilden har inte lagts till. Var god försök igen.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="vanished">File gambar yang ditentukan tidak valid.</translation>
+        <translation type="vanished">Ogiltig bildfil har angetts.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="vanished">File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi.) yang terlalu lama %1 ).</translation>
+        <translation type="vanished">Denna projektfil kan inte läsas, eftersom den skapades av för gammal iRIC (version %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation>File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi. yang lebih baru) %1 ).</translation>
+        <translation>Denna projektfil kan inte läsas, eftersom den skapades av nyare iRIC (version %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation>File Teks (*.csv *.txt);;All Files (*.*)</translation>
+        <translation>Textfiler (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation>Buka File Data Terukur</translation>
+        <translation>Öppna mätdatafilen</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation>Terjadi kesalahan saat memuat %1.</translation>
+        <translation>Ett fel uppstod vid laddning %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">File ini untuk pemecah %1 %2. Ini tidak kompatibel dengan solver yang Anda gunakan, jadi mungkin mengimpor file ini akan gagal. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation type="vanished">Denna fil är för lösare %1 %2. Det är inte kompatibelt med lösaren du använder, så kanske importen av den här filen misslyckas. Vill du verkligen importera den här filen?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation>Tidak ada jendela visualisasi/grafik.</translation>
+        <translation>Det finns inga visualiserings-/graffönster.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Mengajukan %1 tidak bisa dibuka.</translation>
+        <translation>Fil %1 kunde inte öppnas.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation>Sistem koordinat tidak dipilih.</translation>
+        <translation>Koordinatsystemet har inte valts.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>Terjadi kesalahan saat membuka file CGNS di file proyek: Case1.cgn</translation>
+        <translation>Ett fel uppstod när CGNS-filen öppnades i projektfilen: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
-        <translation>Menyalin gambar %1 ke %2 gagal.</translation>
+        <translation>Kopierar bild %1 till %2 misslyckades.</translation>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka %1. iRIC mencoba menyelamatkan data dari %2.</translation>
+        <translation type="vanished">Ett fel uppstod vid öppning %1. iRIC försöker rädda data från %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>Terjadi kesalahan saat membuka %1.</translation>
+        <translation>Ett fel uppstod vid öppning %1.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
-        <translation>Semua gambar (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+        <translation>Alla bilder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
         <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>File gambar yang ditentukan tidak valid. Akhiran file harus berupa "jpg", "jpeg", "png", atau "tif".</translation>
+        <translation>Ogiltig bildfil har angetts. Filsuffix ska vara ett av "jpg", "jpeg", "png" eller "tif".</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
-        <translation>Terjadi kesalahan saat membuat folder %1</translation>
+        <translation>Ett fel uppstod när mappen skapades %1</translation>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation>Hasil perhitungan rusak, dan tidak dapat membuka proyek. Apakah Anda ingin membuang hasil perhitungan, dan mengembalikan data masukan?</translation>
+        <translation>Beräkningsresultatet är trasigt och kan inte öppna projektet. Vill du kassera beräkningsresultatet och återställa indata?</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation>: tidak ada file tersebut.</translation>
+        <translation>: ingen sådan fil.</translation>
     </message>
 </context>
 <context>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation>Pilih jendela target impor</translation>
+        <translation>Välj importmålfönster</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation>Pilih jendela target ekspor</translation>
+        <translation>Välj exportmålfönster</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation>Tanggal untuk t = 0 pengaturan</translation>
+        <translation>Datum för t = 0 inställning</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation>Waktu untuk t = 0:</translation>
+        <translation>Dags för t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation>Tidak ditentukan</translation>
+        <translation>Ej angivet</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation>Format tampilan waktu</translation>
+        <translation>Tidsformat</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Zona waktu:</translation>
+        <translation>Tidszon:</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
         <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <translation>Arbetsyta "%1"har %2 projektmappar som verkar inte användas längre. Vill du ta bort dem?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Information</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation>Peramban Atribut</translation>
+        <translation>Attribut webbläsare</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation>indeks</translation>
+        <translation>Index</translation>
     </message>
     <message>
         <source>1</source>
@@ -3276,15 +3276,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I:</source>
-        <translation>SAYA:</translation>
+        <translation>Jag:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation>Index:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Koordinat</translation>
+        <translation>Koordinater</translation>
     </message>
     <message>
         <source>X:</source>
@@ -3296,119 +3296,119 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation>Atribut:</translation>
+        <translation>Attribut:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation>Nama Atribut</translation>
+        <translation>Attributnamn</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Värde</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Size: 1024 x 768</source>
-        <translation>Ukuran: 1024x768</translation>
+        <translation>Storlek: 1024 x 768</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Ukuran: %1</translation>
+        <translation>Storlek: %1</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget_EditDialog</name>
     <message>
         <source>Edit Window Size</source>
-        <translation>Edit Ukuran Jendela</translation>
+        <translation>Redigera fönsterstorlek</translation>
     </message>
     <message>
         <source>Note: The size you input is for the area saved to screenshots. The area of the Object Browser etc. are not included.</source>
-        <translation>Catatan: Ukuran yang Anda masukkan adalah untuk area yang disimpan ke tangkapan layar. Area Object Browser dll. tidak termasuk.</translation>
+        <translation>Obs: Storleken du anger är för det område som sparats till skärmdumpar. Området för objektbläddraren etc. ingår inte.</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="obsolete">Mode</translation>
+        <translation type="obsolete">Läge</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="obsolete">Lebar:</translation>
+        <translation type="obsolete">Bredd:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="obsolete">Tinggi:</translation>
+        <translation type="obsolete">Höjd:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <source>Draw</source>
-        <translation type="vanished">Seri</translation>
+        <source>Background Color</source>
+        <translation>Bakgrundsfärg</translation>
     </message>
     <message>
-        <source>Move up item</source>
-        <translation>Pindahkan item ke atas</translation>
+        <source>Draw</source>
+        <translation type="vanished">Dra</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Pindahkan item ke bawah</translation>
+        <translation>Flytta objektet nedåt</translation>
+    </message>
+    <message>
+        <source>Move up item</source>
+        <translation>Flytta upp objektet</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation>Gerakan Sewenang-wenang</translation>
+        <translation>Godtyckligt drag</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation>Alokasikan Ulang Gambar Latar Belakang</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Bawaan</translation>
-    </message>
-    <message>
-        <source>(Undefined)</source>
-        <translation>(Tidak terdefinisi)</translation>
-    </message>
-    <message>
-        <source>Background Color</source>
-        <translation>Warna latar belakang</translation>
+        <translation>Omfördela bakgrundsbild</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation>Setel offset</translation>
+        <translation>Ställ in förskjutning</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>(Undefined)</source>
+        <translation>(Odefinierad)</translation>
     </message>
 </context>
 <context>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation>Wilayah Penuh</translation>
+        <translation>Hela regionen</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation>Wilayah Aktif</translation>
+        <translation>Aktiv region</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation>Daerah Pabean</translation>
+        <translation>Anpassad region</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="vanished">saya Min:</translation>
+        <translation type="vanished">Jag är i:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="vanished">saya maks:</translation>
+        <translation type="vanished">Jag Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3416,22 +3416,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="vanished">J Maks:</translation>
+        <translation type="vanished">J Max:</translation>
     </message>
 </context>
 <context>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>saya Min:</translation>
+        <translation>Jag är i:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>saya maks:</translation>
+        <translation>Jag Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3439,159 +3439,159 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Maks:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="vanished">Pengaturan Warna</translation>
+        <translation type="vanished">Färginställning</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation>%1 kisi-kisi</translation>
+        <translation>%1 Rutnät</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionGridType</name>
     <message>
         <source>%1 (magnitude)</source>
-        <translation>%1 (besarnya)</translation>
+        <translation>%1 (magnitud)</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslator</name>
     <message>
         <source> (magnitude)</source>
-        <translation>(besarnya)</translation>
+        <translation>(magnitud)</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="vanished">Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation type="vanished">En kantlinje skär med den för en annan cell i detta rutnät.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="vanished">Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Bildförhållandet för rutnätcellen överskrider gränsvärdet %1 i mer än en cell.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="vanished">Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
+        <translation type="vanished">Variation av rutnätcellslängder överskrider gränsvärden (I-riktning: %1, J-riktning: %2 ) i mer än en cell.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="vanished">Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Vinkeln på rutnätcellens kant faller under gränsvärdet %1 i mer än en cell.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="vanished">* Sel di mana ujung-ujungnya berpotongan</translation>
+        <translation type="vanished">* Celler där kanter skär varandra</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="vanished">Tidak ada</translation>
+        <translation type="vanished">Inte existera</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="vanished">* Sel di mana rasio aspek tepi sel melebihi %1</translation>
+        <translation type="vanished">* Celler där bildförhållandet mellan cellkanter överstiger %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="vanished">I, J, Rasio aspek</translation>
+        <translation type="vanished">I, J, Bildförhållande</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="vanished">Panjang tepi terlalu kecil</translation>
+        <translation type="vanished">Kantlängden för liten</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="vanished">* Sel di mana sudut simpul sel di bawah %1</translation>
+        <translation type="vanished">* Celler där cellpunktens vinkel är under %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="vanished">Saya, J, Sudut</translation>
+        <translation type="vanished">Jag, J, vinkel</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
+        <translation type="vanished">* Celler där variation av celllängd längs i-riktning överstiger %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="vanished">I, J, Variasi</translation>
+        <translation type="vanished">I, J, Variation</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation type="vanished">* Celler där variationen av celllängd längs j-riktningen överstiger %1</translation>
     </message>
 </context>
 <context>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Provtagning</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Alla hörn</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Samplingshastighet:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>I-riktning</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>J-riktning</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Provtagning</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Alla hörn</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Samplingshastighet:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>I-riktning</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>J-riktning</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-arah</translation>
+        <translation>K-riktning</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>-</source>
@@ -3611,131 +3611,131 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>max</source>
-        <translation>maks</translation>
+        <translation>max</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation>Gambar Latar Belakang (Internet)</translation>
+        <translation>Bakgrundsbilder (Internet)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation>Untuk mendapatkan gambar latar belakang dari internet, tentukan sistem koordinat proyek, dari menu berikut. File -&gt; Properti</translation>
+        <translation>För att få bakgrundsbild från internet, ange projektets samordnade system, från följande meny. Arkiv -&gt; Egendom</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation>Perubahan Gambar Latar Belakang</translation>
+        <translation>Ändra bakgrundsbild</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="vanished">Google Peta (Jalan)</translation>
+        <translation type="vanished">Google Map (Road)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="vanished">Google Map (Satelit)</translation>
+        <translation type="vanished">Google Map (satellit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="vanished">Google Peta (Hibrida)</translation>
+        <translation type="vanished">Google Map (hybrid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="vanished">Google Peta (Medan)</translation>
+        <translation type="vanished">Google Map (terräng)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation>Buka Peta Jalan</translation>
+        <translation>Öppna gatukartan</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation>GSI (Standar) (Jepang saja)</translation>
+        <translation>GSI (Standard) (endast Japan)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation>GSI (Pucat) (Jepang saja)</translation>
+        <translation>GSI (blek) (endast Japan)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation>GSI (Bahasa Inggris) (Jepang saja)</translation>
+        <translation>GSI (engelska) (endast Japan)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation>GSI (Relief) (Jepang saja)</translation>
+        <translation>GSI (Relief) (endast Japan)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation>GSI (Gambar Ortho) (Jepang saja)</translation>
+        <translation>GSI (Ortho -bilder) (endast Japan)</translation>
     </message>
     <message>
         <source>Google Maps</source>
-        <translation>Google Peta</translation>
+        <translation>Google kartor</translation>
     </message>
     <message>
         <source>Google Streets</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Streets</translation>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation>Google Satelit</translation>
+        <translation>Google Satellit</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
-        <translation>Hibrida Satelit Google</translation>
+        <translation>Google Satellite Hybrid</translation>
     </message>
     <message>
         <source>Google Roads</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Roads</translation>
     </message>
     <message>
         <source>Google Terrain</source>
-        <translation>Google Medan</translation>
+        <translation>Google Terräng</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Angle: 13</source>
-        <translation>Sudut: 13</translation>
+        <translation>Vinkel: 13</translation>
     </message>
     <message>
         <source>Angle: %1</source>
-        <translation>Sudut: %1</translation>
+        <translation>Vinkel: %1</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget_AngleEditDialog</name>
     <message>
         <source>Edit Angle</source>
-        <translation>Sunting Sudut</translation>
+        <translation>Redigera vinkel</translation>
     </message>
     <message>
         <source>Please input new angle</source>
-        <translation>Silakan masukkan sudut baru</translation>
+        <translation>Vänligen ange ny vinkel</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scale: 1 / 3.123</source>
-        <translation>Skala: 1 / 3.123</translation>
+        <translation>Skala: 1 / 3,123</translation>
     </message>
     <message>
         <source>Scale: %1</source>
@@ -3746,11 +3746,11 @@ Do you really want to import this file?</source>
     <name>VtkGraphicsViewScaleWidget_ScaleEditDialog</name>
     <message>
         <source>Edit Scale</source>
-        <translation>Sunting Skala</translation>
+        <translation>Redigera skala</translation>
     </message>
     <message>
         <source>Please input new scale</source>
-        <translation>Silakan masukkan skala baru</translation>
+        <translation>Vänligen ange ny skala</translation>
     </message>
     <message>
         <source>1 / </source>
@@ -3761,96 +3761,96 @@ Do you really want to import this file?</source>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>Nomor pembuatan nomor versi tidak ditentukan.</translation>
+        <translation>Versionsnummerets buildnummer är inte specificerat.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Terjadi kesalahan: %1</translation>
+        <translation>Fel uppstod: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Memeriksa argumen untuk %1 gagal. Argumen yang tidak valid: %2.</translation>
+        <translation>Kontrollerar argument för %1 misslyckades. Ogiltiga argument: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation>Redigera resultatvariabel för enkel operation</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Hasil Perhitungan:</translation>
+        <translation>Beräkningsresultat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nama variabel:</translation>
+        <translation>Variabelnamn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Nilai untuk pengujian:</translation>
+        <translation>Värde för testning:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nama variabel tidak dimasukkan.</translation>
+        <translation>Variabelnamn matas inte in.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Nama variabel ini sudah digunakan</translation>
+        <translation>Detta variabelnamn används redan</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edit Hasil Operasi Sederhana</translation>
+        <translation>Redigera resultat för enkel operation</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisi:</translation>
+        <translation>Placera:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Hasil perhitungan untuk masukan</translation>
+        <translation>Beräkningsresultat för inmatning</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Radera (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definisi variabel</translation>
+        <translation>Definition av variabel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definiera variabeln med JavaScript-språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;här&lt;/span&gt;&lt;/a&gt; för detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Testa</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisinya dengan mengklik ini. Jika terjadi kesalahan saat mengurai definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diurai, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap masukan ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan testa definitionen genom att klicka här. Om ett fel uppstår när definitionen analyseras, visas felmeddelandet. När definitionen har analyserats framgångsrikt beräknas värdet med &amp;quot;Värde för testningquot; för varje ingång visas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3858,35 +3858,35 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nama hasil</translation>
+        <translation>Resultatnamn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nama variabel</translation>
+        <translation>Variabelnamn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Nilai untuk pengujian</translation>
+        <translation>Värde för testning</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Grid nod</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Rutnätscell</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
@@ -3894,86 +3894,86 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nama tidak dimasukkan.</translation>
+        <translation>Namn anges inte.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Nama ini sudah digunakan</translation>
+        <translation>Detta namn används redan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>Är du säker att du vill radera %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Daftar Hasil Operasi Sederhana</translation>
+        <translation>Resultatlista för enkel operation</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>namn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Ke atas (&amp;U)</translation>
+        <translation>Upp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Turun (&amp;D)</translation>
+        <translation>Ner (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar itu penting. Dalam definisinya, Anda bisa menggunakan nilai penghitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs&lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla operationsberäkningar som en variabel, som visas tidigare i listan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Sunting (&amp;E)...</translation>
+        <translation>Redigera (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Radera (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>Är du säker att du vill radera %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Grid nod</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Rutnätscell</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
@@ -3988,70 +3988,70 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis Kotak:</translation>
+        <translation>Rutnätstyp:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Wilayah: (&amp;R)</translation>
+        <translation>Område: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation>En kantlinje skär den i en annan cell i detta rutnät.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Rasio aspek sel kisi melebihi nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Bildförhållandet för rutnätscellen överskrider gränsvärdet %1 i mer än en cell.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Variasi panjang tepi sel grid melebihi nilai batas (arah I: %1, arah J: %2 ) di lebih dari satu sel.</translation>
+        <translation>Variation av rutnätscellers kantlängder överskrider gränsvärdena (I-riktning: %1, J-riktning: %2 ) i mer än en cell.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Sudut tepi sel grid berada di bawah nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Vinkeln på rutnätscellens kant faller under gränsvärdet %1 i mer än en cell.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Sel tempat ujung-ujungnya berpotongan</translation>
+        <translation>* Celler där kanterna skär varandra</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Tidak ada</translation>
+        <translation>Inte existera</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Sel yang rasio aspek tepi selnya melebihi %1</translation>
+        <translation>* Celler där bildförhållandet för cellkanterna överstiger %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Rasio aspek</translation>
+        <translation>I, J, Bildförhållande</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Panjang tepinya terlalu kecil</translation>
+        <translation>Kantlängden är för liten</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Sel yang sudut puncak selnya berada di bawah %1</translation>
+        <translation>* Celler där vinkeln på cellens vertex är under %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>Saya, J, Sudut</translation>
+        <translation>I, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah i melebihi %1</translation>
+        <translation>* Celler där variationen av celllängd längs i-riktningen överskrider %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Variasi</translation>
+        <translation>I, J, Variation</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation>* Celler där variationen av celllängd längs j-riktningen överstiger %1</translation>
     </message>
 </context>
 </TS>

@@ -2808,11 +2808,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation type="vanished">Adatok olvasása az eredményből/megoldásból %1.cgn nem sikerült. A számítási eredményt megjelenítheti a Solution1.cgn to Solution fájlban %2.cgn.</translation>
-    </message>
-    <message>
-        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
-        <translation>Adatok olvasása az eredményből/megoldásból %1.cgn nem sikerült. Megjelenítheti a számítási eredményt a Solution1.cgn to Solution fájlban %2.cgn. Törölni szeretné az eredményt/megoldást? %1.cgn?</translation>
+        <translation>Adatok olvasása az eredményből/megoldásból %1.cgn nem sikerült. A számítási eredményt megjelenítheti a Solution1.cgn to Solution fájlban %2.cgn.</translation>
     </message>
 </context>
 <context>

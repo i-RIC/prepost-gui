@@ -1,295 +1,295 @@
-<TS version="2.1" language="id_ID">
+<TS version="2.1" language="vi_VN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Tự phối màu</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>Theo giá trị vô hướng</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>Sunting (&amp;E)</translation>
+        <translation>Biên tập (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation>Pengaturan Peta Warna (%1)</translation>
+        <translation>Cài đặt bản đồ màu (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Tự phối màu</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>Theo giá trị vô hướng</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="vanished">Impor (&amp;I)...</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="vanished">Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Peta warna</translation>
+        <translation>bản đồ màu</translation>
     </message>
 </context>
 <context>
     <name>ArrowsGeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="obsolete">Membentuk</translation>
+        <translation type="obsolete">Mẫu đơn</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Tiêu đề :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Cài đặt phông chữ:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Chiều dài</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Định dạng:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Panjang:</translation>
+        <translation>Chiều dài:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Lý lịch:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Kích thước và Vị trí</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Dễ thấy</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Vẽ đường viền</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Chiều dài</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation>Giá trị tiêu chuẩn:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation>[bệnh đa xơ cứng]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation>Chiều dài trên màn hình:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation>[điểm ảnh]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation>Giá trị tối thiểu để vẽ:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="vanished">Nilai:</translation>
+        <translation type="vanished">Giá trị:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Chú giải chiều dài</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Dasar</translation>
+        <translation>Nền tảng</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">Peta warna</translation>
+        <translation type="vanished">bản đồ màu</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Legend of Length</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Truyền thuyết về chiều dài</translation>
     </message>
     <message>
         <source>(Custom Color)</source>
-        <translation>(Warna Kustom)</translation>
+        <translation>(Tự phối màu)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation>hình mũi tên</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Kích thước mũi tên:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Chiều rộng dòng:</translation>
     </message>
 </context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation>Harap tentukan poligon tertutup!</translation>
+        <translation>Vui lòng chỉ định một đa giác đóng!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation>Tidak dapat membaca gambar %1</translation>
+        <translation>Không thể đọc hình ảnh %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">dalam file %1, kenaikan koordinat x per piksel dan kenaikan koordinat y per piksel tidak cocok. Itu dapat diterima, tetapi mungkin salah.</translation>
+        <translation type="vanished">Trong tập tin %1, gia số tọa độ x trên mỗi pixel và gia số tọa độ y trên mỗi pixel không khớp. Nó có thể chấp nhận được, nhưng nó có thể sai.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation>Pilih titik yang sesuai pada Jendela Utama.</translation>
+        <translation>Chọn một điểm tương ứng trên Cửa sổ chính.</translation>
     </message>
     <message>
         <source>Fix Image position</source>
-        <translation>Perbaiki posisi Gambar</translation>
+        <translation>Sửa vị trí hình ảnh</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation>Posisi Gambar Latar Belakang</translation>
+        <translation>Vị trí hình nền</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation>Metode penunjukan</translation>
+        <translation>Phương pháp chỉ định</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Tentukan posisi vertex kiri bawah, skala, dan sudut putar</translation>
+        <translation>Chỉ định vị trí đỉnh dưới cùng bên trái, tỷ lệ và góc xoay</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation>Tentukan posisi vertex kiri bawah dan kanan bawah</translation>
+        <translation>Chỉ định vị trí đỉnh dưới cùng bên trái và dưới cùng bên phải</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation>Titik kiri bawah</translation>
+        <translation>Đỉnh dưới cùng bên trái</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation>X:</translation>
+        <translation>NS:</translation>
     </message>
     <message>
         <source>Y:</source>
@@ -297,136 +297,136 @@
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation>Simpul kanan bawah</translation>
+        <translation>Đỉnh dưới cùng bên phải</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Skala:</translation>
+        <translation>Tỉ lệ:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation>Putar Sudut:</translation>
+        <translation>Xoay góc:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tentukan jarak dalam meter yang sesuai dengan lebar satu piksel gambar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Chỉ định khoảng cách tính bằng mét tương ứng với chiều rộng của một pixel của hình ảnh. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menentukan sudut tepi bawah gambar terhadap sumbu X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Chỉ định góc của cạnh dưới hình ảnh so với trục X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation>Georeferensi</translation>
+        <translation>Tham khảo địa lý</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation>Tekan tombol</translation>
+        <translation>PushButton</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Bersembunyi</translation>
+        <translation>Ẩn giấu</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Menunjukkan</translation>
+        <translation>Chỉ</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Pilih kisi yang akan diimpor</translation>
+        <translation>Chọn lưới để nhập</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Silakan pilih grid mana yang akan diimpor</translation>
+        <translation>Vui lòng chọn lưới để nhập</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Tiêu đề :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Cài đặt phông chữ:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Nhãn:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Lý lịch:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Kích thước và Vị trí</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Dễ thấy</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Phương hướng:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Thẳng đứng</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>chiều rộng thanh</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>px</source>
@@ -434,267 +434,267 @@
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>căn chỉnh</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Bên trái</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Trung tâm</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Phải</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Vẽ đường viền</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Bỏ qua cài đặt thanh Màu khi nhập</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Cài đặt thanh màu</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Chọn tệp để nhập</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="vanished">Pengaturan peta warna (*.cmsetting)</translation>
+        <translation type="vanished">Cài đặt bản đồ màu (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Nhập tên tệp để xuất</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>Đã xảy ra lỗi khi mở %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Giá trị</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Trong suốt</translation>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Liệt kê cài đặt bản đồ màu (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Liệt kê cài đặt bản đồ màu (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>Đã xảy ra lỗi khi nhập cài đặt từ %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Công cộng (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>Riêng tư (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Nhập cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Cách thức</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Chọn từ các tiêu chuẩn</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Chọn tập tin</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Tiêu chuẩn</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Tài liệu</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Thuộc tính để nhập</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Phương hướng</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Cài đặt phông chữ</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Nhãn</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Lý lịch</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Kích thước và Vị trí</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Kích cỡ</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>chiều rộng thanh</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>căn chỉnh</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>Xem trước</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Hình thức</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="vanished">Diskriminasi rasial</translation>
+        <translation type="vanished">Thanh màu</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="vanished">Horisontal</translation>
+        <translation type="vanished">Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="vanished">Vertikal</translation>
+        <translation type="vanished">Thẳng đứng</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Umum</translation>
+        <translation>Chung</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Phương hướng:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Thẳng đứng</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation>huruf</translation>
+        <translation>Nét chữ</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation>Label:</translation>
+        <translation>Nhãn:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Nhãn:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Lý lịch:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Gambarlah batas</translation>
+        <translation>Vẽ đường viền</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation>Batas</translation>
+        <translation>Lề</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="obsolete">Batas Horisontal:</translation>
+        <translation type="obsolete">Lề ngang:</translation>
     </message>
     <message>
         <source>%</source>
@@ -702,150 +702,150 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="obsolete">Batas Vertikal:</translation>
+        <translation type="obsolete">Lề dọc:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Kích cỡ</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Chiều rộng:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation>piksel</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Chiều cao:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Chiều rộng thanh</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Căn chỉnh</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Bên trái</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Trung tâm</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Phải</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation>Posisi</translation>
+        <translation>Vị trí</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation>Horisontal:</translation>
+        <translation>Nằm ngang:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation>Vertikal:</translation>
+        <translation>Thẳng đứng:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Tiêu đề :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Pengaturan Fon:</translation>
+        <translation>Cài đặt phông chữ:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Định dạng:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Nhãn:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Lý lịch:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Kích thước và Vị trí</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Phương hướng:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Thẳng đứng</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Jumlah label:</translation>
+        <translation>Số nhãn:</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Dễ thấy</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>chiều rộng thanh</translation>
     </message>
     <message>
         <source>px</source>
@@ -853,454 +853,454 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>căn chỉnh</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Bên trái</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Trung tâm</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Phải</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Vẽ đường viền</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation>Tingkat melewatkan:</translation>
+        <translation>Tỷ lệ bỏ qua:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="obsolete">Dialog</translation>
+        <translation type="obsolete">Hộp thoại</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation>Cài đặt bản đồ màu</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="vanished">Preset:</translation>
+        <translation type="vanished">cài đặt trước:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Bỏ qua cài đặt thanh Màu khi nhập</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation>Hubungan antara nilai dan warna</translation>
+        <translation>Mối quan hệ giữa các giá trị và màu sắc</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation>Sesuaikan secara otomatis berdasarkan rentang nilai</translation>
+        <translation>Tự động điều chỉnh dựa trên phạm vi giá trị</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation>Atur Secara Manual</translation>
+        <translation>Thiết lập thủ công</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Phạm vi giá trị</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Otomatis</translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>tối đa:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation>tối thiểu:</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Thêm vào (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation>Di dời (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Isi area bawah</translation>
+        <translation>Điền vào khu vực thấp hơn</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Isi area atas</translation>
+        <translation>Điền vào khu vực phía trên</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Công tắc</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Cài đặt thanh màu</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Chọn tệp để nhập</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Cài đặt bản đồ màu (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Nhập tên tệp để xuất</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>Đã xảy ra lỗi khi mở %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="vanished">(Silakan pilih item untuk diterapkan)</translation>
+        <translation type="vanished">(Vui lòng chọn mục để áp dụng)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation>Beralih ke Mode Diskrit</translation>
+        <translation>Chuyển sang chế độ rời rạc</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation>Beralih ke Mode Gradasi</translation>
+        <translation>Chuyển sang Chế độ chuyển màu</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Giá trị</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation>Nilai minimal</translation>
+        <translation>Giá trị tối thiểu</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation>Nilai maks</translation>
+        <translation>giá trị tối đa</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Trong suốt</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="vanished">Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
+        <translation type="vanished">Khi chuyển sang Chế độ chuyển màu, các giá trị được đặt thành giá trị ở giữa của mỗi phần.</translation>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="vanished">Membalikkan warna (&amp;R)</translation>
+        <translation type="vanished">Đảo ngược màu sắc (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="vanished">Pembagian yang setara (&amp;E)</translation>
+        <translation type="vanished">chia đều (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation>Warna Terbalik (&amp;R)</translation>
+        <translation>Màu đảo ngược (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation>Divisi yang Setara (&amp;E)</translation>
+        <translation>Chia đều (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation>Ubah Nomor. Warna</translation>
+        <translation>Thay đổi số. Màu sắc</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Cài đặt bản đồ màu (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>Đã xảy ra lỗi khi nhập cài đặt từ %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Công cộng (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>Riêng tư (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Xuất khẩu (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation>Ubah Jumlah Warna</translation>
+        <translation>Thay đổi số lượng màu</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Số lượng màu sắc:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Phạm vi giá trị</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Tối đa:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation>tối thiểu:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>Tùy chọn</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Giá trị số thập phân:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Nhập cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Cách thức</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Chọn từ các tiêu chuẩn</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Chọn tập tin</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Tiêu chuẩn</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Tài liệu</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Thuộc tính để nhập</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Phương hướng</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Cài đặt phông chữ</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation>Format</translation>
+        <translation>Định dạng</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation>Jumlah label</translation>
+        <translation>Số lượng nhãn</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Nhãn</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Lý lịch</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Kích thước và Vị trí</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>Kích cỡ</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>chiều rộng thanh</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>căn chỉnh</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>Xem trước</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation>Beralih ke Dialog Mode Diskrit</translation>
+        <translation>Chuyển sang hộp thoại Chế độ rời rạc</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>tối đa:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation>tối thiểu:</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="vanished">Jumlah warna untuk disisipkan di setiap bagian</translation>
+        <translation type="vanished">Số lượng màu để chèn vào mỗi phần</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Phạm vi giá trị</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Số màu:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>Tùy chọn</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Giá trị chữ số thập phân:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation>Skala log:</translation>
+        <translation>Đăng nhập quy mô:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Đã bật</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Diskriminasi rasial</translation>
+        <translation>Thanh màu</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Thẳng đứng</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="vanished">Atribut</translation>
+        <translation type="vanished">Thuộc tính</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Warna</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Draw contour lines</source>
-        <translation>Menggambar garis kontur</translation>
+        <translation>Vẽ đường đồng mức</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>px</source>
@@ -1308,26 +1308,26 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Use values of colormap</source>
-        <translation>Gunakan nilai colormap</translation>
+        <translation>Sử dụng các giá trị của colormap</translation>
     </message>
     <message>
         <source>Specify division number</source>
-        <translation>Tentukan nomor divisi</translation>
+        <translation>Chỉ định số phân chia</translation>
     </message>
 </context>
 <context>
     <name>CoordinateSystemDisplayWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>CS: (not specified)</source>
-        <translation>CS: (tidak ditentukan)</translation>
+        <translation>CS: (không xác định)</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(Tidak Ditentukan)</translation>
+        <translation>(Không được chỉ định)</translation>
     </message>
     <message>
         <source>CS: %1</source>
@@ -1338,46 +1338,46 @@ Parse error %2 at %3, column %4</source>
     <name>DelegatedColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Use Setting of Pre-processing Window</source>
-        <translation>Gunakan Pengaturan Jendela Pra-pemrosesan</translation>
+        <translation>Sử dụng Cài đặt của Cửa sổ tiền xử lý</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>DirectionSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Kích thước mũi tên:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Độ rộng dòng:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Màu sắc:</translation>
     </message>
     <message>
         <source>Normal:</source>
-        <translation>Normal:</translation>
+        <translation>Bình thường:</translation>
     </message>
     <message>
         <source>Invalid:</source>
-        <translation>Tidak sah:</translation>
+        <translation>Không hợp lệ:</translation>
     </message>
 </context>
 <context>
@@ -1403,466 +1403,466 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Lấy mẫu</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Tất cả các đỉnh</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Tentukan jumlah simpul</translation>
+        <translation>Chỉ định số lượng đỉnh</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Edit Nama (&amp;N)...</translation>
+        <translation>Chỉnh sửa tên (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation>Bawaan</translation>
+        <translation>Vỡ nợ</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation>Sunting nilai...</translation>
+        <translation>Chỉnh sửa giá trị...</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation>Nilai edit latar belakang</translation>
+        <translation>Giá trị chỉnh sửa nền</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation>Sunting %1 nilai default</translation>
+        <translation>Chỉnh sửa %1 giá trị mặc định</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation>Harap masukkan nilai default baru.</translation>
+        <translation>Vui lòng nhập giá trị mặc định mới.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>Tiểu sử</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation>Nilai minimum data geografis</translation>
+        <translation>Giá trị tối thiểu của dữ liệu địa lý</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation>Nilai maksimum data geografis</translation>
+        <translation>Giá trị tối đa của dữ liệu địa lý</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation>Nilai khusus</translation>
+        <translation>Giá trị tùy chỉnh</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation>Tidak ada titik yang dipilih.</translation>
+        <translation>Không có điểm nào được chọn.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation>Tidak ada poin yang dapat dihapus lebih lanjut.</translation>
+        <translation>Không có điểm nào có thể bị xóa thêm.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation>Pilih titik pada dialog Georeferensi.</translation>
+        <translation>Chọn một điểm trên hộp thoại Georeference.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Hapus Poin</translation>
+        <translation>Xóa điểm</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation>Perubahan Item Browser Objek</translation>
+        <translation>Thay đổi mục trình duyệt đối tượng</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation>Bilah Alat Operasi</translation>
+        <translation>Thanh công cụ hoạt động</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation>Tidak ada Color Bar yang aktif</translation>
+        <translation>Không có Thanh màu hoạt động</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation>Pengaturan Massal Bilah Warna</translation>
+        <translation>Cài đặt hàng loạt thanh màu</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeCellSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Độ rộng dòng:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation>label:</translation>
+        <translation>nhãn mác:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation>Langkah Mundur (&amp;B)</translation>
+        <translation>Bước giật lùi (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation>Maju (&amp;F)</translation>
+        <translation>Bước về phía trước (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>Mengatur ulang (&amp;R)</translation>
+        <translation>Cài lại (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation>Pergi ke Langkah Terakhir (&amp;L)</translation>
+        <translation>Đến bước cuối cùng (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation>Mulai/Hentikan Animasi (&amp;S)</translation>
+        <translation>Bắt đầu / Dừng hoạt ảnh (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation>Hentikan Animasi (&amp;T)</translation>
+        <translation>Ngừng hoạt ảnh (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation>Pengaturan Kecepatan Animasi (&amp;A)...</translation>
+        <translation>Cài đặt tốc độ hoạt ảnh (&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>Nhãn văn bản</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>Nhãn văn bản</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Chỉnh sửa (các) giá trị thuộc tính lưới</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeNodeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Paint</source>
-        <translation>Cat</translation>
+        <translation>Sơn</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poin</translation>
+        <translation>Điểm</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Titik:</translation>
+        <translation>Kích thước điểm:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>Nhãn văn bản</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Chỉnh sửa (các) giá trị thuộc tính lưới</translation>
     </message>
 </context>
 <context>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Thêm vào (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>There must be one group at least.</source>
-        <translation>Setidaknya harus ada satu kelompok.</translation>
+        <translation>Ít nhất phải có một nhóm.</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation>Nama harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Tên chỉ được bao gồm các ký tự tiếng Anh.</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Công tắc</translation>
     </message>
     <message>
         <source>Columns %1 are ignored. Expected names are %2</source>
-        <translation>Kolom %1 diabaikan. Nama yang diharapkan adalah %2</translation>
+        <translation>Cột %1 bị bỏ qua. Những cái tên dự kiến %2</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pilih file yang akan diimpor</translation>
+        <translation>Chọn tệp để nhập</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>berkas CSV (*.csv)</translation>
+        <translation>tệp CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation>Pembukaan %1 gagal.</translation>
+        <translation>Khai mạc %1 thất bại.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation>Pilih file yang akan diekspor</translation>
+        <translation>Chọn tập tin để xuất</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>Tên</translation>
     </message>
     <message>
         <source>Switch to Table view</source>
-        <translation>Beralih ke tampilan Tabel</translation>
+        <translation>Chuyển sang chế độ xem bảng</translation>
     </message>
     <message>
         <source>Switch to List view</source>
-        <translation>Beralih ke tampilan Daftar</translation>
+        <translation>Chuyển sang chế độ xem Danh sách</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>Target:</source>
-        <translation>Target:</translation>
+        <translation>Mục tiêu:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Các sửa đổi bạn đã thực hiện sẽ bị loại bỏ.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation>Target</translation>
+        <translation>Mục tiêu</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Pengaturan</translation>
+        <translation>Thiết lập</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation>Gunakan sebagai Nilai Default</translation>
+        <translation>Sử dụng làm giá trị mặc định</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Màu sắc:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid (&amp;G)</translation>
+        <translation>Điều kiện tạo lưới (&amp;G)</translation>
     </message>
 </context>
 <context>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="vanished">Pengaturan kontur</translation>
+        <translation type="vanished">Thiết lập đường viền</translation>
     </message>
 </context>
 <context>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
 </context>
 <context>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation>Batas Horisontal:</translation>
+        <translation>Lề ngang:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation>Batas Vertikal:</translation>
+        <translation>Lề dọc:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Chiều rộng:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Chiều cao:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation>Jarak dari kiri</translation>
+        <translation>Khoảng cách từ bên trái</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation>Jarak dari kanan</translation>
+        <translation>Khoảng cách từ bên phải</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation>Jarak dari atas</translation>
+        <translation>Khoảng cách từ trên xuống</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation>Jarak dari bawah</translation>
+        <translation>Khoảng cách từ đáy</translation>
     </message>
     <message>
         <source>%</source>
@@ -1874,143 +1874,143 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation>Ukuran Otomatis</translation>
+        <translation>Kich thươc tự động</translation>
     </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
     <message>
         <source>Select Input CGNS File</source>
-        <translation>Pilih Masukkan File CGNS</translation>
+        <translation>Chọn tệp CGNS đầu vào</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Do you want to import grid from the CGNS file?</source>
-        <translation>Apakah Anda ingin mengimpor kisi dari file CGNS?</translation>
+        <translation>Bạn có muốn nhập lưới từ tệp CGNS không?</translation>
     </message>
     <message>
         <source>Select CGNS file</source>
-        <translation>Pilih file CGNS</translation>
+        <translation>Chọn tệp CGNS</translation>
     </message>
     <message>
         <source>Please select from which CGNS file to read grid.</source>
-        <translation>Silakan pilih dari file CGNS mana yang akan dibaca grid.</translation>
+        <translation>Vui lòng chọn từ tệp CGNS để đọc lưới.</translation>
     </message>
     <message>
         <source>CGNS File</source>
-        <translation>File CGNS</translation>
+        <translation>Tệp CGNS</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation>Node definisi tidak disimpan</translation>
+        <translation>Nút định nghĩa không được lưu trữ</translation>
     </message>
     <message>
         <source>Wrong valueType "%1" is set.</source>
-        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
+        <translation>Giá trị sai %1 "được thiết lập.</translation>
     </message>
     <message>
         <source>Wrong conditionType "%1"is set.</source>
-        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
+        <translation>Điều kiện sai %1 "được thiết lập.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDependency</name>
     <message>
         <source>Unhandled widget in ActionSetValue</source>
-        <translation>Widget tidak tertangani di ActionSetValue</translation>
+        <translation>Tiện ích con không được xử lý trong ActionSetValue</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Điều kiện tính toán</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">Simpan dan tutup (&amp;S)</translation>
+        <translation type="vanished">Lưu và đóng (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation>File CGNS ini dibuat untuk %1 Versi: kapan %2. Ini tidak kompatibel dengan pemecah saat ini.</translation>
+        <translation>Tệp CGNS này được tạo cho %1 phiên bản %2. Nó không tương thích với bộ giải hiện tại.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation>File CGNS ini tidak memiliki informasi pemecah masalah. Kami tidak dapat memeriksa apakah file CGNS ini kompatibel dengan solver. Jika tidak kompatibel, mungkin hanya sebagian dari kondisi yang akan diimpor. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation>Tệp CGNS này không có thông tin về bộ giải. Chúng tôi không thể kiểm tra xem tệp CGNS này có tương thích với bộ giải hay không. Nếu nó không tương thích, có thể chỉ một số phần của điều kiện sẽ được nhập. Bạn có thực sự muốn nhập tệp này không?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation>File CGNS ini tidak berisi data kondisi perhitungan.</translation>
+        <translation>Tệp CGNS này không chứa dữ liệu điều kiện tính toán.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation>Apakah Anda yakin ingin mengatur ulang semua kondisi perhitungan ke nilai default?</translation>
+        <translation>Bạn có chắc chắn muốn đặt lại tất cả các điều kiện tính toán về giá trị mặc định không?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation>Solver sedang berjalan saat ini, jadi Anda tidak dapat menyimpan kondisi perhitungan. Silakan tekan tombol Batal.</translation>
+        <translation>Bộ giải hiện đang chạy, vì vậy bạn không thể lưu điều kiện tính toán. Vui lòng nhấn nút Hủy.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>Terjadi kesalahan saat menyimpan.</translation>
+        <translation>Đã xảy ra lỗi khi lưu.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Các sửa đổi bạn đã thực hiện sẽ bị loại bỏ.</translation>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>Gagal membuka file CGNS.</translation>
+        <translation>Không mở được tệp CGNS.</translation>
     </message>
     <message>
         <source>name attribute is not defined for "Item" element</source>
-        <translation>Atribut nama tidak ditentukan untuk elemen "Item".</translation>
+        <translation>Thuộc tính tên không được xác định cho phần tử "Item"</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Sunting %1</translation>
+        <translation>Biên tập %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Biên tập</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation>Grup</translation>
+        <translation>Các nhóm</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>...</source>
@@ -2018,7 +2018,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation>Nama Pemecah:</translation>
+        <translation>Tên người giải quyết:</translation>
     </message>
     <message>
         <source>---</source>
@@ -2026,64 +2026,64 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation>Versi Pemecah:</translation>
+        <translation>Phiên bản Solver:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis kisi:</translation>
+        <translation>Loại lưới:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation>Ukuran kisi:</translation>
+        <translation>Kích thước lưới:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation>Jumlah hasil:</translation>
+        <translation>Số lượng kết quả:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation>Tersusun</translation>
+        <translation>Có cấu trúc</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation>Tidak terstruktur</translation>
+        <translation>Không có cấu trúc</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Chọn tập tin</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Tên tệp chỉ được bao gồm các ký tự tiếng Anh.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation>(File CGNS tidak dipilih)</translation>
+        <translation>(Tệp CGNS không được chọn)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation>(Tidak ada hasil)</translation>
+        <translation>(Không có kết quả)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Đã bật</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Chọn tập tin</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Tên tệp chỉ được bao gồm các ký tự tiếng Anh.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2094,11 +2094,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation>Pilih Direktori</translation>
+        <translation>Chọn thư mục</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation>Nama folder harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Tên thư mục chỉ được bao gồm các ký tự tiếng Anh.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2109,159 +2109,159 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Biên tập</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Điều kiện tính toán</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Menambahkan</translation>
+        <translation>Thêm vào</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Menghapus</translation>
+        <translation>Di dời</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Impor (&amp;I)</translation>
+        <translation>Nhập khẩu (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation>Impor Web</translation>
+        <translation>Nhập Web</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Xuất khẩu (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Jernih</translation>
+        <translation>Sạch</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih kecil dari nilai minimum %4</translation>
+        <translation>%1 ở hàng %2 : Giá trị %3 nhỏ hơn giá trị tối thiểu %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih besar dari nilai maksimum %4</translation>
+        <translation>%1 ở hàng %2 : Giá trị %3 lớn hơn giá trị tối đa %4</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation>Pilih file teks</translation>
+        <translation>Chọn một tệp văn bản</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation>File teks (*.csv *.txt);;All files (*.*)</translation>
+        <translation>Tệp văn bản (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation>Ctrl + V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 adalah nilai untuk bentang. Misalnya input nilai pada baris ke-2 adalah untuk rentang antara baris ke-1 dan baris ke-2.</translation>
+        <translation>%1 là các giá trị cho các nhịp. Ví dụ đầu vào giá trị ở hàng thứ 2 dành cho khoảng giữa hàng thứ nhất và hàng thứ hai.</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation>Tentukan nama file untuk disimpan</translation>
+        <translation>Chỉ định tên tệp để lưu</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation>file CSV (*.csv)</translation>
+        <translation>Tệp CSV (*.csv)</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation>Nilai disalin ke papan klip.</translation>
+        <translation>Giá trị được sao chép vào khay nhớ tạm.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>Mengajukan %1 diperbarui setelah diimpor ke kondisi perhitungan %2. Apakah Anda ingin mengimpor file yang diperbarui?</translation>
+        <translation>Tập tin %1 được cập nhật sau khi nhập vào điều kiện tính toán %2. Bạn có muốn nhập tệp đã cập nhật không?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
+        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt "Ctrl + C" và "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation>Masalah berikut ditemukan:</translation>
+        <translation>Các vấn đề sau được tìm thấy:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation>... dan lainnya %1 kesalahan</translation>
+        <translation>... và khác %1 sai sót</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation>Unduh</translation>
+        <translation>Tải xuống</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation>Nomor Situs:</translation>
+        <translation>Số trang web:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Mulai tanggal:</translation>
+        <translation>Ngày bắt đầu:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation>Tanggal Akhir:</translation>
+        <translation>Ngày cuối:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Thử nghiệm</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation>Masukkan nomor situs.</translation>
+        <translation>Vui lòng nhập số trang web.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation>Nomor situs tidak valid.</translation>
+        <translation>Số trang web không hợp lệ.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation>Tanggal mulai bukan sebelum tanggal akhir.</translation>
+        <translation>Ngày bắt đầu không trước ngày kết thúc.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation>Impor gagal</translation>
+        <translation>Nhập không thành công</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation>Tidak ada data untuk diimpor.</translation>
+        <translation>Không có dữ liệu để nhập.</translation>
     </message>
 </context>
 <context>
@@ -2269,99 +2269,99 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation>(Pilih template untuk diimpor)</translation>
+        <translation>(Chọn mẫu để nhập)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>Konten di area teks akan ditimpa dengan template</translation>
+        <translation>Nội dung trong vùng văn bản được ghi đè bằng mẫu</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="vanished">Pengaturan Peta Warna</translation>
+        <translation type="vanished">Cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="vanished">Rentang nilai</translation>
+        <translation type="vanished">Phạm vi giá trị</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="vanished">Otomatis</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="vanished">Isi area atas</translation>
+        <translation type="vanished">Điền vào khu vực phía trên</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="vanished">Min:</translation>
+        <translation type="vanished">Tối thiểu:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="vanished">Isi area bawah</translation>
+        <translation type="vanished">Điền vào khu vực thấp hơn</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="vanished">Nomor Divisi:</translation>
+        <translation type="vanished">Số bộ phận:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">Maks:</translation>
+        <translation type="vanished">Tối đa:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">peta warna</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
         <source>The first two columns must be "X" and "Y".</source>
-        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
+        <translation>Hai cột đầu tiên phải là "X" và "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation>File data harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Tệp dữ liệu chỉ được bao gồm các ký tự tiếng Anh.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation>Data yang salah ditemukan: %1</translation>
+        <translation>Dữ liệu sai được tìm thấy: %1</translation>
     </message>
     <message>
         <source>Importing Measured Data...</source>
-        <translation>Mengimpor Data Terukur...</translation>
+        <translation>Nhập dữ liệu được đo...</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation>NS:</translation>
     </message>
     <message>
         <source>Y: </source>
@@ -2369,7 +2369,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation>NS: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
@@ -2380,11 +2380,11 @@ Do you really want to import this file?</source>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation>Pengaturan Offset</translation>
+        <translation>Cài đặt bù đắp</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation>X:</translation>
+        <translation>NS:</translation>
     </message>
     <message>
         <source>Y:</source>
@@ -2392,127 +2392,127 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai X tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>Giá trị X không thích hợp. Vui lòng nhập giá trị đơn giản hơn.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai Y tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>Giá trị Y không phù hợp. Vui lòng nhập giá trị đơn giản hơn.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation>Pilihan Hasil Perhitungan</translation>
+        <translation>Lựa chọn kết quả tính toán</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation>Silakan pilih hasil perhitungan yang akan digunakan.</translation>
+        <translation>Vui lòng chọn kết quả tính toán để sử dụng.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation>Perhitungan satu dimensi</translation>
+        <translation>Tính toán một chiều</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation>Perhitungan dua dimensi</translation>
+        <translation>Tính toán hai chiều</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation>Perhitungan tiga dimensi</translation>
+        <translation>Tính toán ba chiều</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Xuất hiện lỗi: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="vanished">Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
+        <translation type="vanished">Kiểm tra đối số cho %1 thất bại. Đối số không hợp lệ: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="vanished">Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Chỉnh sửa biến kết quả hoạt động đơn giản</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="vanished">Hasil Perhitungan:</translation>
+        <translation type="vanished">Kết quả tính toán:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="vanished">Nama variabel:</translation>
+        <translation type="vanished">Tên biến:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="vanished">Nilai untuk pengujian:</translation>
+        <translation type="vanished">Giá trị để thử nghiệm:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="vanished">Nama variabel tidak dimasukkan.</translation>
+        <translation type="vanished">Tên biến không phải là đầu vào.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="vanished">Nama variabel ini sudah digunakan</translation>
+        <translation type="vanished">Tên biến này đã được sử dụng</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="vanished">Edit Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Chỉnh sửa Kết quả Thao tác Đơn giản</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Nama:</translation>
+        <translation type="vanished">Tên:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Chức vụ:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Kết quả tính toán cho đầu vào</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="vanished">Definisi variabel</translation>
+        <translation type="vanished">Định nghĩa về biến</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Thử nghiệm</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể kiểm tra định nghĩa bằng cách nhấp vào đây. Nếu lỗi xảy ra trong khi phân tích cú pháp định nghĩa, thông báo lỗi sẽ được hiển thị. Khi định nghĩa được phân tích cú pháp thành công, giá trị được tính bằng cách sử dụng &amp; quot; Giá trị cho testingquot; cho mỗi đầu vào được hiển thị. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2520,129 +2520,129 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Tên kết quả</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Tên biến</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Ô lưới</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="vanished">Partikel</translation>
+        <translation type="vanished">Hạt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="vanished">Nama tidak dimasukkan.</translation>
+        <translation type="vanished">Tên không phải là đầu vào.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="vanished">Nama ini sudah digunakan</translation>
+        <translation type="vanished">Tên này đã được sử dụng</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="vanished">Daftar Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Danh sách kết quả hoạt động đơn giản</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="vanished">Nama</translation>
+        <translation type="vanished">Tên</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="vanished">Posisi</translation>
+        <translation type="vanished">Chức vụ</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="vanished">Ke atas (&amp;U)</translation>
+        <translation type="vanished">Hướng lên (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="vanished">Turun (&amp;D)</translation>
+        <translation type="vanished">Xuống (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Chỉnh sửa (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Ô lưới</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="vanished">Partikel</translation>
+        <translation type="vanished">Hạt</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Kết quả tính toán xuất</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Sự sắp xếp:</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation>file CSV</translation>
+        <translation>Tệp CSV</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation>File Topografi (*.tpo)</translation>
+        <translation>Tệp địa hình (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation>ESRI Shapefiles</translation>
+        <translation>Cấu hình hình dạng ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation>folder keluaran:</translation>
+        <translation>Thư mục đầu ra:</translation>
     </message>
     <message>
         <source>...</source>
@@ -2650,55 +2650,55 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Output file:</source>
-        <translation>Berkas keluaran:</translation>
+        <translation>Tệp đầu ra:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Waktu</translation>
+        <translation>Thời gian</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation>Semua langkah waktu</translation>
+        <translation>Tất cả các bước</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Awal:</translation>
+        <translation>Bắt đầu:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Akhir:</translation>
+        <translation>Kết thúc:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Lewati tingkat:</translation>
+        <translation>Tỷ lệ bỏ qua:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Awalan:</translation>
+        <translation>Tiếp đầu ngữ:</translation>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation>File VTK (ASCII)</translation>
+        <translation>Tệp VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation>File VTK (Binary)</translation>
+        <translation>Tệp VTK (Nhị phân)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Wilayah</translation>
+        <translation>Khu vực</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Wilayah penuh</translation>
+        <translation>Toàn vùng</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation>Tôi Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation>Tôi Max</translation>
     </message>
     <message>
         <source>J Min</source>
@@ -2718,143 +2718,143 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation>Tampilkan Detail (&amp;D)</translation>
+        <translation>Hiển thị chi tiết (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation>Pilih folder</translation>
+        <translation>Chọn thư mục</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation>Map %1 tidak ada.</translation>
+        <translation>Thư mục %1 Không tồn tại.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation>Sembunyikan Detail (&amp;H)</translation>
+        <translation>Ẩn chi tiết (&amp;H)</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation>-</translation>
     </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải kết quả tính toán.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation>Đã xảy ra lỗi khi tải kết quả tính toán.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation>Memuat hasil perhitungan untuk visualisasi gagal. Silakan coba lagi nanti, atau tunggu sampai akhir perhitungan.</translation>
+        <translation>Tải kết quả tính toán cho hình ảnh hóa không thành công. Vui lòng thử lại sau hoặc đợi cho đến khi kết thúc phép tính.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Tidak ada hasil perhitungan.</translation>
+        <translation>Không có kết quả tính toán nào tồn tại.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation>Hasil perhitungan tidak berisi data grid.</translation>
+        <translation>Kết quả tính toán không chứa dữ liệu lưới.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Kết quả tính toán xuất</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file VTK...</translation>
+        <translation>Lưu kết quả tính toán dưới dạng tệp VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file CSV...</translation>
+        <translation>Đang lưu kết quả tính toán dưới dạng tệp CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation>Menyimpan hasil perhitungan sebagai ESRI Shapefiles...</translation>
+        <translation>Lưu kết quả tính toán dưới dạng ESRI Shapefiles...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation>Terjadi kesalahan saat menyimpan %1</translation>
+        <translation>Đã xảy ra lỗi khi lưu %1</translation>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file TPO...</translation>
+        <translation>Lưu kết quả tính toán dưới dạng tệp TPO...</translation>
     </message>
     <message>
         <source>Reading time values...</source>
-        <translation>Membaca nilai waktu...</translation>
+        <translation>Đọc giá trị thời gian...</translation>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Membaca data dari hasil/Solusi %1.cgn gagal. Anda dapat memvisualisasikan hasil perhitungan di Solution1.cgn ke Solution %2.cgn.</translation>
+        <translation>Đọc dữ liệu từ kết quả/Giải pháp %1.cgn không thành công. Bạn có thể hình dung kết quả tính toán trong Solution1.cgn thành Solution %2.cgn.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Xuất hiện lỗi: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="vanished">I, J, K, indeks untuk label direset karena ukuran grid berubah.</translation>
+        <translation type="vanished">I, J, K, chỉ mục cho nhãn được đặt lại vì kích thước lưới bị thay đổi.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="vanished">Edit Argumen Hasil String</translation>
+        <translation type="vanished">Chỉnh sửa đối số kết quả chuỗi</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Chức vụ:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="vanished">Nama Hasil:</translation>
+        <translation type="vanished">Tên kết quả:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="vanished">Nama Variabel:</translation>
+        <translation type="vanished">Tên biến:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="vanished">SAYA:</translation>
+        <translation type="vanished">TÔI:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="vanished">J:</translation>
+        <translation type="vanished">NS:</translation>
     </message>
     <message>
         <source>K:</source>
@@ -2862,409 +2862,409 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="vanished">Indeks:</translation>
+        <translation type="vanished">Mục lục:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="vanished">Global</translation>
+        <translation type="vanished">Toàn cầu</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nút</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Tủ</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="vanished">Nama variabel kosong.</translation>
+        <translation type="vanished">Tên biến để trống.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Kết quả tính toán cho đầu vào</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="vanished">Jenis</translation>
+        <translation type="vanished">Kiểu</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Tên kết quả</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Tên biến</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="vanished">Indeks</translation>
+        <translation type="vanished">Mục lục</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="vanished">Nilai untuk Pengujian</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Chỉnh sửa (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="vanished">Menghapus (&amp;D)...</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="vanished">Definisi keluaran</translation>
+        <translation type="vanished">Định nghĩa đầu ra</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Thử nghiệm</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="vanished">Global</translation>
+        <translation type="vanished">Toàn cầu</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nút</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Tủ</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="vanished">tepiK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải kết quả tính toán.</translation>
     </message>
 </context>
 <context>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="vanished">Jenis kisi:</translation>
+        <translation type="vanished">Loại lưới:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="vanished">Wilayah: (&amp;R)</translation>
+        <translation type="vanished">Khu vực: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation>kisi-kisi</translation>
+        <translation>Lưới</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid</translation>
+        <translation>Điều kiện tạo lưới</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="vanished">Kondisi Pembuatan Grid</translation>
+        <translation type="vanished">Điều kiện tạo lưới</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation>Memuat file proyek...</translation>
+        <translation>Đang tải tệp dự án...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation>Menyimpan file proyek...</translation>
+        <translation>Đang lưu tệp dự án...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation>Tidak dapat menimpa %1.</translation>
+        <translation>Không thể ghi đè %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation>Menyimpan proyek...</translation>
+        <translation>Đang lưu dự án...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation>Membuka proyek...</translation>
+        <translation>Mở đầu dự án...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">Atribut grid elevasi tidak ditentukan untuk tipe grid %1. Fungsi grid I/O, fungsi pembuatan grid mungkin tidak bekerja dengan benar untuk tipe grid ini.</translation>
+        <translation type="vanished">Thuộc tính lưới độ cao không được xác định cho loại lưới %1. Các chức năng nhập / xuất lưới, chức năng tạo lưới có thể không hoạt động chính xác đối với các loại lưới này.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="vanished">Larutan %1 sudah ada.</translation>
+        <translation type="vanished">Dung dịch %1 đã tồn tại.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="vanished">File CGNS yang namanya mengandung karakter selain huruf dan angka tidak dapat diimpor.</translation>
+        <translation type="vanished">Không thể nhập tệp CGNS có tên chứa các ký tự không phải bảng chữ cái và số.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="vanished">Ekspor file CGNS</translation>
+        <translation type="vanished">Xuất tệp CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="vanished">berkas CGNS (*.cgns)</translation>
+        <translation type="vanished">Tệp CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="vanished">Mengekspor file CGNS gagal. File yang ditentukan dikunci oleh proses lain.</translation>
+        <translation type="vanished">Xuất tệp CGNS không thành công. Tệp được chỉ định bị khóa bởi quá trình khác.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka file CGNS di file proyek: %1</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi mở tệp CGNS trong tệp dự án: %1</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="vanished">%1 Gagal menyimpan file proyek.</translation>
+        <translation type="vanished">%1 Không lưu được tệp dự án.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="vanished">Semua gambar (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
+        <translation type="vanished">Tất cả hình ảnh (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation>Buka file Gambar</translation>
+        <translation>Mở tệp hình ảnh</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation>Gambar latar belakang dengan nama yang sama sudah ada.</translation>
+        <translation>Hình nền có cùng tên đã tồn tại.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="vanished">Gambar latar belakang tidak ditambahkan. Silakan coba lagi.</translation>
+        <translation type="vanished">Hình nền không được thêm vào. Vui lòng thử lại.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="vanished">File gambar yang ditentukan tidak valid.</translation>
+        <translation type="vanished">Tệp hình ảnh không hợp lệ được chỉ định.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="vanished">File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi.) yang terlalu lama %1 ).</translation>
+        <translation type="vanished">Không thể đọc tệp dự án này vì tệp được tạo bởi iRIC (phiên bản %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation>File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi. yang lebih baru) %1 ).</translation>
+        <translation>Không thể đọc tệp dự án này vì tệp được tạo bởi iRIC mới hơn (phiên bản %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation>File Teks (*.csv *.txt);;All Files (*.*)</translation>
+        <translation>Tệp văn bản (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation>Buka File Data Terukur</translation>
+        <translation>Mở tệp dữ liệu được đo</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation>Terjadi kesalahan saat memuat %1.</translation>
+        <translation>Đã xảy ra lỗi khi tải %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">File ini untuk pemecah %1 %2. Ini tidak kompatibel dengan solver yang Anda gunakan, jadi mungkin mengimpor file ini akan gagal. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation type="vanished">Tệp này dành cho người giải quyết %1 %2. Nó không tương thích với bộ giải bạn đang sử dụng, vì vậy có thể quá trình nhập tệp này sẽ không thành công. Bạn có thực sự muốn nhập tệp này không?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation>Tidak ada jendela visualisasi/grafik.</translation>
+        <translation>Không có cửa sổ trực quan hóa / đồ thị.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Mengajukan %1 tidak bisa dibuka.</translation>
+        <translation>Tập tin %1 không thể mở được.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation>Sistem koordinat tidak dipilih.</translation>
+        <translation>Hệ tọa độ chưa được chọn.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>Terjadi kesalahan saat membuka file CGNS di file proyek: Case1.cgn</translation>
+        <translation>Đã xảy ra lỗi khi mở tệp CGNS trong tệp dự án: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
-        <translation>Menyalin gambar %1 ke %2 gagal.</translation>
+        <translation>Sao chép hình ảnh %1 đến %2 thất bại.</translation>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka %1. iRIC mencoba menyelamatkan data dari %2.</translation>
+        <translation type="vanished">Xảy ra lỗi khi mở %1. iRIC cố gắng cứu dữ liệu từ %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>Terjadi kesalahan saat membuka %1.</translation>
+        <translation>Xảy ra lỗi khi mở %1.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
-        <translation>Semua gambar (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+        <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
         <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>File gambar yang ditentukan tidak valid. Akhiran file harus berupa "jpg", "jpeg", "png", atau "tif".</translation>
+        <translation>Tệp hình ảnh không hợp lệ được chỉ định. Hậu tố tệp phải là một trong các "jpg", "jpeg", "png" hoặc "tif".</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
-        <translation>Terjadi kesalahan saat membuat folder %1</translation>
+        <translation>Đã xảy ra lỗi khi tạo thư mục %1</translation>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation>Hasil perhitungan rusak, dan tidak dapat membuka proyek. Apakah Anda ingin membuang hasil perhitungan, dan mengembalikan data masukan?</translation>
+        <translation>Kết quả tính toán bị hỏng, không thể mở dự án. Bạn có muốn hủy kết quả tính toán và khôi phục dữ liệu đầu vào không?</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation>: tidak ada file tersebut.</translation>
+        <translation>: không có tập tin.</translation>
     </message>
 </context>
 <context>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation>Pilih jendela target impor</translation>
+        <translation>Chọn nhập cửa sổ mục tiêu</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation>Pilih jendela target ekspor</translation>
+        <translation>Chọn cửa sổ mục tiêu xuất</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation>Tanggal untuk t = 0 pengaturan</translation>
+        <translation>Ngày cho cài đặt t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation>Waktu untuk t = 0:</translation>
+        <translation>Thời gian cho t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation>Tidak ditentukan</translation>
+        <translation>Không được chỉ định</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation>Format tampilan waktu</translation>
+        <translation>Định dạng hiển thị thời gian</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Zona waktu:</translation>
+        <translation>Múi giờ:</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
         <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <translation>Không gian làm việc "%1" có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>Thông tin</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation>Peramban Atribut</translation>
+        <translation>Trình duyệt thuộc tính</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Mẫu đơn</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation>indeks</translation>
+        <translation>Chỉ số</translation>
     </message>
     <message>
         <source>1</source>
@@ -3272,23 +3272,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation>NS:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>SAYA:</translation>
+        <translation>TÔI:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation>Mục lục:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Koordinat</translation>
+        <translation>Tọa độ</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation>X:</translation>
+        <translation>NS:</translation>
     </message>
     <message>
         <source>Y:</source>
@@ -3296,119 +3296,119 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation>Atribut:</translation>
+        <translation>Thuộc tính:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation>Nama Atribut</translation>
+        <translation>Tên thuộc tính</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Giá trị</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Size: 1024 x 768</source>
-        <translation>Ukuran: 1024x768</translation>
+        <translation>Kích thước: 1024 x 768</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Ukuran: %1</translation>
+        <translation>Kích cỡ: %1</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget_EditDialog</name>
     <message>
         <source>Edit Window Size</source>
-        <translation>Edit Ukuran Jendela</translation>
+        <translation>Chỉnh sửa kích thước cửa sổ</translation>
     </message>
     <message>
         <source>Note: The size you input is for the area saved to screenshots. The area of the Object Browser etc. are not included.</source>
-        <translation>Catatan: Ukuran yang Anda masukkan adalah untuk area yang disimpan ke tangkapan layar. Area Object Browser dll. tidak termasuk.</translation>
+        <translation>Lưu ý: Kích thước bạn nhập là dành cho vùng được lưu vào ảnh chụp màn hình. Không bao gồm khu vực của Trình duyệt đối tượng, v.v.</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="obsolete">Mode</translation>
+        <translation type="obsolete">Cách thức</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="obsolete">Lebar:</translation>
+        <translation type="obsolete">Chiều rộng:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="obsolete">Tinggi:</translation>
+        <translation type="obsolete">Chiều cao:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Draw</source>
-        <translation type="vanished">Seri</translation>
+        <translation type="vanished">Vẽ</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation>Pindahkan item ke atas</translation>
+        <translation>Chuyển mục lên</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Pindahkan item ke bawah</translation>
+        <translation>Chuyển mục xuống</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation>Gerakan Sewenang-wenang</translation>
+        <translation>Di chuyển tùy ý</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation>Alokasikan Ulang Gambar Latar Belakang</translation>
+        <translation>Phân bổ lại hình ảnh nền</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Bawaan</translation>
+        <translation>Vỡ nợ</translation>
     </message>
     <message>
         <source>(Undefined)</source>
-        <translation>(Tidak terdefinisi)</translation>
+        <translation>(Không xác định)</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation>Warna latar belakang</translation>
+        <translation>Màu nền</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation>Setel offset</translation>
+        <translation>Đặt bù đắp</translation>
     </message>
 </context>
 <context>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation>Wilayah Penuh</translation>
+        <translation>toàn vùng</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation>Wilayah Aktif</translation>
+        <translation>Khu vực hoạt động</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation>Daerah Pabean</translation>
+        <translation>Vùng tùy chỉnh</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="vanished">saya Min:</translation>
+        <translation type="vanished">Tôi Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="vanished">saya maks:</translation>
+        <translation type="vanished">Tôi tối đa:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3416,22 +3416,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="vanished">J Maks:</translation>
+        <translation type="vanished">Tối đa:</translation>
     </message>
 </context>
 <context>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>saya Min:</translation>
+        <translation>Tôi Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>saya maks:</translation>
+        <translation>Tôi tối đa:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3439,159 +3439,159 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Maks:</translation>
+        <translation>Tối đa:</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="vanished">Pengaturan Warna</translation>
+        <translation type="vanished">Cài đặt màu sắc</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation>%1 kisi-kisi</translation>
+        <translation>%1 Lưới</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionGridType</name>
     <message>
         <source>%1 (magnitude)</source>
-        <translation>%1 (besarnya)</translation>
+        <translation>%1 (kích cỡ)</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslator</name>
     <message>
         <source> (magnitude)</source>
-        <translation>(besarnya)</translation>
+        <translation>(kích cỡ)</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="vanished">Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation type="vanished">Một đường cạnh giao với đường cạnh của một ô khác trong lưới này.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="vanished">Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Tỷ lệ co của ô lưới vượt quá giá trị giới hạn %1 trong nhiều ô.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="vanished">Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
+        <translation type="vanished">Sự biến đổi của độ dài cạnh ô lưới vượt quá giá trị giới hạn (hướng I: %1, Hướng J: %2 ) trong nhiều ô.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="vanished">Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Góc của cạnh ô lưới giảm xuống dưới giá trị giới hạn %1 trong nhiều ô.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="vanished">* Sel di mana ujung-ujungnya berpotongan</translation>
+        <translation type="vanished">* Các ô nơi các cạnh giao nhau</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="vanished">Tidak ada</translation>
+        <translation type="vanished">Không tồn tại</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="vanished">* Sel di mana rasio aspek tepi sel melebihi %1</translation>
+        <translation type="vanished">* Các ô mà tỷ lệ co của các cạnh ô vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="vanished">I, J, Rasio aspek</translation>
+        <translation type="vanished">I, J, Tỷ lệ co</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="vanished">Panjang tepi terlalu kecil</translation>
+        <translation type="vanished">Chiều dài cạnh quá nhỏ</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="vanished">* Sel di mana sudut simpul sel di bawah %1</translation>
+        <translation type="vanished">* Các ô có góc của đỉnh ô bên dưới %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="vanished">Saya, J, Sudut</translation>
+        <translation type="vanished">I, J, Góc</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
+        <translation type="vanished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng i vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="vanished">I, J, Variasi</translation>
+        <translation type="vanished">I, J, Biến thể</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation type="vanished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng j vượt quá %1</translation>
     </message>
 </context>
 <context>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Lấy mẫu</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Tất cả các đỉnh</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>tôi hướng</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>hướng J</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Lấy mẫu</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Tất cả các đỉnh</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>tôi hướng</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>hướng J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-arah</translation>
+        <translation>hướng K</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>-</source>
@@ -3603,7 +3603,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation>tối thiểu</translation>
     </message>
     <message>
         <source>1</source>
@@ -3611,146 +3611,146 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>max</source>
-        <translation>maks</translation>
+        <translation>tối đa</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation>Gambar Latar Belakang (Internet)</translation>
+        <translation>Hình nền (Internet)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation>Untuk mendapatkan gambar latar belakang dari internet, tentukan sistem koordinat proyek, dari menu berikut. File -&gt; Properti</translation>
+        <translation>Để lấy hình nền từ internet, vui lòng chỉ định hệ thống coordiyate của dự án, từ menu sau. Tệp -&gt; Thuộc tính</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation>Perubahan Gambar Latar Belakang</translation>
+        <translation>Thay đổi hình nền</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="vanished">Google Peta (Jalan)</translation>
+        <translation type="vanished">Bản đồ Google (Đường)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="vanished">Google Map (Satelit)</translation>
+        <translation type="vanished">Bản đồ Google (Vệ tinh)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="vanished">Google Peta (Hibrida)</translation>
+        <translation type="vanished">Bản đồ Google (Kết hợp)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="vanished">Google Peta (Medan)</translation>
+        <translation type="vanished">Bản đồ Google (Địa hình)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation>Buka Peta Jalan</translation>
+        <translation>Mở Bản đồ Đường phố</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation>GSI (Standar) (Jepang saja)</translation>
+        <translation>GSI (Tiêu chuẩn) (Chỉ Nhật Bản)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation>GSI (Pucat) (Jepang saja)</translation>
+        <translation>GSI (Nhạt) (chỉ ở Nhật Bản)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation>GSI (Bahasa Inggris) (Jepang saja)</translation>
+        <translation>GSI (tiếng Anh) (chỉ ở Nhật Bản)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation>GSI (Relief) (Jepang saja)</translation>
+        <translation>GSI (Cứu trợ) (chỉ ở Nhật Bản)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation>GSI (Gambar Ortho) (Jepang saja)</translation>
+        <translation>GSI (Hình ảnh Ortho) (Chỉ ở Nhật Bản)</translation>
     </message>
     <message>
         <source>Google Maps</source>
-        <translation>Google Peta</translation>
+        <translation>bản đồ Google</translation>
     </message>
     <message>
         <source>Google Streets</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Đường phố</translation>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation>Google Satelit</translation>
+        <translation>Google Vệ tinh</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
-        <translation>Hibrida Satelit Google</translation>
+        <translation>Google vệ tinh kết hợp</translation>
     </message>
     <message>
         <source>Google Roads</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Đường</translation>
     </message>
     <message>
         <source>Google Terrain</source>
-        <translation>Google Medan</translation>
+        <translation>Google Địa hình</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Angle: 13</source>
-        <translation>Sudut: 13</translation>
+        <translation>Góc: 13</translation>
     </message>
     <message>
         <source>Angle: %1</source>
-        <translation>Sudut: %1</translation>
+        <translation>Góc: %1</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget_AngleEditDialog</name>
     <message>
         <source>Edit Angle</source>
-        <translation>Sunting Sudut</translation>
+        <translation>Chỉnh sửa góc</translation>
     </message>
     <message>
         <source>Please input new angle</source>
-        <translation>Silakan masukkan sudut baru</translation>
+        <translation>Vui lòng nhập góc mới</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Scale: 1 / 3.123</source>
-        <translation>Skala: 1 / 3.123</translation>
+        <translation>Tỷ lệ: 1/3.123</translation>
     </message>
     <message>
         <source>Scale: %1</source>
-        <translation>Skala: %1</translation>
+        <translation>Tỉ lệ: %1</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget_ScaleEditDialog</name>
     <message>
         <source>Edit Scale</source>
-        <translation>Sunting Skala</translation>
+        <translation>Chỉnh sửa tỷ lệ</translation>
     </message>
     <message>
         <source>Please input new scale</source>
-        <translation>Silakan masukkan skala baru</translation>
+        <translation>Vui lòng nhập thang đo mới</translation>
     </message>
     <message>
         <source>1 / </source>
@@ -3761,96 +3761,96 @@ Do you really want to import this file?</source>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>Nomor pembuatan nomor versi tidak ditentukan.</translation>
+        <translation>Số bản dựng của số phiên bản không được chỉ định.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Terjadi kesalahan: %1</translation>
+        <translation>Có lỗi: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Memeriksa argumen untuk %1 gagal. Argumen yang tidak valid: %2.</translation>
+        <translation>Kiểm tra đối số cho %1 thất bại. Đối số không hợp lệ: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation>Chỉnh sửa biến kết quả thao tác đơn giản</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Hasil Perhitungan:</translation>
+        <translation>Kết quả tính toán:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nama variabel:</translation>
+        <translation>Tên biến:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Nilai untuk pengujian:</translation>
+        <translation>Giá trị để thử nghiệm:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nama variabel tidak dimasukkan.</translation>
+        <translation>Tên biến không được nhập.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Nama variabel ini sudah digunakan</translation>
+        <translation>Tên biến này đã được sử dụng</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edit Hasil Operasi Sederhana</translation>
+        <translation>Chỉnh sửa kết quả thao tác đơn giản</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisi:</translation>
+        <translation>Chức vụ:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Hasil perhitungan untuk masukan</translation>
+        <translation>Kết quả tính toán đầu vào</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definisi variabel</translation>
+        <translation>Định nghĩa biến</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m"&gt;&lt;span style=" -trang trí: gạch chân; màu:#0000ff;"&gt;tại đây&lt;/span&gt;&lt;/a&gt; để biết chi tiết.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Bài kiểm tra</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisinya dengan mengklik ini. Jika terjadi kesalahan saat mengurai definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diurai, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap masukan ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bạn có thể kiểm tra định nghĩa bằng cách nhấp vào đây. Nếu xảy ra lỗi trong khi phân tích định nghĩa, thông báo lỗi sẽ được hiển thị. Khi định nghĩa được phân tích cú pháp thành công, giá trị được tính toán bằng cách sử dụng &amp;quot;Giá trị để kiểm traquot; cho mỗi đầu vào được hiển thị.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3858,200 +3858,200 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nama hasil</translation>
+        <translation>Tên kết quả</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nama variabel</translation>
+        <translation>Tên biến</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Nilai untuk pengujian</translation>
+        <translation>Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Ô lưới</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Lưới iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Lưới jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Lưới kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation>hạt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nama tidak dimasukkan.</translation>
+        <translation>Tên không được nhập.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Nama ini sudah digunakan</translation>
+        <translation>Tên này đã được sử dụng</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Daftar Hasil Operasi Sederhana</translation>
+        <translation>Danh sách kết quả hoạt động đơn giản</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>Tên</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Ke atas (&amp;U)</translation>
+        <translation>Hướng lên (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Turun (&amp;D)</translation>
+        <translation>Xuống (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar itu penting. Dalam definisinya, Anda bisa menggunakan nilai penghitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý&lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính đơn giản làm biến, xuất hiện trước đó trong danh sách.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Sunting (&amp;E)...</translation>
+        <translation>Biên tập (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Ô lưới</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Lưới iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Lưới jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Lưới kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation>hạt</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis Kotak:</translation>
+        <translation>Loại lưới:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Wilayah: (&amp;R)</translation>
+        <translation>Vùng đất: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation>Một đường cạnh giao nhau với đường của một ô khác trong lưới này.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Rasio aspek sel kisi melebihi nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Tỷ lệ khung hình của ô lưới vượt quá giá trị giới hạn %1 trong nhiều hơn một ô.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Variasi panjang tepi sel grid melebihi nilai batas (arah I: %1, arah J: %2 ) di lebih dari satu sel.</translation>
+        <translation>Sự thay đổi độ dài cạnh của ô lưới vượt quá giá trị giới hạn (hướng I: %1, hướng J: %2 ) trong nhiều hơn một ô.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Sudut tepi sel grid berada di bawah nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Góc cạnh của ô lưới giảm xuống dưới giá trị giới hạn %1 trong nhiều hơn một ô.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Sel tempat ujung-ujungnya berpotongan</translation>
+        <translation>* Các ô nơi các cạnh giao nhau</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Tidak ada</translation>
+        <translation>Không tồn tại</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Sel yang rasio aspek tepi selnya melebihi %1</translation>
+        <translation>* Các ô có tỷ lệ khung hình của các cạnh ô vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Rasio aspek</translation>
+        <translation>I, J, Tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Panjang tepinya terlalu kecil</translation>
+        <translation>Chiều dài cạnh quá nhỏ</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Sel yang sudut puncak selnya berada di bawah %1</translation>
+        <translation>* Ô có góc đỉnh ô ở dưới %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>Saya, J, Sudut</translation>
+        <translation>Tôi, J, Góc</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah i melebihi %1</translation>
+        <translation>* Các ô có sự thay đổi chiều dài ô dọc theo hướng i vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Variasi</translation>
+        <translation>Tôi, J, Biến thể</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation>* Các ô có sự thay đổi chiều dài ô dọc theo hướng j vượt quá %1</translation>
     </message>
 </context>
 </TS>

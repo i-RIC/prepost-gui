@@ -1,106 +1,106 @@
-<TS version="2.1" language="id_ID">
+<TS version="2.1" language="ro_RO">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>După valoarea scalară</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>Sunting (&amp;E)</translation>
+        <translation>Editați | × (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation>Pengaturan Peta Warna (%1)</translation>
+        <translation>Setare hartă de culori (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation>După valoarea scalară</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="vanished">Impor (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="vanished">Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Peta warna</translation>
+        <translation>Harta de culori</translation>
     </message>
 </context>
 <context>
     <name>ArrowsGeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="obsolete">Membentuk</translation>
+        <translation type="obsolete">Formă</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Vizibilitate</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Când este selectat</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Mereu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Nu</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titlu</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titlu :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Setarea fontului:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Lungime</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -108,184 +108,184 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titlu:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Panjang:</translation>
+        <translation>Lungime:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Fundal:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Mărime și poziție</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Vizibil</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Desenați chenar</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation>Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation>Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation>[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation>Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation>Valoarea minimă de extras:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="vanished">Nilai:</translation>
+        <translation type="vanished">Valoare:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Legenda lungimii</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Dasar</translation>
+        <translation>De bază</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">Peta warna</translation>
+        <translation type="vanished">Harta de culori</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Legend of Length</source>
-        <translation>Legenda Panjang</translation>
+        <translation>Legenda lungimii</translation>
     </message>
     <message>
         <source>(Custom Color)</source>
-        <translation>(Warna Kustom)</translation>
+        <translation>(Culoare personalizată)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation>Forma săgeată</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
 </context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation>Harap tentukan poligon tertutup!</translation>
+        <translation>Vă rugăm să specificați un poligon închis!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation>Tidak dapat membaca gambar %1</translation>
+        <translation>Imposibil de citit imaginea %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">dalam file %1, kenaikan koordinat x per piksel dan kenaikan koordinat y per piksel tidak cocok. Itu dapat diterima, tetapi mungkin salah.</translation>
+        <translation type="vanished">În dosar %1, creșterea coordonatelor x pe pixel și creșterea coordonatelor y pe pixel nepotrivite. Este acceptabil, dar poate fi greșit.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation>Pilih titik yang sesuai pada Jendela Utama.</translation>
+        <translation>Selectați un punct corespunzător din fereastra principală.</translation>
     </message>
     <message>
         <source>Fix Image position</source>
-        <translation>Perbaiki posisi Gambar</translation>
+        <translation>Fixați poziția imaginii</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation>Posisi Gambar Latar Belakang</translation>
+        <translation>Poziția imaginii de fundal</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation>Metode penunjukan</translation>
+        <translation>Metoda de desemnare</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Tentukan posisi vertex kiri bawah, skala, dan sudut putar</translation>
+        <translation>Specificați poziția, scara și unghiul de rotație al vârfului stânga jos</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation>Tentukan posisi vertex kiri bawah dan kanan bawah</translation>
+        <translation>Specificați pozițiile vârfului stânga jos și dreapta jos</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation>Titik kiri bawah</translation>
+        <translation>Vârful de jos-stânga</translation>
     </message>
     <message>
         <source>X:</source>
@@ -297,136 +297,136 @@
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation>Simpul kanan bawah</translation>
+        <translation>Vârful de jos-dreapta</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Skala:</translation>
+        <translation>Scară:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation>Putar Sudut:</translation>
+        <translation>Rotire unghi:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tentukan jarak dalam meter yang sesuai dengan lebar satu piksel gambar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Specificați distanța în metri care corespunde lățimii unui pixel al imaginii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menentukan sudut tepi bawah gambar terhadap sumbu X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Specificați unghiul marginii inferioare a imaginii în raport cu axa X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation>Georeferensi</translation>
+        <translation>Georeferență</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation>Tekan tombol</translation>
+        <translation>Apasa butonul</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Bersembunyi</translation>
+        <translation>Ascunde</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Menunjukkan</translation>
+        <translation>Spectacol</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Pilih kisi yang akan diimpor</translation>
+        <translation>Selectați grila de importat</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Silakan pilih grid mana yang akan diimpor</translation>
+        <translation>Vă rugăm să selectați ce grilă să importați</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Vizibilitate</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Când este selectat</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Mereu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Nu</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titlu</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titlu :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setelan Fon:</translation>
+        <translation>Setarea fontului:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Afișare etichetă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titlu:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Eticheta:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Fundal:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Mărime și poziție</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Vizibil</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Direcţie:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Lățimea barei</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>px</source>
@@ -434,267 +434,267 @@
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Stânga</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centru</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Dreapta</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Desenați chenar</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Ignorați setarea barei de culoare la import</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Culori</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Setarea barei de culori</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Selectați fișierul de importat</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="vanished">Pengaturan peta warna (*.cmsetting)</translation>
+        <translation type="vanished">Setare hartă de culori (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Introduceți numele fișierului de exportat</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>A apărut o eroare la deschidere %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Valoare</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Transparent</translation>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Enumerați setarea hărții de culori (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+        <translation>Enumerați setarea hărții de culori (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>A apărut o eroare la importarea setării din %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Public (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>Privat (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Import Colormap Setare</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Modul</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Selectați dintre standarde</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Selectați fișierul</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Standarde</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Fişier</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Atribute pentru import</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Direcţie</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titlu</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Setarea fontului</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Afișare etichetă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Eticheta</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>fundal</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Mărime și poziție</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>mărimea</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Lățimea barei</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>previzualizare</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="vanished">Diskriminasi rasial</translation>
+        <translation type="vanished">Bara de culori</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="vanished">Horisontal</translation>
+        <translation type="vanished">Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="vanished">Vertikal</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Umum</translation>
+        <translation>Uzual</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Direcţie:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation>huruf</translation>
+        <translation>Font</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titlu:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation>Label:</translation>
+        <translation>Etichete:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Eticheta:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Fundal:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Gambarlah batas</translation>
+        <translation>Desenați chenar</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation>Batas</translation>
+        <translation>Marja</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="obsolete">Batas Horisontal:</translation>
+        <translation type="obsolete">Marja orizontală:</translation>
     </message>
     <message>
         <source>%</source>
@@ -702,98 +702,98 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="obsolete">Batas Vertikal:</translation>
+        <translation type="obsolete">Marja verticală:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>mărimea</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Lăţime:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation>piksel</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Înălţime:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Lățimea barei</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Stânga</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centru</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Dreapta</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation>Posisi</translation>
+        <translation>Poziții</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation>Horisontal:</translation>
+        <translation>Orizontală:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation>Vertikal:</translation>
+        <translation>Vertical:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="vanished">Visibilitas</translation>
+        <translation type="vanished">Vizibilitate</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="vanished">Saat dipilih</translation>
+        <translation type="vanished">Când este selectat</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="vanished">Selalu</translation>
+        <translation type="vanished">Mereu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="vanished">Tidak pernah</translation>
+        <translation type="vanished">Nu</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titlu</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation>Titlu :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Pengaturan Fon:</translation>
+        <translation>Setarea fontului:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Afișare etichetă</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -801,51 +801,51 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Judul:</translation>
+        <translation>Titlu:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>Label:</translation>
+        <translation>Eticheta:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Latar belakang:</translation>
+        <translation>Fundal:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Mărime și poziție</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Arah:</translation>
+        <translation>Direcţie:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Jumlah label:</translation>
+        <translation>Numar de etichete:</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation>Vizibil</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Lățimea barei</translation>
     </message>
     <message>
         <source>px</source>
@@ -853,27 +853,27 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Kiri</translation>
+        <translation>Stânga</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Tengah</translation>
+        <translation>Centru</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Benar</translation>
+        <translation>Dreapta</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation>Menggambar perbatasan</translation>
+        <translation>Desenați chenar</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation>Tingkat melewatkan:</translation>
+        <translation>Rata de ignorare:</translation>
     </message>
 </context>
 <context>
@@ -884,54 +884,54 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation>Setarea hărții de culori</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="vanished">Preset:</translation>
+        <translation type="vanished">Presetari:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Ignorați setarea barei de culoare la import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation>Hubungan antara nilai dan warna</translation>
+        <translation>Relația dintre valori și culori</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation>Sesuaikan secara otomatis berdasarkan rentang nilai</translation>
+        <translation>Ajustați automat în funcție de intervalul de valori</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation>Atur Secara Manual</translation>
+        <translation>Configurați manual</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Interval de valori</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Otomatis</translation>
+        <translation>Automat</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -939,173 +939,173 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Warna</translation>
+        <translation>Culori</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Isi area bawah</translation>
+        <translation>Umpleți zona inferioară</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Isi area atas</translation>
+        <translation>Umpleți zona superioară</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Intrerupator</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna</translation>
+        <translation>Setarea barei de culori</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="vanished">Pilih file untuk diimpor</translation>
+        <translation type="vanished">Selectați fișierul de importat</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Setare hartă de culori (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Masukkan nama file untuk diekspor</translation>
+        <translation>Introduceți numele fișierului de exportat</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Terjadi kesalahan saat membuka %1</translation>
+        <translation>A apărut o eroare la deschidere %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="vanished">(Silakan pilih item untuk diterapkan)</translation>
+        <translation type="vanished">(Vă rugăm să selectați articolul de aplicat)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation>Beralih ke Mode Diskrit</translation>
+        <translation>Comutați la modul discret</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation>Beralih ke Mode Gradasi</translation>
+        <translation>Comutați la modul de gradare</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Valoare</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation>Nilai minimal</translation>
+        <translation>Valoare minimă</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation>Nilai maks</translation>
+        <translation>Valoarea maximă</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation>Transparan</translation>
+        <translation>Transparent</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="vanished">Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
+        <translation type="vanished">Când treceți la modul de gradare, valorile sunt setate la valoarea de mijloc a fiecărei secțiuni.</translation>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="vanished">Membalikkan warna (&amp;R)</translation>
+        <translation type="vanished">Culori inversate (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="vanished">Pembagian yang setara (&amp;E)</translation>
+        <translation type="vanished">Împărțire egală (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation>Warna Terbalik (&amp;R)</translation>
+        <translation>Culori inversate (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation>Divisi yang Setara (&amp;E)</translation>
+        <translation>Diviziune egală (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation>Ubah Nomor. Warna</translation>
+        <translation>Schimbați Num. Culori</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Setare hartă de culori (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+        <translation>A apărut o eroare la importarea setării din %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation>Publik (%1)</translation>
+        <translation>Public (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation>Pribadi (%1)</translation>
+        <translation>Privat (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Export (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation>Ubah Jumlah Warna</translation>
+        <translation>Modificați numărul de culori</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Numar de culori:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Interval de valori</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -1113,58 +1113,58 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>Opțiuni</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Valoare zecimale:</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation>Import Colormap Setare</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation>Modul</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation>Pilih dari standar</translation>
+        <translation>Selectați dintre standarde</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Pilih file</translation>
+        <translation>Selectați fișierul</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation>Standar</translation>
+        <translation>Standarde</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Mengajukan</translation>
+        <translation>Fişier</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation>Atribut untuk Impor</translation>
+        <translation>Atribute pentru import</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation>Direcţie</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation>Titlu</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation>Pengaturan Font</translation>
+        <translation>Setarea fontului</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation>Afișare etichetă</translation>
     </message>
     <message>
         <source>Format</source>
@@ -1172,54 +1172,54 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation>Jumlah label</translation>
+        <translation>Numărul de etichete</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Label</translation>
+        <translation>Eticheta</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>fundal</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation>Ukuran dan Posisi</translation>
+        <translation>Mărime și poziție</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation>mărimea</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation>Lebar Batang</translation>
+        <translation>Lățimea barei</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Penyelarasan</translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Pratinjau</translation>
+        <translation>previzualizare</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation>Beralih ke Dialog Mode Diskrit</translation>
+        <translation>Comutați la dialogul de mod discret</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -1227,57 +1227,57 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="vanished">Jumlah warna untuk disisipkan di setiap bagian</translation>
+        <translation type="vanished">Numărul de culori de inserat la fiecare secțiune</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation>Rentang Nilai</translation>
+        <translation>Interval de valori</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation>Jumlah warna:</translation>
+        <translation>Numar de culori:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation>Opțiuni</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation>Nilai tempat desimal:</translation>
+        <translation>Valoare zecimale:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation>Skala log:</translation>
+        <translation>Scala logartică:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Activat</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Diskriminasi rasial</translation>
+        <translation>Bara de culori</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation>Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation>Vertical</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Attribute</source>
@@ -1285,22 +1285,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Warna</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Draw contour lines</source>
-        <translation>Menggambar garis kontur</translation>
+        <translation>Desenați linii de contur</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>px</source>
@@ -1308,26 +1308,26 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Use values of colormap</source>
-        <translation>Gunakan nilai colormap</translation>
+        <translation>Utilizați valorile hărții de culori</translation>
     </message>
     <message>
         <source>Specify division number</source>
-        <translation>Tentukan nomor divisi</translation>
+        <translation>Specificați numărul de diviziune</translation>
     </message>
 </context>
 <context>
     <name>CoordinateSystemDisplayWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>CS: (not specified)</source>
-        <translation>CS: (tidak ditentukan)</translation>
+        <translation>CS: (nespecificat)</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(Tidak Ditentukan)</translation>
+        <translation>(Nu este specificat)</translation>
     </message>
     <message>
         <source>CS: %1</source>
@@ -1338,38 +1338,38 @@ Parse error %2 at %3, column %4</source>
     <name>DelegatedColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Use Setting of Pre-processing Window</source>
-        <translation>Gunakan Pengaturan Jendela Pra-pemrosesan</translation>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>DirectionSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation>Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>Normal:</source>
@@ -1377,7 +1377,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Invalid:</source>
-        <translation>Tidak sah:</translation>
+        <translation>Invalid:</translation>
     </message>
 </context>
 <context>
@@ -1403,60 +1403,60 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Rata de eșantionare:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Tentukan jumlah simpul</translation>
+        <translation>Specificați numărul de vârfuri</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Edit Nama (&amp;N)...</translation>
+        <translation>Editeaza numele (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation>Bawaan</translation>
+        <translation>Mod implicit</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation>Sunting nilai...</translation>
-    </message>
-    <message>
-        <source>Background edit value</source>
-        <translation>Nilai edit latar belakang</translation>
+        <translation>Editați valoarea...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation>Sunting %1 nilai default</translation>
+        <translation>Editați | × %1 valoare implicită</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation>Harap masukkan nilai default baru.</translation>
+        <translation>Introduceți o nouă valoare implicită.</translation>
+    </message>
+    <message>
+        <source>Background edit value</source>
+        <translation>Valoarea editării fundalului</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation>Latar belakang</translation>
+        <translation>fundal</translation>
     </message>
 </context>
 <context>
@@ -1467,121 +1467,121 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation>Nilai minimum data geografis</translation>
+        <translation>Valoarea minimă a datelor geografice</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation>Nilai maksimum data geografis</translation>
+        <translation>Valoarea maximă a datelor geografice</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation>Nilai khusus</translation>
+        <translation>Valoare personalizată</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation>Tidak ada titik yang dipilih.</translation>
+        <translation>Nu este selectat niciun punct.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation>Tidak ada poin yang dapat dihapus lebih lanjut.</translation>
+        <translation>Niciun punct nu poate fi șters în continuare.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation>Pilih titik pada dialog Georeferensi.</translation>
+        <translation>Selectați un punct din dialogul Georeference.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Hapus Poin</translation>
+        <translation>Șterge puncte</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation>Perubahan Item Browser Objek</translation>
+        <translation>Schimbarea obiectelor din browserul de obiecte</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation>Bilah Alat Operasi</translation>
+        <translation>Operațiune ToolBar</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation>Tidak ada Color Bar yang aktif</translation>
+        <translation>Bara de culori nu este activă</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation>Pengaturan Massal Bilah Warna</translation>
+        <translation>Setare în bloc pentru bara de culori</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeCellSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation>label:</translation>
+        <translation>eticheta:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation>Langkah Mundur (&amp;B)</translation>
+        <translation>Pas inapoi (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation>Maju (&amp;F)</translation>
+        <translation>Pas înainte (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>Mengatur ulang (&amp;R)</translation>
+        <translation>Resetați (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation>Pergi ke Langkah Terakhir (&amp;L)</translation>
+        <translation>Mergeți la Ultimul pas (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation>Mulai/Hentikan Animasi (&amp;S)</translation>
+        <translation>Porniți / Opriți animația (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation>Hentikan Animasi (&amp;T)</translation>
+        <translation>Opriți animația (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation>Pengaturan Kecepatan Animasi (&amp;A)...</translation>
+        <translation>Setarea vitezei animației (&amp;A)...</translation>
     </message>
 </context>
 <context>
@@ -1592,7 +1592,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
@@ -1603,41 +1603,41 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Editați valoarea (valorile) atributelor grilei</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeNodeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Paint</source>
-        <translation>Cat</translation>
+        <translation>A picta</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poin</translation>
+        <translation>Puncte</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Titik:</translation>
+        <translation>Dimensiunea punctului:</translation>
     </message>
 </context>
 <context>
@@ -1648,14 +1648,14 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation>Label Teks</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation>Edit nilai atribut kisi</translation>
+        <translation>Editați valoarea (valorile) atributelor grilei</translation>
     </message>
 </context>
 <context>
@@ -1673,71 +1673,71 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
-    </message>
-    <message>
-        <source>There must be one group at least.</source>
-        <translation>Setidaknya harus ada satu kelompok.</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation>Nama harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Numele trebuie să fie format doar din caractere englezești.</translation>
+    </message>
+    <message>
+        <source>There must be one group at least.</source>
+        <translation>Trebuie să existe cel puțin un grup.</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mengalihkan</translation>
+        <translation>Intrerupator</translation>
     </message>
     <message>
         <source>Columns %1 are ignored. Expected names are %2</source>
-        <translation>Kolom %1 diabaikan. Nama yang diharapkan adalah %2</translation>
+        <translation>Coloane %1 sunt ignorate. Numele așteptate sunt %2</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pilih file yang akan diimpor</translation>
+        <translation>Selectați fișierul de importat</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>berkas CSV (*.csv)</translation>
+        <translation>fișier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation>Pembukaan %1 gagal.</translation>
+        <translation>Deschidere %1 a eșuat.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation>Pilih file yang akan diekspor</translation>
+        <translation>Selectați fișierul de exportat</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>Nume</translation>
     </message>
     <message>
         <source>Switch to Table view</source>
-        <translation>Beralih ke tampilan Tabel</translation>
+        <translation>Comutați la vizualizarea Tabel</translation>
     </message>
     <message>
         <source>Switch to List view</source>
-        <translation>Beralih ke tampilan Daftar</translation>
+        <translation>Comutați la vizualizarea Listă</translation>
     </message>
 </context>
 <context>
@@ -1748,60 +1748,60 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Target:</source>
-        <translation>Target:</translation>
+        <translation>Ţintă:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Modificările pe care le-ați făcut vor fi eliminate.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation>Target</translation>
+        <translation>Ținte</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Pengaturan</translation>
+        <translation>Setare</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation>Gunakan sebagai Nilai Default</translation>
+        <translation>Folosiți ca valoare implicită</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid (&amp;G)</translation>
+        <translation>Starea de creare a grilei (&amp;G)</translation>
     </message>
 </context>
 <context>
@@ -1812,57 +1812,57 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="vanished">Pengaturan kontur</translation>
+        <translation type="vanished">Setarea conturului</translation>
     </message>
 </context>
 <context>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
 </context>
 <context>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation>Batas Horisontal:</translation>
+        <translation>Marja orizontală:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation>Batas Vertikal:</translation>
+        <translation>Marja verticală:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation>Lăţime:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Tinggi:</translation>
+        <translation>Înălţime:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation>Jarak dari kiri</translation>
+        <translation>Distanța de la stânga</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation>Jarak dari kanan</translation>
+        <translation>Distanța de la dreapta</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation>Jarak dari atas</translation>
+        <translation>Distanța de sus</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation>Jarak dari bawah</translation>
+        <translation>Distanța de jos</translation>
     </message>
     <message>
         <source>%</source>
@@ -1874,143 +1874,143 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation>Ukuran Otomatis</translation>
+        <translation>Dimensiune automată</translation>
     </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
     <message>
         <source>Select Input CGNS File</source>
-        <translation>Pilih Masukkan File CGNS</translation>
+        <translation>Selectați Intrare fișier CGNS</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>Do you want to import grid from the CGNS file?</source>
-        <translation>Apakah Anda ingin mengimpor kisi dari file CGNS?</translation>
+        <translation>Doriți să importați grila din fișierul CGNS?</translation>
     </message>
     <message>
         <source>Select CGNS file</source>
-        <translation>Pilih file CGNS</translation>
+        <translation>Selectați fișierul CGNS</translation>
     </message>
     <message>
         <source>Please select from which CGNS file to read grid.</source>
-        <translation>Silakan pilih dari file CGNS mana yang akan dibaca grid.</translation>
+        <translation>Vă rugăm să selectați din ce fișier CGNS să citiți grila.</translation>
     </message>
     <message>
         <source>CGNS File</source>
-        <translation>File CGNS</translation>
+        <translation>Fișierul CGNS</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation>Node definisi tidak disimpan</translation>
+        <translation>Nodul de definiție nu este stocat</translation>
     </message>
     <message>
         <source>Wrong valueType "%1" is set.</source>
-        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
+        <translation>ValueType greșit "%1"este setat.</translation>
     </message>
     <message>
         <source>Wrong conditionType "%1"is set.</source>
-        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
+        <translation>Stare greșită Tip "%1"este setat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDependency</name>
     <message>
         <source>Unhandled widget in ActionSetValue</source>
-        <translation>Widget tidak tertangani di ActionSetValue</translation>
+        <translation>Widget netratat în ActionSetValue</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Starea de calcul</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">Simpan dan tutup (&amp;S)</translation>
+        <translation type="vanished">Salveaza si inchide (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation>File CGNS ini dibuat untuk %1 Versi: kapan %2. Ini tidak kompatibel dengan pemecah saat ini.</translation>
+        <translation>Acest fișier CGNS este creat pentru %1 versiune %2. Nu este compatibil cu soluția de curent.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation>File CGNS ini tidak memiliki informasi pemecah masalah. Kami tidak dapat memeriksa apakah file CGNS ini kompatibel dengan solver. Jika tidak kompatibel, mungkin hanya sebagian dari kondisi yang akan diimpor. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation>Acest fișier CGNS nu are informații despre soluționare. Nu putem verifica dacă acest fișier CGNS este compatibil cu soluția. Dacă nu este compatibil, poate că doar o parte din condiții vor fi importate. Doriți cu adevărat să importați acest fișier?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation>File CGNS ini tidak berisi data kondisi perhitungan.</translation>
+        <translation>Acest fișier CGNS nu conține date privind condițiile de calcul.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation>Apakah Anda yakin ingin mengatur ulang semua kondisi perhitungan ke nilai default?</translation>
+        <translation>Sigur doriți să resetați toate condițiile de calcul la valorile implicite?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation>Solver sedang berjalan saat ini, jadi Anda tidak dapat menyimpan kondisi perhitungan. Silakan tekan tombol Batal.</translation>
-    </message>
-    <message>
-        <source>Error occured while saving.</source>
-        <translation>Terjadi kesalahan saat menyimpan.</translation>
+        <translation>Solverul rulează în prezent, deci nu puteți salva condiția de calcul. Vă rugăm să apăsați butonul Anulare.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+        <translation>Modificările pe care le-ați făcut vor fi eliminate.</translation>
+    </message>
+    <message>
+        <source>Error occured while saving.</source>
+        <translation>A apărut o eroare la salvare.</translation>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>Gagal membuka file CGNS.</translation>
+        <translation>Deschiderea fișierului CGNS a eșuat.</translation>
     </message>
     <message>
         <source>name attribute is not defined for "Item" element</source>
-        <translation>Atribut nama tidak ditentukan untuk elemen "Item".</translation>
+        <translation>atributul nume nu este definit pentru elementul „Articol”.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Sunting %1</translation>
+        <translation>Editați | × %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Editați | ×</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation>Grup</translation>
+        <translation>Grupuri</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>...</source>
@@ -2018,7 +2018,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation>Nama Pemecah:</translation>
+        <translation>Nume Solver:</translation>
     </message>
     <message>
         <source>---</source>
@@ -2026,64 +2026,64 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation>Versi Pemecah:</translation>
+        <translation>Versiunea Solver:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis kisi:</translation>
+        <translation>Tipul grilei:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation>Ukuran kisi:</translation>
+        <translation>Dimensiunea grilei:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation>Jumlah hasil:</translation>
+        <translation>Număr de rezultate:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation>Tersusun</translation>
+        <translation>Structurat</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation>Tidak terstruktur</translation>
+        <translation>Nestructurat</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Selectați Fișier</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Numele fișierului trebuie să conțină numai caractere englezești.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation>(File CGNS tidak dipilih)</translation>
+        <translation>(Fișierul CGNS nu este selectat)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation>(Tidak ada hasil)</translation>
+        <translation>(Nu există niciun rezultat)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation>Activat</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation>Pilih file</translation>
+        <translation>Selectați Fișier</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Numele fișierului trebuie să conțină numai caractere englezești.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2094,11 +2094,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation>Pilih Direktori</translation>
+        <translation>Selectați Director</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation>Nama folder harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Numele folderului trebuie să conțină numai caractere englezești.</translation>
     </message>
     <message>
         <source>...</source>
@@ -2109,159 +2109,159 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation>Sunting</translation>
+        <translation>Editați | ×</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation>Kondisi Perhitungan</translation>
+        <translation>Starea de calcul</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Menambahkan</translation>
+        <translation>Adăuga</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Menghapus</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Impor (&amp;I)</translation>
+        <translation>Import (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation>Impor Web</translation>
+        <translation>Import Web</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation>Export (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Jernih</translation>
+        <translation>clar</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih kecil dari nilai minimum %4</translation>
+        <translation>%1 la rând %2 : Valoarea %3 este mai mic decât valoarea minimă %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation>%1 di baris %2 : Nilai %3 lebih besar dari nilai maksimum %4</translation>
-    </message>
-    <message>
-        <source>Choose a text file</source>
-        <translation>Pilih file teks</translation>
-    </message>
-    <message>
-        <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation>File teks (*.csv *.txt);;All files (*.*)</translation>
+        <translation>%1 la rând %2 : Valoarea %3 este mai mare decât valoarea maximă %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>A apărut o eroare la deschiderea fișierului.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation>Ctrl + V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 adalah nilai untuk bentang. Misalnya input nilai pada baris ke-2 adalah untuk rentang antara baris ke-1 dan baris ke-2.</translation>
+        <translation>%1 sunt valori pentru intervalele. De exemplu, valoarea introdusă la al doilea rând este pentru intervalul dintre primul rând și al doilea rând.</translation>
+    </message>
+    <message>
+        <source>Choose a text file</source>
+        <translation>Alegeți un fișier text</translation>
+    </message>
+    <message>
+        <source>Text files (*.csv *.txt);;All files (*.*)</source>
+        <translation>Fișiere text (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation>Tentukan nama file untuk disimpan</translation>
+        <translation>Specificați numele fișierului de salvat</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation>file CSV (*.csv)</translation>
-    </message>
-    <message>
-        <source>Values are copied to clipboard.</source>
-        <translation>Nilai disalin ke papan klip.</translation>
-    </message>
-    <message>
-        <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>Mengajukan %1 diperbarui setelah diimpor ke kondisi perhitungan %2. Apakah Anda ingin mengimpor file yang diperbarui?</translation>
+        <translation>Fișiere CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>informație</translation>
+    </message>
+    <message>
+        <source>Values are copied to clipboard.</source>
+        <translation>Valorile sunt copiate în clipboard.</translation>
+    </message>
+    <message>
+        <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
+        <translation>Fişier %1 este actualizat după import în condiția de calcul %2. Doriți să importați fișierul actualizat?</translation>
     </message>
     <message>
         <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
+        <translation>Puteți copia și lipi valorile, cu comanda rapidă „Ctrl + C” și „Ctrl + V”</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation>Masalah berikut ditemukan:</translation>
+        <translation>S-au găsit următoarele probleme:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation>... dan lainnya %1 kesalahan</translation>
+        <translation>... si altul %1 erori</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation>Unduh</translation>
+        <translation>Descarca</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation>Nomor Situs:</translation>
+        <translation>Număr site:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Mulai tanggal:</translation>
+        <translation>Data de început:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation>Tanggal Akhir:</translation>
+        <translation>Data de încheiere:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation>Masukkan nomor situs.</translation>
+        <translation>Vă rugăm să introduceți un număr de site.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation>Nomor situs tidak valid.</translation>
+        <translation>Număr site nevalid.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation>Tanggal mulai bukan sebelum tanggal akhir.</translation>
+        <translation>Data de începere nu înainte de data de încheiere.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation>Impor gagal</translation>
+        <translation>Importul nu a reușit</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation>Tidak ada data untuk diimpor.</translation>
+        <translation>Nu există date de importat.</translation>
     </message>
 </context>
 <context>
@@ -2269,45 +2269,45 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a soluției. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation>(Pilih template untuk diimpor)</translation>
+        <translation>(Selectați șablonul de importat)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>Konten di area teks akan ditimpa dengan template</translation>
+        <translation>Conținutul din zona de text este suprascris cu șablonul</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="vanished">Pengaturan Peta Warna</translation>
+        <translation type="vanished">Setarea Colormap</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="vanished">Rentang nilai</translation>
+        <translation type="vanished">Interval de valori</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="vanished">Otomatis</translation>
+        <translation type="vanished">Automat</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="vanished">Isi area atas</translation>
+        <translation type="vanished">Umpleți zona superioară</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -2315,49 +2315,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="vanished">Isi area bawah</translation>
+        <translation type="vanished">Umpleți zona inferioară</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="vanished">Nomor Divisi:</translation>
+        <translation type="vanished">Număr divizie:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="vanished">Maks:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="vanished">peta warna</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
+        <source>Importing Measured Data...</source>
+        <translation>Importul datelor măsurate...</translation>
+    </message>
+    <message>
         <source>Error occured while opening the file.</source>
-        <translation>Terjadi kesalahan saat membuka file.</translation>
+        <translation>A apărut o eroare la deschiderea fișierului.</translation>
     </message>
     <message>
         <source>The first two columns must be "X" and "Y".</source>
-        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
+        <translation>Primele două coloane trebuie să fie „X” și „Y”.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation>File data harus terdiri dari karakter bahasa Inggris saja.</translation>
+        <translation>Fișierul de date trebuie să fie format doar din caractere englezești.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation>Data yang salah ditemukan: %1</translation>
-    </message>
-    <message>
-        <source>Importing Measured Data...</source>
-        <translation>Mengimpor Data Terukur...</translation>
+        <translation>Date greșite găsite: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>X: </source>
@@ -2380,7 +2380,7 @@ Do you really want to import this file?</source>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation>Pengaturan Offset</translation>
+        <translation>Setare Offset</translation>
     </message>
     <message>
         <source>X:</source>
@@ -2392,127 +2392,127 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai X tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>Valoarea X nu este adecvată. Vă rugăm să introduceți o valoare mai simplă.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation>Nilai Y tidak sesuai. Silakan masukkan nilai yang lebih sederhana.</translation>
+        <translation>Valoarea Y nu este adecvată. Vă rugăm să introduceți o valoare mai simplă.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation>Pilihan Hasil Perhitungan</translation>
+        <translation>Selecția rezultatului calculului</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation>Silakan pilih hasil perhitungan yang akan digunakan.</translation>
+        <translation>Vă rugăm să selectați rezultatul calculului de utilizat.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation>Perhitungan satu dimensi</translation>
+        <translation>Calcul unidimensional</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation>Perhitungan dua dimensi</translation>
+        <translation>Calcul bidimensional</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation>Perhitungan tiga dimensi</translation>
+        <translation>Calcul tridimensional</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">A aparut o eroare: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="vanished">Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
+        <translation type="vanished">Verificarea argumentului pentru %1 a eșuat. Argumente nevalide: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="vanished">Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Editați variația rezultatului operației simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="vanished">Hasil Perhitungan:</translation>
+        <translation type="vanished">Rezultatul calculului:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="vanished">Nama variabel:</translation>
+        <translation type="vanished">Numele variabilei:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="vanished">Nilai untuk pengujian:</translation>
+        <translation type="vanished">Valoare pentru testare:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="vanished">Nama variabel tidak dimasukkan.</translation>
+        <translation type="vanished">Numele variabilei nu este introdus.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="vanished">Nama variabel ini sudah digunakan</translation>
+        <translation type="vanished">Acest nume de variabilă este deja utilizat</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="vanished">Edit Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Editați rezultatul operației simple</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Nama:</translation>
+        <translation type="vanished">Nume:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Poziţie:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Rezultatele calculului pentru intrare</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="vanished">Definisi variabel</translation>
+        <translation type="vanished">Definiția variable</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți testa definiția făcând clic pe aceasta. Dacă apare o eroare în timpul analizei definiției, este afișat mesajul de eroare. Când definiția este analizată cu succes, valoarea calculată utilizând „Valoarea pentru testarequot; pentru fiecare intrare este afișat. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2520,121 +2520,129 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Numele rezultatului</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Numele variabilei</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Valoare pentru testare</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Nodul grilei</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Celulă grilă</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="vanished">Partikel</translation>
+        <translation type="vanished">Particulă</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="vanished">Nama tidak dimasukkan.</translation>
+        <translation type="vanished">Numele nu este introdus.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="vanished">Nama ini sudah digunakan</translation>
+        <translation type="vanished">Acest nume este deja folosit</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">ești sigur că vrei să ștergi %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="vanished">Daftar Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Lista rezultatelor operației simple</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="vanished">Nama</translation>
+        <translation type="vanished">Nume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="vanished">Posisi</translation>
+        <translation type="vanished">Poziţie</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="vanished">Ke atas (&amp;U)</translation>
+        <translation type="vanished">Sus (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="vanished">Turun (&amp;D)</translation>
+        <translation type="vanished">Jos (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="vanished">Menghapus (&amp;D)</translation>
+        <translation type="vanished">Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">ești sigur că vrei să ștergi %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="vanished">simpul jaringan</translation>
+        <translation type="vanished">Nodul grilei</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="vanished">Sel kisi</translation>
+        <translation type="vanished">Celulă grilă</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="vanished">Partikel</translation>
+        <translation type="vanished">Particulă</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Exportul rezultatului calculului</translation>
     </message>
     <message>
         <source>Format:</source>
         <translation>Format:</translation>
     </message>
     <message>
+        <source>VTK files (ASCII)</source>
+        <translation>Fișiere VTK (ASCII)</translation>
+    </message>
+    <message>
+        <source>VTK files (Binary)</source>
+        <translation>Fișiere VTK (binare)</translation>
+    </message>
+    <message>
         <source>CSV files</source>
-        <translation>file CSV</translation>
+        <translation>Fișiere CSV</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation>File Topografi (*.tpo)</translation>
+        <translation>Fișiere de topografie (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
@@ -2642,63 +2650,55 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation>folder keluaran:</translation>
+        <translation>Dosar de iesire:</translation>
     </message>
     <message>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
+        <source>Prefix:</source>
+        <translation>Prefix:</translation>
+    </message>
+    <message>
         <source>Output file:</source>
-        <translation>Berkas keluaran:</translation>
+        <translation>Fisier de iesire:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Waktu</translation>
+        <translation>Timp</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation>Semua langkah waktu</translation>
+        <translation>Toate pașii de timp</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Awal:</translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Akhir:</translation>
+        <translation>Sfârșit:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Lewati tingkat:</translation>
-    </message>
-    <message>
-        <source>Prefix:</source>
-        <translation>Awalan:</translation>
-    </message>
-    <message>
-        <source>VTK files (ASCII)</source>
-        <translation>File VTK (ASCII)</translation>
-    </message>
-    <message>
-        <source>VTK files (Binary)</source>
-        <translation>File VTK (Binary)</translation>
+        <translation>Omite rata:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Wilayah</translation>
+        <translation>Regiune</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Wilayah penuh</translation>
+        <translation>Regiune completă</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation>Sunt în</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation>Eu Max</translation>
     </message>
     <message>
         <source>J Min</source>
@@ -2718,23 +2718,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation>Tampilkan Detail (&amp;D)</translation>
+        <translation>Arată detalii (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation>Pilih folder</translation>
+        <translation>Selectați Folder</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation>Map %1 tidak ada.</translation>
+        <translation>Pliant %1 nu există.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation>Sembunyikan Detail (&amp;H)</translation>
+        <translation>Ascunde detaliile (&amp;H)</translation>
     </message>
     <message>
         <source>--</source>
@@ -2745,112 +2745,112 @@ Do you really want to import this file?</source>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">A apărut o eroare la încărcarea rezultatului calculului.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation>A apărut o eroare la încărcarea rezultatului calculului.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation>Memuat hasil perhitungan untuk visualisasi gagal. Silakan coba lagi nanti, atau tunggu sampai akhir perhitungan.</translation>
+        <translation>Rezultatul de calcul al încărcării pentru vizualizare nu a reușit. Încercați din nou mai târziu sau așteptați până la sfârșitul calculului.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Tidak ada hasil perhitungan.</translation>
+        <translation>Nu există niciun rezultat de calcul.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation>Hasil perhitungan tidak berisi data grid.</translation>
+        <translation>Rezultatul calculului nu conține date de grilă.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation>Hasil Perhitungan Ekspor</translation>
+        <translation>Exportul rezultatului calculului</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file VTK...</translation>
+        <translation>Se salvează rezultatul calculului ca fișiere VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file CSV...</translation>
+        <translation>Se salvează rezultatul calculului ca fișiere CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation>Menyimpan hasil perhitungan sebagai ESRI Shapefiles...</translation>
+        <translation>Se salvează rezultatul calculului ca fișiere de tip ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation>Terjadi kesalahan saat menyimpan %1</translation>
+        <translation>A apărut o eroare la salvare %1</translation>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation>Menyimpan hasil perhitungan sebagai file TPO...</translation>
+        <translation>Se salvează rezultatul calculului ca fișiere TPO...</translation>
     </message>
     <message>
         <source>Reading time values...</source>
-        <translation>Membaca nilai waktu...</translation>
+        <translation>Valorile timpului de citire...</translation>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Membaca data dari hasil/Solusi %1.cgn gagal. Anda dapat memvisualisasikan hasil perhitungan di Solution1.cgn ke Solution %2.cgn.</translation>
+        <translation>Citirea datelor din rezultat/Soluție %1.cgn a eșuat. Puteți vizualiza rezultatul calculului în Solution1.cgn la Solution %2.cgn.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="vanished">Terjadi kesalahan: %1</translation>
+        <translation type="vanished">A aparut o eroare: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="vanished">I, J, K, indeks untuk label direset karena ukuran grid berubah.</translation>
+        <translation type="vanished">I, J, K, indexul pentru etichetă este resetat deoarece dimensiunea grilei este modificată.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="vanished">Edit Argumen Hasil String</translation>
+        <translation type="vanished">Editați argumentul rezultatului șirului</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="vanished">Posisi:</translation>
+        <translation type="vanished">Poziţie:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="vanished">Nama Hasil:</translation>
+        <translation type="vanished">Nume rezultat:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="vanished">Nama Variabel:</translation>
+        <translation type="vanished">Numele variabilei:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="vanished">SAYA:</translation>
+        <translation type="vanished">Eu:</translation>
     </message>
     <message>
         <source>J:</source>
@@ -2862,11 +2862,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="vanished">Indeks:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="vanished">Nilai untuk pengujian</translation>
+        <translation type="vanished">Valoare pentru testare</translation>
     </message>
     <message>
         <source>Global</source>
@@ -2874,90 +2874,90 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nodul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Celulă</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="vanished">Nama variabel kosong.</translation>
+        <translation type="vanished">Numele variabilei este gol.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">Membentuk</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="vanished">Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Rezultatele calculului pentru intrare</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="vanished">Jenis</translation>
+        <translation type="vanished">Tip</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="vanished">Nama hasil</translation>
+        <translation type="vanished">Numele rezultatului</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="vanished">Nama variabel</translation>
+        <translation type="vanished">Numele variabilei</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="vanished">Indeks</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="vanished">Nilai untuk Pengujian</translation>
+        <translation type="vanished">Valoare pentru testare</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="vanished">Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="vanished">Sunting (&amp;E)...</translation>
+        <translation type="vanished">Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="vanished">Menghapus (&amp;D)...</translation>
+        <translation type="vanished">Șterge (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="vanished">Definisi keluaran</translation>
+        <translation type="vanished">Definiția output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="vanished">Tes</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">ești sigur că vrei să ștergi %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
@@ -2965,34 +2965,34 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Node</source>
-        <translation type="vanished">simpul</translation>
+        <translation type="vanished">Nodul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="vanished">Sel</translation>
+        <translation type="vanished">Celulă</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="vanished">tepiI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="vanished">tepiJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="vanished">tepiK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="vanished">Kesalahan</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">A apărut o eroare la încărcarea rezultatului calculului.</translation>
     </message>
 </context>
 <context>
@@ -3003,268 +3003,268 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="vanished">Jenis kisi:</translation>
+        <translation type="vanished">Tipul grilei:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="vanished">Wilayah: (&amp;R)</translation>
+        <translation type="vanished">Regiune: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation>kisi-kisi</translation>
+        <translation>Grilă</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid</translation>
+        <translation>Condiție de creare a rețelei</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="vanished">Kondisi Pembuatan Grid</translation>
+        <translation type="vanished">Starea de creare a grilei</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation>Memuat file proyek...</translation>
+        <translation>Se încarcă fișierul proiectului...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation>Menyimpan file proyek...</translation>
+        <translation>Se salvează fișierul de proiect...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation>Tidak dapat menimpa %1.</translation>
+        <translation>Nu s-a putut suprascrie %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">Peringatan</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation>Menyimpan proyek...</translation>
+        <translation>Se salvează proiectul...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation>Membuka proyek...</translation>
+        <translation>Se deschide proiectul...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">Atribut grid elevasi tidak ditentukan untuk tipe grid %1. Fungsi grid I/O, fungsi pembuatan grid mungkin tidak bekerja dengan benar untuk tipe grid ini.</translation>
+        <translation type="vanished">Atributul grilei de înălțime nu este definit pentru tipul grilei %1. Funcțiile I / O ale rețelei, funcțiile de creare a rețelei pot să nu funcționeze corect pentru aceste tipuri de rețele.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="vanished">Larutan %1 sudah ada.</translation>
+        <translation type="vanished">Soluţie %1 deja exista.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="vanished">File CGNS yang namanya mengandung karakter selain huruf dan angka tidak dapat diimpor.</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Fișierul CGNS al cărui nume conține alte caractere decât alfabete și numere nu poate fi importat.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="vanished">Ekspor file CGNS</translation>
+        <translation type="vanished">Exportați fișierul CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="vanished">berkas CGNS (*.cgns)</translation>
+        <translation type="vanished">Fișier CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="vanished">Mengekspor file CGNS gagal. File yang ditentukan dikunci oleh proses lain.</translation>
+        <translation type="vanished">Exportarea fișierului CGNS nu a reușit. Fișierul specificat este blocat prin alt proces.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka file CGNS di file proyek: %1</translation>
+        <translation type="vanished">A apărut o eroare la deschiderea fișierului CGNS în fișierul proiectului: %1</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="vanished">%1 Gagal menyimpan file proyek.</translation>
+        <translation type="vanished">%1 Salvarea fișierului proiect nu a reușit.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="vanished">Semua gambar (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
+        <translation type="vanished">Toate imaginile (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation>Buka file Gambar</translation>
+        <translation>Deschideți fișierul imagine</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation>Gambar latar belakang dengan nama yang sama sudah ada.</translation>
+        <translation>Există deja o imagine de fundal cu același nume.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="vanished">Gambar latar belakang tidak ditambahkan. Silakan coba lagi.</translation>
+        <translation type="vanished">Imaginea de fundal nu a fost adăugată. Vă rugăm să încercați din nou.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="vanished">File gambar yang ditentukan tidak valid.</translation>
+        <translation type="vanished">Este specificat un fișier imagine nevalid.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="vanished">File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi.) yang terlalu lama %1 ).</translation>
+        <translation type="vanished">Acest fișier de proiect nu poate fi citit, deoarece a fost creat de iRIC prea vechi (versiunea %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation>File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi. yang lebih baru) %1 ).</translation>
+        <translation>Acest fișier de proiect nu poate fi citit, deoarece a fost creat de iRIC (versiunea %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation>File Teks (*.csv *.txt);;All Files (*.*)</translation>
+        <translation>Fișiere text (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation>Buka File Data Terukur</translation>
+        <translation>Deschideți fișierul de date măsurate</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation>Terjadi kesalahan saat memuat %1.</translation>
+        <translation>A apărut o eroare la încărcare %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">File ini untuk pemecah %1 %2. Ini tidak kompatibel dengan solver yang Anda gunakan, jadi mungkin mengimpor file ini akan gagal. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation type="vanished">Acest fișier este pentru rezolvator %1 %2. Nu este compatibil cu soluția pe care o utilizați, deci poate că importul acestui fișier va eșua. Doriți cu adevărat să importați acest fișier?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation>Tidak ada jendela visualisasi/grafik.</translation>
+        <translation>Nu există ferestre de vizualizare / grafic.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Mengajukan %1 tidak bisa dibuka.</translation>
+        <translation>Fişier %1 nu a putut fi deschis.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation>Sistem koordinat tidak dipilih.</translation>
+        <translation>Sistemul de coordonate nu este selectat.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>Terjadi kesalahan saat membuka file CGNS di file proyek: Case1.cgn</translation>
+        <translation>A apărut o eroare la deschiderea fișierului CGNS în fișierul de proiect: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
-        <translation>Menyalin gambar %1 ke %2 gagal.</translation>
+        <translation>Copierea imaginii %1 la %2 a eșuat.</translation>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">Terjadi kesalahan saat membuka %1. iRIC mencoba menyelamatkan data dari %2.</translation>
+        <translation type="vanished">A apărut o eroare la deschidere %1. iRIC încearcă să salveze date din %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>Terjadi kesalahan saat membuka %1.</translation>
+        <translation>A apărut o eroare la deschidere %1.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
-        <translation>Semua gambar (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
+        <translation>Toate imaginile (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
         <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>File gambar yang ditentukan tidak valid. Akhiran file harus berupa "jpg", "jpeg", "png", atau "tif".</translation>
+        <translation>Este specificat un fișier imagine nevalid. Sufixul fișierului ar trebui să fie unul dintre „jpg”, „jpeg”, „png” sau „tif”.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
-        <translation>Terjadi kesalahan saat membuat folder %1</translation>
+        <translation>A apărut o eroare la crearea folderului %1</translation>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation>Hasil perhitungan rusak, dan tidak dapat membuka proyek. Apakah Anda ingin membuang hasil perhitungan, dan mengembalikan data masukan?</translation>
+        <translation>Rezultatul calculului este rupt și nu se poate deschide proiectul. Doriți să renunțați la rezultatul calculului și să restabiliți datele de intrare?</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation>: tidak ada file tersebut.</translation>
+        <translation>: nu exista asemenea fisier.</translation>
     </message>
 </context>
 <context>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation>Pilih jendela target impor</translation>
+        <translation>Selectați ferestrele țintă de import</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation>Pilih jendela target ekspor</translation>
+        <translation>Selectați ferestrele țintă de export</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation>Tanggal untuk t = 0 pengaturan</translation>
+        <translation>Data pentru setarea t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation>Waktu untuk t = 0:</translation>
+        <translation>Timp pentru t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation>Tidak ditentukan</translation>
+        <translation>Nu este specificat</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation>Format tampilan waktu</translation>
+        <translation>Format de afișare a orei</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Zona waktu:</translation>
+        <translation>Fus orar:</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
         <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <translation>Spațiu de lucru "%1"are %2 foldere de proiect care par să nu mai fie folosite. Doriți să le eliminați?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation>informație</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation>Peramban Atribut</translation>
+        <translation>Browser cu atribute</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation>indeks</translation>
+        <translation>Indici</translation>
     </message>
     <message>
         <source>1</source>
@@ -3276,15 +3276,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I:</source>
-        <translation>SAYA:</translation>
+        <translation>Eu:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation>Index:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Koordinat</translation>
+        <translation>Coordonatele</translation>
     </message>
     <message>
         <source>X:</source>
@@ -3296,119 +3296,119 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation>Atribut:</translation>
+        <translation>Atribute:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation>Nama Atribut</translation>
+        <translation>Numele atributului</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation>Valoare</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Size: 1024 x 768</source>
-        <translation>Ukuran: 1024x768</translation>
+        <translation>Dimensiune: 1024 x 768</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Ukuran: %1</translation>
+        <translation>Mărimea: %1</translation>
     </message>
 </context>
 <context>
     <name>QMainWindowWithSnapshotResizeWidget_EditDialog</name>
     <message>
         <source>Edit Window Size</source>
-        <translation>Edit Ukuran Jendela</translation>
+        <translation>Editați dimensiunea ferestrei</translation>
     </message>
     <message>
         <source>Note: The size you input is for the area saved to screenshots. The area of the Object Browser etc. are not included.</source>
-        <translation>Catatan: Ukuran yang Anda masukkan adalah untuk area yang disimpan ke tangkapan layar. Area Object Browser dll. tidak termasuk.</translation>
+        <translation>Notă: dimensiunea introdusă este pentru zona salvată în capturi de ecran. Zona din Browser de obiecte etc. nu sunt incluse.</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="obsolete">Mode</translation>
+        <translation type="obsolete">Modul</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="obsolete">Lebar:</translation>
+        <translation type="obsolete">Lăţime:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="obsolete">Tinggi:</translation>
+        <translation type="obsolete">Înălţime:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <source>Draw</source>
-        <translation type="vanished">Seri</translation>
+        <source>Background Color</source>
+        <translation>Culoare de fundal</translation>
     </message>
     <message>
-        <source>Move up item</source>
-        <translation>Pindahkan item ke atas</translation>
+        <source>Draw</source>
+        <translation type="vanished">A desena</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Pindahkan item ke bawah</translation>
+        <translation>Mutați elementul în jos</translation>
+    </message>
+    <message>
+        <source>Move up item</source>
+        <translation>Mutați elementul în sus</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation>Gerakan Sewenang-wenang</translation>
+        <translation>Mutare arbitrară</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation>Alokasikan Ulang Gambar Latar Belakang</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Bawaan</translation>
-    </message>
-    <message>
-        <source>(Undefined)</source>
-        <translation>(Tidak terdefinisi)</translation>
-    </message>
-    <message>
-        <source>Background Color</source>
-        <translation>Warna latar belakang</translation>
+        <translation>Realocați imaginea de fundal</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation>Setel offset</translation>
+        <translation>Set offset</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Mod implicit</translation>
+    </message>
+    <message>
+        <source>(Undefined)</source>
+        <translation>(Nedefinit)</translation>
     </message>
 </context>
 <context>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation>Wilayah Penuh</translation>
+        <translation>Regiunea plină</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation>Wilayah Aktif</translation>
+        <translation>Regiunea activă</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation>Daerah Pabean</translation>
+        <translation>Regiunea personalizată</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="vanished">saya Min:</translation>
+        <translation type="vanished">Sunt în:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="vanished">saya maks:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3416,22 +3416,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="vanished">J Maks:</translation>
+        <translation type="vanished">J Max:</translation>
     </message>
 </context>
 <context>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>saya Min:</translation>
+        <translation>Sunt în:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>saya maks:</translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
@@ -3439,159 +3439,159 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Maks:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="vanished">Pengaturan Warna</translation>
+        <translation type="vanished">Setarea culorii</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation>%1 kisi-kisi</translation>
+        <translation>%1 Grile</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionGridType</name>
     <message>
         <source>%1 (magnitude)</source>
-        <translation>%1 (besarnya)</translation>
+        <translation>%1 (magnitudine)</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslator</name>
     <message>
         <source> (magnitude)</source>
-        <translation>(besarnya)</translation>
+        <translation>(magnitudine)</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="vanished">Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation type="vanished">O linie de margine se intersectează cu cea a altei celule din această grilă.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="vanished">Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Raportul de aspect al celulei de rețea depășește valoarea limită %1 în mai multe celule.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="vanished">Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
+        <translation type="vanished">Variația lungimilor marginii celulei de rețea depășește valorile limită (direcția I: %1, Direcția J: %2 ) în mai multe celule.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="vanished">Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Unghiul marginii celulei grilei scade sub valoarea limită %1 în mai multe celule.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="vanished">* Sel di mana ujung-ujungnya berpotongan</translation>
+        <translation type="vanished">* Celulele unde marginile se intersectează</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="vanished">Tidak ada</translation>
+        <translation type="vanished">Nu exista</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="vanished">* Sel di mana rasio aspek tepi sel melebihi %1</translation>
+        <translation type="vanished">* Celule în care raportul de aspect al marginilor celulei depășește %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="vanished">I, J, Rasio aspek</translation>
+        <translation type="vanished">I, J, Raport de aspect</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="vanished">Panjang tepi terlalu kecil</translation>
+        <translation type="vanished">Lungimea muchiei este prea mică</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="vanished">* Sel di mana sudut simpul sel di bawah %1</translation>
+        <translation type="vanished">* Celulele unde unghiul vertexului celular este mai jos %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="vanished">Saya, J, Sudut</translation>
+        <translation type="vanished">Eu, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
+        <translation type="vanished">* Celule în care variația lungimii celulei de-a lungul direcției i depășește %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="vanished">I, J, Variasi</translation>
+        <translation type="vanished">Eu, J, Variație</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation type="vanished">* Celule în care variația lungimii celulei de-a lungul direcției j depășește %1</translation>
     </message>
 </context>
 <context>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Rata de eșantionare:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>I-direcția</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>Direcția J</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation>Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation>Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation>Rata de eșantionare:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>arah-I</translation>
+        <translation>I-direcția</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-arah</translation>
+        <translation>Direcția J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-arah</translation>
+        <translation>Direcția K</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>-</source>
@@ -3611,146 +3611,146 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>max</source>
-        <translation>maks</translation>
+        <translation>max</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation>Gambar Latar Belakang (Internet)</translation>
+        <translation>Imagini de fundal (Internet)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation>Untuk mendapatkan gambar latar belakang dari internet, tentukan sistem koordinat proyek, dari menu berikut. File -&gt; Properti</translation>
+        <translation>Pentru a obține imaginea de fundal de pe internet, vă rugăm să specificați sistemul de coordonare al proiectului, din meniul următor. Fișier -&gt; Proprietate</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation>Perubahan Gambar Latar Belakang</translation>
+        <translation>Schimbarea imaginii de fundal</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="vanished">Google Peta (Jalan)</translation>
+        <translation type="vanished">Harta Google (rutier)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="vanished">Google Map (Satelit)</translation>
+        <translation type="vanished">Harta Google (satelit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="vanished">Google Peta (Hibrida)</translation>
+        <translation type="vanished">Google Map (hibrid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="vanished">Google Peta (Medan)</translation>
+        <translation type="vanished">Harta Google (Teren)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation>Buka Peta Jalan</translation>
+        <translation>Deschideți Harta Stradă</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation>GSI (Standar) (Jepang saja)</translation>
+        <translation>GSI (standard) (numai în Japonia)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation>GSI (Pucat) (Jepang saja)</translation>
+        <translation>GSI (Pale) (numai Japonia)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation>GSI (Bahasa Inggris) (Jepang saja)</translation>
+        <translation>GSI (engleză) (numai Japonia)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation>GSI (Relief) (Jepang saja)</translation>
+        <translation>GSI (Relief) (numai Japonia)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation>GSI (Gambar Ortho) (Jepang saja)</translation>
+        <translation>GSI (imagini orto) (numai în Japonia)</translation>
     </message>
     <message>
         <source>Google Maps</source>
-        <translation>Google Peta</translation>
+        <translation>Hărți Google</translation>
     </message>
     <message>
         <source>Google Streets</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Streets</translation>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation>Google Satelit</translation>
+        <translation>Google Satellite</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
-        <translation>Hibrida Satelit Google</translation>
+        <translation>Google Satellite Hybrid</translation>
     </message>
     <message>
         <source>Google Roads</source>
-        <translation>Google Jalan</translation>
+        <translation>Google Roads</translation>
     </message>
     <message>
         <source>Google Terrain</source>
-        <translation>Google Medan</translation>
+        <translation>Google Terrain</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Angle: 13</source>
-        <translation>Sudut: 13</translation>
+        <translation>Unghi: 13</translation>
     </message>
     <message>
         <source>Angle: %1</source>
-        <translation>Sudut: %1</translation>
+        <translation>Unghi: %1</translation>
     </message>
 </context>
 <context>
     <name>Vtk2dGraphicsViewAngleWidget_AngleEditDialog</name>
     <message>
         <source>Edit Angle</source>
-        <translation>Sunting Sudut</translation>
+        <translation>Editați unghi</translation>
     </message>
     <message>
         <source>Please input new angle</source>
-        <translation>Silakan masukkan sudut baru</translation>
+        <translation>Vă rugăm să introduceți un nou unghi</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Scale: 1 / 3.123</source>
-        <translation>Skala: 1 / 3.123</translation>
+        <translation>Scara: 1 / 3.123</translation>
     </message>
     <message>
         <source>Scale: %1</source>
-        <translation>Skala: %1</translation>
+        <translation>Scară: %1</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget_ScaleEditDialog</name>
     <message>
         <source>Edit Scale</source>
-        <translation>Sunting Skala</translation>
+        <translation>Editați scara</translation>
     </message>
     <message>
         <source>Please input new scale</source>
-        <translation>Silakan masukkan skala baru</translation>
+        <translation>Vă rugăm să introduceți o scară nouă</translation>
     </message>
     <message>
         <source>1 / </source>
@@ -3761,96 +3761,96 @@ Do you really want to import this file?</source>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>Nomor pembuatan nomor versi tidak ditentukan.</translation>
+        <translation>Numărul versiunii nu este specificat.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Terjadi kesalahan: %1</translation>
+        <translation>A aparut o eroare: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Memeriksa argumen untuk %1 gagal. Argumen yang tidak valid: %2.</translation>
+        <translation>Verificarea argumentului pentru %1 a eșuat. Argumente nevalide: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation>Editați variabila rezultat al operației simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Hasil Perhitungan:</translation>
+        <translation>Rezultatul calculului:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nama variabel:</translation>
+        <translation>Numele variabilei:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Nilai untuk pengujian:</translation>
+        <translation>Valoare pentru testare:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nama variabel tidak dimasukkan.</translation>
+        <translation>Numele variabilei nu este introdus.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Nama variabel ini sudah digunakan</translation>
+        <translation>Acest nume de variabilă este deja folosit</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edit Hasil Operasi Sederhana</translation>
+        <translation>Editați rezultatul operației simple</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisi:</translation>
+        <translation>Poziţie:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Hasil perhitungan untuk masukan</translation>
+        <translation>Rezultatele calculului pentru intrare</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definisi variabel</translation>
+        <translation>Definiţia variable</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți defini variabila cu limbajul JavaScript. Consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decor: subliniere; culoare:#0000ff;"&gt;aici&lt;/span&gt;&lt;/a&gt; pentru detalii.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisinya dengan mengklik ini. Jika terjadi kesalahan saat mengurai definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diurai, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap masukan ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți testa definiția făcând clic pe aceasta. Dacă apare o eroare în timpul analizării definiției, este afișat mesajul de eroare. Când definiția este analizată cu succes, valoarea calculată utilizând „Valoare pentru testare”; pentru fiecare intrare este afișată.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3858,126 +3858,126 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nama hasil</translation>
+        <translation>Numele rezultatului</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nama variabel</translation>
+        <translation>Nume variabilă</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Nilai untuk pengujian</translation>
+        <translation>Valoare pentru testare</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Nod grilă</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Celula grilă</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Grilă iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation>Particulă</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nama tidak dimasukkan.</translation>
+        <translation>Numele nu este introdus.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Nama ini sudah digunakan</translation>
+        <translation>Acest nume este deja folosit</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>ești sigur că vrei să ștergi %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Daftar Hasil Operasi Sederhana</translation>
+        <translation>Lista rezultatelor operațiunii simple</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation>Nume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Ke atas (&amp;U)</translation>
+        <translation>Sus (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Turun (&amp;D)</translation>
+        <translation>Jos (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar itu penting. Dalam definisinya, Anda bisa menggunakan nilai penghitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă&lt;/span&gt;: ordinea în listă este importantă. În definiție, puteți utiliza valoarea calculelor operaționale simple ca variabilă, care apare mai devreme în listă.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation>Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Sunting (&amp;E)...</translation>
+        <translation>Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation>Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Apakah Anda yakin ingin menghapus %1 ?</translation>
+        <translation>ești sigur că vrei să ștergi %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Simpul jaringan</translation>
+        <translation>Nod grilă</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation>Celula grilă</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation>Jaringan iEdge</translation>
+        <translation>Grilă iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation>Kotak jEdge</translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation>Kotak kEdge</translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation>Particulă</translation>
     </message>
 </context>
 <context>
@@ -3988,70 +3988,70 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis Kotak:</translation>
+        <translation>Tip grilă:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Wilayah: (&amp;R)</translation>
+        <translation>Regiune: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation>O linie de margine se intersectează cu cea a unei alte celule din această grilă.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Rasio aspek sel kisi melebihi nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Raportul de aspect al celulei grilei depășește valoarea limită %1 în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Variasi panjang tepi sel grid melebihi nilai batas (arah I: %1, arah J: %2 ) di lebih dari satu sel.</translation>
+        <translation>Variația lungimii marginilor celulei grilei depășește valorile limită (direcția I: %1, direcția J: %2 ) în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Sudut tepi sel grid berada di bawah nilai batas %1 di lebih dari satu sel.</translation>
+        <translation>Unghiul marginii celulei grilei scade sub valoarea limită %1 în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Sel tempat ujung-ujungnya berpotongan</translation>
+        <translation>* Celulele unde marginile se intersectează</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Tidak ada</translation>
+        <translation>Nu exista</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Sel yang rasio aspek tepi selnya melebihi %1</translation>
+        <translation>* Celule în care raportul de aspect al marginilor celulei depășește %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Rasio aspek</translation>
+        <translation>I, J, raport de aspect</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Panjang tepinya terlalu kecil</translation>
+        <translation>Lungimea muchiei prea mică</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Sel yang sudut puncak selnya berada di bawah %1</translation>
+        <translation>* Celule în care unghiul vârfului celulei este mai jos %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>Saya, J, Sudut</translation>
+        <translation>I, J, Unghi</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah i melebihi %1</translation>
+        <translation>* Celule în care variația lungimii celulei de-a lungul direcției i depășește %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Variasi</translation>
+        <translation>I, J, Variație</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Sel yang variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation>* Celulele în care variația lungimii celulei de-a lungul direcției j depășește %1</translation>
     </message>
 </context>
 </TS>
