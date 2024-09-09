@@ -5,6 +5,7 @@
 #include <guicore/grid/v4grid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/filesystemfunction.h>
+#include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
@@ -51,6 +52,7 @@ bool GridLandXmlExporter::doExport(v4InputGrid* grid, const QString& filename, c
 		return false;
 	}
 	auto vtkGrid = grid->grid()->vtkData()->data();
+	InformationDialog::warning(parent, tr("Warning"), tr("LandXml files export only elevation defined at grid nodes as attributes."), "landxml_export");
 
 	QXmlStreamWriter writer(&file);
 	writer.writeStartDocument("1.0");

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridLandXmlExporter</name>
@@ -11,7 +13,15 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>S'ha produït un error en exportar a %1</translation>
+        <translation>S&apos;ha produït un error en exportar a %1</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LandXml files export only elevation defined at grid nodes as attributes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
