@@ -110,7 +110,7 @@ bool Structured2DGridNaysCSVImporter::import(v4InputGrid* grid, const QString& f
 				data.position = AttributeData::Cell;
 			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace && typeFlag == "I") {
 				data.position = AttributeData::IEdge;
-			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace && typeFlag == "J") {
+			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::JFace && typeFlag == "J") {
 				data.position = AttributeData::JEdge;
 			} else {
 				data.valid = false;
