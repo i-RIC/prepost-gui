@@ -21,7 +21,7 @@ namespace {
 
 struct AttributeData {
 	enum ValueType {Real, Int};
-	enum Position {Node, Cell};
+	enum Position {Node, Cell, IEdge, JEdge};
 
 	bool valid = true;
 	ValueType valueType;
@@ -108,6 +108,10 @@ bool Structured2DGridNaysCSVImporter::import(v4InputGrid* grid, const QString& f
 				data.position = AttributeData::Node;
 			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter && typeFlag == "C") {
 				data.position = AttributeData::Cell;
+			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace && typeFlag == "I") {
+				data.position = AttributeData::IEdge;
+			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::JFace && typeFlag == "J") {
+				data.position = AttributeData::JEdge;
 			} else {
 				data.valid = false;
 				attData.push_back(data);
@@ -153,10 +157,16 @@ bool Structured2DGridNaysCSVImporter::import(v4InputGrid* grid, const QString& f
 						}
 						unsigned int id;
 						if (data.position == AttributeData::Cell && (i == imax - 1 || j == jmax - 1)) {continue;}
+						if (data.position == AttributeData::IEdge && (j == jmax - 1)) {continue;}
+						if (data.position == AttributeData::JEdge && (i == imax - 1)) {continue;}
 						if (data.position == AttributeData::Node) {
 							id = grid2d->pointIndex(i, j);
-						} else {
+						} else if (data.position == AttributeData::Cell) {
 							id = grid2d->cellIndex(i, j);
+						} else if (data.position == AttributeData::IEdge) {
+							id = grid2d->iEdgeIndex(i, j);
+						} else if (data.position == AttributeData::JEdge) {
+							id = grid2d->jEdgeIndex(i, j);
 						}
 						if (data.valueType == AttributeData::Real) {
 							double v;

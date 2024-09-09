@@ -64,12 +64,12 @@ void exportStructured2dGrid(v4Structured2dGrid* grid, QTextStream& stream, int i
 		vtkDataArray* array = cData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* ifData = grid->vtkIEdgeData()->data()->GetPointData();
+	vtkCellData* ifData = grid->vtkIEdgeData()->data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* jfData = grid->vtkJEdgeData()->data()->GetPointData();
+	vtkCellData* jfData = grid->vtkJEdgeData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
@@ -247,17 +247,17 @@ void exportStructured3dGrid(v4Structured3dGrid* grid, QTextStream& stream, int i
 		vtkDataArray* array = cData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* ifData = grid->vtkIFaceData()-> data()->GetPointData();
+	vtkCellData* ifData = grid->vtkIFaceData()-> data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* jfData = grid->vtkJFaceData()->data()->GetPointData();
+	vtkCellData* jfData = grid->vtkJFaceData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* kfData = grid->vtkKFaceData()->data()->GetPointData();
+	vtkCellData* kfData = grid->vtkKFaceData()->data()->GetCellData();
 	for (int i = 0; i < kfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = kfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
