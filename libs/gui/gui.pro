@@ -233,7 +233,6 @@ HEADERS += gui_api.h \
            pref/preferencepagetms.h \
            pref/preferencepagewebcsvtile.h \
            pref/preferencepagewindowsize.h \
-           pref/private/preferencepageriversurvey_fractionadddialog.h \
            projectproperty/projectpropertybasicinfowidget.h \
            projectproperty/projectpropertydialog.h \
            solverdef/solverdefinitionabstractdialog.h \
@@ -260,9 +259,11 @@ HEADERS += gui_api.h \
            continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.h \
            continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.h \
            main/private/iricmainwindow_calculatedresultmanager.h \
+           main/private/iricmainwindow_discardresultconfirmdialog.h \
            main/private/iricmainwindow_modelessdialogmodechanger.h \
            main/private/iricmainwindow_snapshotsaver.h \
            misc/private/cancelhandler.h \
+           pref/private/preferencepageriversurvey_fractionadddialog.h \
            pref/private/preferencepagetmsadddialog.h \
            pref/private/preferencepagewebcsvtileadddialog.h \
            startpage/private/startpagedialog_impl.h \
@@ -286,7 +287,6 @@ FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          pref/preferencepagetms.ui \
          pref/preferencepagewebcsvtile.ui \
          pref/preferencepagewindowsize.ui \
-         pref/private/preferencepageriversurvey_fractionadddialog.ui \
          projectproperty/projectpropertybasicinfowidget.ui \
          projectproperty/projectpropertydialog.ui \
          solverdef/solverdefinitionabstractdialog.ui \
@@ -299,6 +299,8 @@ FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          continuoussnapshot/private/continuoussnapshotwizard_moviepropertypage.ui \
          continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.ui \
          continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.ui \
+         main/private/iricmainwindow_discardresultconfirmdialog.ui \
+         pref/private/preferencepageriversurvey_fractionadddialog.ui \
          pref/private/preferencepagetmsadddialog.ui \
          pref/private/preferencepagewebcsvtileadddialog.ui
 SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
@@ -333,7 +335,6 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            pref/preferencepagetms.cpp \
            pref/preferencepagewebcsvtile.cpp \
            pref/preferencepagewindowsize.cpp \
-           pref/private/preferencepageriversurvey_fractionadddialog.cpp \
            projectproperty/projectpropertybasicinfowidget.cpp \
            projectproperty/projectpropertydialog.cpp \
            solverdef/solverdefinitionabstractdialog.cpp \
@@ -360,9 +361,11 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.cpp \
            continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.cpp \
            main/private/iricmainwindow_calculatedresultmanager.cpp \
+           main/private/iricmainwindow_discardresultconfirmdialog.cpp \
            main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
            misc/private/cancelhandler.cpp \
+           pref/private/preferencepageriversurvey_fractionadddialog.cpp \
            pref/private/preferencepagetmsadddialog.cpp \
            pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc

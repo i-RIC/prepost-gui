@@ -308,6 +308,7 @@ private:
 	QProcessEnvironment m_processEnvironment;
 
 	class CalculatedResultManager;
+	class DiscardResultConfirmDialog;
 	class ModelessDialogModeChanger;
 	class SnapshotSaver;
 

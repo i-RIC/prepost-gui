@@ -16686,7 +16686,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>格子が編集されているか、削除されています。保存すると、計算結果は破棄されます。</translation>
+        <translation type="vanished">格子が編集されているか、削除されています。保存すると、計算結果は破棄されます。</translation>
     </message>
     <message>
         <source>The grids are edited. When you save, the calculation result is discarded.</source>
@@ -17676,6 +17676,37 @@ Option -&gt; Preferences</source>
     <message>
         <source>Color Bar &amp;Bulk Setting...</source>
         <translation>カラーバー一括設定 (&amp;B)...</translation>
+    </message>
+</context>
+<context>
+    <name>iRICMainWindow_DiscardResultConfirmDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
+&lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
+&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ソルバの実行後、格子が編集されています。以下のいずれかを選択する必要があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;格子の編集内容を破棄して、計算結果を保存する。&lt;/li&gt;
+&lt;li&gt;計算結果を破棄して、格子の編集内容を保存する。&lt;/li&gt;
+&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Discard &amp;Grid Modification</source>
+        <translation>格子の編集内容を破棄する(&amp;G)</translation>
+    </message>
+    <message>
+        <source>Discard Calculation &amp;Result</source>
+        <translation>計算結果を破棄する (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>キャンセル(&amp;C)</translation>
     </message>
 </context>
 </TS>
