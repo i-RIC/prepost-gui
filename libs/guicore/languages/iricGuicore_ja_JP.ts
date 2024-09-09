@@ -4037,6 +4037,10 @@ Do you really want to import this file?</source>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
         <translation>計算結果が破損しているためプロジェクトを開けません。計算結果を破棄し、入力条件の復元を試みますか?</translation>
     </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation>入力条件が破損しているためプロジェクトを開けません。現在の入力条件を破棄し、バックアップから復元を試みますか?</translation>
+    </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
