@@ -2810,6 +2810,10 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Andmete lugemine tulemusest/lahendusest %1.cgn ebaõnnestus. Saate visualiseerida arvutustulemust failist Solution1.cgn kuni Lahendus %2.cgn.</translation>
     </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -3191,6 +3195,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
         <translation>Arvutustulemus on katki ja projekti ei saa avada. Kas soovite arvutustulemuse tühistada ja sisendandmed taastada?</translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

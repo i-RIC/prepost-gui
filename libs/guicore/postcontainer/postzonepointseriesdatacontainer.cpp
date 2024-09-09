@@ -1,5 +1,6 @@
 #include "../project/projectcgnsfile.h"
 #include "postsolutioninfo.h"
+#include "posttimesteps.h"
 #include "postzonepointseriesdatacontainer.h"
 #include "v4postcalculatedresult.h"
 #include "v4postcalculatedresultargument.h"
@@ -123,17 +124,24 @@ int PostZonePointSeriesDataContainer::loadData()
 
 	auto file = solutionInfo()->cgnsFile();
 
-	std::vector<double> timeValues;
-	file->ccBase()->biterData()->readTime(&timeValues);
+	const auto timeValues = solutionInfo()->timeSteps()->timesteps();
 
 	auto reader = file->solutionReader();
 	for (int i = 0; i < static_cast<int> (timeValues.size()); ++i) {
 		reader->setSolutionId(i + 1);
-		auto zone = reader->targetFile()->base(PostSolutionInfo::toIntDimension(m_dimension))->zone(m_zoneName);
+		auto file = reader->targetFile();
+		if (file == nullptr) {return IRIC_DATA_NOT_FOUND;}
+		
+		auto base = file->base(PostSolutionInfo::toIntDimension(m_dimension));
+		if (base == nullptr) {return IRIC_DATA_NOT_FOUND;}
+
+		auto zone = base->zone(m_zoneName);
+		if (zone == nullptr) {return IRIC_DATA_NOT_FOUND;}
 
 		double val;
 		int ret = loadData(m_valueName, zone, &val);
-		if (ret != 0) {return false;}
+		if (ret != 0) {return IRIC_DATA_NOT_FOUND;}
+
 		m_data.push_back(val);
 	}
 	return IRIC_NO_ERROR;
