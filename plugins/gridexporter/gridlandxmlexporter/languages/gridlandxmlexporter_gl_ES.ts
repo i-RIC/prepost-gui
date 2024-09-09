@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GridLandXmlExporter</name>
@@ -17,11 +15,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>LandXml files export only elevation defined at grid nodes as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os ficheiros LandXml só exportan a elevación definida nos nodos da grella como atributos.</translation>
     </message>
 </context>
 <context>

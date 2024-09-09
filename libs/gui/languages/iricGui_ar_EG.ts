@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">تحذير</translation>
+        <translation>تحذير</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;يتم تحرير الشبكة بعد تنفيذ الحل. تحتاج إلى الاختيار من بين الخيارات التالية:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;تجاهل تعديل الشبكة، والاحتفاظ بنتيجة الحساب.&lt;/li&gt; &lt;li&gt;تجاهل نتيجة الحساب، وحفظ الشبكة المعدلة.&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>تجاهل تعديل الشبكة (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>تجاهل نتيجة الحساب (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>يلغي (&amp;C)</translation>
     </message>
 </context>
 </TS>

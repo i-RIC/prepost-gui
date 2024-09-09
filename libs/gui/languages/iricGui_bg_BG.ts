@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Внимание</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Мрежата се редактира след изпълнението на решаващия инструмент. Трябва да изберете от следните опции:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Отхвърляне на модификацията на мрежата и запазване на резултата от изчислението.&lt;/li&gt; &lt;li&gt;Отхвърляне на резултата от изчислението и запазване на променената мрежа.&lt;/li&gt; &lt; /ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Отхвърляне на модификацията на мрежата (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Отхвърляне на резултата от изчислението (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Отказ (&amp;C)</translation>
     </message>
 </context>
 </TS>

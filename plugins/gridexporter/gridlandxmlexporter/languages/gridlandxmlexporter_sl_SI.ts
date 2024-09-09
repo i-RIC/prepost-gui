@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GridLandXmlExporter</name>
@@ -17,11 +15,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>LandXml files export only elevation defined at grid nodes as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke LandXml kot atribute izvažajo samo nadmorsko višino, definirano v vozliščih mreže.</translation>
     </message>
 </context>
 <context>

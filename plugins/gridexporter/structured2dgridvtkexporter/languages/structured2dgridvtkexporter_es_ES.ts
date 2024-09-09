@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>VTK files does not support exporting grid attributes defined at edges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos VTK no admiten la exportación de atributos de cuadrícula definidos en los bordes.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GridLandXmlExporter</name>
@@ -17,11 +15,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>LandXml files export only elevation defined at grid nodes as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml 檔案僅將網格節點處定義的高程匯出為屬性。</translation>
     </message>
 </context>
 <context>

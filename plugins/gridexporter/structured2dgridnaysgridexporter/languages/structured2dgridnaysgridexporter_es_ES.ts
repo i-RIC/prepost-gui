@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>RIC-Nays Grid files only support exporting Elevation and CellCondition as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos de cuadrícula RIC-Nays solo admiten la exportación de Elevation y CellCondition como atributos.</translation>
     </message>
 </context>
 </TS>

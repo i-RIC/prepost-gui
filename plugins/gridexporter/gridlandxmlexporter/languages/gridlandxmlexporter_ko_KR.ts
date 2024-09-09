@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GridLandXmlExporter</name>
@@ -17,11 +15,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>LandXml files export only elevation defined at grid nodes as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml 파일은 그리드 노드에서 정의된 표고만 속성으로 내보냅니다.</translation>
     </message>
 </context>
 <context>

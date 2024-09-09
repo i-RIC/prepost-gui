@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La cuadrícula se edita después de la ejecución del solucionador. Debe seleccionar una de las siguientes opciones:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Descartar la modificación de la cuadrícula y conservar el resultado del cálculo.&lt;/li&gt; &lt;li&gt;Descartar el resultado del cálculo y guardar la cuadrícula modificada.&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Descartar modificación de cuadrícula (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Descartar resultado del cálculo (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar (&amp;C)</translation>
     </message>
 </context>
 </TS>

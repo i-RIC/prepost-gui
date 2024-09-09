@@ -2812,7 +2812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Az adatok beolvasása a result/Solution1.cgn fájlból nem sikerült. Nincs megjeleníthető számítási eredmény. Törli a result/Solution1.cgn fájlt?</translation>
     </message>
 </context>
 <context>
@@ -3198,7 +3198,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
-        <translation type="unfinished"></translation>
+        <translation>A bemeneti adatok hibásak, és nem lehet megnyitni a projektet. Szeretné elvetni a bemeneti adatokat, és visszaállítani a biztonsági másolatból?</translation>
     </message>
 </context>
 <context>

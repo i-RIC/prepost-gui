@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelem</translation>
+        <translation>Figyelmeztetés</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A rács szerkesztése a megoldó végrehajtása után történik. A következő lehetőségek közül kell választania:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;A rácsmódosítás elvetése és a számítási eredmény megtartása.&lt;/li&gt; &lt;li&gt;A számítási eredmény elvetése és a módosított rács mentése.&lt;/li&gt; &lt; /ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Dobja el a rács módosítását (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>A számítási eredmény elvetése (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Mégse (&amp;C)</translation>
     </message>
 </context>
 </TS>

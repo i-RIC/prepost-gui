@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>RIC-Nays Grid files only support exporting Elevation and CellCondition as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays Grid 파일은 Elevation과 CellCondition만 속성으로 내보낼 수 있습니다.</translation>
     </message>
 </context>
 </TS>

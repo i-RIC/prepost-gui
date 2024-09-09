@@ -2812,7 +2812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>result/Solution1.cgn에서 데이터를 읽는 데 실패했습니다. 시각화할 수 있는 계산 결과가 없습니다. result/Solution1.cgn을 삭제하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -3198,7 +3198,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
-        <translation type="unfinished"></translation>
+        <translation>입력 데이터가 손상되어 프로젝트를 열 수 없습니다. 입력 데이터를 삭제하고 백업에서 복원하시겠습니까?</translation>
     </message>
 </context>
 <context>

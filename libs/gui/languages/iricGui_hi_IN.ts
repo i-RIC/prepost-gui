@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">चेतावनी</translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;सॉल्वर निष्पादन के बाद ग्रिड संपादित किया जाता है। आपको निम्न विकल्पों में से चयन करना होगा:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;ग्रिड संशोधन को त्यागें, और गणना परिणाम को रखें।&lt;/li&gt; &lt;li&gt;गणना परिणाम को त्यागें, और संशोधित ग्रिड को सहेजें।&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्रिड संशोधन त्यागें (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>गणना परिणाम त्यागें (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>रद्द करना (&amp;C)</translation>
     </message>
 </context>
 </TS>

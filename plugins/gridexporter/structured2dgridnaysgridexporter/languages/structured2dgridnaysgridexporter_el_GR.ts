@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>RIC-Nays Grid files only support exporting Elevation and CellCondition as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα αρχεία RIC-Nays Grid υποστηρίζουν μόνο την εξαγωγή Elevation και CellCondition ως χαρακτηριστικών.</translation>
     </message>
 </context>
 </TS>

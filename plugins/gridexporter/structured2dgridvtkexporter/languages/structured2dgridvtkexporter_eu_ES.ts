@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>VTK files does not support exporting grid attributes defined at edges.</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK fitxategiek ez dute onartzen ertzetan definitutako sareta-atributuak esportatzea.</translation>
     </message>
 </context>
 </TS>

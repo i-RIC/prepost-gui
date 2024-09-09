@@ -2812,7 +2812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Citirea datelor din rezultat/Solution1.cgn a eșuat. Nu există un rezultat al calculului care să poată fi vizualizat. Doriți să ștergeți rezultat/Solution1.cgn?</translation>
     </message>
 </context>
 <context>
@@ -3198,7 +3198,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
-        <translation type="unfinished"></translation>
+        <translation>Datele de intrare sunt rupte și nu se poate deschide proiectul. Doriți să renunțați la datele de intrare și să le restaurați din backup?</translation>
     </message>
 </context>
 <context>

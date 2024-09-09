@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>QObject</name>
@@ -16,11 +14,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>RIC-Nays Grid files only support exporting Elevation and CellCondition as attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays ग्रिड फ़ाइलें केवल एलिवेशन और सेल कंडीशन को विशेषताओं के रूप में निर्यात करने का समर्थन करती हैं।</translation>
     </message>
 </context>
 </TS>

@@ -2744,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2752,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Το πλέγμα επεξεργάζεται μετά την εκτέλεση του προγράμματος επίλυσης. Πρέπει να επιλέξετε από τις ακόλουθες επιλογές:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Απόρριψη τροποποίησης πλέγματος και διατήρηση του αποτελέσματος υπολογισμού.&lt;/li&gt; &lt;li&gt;Απόρριψη του αποτελέσματος υπολογισμού και αποθήκευση του τροποποιημένου πλέγματος.&lt;/li&gt; &lt; /ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Απορρίψτε την τροποποίηση πλέγματος (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόρριψη Αποτελέσματος Υπολογισμού (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Ματαίωση (&amp;C)</translation>
     </message>
 </context>
 </TS>
