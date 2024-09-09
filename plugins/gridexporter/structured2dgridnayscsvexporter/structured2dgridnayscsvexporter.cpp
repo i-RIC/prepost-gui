@@ -119,7 +119,7 @@ AttributeData buildCellAttributeValues(GridAttributeContainer* c)
 AttributeData buildIEdgeAttributeValues(GridAttributeContainer* c)
 {
 	AttributeData ret;
-	ret.name = QString("EI_%1").arg(c->name().c_str());
+	ret.name = QString("I_%1").arg(c->name().c_str());
 	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
 	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
 	if (realC != nullptr) {
@@ -136,7 +136,7 @@ AttributeData buildIEdgeAttributeValues(GridAttributeContainer* c)
 AttributeData buildJEdgeAttributeValues(GridAttributeContainer* c)
 {
 	AttributeData ret;
-	ret.name = QString("EJ_%1").arg(c->name().c_str());
+	ret.name = QString("J_%1").arg(c->name().c_str());
 	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
 	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
 	if (realC != nullptr) {
