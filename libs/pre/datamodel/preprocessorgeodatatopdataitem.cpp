@@ -311,6 +311,19 @@ int PreProcessorGeoDataTopDataItem::saveToCgnsFile()
 	return IRIC_NO_ERROR;
 }
 
+int PreProcessorGeoDataTopDataItem::updateCgnsFileOtherThanGrids()
+{
+	int ier = GraphicsWindowDataItem::updateCgnsFileOtherThanGrids();
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	for (auto child : m_childItems) {
+		auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(child);
+		int ier = gItem->saveComplexGroupsToCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+	return IRIC_NO_ERROR;
+}
+
 void PreProcessorGeoDataTopDataItem::setDimensionsToFirst()
 {
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
