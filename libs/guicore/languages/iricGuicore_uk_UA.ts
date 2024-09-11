@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Переключитися на перегляд списку</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Інформація</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" встановлено як групу за замовчуванням, оскільки ви не вказали групу за замовчуванням.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Читання даних із результату/розв’язання %1.cgn не вдалося. Ви можете візуалізувати результат розрахунку в Solution1.cgn to Solution %2.cgn.</translation>
+        <translation type="vanished">Читання даних із результату/розв’язання %1.cgn не вдалося. Ви можете візуалізувати результат розрахунку в Solution1.cgn to Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Не вдалося прочитати дані з result/Solution1.cgn. Немає результату розрахунку, який можна візуалізувати. Ви бажаєте видалити result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Читання даних із результату/розв’язання %1.cgn не вдалося. Ви можете візуалізувати результат розрахунку в Solution1.cgn to Solution %2.cgn. Ви хочете видалити результат/Рішення? %1.cgn?</translation>
     </message>
 </context>
 <context>

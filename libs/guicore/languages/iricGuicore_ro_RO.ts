@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Comutați la vizualizarea Listă</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informaţii</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>" %1 „ este setat să fie grup implicit, deoarece nu ați specificat un grup implicit.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Citirea datelor din rezultat/Soluție %1.cgn a eșuat. Puteți vizualiza rezultatul calculului în Solution1.cgn la Solution %2.cgn.</translation>
+        <translation type="vanished">Citirea datelor din rezultat/Soluție %1.cgn a eșuat. Puteți vizualiza rezultatul calculului în Solution1.cgn la Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Citirea datelor din rezultat/Solution1.cgn a eșuat. Nu există un rezultat al calculului care să poată fi vizualizat. Doriți să ștergeți rezultat/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Citirea datelor din rezultat/Soluție %1.cgn a eșuat. Puteți vizualiza rezultatul calculului în Solution1.cgn la Solution %2.cgn. Doriți să ștergeți rezultatul/Soluția %1.cgn?</translation>
     </message>
 </context>
 <context>

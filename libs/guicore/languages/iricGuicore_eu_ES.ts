@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Aldatu zerrenda ikuspegira</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informazioa</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" talde lehenetsi gisa ezarri da, ez duzulako talde lehenetsirik zehaztu.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn.</translation>
+        <translation type="vanished">Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Ezin izan da emaitza/Solution1.cgn-ko datuak irakurtzean. Ez dago ikus daitekeen kalkulu-emaitzarik. emaitza/Solution1.cgn ezabatu nahi duzu?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn. Emaitza/soluzioa ezabatu nahi al duzu %1.cgn?</translation>
     </message>
 </context>
 <context>

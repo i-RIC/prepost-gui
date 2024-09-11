@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Prebacite se na prikaz liste</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informacije</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" je postavljena kao zadana grupa, jer niste naveli zadanu grupu.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Čitanje podataka iz rezultata/rješenja %1.cgn nije uspio. Rezultat izračunavanja možete vizualizirati u Solution1.cgn u rješenje %2.cgn.</translation>
+        <translation type="vanished">Čitanje podataka iz rezultata/rješenja %1.cgn nije uspio. Rezultat izračunavanja možete vizualizirati u Solution1.cgn u rješenje %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Čitanje podataka iz result/Solution1.cgn nije uspjelo. Ne postoji rezultat proračuna koji se može vizualizirati. Želite li izbrisati result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Čitanje podataka iz rezultata/rješenja %1.cgn nije uspio. Rezultat izračunavanja možete vizualizirati u Solution1.cgn u rješenje %2.cgn. Želite li izbrisati rezultat/rješenje %1.cgn?</translation>
     </message>
 </context>
 <context>

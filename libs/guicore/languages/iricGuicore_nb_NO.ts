@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Bytt til listevisning</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informasjon</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" er satt til å være standardgruppe, fordi du ikke spesifiserte en standardgruppe.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Leser data fra resultat/løsning %1.cgn mislyktes. Du kan visualisere beregningsresultatet i Solution1.cgn til løsning %2.cgn.</translation>
+        <translation type="vanished">Leser data fra resultat/løsning %1.cgn mislyktes. Du kan visualisere beregningsresultatet i Solution1.cgn til løsning %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Lesing av data fra result/Solution1.cgn mislyktes. Det er ikke noe beregningsresultat som kan visualiseres. Vil du slette resultat/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Leser data fra resultat/løsning %1.cgn mislyktes. Du kan visualisere beregningsresultatet i Solution1.cgn to Solution %2.cgn. Ønsker du å slette resultat/Løsning %1.cgn?</translation>
     </message>
 </context>
 <context>

@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Lülituge loendivaatele</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Teave</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" on määratud vaikerühmaks, kuna te ei määranud vaikerühma.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Andmete lugemine tulemusest/lahendusest %1.cgn ebaõnnestus. Saate visualiseerida arvutustulemust failist Solution1.cgn kuni Lahendus %2.cgn.</translation>
+        <translation type="vanished">Andmete lugemine tulemusest/lahendusest %1.cgn ebaõnnestus. Saate visualiseerida arvutustulemust failist Solution1.cgn kuni Lahendus %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Tulemus/Solution1.cgn andmete lugemine ebaõnnestus. Ei ole arvutustulemust, mida saaks visualiseerida. Kas soovite result/Solution1.cgn kustutada?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Andmete lugemine tulemusest/lahendusest %1.cgn ebaõnnestus. Saate visualiseerida arvutustulemust failist Solution1.cgn kuni Lahendus %2.cgn. Kas soovite tulemuse/lahenduse kustutada? %1.cgn?</translation>
     </message>
 </context>
 <context>

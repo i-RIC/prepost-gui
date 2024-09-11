@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>สลับไปที่มุมมองรายการ</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>ข้อมูล</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>- %1 " ถูกกำหนดให้เป็นกลุ่มเริ่มต้น เนื่องจากคุณไม่ได้ระบุกลุ่มเริ่มต้น</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>อ่านข้อมูลจากผลลัพธ์/โซลูชัน %1.cgn ล้มเหลว คุณสามารถดูผลการคำนวณใน Solution1.cgn ไปยัง Solution %2.cgn</translation>
+        <translation type="vanished">อ่านข้อมูลจากผลลัพธ์/โซลูชัน %1.cgn ล้มเหลว คุณสามารถดูผลการคำนวณใน Solution1.cgn ไปยัง Solution %2.cgn</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>การอ่านข้อมูลจาก result/Solution1.cgn ล้มเหลว ไม่มีผลลัพธ์การคำนวณที่สามารถมองเห็นได้ คุณต้องการลบ result/Solution1.cgn หรือไม่</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>การอ่านข้อมูลจากผลลัพธ์/โซลูชัน %1.cgn ล้มเหลว คุณสามารถแสดงผลการคำนวณใน Solution1.cgn ของ Solution ได้ %2.cgn. คุณต้องการลบผลลัพธ์/วิธีแก้ไขหรือไม่ %1.cgn?</translation>
     </message>
 </context>
 <context>

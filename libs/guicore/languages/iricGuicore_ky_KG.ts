@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Тизме көрүнүшүнө которулуу</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Маалымат</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" демейки топ болуп коюлган, анткени сиз демейки топту көрсөткөн эмессиз.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Жыйынтыктан/Чечимден маалыматтарды окуу %1.cgn ишке ашкан жок. Эсептөө натыйжасын Solution1.cgn менен Чечимге визуализациялай аласыз %2.cgn.</translation>
+        <translation type="vanished">Жыйынтыктан/Чечимден маалыматтарды окуу %1.cgn ишке ашкан жок. Эсептөө натыйжасын Solution1.cgn менен Чечимге визуализациялай аласыз %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>result/Solution1.cgn дайындарын окуу ишке ашкан жок. Көзгө көрүнгөн эч кандай эсептөө натыйжасы жок. result/Solution1.cgn жок кылгыңыз келеби?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Жыйынтыктан/Чечимден маалыматтарды окуу %1.cgn ишке ашкан жок. Эсептөө натыйжасын Solution1.cgn менен Чечимге визуализациялай аласыз %2.cgn. Натыйжаны/Чечимди жок кылгыңыз келеби %1.cgn?</translation>
     </message>
 </context>
 <context>
