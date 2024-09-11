@@ -326,21 +326,27 @@ void PreProcessorGridDataItem::closeCgnsFile()
 bool PreProcessorGridDataItem::importFromImporter(v4InputGrid* grid, GridImporterI* importer, const QString& filename, const QString& selectedFilter)
 {
 	auto projImporter = dynamic_cast<ProjectGridImporter*> (importer);
+	bool ret = false;
 	if (projImporter != nullptr) {
 		delete grid;
 		ProjectImporter projectImporter2(this);
-		return projectImporter2.importGrid(filename, projImporter);
+		ret = projectImporter2.importGrid(filename, projImporter);
+		updateItemMap();
+		return ret;
 	}
 	auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 	if (cgnsImporter != nullptr) {
 		delete grid;
 		CgnsImporter cgnsImporter2(this);
-		return cgnsImporter2.importGrid(filename, cgnsImporter);
+		ret = cgnsImporter2.importGrid(filename, cgnsImporter);
+		updateItemMap();
+		return ret;
 	}
 	bool ok = importer->import(grid, filename, selectedFilter, projectData()->mainWindow());
 	if (ok) {
 		setGrid(grid);
 		fixComplexValuesToDefaultIfInvalid();
+		updateItemMap();
 		return true;
 	} else {
 		delete grid;
