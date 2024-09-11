@@ -152,7 +152,12 @@ bool Structured2DGridNaysCSVImporter::import(v4InputGrid* grid, const QString& f
 							continue;
 						}
 						unsigned int id;
-						if (data.position == AttributeData::Cell && (i == imax - 1 || j == jmax - 1)) {continue;}
+						if (data.position == AttributeData::Cell && (i == imax - 1 || j == jmax - 1)) {
+							// skip the value
+							double v;
+							iss >> v;
+							continue;
+						}
 						if (data.position == AttributeData::Node) {
 							id = grid2d->pointIndex(i, j);
 						} else {
