@@ -26,6 +26,7 @@ public:
 	void updateActorSettings();
 	QStringList getGeoDatasNotMapped();
 	int saveToCgnsFile() override;
+	int updateCgnsFileOtherThanGrids() override;
 	/// Set all dimensions to the first.
 	void setDimensionsToFirst() override;
 	void clearDimensionsIfNoDataExists() override;
