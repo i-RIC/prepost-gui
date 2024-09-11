@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -152,7 +150,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>边缘插值设置 (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -278,23 +276,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>插值设置</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>样条曲线</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>折线</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>插值设定目标</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">此线及其平行位置线</translation>
+        <translation>这条线和平行位置的线</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -302,11 +300,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">仅此线</translation>
+        <translation>仅限此行</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;插值设置适用于所有平行位置的线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

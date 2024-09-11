@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AnimationController</name>
@@ -793,7 +791,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Wybierz Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Kiedy tworzysz nowy projekt, musisz wybrać solver, który będzie używany do obliczeń. Wybierz solver i naciśnij przycisk „OK”.</translation>
     </message>
 </context>
@@ -1489,8 +1487,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>Czy jesteś pewien, że chcesz usunąć &quot; %1 „?</translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Czy jesteś pewien, że chcesz usunąć " %1 „?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1734,9 +1732,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 &quot;. Ten solver jest ignorowany. %2</translation>
+        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 ". Ten solver jest ignorowany. %2</translation>
     </message>
 </context>
 <context>
@@ -1914,7 +1912,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Wydaje się, że ten projekt jest otwierany przez inne okno interfejsu iRIC GUI. Nie można otworzyć folderu projektu z wielu okien GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation type="vanished">Otwarty projekt nie jest kopiowany do katalogu roboczego i będziesz zmuszony do zapisania zmian dokonanych w tym projekcie. Jeśli chcesz zachować aktualny projekt, najpierw zapisz go w innym projekcie.</translation>
     </message>
     <message>
@@ -2074,7 +2072,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Obecnie aktywne okno podrzędne nie obsługuje eksportowania konturu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Aby wyeksportować plik kształtu, przełącz opcję „Ustawienia wyświetlania” na „Figurę konturu”, a nie na „Obramowanie kolorów” lub „Izolinie”.</translation>
     </message>
     <message>
@@ -2215,7 +2213,7 @@ Option -&gt; Preferences</source>
         <translation>Plik ustawień (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation type="vanished">Aby wyeksportować plik kształtu, przełącz tryb Kolor na „Tryb dyskretny”.</translation>
     </message>
     <message>
@@ -2227,7 +2225,7 @@ Option -&gt; Preferences</source>
         <translation>Wybierz siatkę, aby wyeksportować pliki kształtów.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <source>No contour is drawn in "Discrete Mode".</source>
         <translation>Żaden kontur nie jest rysowany w „Trybie dyskretnym”.</translation>
     </message>
     <message>
@@ -2236,7 +2234,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Failed to load calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się załadować wyniku obliczeń</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2581,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2610,7 +2608,7 @@ Option -&gt; Preferences</source>
         <translation>Otwórz nowe okno przetwarzania końcowego 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Otwórz nowe okno przetwarzania końcowego z lotu ptaka 2D</translation>
     </message>
     <message>
@@ -2746,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Ostrzeżenie</translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2754,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Siatka jest edytowana po wykonaniu solvera. Musisz wybrać jedną z następujących opcji:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Odrzuć modyfikację siatki i zachowaj wynik obliczeń.&lt;/li&gt; &lt;li&gt;Odrzuć wynik obliczeń i zapisz zmodyfikowaną siatkę.&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Odrzuć modyfikację siatki (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Odrzuć wynik obliczeń (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulować (&amp;C)</translation>
     </message>
 </context>
 </TS>

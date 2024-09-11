@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation>Barre d&apos;outils d&apos;animation</translation>
+        <translation>Barre d'outils d'animation</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation>Démarrer/arrêter l&apos;animation (&amp;S)</translation>
+        <translation>Démarrer/arrêter l'animation (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation>Arrêter l&apos;animation (&amp;T)</translation>
+        <translation>Arrêter l'animation (&amp;T)</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation>Réglage de la vitesse d&apos;animation (&amp;A)...</translation>
+        <translation>Réglage de la vitesse d'animation (&amp;A)...</translation>
     </message>
     <message>
         <source>L&amp;oop Animation</source>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="vanished">Dossier %1 N&apos;existe pas. Veux-tu le faire maintenant ?</translation>
+        <translation type="vanished">Dossier %1 N'existe pas. Veux-tu le faire maintenant ?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -170,7 +168,7 @@
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="vanished">Création d&apos;un dossier %1 échoué.</translation>
+        <translation type="vanished">Création d'un dossier %1 échoué.</translation>
     </message>
 </context>
 <context>
@@ -189,7 +187,7 @@
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="vanished">Remarque : Cette fonction n&apos;est disponible que lorsqu&apos;un système de coordonnées a été spécifié.</translation>
+        <translation type="vanished">Remarque : Cette fonction n'est disponible que lorsqu'un système de coordonnées a été spécifié.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -212,7 +210,7 @@
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="vanished">Utilisez cet assistant pour spécifier les conditions requises pour générer une sortie d&apos;instantané continue.</translation>
+        <translation type="vanished">Utilisez cet assistant pour spécifier les conditions requises pour générer une sortie d'instantané continue.</translation>
     </message>
 </context>
 <context>
@@ -274,7 +272,7 @@
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="vanished">Veuillez spécifier le pas de temps de début, le pas de temps d&apos;arrêt et le taux de saut.</translation>
+        <translation type="vanished">Veuillez spécifier le pas de temps de début, le pas de temps d'arrêt et le taux de saut.</translation>
     </message>
     <message>
         <source>start :</source>
@@ -357,18 +355,18 @@
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="vanished">Plusieurs fenêtres de visualisation ont une région transparente. Ils ne peuvent pas être enregistrés dans des images d&apos;arrière-plan transparentes. Veuillez sélectionner un fond blanc ou annuler et désactiver la transparence pour les contours, etc.</translation>
+        <translation type="vanished">Plusieurs fenêtres de visualisation ont une région transparente. Ils ne peuvent pas être enregistrés dans des images d'arrière-plan transparentes. Veuillez sélectionner un fond blanc ou annuler et désactiver la transparence pour les contours, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="vanished">Aucune fenêtre n&apos;est actuellement sélectionnée.</translation>
+        <translation type="vanished">Aucune fenêtre n'est actuellement sélectionnée.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard</name>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation>Instantané continu / Film / Assistant d&apos;exportation Google Earth</translation>
+        <translation>Instantané continu / Film / Assistant d'exportation Google Earth</translation>
     </message>
     <message>
         <source>Introduction</source>
@@ -376,7 +374,7 @@
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Utilisez cet assistant pour spécifier les conditions requises pour générer une sortie d&apos;instantané continue.</translation>
+        <translation>Utilisez cet assistant pour spécifier les conditions requises pour générer une sortie d'instantané continue.</translation>
     </message>
 </context>
 <context>
@@ -450,7 +448,7 @@
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Dossier %1 N&apos;existe pas. Le voulez-vous maintenant ?</translation>
+        <translation>Dossier %1 N'existe pas. Le voulez-vous maintenant ?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -484,11 +482,11 @@
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Plusieurs fenêtres de visualisation ont une région transparente. Ils ne peuvent pas être enregistrés dans des images d&apos;arrière-plan transparentes. Veuillez sélectionner un fond blanc ou annuler et désactiver la transparence pour les contours, etc.</translation>
+        <translation>Plusieurs fenêtres de visualisation ont une région transparente. Ils ne peuvent pas être enregistrés dans des images d'arrière-plan transparentes. Veuillez sélectionner un fond blanc ou annuler et désactiver la transparence pour les contours, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Aucune fenêtre n&apos;est actuellement sélectionnée.</translation>
+        <translation>Aucune fenêtre n'est actuellement sélectionnée.</translation>
     </message>
 </context>
 <context>
@@ -519,7 +517,7 @@
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Longueur du suffixe&#xa0;:</translation>
+        <translation>Longueur du suffixe :</translation>
     </message>
     <message>
         <source>Format :</source>
@@ -542,7 +540,7 @@
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation>Remarque&#xa0;: Cette fonction est disponible uniquement lorsqu&apos;un système de coordonnées a été spécifié et qu&apos;un instantané de la fenêtre de post-traitement (2D) est généré.</translation>
+        <translation>Remarque : Cette fonction est disponible uniquement lorsqu'un système de coordonnées a été spécifié et qu'un instantané de la fenêtre de post-traitement (2D) est généré.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -612,7 +610,7 @@
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Veuillez spécifier le pas de temps de début, le pas de temps d&apos;arrêt et le taux de saut.</translation>
+        <translation>Veuillez spécifier le pas de temps de début, le pas de temps d'arrêt et le taux de saut.</translation>
     </message>
     <message>
         <source>start :</source>
@@ -724,7 +722,7 @@
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Paramètre d&apos;importation d&apos;images Google Map</translation>
+        <translation>Paramètre d'importation d'images Google Map</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Sélectionnez le solveur</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Lorsque vous créez un nouveau projet, vous devez sélectionner le solveur à utiliser pour le calcul. Veuillez sélectionner un solveur et appuyez sur le bouton &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Lorsque vous créez un nouveau projet, vous devez sélectionner le solveur à utiliser pour le calcul. Veuillez sélectionner un solveur et appuyez sur le bouton "OK".</translation>
     </message>
 </context>
 <context>
@@ -806,7 +804,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>%1 jours se sont écoulés depuis le dernier lancement d&apos;iRIC Maintenance. Voulez-vous lancer iRIC Maintenance&#xa0;?</translation>
+        <translation>%1 jours se sont écoulés depuis le dernier lancement d'iRIC Maintenance. Voulez-vous lancer iRIC Maintenance ?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
@@ -833,7 +831,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation>Données d&apos;enquête sur la rivière</translation>
+        <translation>Données d'enquête sur la rivière</translation>
     </message>
     <message>
         <source>Network Proxy</source>
@@ -845,7 +843,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation>Données d&apos;altitude Web</translation>
+        <translation>Données d'altitude Web</translation>
     </message>
     <message>
         <source>Background Grid</source>
@@ -872,19 +870,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation>Données d&apos;enquête sur la rivière</translation>
+        <translation>Données d'enquête sur la rivière</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation>Direction de la section transversale&#xa0;:</translation>
+        <translation>Direction de la section transversale :</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation>Entre les sections transversales&#xa0;:</translation>
+        <translation>Entre les sections transversales :</translation>
     </message>
     <message>
         <source>Note: Background Grid setting is applied when iRIC is launched next time.</source>
-        <translation>Remarque&#xa0;: le paramètre de grille d&apos;arrière-plan est appliqué lors du prochain lancement d&apos;iRIC.</translation>
+        <translation>Remarque : le paramètre de grille d'arrière-plan est appliqué lors du prochain lancement d'iRIC.</translation>
     </message>
 </context>
 <context>
@@ -927,7 +925,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation>Noms des sections transversales des données d&apos;enquête sur les rivières</translation>
+        <translation>Noms des sections transversales des données d'enquête sur les rivières</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
@@ -947,7 +945,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation>Titre du graphique&#xa0;:</translation>
+        <translation>Titre du graphique :</translation>
     </message>
     <message>
         <source>Legends:</source>
@@ -955,11 +953,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation>Titre de l&apos;axe&#xa0;:</translation>
+        <translation>Titre de l'axe :</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation>Coches d&apos;axe&#xa0;:</translation>
+        <translation>Coches d'axe :</translation>
     </message>
 </context>
 <context>
@@ -974,7 +972,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation>Remarque : le paramètre de langue est appliqué lors du prochain lancement d&apos;iRIC.</translation>
+        <translation>Remarque : le paramètre de langue est appliqué lors du prochain lancement d'iRIC.</translation>
     </message>
     <message>
         <source>Working Directory</source>
@@ -986,7 +984,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="vanished">Copiez le projet de dossier dans le répertoire de travail à l&apos;ouverture</translation>
+        <translation type="vanished">Copiez le projet de dossier dans le répertoire de travail à l'ouverture</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -998,7 +996,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation>Intervalle entre les vérifications (jours)&#xa0;:</translation>
+        <translation>Intervalle entre les vérifications (jours) :</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
@@ -1010,15 +1008,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation>Nombre maximum de cellules tirées&#xa0;:</translation>
+        <translation>Nombre maximum de cellules tirées :</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation>Nombre maximum d&apos;indices tirés&#xa0;:</translation>
+        <translation>Nombre maximum d'indices tirés :</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation>Avertissement&#xa0;: Si vous désactivez l&apos;élimination et créez une très grande grille, l&apos;interface graphique iRIC se bloquera peut-être en raison d&apos;un manque de mémoire.</translation>
+        <translation>Avertissement : Si vous désactivez l'élimination et créez une très grande grille, l'interface graphique iRIC se bloquera peut-être en raison d'un manque de mémoire.</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -1026,7 +1024,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation>Annuler la limite&#xa0;:</translation>
+        <translation>Annuler la limite :</translation>
     </message>
     <message>
         <source>Solver console</source>
@@ -1050,7 +1048,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>Le répertoire de travail est modifié, mais le nouveau répertoire de travail est utilisé APRÈS avoir quitté l&apos;interface graphique iRIC&#xa0;!</translation>
+        <translation>Le répertoire de travail est modifié, mais le nouveau répertoire de travail est utilisé APRÈS avoir quitté l'interface graphique iRIC !</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -1058,7 +1056,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation>Remarque&#xa0;: Utilisé pour exécuter des solveurs écrits en Python.</translation>
+        <translation>Remarque : Utilisé pour exécuter des solveurs écrits en Python.</translation>
     </message>
 </context>
 <context>
@@ -1089,7 +1087,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation>Remarque : Le chargement d&apos;une image dont la largeur (ou la hauteur) est supérieure au maximum, sera automatiquement redimensionnée.</translation>
+        <translation>Remarque : Le chargement d'une image dont la largeur (ou la hauteur) est supérieure au maximum, sera automatiquement redimensionnée.</translation>
     </message>
     <message>
         <source>Vector</source>
@@ -1129,7 +1127,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taille des points&#xa0;:</translation>
+        <translation>Taille des points :</translation>
     </message>
 </context>
 <context>
@@ -1144,11 +1142,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation>Avant d&apos;exécuter le solveur</translation>
+        <translation>Avant d'exécuter le solveur</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation>Avant d&apos;exporter la grille</translation>
+        <translation>Avant d'exporter la grille</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
@@ -1172,15 +1170,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation>Direction J&#xa0;:</translation>
+        <translation>Direction J :</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation>Vérifiez que l&apos;angle de la cellule est supérieur à</translation>
+        <translation>Vérifiez que l'angle de la cellule est supérieur à</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation>Remarque : les paramètres de cette page ne s&apos;appliquent qu&apos;aux grilles structurées.</translation>
+        <translation>Remarque : les paramètres de cette page ne s'appliquent qu'aux grilles structurées.</translation>
     </message>
 </context>
 <context>
@@ -1211,11 +1209,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation>Besoin d&apos;authentification pour le proxy HTTP</translation>
+        <translation>Besoin d'authentification pour le proxy HTTP</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Nom d&apos;utilisateur:</translation>
+        <translation>Nom d'utilisateur:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1230,7 +1228,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation>Liste des fractions pour l&apos;édition de la section transversale&#xa0;:</translation>
+        <translation>Liste des fractions pour l'édition de la section transversale :</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1258,11 +1256,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer l&apos;élément sélectionné&#xa0;?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer l'élément sélectionné ?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation>Voulez-vous vraiment restaurer les valeurs par défaut&#xa0;?</translation>
+        <translation>Voulez-vous vraiment restaurer les valeurs par défaut ?</translation>
     </message>
 </context>
 <context>
@@ -1273,7 +1271,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="vanished">Spécifiez la fraction à ajouter&#xa0;:</translation>
+        <translation type="vanished">Spécifiez la fraction à ajouter :</translation>
     </message>
     <message>
         <source>1:</source>
@@ -1288,7 +1286,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation>Précisez la fraction à ajouter&#xa0;:</translation>
+        <translation>Précisez la fraction à ajouter :</translation>
     </message>
     <message>
         <source>1:</source>
@@ -1303,15 +1301,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation>Coordonnées dans la barre d&apos;état</translation>
+        <translation>Coordonnées dans la barre d'état</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation>Décimales&#xa0;:</translation>
+        <translation>Décimales :</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation>Navigateur d&apos;attributs</translation>
+        <translation>Navigateur d'attributs</translation>
     </message>
     <message>
         <source>Decimal places</source>
@@ -1319,7 +1317,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation>Coordonnées&#xa0;:</translation>
+        <translation>Coordonnées :</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -1358,11 +1356,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="vanished">Saisissez la clé de l&apos;API Google&#xa0;Maps (&amp;I)</translation>
+        <translation type="vanished">Saisissez la clé de l'API Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La plate-forme Google Maps a désormais besoin d&apos;une clé API pour utiliser Google Maps via iRIC. Veuillez obtenir votre propre clé API Google Maps et saisir ici, pour utiliser les images Google Maps comme images d&apos;arrière-plan sur le préprocesseur et sur Windows de post-traitement 2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La plate-forme Google Maps a désormais besoin d'une clé API pour utiliser Google Maps via iRIC. Veuillez obtenir votre propre clé API Google Maps et saisir ici, pour utiliser les images Google Maps comme images d'arrière-plan sur le préprocesseur et sur Windows de post-traitement 2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1389,15 +1387,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>URL:</source>
-        <translation>URL&#xa0;:</translation>
+        <translation>URL :</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation>Exemple&#xa0;: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
+        <translation>Exemple : http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation>Niveau de zoom maximum&#xa0;:</translation>
+        <translation>Niveau de zoom maximum :</translation>
     </message>
 </context>
 <context>
@@ -1432,14 +1430,14 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation>Modifier les données d&apos;élévation de la toile</translation>
+        <translation>Modifier les données d'élévation de la toile</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation>Ajouter des données d&apos;élévation Web</translation>
+        <translation>Ajouter des données d'élévation Web</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1447,19 +1445,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation>Niveau de zoom minimum&#xa0;:</translation>
+        <translation>Niveau de zoom minimum :</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation>Niveau de zoom maximum&#xa0;:</translation>
+        <translation>Niveau de zoom maximum :</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation>URL&#xa0;:</translation>
+        <translation>URL :</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation>Exemple&#xa0;: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
+        <translation>Exemple : http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
@@ -1489,12 +1487,12 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>Etes-vous sûr que vous voulez supprimer &quot;%1&quot;&#xa0;?</translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Etes-vous sûr que vous voulez supprimer "%1" ?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation>Êtes-vous sûr de vouloir réinitialiser les paramètres par défaut&#xa0;?</translation>
+        <translation>Êtes-vous sûr de vouloir réinitialiser les paramètres par défaut ?</translation>
     </message>
 </context>
 <context>
@@ -1509,15 +1507,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation>Heure de la dernière mise à jour&#xa0;:</translation>
+        <translation>Heure de la dernière mise à jour :</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation>Solveur&#xa0;:</translation>
+        <translation>Solveur :</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation>Grille(s)&#xa0;:</translation>
+        <translation>Grille(s) :</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
@@ -1525,7 +1523,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation>Résultat du calcul&#xa0;:</translation>
+        <translation>Résultat du calcul :</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
@@ -1537,11 +1535,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation>Décalage de coordonnées&#xa0;:</translation>
+        <translation>Décalage de coordonnées :</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation>Date pour t = 0&#xa0;:</translation>
+        <translation>Date pour t = 0 :</translation>
     </message>
     <message>
         <source>(No data)</source>
@@ -1611,7 +1609,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation>Veuillez sélectionner comment enregistrer le projet parmi les éléments suivants&#xa0;:</translation>
+        <translation>Veuillez sélectionner comment enregistrer le projet parmi les éléments suivants :</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
@@ -1669,7 +1667,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>droits d&apos;auteur</translation>
+        <translation>droits d'auteur</translation>
     </message>
     <message>
         <source>Release</source>
@@ -1677,7 +1675,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Page d&apos;accueil</translation>
+        <translation>Page d'accueil</translation>
     </message>
     <message>
         <source>Description</source>
@@ -1708,7 +1706,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>droits d&apos;auteur</translation>
+        <translation>droits d'auteur</translation>
     </message>
     <message>
         <source>Release</source>
@@ -1716,7 +1714,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Page d&apos;accueil</translation>
+        <translation>Page d'accueil</translation>
     </message>
     <message>
         <source>Description</source>
@@ -1734,9 +1732,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Une erreur s&apos;est produite lors du chargement du fichier de définition du solveur dans le dossier &quot;%1&quot;. Ce solveur est ignoré. %2</translation>
+        <translation>Une erreur s'est produite lors du chargement du fichier de définition du solveur dans le dossier "%1". Ce solveur est ignoré. %2</translation>
     </message>
 </context>
 <context>
@@ -1782,7 +1780,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation>Bienvenue à l&apos;iRIC ! iRIC peut simuler des rivières du fleuve Colorado au Nil.</translation>
+        <translation>Bienvenue à l'iRIC ! iRIC peut simuler des rivières du fleuve Colorado au Nil.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
@@ -1794,7 +1792,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation>Démarrer l&apos;interface graphique iRIC-MI (&amp;S)</translation>
+        <translation>Démarrer l'interface graphique iRIC-MI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1813,7 +1811,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation>Solveurs récents&#xa0;:</translation>
+        <translation>Solveurs récents :</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
@@ -1872,7 +1870,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation>Masquer les navigateurs d&apos;objets</translation>
+        <translation>Masquer les navigateurs d'objets</translation>
     </message>
 </context>
 <context>
@@ -1883,7 +1881,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation>Une erreur s&apos;est produite lors du chargement du fichier de définition du solveur.</translation>
+        <translation>Une erreur s'est produite lors du chargement du fichier de définition du solveur.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
@@ -1899,7 +1897,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation>Dossier de projet %1 N&apos;existe pas.</translation>
+        <translation>Dossier de projet %1 N'existe pas.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
@@ -1907,11 +1905,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation>Ce projet semble être ouvert par une autre fenêtre de l&apos;interface graphique iRIC. Vous ne pouvez pas ouvrir un dossier de projet à partir de plusieurs fenêtres GUI.</translation>
+        <translation>Ce projet semble être ouvert par une autre fenêtre de l'interface graphique iRIC. Vous ne pouvez pas ouvrir un dossier de projet à partir de plusieurs fenêtres GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="vanished">Le projet ouvert n&apos;est pas copié dans le répertoire de travail, et vous serez obligé d&apos;enregistrer les modifications que vous apportez à ce projet. Si vous souhaitez conserver le projet actuel, veuillez d&apos;abord l&apos;enregistrer dans un autre projet.</translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation type="vanished">Le projet ouvert n'est pas copié dans le répertoire de travail, et vous serez obligé d'enregistrer les modifications que vous apportez à ce projet. Si vous souhaitez conserver le projet actuel, veuillez d'abord l'enregistrer dans un autre projet.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
@@ -1919,7 +1917,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation>fichier CGNS %1 N&apos;existe pas.</translation>
+        <translation>fichier CGNS %1 N'existe pas.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
@@ -1967,7 +1965,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="vanished">Aucune figure de contour n&apos;est dessinée maintenant.</translation>
+        <translation type="vanished">Aucune figure de contour n'est dessinée maintenant.</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
@@ -1991,15 +1989,15 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation>Échec de l&apos;enregistrement du projet.</translation>
+        <translation>Échec de l'enregistrement du projet.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation>Le solveur est toujours en cours d&apos;exécution. Vraiment arrêter ?</translation>
+        <translation>Le solveur est toujours en cours d'exécution. Vraiment arrêter ?</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation>Enregistrer l&apos;instantané</translation>
+        <translation>Enregistrer l'instantané</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
@@ -2015,7 +2013,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation>Voulez-vous rendre l&apos;arrière-plan transparent&#xa0;?</translation>
+        <translation>Voulez-vous rendre l'arrière-plan transparent ?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
@@ -2023,7 +2021,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation>Échec de l&apos;enregistrement de l&apos;instantané.</translation>
+        <translation>Échec de l'enregistrement de l'instantané.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
@@ -2035,7 +2033,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation>Cette fenêtre ne prend pas en charge la fonction d&apos;instantané.</translation>
+        <translation>Cette fenêtre ne prend pas en charge la fonction d'instantané.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
@@ -2043,11 +2041,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation>Ce menu n&apos;est pas disponible pendant l&apos;exécution du solveur.</translation>
+        <translation>Ce menu n'est pas disponible pendant l'exécution du solveur.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation>Cette fenêtre ne prend pas en charge la fonction d&apos;instantané continu.</translation>
+        <translation>Cette fenêtre ne prend pas en charge la fonction d'instantané continu.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
@@ -2055,11 +2053,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation>enregistrement de l&apos;instantané continu...</translation>
+        <translation>enregistrement de l'instantané continu...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation>%1 existe déjà et n&apos;a pas réussi à le supprimer. Le fichier vidéo n&apos;est pas sorti.</translation>
+        <translation>%1 existe déjà et n'a pas réussi à le supprimer. Le fichier vidéo n'est pas sorti.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -2075,11 +2073,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation>La sous-fenêtre actuellement active ne prend pas en charge l&apos;exportation de la figure de contour.</translation>
+        <translation>La sous-fenêtre actuellement active ne prend pas en charge l'exportation de la figure de contour.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Pour exporter le fichier de forme, passez &quot;Paramètres d&apos;affichage&quot; à &quot;Figure de contour&quot;, pas &quot;Frange de couleur&quot; ou &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Pour exporter le fichier de forme, passez "Paramètres d'affichage" à "Figure de contour", pas "Frange de couleur" ou "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2087,7 +2085,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation>Veuillez sélectionner la zone à utiliser&#xa0;:</translation>
+        <translation>Veuillez sélectionner la zone à utiliser :</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
@@ -2104,7 +2102,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation>Le solveur est en cours d&apos;exécution. Veuillez arrêter le solveur pour effectuer cette action.</translation>
+        <translation>Le solveur est en cours d'exécution. Veuillez arrêter le solveur pour effectuer cette action.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
@@ -2120,7 +2118,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation>Voulez-vous vraiment supprimer le résultat du calcul&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer le résultat du calcul ?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
@@ -2132,7 +2130,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation>Le résultat du calcul n&apos;existe pas.</translation>
+        <translation>Le résultat du calcul n'existe pas.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
@@ -2140,7 +2138,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation>Aucune particule n&apos;est dessinée maintenant.</translation>
+        <translation>Aucune particule n'est dessinée maintenant.</translation>
     </message>
     <message>
         <source>Export Particles</source>
@@ -2152,7 +2150,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>Une erreur s&apos;est produite lors de l&apos;enregistrement.</translation>
+        <translation>Une erreur s'est produite lors de l'enregistrement.</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
@@ -2168,7 +2166,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Déposer %1 N&apos;existe pas.</translation>
+        <translation>Déposer %1 N'existe pas.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
@@ -2188,7 +2186,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation>Il n&apos;y a pas de données de calcul, vous ne pouvez donc pas définir de résultats d&apos;opération simples.</translation>
+        <translation>Il n'y a pas de données de calcul, vous ne pouvez donc pas définir de résultats d'opération simples.</translation>
     </message>
     <message>
         <source>Select dimension</source>
@@ -2215,8 +2213,8 @@ Option -&gt; Preferences</source>
         <translation>Fichier de réglage (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Pour exporter le fichier de forme, basculez le mode Couleur sur &quot;Mode discret&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Pour exporter le fichier de forme, basculez le mode Couleur sur "Mode discret".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2227,8 +2225,8 @@ Option -&gt; Preferences</source>
         <translation>Sélectionnez la grille pour exporter les fichiers de forme.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>Aucun contour n&apos;est tracé en &quot;mode discret&quot;.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>Aucun contour n'est tracé en "mode discret".</translation>
     </message>
     <message>
         <source>This project is modified. Do you want to save?</source>
@@ -2236,14 +2234,14 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Failed to load calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de charger le résultat du calcul</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation>À propos de l&apos;iRIC</translation>
+        <translation>À propos de l'iRIC</translation>
     </message>
     <message>
         <source>imglabel</source>
@@ -2259,7 +2257,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>copyright</source>
-        <translation>droits d&apos;auteur</translation>
+        <translation>droits d'auteur</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -2271,11 +2269,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation>droits d&apos;auteur %1</translation>
+        <translation>droits d'auteur %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation>Conditions d&apos;utilisation:</translation>
+        <translation>Conditions d'utilisation:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
@@ -2330,11 +2328,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation>Enregistrer l&apos;instantané (&amp;N)...</translation>
+        <translation>Enregistrer l'instantané (&amp;N)...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation>Copier l&apos;instantané dans le presse-papiers</translation>
+        <translation>Copier l'instantané dans le presse-papiers</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
@@ -2442,35 +2440,35 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation>Barre d&apos;outils (&amp;T)</translation>
+        <translation>Barre d'outils (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation>Barre d&apos;outils principale (&amp;M)</translation>
+        <translation>Barre d'outils principale (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation>Liste des fenêtres Barre d&apos;outils (&amp;W)</translation>
+        <translation>Liste des fenêtres Barre d'outils (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation>Barre d&apos;outils d&apos;animation (&amp;A)</translation>
+        <translation>Barre d'outils d'animation (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation>Navigateur d&apos;objets (&amp;O)</translation>
+        <translation>Navigateur d'objets (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation>Navigateur d&apos;attributs (&amp;A)</translation>
+        <translation>Navigateur d'attributs (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation>Barre d&apos;état (&amp;S)</translation>
+        <translation>Barre d'état (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation>Couleur de l&apos;arrière plan (&amp;B)...</translation>
+        <translation>Couleur de l'arrière plan (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
@@ -2583,7 +2581,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2610,8 +2608,8 @@ Option -&gt; Preferences</source>
         <translation>Ouvrir une nouvelle fenêtre de post-traitement 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Ouvrir une nouvelle fenêtre de post-traitement 2D Bird&apos;s-Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Ouvrir une nouvelle fenêtre de post-traitement 2D Bird's-Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2703,11 +2701,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation>Barre d&apos;outils principale</translation>
+        <translation>Barre d'outils principale</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation>Liste des fenêtres Barre d&apos;outils</translation>
+        <translation>Liste des fenêtres Barre d'outils</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -2746,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertissement</translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2754,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La grille est modifiée après l'exécution du solveur. Vous devez sélectionner l'une des options suivantes :&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Annuler la modification de la grille et conserver le résultat du calcul.&lt;/li&gt; &lt;li&gt;Annuler le résultat du calcul et enregistrer la grille modifiée.&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuler la modification de la grille (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Résultat du calcul de rejet (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuler (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -148,7 +146,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge Interpolate Setting (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -274,23 +272,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка за интерполиране</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Сплайн крива</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Полилиния</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Интерполиране на целта за настройка</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">Тази линия и линии в паралелни позиции</translation>
+        <translation>Тази линия и линии в успоредни позиции</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -298,11 +296,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">Само този ред</translation>
+        <translation>Само тази линия</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройката за интерполиране се прилага към всички линии в успоредни позиции.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

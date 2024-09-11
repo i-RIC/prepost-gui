@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -148,7 +146,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση παρεμβολής άκρων (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -274,23 +272,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση παρεμβολής</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Καμπύλη Spline</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolate Setting Target</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">Αυτή η γραμμή και οι γραμμές σε παράλληλες θέσεις</translation>
+        <translation>Αυτή η ευθεία και ευθείες σε παράλληλες θέσεις</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -298,11 +296,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">Αυτή η γραμμή μόνο</translation>
+        <translation>Μόνο αυτή η γραμμή</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Η ρύθμιση παρεμβολής εφαρμόζεται σε όλες τις γραμμές σε παράλληλες θέσεις.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

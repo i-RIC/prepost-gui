@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -148,7 +146,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Interpolasi Tepi (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -274,23 +272,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Interpolasi</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurva spline</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis poli</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolasi Menetapkan Target</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">Garis ini dan garis dalam posisi paralel</translation>
+        <translation>Garis ini dan garis-garis pada posisi paralel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -298,11 +296,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">Baris ini saja</translation>
+        <translation>Hanya baris ini</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pengaturan interpolasi diterapkan ke semua baris dalam posisi paralel.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AnimationController</name>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Izberite Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Ko ustvarite nov projekt, morate izbrati orodje za reševanje, ki ga boste uporabili za izračun. Izberite reševalno napravo in pritisnite gumb &quot;V redu&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Ko ustvarite nov projekt, morate izbrati orodje za reševanje, ki ga boste uporabili za izračun. Izberite reševalno napravo in pritisnite gumb "V redu".</translation>
     </message>
 </context>
 <context>
@@ -1489,8 +1487,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>Ali ste prepričani, da želite izbrisati &quot;%1&quot;?</translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Ali ste prepričani, da želite izbrisati "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1734,9 +1732,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Pri nalaganju definicijske datoteke reševalca v mapo je prišlo do napake &quot;%1&quot;. To reševalno sredstvo se ne upošteva. %2</translation>
+        <translation>Pri nalaganju definicijske datoteke reševalca v mapo je prišlo do napake "%1". To reševalno sredstvo se ne upošteva. %2</translation>
     </message>
 </context>
 <context>
@@ -1914,7 +1912,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdi se, da ta projekt odpira drugo okno grafičnega vmesnika iRIC. Mape projekta ne morete odpreti iz več oken z grafičnim vmesnikom.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation type="vanished">Odprti projekt se ne kopira v delovni imenik, zato boste morali shraniti spremembe, ki jih naredite v tem projektu. Če želite obdržati trenutni projekt, ga najprej shranite v drug projekt.</translation>
     </message>
     <message>
@@ -2074,7 +2072,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Trenutno aktivno podokno ne podpira izvoza konturne figure.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Če želite izvoziti obliko oblike, preklopite »Nastavitev zaslona« na »Slika konture«, ne pa »Barvne obrobe« ali »Izoline«.</translation>
     </message>
     <message>
@@ -2215,8 +2213,8 @@ Option -&gt; Preferences</source>
         <translation>Nastavitvena datoteka (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Če želite izvoziti datoteko oblike, preklopite barvni način na &quot;Diskretni način&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Če želite izvoziti datoteko oblike, preklopite barvni način na "Diskretni način".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2227,8 +2225,8 @@ Option -&gt; Preferences</source>
         <translation>Izberite mrežo za izvoz datotek oblike.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>V &quot;diskretnem načinu&quot; ni narisana kontura.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>V "diskretnem načinu" ni narisana kontura.</translation>
     </message>
     <message>
         <source>This project is modified. Do you want to save?</source>
@@ -2236,7 +2234,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Failed to load calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultata izračuna ni bilo mogoče naložiti</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2581,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2610,7 +2608,7 @@ Option -&gt; Preferences</source>
         <translation>Odprite novo 2D okno za naknadno obdelavo</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Odprite novo 2D okno za naknadno obdelavo ptičje oko</translation>
     </message>
     <message>
@@ -2746,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Opozorilo</translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2754,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mreža se uredi po izvedbi reševalnika. Izbrati morate med naslednjimi možnostmi:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Zavrzi spremembo mreže in obdrži rezultat izračuna.&lt;/li&gt; &lt;li&gt;Zavrzi rezultat izračuna in shrani spremenjeno mrežo.&lt;/li&gt; &lt; /ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavrzi spremembo mreže (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavrzi rezultat izračuna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Prekliči (&amp;C)</translation>
     </message>
 </context>
 </TS>

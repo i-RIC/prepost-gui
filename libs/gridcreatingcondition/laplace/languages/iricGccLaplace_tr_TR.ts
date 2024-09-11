@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -88,7 +86,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
+        <translation>Vertex'i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
@@ -140,7 +138,7 @@
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation>Vertex&apos;i Kaldır</translation>
+        <translation>Vertex'i Kaldır</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
@@ -148,7 +146,7 @@
     </message>
     <message>
         <source>Edge &amp;Interpolate Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar Ara Değer Ayarı (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -274,23 +272,23 @@
     <name>GridCreatingConditionLaplaceInterpolateSettingDialog</name>
     <message>
         <source>Interpolate Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ara Değer Ayarı</translation>
     </message>
     <message>
         <source>Spline curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline eğrisi</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Çoklu çizgi</translation>
     </message>
     <message>
         <source>Interpolate Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedefi Ara Değerleme Ayarı</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished">Bu çizgi ve çizgiler paralel konumlarda</translation>
+        <translation>Bu çizgi ve paralel konumlardaki çizgiler</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -298,11 +296,11 @@
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished">Bu hat sadece</translation>
+        <translation>Sadece bu satır</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The interpolate setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;İnterpolasyon ayarı paralel konumlardaki tüm satırlara uygulanır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

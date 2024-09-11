@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1795,8 +1793,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Kolore:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1913,12 +1911,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definizio nodoa ez da gordetzen</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Balio mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Balio mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Egoera mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Egoera mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1989,8 +1987,8 @@ Do you really want to import this file?</source>
         <translation>CGNS fitxategia irekitzean huts egin du.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>name atributua ez dago definitu &quot;Elementua&quot; elementurako</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>name atributua ez dago definitu "Elementua" elementurako</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2201,8 +2199,8 @@ Do you really want to import this file?</source>
         <translation>Fitxategia %1 Kalkulu-baldintzara inportatu ondoren eguneratzen da %2. Eguneratutako fitxategia inportatu nahi duzu?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Balioak kopiatu eta itsatsi ditzakezu, &quot;Ctrl + C&quot; eta &quot;Ctrl + V&quot; lasterbideekin.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Balioak kopiatu eta itsatsi ditzakezu, "Ctrl + C" eta "Ctrl + V" lasterbideekin.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2343,8 +2341,8 @@ Do you really want to import this file?</source>
         <translation>Errorea gertatu da fitxategia irekitzean.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Lehenengo bi zutabeek &quot;X&quot; eta &quot;Y&quot; izan behar dute.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Lehenengo bi zutabeek "X" eta "Y" izan behar dute.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2505,8 +2503,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Aldagaiaren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2584,8 +2582,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Behera (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2810,15 +2808,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation type="vanished">Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn.</translation>
-    </message>
-    <message>
-        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezin izan da emaitza/Solution1.cgn-ko datuak irakurtzean. Ez dago ikus daitekeen kalkulu-emaitzarik. emaitza/Solution1.cgn ezabatu nahi duzu?</translation>
     </message>
 </context>
 <context>
@@ -2954,8 +2948,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Irteeraren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3191,8 +3185,8 @@ Do you really want to import this file?</source>
         <translation>Irudi guztiak (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
-        <translation>Irudi fitxategi baliogabea zehaztu da. Fitxategiaren atzizkiak &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; edo &quot;tif&quot; hauetako bat izan behar du.</translation>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Irudi fitxategi baliogabea zehaztu da. Fitxategiaren atzizkiak "jpg", "jpeg", "png" edo "tif" hauetako bat izan behar du.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
@@ -3200,11 +3194,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalkuluaren emaitza hautsita dago eta ezin da proiektua ireki. Kalkuluaren emaitza baztertu eta sarrerako datuak leheneratu nahi dituzu?</translation>
     </message>
     <message>
         <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarrerako datuak hautsita daude eta ezin da proiektua ireki. Sarrerako datuak baztertu eta babeskopiatik leheneratu nahi dituzu?</translation>
     </message>
 </context>
 <context>
@@ -3255,8 +3249,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Laneko eremua &quot;%1&quot;du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Laneko eremua "%1"du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3855,8 +3849,8 @@ Do you really want to import this file?</source>
         <translation>Aldagaiaren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldagaia JavaScript hizkuntzarekin defini dezakezu. Ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -dekorazioa: azpimarra; kolorea:#0000ff;&quot;&gt;hemen&lt;/span&gt;&lt;/a&gt; xehetasunetarako.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldagaia JavaScript hizkuntzarekin defini dezakezu. Ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -dekorazioa: azpimarra; kolorea:#0000ff;"&gt;hemen&lt;/span&gt;&lt;/a&gt; xehetasunetarako.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3946,8 +3940,8 @@ Do you really want to import this file?</source>
         <translation>Behera (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra&lt;/span&gt;: garrantzitsua da zerrendako ordena. Definizioan, eragiketa sinpleen kalkuluen balioa aldagai gisa erabil dezakezu, zerrendan lehenago agertzen dena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra&lt;/span&gt;: garrantzitsua da zerrendako ordena. Definizioan, eragiketa sinpleen kalkuluen balioa aldagai gisa erabil dezakezu, zerrendan lehenago agertzen dena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

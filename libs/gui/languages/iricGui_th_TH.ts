@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AnimationController</name>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>เลือก Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม &quot;ตกลง&quot;</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม "ตกลง"</translation>
     </message>
 </context>
 <context>
@@ -1489,8 +1487,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>คุณแน่ใจหรือว่าต้องการลบ &quot;%1&quot;?</translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>คุณแน่ใจหรือว่าต้องการลบ "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1734,9 +1732,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ &quot;%1&quot; ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
+        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ "%1" ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ดูเหมือนว่าโปรเจ็กต์นี้จะเปิดขึ้นโดยหน้าต่าง iRIC GUI อื่น คุณไม่สามารถเปิดโฟลเดอร์โครงการจากหลายหน้าต่าง GUI</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation type="vanished">โปรเจ็กต์ที่เปิดอยู่จะไม่ถูกคัดลอกไปยังไดเร็กทอรีงาน และคุณจะถูกบังคับให้บันทึกการแก้ไขที่คุณทำกับโปรเจ็กต์นี้ หากคุณต้องการเก็บโปรเจ็กต์ปัจจุบันไว้ โปรดบันทึกไปที่โปรเจ็กต์อื่นก่อน</translation>
     </message>
     <message>
@@ -2078,8 +2076,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>หน้าต่างย่อยที่ใช้งานอยู่ในปัจจุบันไม่รองรับการส่งออกรูปทรงเส้นขอบ</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2215,8 +2213,8 @@ Option -&gt; Preferences</source>
         <translation>ไฟล์การตั้งค่า (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น "โหมดแยก"</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2227,8 +2225,8 @@ Option -&gt; Preferences</source>
         <translation>เลือกกริดเพื่อส่งออกไฟล์รูปร่าง</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>ไม่มีการวาดรูปร่างใน &quot;โหมดไม่ต่อเนื่อง&quot;</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>ไม่มีการวาดรูปร่างใน "โหมดไม่ต่อเนื่อง"</translation>
     </message>
     <message>
         <source>This project is modified. Do you want to save?</source>
@@ -2236,7 +2234,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Failed to load calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถโหลดผลการคำนวณได้</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2581,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2610,8 +2608,8 @@ Option -&gt; Preferences</source>
         <translation>เปิดหน้าต่างหลังการประมวลผล 2D ใหม่</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird&apos;s-Eye ใหม่</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird's-Eye ใหม่</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2746,7 +2744,7 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow_DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">คำเตือน</translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grid is edited after solver execution. You need to select from the following choices:&lt;/p&gt;
@@ -2754,19 +2752,19 @@ Option -&gt; Preferences</source>
 &lt;li&gt;Discard grid modification, and keep calculation result.&lt;/li&gt;
 &lt;li&gt;Discard calculation result, and save the modified grid.&lt;/li&gt;
 &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ตารางจะถูกแก้ไขหลังจากดำเนินการโปรแกรมแก้ปัญหา คุณต้องเลือกจากตัวเลือกต่อไปนี้:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;ยกเลิกการปรับเปลี่ยนตาราง และเก็บผลการคำนวณไว้&lt;/li&gt; &lt;li&gt;ยกเลิกผลการคำนวณ และบันทึกตารางที่ปรับเปลี่ยน&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Discard &amp;Grid Modification</source>
-        <translation type="unfinished"></translation>
+        <translation>ยกเลิกการปรับเปลี่ยนกริด (&amp;G)</translation>
     </message>
     <message>
         <source>Discard Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>ยกเลิกผลการคำนวณ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>ยกเลิก (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1795,8 +1793,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Barva:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka: Pro jméno můžete použít pouze znaky ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka: Pro jméno můžete použít pouze znaky ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1913,12 +1911,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definiční uzel není uložen</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Špatná hodnotaTyp &quot; %1 “je nastaveno.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Špatná hodnotaTyp " %1 “je nastaveno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Špatný stavTyp &quot; %1 “je nastaveno.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Špatný stavTyp " %1 “je nastaveno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1989,8 +1987,8 @@ Do you really want to import this file?</source>
         <translation>Otevření souboru CGNS se nezdařilo.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>atribut name není definován pro prvek &quot;Item&quot;.</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>atribut name není definován pro prvek "Item".</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2201,7 +2199,7 @@ Do you really want to import this file?</source>
         <translation>Soubor %1 se aktualizuje po importu do podmínky výpočtu %2. Chcete importovat aktualizovaný soubor?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Hodnoty můžete zkopírovat a vložit pomocí klávesové zkratky „Ctrl + C“ a „Ctrl + V“</translation>
     </message>
     <message>
@@ -2343,7 +2341,7 @@ Do you really want to import this file?</source>
         <translation>Při otevírání souboru došlo k chybě.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>První dva sloupce musí být „X“ a „Y“.</translation>
     </message>
     <message>
@@ -2505,8 +2503,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definice proměnné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2514,7 +2512,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí &quot;Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí "Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2584,8 +2582,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Dolů (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2810,15 +2808,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation type="vanished">Čtení dat z výsledku/řešení %1.cgn se nezdařilo. Výsledek výpočtu můžete vizualizovat v Solution1.cgn to Solution %2.cgn.</translation>
-    </message>
-    <message>
-        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Čtení dat z výsledku/řešení %1.cgn se nezdařilo. Výsledek výpočtu můžete vizualizovat v Solution1.cgn to Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
-        <translation type="unfinished"></translation>
+        <translation>Čtení dat z result/Solution1.cgn se nezdařilo. Neexistuje žádný výsledek výpočtu, který by bylo možné vizualizovat. Chcete smazat result/Solution1.cgn?</translation>
     </message>
 </context>
 <context>
@@ -2954,8 +2948,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definice výstupu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3191,7 +3185,7 @@ Do you really want to import this file?</source>
         <translation>Všechny obrázky (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
         <translation>Je zadán neplatný soubor obrázku. Přípona souboru by měla být jedna z „jpg“, „jpeg“, „png“ nebo „tif“.</translation>
     </message>
     <message>
@@ -3200,11 +3194,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledek výpočtu je nefunkční a projekt nelze otevřít. Chcete zahodit výsledek výpočtu a obnovit vstupní data?</translation>
     </message>
     <message>
         <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstupní data jsou poškozená a nelze otevřít projekt. Chcete zahodit vstupní data a obnovit je ze zálohy?</translation>
     </message>
 </context>
 <context>
@@ -3255,8 +3249,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Pracovní prostor &quot;%1&quot;má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Pracovní prostor "%1"má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3855,8 +3849,8 @@ Do you really want to import this file?</source>
         <translation>Definice proměnné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Proměnnou můžete definovat pomocí jazyka JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;detaily&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Proměnnou můžete definovat pomocí jazyka JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;detaily&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3864,7 +3858,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Můžete otestovat definici kliknutím na toto. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočítaná pomocí &quot;Hodnoty pro testování&quot;; pro každý vstup se zobrazí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Můžete otestovat definici kliknutím na toto. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočítaná pomocí "Hodnoty pro testování"; pro každý vstup se zobrazí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3946,8 +3940,8 @@ Do you really want to import this file?</source>
         <translation>Dolů (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka&lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete jako proměnnou použít hodnotu výpočtů jednoduchých operací, která se objeví dříve v seznamu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka&lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete jako proměnnou použít hodnotu výpočtů jednoduchých operací, která se objeví dříve v seznamu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
