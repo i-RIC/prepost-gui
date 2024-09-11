@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>顏色：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：名稱只能使用 ASCII 字符。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：名稱只能使用 ASCII 字符。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,11 +1913,11 @@ Parse error %2 at %3, column %4</source>
         <translation>定義節點未存儲</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation>錯誤的值類型“ %1 ”設置。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
         <translation>錯誤的條件類型“ %1 “設置了。</translation>
     </message>
     <message>
@@ -1987,7 +1989,7 @@ Do you really want to import this file?</source>
         <translation>打開 CGNS 文件失敗。</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>未為「Item」元素定義 name 屬性</translation>
     </message>
     <message>
@@ -2199,7 +2201,7 @@ Do you really want to import this file?</source>
         <translation>文件 %1 導入計算條件後更新 %2.是否要導入更新後的文件？</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>您可以使用快捷鍵“Ctrl + C”和“Ctrl + V”複製和粘貼值</translation>
     </message>
     <message>
@@ -2341,7 +2343,7 @@ Do you really want to import this file?</source>
         <translation>打開文件時出錯。</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>前兩列必須是“X”和“Y”。</translation>
     </message>
     <message>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>發生了錯誤： %1</translation>
+        <translation type="vanished">發生了錯誤： %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>檢查參數 %1 失敗的。無效參數： %2.</translation>
+        <translation type="vanished">檢查參數 %1 失敗的。無效參數： %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>編輯簡單操作結果變量</translation>
+        <translation type="vanished">編輯簡單操作結果變量</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>計算結果：</translation>
+        <translation type="vanished">計算結果：</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>變量名：</translation>
+        <translation type="vanished">變量名：</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>測試價值：</translation>
+        <translation type="vanished">測試價值：</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>未輸入變量名。</translation>
+        <translation type="vanished">未輸入變量名。</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>此變量名稱已被使用</translation>
+        <translation type="vanished">此變量名稱已被使用</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>編輯簡單操作結果</translation>
+        <translation type="vanished">編輯簡單操作結果</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>姓名：</translation>
+        <translation type="vanished">姓名：</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>位置：</translation>
+        <translation type="vanished">位置：</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>輸入的計算結果</translation>
+        <translation type="vanished">輸入的計算結果</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>添加 (&amp;A)...</translation>
+        <translation type="vanished">添加 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>刪除 (&amp;D)</translation>
+        <translation type="vanished">刪除 (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>變量的定義</translation>
+        <translation type="vanished">變量的定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 語言定義變量。請參閱 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text - 裝飾：下劃線；顏色：#0000ff;"&gt;此處&lt;/span&gt;&lt;/a&gt; 詳情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 語言定義變量。請參閱 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text - 裝飾：下劃線；顏色：#0000ff;&quot;&gt;此處&lt;/span&gt;&lt;/a&gt; 詳情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>測試</translation>
+        <translation type="vanished">測試</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以通過單擊此來測試定義。如果在解析定義時發生錯誤，則會顯示錯誤消息。當定義被成功解析時，使用“用於測試的值”計算的值將被成功解析。顯示每個輸入。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以通過單擊此來測試定義。如果在解析定義時發生錯誤，則會顯示錯誤消息。當定義被成功解析時，使用“用於測試的值”計算的值將被成功解析。顯示每個輸入。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>結果名稱</translation>
+        <translation type="vanished">結果名稱</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>變量名</translation>
+        <translation type="vanished">變量名</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>測試價值</translation>
+        <translation type="vanished">測試價值</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>網格節點</translation>
+        <translation type="vanished">網格節點</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>網格單元</translation>
+        <translation type="vanished">網格單元</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>粒子</translation>
+        <translation type="vanished">粒子</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>未輸入名稱。</translation>
+        <translation type="vanished">未輸入名稱。</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>此名稱已被使用</translation>
+        <translation type="vanished">此名稱已被使用</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>你確定你要刪除 %1 ?</translation>
+        <translation type="vanished">你確定你要刪除 %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>簡單操作結果列表</translation>
+        <translation type="vanished">簡單操作結果列表</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>姓名</translation>
+        <translation type="vanished">姓名</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>向上 (&amp;U)</translation>
+        <translation type="vanished">向上 (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>下 (&amp;D)</translation>
+        <translation type="vanished">下 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：列表中的順序很重要。在定義中，您可以使用簡單操作計算的值作為變量，出現在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：列表中的順序很重要。在定義中，您可以使用簡單操作計算的值作為變量，出現在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>添加 (&amp;A)...</translation>
+        <translation type="vanished">添加 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編輯 (&amp;E)...</translation>
+        <translation type="vanished">編輯 (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>刪除 (&amp;D)</translation>
+        <translation type="vanished">刪除 (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>你確定你要刪除 %1 ?</translation>
+        <translation type="vanished">你確定你要刪除 %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>網格節點</translation>
+        <translation type="vanished">網格節點</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>網格單元</translation>
+        <translation type="vanished">網格單元</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>粒子</translation>
+        <translation type="vanished">粒子</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>從結果/解決方案中讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果可視化到 Solution %2.cgn。</translation>
+        <translation type="vanished">從結果/解決方案中讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果可視化到 Solution %2.cgn。</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">輸出定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 語言定義變量。請參閱 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text - 裝飾：下劃線；顏色：#0000ff;"&gt;此處&lt;/span&gt;&lt;/a&gt; 詳情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 語言定義變量。請參閱 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text - 裝飾：下劃線；顏色：#0000ff;&quot;&gt;此處&lt;/span&gt;&lt;/a&gt; 詳情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>對話</translation>
+        <translation type="vanished">對話</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>網格類型：</translation>
+        <translation type="vanished">網格類型：</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>地區： (&amp;R)</translation>
+        <translation type="vanished">地區： (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>打開時發生錯誤 %1 。 iRIC 試圖挽救數據 %2 。</translation>
+        <translation type="vanished">打開時發生錯誤 %1 。 iRIC 試圖挽救數據 %2 。</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>所有圖片 (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
         <translation>指定的圖像檔案無效。檔案後綴應為「jpg」、「jpeg」、「png」或「tif」之一。</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>建立資料夾時出錯 %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,7 +3255,7 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
         <translation>工作區” %1 “ 已 %2 似乎不再使用的項目文件夾。你想刪除它們嗎？</translation>
     </message>
     <message>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>變數的定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript語言定義變數。請參閱&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style="text -decoration: underline; color:#0000ff;"&gt;此處&lt;/span&gt;&lt;/a&gt;了解詳細資訊。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript語言定義變數。請參閱&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot;text -decoration: underline; color:#0000ff;&quot;&gt;此處&lt;/span&gt;&lt;/a&gt;了解詳細資訊。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>向下 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：清單中的順序很重要。在定義中，您可以使用簡單運算計算的值作為變量，該變數出現在清單的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：清單中的順序很重要。在定義中，您可以使用簡單運算計算的值作為變量，該變數出現在清單的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Цвет:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание. В имени можно использовать только символы ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание. В имени можно использовать только символы ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Узел определения не сохраняется</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Неверное значение типа "%1"установлено.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Неверное значение типа &quot;%1&quot;установлено.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Неверный тип условия "%1"установлено.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Неверный тип условия &quot;%1&quot;установлено.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,7 +1989,7 @@ Do you really want to import this file?</source>
         <translation>Не удалось открыть файл CGNS.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>Атрибут name не определен для элемента «Item»</translation>
     </message>
     <message>
@@ -2199,7 +2201,7 @@ Do you really want to import this file?</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Вы можете копировать и вставлять значения с помощью сочетания клавиш «Ctrl + C» и «Ctrl + V».</translation>
     </message>
     <message>
@@ -2337,7 +2339,7 @@ Do you really want to import this file?</source>
         <translation>Произошла ошибка при открытии файла.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Первые два столбца должны быть «X» и «Y».</translation>
     </message>
     <message>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Произошла ошибка: %1</translation>
+        <translation type="vanished">Произошла ошибка: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Проверка аргумента для %1 не смогли. Недействительные аргументы: %2.</translation>
+        <translation type="vanished">Проверка аргумента для %1 не смогли. Недействительные аргументы: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Редактировать переменную результата простой операции</translation>
+        <translation type="vanished">Редактировать переменную результата простой операции</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Результат расчета:</translation>
+        <translation type="vanished">Результат расчета:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Имя переменной:</translation>
+        <translation type="vanished">Имя переменной:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Значение для тестирования:</translation>
+        <translation type="vanished">Значение для тестирования:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Имя переменной не вводится.</translation>
+        <translation type="vanished">Имя переменной не вводится.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Это имя переменной уже используется</translation>
+        <translation type="vanished">Это имя переменной уже используется</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Редактировать результат простой операции</translation>
+        <translation type="vanished">Редактировать результат простой операции</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Имя:</translation>
+        <translation type="vanished">Имя:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Позиция:</translation>
+        <translation type="vanished">Позиция:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Результаты расчета для ввода</translation>
+        <translation type="vanished">Результаты расчета для ввода</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Добавлять (&amp;A)...</translation>
+        <translation type="vanished">Добавлять (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Удалить (&amp;D)</translation>
+        <translation type="vanished">Удалить (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Определение переменной</translation>
+        <translation type="vanished">Определение переменной</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Тестовое задание</translation>
+        <translation type="vanished">Тестовое задание</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете проверить определение, щелкнув по нему. Если при анализе определения возникает ошибка, отображается сообщение об ошибке. Когда определение успешно проанализировано, значение, вычисленное с использованием параметра &amp; quot; Значение для тестированияquot; для каждого ввода отображается. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете проверить определение, щелкнув по нему. Если при анализе определения возникает ошибка, отображается сообщение об ошибке. Когда определение успешно проанализировано, значение, вычисленное с использованием параметра &amp; quot; Значение для тестированияquot; для каждого ввода отображается. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Название результата</translation>
+        <translation type="vanished">Название результата</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Имя переменной</translation>
+        <translation type="vanished">Имя переменной</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Ценность для тестирования</translation>
+        <translation type="vanished">Ценность для тестирования</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Узел сетки</translation>
+        <translation type="vanished">Узел сетки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ячейка сетки</translation>
+        <translation type="vanished">Ячейка сетки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Частицы</translation>
+        <translation type="vanished">Частицы</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Имя не вводится.</translation>
+        <translation type="vanished">Имя не вводится.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Это имя уже используется</translation>
+        <translation type="vanished">Это имя уже используется</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Вы уверены, что хотите удалить %1 ?</translation>
+        <translation type="vanished">Вы уверены, что хотите удалить %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Список результатов простой операции</translation>
+        <translation type="vanished">Список результатов простой операции</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Имя</translation>
+        <translation type="vanished">Имя</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Вверх (&amp;U)</translation>
+        <translation type="vanished">Вверх (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Вниз (&amp;D)</translation>
+        <translation type="vanished">Вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примечание &lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простых операций в качестве переменной, которая появляется раньше в списке. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Примечание &lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простых операций в качестве переменной, которая появляется раньше в списке. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Добавлять (&amp;A)...</translation>
+        <translation type="vanished">Добавлять (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Редактировать (&amp;E)...</translation>
+        <translation type="vanished">Редактировать (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Удалить (&amp;D)</translation>
+        <translation type="vanished">Удалить (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Вы уверены, что хотите удалить %1 ?</translation>
+        <translation type="vanished">Вы уверены, что хотите удалить %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Узел сетки</translation>
+        <translation type="vanished">Узел сетки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ячейка сетки</translation>
+        <translation type="vanished">Ячейка сетки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Частицы</translation>
+        <translation type="vanished">Частицы</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Чтение данных из результата/решения %1.cgn не удалось. Вы можете визуализировать результат расчета в Solution1.cgn to Solution %2.cgn.</translation>
+        <translation type="vanished">Чтение данных из результата/решения %1.cgn не удалось. Вы можете визуализировать результат расчета в Solution1.cgn to Solution %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Определение вывода</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Тип сетки:</translation>
+        <translation type="vanished">Тип сетки:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Область: (&amp;R)</translation>
+        <translation type="vanished">Область: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Произошла ошибка при открытии %1. iRIC пытается спасти данные из %2.</translation>
+        <translation type="vanished">Произошла ошибка при открытии %1. iRIC пытается спасти данные из %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>Все изображения (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
         <translation>Указан недопустимый файл изображения. Суффикс файла должен быть одним из «jpg», «jpeg», «png» или «tif».</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Произошла ошибка при создании папки %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3255,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Рабочая среда "%1" имеет %2 папки проекта, которые, похоже, больше не используются. Вы хотите их удалить?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Рабочая среда &quot;%1&quot; имеет %2 папки проекта, которые, похоже, больше не используются. Вы хотите их удалить?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>Определение переменной</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" текст. -декорация: подчеркивание; цвет:#0000ff;"&gt;здесь&lt;/span&gt;&lt;/a&gt; подробности.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; текст. -декорация: подчеркивание; цвет:#0000ff;&quot;&gt;здесь&lt;/span&gt;&lt;/a&gt; подробности.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>Вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;Примечание&lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простой операции в качестве переменной, которая появляется раньше в списке.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;Примечание&lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простой операции в качестве переменной, которая появляется раньше в списке.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

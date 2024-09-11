@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Kolor:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga: w polu Imię możesz używać tylko znaków ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga: w polu Imię możesz używać tylko znaków ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Węzeł definicji nie jest przechowywany</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Nieprawidłowa wartośćType " %1 jest ustawiony.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Nieprawidłowa wartośćType &quot; %1 jest ustawiony.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Zły warunekTyp "%1"jest ustawiony.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Zły warunekTyp &quot;%1&quot;jest ustawiony.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,7 +1989,7 @@ Do you really want to import this file?</source>
         <translation>Nie udało się otworzyć pliku CGNS.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>atrybut name nie jest zdefiniowany dla elementu „Item”.</translation>
     </message>
     <message>
@@ -2199,7 +2201,7 @@ Do you really want to import this file?</source>
         <translation>Plik %1 jest aktualizowany po zaimportowaniu do warunku obliczeniowego %2. Czy chcesz zaimportować zaktualizowany plik?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Możesz kopiować i wklejać wartości za pomocą skrótu „Ctrl + C” i „Ctrl + V”</translation>
     </message>
     <message>
@@ -2341,7 +2343,7 @@ Do you really want to import this file?</source>
         <translation>Wystąpił błąd podczas otwierania pliku.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Pierwsze dwie kolumny muszą zawierać „X” i „Y”.</translation>
     </message>
     <message>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation type="vanished">Błąd</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Wystąpił błąd: %1</translation>
+        <translation type="vanished">Wystąpił błąd: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Sprawdzam argument dla %1 przegrany. Nieprawidłowe argumenty: %2.</translation>
+        <translation type="vanished">Sprawdzam argument dla %1 przegrany. Nieprawidłowe argumenty: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edytuj zmienną wynikową prostej operacji</translation>
+        <translation type="vanished">Edytuj zmienną wynikową prostej operacji</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Wynik obliczeń:</translation>
+        <translation type="vanished">Wynik obliczeń:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nazwa zmiennej:</translation>
+        <translation type="vanished">Nazwa zmiennej:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Wartość do testowania:</translation>
+        <translation type="vanished">Wartość do testowania:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nazwa zmiennej nie jest wprowadzana.</translation>
+        <translation type="vanished">Nazwa zmiennej nie jest wprowadzana.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Ta nazwa zmiennej jest już używana</translation>
+        <translation type="vanished">Ta nazwa zmiennej jest już używana</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edytuj wynik prostej operacji</translation>
+        <translation type="vanished">Edytuj wynik prostej operacji</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nazwa:</translation>
+        <translation type="vanished">Nazwa:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozycja:</translation>
+        <translation type="vanished">Pozycja:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Wyniki obliczeń dla danych wejściowych</translation>
+        <translation type="vanished">Wyniki obliczeń dla danych wejściowych</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodać (&amp;A)...</translation>
+        <translation type="vanished">Dodać (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Kasować (&amp;D)</translation>
+        <translation type="vanished">Kasować (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definicja zmiennej</translation>
+        <translation type="vanished">Definicja zmiennej</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz przetestować definicję, klikając to. Jeśli podczas analizowania definicji wystąpi błąd, zostanie wyświetlony komunikat o błędzie. Po pomyślnym przeanalizowaniu definicji wartość zostanie obliczona przy użyciu opcji „Wartość do testowania”; dla każdego wejścia jest pokazany.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz przetestować definicję, klikając to. Jeśli podczas analizowania definicji wystąpi błąd, zostanie wyświetlony komunikat o błędzie. Po pomyślnym przeanalizowaniu definicji wartość zostanie obliczona przy użyciu opcji „Wartość do testowania”; dla każdego wejścia jest pokazany.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nazwa wyniku</translation>
+        <translation type="vanished">Nazwa wyniku</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nazwa zmiennej</translation>
+        <translation type="vanished">Nazwa zmiennej</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Wartość do testowania</translation>
+        <translation type="vanished">Wartość do testowania</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Węzeł siatki</translation>
+        <translation type="vanished">Węzeł siatki</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Komórka siatki</translation>
+        <translation type="vanished">Komórka siatki</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Cząstka</translation>
+        <translation type="vanished">Cząstka</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Imię i nazwisko nie są wprowadzane.</translation>
+        <translation type="vanished">Imię i nazwisko nie są wprowadzane.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Ta nazwa jest już używana</translation>
+        <translation type="vanished">Ta nazwa jest już używana</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>czy jesteś pewien, że chcesz usunąć %1 ?</translation>
+        <translation type="vanished">czy jesteś pewien, że chcesz usunąć %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Lista wyników prostej operacji</translation>
+        <translation type="vanished">Lista wyników prostej operacji</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation type="vanished">Nazwa</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozycja</translation>
+        <translation type="vanished">Pozycja</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>W górę (&amp;U)</translation>
+        <translation type="vanished">W górę (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>W dół (&amp;D)</translation>
+        <translation type="vanished">W dół (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodać (&amp;A)...</translation>
+        <translation type="vanished">Dodać (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Edytować (&amp;E)...</translation>
+        <translation type="vanished">Edytować (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Kasować (&amp;D)</translation>
+        <translation type="vanished">Kasować (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>czy jesteś pewien, że chcesz usunąć %1 ?</translation>
+        <translation type="vanished">czy jesteś pewien, że chcesz usunąć %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Węzeł siatki</translation>
+        <translation type="vanished">Węzeł siatki</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Komórka siatki</translation>
+        <translation type="vanished">Komórka siatki</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Cząstka</translation>
+        <translation type="vanished">Cząstka</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Odczytywanie danych z wyniku/rozwiązania %1.cgn nie powiodło się. Możesz wizualizować wynik obliczeń w Solution1.cgn do Solution %2.cgn.</translation>
+        <translation type="vanished">Odczytywanie danych z wyniku/rozwiązania %1.cgn nie powiodło się. Możesz wizualizować wynik obliczeń w Solution1.cgn do Solution %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definicja wyjścia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Typ siatki:</translation>
+        <translation type="vanished">Typ siatki:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Region: (&amp;R)</translation>
+        <translation type="vanished">Region: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Wystąpił błąd podczas otwierania %1. iRIC próbuje odzyskać dane z %2.</translation>
+        <translation type="vanished">Wystąpił błąd podczas otwierania %1. iRIC próbuje odzyskać dane z %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>Wszystkie obrazy (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
         <translation>Określono nieprawidłowy plik obrazu. Rozszerzenie pliku powinno mieć postać „jpg”, „jpeg”, „png” lub „tif”.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Wystąpił błąd podczas tworzenia folderu %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3255,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Obszar roboczy "%1" ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Obszar roboczy &quot;%1&quot; ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3682,7 +3700,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation>Satelita Google'a</translation>
+        <translation>Satelita Google&apos;a</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
@@ -3694,7 +3712,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Google Terrain</source>
-        <translation>Teren Google'a</translation>
+        <translation>Teren Google&apos;a</translation>
     </message>
 </context>
 <context>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>Definicja zmiennej</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operative-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operative-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>W dół (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;Uwaga&lt;/span&gt;: Kolejność na liście jest istotna. W definicji można użyć wartości obliczeń operacji prostych jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: Kolejność na liście jest istotna. W definicji można użyć wartości obliczeń operacji prostych jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

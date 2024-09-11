@@ -74,7 +74,7 @@ void PostBaseIterativeValuesContainer::updateIfNeeded(int *progress, int *invali
 				QDir workDir(impl->m_projectData->workDirectory());
 				auto resultFolder = iRIC::toStr(workDir.absoluteFilePath("result"));
 				auto invalidCgnsName = iRICLib::H5CgnsFileSeparateSolutionUtil::fileNameForSolution(resultFolder, solId + 1); // solId starts from 0
-				QFile::remove(invalidCgnsName.c_str());
+				// QFile::remove(invalidCgnsName.c_str());
 
 				return;
 			}

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>रंग:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>परिभाषा नोड संग्रहीत नहीं है</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>गलत मान प्रकार "%1"सेट किया गया है।</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>गलत मान प्रकार &quot;%1&quot;सेट किया गया है।</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>गलत स्थिति प्रकार "%1"सेट है।</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>गलत स्थिति प्रकार &quot;%1&quot;सेट है।</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,8 +1989,8 @@ Do you really want to import this file?</source>
         <translation>CGNS फ़ाइल को खोलना विफल रहा।</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>"आइटम" तत्व के लिए नाम विशेषता परिभाषित नहीं है</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>&quot;आइटम&quot; तत्व के लिए नाम विशेषता परिभाषित नहीं है</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2199,8 +2201,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल %1 गणना की स्थिति में आयात करने के बाद अद्यतन किया जाता है %2. क्या आप अद्यतन की गई फ़ाइल आयात करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>आप शॉर्टकट "Ctrl + C" और "Ctrl + V" के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>आप शॉर्टकट &quot;Ctrl + C&quot; और &quot;Ctrl + V&quot; के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2341,8 +2343,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल खोलते समय त्रुटि हुई.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>पहले दो कॉलम "X" और "Y" होने चाहिए।</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>पहले दो कॉलम &quot;X&quot; और &quot;Y&quot; होने चाहिए।</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>त्रुटि हुई: %1</translation>
+        <translation type="vanished">त्रुटि हुई: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>के लिए तर्क की जाँच कर रहा है %1 अनुत्तीर्ण होना। अमान्य तर्क: %2.</translation>
+        <translation type="vanished">के लिए तर्क की जाँच कर रहा है %1 अनुत्तीर्ण होना। अमान्य तर्क: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>सरल ऑपरेशन परिणाम चर संपादित करें</translation>
+        <translation type="vanished">सरल ऑपरेशन परिणाम चर संपादित करें</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>गणना परिणाम:</translation>
+        <translation type="vanished">गणना परिणाम:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>चर का नाम:</translation>
+        <translation type="vanished">चर का नाम:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>परीक्षण के लिए मूल्य:</translation>
+        <translation type="vanished">परीक्षण के लिए मूल्य:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>परिवर्तनीय नाम इनपुट नहीं है।</translation>
+        <translation type="vanished">परिवर्तनीय नाम इनपुट नहीं है।</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>यह चर नाम पहले ही प्रयोग किया जा चुका है</translation>
+        <translation type="vanished">यह चर नाम पहले ही प्रयोग किया जा चुका है</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>सरल ऑपरेशन परिणाम संपादित करें</translation>
+        <translation type="vanished">सरल ऑपरेशन परिणाम संपादित करें</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>नाम:</translation>
+        <translation type="vanished">नाम:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>पद:</translation>
+        <translation type="vanished">पद:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>इनपुट के लिए गणना परिणाम</translation>
+        <translation type="vanished">इनपुट के लिए गणना परिणाम</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>जोड़ें (&amp;A)...</translation>
+        <translation type="vanished">जोड़ें (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>हटाएं (&amp;D)</translation>
+        <translation type="vanished">हटाएं (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>चर की परिभाषा</translation>
+        <translation type="vanished">चर की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>परीक्षण</translation>
+        <translation type="vanished">परीक्षण</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप इस पर क्लिक करके परिभाषा की जांच कर सकते हैं। यदि परिभाषा को पार्स करते समय त्रुटि होती है, तो त्रुटि संदेश दिखाया जाता है। जब परिभाषा को सफलतापूर्वक पार्स किया जाता है, तो मूल्य की गणना &amp;quot;परीक्षण के लिए मूल्यquot; का उपयोग करके की जाती है; प्रत्येक इनपुट के लिए दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप इस पर क्लिक करके परिभाषा की जांच कर सकते हैं। यदि परिभाषा को पार्स करते समय त्रुटि होती है, तो त्रुटि संदेश दिखाया जाता है। जब परिभाषा को सफलतापूर्वक पार्स किया जाता है, तो मूल्य की गणना &amp;quot;परीक्षण के लिए मूल्यquot; का उपयोग करके की जाती है; प्रत्येक इनपुट के लिए दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>परिणाम का नाम</translation>
+        <translation type="vanished">परिणाम का नाम</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>चर का नाम</translation>
+        <translation type="vanished">चर का नाम</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>परीक्षण के लिए मूल्य</translation>
+        <translation type="vanished">परीक्षण के लिए मूल्य</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>ग्रिड नोड</translation>
+        <translation type="vanished">ग्रिड नोड</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>ग्रिड सेल</translation>
+        <translation type="vanished">ग्रिड सेल</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>कण</translation>
+        <translation type="vanished">कण</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>नाम इनपुट नहीं है।</translation>
+        <translation type="vanished">नाम इनपुट नहीं है।</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>यह नाम पहले ही प्रयोग किया जा चुका है</translation>
+        <translation type="vanished">यह नाम पहले ही प्रयोग किया जा चुका है</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
+        <translation type="vanished">क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>सरल ऑपरेशन परिणाम सूची</translation>
+        <translation type="vanished">सरल ऑपरेशन परिणाम सूची</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>नाम</translation>
+        <translation type="vanished">नाम</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>पद</translation>
+        <translation type="vanished">पद</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>यूपी (&amp;U)</translation>
+        <translation type="vanished">यूपी (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>नीचे (&amp;D)</translation>
+        <translation type="vanished">नीचे (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>जोड़ें (&amp;A)...</translation>
+        <translation type="vanished">जोड़ें (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>संपादित करें (&amp;E)...</translation>
+        <translation type="vanished">संपादित करें (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>हटाएं (&amp;D)</translation>
+        <translation type="vanished">हटाएं (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
+        <translation type="vanished">क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>ग्रिड नोड</translation>
+        <translation type="vanished">ग्रिड नोड</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>ग्रिड सेल</translation>
+        <translation type="vanished">ग्रिड सेल</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>कण</translation>
+        <translation type="vanished">कण</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>परिणाम/समाधान से डेटा पढ़ना %1.सीजीएन विफल. आप Solution1.cgn से Solution तक गणना परिणाम देख सकते हैं %2.सीजीएन.</translation>
+        <translation type="vanished">परिणाम/समाधान से डेटा पढ़ना %1.सीजीएन विफल. आप Solution1.cgn से Solution तक गणना परिणाम देख सकते हैं %2.सीजीएन.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">आउटपुट की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>ग्रिड प्रकार:</translation>
+        <translation type="vanished">ग्रिड प्रकार:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>क्षेत्र: (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
+        <translation type="vanished">खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>सभी छवियाँ (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>अमान्य छवि फ़ाइल निर्दिष्ट की गई है। फ़ाइल प्रत्यय "jpg", "jpeg", "png", या "tif" में से एक होना चाहिए।</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>अमान्य छवि फ़ाइल निर्दिष्ट की गई है। फ़ाइल प्रत्यय &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, या &quot;tif&quot; में से एक होना चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>फ़ोल्डर बनाते समय त्रुटि हुई %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3255,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>कार्यक्षेत्र "%1" है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>कार्यक्षेत्र &quot;%1&quot; है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>चर की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href='http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m'&gt;&lt;span style=' text -सजावट: रेखांकित करें; रंग:#0000ff;"&gt;विवरण के लिए यहां&lt;/span&gt;&lt;/a&gt;।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&apos;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&apos;&gt;&lt;span style=&apos; text -सजावट: रेखांकित करें; रंग:#0000ff;&quot;&gt;विवरण के लिए यहां&lt;/span&gt;&lt;/a&gt;।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>नीचे (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;नोट&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप सरल ऑपरेशन गणनाओं के मान को एक चर के रूप में उपयोग कर सकते हैं, जो सूची में पहले दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;नोट&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप सरल ऑपरेशन गणनाओं के मान को एक चर के रूप में उपयोग कर सकते हैं, जो सूची में पहले दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>اللون:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: يمكنك استخدام أحرف ASCII فقط للاسم. &lt;/ span&gt; &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة: يمكنك استخدام أحرف ASCII فقط للاسم. &lt;/ span&gt; &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>لا يتم تخزين عقدة التعريف</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>نوع القيمة خاطئ "%1"تم تعيينه.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>نوع القيمة خاطئ &quot;%1&quot;تم تعيينه.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>نوع الشرط خاطئ "%1"تم تعيينه.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>نوع الشرط خاطئ &quot;%1&quot;تم تعيينه.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1972,7 +1974,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation>برنامج الحل قيد التشغيل حاليًا ، لذا لا يمكنك حفظ شرط الحساب. الرجاء الضغط على زر "إلغاء الأمر".</translation>
+        <translation>برنامج الحل قيد التشغيل حاليًا ، لذا لا يمكنك حفظ شرط الحساب. الرجاء الضغط على زر &quot;إلغاء الأمر&quot;.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
@@ -1987,8 +1989,8 @@ Do you really want to import this file?</source>
         <translation>فشل فتح ملف CGNS.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>لم يتم تعريف سمة الاسم لعنصر "العنصر".</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>لم يتم تعريف سمة الاسم لعنصر &quot;العنصر&quot;.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2199,8 +2201,8 @@ Do you really want to import this file?</source>
         <translation>ملف %1 يتم تحديثه بعد الاستيراد إلى شرط الحساب %2. هل تريد استيراد الملف المحدث؟</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>يمكنك نسخ القيم ولصقها باستخدام الاختصار "Ctrl + C" و "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>يمكنك نسخ القيم ولصقها باستخدام الاختصار &quot;Ctrl + C&quot; و &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2341,8 +2343,8 @@ Do you really want to import this file?</source>
         <translation>حدث خطأ أثناء فتح الملف.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>يجب أن يكون أول عمودين "X" و "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>يجب أن يكون أول عمودين &quot;X&quot; و &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>حدث خطأ: %1</translation>
+        <translation type="vanished">حدث خطأ: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>التحقق من حجة %1 باءت بالفشل. حجج باطلة: %2.</translation>
+        <translation type="vanished">التحقق من حجة %1 باءت بالفشل. حجج باطلة: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>تحرير متغير نتيجة عملية بسيطة</translation>
+        <translation type="vanished">تحرير متغير نتيجة عملية بسيطة</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>نتيجة الحساب:</translation>
+        <translation type="vanished">نتيجة الحساب:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>اسم المتغير:</translation>
+        <translation type="vanished">اسم المتغير:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>قيمة الاختبار:</translation>
+        <translation type="vanished">قيمة الاختبار:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>لا يتم إدخال اسم المتغير.</translation>
+        <translation type="vanished">لا يتم إدخال اسم المتغير.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>اسم المتغير هذا مستخدم بالفعل</translation>
+        <translation type="vanished">اسم المتغير هذا مستخدم بالفعل</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>تحرير نتيجة عملية بسيطة</translation>
+        <translation type="vanished">تحرير نتيجة عملية بسيطة</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>اسم:</translation>
+        <translation type="vanished">اسم:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>موقع:</translation>
+        <translation type="vanished">موقع:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>نتائج الحساب للمدخلات</translation>
+        <translation type="vanished">نتائج الحساب للمدخلات</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>يضيف (&amp;A)...</translation>
+        <translation type="vanished">يضيف (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>حذف (&amp;D)</translation>
+        <translation type="vanished">حذف (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>تعريف المتغير</translation>
+        <translation type="vanished">تعريف المتغير</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>اختبار</translation>
+        <translation type="vanished">اختبار</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك اختبار التعريف بالنقر عليه. في حالة حدوث خطأ أثناء تحليل التعريف ، تظهر رسالة الخطأ. عندما يتم تحليل التعريف بنجاح ، يتم حساب القيمة باستخدام &amp; quot؛ Value for testingquot؛ لكل المدخلات المعروضة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك اختبار التعريف بالنقر عليه. في حالة حدوث خطأ أثناء تحليل التعريف ، تظهر رسالة الخطأ. عندما يتم تحليل التعريف بنجاح ، يتم حساب القيمة باستخدام &amp; quot؛ Value for testingquot؛ لكل المدخلات المعروضة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>اسم النتيجة</translation>
+        <translation type="vanished">اسم النتيجة</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>اسم المتغير</translation>
+        <translation type="vanished">اسم المتغير</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>قيمة للاختبار</translation>
+        <translation type="vanished">قيمة للاختبار</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>عقدة الشبكة</translation>
+        <translation type="vanished">عقدة الشبكة</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>خلية الشبكة</translation>
+        <translation type="vanished">خلية الشبكة</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>جسيم</translation>
+        <translation type="vanished">جسيم</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>الاسم ليس إدخالاً.</translation>
+        <translation type="vanished">الاسم ليس إدخالاً.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>هذا الاسم مستخدم بالفعل</translation>
+        <translation type="vanished">هذا الاسم مستخدم بالفعل</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>هل أنت متأكد أنك تريد حذف %1 ؟</translation>
+        <translation type="vanished">هل أنت متأكد أنك تريد حذف %1 ؟</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>قائمة نتائج عملية بسيطة</translation>
+        <translation type="vanished">قائمة نتائج عملية بسيطة</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>اسم</translation>
+        <translation type="vanished">اسم</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>موقع</translation>
+        <translation type="vanished">موقع</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>فوق (&amp;U)</translation>
+        <translation type="vanished">فوق (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>تحت (&amp;D)</translation>
+        <translation type="vanished">تحت (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>يضيف (&amp;A)...</translation>
+        <translation type="vanished">يضيف (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>يحرر (&amp;E)...</translation>
+        <translation type="vanished">يحرر (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>حذف (&amp;D)</translation>
+        <translation type="vanished">حذف (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>هل أنت متأكد أنك تريد حذف %1 ؟</translation>
+        <translation type="vanished">هل أنت متأكد أنك تريد حذف %1 ؟</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>عقدة الشبكة</translation>
+        <translation type="vanished">عقدة الشبكة</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>خلية الشبكة</translation>
+        <translation type="vanished">خلية الشبكة</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>جسيم</translation>
+        <translation type="vanished">جسيم</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>قراءة البيانات من النتيجة / الحل %1 فشل.cgn. يمكنك تصور نتيجة الحساب في Solution1.cgn إلى Solution %2.cgn.</translation>
+        <translation type="vanished">قراءة البيانات من النتيجة / الحل %1 فشل.cgn. يمكنك تصور نتيجة الحساب في Solution1.cgn إلى Solution %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">تعريف الإخراج</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>حوار</translation>
+        <translation type="vanished">حوار</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>نوع الشبكة:</translation>
+        <translation type="vanished">نوع الشبكة:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>منطقة: (&amp;R)</translation>
+        <translation type="vanished">منطقة: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>حدث خطأ أثناء الفتح %1. يحاول iRIC إنقاذ البيانات من %2.</translation>
+        <translation type="vanished">حدث خطأ أثناء الفتح %1. يحاول iRIC إنقاذ البيانات من %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>جميع الصور (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>تم تحديد ملف صورة غير صالح. يجب أن تكون لاحقة الملف واحدة من "jpg" أو "jpeg" أو "png" أو "tif".</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>تم تحديد ملف صورة غير صالح. يجب أن تكون لاحقة الملف واحدة من &quot;jpg&quot; أو &quot;jpeg&quot; أو &quot;png&quot; أو &quot;tif&quot;.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>حدث خطأ أثناء إنشاء المجلد %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3255,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>مساحة العمل "%1" لديها %2 مجلدات المشروع التي يبدو أنها لم تعد مستخدمة. هل تريد إزالتها؟</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>مساحة العمل &quot;%1&quot; لديها %2 مجلدات المشروع التي يبدو أنها لم تعد مستخدمة. هل تريد إزالتها؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>تعريف المتغير</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;يمكنك تعريف المتغير باستخدام لغة JavaScript. يرجى الاطلاع على &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -الديكور: تسطير؛ اللون:#0000ff;"&gt;هنا&lt;/span&gt;&lt;/a&gt; لمزيد من التفاصيل.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;يمكنك تعريف المتغير باستخدام لغة JavaScript. يرجى الاطلاع على &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -الديكور: تسطير؛ اللون:#0000ff;&quot;&gt;هنا&lt;/span&gt;&lt;/a&gt; لمزيد من التفاصيل.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>تحت (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;ملاحظة&lt;/span&gt;: الترتيب في القائمة مهم. في التعريف، يمكنك استخدام قيمة حسابات العمليات البسيطة كمتغير، والذي يظهر سابقًا في القائمة.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;ملاحظة&lt;/span&gt;: الترتيب في القائمة مهم. في التعريف، يمكنك استخدام قيمة حسابات العمليات البسيطة كمتغير، والذي يظهر سابقًا في القائمة.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

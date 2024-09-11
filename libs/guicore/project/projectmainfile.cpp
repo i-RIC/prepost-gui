@@ -565,7 +565,14 @@ int ProjectMainFile::loadFromCgnsFile()
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
 		if (impl->m_cgnsManager->backupFileExists()) {
-			QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1. iRIC tries to salvage data from %2.").arg("Case1.cgn", "Case1_input.cgn"));
+			if (impl->m_cgnsManager->separateResultExists()) {
+				int ret = QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+				if (ret == QMessageBox::No) {return IRIC_H5_CALL_ERROR;}
+			} else {
+				int ret = QMessageBox::critical(impl->m_projectData->mainWindow(), tr("Error"), tr("Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+				if (ret == QMessageBox::No) {return IRIC_H5_CALL_ERROR;}
+			}
+
 			// copy backup file.
 			QFile::remove(impl->m_cgnsManager->mainFileFullName().c_str());
 			QFile::copy(impl->m_cgnsManager->backupFileFullName().c_str(), impl->m_cgnsManager->mainFileFullName().c_str());

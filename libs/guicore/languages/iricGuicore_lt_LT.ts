@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1793,8 +1795,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Spalva:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1911,12 +1913,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Apibrėžimo mazgas nesaugomas</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Neteisingas valueType "%1"yra nustatytas.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Neteisingas valueType &quot;%1&quot;yra nustatytas.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Klaidinga būklėTipas "%1"yra nustatytas.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Klaidinga būklėTipas &quot;%1&quot;yra nustatytas.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1987,7 +1989,7 @@ Do you really want to import this file?</source>
         <translation>Nepavyko atidaryti CGNS failo.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>pavadinimo atributas neapibrėžtas elementui „Prekė“.</translation>
     </message>
     <message>
@@ -2199,7 +2201,7 @@ Do you really want to import this file?</source>
         <translation>Failas %1 yra atnaujinamas importavus į skaičiavimo sąlygas %2. Ar norite importuoti atnaujintą failą?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Galite nukopijuoti ir įklijuoti vertes naudodami sparčiuosius klavišus „Ctrl + C“ ir „Ctrl + V“</translation>
     </message>
     <message>
@@ -2341,7 +2343,7 @@ Do you really want to import this file?</source>
         <translation>Atidarant failą įvyko klaida.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Pirmieji du stulpeliai turi būti „X“ ir „Y“.</translation>
     </message>
     <message>
@@ -2430,192 +2432,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Įvyko klaida: %1</translation>
+        <translation type="vanished">Įvyko klaida: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Tikrinamas argumentas %1 nepavyko. Neteisingi argumentai: %2.</translation>
+        <translation type="vanished">Tikrinamas argumentas %1 nepavyko. Neteisingi argumentai: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Redaguoti paprastų operacijų rezultatų kintamąjį</translation>
+        <translation type="vanished">Redaguoti paprastų operacijų rezultatų kintamąjį</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Skaičiavimo rezultatas:</translation>
+        <translation type="vanished">Skaičiavimo rezultatas:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Kintamojo pavadinimas:</translation>
+        <translation type="vanished">Kintamojo pavadinimas:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Vertė bandymui:</translation>
+        <translation type="vanished">Vertė bandymui:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Kintamojo pavadinimas neįvedamas.</translation>
+        <translation type="vanished">Kintamojo pavadinimas neįvedamas.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Šis kintamojo pavadinimas jau naudojamas</translation>
+        <translation type="vanished">Šis kintamojo pavadinimas jau naudojamas</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Redaguoti paprastos operacijos rezultatą</translation>
+        <translation type="vanished">Redaguoti paprastos operacijos rezultatą</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Vardas:</translation>
+        <translation type="vanished">Vardas:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozicija:</translation>
+        <translation type="vanished">Pozicija:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Įvesties skaičiavimo rezultatai</translation>
+        <translation type="vanished">Įvesties skaičiavimo rezultatai</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Papildyti (&amp;A)...</translation>
+        <translation type="vanished">Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Ištrinti (&amp;D)</translation>
+        <translation type="vanished">Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Kintamojo apibrėžimas</translation>
+        <translation type="vanished">Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Bandymas</translation>
+        <translation type="vanished">Bandymas</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite patikrinti apibrėžimą spustelėję šį. Jei analizuojant apibrėžimą įvyksta klaida, rodomas klaidos pranešimas. Sėkmingai išanalizavus apibrėžimą, reikšmė, apskaičiuota naudojant &amp; quot; Value for testingquot; rodomas kiekvienas įvestis. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite patikrinti apibrėžimą spustelėję šį. Jei analizuojant apibrėžimą įvyksta klaida, rodomas klaidos pranešimas. Sėkmingai išanalizavus apibrėžimą, reikšmė, apskaičiuota naudojant &amp; quot; Value for testingquot; rodomas kiekvienas įvestis. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Rezultato pavadinimas</translation>
+        <translation type="vanished">Rezultato pavadinimas</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Kintamasis pavadinimas</translation>
+        <translation type="vanished">Kintamasis pavadinimas</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vertė bandymams</translation>
+        <translation type="vanished">Vertė bandymams</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Tinklelio mazgas</translation>
+        <translation type="vanished">Tinklelio mazgas</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Tinklelio ląstelė</translation>
+        <translation type="vanished">Tinklelio ląstelė</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Dalelė</translation>
+        <translation type="vanished">Dalelė</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Vardas neįvedamas.</translation>
+        <translation type="vanished">Vardas neįvedamas.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Šis pavadinimas jau naudojamas</translation>
+        <translation type="vanished">Šis pavadinimas jau naudojamas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
+        <translation type="vanished">Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Paprastų operacijų rezultatų sąrašas</translation>
+        <translation type="vanished">Paprastų operacijų rezultatų sąrašas</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>vardas</translation>
+        <translation type="vanished">vardas</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozicija</translation>
+        <translation type="vanished">Pozicija</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Aukštyn (&amp;U)</translation>
+        <translation type="vanished">Aukštyn (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Žemyn (&amp;D)</translation>
+        <translation type="vanished">Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Papildyti (&amp;A)...</translation>
+        <translation type="vanished">Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redaguoti (&amp;E)...</translation>
+        <translation type="vanished">Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Ištrinti (&amp;D)</translation>
+        <translation type="vanished">Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
+        <translation type="vanished">Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Tinklelio mazgas</translation>
+        <translation type="vanished">Tinklelio mazgas</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Tinklelio ląstelė</translation>
+        <translation type="vanished">Tinklelio ląstelė</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Dalelė</translation>
+        <translation type="vanished">Dalelė</translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2810,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Duomenų skaitymas iš rezultato/sprendimo %1.cgn nepavyko. Galite vizualizuoti skaičiavimo rezultatą iš Solution1.cgn į Sprendimą %2.cgn.</translation>
+        <translation type="vanished">Duomenų skaitymas iš rezultato/sprendimo %1.cgn nepavyko. Galite vizualizuoti skaičiavimo rezultatą iš Solution1.cgn į Sprendimą %2.cgn.</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2944,8 +2954,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Išvesties apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2999,15 +3009,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Tinklelio tipas:</translation>
+        <translation type="vanished">Tinklelio tipas:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regionas: (&amp;R)</translation>
+        <translation type="vanished">Regionas: (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3180,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Atidarant įvyko klaida %1. iRIC bando išgelbėti duomenis iš %2.</translation>
+        <translation type="vanished">Atidarant įvyko klaida %1. iRIC bando išgelbėti duomenis iš %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3181,12 +3191,20 @@ Do you really want to import this file?</source>
         <translation>Visi vaizdai (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
         <translation>Nurodytas netinkamas vaizdo failas. Failo priesaga turi būti viena iš „jpg“, „jpeg“, „png“ arba „tif“.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
         <translation>Kuriant aplanką įvyko klaida %1</translation>
+    </message>
+    <message>
+        <source>Calculation result is broken, and can not open the project. Do you want to discard the calculation result, and restore the input data?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input data is broken, and can not open the project. Do you want to discard the input data, and restore from backup?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3237,8 +3255,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Darbo vieta "%1"turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Darbo vieta &quot;%1&quot;turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3837,8 +3855,8 @@ Do you really want to import this file?</source>
         <translation>Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kintamąjį galite apibrėžti naudodami „JavaScript“ kalbą. Žr. tekstą &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -dekoracija: pabraukite; spalva:#0000ff;"&gt;čia&lt;/span&gt;&lt;/a&gt; daugiau informacijos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kintamąjį galite apibrėžti naudodami „JavaScript“ kalbą. Žr. tekstą &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; -dekoracija: pabraukite; spalva:#0000ff;&quot;&gt;čia&lt;/span&gt;&lt;/a&gt; daugiau informacijos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3928,8 +3946,8 @@ Do you really want to import this file?</source>
         <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba&lt;/span&gt;: tvarka sąraše yra svarbi. Apibrėžime kaip kintamąjį galite naudoti paprastų operacijų skaičiavimų reikšmę, kuri sąraše rodoma anksčiau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba&lt;/span&gt;: tvarka sąraše yra svarbi. Apibrėžime kaip kintamąjį galite naudoti paprastų operacijų skaičiavimų reikšmę, kuri sąraše rodoma anksčiau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
