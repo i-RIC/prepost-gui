@@ -19,6 +19,7 @@ public:
 
 	void setDataItem(PreProcessorGeoDataComplexGroupDataItemI* dataItem);
 	std::vector<GridComplexConditionGroup*> groups() const;
+	void fixComplexValuesToDefaultIfInvalid();
 
 private:
 	SolverDefinitionGridComplexAttribute* gridAttribute() const;

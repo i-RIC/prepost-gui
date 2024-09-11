@@ -43,6 +43,7 @@
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/grid/v4inputgridio.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
@@ -339,6 +340,7 @@ bool PreProcessorGridDataItem::importFromImporter(v4InputGrid* grid, GridImporte
 	bool ok = importer->import(grid, filename, selectedFilter, projectData()->mainWindow());
 	if (ok) {
 		setGrid(grid);
+		fixComplexValuesToDefaultIfInvalid();
 		return true;
 	} else {
 		delete grid;
@@ -1372,6 +1374,18 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 	impl->m_regionPolyData->Modified();
 
 	updateVisibilityWithoutRendering();
+}
+
+void PreProcessorGridDataItem::fixComplexValuesToDefaultIfInvalid()
+{
+	if (impl->m_grid == nullptr) {return;}
+
+	for (auto att : impl->m_grid->attributes()) {
+		auto complexAtt = dynamic_cast<GridComplexAttributeContainer*> (att);
+		if (complexAtt == nullptr) {continue;}
+
+		complexAtt->fixComplexValuesToDefaultIfInvalid();
+	}
 }
 
 void PreProcessorGridDataItem::doApplyOffset(double x, double y)
