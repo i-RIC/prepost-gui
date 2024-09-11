@@ -433,7 +433,7 @@ void GridComplexConditionDialog::addItem()
 	auto newWidget = new GridComplexConditionWidget(this);
 	if (m_calculationConditionMode) {newWidget->hideWidgetsNotForCalculationCondition();}
 	newWidget->setGroup(newGroup.get());
-	newWidget->setCaption(QString("Item%1").arg(m_widgets.size() + 1));
+	newWidget->setCaption(nextNewItemCaption());
 
 	if (m_widgets.size() == 0) {
 		// this is the first one. make it the default.
@@ -607,4 +607,20 @@ void GridComplexConditionDialog::updateSwitchButtonText()
 		text = tr("Switch to List view");
 	}
 	ui->switchButton->setText(text);
+}
+
+QString GridComplexConditionDialog::nextNewItemCaption() const
+{
+	std::unordered_set<QString> captions;
+	for (auto w : m_widgets) {
+		captions.insert(w->caption());
+	}
+	int id = 1;
+	while (true) {
+		auto caption = QString("Item%1").arg(id);
+		auto it = captions.find(caption);
+		if (it == captions.end()) {return caption;}
+
+		++ id;
+	}
 }
