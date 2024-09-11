@@ -18,6 +18,7 @@
 #include "../startpage/startpagedialog.h"
 #include "iricmainwindow.h"
 #include "private/iricmainwindow_calculatedresultmanager.h"
+#include "private/iricmainwindow_discardresultconfirmdialog.h"
 #include "private/iricmainwindow_modelessdialogmodechanger.h"
 #include "private/iricmainwindow_snapshotsaver.h"
 
@@ -863,7 +864,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	ModelessDialogModeChanger modeChanger(this);
 
-	bool ret;
+	bool ret = true;
 	auto mainfile = m_projectData->mainfile();
 	if (m_projectData->isPostOnlyMode()) {
 		// do not save CGNS file, but only projext.xml.
@@ -875,12 +876,27 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 
 		if (gridEdited) {
 			if (hasResult) {
-				if (! noWarning) {
-					int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-					if (ret == QMessageBox::Cancel) {return false;}
-				}
+				if (noWarning) {
+					mainfile->clearResults();
+				} else {
+					DiscardResultConfirmDialog dialog(m_preProcessorWindow);
+					int ret = dialog.exec();
+					if (ret == QDialog::Rejected) {
+						return false;
+					}
 
-				mainfile->clearResults();
+					auto result = dialog.result();
+					if (result == DiscardResultConfirmDialog::Result::DiscardGrid) {
+						int ier = mainfile->updateCgnsFileOtherThanGrids();
+						ret = (ier == IRIC_NO_ERROR);
+						if (ret) {
+							mainfile->closeCgnsFile();
+							mainfile->loadFromCgnsFile();
+						}
+					} else if (result == DiscardResultConfirmDialog::Result::DiscardCalculationResult) {
+						mainfile->clearResults();
+					}
+				}
 			} else {
 				int ier = mainfile->saveToCgnsFile();
 				ret = (ier == IRIC_NO_ERROR);
