@@ -10,6 +10,7 @@
 #include "gridcomplexconditiongroup.h"
 #include "gridcomplexconditionwidget.h"
 
+#include <misc/valuechangert.h>
 #include <misc/csviohelper.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -39,6 +40,7 @@ GridComplexConditionDialog::GridComplexConditionDialog(SolverDefinition* def, co
 	m_element {elem},
 	m_undefinedColor {Qt::gray},
 	m_calculationConditionMode {false},
+	m_ignoreDefaultCheck {false},
 	ui(new Ui::GridComplexConditionDialog)
 {
 	ui->setupUi(this);
@@ -373,11 +375,12 @@ void GridComplexConditionDialog::accept()
 			defIndex = i;
 		}
 	}
+	ValueChangerT<bool> ignoreDefaultCheckChanger(&m_ignoreDefaultCheck, true);
 
-	disconnect(this, SLOT(defaultChecked(bool)));
 	if (defIndex == -1 && m_widgets.size() > 0) {
-		// if no default specified and there is more than one widget, make the first one default.
-		m_widgets[0]->setIsDefault(true);
+		auto firstWidget = m_widgets[0];
+		QMessageBox::information(this, tr("Information"), tr("\"%1\" is set to be default group, because you did not specify a default group.").arg(firstWidget->caption()));
+		firstWidget->setIsDefault(true);
 	}
 
 	ui->widgetContainer->setWidget(nullptr);
@@ -398,6 +401,7 @@ void GridComplexConditionDialog::reject()
 
 void GridComplexConditionDialog::defaultChecked(bool checked)
 {
+	if (m_ignoreDefaultCheck) {return;}
 	if (! checked) {return;}
 
 	int current = ui->listWidget->currentRow();

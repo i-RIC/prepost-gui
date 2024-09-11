@@ -72,6 +72,7 @@ private:
 
 	QColor m_undefinedColor;
 	bool m_calculationConditionMode;
+	bool m_ignoreDefaultCheck;
 	Ui::GridComplexConditionDialog* ui;
 };
 
