@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Skift til listevisning</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Information</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" er indstillet til at være standardgruppe, fordi du ikke har angivet en standardgruppe.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Aflæsning af data fra resultat/løsning %1.cgn mislykkedes. Du kan visualisere beregningsresultatet i Solution1.cgn til Solution %2.cgn.</translation>
+        <translation type="vanished">Aflæsning af data fra resultat/løsning %1.cgn mislykkedes. Du kan visualisere beregningsresultatet i Solution1.cgn til Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Læsning af data fra result/Solution1.cgn mislykkedes. Der er ikke noget beregningsresultat, der kan visualiseres. Vil du slette result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Aflæsning af data fra resultat/løsning %1.cgn mislykkedes. Du kan visualisere beregningsresultatet i Solution1.cgn til Solution %2.cgn. Ønsker du at slette resultat/løsning %1.cgn?</translation>
     </message>
 </context>
 <context>

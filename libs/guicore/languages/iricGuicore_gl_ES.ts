@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Cambia á vista de lista</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" está configurado como grupo predeterminado, porque non especificou un grupo predeterminado.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Lectura de datos do resultado/Solución %1.cgn fallou. Podes visualizar o resultado do cálculo en Solution1.cgn to Solution %2.cgn.</translation>
+        <translation type="vanished">Lectura de datos do resultado/Solución %1.cgn fallou. Podes visualizar o resultado do cálculo en Solution1.cgn to Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Produciuse un erro ao ler os datos do resultado/Solution1.cgn. Non hai ningún resultado do cálculo que se poida visualizar. Queres eliminar result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Lectura de datos do resultado/Solución %1.cgn fallou. Podes visualizar o resultado do cálculo en Solution1.cgn to Solution %2.cgn. Queres eliminar o resultado/solución %1.cgn?</translation>
     </message>
 </context>
 <context>

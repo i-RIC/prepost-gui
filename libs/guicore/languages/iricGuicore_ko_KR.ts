@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>목록 보기로 전환</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>정보</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1"가 기본 그룹으로 설정되었습니다. 기본 그룹을 지정하지 않았기 때문입니다.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn의 계산 결과를 Solution으로 가시화할 수 있습니다. %2.cgn.</translation>
+        <translation type="vanished">결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn의 계산 결과를 Solution으로 가시화할 수 있습니다. %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>result/Solution1.cgn에서 데이터를 읽는 데 실패했습니다. 시각화할 수 있는 계산 결과가 없습니다. result/Solution1.cgn을 삭제하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn에서 계산 결과를 Solution으로 시각화할 수 있습니다. %2.cgn. 결과/솔루션을 삭제하시겠습니까? %1 영어:.cgn?(영어)</translation>
     </message>
 </context>
 <context>

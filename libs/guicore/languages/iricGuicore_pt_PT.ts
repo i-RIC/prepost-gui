@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Mudar para visualização de lista</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informação</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" está definido como grupo padrão, porque você não especificou um grupo padrão.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Lendo dados do resultado/Solução %1.cgn falhou. Você pode visualizar o resultado do cálculo em Solution1.cgn para Solution %2.cgn.</translation>
+        <translation type="vanished">Lendo dados do resultado/Solução %1.cgn falhou. Você pode visualizar o resultado do cálculo em Solution1.cgn para Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>A leitura de dados de result/Solution1.cgn falhou. Não há resultado de cálculo que possa ser visualizado. Você quer excluir result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Lendo dados do resultado/solução %1.cgn falhou. Você pode visualizar o resultado do cálculo em Solution1.cgn para Solution %2.cgn. Você quer apagar resultado/Solução %1.cgn?</translation>
     </message>
 </context>
 <context>

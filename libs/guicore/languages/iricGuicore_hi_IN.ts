@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>सूची दृश्य पर स्विच करें</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>जानकारी</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" को डिफ़ॉल्ट समूह के रूप में सेट किया गया है, क्योंकि आपने कोई डिफ़ॉल्ट समूह निर्दिष्ट नहीं किया है।</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>परिणाम/समाधान से डेटा पढ़ना %1.सीजीएन विफल. आप Solution1.cgn से Solution तक गणना परिणाम देख सकते हैं %2.सीजीएन.</translation>
+        <translation type="vanished">परिणाम/समाधान से डेटा पढ़ना %1.सीजीएन विफल. आप Solution1.cgn से Solution तक गणना परिणाम देख सकते हैं %2.सीजीएन.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>result/Solution1.cgn से डेटा पढ़ना विफल रहा। ऐसा कोई गणना परिणाम नहीं है जिसे विज़ुअलाइज़ किया जा सके। क्या आप result/Solution1.cgn को हटाना चाहते हैं?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>परिणाम/समाधान से डेटा पढ़ना %1.cgn विफल हुआ। आप Solution1.cgn में समाधान के लिए गणना परिणाम देख सकते हैं %2.cgn. क्या आप परिणाम/समाधान हटाना चाहते हैं %1.सीजीएन?</translation>
     </message>
 </context>
 <context>

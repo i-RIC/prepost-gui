@@ -2136,6 +2136,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>リスト形式に切り替え</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>デフォルト値として使うグループが指定されなかったため、"%1" がデフォルトグループに設定されました。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
