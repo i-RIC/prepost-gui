@@ -768,18 +768,18 @@ void GeoDataPolyDataGroup::updateAttributeBrowser(bool force)
 void GeoDataPolyDataGroup::makeConnections()
 {
 	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addData()));
-	connect(impl->m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePolyDataAndPolyDataGroups()));
-	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedData()));
-	connect(impl->m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
-	connect(impl->m_editNameAndValueAction, SIGNAL(triggered()), this, SLOT(editNameAndValue()));
-	connect(impl->m_editDisplaySettingAction, SIGNAL(triggered()), this, SLOT(editColorSetting()));
-	connect(impl->m_attributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
-	connect(impl->m_moveToTopAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataToTop()));
-	connect(impl->m_moveToBottomAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataToBottom()));
-	connect(impl->m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataUp()));
-	connect(impl->m_moveDownAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataDown()));
-	connect(impl->m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
-	connect(impl->m_attributeBrowser, SIGNAL(visibilityChanged(bool)), this, SLOT(handleAttributeBrowserVisibilityChange(bool)));
+	connect(impl->m_mergeAction, &QAction::triggered, this, &GeoDataPolyDataGroup::mergePolyDataAndPolyDataGroups);
+	connect(impl->m_deleteAction, &QAction::triggered, this, &GeoDataPolyDataGroup::deleteSelectedData);
+	connect(impl->m_editNameAction, &QAction::triggered, this, &GeoDataPolyDataGroup::editName);
+	connect(impl->m_editNameAndValueAction, &QAction::triggered, this, &GeoDataPolyDataGroup::editNameAndValue);
+	connect(impl->m_editDisplaySettingAction, &QAction::triggered, this, &GeoDataPolyDataGroup::editColorSetting);
+	connect(impl->m_attributeBrowserAction, &QAction::triggered, this, &GeoDataPolyDataGroup::showAttributeBrowser);
+	connect(impl->m_moveToTopAction, &QAction::triggered, this, &GeoDataPolyDataGroup::moveSelectedDataToTop);
+	connect(impl->m_moveToBottomAction, &QAction::triggered, this, &GeoDataPolyDataGroup::moveSelectedDataToBottom);
+	connect(impl->m_moveUpAction, &QAction::triggered, this, &GeoDataPolyDataGroup::moveSelectedDataUp);
+	connect(impl->m_moveDownAction, &QAction::triggered, this, &GeoDataPolyDataGroup::moveSelectedDataDown);
+	connect(impl->m_copyAction, &QAction::triggered, this, &GeoDataPolyDataGroup::copy);
+	connect(impl->m_attributeBrowser, &GeoDataPolyDataGroupAttributeBrowser::visibilityChanged, this, &GeoDataPolyDataGroup::handleAttributeBrowserVisibilityChange);
 }
 
 void GeoDataPolyDataGroup::mergeEditTargetData(bool noUpdate)
