@@ -84,6 +84,7 @@ public:
 	virtual void showInitialDialog();
 	virtual bool addToolBarButtons(QToolBar* parent);
 	virtual void applyColorMapSetting();
+	virtual void applyValueChangeMap(const std::vector<int>& valueMap);
 
 	QMenu* menu() const;
 

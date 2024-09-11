@@ -157,6 +157,22 @@ void GeoDataPolyDataGroup::showInitialDialog()
 	addData();
 }
 
+void GeoDataPolyDataGroup::applyValueChangeMap(const std::vector<int>& valueMap)
+{
+	for (auto data : impl->m_data) {
+		int current = data->value().toInt();
+		int newVal = 0;
+		if (current >= static_cast<int> (valueMap.size())) {
+			newVal = valueMap.at(0);
+		} else {
+			newVal = valueMap.at(current);
+		}
+		data->setValue(newVal);
+	}
+	updateVtkObjects();
+	updateActorSetting();
+}
+
 void GeoDataPolyDataGroup::viewOperationEnded(PreProcessorGraphicsViewI* /*v*/)
 {}
 
