@@ -18,6 +18,7 @@ public:
 
 	virtual void setupGroups(int count) = 0;
 	virtual std::vector<GridComplexConditionGroup*> groups() const = 0;
+	virtual QString captionForValue(int value) const = 0;
 };
 
 #endif // PREPROCESSORGEODATACOMPLEXGROUPDATAITEMI_H

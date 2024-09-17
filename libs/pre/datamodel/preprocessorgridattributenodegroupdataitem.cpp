@@ -394,8 +394,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdTyp
 			if (group->condition()->position() != SolverDefinitionGridComplexAttribute::Position::Node) {continue;}
 
 			auto v = cAtt->value(vid);
-			auto g = group->groups().at(v - 1);
-			PropertyBrowserAttribute att(group->condition()->caption(), g->caption());
+			PropertyBrowserAttribute att(group->condition()->caption(), group->captionForValue(v));
 			atts.append(att);
 		}
 	}

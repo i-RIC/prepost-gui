@@ -36,6 +36,7 @@ public:
 
 	void setupGroups(int count) override;
 	std::vector<GridComplexConditionGroup*> groups() const override;
+	QString captionForValue(int value) const override;
 	bool addToolBarButtons(QToolBar* parent) override;
 
 public slots:
