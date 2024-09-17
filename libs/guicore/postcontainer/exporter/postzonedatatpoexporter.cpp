@@ -1,13 +1,17 @@
+#include "../../base/iricmainwindowi.h"
 #include "../../grid/v4grid.h"
 #include "../../grid/v4structured2dgrid.h"
 #include "../../grid/v4structured3dgrid.h"
 #include "../../grid/v4unstructured2dgrid.h"
+#include "../../project/projectdata.h"
+#include "../postsolutioninfo.h"
 #include "../v4solutiongrid.h"
 #include "../v4postzonedatacontainer.h"
 #include "postzonedatatpoexporter.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpointsutil.h>
+#include <misc/informationdialog.h>
 
 #include <QFile>
 #include <QTextStream>
@@ -120,7 +124,7 @@ QString PostZoneDataTpoExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataTpoExporter::exportToFile(v4PostZoneDataContainer* c, const QString& filename, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* /*projectdata*/, const QPointF& offset) const
+bool PostZoneDataTpoExporter::exportToFile(v4PostZoneDataContainer* c, const QString& filename, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectData, const QPointF& offset) const
 {
 	QString componentName;
 
@@ -162,6 +166,10 @@ bool PostZoneDataTpoExporter::exportToFile(v4PostZoneDataContainer* c, const QSt
 			if (! ok){return false;}
 		}
 	}
+
+	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+														 PostSolutionInfo::tr("tpo files export calculation result defined at grid nodes."),
+														 "postzonedatatpoexporter_warning");
 
 	return true;
 }
