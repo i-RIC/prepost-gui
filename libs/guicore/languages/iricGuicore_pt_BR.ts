@@ -2438,192 +2438,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Ocorreu um erro : %1</translation>
+        <translation type="vanished">Ocorreu um erro : %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Ha um problema com o argumento % 1. Argumento problematico: % 2</translation>
+        <translation type="vanished">Ha um problema com o argumento % 1. Argumento problematico: % 2</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edicao de resultado variavel da operacao simples</translation>
+        <translation type="vanished">Edicao de resultado variavel da operacao simples</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Resultado de calculo:</translation>
+        <translation type="vanished">Resultado de calculo:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nome de uma variavel :</translation>
+        <translation type="vanished">Nome de uma variavel :</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Valor para o teste :</translation>
+        <translation type="vanished">Valor para o teste :</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nome do numero variavel nao foi colocado.</translation>
+        <translation type="vanished">Nome do numero variavel nao foi colocado.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Este nome variavel ja e usado.</translation>
+        <translation type="vanished">Este nome variavel ja e usado.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edicao de resultado da operacao simples</translation>
+        <translation type="vanished">Edicao de resultado da operacao simples</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nome :</translation>
+        <translation type="vanished">Nome :</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posicao :</translation>
+        <translation type="vanished">Posicao :</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultados de calculo usados para entrada</translation>
+        <translation type="vanished">Resultados de calculo usados para entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Adicionar (&amp;A)...</translation>
+        <translation type="vanished">Adicionar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Excluir (&amp;D)</translation>
+        <translation type="vanished">Excluir (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definicao de numero variavel</translation>
+        <translation type="vanished">Definicao de numero variavel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Teste</translation>
+        <translation type="vanished">Teste</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nome de resultado do calculo</translation>
+        <translation type="vanished">Nome de resultado do calculo</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nome do numero variavel</translation>
+        <translation type="vanished">Nome do numero variavel</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Valor para o teste</translation>
+        <translation type="vanished">Valor para o teste</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Ponto da grade</translation>
+        <translation type="vanished">Ponto da grade</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Celula de grade</translation>
+        <translation type="vanished">Celula de grade</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Particula</translation>
+        <translation type="vanished">Particula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>O nome nao foi inserido.</translation>
+        <translation type="vanished">O nome nao foi inserido.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Este nome ja e usado.</translation>
+        <translation type="vanished">Este nome ja e usado.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Tem certeza de que deseja excluir % 1?</translation>
+        <translation type="vanished">Tem certeza de que deseja excluir % 1?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Lista de resultados de calculos simples</translation>
+        <translation type="vanished">Lista de resultados de calculos simples</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posicao</translation>
+        <translation type="vanished">Posicao</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Para cima (&amp;U)</translation>
+        <translation type="vanished">Para cima (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Abaixo (&amp;D)</translation>
+        <translation type="vanished">Abaixo (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Adicionar (&amp;A)...</translation>
+        <translation type="vanished">Adicionar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editar (&amp;E)...</translation>
+        <translation type="vanished">Editar (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Excluir (&amp;D)</translation>
+        <translation type="vanished">Excluir (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Atencao</translation>
+        <translation type="vanished">Atencao</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Tem certeza de que deseja excluir % 1?</translation>
+        <translation type="vanished">Tem certeza de que deseja excluir % 1?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Ponto da grade</translation>
+        <translation type="vanished">Ponto da grade</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Celula de grade</translation>
+        <translation type="vanished">Celula de grade</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Particula</translation>
+        <translation type="vanished">Particula</translation>
     </message>
 </context>
 <context>
@@ -2818,6 +2818,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Lendo dados do resultado/Solução %1.cgn falhou. Você pode visualizar o resultado do cálculo em Solution1.cgn para Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Os arquivos CSV exportam resultados de cálculos definidos em nós de grade, células e arestas.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>resultado do cálculo de exportação de shapefiles definido nos nós da grade.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Arquivos tpo exportam resultados de cálculos definidos em nós de grade.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Os arquivos VTK exportam resultados de cálculos definidos em nós e células da grade.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -3007,15 +3023,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Tipo de grade</translation>
+        <translation type="vanished">Tipo de grade</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regiao (&amp;R)</translation>
+        <translation type="vanished">Regiao (&amp;R)</translation>
     </message>
 </context>
 <context>

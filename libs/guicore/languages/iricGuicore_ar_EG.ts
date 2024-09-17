@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>حدث خطأ: %1</translation>
+        <translation type="vanished">حدث خطأ: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>التحقق من حجة %1 باءت بالفشل. حجج باطلة: %2.</translation>
+        <translation type="vanished">التحقق من حجة %1 باءت بالفشل. حجج باطلة: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>تحرير متغير نتيجة عملية بسيطة</translation>
+        <translation type="vanished">تحرير متغير نتيجة عملية بسيطة</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>نتيجة الحساب:</translation>
+        <translation type="vanished">نتيجة الحساب:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>اسم المتغير:</translation>
+        <translation type="vanished">اسم المتغير:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>قيمة الاختبار:</translation>
+        <translation type="vanished">قيمة الاختبار:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>لا يتم إدخال اسم المتغير.</translation>
+        <translation type="vanished">لا يتم إدخال اسم المتغير.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>اسم المتغير هذا مستخدم بالفعل</translation>
+        <translation type="vanished">اسم المتغير هذا مستخدم بالفعل</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>تحرير نتيجة عملية بسيطة</translation>
+        <translation type="vanished">تحرير نتيجة عملية بسيطة</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>اسم:</translation>
+        <translation type="vanished">اسم:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>موقع:</translation>
+        <translation type="vanished">موقع:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>نتائج الحساب للمدخلات</translation>
+        <translation type="vanished">نتائج الحساب للمدخلات</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>يضيف (&amp;A)...</translation>
+        <translation type="vanished">يضيف (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>حذف (&amp;D)</translation>
+        <translation type="vanished">حذف (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>تعريف المتغير</translation>
+        <translation type="vanished">تعريف المتغير</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>اختبار</translation>
+        <translation type="vanished">اختبار</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك اختبار التعريف بالنقر عليه. في حالة حدوث خطأ أثناء تحليل التعريف ، تظهر رسالة الخطأ. عندما يتم تحليل التعريف بنجاح ، يتم حساب القيمة باستخدام &amp; quot؛ Value for testingquot؛ لكل المدخلات المعروضة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك اختبار التعريف بالنقر عليه. في حالة حدوث خطأ أثناء تحليل التعريف ، تظهر رسالة الخطأ. عندما يتم تحليل التعريف بنجاح ، يتم حساب القيمة باستخدام &amp; quot؛ Value for testingquot؛ لكل المدخلات المعروضة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>اسم النتيجة</translation>
+        <translation type="vanished">اسم النتيجة</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>اسم المتغير</translation>
+        <translation type="vanished">اسم المتغير</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>قيمة للاختبار</translation>
+        <translation type="vanished">قيمة للاختبار</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>عقدة الشبكة</translation>
+        <translation type="vanished">عقدة الشبكة</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>خلية الشبكة</translation>
+        <translation type="vanished">خلية الشبكة</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>جسيم</translation>
+        <translation type="vanished">جسيم</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>الاسم ليس إدخالاً.</translation>
+        <translation type="vanished">الاسم ليس إدخالاً.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>هذا الاسم مستخدم بالفعل</translation>
+        <translation type="vanished">هذا الاسم مستخدم بالفعل</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>هل أنت متأكد أنك تريد حذف %1 ؟</translation>
+        <translation type="vanished">هل أنت متأكد أنك تريد حذف %1 ؟</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>قائمة نتائج عملية بسيطة</translation>
+        <translation type="vanished">قائمة نتائج عملية بسيطة</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>اسم</translation>
+        <translation type="vanished">اسم</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>موقع</translation>
+        <translation type="vanished">موقع</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>فوق (&amp;U)</translation>
+        <translation type="vanished">فوق (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>تحت (&amp;D)</translation>
+        <translation type="vanished">تحت (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>يضيف (&amp;A)...</translation>
+        <translation type="vanished">يضيف (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>يحرر (&amp;E)...</translation>
+        <translation type="vanished">يحرر (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>حذف (&amp;D)</translation>
+        <translation type="vanished">حذف (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>هل أنت متأكد أنك تريد حذف %1 ؟</translation>
+        <translation type="vanished">هل أنت متأكد أنك تريد حذف %1 ؟</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>عقدة الشبكة</translation>
+        <translation type="vanished">عقدة الشبكة</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>خلية الشبكة</translation>
+        <translation type="vanished">خلية الشبكة</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>جسيم</translation>
+        <translation type="vanished">جسيم</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>قراءة البيانات من النتيجة / الحل %1 فشل.cgn. يمكنك تصور نتيجة الحساب في Solution1.cgn إلى Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>يتم تصدير نتائج الحسابات بتنسيق CSV المحددة في عقد الشبكة والخلايا والحواف.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>يتم تصدير نتائج الحسابات الخاصة بملفات الشكل المحددة في عقد الشبكة.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>يتم تصدير نتائج الحسابات المحددة في عقد الشبكة بواسطة ملفات tpo.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>يتم تصدير نتائج الحسابات المحددة في عقد الشبكة والخلايا في ملفات VTK.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>حوار</translation>
+        <translation type="vanished">حوار</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>نوع الشبكة:</translation>
+        <translation type="vanished">نوع الشبكة:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>منطقة: (&amp;R)</translation>
+        <translation type="vanished">منطقة: (&amp;R)</translation>
     </message>
 </context>
 <context>

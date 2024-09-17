@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Сталася помилка: %1</translation>
+        <translation type="vanished">Сталася помилка: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Перевірка аргументу для %1 не вдалося. Недійсні аргументи: %2.</translation>
+        <translation type="vanished">Перевірка аргументу для %1 не вдалося. Недійсні аргументи: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Редагувати змінну результату простої операції</translation>
+        <translation type="vanished">Редагувати змінну результату простої операції</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Результат розрахунку:</translation>
+        <translation type="vanished">Результат розрахунку:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Назва змінної:</translation>
+        <translation type="vanished">Назва змінної:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Значення для тестування:</translation>
+        <translation type="vanished">Значення для тестування:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Назва змінної не вводиться.</translation>
+        <translation type="vanished">Назва змінної не вводиться.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Ця назва змінної вже використовується</translation>
+        <translation type="vanished">Ця назва змінної вже використовується</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Редагувати простий результат операції</translation>
+        <translation type="vanished">Редагувати простий результат операції</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation type="vanished">Ім'я:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Посада:</translation>
+        <translation type="vanished">Посада:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Результати розрахунків для введення</translation>
+        <translation type="vanished">Результати розрахунків для введення</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Додати (&amp;A)...</translation>
+        <translation type="vanished">Додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Видалити (&amp;D)</translation>
+        <translation type="vanished">Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Визначення змінної</translation>
+        <translation type="vanished">Визначення змінної</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Тестування</translation>
+        <translation type="vanished">Тестування</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете перевірити визначення, натиснувши це. Якщо під час розбору визначення виникає помилка, відображається повідомлення про помилку. Коли визначення успішно розбирається, значення обчислюється за допомогою &amp; quot; Значення для тестуванняquot; для кожного входу показано. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете перевірити визначення, натиснувши це. Якщо під час розбору визначення виникає помилка, відображається повідомлення про помилку. Коли визначення успішно розбирається, значення обчислюється за допомогою &amp; quot; Значення для тестуванняquot; для кожного входу показано. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Назва результату</translation>
+        <translation type="vanished">Назва результату</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Назва змінної</translation>
+        <translation type="vanished">Назва змінної</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Значення для тестування</translation>
+        <translation type="vanished">Значення для тестування</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Вузол сітки</translation>
+        <translation type="vanished">Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ячейка сітки</translation>
+        <translation type="vanished">Ячейка сітки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Частинка</translation>
+        <translation type="vanished">Частинка</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Ім'я не вводиться.</translation>
+        <translation type="vanished">Ім'я не вводиться.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Ця назва вже використовується</translation>
+        <translation type="vanished">Ця назва вже використовується</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
+        <translation type="vanished">Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Список простих операцій</translation>
+        <translation type="vanished">Список простих операцій</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Назва</translation>
+        <translation type="vanished">Назва</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиція</translation>
+        <translation type="vanished">Позиція</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Вгору (&amp;U)</translation>
+        <translation type="vanished">Вгору (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Вниз (&amp;D)</translation>
+        <translation type="vanished">Вниз (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Додати (&amp;A)...</translation>
+        <translation type="vanished">Додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Редагувати (&amp;E)...</translation>
+        <translation type="vanished">Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Видалити (&amp;D)</translation>
+        <translation type="vanished">Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
+        <translation type="vanished">Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Вузол сітки</translation>
+        <translation type="vanished">Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ячейка сітки</translation>
+        <translation type="vanished">Ячейка сітки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Частинка</translation>
+        <translation type="vanished">Частинка</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Читання даних із результату/розв’язання %1.cgn не вдалося. Ви можете візуалізувати результат розрахунку в Solution1.cgn to Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Файли CSV експортують результат розрахунку, визначений у вузлах сітки, клітинках і ребрах.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>шейп-файли експортують результат обчислення, визначений у вузлах сітки.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Файли tpo експортують результат розрахунку, визначений у вузлах сітки.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Файли VTK експортують результат розрахунку, визначений у вузлах і клітинках сітки.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Діалог</translation>
+        <translation type="vanished">Діалог</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Тип сітки:</translation>
+        <translation type="vanished">Тип сітки:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Регіон: (&amp;R)</translation>
+        <translation type="vanished">Регіон: (&amp;R)</translation>
     </message>
 </context>
 <context>

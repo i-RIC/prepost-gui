@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Der opstod en fejl: %1</translation>
+        <translation type="vanished">Der opstod en fejl: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Kontrollerer argument for %1 mislykkedes. Ugyldige argumenter: %2.</translation>
+        <translation type="vanished">Kontrollerer argument for %1 mislykkedes. Ugyldige argumenter: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Rediger Enkel betjening Resultatvariabel</translation>
+        <translation type="vanished">Rediger Enkel betjening Resultatvariabel</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Beregningsresultat:</translation>
+        <translation type="vanished">Beregningsresultat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Variabelnavn:</translation>
+        <translation type="vanished">Variabelnavn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Værdi til test:</translation>
+        <translation type="vanished">Værdi til test:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Variabelnavn indtastes ikke.</translation>
+        <translation type="vanished">Variabelnavn indtastes ikke.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Dette variabelnavn er allerede brugt</translation>
+        <translation type="vanished">Dette variabelnavn er allerede brugt</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Rediger enkelt betjeningsresultat</translation>
+        <translation type="vanished">Rediger enkelt betjeningsresultat</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation type="vanished">Navn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Position:</translation>
+        <translation type="vanished">Position:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Beregningsresultater for input</translation>
+        <translation type="vanished">Beregningsresultater for input</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Tilføje (&amp;A)...</translation>
+        <translation type="vanished">Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Slet (&amp;D)</translation>
+        <translation type="vanished">Slet (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definition af variabel</translation>
+        <translation type="vanished">Definition af variabel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Prøve</translation>
+        <translation type="vanished">Prøve</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan teste definitionen ved at klikke på denne. Hvis der opstår fejl under parsing af definitionen, vises fejlmeddelelsen. Når definitionen analyseres korrekt, beregnes værdien ved hjælp af &amp; quot; Value for testingquot; for hvert input vises. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan teste definitionen ved at klikke på denne. Hvis der opstår fejl under parsing af definitionen, vises fejlmeddelelsen. Når definitionen analyseres korrekt, beregnes værdien ved hjælp af &amp; quot; Value for testingquot; for hvert input vises. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultatnavn</translation>
+        <translation type="vanished">Resultatnavn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabelnavn</translation>
+        <translation type="vanished">Variabelnavn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Værdi til test</translation>
+        <translation type="vanished">Værdi til test</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Gitterknude</translation>
+        <translation type="vanished">Gitterknude</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Gittercelle</translation>
+        <translation type="vanished">Gittercelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Navn er ikke indtastet.</translation>
+        <translation type="vanished">Navn er ikke indtastet.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Dette navn er allerede brugt</translation>
+        <translation type="vanished">Dette navn er allerede brugt</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Er du sikker på, at du vil slette %1 ?</translation>
+        <translation type="vanished">Er du sikker på, at du vil slette %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Enkel betjeningsresultatliste</translation>
+        <translation type="vanished">Enkel betjeningsresultatliste</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Navn</translation>
+        <translation type="vanished">Navn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Op (&amp;U)</translation>
+        <translation type="vanished">Op (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>ned (&amp;D)</translation>
+        <translation type="vanished">ned (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Tilføje (&amp;A)...</translation>
+        <translation type="vanished">Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redigere (&amp;E)...</translation>
+        <translation type="vanished">Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Slet (&amp;D)</translation>
+        <translation type="vanished">Slet (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Er du sikker på, at du vil slette %1 ?</translation>
+        <translation type="vanished">Er du sikker på, at du vil slette %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Gitterknude</translation>
+        <translation type="vanished">Gitterknude</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Gittercelle</translation>
+        <translation type="vanished">Gittercelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Aflæsning af data fra resultat/løsning %1.cgn mislykkedes. Du kan visualisere beregningsresultatet i Solution1.cgn til Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV-filer eksporterer beregningsresultat defineret ved gitternoder, celler og kanter.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefiles eksportberegningsresultat defineret ved grid noder.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo-filer eksporterer beregningsresultat defineret ved gitterknudepunkter.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK-filer eksporterer beregningsresultat defineret ved gitternoder og celler.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Gittertype:</translation>
+        <translation type="vanished">Gittertype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Område: (&amp;R)</translation>
+        <translation type="vanished">Område: (&amp;R)</translation>
     </message>
 </context>
 <context>

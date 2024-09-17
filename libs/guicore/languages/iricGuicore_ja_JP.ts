@@ -3105,81 +3105,77 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>エラーが発生しました: %1</translation>
+        <translation type="vanished">エラーが発生しました: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>%1 の引数に問題があります。問題がある引数: %2</translation>
+        <translation type="vanished">%1 の引数に問題があります。問題がある引数: %2</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>簡易演算結果の変数の編集</translation>
+        <translation type="vanished">簡易演算結果の変数の編集</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>計算結果:</translation>
-    </message>
-    <message>
-        <source>Variable name:</source>
-        <translation />
+        <translation type="vanished">計算結果:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>テスト用の値:</translation>
+        <translation type="vanished">テスト用の値:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>変数名が入力されていません。</translation>
+        <translation type="vanished">変数名が入力されていません。</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>この変数名は既に使われています。</translation>
+        <translation type="vanished">この変数名は既に使われています。</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>簡易演算結果の編集</translation>
+        <translation type="vanished">簡易演算結果の編集</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation type="vanished">名前:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>位置:</translation>
+        <translation type="vanished">位置:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>入力として使う計算結果</translation>
+        <translation type="vanished">入力として使う計算結果</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)</translation>
+        <translation type="vanished">追加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>削除(&amp;D)</translation>
+        <translation type="vanished">削除(&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>変数の定義</translation>
+        <translation type="vanished">変数の定義</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -3187,11 +3183,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Test</source>
-        <translation>テスト</translation>
+        <translation type="vanished">テスト</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the "Value for testing" for each input is shown.</source>
@@ -3199,86 +3195,86 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>計算結果名</translation>
+        <translation type="vanished">計算結果名</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>変数名</translation>
+        <translation type="vanished">変数名</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>テスト用の値</translation>
+        <translation type="vanished">テスト用の値</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>格子点</translation>
+        <translation type="vanished">格子点</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>格子セル</translation>
+        <translation type="vanished">格子セル</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>名前が入力されていません</translation>
+        <translation type="vanished">名前が入力されていません</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>この名前は既に使われています</translation>
+        <translation type="vanished">この名前は既に使われています</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>本当に %1 を削除していいですか?</translation>
+        <translation type="vanished">本当に %1 を削除していいですか?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>簡易演算結果一覧</translation>
+        <translation type="vanished">簡易演算結果一覧</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation type="vanished">名前</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>上へ (&amp;U)</translation>
+        <translation type="vanished">上へ (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>下へ (&amp;D)</translation>
+        <translation type="vanished">下へ (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)</translation>
+        <translation type="vanished">追加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編集 (&amp;E)...</translation>
+        <translation type="vanished">編集 (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>削除(&amp;D)</translation>
+        <translation type="vanished">削除(&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -3286,23 +3282,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>本当に %1 を削除していいですか?</translation>
+        <translation type="vanished">本当に %1 を削除していいですか?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>格子点</translation>
+        <translation type="vanished">格子点</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>格子セル</translation>
+        <translation type="vanished">格子セル</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
     </message>
 </context>
 <context>
@@ -3516,6 +3512,22 @@ Do you really want to import this file?</source>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>result/Solution%1.cgn からのデータの読み込みに失敗しました。Solution1.cgn から Solution%2.cgn までの計算結果を可視化できます。</translation>
+    </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSVファイルには、格子点、格子セル、格子のエッジで定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>シェープファイルには、格子点で定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpoファイルには、格子点で定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTKファイルには、格子点、格子セルで定義された計算結果のみ出力されます。</translation>
     </message>
 </context>
 <context>
@@ -3793,15 +3805,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>格子種類:</translation>
+        <translation type="vanished">格子種類:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>領域(&amp;R):</translation>
+        <translation type="vanished">領域(&amp;R):</translation>
     </message>
 </context>
 <context>

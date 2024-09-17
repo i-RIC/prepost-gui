@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Errorea gertatu da: %1</translation>
+        <translation type="vanished">Errorea gertatu da: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Argumentua egiaztatzen %1 huts egin du. Argudio baliogabeak: %2.</translation>
+        <translation type="vanished">Argumentua egiaztatzen %1 huts egin du. Argudio baliogabeak: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Editatu eragiketa sinplearen emaitza aldagaia</translation>
+        <translation type="vanished">Editatu eragiketa sinplearen emaitza aldagaia</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Kalkuluaren emaitza:</translation>
+        <translation type="vanished">Kalkuluaren emaitza:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Aldagaiaren izena:</translation>
+        <translation type="vanished">Aldagaiaren izena:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Probarako balioa:</translation>
+        <translation type="vanished">Probarako balioa:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Izen aldakorra ez da idazten.</translation>
+        <translation type="vanished">Izen aldakorra ez da idazten.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Aldagai izen hau dagoeneko erabiltzen da</translation>
+        <translation type="vanished">Aldagai izen hau dagoeneko erabiltzen da</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Editatu eragiketa sinplearen emaitza</translation>
+        <translation type="vanished">Editatu eragiketa sinplearen emaitza</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Izena:</translation>
+        <translation type="vanished">Izena:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Kargua:</translation>
+        <translation type="vanished">Kargua:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Sarrerako kalkuluaren emaitzak</translation>
+        <translation type="vanished">Sarrerako kalkuluaren emaitzak</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Gehitu (&amp;A)...</translation>
+        <translation type="vanished">Gehitu (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Ezabatu (&amp;D)</translation>
+        <translation type="vanished">Ezabatu (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Aldagaiaren definizioa</translation>
+        <translation type="vanished">Aldagaiaren definizioa</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Proba</translation>
+        <translation type="vanished">Proba</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Definizioa proban klik eginez gero. Definizioa analizatzean errorea gertatzen bada, errore-mezua agertzen da. Definizioa behar bezala analizatzen denean, &amp; quot; Probarako balioaquot; sarrera bakoitzerako agertzen da. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Definizioa proban klik eginez gero. Definizioa analizatzean errorea gertatzen bada, errore-mezua agertzen da. Definizioa behar bezala analizatzen denean, &amp; quot; Probarako balioaquot; sarrera bakoitzerako agertzen da. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Emaitzaren izena</translation>
+        <translation type="vanished">Emaitzaren izena</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Izen aldakorra</translation>
+        <translation type="vanished">Izen aldakorra</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Probarako balioa</translation>
+        <translation type="vanished">Probarako balioa</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Sareta nodo</translation>
+        <translation type="vanished">Sareta nodo</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sareta zelula</translation>
+        <translation type="vanished">Sareta zelula</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikula</translation>
+        <translation type="vanished">Partikula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Izena ez da idazten.</translation>
+        <translation type="vanished">Izena ez da idazten.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Izen hau dagoeneko erabiltzen da</translation>
+        <translation type="vanished">Izen hau dagoeneko erabiltzen da</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ziur zaude ezabatu nahi duzula %1 ?</translation>
+        <translation type="vanished">Ziur zaude ezabatu nahi duzula %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Eragiketa sinplearen emaitzen zerrenda</translation>
+        <translation type="vanished">Eragiketa sinplearen emaitzen zerrenda</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Izena</translation>
+        <translation type="vanished">Izena</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posizioa</translation>
+        <translation type="vanished">Posizioa</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Gora (&amp;U)</translation>
+        <translation type="vanished">Gora (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Behera (&amp;D)</translation>
+        <translation type="vanished">Behera (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Gehitu (&amp;A)...</translation>
+        <translation type="vanished">Gehitu (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editatu (&amp;E)...</translation>
+        <translation type="vanished">Editatu (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Ezabatu (&amp;D)</translation>
+        <translation type="vanished">Ezabatu (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ziur zaude ezabatu nahi duzula %1 ?</translation>
+        <translation type="vanished">Ziur zaude ezabatu nahi duzula %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Sareta nodo</translation>
+        <translation type="vanished">Sareta nodo</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sareta zelula</translation>
+        <translation type="vanished">Sareta zelula</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikula</translation>
+        <translation type="vanished">Partikula</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV fitxategiak esportatzeko kalkuluaren emaitza sareko nodoetan, gelaxketan eta ertzetan definituta dago.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefiles esportatzeko kalkuluaren emaitza sareko nodoetan definituta.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo fitxategiak esportatzeko kalkuluaren emaitza sareko nodoetan definitu da.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK fitxategiak sareko nodo eta gelaxketan definitutako kalkulu-emaitza esportatu.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Sareta mota:</translation>
+        <translation type="vanished">Sareta mota:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Eskualdea: (&amp;R)</translation>
+        <translation type="vanished">Eskualdea: (&amp;R)</translation>
     </message>
 </context>
 <context>

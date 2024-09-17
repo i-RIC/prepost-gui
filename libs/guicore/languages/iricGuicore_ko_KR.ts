@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>문제 발생: %1</translation>
+        <translation type="vanished">문제 발생: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>인수 확인 중 %1 실패한. 잘못된 인수: %2.</translation>
+        <translation type="vanished">인수 확인 중 %1 실패한. 잘못된 인수: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>단순 연산 결과 변수 편집</translation>
+        <translation type="vanished">단순 연산 결과 변수 편집</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>계산 결과:</translation>
+        <translation type="vanished">계산 결과:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>변수 이름:</translation>
+        <translation type="vanished">변수 이름:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>테스트 가치:</translation>
+        <translation type="vanished">테스트 가치:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>변수 이름이 입력되지 않았습니다.</translation>
+        <translation type="vanished">변수 이름이 입력되지 않았습니다.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>이 변수 이름은 이미 사용 중입니다.</translation>
+        <translation type="vanished">이 변수 이름은 이미 사용 중입니다.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>단순 작업 결과 편집</translation>
+        <translation type="vanished">단순 작업 결과 편집</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>이름:</translation>
+        <translation type="vanished">이름:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>위치:</translation>
+        <translation type="vanished">위치:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>입력에 대한 계산 결과</translation>
+        <translation type="vanished">입력에 대한 계산 결과</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>추가하다 (&amp;A)...</translation>
+        <translation type="vanished">추가하다 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>삭제 (&amp;D)</translation>
+        <translation type="vanished">삭제 (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>변수의 정의</translation>
+        <translation type="vanished">변수의 정의</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>시험</translation>
+        <translation type="vanished">시험</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>결과 이름</translation>
+        <translation type="vanished">결과 이름</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>변수 이름</translation>
+        <translation type="vanished">변수 이름</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>테스트 가치</translation>
+        <translation type="vanished">테스트 가치</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>그리드 노드</translation>
+        <translation type="vanished">그리드 노드</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>그리드 셀</translation>
+        <translation type="vanished">그리드 셀</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>입자</translation>
+        <translation type="vanished">입자</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>이름이 입력되지 않았습니다.</translation>
+        <translation type="vanished">이름이 입력되지 않았습니다.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>이미 사용 중인 이름입니다.</translation>
+        <translation type="vanished">이미 사용 중인 이름입니다.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>삭제 하시겠습니까 %1 ?</translation>
+        <translation type="vanished">삭제 하시겠습니까 %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>단순 작업 결과 목록</translation>
+        <translation type="vanished">단순 작업 결과 목록</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>이름</translation>
+        <translation type="vanished">이름</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>위치</translation>
+        <translation type="vanished">위치</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>위로 (&amp;U)</translation>
+        <translation type="vanished">위로 (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>아래에 (&amp;D)</translation>
+        <translation type="vanished">아래에 (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>추가하다 (&amp;A)...</translation>
+        <translation type="vanished">추가하다 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>편집하다 (&amp;E)...</translation>
+        <translation type="vanished">편집하다 (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>삭제 (&amp;D)</translation>
+        <translation type="vanished">삭제 (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>삭제 하시겠습니까 %1 ?</translation>
+        <translation type="vanished">삭제 하시겠습니까 %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>그리드 노드</translation>
+        <translation type="vanished">그리드 노드</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>그리드 셀</translation>
+        <translation type="vanished">그리드 셀</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>입자</translation>
+        <translation type="vanished">입자</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn의 계산 결과를 Solution으로 가시화할 수 있습니다. %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV 파일은 그리드 노드, 셀, 모서리에 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>셰이프파일은 그리드 노드에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo 파일은 그리드 노드에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK 파일은 그리드 노드와 셀에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>그리드 유형:</translation>
+        <translation type="vanished">그리드 유형:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>지역: (&amp;R)</translation>
+        <translation type="vanished">지역: (&amp;R)</translation>
     </message>
 </context>
 <context>

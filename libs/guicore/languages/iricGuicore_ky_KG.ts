@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Ката кетти: %1</translation>
+        <translation type="vanished">Ката кетти: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Аргумент текшерилүүдө %1 ишке ашкан жок Жараксыз аргументтер: %2.</translation>
+        <translation type="vanished">Аргумент текшерилүүдө %1 ишке ашкан жок Жараксыз аргументтер: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Жөнөкөй операция натыйжасынын өзгөрмөсүн түзөтүңүз</translation>
+        <translation type="vanished">Жөнөкөй операция натыйжасынын өзгөрмөсүн түзөтүңүз</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Эсептөөнүн жыйынтыгы:</translation>
+        <translation type="vanished">Эсептөөнүн жыйынтыгы:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Өзгөрмө аты:</translation>
+        <translation type="vanished">Өзгөрмө аты:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Тестирлөөнүн мааниси:</translation>
+        <translation type="vanished">Тестирлөөнүн мааниси:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Өзгөрмө аты киргизилген эмес.</translation>
+        <translation type="vanished">Өзгөрмө аты киргизилген эмес.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Бул өзгөрмө ат мурунтан эле колдонулат</translation>
+        <translation type="vanished">Бул өзгөрмө ат мурунтан эле колдонулат</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Жөнөкөй операция жыйынтыгын түзөтүү</translation>
+        <translation type="vanished">Жөнөкөй операция жыйынтыгын түзөтүү</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Аты:</translation>
+        <translation type="vanished">Аты:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Позициясы:</translation>
+        <translation type="vanished">Позициясы:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Киргизүү үчүн эсептөө жыйынтыктары</translation>
+        <translation type="vanished">Киргизүү үчүн эсептөө жыйынтыктары</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Кошуу (&amp;A)...</translation>
+        <translation type="vanished">Кошуу (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Жок кылуу (&amp;D)</translation>
+        <translation type="vanished">Жок кылуу (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Өзгөрмөнүн аныктамасы</translation>
+        <translation type="vanished">Өзгөрмөнүн аныктамасы</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Тест</translation>
+        <translation type="vanished">Тест</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз муну басуу менен аныктаманы текшере аласыз. Эгерде ката аныктоону талдоодо пайда болсо, ката жөнүндө билдирүү көрсөтүлөт. Аныктоо ийгиликтүү талданганда, &amp; quot; Тесттин баасы; ар бир киргизүү үчүн көрсөтүлөт. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз муну басуу менен аныктаманы текшере аласыз. Эгерде ката аныктоону талдоодо пайда болсо, ката жөнүндө билдирүү көрсөтүлөт. Аныктоо ийгиликтүү талданганда, &amp; quot; Тесттин баасы; ар бир киргизүү үчүн көрсөтүлөт. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Жыйынтык аты</translation>
+        <translation type="vanished">Жыйынтык аты</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Өзгөрмө аты</translation>
+        <translation type="vanished">Өзгөрмө аты</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Сыноо үчүн баа</translation>
+        <translation type="vanished">Сыноо үчүн баа</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Тор түйүнү</translation>
+        <translation type="vanished">Тор түйүнү</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Тор клеткасы</translation>
+        <translation type="vanished">Тор клеткасы</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Бөлүкчө</translation>
+        <translation type="vanished">Бөлүкчө</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Аты киргизилген эмес.</translation>
+        <translation type="vanished">Аты киргизилген эмес.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Бул ат мурунтан эле колдонулат</translation>
+        <translation type="vanished">Бул ат мурунтан эле колдонулат</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Чын эле жок кылгыңыз келеби? %1 ?</translation>
+        <translation type="vanished">Чын эле жок кылгыңыз келеби? %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Жөнөкөй операция натыйжаларынын тизмеси</translation>
+        <translation type="vanished">Жөнөкөй операция натыйжаларынын тизмеси</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Аты</translation>
+        <translation type="vanished">Аты</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Өйдө (&amp;U)</translation>
+        <translation type="vanished">Өйдө (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Down (&amp;D)</translation>
+        <translation type="vanished">Down (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Кошуу (&amp;A)...</translation>
+        <translation type="vanished">Кошуу (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Түзөтүү (&amp;E)...</translation>
+        <translation type="vanished">Түзөтүү (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Жок кылуу (&amp;D)</translation>
+        <translation type="vanished">Жок кылуу (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Чын эле жок кылгыңыз келеби? %1 ?</translation>
+        <translation type="vanished">Чын эле жок кылгыңыз келеби? %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Тор түйүнү</translation>
+        <translation type="vanished">Тор түйүнү</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Тор клеткасы</translation>
+        <translation type="vanished">Тор клеткасы</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Бөлүкчө</translation>
+        <translation type="vanished">Бөлүкчө</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Жыйынтыктан/Чечимден маалыматтарды окуу %1.cgn ишке ашкан жок. Эсептөө натыйжасын Solution1.cgn менен Чечимге визуализациялай аласыз %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV файлдары тор түйүндөрүндө, уячаларында жана четинде аныкталган экспорттук эсептөө натыйжасы.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>сетка түйүндөрүндө аныкталган shapefiles экспорттук эсептөө натыйжасы.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo файлдарынын экспорттук эсептөө натыйжасы тор түйүндөрүндө аныкталган.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK файлдарынын экспорттук эсептөө жыйынтыгы тор түйүндөрүндө жана уячаларында аныкталган.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Тордун түрү:</translation>
+        <translation type="vanished">Тордун түрү:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Аймак: (&amp;R)</translation>
+        <translation type="vanished">Аймак: (&amp;R)</translation>
     </message>
 </context>
 <context>

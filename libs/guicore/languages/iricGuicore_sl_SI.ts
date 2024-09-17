@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Prišlo je do napake: %1</translation>
+        <translation type="vanished">Prišlo je do napake: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Preverjanje argumenta za %1 ni uspelo. Neveljavni argumenti: %2.</translation>
+        <translation type="vanished">Preverjanje argumenta za %1 ni uspelo. Neveljavni argumenti: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Uredi spremenljivko rezultata enostavnega delovanja</translation>
+        <translation type="vanished">Uredi spremenljivko rezultata enostavnega delovanja</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Rezultat izračuna:</translation>
+        <translation type="vanished">Rezultat izračuna:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Ime spremenljivke:</translation>
+        <translation type="vanished">Ime spremenljivke:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Vrednost za testiranje:</translation>
+        <translation type="vanished">Vrednost za testiranje:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Ime spremenljivke ni vneseno.</translation>
+        <translation type="vanished">Ime spremenljivke ni vneseno.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>To ime spremenljivke je že uporabljeno</translation>
+        <translation type="vanished">To ime spremenljivke je že uporabljeno</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Urejanje rezultata preprostega delovanja</translation>
+        <translation type="vanished">Urejanje rezultata preprostega delovanja</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ime:</translation>
+        <translation type="vanished">Ime:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Položaj:</translation>
+        <translation type="vanished">Položaj:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rezultati izračuna za vnos</translation>
+        <translation type="vanished">Rezultati izračuna za vnos</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodaj (&amp;A)...</translation>
+        <translation type="vanished">Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Izbriši (&amp;D)</translation>
+        <translation type="vanished">Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Opredelitev spremenljivke</translation>
+        <translation type="vanished">Opredelitev spremenljivke</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definicijo lahko preizkusite s klikom na to. Če pride do napake med razčlenjevanjem definicije, se prikaže sporočilo o napaki. Ko je definicija uspešno razčlenjena, se vrednost izračuna z uporabo &amp; quot; Vrednosti za testiranjequot; za vsak vnos je prikazan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definicijo lahko preizkusite s klikom na to. Če pride do napake med razčlenjevanjem definicije, se prikaže sporočilo o napaki. Ko je definicija uspešno razčlenjena, se vrednost izračuna z uporabo &amp; quot; Vrednosti za testiranjequot; za vsak vnos je prikazan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Ime rezultata</translation>
+        <translation type="vanished">Ime rezultata</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Ime spremenljivke</translation>
+        <translation type="vanished">Ime spremenljivke</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vrednost za testiranje</translation>
+        <translation type="vanished">Vrednost za testiranje</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Mrežno vozlišče</translation>
+        <translation type="vanished">Mrežno vozlišče</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Mrežna celica</translation>
+        <translation type="vanished">Mrežna celica</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Delci</translation>
+        <translation type="vanished">Delci</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Ime ni vneseno.</translation>
+        <translation type="vanished">Ime ni vneseno.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>To ime je že uporabljeno</translation>
+        <translation type="vanished">To ime je že uporabljeno</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
+        <translation type="vanished">Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Seznam rezultatov preprostega delovanja</translation>
+        <translation type="vanished">Seznam rezultatov preprostega delovanja</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Ime</translation>
+        <translation type="vanished">Ime</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Položaj</translation>
+        <translation type="vanished">Položaj</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Gor (&amp;U)</translation>
+        <translation type="vanished">Gor (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Dol (&amp;D)</translation>
+        <translation type="vanished">Dol (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodaj (&amp;A)...</translation>
+        <translation type="vanished">Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Uredi (&amp;E)...</translation>
+        <translation type="vanished">Uredi (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Izbriši (&amp;D)</translation>
+        <translation type="vanished">Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
+        <translation type="vanished">Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Mrežno vozlišče</translation>
+        <translation type="vanished">Mrežno vozlišče</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Mrežna celica</translation>
+        <translation type="vanished">Mrežna celica</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Delci</translation>
+        <translation type="vanished">Delci</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Branje podatkov iz rezultata/rešitve %1.cgn ni uspelo. Rezultat izračuna lahko vizualizirate v Solution1.cgn to Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Datoteke CSV izvozijo rezultat izračuna, definiran v vozliščih mreže, celicah in robovih.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>datoteke oblike izvozijo rezultat izračuna, definiran v vozliščih mreže.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>datoteke tpo izvozijo rezultat izračuna, definiran v vozliščih mreže.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Datoteke VTK izvozijo rezultat izračuna, definiran v vozliščih in celicah mreže.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Vrsta mreže:</translation>
+        <translation type="vanished">Vrsta mreže:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regija: (&amp;R)</translation>
+        <translation type="vanished">Regija: (&amp;R)</translation>
     </message>
 </context>
 <context>

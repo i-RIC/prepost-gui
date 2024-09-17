@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Terjadi kesalahan: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
+        <translation type="vanished">Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edit Variabel Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Edit Variabel Hasil Operasi Sederhana</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Hasil Perhitungan:</translation>
+        <translation type="vanished">Hasil Perhitungan:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nama variabel:</translation>
+        <translation type="vanished">Nama variabel:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Nilai untuk pengujian:</translation>
+        <translation type="vanished">Nilai untuk pengujian:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nama variabel tidak dimasukkan.</translation>
+        <translation type="vanished">Nama variabel tidak dimasukkan.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Nama variabel ini sudah digunakan</translation>
+        <translation type="vanished">Nama variabel ini sudah digunakan</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edit Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Edit Hasil Operasi Sederhana</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nama:</translation>
+        <translation type="vanished">Nama:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisi:</translation>
+        <translation type="vanished">Posisi:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Hasil perhitungan untuk input</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Menambahkan (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation type="vanished">Menghapus (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definisi variabel</translation>
+        <translation type="vanished">Definisi variabel</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation type="vanished">Tes</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nama hasil</translation>
+        <translation type="vanished">Nama hasil</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nama variabel</translation>
+        <translation type="vanished">Nama variabel</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Nilai untuk pengujian</translation>
+        <translation type="vanished">Nilai untuk pengujian</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>simpul jaringan</translation>
+        <translation type="vanished">simpul jaringan</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation type="vanished">Sel kisi</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nama tidak dimasukkan.</translation>
+        <translation type="vanished">Nama tidak dimasukkan.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Nama ini sudah digunakan</translation>
+        <translation type="vanished">Nama ini sudah digunakan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Daftar Hasil Operasi Sederhana</translation>
+        <translation type="vanished">Daftar Hasil Operasi Sederhana</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nama</translation>
+        <translation type="vanished">Nama</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation type="vanished">Posisi</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Ke atas (&amp;U)</translation>
+        <translation type="vanished">Ke atas (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Turun (&amp;D)</translation>
+        <translation type="vanished">Turun (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Menambahkan (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Sunting (&amp;E)...</translation>
+        <translation type="vanished">Sunting (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Menghapus (&amp;D)</translation>
+        <translation type="vanished">Menghapus (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>simpul jaringan</translation>
+        <translation type="vanished">simpul jaringan</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Sel kisi</translation>
+        <translation type="vanished">Sel kisi</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partikel</translation>
+        <translation type="vanished">Partikel</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Membaca data dari hasil/Solusi %1.cgn gagal. Anda dapat memvisualisasikan hasil perhitungan di Solution1.cgn ke Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>File CSV mengekspor hasil perhitungan yang ditentukan pada simpul grid, sel, dan tepi.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>hasil perhitungan ekspor shapefile yang ditentukan pada simpul grid.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Hasil perhitungan ekspor file tpo ditentukan pada node grid.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>File VTK mengekspor hasil perhitungan yang ditentukan pada node grid dan sel.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Jenis kisi:</translation>
+        <translation type="vanished">Jenis kisi:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Wilayah: (&amp;R)</translation>
+        <translation type="vanished">Wilayah: (&amp;R)</translation>
     </message>
 </context>
 <context>

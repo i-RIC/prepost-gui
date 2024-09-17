@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation type="vanished">S'ha produït un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>S'està comprovant l'argument de %1 fracassat. Arguments no vàlids: %2.</translation>
+        <translation type="vanished">S'està comprovant l'argument de %1 fracassat. Arguments no vàlids: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edita la variable de resultat de l'operació simple</translation>
+        <translation type="vanished">Edita la variable de resultat de l'operació simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Resultat del càlcul:</translation>
+        <translation type="vanished">Resultat del càlcul:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nom de la variable:</translation>
+        <translation type="vanished">Nom de la variable:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Valor de les proves:</translation>
+        <translation type="vanished">Valor de les proves:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>El nom de la variable no s'introdueix.</translation>
+        <translation type="vanished">El nom de la variable no s'introdueix.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Aquest nom de variable ja s’utilitza</translation>
+        <translation type="vanished">Aquest nom de variable ja s’utilitza</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edita el resultat de l'operació simple</translation>
+        <translation type="vanished">Edita el resultat de l'operació simple</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nom:</translation>
+        <translation type="vanished">Nom:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posició:</translation>
+        <translation type="vanished">Posició:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul de l'entrada</translation>
+        <translation type="vanished">Resultats del càlcul de l'entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Afegeix (&amp;A)...</translation>
+        <translation type="vanished">Afegeix (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Suprimeix (&amp;D)</translation>
+        <translation type="vanished">Suprimeix (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definició de variable</translation>
+        <translation type="vanished">Definició de variable</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Prova</translation>
+        <translation type="vanished">Prova</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d'error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d'error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nom del resultat</translation>
+        <translation type="vanished">Nom del resultat</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nom de la variable</translation>
+        <translation type="vanished">Nom de la variable</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Valor de les proves</translation>
+        <translation type="vanished">Valor de les proves</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Node de quadrícula</translation>
+        <translation type="vanished">Node de quadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Cèl·lula quadrícula</translation>
+        <translation type="vanished">Cèl·lula quadrícula</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partícula</translation>
+        <translation type="vanished">Partícula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>El nom no s'introdueix.</translation>
+        <translation type="vanished">El nom no s'introdueix.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Aquest nom ja s’utilitza</translation>
+        <translation type="vanished">Aquest nom ja s’utilitza</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Esteu segur que voleu suprimir-lo? %1 ?</translation>
+        <translation type="vanished">Esteu segur que voleu suprimir-lo? %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Llista de resultats d'operacions simples</translation>
+        <translation type="vanished">Llista de resultats d'operacions simples</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation type="vanished">Nom</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posició</translation>
+        <translation type="vanished">Posició</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Amunt (&amp;U)</translation>
+        <translation type="vanished">Amunt (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>A baix (&amp;D)</translation>
+        <translation type="vanished">A baix (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: l'ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: l'ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Afegeix (&amp;A)...</translation>
+        <translation type="vanished">Afegeix (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Edita (&amp;E)...</translation>
+        <translation type="vanished">Edita (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Suprimeix (&amp;D)</translation>
+        <translation type="vanished">Suprimeix (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Esteu segur que voleu suprimir-lo? %1 ?</translation>
+        <translation type="vanished">Esteu segur que voleu suprimir-lo? %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Node de quadrícula</translation>
+        <translation type="vanished">Node de quadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Cèl·lula quadrícula</translation>
+        <translation type="vanished">Cèl·lula quadrícula</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Partícula</translation>
+        <translation type="vanished">Partícula</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Lectura de dades del resultat/solució %1.cgn ha fallat. Podeu visualitzar el resultat del càlcul a Solution1.cgn a Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Els fitxers CSV exporten el resultat del càlcul definit als nodes, cel·les i vores de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>resultat del càlcul d'exportació de fitxers de forma definit als nodes de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Resultat del càlcul de l'exportació dels fitxers tpo definit als nodes de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Els fitxers VTK exporten el resultat del càlcul definit als nodes i cel·les de la quadrícula.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diàleg</translation>
+        <translation type="vanished">Diàleg</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Tipus de quadrícula:</translation>
+        <translation type="vanished">Tipus de quadrícula:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regió: (&amp;R)</translation>
+        <translation type="vanished">Regió: (&amp;R)</translation>
     </message>
 </context>
 <context>

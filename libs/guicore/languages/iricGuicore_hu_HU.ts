@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Hiba lépett fel: %1</translation>
+        <translation type="vanished">Hiba lépett fel: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Ellenőrző érv %1 nem sikerült. Érvénytelen érvek: %2.</translation>
+        <translation type="vanished">Ellenőrző érv %1 nem sikerült. Érvénytelen érvek: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Egyszerű működés eredményváltozójának szerkesztése</translation>
+        <translation type="vanished">Egyszerű működés eredményváltozójának szerkesztése</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Számítási eredmény:</translation>
+        <translation type="vanished">Számítási eredmény:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Változó neve:</translation>
+        <translation type="vanished">Változó neve:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>A teszt értéke:</translation>
+        <translation type="vanished">A teszt értéke:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>A változó neve nincs megadva.</translation>
+        <translation type="vanished">A változó neve nincs megadva.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Ez a változónév már használatban van</translation>
+        <translation type="vanished">Ez a változónév már használatban van</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Egyszerű művelet eredményének szerkesztése</translation>
+        <translation type="vanished">Egyszerű művelet eredményének szerkesztése</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Név:</translation>
+        <translation type="vanished">Név:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozíció:</translation>
+        <translation type="vanished">Pozíció:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Számítási eredmények a bemenethez</translation>
+        <translation type="vanished">Számítási eredmények a bemenethez</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Hozzáadás (&amp;A)...</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Töröl (&amp;D)</translation>
+        <translation type="vanished">Töröl (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>A változó meghatározása</translation>
+        <translation type="vanished">A változó meghatározása</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "szöveget -dekoráció: aláhúzás; color:#0000ff; "&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "szöveget -dekoráció: aláhúzás; color:#0000ff; "&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Teszt</translation>
+        <translation type="vanished">Teszt</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A definíciót erre kattintva tesztelheti. Ha hiba lép fel a definíció értelmezése közben, a hibaüzenet jelenik meg. A definíció sikeres elemzése után az &amp; quot; Value for testingquot; minden bemenethez megjelenik. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A definíciót erre kattintva tesztelheti. Ha hiba lép fel a definíció értelmezése közben, a hibaüzenet jelenik meg. A definíció sikeres elemzése után az &amp; quot; Value for testingquot; minden bemenethez megjelenik. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Eredmény neve</translation>
+        <translation type="vanished">Eredmény neve</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Változó név</translation>
+        <translation type="vanished">Változó név</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Érték a teszteléshez</translation>
+        <translation type="vanished">Érték a teszteléshez</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rács csomópont</translation>
+        <translation type="vanished">Rács csomópont</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rács cella</translation>
+        <translation type="vanished">Rács cella</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Részecske</translation>
+        <translation type="vanished">Részecske</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>A név nincs megadva.</translation>
+        <translation type="vanished">A név nincs megadva.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Ezt a nevet már használják</translation>
+        <translation type="vanished">Ezt a nevet már használják</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Biztos vagy benne, hogy törölni akarod %1 ?</translation>
+        <translation type="vanished">Biztos vagy benne, hogy törölni akarod %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Egyszerű működés eredménylistája</translation>
+        <translation type="vanished">Egyszerű működés eredménylistája</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Név</translation>
+        <translation type="vanished">Név</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozíció</translation>
+        <translation type="vanished">Pozíció</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Fel (&amp;U)</translation>
+        <translation type="vanished">Fel (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Le (&amp;D)</translation>
+        <translation type="vanished">Le (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: A lista sorrendje fontos. A definícióban az egyszerű műveleti számítások értékét használhatja változóként, amely a lista elején található. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: A lista sorrendje fontos. A definícióban az egyszerű műveleti számítások értékét használhatja változóként, amely a lista elején található. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Hozzáadás (&amp;A)...</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Szerkesztés (&amp;E)...</translation>
+        <translation type="vanished">Szerkesztés (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Töröl (&amp;D)</translation>
+        <translation type="vanished">Töröl (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Biztos vagy benne, hogy törölni akarod %1 ?</translation>
+        <translation type="vanished">Biztos vagy benne, hogy törölni akarod %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rács csomópont</translation>
+        <translation type="vanished">Rács csomópont</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rács cella</translation>
+        <translation type="vanished">Rács cella</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Részecske</translation>
+        <translation type="vanished">Részecske</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Adatok olvasása az eredményből/megoldásból %1.cgn nem sikerült. A számítási eredményt megjelenítheti a Solution1.cgn to Solution fájlban %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>A CSV-fájlok exportálják a rácscsomópontokon, cellákon és éleken meghatározott számítási eredményeket.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>A rácscsomópontokon meghatározott shapefiles export számítási eredmény.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>A tpo fájlok a rács csomópontjainál meghatározott számítási eredmény exportálása.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>A VTK-fájlok exportálják a rácscsomópontokon és -cellákon meghatározott számítási eredményeket.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation type="vanished">Párbeszéd</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Rács típusa:</translation>
+        <translation type="vanished">Rács típusa:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Vidék: (&amp;R)</translation>
+        <translation type="vanished">Vidék: (&amp;R)</translation>
     </message>
 </context>
 <context>

@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Hata oluştu: %1</translation>
+        <translation type="vanished">Hata oluştu: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>için argüman kontrol ediliyor %1 arızalı. Geçersiz argümanlar: %2.</translation>
+        <translation type="vanished">için argüman kontrol ediliyor %1 arızalı. Geçersiz argümanlar: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Basit İşlem Sonuç Değişkenini Düzenle</translation>
+        <translation type="vanished">Basit İşlem Sonuç Değişkenini Düzenle</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Hesaplama Sonucu:</translation>
+        <translation type="vanished">Hesaplama Sonucu:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Değişken ismi:</translation>
+        <translation type="vanished">Değişken ismi:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Test için değer:</translation>
+        <translation type="vanished">Test için değer:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Değişken adı girilmez.</translation>
+        <translation type="vanished">Değişken adı girilmez.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Bu değişken adı zaten kullanılıyor</translation>
+        <translation type="vanished">Bu değişken adı zaten kullanılıyor</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Basit İşlem Sonucunu Düzenle</translation>
+        <translation type="vanished">Basit İşlem Sonucunu Düzenle</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>İsim:</translation>
+        <translation type="vanished">İsim:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Konum:</translation>
+        <translation type="vanished">Konum:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Giriş için hesaplama sonuçları</translation>
+        <translation type="vanished">Giriş için hesaplama sonuçları</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Ekle (&amp;A)...</translation>
+        <translation type="vanished">Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Silmek (&amp;D)</translation>
+        <translation type="vanished">Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>değişken tanımı</translation>
+        <translation type="vanished">değişken tanımı</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" metnine bakın -decoration: underline; color:#0000ff;"&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" metnine bakın -decoration: underline; color:#0000ff;"&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Ölçek</translation>
+        <translation type="vanished">Ölçek</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarılı bir şekilde ayrıştırıldığında, "Test için değer" kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarılı bir şekilde ayrıştırıldığında, "Test için değer" kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Sonuç adı</translation>
+        <translation type="vanished">Sonuç adı</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Değişken ismi</translation>
+        <translation type="vanished">Değişken ismi</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Test için değer</translation>
+        <translation type="vanished">Test için değer</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>ızgara düğümü</translation>
+        <translation type="vanished">ızgara düğümü</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Izgara hücresi</translation>
+        <translation type="vanished">Izgara hücresi</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>parçacık</translation>
+        <translation type="vanished">parçacık</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Ad girilmez.</translation>
+        <translation type="vanished">Ad girilmez.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Bu ad zaten kullanılıyor</translation>
+        <translation type="vanished">Bu ad zaten kullanılıyor</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Silmek istediğine emin misin %1 ?</translation>
+        <translation type="vanished">Silmek istediğine emin misin %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Basit İşlem Sonuç Listesi</translation>
+        <translation type="vanished">Basit İşlem Sonuç Listesi</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>İsim</translation>
+        <translation type="vanished">İsim</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Konum</translation>
+        <translation type="vanished">Konum</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Yukarı (&amp;U)</translation>
+        <translation type="vanished">Yukarı (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Aşağı (&amp;D)</translation>
+        <translation type="vanished">Aşağı (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listede daha önce görünen basit işlem hesaplamalarının değerini değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listede daha önce görünen basit işlem hesaplamalarının değerini değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Ekle (&amp;A)...</translation>
+        <translation type="vanished">Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Düzenlemek (&amp;E)...</translation>
+        <translation type="vanished">Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Silmek (&amp;D)</translation>
+        <translation type="vanished">Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Silmek istediğine emin misin %1 ?</translation>
+        <translation type="vanished">Silmek istediğine emin misin %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>ızgara düğümü</translation>
+        <translation type="vanished">ızgara düğümü</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Izgara hücresi</translation>
+        <translation type="vanished">Izgara hücresi</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>parçacık</translation>
+        <translation type="vanished">parçacık</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Sonuç/Çözüm'den veri okuma %1.cgn başarısız oldu. Hesaplama sonucunu Solution1.cgn'de Solution'a görselleştirebilirsiniz %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV dosyaları, grid düğümlerinde, hücrelerde ve kenarlarda tanımlanan hesaplama sonucunu dışa aktarır.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>şekil dosyaları, grid düğümlerinde tanımlanan hesaplama sonucunu dışa aktarır.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo dosyaları grid düğümlerinde tanımlanan hesaplama sonucunu dışa aktarır.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK dosyaları grid düğümlerinde ve hücrelerde tanımlanan hesaplama sonucunu dışa aktarır.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>iletişim kutusu</translation>
+        <translation type="vanished">iletişim kutusu</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Izgara Tipi:</translation>
+        <translation type="vanished">Izgara Tipi:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Bölge: (&amp;R)</translation>
+        <translation type="vanished">Bölge: (&amp;R)</translation>
     </message>
 </context>
 <context>

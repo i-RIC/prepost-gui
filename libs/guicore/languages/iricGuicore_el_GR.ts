@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Παρουσιάστηκε σφάλμα: %1</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Έλεγχος επιχειρημάτων για %1 απέτυχε. Μη έγκυρα ορίσματα: %2 Το</translation>
+        <translation type="vanished">Έλεγχος επιχειρημάτων για %1 απέτυχε. Μη έγκυρα ορίσματα: %2 Το</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Επεξεργασία μεταβλητής αποτελεσμάτων απλής λειτουργίας</translation>
+        <translation type="vanished">Επεξεργασία μεταβλητής αποτελεσμάτων απλής λειτουργίας</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Αποτέλεσμα υπολογισμού:</translation>
+        <translation type="vanished">Αποτέλεσμα υπολογισμού:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Όνομα μεταβλητής:</translation>
+        <translation type="vanished">Όνομα μεταβλητής:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Τιμή για δοκιμή:</translation>
+        <translation type="vanished">Τιμή για δοκιμή:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Το όνομα της μεταβλητής δεν εισάγεται.</translation>
+        <translation type="vanished">Το όνομα της μεταβλητής δεν εισάγεται.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Αυτό το όνομα μεταβλητής χρησιμοποιείται ήδη</translation>
+        <translation type="vanished">Αυτό το όνομα μεταβλητής χρησιμοποιείται ήδη</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Επεξεργασία απλού αποτελέσματος λειτουργίας</translation>
+        <translation type="vanished">Επεξεργασία απλού αποτελέσματος λειτουργίας</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ονομα:</translation>
+        <translation type="vanished">Ονομα:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Θέση:</translation>
+        <translation type="vanished">Θέση:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Αποτελέσματα υπολογισμού για την είσοδο</translation>
+        <translation type="vanished">Αποτελέσματα υπολογισμού για την είσοδο</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Προσθήκη (&amp;A)...</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Διαγράφω (&amp;D)</translation>
+        <translation type="vanished">Διαγράφω (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Ορισμός μεταβλητής</translation>
+        <translation type="vanished">Ορισμός μεταβλητής</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Δοκιμή</translation>
+        <translation type="vanished">Δοκιμή</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να δοκιμάσετε τον ορισμό κάνοντας κλικ σε αυτό. Εάν παρουσιαστεί σφάλμα κατά την ανάλυση του ορισμού, εμφανίζεται το μήνυμα σφάλματος. Όταν ο ορισμός αναλυθεί με επιτυχία, η τιμή υπολογίζεται χρησιμοποιώντας το &amp; quot; Τιμή για έλεγχοquot; για κάθε είσοδο εμφανίζεται. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να δοκιμάσετε τον ορισμό κάνοντας κλικ σε αυτό. Εάν παρουσιαστεί σφάλμα κατά την ανάλυση του ορισμού, εμφανίζεται το μήνυμα σφάλματος. Όταν ο ορισμός αναλυθεί με επιτυχία, η τιμή υπολογίζεται χρησιμοποιώντας το &amp; quot; Τιμή για έλεγχοquot; για κάθε είσοδο εμφανίζεται. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Όνομα αποτελέσματος</translation>
+        <translation type="vanished">Όνομα αποτελέσματος</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Όνομα μεταβλητής</translation>
+        <translation type="vanished">Όνομα μεταβλητής</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Τιμή για δοκιμή</translation>
+        <translation type="vanished">Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Κόμβος πλέγματος</translation>
+        <translation type="vanished">Κόμβος πλέγματος</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Κύτταρο πλέγματος</translation>
+        <translation type="vanished">Κύτταρο πλέγματος</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Σωματίδιο</translation>
+        <translation type="vanished">Σωματίδιο</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Το όνομα δεν εισάγεται.</translation>
+        <translation type="vanished">Το όνομα δεν εισάγεται.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Αυτό το όνομα χρησιμοποιείται ήδη</translation>
+        <translation type="vanished">Αυτό το όνομα χρησιμοποιείται ήδη</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
+        <translation type="vanished">Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Λίστα αποτελεσμάτων απλής λειτουργίας</translation>
+        <translation type="vanished">Λίστα αποτελεσμάτων απλής λειτουργίας</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Ονομα</translation>
+        <translation type="vanished">Ονομα</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Θέση</translation>
+        <translation type="vanished">Θέση</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Πάνω (&amp;U)</translation>
+        <translation type="vanished">Πάνω (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Κάτω (&amp;D)</translation>
+        <translation type="vanished">Κάτω (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Προσθήκη (&amp;A)...</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Επεξεργασία (&amp;E)...</translation>
+        <translation type="vanished">Επεξεργασία (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Διαγράφω (&amp;D)</translation>
+        <translation type="vanished">Διαγράφω (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
+        <translation type="vanished">Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Κόμβος πλέγματος</translation>
+        <translation type="vanished">Κόμβος πλέγματος</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Κύτταρο πλέγματος</translation>
+        <translation type="vanished">Κύτταρο πλέγματος</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Σωματίδιο</translation>
+        <translation type="vanished">Σωματίδιο</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Ανάγνωση δεδομένων από αποτέλεσμα/Λύση %1.cgn απέτυχε. Μπορείτε να οπτικοποιήσετε το αποτέλεσμα υπολογισμού στο Solution1.cgn to Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Τα αποτελέσματα των υπολογισμών εξαγωγής αρχείων CSV ορίζονται στους κόμβους, τα κελιά και τις άκρες πλέγματος.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Το αποτέλεσμα υπολογισμού εξαγωγής shapefiles ορίζεται στους κόμβους πλέγματος.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>αρχεία tpo αποτέλεσμα υπολογισμού εξαγωγής που ορίζεται στους κόμβους πλέγματος.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Το αποτέλεσμα του υπολογισμού εξαγωγής αρχείων VTK ορίζεται στους κόμβους και τα κελιά πλέγματος.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Διάλογος</translation>
+        <translation type="vanished">Διάλογος</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Τύπος πλέγματος:</translation>
+        <translation type="vanished">Τύπος πλέγματος:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Περιοχή: (&amp;R)</translation>
+        <translation type="vanished">Περιοχή: (&amp;R)</translation>
     </message>
 </context>
 <context>

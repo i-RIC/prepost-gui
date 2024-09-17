@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>错误:%1</translation>
+        <translation type="vanished">错误:%1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>检查%1的参数失败。 无效的参数:%2。</translation>
+        <translation type="vanished">检查%1的参数失败。 无效的参数:%2。</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>编辑简单操作结果变量</translation>
+        <translation type="vanished">编辑简单操作结果变量</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>计算结果:</translation>
+        <translation type="vanished">计算结果:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>变化名:</translation>
+        <translation type="vanished">变化名:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>测试值:</translation>
+        <translation type="vanished">测试值:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>变化名不是输入</translation>
+        <translation type="vanished">变化名不是输入</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>此变化名已存在</translation>
+        <translation type="vanished">此变化名已存在</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>编辑简单操作结果</translation>
+        <translation type="vanished">编辑简单操作结果</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>名称:</translation>
+        <translation type="vanished">名称:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>位置:</translation>
+        <translation type="vanished">位置:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>输入的计算结果</translation>
+        <translation type="vanished">输入的计算结果</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;删除</translation>
+        <translation type="vanished">&amp;删除</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>变量定义</translation>
+        <translation type="vanished">变量定义</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>测试</translation>
+        <translation type="vanished">测试</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以通过单击此定义来测试定义。 如果在解析定义时发生错误，则会显示错误消息。 成功解析定义后，将显示使用用于测试每个输入的%amp;值的&amp;值计算得出的值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以通过单击此定义来测试定义。 如果在解析定义时发生错误，则会显示错误消息。 成功解析定义后，将显示使用用于测试每个输入的%amp;值的&amp;值计算得出的值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>结果名称</translation>
+        <translation type="vanished">结果名称</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>变量名</translation>
+        <translation type="vanished">变量名</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>测试值</translation>
+        <translation type="vanished">测试值</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>网格节点</translation>
+        <translation type="vanished">网格节点</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>网格单元格</translation>
+        <translation type="vanished">网格单元格</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>粒子</translation>
+        <translation type="vanished">粒子</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>名称不是输入</translation>
+        <translation type="vanished">名称不是输入</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>名称已存在</translation>
+        <translation type="vanished">名称已存在</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>确认删除%1?</translation>
+        <translation type="vanished">确认删除%1?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>简单操作结果清单</translation>
+        <translation type="vanished">简单操作结果清单</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名称</translation>
+        <translation type="vanished">名称</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>&amp;上移</translation>
+        <translation type="vanished">&amp;上移</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>&amp;下移</translation>
+        <translation type="vanished">&amp;下移</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>&amp;添加...</translation>
+        <translation type="vanished">&amp;添加...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>&amp;编辑...</translation>
+        <translation type="vanished">&amp;编辑...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;删除</translation>
+        <translation type="vanished">&amp;删除</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>确认删除%1?</translation>
+        <translation type="vanished">确认删除%1?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>网格节点</translation>
+        <translation type="vanished">网格节点</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>网格单元格</translation>
+        <translation type="vanished">网格单元格</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>粒子</translation>
+        <translation type="vanished">粒子</translation>
     </message>
 </context>
 <context>
@@ -2813,6 +2813,22 @@ Do you really want to import this file?</source>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>从结果/解决方案中读取数据 %1.cgn 失败。您可以将 Solution1.cgn 中的计算结果可视化到 Solution %2.cgn。</translation>
+    </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV 文件导出在网格节点、单元和边定义的计算结果。</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Shapefile 导出在网格节点定义的计算结果。</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo文件导出在网格节点定义的计算结果。</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK 文件导出在网格节点和单元定义的计算结果。</translation>
     </message>
 </context>
 <context>
@@ -3038,15 +3054,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>对话框</translation>
+        <translation type="vanished">对话框</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>网格种类:</translation>
+        <translation type="vanished">网格种类:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>&amp;区域:</translation>
+        <translation type="vanished">&amp;区域:</translation>
     </message>
 </context>
 <context>

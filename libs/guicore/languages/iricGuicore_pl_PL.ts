@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation type="vanished">Błąd</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Wystąpił błąd: %1</translation>
+        <translation type="vanished">Wystąpił błąd: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Sprawdzam argument dla %1 przegrany. Nieprawidłowe argumenty: %2.</translation>
+        <translation type="vanished">Sprawdzam argument dla %1 przegrany. Nieprawidłowe argumenty: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edytuj zmienną wynikową prostej operacji</translation>
+        <translation type="vanished">Edytuj zmienną wynikową prostej operacji</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Wynik obliczeń:</translation>
+        <translation type="vanished">Wynik obliczeń:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Nazwa zmiennej:</translation>
+        <translation type="vanished">Nazwa zmiennej:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Wartość do testowania:</translation>
+        <translation type="vanished">Wartość do testowania:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Nazwa zmiennej nie jest wprowadzana.</translation>
+        <translation type="vanished">Nazwa zmiennej nie jest wprowadzana.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Ta nazwa zmiennej jest już używana</translation>
+        <translation type="vanished">Ta nazwa zmiennej jest już używana</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edytuj wynik prostej operacji</translation>
+        <translation type="vanished">Edytuj wynik prostej operacji</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nazwa:</translation>
+        <translation type="vanished">Nazwa:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozycja:</translation>
+        <translation type="vanished">Pozycja:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Wyniki obliczeń dla danych wejściowych</translation>
+        <translation type="vanished">Wyniki obliczeń dla danych wejściowych</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodać (&amp;A)...</translation>
+        <translation type="vanished">Dodać (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Kasować (&amp;D)</translation>
+        <translation type="vanished">Kasować (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definicja zmiennej</translation>
+        <translation type="vanished">Definicja zmiennej</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz przetestować definicję, klikając to. Jeśli podczas analizowania definicji wystąpi błąd, zostanie wyświetlony komunikat o błędzie. Po pomyślnym przeanalizowaniu definicji wartość zostanie obliczona przy użyciu opcji „Wartość do testowania”; dla każdego wejścia jest pokazany.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz przetestować definicję, klikając to. Jeśli podczas analizowania definicji wystąpi błąd, zostanie wyświetlony komunikat o błędzie. Po pomyślnym przeanalizowaniu definicji wartość zostanie obliczona przy użyciu opcji „Wartość do testowania”; dla każdego wejścia jest pokazany.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nazwa wyniku</translation>
+        <translation type="vanished">Nazwa wyniku</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nazwa zmiennej</translation>
+        <translation type="vanished">Nazwa zmiennej</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Wartość do testowania</translation>
+        <translation type="vanished">Wartość do testowania</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Węzeł siatki</translation>
+        <translation type="vanished">Węzeł siatki</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Komórka siatki</translation>
+        <translation type="vanished">Komórka siatki</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Cząstka</translation>
+        <translation type="vanished">Cząstka</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Imię i nazwisko nie są wprowadzane.</translation>
+        <translation type="vanished">Imię i nazwisko nie są wprowadzane.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Ta nazwa jest już używana</translation>
+        <translation type="vanished">Ta nazwa jest już używana</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>czy jesteś pewien, że chcesz usunąć %1 ?</translation>
+        <translation type="vanished">czy jesteś pewien, że chcesz usunąć %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Lista wyników prostej operacji</translation>
+        <translation type="vanished">Lista wyników prostej operacji</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation type="vanished">Nazwa</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozycja</translation>
+        <translation type="vanished">Pozycja</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>W górę (&amp;U)</translation>
+        <translation type="vanished">W górę (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>W dół (&amp;D)</translation>
+        <translation type="vanished">W dół (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodać (&amp;A)...</translation>
+        <translation type="vanished">Dodać (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Edytować (&amp;E)...</translation>
+        <translation type="vanished">Edytować (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Kasować (&amp;D)</translation>
+        <translation type="vanished">Kasować (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>czy jesteś pewien, że chcesz usunąć %1 ?</translation>
+        <translation type="vanished">czy jesteś pewien, że chcesz usunąć %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Węzeł siatki</translation>
+        <translation type="vanished">Węzeł siatki</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Komórka siatki</translation>
+        <translation type="vanished">Komórka siatki</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Cząstka</translation>
+        <translation type="vanished">Cząstka</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Odczytywanie danych z wyniku/rozwiązania %1.cgn nie powiodło się. Możesz wizualizować wynik obliczeń w Solution1.cgn do Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Pliki CSV eksportują wyniki obliczeń zdefiniowane w węzłach siatki, komórkach i krawędziach.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Pliki shapefile eksportują wyniki obliczeń zdefiniowane w węzłach siatki.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Pliki tpo eksportują wyniki obliczeń zdefiniowane w węzłach siatki.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Pliki VTK eksportują wyniki obliczeń zdefiniowane w węzłach i komórkach siatki.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Typ siatki:</translation>
+        <translation type="vanished">Typ siatki:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Region: (&amp;R)</translation>
+        <translation type="vanished">Region: (&amp;R)</translation>
     </message>
 </context>
 <context>

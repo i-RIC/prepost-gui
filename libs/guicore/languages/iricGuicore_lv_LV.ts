@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Radās kļūda: %1</translation>
+        <translation type="vanished">Radās kļūda: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Tiek pārbaudīts arguments %1 neizdevās. Nederīgi argumenti: %2.</translation>
+        <translation type="vanished">Tiek pārbaudīts arguments %1 neizdevās. Nederīgi argumenti: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Rediģēt vienkāršas darbības rezultātu mainīgo</translation>
+        <translation type="vanished">Rediģēt vienkāršas darbības rezultātu mainīgo</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Aprēķina rezultāts:</translation>
+        <translation type="vanished">Aprēķina rezultāts:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Mainīgā nosaukums:</translation>
+        <translation type="vanished">Mainīgā nosaukums:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Pārbaudes vērtība:</translation>
+        <translation type="vanished">Pārbaudes vērtība:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Mainīgā nosaukums netiek ievadīts.</translation>
+        <translation type="vanished">Mainīgā nosaukums netiek ievadīts.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Šis mainīgā nosaukums jau ir izmantots</translation>
+        <translation type="vanished">Šis mainīgā nosaukums jau ir izmantots</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Rediģēt vienkāršas darbības rezultātu</translation>
+        <translation type="vanished">Rediģēt vienkāršas darbības rezultātu</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Vārds:</translation>
+        <translation type="vanished">Vārds:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozīcija:</translation>
+        <translation type="vanished">Pozīcija:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Ievades aprēķinu rezultāti</translation>
+        <translation type="vanished">Ievades aprēķinu rezultāti</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Pievienot (&amp;A)...</translation>
+        <translation type="vanished">Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Dzēst (&amp;D)</translation>
+        <translation type="vanished">Dzēst (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Mainīgā definīcija</translation>
+        <translation type="vanished">Mainīgā definīcija</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Pārbaude</translation>
+        <translation type="vanished">Pārbaude</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Jūs varat pārbaudīt definīciju, noklikšķinot uz šīs. Ja definīcijas parsēšanas laikā rodas kļūda, tiek parādīts kļūdas ziņojums. Kad definīcija ir veiksmīgi parsēta, vērtība, kas aprēķināta, izmantojot &amp; quot; Value for testingquot; tiek parādīta katra ievade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Jūs varat pārbaudīt definīciju, noklikšķinot uz šīs. Ja definīcijas parsēšanas laikā rodas kļūda, tiek parādīts kļūdas ziņojums. Kad definīcija ir veiksmīgi parsēta, vērtība, kas aprēķināta, izmantojot &amp; quot; Value for testingquot; tiek parādīta katra ievade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Rezultāta nosaukums</translation>
+        <translation type="vanished">Rezultāta nosaukums</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Mainīgā nosaukums</translation>
+        <translation type="vanished">Mainīgā nosaukums</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vērtība testēšanai</translation>
+        <translation type="vanished">Vērtība testēšanai</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Režģa mezgls</translation>
+        <translation type="vanished">Režģa mezgls</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Režģa šūna</translation>
+        <translation type="vanished">Režģa šūna</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Daļiņa</translation>
+        <translation type="vanished">Daļiņa</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Nosaukums netiek ievadīts.</translation>
+        <translation type="vanished">Nosaukums netiek ievadīts.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Šis nosaukums jau ir izmantots</translation>
+        <translation type="vanished">Šis nosaukums jau ir izmantots</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Vai tiešām vēlaties dzēst? %1 ?</translation>
+        <translation type="vanished">Vai tiešām vēlaties dzēst? %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Vienkāršas darbības rezultātu saraksts</translation>
+        <translation type="vanished">Vienkāršas darbības rezultātu saraksts</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Vārds</translation>
+        <translation type="vanished">Vārds</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozīcija</translation>
+        <translation type="vanished">Pozīcija</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Uz augšu (&amp;U)</translation>
+        <translation type="vanished">Uz augšu (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Uz leju (&amp;D)</translation>
+        <translation type="vanished">Uz leju (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: secība sarakstā ir svarīga. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas parādīta iepriekš sarakstā. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: secība sarakstā ir svarīga. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas parādīta iepriekš sarakstā. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Pievienot (&amp;A)...</translation>
+        <translation type="vanished">Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Rediģēt (&amp;E)...</translation>
+        <translation type="vanished">Rediģēt (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Dzēst (&amp;D)</translation>
+        <translation type="vanished">Dzēst (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Vai tiešām vēlaties dzēst? %1 ?</translation>
+        <translation type="vanished">Vai tiešām vēlaties dzēst? %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Režģa mezgls</translation>
+        <translation type="vanished">Režģa mezgls</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Režģa šūna</translation>
+        <translation type="vanished">Režģa šūna</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Daļiņa</translation>
+        <translation type="vanished">Daļiņa</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Datu nolasīšana no rezultāta/risinājuma %1.cgn neizdevās. Aprēķinu rezultātu var vizualizēt no Solution1.cgn uz Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV faili eksportē aprēķina rezultātu, kas definēts režģa mezglos, šūnās un malās.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Shapefiles eksporta aprēķinu rezultāts, kas definēts režģa mezglos.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo failu eksporta aprēķinu rezultāts, kas definēts režģa mezglos.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK faili eksportē aprēķina rezultātu, kas definēts režģa mezglos un šūnās.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogs</translation>
+        <translation type="vanished">Dialogs</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Režģa tips:</translation>
+        <translation type="vanished">Režģa tips:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Novads: (&amp;R)</translation>
+        <translation type="vanished">Novads: (&amp;R)</translation>
     </message>
 </context>
 <context>

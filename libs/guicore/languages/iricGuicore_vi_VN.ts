@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Xuất hiện lỗi: %1</translation>
+        <translation type="vanished">Xuất hiện lỗi: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Kiểm tra đối số cho %1 thất bại. Đối số không hợp lệ: %2.</translation>
+        <translation type="vanished">Kiểm tra đối số cho %1 thất bại. Đối số không hợp lệ: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Chỉnh sửa biến kết quả hoạt động đơn giản</translation>
+        <translation type="vanished">Chỉnh sửa biến kết quả hoạt động đơn giản</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Kết quả tính toán:</translation>
+        <translation type="vanished">Kết quả tính toán:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Tên biến:</translation>
+        <translation type="vanished">Tên biến:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Giá trị để thử nghiệm:</translation>
+        <translation type="vanished">Giá trị để thử nghiệm:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Tên biến không phải là đầu vào.</translation>
+        <translation type="vanished">Tên biến không phải là đầu vào.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Tên biến này đã được sử dụng</translation>
+        <translation type="vanished">Tên biến này đã được sử dụng</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Chỉnh sửa Kết quả Thao tác Đơn giản</translation>
+        <translation type="vanished">Chỉnh sửa Kết quả Thao tác Đơn giản</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Tên:</translation>
+        <translation type="vanished">Tên:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Chức vụ:</translation>
+        <translation type="vanished">Chức vụ:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Kết quả tính toán cho đầu vào</translation>
+        <translation type="vanished">Kết quả tính toán cho đầu vào</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Thêm vào (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Xóa bỏ (&amp;D)</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Định nghĩa về biến</translation>
+        <translation type="vanished">Định nghĩa về biến</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Thử nghiệm</translation>
+        <translation type="vanished">Thử nghiệm</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể kiểm tra định nghĩa bằng cách nhấp vào đây. Nếu lỗi xảy ra trong khi phân tích cú pháp định nghĩa, thông báo lỗi sẽ được hiển thị. Khi định nghĩa được phân tích cú pháp thành công, giá trị được tính bằng cách sử dụng &amp; quot; Giá trị cho testingquot; cho mỗi đầu vào được hiển thị. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể kiểm tra định nghĩa bằng cách nhấp vào đây. Nếu lỗi xảy ra trong khi phân tích cú pháp định nghĩa, thông báo lỗi sẽ được hiển thị. Khi định nghĩa được phân tích cú pháp thành công, giá trị được tính bằng cách sử dụng &amp; quot; Giá trị cho testingquot; cho mỗi đầu vào được hiển thị. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Tên kết quả</translation>
+        <translation type="vanished">Tên kết quả</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Tên biến</translation>
+        <translation type="vanished">Tên biến</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Giá trị để thử nghiệm</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Nút lưới</translation>
+        <translation type="vanished">Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ô lưới</translation>
+        <translation type="vanished">Ô lưới</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Hạt</translation>
+        <translation type="vanished">Hạt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Tên không phải là đầu vào.</translation>
+        <translation type="vanished">Tên không phải là đầu vào.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Tên này đã được sử dụng</translation>
+        <translation type="vanished">Tên này đã được sử dụng</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Danh sách kết quả hoạt động đơn giản</translation>
+        <translation type="vanished">Danh sách kết quả hoạt động đơn giản</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Tên</translation>
+        <translation type="vanished">Tên</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Chức vụ</translation>
+        <translation type="vanished">Chức vụ</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Hướng lên (&amp;U)</translation>
+        <translation type="vanished">Hướng lên (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Xuống (&amp;D)</translation>
+        <translation type="vanished">Xuống (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Thêm vào (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Chỉnh sửa (&amp;E)...</translation>
+        <translation type="vanished">Chỉnh sửa (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Xóa bỏ (&amp;D)</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Nút lưới</translation>
+        <translation type="vanished">Nút lưới</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Ô lưới</translation>
+        <translation type="vanished">Ô lưới</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Hạt</translation>
+        <translation type="vanished">Hạt</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Đọc dữ liệu từ kết quả/Giải pháp %1.cgn không thành công. Bạn có thể hình dung kết quả tính toán trong Solution1.cgn thành Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Tệp CSV xuất kết quả tính toán được xác định tại các nút lưới, ô và cạnh.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Kết quả tính toán xuất tệp hình dạng được xác định tại các nút lưới.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Tệp tpo xuất kết quả tính toán được xác định tại các nút lưới.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Tệp VTK xuất kết quả tính toán được xác định tại các nút và ô lưới.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Hộp thoại</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Loại lưới:</translation>
+        <translation type="vanished">Loại lưới:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Khu vực: (&amp;R)</translation>
+        <translation type="vanished">Khu vực: (&amp;R)</translation>
     </message>
 </context>
 <context>

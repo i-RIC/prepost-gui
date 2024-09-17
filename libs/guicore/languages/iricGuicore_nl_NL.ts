@@ -2430,192 +2430,192 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Fout opgetreden: %1</translation>
+        <translation type="vanished">Fout opgetreden: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Argument controleren voor %1 mislukt. Ongeldige argumenten: %2.</translation>
+        <translation type="vanished">Argument controleren voor %1 mislukt. Ongeldige argumenten: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Bewerk eenvoudige bewerking Resultaatvariabele</translation>
+        <translation type="vanished">Bewerk eenvoudige bewerking Resultaatvariabele</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation>Berekeningsresultaat:</translation>
+        <translation type="vanished">Berekeningsresultaat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation>Variabele naam:</translation>
+        <translation type="vanished">Variabele naam:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation>Waarde voor testen:</translation>
+        <translation type="vanished">Waarde voor testen:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>Variabelenaam is niet ingevoerd.</translation>
+        <translation type="vanished">Variabelenaam is niet ingevoerd.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Deze variabelenaam wordt al gebruikt</translation>
+        <translation type="vanished">Deze variabelenaam wordt al gebruikt</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Bewerk het resultaat van een eenvoudige bewerking</translation>
+        <translation type="vanished">Bewerk het resultaat van een eenvoudige bewerking</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Naam:</translation>
+        <translation type="vanished">Naam:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Positie:</translation>
+        <translation type="vanished">Positie:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rekenresultaten voor invoer</translation>
+        <translation type="vanished">Rekenresultaten voor invoer</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Toevoegen (&amp;A)...</translation>
+        <translation type="vanished">Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Verwijderen (&amp;D)</translation>
+        <translation type="vanished">Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation>Definitie van variabele</translation>
+        <translation type="vanished">Definitie van variabele</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Toets</translation>
+        <translation type="vanished">Toets</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de definitie testen door hierop te klikken. Als er een fout optreedt tijdens het ontleden van de definitie, wordt het foutbericht weergegeven. Wanneer de definitie met succes is geparseerd, wordt de waarde berekend met behulp van de &amp;quot;Value for testingquot; voor elke invoer wordt weergegeven.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Je kunt de definitie testen door hierop te klikken. Als er een fout optreedt tijdens het ontleden van de definitie, wordt het foutbericht weergegeven. Wanneer de definitie met succes is geparseerd, wordt de waarde berekend met behulp van de &amp;quot;Value for testingquot; voor elke invoer wordt weergegeven.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation>----</translation>
+        <translation type="vanished">----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultaat naam</translation>
+        <translation type="vanished">Resultaat naam</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabele naam</translation>
+        <translation type="vanished">Variabele naam</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Waarde voor testen</translation>
+        <translation type="vanished">Waarde voor testen</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rasterknooppunt</translation>
+        <translation type="vanished">Rasterknooppunt</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rastercel</translation>
+        <translation type="vanished">Rastercel</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Deeltje</translation>
+        <translation type="vanished">Deeltje</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Naam is niet ingevoerd.</translation>
+        <translation type="vanished">Naam is niet ingevoerd.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Deze naam wordt al gebruikt</translation>
+        <translation type="vanished">Deze naam wordt al gebruikt</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
+        <translation type="vanished">Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Lijst met eenvoudige bewerkingsresultaten</translation>
+        <translation type="vanished">Lijst met eenvoudige bewerkingsresultaten</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Naam</translation>
+        <translation type="vanished">Naam</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Positie</translation>
+        <translation type="vanished">Positie</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation>Omhoog (&amp;U)</translation>
+        <translation type="vanished">Omhoog (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>Omlaag (&amp;D)</translation>
+        <translation type="vanished">Omlaag (&amp;D)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Toevoegen (&amp;A)...</translation>
+        <translation type="vanished">Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Bewerking (&amp;E)...</translation>
+        <translation type="vanished">Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>Verwijderen (&amp;D)</translation>
+        <translation type="vanished">Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
+        <translation type="vanished">Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation>Rasterknooppunt</translation>
+        <translation type="vanished">Rasterknooppunt</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation>Rastercel</translation>
+        <translation type="vanished">Rastercel</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation>Deeltje</translation>
+        <translation type="vanished">Deeltje</translation>
     </message>
 </context>
 <context>
@@ -2810,6 +2810,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
         <translation>Gegevens uit resultaat/oplossing lezen %1.cgn mislukt. U kunt het resultaat van de berekening visualiseren in Solution1.cgn naar Solution %2.cgn.</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten, cellen en randen.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefiles exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten en cellen.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2999,15 +3015,15 @@ Do you really want to import this file?</source>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Rastertype:</translation>
+        <translation type="vanished">Rastertype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation>Regio: (&amp;R)</translation>
+        <translation type="vanished">Regio: (&amp;R)</translation>
     </message>
 </context>
 <context>
