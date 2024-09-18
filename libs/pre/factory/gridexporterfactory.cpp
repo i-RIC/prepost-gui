@@ -40,6 +40,8 @@ GridExporterFactory::GridExporterFactory()
 	QStringList nameFilters;
 	nameFilters.append("*.dll");
 	for (const QString& folderName : pluginsDir.entryList(QDir::Dirs)) {
+		if (folderName == "structured2dgridnaysgridexporter") {continue;}
+
 		QDir pluginDir(pluginsDir.filePath(folderName));
 		for (const QString& fileName : pluginDir.entryList(nameFilters, QDir::Files)) {
 			QFileInfo finfo(fileName);
