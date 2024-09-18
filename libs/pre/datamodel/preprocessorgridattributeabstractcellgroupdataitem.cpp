@@ -358,9 +358,7 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 			if (group->condition()->position() != pos) {continue;}
 
 			auto v = cAtt->value(cellid);
-			if (v == 0) {v = 1;} // in case not mapped yet, change value to Default (= 1)
-			auto g = group->groups().at(v - 1);
-			PropertyBrowserAttribute att(group->condition()->caption(), g->caption());
+			PropertyBrowserAttribute att(group->condition()->caption(), group->captionForValue(v));
 			atts.append(att);
 		}
 	}
