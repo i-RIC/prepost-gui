@@ -842,6 +842,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Import</source>
         <translation>Nhập khẩu (&amp;I)</translation>
     </message>
+    <message>
+        <source>(Undefined value)</source>
+        <translation>(Giá trị không xác định)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
@@ -1221,7 +1225,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Độ rộng dòng:</translation>
+        <translation type="vanished">Độ rộng dòng:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
