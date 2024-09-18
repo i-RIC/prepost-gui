@@ -51,12 +51,13 @@ GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSe
 	m_slider = new QSlider(toolbar);
 	m_slider->setOrientation(Qt::Horizontal);
 	m_slider->setTickPosition(QSlider::TicksBelow);
+	m_slider->setMinimumWidth(SLIDERWIDTH_MAX);
 	m_slider->setMaximumWidth(SLIDERWIDTH_MAX);
 	m_slider->setTracking(false);
 	toolbar->addWidget(m_slider);
 
-	connect(m_slider, SIGNAL(sliderMoved(int)), this, SLOT(handleSliderMove(int)));
-	connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(handleSlideValueChange(int)));
+	connect(m_slider, &QSlider::sliderMoved, this, &GridAttributeDimensionTimeSliderSelectWidget::handleSliderMove);
+	connect(m_slider, &QSlider::valueChanged, this, &GridAttributeDimensionTimeSliderSelectWidget::handleSlideValueChange);
 
 	m_currentLabel = new QLabel(toolbar);
 	m_currentLabel->setMargin(4);
@@ -69,7 +70,6 @@ GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSe
 	setLayout(layout);
 
 	setBackgroundRole(QPalette::ButtonText);
-	setMaximumWidth(450);
 	applyValues();
 }
 
