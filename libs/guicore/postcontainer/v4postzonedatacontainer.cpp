@@ -99,7 +99,7 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProc
 
 	int ier;
 	if (impl->m_inputGridData == nullptr && zone->base()->dimension() == 2 && gtItem != nullptr) {
-		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem, tmpPath, offset(), &ier);
+		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem, tmpPath, offset(), true, &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 
 		const auto& conds = gtItem->conditions();

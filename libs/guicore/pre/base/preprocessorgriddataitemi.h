@@ -24,7 +24,7 @@ public:
 	virtual void informGridAttributeChange(const std::string& name) = 0;
 	virtual void updateAttributeActorSettings() = 0;
 	virtual v4InputGrid* grid() const = 0;
-	virtual bool setGrid(v4InputGrid* newGrid) = 0;
+	virtual bool setGrid(v4InputGrid* newGrid, bool noDimensions) = 0;
 	virtual void silentDeleteGrid() = 0;
 	virtual void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) = 0;
 	virtual void unsetBCGroupDataItem() = 0;

@@ -47,9 +47,7 @@ int GridAttributeContainerT<V, DA>::loadFromCgnsFile(const iRICLib::H5CgnsGridAt
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
 	int ier = 0;
-	if (dims == nullptr || dims->containers().size() == 0) {
-		ier = loadFromCgnsFileForIndex(atts, 0);
-	} else {
+	if (dims != nullptr && dims->containers().size() > 0) {
 		for (int index = 0; index <= dims->maxIndex(); ++index) {
 			ier = loadFromCgnsFileForIndex(atts, index);
 			if (ier == IRIC_NO_ERROR) {
@@ -61,6 +59,8 @@ int GridAttributeContainerT<V, DA>::loadFromCgnsFile(const iRICLib::H5CgnsGridAt
 			}
 		}
 	}
+
+	ier = loadFromCgnsFileForIndex(atts, 0);
 	if (ier == IRIC_NO_ERROR) {
 		setMapped(true);
 	}
