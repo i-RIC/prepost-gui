@@ -1506,7 +1506,7 @@ QStringList PreProcessorGeoDataGroupDataItem::containedFiles() const
 void PreProcessorGeoDataGroupDataItem::setupConnectionToGeoData(GeoData* geodata)
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
-	connect(dims, SIGNAL(currentIndexChanged(int,int)), geodata, SLOT(handleDimensionCurrentIndexChange(int,int)));
+	connect<void (GridAttributeDimensionsContainer::*)(int, int)>(dims, &GridAttributeDimensionsContainer::currentIndexChanged, geodata, &GeoData::handleDimensionCurrentIndexChange);
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		GridAttributeDimensionContainer* cont = dims->containers().at(i);
 		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), geodata, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
