@@ -842,6 +842,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Import</source>
         <translation>수입 (&amp;I)</translation>
     </message>
+    <message>
+        <source>(Undefined value)</source>
+        <translation>(정의되지 않은 값)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
@@ -1221,7 +1225,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>선의 폭:</translation>
+        <translation type="vanished">선의 폭:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
