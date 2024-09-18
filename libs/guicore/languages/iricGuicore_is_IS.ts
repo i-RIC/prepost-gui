@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Skiptu yfir í listaskjá</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Upplýsingar</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" er stillt á að vera sjálfgefinn hópur, vegna þess að þú tilgreindir ekki sjálfgefinn hóp.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Að lesa gögn úr niðurstöðu/lausn %1.cgn mistókst. Þú getur séð niðurstöðu útreikninga í Solution1.cgn til lausnar %2.cgn.</translation>
+        <translation type="vanished">Að lesa gögn úr niðurstöðu/lausn %1.cgn mistókst. Þú getur séð niðurstöðu útreikninga í Solution1.cgn til lausnar %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Mistókst að lesa gögn úr result/Solution1.cgn. Það er engin útreikningsniðurstaða sem hægt er að sjá fyrir sér. Viltu eyða niðurstöðu/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Að lesa gögn úr niðurstöðu/lausn %1.cgn mistókst. Þú getur séð niðurstöðu útreikninga í Solution1.cgn til lausnar %2.cgn. Viltu eyða niðurstöðu/lausn %1.cgn?</translation>
     </message>
 </context>
 <context>

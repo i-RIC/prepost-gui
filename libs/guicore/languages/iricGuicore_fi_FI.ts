@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Vaihda luettelonäkymään</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Tiedot</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" on asetettu oletusryhmäksi, koska et määrittänyt oletusryhmää.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Tietojen lukeminen tuloksesta/ratkaisusta %1.cgn epäonnistui. Voit visualisoida laskentatuloksen Solution1.cgn:stä ratkaisuun %2.cgn.</translation>
+        <translation type="vanished">Tietojen lukeminen tuloksesta/ratkaisusta %1.cgn epäonnistui. Voit visualisoida laskentatuloksen Solution1.cgn:stä ratkaisuun %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Datan lukeminen tuloksesta/Solution1.cgn epäonnistui. Laskentatulosta ei ole mahdollista visualisoida. Haluatko poistaa result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Tietojen lukeminen tuloksesta/ratkaisusta %1.cgn epäonnistui. Voit visualisoida laskentatuloksen Solution1.cgn:stä ratkaisuun %2.cgn. Haluatko poistaa tuloksen/ratkaisun %1.cgn?</translation>
     </message>
 </context>
 <context>

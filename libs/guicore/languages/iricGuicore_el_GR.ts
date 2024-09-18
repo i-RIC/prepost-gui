@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Μετάβαση σε προβολή λίστας</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Πληροφορίες</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>" %1 Το " έχει οριστεί ως προεπιλεγμένη ομάδα, επειδή δεν καθορίσατε μια προεπιλεγμένη ομάδα.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Ανάγνωση δεδομένων από αποτέλεσμα/Λύση %1.cgn απέτυχε. Μπορείτε να οπτικοποιήσετε το αποτέλεσμα υπολογισμού στο Solution1.cgn to Solution %2.cgn.</translation>
+        <translation type="vanished">Ανάγνωση δεδομένων από αποτέλεσμα/Λύση %1.cgn απέτυχε. Μπορείτε να οπτικοποιήσετε το αποτέλεσμα υπολογισμού στο Solution1.cgn to Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Η ανάγνωση δεδομένων από το result/Solution1.cgn απέτυχε. Δεν υπάρχει αποτέλεσμα υπολογισμού που να μπορεί να οπτικοποιηθεί. Θέλετε να διαγράψετε το result/Solution1.cgn;</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Ανάγνωση δεδομένων από αποτέλεσμα/Λύση %1.cgn απέτυχε. Μπορείτε να οπτικοποιήσετε το αποτέλεσμα υπολογισμού στο Solution1.cgn to Solution %2.cgn. Θέλετε να διαγράψετε αποτέλεσμα/Λύση %1.cgn;</translation>
     </message>
 </context>
 <context>

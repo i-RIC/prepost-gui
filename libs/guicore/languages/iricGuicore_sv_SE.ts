@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Växla till listvy</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Information</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" är inställd som standardgrupp, eftersom du inte har angett en standardgrupp.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Läser data från resultat/lösning %1.cgn misslyckades. Du kan visualisera beräkningsresultat i Solution1.cgn till lösning %2.cgn.</translation>
+        <translation type="vanished">Läser data från resultat/lösning %1.cgn misslyckades. Du kan visualisera beräkningsresultat i Solution1.cgn till lösning %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Det gick inte att läsa data från result/Solution1.cgn. Det finns inget beräkningsresultat som kan visualiseras. Vill du ta bort result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Läser data från resultat/lösning %1.cgn misslyckades. Du kan visualisera beräkningsresultat i Solution1.cgn till lösning %2.cgn. Vill du radera resultat/Lösning %1.cgn?</translation>
     </message>
 </context>
 <context>

@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Passer à la vue Liste</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Information</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" est défini comme groupe par défaut, car vous n'avez pas spécifié de groupe par défaut.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Lecture des données du résultat/solution %1.cgn a échoué. Vous pouvez visualiser le résultat du calcul dans Solution1.cgn vers Solution %2.cgn.</translation>
+        <translation type="vanished">Lecture des données du résultat/solution %1.cgn a échoué. Vous pouvez visualiser le résultat du calcul dans Solution1.cgn vers Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>La lecture des données de result/Solution1.cgn a échoué. Aucun résultat de calcul ne peut être visualisé. Voulez-vous supprimer result/Solution1.cgn ?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Lecture des données à partir du résultat/de la solution %1.cgn a échoué. Vous pouvez visualiser le résultat du calcul dans Solution1.cgn vers Solution %2.cgn. Voulez-vous supprimer le résultat/la solution %1.cgn?</translation>
     </message>
 </context>
 <context>

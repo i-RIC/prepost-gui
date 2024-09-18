@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>切換到清單視圖</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>資訊</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>」 %1 " 被設定為預設群組，因為您沒有指定預設群組。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>從結果/解決方案中讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果可視化到 Solution %2.cgn。</translation>
+        <translation type="vanished">從結果/解決方案中讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果可視化到 Solution %2.cgn。</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>從 result/Solution1.cgn 讀取資料失敗。沒有可以視覺化的計算結果。您想刪除 result/Solution1.cgn 嗎？</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>從結果/解決方案讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果視覺化到 Solution %2.cgn。您要刪除結果/解決方案嗎 %1.cgn？</translation>
     </message>
 </context>
 <context>

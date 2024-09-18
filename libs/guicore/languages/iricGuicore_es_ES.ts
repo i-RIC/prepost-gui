@@ -1732,6 +1732,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Cambiar a vista de lista</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" está configurado como grupo predeterminado porque no especificó un grupo predeterminado.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2801,11 +2809,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Lectura de datos de resultado/Solución %1.cgn falló. Puede visualizar el resultado del cálculo en Solution1.cgn to Solution %2.cgn.</translation>
+        <translation type="vanished">Lectura de datos de resultado/Solución %1.cgn falló. Puede visualizar el resultado del cálculo en Solution1.cgn to Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Error al leer los datos de result/Solution1.cgn. No hay ningún resultado de cálculo que se pueda visualizar. ¿Desea eliminar result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Lectura de datos del resultado/solución %1 Error en.cgn. Puede visualizar el resultado del cálculo en Solution1.cgn para Solution %2.cgn. ¿Quieres eliminar resultado/solución? %1.cgn?</translation>
     </message>
 </context>
 <context>

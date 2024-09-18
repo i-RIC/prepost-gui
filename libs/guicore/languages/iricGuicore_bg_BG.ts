@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Превключване към изглед на списък</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" е зададено да бъде група по подразбиране, защото не сте посочили група по подразбиране.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Четене на данни от резултат/решение %1.cgn неуспешно. Можете да визуализирате резултата от изчислението в Solution1.cgn към Solution %2.cgn.</translation>
+        <translation type="vanished">Четене на данни от резултат/решение %1.cgn неуспешно. Можете да визуализирате резултата от изчислението в Solution1.cgn към Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Неуспешно четене на данни от result/Solution1.cgn. Няма резултат от изчислението, който да може да се визуализира. Искате ли да изтриете result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Четене на данни от резултат/решение %1.cgn неуспешно. Можете да визуализирате резултата от изчислението в Solution1.cgn към Solution %2.cgn. Искате ли да изтриете резултат/решение %1.cgn?</translation>
     </message>
 </context>
 <context>

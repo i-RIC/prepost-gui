@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Canvia a la vista de llista</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informació</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" està configurat com a grup predeterminat, perquè no heu especificat cap grup predeterminat.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Lectura de dades del resultat/solució %1.cgn ha fallat. Podeu visualitzar el resultat del càlcul a Solution1.cgn a Solution %2.cgn.</translation>
+        <translation type="vanished">Lectura de dades del resultat/solució %1.cgn ha fallat. Podeu visualitzar el resultat del càlcul a Solution1.cgn a Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>No s'ha pogut llegir les dades del resultat/Solution1.cgn. No hi ha cap resultat de càlcul que es pugui visualitzar. Voleu suprimir result/Solution1.cgn?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Lectura de dades del resultat/solució %1.cgn ha fallat. Podeu visualitzar el resultat del càlcul a Solution1.cgn a Solution %2.cgn. Voleu eliminar el resultat/solució %1.cgn?</translation>
     </message>
 </context>
 <context>

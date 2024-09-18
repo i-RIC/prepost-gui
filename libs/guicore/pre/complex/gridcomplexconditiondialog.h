@@ -61,6 +61,7 @@ private:
 	void updateList();
 	void updateTable();
 	void updateSwitchButtonText();
+	QString nextNewItemCaption() const;
 
 	std::vector<GridComplexConditionWidget*> m_widgets;
 	std::vector<std::shared_ptr<GridComplexConditionGroup> > m_groups;
@@ -72,6 +73,7 @@ private:
 
 	QColor m_undefinedColor;
 	bool m_calculationConditionMode;
+	bool m_ignoreDefaultCheck;
 	Ui::GridComplexConditionDialog* ui;
 };
 

@@ -1739,6 +1739,14 @@ Parse error %2 at %3, column %4</source>
         <source>Switch to List view</source>
         <translation>Schakel over naar Lijstweergave</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation>Informatie</translation>
+    </message>
+    <message>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>"%1" is ingesteld als standaardgroep, omdat u geen standaardgroep hebt opgegeven.</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2808,11 +2816,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Gegevens uit resultaat/oplossing lezen %1.cgn mislukt. U kunt het resultaat van de berekening visualiseren in Solution1.cgn naar Solution %2.cgn.</translation>
+        <translation type="vanished">Gegevens uit resultaat/oplossing lezen %1.cgn mislukt. U kunt het resultaat van de berekening visualiseren in Solution1.cgn naar Solution %2.cgn.</translation>
     </message>
     <message>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>Lezen van gegevens van result/Solution1.cgn mislukt. Er is geen berekeningsresultaat dat kan worden gevisualiseerd. Wilt u result/Solution1.cgn verwijderen?</translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
+        <translation>Gegevens uit resultaat/oplossing lezen %1.cgn is mislukt. U kunt het berekeningsresultaat visualiseren in Solution1.cgn naar Solution %2.cgn. Wilt u resultaat/oplossing verwijderen? %1.cgn?</translation>
     </message>
 </context>
 <context>
