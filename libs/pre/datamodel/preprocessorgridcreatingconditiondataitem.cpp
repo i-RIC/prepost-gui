@@ -276,7 +276,7 @@ void PreProcessorGridCreatingConditionDataItem::handleNewGrid(v4InputGrid* newgr
 	tmp_parent->setupGridDataItem(newgrid);
 
 	auto gridDataItem = tmp_parent->gridDataItem();
-	bool ok = gridDataItem->setGrid(newgrid);
+	bool ok = gridDataItem->setGrid(newgrid, false);
 	if (! ok) {
 		delete newgrid;
 		return;
@@ -290,7 +290,7 @@ void PreProcessorGridCreatingConditionDataItem::handleTmpGrid(v4InputGrid* tmpgr
 	auto tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	auto gridDataItem = tmp_parent->gridDataItem();
 
-	bool ok = gridDataItem->setGrid(tmpgrid);
+	bool ok = gridDataItem->setGrid(tmpgrid, false);
 	if (! ok) {
 		delete tmpgrid;
 	}

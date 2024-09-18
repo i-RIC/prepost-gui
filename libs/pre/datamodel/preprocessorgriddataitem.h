@@ -59,7 +59,7 @@ public:
 	~PreProcessorGridDataItem();
 
 	v4InputGrid* grid() const override;
-	bool setGrid(v4InputGrid* newGrid) override;
+	bool setGrid(v4InputGrid* newGrid, bool noDimensions) override;
 
 	int loadFromCgnsFile() override;
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);

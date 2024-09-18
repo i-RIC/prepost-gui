@@ -329,15 +329,18 @@ bool PreProcessorGridDataItem::importFromImporter(v4InputGrid* grid, GridImporte
 		ProjectImporter projectImporter2(this);
 		return projectImporter2.importGrid(filename, projImporter);
 	}
+
 	auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 	if (cgnsImporter != nullptr) {
 		delete grid;
 		CgnsImporter cgnsImporter2(this);
 		return cgnsImporter2.importGrid(filename, cgnsImporter);
 	}
+
 	bool ok = importer->import(grid, filename, selectedFilter, projectData()->mainWindow());
 	if (ok) {
-		setGrid(grid);
+		setGrid(grid, false);
+
 		return true;
 	} else {
 		delete grid;
@@ -461,7 +464,7 @@ v4InputGrid* PreProcessorGridDataItem::grid() const
 	return impl->m_grid;
 }
 
-bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid)
+bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid, bool noDimensions)
 {
 	newGrid->grid()->vtkData()->updateValueRangeSet();
 	newGrid->grid()->updateCellIndex();
@@ -471,7 +474,9 @@ bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid)
 	impl->m_grid->setGridDataItem(this);
 	connect(impl->m_grid->grid(), &v4Grid::changed, this, &PreProcessorGridDataItem::handleGridChange);
 
-	setDimensionsToAttributes();
+	if (! noDimensions) {
+		setDimensionsToAttributes();
+	}
 
 	PreProcessorGraphicsViewI* view = dataModel()->graphicsView();
 	double xmin, xmax, ymin, ymax;
