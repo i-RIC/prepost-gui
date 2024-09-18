@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Emaitza/Soluzioko datuak irakurtzea %1.cgn huts egin du. Kalkuluaren emaitza Solution1.cgn to Solution-n ikus dezakezu %2.cgn. Emaitza/soluzioa ezabatu nahi al duzu %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV fitxategiak esportatzeko kalkuluaren emaitza sareko nodoetan, gelaxketan eta ertzetan definituta dago.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefiles esportatzeko kalkuluaren emaitza sareko nodoetan definituta.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo fitxategiak esportatzeko kalkuluaren emaitza sareko nodoetan definitu da.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK fitxategiak sareko nodo eta gelaxketan definitutako kalkulu-emaitza esportatu.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

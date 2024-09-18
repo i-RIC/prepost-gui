@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>قراءة البيانات من النتيجة/الحل %1 فشل.cgn. يمكنك تصور نتيجة الحساب في الحل 1.cgn إلى الحل %2.cgn. هل تريد حذف النتيجة/الحل؟ %1.cgn؟</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>يتم تصدير نتائج الحسابات بتنسيق CSV المحددة في عقد الشبكة والخلايا والحواف.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>يتم تصدير نتائج الحسابات الخاصة بملفات الشكل المحددة في عقد الشبكة.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>يتم تصدير نتائج الحسابات المحددة في عقد الشبكة بواسطة ملفات tpo.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>يتم تصدير نتائج الحسابات المحددة في عقد الشبكة والخلايا في ملفات VTK.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

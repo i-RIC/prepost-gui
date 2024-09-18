@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Daten aus Ergebnis/Lösung lesen %1.cgn ist fehlgeschlagen. Sie können das Berechnungsergebnis in Solution1.cgn zur Lösung visualisieren %2.cgn. Möchten Sie das Ergebnis/die Lösung löschen? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV-Dateien exportieren Berechnungsergebnisse, die an Gitterknoten, Zellen und Kanten definiert sind.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Berechnungsergebnis des Shapefile-Exports, definiert an Gitterknoten.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>TPO-Dateien exportieren Berechnungsergebnisse, die an Gitterknoten definiert sind.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK-Dateien exportieren Berechnungsergebnisse, die an Gitterknoten und -zellen definiert sind.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

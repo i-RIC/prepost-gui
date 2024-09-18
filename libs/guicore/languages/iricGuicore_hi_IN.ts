@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>परिणाम/समाधान से डेटा पढ़ना %1.cgn विफल हुआ। आप Solution1.cgn में समाधान के लिए गणना परिणाम देख सकते हैं %2.cgn. क्या आप परिणाम/समाधान हटाना चाहते हैं %1.सीजीएन?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV फ़ाइलें ग्रिड नोड्स, कोशिकाओं और किनारों पर परिभाषित गणना परिणाम निर्यात करती हैं।</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>शेपफाइल्स ग्रिड नोड्स पर परिभाषित गणना परिणाम निर्यात करते हैं।</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo फ़ाइलें ग्रिड नोड्स पर परिभाषित गणना परिणाम निर्यात करती हैं।</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK फ़ाइलें ग्रिड नोड्स और कोशिकाओं पर परिभाषित गणना परिणाम निर्यात करती हैं।</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

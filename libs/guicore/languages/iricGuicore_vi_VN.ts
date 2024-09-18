@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Đọc dữ liệu từ kết quả/Giải pháp %1.cgn không thành công. Bạn có thể hình dung kết quả tính toán trong Solution1.cgn thành Solution %2.cgn. Bạn có muốn xóa kết quả/Giải pháp không? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Tệp CSV xuất kết quả tính toán được xác định tại các nút lưới, ô và cạnh.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Kết quả tính toán xuất tệp hình dạng được xác định tại các nút lưới.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Tệp tpo xuất kết quả tính toán được xác định tại các nút lưới.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Tệp VTK xuất kết quả tính toán được xác định tại các nút và ô lưới.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

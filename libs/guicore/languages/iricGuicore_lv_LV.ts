@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Datu nolasīšana no rezultāta/risinājuma %1.cgn neizdevās. Aprēķinu rezultātu var vizualizēt no Solution1.cgn uz Solution %2.cgn. Vai vēlaties dzēst rezultātu/risinājumu %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV faili eksportē aprēķina rezultātu, kas definēts režģa mezglos, šūnās un malās.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Shapefiles eksporta aprēķinu rezultāts, kas definēts režģa mezglos.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo failu eksporta aprēķinu rezultāts, kas definēts režģa mezglos.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK faili eksportē aprēķina rezultātu, kas definēts režģa mezglos un šūnās.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

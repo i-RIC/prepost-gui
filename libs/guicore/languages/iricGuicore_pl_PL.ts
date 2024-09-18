@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Odczyt danych z wyniku/rozwiązania %1.cgn nie powiodło się. Możesz wizualizować wynik obliczeń w Solution1.cgn do Solution %2.cgn. Czy chcesz usunąć wynik/rozwiązanie? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Pliki CSV eksportują wyniki obliczeń zdefiniowane w węzłach siatki, komórkach i krawędziach.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>Pliki shapefile eksportują wyniki obliczeń zdefiniowane w węzłach siatki.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Pliki tpo eksportują wyniki obliczeń zdefiniowane w węzłach siatki.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Pliki VTK eksportują wyniki obliczeń zdefiniowane w węzłach i komórkach siatki.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
