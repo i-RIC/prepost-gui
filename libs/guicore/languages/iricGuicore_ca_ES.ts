@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Lectura de dades del resultat/solució %1.cgn ha fallat. Podeu visualitzar el resultat del càlcul a Solution1.cgn a Solution %2.cgn. Voleu eliminar el resultat/solució %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Els fitxers CSV exporten el resultat del càlcul definit als nodes, cel·les i vores de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>resultat del càlcul d'exportació de fitxers de forma definit als nodes de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Resultat del càlcul de l'exportació dels fitxers tpo definit als nodes de la quadrícula.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Els fitxers VTK exporten el resultat del càlcul definit als nodes i cel·les de la quadrícula.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

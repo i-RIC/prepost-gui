@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Читання даних із результату/розв’язання %1.cgn не вдалося. Ви можете візуалізувати результат розрахунку в Solution1.cgn to Solution %2.cgn. Ви хочете видалити результат/Рішення? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>Файли CSV експортують результат розрахунку, визначений у вузлах сітки, клітинках і ребрах.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>шейп-файли експортують результат обчислення, визначений у вузлах сітки.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Файли tpo експортують результат розрахунку, визначений у вузлах сітки.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>Файли VTK експортують результат розрахунку, визначений у вузлах і клітинках сітки.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

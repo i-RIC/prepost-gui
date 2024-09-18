@@ -1,15 +1,19 @@
-#include "postzonedatacsvexporter.h"
+#include "../../base/iricmainwindowi.h"
 #include "../../grid/v4grid.h"
 #include "../../grid/v4structured2dgrid.h"
 #include "../../grid/v4structured3dgrid.h"
 #include "../../grid/v4unstructured2dgrid.h"
+#include "../../project/projectdata.h"
+#include "../../solverdef/solverdefinitiongridtype.h"
+#include "../postsolutioninfo.h"
 #include "../v4solutiongrid.h"
 #include "../v4postzonedatacontainer.h"
+#include "postzonedatacsvexporter.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/informationdialog.h>
 
 #include <QFile>
 #include <QTextStream>
@@ -64,12 +68,12 @@ void exportStructured2dGrid(v4Structured2dGrid* grid, QTextStream& stream, int i
 		vtkDataArray* array = cData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* ifData = grid->vtkIEdgeData()->data()->GetPointData();
+	vtkCellData* ifData = grid->vtkIEdgeData()->data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* jfData = grid->vtkJEdgeData()->data()->GetPointData();
+	vtkCellData* jfData = grid->vtkJEdgeData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
@@ -247,17 +251,17 @@ void exportStructured3dGrid(v4Structured3dGrid* grid, QTextStream& stream, int i
 		vtkDataArray* array = cData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* ifData = grid->vtkIFaceData()-> data()->GetPointData();
+	vtkCellData* ifData = grid->vtkIFaceData()-> data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* jfData = grid->vtkJFaceData()->data()->GetPointData();
+	vtkCellData* jfData = grid->vtkJFaceData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
-	vtkPointData* kfData = grid->vtkKFaceData()->data()->GetPointData();
+	vtkCellData* kfData = grid->vtkKFaceData()->data()->GetCellData();
 	for (int i = 0; i < kfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = kfData->GetArray(i);
 		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
@@ -505,7 +509,7 @@ QString PostZoneDataCsvExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataCsvExporter::exportToFile(v4PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
+bool PostZoneDataCsvExporter::exportToFile(v4PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectData, const QPointF& offset) const
 {
 	if (QFile::exists(filename)){
 		bool ok = QFile::remove(filename);
@@ -513,6 +517,7 @@ bool PostZoneDataCsvExporter::exportToFile(v4PostZoneDataContainer* c, const QSt
 			return false;
 		}
 	}
+
 	QFile f(filename);
 	bool ok = f.open(QIODevice::WriteOnly);
 	if (! ok){return false;}
@@ -533,5 +538,10 @@ bool PostZoneDataCsvExporter::exportToFile(v4PostZoneDataContainer* c, const QSt
 		exportUnstructuredGrid(ugrid, stream, offset);
 	}
 	f.close();
+
+	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+														 PostSolutionInfo::tr("CSV files export calculation result defined at grid nodes, cells, and edges."),
+														 "postzonedatacsvexporter_warning");
+
 	return true;
 }

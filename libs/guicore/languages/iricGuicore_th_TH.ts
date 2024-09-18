@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>การอ่านข้อมูลจากผลลัพธ์/โซลูชัน %1.cgn ล้มเหลว คุณสามารถแสดงผลการคำนวณใน Solution1.cgn ของ Solution ได้ %2.cgn. คุณต้องการลบผลลัพธ์/วิธีแก้ไขหรือไม่ %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>ไฟล์ CSV ส่งออกผลการคำนวณที่กำหนดไว้ที่โหนดกริด เซลล์ และขอบ</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>ผลการคำนวณการส่งออกไฟล์รูปร่างที่กำหนดไว้ที่โหนดกริด</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>ไฟล์ tpo ส่งออกผลการคำนวณที่กำหนดไว้ที่โหนดกริด</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>ไฟล์ VTK ส่งออกผลการคำนวณที่กำหนดไว้ที่โหนดกริดและเซลล์</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

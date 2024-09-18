@@ -4,6 +4,7 @@
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
+#include <misc/informationdialog.h>
 
 #include <QObject>
 #include <QFile>
@@ -30,9 +31,10 @@ QStringList Structured2DGridNaysGridExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridNaysGridExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured2DGridNaysGridExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* parent)
 {
 	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+	InformationDialog::warning(parent, tr("Warning"), tr("RIC-Nays Grid files only support exporting Elevation and CellCondition as attributes."), "structured2d_naysgrid_export");
 
 	QFile f(filename);
 	bool ret = f.open(QIODevice::WriteOnly);

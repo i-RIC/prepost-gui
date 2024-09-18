@@ -28,6 +28,13 @@ unix {
 }
 LIBS += -liricGuicore
 
+# iricMisc library
+
+unix {
+        LIBS += -L"../../../libs/misc"
+}
+LIBS += -liricMisc
+
 # VTK
 
 LIBS += \

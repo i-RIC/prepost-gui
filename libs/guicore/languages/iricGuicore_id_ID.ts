@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Membaca data dari hasil/Solusi %1.cgn gagal. Anda dapat memvisualisasikan hasil perhitungan di Solution1.cgn ke Solution %2.cgn. Apakah Anda ingin menghapus hasil/Solusi? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>File CSV mengekspor hasil perhitungan yang ditentukan pada simpul grid, sel, dan tepi.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>hasil perhitungan ekspor shapefile yang ditentukan pada simpul grid.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>Hasil perhitungan ekspor file tpo ditentukan pada node grid.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>File VTK mengekspor hasil perhitungan yang ditentukan pada node grid dan sel.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

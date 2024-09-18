@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Adatok olvasása az eredményből/megoldásból %1.cgn nem sikerült. Megjelenítheti a számítási eredményt a Solution1.cgn to Solution fájlban %2.cgn. Törölni szeretné az eredményt/megoldást? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>A CSV-fájlok exportálják a rácscsomópontokon, cellákon és éleken meghatározott számítási eredményeket.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>A rácscsomópontokon meghatározott shapefiles export számítási eredmény.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>A tpo fájlok a rács csomópontjainál meghatározott számítási eredmény exportálása.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>A VTK-fájlok exportálják a rácscsomópontokon és -cellákon meghatározott számítási eredményeket.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

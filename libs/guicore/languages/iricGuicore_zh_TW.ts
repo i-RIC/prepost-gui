@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>從結果/解決方案讀取數據 %1.cgn 失敗。您可以將 Solution1.cgn 中的計算結果視覺化到 Solution %2.cgn。您要刪除結果/解決方案嗎 %1.cgn？</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV 檔案匯出在網格節點、單元格和邊緣定義的計算結果。</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefile 匯出在網格節點定義的計算結果。</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo 檔案匯出網格節點處定義的計算結果。</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK 檔案匯出在網格節點和單元格定義的計算結果。</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

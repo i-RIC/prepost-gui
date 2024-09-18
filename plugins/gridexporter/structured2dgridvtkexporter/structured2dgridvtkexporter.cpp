@@ -1,14 +1,17 @@
 #include "structured2dgridvtkexporter.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/filesystemfunction.h>
+#include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
 #include <QStringList>
 #include <QFile>
 #include <QDir>
 
+#include <vtkCellData.h>
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGridWriter.h>
 
@@ -36,13 +39,20 @@ QStringList Structured2DGridVTKExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridVTKExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured2DGridVTKExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* parent)
 {
 	QString tempPath = QDir::tempPath();
 	QString tmpFile = iRIC::getTempFileName(tempPath);
 
 	auto writer = vtkSmartPointer<vtkStructuredGridWriter>::New();
 	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+	bool edgeDataExists = false;
+	edgeDataExists = edgeDataExists || (grid2d->vtkIEdgeData()->concreteData()->GetCellData()->GetNumberOfArrays() > 0);
+	edgeDataExists = edgeDataExists || (grid2d->vtkJEdgeData()->concreteData()->GetCellData()->GetNumberOfArrays() > 0);
+	if (edgeDataExists) {
+		InformationDialog::warning(parent, tr("Warning"), tr("VTK files does not support exporting grid attributes defined at edges."), "structured2d_vtk_edge_export");
+	}
+
 	writer->SetInputData(grid2d->vtkConcreteData()->concreteData());
 	writer->SetFileTypeToASCII();
 	writer->SetFileName(iRIC::toStr(tmpFile).c_str());

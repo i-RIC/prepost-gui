@@ -1,14 +1,17 @@
-#include "postzonedatashapeexporter.h"
+#include "../../base/iricmainwindowi.h"
 #include "../../grid/v4grid.h"
+#include "../../project/projectdata.h"
+#include "../../project/projectmainfile.h"
+#include "../postsolutioninfo.h"
 #include "../v4solutiongrid.h"
 #include "../v4postzonedatacontainer.h"
-#include "misc/filesystemfunction.h"
-#include "misc/stringtool.h"
-#include "project/projectdata.h"
-#include "project/projectmainfile.h"
+#include "postzonedatashapeexporter.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <cs/coordinatesystem.h>
+#include <misc/filesystemfunction.h>
+#include <misc/informationdialog.h>
+#include <misc/stringtool.h>
 
 #include <QFileInfo>
 #include <QTextStream>
@@ -225,7 +228,7 @@ QString PostZoneDataShapeExporter::filename(const QString& prefix, int index) co
 	return fname;
 }
 
-bool PostZoneDataShapeExporter::exportToFile(v4PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const
+bool PostZoneDataShapeExporter::exportToFile(v4PostZoneDataContainer* data, const QString& shp, double /*time*/, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectData, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 
@@ -248,8 +251,13 @@ bool PostZoneDataShapeExporter::exportToFile(v4PostZoneDataContainer* data, cons
 	QString shx, dbf, prj;
 	getFileNames(shp, &shx, &dbf, &prj);
 
-	ok = exportPrj(prj, pd);
+	ok = exportPrj(prj, projectData);
 	if (! ok) {return false;}
+
+
+	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+														 PostSolutionInfo::tr("shapefiles export calculation result defined at grid nodes."),
+														 "postzonedatashapeexporter_warning");
 
 	return moveFiles(tmpFile.c_str(), shp);
 }

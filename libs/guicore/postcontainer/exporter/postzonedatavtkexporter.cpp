@@ -1,10 +1,14 @@
+#include "../../base/iricmainwindowi.h"
 #include "../../grid/v4grid.h"
+#include "../../project/projectdata.h"
+#include "../postsolutioninfo.h"
 #include "../v4solutiongrid.h"
 #include "../v4postzonedatacontainer.h"
 #include "postzonedatavtkexporter.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <misc/filesystemfunction.h>
+#include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
 #include <QFile>
@@ -32,7 +36,7 @@ QString PostZoneDataVtkExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataVtkExporter::exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
+bool PostZoneDataVtkExporter::exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* projectData, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 	auto ps = data->gridData()->grid()->vtkData()->data();
@@ -59,6 +63,12 @@ bool PostZoneDataVtkExporter::exportToFile(v4PostZoneDataContainer* data, const 
 		QFile::remove(tmpFile.c_str());
 		return false;
 	}
+
+
+	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+														 PostSolutionInfo::tr("VTK files export calculation result defined at grid nodes and cells."),
+														 "postzonedatavtkexporter_warning");
+
 	return true;
 }
 

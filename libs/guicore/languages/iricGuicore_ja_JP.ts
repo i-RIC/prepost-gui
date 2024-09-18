@@ -3533,6 +3533,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution1.cgn failed. There is no calculation result that can be visualized. Do you want to delete result/Solution1.cgn?</source>
         <translation>result/Solution1.cgn からのデータの読み込みに失敗しました。可視化できる計算結果がありません。result/Solution1.cgn を削除しますか?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSVファイルには、格子点、格子セル、格子のエッジで定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>シェープファイルには、格子点で定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpoファイルには、格子点で定義された計算結果のみ出力されます。</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTKファイルには、格子点、格子セルで定義された計算結果のみ出力されます。</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

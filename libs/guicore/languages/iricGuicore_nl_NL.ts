@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>Gegevens uit resultaat/oplossing lezen %1.cgn is mislukt. U kunt het berekeningsresultaat visualiseren in Solution1.cgn naar Solution %2.cgn. Wilt u resultaat/oplossing verwijderen? %1.cgn?</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten, cellen en randen.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>shapefiles exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK-bestanden exporteren berekeningsresultaten die zijn gedefinieerd op rasterknooppunten en cellen.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>

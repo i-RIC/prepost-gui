@@ -2826,6 +2826,22 @@ Do you really want to import this file?</source>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn. Do you want to delete result/Solution%1.cgn?</source>
         <translation>결과/솔루션에서 데이터 읽기 %1.cgn이 실패했습니다. Solution1.cgn에서 계산 결과를 Solution으로 시각화할 수 있습니다. %2.cgn. 결과/솔루션을 삭제하시겠습니까? %1 영어:.cgn?(영어)</translation>
     </message>
+    <message>
+        <source>CSV files export calculation result defined at grid nodes, cells, and edges.</source>
+        <translation>CSV 파일은 그리드 노드, 셀, 모서리에 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>shapefiles export calculation result defined at grid nodes.</source>
+        <translation>셰이프파일은 그리드 노드에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>tpo files export calculation result defined at grid nodes.</source>
+        <translation>tpo 파일은 그리드 노드에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
+    <message>
+        <source>VTK files export calculation result defined at grid nodes and cells.</source>
+        <translation>VTK 파일은 그리드 노드와 셀에서 정의된 계산 결과를 내보냅니다.</translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
