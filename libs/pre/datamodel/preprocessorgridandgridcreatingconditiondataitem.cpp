@@ -256,7 +256,7 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 
 	auto gtItem = gridTypeDataItem();
 	int ier;
-	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem, subPath(), offset(), &ier);
+	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem, subPath(), offset(), true, &ier);
 	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
 	setupGridDataItem(grid);
 	delete grid;

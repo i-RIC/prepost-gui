@@ -158,6 +158,7 @@ public slots:
 
 private slots:
 	void showDisplaySettingDialog();
+	void handleGridChange();
 	void deleteGrid();
 	void openBirdEyeWindow();
 	void launchAttributeGenerator();

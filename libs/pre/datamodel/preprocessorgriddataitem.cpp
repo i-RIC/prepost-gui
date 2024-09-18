@@ -234,15 +234,14 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	int ier;
 	auto tmpPath = subPath();
-	impl->m_grid = v4InputGridIO::load(zone, gridTypeDataItem(), tmpPath, offset(), &ier);
+	impl->m_grid = v4InputGridIO::load(zone, gridTypeDataItem(), tmpPath, offset(), false, &ier);
 	impl->m_grid->setGridDataItem(this);
+	connect(impl->m_grid->grid(), &v4Grid::changed, this, &PreProcessorGridDataItem::handleGridChange);
 
 	if (m_bcGroupDataItem != nullptr) {
 		int ier = m_bcGroupDataItem->loadFromCgnsFile(zone);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
-
-	setDimensionsToAttributes();
 
 	for (auto child : m_childItems) {
 		int ier = child->loadFromCgnsFile();
@@ -438,6 +437,11 @@ void PreProcessorGridDataItem::showDisplaySettingDialog()
 	m_shapeDataItem->showPropertyDialog();
 }
 
+void PreProcessorGridDataItem::handleGridChange()
+{
+	updateSimplifiedGrid();
+}
+
 void PreProcessorGridDataItem::deleteGrid()
 {
 	if (impl->m_grid == nullptr) {return;}
@@ -465,6 +469,7 @@ bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid)
 	delete impl->m_grid;
 	impl->m_grid = newGrid;
 	impl->m_grid->setGridDataItem(this);
+	connect(impl->m_grid->grid(), &v4Grid::changed, this, &PreProcessorGridDataItem::handleGridChange);
 
 	setDimensionsToAttributes();
 

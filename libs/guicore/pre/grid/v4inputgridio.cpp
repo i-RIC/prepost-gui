@@ -20,7 +20,7 @@
 
 #include <QPointF>
 
-v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, const QPointF& offset, int* ier)
+v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, const QPointF& offset, bool noDimension, int* ier)
 {
 	v4Grid* grid = nullptr;
 	if (zone.type() == iRICLib::H5CgnsZone::Type::Unstructured) {
@@ -47,8 +47,9 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGr
 
 	for (auto att : inputGrid->attributes()) {
 		auto gItem = gdTop->groupDataItem(att->name());
-		auto dims = gItem->dimensions();
-		att->setDimensions(dims);
+		if (! noDimension) {
+			att->setDimensions(gItem->dimensions());
+		}
 		att->setTemporaryDir(tmpPath);
 		*ier = att->loadFromCgnsFile(*zoneAtts);
 		if (*ier != IRIC_NO_ERROR) {delete inputGrid; return nullptr;}
