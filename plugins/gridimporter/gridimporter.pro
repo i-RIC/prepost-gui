@@ -9,7 +9,6 @@ CONFIG += ordered
 SUBDIRS = \
 	structured2dgridgdalimporter \
 	structured2dgridnayscsvimporter \
-	structured2dgridnaysgridimporter \
 	structured2dgridvtkimporter \
 	unstructured2dgridsewerimporter \
 	unstructured2dgridtriangleimporter \
