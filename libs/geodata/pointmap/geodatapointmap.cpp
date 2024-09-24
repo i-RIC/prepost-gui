@@ -732,7 +732,7 @@ void GeoDataPointmap::removeTrianglesWithLongEdgeStart()
 			remeshTINS();
 		}
 		m_representation = GeoDataPointmapRepresentationDialog::Wireframe;
-		updateActorSettings();
+		updateActorSetting();
 	}
 	m_longEdgeRemover = new TrianglesWithLongEdgeRemover(this);
 	*/
