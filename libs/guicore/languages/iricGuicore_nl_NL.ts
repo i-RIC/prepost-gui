@@ -2004,7 +2004,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bewerking</translation>
+        <translation type="vanished">Bewerking</translation>
     </message>
 </context>
 <context>
@@ -2081,6 +2081,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Enabled</source>
         <translation>Ingeschakeld</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetComplexButton</name>
+    <message>
+        <source>Edit...</source>
+        <translation>Bewerking...</translation>
     </message>
 </context>
 <context>

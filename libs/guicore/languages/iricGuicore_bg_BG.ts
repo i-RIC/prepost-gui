@@ -2004,7 +2004,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>редактиране</translation>
+        <translation type="vanished">редактиране</translation>
     </message>
 </context>
 <context>
@@ -2081,6 +2081,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Enabled</source>
         <translation>Активирано</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetComplexButton</name>
+    <message>
+        <source>Edit...</source>
+        <translation>Редактиране...</translation>
     </message>
 </context>
 <context>

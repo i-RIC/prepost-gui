@@ -2002,7 +2002,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>编辑</translation>
+        <translation type="vanished">编辑</translation>
     </message>
 </context>
 <context>
@@ -2079,6 +2079,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Enabled</source>
         <translation>启用</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetComplexButton</name>
+    <message>
+        <source>Edit...</source>
+        <translation>编辑...</translation>
     </message>
 </context>
 <context>
