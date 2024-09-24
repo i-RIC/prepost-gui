@@ -132,13 +132,13 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongroupjfacemappert_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
            private/geodatapolygongrouppolygon_impl.h \
-           private/geodatapolygongrouppolygon_triangulatori.h \
-           private/geodatapolygongrouppolygon_triangulatortriangle.h \
-           private/geodatapolygongrouppolygon_triangulatorvtk.h \
            private/geodatapolygongroupproxy_displaysetting.h \
            private/geodatapolygongroupproxy_displaysettingwidget.h \
            private/geodatapolygongroupproxy_impl.h \
-           public/geodatapolygongroup_displaysettingwidget.h
+           public/geodatapolygongroup_displaysettingwidget.h \
+           public/geodatapolygongrouppolygon_triangulatori.h \
+           public/geodatapolygongrouppolygon_triangulatortriangle.h \
+           public/geodatapolygongrouppolygon_triangulatorvtk.h
 FORMS += private/geodatapolygongroupproxy_displaysettingwidget.ui \
          public/geodatapolygongroup_displaysettingwidget.ui
 SOURCES += geodatapolygongroup.cpp \
@@ -153,12 +153,12 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupshpimporter.cpp \
            private/geodatapolygongroup_displaysetting.cpp \
            private/geodatapolygongroup_impl.cpp \
-           private/geodatapolygongrouppolygon_triangulatortriangle.cpp \
-           private/geodatapolygongrouppolygon_triangulatorvtk.cpp \
            private/geodatapolygongroupproxy_displaysetting.cpp \
            private/geodatapolygongroupproxy_displaysettingwidget.cpp \
            private/geodatapolygongroupproxy_impl.cpp \
-           public/geodatapolygongroup_displaysettingwidget.cpp
+           public/geodatapolygongroup_displaysettingwidget.cpp \
+           public/geodatapolygongrouppolygon_triangulatortriangle.cpp \
+           public/geodatapolygongrouppolygon_triangulatorvtk.cpp
 TRANSLATIONS += languages/iricGdPolygonGroup_ar_EG.ts \
                 languages/iricGdPolygonGroup_bg_BG.ts \
                 languages/iricGdPolygonGroup_bs_BA.ts \

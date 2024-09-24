@@ -46,7 +46,7 @@ namespace {
 
 std::string VALUE = "value";
 
-GeoDataCreator* getPolygonGroupCreator(PreProcessorGeoDataDataItemI* geoData, SolverDefinitionGridAttribute* att)
+GeoDataCreator* getPolygonGroupCreator(SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
 	auto creators = factory.compatibleCreators(att);
@@ -139,14 +139,14 @@ void GeoDataPolygonGroup::updateVtkObjects()
 		}
 		auto lineEdges = pol->lineEdges();
 		vtkIdType pts[3];
-		for (int i = 0; i < lineEdges.size() / 2; ++i) {
+		for (int i = 0; i < static_cast<int> (lineEdges.size()) / 2; ++i) {
 			pts[0] = lineEdges.at(i * 2) + offset;
 			pts[1] = lineEdges.at(i * 2 + 1) + offset;
 			edges->InsertNextCell(2, pts);
 			edgeValues->InsertNextValue(v);
 		}
 		auto cells = pol->triangleCells();
-		for (int i = 0; i < cells.size() / 3; ++i) {
+		for (int i = 0; i < static_cast<int> (cells.size()) / 3; ++i) {
 			pts[0] = cells.at(i * 3) + offset;
 			pts[1] = cells.at(i * 3 + 1) + offset;
 			pts[2] = cells.at(i * 3 + 2) + offset;
@@ -195,7 +195,7 @@ void GeoDataPolygonGroup::updateSelectedDataVtkObjects()
 			pointValues->InsertNextValue(v);
 		}
 		auto lineEdges = pol->lineEdges();
-		for (int i = 0; i < lineEdges.size() / 2; ++i) {
+		for (int i = 0; i < static_cast<int> (lineEdges.size()) / 2; ++i) {
 			pts[0] = lineEdges.at(i * 2) + offset;
 			pts[1] = lineEdges.at(i * 2 + 1) + offset;
 			edges->InsertNextCell(2, pts);
@@ -279,7 +279,7 @@ QString GeoDataPolygonGroup::captionForData(int number)
 GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeoDataDataItemI *d)
 {
 	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(d->parent());
-	return dynamic_cast<GeoDataPolyDataGroup*> (getPolygonGroupCreator(d, gItem->condition())->create(d, gItem->condition()));
+	return dynamic_cast<GeoDataPolyDataGroup*> (getPolygonGroupCreator(gItem->condition())->create(d, gItem->condition()));
 }
 
 void GeoDataPolygonGroup::setupMenu()
@@ -351,7 +351,7 @@ void GeoDataPolygonGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 GeoDataPolyDataGroupPolyData* GeoDataPolygonGroup::createNewData()
 {
-	return new GeoDataPolygonGroupPolygon(this);
+	return new GeoDataPolygonGroupPolygon(this, impl->m_triangle, impl->m_vtk);
 }
 
 GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()

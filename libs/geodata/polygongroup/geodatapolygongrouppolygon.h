@@ -24,9 +24,13 @@ class QVariant;
 class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroupPolygon : public GeoDataPolyDataGroupPolyDataWithBoundingRect
 {
 public:
-	GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group);
-	GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group);
-	GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group);
+	class TriangulatorI;
+	class TriangulatorTriangle;
+	class TriangulatorVtk;
+
+	GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk);
+	GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk);
+	GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk);
 	~GeoDataPolygonGroupPolygon();
 
 	bool isInside(const QPointF& point) const;
@@ -53,11 +57,6 @@ private:
 
 	class Impl;
 	Impl* impl;
-
-	class TriangulatorI;
-	class TriangulatorGeos;
-	class TriangulatorTriangle;
-	class TriangulatorVtk;
 };
 
 #ifdef _DEBUG

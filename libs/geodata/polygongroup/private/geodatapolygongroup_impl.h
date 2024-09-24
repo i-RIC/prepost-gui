@@ -2,6 +2,7 @@
 #define GEODATAPOLYGONGROUP_IMPL_H
 
 #include "../geodatapolygongroup.h"
+#include "../geodatapolygongrouppolygon.h"
 #include "geodatapolygongroup_displaysetting.h"
 
 class GeoDataPolygon;
@@ -37,6 +38,9 @@ public:
 	GeoDataPolygonGroup* m_group;
 
 	DisplaySetting m_displaySetting;
+
+	GeoDataPolygonGroupPolygon::TriangulatorTriangle* m_triangle;
+	GeoDataPolygonGroupPolygon::TriangulatorVtk* m_vtk;
 };
 
 #endif // GEODATAPOLYGONGROUP_IMPL_H
