@@ -9,6 +9,7 @@ GridAttributeNodeSetting::GridAttributeNodeSetting() :
 	renderMode {"renderMode", RenderMode::Paint},
 	lineWidth {"lineWidth", 5},
 	pointSize {"pointSize", 5},
+	stringSetting {},
 	opacity {}
 {
 	opacity = 50;

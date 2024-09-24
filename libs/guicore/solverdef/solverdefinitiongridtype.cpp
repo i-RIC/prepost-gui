@@ -10,6 +10,7 @@
 #include "solverdefinitiongridattributeintegeroption.h"
 #include "solverdefinitiongridattributereal.h"
 #include "solverdefinitiongridattributerealoption.h"
+#include "solverdefinitiongridattributestring.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridoutput.h"
 #include "solverdefinitiongridoutputoption.h"
@@ -170,6 +171,8 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 					} else {
 						c = new SolverDefinitionGridAttributeReal(itemElem, solverDef, pos, false, order);
 					}
+				} else if (defElem.attribute("valueType") == "string") {
+					c = new SolverDefinitionGridAttributeString(itemElem, solverDef, pos, false, order);
 				}
 				if (c != nullptr) {
 					m_gridAttributes.push_back(c);

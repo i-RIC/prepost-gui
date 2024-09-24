@@ -351,6 +351,7 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridattributereal.h \
            solverdef/solverdefinitiongridattributerealdimension.h \
            solverdef/solverdefinitiongridattributerealoption.h \
+           solverdef/solverdefinitiongridattributestring.h \
            solverdef/solverdefinitiongridattributet.h \
            solverdef/solverdefinitiongridcomplexattribute.h \
            solverdef/solverdefinitiongridoutput.h \
@@ -474,6 +475,7 @@ HEADERS += guicore_global.h \
            pre/geodatabackground/geodatabackgroundjfacemappert.h \
            pre/geodatabackground/geodatabackgroundnodemappert.h \
            pre/geodatabackground/geodatabackgroundrealcreator.h \
+           pre/geodatabackground/geodatabackgroundstringcreator.h \
            pre/grid/gridexporteri.h \
            pre/grid/gridimporteri.h \
            pre/grid/gridinternalexporter.h \
@@ -624,6 +626,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/complex/gridcomplexattributeeditwidget.h \
            pre/gridcond/container/gridattributeintegercontainer.h \
            pre/gridcond/container/gridattributerealcontainer.h \
+           pre/gridcond/container/gridattributestringcontainer.h \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.h \
            pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.h \
            pre/gridcond/editwidget/gridattributeintegereditwidget.h \
@@ -632,9 +635,11 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           pre/gridcond/editwidget/gridattributestringeditwidget.h \
            pre/gridcond/stringconverter/gridattributestringconverterenumerate.h \
            pre/gridcond/stringconverter/gridattributestringconverterinteger.h \
            pre/gridcond/stringconverter/gridattributestringconverterreal.h \
+           pre/gridcond/stringconverter/gridattributestringconverterstring.h \
            pre/hydraulicdata/private/hydraulicdata_impl.h \
            pre/hydraulicdata/private/hydraulicdatacreator_impl.h \
            pre/hydraulicdata/private/hydraulicdataexporter_impl.h \
@@ -927,6 +932,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            solverdef/solverdefinitiongridattributereal.cpp \
            solverdef/solverdefinitiongridattributerealdimension.cpp \
            solverdef/solverdefinitiongridattributerealoption.cpp \
+           solverdef/solverdefinitiongridattributestring.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridoutput.cpp \
            solverdef/solverdefinitiongridoutputoption.cpp \
@@ -1020,6 +1026,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/geodatabackground/geodatabackgroundeditdialog.cpp \
            pre/geodatabackground/geodatabackgroundintegercreator.cpp \
            pre/geodatabackground/geodatabackgroundrealcreator.cpp \
+           pre/geodatabackground/geodatabackgroundstringcreator.cpp \
            pre/grid/gridinternalexporter.cpp \
            pre/grid/gridinternalimporter.cpp \
            pre/grid/v4inputgrid.cpp \
@@ -1112,6 +1119,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/gridcond/complex/gridcomplexattributeeditwidget.cpp \
            pre/gridcond/container/gridattributeintegercontainer.cpp \
            pre/gridcond/container/gridattributerealcontainer.cpp \
+           pre/gridcond/container/gridattributestringcontainer.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp \
            pre/gridcond/editwidget/gridattributeintegereditwidget.cpp \
@@ -1120,9 +1128,11 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/gridcond/editwidget/gridattributerealeditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
+           pre/gridcond/editwidget/gridattributestringeditwidget.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterenumerate.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterinteger.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterreal.cpp \
+           pre/gridcond/stringconverter/gridattributestringconverterstring.cpp \
            project/inputcond/private/inputconditioncgnsfile.cpp \
            project/inputcond/private/inputconditioncgnsfileselectdialog.cpp \
            project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \

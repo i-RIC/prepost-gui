@@ -6,9 +6,12 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowgridattributenodedataitem_propertydialog.h"
 
+#include <guibase/vtktextpropertysettingwidget.h>
 #include <guibase/widget/opacitycontainerwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/gridatt/node/gridattributenodesetting.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
@@ -16,6 +19,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -39,6 +43,19 @@ QDialog* Post2dWindowGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
 	if (compAtt != nullptr && compAtt->isGrouped() == false) {
 		return nullptr;
+	}
+
+	auto strAtt = dynamic_cast<SolverDefinitionGridAttributeString*>(m_condition);
+	if (strAtt != nullptr) {
+		auto setting = &(groupDataItem()->setting().stringSetting);
+		auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(groupDataItem(), p);
+		auto widget = new vtkTextPropertySettingWidget(dialog);
+		widget->setSetting(setting);
+		dialog->setWidget(widget);
+		dialog->setWindowTitle(tr("Grid Node Attribute Display Setting (%1)").arg(condition()->caption()));
+		dialog->resize(200, 80);
+
+		return dialog;
 	}
 
 	auto setting = colorMapSettingContainer();
@@ -143,7 +160,10 @@ SolverDefinitionGridAttribute* Post2dWindowGridAttributeNodeDataItem::condition(
 
 ColorMapSettingContainerI* Post2dWindowGridAttributeNodeDataItem::colorMapSettingContainer() const
 {
-	return gridTypeDataItem()->colorMapSetting(m_condition->name())->customSetting;
+	auto cm = gridTypeDataItem()->colorMapSetting(m_condition->name());
+	if (cm == nullptr) {return nullptr;}
+
+	return cm->customSetting;
 }
 
 ColorMapSettingToolBarWidgetController* Post2dWindowGridAttributeNodeDataItem::colorMapSettingToolBarWidgetController() const
@@ -197,13 +217,16 @@ bool Post2dWindowGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 	opacityW->show();
 	toolBar->addWidget(opacityW);
 
-	toolBar->addSeparator();
+	auto cmtbw = m_colorMapToolBarWidgetController;
+	if (cmtbw != nullptr) {
+		toolBar->addSeparator();
 
-	auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
-	cmwContainer->setParent(toolBar);
-	cmwContainer->show();
-	toolBar->addWidget(cmwContainer);
-	cmwContainer->setWidget(m_colorMapToolBarWidgetController->widget());
+		auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
+		cmwContainer->setParent(toolBar);
+		cmwContainer->show();
+		toolBar->addWidget(cmwContainer);
+		cmwContainer->setWidget(cmtbw->widget());
+	}
 
 	v4InputGrid* grid = groupDataItem()->gridDataItem()->inputGrid();
 	auto cont = grid->attribute(condition()->name());

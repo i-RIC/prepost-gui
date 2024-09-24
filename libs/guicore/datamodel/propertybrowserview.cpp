@@ -6,25 +6,6 @@
 #include <QSettings>
 #include <QVector2D>
 
-namespace {
-
-QString valueString(const QVariant& value, int decimals)
-{
-	bool ok;
-	double v = value.toDouble(&ok);
-	if (ok) {
-		if (std::fabs(v) < 1.0E-6) {
-			return QString("%1").arg(v, 0, 'g', 10);
-		} else {
-			return QString("%1").arg(v, 0, 'f', decimals);
-		}
-	} else {
-		return value.toString();
-	}
-}
-
-} // namespace
-
 PropertyBrowserView::PropertyBrowserView(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::PropertyBrowserView)
@@ -238,7 +219,7 @@ void PropertyBrowserView::updateAttributes(const QList<PropertyBrowserAttribute>
 		table->insertRow(index);
 		QTableWidgetItem* labelItem = new QTableWidgetItem(a.name);
 		table->setItem(index, 0, labelItem);
-		QTableWidgetItem* valueItem = new QTableWidgetItem(valueString(a.value, decimals));
+		QTableWidgetItem* valueItem = new QTableWidgetItem(a.valueString(decimals));
 		table->setItem(index, 1, valueItem);
 		table->setRowHeight(index, ROWHEIGHT);
 		++ index;

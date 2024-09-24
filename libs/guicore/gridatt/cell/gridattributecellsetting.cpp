@@ -7,6 +7,7 @@
 GridAttributeCellSetting::GridAttributeCellSetting() :
 	CompositeContainer({&lineWidth, &opacity}),
 	lineWidth {"lineWidth", 5},
+	stringSetting {},
 	opacity {}
 {
 	opacity = 50;

@@ -7,6 +7,8 @@
 GridAttributeRealEditWidget::GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
 	GridAttributeEditWidgetT<double, vtkDoubleArray>(parent, cond)
 {
+	m_value = 0;
+
 	m_widget = new RealNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
 	l->setMargin(0);

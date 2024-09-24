@@ -24,9 +24,11 @@
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributestringcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroption.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -34,9 +36,13 @@
 #include <misc/qwidgetcontainer.h>
 #include <misc/xmlsupport.h>
 
+#include <vtkCellCenters.h>
+#include <vtkLabeledDataMapper.h>
+
 Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl::Impl(Post2dWindowGridAttributeAbstractCellGroupDataItem* item) :
 	m_target {},
 	m_actor {vtkActor::New()},
+	m_stringActor {vtkActor2D::New()},
 	m_nameMap {},
 	m_showAttributeBrowserAction {new QAction(Post2dWindowGridAttributeAbstractCellGroupDataItem::tr("Show Attribute Browser"), item)},
 	m_attributeBrowserFixed {false},
@@ -49,6 +55,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl::Impl(Post2dWindowGridA
 Post2dWindowGridAttributeAbstractCellGroupDataItem::Impl::~Impl()
 {
 	m_actor->Delete();
+	m_stringActor->Delete();
 }
 
 Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbstractCellGroupDataItem(const QString& caption, Post2dWindowDataItem* p) :
@@ -62,6 +69,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 	impl->m_actor->GetProperty()->SetLighting(false);
 	impl->m_actor->GetProperty()->SetLineWidth(5);
 	renderer()->AddActor(impl->m_actor);
+	renderer()->AddActor2D(impl->m_stringActor);
 
 	impl->m_opacityWidget->setContainer(&impl->m_setting.opacity);
 	impl->m_opacityWidget->hide();
@@ -76,6 +84,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 Post2dWindowGridAttributeAbstractCellGroupDataItem::~Post2dWindowGridAttributeAbstractCellGroupDataItem()
 {
 	renderer()->RemoveActor(impl->m_actor);
+	renderer()->RemoveActor2D(impl->m_stringActor);
 }
 
 void Post2dWindowGridAttributeAbstractCellGroupDataItem::setupChildren()
@@ -125,33 +134,51 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 {
 	impl->m_opacityWidget->setDisabled(true);
 	impl->m_actor->VisibilityOff();
+	impl->m_stringActor->VisibilityOff();
 
 	// make all the items invisible
 	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 	v4InputGrid* g = gridDataItem()->inputGrid();
 	if (g == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
 	if (impl->m_target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
+
 	impl->m_opacityWidget->setEnabled(true);
-
-	auto cs = gridTypeDataItem()->colorMapSetting(impl->m_target);
-
 	auto filteredGrid = filteredData();
-	vtkCellData* data = filteredGrid->GetCellData();
-	data->SetActiveScalars(impl->m_target.c_str());
 
-	auto mapper = cs->customSetting->buildCellDataMapper(filteredGrid, false);
-	impl->m_actor->SetMapper(mapper);
-	mapper->Delete();
+	auto att = cellDataItem(impl->m_target)->condition();
+	auto stringAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (att);
+	if (stringAtt != nullptr) {
+		auto mapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+		impl->m_setting.stringSetting.applySetting(mapper->GetLabelTextProperty());
+		auto cc = vtkSmartPointer<vtkCellCenters>::New();
+		cc->SetInputData(filteredGrid);
+		mapper->SetInputConnection(cc->GetOutputPort());
+		mapper->SetLabelModeToLabelFieldData();
+		mapper->SetFieldDataName(impl->m_target.c_str());
 
-	impl->m_setting.apply(impl->m_actor, dataModel()->graphicsView());
+		impl->m_stringActor->SetMapper(mapper);
+		m_actor2DCollection->AddItem(impl->m_stringActor);
+	} else {
+		// integer or real
+		auto cs = gridTypeDataItem()->colorMapSetting(impl->m_target);
 
-	m_actorCollection->AddItem(impl->m_actor);
+		vtkCellData* data = filteredGrid->GetCellData();
+		data->SetActiveScalars(impl->m_target.c_str());
+
+		auto mapper = cs->customSetting->buildCellDataMapper(filteredGrid, false);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+
+		impl->m_setting.apply(impl->m_actor, dataModel()->graphicsView());
+
+		m_actorCollection->AddItem(impl->m_actor);
+	}
 	updateVisibilityWithoutRendering();
 }
 
@@ -314,6 +341,7 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 
 		auto iAtt = dynamic_cast<GridAttributeIntegerContainer*>(att);
 		auto rAtt = dynamic_cast<GridAttributeRealContainer*>(att);
+		auto sAtt = dynamic_cast<GridAttributeStringContainer*>(att);
 		auto cAtt = dynamic_cast<GridComplexAttributeContainer*>(att);
 
 		if (iAtt != nullptr) {
@@ -327,6 +355,9 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 			}
 		} else if (rAtt != nullptr) {
 			PropertyBrowserAttribute att(rAtt->gridAttribute()->caption(), rAtt->value(cellid));
+			atts.append(att);
+		} else if (sAtt!= nullptr) {
+			PropertyBrowserAttribute att(sAtt->gridAttribute()->caption(), QString(sAtt->value(cellid).c_str()));
 			atts.append(att);
 		} else if (cAtt != nullptr) {
 			auto group1 = geoTopItem->preGeoDataTopDataItem()->groupDataItem(cAtt->name());

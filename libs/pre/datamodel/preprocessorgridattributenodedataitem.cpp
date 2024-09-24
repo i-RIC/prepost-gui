@@ -9,10 +9,13 @@
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktextpropertysettingwidget.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/gridatt/node/gridattributenodesetting.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
@@ -27,6 +30,7 @@
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditdialog.h>
+#include <guicore/pre/gridcond/container/gridattributestringcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -34,6 +38,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
@@ -92,6 +97,19 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
 	if (compAtt != nullptr && compAtt->isGrouped() == false) {
 		return nullptr;
+	}
+
+	auto strAtt = dynamic_cast<SolverDefinitionGridAttributeString*> (m_condition);
+	if (strAtt != nullptr) {
+		auto setting = &(groupDataItem()->setting().stringSetting);
+		auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(groupDataItem(), p);
+		auto widget = new vtkTextPropertySettingWidget(dialog);
+		widget->setSetting(setting);
+		dialog->setWidget(widget);
+		dialog->setWindowTitle(tr("Grid Node Attribute Display Setting (%1)").arg(condition()->caption()));
+		dialog->resize(200, 80);
+
+		return dialog;
 	}
 
 	auto setting = colorMapSettingContainer();
@@ -196,6 +214,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		imgCtrl->handleMouseReleaseEvent(this, event, v);
 	}
 	auto gItem = gridDataItem();
+	auto att = gItem->grid()->attribute(m_condition->name());
 
 	static QMenu* menu = nullptr;
 	if (event->button() == Qt::LeftButton) {
@@ -215,7 +234,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		auto ccond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
 		if (ccond != nullptr) {groupedComplex = ccond->isGrouped();}
 
-		if (! m_condition->isOption() && ! groupedComplex) {
+		if (! m_condition->isOption() && ! groupedComplex && (dynamic_cast<GridAttributeStringContainer*> (att) == nullptr)) {
 			menu->addAction(m_editDifferenceAction);
 			m_editDifferenceAction->setEnabled(vertexSelected);
 			menu->addAction(m_editRatioAction);
@@ -522,13 +541,16 @@ bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 	opacityW->show();
 	toolBar->addWidget(opacityW);
 
-	toolBar->addSeparator();
+	auto cmtbw = m_colorMapToolBarWidgetController;
+	if (cmtbw != nullptr) {
+		toolBar->addSeparator();
 
-	auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
-	cmwContainer->setParent(toolBar);
-	cmwContainer->show();
-	toolBar->addWidget(cmwContainer);
-	cmwContainer->setWidget(m_colorMapToolBarWidgetController->widget());
+		auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
+		cmwContainer->setParent(toolBar);
+		cmwContainer->show();
+		toolBar->addWidget(cmwContainer);
+		cmwContainer->setWidget(cmtbw->widget());
+	}
 
 	v4InputGrid* grid = groupDataItem()->gridDataItem()->grid();
 	auto cont = grid->attribute(condition()->name());

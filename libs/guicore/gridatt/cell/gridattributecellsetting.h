@@ -3,6 +3,7 @@
 
 #include "../../guicore_global.h"
 
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/intcontainer.h>
 #include <misc/opacitycontainer.h>
@@ -21,6 +22,7 @@ public:
 	void apply(vtkActor* actor, VTKGraphicsView* view);
 
 	IntContainer lineWidth;
+	vtkTextPropertySettingContainer stringSetting;
 	OpacityContainer opacity;
 };
 

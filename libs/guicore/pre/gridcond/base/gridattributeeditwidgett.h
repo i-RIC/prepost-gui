@@ -22,7 +22,7 @@ public:
 	void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem) override;
 
 protected:
-	mutable V m_value {0};
+	mutable V m_value {};
 };
 
 #include "private/gridattributeeditwidgett_detail.h"

@@ -6,6 +6,8 @@
 GridAttributeIntegerOptionEditWidget::GridAttributeIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
 	GridAttributeEditWidgetT<int, vtkIntArray>(parent, cond)
 {
+	m_value = 0;
+
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 	QVBoxLayout* l = new QVBoxLayout();

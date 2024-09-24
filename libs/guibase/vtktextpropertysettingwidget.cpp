@@ -3,8 +3,12 @@
 #include "vtktextpropertysettingcontainer.h"
 #include "vtktextpropertysettingwidget.h"
 
+#include <misc/qundocommandhelper.h>
+#include <misc/valuemodifycommandt.h>
+
 vtkTextPropertySettingWidget::vtkTextPropertySettingWidget(QWidget* parent) :
-	QWidget(parent),
+	ModifyCommandWidget(parent),
+	m_settingP {nullptr},
 	ui(new Ui::vtkTextPropertySettingWidget)
 {
 	ui->setupUi(this);
@@ -37,6 +41,19 @@ void vtkTextPropertySettingWidget::setSetting(const vtkTextPropertySettingContai
 	ui->boldButton->setChecked(setting.isBold);
 	ui->italicButton->setChecked(setting.isItalic);
 	ui->shadowButton->setChecked(setting.isShadow);
+}
+
+void vtkTextPropertySettingWidget::setSetting(vtkTextPropertySettingContainer* setting)
+{
+	m_settingP = setting;
+
+	setSetting(*setting);
+}
+
+QUndoCommand* vtkTextPropertySettingWidget::createModifyCommand(bool apply)
+{
+	return new ValueModifyCommmand<vtkTextPropertySettingContainer>(
+				iRIC::generateCommandId("vtkTextPropertySettingWidget"), apply, setting(), m_settingP);
 }
 
 void vtkTextPropertySettingWidget::disableSize()

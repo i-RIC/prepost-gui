@@ -5,7 +5,7 @@
 
 #include <QUndoCommand>
 
-#include <vtkDataArray.h>
+#include <vtkAbstractArray.h>
 #include <vtkDataSetAttributes.h>
 #include <vtkSmartPointer.h>
 
@@ -16,16 +16,16 @@ class PreProcessorGridDataItemI;
 class GUICOREDLL_EXPORT GridAttributeEditCommand :  public QUndoCommand
 {
 public:
-	GridAttributeEditCommand(const std::string& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem);
+	GridAttributeEditCommand(const std::string& name, vtkAbstractArray* newValues, vtkAbstractArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem);
 
 	void redo() override;
 	void undo() override;
 
 private:
-	void copyValues(vtkDataArray* data, bool modified);
+	void copyValues(vtkAbstractArray* data, bool modified);
 
-	vtkSmartPointer<vtkDataArray> m_newValues;
-	vtkSmartPointer<vtkDataArray> m_oldValues;
+	vtkSmartPointer<vtkAbstractArray> m_newValues;
+	vtkSmartPointer<vtkAbstractArray> m_oldValues;
 
 	bool m_oldCustomModified;
 	vtkSmartPointer<vtkDataSetAttributes> m_attributes;
