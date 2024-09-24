@@ -38,6 +38,8 @@ private:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
+
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	QDialog* propertyDialog(QWidget* p) override;
 	void updateVisibility(bool visible) override;

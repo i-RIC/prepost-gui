@@ -63,7 +63,7 @@ public:
 
 	vtkPolyData* extractEdgeData(vtkIdType i, vtkIdType j) const;
 
-	void updateCellIndex() override;
+	void discardCellIndex() override;
 	void updateFilteredData(double xMin, double xMax, double yMin, double yMax) override;
 
 	v4GridStructureCheckerI* structureChecker() const override;

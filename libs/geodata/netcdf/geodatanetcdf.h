@@ -113,7 +113,6 @@ public slots:
 private:
 	void setupActors() override;
 	void updateShapeData();
-	void updateActorSettings();
 	void updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax);
 	void updateRegionPolyData();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

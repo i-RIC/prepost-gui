@@ -39,6 +39,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;

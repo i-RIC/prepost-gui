@@ -4,27 +4,11 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 
-#include <vtkStaticPointLocator.h>
-#include <vtkStaticPointLocator2D.h>
+#include <vtkAbstractPointLocator.h>
 
 vtkPointSetExtended::vtkPointSetExtended(vtkPointSet* data, bool twoDimensional, bool geosIndex) :
-	impl {new Impl {data, this}}
-{
-	if (twoDimensional) {
-		impl->m_pointLocator = vtkStaticPointLocator2D::New();
-	} else {
-		impl->m_pointLocator = vtkStaticPointLocator::New();
-	}
-	impl->m_pointLocator->SetDataSet(data);
-
-	if (geosIndex) {
-		impl->rebuildCellIndex();
-	}
-
-	if (data->GetNumberOfPoints() > 0) {
-		impl->m_pointLocator->BuildLocator();
-	}
-}
+	impl {new Impl {twoDimensional, geosIndex, data, this}}
+{}
 
 vtkPointSetExtended::~vtkPointSetExtended()
 {
@@ -60,11 +44,15 @@ bool vtkPointSetExtended::cellScalarValueExists() const
 
 vtkIdType vtkPointSetExtended::findClosestPoint(double x, double y, double z) const
 {
+	impl->buildPointLocatorIfNotExists();
+
 	return impl->m_pointLocator->FindClosestPoint(x, y, z);
 }
 
 vtkIdType vtkPointSetExtended::findClosestPointWithinRadius(double radius, double x, double y, double z) const
 {
+	impl->buildPointLocatorIfNotExists();
+
 	double p[3] = {x, y, z};
 	double dist2;
 
@@ -73,6 +61,8 @@ vtkIdType vtkPointSetExtended::findClosestPointWithinRadius(double radius, doubl
 
 vtkIdType vtkPointSetExtended::findCell(double x, double y, double z, double radius, double* weights)
 {
+	impl->buildCellIndexIfNotExists();
+
 	if (impl->m_cellIndex != nullptr) {
 		return impl->m_cellIndex->findCell(x, y, radius, weights);
 	} else {
@@ -89,14 +79,14 @@ vtkIdType vtkPointSetExtended::findCell(double x, double y, double z, double rad
 
 vtkAbstractPointLocator* vtkPointSetExtended::pointLocator() const
 {
+	impl->buildPointLocatorIfNotExists();
+
 	return impl->m_pointLocator;
 }
 
-void vtkPointSetExtended::updateCellIndex()
+void vtkPointSetExtended::discardCellIndex()
 {
-	if (impl->m_cellIndex == nullptr) {return;}
-
-	impl->rebuildCellIndex();
+	impl->deleteCellIndex();
 }
 
 void vtkPointSetExtended::updateValueRangeSet()

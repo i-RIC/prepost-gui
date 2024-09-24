@@ -22,7 +22,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::undo()
 
 int Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::id() const
 {
-	return iRIC::generateCommandId("Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingsCommand");
+	return iRIC::generateCommandId("Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand");
 }
 
 bool Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::mergeWith(const QUndoCommand* other)

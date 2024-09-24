@@ -9,10 +9,16 @@ class vtkPointSetGeos2dIndex;
 class vtkPointSetExtended::Impl
 {
 public:
-	Impl(vtkPointSet* data, vtkPointSetExtended* p);
+	Impl(bool twoDimensional, bool geosIndex, vtkPointSet* data, vtkPointSetExtended* p);
 	~Impl();
 
-	void rebuildCellIndex();
+	void deleteCellIndex();
+	void buildCellIndexIfNotExists();
+
+	void buildPointLocatorIfNotExists();
+
+	bool m_twoDimensional;
+	bool m_geosIndex;
 
 	vtkPointSet* m_data;
 	vtkAbstractPointLocator* m_pointLocator;

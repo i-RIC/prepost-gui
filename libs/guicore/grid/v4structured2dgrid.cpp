@@ -261,11 +261,11 @@ vtkPolyData* v4Structured2dGrid::extractEdgeData(vtkIdType i, vtkIdType j) const
 	return ret;
 }
 
-void v4Structured2dGrid::updateCellIndex()
+void v4Structured2dGrid::discardCellIndex()
 {
-	v4Grid::updateCellIndex();
-	impl->m_vtkIEdgeData.updateCellIndex();
-	impl->m_vtkJEdgeData.updateCellIndex();
+	v4Grid::discardCellIndex();
+	impl->m_vtkIEdgeData.discardCellIndex();
+	impl->m_vtkJEdgeData.discardCellIndex();
 }
 
 void v4Structured2dGrid::updateFilteredData(double xMin, double xMax, double yMin, double yMax)

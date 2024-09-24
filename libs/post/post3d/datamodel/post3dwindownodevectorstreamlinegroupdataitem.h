@@ -35,6 +35,7 @@ public:
 	~Post3dWindowNodeVectorStreamlineGroupDataItem() override;
 
 	void updateActorSetting() override;
+	void handleStandardItemChange() override;
 	void update();
 
 public slots:

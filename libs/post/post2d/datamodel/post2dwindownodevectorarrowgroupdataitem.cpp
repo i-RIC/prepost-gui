@@ -134,6 +134,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 
+	if (! isChecked()) {return;}
 	if (m_setting.target == "") {return;}
 
 	auto data = buildFilteredData();
@@ -332,6 +333,12 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post2dWindowDataItem::handleStandardItemChange();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu* menu)

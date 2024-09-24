@@ -91,6 +91,7 @@ const std::string& Post2dWindowNodeScalarGroupDataItem::target() const
 void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
+	if (! isChecked()) {return;}
 
 	auto z = topDataItem()->zoneDataItem();
 	auto cont = z->v4DataContainer();
@@ -248,6 +249,12 @@ void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 	if (event->button() == Qt::LeftButton) {
 		topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 	}
+}
+
+void Post2dWindowNodeScalarGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post2dWindowDataItem::handleStandardItemChange();
 }
 
 bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()

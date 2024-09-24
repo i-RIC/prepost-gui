@@ -37,7 +37,7 @@ public:
 	void applyOffset(const QPointF& point);
 	void pointsModified();
 
-	virtual void updateCellIndex();
+	virtual void discardCellIndex();
 
 	virtual v4GridStructureCheckerI* structureChecker() const;
 
