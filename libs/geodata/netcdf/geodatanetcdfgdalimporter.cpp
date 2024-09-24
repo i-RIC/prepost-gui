@@ -412,12 +412,13 @@ void GeoDataNetcdfGdalImporter::setupCoordinates(GeoDataNetcdf* data, GDALRaster
 	}
 
 	data->impl->m_lonValues.clear();
+	bool isLonLat = m_coordinateSystem->isLongLat();
 	for (int j = 0; j < data->impl->m_yValues.size(); ++j) {
 		double y = data->impl->m_yValues.at(j);
 		for (int i = 0; i < data->impl->m_xValues.size(); ++i) {
 			double x = data->impl->m_xValues.at(i);
 			double lon, lat;
-			if (m_coordinateSystem->isLongLat()) {
+			if (isLonLat) {
 				lon = x;
 				lat = y;
 			} else {
