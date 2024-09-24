@@ -589,9 +589,6 @@ void GeoDataPointmap::updateActorSetting()
 
 		impl->m_pointsManager.setSelectedPointsSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
 	} else {
-
-
-
 		auto actor = impl->m_tinManager.tinActor();
 		actor->GetProperty()->SetRepresentationToSurface();
 		if (impl->m_displaySetting.tinRepresentation.value() == DisplaySetting::TinRepresentation::Points) {
