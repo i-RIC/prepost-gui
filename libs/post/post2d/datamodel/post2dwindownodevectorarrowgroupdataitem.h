@@ -28,6 +28,8 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
+
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void addCustomMenuItems(QMenu* menu) override;

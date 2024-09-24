@@ -89,6 +89,8 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 
 	clearActors();
 
+	if (! isChecked()) {return;}
+
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return;}
 
@@ -102,6 +104,12 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 	setupActors();
 	applyZScale();
 	updateVisibilityWithoutRendering();
+}
+
+void Post3dWindowNodeVectorStreamlineGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::update()

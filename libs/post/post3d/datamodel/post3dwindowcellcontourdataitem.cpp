@@ -37,12 +37,12 @@ void Post3dWindowCellContourDataItem::setSetting(const Post3dWindowCellRangeSett
 	m_isCommandExecuting = true;
 	standardItem()->setCheckState(Qt::Checked);
 	m_isCommandExecuting = false;
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowCellContourDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 Post3dWindowCellContourGroupDataItem* Post3dWindowCellContourDataItem::groupDataItem() const
@@ -57,7 +57,7 @@ void Post3dWindowCellContourDataItem::doLoadFromProjectMainFile(const QDomNode& 
 
 	m_setting.load(node);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowCellContourDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -71,10 +71,11 @@ void Post3dWindowCellContourDataItem::innerUpdateZScale(double scale)
 	m_actor->SetScale(1, 1, scale);
 }
 
-void Post3dWindowCellContourDataItem::updateActorSettings()
+void Post3dWindowCellContourDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
+	if (! isChecked()) {return;}
 
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return;}
@@ -114,6 +115,12 @@ void Post3dWindowCellContourDataItem::mousePressEvent(QMouseEvent* event, VTKGra
 void Post3dWindowCellContourDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	groupDataItem()->mouseReleaseEvent(event, v);
+}
+
+void Post3dWindowCellContourDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
 }
 
 bool Post3dWindowCellContourDataItem::addToolBarButtons(QToolBar* toolBar)

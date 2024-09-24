@@ -23,7 +23,7 @@ public:
 
 private:
 	Post3dWindowCellContourGroupDataItem* groupDataItem() const;
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -35,6 +35,8 @@ private:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
+
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	void updateVisibility(bool visible) override;
 

@@ -152,6 +152,8 @@ QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 
 void Post3dWindowCellContourGroupDataItem::updateActorSetting()
 {
+	if (! isChecked()) {return;}
+
 	m_colorMapSetting.setAutoValueRange(valueRange());
 	m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
 
@@ -239,6 +241,12 @@ void Post3dWindowCellContourGroupDataItem::mousePressEvent(QMouseEvent* event, V
 void Post3dWindowCellContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(this, event, v);
+}
+
+void Post3dWindowCellContourGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
 }
 
 void Post3dWindowCellContourGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

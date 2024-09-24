@@ -244,6 +244,12 @@ void Post3dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
+void Post3dWindowNodeVectorArrowGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
+}
+
 bool Post3dWindowNodeVectorArrowGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	m_lengthLegendVisibilityWidget->setParent(toolBar);
@@ -300,7 +306,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
 
 void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 {
-	if (m_childItems.size() == 0) {
+	if (! isChecked() || m_childItems.size() == 0) {
 		updateLegendsVisibility();
 		return;
 	}
