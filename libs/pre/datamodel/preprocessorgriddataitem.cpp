@@ -472,7 +472,7 @@ v4InputGrid* PreProcessorGridDataItem::grid() const
 bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid, bool noDimensions)
 {
 	newGrid->grid()->vtkData()->updateValueRangeSet();
-	newGrid->grid()->updateCellIndex();
+	newGrid->grid()->discardCellIndex();
 
 	delete impl->m_grid;
 	impl->m_grid = newGrid;

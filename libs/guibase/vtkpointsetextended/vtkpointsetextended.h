@@ -29,7 +29,7 @@ public:
 
 	vtkAbstractPointLocator* pointLocator() const;
 
-	void updateCellIndex();
+	void discardCellIndex();
 	void updateValueRangeSet();
 	void updatePointValueRange(const std::string& name);
 	void updateCellValueRange(const std::string& name);
