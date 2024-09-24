@@ -436,6 +436,11 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 	dep->check();
 }
 
+void InputConditionWidgetSet::addWidget(const std::string& name, InputConditionWidget* widget)
+{
+	m_widgets.insert(name, widget);
+}
+
 void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode itemNode, const SolverDefinitionTranslator& t)
 {
 	auto itemElem = itemNode.toElement();
