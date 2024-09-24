@@ -6,7 +6,7 @@
 #include "../projectcgnsfile.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondialog.h"
-#include "inputconditionwidgetset.h"
+#include "inputconditionwidgetcomplexbutton.h"
 #include "inputconditionwidgetset.h"
 
 #include "private/inputconditioncgnsfile.h"
@@ -89,19 +89,19 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 		condNode = iRIC::getChildNode(docElement, "GridGeneratingCondition");
 	}
 
+	// setup complexDialogs
+	setupComplexDialogs(condNode, t);
+
 	// setup ContainerSet first.
 	m_containerSet->setup(condNode, def, t);
 	m_containerSetBackup = m_containerSet->clone();
 	// setup WidgetSet.
 	m_widgetSet->setup(condNode, *m_containerSet, def, t);
 
-	// setup complexDialogs
-	setupComplexDialogs(condNode, t);
-
 	// setup PageList.
 	ui->m_pageList->setup(condNode.toElement(), t);
 	// setup PageContainer.
-	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, m_complexDialogOpenButtons, t);
+	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, t);
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
 }
@@ -136,9 +136,9 @@ void InputConditionDialog::setupComplexDialogsRec(const QDomNode& node, const So
 
 			m_complexDialogs.insert({nameStr, dialog});
 
-			auto button = new QPushButton(tr("Edit"), this);
-			connect(button, &QPushButton::clicked, dialog, &GridComplexConditionDialog::exec);
-			m_complexDialogOpenButtons.insert({nameStr, button});
+			auto button = new InputConditionWidgetComplexButton();
+			connect(button, &InputConditionWidgetComplexButton::clicked, dialog, &GridComplexConditionDialog::exec);
+			m_widgetSet->addWidget(nameStr, button);
 		}
 	} else {
 		auto children = elem.childNodes();

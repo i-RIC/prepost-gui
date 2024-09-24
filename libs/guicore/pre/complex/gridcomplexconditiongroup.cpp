@@ -46,9 +46,7 @@ GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& 
 		m_tableLabels.push_back(label);
 	}
 
-	std::unordered_map<std::string, QPushButton*> emptyButtons;
-
-	m_page = new InputConditionPage(elem, &m_widgetSet, emptyButtons, t, nullptr);
+	m_page = new InputConditionPage(elem, &m_widgetSet, t, nullptr);
 }
 
 GridComplexConditionGroup::Impl::~Impl()

@@ -2008,7 +2008,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Editar</translation>
+        <translation type="vanished">Editar</translation>
     </message>
 </context>
 <context>
@@ -2085,6 +2085,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Enabled</source>
         <translation>Habilitado</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetComplexButton</name>
+    <message>
+        <source>Edit...</source>
+        <translation>Editar...</translation>
     </message>
 </context>
 <context>

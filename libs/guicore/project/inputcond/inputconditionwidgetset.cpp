@@ -325,6 +325,9 @@ void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputCondi
 		throw(ErrorMessage("Definition node does not exist!"));
 	}
 	auto w = this->widget(parameterName);
+	if (w == nullptr) {
+		throw(ErrorMessage(QString("Item with name \"%1\" does not exists").arg(parameterName.c_str())));
+	}
 
 	// Search for "Dependency" node.
 	auto depNode = iRIC::getChildNode(defNode, "Dependency");
@@ -431,6 +434,11 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 	w->addDependency(dep);
 	// Initial Check
 	dep->check();
+}
+
+void InputConditionWidgetSet::addWidget(const std::string& name, InputConditionWidget* widget)
+{
+	m_widgets.insert(name, widget);
 }
 
 void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode itemNode, const SolverDefinitionTranslator& t)
