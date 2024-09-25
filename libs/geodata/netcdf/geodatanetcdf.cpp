@@ -568,12 +568,14 @@ void GeoDataNetcdf::updateShapeData()
 		latitude  -= latitudes[calcIndex(xsize - 2, ysize - 2, xsize + 1)];
 		longitudes[calcIndex(xsize, ysize, xsize + 1)] = longitude;
 		latitudes[calcIndex(xsize, ysize, xsize + 1)] = latitude;
+		bool isLonLat = cs->isLongLat();
+
 		for (int j = 0; j < impl->m_yValues.size() + 1; ++j) {
 			for (int i = 0; i < impl->m_xValues.size() + 1; ++i) {
 				double longitude = longitudes[calcIndex(i, j, xsize + 1)];
 				double latitude  = latitudes[calcIndex(i, j, xsize + 1)];
 				double x, y;
-				if (cs->isLongLat()) {
+				if (isLonLat) {
 					x = longitude;
 					y = latitude;
 				} else {
@@ -586,6 +588,8 @@ void GeoDataNetcdf::updateShapeData()
 		m_grid->SetDimensions(static_cast<int> (impl->m_lonValues.size()) + 1, static_cast<int> (impl->m_latValues.size()) + 1, 1);
 		points->Initialize();
 		points->Allocate((impl->m_lonValues.size() + 1) * (impl->m_latValues.size() + 1));
+		bool isLonLat = cs->isLongLat();
+
 		for (int j = 0; j < impl->m_latValues.size() + 1; ++j) {
 			double latitude;
 			if (j == 0) {
@@ -609,7 +613,7 @@ void GeoDataNetcdf::updateShapeData()
 					longitude = (impl->m_lonValues.at(i - 1) + impl->m_lonValues.at(i)) * 0.5;
 				}
 				double x, y;
-				if (cs->isLongLat()) {
+				if (isLonLat) {
 					x = longitude;
 					y = latitude;
 				} else {
