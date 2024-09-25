@@ -1,7 +1,7 @@
 #define REAL double
 #define VOID void
 
-#include "geodatapolygongrouppolygon_impl.h"
+#include "../private/geodatapolygongrouppolygon_impl.h"
 #include "geodatapolygongrouppolygon_triangulatortriangle.h"
 
 #include <triangle/triangle.h>

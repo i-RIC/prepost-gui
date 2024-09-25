@@ -4,6 +4,7 @@
 #include <guicore/pre/geodata/geodataimporter.h>
 
 class CoordinateSystemConverter;
+class GeoDataPolygonGroup;
 
 class GeoDataPolygonGroupCsvImporter : public GeoDataImporter
 {
@@ -20,6 +21,7 @@ public:
 
 private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	static void addNewPolygon(GeoDataPolygonGroup* group, const QString& name, double value, QPolygonF polygon);
 
 	CoordinateSystemConverter* m_converter;
 };

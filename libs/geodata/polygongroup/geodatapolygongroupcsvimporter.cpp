@@ -1,6 +1,7 @@
 #include "geodatapolygongroup.h"
 #include "geodatapolygongroupcsvimporter.h"
 #include "geodatapolygongrouppolygon.h"
+#include "private/geodatapolygongroup_impl.h"
 
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
@@ -16,23 +17,6 @@
 #include <QMessageBox>
 #include <QPolygonF>
 #include <QTextStream>
-
-namespace {
-
-void addNewPolygon(GeoDataPolygonGroup* group, const QString& name, double value, QPolygonF polygon)
-{
-	if (polygon.at(0) != polygon.at(polygon.size() - 1)) {
-		polygon.append(polygon.at(0));
-	}
-
-	std::vector<QPolygonF> holes;
-	auto newLine = new GeoDataPolygonGroupPolygon(polygon, holes, group);
-	newLine->setName(name);
-	newLine->setValue(value);
-	group->addData(newLine);
-}
-
-} // namespace
 
 GeoDataPolygonGroupCsvImporter::GeoDataPolygonGroupCsvImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"csv_polygon_group", tr("CSV file (Polygons)"), creator},
@@ -58,7 +42,7 @@ const QStringList GeoDataPolygonGroupCsvImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int index, QWidget* w)
+bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 
@@ -221,7 +205,7 @@ bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int index, QWidge
 	}
 }
 
-bool GeoDataPolygonGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolygonGroupCsvImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}
@@ -255,4 +239,17 @@ bool GeoDataPolygonGroupCsvImporter::doInit(const QString& filename, const QStri
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
 	return true;
+}
+
+void GeoDataPolygonGroupCsvImporter::addNewPolygon(GeoDataPolygonGroup* group, const QString& name, double value, QPolygonF polygon)
+{
+	if (polygon.at(0) != polygon.at(polygon.size() - 1)) {
+		polygon.append(polygon.at(0));
+	}
+
+	std::vector<QPolygonF> holes;
+	auto newLine = new GeoDataPolygonGroupPolygon(polygon, holes, group, group->impl->m_triangle, group->impl->m_vtk);
+	newLine->setName(name);
+	newLine->setValue(value);
+	group->addData(newLine);
 }

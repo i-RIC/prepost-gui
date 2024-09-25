@@ -121,7 +121,7 @@ std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileN
 		}
 		std::sort(rectVec.begin(), rectVec.end(), RectIndexAreaReverseSorter());
 
-		for (int j = 0; j < rectVec.size(); ++j) {
+		for (int j = 0; j < static_cast<int> (rectVec.size()); ++j) {
 			bool hole = holeVec.at(j);
 			if (hole) {continue;}
 			const RectIndex& ri = rectVec.at(j);
@@ -131,7 +131,7 @@ std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileN
 			info.item = i;
 			info.region = ri.index;
 
-			for (int k = j + 1; k < rectVec.size(); ++k) {
+			for (int k = j + 1; k < static_cast<int> (rectVec.size()); ++k) {
 				const RectIndex& ri2 = rectVec.at(k);
 				QRectF holeRect = ri2.rect;
 				QPolygonF holePolygon = ri2.polygon;
@@ -185,17 +185,17 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 				"- Polygon passes the same point several times");
 
 	QString nameTpl = tr("Polygon%1");
-	for (int i = 0; i < shapeInfos.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (shapeInfos.size()); ++i) {
 		PolygonShapeInfo info = shapeInfos.at(i);
 		SHPObject* shpo = SHPReadObject(shph, info.item);
 		QPolygonF region = readPolygon(shpo, info.region, m_converter);
 		std::vector<QPolygonF> holes;
-		for (int j = 0; j < info.holes.size(); ++j) {
+		for (int j = 0; j < static_cast<int> (info.holes.size()); ++j) {
 			int holeIndex = info.holes.at(j);
 			holes.push_back(readPolygon(shpo, holeIndex, m_converter));
 		}
 		try {
-			auto poly = new GeoDataPolygonGroupPolygon(region, holes, group);
+			auto poly = new GeoDataPolygonGroupPolygon(region, holes, group, group->impl->m_triangle, group->impl->m_vtk);
 			// name
 			QString name = nameTpl.arg(i + 1);
 			if (m_nameSetting == GeoDataPolyDataGroupShpImporterSettingDialog::nsLoadFromDBF) {
