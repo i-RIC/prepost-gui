@@ -209,25 +209,13 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	}
 
 	// modify the geodata values.
-	// TODO fix this to apply to all types og geodata.
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		GeoData* rd = item->geoData();
-		auto polygon = dynamic_cast<GeoDataPolygon*>(rd);
-		if (polygon != nullptr) {
-			int currval = polygon->variantValue().toInt();
-			int newVal = 0;
-			if (currval >= static_cast<int> (valueMap.size())) {
-				newVal = newDefault;
-			} else {
-				newVal = valueMap.at(currval);
-			}
-			polygon->setVariantValue(newVal);
-		}
+		rd->applyValueChangeMap(valueMap);
 	}
 
 	// modify grid attribute values.
-
 	for (auto ccItem : gridTypeDataItem()->conditions()) {
 		v4InputGrid* g = ccItem->gridDataItem()->grid();
 		if (g == nullptr) {continue;}

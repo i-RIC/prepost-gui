@@ -129,6 +129,9 @@ bool GeoData::addToolBarButtons(QToolBar*)
 void GeoData::applyColorMapSetting()
 {}
 
+void GeoData::applyValueChangeMap(const std::vector<int>& /*valueMap*/)
+{}
+
 QMenu* GeoData::menu() const
 {
 	return m_menu;

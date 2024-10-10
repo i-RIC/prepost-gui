@@ -53,6 +53,7 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar *parent) override;
 	void showInitialDialog() override;
+	void applyValueChangeMap(const std::vector<int>& valueMap) override;
 
 	void viewOperationEnded(PreProcessorGraphicsViewI* v) override;
 	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
