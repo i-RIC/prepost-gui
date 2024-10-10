@@ -25,6 +25,8 @@ GridAttributeContainerT<V, DA>::GridAttributeContainerT(v4InputGrid* grid, Solve
 	GridAttributeContainer(grid, cond)
 {
 	addArrayIfNeeded();
+
+	m_dataArray = DA::SafeDownCast(vtkAttributes()->GetAbstractArray(name().c_str()));
 }
 
 template <class V, class DA>
@@ -34,13 +36,13 @@ GridAttributeContainerT<V, DA>::~GridAttributeContainerT()
 template <class V, class DA>
 V GridAttributeContainerT<V, DA>::value(unsigned int index) const
 {
-	return dataArray()->GetValue(index);
+	return m_dataArray->GetValue(index);
 }
 
 template <class V, class DA>
 void GridAttributeContainerT<V, DA>::setValue(unsigned int index, V value)
 {
-	dataArray()->SetValue(index, value);
+	m_dataArray->SetValue(index, value);
 }
 
 template <class V, class DA>
