@@ -459,6 +459,8 @@ void GridComplexConditionDialog::removeItem()
 	}
 
 	int current = ui->listWidget->currentRow();
+	if (current < 0) {return;}
+
 	m_groups.erase(m_groups.begin() + current);
 	m_widgets.erase(m_widgets.begin() + current);
 
