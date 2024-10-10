@@ -251,6 +251,8 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 		if (value != "") {
 			data->GetPointData()->SetActiveScalars(value.c_str());
 			auto cs = activeColorMapSetting();
+			if (cs == nullptr) {return;}
+
 			auto mapper = cs->buildPointDataMapper(data);
 			m_actor->SetMapper(mapper);
 			mapper->Delete();
