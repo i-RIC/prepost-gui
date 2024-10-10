@@ -21,7 +21,7 @@ public:
 	InputConditionPageContainer(QWidget* w);
 	~InputConditionPageContainer();
 
-	void setup(const QDomElement& elem, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	void setup(const QDomElement& elem, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
 
 public slots:
 	void pageSelected(const QString& pagename);

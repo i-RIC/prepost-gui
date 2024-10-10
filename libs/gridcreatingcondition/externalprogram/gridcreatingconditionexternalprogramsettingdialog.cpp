@@ -61,8 +61,7 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 	// setup PageList.
 	ui->m_pageList->setup(condNode.toElement(), t);
 	// setup PageContainer.
-	std::unordered_map<std::string, QPushButton*> emptyButtons;
-	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, emptyButtons, t);
+	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, t);
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
 

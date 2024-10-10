@@ -2499,7 +2499,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>編集</translation>
+        <translation type="vanished">編集</translation>
     </message>
 </context>
 <context>
@@ -2576,6 +2576,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Enabled</source>
         <translation>有効</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetComplexButton</name>
+    <message>
+        <source>Edit...</source>
+        <translation>編集...</translation>
     </message>
 </context>
 <context>

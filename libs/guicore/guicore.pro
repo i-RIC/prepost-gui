@@ -501,6 +501,7 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionpagecontainer.h \
            project/inputcond/inputconditionpagelist.h \
            project/inputcond/inputconditionwidget.h \
+           project/inputcond/inputconditionwidgetcomplexbutton.h \
            project/inputcond/inputconditionwidgetfilename.h \
            project/inputcond/inputconditionwidgetset.h \
            project/measured/measureddata.h \
@@ -1043,6 +1044,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            project/inputcond/inputconditionpagecontainer.cpp \
            project/inputcond/inputconditionpagelist.cpp \
            project/inputcond/inputconditionwidget.cpp \
+           project/inputcond/inputconditionwidgetcomplexbutton.cpp \
            project/inputcond/inputconditionwidgetfilename.cpp \
            project/inputcond/inputconditionwidgetset.cpp \
            project/measured/measureddata.cpp \

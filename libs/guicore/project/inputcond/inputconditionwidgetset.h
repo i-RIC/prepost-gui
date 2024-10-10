@@ -52,6 +52,7 @@ private:
 	void buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset);
 	void buildDepsOption(const QDomNode& imageNode, InputConditionContainerSet& cset);
 	void buildDep(const QDomNode&, InputConditionContainerSet& cset, InputConditionWidget* w);
+	void addWidget(const std::string& name, InputConditionWidget* widget);
 	void addTooltip(InputConditionWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
 
 	InputConditionCgnsFile* getCgnsFile(const std::string& name);

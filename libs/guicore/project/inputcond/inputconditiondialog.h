@@ -80,7 +80,6 @@ private:
 	InputConditionWidgetSet* m_widgetSet;
 
 	std::unordered_map<std::string, GridComplexConditionDialog*> m_complexDialogs;
-	std::unordered_map<std::string, QPushButton*> m_complexDialogOpenButtons;
 
 	SolverDefinition* m_solverDefinition;
 	/// CGNS Filename to load and save input condition.
