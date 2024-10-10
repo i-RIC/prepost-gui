@@ -146,6 +146,7 @@ public:
 	void doViewOperationEndedGlobal(VTKGraphicsView*) override;
 	void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) override;
 	void updateRegionPolyData();
+	void fixComplexValuesToDefaultIfInvalid();
 
 	void updateObjectBrowserTree();
 	void updateVtkObjectsForDrawing();

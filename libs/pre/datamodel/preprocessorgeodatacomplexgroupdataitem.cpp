@@ -336,6 +336,16 @@ std::vector<GridComplexConditionGroup*> PreProcessorGeoDataComplexGroupDataItem:
 	return ret;
 }
 
+QString PreProcessorGeoDataComplexGroupDataItem::captionForValue(int value) const
+{
+	auto glist = groups();
+	if (value >= 1 && value <= static_cast<int> (glist.size())) {
+		return glist.at(value - 1)->caption();
+	}
+
+	return tr("(Undefined value)");
+}
+
 bool PreProcessorGeoDataComplexGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	bool added = false;
