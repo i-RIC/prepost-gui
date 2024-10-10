@@ -180,7 +180,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->clear();
 	// add gridtypes.
 	SolverDefinition* def = projectData()->solverDefinition();
-	if (def->preGridTypes().size() == 1) {
+	if (def->preGridTypes().size() == 1 && ! def->preGridTypes().at(0)->multiple()) {
 		// If there is no gridtypeDataitem, do nothing.
 		if (m_gridTypeDataItems.size() != 0) {
 			// Current solver support only one grid type, and it does not allow multiple grids to input.
