@@ -34,6 +34,8 @@ public:
 
 private:
 	void addArrayIfNeeded();
+
+	DA* m_dataArray;
 };
 
 #include "private/gridattributecontainert_detail.h"
