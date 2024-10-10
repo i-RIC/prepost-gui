@@ -1,9 +1,9 @@
 #include "geodatapolygongroup.h"
 #include "geodatapolygongrouppolygon.h"
 #include "private/geodatapolygongrouppolygon_impl.h"
-#include "private/geodatapolygongrouppolygon_triangulatori.h"
-#include "private/geodatapolygongrouppolygon_triangulatortriangle.h"
-#include "private/geodatapolygongrouppolygon_triangulatorvtk.h"
+#include "public/geodatapolygongrouppolygon_triangulatori.h"
+#include "public/geodatapolygongrouppolygon_triangulatortriangle.h"
+#include "public/geodatapolygongrouppolygon_triangulatorvtk.h"
 
 #include <geodata/polygon/geodatapolygon.h>
 
@@ -43,7 +43,7 @@ geos::geom::LinearRing* buildRing(const QPolygonF& polygon)
 QPolygonF buildPolygon(const geos::geom::LineString* string)
 {
 	QPolygonF ret;
-	for (int i = 0; i < string->getNumPoints(); ++i) {
+	for (int i = 0; i < static_cast<int> (string->getNumPoints()); ++i) {
 		const auto& coords = string->getCoordinateN(i);
 		ret.push_back(QPointF(coords.x, coords.y));
 	}
@@ -61,13 +61,16 @@ geos::geom::LinearRing* applyOffset(const geos::geom::LineString* string, double
 
 } // namespace
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group) :
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk) :
 	GeoDataPolyDataGroupPolyDataWithBoundingRect {group},
 	impl {new Impl {}}
-{}
+{
+	impl->m_triangle = triangle;
+	impl->m_vtk = vtk;
+}
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group) :
-	GeoDataPolygonGroupPolygon(group)
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, const std::vector<QPolygonF>& holes, GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk) :
+	GeoDataPolygonGroupPolygon(group, triangle, vtk)
 {
 	auto outerRing = buildRing(outer);
 	std::vector<Geometry*>* holeRings = new std::vector<Geometry*>();
@@ -82,8 +85,8 @@ GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(const QPolygonF& outer, c
 	setupTriangleCells();
 }
 
-GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group) :
-	GeoDataPolygonGroupPolygon(group)
+GeoDataPolygonGroupPolygon::GeoDataPolygonGroupPolygon(geos::geom::Polygon* polygon, GeoDataPolygonGroup* group, TriangulatorTriangle* triangle, TriangulatorVtk* vtk) :
+	GeoDataPolygonGroupPolygon(group, triangle, vtk)
 {
 	impl->m_polygon.reset(polygon);
 
@@ -137,13 +140,13 @@ std::vector<QPointF> GeoDataPolygonGroupPolygon::points() const
 	geos::geom::Polygon* pol = impl->m_polygon.get();
 
 	const geos::geom::LineString* ls = pol->getExteriorRing();
-	for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 		const auto& c = ls->getCoordinateN(i);
 		ret.push_back(QPointF(c.x, c.y));
 	}
-	for (int j = 0; j < pol->getNumInteriorRing(); ++j) {
+	for (int j = 0; j < static_cast<int> (pol->getNumInteriorRing()); ++j) {
 		ls = pol->getInteriorRingN(j);
-		for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+		for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 			const auto& c = ls->getCoordinateN(i);
 			ret.push_back(QPointF(c.x, c.y));
 		}
@@ -160,15 +163,15 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::lineEdges() const
 	const geos::geom::LineString* ls = pol->getExteriorRing();
 
 	unsigned int offset = 0;
-	for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 		ret.push_back(offset + i);
 		ret.push_back(offset + (i + 1) % (ls->getNumPoints() - 1));
 	}
 	offset += (ls->getNumPoints() - 1);
 
-	for (int j = 0; j < pol->getNumInteriorRing(); ++j) {
+	for (int j = 0; j < static_cast<int> (pol->getNumInteriorRing()); ++j) {
 		ls = pol->getInteriorRingN(j);
-		for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+		for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 			ret.push_back(offset + i);
 			ret.push_back(offset + (i + 1) % (ls->getNumPoints() - 1));
 		}
@@ -239,7 +242,7 @@ void GeoDataPolygonGroupPolygon::saveExternalData(QDataStream* stream)
 
 	int numHoles = pol->getNumInteriorRing();
 	*stream << numHoles;
-	for (int i = 0; i < pol->getNumInteriorRing(); ++i) {
+	for (int i = 0; i < static_cast<int> (pol->getNumInteriorRing()); ++i) {
 		auto vec = buildPolygon(pol->getInteriorRingN(i));
 		*stream << vec;
 	}
@@ -267,7 +270,7 @@ void GeoDataPolygonGroupPolygon::applyOffset(double x, double y)
 
 GeoDataPolyDataGroupPolyData* GeoDataPolygonGroupPolygon::copy(GeoDataPolyDataGroup* group) const
 {
-	auto ret = new GeoDataPolygonGroupPolygon(dynamic_cast<GeoDataPolygonGroup*> (group));
+	auto ret = new GeoDataPolygonGroupPolygon(dynamic_cast<GeoDataPolygonGroup*> (group), impl->m_triangle, impl->m_vtk);
 	ret->setName(name());
 	ret->setGeosPolygon(dynamic_cast<geos::geom::Polygon*> (geosPolygon()->clone()));
 	ret->setValue(value());
@@ -290,11 +293,9 @@ void GeoDataPolygonGroupPolygon::setupTriangleCells()
 	TriangulatorI* triangulator = nullptr;
 	auto pol = impl->m_polygon.get();
 	if (pol->getNumInteriorRing() > 0) {
-		triangulator = new TriangulatorTriangle();
+		triangulator = impl->m_triangle;
 	} else {
-		triangulator = new TriangulatorVtk();
+		triangulator = impl->m_vtk;
 	}
 	impl->m_triangleCells = triangulator->triangulate(this);
-
-	delete triangulator;
 }

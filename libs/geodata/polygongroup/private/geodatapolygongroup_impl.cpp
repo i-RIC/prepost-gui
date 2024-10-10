@@ -1,3 +1,5 @@
+#include "../public/geodatapolygongrouppolygon_triangulatortriangle.h"
+#include "../public/geodatapolygongrouppolygon_triangulatorvtk.h"
 #include "geodatapolygongroup_impl.h"
 
 #include <geoio/polygonutil.h>
@@ -33,7 +35,9 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 	m_selectedPolygonsEdgesActor {vtkActor::New()},
 	m_selectedPolygonsPointsActor {vtkActor::New()},
 	m_dummyPolygonForMenu {new GeoDataPolygon(group->parent(), group->creator(), group->gridAttribute())},
-	m_group {group}
+	m_group {group},
+	m_triangle {new GeoDataPolygonGroupPolygon::TriangulatorTriangle()},
+	m_vtk {new GeoDataPolygonGroupPolygon::TriangulatorVtk()}
 {
 	m_points->SetDataTypeToDouble();
 
@@ -56,6 +60,8 @@ GeoDataPolygonGroup::Impl::~Impl()
 	m_selectedPolygonsPointsActor->Delete();
 
 	delete m_dummyPolygonForMenu;
+	delete m_triangle;
+	delete m_vtk;
 }
 
 void GeoDataPolygonGroup::Impl::setupDummyPolygonForMenu()
