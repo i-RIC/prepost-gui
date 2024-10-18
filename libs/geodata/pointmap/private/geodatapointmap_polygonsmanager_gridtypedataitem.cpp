@@ -35,6 +35,11 @@ const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& GeoDataPointmap
 	return empty;
 }
 
+GridAttributeDimensionsContainer* GeoDataPointmap::PolygonsManager::GridTypeDataItem::gridAttributeDimensions(const std::string& attName) const
+{
+	return nullptr;
+}
+
 PreProcessorGeoDataTopDataItemI* GeoDataPointmap::PolygonsManager::GridTypeDataItem::geoDataTop() const
 {
 	return nullptr;

@@ -6,9 +6,11 @@
 
 #include <string>
 
-class QString;
+class GridAttributeContainerIoI;
 class PreProcessorGridDataItemI;
 class PreProcessorGridCreatingConditionDataItemI;
+
+class QString;
 
 class GUICOREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItemI : public PreProcessorDataItem
 {
@@ -24,6 +26,7 @@ public:
 	virtual void setGridEdited() = 0;
 	virtual void setEdgeFocus(vtkIdType i, vtkIdType j) = 0;
 	virtual void clearEdgeFocus() = 0;
+	virtual GridAttributeContainerIoI* gridAttributeIo() = 0;
 };
 
 #endif // PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEMI_H

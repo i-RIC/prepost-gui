@@ -21,7 +21,7 @@ private:
 public:
 	const static int SLIDERWIDTH_MAX = 100;
 
-	GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent);
+	GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent);
 	~GridAttributeDimensionTimeSliderSelectWidget();
 
 	int currentStepIndex() const;

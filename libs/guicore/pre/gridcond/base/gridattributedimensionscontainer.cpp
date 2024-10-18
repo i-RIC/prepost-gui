@@ -14,9 +14,6 @@ GridAttributeDimensionsContainer::GridAttributeDimensionsContainer(SolverDefinit
 	for (auto dim : conddef->dimensions()) {
 		GridAttributeDimensionContainer* cont = dim->buildContainer();
 		impl->m_containers.push_back(cont);
-		GridAttributeDimensionSelectWidget* widget = dim->buildSelectWidget(cont);
-		widget->setProjectMainFile(projectData()->mainfile());
-		impl->m_selectWidgets.push_back(widget);
 
 		connect(cont, SIGNAL(valuesChanged()), this, SIGNAL(valuesChanged()));
 		connect(cont, SIGNAL(currentIndexChanged(bool)), this, SLOT(handleIndexChange(bool)));
@@ -27,9 +24,6 @@ GridAttributeDimensionsContainer::~GridAttributeDimensionsContainer()
 {
 	for (auto c : impl->m_containers) {
 		delete c;
-	}
-	for (auto w : impl->m_selectWidgets) {
-		delete w;
 	}
 }
 
@@ -43,14 +37,15 @@ std::vector<GridAttributeDimensionContainer *>& GridAttributeDimensionsContainer
 	return impl->m_containers;
 }
 
-const std::vector<GridAttributeDimensionSelectWidget *>& GridAttributeDimensionsContainer::selectWidgets() const
+std::vector<GridAttributeDimensionSelectWidget*> GridAttributeDimensionsContainer::buildSelectWidgets()
 {
-	return impl->m_selectWidgets;
-}
+	std::vector<GridAttributeDimensionSelectWidget*> ret;
+	for (auto c : impl->m_containers) {
+		auto widget = c->definition()->buildSelectWidget(c, projectData()->mainfile());
+		ret.push_back(widget);
+	}
 
-std::vector<GridAttributeDimensionSelectWidget *>& GridAttributeDimensionsContainer::selectWidgets()
-{
-	return impl->m_selectWidgets;
+	return ret;
 }
 
 void GridAttributeDimensionsContainer::clear()

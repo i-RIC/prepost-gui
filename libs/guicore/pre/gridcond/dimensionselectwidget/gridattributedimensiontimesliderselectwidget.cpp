@@ -16,8 +16,8 @@
 #include <QTimeZone>
 #include <QVariant>
 
-GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent) :
-	GridAttributeDimensionSelectWidget(container, parent)
+GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent) :
+	GridAttributeDimensionSelectWidget(container, mainFile, parent)
 {
 	m_animationActions = new GridAttributeDimensionTimeSliderSelectWidget::AnimationActions(this);
 	m_runMode = NotRunning;
@@ -26,13 +26,13 @@ GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSe
 	m_timer->setSingleShot(true);
 	m_isTime = (container->name() == "Time");
 
-	connect(m_animationActions->actionStepFirst, SIGNAL(triggered()), this, SLOT(stepFirst()));
-	connect(m_animationActions->actionStepBackward, SIGNAL(triggered()), this, SLOT(stepBackward()));
-	connect(m_animationActions->actionStepForward, SIGNAL(triggered()), this, SLOT(stepForward()));
-	connect(m_animationActions->actionStepLast, SIGNAL(triggered()), this, SLOT(stepLast()));
-	connect(m_animationActions->actionStartAnimation, SIGNAL(triggered()), this, SLOT(startSlowmotionAnimation()));
-	connect(m_animationActions->actionEditSpeed, SIGNAL(triggered()), this, SLOT(editSlowmotionSpeed()));
-	connect(m_timer, SIGNAL(timeout()), this, SLOT(handleTimerTimeout()));
+	connect(m_animationActions->actionStepFirst, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::stepFirst);
+	connect(m_animationActions->actionStepBackward, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::stepBackward);
+	connect(m_animationActions->actionStepForward, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::stepForward);
+	connect(m_animationActions->actionStepLast, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::stepLast);
+	connect(m_animationActions->actionStartAnimation, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::startSlowmotionAnimation);
+	connect(m_animationActions->actionEditSpeed, &QAction::triggered, this, &GridAttributeDimensionTimeSliderSelectWidget::editSlowmotionSpeed);
+	connect(m_timer, &QTimer::timeout, this, &GridAttributeDimensionTimeSliderSelectWidget::handleTimerTimeout);
 
 	iRICToolBar* toolbar = new iRICToolBar(this);
 	m_titleLabel = new QLabel(toolbar);

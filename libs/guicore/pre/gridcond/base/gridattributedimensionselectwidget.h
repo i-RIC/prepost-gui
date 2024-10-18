@@ -11,12 +11,10 @@ class GridAttributeDimensionSelectWidget : public QWidget
 	Q_OBJECT
 
 public:
-	GridAttributeDimensionSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent = nullptr);
+        GridAttributeDimensionSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent = nullptr);
 	~GridAttributeDimensionSelectWidget();
 
 	GridAttributeDimensionContainer* container() const;
-
-	void setProjectMainFile(ProjectMainFile* mainFile);
 
 protected slots:
 	void applyValues();

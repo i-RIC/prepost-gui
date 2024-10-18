@@ -1,10 +1,10 @@
 #include "gridattributedimensioncontainer.h"
 #include "gridattributedimensionselectwidget.h"
 
-GridAttributeDimensionSelectWidget::GridAttributeDimensionSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent) :
+GridAttributeDimensionSelectWidget::GridAttributeDimensionSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent) :
 	QWidget(parent),
 	m_container {container},
-	m_projectMainFile {nullptr}
+	m_projectMainFile {mainFile}
 {
 	connect(m_container, SIGNAL(valuesChanged()), this, SLOT(applyValues()));
 	connect(m_container, SIGNAL(currentIndexChanged(int,bool)), this, SLOT(setCurrentIndex(int)));
@@ -17,11 +17,6 @@ GridAttributeDimensionSelectWidget::~GridAttributeDimensionSelectWidget()
 GridAttributeDimensionContainer* GridAttributeDimensionSelectWidget::container() const
 {
 	return m_container;
-}
-
-void GridAttributeDimensionSelectWidget::setProjectMainFile(ProjectMainFile* mainFile)
-{
-	m_projectMainFile = mainFile;
 }
 
 void GridAttributeDimensionSelectWidget::applyValues()

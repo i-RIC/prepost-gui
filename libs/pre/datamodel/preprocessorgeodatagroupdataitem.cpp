@@ -1457,9 +1457,8 @@ bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 		added = true;
 	}
 
-	for (int i = 0; i < m_dimensions->selectWidgets().size(); ++i) {
-		auto w = m_dimensions->selectWidgets().at(i);
-		QAction* action = toolBar->addWidget(w);
+	for (auto w : m_dimensions->buildSelectWidgets()) {
+		auto action = toolBar->addWidget(w);
 		action->setVisible(true);
 		added = true;
 	}

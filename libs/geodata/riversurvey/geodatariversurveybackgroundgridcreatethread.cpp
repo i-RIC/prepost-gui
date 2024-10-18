@@ -357,7 +357,7 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(rawItem->parent()->parent()->parent());
 	SolverDefinitionGridType* gt = gtItem->gridType();
 	auto inputGrid = new v4InputGrid(gt, tmpgrid);
-	gt->buildGridAttributes(inputGrid);
+	gt->buildGridAttributes(inputGrid, nullptr);
 
 	inputGrid->allocateAttributes();
 

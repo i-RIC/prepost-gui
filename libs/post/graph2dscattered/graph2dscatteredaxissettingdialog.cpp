@@ -12,7 +12,7 @@ Graph2dScatteredAxisSettingDialog::Graph2dScatteredAxisSettingDialog(QWidget* pa
 {
 	ui->setupUi(this);
 
-	connect(ui->yAxisSideComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(yAxisComboBoxChange(int)));
+	connect<void (QComboBox::*)(int)>(ui->yAxisSideComboBox, &QComboBox::currentIndexChanged, this, &Graph2dScatteredAxisSettingDialog::yAxisComboBoxChange);
 }
 
 Graph2dScatteredAxisSettingDialog::~Graph2dScatteredAxisSettingDialog()

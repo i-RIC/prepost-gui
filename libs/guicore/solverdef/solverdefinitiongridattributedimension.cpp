@@ -51,11 +51,11 @@ SolverDefinitionGridAttribute* SolverDefinitionGridAttributeDimension::attribute
 	return impl->m_attribute;
 }
 
-GridAttributeDimensionSelectWidget* SolverDefinitionGridAttributeDimension::buildSelectWidget(GridAttributeDimensionContainer* container)
+GridAttributeDimensionSelectWidget* SolverDefinitionGridAttributeDimension::buildSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile)
 {
 	if (impl->m_name == "Time") {
-		return new GridAttributeDimensionTimeSliderSelectWidget(container, 0);
+		return new GridAttributeDimensionTimeSliderSelectWidget(container, mainFile, nullptr);
 	} else {
-		return new GridAttributeDimensionComboboxSelectWidget(container, 0);
+		return new GridAttributeDimensionComboboxSelectWidget(container, mainFile, nullptr);
 	}
 }

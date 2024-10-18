@@ -85,8 +85,9 @@ bool PreProcessorGridDataItem::CgnsImporter::importGrid(const QString& fileName,
 			if (ret == QMessageBox::No) {return false;}
 		}
 
-		int ier;
-		auto grid = v4InputGridIO::load(*zone, m_item->gridTypeDataItem(), "", m_item->offset(), false, &ier);
+		int ier = 0;
+		auto gridType = m_item->gridTypeDataItem()->gridType();
+		auto grid = v4InputGridIO::load(*zone, gridType, m_item->gridTypeDataItem(), nullptr, m_item->offset(), false, &ier);
 		if (ier != IRIC_NO_ERROR) {return false;}
 
 		m_item->setGrid(grid, true);

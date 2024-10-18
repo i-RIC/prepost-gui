@@ -1,12 +1,17 @@
 #include "../grid/v4grid.h"
 #include "../pre/grid/v4inputgrid.h"
 #include "../pre/grid/v4inputgridio.h"
+#include "../pre/gridcond/base/gridattributecontainer.h"
+#include "../pre/gridcond/base/gridattributecontaineriopost.h"
+#include "../pre/gridcond/base/gridattributedimensioncontainer.h"
+#include "../pre/gridcond/base/gridattributedimensionscontainer.h"
 #include "../pre/base/preprocessorgridtypedataitemi.h"
 #include "../pre/base/preprocessorgridandgridcreatingconditiondataitemi.h"
 #include "v4solutiongrid.h"
 #include "v4solutiongridio.h"
 #include "v4postcalculatedresult.h"
 #include "v4postzonedatacontainer.h"
+#include "postsolutioninfo.h"
 #include "private/v4postzonedatacontainer_impl.h"
 
 #include <h5cgnsbase.h>
@@ -19,10 +24,13 @@ v4PostZoneDataContainer::v4PostZoneDataContainer(const std::string& zoneName, So
 {
 	impl->m_zoneName = zoneName;
 	impl->m_gridType = gridType;
+	impl->m_io = new GridAttributeContainerIoPost(2, zoneName, parent);
 }
 
 v4PostZoneDataContainer::~v4PostZoneDataContainer()
-{}
+{
+	delete impl->m_io;
+}
 
 const std::string& v4PostZoneDataContainer::zoneName() const
 {
@@ -93,13 +101,13 @@ const std::map<std::string, v4SolutionGrid*>& v4PostZoneDataContainer::polyDataM
 	return impl->m_polyDataMap;
 }
 
-int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, bool disableCalculatedResult)
+int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, bool disableCalculatedResult)
 {
 	impl->clearParticleDataAndPolyData();
 
 	int ier;
 	if (impl->m_inputGridData == nullptr && zone->base()->dimension() == 2 && gtItem != nullptr) {
-		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem, tmpPath, offset(), true, &ier);
+		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem->gridType(), gtItem, impl->m_io, offset(), false, &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 
 		const auto& conds = gtItem->conditions();
@@ -146,11 +154,11 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProc
 	return IRIC_NO_ERROR;
 }
 
-int v4PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath)
+int v4PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem)
 {
 	if (impl->m_gridData != nullptr) {return IRIC_NO_ERROR;}
 
-	return loadFromCgnsFile(zone, gtItem, tmpPath, false);
+	return loadFromCgnsFile(zone, gtItem, false);
 }
 
 void v4PostZoneDataContainer::applyOffset(const QPointF& offset)

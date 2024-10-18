@@ -55,6 +55,7 @@ public:
 
 	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
 	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
+	GridAttributeDimensionsContainer* gridAttributeDimensions(const std::string& attName) const override;
 
 public slots:
 	void addNewCondition();

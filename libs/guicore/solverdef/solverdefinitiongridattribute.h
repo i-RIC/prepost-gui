@@ -19,6 +19,7 @@ class ColorMapSettingToolBarWidget;
 class ColorTransferFunctionContainer;
 class v4InputGrid;
 class GridAttributeContainer;
+class GridAttributeContainerIoI;
 class GridAttributeEditDialog;
 class GridAttributeEditNameAndValueDialog;
 class GridAttributeEditWidget;
@@ -71,7 +72,7 @@ public:
 
 	/// @name Interface building functions
 	//@{
-	GridAttributeContainer* container(v4InputGrid* grid);
+	GridAttributeContainer* container(v4InputGrid* grid, GridAttributeContainerIoI* io);
 
 	virtual GridAttributeStringConverter* stringConverter() const = 0;
 
@@ -99,7 +100,7 @@ protected:
 
 private:
 	virtual void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const;
-	virtual GridAttributeContainer* buildContainer(v4InputGrid* grid) = 0;
+	virtual GridAttributeContainer* buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io) = 0;
 
 	class Impl;
 	std::unique_ptr<Impl> impl;

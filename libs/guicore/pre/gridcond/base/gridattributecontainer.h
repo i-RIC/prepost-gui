@@ -10,8 +10,9 @@
 
 #include <vector>
 
-class PreProcessorGeoDataGroupDataItemI;
+class GridAttributeContainerIoI;
 class GridAttributeDimensionsContainer;
+class PreProcessorGeoDataGroupDataItemI;
 
 class vtkDataSetAttributes;
 
@@ -24,7 +25,7 @@ class GUICOREDLL_EXPORT GridAttributeContainer : public GridAttributeBaseObject
 	Q_OBJECT
 
 public:
-	GridAttributeContainer(v4InputGrid* grid, SolverDefinitionGridAttribute* cond);
+	GridAttributeContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttribute* cond);
 	~GridAttributeContainer();
 
 	// basic properties
@@ -34,8 +35,6 @@ public:
 	GridAttributeDimensionsContainer* dimensions() const;
 	void setDimensions(GridAttributeDimensionsContainer* dims);
 
-	QString temporaryDir() const;
-	void setTemporaryDir(const QString& dir);
 	void clearTemporaryData();
 
 	unsigned int dataCount() const;
@@ -53,7 +52,9 @@ public:
 	virtual void allocate() = 0;
 
 	virtual int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) = 0;
+	virtual int loadFromCgnsFileForIndex(const iRICLib::H5CgnsGridAttributes& atts, int index) = 0;
 	virtual int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) = 0;
+	virtual int saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttributes* atts, int index) = 0;
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
@@ -61,7 +62,8 @@ public slots:
 
 protected:
 	vtkDataSetAttributes* vtkAttributes() const;
-	QString temporaryExternalFilename(int index) const;
+
+	GridAttributeContainerIoI* m_io;
 
 private:
 	virtual bool loadFromExternalFile(const QString& filename) = 0;
@@ -70,9 +72,11 @@ private:
 
 	v4InputGrid* m_grid;
 	GridAttributeDimensionsContainer* m_dimensions;
-	QString m_temporaryDir;
 	bool m_mapped;
 	bool m_isCustomModified;
+
+public:
+	friend class GridAttributeContainerIoPre;
 };
 
 #endif // GRIDATTRIBUTECONTAINER_H
