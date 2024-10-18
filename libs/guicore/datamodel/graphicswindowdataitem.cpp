@@ -164,7 +164,7 @@ void GraphicsWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, GraphicsWin
 void GraphicsWindowDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack::instance().push(new GraphicsWindowDataItemStandardItemChangeCommand(this));
+	pushCommand(new GraphicsWindowDataItemStandardItemChangeCommand(this));
 }
 
 int GraphicsWindowDataItem::loadFromCgnsFile()
