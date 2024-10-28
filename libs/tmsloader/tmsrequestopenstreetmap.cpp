@@ -8,10 +8,10 @@ TmsRequestOpenStreetMap::TmsRequestOpenStreetMap(const QPointF& centerLonLat, co
 {}
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const
 #else
-TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebView* view) const
+TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const
 #endif
 {
-	return new TmsRequestHandlerOpenStreetMap(center(), size(), scale(), requestId, view);
+	return new TmsRequestHandlerOpenStreetMap(center(), size(), scale(), requestId, view, imageCache);
 }

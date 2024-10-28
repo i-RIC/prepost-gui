@@ -22,10 +22,10 @@ TmsRequestXYZ::~TmsRequestXYZ()
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const
 #else
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebView* view) const
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const
 #endif
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, view);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, view, imageCache);
 }

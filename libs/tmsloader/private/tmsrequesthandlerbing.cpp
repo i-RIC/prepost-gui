@@ -5,11 +5,11 @@
 using namespace tmsloader;
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view) :
+TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view, TmsImageCache* imageCache) :
 #else
-TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view) :
+TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view, TmsImageCache* imageCache) :
 #endif
-	TmsRequestHandler {centerLonLat, size, scale, "bing.html", requestId, view}
+	TmsRequestHandler {centerLonLat, size, scale, "bing.html", requestId, view, imageCache}
 {
 	std::map<TmsRequestBing::ImagerySet, QString> imagerySetMap;
 

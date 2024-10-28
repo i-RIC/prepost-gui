@@ -18,9 +18,9 @@ public:
 	~TmsRequestBing();
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
+	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const override;
 #else
-	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
+	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const override;
 #endif
 
 private:

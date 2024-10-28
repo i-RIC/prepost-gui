@@ -18,6 +18,7 @@ namespace {
 }
 
 TmsLoader::Impl::Impl(TmsLoader* parent) :
+	m_imageCache {},
 	m_loader (parent)
 {}
 
@@ -47,7 +48,7 @@ TmsRequestHandler *TmsLoader::Impl::registerNewHandler(const TmsRequest &request
 		newId = static_cast<int>(m_handlers.size()) - 1;
 	}
 
-	TmsRequestHandler* handler = request.buildHandler(newId, getWebView());
+	TmsRequestHandler* handler = request.buildHandler(newId, getWebView(), &m_imageCache);
 	m_handlers[newId] = handler;
 
 	return handler;
