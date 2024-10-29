@@ -251,14 +251,15 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 		if (value != "") {
 			data->GetPointData()->SetActiveScalars(value.c_str());
 			auto cs = activeColorMapSetting();
-			if (cs == nullptr) {return;}
 
-			auto mapper = cs->buildPointDataMapper(data);
-			m_actor->SetMapper(mapper);
-			mapper->Delete();
+			if (cs != nullptr) {
+				auto mapper = cs->buildPointDataMapper(data);
+				m_actor->SetMapper(mapper);
+				mapper->Delete();
 
-			m_colorMapToolBarWidget->setEnabled(true);
-			m_colorMapToolBarWidget->setSetting(cs);
+				m_colorMapToolBarWidget->setEnabled(true);
+				m_colorMapToolBarWidget->setSetting(cs);
+			}
 		}
 	}
 	m_actor->GetProperty()->SetPointSize(m_setting.particleSize * v->devicePixelRatioF());
@@ -312,7 +313,10 @@ ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::activeC
 	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
 	if (m_setting.value == "") {return nullptr;}
 
-	return activeChildDataItem()->colorMapSetting();
+	auto active = activeChildDataItem();
+	if (active == nullptr) {return nullptr;}
+
+	active->colorMapSetting();
 }
 
 ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::activeColorMapSettingWithVisibleLegend() const
