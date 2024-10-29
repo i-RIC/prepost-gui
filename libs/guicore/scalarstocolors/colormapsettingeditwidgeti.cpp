@@ -23,7 +23,9 @@ void ColorMapSettingEditWidgetI::setSetting(ColorMapSettingContainerI* setting)
 	m_legendSetting = nullptr;
 
 	disconnect(m_updateImageSettingConnection);
-	m_updateImageSettingConnection = connect(setting->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &ColorMapSettingEditWidgetI::updateImageSetting);
+	if (setting != nullptr) {
+		m_updateImageSettingConnection = connect(setting->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &ColorMapSettingEditWidgetI::updateImageSetting);
+	}
 
 	setupWidget();
 }
