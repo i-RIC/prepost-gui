@@ -206,8 +206,8 @@ bool Post2dWindowParticlesBaseScalarGroupDataItem::addToolBarButtons(QToolBar* t
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::handleStandardItemChange()
 {
-	GraphicsWindowDataItem::handleStandardItemChange();
 	topDataItem()->updateColorMapLegendsVisibility();
+	GraphicsWindowDataItem::handleStandardItemChange();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
