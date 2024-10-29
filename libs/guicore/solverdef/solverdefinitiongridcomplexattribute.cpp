@@ -74,7 +74,7 @@ bool SolverDefinitionGridComplexAttribute::isGrouped() const
 	return impl->m_isGrouped;
 }
 
-GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(v4InputGrid* grid)
+GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io)
 {
-	return new GridComplexAttributeContainer(grid, this);
+	return new GridComplexAttributeContainer(grid, io, this);
 }

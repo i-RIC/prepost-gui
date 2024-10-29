@@ -35,6 +35,9 @@ public:
 	bool colorBarShouldBeVisible(const std::string& name) const;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+private slots:
+	void handleGridChange();
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

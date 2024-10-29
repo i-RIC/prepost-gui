@@ -13,7 +13,7 @@ class GridAttributeDimensionComboboxSelectWidget : public GridAttributeDimension
 	Q_OBJECT
 
 public:
-	explicit GridAttributeDimensionComboboxSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent);
+	explicit GridAttributeDimensionComboboxSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent);
 	~GridAttributeDimensionComboboxSelectWidget();
 
 protected:

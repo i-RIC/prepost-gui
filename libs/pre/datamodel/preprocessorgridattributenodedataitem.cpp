@@ -554,7 +554,7 @@ bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 
 	v4InputGrid* grid = groupDataItem()->gridDataItem()->grid();
 	auto cont = grid->attribute(condition()->name());
-	const auto& selectWidgets = cont->dimensions()->selectWidgets();
+	auto selectWidgets = cont->dimensions()->buildSelectWidgets();
 	if (selectWidgets.size() > 0) {
 		toolBar->addSeparator();
 

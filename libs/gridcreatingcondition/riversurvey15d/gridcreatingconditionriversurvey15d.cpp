@@ -17,6 +17,7 @@
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/pre/grid/v4inputgrid.h>
@@ -906,7 +907,8 @@ void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* star
 
 	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
 	auto ret = new v4InputGrid(gt->gridType(), grid);
-	gt->gridType()->buildGridAttributes(ret);
+	auto item = gccDataItem()->gridAndGridCreatingConditionDataItem();
+	gt->gridType()->buildGridAttributes(ret, item->gridAttributeIo());
 
 	setupCrosssections(ret);
 

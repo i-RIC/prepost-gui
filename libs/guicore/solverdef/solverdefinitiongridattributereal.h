@@ -13,7 +13,7 @@ public:
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
-	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
+	GridAttributeContainer* buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io) override;
 	GridAttributeStringConverter* stringConverter() const override;
 	double fromVariant(const QVariant& v) const override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;

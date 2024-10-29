@@ -10,7 +10,7 @@
 class GridAttributeStringContainer : public GridAttributeContainerT<std::string, vtkStringArray>
 {
 public:
-	GridAttributeStringContainer(v4InputGrid* grid, SolverDefinitionGridAttributeT<std::string>* cond);
+	GridAttributeStringContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttributeT<std::string>* cond);
 };
 
 #endif // GRIDATTRIBUTESTRINGCONTAINER_H

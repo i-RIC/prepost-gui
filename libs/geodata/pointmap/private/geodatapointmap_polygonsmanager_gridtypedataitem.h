@@ -17,6 +17,7 @@ public:
 
 	SolverDefinitionGridType* gridType() const override;
 	const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& conditions() const override;
+	GridAttributeDimensionsContainer* gridAttributeDimensions(const std::string& attName) const override;
 	PreProcessorGeoDataTopDataItemI* geoDataTop() const override;
 	PreProcessorHydraulicDataTopDataItemI* hydraulicDataTop() const override;
 

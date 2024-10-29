@@ -230,7 +230,7 @@ bool Post2dWindowGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 
 	v4InputGrid* grid = groupDataItem()->gridDataItem()->inputGrid();
 	auto cont = grid->attribute(condition()->name());
-	const auto& selectWidgets = cont->dimensions()->selectWidgets();
+	auto selectWidgets = cont->dimensions()->buildSelectWidgets();
 	if (selectWidgets.size() > 0) {
 		toolBar->addSeparator();
 

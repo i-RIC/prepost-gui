@@ -21,8 +21,8 @@
 #include <vtkPointData.h>
 #include <vtkPointSet.h>
 
-GridComplexAttributeContainer::GridComplexAttributeContainer(v4InputGrid* grid, SolverDefinitionGridComplexAttribute* cond) :
-	GridAttributeContainerT<int, vtkIntArray> {grid, cond}
+GridComplexAttributeContainer::GridComplexAttributeContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridComplexAttribute* cond) :
+	GridAttributeContainerT<int, vtkIntArray> {grid, io, cond}
 {}
 
 GridComplexAttributeContainer::~GridComplexAttributeContainer()

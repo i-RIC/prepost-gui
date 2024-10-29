@@ -4,6 +4,8 @@
 #include "../../guicore_global.h"
 
 #include "preprocessordataitem.h"
+#include "../gridcond/base/gridattributedimensionsprovideri.h"
+
 #include <QList>
 
 class ColorMapSettingContainerI;
@@ -15,7 +17,7 @@ class PreProcessorGridAndGridCreatingConditionDataItemI;
 
 class QString;
 
-class GUICOREDLL_EXPORT PreProcessorGridTypeDataItemI : public PreProcessorDataItem
+class GUICOREDLL_EXPORT PreProcessorGridTypeDataItemI : public PreProcessorDataItem, public GridAttributeDimensionsProviderI
 {
 	Q_OBJECT
 

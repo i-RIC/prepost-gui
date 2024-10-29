@@ -117,8 +117,5 @@ PreProcessorGridDataItemI* v4InputGrid::gridDataItem() const
 void v4InputGrid::setGridDataItem(PreProcessorGridDataItemI* gridDataItem)
 {
 	impl->m_gridDataItem = gridDataItem;
-	for (auto att : attributes()) {
-		att->setTemporaryDir(gridDataItem->subPath());
-	}
 	impl->m_attributeDataProvider->setGeoDataTopDataItem(gridDataItem->geoDataTopDataItem());
 }

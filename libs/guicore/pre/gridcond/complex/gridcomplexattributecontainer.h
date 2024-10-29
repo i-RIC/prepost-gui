@@ -14,7 +14,7 @@ class PreProcessorGeoDataComplexGroupDataItemI;
 class GUICOREDLL_EXPORT GridComplexAttributeContainer : public GridAttributeContainerT<int, vtkIntArray>
 {
 public:
-	GridComplexAttributeContainer(v4InputGrid* grid, SolverDefinitionGridComplexAttribute* cond);
+	GridComplexAttributeContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridComplexAttribute* cond);
 	~GridComplexAttributeContainer();
 
 	void setDataItem(PreProcessorGeoDataComplexGroupDataItemI* dataItem);

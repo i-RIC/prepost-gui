@@ -3,6 +3,8 @@
 
 #include "../v4postzonedatacontainer.h"
 
+class GridAttributeContainerIoPost;
+
 class v4PostZoneDataContainer::Impl
 {
 public:
@@ -22,6 +24,7 @@ public:
 	std::map<std::string, v4SolutionGrid*> m_particleGroupImageMap;
 	std::map<std::string, v4SolutionGrid*> m_polyDataMap;
 
+	GridAttributeContainerIoPost* m_io;
 	std::vector<v4PostCalculatedResult*> m_calculatedResults;
 };
 

@@ -234,8 +234,8 @@ int PreProcessorGridDataItem::loadFromCgnsFile()
 int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	int ier;
-	auto tmpPath = subPath();
-	impl->m_grid = v4InputGridIO::load(zone, gridTypeDataItem(), tmpPath, offset(), false, &ier);
+	auto gtItem = gridTypeDataItem();
+	impl->m_grid = v4InputGridIO::load(zone, gtItem->gridType(), gtItem, gridAndGridCreatingConditionDataItem()->gridAttributeIo(), offset(), false, &ier);
 	impl->m_grid->setGridDataItem(this);
 	connect(impl->m_grid->grid(), &v4Grid::changed, this, &PreProcessorGridDataItem::handleGridChange);
 

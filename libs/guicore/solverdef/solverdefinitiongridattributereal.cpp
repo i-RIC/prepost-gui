@@ -23,9 +23,9 @@ GridAttributeVariationEditWidget* SolverDefinitionGridAttributeReal::variationEd
 	return new GridAttributeRealVariationEditWidget(parent, this);
 }
 
-GridAttributeContainer* SolverDefinitionGridAttributeReal::buildContainer(v4InputGrid* grid)
+GridAttributeContainer* SolverDefinitionGridAttributeReal::buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io)
 {
-	return new GridAttributeRealContainer(grid, this);
+	return new GridAttributeRealContainer(grid, io, this);
 }
 
 GridAttributeStringConverter* SolverDefinitionGridAttributeReal::stringConverter() const

@@ -42,6 +42,7 @@ public:
 	void clearEdgeFocus() override;
 	void setupGridDataItem(v4InputGrid* grid);
 	int loadFromCgnsFile() override;
+	GridAttributeContainerIoI* gridAttributeIo() override;
 
 	bool importGridFromCgnsFile(const QString& filename);
 
@@ -69,6 +70,7 @@ private:
 	PreProcessorGridAttributeMappingSettingTopDataItem* m_mappingSettingDataItem;
 	PreProcessorGridDataItem* m_gridDataItem;
 	FolderBackup* m_backup;
+	GridAttributeContainerIoI* m_io;
 
 	QDomElement* m_gridSetting;
 };

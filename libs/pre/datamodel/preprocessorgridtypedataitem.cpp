@@ -589,3 +589,11 @@ void PreProcessorGridTypeDataItem::gatherActiveColorMapLegends(std::vector<Color
 		}
 	}
 }
+
+GridAttributeDimensionsContainer* PreProcessorGridTypeDataItem::gridAttributeDimensions(const std::string& attName) const
+{
+	auto group = geoDataTop()->groupDataItem(attName);
+	if (group == nullptr) {return nullptr;}
+
+	return group->dimensions();
+}

@@ -102,7 +102,7 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& elem, SolverDefinit
 	setupGridAttributes(grcElem, solverDef, translator);
 	// setup boundary conditions;
 	setupBoundaryConditions(elem, solverDef);
-	m_emptyGrid = createEmptyGrid(m_defaultGridType);
+	m_emptyGrid = createEmptyGrid(m_defaultGridType, nullptr);
 }
 
 void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
@@ -211,17 +211,17 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 	}
 }
 
-void SolverDefinitionGridType::Impl::buildGridAttributes(v4InputGrid* grid) const
+void SolverDefinitionGridType::Impl::buildGridAttributes(v4InputGrid* grid, GridAttributeContainerIoI* io) const
 {
 	for (auto cond : m_gridAttributes) {
-		grid->addAttribute(cond->container(grid));
+		grid->addAttribute(cond->container(grid, io));
 	}
 	for (auto cond : m_gridComplexAttributes) {
-		grid->addAttribute(cond->container(grid));
+		grid->addAttribute(cond->container(grid, io));
 	}
 }
 
-v4InputGrid* SolverDefinitionGridType::Impl::createEmptyGrid(GridType gridType)
+v4InputGrid* SolverDefinitionGridType::Impl::createEmptyGrid(GridType gridType, GridAttributeContainerIoI* io)
 {
 	v4Grid* grid = nullptr;
 	switch (gridType) {
@@ -246,7 +246,7 @@ v4InputGrid* SolverDefinitionGridType::Impl::createEmptyGrid(GridType gridType)
 	if (grid == nullptr) {return nullptr;}
 
 	auto ret = new v4InputGrid(m_parent, grid);
-	buildGridAttributes(ret);
+	buildGridAttributes(ret, io);
 	return ret;
 }
 
@@ -407,9 +407,9 @@ bool SolverDefinitionGridType::post() const
 	return impl->m_post;
 }
 
-void SolverDefinitionGridType::buildGridAttributes(v4InputGrid* grid) const
+void SolverDefinitionGridType::buildGridAttributes(v4InputGrid* grid, GridAttributeContainerIoI* io) const
 {
-	impl->buildGridAttributes(grid);
+	impl->buildGridAttributes(grid, io);
 }
 
 v4InputGrid* SolverDefinitionGridType::emptyGrid() const
@@ -417,14 +417,14 @@ v4InputGrid* SolverDefinitionGridType::emptyGrid() const
 	return impl->m_emptyGrid;
 }
 
-v4InputGrid* SolverDefinitionGridType::createEmptyGrid()
+v4InputGrid* SolverDefinitionGridType::createEmptyGrid(GridAttributeContainerIoI* io)
 {
-	return createEmptyGrid(impl->m_defaultGridType);
+	return createEmptyGrid(impl->m_defaultGridType, io);
 }
 
-v4InputGrid* SolverDefinitionGridType::createEmptyGrid(GridType type)
+v4InputGrid* SolverDefinitionGridType::createEmptyGrid(GridType type, GridAttributeContainerIoI* io)
 {
-	return impl->createEmptyGrid(type);
+	return impl->createEmptyGrid(type, io);
 }
 
 QString SolverDefinitionGridType::gridAttributeCaption(const std::string& name) const

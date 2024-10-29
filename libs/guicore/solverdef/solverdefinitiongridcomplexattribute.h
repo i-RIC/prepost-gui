@@ -24,7 +24,7 @@ public:
 	bool isGrouped() const;
 
 private:
-	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
+	GridAttributeContainer* buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io) override;
 
 	class Impl;
 	std::unique_ptr<Impl> impl;

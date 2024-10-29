@@ -10,6 +10,7 @@ class QDomElement;
 class SolverDefinitionGridAttribute;
 class GridAttributeDimensionContainer;
 class GridAttributeDimensionSelectWidget;
+class ProjectMainFile;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimension : public SolverDefinitionNode
 {
@@ -24,7 +25,7 @@ public:
 	SolverDefinitionGridAttribute* attribute() const;
 
 	virtual GridAttributeDimensionContainer* buildContainer() = 0;
-	GridAttributeDimensionSelectWidget* buildSelectWidget(GridAttributeDimensionContainer* container);
+	GridAttributeDimensionSelectWidget* buildSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile);
 
 private:
 	class Impl;

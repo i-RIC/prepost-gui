@@ -22,9 +22,9 @@ GridAttributeVariationEditWidget* SolverDefinitionGridAttributeString::variation
 	return nullptr;
 }
 
-GridAttributeContainer* SolverDefinitionGridAttributeString::buildContainer(v4InputGrid* grid)
+GridAttributeContainer* SolverDefinitionGridAttributeString::buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io)
 {
-	return new GridAttributeStringContainer(grid, this);
+	return new GridAttributeStringContainer(grid, io, this);
 }
 
 GridAttributeStringConverter* SolverDefinitionGridAttributeString::stringConverter() const

@@ -4,8 +4,8 @@
 #include "../base/gridattributedimensioncontainer.h"
 #include "gridattributedimensioncomboboxselectwidget.h"
 
-GridAttributeDimensionComboboxSelectWidget::GridAttributeDimensionComboboxSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent) :
-	GridAttributeDimensionSelectWidget(container, parent),
+GridAttributeDimensionComboboxSelectWidget::GridAttributeDimensionComboboxSelectWidget(GridAttributeDimensionContainer* container, ProjectMainFile* mainFile, QWidget* parent) :
+	GridAttributeDimensionSelectWidget(container, mainFile, parent),
 	ui(new Ui::GridAttributeDimensionComboboxSelectWidget)
 {
 	ui->setupUi(this);

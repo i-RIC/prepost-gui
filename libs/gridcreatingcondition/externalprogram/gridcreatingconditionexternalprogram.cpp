@@ -174,7 +174,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* parent)
 			return false;
 		}
 
-		grid = v4InputGridIO::load(*firstZone, gtItem, "", offset(), true, &ier);
+		grid = v4InputGridIO::load(*firstZone, gType, gtItem, nullptr, offset(), true, &ier);
 	}  catch (...) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 		return false;

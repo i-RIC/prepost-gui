@@ -8,7 +8,7 @@
 class GridAttributeIntegerContainer : public GridAttributeContainerT<int, vtkIntArray>
 {
 public:
-	GridAttributeIntegerContainer(v4InputGrid* grid, SolverDefinitionGridAttributeT<int>* cond);
+	GridAttributeIntegerContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttributeT<int>* cond);
 };
 
 #endif // GRIDATTRIBUTEINTEGERCONTAINER_H
