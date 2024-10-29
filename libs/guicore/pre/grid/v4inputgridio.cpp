@@ -27,6 +27,11 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGr
 		grid = loadUnstructured2dGrid(zone, offset, ier);
 	} else {
 		auto size = zone.size();
+		if (size.size() == 0) {
+			*ier = IRIC_DATA_NOT_FOUND;
+			return nullptr;
+		}
+
 		if (size[1] == 1) {
 			grid = loadStructured15DGridWithCrossSection(zone, offset, ier);
 		} else {
