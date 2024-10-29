@@ -114,7 +114,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	int currentStep = 0;
-	if (cont == nullptr || cont->gridData()) {
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		resetParticles();
 		goto TIMEHANDLING;
 	}
