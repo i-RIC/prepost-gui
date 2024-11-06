@@ -3,6 +3,7 @@
 
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
 #include <guicore/pre/grid/v4inputgridio.h>
@@ -173,8 +174,8 @@ bool GridCreatingConditionExternalProgram::create(QWidget* parent)
 			QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 			return false;
 		}
-
-		grid = v4InputGridIO::load(*firstZone, gType, gtItem, nullptr, offset(), true, &ier);
+		auto ioi = gccDataItem()->gridAndGridCreatingConditionDataItem()->gridAttributeIo();
+		grid = v4InputGridIO::load(*firstZone, gType, gtItem, ioi, offset(), true, &ier);
 	}  catch (...) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 		return false;
