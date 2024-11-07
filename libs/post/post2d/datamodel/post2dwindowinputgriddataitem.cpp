@@ -26,12 +26,7 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	auto geoDataTop = zoneDataItem()->gridTypeDataItem()->geoDataItem();
-	auto grid = inputGrid();
-	for (auto att : grid->attributes()) {
-		auto gItem = geoDataTop->preGeoDataTopDataItem()->groupDataItem(att->name());
-		att->setDimensions(gItem->dimensions());
-	}
+	connect(inputGrid()->grid(), &v4Grid::changed, this, &Post2dWindowInputGridDataItem::handleGridChange);
 
 	impl->m_gridShapeDataItem = new Post2dWindowGridShapeDataItem(this);
 	impl->m_nodeGroupDataItem = new Post2dWindowGridAttributeNodeGroupDataItem(this);
@@ -112,6 +107,11 @@ Post2dWindowGridAttributeIEdgeGroupDataItem* Post2dWindowInputGridDataItem::iEdg
 Post2dWindowGridAttributeJEdgeGroupDataItem* Post2dWindowInputGridDataItem::jEdgeGroupDataItem() const
 {
 	return impl->m_jEdgeGroupDataItem;
+}
+
+void Post2dWindowInputGridDataItem::handleGridChange()
+{
+	zoneDataItem()->update(true);
 }
 
 void Post2dWindowInputGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)

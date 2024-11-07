@@ -11,6 +11,7 @@
 #include <vector>
 
 class ProjectData;
+class ProjectMainFile;
 
 class GUICOREDLL_EXPORT GridAttributeDimensionsContainer : public ProjectDataItem
 {
@@ -23,8 +24,7 @@ public:
 	const std::vector<GridAttributeDimensionContainer*>& containers() const;
 	std::vector<GridAttributeDimensionContainer*>& containers();
 
-	const std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets() const;
-	std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets();
+	std::vector<GridAttributeDimensionSelectWidget*> buildSelectWidgets();
 
 	void clear();
 

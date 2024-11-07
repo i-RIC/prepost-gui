@@ -8,7 +8,7 @@
 class GridAttributeRealContainer : public GridAttributeContainerT<double, vtkDoubleArray>
 {
 public:
-	GridAttributeRealContainer(v4InputGrid* grid, SolverDefinitionGridAttributeT<double>* cond);
+	GridAttributeRealContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttributeT<double>* cond);
 };
 
 #endif // GRIDATTRIBUTEREALCONTAINER_H

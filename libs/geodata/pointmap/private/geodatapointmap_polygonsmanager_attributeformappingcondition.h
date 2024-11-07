@@ -17,7 +17,7 @@ public:
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 
 private:
-	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
+	GridAttributeContainer* buildContainer(v4InputGrid* grid, GridAttributeContainerIoI* io) override;
 	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;
 
 	class EditWidget;

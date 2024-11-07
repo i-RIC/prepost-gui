@@ -23,8 +23,8 @@ public:
 	void setGridGenerators(const QDomElement& elem);
 	void setupGridAttributes(const QDomElement& elem, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 	void setupBoundaryConditions(const QDomElement& elem, SolverDefinition* solverDef);
-	void buildGridAttributes(v4InputGrid* grid) const;
-	v4InputGrid* createEmptyGrid(GridType gridType);
+	void buildGridAttributes(v4InputGrid* grid, GridAttributeContainerIoI* io) const;
+	v4InputGrid* createEmptyGrid(GridType gridType, GridAttributeContainerIoI* io);
 
 	std::string m_name;
 	QString m_caption;

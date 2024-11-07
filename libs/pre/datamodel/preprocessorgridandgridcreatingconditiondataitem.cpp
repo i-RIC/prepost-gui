@@ -26,6 +26,7 @@
 #include <guicore/pre/grid/gridimporteri.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/grid/v4inputgridio.h>
+#include <guicore/pre/gridcond/base/gridattributecontaineriopre.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectmainfile.h>
@@ -52,6 +53,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_bcGroupDataItem {nullptr},
 	m_gridDataItem {nullptr},
 	m_backup {nullptr},
+	m_io {new GridAttributeContainerIoPre(subPath())},
 	m_gridSetting {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -256,7 +258,7 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 
 	auto gtItem = gridTypeDataItem();
 	int ier;
-	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem, subPath(), offset(), true, &ier);
+	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem->gridType(), gtItem, m_io, offset(), true, &ier);
 	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
 	setupGridDataItem(grid);
 	delete grid;
@@ -272,6 +274,11 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 	m_gridDataItem->reflectExpandState(dataModel()->objectBrowserView());
 
 	return ret;
+}
+
+GridAttributeContainerIoI* PreProcessorGridAndGridCreatingConditionDataItem::gridAttributeIo()
+{
+	return m_io;
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -347,7 +354,7 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridIm
 {
 	// create new empty grid.
 	auto gt = importer->supportedGridType();
-	v4InputGrid* importedGrid = gridTypeDataItem()->gridType()->createEmptyGrid(gt);
+	v4InputGrid* importedGrid = gridTypeDataItem()->gridType()->createEmptyGrid(gt, m_io);
 	setupGridDataItem(importedGrid);
 
 	// now, import grid data.

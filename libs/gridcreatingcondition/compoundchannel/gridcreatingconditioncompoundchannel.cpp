@@ -26,6 +26,7 @@
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
@@ -1096,7 +1097,8 @@ v4InputGrid* GridCreatingConditionCompoundChannel::createGridCore(const GridCrea
 
 	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
 	auto ret = new v4InputGrid(gt->gridType(), grid);
-	gt->gridType()->buildGridAttributes(ret);
+	auto item = gccDataItem()->gridAndGridCreatingConditionDataItem();
+	gt->gridType()->buildGridAttributes(ret, item->gridAttributeIo());
 
 	ret->allocateAttributes();
 	return ret;

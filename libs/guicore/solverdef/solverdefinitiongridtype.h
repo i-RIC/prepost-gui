@@ -11,6 +11,7 @@
 #include <vector>
 
 class ColorMapSettingEditWidgetI;
+class GridAttributeContainerIoI;
 class v4InputGrid;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
@@ -80,12 +81,12 @@ public:
 
 	/// @name Functions to build objects
 	//@{
-	void buildGridAttributes(v4InputGrid* grid) const;
+	void buildGridAttributes(v4InputGrid* grid, GridAttributeContainerIoI* io) const;
 
 	/// Returns a pointer to a grid that has no data.
 	v4InputGrid* emptyGrid() const;
-	v4InputGrid* createEmptyGrid();
-	v4InputGrid* createEmptyGrid(GridType type);
+	v4InputGrid* createEmptyGrid(GridAttributeContainerIoI* io);
+	v4InputGrid* createEmptyGrid(GridType type, GridAttributeContainerIoI* io);
 	//@}
 
 	QString gridAttributeCaption(const std::string& name) const;

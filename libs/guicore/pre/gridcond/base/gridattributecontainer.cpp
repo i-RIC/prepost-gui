@@ -6,6 +6,7 @@
 #include "../../../grid/v4grid.h"
 #include "../../../grid/v4structured2dgrid.h"
 #include "gridattributecontainer.h"
+#include "gridattributecontainerioi.h"
 #include "gridattributedimensioncontainer.h"
 #include "gridattributedimensionscontainer.h"
 
@@ -14,13 +15,13 @@
 
 #include <QDir>
 
-GridAttributeContainer::GridAttributeContainer(v4InputGrid* grid, SolverDefinitionGridAttribute* cond) :
+GridAttributeContainer::GridAttributeContainer(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttribute* cond) :
 	GridAttributeBaseObject(cond),
 	m_grid {grid},
 	m_dimensions {nullptr},
-	m_temporaryDir {},
 	m_mapped {false},
-	m_isCustomModified {false}
+	m_isCustomModified {false},
+	m_io {io}
 {}
 
 GridAttributeContainer::~GridAttributeContainer()
@@ -50,27 +51,11 @@ void GridAttributeContainer::setDimensions(GridAttributeDimensionsContainer* dim
 	}
 }
 
-QString GridAttributeContainer::temporaryDir() const
-{
-	return m_temporaryDir;
-}
-
-void GridAttributeContainer::setTemporaryDir(const QString& dir)
-{
-	m_temporaryDir = dir;
-}
-
 void GridAttributeContainer::clearTemporaryData()
 {
-	int index = 0;
-	while (true) {
-		auto fname = temporaryExternalFilename(index);
-		QFile f(fname);
-		if (! f.exists()) {return;}
+	if (m_io == nullptr) {return;}
 
-		f.remove();
-		++ index;
-	}
+	m_io->clearTemporaryData(this);
 }
 
 unsigned int GridAttributeContainer::dataCount() const
@@ -129,26 +114,11 @@ void GridAttributeContainer::updateValueRange()
 
 void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
-	if (oldIndex == newIndex) {return;}
-
-	QString fname = temporaryExternalFilename(oldIndex);
-
-	QFileInfo finfo(fname);
-	iRIC::mkdirRecursively(finfo.absolutePath());
-	saveToExternalFile(fname);
-
-	fname = temporaryExternalFilename(newIndex);
-	loadFromExternalFile(fname);
-	setModified();
-
-	emit m_grid->grid()->changed();
+	m_io->handleDimensionCurrentIndexChange(oldIndex, newIndex, this);
 }
 
 void GridAttributeContainer::handleDimensionValuesChange(const std::vector<QVariant> & /*before*/, const std::vector<QVariant> & /*after*/)
-{
-	QString fname = temporaryExternalFilename(dimensions()->currentIndex());
-	saveToExternalFile(fname);
-}
+{}
 
 vtkDataSetAttributes* GridAttributeContainer::vtkAttributes() const
 {
@@ -164,13 +134,4 @@ vtkDataSetAttributes* GridAttributeContainer::vtkAttributes() const
 		return sgrid->vtkJEdgeData()->data()->GetCellData();
 	}
 	return nullptr; // this never happens. only for avoiding compiler warning
-}
-
-QString GridAttributeContainer::temporaryExternalFilename(int index) const
-{
-	QString format("%1_%2.dat");
-	QString filename = format.arg(gridAttribute()->name().c_str()).arg(index + 1);
-
-	QDir subDir(m_temporaryDir);
-	return subDir.absoluteFilePath(filename);
 }

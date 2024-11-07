@@ -7,7 +7,6 @@
 #include "../project/projectmainfile.h"
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
-#include "../solverdef/solverdefinitiongridtype.h"
 #include "exporter/postzonedatacsvexporter.h"
 #include "exporter/postzonedatashapeexporter.h"
 #include "exporter/postzonedatatpoexporter.h"
@@ -97,6 +96,7 @@ PostSolutionInfo::~PostSolutionInfo()
 	clearCalculatedResults(&m_calculatedResults2D);
 	clearCalculatedResults(&m_calculatedResults3D);
 	clearBaseIterativeResults();
+
 	delete m_baseIterativeValuesContainer;
 	delete m_loadedElement;
 }
@@ -196,20 +196,17 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 	for (auto c : m_v4ZoneContainers1D) {
 		auto z = f->base(1)->zone(c->zoneName());
 		auto gtItem = preModel->gridTypeDataItem(c->gridType()->name());
-		auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(c->zoneName().c_str()));
-		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, tmpPath, m_disableCalculatedResult));
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, m_disableCalculatedResult));
 	}
 	for (auto c : m_v4ZoneContainers2D) {
 		auto z = f->base(2)->zone(c->zoneName());
 		auto gtItem = preModel->gridTypeDataItem(c->gridType()->name());
-		auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(c->zoneName().c_str()));
-		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, tmpPath, m_disableCalculatedResult));
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, m_disableCalculatedResult));
 	}
 	for (auto c : m_v4ZoneContainers3D) {
 		auto z = f->base(3)->zone(c->zoneName());
 		auto gtItem = preModel->gridTypeDataItem(c->gridType()->name());
-		auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(c->zoneName().c_str()));
-		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, tmpPath, m_disableCalculatedResult));
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, gtItem, m_disableCalculatedResult));
 	}
 
 	qDebug("Loading result from CGNS file: %d", wholetime.elapsed());
@@ -277,8 +274,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 		// zone names are equal to those already read.
 		for (auto c : *containers) {
 			auto gtItem = preModel->gridTypeDataItem(c->gridType()->name());
-			auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(c->zoneName().c_str()));
-			c->loadIfEmpty(base->zone(c->zoneName()), gtItem, tmpPath);
+			c->loadIfEmpty(base->zone(c->zoneName()), gtItem);
 		}
 		return false;
 	}
@@ -302,9 +298,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 				if (gridType->isPrimary() && ! (gridType->isOptional())) {
 					auto cont = new v4PostZoneDataContainer(zoneName, gridType, this);
 					auto gtItem = preModel->gridTypeDataItem(gridType->name());
-					auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(cont->zoneName().c_str()));
-					iRIC::mkdirRecursively(tmpPath);
-					cont->loadFromCgnsFile(zone, gtItem, tmpPath, false);
+					cont->loadFromCgnsFile(zone, gtItem, false);
 					containers->push_back(cont);
 					containerNameMap->insert({zoneName, cont});
 					found = true;
@@ -316,9 +310,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 				if (zoneName.find(gridType->name()) != std::string::npos) {
 					auto cont = new v4PostZoneDataContainer(zoneName, gridType, this);
 					auto gtItem = preModel->gridTypeDataItem(gridType->name());
-					auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(cont->zoneName().c_str()));
-					iRIC::mkdirRecursively(tmpPath);
-					cont->loadFromCgnsFile(zone, gtItem, tmpPath, false);
+					cont->loadFromCgnsFile(zone, gtItem, false);
 					containers->push_back(cont);
 					containerNameMap->insert({zoneName, cont});
 					found = true;
@@ -329,9 +321,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 		if (! found) {
 			// no appropriate gridtype found. use the dummy grid type.
 			auto cont = new v4PostZoneDataContainer(zoneName, projectData()->solverDefinition()->dummyGridType(), this);
-			auto tmpPath = wDir.absoluteFilePath(QString("post/%1").arg(cont->zoneName().c_str()));
-			iRIC::mkdirRecursively(tmpPath);
-			cont->loadFromCgnsFile(zone, nullptr, tmpPath, false);
+			cont->loadFromCgnsFile(zone, nullptr, false);
 			containers->push_back(cont);
 			containerNameMap->insert({zoneName, cont});
 		}

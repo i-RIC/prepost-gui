@@ -1,6 +1,7 @@
 #ifndef GRIDATTRIBUTECONTAINERT_DETAIL_H
 #define GRIDATTRIBUTECONTAINERT_DETAIL_H
 
+#include "../gridattributecontainerioi.h"
 #include "../gridattributecontainert.h"
 #include "../gridattributedimensionscontainer.h"
 #include "../../../../project/projectcgnsfile.h"
@@ -20,8 +21,8 @@
 #include <iriclib_errorcodes.h>
 
 template <class V, class DA>
-GridAttributeContainerT<V, DA>::GridAttributeContainerT(v4InputGrid* grid, SolverDefinitionGridAttributeT<V>* cond) :
-	GridAttributeContainer(grid, cond)
+GridAttributeContainerT<V, DA>::GridAttributeContainerT(v4InputGrid* grid, GridAttributeContainerIoI* io, SolverDefinitionGridAttributeT<V>* cond) :
+	GridAttributeContainer(grid, io, cond)
 {
 	addArrayIfNeeded();
 }
@@ -45,26 +46,15 @@ void GridAttributeContainerT<V, DA>::setValue(unsigned int index, V value)
 template <class V, class DA>
 int GridAttributeContainerT<V, DA>::loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts)
 {
-	GridAttributeDimensionsContainer* dims = dimensions();
-	int ier = 0;
-	if (dims != nullptr && dims->containers().size() > 0) {
-		for (int index = 0; index <= dims->maxIndex(); ++index) {
-			ier = loadFromCgnsFileForIndex(atts, index);
-			if (ier == IRIC_NO_ERROR) {
-				auto fileName = temporaryExternalFilename(index);
-				QFileInfo finfo(fileName);
-				iRIC::mkdirRecursively(finfo.absolutePath());
-				bool ok = saveToExternalFile(fileName);
-				if (! ok) {return IRIC_FILE_COPY_FAIL;}
-			}
+	if (m_io == nullptr) {
+		int ier = loadFromCgnsFileForIndex(atts, 0);
+		if (ier == IRIC_NO_ERROR) {
+			setMapped(true);
 		}
+		return ier;
+	} else {
+		return m_io->loadFromCgnsFile(atts, this);
 	}
-
-	ier = loadFromCgnsFileForIndex(atts, 0);
-	if (ier == IRIC_NO_ERROR) {
-		setMapped(true);
-	}
-	return ier;
 }
 
 template <class V, class DA>
@@ -92,26 +82,11 @@ int GridAttributeContainerT<V, DA>::loadFromCgnsFileForIndex(const iRICLib::H5Cg
 template <class V, class DA>
 int GridAttributeContainerT<V, DA>::saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts)
 {
-	GridAttributeDimensionsContainer* dims = dimensions();
-
-	// output dimension values
-	for (auto dim : dims->containers()) {
-		int ier = dim->saveToCgnsFile(atts);
-		if (ier != IRIC_NO_ERROR) {return ier;}
-	}
-
-	if (dims->containers().size() == 0) {
-		return saveToCgnsFileForIndex(atts, 0);
-	} else {
-		for (int index = 0; index <= dims->maxIndex(); ++index) {
-			bool ok = loadFromExternalFile(temporaryExternalFilename(index));
-			if (ok) {
-				int ier = saveToCgnsFileForIndex(atts, index);
-				if (ier != IRIC_NO_ERROR) {return ier;}
-			}
-		}
+	if (m_io == nullptr) {
 		return IRIC_NO_ERROR;
 	}
+
+	m_io->saveToCgnsFile(atts, this);
 }
 
 template <class V, class DA>

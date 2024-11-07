@@ -601,6 +601,9 @@ HEADERS += guicore_global.h \
            pre/grid/private/v4inputgrid_impl.h \
            pre/gridcond/base/gridattributebaseobject.h \
            pre/gridcond/base/gridattributecontainer.h \
+           pre/gridcond/base/gridattributecontainerioi.h \
+           pre/gridcond/base/gridattributecontaineriopost.h \
+           pre/gridcond/base/gridattributecontaineriopre.h \
            pre/gridcond/base/gridattributecontainert.h \
            pre/gridcond/base/gridattributedimensioncontainer.h \
            pre/gridcond/base/gridattributedimensioncontainert.h \
@@ -608,6 +611,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributedimensionrealcontainer.h \
            pre/gridcond/base/gridattributedimensionscontainer.h \
            pre/gridcond/base/gridattributedimensionselectwidget.h \
+           pre/gridcond/base/gridattributedimensionsprovideri.h \
            pre/gridcond/base/gridattributeeditcommand.h \
            pre/gridcond/base/gridattributeeditdialog.h \
            pre/gridcond/base/gridattributeeditnameandvaluedialog.h \
@@ -1094,6 +1098,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/grid/private/v4inputgrid_attributedataprovider.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \
+           pre/gridcond/base/gridattributecontaineriopost.cpp \
+           pre/gridcond/base/gridattributecontaineriopre.cpp \
            pre/gridcond/base/gridattributedimensioncontainer.cpp \
            pre/gridcond/base/gridattributedimensionintegercontainer.cpp \
            pre/gridcond/base/gridattributedimensionrealcontainer.cpp \

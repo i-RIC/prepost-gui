@@ -31,6 +31,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
@@ -430,7 +431,8 @@ v4InputGrid* GridCreatingConditionPoisson::Impl::createGrid()
 
 	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_parent->m_conditionDataItem->parent()->parent());
 	auto inputGrid = new v4InputGrid(gt->gridType(), grid);
-	gt->gridType()->buildGridAttributes(inputGrid);
+	auto item = m_parent->gccDataItem()->gridAndGridCreatingConditionDataItem();
+	gt->gridType()->buildGridAttributes(inputGrid, item->gridAttributeIo());
 
 	auto leftBankPoints = PolyLineUtil::buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
 	auto rightBankPoints = PolyLineUtil::buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);

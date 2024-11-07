@@ -175,9 +175,9 @@ std::vector<SolverDefinitionGridAttributeDimension *>& SolverDefinitionGridAttri
 	return impl->m_dimensions;
 }
 
-GridAttributeContainer* SolverDefinitionGridAttribute::container(v4InputGrid* grid)
+GridAttributeContainer* SolverDefinitionGridAttribute::container(v4InputGrid* grid, GridAttributeContainerIoI* io)
 {
-	return buildContainer(grid);
+	return buildContainer(grid, io);
 }
 
 GridAttributeEditDialog* SolverDefinitionGridAttribute::editDialog(QWidget* parent)

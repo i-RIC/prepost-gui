@@ -1,4 +1,5 @@
 #include "../../gridimporter/cgnsgridimporter.h"
+#include "../preprocessorgridandgridcreatingconditiondataitem.h"
 #include "../preprocessorgridtypedataitem.h"
 #include "../preprocessorbcgroupdataitem.h"
 #include "preprocessorgriddataitem_cgnsimporter.h"
@@ -85,8 +86,10 @@ bool PreProcessorGridDataItem::CgnsImporter::importGrid(const QString& fileName,
 			if (ret == QMessageBox::No) {return false;}
 		}
 
-		int ier;
-		auto grid = v4InputGridIO::load(*zone, m_item->gridTypeDataItem(), "", m_item->offset(), false, &ier);
+		int ier = 0;
+		auto gridType = m_item->gridTypeDataItem()->gridType();
+		auto ioi = m_item->gridAndGridCreatingConditionDataItem()->gridAttributeIo();
+		auto grid = v4InputGridIO::load(*zone, gridType, m_item->gridTypeDataItem(), ioi, m_item->offset(), false, &ier);
 		if (ier != IRIC_NO_ERROR) {return false;}
 
 		m_item->setGrid(grid, true);

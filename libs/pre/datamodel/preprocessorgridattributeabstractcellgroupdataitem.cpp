@@ -425,7 +425,7 @@ bool PreProcessorGridAttributeAbstractCellGroupDataItem::addToolBarButtons(QTool
 	if (grid == nullptr) {return true;}
 
 	auto att = grid->attribute(activeItem->condition()->name());
-	const auto& selectWidgets = att->dimensions()->selectWidgets();
+	auto selectWidgets = att->dimensions()->buildSelectWidgets();
 	if (selectWidgets.size() >= 0) {
 		toolBar->addSeparator();
 

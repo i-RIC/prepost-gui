@@ -10,6 +10,7 @@
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -174,6 +175,17 @@ bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 		widget->setParent(toolBar);
 		widget->show();
 		toolBar->addWidget(widget);
+		added = true;
+	}
+
+	Post2dWindowGeoDataTopDataItem* tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
+	PreProcessorGeoDataTopDataItemI* rtItem = tItem->preGeoDataTopDataItem();
+	PreProcessorGeoDataGroupDataItemI* gItem = rtItem->groupDataItem(m_condition->name());
+	auto dims = gItem->dimensions();
+
+	for (auto w : dims->buildSelectWidgets()) {
+		QAction* action = toolBar->addWidget(w);
+		action->setVisible(true);
 		added = true;
 	}
 

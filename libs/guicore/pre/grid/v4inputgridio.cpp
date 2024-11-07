@@ -9,6 +9,7 @@
 #include "../base/preprocessorgeodatagroupdataitemi.h"
 #include "../base/preprocessorgeodatatopdataitemi.h"
 #include "../gridcond/base/gridattributecontainer.h"
+#include "../gridcond/base/gridattributedimensionsprovideri.h"
 
 #include <iriclib_errorcodes.h>
 #include <h5cgnsbase.h>
@@ -20,7 +21,7 @@
 
 #include <QPointF>
 
-v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, const QPointF& offset, bool noDimension, int* ier)
+v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, SolverDefinitionGridType* gt, GridAttributeDimensionsProviderI* dimsProvider, GridAttributeContainerIoI* io, const QPointF& offset, bool noDimension, int* ier)
 {
 	v4Grid* grid = nullptr;
 	if (zone.type() == iRICLib::H5CgnsZone::Type::Unstructured) {
@@ -38,19 +39,15 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGr
 	auto zoneAtts = zone.gridAttributes();
 	if (zoneAtts == nullptr) {delete grid; return nullptr;}
 
-	auto gridType = gtItem->gridType();
-	auto inputGrid = new v4InputGrid(gridType, grid);
-	gridType->buildGridAttributes(inputGrid);
+	auto inputGrid = new v4InputGrid(gt, grid);
+	gt->buildGridAttributes(inputGrid, io);
 	inputGrid->allocateAttributes();
 
-	auto gdTop = gtItem->geoDataTop();
-
 	for (auto att : inputGrid->attributes()) {
-		auto gItem = gdTop->groupDataItem(att->name());
 		if (! noDimension) {
-			att->setDimensions(gItem->dimensions());
+			auto dims = dimsProvider->gridAttributeDimensions(att->name());
+			att->setDimensions(dims);
 		}
-		att->setTemporaryDir(tmpPath);
 		*ier = att->loadFromCgnsFile(*zoneAtts);
 		if (*ier != IRIC_NO_ERROR) {delete inputGrid; return nullptr;}
 	}
