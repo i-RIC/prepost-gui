@@ -562,7 +562,9 @@ int ProjectMainFile::loadFromCgnsFile()
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 		int ier = impl->m_projectData->mainWindow()->loadFromCgnsFile();
-		if (ier != IRIC_NO_ERROR) {return ier;}
+		if (ier != IRIC_NO_ERROR) {
+			throw ErrorMessage("Cgns file load fail");
+		}
 	} catch (...) {
 		if (impl->m_cgnsManager->backupFileExists()) {
 			if (impl->m_cgnsManager->separateResultExists()) {
