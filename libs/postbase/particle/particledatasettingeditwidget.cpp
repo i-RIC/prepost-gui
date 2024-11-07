@@ -80,9 +80,13 @@ QUndoCommand* ParticleDataSettingEditWidget::createModifyCommand(bool apply)
 void ParticleDataSettingEditWidget::colorTargetChanged(int index)
 {
 	auto colorTarget = m_colorTargets.at(index);
-	auto cs = m_colorMapSettings.find(colorTarget)->second;
+	ColorMapSettingContainerI* cs = nullptr;
+	auto cm_it = m_colorMapSettings.find(colorTarget);
+	if (cm_it != m_colorMapSettings.end()) {
+		cs = cm_it->second;
+	}
 
-	if (m_colorMapWidget != nullptr) {
+	if (m_colorMapWidget != nullptr && cs != nullptr) {
 		cs->legendSetting()->copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
 	}
 
