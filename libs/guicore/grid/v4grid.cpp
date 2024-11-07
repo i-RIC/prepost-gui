@@ -72,12 +72,12 @@ void v4Grid::applyOffset(const QPointF& point)
 void v4Grid::pointsModified()
 {
 	impl->m_vtkData->data()->GetPoints()->Modified();
-	updateCellIndex();
+	discardCellIndex();
 }
 
-void v4Grid::updateCellIndex()
+void v4Grid::discardCellIndex()
 {
-	vtkData()->updateCellIndex();
+	vtkData()->discardCellIndex();
 }
 
 v4GridStructureCheckerI* v4Grid::structureChecker() const

@@ -24,6 +24,7 @@ public:
 	bool isOutput() const;
 
 	void updateActorSetting() override;
+	void handleStandardItemChange() override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 

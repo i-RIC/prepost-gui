@@ -81,6 +81,8 @@ Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
 
 vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
 {
+	if (! isChecked()) {return nullptr;}
+
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return nullptr;}
 
@@ -187,6 +189,7 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
+	if (! isChecked()) {return;}
 
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return;}

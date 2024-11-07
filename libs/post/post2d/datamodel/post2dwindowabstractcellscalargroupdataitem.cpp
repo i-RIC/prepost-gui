@@ -67,6 +67,7 @@ const std::string& Post2dWindowAbstractCellScalarGroupDataItem::target() const
 void Post2dWindowAbstractCellScalarGroupDataItem::updateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
+	if (! isChecked()) {return;}
 
 	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	if (cont == nullptr || cont->gridData() == nullptr) {
@@ -215,6 +216,12 @@ void Post2dWindowAbstractCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent*
 	if (event->button() == Qt::LeftButton) {
 		topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 	}
+}
+
+void Post2dWindowAbstractCellScalarGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post2dWindowDataItem::handleStandardItemChange();
 }
 
 void Post2dWindowAbstractCellScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

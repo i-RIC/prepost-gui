@@ -81,6 +81,7 @@ void Post3dWindowContourDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
+	if (! isChecked()) {return;}
 
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return;}
@@ -132,6 +133,12 @@ void Post3dWindowContourDataItem::mousePressEvent(QMouseEvent* event, VTKGraphic
 void Post3dWindowContourDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	groupDataItem()->mouseReleaseEvent(event, v);
+}
+
+void Post3dWindowContourDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
 }
 
 bool Post3dWindowContourDataItem::addToolBarButtons(QToolBar* toolBar)

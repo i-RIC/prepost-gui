@@ -71,6 +71,8 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
 	clearParticleActors();
 	clearParticles();
 
+	if (! isChecked()) {return;}
+
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr || cont->gridData() == nullptr) {return;}
 	if (m_setting.target == "") {return;}
@@ -84,6 +86,12 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
 
 	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
+}
+
+void Post3dWindowNodeVectorParticleGroupDataItem::handleStandardItemChange()
+{
+	updateActorSetting();
+	Post3dWindowDataItem::handleStandardItemChange();
 }
 
 void Post3dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

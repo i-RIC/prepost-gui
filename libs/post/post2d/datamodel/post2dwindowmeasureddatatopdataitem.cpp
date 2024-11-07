@@ -107,7 +107,7 @@ const QList<MeasuredDataFileDataItem*> Post2dWindowMeasuredDataTopDataItem::file
 void Post2dWindowMeasuredDataTopDataItem::setupActors()
 {}
 
-void Post2dWindowMeasuredDataTopDataItem::updateActorSettings()
+void Post2dWindowMeasuredDataTopDataItem::updateActorSetting()
 {}
 
 void Post2dWindowMeasuredDataTopDataItem::addChildItem()
