@@ -217,5 +217,5 @@ void Post2dWindowZoneDataItem::updateRegionPolyData()
 	cells->InsertNextCell(4, pts);
 	impl->m_regionPolyData->SetPolys(cells);
 	impl->m_regionPolyData->Modified();
-	updateVisibilityWithoutRendering();
+	// updateVisibilityWithoutRendering();
 }
