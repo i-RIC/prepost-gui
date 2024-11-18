@@ -81,7 +81,6 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 
 GeoDataPolygonGroup::~GeoDataPolygonGroup()
 {
-	actorCollection()->RemoveAllItems();
 	renderer()->RemoveActor(impl->m_paintActor);
 	renderer()->RemoveActor(impl->m_edgesActor);
 	renderer()->RemoveActor(impl->m_selectedPolygonsEdgesActor);
@@ -366,7 +365,7 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 	return polygon;
 }
 
-void GeoDataPolygonGroup::updateActorSetting()
+void GeoDataPolygonGroup::doUpdateActorSetting()
 {
 	auto ds = impl->m_displaySetting;
 
@@ -428,7 +427,6 @@ void GeoDataPolygonGroup::updateActorSetting()
 	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
 	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
 
-	updateVisibilityWithoutRendering();
 	updateActorSettingForEditTargetPolyData();
 
 	emit updateActorSettingExecuted();
@@ -568,5 +566,5 @@ void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
 	}
 	p_ds.lineWidth = ds.lineWidth;
 
-	targetData->updateActorSetting();
+	targetData->doUpdateActorSetting();
 }

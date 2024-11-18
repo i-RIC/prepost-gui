@@ -64,10 +64,9 @@ const std::string& Post2dWindowAbstractCellScalarGroupDataItem::target() const
 	return impl->m_target;
 }
 
-void Post2dWindowAbstractCellScalarGroupDataItem::updateActorSetting()
+void Post2dWindowAbstractCellScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
-	if (! isChecked()) {return;}
 
 	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	if (cont == nullptr || cont->gridData() == nullptr) {
@@ -105,14 +104,12 @@ void Post2dWindowAbstractCellScalarGroupDataItem::updateActorSetting()
 	if (impl->m_setting.colorMapSetting->legendSetting()->getVisible()) {
 		m_actor2DCollection->AddItem(impl->m_legendActor);
 	}
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowAbstractCellScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowAbstractCellScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

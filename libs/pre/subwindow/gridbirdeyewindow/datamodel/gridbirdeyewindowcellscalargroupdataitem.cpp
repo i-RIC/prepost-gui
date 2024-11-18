@@ -99,7 +99,7 @@ const std::string& GridBirdEyeWindowCellScalarGroupDataItem::elevationTarget() c
 	return impl->m_elevationTarget;
 }
 
-void GridBirdEyeWindowCellScalarGroupDataItem::updateActorSetting()
+void GridBirdEyeWindowCellScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_legendActor->VisibilityOff();
 	m_actor2DCollection->RemoveAllItems();
@@ -159,7 +159,6 @@ void GridBirdEyeWindowCellScalarGroupDataItem::updateActorSetting()
 	}
 
 	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
-	updateVisibilityWithoutRendering();
 }
 
 void GridBirdEyeWindowCellScalarGroupDataItem::setupActors()

@@ -68,7 +68,7 @@ void GeoDataPointmap::PolygonsManager::mergeEditTargetPolygon()
 void GeoDataPointmap::PolygonsManager::updatePolygonsActorSettings() const
 {
 	auto pg = polygonGroup();
-	pg->updateActorSetting();
+	pg->doUpdateActorSetting();
 	auto v = m_parent->graphicsView();
 	m_polygonsColorMap->legendSetting()->imgSetting()->apply(v);
 

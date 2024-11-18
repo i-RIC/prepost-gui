@@ -100,7 +100,7 @@ std::vector<GeoDataExporter*> GeoData::exporters() const
 
 void GeoData::setupDataItem()
 {
-	PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
+	auto item = geoDataDataItem();
 	QString fname = name();
 	fname.append(".dat");
 	item->setFilename(fname);
@@ -131,6 +131,11 @@ void GeoData::applyColorMapSetting()
 
 void GeoData::applyValueChangeMap(const std::vector<int>& /*valueMap*/)
 {}
+
+void GeoData::updateActorSetting()
+{
+	geoDataDataItem()->updateActorSetting();
+}
 
 QMenu* GeoData::menu() const
 {
@@ -348,7 +353,7 @@ vtkActor2DCollection* GeoData::actor2DCollection()
 	return geoDataDataItem()->actor2DCollection();
 }
 
-void GeoData::updateActorSetting()
+void GeoData::doUpdateActorSetting()
 {}
 
 void GeoData::editName()

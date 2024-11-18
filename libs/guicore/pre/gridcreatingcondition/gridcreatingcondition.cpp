@@ -176,7 +176,6 @@ void GridCreatingCondition::updateVisibilityWithoutRendering()
 	gccDataItem()->updateVisibilityWithoutRendering();
 }
 
-
 ProjectData* GridCreatingCondition::projectData()
 {
 	return m_conditionDataItem->projectData();

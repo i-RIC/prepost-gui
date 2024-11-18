@@ -30,7 +30,6 @@ PreProcessorNormal15DGridWithCrossSectionShapeDataItem::PreProcessorNormal15DGri
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
 	setupActors();
-	updateActorSettings();
 }
 
 PreProcessorNormal15DGridWithCrossSectionShapeDataItem::~PreProcessorNormal15DGridWithCrossSectionShapeDataItem()
@@ -72,20 +71,11 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informGridUpdate()
 		m_edgeMapper->SetInputData(grid->vtkData()->data());
 		m_vertexMapper->SetInputData(grid->pointsGrid());
 	}
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings()
+void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doUpdateActorSetting()
 {
-	vtkCollectionIterator* it = m_actorCollection->NewIterator();
-	it->GoToFirstItem();
-	while (! it->IsDoneWithTraversal()) {
-		vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
-		actor->VisibilityOff();
-		it->GoToNextItem();
-	}
-	m_actorCollection->RemoveAllItems();
-
 	v4InputGrid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g == nullptr) {
 		return;
@@ -95,8 +85,6 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 	m_actorCollection->AddItem(m_edgeActor);
 	m_vertexActor->GetProperty()->SetColor(m_setting.color);
 	m_actorCollection->AddItem(m_vertexActor);
-
-	updateVisibility();
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)

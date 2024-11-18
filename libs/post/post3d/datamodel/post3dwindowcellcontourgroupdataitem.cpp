@@ -78,7 +78,6 @@ void Post3dWindowCellContourGroupDataItem::updateColorMapVisibility()
 		auto v = dataModel()->graphicsView();
 		m_colorMapSetting.legend.imageSetting.apply(v);
 		m_actor2DCollection->AddItem(actor);
-		updateVisibilityWithoutRendering();
 	}
 }
 
@@ -150,10 +149,8 @@ QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-void Post3dWindowCellContourGroupDataItem::updateActorSetting()
+void Post3dWindowCellContourGroupDataItem::doUpdateActorSetting()
 {
-	if (! isChecked()) {return;}
-
 	m_colorMapSetting.setAutoValueRange(valueRange());
 	m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
 
@@ -162,7 +159,6 @@ void Post3dWindowCellContourGroupDataItem::updateActorSetting()
 		item->update();
 	}
 	updateColorMapVisibility();
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowCellContourGroupDataItem::updateVisibility(bool visible)

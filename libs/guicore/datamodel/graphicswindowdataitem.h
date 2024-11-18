@@ -121,6 +121,7 @@ public:
 	virtual void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends);
 	void update2Ds();
 	void updateZScale(double scale);
+	virtual void updateActorSetting();
 	void loadCheckState(const QDomNode& node);
 	void renderGraphicsView();
 	virtual void updateVisibilityWithoutRendering();
@@ -146,7 +147,7 @@ protected:
 	virtual void unregisterChild(GraphicsWindowDataItem* child);
 	/// Initialize itself
 	virtual void init();
-	virtual void updateActorSetting();
+	virtual void doUpdateActorSetting();
 	void updateActorSettingRecursively();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
@@ -170,6 +171,7 @@ protected:
 	std::vector<GraphicsWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy;
+	bool m_isActorsReady;
 	bool m_isDeletable;
 	bool m_isReorderable;
 	BoolContainer m_isExpanded;
@@ -179,9 +181,12 @@ protected:
 	ZDepthRange m_zDepthRange;
 	bool m_isCommandExecuting;
 
-protected:
 	/// If true, the PreProcessorDataItem tree is under destruction.
 	bool m_isDestructing {false};
+
+private:
+	void updateVisibilityOfActorCollection(bool visible);
+	void updateVisibilityOfActor2DCollection(bool visible);
 
 public:
 	friend class BackgroundImageInfo;

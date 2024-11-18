@@ -75,7 +75,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 	updateActorSetting();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
+void Post2dWindowNodeVectorStreamlineGroupDataItem::doUpdateActorSetting()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
 
@@ -92,7 +92,6 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	setupActors();
-	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
 }
 

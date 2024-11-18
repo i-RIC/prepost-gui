@@ -564,7 +564,7 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->m_gridThread->update();
 }
 
-void GeoDataRiverSurvey::updateActorSetting()
+void GeoDataRiverSurvey::doUpdateActorSetting()
 {
 	impl->updateVtkVerticalCenterLinesObjects();
 
@@ -598,8 +598,6 @@ void GeoDataRiverSurvey::updateActorSetting()
 		impl->m_backgroundActor->SetMapper(mapper);
 		mapper->Delete();
 	}
-
-	updateVisibilityWithoutRendering();
 
 	emit updateActorSettingExecuted();
 }

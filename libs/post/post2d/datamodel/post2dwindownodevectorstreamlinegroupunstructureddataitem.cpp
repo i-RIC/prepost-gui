@@ -169,7 +169,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 {
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(node);
 	impl->m_setting.load(node);
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -37,7 +37,7 @@ private:
 
 	GeoDataPolyDataGroupPolyData* createNewData() override;
 	GeoDataPolyData* createEditTargetData() override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateActionConnections();
 	void updateMenu() override;
 	void updateMenu(QMenu* menu);

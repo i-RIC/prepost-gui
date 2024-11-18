@@ -64,7 +64,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::update()
 	updateActorSetting();
 }
 
-void Post2dBirdEyeWindowGridShapeDataItem::updateActorSetting()
+void Post2dBirdEyeWindowGridShapeDataItem::doUpdateActorSetting()
 {
 	impl->m_setting.gridShape.outlineActor()->VisibilityOff();
 	impl->m_setting.gridShape.wireframeActor()->VisibilityOff();
@@ -86,8 +86,6 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSetting()
 									 impl->m_gridWarp->GetOutput(), impl->m_gridWarp->GetOutput(),
 									 impl->m_labelWarp->GetOutput(),
 									 v4GridUtil::LABEL_NAME);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)

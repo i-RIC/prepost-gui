@@ -89,7 +89,7 @@ public:
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
 	vtkStructuredGrid* grid() const;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewI* v) override;
 	virtual double thresholdValue() const = 0;
 

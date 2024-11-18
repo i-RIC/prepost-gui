@@ -21,7 +21,7 @@ public slots:
 
 private:
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
 

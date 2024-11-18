@@ -126,7 +126,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStrea
 	}
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
+void Post2dWindowNodeVectorArrowGroupDataItem::doUpdateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_arrowLegendActor->VisibilityOff();
@@ -134,7 +134,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 
-	if (! isChecked()) {return;}
 	if (m_setting.target == "") {return;}
 
 	auto data = buildFilteredData();
@@ -170,7 +169,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
 
 	m_actorCollection->AddItem(m_actor);
-	updateVisibilityWithoutRendering();
 
 	m_setting.legend.imageSetting.apply(v);
 }

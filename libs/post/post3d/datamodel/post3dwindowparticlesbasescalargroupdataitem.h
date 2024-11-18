@@ -54,7 +54,7 @@ public slots:
 
 private:
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void innerUpdateZScale(double zscale) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -59,7 +59,7 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void innerUpdateZScale(double scale) override;
 

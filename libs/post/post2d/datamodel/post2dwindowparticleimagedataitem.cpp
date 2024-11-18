@@ -79,7 +79,7 @@ Post2dWindowZoneDataItem* Post2dWindowParticleImageDataItem::zoneDataItem() cons
 	return topDataItem()->zoneDataItem();
 }
 
-void Post2dWindowParticleImageDataItem::updateActorSetting()
+void Post2dWindowParticleImageDataItem::doUpdateActorSetting()
 {
 	for (auto a : impl->m_actors) {
 		renderer()->RemoveActor(a);
@@ -134,15 +134,13 @@ void Post2dWindowParticleImageDataItem::updateActorSetting()
 	}
 
 	texture->Delete();
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowParticleImageDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowParticleImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

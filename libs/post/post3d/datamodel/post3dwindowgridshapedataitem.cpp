@@ -44,7 +44,7 @@ void Post3dWindowGridShapeDataItem::update()
 	updateActorSetting();
 }
 
-void Post3dWindowGridShapeDataItem::updateActorSetting()
+void Post3dWindowGridShapeDataItem::doUpdateActorSetting()
 {
 	m_setting.outlineActor()->VisibilityOff();
 	m_setting.wireframeActor()->VisibilityOff();
@@ -55,9 +55,7 @@ void Post3dWindowGridShapeDataItem::updateActorSetting()
 
 	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid());
 	auto data = grid->vtkConcreteData()->concreteData();
-	m_setting.update(actorCollection(), actor2DCollection(), data, data, grid->vtkIndexData(), v4GridUtil::LABEL_NAME);
-
-	updateVisibilityWithoutRendering();
+	m_setting.update(m_actorCollection, m_actor2DCollection, data, data, grid->vtkIndexData(), v4GridUtil::LABEL_NAME);
 }
 
 Post3dWindowZoneDataItem* Post3dWindowGridShapeDataItem::zoneDataItem() const

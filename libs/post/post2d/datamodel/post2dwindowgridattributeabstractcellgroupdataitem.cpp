@@ -121,7 +121,7 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::handleNamedItemChange(N
 	pushRenderCommand(cmd, this, true);
 }
 
-void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateActorSetting()
+void Post2dWindowGridAttributeAbstractCellGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_opacityWidget->setDisabled(true);
 	impl->m_actor->VisibilityOff();
@@ -134,7 +134,6 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 		return;
 	}
 	if (impl->m_target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
 	impl->m_opacityWidget->setEnabled(true);
@@ -152,7 +151,6 @@ void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 	impl->m_setting.apply(impl->m_actor, dataModel()->graphicsView());
 
 	m_actorCollection->AddItem(impl->m_actor);
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowGridAttributeAbstractCellGroupDataItem::updateZDepthRangeItemCount()

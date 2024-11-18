@@ -42,7 +42,7 @@ void Post3dWindowCellContourDataItem::setSetting(const Post3dWindowCellRangeSett
 
 void Post3dWindowCellContourDataItem::update()
 {
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 Post3dWindowCellContourGroupDataItem* Post3dWindowCellContourDataItem::groupDataItem() const
@@ -71,11 +71,10 @@ void Post3dWindowCellContourDataItem::innerUpdateZScale(double scale)
 	m_actor->SetScale(1, 1, scale);
 }
 
-void Post3dWindowCellContourDataItem::updateActorSetting()
+void Post3dWindowCellContourDataItem::doUpdateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
-	if (! isChecked()) {return;}
 
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return;}
@@ -88,8 +87,6 @@ void Post3dWindowCellContourDataItem::updateActorSetting()
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 	m_actorCollection->AddItem(m_actor);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowCellContourDataItem::informSelection(VTKGraphicsView* v)

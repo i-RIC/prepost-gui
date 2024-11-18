@@ -34,7 +34,7 @@ public:
 	Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorStreamlineGroupDataItem() override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void handleStandardItemChange() override;
 	void update();
 

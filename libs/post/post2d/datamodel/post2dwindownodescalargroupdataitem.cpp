@@ -88,10 +88,9 @@ const std::string& Post2dWindowNodeScalarGroupDataItem::target() const
 	return impl->m_target;
 }
 
-void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
+void Post2dWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
-	if (! isChecked()) {return;}
 
 	auto z = topDataItem()->zoneDataItem();
 	auto cont = z->v4DataContainer();
@@ -136,14 +135,12 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	} else {
 		impl->m_setting.nodeSetting.apply(impl->m_actor, dataModel()->graphicsView());
 	}
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -162,7 +159,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->setItem(this);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()

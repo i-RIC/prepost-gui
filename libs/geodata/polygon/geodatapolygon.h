@@ -145,7 +145,7 @@ private:
 	bool checkCondition();
 	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateScalarValues() override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();

@@ -115,8 +115,6 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateLegendsVisibility()
 		cm->legendSetting()->imgSetting()->apply(v);
 		m_actor2DCollection->AddItem(cm->legendSetting()->imgSetting()->actor());
 	}
-
-	updateVisibilityWithoutRendering();
 }
 
 const std::string& Post3dWindowNodeVectorArrowGroupDataItem::target() const
@@ -304,9 +302,9 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
 	updateLegendsVisibility();
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
+void Post3dWindowNodeVectorArrowGroupDataItem::doUpdateActorSetting()
 {
-	if (! isChecked() || m_childItems.size() == 0) {
+	if (m_childItems.size() == 0) {
 		updateLegendsVisibility();
 		return;
 	}

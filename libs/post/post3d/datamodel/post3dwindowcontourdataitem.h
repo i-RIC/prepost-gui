@@ -26,7 +26,7 @@ public slots:
 
 private:
 	Post3dWindowContourGroupDataItem* groupDataItem() const;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

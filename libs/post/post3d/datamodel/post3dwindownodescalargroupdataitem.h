@@ -56,7 +56,7 @@ protected:
 
 private:
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void setDefaultValues();
 	void setupIsosurfaceSetting();

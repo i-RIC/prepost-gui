@@ -180,7 +180,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::updateVisibility(bool visibl
 	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
-void PreProcessorGridAttributeAbstractCellDataItem::updateActorSetting()
+void PreProcessorGridAttributeAbstractCellDataItem::doUpdateActorSetting()
 {
 	m_directionActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
@@ -191,21 +191,9 @@ void PreProcessorGridAttributeAbstractCellDataItem::updateActorSetting()
 
 		auto view = dataModel()->graphicsView();
 		m_directionSetting.buildDirectionPolygonData(data, m_condition, view, m_wrongPoints, m_directionActor, m_wrongDirectionActor);
-		/*
-		auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-		mapper->ScalarVisibilityOff();
-		mapper->SetInputData(polyData);
-		m_directionActor->SetMapper(mapper);
-		polyData->Delete();
-		m_directionActor->GetProperty()->SetColor(m_directionSetting.color);
-		m_directionActor->GetProperty()->SetOpacity(m_directionSetting.opacity);
-		m_directionActor->GetProperty()->SetLineWidth(m_directionSetting.lineWidth);
-		*/
 
 		m_actorCollection->AddItem(m_directionActor);
 		m_actorCollection->AddItem(m_wrongDirectionActor);
-
-		updateVisibilityWithoutRendering();
 	}
 }
 

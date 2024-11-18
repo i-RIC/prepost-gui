@@ -35,7 +35,7 @@ private:
 
 	QDialog* propertyDialog(QWidget* p) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateVisibility(bool visible) override;
 
 	const ValueRangeContainer& valueRange() const;

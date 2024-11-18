@@ -84,7 +84,7 @@ const std::string& Post2dBirdEyeWindowCellScalarGroupDataItem::elevationTarget()
 	return impl->m_elevationTarget;
 }
 
-void Post2dBirdEyeWindowCellScalarGroupDataItem::updateActorSetting()
+void Post2dBirdEyeWindowCellScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
@@ -153,8 +153,6 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::updateActorSetting()
 	auto v = dataModel()->graphicsView();
 	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth * v->devicePixelRatioF());
 	m_actorCollection->AddItem(impl->m_actor);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowCellScalarGroupDataItem::setupActors()

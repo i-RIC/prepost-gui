@@ -37,7 +37,7 @@ private:
 
 private:
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

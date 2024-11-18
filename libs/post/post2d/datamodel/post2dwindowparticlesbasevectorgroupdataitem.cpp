@@ -126,7 +126,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(con
 {
 	m_setting.load(node);
 	updateCheckState();
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -246,12 +246,12 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateCheckState()
 	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.arrowsSetting.target, m_childItems, true);
 }
 
-void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
+void Post2dWindowParticlesBaseVectorGroupDataItem::doUpdateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_legendActor->VisibilityOff();
-	actorCollection()->RemoveAllItems();
-	actor2DCollection()->RemoveAllItems();
+	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 
 	auto data = particleData();
 	if (data == nullptr) {return;}
@@ -292,9 +292,8 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 	auto v = dataModel()->graphicsView();
 	m_actor->GetProperty()->SetLineWidth(m_setting.arrowsSetting.lineWidth * v->devicePixelRatioF());
 
-	actorCollection()->AddItem(m_actor);
-	actor2DCollection()->AddItem(m_legendActor);
-	updateVisibilityWithoutRendering();
+	m_actorCollection->AddItem(m_actor);
+	m_actor2DCollection->AddItem(m_legendActor);
 
 	m_setting.arrowsSetting.legend.imageSetting.apply(v);
 

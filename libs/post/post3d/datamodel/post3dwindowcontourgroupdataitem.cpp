@@ -99,7 +99,6 @@ void Post3dWindowContourGroupDataItem::updateColorMapVisibility()
 		auto v = dataModel()->graphicsView();
 		impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(v);
 		m_actor2DCollection->AddItem(actor);
-		updateVisibilityWithoutRendering();
 	}
 }
 
@@ -172,10 +171,8 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-void Post3dWindowContourGroupDataItem::updateActorSetting()
+void Post3dWindowContourGroupDataItem::doUpdateActorSetting()
 {
-	if (! isChecked()) {return;}
-
 	impl->m_setting.colorMapSetting->setAutoValueRange(valueRange());
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 
@@ -184,7 +181,6 @@ void Post3dWindowContourGroupDataItem::updateActorSetting()
 		item->update();
 	}
 	updateColorMapVisibility();
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)

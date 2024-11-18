@@ -163,8 +163,6 @@ void Post2dWindowParticlesBaseTopDataItem::updateColorMapLegendsVisibility()
 		cms->legendSetting()->imgSetting()->apply(view);
 		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
 	}
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser()

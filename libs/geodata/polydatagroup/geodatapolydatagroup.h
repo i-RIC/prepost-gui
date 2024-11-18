@@ -131,7 +131,7 @@ private:
 
 	virtual GeoDataPolyDataGroupPolyData* createNewData() = 0;
 	virtual GeoDataPolyData* createEditTargetData() = 0;
-	virtual void updateActorSetting() = 0;
+	virtual void doUpdateActorSetting() = 0;
 	virtual void updateMenu() = 0;
 
 	virtual void updateVtkObjects() = 0;

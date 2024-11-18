@@ -43,7 +43,7 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	Post2dWindowNodeVectorArrowGroupTopDataItem* topDataItem() const;
 	void createOrUpdateColorMapsSetting(SolverDefinitionGridType* gtype, const std::string& name, const ValueRangeContainer& range);
 
