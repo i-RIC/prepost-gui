@@ -1,6 +1,7 @@
 #include "../grid/v4particles2d.h"
 #include "../grid/v4particles3d.h"
 #include "../grid/v4polydata2d.h"
+#include "../grid/v4structured1dgrid.h"
 #include "../grid/v4structured2dgrid.h"
 #include "../grid/v4structured3dgrid.h"
 #include "../grid/v4unstructured2dgrid.h"
@@ -41,6 +42,8 @@ v4SolutionGrid* v4SolutionGridIO::loadGrid(SolverDefinitionGridType* gridType, i
 		} else {
 			grid = loadUnstructured2dGrid(zone, offset, ier);
 		}
+	} else if (zone->base()->dimension() == 1) {
+		grid = loadStructured1dGrid(zone, offset, ier);
 	}
 	return new v4SolutionGrid(gridType, grid);
 }
@@ -58,6 +61,9 @@ void v4SolutionGridIO::loadGrid(v4SolutionGrid* grid, iRICLib::H5CgnsZone* zone,
 
 	auto uGrid2d = dynamic_cast<v4Unstructured2dGrid*> (grid2);
 	if (uGrid2d != nullptr) {loadUnstructured2dGrid(uGrid2d, zone, offset, ier);}
+
+	auto sGrid1d = dynamic_cast<v4Structured1dGrid*> (grid2);
+	if (sGrid1d != nullptr) {loadStructured1dGrid(sGrid1d, zone, offset, ier);}
 }
 
 v4SolutionGrid* v4SolutionGridIO::loadParticles2d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)
@@ -451,6 +457,39 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadPolyDataGroup2d(Sol
 	return ret;
 }
 
+v4Structured1dGrid* v4SolutionGridIO::loadStructured1dGrid(iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)
+{
+	auto grid = new v4Structured1dGrid();
+
+	auto size = zone->size();
+	grid->setDimension(size[0]);
+
+	loadStructured1dGrid(grid, zone, offset, ier, true);
+
+	if (*ier != IRIC_NO_ERROR) {
+		delete grid;
+		return nullptr;
+	}
+
+	return grid;
+}
+
+void v4SolutionGridIO::loadStructured1dGrid(v4Structured1dGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier, bool forceLoadCoords)
+{
+	*ier = loadCoordinates1d(grid, zone, offset, forceLoadCoords);
+	if (*ier != IRIC_NO_ERROR) {return;}
+
+	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
+		*ier = CgnsUtil::loadScalarData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData(), IBC);
+		if (*ier != IRIC_NO_ERROR) {return;}
+	}
+	if (zone->cellSolutionExists() && zone->cellSolution() != nullptr) {
+		*ier = CgnsUtil::loadScalarData(zone->cellSolution(), grid->vtkData()->data()->GetCellData(), IBC);
+		if (*ier != IRIC_NO_ERROR) {return;}
+	}
+	grid->vtkData()->updateValueRangeSet();
+}
+
 v4Structured2dGrid* v4SolutionGridIO::loadStructured2dGrid(iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)
 {
 	auto grid = new v4Structured2dGrid();
@@ -632,6 +671,33 @@ void v4SolutionGridIO::loadStructured3dGrid(v4Structured3dGrid* grid, iRICLib::H
 	grid->vtkIFaceData()->updateValueRangeSet();
 	grid->vtkJFaceData()->updateValueRangeSet();
 	grid->vtkKFaceData()->updateValueRangeSet();
+}
+
+int v4SolutionGridIO::loadCoordinates1d(v4Grid1d* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, bool forceLoadCoords)
+{
+	iRICLib::H5CgnsGridCoordinates* coords = nullptr;
+	if (zone->gridCoordinatesForSolutionExists()) {
+		coords = zone->gridCoordinatesForSolution();
+	} else if (forceLoadCoords) {
+		coords = zone->gridCoordinates();
+	}
+
+	if (coords == nullptr) {
+		return IRIC_NO_ERROR;
+	}
+
+	int ier;
+	std::vector<double> xVec;
+	ier = coords->readCoordinatesX(&xVec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	auto points = grid->vtkData()->data()->GetPoints();
+	for (unsigned int i = 0; i < xVec.size(); ++i) {
+		points->SetPoint(i, xVec[i] - offset.x(), 0, 0);
+	}
+	grid->pointsModified();
+
+	return IRIC_NO_ERROR;
 }
 
 int v4SolutionGridIO::loadCoordinates2d(v4Grid2d* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, bool forceLoadCoords)
