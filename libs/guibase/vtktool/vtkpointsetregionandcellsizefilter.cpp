@@ -241,8 +241,16 @@ void vtkPointSetRegionAndCellSizeFilter::calcExtractParameters(vtkStructuredGrid
 	if (jMax1 == *(dimensions + 1) - 1) {
 		jMax2 = jMax1;
 	} else {
-		jMax2 = limitJIntersects(region2, data, dimensions, centerJ, *(dimensions + 1) - 1);
+		if (jLineIntersectsRegion(region2, data, dimensions, *(dimensions + 1) - 1)) {
+			jMax2 = *(dimensions + 1) - 1;
+		} else {
+			jMax2 = limitJIntersects(region2, data, dimensions, centerJ, *(dimensions + 1) - 1);
+		}
 	}
+	if (iMin2 > 0) {iMin2 -= 1;}
+	if (iMax2 < *(dimensions) - 1) {iMax2 += 1;}
+	if (jMin2 > 0) {jMin2 -= 1;}
+	if (jMax2 < *(dimensions + 1) - 1) {jMax2 += 1;}
 
 	*imin = iMin2;
 	*imax = iMax2;
