@@ -45,7 +45,7 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 		for (auto c : conts) {
 			zoneExists = zoneExists || c->gridType() == type;
 		}
-		if (! zoneExists) {continue;}
+		// if (! zoneExists) {continue;}
 
 		auto item = new Post2dWindowGridTypeDataItem(type, this);
 		m_gridTypeDataItems.append(item);
