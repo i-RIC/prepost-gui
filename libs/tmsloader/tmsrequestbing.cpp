@@ -21,10 +21,10 @@ TmsRequestBing::~TmsRequestBing()
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const
 #else
-TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebView* view) const
+TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const
 #endif
 {
-	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, view);
+	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, view, imageCache);
 }

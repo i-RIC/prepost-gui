@@ -58,10 +58,10 @@ TmsRequestGSI::~TmsRequestGSI()
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const
 #else
-TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebView* view) const
+TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const
 #endif
 {
-	return impl->m_requestXYZ->buildHandler(requestId, view);
+	return impl->m_requestXYZ->buildHandler(requestId, view, imageCache);
 }

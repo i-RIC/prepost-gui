@@ -10,6 +10,7 @@
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/project/projectworkspace.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/tmsimage/tmsimagesetting.h>
@@ -33,11 +34,22 @@
 
 namespace {
 
+void getExtendedDrawnRegion(VTK2DGraphicsView* view, double* xmin, double* xmax, double* ymin, double* ymax)
+{
+	view->getDrawnRegion(xmin, xmax, ymin, ymax);
+	double width = (*xmax - *xmin);
+	double height = (*ymax - *ymin);
+	*xmin -= width * 0.3;
+	*xmax += width * 0.3;
+	*ymin -= height * 0.3;
+	*ymax += height * 0.3;
+}
+
 QRectF calcRect(VTK2DGraphicsView* view, const QPointF& offset)
 {
 	double xmin, xmax, ymin, ymax;
 
-	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	getExtendedDrawnRegion(view, &xmin, &xmax, &ymin, &ymax);
 	QRectF rect(xmin, ymin, (xmax - xmin), (ymax - ymin));
 	rect.adjust(offset.x(), offset.y(), offset.x(), offset.y());
 
@@ -66,7 +78,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 	double xmin, xmax, ymin, ymax;
 	double centerX, centerY, centerLongitude, centerLatitude;
 
-	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	getExtendedDrawnRegion(view, &xmin, &xmax, &ymin, &ymax);
 	*lowerLeft = QPointF(xmin, ymin);
 
 	QRectF rect = calcRect(view, offset);
@@ -86,7 +98,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 	double newHeight = std::abs(std::sin(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::cos(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 
-	*size = QSize(newWidth, newHeight);
+	*size = QSize(newWidth * 1.6, newHeight * 1.6); // 1.6 = 1.0 + 0.3 * 2
 }
 
 QRectF trimLonLatRect(const QRectF& rect)
@@ -213,7 +225,7 @@ void TmsImageGroupDataItem::setTarget(const QString &target)
 		impl->m_actor->VisibilityOff();
 	}
 
-	requestImage();
+	requestImage(true);
 }
 
 void TmsImageGroupDataItem::rebuildChildItems()
@@ -309,27 +321,55 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 	updateVisibility();
 }
 
-void TmsImageGroupDataItem::requestImage()
+void TmsImageGroupDataItem::requestImage(bool force)
 {
 	static bool requesting = false;
 
 	if (requesting) {return;}
 	ValueChangerT<bool> changer(&requesting, true);
 
-	if (impl->m_tmsRequestId != -1) {
-		impl->m_tmsLoader.cancelRequest(impl->m_tmsRequestId);
-	}
 	auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 	if (view == nullptr) {return;}
 
 	auto cs = projectData()->mainfile()->coordinateSystem();
 	if (cs == nullptr) {return;}
 
+	// skip reload image if four corners are inside image
+	double xmin = impl->m_imageLowerLeft.x();
+	double ymin = impl->m_imageLowerLeft.y();
+	double xmax = xmin + impl->m_imageScale * impl->m_image.width();
+	double ymax = ymin + impl->m_imageScale * impl->m_image.height();
+
+	bool all_ok = ! force;
+
+	auto tl = view->viewportToWorld(QPoint(0, 0));
+	all_ok = all_ok && (tl.x() >= xmin && tl.x() <= xmax && tl.y() >= ymin && tl.y() <= ymax);
+	auto tr = view->viewportToWorld(QPoint(view->width(), 0));
+	all_ok = all_ok && (tr.x() >= xmin && tr.x() <= xmax && tr.y() >= ymin && tr.y() <= ymax);
+	auto ll = view->viewportToWorld(QPoint(0, view->height()));
+	all_ok = all_ok && (ll.x() >= xmin && ll.x() <= xmax && ll.y() >= ymin && ll.y() <= ymax);
+	auto lr = view->viewportToWorld(QPoint(view->width(), view->height()));
+	all_ok = all_ok && (lr.x() >= xmin && lr.x() <= xmax && lr.y() >= ymin && lr.y() <= ymax);
+
 	QPointF center;
 	QSize size;
 	double scale;
+	QPointF imageLowerLeft;
+	double imageScale;
 
-	calcImageParameters(&center, &size, &scale, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
+	double oldImageScale = impl->m_imageScale;
+	calcImageParameters(&center, &size, &scale, &imageLowerLeft, &imageScale, view, *cs, impl->m_offset);
+	double ratio = imageScale / oldImageScale;
+	all_ok = all_ok && (ratio < 1.2 && 1.0 / ratio < 1.2);
+
+	if (all_ok) {return;}
+
+	impl->m_imageLowerLeft = imageLowerLeft;
+	impl->m_imageScale = imageScale;
+
+	if (impl->m_tmsRequestId != -1) {
+		impl->m_tmsLoader.cancelRequest(impl->m_tmsRequestId);
+	}
 
 	TmsImageSettingManager manager;
 	auto setting = TmsImageSetting::buildFromString(impl->m_target);

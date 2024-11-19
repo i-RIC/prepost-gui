@@ -1,8 +1,13 @@
 #ifndef TMSLOADER_TMSLOADER_IMPL_H
 #define TMSLOADER_TMSLOADER_IMPL_H
 
+#include "../tmsimagecache.h"
 #include "../tmsloader.h"
 
+#include <QPixmap>
+#include <QString>
+
+#include <unordered_map>
 #include <vector>
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
@@ -38,6 +43,7 @@ public:
 #else
 	std::vector<QWebView*> m_webViewPool;
 #endif
+	TmsImageCache m_imageCache;
 
 	TmsLoader* m_loader;
 };

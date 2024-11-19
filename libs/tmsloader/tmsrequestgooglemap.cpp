@@ -19,10 +19,10 @@ TmsRequestGoogleMap::~TmsRequestGoogleMap()
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const
 #else
-TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebView* view) const
+TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const
 #endif
 {
-	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, view);
+	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, view, imageCache);
 }

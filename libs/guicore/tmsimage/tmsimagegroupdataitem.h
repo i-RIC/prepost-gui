@@ -37,7 +37,7 @@ protected:
 	void doApplyOffset(double x_diff, double y_diff) override;
 
 private:
-	void requestImage();
+	void requestImage(bool force = false);
 
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;

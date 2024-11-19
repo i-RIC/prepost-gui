@@ -10,9 +10,9 @@ class TmsRequestHandlerXYZ : public TmsRequestHandler
 {
 public:
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebEngineView* view);
+	TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebEngineView* view, TmsImageCache* imageCache);
 #else
-	TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebView* view);
+	TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebView* view, TmsImageCache* imageCache);
 #endif
 };
 

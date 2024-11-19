@@ -15,13 +15,32 @@ include( ../../paths.pri )
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = tmsloader_pch.h
 
+######################
+# Internal libraries #
+######################
+
+# iricCs
+
+unix {
+        LIBS += -L"../cs"
+}
+LIBS += -liricCs
+
+# iricMisc
+
+unix {
+        LIBS += -L"../misc"
+}
+LIBS += -liricMisc
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
 # Input
-HEADERS += tmsloader.h \
+HEADERS += tmsimagecache.h \
+           tmsloader.h \
            tmsloader_api.h \
            tmsloadertester.h \
            tmsrequest.h \
@@ -42,7 +61,8 @@ HEADERS += tmsloader.h \
            private/tmsrequesthandleropenstreetmap.h \
            private/tmsrequesthandlerxyz.h \
            private/tmsrequestxyz_impl.h
-SOURCES += tmsloader.cpp \
+SOURCES += tmsimagecache.cpp \
+           tmsloader.cpp \
            tmsloadertester.cpp \
            tmsrequest.cpp \
            tmsrequestbing.cpp \

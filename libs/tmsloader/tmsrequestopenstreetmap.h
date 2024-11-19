@@ -12,9 +12,9 @@ public:
 	TmsRequestOpenStreetMap(const QPointF& centerLonLat, const QSize& size, double scale);
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
+	TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const override;
 #else
-	TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
+	TmsRequestHandler* buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const override;
 #endif
 };
 
