@@ -1,10 +1,10 @@
+#include "../iricgeometrypartialcellfilter.h"
 #include "vtkpointsetregionandcellsizefilter.h"
 
 #include <misc/rectregion.h>
 
 #include <vtkAbstractPointLocator.h>
 #include <vtkExtractGrid.h>
-#include <vtkGeometryFilter.h>
 #include <vtkMaskPolyData.h>
 #include <vtkSmartPointer.h>
 
@@ -113,7 +113,7 @@ vtkPolyData* vtkPointSetRegionAndCellSizeFilter::filterGeneral(vtkPointSet* data
 	double xwidth = region.xMax - region.xMin;
 	double ywidth = region.yMax - region.yMin;
 
-	auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
+	auto gfilter = vtkSmartPointer<iricGeometryPartialCellFilter>::New();
 	gfilter->SetExtent(region.xMin - xwidth * MARGIN_RATIO, region.xMax + xwidth * MARGIN_RATIO, region.yMin - ywidth * MARGIN_RATIO, region.yMax + ywidth * MARGIN_RATIO, -1, 1);
 	gfilter->ExtentClippingOn();
 	gfilter->SetInputData(data);
@@ -241,8 +241,16 @@ void vtkPointSetRegionAndCellSizeFilter::calcExtractParameters(vtkStructuredGrid
 	if (jMax1 == *(dimensions + 1) - 1) {
 		jMax2 = jMax1;
 	} else {
-		jMax2 = limitJIntersects(region2, data, dimensions, centerJ, *(dimensions + 1) - 1);
+		if (jLineIntersectsRegion(region2, data, dimensions, *(dimensions + 1) - 1)) {
+			jMax2 = *(dimensions + 1) - 1;
+		} else {
+			jMax2 = limitJIntersects(region2, data, dimensions, centerJ, *(dimensions + 1) - 1);
+		}
 	}
+	if (iMin2 > 0) {iMin2 -= 1;}
+	if (iMax2 < *(dimensions) - 1) {iMax2 += 1;}
+	if (jMin2 > 0) {jMin2 -= 1;}
+	if (jMax2 < *(dimensions + 1) - 1) {jMax2 += 1;}
 
 	*imin = iMin2;
 	*imax = iMax2;
