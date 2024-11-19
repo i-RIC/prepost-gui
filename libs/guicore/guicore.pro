@@ -226,6 +226,8 @@ HEADERS += guicore_global.h \
            filter/structuredgridskiporsubdividesettingcontainer.h \
            filter/structuredgridskiporsubdividesettingeditwidget.h \
            grid/v4grid.h \
+           grid/v4grid1d.h \
+           grid/v4grid1dt.h \
            grid/v4grid2d.h \
            grid/v4grid2dt.h \
            grid/v4grid3d.h \
@@ -237,6 +239,7 @@ HEADERS += guicore_global.h \
            grid/v4polydata2d.h \
            grid/v4structured15dgridwithcrosssection.h \
            grid/v4structured15dgridwithcrosssectioncrosssection.h \
+           grid/v4structured1dgrid.h \
            grid/v4structured2dgrid.h \
            grid/v4structured3dgrid.h \
            grid/v4unstructured2dgrid.h \
@@ -380,11 +383,13 @@ HEADERS += guicore_global.h \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.h \
            datamodel/private/vtkgraphicsview_impl.h \
            datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.h \
+           grid/private/v4grid1dt_detail.h \
            grid/private/v4grid2d_impl.h \
            grid/private/v4grid2dt_detail.h \
            grid/private/v4grid3dt_detail.h \
            grid/private/v4grid_impl.h \
            grid/private/v4structured15dgridwithcrosssection_impl.h \
+           grid/private/v4structured1dgrid_impl.h \
            grid/private/v4structured2dgrid_impl.h \
            grid/private/v4structured2dgrid_structurechecker.h \
            grid/private/v4structured3dgrid_impl.h \
@@ -821,6 +826,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            filter/structuredgridskiporsubdividesettingcontainer.cpp \
            filter/structuredgridskiporsubdividesettingeditwidget.cpp \
            grid/v4grid.cpp \
+           grid/v4grid1d.cpp \
            grid/v4grid2d.cpp \
            grid/v4grid3d.cpp \
            grid/v4gridstructurecheckeri.cpp \
@@ -830,6 +836,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            grid/v4polydata2d.cpp \
            grid/v4structured15dgridwithcrosssection.cpp \
            grid/v4structured15dgridwithcrosssectioncrosssection.cpp \
+           grid/v4structured1dgrid.cpp \
            grid/v4structured2dgrid.cpp \
            grid/v4structured3dgrid.cpp \
            grid/v4unstructured2dgrid.cpp \
@@ -964,6 +971,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.cpp \
            datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.cpp \
            grid/private/v4grid_impl.cpp \
+           grid/private/v4structured1dgrid_impl.cpp \
            grid/private/v4structured2dgrid_impl.cpp \
            grid/private/v4structured2dgrid_structurechecker.cpp \
            grid/public/v4grid_attributedataprovider.cpp \

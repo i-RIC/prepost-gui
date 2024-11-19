@@ -9,6 +9,7 @@
 
 #include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
+#include <guicore/grid/v4structured1dgrid.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -90,6 +91,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 	if (cont == nullptr) {return;}
 
 	auto grid = cont->gridData()->grid();
+	auto sGrid1d = dynamic_cast<v4Structured1dGrid*> (grid);
 	auto sGrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
 	auto sGrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
 
@@ -98,7 +100,11 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 	std::vector<vtkIdType> ids;
 	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
-			if (sGrid2d != nullptr) {
+			if (sGrid1d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid1d->dimension(); ++i) {
+					ids.push_back(i);
+				}
+			} else if (sGrid2d != nullptr) {
 				for (vtkIdType i = 0; i < sGrid2d->dimensionI(); ++i) {
 					ids.push_back(sGrid2d->pointIndex(i, s.gridJ()));
 				}
@@ -128,7 +134,11 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 		atts = grid->vtkData()->data()->GetPointData();
 	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
-			if (sGrid2d != nullptr) {
+			if (sGrid1d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid1d->dimension() - 1; ++i) {
+					ids.push_back(i);
+				}
+			} else if (sGrid2d != nullptr) {
 				for (vtkIdType i = 0; i < sGrid2d->dimensionI() - 1; ++i) {
 					ids.push_back(sGrid2d->cellIndex(i, s.gridJ()));
 				}

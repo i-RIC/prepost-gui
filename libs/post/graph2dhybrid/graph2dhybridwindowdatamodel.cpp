@@ -30,6 +30,7 @@
 #include <guicore/base/animationcontrolleri.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured1dgrid.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/grid/v4unstructured2dgrid.h>
@@ -1511,8 +1512,17 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	auto grid = cont->gridData()->grid();
 
 	if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured) {
-		// not implemented yet
-		index = 0;
+		switch (tinfo->gridLocation) {
+		case iRICLib::H5CgnsZone::SolutionPosition::Node:
+			index = c->iValue();
+			break;
+		case iRICLib::H5CgnsZone::SolutionPosition::Cell:
+			index = c->iValue();
+			break;
+		default:
+			Q_ASSERT_X(false, "Graph2dHybridWindowDataModel::sliderChanged", "Unhandled GridLocation");
+			break;
+		}
 	}	else if (tinfo->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
 		auto grids2d = dynamic_cast<v4Structured2dGrid*> (grid);
 
@@ -1614,10 +1624,24 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 	auto cont = sol->v4ZoneContainer(tinfo->dimension, tinfo->zoneName);
 	if (cont != nullptr) {
 		auto grid = cont->gridData()->grid();
+		auto sgrid1d = dynamic_cast<v4Structured1dGrid*> (grid);
 		auto sgrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
 		auto sgrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
 		auto ugrid = dynamic_cast<v4Unstructured2dGrid*> (grid);
-		if (sgrid2d != nullptr) {
+		if (sgrid1d != nullptr) {
+			// structured 1d grid
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
+				dims[0] = sgrid1d->dimension();
+				dims[1] = 1;
+				dims[2] = 1;
+				dims[3] = 1;
+			} else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
+				dims[0] = sgrid1d->dimension();
+				dims[1] = 1;
+				dims[2] = 1;
+				dims[3] = 1;
+			}
+		} else if (sgrid2d != nullptr) {
 			// structured 2d grid
 			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 				dims[0] = sgrid2d->dimensionI();
