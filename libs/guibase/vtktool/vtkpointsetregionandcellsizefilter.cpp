@@ -1,10 +1,10 @@
+#include "../iricgeometrypartialcellfilter.h"
 #include "vtkpointsetregionandcellsizefilter.h"
 
 #include <misc/rectregion.h>
 
 #include <vtkAbstractPointLocator.h>
 #include <vtkExtractGrid.h>
-#include <vtkGeometryFilter.h>
 #include <vtkMaskPolyData.h>
 #include <vtkSmartPointer.h>
 
@@ -113,7 +113,7 @@ vtkPolyData* vtkPointSetRegionAndCellSizeFilter::filterGeneral(vtkPointSet* data
 	double xwidth = region.xMax - region.xMin;
 	double ywidth = region.yMax - region.yMin;
 
-	auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
+	auto gfilter = vtkSmartPointer<iricGeometryPartialCellFilter>::New();
 	gfilter->SetExtent(region.xMin - xwidth * MARGIN_RATIO, region.xMax + xwidth * MARGIN_RATIO, region.yMin - ywidth * MARGIN_RATIO, region.yMax + ywidth * MARGIN_RATIO, -1, 1);
 	gfilter->ExtentClippingOn();
 	gfilter->SetInputData(data);
