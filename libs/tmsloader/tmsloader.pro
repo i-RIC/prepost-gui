@@ -44,36 +44,24 @@ HEADERS += tmsimagecache.h \
            tmsloader_api.h \
            tmsloadertester.h \
            tmsrequest.h \
-           tmsrequestbing.h \
-           tmsrequestgooglemap.h \
-           tmsrequestgsi.h \
-           tmsrequestopenstreetmap.h \
            tmsrequestxyz.h \
            tmsutil.h \
+           private/tmsimagecache_entry.h \
+           private/tmsimagecache_garbagecollectthread.h \
+           private/tmsimagecache_networkaccessmanager.h \
            private/tmsloader_impl.h \
            private/tmsrequest_impl.h \
-           private/tmsrequestbing_impl.h \
-           private/tmsrequestgooglemap_impl.h \
-           private/tmsrequestgsi_impl.h \
            private/tmsrequesthandler.h \
-           private/tmsrequesthandlerbing.h \
-           private/tmsrequesthandlergooglemap.h \
-           private/tmsrequesthandleropenstreetmap.h \
            private/tmsrequesthandlerxyz.h \
            private/tmsrequestxyz_impl.h
 SOURCES += tmsimagecache.cpp \
            tmsloader.cpp \
            tmsloadertester.cpp \
            tmsrequest.cpp \
-           tmsrequestbing.cpp \
-           tmsrequestgooglemap.cpp \
-           tmsrequestgsi.cpp \
-           tmsrequestopenstreetmap.cpp \
            tmsrequestxyz.cpp \
            tmsutil.cpp \
+           private/tmsimagecache_entry.cpp \
+           private/tmsimagecache_garbagecollectthread.cpp \
+           private/tmsimagecache_networkaccessmanager.cpp \
            private/tmsrequesthandler.cpp \
-           private/tmsrequesthandlerbing.cpp \
-           private/tmsrequesthandlergooglemap.cpp \
-           private/tmsrequesthandleropenstreetmap.cpp \
            private/tmsrequesthandlerxyz.cpp
-RESOURCES += tmsloader.qrc

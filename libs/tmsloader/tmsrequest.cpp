@@ -3,16 +3,16 @@
 
 using namespace tmsloader;
 
-TmsRequest::Impl::Impl(const QPointF& centerLonLat, const QSize& size, double scale) :
+TmsRequest::Impl::Impl(const QPointF& centerLonLat, const QSize& size, int zoomLevel) :
 	m_center {centerLonLat},
 	m_size {size},
-	m_scale {scale}
+	m_zoomLevel {zoomLevel}
 {}
 
 // public interfaces
 
-TmsRequest::TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale) :
-	impl {new Impl {centerLonLat, size, scale}}
+TmsRequest::TmsRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel) :
+	impl {new Impl {centerLonLat, size, zoomLevel}}
 {}
 
 TmsRequest::~TmsRequest()
@@ -29,7 +29,8 @@ QSize TmsRequest::size() const
 {
 	return impl->m_size;
 }
-double TmsRequest::scale() const
+
+int TmsRequest::zoomLevel() const
 {
-	return impl->m_scale;
+	return impl->m_zoomLevel;
 }
