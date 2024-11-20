@@ -256,11 +256,11 @@ void DistanceMeasureDataItem::setPoints(const QPointF& v1, const QPointF& v2)
 {
 	impl->m_setting.point1 = v1;
 	impl->m_setting.point2 = v2;
-	updateActorSetting();
+	doUpdateActorSetting();
 	renderGraphicsView();
 }
 
-void DistanceMeasureDataItem::updateActorSetting()
+void DistanceMeasureDataItem::doUpdateActorSetting()
 {
 	std::vector<QPointF> line;
 	line.push_back(impl->m_setting.point1);
@@ -291,20 +291,19 @@ void DistanceMeasureDataItem::updateActorSetting()
 	impl->m_lineActor.pointsActor()->VisibilityOff();
 	impl->m_lineActor.lineActor()->VisibilityOff();
 	impl->m_labelActor.actor()->VisibilityOff();
-	actorCollection()->RemoveItem(impl->m_lineActor.pointsActor());
-	actorCollection()->RemoveItem(impl->m_lineActor.lineActor());
-	actor2DCollection()->RemoveItem(impl->m_labelActor.actor());
+	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 
 	if (impl->m_setting.defined) {
 		if (impl->m_setting.showMarkers) {
-			actorCollection()->AddItem(impl->m_lineActor.pointsActor());
+			m_actorCollection->AddItem(impl->m_lineActor.pointsActor());
 		}
-		actorCollection()->AddItem(impl->m_lineActor.lineActor());
+		m_actorCollection->AddItem(impl->m_lineActor.lineActor());
+
 		if (impl->m_setting.showLabel) {
-			actor2DCollection()->AddItem(impl->m_labelActor.actor());
+			m_actor2DCollection->AddItem(impl->m_labelActor.actor());
 		}
 	}
-	updateVisibilityWithoutRendering();
 
 	auto v = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 	v->ResetCameraClippingRange();
@@ -358,7 +357,7 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_mouseEventMode = Impl::meBeforeDefining;
 	}
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void DistanceMeasureDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

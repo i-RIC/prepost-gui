@@ -25,7 +25,6 @@ public:
 	~Post2dWindowMeasuredDataTopDataItem() override;
 	const QList<MeasuredDataFileDataItem*> fileDataItems() const;
 	void setupActors();
-	void updateActorSetting() override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:

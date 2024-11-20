@@ -65,7 +65,7 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doLoadFromProjectMainFi
 
 	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

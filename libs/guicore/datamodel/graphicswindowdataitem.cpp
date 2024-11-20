@@ -52,6 +52,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent) :
 	ProjectDataItem {parent},
 	m_standardItem {nullptr},
 	m_standardItemCopy {nullptr},
+	m_isActorsReady {false},
 	m_isDeletable {true},
 	m_isReorderable {false},
 	m_isExpanded {"isExpanded", false},
@@ -164,7 +165,7 @@ void GraphicsWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, GraphicsWin
 void GraphicsWindowDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack::instance().push(new GraphicsWindowDataItemStandardItemChangeCommand(this));
+	pushCommand(new GraphicsWindowDataItemStandardItemChangeCommand(this));
 }
 
 int GraphicsWindowDataItem::loadFromCgnsFile()
@@ -303,6 +304,18 @@ void GraphicsWindowDataItem::updateItemMap()
 }
 
 void GraphicsWindowDataItem::updateActorSetting()
+{
+	if (! isAncientChecked() || ! isChecked()) {
+		m_isActorsReady = false;
+	} else {
+		doUpdateActorSetting();
+		updateVisibilityOfActorCollection(true);
+		updateVisibilityOfActor2DCollection(true);
+		m_isActorsReady = true;
+	}
+}
+
+void GraphicsWindowDataItem::doUpdateActorSetting()
 {}
 
 void GraphicsWindowDataItem::updateActorSettingRecursively()
@@ -316,12 +329,9 @@ void GraphicsWindowDataItem::updateActorSettingRecursively()
 
 void GraphicsWindowDataItem::updateVisibility()
 {
-	bool ancientVisible = isAncientChecked();
-	updateVisibility(ancientVisible);
-
+	updateVisibilityWithoutRendering();
 	renderGraphicsView();
 }
-
 
 void GraphicsWindowDataItem::updateVisibilityWithoutRendering()
 {
@@ -329,44 +339,20 @@ void GraphicsWindowDataItem::updateVisibilityWithoutRendering()
 	updateVisibility(ancientVisible);
 }
 
-void GraphicsWindowDataItem::updateVisibility(bool visible)
+void GraphicsWindowDataItem::updateVisibility(bool ancientVisible)
 {
-	bool my_visible = true;
-	if (m_standardItem == nullptr) {
-		my_visible = customVisibility();
-	} else if (m_standardItem->isCheckable()) {
-		switch (m_standardItem->checkState()) {
-		case Qt::Checked:
-		case Qt::PartiallyChecked:
-			my_visible = true;
-			break;
-		case Qt::Unchecked:
-			my_visible = false;
-			break;
-		}
-	}
-	visible = visible && my_visible;
-	vtkCollectionIterator* it = m_actorCollection->NewIterator();
-	it->GoToFirstItem();
-	// update the visibility of actors those are handled
-	// by this instance.
-	while (!it->IsDoneWithTraversal()) {
-		auto actor = vtkActor::SafeDownCast(it->GetCurrentObject());
-		actor->SetVisibility(visible);
-		it->GoToNextItem();
-	}
-	it->Delete();
+	bool visible = ancientVisible && isChecked();
 
-	it = m_actor2DCollection->NewIterator();
-	it->GoToFirstItem();
-	// update the visibility of actors those are handled
-	// by this instance.
-	while (!it->IsDoneWithTraversal()) {
-		auto actor = vtkActor2D::SafeDownCast(it->GetCurrentObject());
-		actor->SetVisibility(visible);
-		it->GoToNextItem();
+	if (visible && ! m_isActorsReady) {
+		updateVisibilityOfActorCollection(false);
+		updateVisibilityOfActor2DCollection(false);
+
+		doUpdateActorSetting();
+		m_isActorsReady = true;
 	}
-	it->Delete();
+
+	updateVisibilityOfActorCollection(visible);
+	updateVisibilityOfActor2DCollection(visible);
 
 	// cascade to update the visibility of actors those are
 	// handled by the child instances.
@@ -392,8 +378,10 @@ QMainWindow* GraphicsWindowDataItem::mainWindow() const
 
 bool GraphicsWindowDataItem::isChecked() const
 {
-	if (m_standardItem == nullptr) {return true;}
-	if (! m_standardItem->isCheckable()) { return true;}
+	if (m_standardItem == nullptr) {
+		return customVisibility();
+	}
+	if (! m_standardItem->isCheckable()) {return true;}
 
 	return m_standardItem->checkState() == Qt::Checked;
 }
@@ -778,3 +766,28 @@ void GraphicsWindowDataItem::showPropertyDialogModeless()
 
 	propDialog->show();
 }
+
+void GraphicsWindowDataItem::updateVisibilityOfActorCollection(bool visible)
+{
+	auto it = m_actorCollection->NewIterator();
+	it->GoToFirstItem();
+	while (! it->IsDoneWithTraversal()) {
+		auto actor = vtkActor::SafeDownCast(it->GetCurrentObject());
+		actor->SetVisibility(visible);
+		it->GoToNextItem();
+	}
+	it->Delete();
+}
+
+void GraphicsWindowDataItem::updateVisibilityOfActor2DCollection(bool visible)
+{
+	auto it = m_actor2DCollection->NewIterator();
+	it->GoToFirstItem();
+	while (!it->IsDoneWithTraversal()) {
+		auto actor = vtkActor2D::SafeDownCast(it->GetCurrentObject());
+		actor->SetVisibility(visible);
+		it->GoToNextItem();
+	}
+	it->Delete();
+}
+

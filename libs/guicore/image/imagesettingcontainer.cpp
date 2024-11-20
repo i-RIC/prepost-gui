@@ -233,7 +233,6 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 	
 	if (item != nullptr) {
 		item->actor2DCollection()->AddItem(m_actor);
-		item->updateVisibilityWithoutRendering();
 	} else {
 		if (itemTested && visible) {
 			m_actor->VisibilityOn();

@@ -39,7 +39,7 @@ void Post2dWindowGridShapeDataItem::setupActors()
 	auto v = dataModel()->graphicsView();
 	m_setting.outlineActor()->GetProperty()->SetLineWidth(GridShapeSettingContainer::normalOutlineWidth * v->devicePixelRatioF());
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowGridShapeDataItem::update()
@@ -47,16 +47,14 @@ void Post2dWindowGridShapeDataItem::update()
 	updateActorSetting();
 }
 
-void Post2dWindowGridShapeDataItem::updateActorSetting()
+void Post2dWindowGridShapeDataItem::doUpdateActorSetting()
 {
 	auto grid2d = gridDataItem()->grid();
 	if (grid2d == nullptr) {
-		m_setting.update(actorCollection(), actor2DCollection(), nullptr, nullptr, nullptr, v4GridUtil::LABEL_NAME);
+		m_setting.update(m_actorCollection, m_actor2DCollection, nullptr, nullptr, nullptr, v4GridUtil::LABEL_NAME);
 	} else {
-		m_setting.update(actorCollection(), actor2DCollection(), grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
+		m_setting.update(m_actorCollection, m_actor2DCollection, grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
 	}
-
-	updateVisibilityWithoutRendering();
 }
 
 Post2dWindowGridDataItemI* Post2dWindowGridShapeDataItem::gridDataItem() const
@@ -67,7 +65,7 @@ Post2dWindowGridDataItemI* Post2dWindowGridShapeDataItem::gridDataItem() const
 void Post2dWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

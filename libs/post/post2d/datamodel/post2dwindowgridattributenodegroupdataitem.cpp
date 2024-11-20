@@ -130,7 +130,7 @@ void Post2dWindowGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 	updateActorSetting();
 }
 
-void Post2dWindowGridAttributeNodeGroupDataItem::updateActorSetting()
+void Post2dWindowGridAttributeNodeGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_opacityWidget->setDisabled(true);
 	impl->m_actor->VisibilityOff();
@@ -186,7 +186,6 @@ void Post2dWindowGridAttributeNodeGroupDataItem::updateActorSetting()
 
 		m_actorCollection->AddItem(impl->m_actor);
 	}
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -505,7 +504,7 @@ void Post2dWindowGridAttributeNodeGroupDataItem::applyColorMapSetting(const std:
 {
 	if (impl->m_target != name) {return;}
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 Post2dWindowInputGridDataItem* Post2dWindowGridAttributeNodeGroupDataItem::gridDataItem() const

@@ -34,7 +34,7 @@ public:
 
 	void setupActors();
 	void update();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;

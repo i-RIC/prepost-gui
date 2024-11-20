@@ -235,8 +235,6 @@ void GeoDataNetcdf::setupActors()
 	m_regionActor->VisibilityOff();
 
 	renderer()->AddActor(m_regionActor);
-
-	updateActorSetting();
 }
 
 void GeoDataNetcdf::loadExternalData(const QString& filename)
@@ -910,7 +908,7 @@ int GeoDataNetcdf::getValueVarId(int ncid, int* varId)
 	return nc_inq_varid(ncid, VALUE, varId);
 }
 
-void GeoDataNetcdf::updateActorSetting()
+void GeoDataNetcdf::doUpdateActorSetting()
 {
 	// color
 	m_actor->GetProperty()->SetColor(impl->m_displaySetting.color);

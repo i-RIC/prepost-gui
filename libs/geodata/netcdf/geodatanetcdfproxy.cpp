@@ -35,8 +35,6 @@ void GeoDataNetcdfProxy::setupActors()
 
 	r->AddActor(impl->m_actor);
 	col->AddItem(impl->m_actor);
-
-	updateActorSetting();
 }
 
 void GeoDataNetcdfProxy::updateZDepthRangeItemCount(ZDepthRange& range)

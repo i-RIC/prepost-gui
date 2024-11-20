@@ -58,9 +58,9 @@ QDialog* PostTitleDataItem::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-void PostTitleDataItem::updateActorSetting()
+void PostTitleDataItem::doUpdateActorSetting()
 {
-	actor2DCollection()->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 
 	// To avoid VTK warning
 	if (m_setting.title.value().isEmpty()) {
@@ -68,7 +68,7 @@ void PostTitleDataItem::updateActorSetting()
 		return;
 	}
 
-	actor2DCollection()->AddItem(m_titleActor);
+	m_actor2DCollection->AddItem(m_titleActor);
 
 	m_titleActor->SetInput(iRIC::toStr(m_setting.title).c_str());
 	m_titleActor->SetTextScaleModeToNone();
@@ -79,6 +79,4 @@ void PostTitleDataItem::updateActorSetting()
 	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToCentered();
 	prop->SetVerticalJustificationToTop();
-
-	updateVisibilityWithoutRendering();
 }

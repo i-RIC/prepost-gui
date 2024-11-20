@@ -32,7 +32,6 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	void updateActorSetting() override;
 	void informDataChange(const std::string& name);
 	void updateZDepthRangeItemCount() override;
 	void informSelection(VTKGraphicsView* v) override;
@@ -61,10 +60,12 @@ public:
 	PreProcessorGridDataItem* gridDataItem() const;
 	bool colorBarShouldBeVisible(const std::string& name) const;
 
-
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showAttributeBrowser();
+
+protected:
+	void doUpdateActorSetting() override;
 
 private:
 	PreProcessorGridAttributeNodeDataItem* activeChildItem() const;

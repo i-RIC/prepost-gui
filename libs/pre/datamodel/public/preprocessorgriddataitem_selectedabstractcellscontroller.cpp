@@ -60,7 +60,6 @@ void PreProcessorGridDataItem::SelectedAbstractCellsController::setVisibility(bo
 		col->AddItem(m_cellsActor);
 		col->AddItem(m_cellsLinesActor);
 	}
-	m_item->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridDataItem::SelectedAbstractCellsController::handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*view*/)

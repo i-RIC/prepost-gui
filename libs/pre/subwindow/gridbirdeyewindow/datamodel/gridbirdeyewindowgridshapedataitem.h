@@ -31,7 +31,7 @@ private:
 	void innerUpdateZScale(double scale) override;
 
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	GridBirdEyeWindowZoneDataItem* zoneDataItem() const;
 
 	vtkWarpScalar* m_gridWarp;

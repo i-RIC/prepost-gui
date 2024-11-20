@@ -50,7 +50,7 @@ private:
 
 	void setupActors();
 	void updateCheckState();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateVisibility(bool visible) override;
 
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;

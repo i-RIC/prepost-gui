@@ -64,7 +64,7 @@ public:
 
 	void updateInterpolators();
 	void updateShapeData();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateSelectionShapeData();
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;

@@ -106,8 +106,6 @@ GeoDataPoint::GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDe
 	if (att && att->isReferenceInformation()) {
 		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
-
-	updateActorSetting();
 }
 
 GeoDataPoint::~GeoDataPoint()
@@ -358,13 +356,10 @@ void GeoDataPoint::updateScalarValues()
 	impl->m_scalarValues->Modified();
 }
 
-void GeoDataPoint::updateActorSetting()
+void GeoDataPoint::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
 	impl->m_imageActor->VisibilityOff();
-
-	actorCollection()->RemoveAllItems();
-	actor2DCollection()->RemoveAllItems();
 
 	auto& ds = impl->m_displaySetting;
 
@@ -424,7 +419,6 @@ void GeoDataPoint::updateActorSetting()
 
 		actor2DCollection()->AddItem(impl->m_imageActor);
 	}
-	updateVisibilityWithoutRendering();
 
 	emit updateActorSettingExecuted();
 }

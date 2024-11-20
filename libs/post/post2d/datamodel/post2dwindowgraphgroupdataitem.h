@@ -43,7 +43,7 @@ private:
 	void updateZDepthRangeItemCount() override;
 
 	void innerUpdateZScale(double scale) override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	class Impl;
 	std::unique_ptr<Impl> impl;

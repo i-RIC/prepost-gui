@@ -120,7 +120,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 	updateActorSetting();
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
+void PreProcessorGridAttributeNodeGroupDataItem::doUpdateActorSetting()
 {
 	auto actor = impl->m_actor;
 	auto stringActor = impl->m_stringActor;
@@ -139,7 +139,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 		return;
 	}
 	if (target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
 	impl->m_opacityWidget->setEnabled(true);
@@ -181,7 +180,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 
 		m_actorCollection->AddItem(actor);
 	}
-	updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -52,7 +52,7 @@ private:
 	QDialog* propertyDialog(QWidget* p) override;
 	void updateVisibility(bool visible) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	Post3dWindowNodeVectorArrowTopDataItem* topDataItem() const;
 	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
 

@@ -35,7 +35,6 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	void updateActorSetting() override;
 	void informDataChange(const std::string& name);
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -76,6 +75,7 @@ private:
 	void updateAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
+	void doUpdateActorSetting() override;
 
 	virtual SolverDefinitionGridAttribute::Position definitionPosition() const = 0;
 	virtual PreProcessorGridAttributeAbstractCellDataItem* createChild(SolverDefinitionGridAttribute* att) = 0;

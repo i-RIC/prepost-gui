@@ -196,7 +196,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::setupActors()
 	update();
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
+void Post3dWindowParticlesBaseScalarGroupDataItem::doUpdateActorSetting()
 {
 	updateCheckState();
 

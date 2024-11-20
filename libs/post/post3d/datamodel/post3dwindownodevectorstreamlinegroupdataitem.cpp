@@ -83,13 +83,11 @@ Post3dWindowZoneDataItem* Post3dWindowNodeVectorStreamlineGroupDataItem::zoneDat
 	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
 }
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
+void Post3dWindowNodeVectorStreamlineGroupDataItem::doUpdateActorSetting()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
 
 	clearActors();
-
-	if (! isChecked()) {return;}
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return;}
@@ -103,7 +101,6 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 
 	setupActors();
 	applyZScale();
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::handleStandardItemChange()

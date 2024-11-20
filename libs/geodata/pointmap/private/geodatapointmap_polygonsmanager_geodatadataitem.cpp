@@ -39,7 +39,7 @@ void GeoDataPointmap::PolygonsManager::GeoDataDataItem::informValueRangeChange()
 
 void GeoDataPointmap::PolygonsManager::GeoDataDataItem::informDataChange()
 {
-	m_geoData->updateActorSetting();
+	m_geoData->doUpdateActorSetting();
 	m_geoData->renderGraphicsView();
 }
 

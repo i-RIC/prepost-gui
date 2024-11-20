@@ -74,7 +74,7 @@ void Post3dWindowNodeScalarGroupDataItem::setDefaultValues()
 	impl->m_setting.range.kMax = dims[2] - 1;
 }
 
-void Post3dWindowNodeScalarGroupDataItem::updateActorSetting()
+void Post3dWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
@@ -119,8 +119,6 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSetting()
 	impl->m_isoSurfaceActor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 
 	m_actorCollection->AddItem(impl->m_isoSurfaceActor);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

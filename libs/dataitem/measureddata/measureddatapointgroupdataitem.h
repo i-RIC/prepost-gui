@@ -55,7 +55,7 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	void updateVisibility(bool visible) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	MeasuredDataFileDataItem* fileDataItem() const;
 
 	class Impl;

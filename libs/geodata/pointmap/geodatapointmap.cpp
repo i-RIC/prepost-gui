@@ -565,7 +565,7 @@ void GeoDataPointmap::updateMenu(QMenu* menu)
 	menu->addAction(impl->m_displaySettingAction);
 }
 
-void GeoDataPointmap::updateActorSetting()
+void GeoDataPointmap::doUpdateActorSetting()
 {
 	auto v = dataModel()->graphicsView();
 
@@ -612,8 +612,6 @@ void GeoDataPointmap::updateActorSetting()
 
 	impl->m_tinManager.updateBreakLinesActorSettings();
 	impl->m_polygonsManager.updatePolygonsActorSettings();
-
-	updateVisibilityWithoutRendering();
 }
 
 void GeoDataPointmap::addCustomMenuItems(QMenu* menu)

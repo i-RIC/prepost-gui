@@ -35,7 +35,7 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v) override;

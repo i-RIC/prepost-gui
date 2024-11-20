@@ -11,13 +11,13 @@ Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::UpdateActor
 void Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::redo()
 {
 	m_command->redo();
-	m_item->updateActorSetting();
+	m_item->doUpdateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::undo()
 {
 	m_command->undo();
-	m_item->updateActorSetting();
+	m_item->doUpdateActorSetting();
 }
 
 int Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::id() const

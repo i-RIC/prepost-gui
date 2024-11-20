@@ -124,7 +124,7 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::handleNamedItemChange(N
 	pushRenderCommand(cmd, this, true);
 }
 
-void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
+void PreProcessorGridAttributeAbstractCellGroupDataItem::doUpdateActorSetting()
 {
 	auto actor = impl->m_actor;
 	auto stringActor = impl->m_stringActor;
@@ -143,7 +143,6 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 		return;
 	}
 	if (target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
 	impl->m_opacityWidget->setEnabled(true);
@@ -186,7 +185,6 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 
 			m_actorCollection->AddItem(actor);
 		}
-		updateVisibilityWithoutRendering();
 	}
 }
 

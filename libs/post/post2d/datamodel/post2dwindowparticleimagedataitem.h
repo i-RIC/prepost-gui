@@ -28,7 +28,7 @@ private:
 	Post2dWindowParticleImageTopDataItem* topDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

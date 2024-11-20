@@ -151,7 +151,7 @@ void Post2dWindowPolyDataGroupDataItem::update()
 	updateActorSetting();
 }
 
-void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
+void Post2dWindowPolyDataGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
 	impl->m_legendActor->VisibilityOff();
@@ -188,7 +188,6 @@ void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
 	m_actorCollection->AddItem(impl->m_actor);
 
 	updateCheckState();
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowPolyDataGroupDataItem::showPropertyDialog()

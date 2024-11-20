@@ -27,7 +27,7 @@ private:
 	QDialog* propertyDialog(QWidget* parent) override;
 
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 };
 
 #endif // PREPROCESSORSTRUCTURED2DGRIDSHAPEDATAITEM_H

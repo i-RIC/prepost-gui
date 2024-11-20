@@ -29,7 +29,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 private:
 	class Impl;

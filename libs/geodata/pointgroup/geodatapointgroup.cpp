@@ -71,8 +71,6 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 {
 	addAction()->setText(tr("&Add New Point..."));
 
-	actorCollection()->AddItem(impl->m_pointsActor);
-
 	renderer()->AddActor(impl->m_pointsActor);
 	renderer()->AddActor(impl->m_selectedPointsPointsActor);
 
@@ -80,15 +78,10 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 	if (att && att->isReferenceInformation()) {
 		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
-
-	updateActorSetting();
 }
 
 GeoDataPointGroup::~GeoDataPointGroup()
 {
-	actorCollection()->RemoveAllItems();
-	actor2DCollection()->RemoveAllItems();
-
 	auto r = renderer();
 	for (auto actor : impl->m_imageActors) {
 		r->RemoveActor2D(actor);
@@ -312,7 +305,7 @@ GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 	return point;
 }
 
-void GeoDataPointGroup::updateActorSetting()
+void GeoDataPointGroup::doUpdateActorSetting()
 {
 	auto r = renderer();
 	for (auto actor : impl->m_imageActors) {
@@ -322,8 +315,10 @@ void GeoDataPointGroup::updateActorSetting()
 	impl->m_imageActors.clear();
 	impl->m_pointsActor->VisibilityOff();
 
-	actorCollection()->RemoveAllItems();
-	actor2DCollection()->RemoveAllItems();
+	auto ac = actorCollection();
+	auto a2dc = actor2DCollection();
+	ac->RemoveAllItems();
+	a2dc->RemoveAllItems();
 
 	auto ds = impl->m_displaySetting;
 
@@ -370,7 +365,7 @@ void GeoDataPointGroup::updateActorSetting()
 		impl->m_pointsActor->GetProperty()->SetPointSize(ds.pointSize);
 		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(ds.pointSize * 2);
 
-		actorCollection()->AddItem(impl->m_pointsActor);
+		ac->AddItem(impl->m_pointsActor);
 	} else {
 		auto view = dataModel()->graphicsView();
 		auto pixmap = QPixmap::fromImage(impl->m_displaySetting.image);
@@ -381,7 +376,6 @@ void GeoDataPointGroup::updateActorSetting()
 		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
 		imageInfo->SetInputConnection(imgToImg->GetOutputPort());
 		imageInfo->CenterImageOn();
-		auto col = actor2DCollection();
 
 		for (auto it = data().rbegin(); it != data().rend(); ++it) {
 			auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
@@ -402,11 +396,11 @@ void GeoDataPointGroup::updateActorSetting()
 			coord->SetValue(p2.x(), p2.y(), 0);
 
 			r->AddActor2D(actor);
-			col->AddItem(actor);
+			a2dc->AddItem(actor);
 			impl->m_imageActors.push_back(actor);
 		}
 	}
-	updateVisibilityWithoutRendering();
+
 	updateActorSettingForEditTargetPolyData();
 
 	emit updateActorSettingExecuted();
@@ -525,5 +519,5 @@ void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
 	}
 	p_ds.pointSize = ds.pointSize * 2;
 
-	targetData->updateActorSetting();
+	targetData->doUpdateActorSetting();
 }
