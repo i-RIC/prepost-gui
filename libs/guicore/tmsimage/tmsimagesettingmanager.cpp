@@ -1,10 +1,6 @@
 #include "tmsimagesetting.h"
 #include "tmsimagesettingmanager.h"
 
-#include <tmsloader/tmsrequestbing.h>
-#include <tmsloader/tmsrequestgooglemap.h>
-#include <tmsloader/tmsrequestgsi.h>
-#include <tmsloader/tmsrequestopenstreetmap.h>
 #include <tmsloader/tmsrequestxyz.h>
 
 #include <misc/stringtool.h>
@@ -139,57 +135,19 @@ TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& caption, 
 	return ret;
 }
 
-TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, double scale, const TmsImageSetting& setting) const
+TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const TmsImageSetting& setting) const
 {
 	QString tms = setting.value("tms");
-	if (tms == "googlemap") {
-		TmsRequestGoogleMap::MapType mapType = TmsRequestGoogleMap::MapType::ROADMAP;
-		QString mapTypeStr = setting.value("mapType");
-		if (mapTypeStr == "roadmap") {
-			mapType = TmsRequestGoogleMap::MapType::ROADMAP;
-		} else if (mapTypeStr == "satellite") {
-			mapType = TmsRequestGoogleMap::MapType::SATELLITE;
-		} else if (mapTypeStr == "hybrid") {
-			mapType = TmsRequestGoogleMap::MapType::HYBRID;
-		} else if (mapTypeStr == "terrain") {
-			mapType = TmsRequestGoogleMap::MapType::TERRAIN;
-		}
-		return new TmsRequestGoogleMap(centerLonLat, size, scale, mapType);
-	} else if (tms == "openstreetmap") {
-		return new TmsRequestOpenStreetMap(centerLonLat, size, scale);
-	} else if (tms == "bing") {
-		TmsRequestBing::ImagerySet iset = TmsRequestBing::ImagerySet::AERIAL;
-		QString imagerySetStr = setting.value("imageryset");
-		if (imagerySetStr == "aerial") {
-			iset = TmsRequestBing::ImagerySet::AERIAL;
-		} else if (imagerySetStr == "road") {
-			iset = TmsRequestBing::ImagerySet::ROAD;
-		}
-		return new TmsRequestBing(centerLonLat, size, scale, iset);
-	} else if (tms == "gsi") {
-		TmsRequestGSI::TileType tileType = TmsRequestGSI::TileType::STD;
-		QString tileTypeStr = setting.value("tiletype");
-		if (tileTypeStr == "std") {
-			tileType = TmsRequestGSI::TileType::STD;
-		} else if (tileTypeStr == "pale") {
-			tileType = TmsRequestGSI::TileType::PALE;
-		} else if (tileTypeStr == "english") {
-			tileType = TmsRequestGSI::TileType::ENGLISH;
-		} else if (tileTypeStr == "relief") {
-			tileType = TmsRequestGSI::TileType::RELIEF;
-		} else if (tileTypeStr == "ort") {
-			tileType = TmsRequestGSI::TileType::ORT;
-		}
-		return new TmsRequestGSI(centerLonLat, size, scale, tileType);
-	} else if (tms == "xyz") {
+	if (tms == "xyz") {
 		QString url = setting.value("url");
 		std::map<QString, QString> options;
 		QString maxZoom = setting.value("maxNativeZoom");
 		if (! maxZoom.isNull()) {
 			options.insert({"maxNativeZoom", maxZoom});
 		}
-		return new TmsRequestXYZ(centerLonLat, size, scale, url, options);
+		return new TmsRequestXYZ(centerLonLat, size, zoomLevel, url, options);
 	}
+
 	return nullptr;
 }
 

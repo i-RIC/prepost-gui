@@ -26,19 +26,15 @@ class TmsRequestHandler;
 class TMSLOADER_API TmsRequest
 {
 public:
-	TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale);
+	TmsRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel);
 	virtual ~TmsRequest();
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	virtual TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view, TmsImageCache* imageCache) const = 0;
-#else
-	virtual TmsRequestHandler* buildHandler(int requestId, QWebView* view, TmsImageCache* imageCache) const = 0;
-#endif
+	virtual TmsRequestHandler* buildHandler(int requestId, TmsImageCache* imageCache) const = 0;
 
 protected:
 	QPointF center() const;
 	QSize size() const;
-	double scale() const;
+	int zoomLevel() const;
 
 private:
 	class Impl;

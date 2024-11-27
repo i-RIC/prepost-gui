@@ -34,15 +34,17 @@
 
 namespace {
 
+	const double MARGIN_RATIO = 0.3;
+
 void getExtendedDrawnRegion(VTK2DGraphicsView* view, double* xmin, double* xmax, double* ymin, double* ymax)
 {
 	view->getDrawnRegion(xmin, xmax, ymin, ymax);
 	double width = (*xmax - *xmin);
 	double height = (*ymax - *ymin);
-	*xmin -= width * 0.3;
-	*xmax += width * 0.3;
-	*ymin -= height * 0.3;
-	*ymax += height * 0.3;
+	*xmin -= width * MARGIN_RATIO;
+	*xmax += width * MARGIN_RATIO;
+	*ymin -= height * MARGIN_RATIO;
+	*ymax += height * MARGIN_RATIO;
 }
 
 QRectF calcRect(VTK2DGraphicsView* view, const QPointF& offset)
@@ -98,7 +100,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 	double newHeight = std::abs(std::sin(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::cos(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 
-	*size = QSize(newWidth * 1.6, newHeight * 1.6); // 1.6 = 1.0 + 0.3 * 2
+	*size = QSize(newWidth * (1. + 2 * MARGIN_RATIO), newHeight * (1. + 2 * MARGIN_RATIO));
 }
 
 QRectF trimLonLatRect(const QRectF& rect)
@@ -111,42 +113,50 @@ QRectF trimLonLatRect(const QRectF& rect)
 	return ret;
 }
 
-void calcImageParametersLonLat(QPointF* center, QSize* size, double* requestScale, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const QPointF& offset)
+void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, const QPointF& center, QSize* size, int* zoomLevel, double* ratio)
 {
-	QRectF rect = calcRect(view, offset);
-	double orig_width = rect.width();
+	*zoomLevel = tmsloader::TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel) + 1;
+	while (true) {
+		-- *zoomLevel;
+		double mpp = tmsloader::TmsUtil::meterPerPixel(center, *zoomLevel);
+		*ratio = targetMeterPerPixel / mpp;
+		*size = QSize(targetSize.width() * *ratio, targetSize.height() * *ratio);
 
-	rect = trimLonLatRect(rect);
-	double new_width = rect.width();
-	*lowerLeft = QPointF(rect.left() - offset.x(), rect.top() - offset.y());
-
-	QPointF vecX = calcVecX(view);
-	QPointF stdVecX(1, 0);
-	double angleRad = iRIC::angleRadian(stdVecX, vecX);
-	QSize windowSize = view->size();
-
-	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
-	newWidth *= new_width / orig_width;
-
-	double lonCenter, latCenter;
-	int zoomLevel, width, height;
-	WebMercatorUtil::calcImageZoomAndSize(rect.left(), rect.top(), rect.right(), rect.bottom(), newWidth,
-																				&lonCenter, &latCenter, &zoomLevel, &width, &height);
-
-	*center = QPointF(lonCenter, latCenter);
-	*requestScale = tmsloader::TmsUtil::meterPerPixel(*center, zoomLevel);
-	*size = QSize(width, height);
-
-	*scale = iRIC::length(vecX) * (newWidth / width);
+		if (*ratio < 1.0) {break;}
+	}
 }
 
-void calcImageParameters(QPointF* center, QSize* size, double* requestScale, QPointF* lowerLeft, double* scale, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
+void calcRequestParameters(QPointF* center, QSize* size, double* scale, QPointF* lowerLeft, int* zoomLevel, VTK2DGraphicsView* view, const CoordinateSystem& cs, const QPointF& offset)
 {
 	if (cs.isLongLat()) {
-		calcImageParametersLonLat(center, size, requestScale, lowerLeft, scale, view, offset);
+		QRectF rect = calcRect(view, offset);
+		double orig_width = rect.width();
+
+		rect = trimLonLatRect(rect);
+		double new_width = rect.width();
+		*lowerLeft = QPointF(rect.left() - offset.x(), rect.top() - offset.y());
+
+		QPointF vecX = calcVecX(view);
+		QPointF stdVecX(1, 0);
+		double angleRad = iRIC::angleRadian(stdVecX, vecX);
+		QSize windowSize = view->size();
+
+		double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
+		newWidth *= new_width / orig_width;
+
+		double lonCenter, latCenter;
+		int width, height;
+		WebMercatorUtil::calcImageZoomAndSize(rect.left(), rect.top(), rect.right(), rect.bottom(), newWidth * (1. + 2 * MARGIN_RATIO),
+																					&lonCenter, &latCenter, zoomLevel, &width, &height);
+		*center = QPointF(lonCenter, latCenter);
+		*size = QSize(width, height);
+		*scale = iRIC::length(vecX) * (newWidth * (1. + 2 * MARGIN_RATIO) / width);
 	} else {
-		calcImageParameters(center, size, lowerLeft, scale, view, cs, offset);
-		*requestScale = *scale;
+		QSize screenSize;
+		double ratio;
+		calcImageParameters(center, &screenSize, lowerLeft, scale, view, cs, offset);
+		calcSizeAndZoomLevel(screenSize, *scale, *center, size, zoomLevel, &ratio);
+		*scale /= ratio;
 	}
 }
 
@@ -353,14 +363,33 @@ void TmsImageGroupDataItem::requestImage(bool force)
 
 	QPointF center;
 	QSize size;
+	double imageScale;
+	QPointF imageLowerLeft;
+	int zoomLevel;
+
+	double oldImageScale = impl->m_imageScale;
+	calcRequestParameters(&center, &size, &imageScale, &imageLowerLeft, &zoomLevel, view, *cs, impl->m_offset);
+
+/*
+	QPointF center;
+	QSize size;
 	double scale;
 	QPointF imageLowerLeft;
 	double imageScale;
 
 	double oldImageScale = impl->m_imageScale;
 	calcImageParameters(&center, &size, &scale, &imageLowerLeft, &imageScale, view, *cs, impl->m_offset);
-	double ratio = imageScale / oldImageScale;
-	all_ok = all_ok && (ratio < 1.2 && 1.0 / ratio < 1.2);
+
+	QSize imageSize;
+	double ratio;
+	int zoomLevel;
+	calcSizeAndZoomLevel(size, scale, center, &imageSize, &zoomLevel, &ratio);
+
+	imageScale /= ratio;
+	*/
+
+	double r = imageScale / oldImageScale;
+	all_ok = all_ok && (r < 1.2 && 1.0 / r < 1.2);
 
 	if (all_ok) {return;}
 
@@ -373,15 +402,12 @@ void TmsImageGroupDataItem::requestImage(bool force)
 
 	TmsImageSettingManager manager;
 	auto setting = TmsImageSetting::buildFromString(impl->m_target);
-	tmsloader::TmsRequest* request = manager.buildRequest(center, size, scale, setting);
+	tmsloader::TmsRequest* request = manager.buildRequest(center, size, zoomLevel, setting);
 	if (request == nullptr) {return;}
 
 	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));
 
 	delete request;
-
-	impl->m_actor->VisibilityOff();
-	renderGraphicsView();
 }
 
 void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)

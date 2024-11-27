@@ -11,11 +11,11 @@ namespace tmsloader {
 class TmsRequest::Impl
 {
 public:
-	Impl(const QPointF& centerLonLat, const QSize& size, double scale);
+	Impl(const QPointF& centerLonLat, const QSize& size, int zoomLevel);
 
 	QPointF m_center;
 	QSize m_size;
-	double m_scale;
+	int m_zoomLevel;
 };
 
 } // tmsloader

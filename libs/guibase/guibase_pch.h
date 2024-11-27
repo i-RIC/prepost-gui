@@ -203,10 +203,6 @@
 
 #include <tmsloader/tmsloader.h>
 #include <tmsloader/tmsrequest.h>
-#include <tmsloader/tmsrequestbing.h>
-#include <tmsloader/tmsrequestgooglemap.h>
-#include <tmsloader/tmsrequestgsi.h>
-#include <tmsloader/tmsrequestopenstreetmap.h>
 #include <tmsloader/tmsrequestxyz.h>
 #include <tmsloader/tmsutil.h>
 
