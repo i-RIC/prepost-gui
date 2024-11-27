@@ -141,6 +141,12 @@ unix {
 }
 LIBS += -liricGdNetcdf
 
+# iricGdGdal
+unix {
+        LIBS += -L"../geodata/gdal"
+}
+LIBS += -liricGdGdal
+
 # iricGccCenterandwidth
 
 unix {
