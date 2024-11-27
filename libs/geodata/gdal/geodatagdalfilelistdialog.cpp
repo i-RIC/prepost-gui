@@ -1,30 +1,30 @@
-#include "geodatanetcdffilelistdialog.h"
-#include "geodatanetcdffilenamematcher.h"
-#include "ui_geodatanetcdffilelistdialog.h"
+#include "geodatagdalfilelistdialog.h"
+#include "geodatagdalfilenamematcher.h"
+#include "ui_geodatagdalfilelistdialog.h"
 
 #include <QDir>
 
-GeoDataNetcdfFileListDialog::GeoDataNetcdfFileListDialog(QWidget *parent) :
+GeoDataGdalFileListDialog::GeoDataGdalFileListDialog(QWidget *parent) :
 	QDialog(parent),
 	m_fileNameMatcher {nullptr},
-	ui(new Ui::GeoDataNetcdfFileListDialog)
+	ui(new Ui::GeoDataGdalFileListDialog)
 {
 	ui->setupUi(this);
 	connect(ui->selectAllButton, SIGNAL(clicked()), this, SLOT(selectAll()));
 	connect(ui->deselectAllButton, SIGNAL(clicked()), this, SLOT(deselectAll()));
 }
 
-GeoDataNetcdfFileListDialog::~GeoDataNetcdfFileListDialog()
+GeoDataGdalFileListDialog::~GeoDataGdalFileListDialog()
 {
 	delete ui;
 }
 
-void GeoDataNetcdfFileListDialog::setFileNameMatcher(GeoDataNetcdfFileNameMatcher* matcher)
+void GeoDataGdalFileListDialog::setFileNameMatcher(GeoDataGdalFileNameMatcher* matcher)
 {
 	m_fileNameMatcher = matcher;
 }
 
-void GeoDataNetcdfFileListDialog::setFileNames(const std::vector<QString>& fileNames)
+void GeoDataGdalFileListDialog::setFileNames(const std::vector<QString>& fileNames)
 {
 	m_fileNames = fileNames;
 
@@ -34,7 +34,7 @@ void GeoDataNetcdfFileListDialog::setFileNames(const std::vector<QString>& fileN
 	ui->listWidget->selectAll();
 }
 
-std::vector<QString> GeoDataNetcdfFileListDialog::selectedFilenames() const
+std::vector<QString> GeoDataGdalFileListDialog::selectedFilenames() const
 {
 	std::vector<QString> ret;
 
@@ -48,7 +48,7 @@ std::vector<QString> GeoDataNetcdfFileListDialog::selectedFilenames() const
 	return ret;
 }
 
-void GeoDataNetcdfFileListDialog::accept()
+void GeoDataGdalFileListDialog::accept()
 {
 	auto filenames = selectedFilenames();
 
@@ -78,12 +78,12 @@ void GeoDataNetcdfFileListDialog::accept()
 	QDialog::accept();
 }
 
-void GeoDataNetcdfFileListDialog::selectAll()
+void GeoDataGdalFileListDialog::selectAll()
 {
 	ui->listWidget->selectAll();
 }
 
-void GeoDataNetcdfFileListDialog::deselectAll()
+void GeoDataGdalFileListDialog::deselectAll()
 {
 	ui->listWidget->clearSelection();
 }

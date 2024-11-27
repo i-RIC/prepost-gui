@@ -1,4 +1,4 @@
-#include "geodatanetcdffilenamematcher.h"
+#include "geodatagdalfilenamematcher.h"
 
 #include <QDate>
 #include <QDateTime>
@@ -30,7 +30,7 @@ int setupCapId(int idx, const std::vector<int>& indices)
 
 } // namespace
 
-GeoDataNetcdfFileNameMatcher::GeoDataNetcdfFileNameMatcher(const QString& pattern) :
+GeoDataGdalFileNameMatcher::GeoDataGdalFileNameMatcher(const QString& pattern) :
 	m_pattern {pattern}
 {
 	int YYYY_idx = pattern.indexOf(YYYY);
@@ -68,7 +68,7 @@ GeoDataNetcdfFileNameMatcher::GeoDataNetcdfFileNameMatcher(const QString& patter
 	m_patternRe = QRegExp(regexpPattern);
 }
 
-bool GeoDataNetcdfFileNameMatcher::setup(const QString& filename)
+bool GeoDataGdalFileNameMatcher::setup(const QString& filename)
 {
 	int pos = m_patternRe.indexIn(filename);
 	if (pos == -1) {return false;}
@@ -79,12 +79,12 @@ bool GeoDataNetcdfFileNameMatcher::setup(const QString& filename)
 	return true;
 }
 
-QString GeoDataNetcdfFileNameMatcher::pattern() const
+QString GeoDataGdalFileNameMatcher::pattern() const
 {
 	return m_pattern;
 }
 
-QDateTime GeoDataNetcdfFileNameMatcher::getDateTime(const QString& filename, bool* ok) const
+QDateTime GeoDataGdalFileNameMatcher::getDateTime(const QString& filename, bool* ok) const
 {
 	auto current = QDate::currentDate();
 	int year = current.year();

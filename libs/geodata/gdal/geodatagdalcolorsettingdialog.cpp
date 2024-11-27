@@ -1,8 +1,8 @@
-#include "ui_geodatanetcdfcolorsettingdialog.h"
+#include "ui_geodatagdalcolorsettingdialog.h"
 
-#include "geodatanetcdfcolorsettingdialog.h"
+#include "geodatagdalcolorsettingdialog.h"
 
-GeoDataNetcdfColorSettingDialog::Setting::Setting() :
+GeoDataGdalColorSettingDialog::Setting::Setting() :
 	CompositeContainer ({&color, &opacity, &mapping}),
 	color {"color"},
 	opacity {},
@@ -11,31 +11,31 @@ GeoDataNetcdfColorSettingDialog::Setting::Setting() :
 	opacity = 50;
 }
 
-GeoDataNetcdfColorSettingDialog::Setting::Setting(const Setting& s) :
+GeoDataGdalColorSettingDialog::Setting::Setting(const Setting& s) :
 	Setting()
 {
 	CompositeContainer::copyValue(s);
 }
 
-GeoDataNetcdfColorSettingDialog::Setting& GeoDataNetcdfColorSettingDialog::Setting::operator=(const Setting& s)
+GeoDataGdalColorSettingDialog::Setting& GeoDataGdalColorSettingDialog::Setting::operator=(const Setting& s)
 {
 	CompositeContainer::copyValue(s);
 	return *this;
 }
 
-GeoDataNetcdfColorSettingDialog::GeoDataNetcdfColorSettingDialog(QWidget* parent) :
+GeoDataGdalColorSettingDialog::GeoDataGdalColorSettingDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::GeoDataNetcdfColorSettingDialog}
+	ui {new Ui::GeoDataGdalColorSettingDialog}
 {
 	ui->setupUi(this);
 }
 
-GeoDataNetcdfColorSettingDialog::~GeoDataNetcdfColorSettingDialog()
+GeoDataGdalColorSettingDialog::~GeoDataGdalColorSettingDialog()
 {
 	delete ui;
 }
 
-void GeoDataNetcdfColorSettingDialog::setIsReferenceInformation(bool isRef)
+void GeoDataGdalColorSettingDialog::setIsReferenceInformation(bool isRef)
 {
 	if (! isRef) {return;}
 
@@ -43,7 +43,7 @@ void GeoDataNetcdfColorSettingDialog::setIsReferenceInformation(bool isRef)
 	ui->byValueRadioButton->setDisabled(true);
 }
 
-void GeoDataNetcdfColorSettingDialog::setSetting(const Setting& setting)
+void GeoDataGdalColorSettingDialog::setSetting(const Setting& setting)
 {
 	// mapping
 	if (setting.mapping == Value) {
@@ -59,7 +59,7 @@ void GeoDataNetcdfColorSettingDialog::setSetting(const Setting& setting)
 	ui->colorEditWidget->setColor(setting.color);
 }
 
-GeoDataNetcdfColorSettingDialog::Setting GeoDataNetcdfColorSettingDialog::setting() const
+GeoDataGdalColorSettingDialog::Setting GeoDataGdalColorSettingDialog::setting() const
 {
 	Setting ret;
 	// mapping

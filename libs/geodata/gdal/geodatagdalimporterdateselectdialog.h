@@ -1,14 +1,14 @@
-#ifndef GEODATANETCDFIMPORTERDATESELECTDIALOG_H
-#define GEODATANETCDFIMPORTERDATESELECTDIALOG_H
+#ifndef GEODATAGDALIMPORTERDATESELECTDIALOG_H
+#define GEODATAGDALIMPORTERDATESELECTDIALOG_H
 
 #include <QDialog>
 
 namespace Ui
 {
-	class GeoDataNetcdfImporterDateSelectDialog;
+	class GeoDataGdalImporterDateSelectDialog;
 }
 
-class GeoDataNetcdfImporterDateSelectDialog : public QDialog
+class GeoDataGdalImporterDateSelectDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -21,8 +21,8 @@ public:
 		Seconds,
 	};
 
-	explicit GeoDataNetcdfImporterDateSelectDialog(QWidget* parent = 0);
-	~GeoDataNetcdfImporterDateSelectDialog();
+	explicit GeoDataGdalImporterDateSelectDialog(QWidget* parent = 0);
+	~GeoDataGdalImporterDateSelectDialog();
 
 	void setUnit(const QString& unit);
 	void setOriginalDateTime(const QDateTime& orig);
@@ -32,7 +32,7 @@ public:
 	static int timeUnitScale(TimeUnit unit);
 
 private:
-	Ui::GeoDataNetcdfImporterDateSelectDialog* ui;
+	Ui::GeoDataGdalImporterDateSelectDialog* ui;
 };
 
-#endif // GEODATANETCDFIMPORTERDATESELECTDIALOG_H
+#endif // GEODATAGDALIMPORTERDATESELECTDIALOG_H

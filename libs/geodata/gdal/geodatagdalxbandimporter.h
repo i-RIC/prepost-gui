@@ -1,16 +1,16 @@
-#ifndef GEODATANETCDFXBANDIMPORTER_H
-#define GEODATANETCDFXBANDIMPORTER_H
+#ifndef GEODATAGDALXBANDIMPORTER_H
+#define GEODATAGDALXBANDIMPORTER_H
 
-#include "gd_netcdf_global.h"
+#include "gd_gdal_global.h"
 #include <guicore/pre/geodata/geodataimporter.h>
 
-class GD_NETCDF_EXPORT GeoDataNetcdfXbandImporter : public GeoDataImporter
+class GD_GDAL_EXPORT GeoDataGdalXbandImporter : public GeoDataImporter
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfXbandImporter(GeoDataCreator* creator);
-	~GeoDataNetcdfXbandImporter();
+	GeoDataGdalXbandImporter(GeoDataCreator* creator);
+	~GeoDataGdalXbandImporter();
 
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
@@ -24,4 +24,4 @@ private:
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 };
 
-#endif // GEODATANETCDFXBANDIMPORTER_H
+#endif // GEODATAGDALXBANDIMPORTER_H

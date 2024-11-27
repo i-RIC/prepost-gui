@@ -1,24 +1,24 @@
-#ifndef GEODATANETCDFGRAYSCALEPNGREALEXPORTER_H
-#define GEODATANETCDFGRAYSCALEPNGREALEXPORTER_H
+#ifndef GEODATAGDALGRAYSCALEPNGREALEXPORTER_H
+#define GEODATAGDALGRAYSCALEPNGREALEXPORTER_H
 
 #include <guicore/pre/geodata/geodataexporter.h>
 
-class GeoDataNetcdfReal;
+class GeoDataGdalReal;
 
-class GeoDataNetcdfGrayscalePngRealExporter : public GeoDataExporter
+class GeoDataGdalGrayscalePngRealExporter : public GeoDataExporter
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfGrayscalePngRealExporter(GeoDataCreator* creator);
+	GeoDataGdalGrayscalePngRealExporter(GeoDataCreator* creator);
 
 	bool doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) override;
 	const QStringList fileDialogFilters() override;
 
 private:
-	bool doExportPng(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w);
-	bool doExportPgw(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w);
-	bool doExportMeta(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w);
+	bool doExportPng(GeoDataGdalReal* gdal, const QString& filename, QWidget* w);
+	bool doExportPgw(GeoDataGdalReal* gdal, const QString& filename, QWidget* w);
+	bool doExportMeta(GeoDataGdalReal* gdal, const QString& filename, QWidget* w);
 };
 
-#endif // GEODATANETCDFGRAYSCALEPNGREALEXPORTER_H
+#endif // GEODATAGDALGRAYSCALEPNGREALEXPORTER_H

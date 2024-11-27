@@ -1,16 +1,16 @@
-#ifndef GEODATANETCDF_DISPLAYSETTINGWIDGET_H
-#define GEODATANETCDF_DISPLAYSETTINGWIDGET_H
+#ifndef GEODATAGDAL_DISPLAYSETTINGWIDGET_H
+#define GEODATAGDAL_DISPLAYSETTINGWIDGET_H
 
-#include "../private/geodatanetcdf_displaysetting.h"
-#include "../geodatanetcdf.h"
+#include "../private/geodatagdal_displaysetting.h"
+#include "../geodatagdal.h"
 
 #include <misc/modifycommandwidget.h>
 
 namespace Ui {
-class GeoDataNetcdf_DisplaySettingWidget;
+class GeoDataGdal_DisplaySettingWidget;
 }
 
-class GeoDataNetcdf::DisplaySettingWidget : public ModifyCommandWidget
+class GeoDataGdal::DisplaySettingWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
 
@@ -34,7 +34,7 @@ private:
 	DisplaySetting* m_displaySetting;
 	ModifyCommandWidget* m_colorMapWidget;
 
-	Ui::GeoDataNetcdf_DisplaySettingWidget *ui;
+	Ui::GeoDataGdal_DisplaySettingWidget *ui;
 };
 
-#endif // GEODATANETCDF_DISPLAYSETTINGWIDGET_H
+#endif // GEODATAGDAL_DISPLAYSETTINGWIDGET_H

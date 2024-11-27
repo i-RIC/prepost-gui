@@ -1,13 +1,13 @@
-#ifndef GEODATANETCDFPROXY_DISPLAYSETTING_H
-#define GEODATANETCDFPROXY_DISPLAYSETTING_H
+#ifndef GEODATAGDALPROXY_DISPLAYSETTING_H
+#define GEODATAGDALPROXY_DISPLAYSETTING_H
 
-#include "geodatanetcdf_displaysetting.h"
-#include "../geodatanetcdfproxy.h"
+#include "geodatagdal_displaysetting.h"
+#include "../geodatagdalproxy.h"
 
 #include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
 
-class GeoDataNetcdfProxy::DisplaySetting : public CompositeContainer
+class GeoDataGdalProxy::DisplaySetting : public CompositeContainer
 {
 public:
 	DisplaySetting();
@@ -17,7 +17,7 @@ public:
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& s);
 
 	BoolContainer usePreSetting;
-	GeoDataNetcdf::DisplaySetting displaySetting;
+	GeoDataGdal::DisplaySetting displaySetting;
 };
 
-#endif // GEODATANETCDFPROXY_DISPLAYSETTING_H
+#endif // GEODATAGDALPROXY_DISPLAYSETTING_H

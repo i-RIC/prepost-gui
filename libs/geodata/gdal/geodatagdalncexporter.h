@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFNCEXPORTER_H
-#define GEODATANETCDFNCEXPORTER_H
+#ifndef GEODATAGDALNCEXPORTER_H
+#define GEODATAGDALNCEXPORTER_H
 
 #include <guicore/pre/geodata/geodataexporter.h>
 
-class GeoDataNetcdfNcExporter : public GeoDataExporter
+class GeoDataGdalNcExporter : public GeoDataExporter
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfNcExporter(GeoDataCreator* creator);
+	GeoDataGdalNcExporter(GeoDataCreator* creator);
 
 	bool doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) override;
 	const QStringList fileDialogFilters() override;
 };
 
-#endif // GEODATANETCDFNCEXPORTER_H
+#endif // GEODATAGDALNCEXPORTER_H

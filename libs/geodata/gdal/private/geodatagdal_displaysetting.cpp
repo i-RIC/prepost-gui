@@ -1,6 +1,6 @@
-#include "geodatanetcdf_displaysetting.h"
+#include "geodatagdal_displaysetting.h"
 
-GeoDataNetcdf::DisplaySetting::DisplaySetting() :
+GeoDataGdal::DisplaySetting::DisplaySetting() :
 	CompositeContainer ({&color, &opacity, &mapping}),
 	color {"color"},
 	opacity {},
@@ -9,19 +9,19 @@ GeoDataNetcdf::DisplaySetting::DisplaySetting() :
 	opacity = 50;
 }
 
-GeoDataNetcdf::DisplaySetting::DisplaySetting(const DisplaySetting& s) :
+GeoDataGdal::DisplaySetting::DisplaySetting(const DisplaySetting& s) :
 	DisplaySetting {}
 {
 	copyValue(s);
 }
 
-GeoDataNetcdf::DisplaySetting& GeoDataNetcdf::DisplaySetting::operator=(const DisplaySetting& s)
+GeoDataGdal::DisplaySetting& GeoDataGdal::DisplaySetting::operator=(const DisplaySetting& s)
 {
 	copyValue(s);
 	return *this;
 }
 
-XmlAttributeContainer& GeoDataNetcdf::DisplaySetting::operator=(const XmlAttributeContainer& s)
+XmlAttributeContainer& GeoDataGdal::DisplaySetting::operator=(const XmlAttributeContainer& s)
 {
 	return operator=(dynamic_cast<const DisplaySetting&> (s));
 }

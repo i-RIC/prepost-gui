@@ -1,6 +1,6 @@
 <TS version="2.1" language="bs_BA">
 <context>
-    <name>GeoDataNetcdf</name>
+    <name>GeoDataGdal</name>
     <message>
         <source>Error</source>
         <translation>Greška</translation>
@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfColorSettingDialog</name>
+    <name>GeoDataGdalColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
         <translation>Postavka boje rasterskih podataka</translation>
@@ -38,7 +38,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfCreator</name>
+    <name>GeoDataGdalCreator</name>
     <message>
         <source>Raster Data</source>
         <translation>Rasterski podaci</translation>
@@ -49,7 +49,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileListDialog</name>
+    <name>GeoDataGdalFileListDialog</name>
     <message>
         <source>Confirm File List</source>
         <translation>Potvrdite listu datoteka</translation>
@@ -80,7 +80,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <name>GeoDataGdalFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
         <translation>Postavka uzorka imena datoteke</translation>
@@ -119,7 +119,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalExporter</name>
+    <name>GeoDataGdalGdalExporter</name>
     <message>
         <source>GDAL</source>
         <translation>GDAL</translation>
@@ -150,7 +150,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalImporter</name>
+    <name>GeoDataGdalGdalImporter</name>
     <message>
         <source>Importing data...</source>
         <translation>Uvoz podataka...</translation>
@@ -205,7 +205,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <name>GeoDataGdalGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
         <translation>16 -bitne PNG datoteke u sivim tonovima (*.png)</translation>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <name>GeoDataGdalGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
         <translation>16 -bitni PNG u sivim tonovima (za Unreal Engine 4)</translation>
@@ -279,7 +279,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporter</name>
+    <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
         <translation>NetCDF</translation>
@@ -314,7 +314,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterDateSelectDialog</name>
+    <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
         <translation>Navedite originalni datum</translation>
@@ -365,7 +365,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterSettingDialog</name>
+    <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
         <translation>Postavka mapiranja dimenzija</translation>
@@ -380,21 +380,21 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfNcExporter</name>
+    <name>GeoDataGdalNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF datoteke (*.nc)</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy</name>
+    <name>GeoDataGdalProxy</name>
     <message>
         <source>Raster Data Display Setting</source>
         <translation>Podešavanje prikaza rasterskih podataka</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <name>GeoDataGdalProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>Forma</translation>
@@ -405,7 +405,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <name>GeoDataGdalTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
         <translation>Rasterski podaci vremenskih serija</translation>
@@ -416,7 +416,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfXbandImporter</name>
+    <name>GeoDataGdalXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
         <translation>Podaci XBand MP RADER -a</translation>
@@ -463,7 +463,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <name>GeoDataGdal_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>Forma</translation>

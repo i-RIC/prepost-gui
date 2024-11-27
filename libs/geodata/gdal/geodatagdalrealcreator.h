@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFREALCREATOR_H
-#define GEODATANETCDFREALCREATOR_H
+#ifndef GEODATAGDALREALCREATOR_H
+#define GEODATAGDALREALCREATOR_H
 
-#include "gd_netcdf_global.h"
-#include "geodatanetcdfcreatort.h"
+#include "gd_gdal_global.h"
+#include "geodatagdalcreatort.h"
 
 class vtkDoubleArray;
 
-class GD_NETCDF_EXPORT GeoDataNetcdfRealCreator : public GeoDataNetcdfCreatorT<double, vtkDoubleArray>
+class GD_GDAL_EXPORT GeoDataGdalRealCreator : public GeoDataGdalCreatorT<double, vtkDoubleArray>
 {
 public:
-	GeoDataNetcdfRealCreator();
+	GeoDataGdalRealCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 
-#endif // GEODATANETCDFREALCREATOR_H
+#endif // GEODATAGDALREALCREATOR_H

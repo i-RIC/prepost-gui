@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFREAL_H
-#define GEODATANETCDFREAL_H
+#ifndef GEODATAGDALREAL_H
+#define GEODATAGDALREAL_H
 
-#include "geodatanetcdft.h"
+#include "geodatagdalt.h"
 
 #include <vtkDoubleArray.h>
 
-class GeoDataNetcdfReal : public GeoDataNetcdfT<double, vtkDoubleArray>
+class GeoDataGdalReal : public GeoDataGdalT<double, vtkDoubleArray>
 {
 public:
-	GeoDataNetcdfReal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
+	GeoDataGdalReal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 
 	double missingValue() const override;
 	double thresholdValue() const override;
 };
 
-#endif // GEODATANETCDFREAL_H
+#endif // GEODATAGDALREAL_H

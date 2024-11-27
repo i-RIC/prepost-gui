@@ -1,24 +1,24 @@
-#include "geodatanetcdfproxy_displaysetting.h"
+#include "geodatagdalproxy_displaysetting.h"
 
-GeoDataNetcdfProxy::DisplaySetting::DisplaySetting() :
+GeoDataGdalProxy::DisplaySetting::DisplaySetting() :
 	CompositeContainer {&usePreSetting, &displaySetting},
 	usePreSetting {"usePreSetting", false},
 	displaySetting {}
 {}
 
-GeoDataNetcdfProxy::DisplaySetting::DisplaySetting(const DisplaySetting& s) :
+GeoDataGdalProxy::DisplaySetting::DisplaySetting(const DisplaySetting& s) :
 	DisplaySetting {}
 {
 	copyValue(s);
 }
 
-GeoDataNetcdfProxy::DisplaySetting& GeoDataNetcdfProxy::DisplaySetting::operator=(const DisplaySetting& s)
+GeoDataGdalProxy::DisplaySetting& GeoDataGdalProxy::DisplaySetting::operator=(const DisplaySetting& s)
 {
 	copyValue(s);
 	return *this;
 }
 
-XmlAttributeContainer& GeoDataNetcdfProxy::DisplaySetting::operator=(const XmlAttributeContainer& s)
+XmlAttributeContainer& GeoDataGdalProxy::DisplaySetting::operator=(const XmlAttributeContainer& s)
 {
 	return operator=(dynamic_cast<const DisplaySetting&> (s));
 }

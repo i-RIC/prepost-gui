@@ -1,15 +1,15 @@
-#include "geodatanetcdfinteger.h"
+#include "geodatagdalinteger.h"
 
-GeoDataNetcdfInteger::GeoDataNetcdfInteger(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataNetcdfT<int, vtkIntArray> {d, creator, condition}
+GeoDataGdalInteger::GeoDataGdalInteger(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	GeoDataGdalT<int, vtkIntArray> {d, creator, condition}
 {}
 
-int GeoDataNetcdfInteger::missingValue() const
+int GeoDataGdalInteger::missingValue() const
 {
 	return NC_FILL_INT;
 }
 
-double GeoDataNetcdfInteger::thresholdValue() const
+double GeoDataGdalInteger::thresholdValue() const
 {
 	int mval = missingValue();
 	if (mval > 0) {return mval - 1;}

@@ -1,8 +1,8 @@
-#include "geodatanetcdf.h"
-#include "geodatanetcdfcolorsettingdialog.h"
-#include "geodatanetcdfproxy.h"
-#include "private/geodatanetcdf_impl.h"
-#include "public/geodatanetcdf_displaysettingwidget.h"
+#include "geodatagdal.h"
+#include "geodatagdalcolorsettingdialog.h"
+#include "geodatagdalproxy.h"
+#include "private/geodatagdal_impl.h"
+#include "public/geodatagdal_displaysettingwidget.h"
 
 #include <cs/coordinatesystem.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -57,7 +57,7 @@
 #define LON "lon"
 #define LAT "lat"
 
-const int GeoDataNetcdf::MAX_DRAWCELLCOUNT = 200000;
+const int GeoDataGdal::MAX_DRAWCELLCOUNT = 200000;
 
 namespace {
 
@@ -68,7 +68,7 @@ namespace {
 
 } // namespace
 
-bool GeoDataNetcdf::RectRegion::pointIsInside(double x, double y) const
+bool GeoDataGdal::RectRegion::pointIsInside(double x, double y) const
 {
 	if (x < xMin) {return false;}
 	if (x > xMax) {return false;}
@@ -77,14 +77,14 @@ bool GeoDataNetcdf::RectRegion::pointIsInside(double x, double y) const
 	return true;
 }
 
-bool GeoDataNetcdf::RectRegion::intersect(const QLineF& line) const
+bool GeoDataGdal::RectRegion::intersect(const QLineF& line) const
 {
 	bool isInside1 = pointIsInside(line.x1(), line.y1());
 	bool isInside2 = pointIsInside(line.x2(), line.y2());
 	return (isInside1 != isInside2);
 }
 
-GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
+GeoDataGdal::GeoDataGdal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoDataWithSingleMapper {d, creator, att},
 	impl {new Impl {}}
 {
@@ -94,7 +94,7 @@ GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, Solver
 	m_grid->SetPoints(points);
 }
 
-GeoDataNetcdf::~GeoDataNetcdf()
+GeoDataGdal::~GeoDataGdal()
 {
 	actorCollection()->RemoveItem(m_regionActor);
 	actorCollection()->RemoveItem(m_actor);
@@ -104,67 +104,67 @@ GeoDataNetcdf::~GeoDataNetcdf()
 	delete impl;
 }
 
-const std::vector<double> GeoDataNetcdf::lonValues() const
+const std::vector<double> GeoDataGdal::lonValues() const
 {
 	return impl->m_lonValues;
 }
 
-const std::vector<double> GeoDataNetcdf::latValues() const
+const std::vector<double> GeoDataGdal::latValues() const
 {
 	return impl->m_latValues;
 }
 
-std::vector<double> GeoDataNetcdf::lonValues()
+std::vector<double> GeoDataGdal::lonValues()
 {
 	return impl->m_lonValues;
 }
 
-std::vector<double> GeoDataNetcdf::latValues()
+std::vector<double> GeoDataGdal::latValues()
 {
 	return impl->m_latValues;
 }
 
-const std::vector<double> GeoDataNetcdf::xValues() const
+const std::vector<double> GeoDataGdal::xValues() const
 {
 	return impl->m_xValues;
 }
 
-const std::vector<double> GeoDataNetcdf::yValues() const
+const std::vector<double> GeoDataGdal::yValues() const
 {
 	return impl->m_yValues;
 }
 
-std::vector<double> GeoDataNetcdf::xValues()
+std::vector<double> GeoDataGdal::xValues()
 {
 	return impl->m_xValues;
 }
 
-std::vector<double> GeoDataNetcdf::yValues()
+std::vector<double> GeoDataGdal::yValues()
 {
 	return impl->m_yValues;
 }
 
-GeoDataNetcdf::CoordinateSystemType GeoDataNetcdf::coordinateSystemType() const
+GeoDataGdal::CoordinateSystemType GeoDataGdal::coordinateSystemType() const
 {
 	return impl->m_coordinateSystemType;
 }
 
-QString GeoDataNetcdf::coordinateSystemName() const
+QString GeoDataGdal::coordinateSystemName() const
 {
 	return impl->m_coordinateSystemName;
 }
 
-bool GeoDataNetcdf::geoTransformExists() const
+bool GeoDataGdal::geoTransformExists() const
 {
 	return impl->m_geoTransformExists;
 }
 
-double* GeoDataNetcdf::geoTransform()
+double* GeoDataGdal::geoTransform()
 {
 	return &(impl->m_geoTransform[0]);
 }
 
-void GeoDataNetcdf::setGeoTransform(double* t)
+void GeoDataGdal::setGeoTransform(double* t)
 {
 	impl->m_geoTransformExists = true;
 
@@ -173,35 +173,35 @@ void GeoDataNetcdf::setGeoTransform(double* t)
 	}
 }
 
-bool GeoDataNetcdf::baseAndResolutionExists() const
+bool GeoDataGdal::baseAndResolutionExists() const
 {
 	return impl->m_baseAndResolutionExists;
 }
 
-void GeoDataNetcdf::setBaseAndResolution(double base, double resolution)
+void GeoDataGdal::setBaseAndResolution(double base, double resolution)
 {
 	impl->m_baseAndResolutionExists = true;
 	impl->m_base = base;
 	impl->m_resolution = resolution;
 }
 
-double GeoDataNetcdf::base() const
+double GeoDataGdal::base() const
 {
 	return impl->m_base;
 }
 
-double GeoDataNetcdf::resolution() const
+double GeoDataGdal::resolution() const
 {
 	return impl->m_resolution;
 }
 
 
-vtkStructuredGrid* GeoDataNetcdf::grid() const
+vtkStructuredGrid* GeoDataGdal::grid() const
 {
 	return m_grid;
 }
 
-void GeoDataNetcdf::setupActors()
+void GeoDataGdal::setupActors()
 {
 	m_threshold = vtkSmartPointer<vtkThreshold>::New();
 	m_threshold->SetInputData(m_grid);
@@ -239,7 +239,7 @@ void GeoDataNetcdf::setupActors()
 	updateActorSetting();
 }
 
-void GeoDataNetcdf::loadExternalData(const QString& filename)
+void GeoDataGdal::loadExternalData(const QString& filename)
 {
 	std::string fname = iRIC::toStr(filename);
 	int ncid, ret;
@@ -403,17 +403,17 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 	loadRasterData(0);
 }
 
-void GeoDataNetcdf::saveExternalData(const QString& /*filename*/)
+void GeoDataGdal::saveExternalData(const QString& /*filename*/)
 {
 
 }
 
-void GeoDataNetcdf::updateFilename()
+void GeoDataGdal::updateFilename()
 {
 	setFilename(name().append(".dat"));
 }
 
-void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
+void GeoDataGdal::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 	impl->m_displaySetting.load(node);
@@ -422,7 +422,7 @@ void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
 	loadBaseAndResolution(node);
 }
 
-void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void GeoDataGdal::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
 	impl->m_displaySetting.save(writer);
@@ -431,7 +431,7 @@ void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	saveBaseAndResolution(writer);
 }
 
-void GeoDataNetcdf::doApplyOffset(double x, double y)
+void GeoDataGdal::doApplyOffset(double x, double y)
 {
 	auto points = m_grid->GetPoints();
 	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
@@ -460,7 +460,7 @@ void GeoDataNetcdf::doApplyOffset(double x, double y)
 	updateRegionPolyData();
 }
 
-void GeoDataNetcdf::updateShapeData()
+void GeoDataGdal::updateShapeData()
 {
 	auto offset = projectData()->mainfile()->offset();
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
@@ -639,7 +639,7 @@ void GeoDataNetcdf::updateShapeData()
 	updateRegionPolyData();
 }
 
-nc_type GeoDataNetcdf::getNcType(SolverDefinitionGridAttribute* cond)
+nc_type GeoDataGdal::getNcType(SolverDefinitionGridAttribute* cond)
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeInteger*>(cond) != 0) {
 		return NC_INT;
@@ -649,7 +649,7 @@ nc_type GeoDataNetcdf::getNcType(SolverDefinitionGridAttribute* cond)
 	return NC_NAT;
 }
 
-nc_type GeoDataNetcdf::getNcType(SolverDefinitionGridAttributeDimension* dim)
+nc_type GeoDataGdal::getNcType(SolverDefinitionGridAttributeDimension* dim)
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeIntegerDimension*>(dim) != 0) {
 		return NC_INT;
@@ -659,7 +659,7 @@ nc_type GeoDataNetcdf::getNcType(SolverDefinitionGridAttributeDimension* dim)
 	return NC_NAT;
 }
 
-int GeoDataNetcdf::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId)
+int GeoDataGdal::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId)
 {
 	int ret;
 	QString tmp;
@@ -752,7 +752,7 @@ int GeoDataNetcdf::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimI
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds)
+int GeoDataGdal::defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds)
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
 	int ret;
@@ -790,7 +790,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vec
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const std::vector<int> &dimIds, int* varId)
+int GeoDataGdal::defineValue(int ncid, int xId, int yId, const std::vector<int> &dimIds, int* varId)
 {
 	int ret;
 	int ndims = static_cast<int>(dimensions()->containers().size()) + 2;
@@ -820,7 +820,7 @@ int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const std::vector<int
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId)
+int GeoDataGdal::outputCoords(int ncid, int xId, int yId, int lonId, int latId)
 {
 	if (impl->m_coordinateSystemType == XY) {
 		std::vector<double> xs(impl->m_xValues.size());
@@ -858,7 +858,7 @@ int GeoDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::outputDimensions(int ncid, const std::vector<int> &varIds)
+int GeoDataGdal::outputDimensions(int ncid, const std::vector<int> &varIds)
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
 	for (int i = 0; i < dims->containers().size(); ++i) {
@@ -893,24 +893,24 @@ int GeoDataNetcdf::outputDimensions(int ncid, const std::vector<int> &varIds)
 	return NC_NOERR;
 }
 
-void GeoDataNetcdf::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
+void GeoDataGdal::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
 	doHandleDimensionCurrentIndexChange(oldIndex, newIndex);
 }
 
-void GeoDataNetcdf::handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after)
+void GeoDataGdal::handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after)
 {
 	GridAttributeDimensionContainer* dim =
 		dynamic_cast<GridAttributeDimensionContainer*>(sender());
 	doHandleDimensionValuesChange(dim, before, after);
 }
 
-int GeoDataNetcdf::getValueVarId(int ncid, int* varId)
+int GeoDataGdal::getValueVarId(int ncid, int* varId)
 {
 	return nc_inq_varid(ncid, VALUE, varId);
 }
 
-void GeoDataNetcdf::updateActorSetting()
+void GeoDataGdal::updateActorSetting()
 {
 	// color
 	m_actor->GetProperty()->SetColor(impl->m_displaySetting.color);
@@ -947,25 +947,25 @@ void GeoDataNetcdf::updateActorSetting()
 	emit updateActorSettingExecuted();
 }
 
-void GeoDataNetcdf::viewOperationEndedGlobal(PreProcessorGraphicsViewI* v)
+void GeoDataGdal::viewOperationEndedGlobal(PreProcessorGraphicsViewI* v)
 {
 	double xmin, xmax, ymin, ymax;
 	v->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 	updateSimpifiedGrid(xmin, xmax, ymin, ymax);
 }
 
-void GeoDataNetcdf::updateZDepthRangeItemCount(ZDepthRange& range)
+void GeoDataGdal::updateZDepthRangeItemCount(ZDepthRange& range)
 {
 	range.setItemCount(1);
 }
 
-void GeoDataNetcdf::assignActorZValues(const ZDepthRange& range)
+void GeoDataGdal::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 	m_regionActor->SetPosition(0, 0, range.min());
 }
 
-bool GeoDataNetcdf::getValueAt(double x, double y, double* value)
+bool GeoDataGdal::getValueAt(double x, double y, double* value)
 {
 	vtkIdType cellid;
 	double pcoords[4];
@@ -983,12 +983,12 @@ bool GeoDataNetcdf::getValueAt(double x, double y, double* value)
 	return true;
 }
 
-void GeoDataNetcdf::showPropertyDialog()
+void GeoDataGdal::showPropertyDialog()
 {
 	showPropertyDialogModeless();
 }
 
-QDialog* GeoDataNetcdf::propertyDialog(QWidget* parent)
+QDialog* GeoDataGdal::propertyDialog(QWidget* parent)
 {
 	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
 	auto widget = new DisplaySettingWidget(dialog);
@@ -1012,17 +1012,17 @@ QDialog* GeoDataNetcdf::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-void GeoDataNetcdf::applyColorMapSetting()
+void GeoDataGdal::applyColorMapSetting()
 {
 	updateActorSetting();
 }
 
-GeoDataProxy* GeoDataNetcdf::getProxy()
+GeoDataProxy* GeoDataGdal::getProxy()
 {
-	return new GeoDataNetcdfProxy(this);
+	return new GeoDataGdalProxy(this);
 }
 
-void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
+void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
 	double xcenter = (xmin + xmax) * 0.5;
 	double ycenter = (ymin + ymax) * 0.5;
@@ -1047,7 +1047,7 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 	}
 	int dimI = 1, dimJ = 1;
 
-	if (impl->m_coordinateSystemType == GeoDataNetcdf::XY) {
+	if (impl->m_coordinateSystemType == GeoDataGdal::XY) {
 		dimI = static_cast<int> (impl->m_xValues.size());
 		dimJ = static_cast<int> (impl->m_yValues.size());
 	} else if (impl->m_coordinateSystemType == LonLat) {
@@ -1153,7 +1153,7 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 	updateActorSetting();
 }
 
-void GeoDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const
+void GeoDataGdal::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const
 {
 	int dimI = 1;
 	if (impl->m_coordinateSystemType == XY) {
@@ -1166,7 +1166,7 @@ void GeoDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) c
 	*j = id / dimI;
 }
 
-unsigned int GeoDataNetcdf::vertexIndex(unsigned int i, unsigned int j) const
+unsigned int GeoDataGdal::vertexIndex(unsigned int i, unsigned int j) const
 {
 	int dimI = 1;
 	if (impl->m_coordinateSystemType == XY) {
@@ -1177,7 +1177,7 @@ unsigned int GeoDataNetcdf::vertexIndex(unsigned int i, unsigned int j) const
 	return dimI * j + i;
 }
 
-int GeoDataNetcdf::lineLimitI(int j, int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
+int GeoDataGdal::lineLimitI(int j, int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
 {
 	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
@@ -1192,7 +1192,7 @@ int GeoDataNetcdf::lineLimitI(int j, int iIn, int iOut, int dimI, int dimJ, cons
 	}
 }
 
-int GeoDataNetcdf::lineLimitJ(int i, int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
+int GeoDataGdal::lineLimitJ(int i, int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
 {
 	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
@@ -1207,7 +1207,7 @@ int GeoDataNetcdf::lineLimitJ(int i, int jIn, int jOut, int dimI, int dimJ, cons
 	}
 }
 
-int GeoDataNetcdf::lineLimitI2(int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
+int GeoDataGdal::lineLimitI2(int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
 {
 	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
@@ -1220,7 +1220,7 @@ int GeoDataNetcdf::lineLimitI2(int iIn, int iOut, int dimI, int dimJ, const Rect
 	}
 }
 
-int GeoDataNetcdf::lineLimitJ2(int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
+int GeoDataGdal::lineLimitJ2(int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
 {
 	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
@@ -1233,7 +1233,7 @@ int GeoDataNetcdf::lineLimitJ2(int jIn, int jOut, int dimI, int dimJ, const Rect
 	}
 }
 
-bool GeoDataNetcdf::lineAtIIntersect(int i, int /*dimI*/, int dimJ, const RectRegion& region) const
+bool GeoDataGdal::lineAtIIntersect(int i, int /*dimI*/, int dimJ, const RectRegion& region) const
 {
 	QPointF p1, p2;
 	double tmpv[3];
@@ -1248,7 +1248,7 @@ bool GeoDataNetcdf::lineAtIIntersect(int i, int /*dimI*/, int dimJ, const RectRe
 	return false;
 }
 
-bool GeoDataNetcdf::lineAtJIntersect(int j, int dimI, int /*dimJ*/, const RectRegion& region) const
+bool GeoDataGdal::lineAtJIntersect(int j, int dimI, int /*dimJ*/, const RectRegion& region) const
 {
 	QPointF p1, p2;
 	double tmpv[3];
@@ -1263,7 +1263,7 @@ bool GeoDataNetcdf::lineAtJIntersect(int j, int dimI, int /*dimJ*/, const RectRe
 	return false;
 }
 
-void GeoDataNetcdf::updateRegionPolyData()
+void GeoDataGdal::updateRegionPolyData()
 {
 	double bounds[6];
 	m_grid->GetBounds(bounds);
@@ -1285,7 +1285,7 @@ void GeoDataNetcdf::updateRegionPolyData()
 	updateVisibilityWithoutRendering();
 }
 
-int GeoDataNetcdf::xSize() const
+int GeoDataGdal::xSize() const
 {
 	if (impl->m_coordinateSystemType == XY) {
 		return static_cast<int> (impl->m_xValues.size());
@@ -1294,7 +1294,7 @@ int GeoDataNetcdf::xSize() const
 	}
 	return 0;
 }
-int GeoDataNetcdf::ySize() const
+int GeoDataGdal::ySize() const
 {
 	if (impl->m_coordinateSystemType == XY) {
 		return static_cast<int> (impl->m_yValues.size());
@@ -1304,7 +1304,7 @@ int GeoDataNetcdf::ySize() const
 	return 0;
 }
 
-void GeoDataNetcdf::loadGeoTransform(const QDomNode& node)
+void GeoDataGdal::loadGeoTransform(const QDomNode& node)
 {
 	impl->m_geoTransformExists = false;
 
@@ -1314,7 +1314,7 @@ void GeoDataNetcdf::loadGeoTransform(const QDomNode& node)
 	}
 }
 
-void GeoDataNetcdf::saveGeoTransform(QXmlStreamWriter& writer)
+void GeoDataGdal::saveGeoTransform(QXmlStreamWriter& writer)
 {
 	if (!impl->m_geoTransformExists) {return;}
 
@@ -1323,7 +1323,7 @@ void GeoDataNetcdf::saveGeoTransform(QXmlStreamWriter& writer)
 	}
 }
 
-void GeoDataNetcdf::loadBaseAndResolution(const QDomNode& node)
+void GeoDataGdal::loadBaseAndResolution(const QDomNode& node)
 {
 	impl->m_base = iRIC::getDoubleAttribute(node, "base");
 	impl->m_resolution = iRIC::getDoubleAttribute(node, "resolution");
@@ -1331,7 +1331,7 @@ void GeoDataNetcdf::loadBaseAndResolution(const QDomNode& node)
 	impl->m_baseAndResolutionExists = (impl->m_base != 0 || impl->m_resolution != 0);
 }
 
-void GeoDataNetcdf::saveBaseAndResolution(QXmlStreamWriter& writer)
+void GeoDataGdal::saveBaseAndResolution(QXmlStreamWriter& writer)
 {
 	if (!impl->m_baseAndResolutionExists) {return;}
 

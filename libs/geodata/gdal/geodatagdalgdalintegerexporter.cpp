@@ -1,32 +1,32 @@
-#include "geodatanetcdfinteger.h"
-#include "geodatanetcdfgdalintegerexporter.h"
+#include "geodatagdalinteger.h"
+#include "geodatagdalgdalintegerexporter.h"
 
-GeoDataNetcdfGdalIntegerExporter::GeoDataNetcdfGdalIntegerExporter(GeoDataCreator* creator) :
-	GeoDataNetcdfGdalExporter(creator)
+GeoDataGdalGdalIntegerExporter::GeoDataGdalGdalIntegerExporter(GeoDataCreator* creator) :
+	GeoDataGdalGdalExporter(creator)
 {}
 
-GDALDataType GeoDataNetcdfGdalIntegerExporter::gdalDataType() const
+GDALDataType GeoDataGdalGdalIntegerExporter::gdalDataType() const
 {
 	return GDT_Int32;
 }
 
-void GeoDataNetcdfGdalIntegerExporter::copyData(GeoDataNetcdf* netcdf, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band)
+void GeoDataGdalGdalIntegerExporter::copyData(GeoDataGdal* gdal, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band)
 {
 	size_t buffersize = *(ends) * *(ends + 1);
 	std::vector<int> buffer(buffersize);
 	std::vector<int> buffer2(buffersize);
 
-	auto netcdfi = dynamic_cast<GeoDataNetcdfInteger*> (netcdf);
+	auto gdali = dynamic_cast<GeoDataGdalInteger*> (gdal);
 
-	band->SetNoDataValue(netcdfi->missingValue());
+	band->SetNoDataValue(gdali->missingValue());
 
 	int ret = nc_get_vara_int(ncid, varid, starts, ends, buffer.data());
 
-	for (int j = 0; j < netcdf->ySize(); ++j) {
-		for (int i = 0; i < netcdf->xSize(); ++i) {
-			buffer2[(netcdf->ySize() - 1 - j) * netcdf->xSize() + i] = buffer[j * netcdf->xSize() + i];
+	for (int j = 0; j < gdal->ySize(); ++j) {
+		for (int i = 0; i < gdal->xSize(); ++i) {
+			buffer2[(gdal->ySize() - 1 - j) * gdal->xSize() + i] = buffer[j * gdal->xSize() + i];
 		}
 	}
 
-	GDALRasterIO(band, GF_Write, 0, 0, netcdf->xSize(), netcdf->ySize(), buffer2.data(), netcdf->xSize(), netcdf->ySize(), GDT_Int32, 0, 0);
+	GDALRasterIO(band, GF_Write, 0, 0, gdal->xSize(), gdal->ySize(), buffer2.data(), gdal->xSize(), gdal->ySize(), GDT_Int32, 0, 0);
 }

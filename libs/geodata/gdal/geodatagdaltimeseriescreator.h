@@ -1,15 +1,15 @@
-#ifndef GEODATANETCDFTIMESERIESCREATOR_H
-#define GEODATANETCDFTIMESERIESCREATOR_H
+#ifndef GEODATAGDALTIMESERIESCREATOR_H
+#define GEODATAGDALTIMESERIESCREATOR_H
 
-#include "gd_netcdf_global.h"
+#include "gd_gdal_global.h"
 #include <guicore/pre/geodata/geodatacreator.h>
 
-class GD_NETCDF_EXPORT GeoDataNetcdfTimeSeriesCreator : public GeoDataCreator
+class GD_GDAL_EXPORT GeoDataGdalTimeSeriesCreator : public GeoDataCreator
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfTimeSeriesCreator(const QString& typeName);
+	GeoDataGdalTimeSeriesCreator(const QString& typeName);
 
 	QString name(unsigned int index) const override;
 	QString defaultCaption(unsigned int index) const override;
@@ -17,4 +17,4 @@ public:
 	bool requestCoordinateSystem() const override;
 };
 
-#endif // GEODATANETCDFTIMESERIESCREATOR_H
+#endif // GEODATAGDALTIMESERIESCREATOR_H

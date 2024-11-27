@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GeoDataNetcdfFileListDialog</class>
- <widget class="QDialog" name="GeoDataNetcdfFileListDialog">
+ <class>GeoDataGdalFileListDialog</class>
+ <widget class="QDialog" name="GeoDataGdalFileListDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -79,7 +79,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>GeoDataNetcdfFileListDialog</receiver>
+   <receiver>GeoDataGdalFileListDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -95,7 +95,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>GeoDataNetcdfFileListDialog</receiver>
+   <receiver>GeoDataGdalFileListDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

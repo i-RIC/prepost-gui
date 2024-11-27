@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFPROXY_H
-#define GEODATANETCDFPROXY_H
+#ifndef GEODATAGDALPROXY_H
+#define GEODATAGDALPROXY_H
 
 #include <guicore/pre/geodata/geodataproxy.h>
 
-class GeoDataNetcdf;
+class GeoDataGdal;
 
-class GeoDataNetcdfProxy : public GeoDataProxy
+class GeoDataGdalProxy : public GeoDataProxy
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfProxy(GeoDataNetcdf* geodata);
-	~GeoDataNetcdfProxy();
+	GeoDataGdalProxy(GeoDataGdal* geodata);
+	~GeoDataGdalProxy();
 
 	void setupActors() override;
 
@@ -36,4 +36,4 @@ private:
 	Impl* impl;
 };
 
-#endif // GEODATANETCDFPROXY_H
+#endif // GEODATAGDALPROXY_H

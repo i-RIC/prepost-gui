@@ -1,10 +1,10 @@
-#include "geodatanetcdfproxy_impl.h"
+#include "geodatagdalproxy_impl.h"
 
-GeoDataNetcdfProxy::Impl::Impl() :
+GeoDataGdalProxy::Impl::Impl() :
 	m_actor {vtkActor::New()}
 {}
 
-GeoDataNetcdfProxy::Impl::~Impl()
+GeoDataGdalProxy::Impl::~Impl()
 {
 	m_actor->Delete();
 }

@@ -1,26 +1,26 @@
-#include "geodatanetcdffilenamematcher.h"
-#include "geodatanetcdffilenamepatterndialog.h"
-#include "ui_geodatanetcdffilenamepatterndialog.h"
+#include "geodatagdalfilenamematcher.h"
+#include "geodatagdalfilenamepatterndialog.h"
+#include "ui_geodatagdalfilenamepatterndialog.h"
 
 #include <QDateTime>
 #include <QPushButton>
 
-GeoDataNetcdfFileNamePatternDialog::GeoDataNetcdfFileNamePatternDialog(QWidget *parent) :
+GeoDataGdalFileNamePatternDialog::GeoDataGdalFileNamePatternDialog(QWidget *parent) :
 	QDialog(parent),
-	ui(new Ui::GeoDataNetcdfFileNamePatternDialog),
+	ui(new Ui::GeoDataGdalFileNamePatternDialog),
 	m_matcher {nullptr}
 {
 	ui->setupUi(this);
 	connect(ui->patternLineEdit, SIGNAL(textChanged(QString)), this, SLOT(updateMatcher()));
 }
 
-GeoDataNetcdfFileNamePatternDialog::~GeoDataNetcdfFileNamePatternDialog()
+GeoDataGdalFileNamePatternDialog::~GeoDataGdalFileNamePatternDialog()
 {
 	delete ui;
 	delete m_matcher;
 }
 
-void GeoDataNetcdfFileNamePatternDialog::setFilename(const QString& filename)
+void GeoDataGdalFileNamePatternDialog::setFilename(const QString& filename)
 {
 	m_filename = filename;
 	ui->fileNameValueLabel->setText(filename);
@@ -28,34 +28,34 @@ void GeoDataNetcdfFileNamePatternDialog::setFilename(const QString& filename)
 	updateMatcher();
 }
 
-void GeoDataNetcdfFileNamePatternDialog::setPattern(const QString& pattern)
+void GeoDataGdalFileNamePatternDialog::setPattern(const QString& pattern)
 {
 	ui->patternLineEdit->setText(pattern);
 
 	updateMatcher();
 }
 
-QTimeZone GeoDataNetcdfFileNamePatternDialog::timeZone() const
+QTimeZone GeoDataGdalFileNamePatternDialog::timeZone() const
 {
 	return ui->timeZoneComboBox->timeZone();
 }
 
-void GeoDataNetcdfFileNamePatternDialog::setTimeZone(const QTimeZone& timeZone)
+void GeoDataGdalFileNamePatternDialog::setTimeZone(const QTimeZone& timeZone)
 {
 	ui->timeZoneComboBox->setTimeZone(timeZone);
 }
 
-GeoDataNetcdfFileNameMatcher* GeoDataNetcdfFileNamePatternDialog::matcher()
+GeoDataGdalFileNameMatcher* GeoDataGdalFileNamePatternDialog::matcher()
 {
 	auto m = m_matcher;
 	m_matcher = nullptr;
 	return m;
 }
 
-void GeoDataNetcdfFileNamePatternDialog::updateMatcher()
+void GeoDataGdalFileNamePatternDialog::updateMatcher()
 {
 	delete m_matcher;
-	m_matcher = new GeoDataNetcdfFileNameMatcher(ui->patternLineEdit->text().trimmed());
+	m_matcher = new GeoDataGdalFileNameMatcher(ui->patternLineEdit->text().trimmed());
 	bool ok = m_matcher->setup(m_filename);
 	if (! ok) {
 		ui->resultValueLabel->setText(tr("File name does not match the pattern"));

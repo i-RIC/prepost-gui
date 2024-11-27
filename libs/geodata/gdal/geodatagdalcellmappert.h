@@ -1,23 +1,23 @@
-#ifndef GEODATANETCDFCELLMAPPERT_H
-#define GEODATANETCDFCELLMAPPERT_H
+#ifndef GEODATAGDALCELLMAPPERT_H
+#define GEODATAGDALCELLMAPPERT_H
 
-#include "geodatanetcdft.h"
+#include "geodatagdalt.h"
 
 #include <guicore/pre/geodata/geodatacellmappert.h>
 
 class GeoDataMapperSettingI;
 
 template <class V, class DA>
-class GeoDataNetcdfCellMapperT : public GeoDataCellMapperT<V, DA>
+class GeoDataGdalCellMapperT : public GeoDataCellMapperT<V, DA>
 {
 public:
-	GeoDataNetcdfCellMapperT(GeoDataCreator* parent);
+	GeoDataGdalCellMapperT(GeoDataCreator* parent);
 
 	GeoDataMapperSettingI* initialize(bool* boolMap) override;
 	void map(bool* boolMap, GeoDataMapperSettingI* s) override;
 	void terminate(GeoDataMapperSettingI* s) override;
 };
 
-#include "private/geodatanetcdfcellmappert_detail.h"
+#include "private/geodatagdalcellmappert_detail.h"
 
-#endif // GEODATANETCDFCELLMAPPERT_H
+#endif // GEODATAGDALCELLMAPPERT_H

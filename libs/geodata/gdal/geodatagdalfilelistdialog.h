@@ -1,5 +1,5 @@
-#ifndef GEODATANETCDFFILELISTDIALOG_H
-#define GEODATANETCDFFILELISTDIALOG_H
+#ifndef GEODATAGDALFILELISTDIALOG_H
+#define GEODATAGDALFILELISTDIALOG_H
 
 #include <QDialog>
 #include <QString>
@@ -7,20 +7,20 @@
 #include <vector>
 
 namespace Ui {
-class GeoDataNetcdfFileListDialog;
+class GeoDataGdalFileListDialog;
 }
 
-class GeoDataNetcdfFileNameMatcher;
+class GeoDataGdalFileNameMatcher;
 
-class GeoDataNetcdfFileListDialog : public QDialog
+class GeoDataGdalFileListDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
-	explicit GeoDataNetcdfFileListDialog(QWidget *parent = 0);
-	~GeoDataNetcdfFileListDialog();
+	explicit GeoDataGdalFileListDialog(QWidget *parent = 0);
+	~GeoDataGdalFileListDialog();
 
-	void setFileNameMatcher(GeoDataNetcdfFileNameMatcher* matcher);
+	void setFileNameMatcher(GeoDataGdalFileNameMatcher* matcher);
 	void setFileNames(const std::vector<QString>& fileNames);
 
 	std::vector<QString> selectedFilenames() const;
@@ -33,10 +33,10 @@ private slots:
 	void deselectAll();
 
 private:
-	GeoDataNetcdfFileNameMatcher* m_fileNameMatcher;
+	GeoDataGdalFileNameMatcher* m_fileNameMatcher;
 	std::vector<QString> m_fileNames;
 
-	Ui::GeoDataNetcdfFileListDialog *ui;
+	Ui::GeoDataGdalFileListDialog *ui;
 };
 
-#endif // GEODATANETCDFFILELISTDIALOG_H
+#endif // GEODATAGDALFILELISTDIALOG_H

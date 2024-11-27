@@ -1,29 +1,29 @@
-#include "geodatanetcdf_displaysettingwidget.h"
-#include "ui_geodatanetcdf_displaysettingwidget.h"
+#include "geodatagdal_displaysettingwidget.h"
+#include "ui_geodatagdal_displaysettingwidget.h"
 
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
-GeoDataNetcdf::DisplaySettingWidget::DisplaySettingWidget(QWidget *parent) :
+GeoDataGdal::DisplaySettingWidget::DisplaySettingWidget(QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_displaySetting {nullptr},
 	m_colorMapWidget {nullptr},
-	ui(new Ui::GeoDataNetcdf_DisplaySettingWidget)
+	ui(new Ui::GeoDataGdal_DisplaySettingWidget)
 {
 	ui->setupUi(this);
 	connect(ui->byValueRadioButton, &QRadioButton::toggled, this, &DisplaySettingWidget::handleColorByValueToggle);
 }
 
-GeoDataNetcdf::DisplaySettingWidget::~DisplaySettingWidget()
+GeoDataGdal::DisplaySettingWidget::~DisplaySettingWidget()
 {
 	delete m_colorMapWidget;
 	delete ui;
 }
 
-QUndoCommand* GeoDataNetcdf::DisplaySettingWidget::createModifyCommand(bool apply)
+QUndoCommand* GeoDataGdal::DisplaySettingWidget::createModifyCommand(bool apply)
 {
-	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("GeoDataNetcdf::DisplaySettingWidget::Modify"), apply);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("GeoDataGdal::DisplaySettingWidget::Modify"), apply);
 	command->addCommand(new ValueModifyCommmand<DisplaySetting>(iRIC::generateCommandId("DisplaySetting"), true, setting(), m_displaySetting));
 	if (m_colorMapWidget != nullptr) {
 		command->addCommand(m_colorMapWidget->createModifyCommand(apply));
@@ -31,7 +31,7 @@ QUndoCommand* GeoDataNetcdf::DisplaySettingWidget::createModifyCommand(bool appl
 	return command;
 }
 
-GeoDataNetcdf::DisplaySetting GeoDataNetcdf::DisplaySettingWidget::setting() const
+GeoDataGdal::DisplaySetting GeoDataGdal::DisplaySettingWidget::setting() const
 {
 	DisplaySetting setting;
 	if (ui->arbitraryRadioButton->isChecked()) {
@@ -45,7 +45,7 @@ GeoDataNetcdf::DisplaySetting GeoDataNetcdf::DisplaySettingWidget::setting() con
 	return setting;
 }
 
-void GeoDataNetcdf::DisplaySettingWidget::setSetting(const DisplaySetting& setting)
+void GeoDataGdal::DisplaySettingWidget::setSetting(const DisplaySetting& setting)
 {
 	if (setting.mapping == DisplaySetting::Mapping::Arbitrary) {
 		ui->arbitraryRadioButton->setChecked(true);
@@ -56,19 +56,19 @@ void GeoDataNetcdf::DisplaySettingWidget::setSetting(const DisplaySetting& setti
 	ui->transparencyWidget->setOpacity(setting.opacity);
 }
 
-void GeoDataNetcdf::DisplaySettingWidget::setSetting(DisplaySetting* setting)
+void GeoDataGdal::DisplaySettingWidget::setSetting(DisplaySetting* setting)
 {
 	m_displaySetting = setting;
 	setSetting(*setting);
 }
 
-void GeoDataNetcdf::DisplaySettingWidget::setColorMapWidget(ModifyCommandWidget* widget)
+void GeoDataGdal::DisplaySettingWidget::setColorMapWidget(ModifyCommandWidget* widget)
 {
 	m_colorMapWidget = widget;
 	ui->colorMapWidget->setWidget(widget);
 }
 
-void GeoDataNetcdf::DisplaySettingWidget::setIsReferenceInformation(bool isReference)
+void GeoDataGdal::DisplaySettingWidget::setIsReferenceInformation(bool isReference)
 {
 	if (! isReference) {return;}
 
@@ -77,7 +77,7 @@ void GeoDataNetcdf::DisplaySettingWidget::setIsReferenceInformation(bool isRefer
 	ui->byValueRadioButton->setDisabled(true);
 }
 
-void GeoDataNetcdf::DisplaySettingWidget::handleColorByValueToggle(bool toggled)
+void GeoDataGdal::DisplaySettingWidget::handleColorByValueToggle(bool toggled)
 {
 	m_colorMapWidget->setEnabled(toggled);
 }

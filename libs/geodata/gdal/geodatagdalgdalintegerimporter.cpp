@@ -1,17 +1,17 @@
-#include "geodatanetcdfgdalintegerimporter.h"
-#include "geodatanetcdfinteger.h"
+#include "geodatagdalgdalintegerimporter.h"
+#include "geodatagdalinteger.h"
 
 #include <vtkIntArray.h>
 
 #include <gdal_priv.h>
 
-GeoDataNetcdfGdalIntegerImporter::GeoDataNetcdfGdalIntegerImporter(GeoDataCreator* creator) : GeoDataNetcdfGdalImporter(creator)
+GeoDataGdalGdalIntegerImporter::GeoDataGdalGdalIntegerImporter(GeoDataCreator* creator) : GeoDataGdalGdalImporter(creator)
 {}
 
-GeoDataNetcdfGdalIntegerImporter::~GeoDataNetcdfGdalIntegerImporter()
+GeoDataGdalGdalIntegerImporter::~GeoDataGdalGdalIntegerImporter()
 {}
 
-int GeoDataNetcdfGdalIntegerImporter::outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data)
+int GeoDataGdalGdalIntegerImporter::outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data)
 {
 	int ret = NC_NOERR;
 	int bufSize = data->xSize() * data->ySize();
@@ -19,7 +19,7 @@ int GeoDataNetcdfGdalIntegerImporter::outputValues(int ncid, int varId, GDALRast
 	int noDataValue;
 	int noDataSuccess;
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
-	auto rData = dynamic_cast<GeoDataNetcdfInteger*> (data);
+	auto rData = dynamic_cast<GeoDataGdalInteger*> (data);
 
 	std::vector<double> buffer1(bufSize);
 	std::vector<int> buffer2(bufSize);
@@ -42,7 +42,7 @@ int GeoDataNetcdfGdalIntegerImporter::outputValues(int ncid, int varId, GDALRast
 	return NC_NOERR;
 }
 
-int GeoDataNetcdfGdalIntegerImporter::outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data)
+int GeoDataGdalGdalIntegerImporter::outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data)
 {
 	int ret = NC_NOERR;
 	int bufSize = data->xSize() * data->ySize();
@@ -50,7 +50,7 @@ int GeoDataNetcdfGdalIntegerImporter::outputValuesWithTime(int ncid, int varId, 
 	double noDataValue;
 	int noDataSuccess;
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
-	auto rData = dynamic_cast<GeoDataNetcdfInteger*> (data);
+	auto rData = dynamic_cast<GeoDataGdalInteger*> (data);
 
 	std::vector<double> buffer1(bufSize);
 	std::vector<int> buffer2(bufSize);

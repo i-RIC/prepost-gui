@@ -1,7 +1,7 @@
-#ifndef GEODATANETCDF_H
-#define GEODATANETCDF_H
+#ifndef GEODATAGDAL_H
+#define GEODATAGDAL_H
 
-#include "geodatanetcdfcolorsettingdialog.h"
+#include "geodatagdalcolorsettingdialog.h"
 
 #include <guicore/misc/valuepointi.h>
 #include <guicore/pre/geodata/geodatawithsinglemapper.h>
@@ -18,12 +18,12 @@
 
 class QAction;
 class QPolygonF;
-class GeoDataNetcdfImporter;
-class GeoDataNetcdfXbandImporter;
-class GeoDataNetcdfGdalImporter;
+class GeoDataGdalImporter;
+class GeoDataGdalXbandImporter;
+class GeoDataGdalGdalImporter;
 class GridAttributeDimensionContainer;
 
-class GeoDataNetcdf : public GeoDataWithSingleMapper, public ValuePointI
+class GeoDataGdal : public GeoDataWithSingleMapper, public ValuePointI
 {
 	Q_OBJECT
 
@@ -55,8 +55,8 @@ public:
 		XY
 	};
 
-	GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
-	virtual ~GeoDataNetcdf();
+	GeoDataGdal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
+	virtual ~GeoDataGdal();
 
 	const std::vector<double> lonValues() const;
 	const std::vector<double> latValues() const;
@@ -168,13 +168,13 @@ private:
 	void saveBaseAndResolution(QXmlStreamWriter& writer);
 
 public:
-	friend class GeoDataNetcdfGdalExporter;
-	friend class GeoDataNetcdfGdalImporter;
-	friend class GeoDataNetcdfGrayscalePngRealImporter;
-	friend class GeoDataNetcdfGrayscalePngRealExporter;
-	friend class GeoDataNetcdfImporter;
-	friend class GeoDataNetcdfProxy;
-	friend class GeoDataNetcdfXbandImporter;
+	friend class GeoDataGdalGdalExporter;
+	friend class GeoDataGdalGdalImporter;
+	friend class GeoDataGdalGrayscalePngRealImporter;
+	friend class GeoDataGdalGrayscalePngRealExporter;
+	friend class GeoDataGdalImporter;
+	friend class GeoDataGdalProxy;
+	friend class GeoDataGdalXbandImporter;
 };
 
-#endif // GEODATANETCDF_H
+#endif // GEODATAGDAL_H

@@ -1,5 +1,5 @@
-#include "geodatanetcdfreal.h"
-#include "geodatanetcdfgrayscalepngrealexporter.h"
+#include "geodatagdalreal.h"
+#include "geodatagdalgrayscalepngrealexporter.h"
 
 #include <misc/stringtool.h>
 
@@ -15,49 +15,49 @@
 #include <QRegExp>
 #include <QTextStream>
 
-GeoDataNetcdfGrayscalePngRealExporter::GeoDataNetcdfGrayscalePngRealExporter(GeoDataCreator* creator) :
+GeoDataGdalGrayscalePngRealExporter::GeoDataGdalGrayscalePngRealExporter(GeoDataCreator* creator) :
 	GeoDataExporter("Grayscale PNG", creator)
 {}
 
-bool GeoDataNetcdfGrayscalePngRealExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w, ProjectData* /*pd*/)
+bool GeoDataGdalGrayscalePngRealExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w, ProjectData* /*pd*/)
 {
-	auto netcdf = dynamic_cast<GeoDataNetcdfReal*> (data);
+	auto gdal = dynamic_cast<GeoDataGdalReal*> (data);
 
-	if (! doExportPng(netcdf, filename, w)) {return false;}
-	if (! doExportPgw(netcdf, filename, w)) {return false;}
-	if (! doExportMeta(netcdf, filename, w)) {return false;}
+	if (! doExportPng(gdal, filename, w)) {return false;}
+	if (! doExportPgw(gdal, filename, w)) {return false;}
+	if (! doExportMeta(gdal, filename, w)) {return false;}
 
 	return true;
 }
 
-const QStringList GeoDataNetcdfGrayscalePngRealExporter::fileDialogFilters()
+const QStringList GeoDataGdalGrayscalePngRealExporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret.append(tr("Grayscale 16bit PNG files(*.png)"));
 	return ret;
 }
 
-bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealExporter::doExportPng(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
-	if (! netcdf->geoTransformExists() || ! netcdf->baseAndResolutionExists()) {
+	if (! gdal->geoTransformExists() || ! gdal->baseAndResolutionExists()) {
 		QMessageBox::critical(w, tr("Error"), tr("This data cannot be exported. It seems that it was not imported from *.png."));
 		return false;
 	}
 
-	if (netcdf->dimensions()->containers().size() > 0) {
+	if (gdal->dimensions()->containers().size() > 0) {
 		QMessageBox::critical(w, tr("Error"), tr("This data cannot be exported. Data with \"Time\" dimension cannot be exported to *.png"));
 		return false;
 	}
 
 	int ncid, varid, ret;
-	ret = nc_open(iRIC::toStr(netcdf->filename()).c_str(), NC_NOWRITE, &ncid);
+	ret = nc_open(iRIC::toStr(gdal->filename()).c_str(), NC_NOWRITE, &ncid);
 	size_t starts[2], ends[2];
 	starts[0] = 0;
 	starts[1] = 0;
-	ends[0] = netcdf->ySize();
-	ends[1] = netcdf->xSize();
-	netcdf->getValueVarId(ncid, &varid);
-	size_t bufferSize = netcdf->xSize() * netcdf->ySize();
+	ends[0] = gdal->ySize();
+	ends[1] = gdal->xSize();
+	gdal->getValueVarId(ncid, &varid);
+	size_t bufferSize = gdal->xSize() * gdal->ySize();
 	std::vector<double> buffer(bufferSize);
 	ret = nc_get_vara_double(ncid, varid, starts, ends, buffer.data());
 	nc_close(ncid);
@@ -83,19 +83,19 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcd
 	png_init_io(png_ptr, fp);
 
 	// write header
-	png_set_IHDR(png_ptr, png_info, netcdf->xSize(), netcdf->ySize(), 16, PNG_COLOR_TYPE_GRAY,
+	png_set_IHDR(png_ptr, png_info, gdal->xSize(), gdal->ySize(), 16, PNG_COLOR_TYPE_GRAY,
 							 PNG_INTERLACE_NONE, PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
 	png_write_info(png_ptr, png_info);
 	png_set_swap(png_ptr);
 
 	// write bytes
-	double base = netcdf->base();
-	double resolution = netcdf->resolution();
+	double base = gdal->base();
+	double resolution = gdal->resolution();
 
-	std::vector<png_int_16> row_buffer(netcdf->xSize());
-	for (int j = 0; j < netcdf->ySize(); ++j) {
-		for (int i = 0; i < netcdf->xSize(); ++i) {
-			row_buffer[i] = static_cast<png_int_16> ((buffer.at((netcdf->ySize() - 1 - j) * netcdf->xSize() + i) - base) / resolution);
+	std::vector<png_int_16> row_buffer(gdal->xSize());
+	for (int j = 0; j < gdal->ySize(); ++j) {
+		for (int i = 0; i < gdal->xSize(); ++i) {
+			row_buffer[i] = static_cast<png_int_16> ((buffer.at((gdal->ySize() - 1 - j) * gdal->xSize() + i) - base) / resolution);
 		}
 		png_write_row(png_ptr, reinterpret_cast<png_const_bytep>(row_buffer.data()));
 	}
@@ -108,7 +108,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcd
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealExporter::doExportPgw(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealExporter::doExportPgw(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
 	QString pgwFilename = filename;
 	pgwFilename.replace(QRegExp("png$"), "pgw");
@@ -118,7 +118,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPgw(GeoDataNetcdfReal* netcd
 		return false;
 	}
 	QTextStream stream(&f);
-	double* transform = netcdf->geoTransform();
+	double* transform = gdal->geoTransform();
 	double t[6];
 	for (int i = 0; i < 6; ++i) {
 		t[i] = *(transform + i);
@@ -133,7 +133,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPgw(GeoDataNetcdfReal* netcd
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealExporter::doExportMeta(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealExporter::doExportMeta(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
 	QString metaFilename = filename + ".meta";
 	QFile f(metaFilename);
@@ -142,8 +142,8 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportMeta(GeoDataNetcdfReal* netc
 		return false;
 	}
 	QTextStream stream(&f);
-	stream << "base: " << netcdf->base() << endl;
-	stream << "resolution: " << netcdf->resolution() << endl;
+	stream << "base: " << gdal->base() << endl;
+	stream << "resolution: " << gdal->resolution() << endl;
 	f.close();
 	return true;
 }

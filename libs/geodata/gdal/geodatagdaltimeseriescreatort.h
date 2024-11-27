@@ -1,19 +1,19 @@
-#ifndef GEODATANETCDFTIMESERIESCREATORT_H
-#define GEODATANETCDFTIMESERIESCREATORT_H
+#ifndef GEODATAGDALTIMESERIESCREATORT_H
+#define GEODATAGDALTIMESERIESCREATORT_H
 
-#include "geodatanetcdftimeseriescreator.h"
+#include "geodatagdaltimeseriescreator.h"
 
 class SolverDefinitionGridAttribute;
 
 template <class V, class DA>
-class GeoDataNetcdfTimeSeriesCreatorT : public GeoDataNetcdfTimeSeriesCreator
+class GeoDataGdalTimeSeriesCreatorT : public GeoDataGdalTimeSeriesCreator
 {
 public:
-	GeoDataNetcdfTimeSeriesCreatorT(const QString& typeName);
+	GeoDataGdalTimeSeriesCreatorT(const QString& typeName);
 
 	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 };
 
-#include "private/geodatanetcdftimeseriescreatort_detail.h"
+#include "private/geodatagdaltimeseriescreatort_detail.h"
 
-#endif // GEODATANETCDFTIMESERIESCREATORT_H
+#endif // GEODATAGDALTIMESERIESCREATORT_H

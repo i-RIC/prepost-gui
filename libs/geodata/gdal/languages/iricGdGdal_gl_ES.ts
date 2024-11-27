@@ -1,6 +1,6 @@
 <TS version="2.1" language="gl_ES">
 <context>
-    <name>GeoDataNetcdf</name>
+    <name>GeoDataGdal</name>
     <message>
         <source>Error</source>
         <translation>Erro</translation>
@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfColorSettingDialog</name>
+    <name>GeoDataGdalColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
         <translation>Configuración de cor de datos raster</translation>
@@ -38,7 +38,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfCreator</name>
+    <name>GeoDataGdalCreator</name>
     <message>
         <source>Raster Data</source>
         <translation>Datos raster</translation>
@@ -49,7 +49,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileListDialog</name>
+    <name>GeoDataGdalFileListDialog</name>
     <message>
         <source>Confirm File List</source>
         <translation>Confirme a lista de ficheiros</translation>
@@ -80,7 +80,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <name>GeoDataGdalFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
         <translation>Configuración do patrón do nome do ficheiro</translation>
@@ -119,7 +119,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalExporter</name>
+    <name>GeoDataGdalGdalExporter</name>
     <message>
         <source>GDAL</source>
         <translation>GDAL</translation>
@@ -150,7 +150,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalImporter</name>
+    <name>GeoDataGdalGdalImporter</name>
     <message>
         <source>Importing data...</source>
         <translation>Importando datos...</translation>
@@ -205,7 +205,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <name>GeoDataGdalGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
         <translation>Ficheiros PNG de 16 bits en escala de grises (*.png)</translation>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <name>GeoDataGdalGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
         <translation>Escala de grises PNG de 16 bits (para Unreal Engine 4)</translation>
@@ -279,7 +279,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporter</name>
+    <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
         <translation>NetCDF</translation>
@@ -314,7 +314,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterDateSelectDialog</name>
+    <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
         <translation>Especifique a data orixinal</translation>
@@ -365,7 +365,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterSettingDialog</name>
+    <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
         <translation>Axuste de asignación de dimensións</translation>
@@ -380,21 +380,21 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfNcExporter</name>
+    <name>GeoDataGdalNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Arquivos NetCDF (*.nc)</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy</name>
+    <name>GeoDataGdalProxy</name>
     <message>
         <source>Raster Data Display Setting</source>
         <translation>Configuración de visualización de datos ráster</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <name>GeoDataGdalProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>Formulario</translation>
@@ -405,7 +405,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <name>GeoDataGdalTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
         <translation>Datos ráster de series temporais</translation>
@@ -416,7 +416,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfXbandImporter</name>
+    <name>GeoDataGdalXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
         <translation>Datos XBand MP RADER</translation>
@@ -463,7 +463,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <name>GeoDataGdal_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>Formulario</translation>

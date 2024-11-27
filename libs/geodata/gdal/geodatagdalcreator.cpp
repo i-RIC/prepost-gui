@@ -1,29 +1,29 @@
-#include "geodatanetcdf.h"
-#include "geodatanetcdfcreator.h"
-#include "geodatanetcdfimporter.h"
-//#include "geodatanetcdfimporter.h"
-//#include "geodatanetcdfshapeexporter.h"
+#include "geodatagdal.h"
+#include "geodatagdalcreator.h"
+#include "geodatagdalimporter.h"
+//#include "geodatagdalimporter.h"
+//#include "geodatagdalshapeexporter.h"
 
 #include <guibase/irictoolbar.h>
 
 #include <QAction>
 #include <QIcon>
 
-GeoDataNetcdfCreator::GeoDataNetcdfCreator(const QString& typeName) :
+GeoDataGdalCreator::GeoDataGdalCreator(const QString& typeName) :
 	GeoDataCreator {typeName, tr("Raster Data")}
 {}
 
-QString GeoDataNetcdfCreator::name(unsigned int index) const
+QString GeoDataGdalCreator::name(unsigned int index) const
 {
 	return QString("rasterdata%1").arg(index);
 }
 
-QString GeoDataNetcdfCreator::defaultCaption(unsigned int index) const
+QString GeoDataGdalCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("Raster Data%1")).arg(index);
 }
 
-bool GeoDataNetcdfCreator::requestCoordinateSystem() const
+bool GeoDataGdalCreator::requestCoordinateSystem() const
 {
 	return true;
 }

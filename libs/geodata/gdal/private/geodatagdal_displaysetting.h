@@ -1,14 +1,14 @@
-#ifndef GEODATANETCDF_DISPLAYSETTING_H
-#define GEODATANETCDF_DISPLAYSETTING_H
+#ifndef GEODATAGDAL_DISPLAYSETTING_H
+#define GEODATAGDAL_DISPLAYSETTING_H
 
-#include "../geodatanetcdf.h"
+#include "../geodatagdal.h"
 
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/enumcontainert.h>
 
-class GeoDataNetcdf::DisplaySetting : public CompositeContainer
+class GeoDataGdal::DisplaySetting : public CompositeContainer
 {
 public:
 	enum class Mapping {Value, Arbitrary};
@@ -24,4 +24,4 @@ public:
 	EnumContainerT<Mapping> mapping;
 };
 
-#endif // GEODATANETCDF_DISPLAYSETTING_H
+#endif // GEODATAGDAL_DISPLAYSETTING_H

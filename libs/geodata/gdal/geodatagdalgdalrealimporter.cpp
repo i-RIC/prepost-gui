@@ -1,17 +1,17 @@
-#include "geodatanetcdfgdalrealimporter.h"
-#include "geodatanetcdfreal.h"
+#include "geodatagdalgdalrealimporter.h"
+#include "geodatagdalreal.h"
 
 #include <vtkDoubleArray.h>
 
 #include <gdal_priv.h>
 
-GeoDataNetcdfGdalRealImporter::GeoDataNetcdfGdalRealImporter(GeoDataCreator* creator) : GeoDataNetcdfGdalImporter(creator)
+GeoDataGdalGdalRealImporter::GeoDataGdalGdalRealImporter(GeoDataCreator* creator) : GeoDataGdalGdalImporter(creator)
 {}
 
-GeoDataNetcdfGdalRealImporter::~GeoDataNetcdfGdalRealImporter()
+GeoDataGdalGdalRealImporter::~GeoDataGdalGdalRealImporter()
 {}
 
-int GeoDataNetcdfGdalRealImporter::outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data)
+int GeoDataGdalGdalRealImporter::outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data)
 {
 	int ret = NC_NOERR;
 	int bufSize = data->xSize() * data->ySize();
@@ -19,7 +19,7 @@ int GeoDataNetcdfGdalRealImporter::outputValues(int ncid, int varId, GDALRasterB
 	double noDataValue;
 	int noDataSuccess;
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
-	auto rData = dynamic_cast<GeoDataNetcdfReal*> (data);
+	auto rData = dynamic_cast<GeoDataGdalReal*> (data);
 
 	std::vector<double> buffer1(bufSize);
 	std::vector<double> buffer2(bufSize);
@@ -40,7 +40,7 @@ int GeoDataNetcdfGdalRealImporter::outputValues(int ncid, int varId, GDALRasterB
 	return NC_NOERR;
 }
 
-int GeoDataNetcdfGdalRealImporter::outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data)
+int GeoDataGdalGdalRealImporter::outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data)
 {
 	int ret = NC_NOERR;
 	int bufSize = data->xSize() * data->ySize();
@@ -48,7 +48,7 @@ int GeoDataNetcdfGdalRealImporter::outputValuesWithTime(int ncid, int varId, int
 	double noDataValue;
 	int noDataSuccess;
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
-	auto rData = dynamic_cast<GeoDataNetcdfReal*> (data);
+	auto rData = dynamic_cast<GeoDataGdalReal*> (data);
 
 	std::vector<double> buffer1(bufSize);
 	std::vector<double> buffer2(bufSize);

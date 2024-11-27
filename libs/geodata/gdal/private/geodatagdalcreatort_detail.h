@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFCREATORT_DETAIL_H
-#define GEODATANETCDFCREATORT_DETAIL_H
+#ifndef GEODATAGDALCREATORT_DETAIL_H
+#define GEODATAGDALCREATORT_DETAIL_H
 
-#include "../geodatanetcdfcellmappert.h"
-#include "../geodatanetcdfcreatort.h"
-#include "../geodatanetcdfnodemappert.h"
+#include "../geodatagdalcellmappert.h"
+#include "../geodatagdalcreatort.h"
+#include "../geodatagdalnodemappert.h"
 
 template <class V, class DA>
-GeoDataNetcdfCreatorT<V, DA>::GeoDataNetcdfCreatorT(const QString& typeName) :
-	GeoDataNetcdfCreator(typeName)
+GeoDataGdalCreatorT<V, DA>::GeoDataGdalCreatorT(const QString& typeName) :
+	GeoDataGdalCreator(typeName)
 {}
 
 template <class V, class DA>
-bool GeoDataNetcdfCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
+bool GeoDataGdalCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	auto cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
 	if (cond == nullptr) {return false;}
@@ -21,4 +21,4 @@ bool GeoDataNetcdfCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribut
 	return true;
 }
 
-#endif // GEODATANETCDFCREATORT_DETAIL_H
+#endif // GEODATAGDALCREATORT_DETAIL_H

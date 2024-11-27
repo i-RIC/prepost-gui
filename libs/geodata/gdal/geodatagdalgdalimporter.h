@@ -1,7 +1,7 @@
-#ifndef GEODATANETCDFGDALIMPORTER_H
-#define GEODATANETCDFGDALIMPORTER_H
+#ifndef GEODATAGDALGDALIMPORTER_H
+#define GEODATAGDALGDALIMPORTER_H
 
-#include "gd_netcdf_global.h"
+#include "gd_gdal_global.h"
 
 #include <guicore/pre/geodata/geodataimporter.h>
 
@@ -10,15 +10,15 @@
 #include <vector>
 
 class CoordinateSystem;
-class GeoDataNetcdf;
-class GeoDataNetcdfFileNameMatcher;
+class GeoDataGdal;
+class GeoDataGdalFileNameMatcher;
 
 class GDALDataset;
 class GDALRasterBand;
 class OGRSpatialReference;
-class GeoDataNetcdf;
+class GeoDataGdal;
 
-class GD_NETCDF_EXPORT GeoDataNetcdfGdalImporter : public GeoDataImporter
+class GD_GDAL_EXPORT GeoDataGdalGdalImporter : public GeoDataImporter
 {
 	Q_OBJECT
 
@@ -28,8 +28,8 @@ public:
 		Time
 	};
 
-	GeoDataNetcdfGdalImporter(GeoDataCreator* creator);
-	virtual ~GeoDataNetcdfGdalImporter();
+	GeoDataGdalGdalImporter(GeoDataCreator* creator);
+	virtual ~GeoDataGdalGdalImporter();
 
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
@@ -44,27 +44,27 @@ private:
 	bool doInitForSingleMode(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	bool doInitForTimeMode(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
-	bool importDataForSingleMode(GeoDataNetcdf* data, QWidget* w);
-	bool importDataForTimeMode(GeoDataNetcdf* data, QWidget* w);
+	bool importDataForSingleMode(GeoDataGdal* data, QWidget* w);
+	bool importDataForTimeMode(GeoDataGdal* data, QWidget* w);
 
 	bool setMode(SolverDefinitionGridAttribute* condition, QWidget* w);
 	bool setCoordinateSystem(const QString& filename, GDALDataset* dataset, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	bool setTransform(GDALDataset* dataset);
-	void setupCoordinates(GeoDataNetcdf* data, GDALRasterBand* band);
+	void setupCoordinates(GeoDataGdal* data, GDALRasterBand* band);
 	bool setupFileNamePattern(const QString &filename, QWidget *w);
 	bool setupFilenames(const QString &filename, QWidget* w);
 	void clear();
 
-	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) = 0;
-	virtual int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data) = 0;
+	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data) = 0;
+	virtual int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data) = 0;
 
 	double m_transform[6];
 	std::vector<QString> m_filenames;
 	CoordinateSystem* m_coordinateSystem;
 	QTimeZone m_timeZone;
 	Mode m_mode;
-	GeoDataNetcdfFileNameMatcher* m_matcher;
+	GeoDataGdalFileNameMatcher* m_matcher;
 	bool m_canceled;
 };
 
-#endif // GEODATANETCDFGDALIMPORTER_H
+#endif // GEODATAGDALGDALIMPORTER_H

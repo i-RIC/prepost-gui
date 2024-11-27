@@ -1,6 +1,6 @@
 <TS version="2.1" language="ar_EG">
 <context>
-    <name>GeoDataNetcdf</name>
+    <name>GeoDataGdal</name>
     <message>
         <source>Error</source>
         <translation>خطأ</translation>
@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfColorSettingDialog</name>
+    <name>GeoDataGdalColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
         <translation>إعداد لون البيانات النقطية</translation>
@@ -38,7 +38,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfCreator</name>
+    <name>GeoDataGdalCreator</name>
     <message>
         <source>Raster Data</source>
         <translation>البيانات النقطية</translation>
@@ -49,7 +49,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileListDialog</name>
+    <name>GeoDataGdalFileListDialog</name>
     <message>
         <source>Confirm File List</source>
         <translation>تأكيد قائمة الملفات</translation>
@@ -80,7 +80,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <name>GeoDataGdalFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
         <translation>إعداد نمط اسم الملف</translation>
@@ -119,7 +119,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalExporter</name>
+    <name>GeoDataGdalGdalExporter</name>
     <message>
         <source>GDAL</source>
         <translation>جدال</translation>
@@ -150,7 +150,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalImporter</name>
+    <name>GeoDataGdalGdalImporter</name>
     <message>
         <source>Importing data...</source>
         <translation>جاري استيراد البيانات...</translation>
@@ -205,7 +205,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <name>GeoDataGdalGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
         <translation>ملفات PNG ذات 16 بت بتدرج الرمادي (*.png)</translation>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <name>GeoDataGdalGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
         <translation>PNG ذات 16 بت بتدرج الرمادي (للمحرك غير الواقعي 4)</translation>
@@ -279,7 +279,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporter</name>
+    <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
         <translation>نت سي دي إف</translation>
@@ -314,7 +314,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterDateSelectDialog</name>
+    <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
         <translation>حدد التاريخ الأصلي</translation>
@@ -365,7 +365,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterSettingDialog</name>
+    <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
         <translation>إعداد رسم الخرائط البعد</translation>
@@ -380,21 +380,21 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfNcExporter</name>
+    <name>GeoDataGdalNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>ملفات NetCDF (*.nc)</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy</name>
+    <name>GeoDataGdalProxy</name>
     <message>
         <source>Raster Data Display Setting</source>
         <translation>إعداد عرض البيانات النقطية</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <name>GeoDataGdalProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>استمارة</translation>
@@ -405,7 +405,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <name>GeoDataGdalTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
         <translation>البيانات النقطية المتسلسلة الزمنية</translation>
@@ -416,7 +416,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfXbandImporter</name>
+    <name>GeoDataGdalXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
         <translation>بيانات XBand MP RADER</translation>
@@ -463,7 +463,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <name>GeoDataGdal_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>استمارة</translation>

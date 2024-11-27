@@ -1,8 +1,8 @@
-TARGET = iricGdNetcdf
+TARGET = iricGdGdal
 TEMPLATE = lib
 INCLUDEPATH += ../..
 
-DEFINES += GD_NETCDF_LIBRARY
+DEFINES += GD_GDAL_LIBRARY
 
 DEFINES += ANSI_DECLARATORS
 win32 {
@@ -14,7 +14,7 @@ include( ../../../paths.pri )
 QT += widgets xml
 
 # Use Precompiled headers (PCH)
-PRECOMPILED_HEADER = netcdf_pch.h
+PRECOMPILED_HEADER = gdal_pch.h
 
 ######################
 # Internal libraries #
@@ -130,136 +130,136 @@ win32 {
 }
 
 # Input
-HEADERS += gd_netcdf_global.h \
-           geodatanetcdf.h \
-           geodatanetcdfcellmappert.h \
-           geodatanetcdfcolorsettingdialog.h \
-           geodatanetcdfcreator.h \
-           geodatanetcdfcreatort.h \
-           geodatanetcdffilelistdialog.h \
-           geodatanetcdffilenamematcher.h \
-           geodatanetcdffilenamepatterndialog.h \
-           geodatanetcdfgdalexporter.h \
-           geodatanetcdfgdalimporter.h \
-           geodatanetcdfgdalintegerexporter.h \
-           geodatanetcdfgdalintegerimporter.h \
-           geodatanetcdfgdalrealexporter.h \
-           geodatanetcdfgdalrealimporter.h \
-           geodatanetcdfgrayscalepngrealexporter.h \
-           geodatanetcdfgrayscalepngrealimporter.h \
-           geodatanetcdfifacemappert.h \
-           geodatanetcdfimporter.h \
-           geodatanetcdfimporterdateselectdialog.h \
-           geodatanetcdfimportersettingdialog.h \
-           geodatanetcdfimportert.h \
-           geodatanetcdfinteger.h \
-           geodatanetcdfintegercreator.h \
-           geodatanetcdfintegerimporter.h \
-           geodatanetcdfjfacemappert.h \
-           geodatanetcdfncexporter.h \
-           geodatanetcdfnodemappert.h \
-           geodatanetcdfproxy.h \
-           geodatanetcdfreal.h \
-           geodatanetcdfrealcreator.h \
-           geodatanetcdfrealimporter.h \
-           geodatanetcdft.h \
-           geodatanetcdftimeseriescreator.h \
-           geodatanetcdftimeseriescreatort.h \
-           geodatanetcdftimeseriesintegercreator.h \
-           geodatanetcdftimeseriesrealcreator.h \
-           geodatanetcdfxbandimporter.h \
-           private/geodatanetcdf_displaysetting.h \
-           private/geodatanetcdf_impl.h \
-           private/geodatanetcdfcellmappert_detail.h \
-           private/geodatanetcdfcreatort_detail.h \
-           private/geodatanetcdfifacemappert_detail.h \
-           private/geodatanetcdfimportert_detail.h \
-           private/geodatanetcdfjfacemappert_detail.h \
-           private/geodatanetcdfnodemappert_detail.h \
-           private/geodatanetcdfproxy_displaysetting.h \
-           private/geodatanetcdfproxy_displaysettingwidget.h \
-           private/geodatanetcdfproxy_impl.h \
-           private/geodatanetcdft_detail.h \
-           private/geodatanetcdftimeseriescreatort_detail.h \
-           public/geodatanetcdf_displaysettingwidget.h
-FORMS += geodatanetcdfcolorsettingdialog.ui \
-         geodatanetcdffilelistdialog.ui \
-         geodatanetcdffilenamepatterndialog.ui \
-         geodatanetcdfimporterdateselectdialog.ui \
-         geodatanetcdfimportersettingdialog.ui \
-         private/geodatanetcdfproxy_displaysettingwidget.ui \
-         public/geodatanetcdf_displaysettingwidget.ui
-SOURCES += geodatanetcdf.cpp \
-           geodatanetcdfcolorsettingdialog.cpp \
-           geodatanetcdfcreator.cpp \
-           geodatanetcdffilelistdialog.cpp \
-           geodatanetcdffilenamematcher.cpp \
-           geodatanetcdffilenamepatterndialog.cpp \
-           geodatanetcdfgdalexporter.cpp \
-           geodatanetcdfgdalimporter.cpp \
-           geodatanetcdfgdalintegerexporter.cpp \
-           geodatanetcdfgdalintegerimporter.cpp \
-           geodatanetcdfgdalrealexporter.cpp \
-           geodatanetcdfgdalrealimporter.cpp \
-           geodatanetcdfgrayscalepngrealexporter.cpp \
-           geodatanetcdfgrayscalepngrealimporter.cpp \
-           geodatanetcdfimporter.cpp \
-           geodatanetcdfimporterdateselectdialog.cpp \
-           geodatanetcdfimportersettingdialog.cpp \
-           geodatanetcdfinteger.cpp \
-           geodatanetcdfintegercreator.cpp \
-           geodatanetcdfintegerimporter.cpp \
-           geodatanetcdfncexporter.cpp \
-           geodatanetcdfproxy.cpp \
-           geodatanetcdfreal.cpp \
-           geodatanetcdfrealcreator.cpp \
-           geodatanetcdfrealimporter.cpp \
-           geodatanetcdftimeseriescreator.cpp \
-           geodatanetcdftimeseriesintegercreator.cpp \
-           geodatanetcdftimeseriesrealcreator.cpp \
-           geodatanetcdfxbandimporter.cpp \
-           private/geodatanetcdf_displaysetting.cpp \
-           private/geodatanetcdf_impl.cpp \
-           private/geodatanetcdfproxy_displaysetting.cpp \
-           private/geodatanetcdfproxy_displaysettingwidget.cpp \
-           private/geodatanetcdfproxy_impl.cpp \
-           public/geodatanetcdf_displaysettingwidget.cpp
-TRANSLATIONS += languages/iricGdNetcdf_ar_EG.ts \
-                languages/iricGdNetcdf_bg_BG.ts \
-                languages/iricGdNetcdf_bs_BA.ts \
-                languages/iricGdNetcdf_ca_ES.ts \
-                languages/iricGdNetcdf_cs_CZ.ts \
-                languages/iricGdNetcdf_da_DK.ts \
-                languages/iricGdNetcdf_de_DE.ts \
-                languages/iricGdNetcdf_el_GR.ts \
-                languages/iricGdNetcdf_es_ES.ts \
-                languages/iricGdNetcdf_et_EE.ts \
-                languages/iricGdNetcdf_eu_ES.ts \
-                languages/iricGdNetcdf_fi_FI.ts \
-                languages/iricGdNetcdf_fr_FR.ts \
-                languages/iricGdNetcdf_gl_ES.ts \
-                languages/iricGdNetcdf_hi_IN.ts \
-                languages/iricGdNetcdf_hu_HU.ts \
-                languages/iricGdNetcdf_id_ID.ts \
-                languages/iricGdNetcdf_is_IS.ts \
-                languages/iricGdNetcdf_it_IT.ts \
-                languages/iricGdNetcdf_ja_JP.ts \
-                languages/iricGdNetcdf_ko_KR.ts \
-                languages/iricGdNetcdf_ky_KG.ts \
-                languages/iricGdNetcdf_lt_LT.ts \
-                languages/iricGdNetcdf_lv_LV.ts \
-                languages/iricGdNetcdf_nb_NO.ts \
-                languages/iricGdNetcdf_nl_NL.ts \
-                languages/iricGdNetcdf_pl_PL.ts \
-                languages/iricGdNetcdf_pt_BR.ts \
-                languages/iricGdNetcdf_pt_PT.ts \
-                languages/iricGdNetcdf_ro_RO.ts \
-                languages/iricGdNetcdf_ru_RU.ts \
-                languages/iricGdNetcdf_sl_SI.ts \
-                languages/iricGdNetcdf_sv_SE.ts \
-                languages/iricGdNetcdf_th_TH.ts \
-                languages/iricGdNetcdf_tr_TR.ts \
-                languages/iricGdNetcdf_uk_UA.ts \
-                languages/iricGdNetcdf_vi_VN.ts \
-                languages/iricGdNetcdf_zh_CN.ts \
-                languages/iricGdNetcdf_zh_TW.ts
+HEADERS += gd_gdal_global.h \
+           geodatagdal.h \
+           geodatagdalcellmappert.h \
+           geodatagdalcolorsettingdialog.h \
+           geodatagdalcreator.h \
+           geodatagdalcreatort.h \
+           geodatagdalfilelistdialog.h \
+           geodatagdalfilenamematcher.h \
+           geodatagdalfilenamepatterndialog.h \
+           geodatagdalgdalexporter.h \
+           geodatagdalgdalimporter.h \
+           geodatagdalgdalintegerexporter.h \
+           geodatagdalgdalintegerimporter.h \
+           geodatagdalgdalrealexporter.h \
+           geodatagdalgdalrealimporter.h \
+           geodatagdalgrayscalepngrealexporter.h \
+           geodatagdalgrayscalepngrealimporter.h \
+           geodatagdalifacemappert.h \
+           geodatagdalimporter.h \
+           geodatagdalimporterdateselectdialog.h \
+           geodatagdalimportersettingdialog.h \
+           geodatagdalimportert.h \
+           geodatagdalinteger.h \
+           geodatagdalintegercreator.h \
+           geodatagdalintegerimporter.h \
+           geodatagdaljfacemappert.h \
+           geodatagdalncexporter.h \
+           geodatagdalnodemappert.h \
+           geodatagdalproxy.h \
+           geodatagdalreal.h \
+           geodatagdalrealcreator.h \
+           geodatagdalrealimporter.h \
+           geodatagdalt.h \
+           geodatagdaltimeseriescreator.h \
+           geodatagdaltimeseriescreatort.h \
+           geodatagdaltimeseriesintegercreator.h \
+           geodatagdaltimeseriesrealcreator.h \
+           geodatagdalxbandimporter.h \
+           private/geodatagdal_displaysetting.h \
+           private/geodatagdal_impl.h \
+           private/geodatagdalcellmappert_detail.h \
+           private/geodatagdalcreatort_detail.h \
+           private/geodatagdalifacemappert_detail.h \
+           private/geodatagdalimportert_detail.h \
+           private/geodatagdaljfacemappert_detail.h \
+           private/geodatagdalnodemappert_detail.h \
+           private/geodatagdalproxy_displaysetting.h \
+           private/geodatagdalproxy_displaysettingwidget.h \
+           private/geodatagdalproxy_impl.h \
+           private/geodatagdalt_detail.h \
+           private/geodatagdaltimeseriescreatort_detail.h \
+           public/geodatagdal_displaysettingwidget.h
+FORMS += geodatagdalcolorsettingdialog.ui \
+         geodatagdalfilelistdialog.ui \
+         geodatagdalfilenamepatterndialog.ui \
+         geodatagdalimporterdateselectdialog.ui \
+         geodatagdalimportersettingdialog.ui \
+         private/geodatagdalproxy_displaysettingwidget.ui \
+         public/geodatagdal_displaysettingwidget.ui
+SOURCES += geodatagdal.cpp \
+           geodatagdalcolorsettingdialog.cpp \
+           geodatagdalcreator.cpp \
+           geodatagdalfilelistdialog.cpp \
+           geodatagdalfilenamematcher.cpp \
+           geodatagdalfilenamepatterndialog.cpp \
+           geodatagdalgdalexporter.cpp \
+           geodatagdalgdalimporter.cpp \
+           geodatagdalgdalintegerexporter.cpp \
+           geodatagdalgdalintegerimporter.cpp \
+           geodatagdalgdalrealexporter.cpp \
+           geodatagdalgdalrealimporter.cpp \
+           geodatagdalgrayscalepngrealexporter.cpp \
+           geodatagdalgrayscalepngrealimporter.cpp \
+           geodatagdalimporter.cpp \
+           geodatagdalimporterdateselectdialog.cpp \
+           geodatagdalimportersettingdialog.cpp \
+           geodatagdalinteger.cpp \
+           geodatagdalintegercreator.cpp \
+           geodatagdalintegerimporter.cpp \
+           geodatagdalncexporter.cpp \
+           geodatagdalproxy.cpp \
+           geodatagdalreal.cpp \
+           geodatagdalrealcreator.cpp \
+           geodatagdalrealimporter.cpp \
+           geodatagdaltimeseriescreator.cpp \
+           geodatagdaltimeseriesintegercreator.cpp \
+           geodatagdaltimeseriesrealcreator.cpp \
+           geodatagdalxbandimporter.cpp \
+           private/geodatagdal_displaysetting.cpp \
+           private/geodatagdal_impl.cpp \
+           private/geodatagdalproxy_displaysetting.cpp \
+           private/geodatagdalproxy_displaysettingwidget.cpp \
+           private/geodatagdalproxy_impl.cpp \
+           public/geodatagdal_displaysettingwidget.cpp
+TRANSLATIONS += languages/iricGdGdal_ar_EG.ts \
+                languages/iricGdGdal_bg_BG.ts \
+                languages/iricGdGdal_bs_BA.ts \
+                languages/iricGdGdal_ca_ES.ts \
+                languages/iricGdGdal_cs_CZ.ts \
+                languages/iricGdGdal_da_DK.ts \
+                languages/iricGdGdal_de_DE.ts \
+                languages/iricGdGdal_el_GR.ts \
+                languages/iricGdGdal_es_ES.ts \
+                languages/iricGdGdal_et_EE.ts \
+                languages/iricGdGdal_eu_ES.ts \
+                languages/iricGdGdal_fi_FI.ts \
+                languages/iricGdGdal_fr_FR.ts \
+                languages/iricGdGdal_gl_ES.ts \
+                languages/iricGdGdal_hi_IN.ts \
+                languages/iricGdGdal_hu_HU.ts \
+                languages/iricGdGdal_id_ID.ts \
+                languages/iricGdGdal_is_IS.ts \
+                languages/iricGdGdal_it_IT.ts \
+                languages/iricGdGdal_ja_JP.ts \
+                languages/iricGdGdal_ko_KR.ts \
+                languages/iricGdGdal_ky_KG.ts \
+                languages/iricGdGdal_lt_LT.ts \
+                languages/iricGdGdal_lv_LV.ts \
+                languages/iricGdGdal_nb_NO.ts \
+                languages/iricGdGdal_nl_NL.ts \
+                languages/iricGdGdal_pl_PL.ts \
+                languages/iricGdGdal_pt_BR.ts \
+                languages/iricGdGdal_pt_PT.ts \
+                languages/iricGdGdal_ro_RO.ts \
+                languages/iricGdGdal_ru_RU.ts \
+                languages/iricGdGdal_sl_SI.ts \
+                languages/iricGdGdal_sv_SE.ts \
+                languages/iricGdGdal_th_TH.ts \
+                languages/iricGdGdal_tr_TR.ts \
+                languages/iricGdGdal_uk_UA.ts \
+                languages/iricGdGdal_vi_VN.ts \
+                languages/iricGdGdal_zh_CN.ts \
+                languages/iricGdGdal_zh_TW.ts

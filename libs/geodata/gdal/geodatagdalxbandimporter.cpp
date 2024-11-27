@@ -1,6 +1,6 @@
-#include "geodatanetcdfreal.h"
-#include "geodatanetcdfxbandimporter.h"
-#include "private/geodatanetcdf_impl.h"
+#include "geodatagdalreal.h"
+#include "geodatagdalxbandimporter.h"
+#include "private/geodatagdal_impl.h"
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
@@ -28,28 +28,28 @@ namespace {
 	const QString TMP_NC = "tmp.nc";
 } // namespace
 
-GeoDataNetcdfXbandImporter::GeoDataNetcdfXbandImporter(GeoDataCreator* creator) :
+GeoDataGdalXbandImporter::GeoDataGdalXbandImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"xband", tr("XBand MP RADER data"), creator}
 {}
 
-GeoDataNetcdfXbandImporter::~GeoDataNetcdfXbandImporter()
+GeoDataGdalXbandImporter::~GeoDataGdalXbandImporter()
 {}
 
-const QStringList GeoDataNetcdfXbandImporter::fileDialogFilters()
+const QStringList GeoDataGdalXbandImporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret.append(tr("X band MP rader data (*.*)"));
 	return ret;
 }
 
-const QStringList GeoDataNetcdfXbandImporter::acceptableExtensions()
+const QStringList GeoDataGdalXbandImporter::acceptableExtensions()
 {
 	QStringList ret;
 	ret.append("*");
 	return ret;
 }
 
-bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_groupDataItem = item;
 
@@ -78,9 +78,9 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	return true;
 }
 
-bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidget* w)
+bool GeoDataGdalXbandImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	GeoDataNetcdfReal* netcdf = dynamic_cast<GeoDataNetcdfReal*>(data);
+	GeoDataGdalReal* gdal = dynamic_cast<GeoDataGdalReal*>(data);
 
 	int ncid_in, ncid_out;
 	int ret;
@@ -88,7 +88,7 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 	QString exepath = iRICRootPath::get();
 	QString exeName = QDir(exepath).absoluteFilePath("mlitx2nc.exe");
 
-	QDir workDir = netcdf->projectData()->workDirectory();
+	QDir workDir = gdal->projectData()->workDirectory();
 	QString tmpFileName = workDir.absoluteFilePath(TMP_NC);
 
 	QDir dir(m_dirName);
@@ -138,20 +138,20 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 		ret = nc_inq_dimlen(ncid_in, timeDimId, &timeLen);
 
 		if (i == 0) {
-			QFileInfo finfo(netcdf->filename());
+			QFileInfo finfo(gdal->filename());
 			iRIC::mkdirRecursively(finfo.absolutePath());
 
 			// delete the file if it already exists.
-			QFile f(netcdf->filename());
+			QFile f(gdal->filename());
 			f.remove();
 
-			ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
+			ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 			if (ret != NC_NOERR) {
-				QMessageBox::critical(w, tr("Error"), tr("Error occured when opening %1.").arg(QDir::toNativeSeparators(netcdf->filename())));
+				QMessageBox::critical(w, tr("Error"), tr("Error occured when opening %1.").arg(QDir::toNativeSeparators(gdal->filename())));
 				return false;
 			}
 
-			netcdf->impl->m_coordinateSystemType = GeoDataNetcdf::LonLat;
+			gdal->impl->m_coordinateSystemType = GeoDataGdal::LonLat;
 
 			std::vector<double> lons(lonLen);
 			std::vector<double> lats(latLen);
@@ -160,13 +160,13 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 			nc_get_var_double(ncid_in, latVarId, lats.data());
 
 			// set lon and lat data
-			netcdf->impl->m_lonValues.clear();
+			gdal->impl->m_lonValues.clear();
 			for (size_t i = 0; i < lonLen; ++i) {
-				netcdf->impl->m_lonValues.push_back(lons[i]);
+				gdal->impl->m_lonValues.push_back(lons[i]);
 			}
-			netcdf->impl->m_latValues.clear();
+			gdal->impl->m_latValues.clear();
 			for (size_t i = 0; i < latLen; ++i) {
-				netcdf->impl->m_latValues.push_back(lats[i]);
+				gdal->impl->m_latValues.push_back(lats[i]);
 			}
 			// set time dummy data
 			GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
@@ -177,18 +177,18 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 			}
 			c->setVariantValues(timeVals);
 
-			// save coordinates and dimensions to the netcdf file.
+			// save coordinates and dimensions to the gdal file.
 			int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 			int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
 			std::vector<int> dimIds;
 
 			ret = nc_redef(ncid_out);
-			netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-			netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
-			ret = netcdf->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
+			gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+			gdal->defineDimensions(ncid_out, &dimIds, &varIds);
+			ret = gdal->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
 
 			ret = nc_enddef(ncid_out);
-			netcdf->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+			gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
 		}
 
 		// read time value
@@ -232,7 +232,7 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 		nc_get_vara_float(ncid_in, rrVarId, start_in, len_in, floatBuffer.data());
 		for (size_t j = 0; j < bufferSize; ++j) {
 			if (floatBuffer[j] == missingValue) {
-				doubleBuffer[j] = netcdf->missingValue();
+				doubleBuffer[j] = gdal->missingValue();
 			} else {
 				doubleBuffer[j] = floatBuffer[j] * scaleFactor + addOffset;
 			}
@@ -247,12 +247,12 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 
 	auto timeContainer = m_groupDataItem->dimensions()->containers().at(0);
 	timeContainer->setVariantValues(timeValues);
-	netcdf->outputDimensions(ncid_out, varIds);
+	gdal->outputDimensions(ncid_out, varIds);
 
 	nc_close(ncid_out);
 
-	netcdf->updateShapeData();
-	netcdf->handleDimensionCurrentIndexChange(0, netcdf->dimensions()->currentIndex());
+	gdal->updateShapeData();
+	gdal->handleDimensionCurrentIndexChange(0, gdal->dimensions()->currentIndex());
 
 	return true;
 }

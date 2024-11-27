@@ -1,6 +1,6 @@
 <TS version="2.1" language="hi_IN">
 <context>
-    <name>GeoDataNetcdf</name>
+    <name>GeoDataGdal</name>
     <message>
         <source>Error</source>
         <translation>त्रुटि</translation>
@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfColorSettingDialog</name>
+    <name>GeoDataGdalColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
         <translation>रेखापुंज डेटा रंग सेटिंग</translation>
@@ -38,7 +38,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfCreator</name>
+    <name>GeoDataGdalCreator</name>
     <message>
         <source>Raster Data</source>
         <translation>रेखापुंज डेटा</translation>
@@ -49,7 +49,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileListDialog</name>
+    <name>GeoDataGdalFileListDialog</name>
     <message>
         <source>Confirm File List</source>
         <translation>फ़ाइल सूची की पुष्टि करें</translation>
@@ -80,7 +80,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfFileNamePatternDialog</name>
+    <name>GeoDataGdalFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
         <translation>फ़ाइल नाम पैटर्न सेटिंग</translation>
@@ -119,7 +119,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalExporter</name>
+    <name>GeoDataGdalGdalExporter</name>
     <message>
         <source>GDAL</source>
         <translation>GDAL</translation>
@@ -150,7 +150,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGdalImporter</name>
+    <name>GeoDataGdalGdalImporter</name>
     <message>
         <source>Importing data...</source>
         <translation>डेटा आयात किया जा रहा है...</translation>
@@ -205,7 +205,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <name>GeoDataGdalGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
         <translation>ग्रेस्केल १६बिट पीएनजी फाइलें (*.png)</translation>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <name>GeoDataGdalGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
         <translation>ग्रेस्केल १६बिट पीएनजी (अवास्तविक इंजन ४ के लिए)</translation>
@@ -279,7 +279,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporter</name>
+    <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
         <translation>नेटसीडीएफ</translation>
@@ -314,7 +314,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterDateSelectDialog</name>
+    <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
         <translation>मूल तिथि निर्दिष्ट करें</translation>
@@ -365,7 +365,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfImporterSettingDialog</name>
+    <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
         <translation>आयाम मानचित्रण सेटिंग</translation>
@@ -380,21 +380,21 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfNcExporter</name>
+    <name>GeoDataGdalNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>नेटसीडीएफ फाइलें (*.nc)</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy</name>
+    <name>GeoDataGdalProxy</name>
     <message>
         <source>Raster Data Display Setting</source>
         <translation>रेखापुंज डेटा प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <name>GeoDataGdalProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>प्रपत्र</translation>
@@ -405,7 +405,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <name>GeoDataGdalTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
         <translation>समय श्रृंखला रेखापुंज डेटा</translation>
@@ -416,7 +416,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdfXbandImporter</name>
+    <name>GeoDataGdalXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
         <translation>XBand MP RADER डेटा</translation>
@@ -463,7 +463,7 @@
     </message>
 </context>
 <context>
-    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <name>GeoDataGdal_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
         <translation>प्रपत्र</translation>

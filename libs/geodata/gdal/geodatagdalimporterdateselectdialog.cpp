@@ -1,24 +1,24 @@
-#include "ui_geodatanetcdfimporterdateselectdialog.h"
+#include "ui_geodatagdalimporterdateselectdialog.h"
 
-#include "geodatanetcdfimporterdateselectdialog.h"
+#include "geodatagdalimporterdateselectdialog.h"
 
 static QString defaultDisplayFormat("yyyy-MM-dd HH:mm:s.s");
 
-GeoDataNetcdfImporterDateSelectDialog::GeoDataNetcdfImporterDateSelectDialog(QWidget* parent) :
+GeoDataGdalImporterDateSelectDialog::GeoDataGdalImporterDateSelectDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::GeoDataNetcdfImporterDateSelectDialog}
+	ui {new Ui::GeoDataGdalImporterDateSelectDialog}
 {
 	ui->setupUi(this);
 	ui->dateTimeEdit->setDisplayFormat(defaultDisplayFormat);
 	ui->timeZoneComboBox->setTimeZone(QTimeZone::utc());
 }
 
-GeoDataNetcdfImporterDateSelectDialog::~GeoDataNetcdfImporterDateSelectDialog()
+GeoDataGdalImporterDateSelectDialog::~GeoDataGdalImporterDateSelectDialog()
 {
 	delete ui;
 }
 
-void GeoDataNetcdfImporterDateSelectDialog::setUnit(const QString& unit)
+void GeoDataGdalImporterDateSelectDialog::setUnit(const QString& unit)
 {
 	QRegExp rx("(.+) since (.+)");
 	if (rx.indexIn(unit) != -1) {
@@ -30,17 +30,17 @@ void GeoDataNetcdfImporterDateSelectDialog::setUnit(const QString& unit)
 	ui->unitsValueLabel->setText(unit);
 }
 
-void GeoDataNetcdfImporterDateSelectDialog::setOriginalDateTime(const QDateTime& orig)
+void GeoDataGdalImporterDateSelectDialog::setOriginalDateTime(const QDateTime& orig)
 {
 	ui->dateTimeEdit->setDateTime(orig);
 }
 
-QDateTime GeoDataNetcdfImporterDateSelectDialog::originalDateTime() const
+QDateTime GeoDataGdalImporterDateSelectDialog::originalDateTime() const
 {
 	return ui->dateTimeEdit->dateTime();
 }
 
-GeoDataNetcdfImporterDateSelectDialog::TimeUnit GeoDataNetcdfImporterDateSelectDialog::timeUnit() const
+GeoDataGdalImporterDateSelectDialog::TimeUnit GeoDataGdalImporterDateSelectDialog::timeUnit() const
 {
 	std::vector<TimeUnit> units;
 	units.push_back(TimeUnit::Years);
@@ -52,12 +52,12 @@ GeoDataNetcdfImporterDateSelectDialog::TimeUnit GeoDataNetcdfImporterDateSelectD
 	return units.at(ui->importUnitsAsComboBox->currentIndex());
 }
 
-QTimeZone GeoDataNetcdfImporterDateSelectDialog::timeZone() const
+QTimeZone GeoDataGdalImporterDateSelectDialog::timeZone() const
 {
 	return ui->timeZoneComboBox->timeZone();
 }
 
-int GeoDataNetcdfImporterDateSelectDialog::timeUnitScale(TimeUnit unit)
+int GeoDataGdalImporterDateSelectDialog::timeUnitScale(TimeUnit unit)
 {
 	if (unit == TimeUnit::Years) {
 		return 60 * 60 * 24 * 365;

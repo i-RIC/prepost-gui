@@ -1,26 +1,26 @@
-#include "geodatanetcdfgdalintegerexporter.h"
-#include "geodatanetcdfgdalintegerimporter.h"
-#include "geodatanetcdfinteger.h"
-#include "geodatanetcdftimeseriesintegercreator.h"
-#include "geodatanetcdfintegerimporter.h"
-#include "geodatanetcdfncexporter.h"
+#include "geodatagdalgdalintegerexporter.h"
+#include "geodatagdalgdalintegerimporter.h"
+#include "geodatagdalinteger.h"
+#include "geodatagdaltimeseriesintegercreator.h"
+#include "geodatagdalintegerimporter.h"
+#include "geodatagdalncexporter.h"
 
-GeoDataNetcdfTimeSeriesIntegerCreator::GeoDataNetcdfTimeSeriesIntegerCreator() :
-	GeoDataNetcdfTimeSeriesCreatorT<int, vtkIntArray> {"timeSeriesIntegerNetcdf"}
+GeoDataGdalTimeSeriesIntegerCreator::GeoDataGdalTimeSeriesIntegerCreator() :
+	GeoDataGdalTimeSeriesCreatorT<int, vtkIntArray> {"timeSeriesIntegerGdal"}
 {
-	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
-	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
+	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalIntegerImporter(this));
 
-	exporters().push_back(new GeoDataNetcdfNcExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }
 
-GeoData* GeoDataNetcdfTimeSeriesIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+GeoData* GeoDataGdalTimeSeriesIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	auto data = new GeoDataNetcdfInteger(parent, this, condition);
+	auto data = new GeoDataGdalInteger(parent, this, condition);
 	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
-		data->setMapper(new GeoDataNetcdfNodeMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalNodeMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
-		data->setMapper(new GeoDataNetcdfCellMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalCellMapperT<int, vtkIntArray>(this));
 	}
 	return data;
 }

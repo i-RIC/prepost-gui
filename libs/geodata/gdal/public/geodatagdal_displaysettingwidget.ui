@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GeoDataNetcdf_DisplaySettingWidget</class>
- <widget class="QWidget" name="GeoDataNetcdf_DisplaySettingWidget">
+ <class>GeoDataGdal_DisplaySettingWidget</class>
+ <widget class="QWidget" name="GeoDataGdal_DisplaySettingWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

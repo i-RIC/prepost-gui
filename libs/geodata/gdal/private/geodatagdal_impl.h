@@ -1,10 +1,10 @@
-#ifndef GEODATANETCDF_IMPL_H
-#define GEODATANETCDF_IMPL_H
+#ifndef GEODATAGDAL_IMPL_H
+#define GEODATAGDAL_IMPL_H
 
-#include "../geodatanetcdf.h"
-#include "geodatanetcdf_displaysetting.h"
+#include "../geodatagdal.h"
+#include "geodatagdal_displaysetting.h"
 
-class GeoDataNetcdf::Impl
+class GeoDataGdal::Impl
 {
 public:
 	Impl();
@@ -29,4 +29,4 @@ public:
 	DisplaySetting m_displaySetting;
 };
 
-#endif // GEODATANETCDF_IMPL_H
+#endif // GEODATAGDAL_IMPL_H

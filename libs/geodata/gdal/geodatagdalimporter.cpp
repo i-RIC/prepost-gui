@@ -1,8 +1,8 @@
-#include "geodatanetcdf.h"
-#include "geodatanetcdfimporter.h"
-#include "geodatanetcdfimporterdateselectdialog.h"
-#include "geodatanetcdfimportersettingdialog.h"
-#include "private/geodatanetcdf_impl.h"
+#include "geodatagdal.h"
+#include "geodatagdalimporter.h"
+#include "geodatagdalimporterdateselectdialog.h"
+#include "geodatagdalimportersettingdialog.h"
+#include "private/geodatagdal_impl.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
@@ -68,28 +68,28 @@ int getVarLen(int ncid, int varid)
 
 } // namespace
 
-GeoDataNetcdfImporter::GeoDataNetcdfImporter(GeoDataCreator* creator) :
-	GeoDataImporter("netcdf", tr("NetCDF"), creator)
+GeoDataGdalImporter::GeoDataGdalImporter(GeoDataCreator* creator) :
+	GeoDataImporter("gdal", tr("NetCDF"), creator)
 {}
 
-GeoDataNetcdfImporter::~GeoDataNetcdfImporter()
+GeoDataGdalImporter::~GeoDataGdalImporter()
 {}
 
-const QStringList GeoDataNetcdfImporter::fileDialogFilters()
+const QStringList GeoDataGdalImporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret.append(tr("NetCDF file (*.nc)"));
 	return ret;
 }
 
-const QStringList GeoDataNetcdfImporter::acceptableExtensions()
+const QStringList GeoDataGdalImporter::acceptableExtensions()
 {
 	QStringList ret;
 	ret.append("nc");
 	return ret;
 }
 
-bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (item->geoDatas().size() > 1) {
 		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
@@ -158,9 +158,9 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	}
 
 	if (m_xDimId != -1 && m_yDimId != -1) {
-		m_csType = GeoDataNetcdf::XY;
+		m_csType = GeoDataGdal::XY;
 	} else if (m_latDimId != -1 && m_lonDimId != -1){
-		m_csType = GeoDataNetcdf::LonLat;
+		m_csType = GeoDataGdal::LonLat;
 	} else {
 		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(filename)));
 		return false;
@@ -174,15 +174,15 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	dimids.assign(10, 0);
 	int nAtts;
 
-	std::vector<GeoDataNetcdfImporterSettingDialog::NcVariable> variables;
+	std::vector<GeoDataGdalImporterSettingDialog::NcVariable> variables;
 	for (int i = 0; i < nvars; ++i) {
 		ret = nc_inq_var(ncid, varids[i], &(nameBuffer[0]), &ncType, &nDims, dimids.data(), &nAtts);
 		QString name = QString(nameBuffer).toLower();
-		if (m_csType == GeoDataNetcdf::XY && (name == "lon" || name == "longitude")) {
+		if (m_csType == GeoDataGdal::XY && (name == "lon" || name == "longitude")) {
 			m_lonVarId = i;
 			continue;
 		}
-		if (m_csType == GeoDataNetcdf::XY && (name == "lat" || name == "latitude")) {
+		if (m_csType == GeoDataGdal::XY && (name == "lat" || name == "latitude")) {
 			m_latVarId = i;
 			continue;
 		}
@@ -190,16 +190,16 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			// this is not a variable for value.
 			continue;
 		}
-		GeoDataNetcdfImporterSettingDialog::NcVariable v;
+		GeoDataGdalImporterSettingDialog::NcVariable v;
 		bool xOk = false;
 		bool yOk = false;
 		v.name = nameBuffer;
 		for (int j = 0; j < nDims; ++j) {
 			int dimid = dimids[j];
-			if (m_csType == GeoDataNetcdf::XY && dimid == m_xDimId) {xOk = true;}
-			else if (m_csType == GeoDataNetcdf::XY && dimid == m_yDimId) {yOk = true;}
-			else if (m_csType == GeoDataNetcdf::LonLat && dimid == m_lonDimId) {xOk = true;}
-			else if (m_csType == GeoDataNetcdf::LonLat && dimid == m_latDimId) {yOk = true;}
+			if (m_csType == GeoDataGdal::XY && dimid == m_xDimId) {xOk = true;}
+			else if (m_csType == GeoDataGdal::XY && dimid == m_yDimId) {yOk = true;}
+			else if (m_csType == GeoDataGdal::LonLat && dimid == m_lonDimId) {xOk = true;}
+			else if (m_csType == GeoDataGdal::LonLat && dimid == m_latDimId) {yOk = true;}
 
 			auto it = std::find(dimids.begin(), dimids.end(), dimid);
 			if (it != dimids.end()) {
@@ -219,7 +219,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 		return false;
 	}
 
-	GeoDataNetcdfImporterSettingDialog dialog(w);
+	GeoDataGdalImporterSettingDialog dialog(w);
 	dialog.setCondition(condition);
 	dialog.setVariables(variables);
 
@@ -234,9 +234,9 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	return true;
 }
 
-bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
+bool GeoDataGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*>(data);
+	GeoDataGdal* gdal = dynamic_cast<GeoDataGdal*>(data);
 
 	int ncid_in, ncid_out;
 	int ret;
@@ -246,22 +246,22 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer(ncid_in);
 
-	QFileInfo finfo(netcdf->filename());
+	QFileInfo finfo(gdal->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());
 
 	// delete the file if it already exists.
-	QFile f(netcdf->filename());
+	QFile f(gdal->filename());
 	f.remove();
 
-	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
+	ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer_new(ncid_out);
 
-	netcdf->impl->m_coordinateSystemType = m_csType;
+	gdal->impl->m_coordinateSystemType = m_csType;
 
 	// load coordinate values
 
-	if (m_csType == GeoDataNetcdf::XY) {
+	if (m_csType == GeoDataGdal::XY) {
 		// load X and Y
 		size_t xlen, ylen;
 		ret = nc_inq_dimlen(ncid_in, m_xDimId, &xlen);
@@ -279,13 +279,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
 		ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys.data());
 
-		netcdf->impl->m_xValues.clear();
+		gdal->impl->m_xValues.clear();
 		for (size_t i = 0; i < xlen; ++i) {
-			netcdf->impl->m_xValues.push_back(xs[i]);
+			gdal->impl->m_xValues.push_back(xs[i]);
 		}
-		netcdf->impl->m_yValues.clear();
+		gdal->impl->m_yValues.clear();
 		for (size_t i = 0; i < ylen; ++i) {
-			netcdf->impl->m_yValues.push_back(ys[i]);
+			gdal->impl->m_yValues.push_back(ys[i]);
 		}
 
 		// load Lon and Lat
@@ -300,15 +300,15 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = ncGetVariableAsDouble(ncid_in, m_lonVarId, lonLen, lons.data());
 		ret = ncGetVariableAsDouble(ncid_in, m_latVarId, latLen, lats.data());
 
-		netcdf->impl->m_lonValues.clear();
+		gdal->impl->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->impl->m_lonValues.push_back(lons[i]);
+			gdal->impl->m_lonValues.push_back(lons[i]);
 		}
-		netcdf->impl->m_latValues.clear();
+		gdal->impl->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->impl->m_latValues.push_back(lats[i]);
+			gdal->impl->m_latValues.push_back(lats[i]);
 		}
-	} else if (m_csType == GeoDataNetcdf::LonLat) {
+	} else if (m_csType == GeoDataGdal::LonLat) {
 		// load Lon and Lat
 		size_t lonLen, latLen;
 
@@ -327,13 +327,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
 		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats.data());
 
-		netcdf->impl->m_lonValues.clear();
+		gdal->impl->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->impl->m_lonValues.push_back(lons[i]);
+			gdal->impl->m_lonValues.push_back(lons[i]);
 		}
-		netcdf->impl->m_latValues.clear();
+		gdal->impl->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->impl->m_latValues.push_back(lats[i]);
+			gdal->impl->m_latValues.push_back(lats[i]);
 		}
 	}
 
@@ -371,7 +371,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		}
 		c->setVariantValues(convertedVals);
 	}
-	// save coordinates and dimensions to the netcdf file.
+	// save coordinates and dimensions to the gdal file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
 	std::vector<int> dimIds;
@@ -379,28 +379,28 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
-	netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-	netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
-	if (m_csType == GeoDataNetcdf::XY) {
-		ret = netcdf->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
-	} else if (m_csType == GeoDataNetcdf::LonLat) {
-		ret = netcdf->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
+	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+	gdal->defineDimensions(ncid_out, &dimIds, &varIds);
+	if (m_csType == GeoDataGdal::XY) {
+		ret = gdal->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
+	} else if (m_csType == GeoDataGdal::LonLat) {
+		ret = gdal->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
 	}
 
 	ret = nc_enddef(ncid_out);
-	netcdf->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
-	netcdf->outputDimensions(ncid_out, varIds);
+	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+	gdal->outputDimensions(ncid_out, varIds);
 
-	ret = importValues(ncid_in, ncid_out, varOutId, m_xDimId, m_yDimId, m_lonDimId, m_latDimId, dimIds, netcdf);
+	ret = importValues(ncid_in, ncid_out, varOutId, m_xDimId, m_yDimId, m_lonDimId, m_latDimId, dimIds, gdal);
 	closer_new.close();
 
-	netcdf->updateShapeData();
-	netcdf->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
+	gdal->updateShapeData();
+	gdal->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
 
 	return true;
 }
 
-int GeoDataNetcdfImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer)
+int GeoDataGdalImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer)
 {
 	Q_UNUSED(len)
 
@@ -436,7 +436,7 @@ int getVariableAsQVariant(int ncid, int varid, size_t len, int (*f)(int, int, T*
 	return NC_NOERR;
 }
 
-int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list)
+int GeoDataGdalImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list)
 {
 	int ret;
 	nc_type ncType;
@@ -468,7 +468,7 @@ int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 	return NC_NOERR;
 }
 
-std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled)
+std::vector<QVariant> GeoDataGdalImporter::convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled)
 {
 	*canceled = false;
 
@@ -491,7 +491,7 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 		return ret;
 	}
 
-	GeoDataNetcdfImporterDateSelectDialog dialog(parent);
+	GeoDataGdalImporterDateSelectDialog dialog(parent);
 	dialog.setUnit(units);
 	int result = dialog.exec();
 
@@ -509,18 +509,18 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	for (int i = 0; i < values.size(); ++i) {
 		QVariant val = values.at(i);
 		QDateTime d = zeroDate;
-		if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Years) {
+		if (timeUnit == GeoDataGdalImporterDateSelectDialog::TimeUnit::Years) {
 			d = d.addYears(val.toInt());
-		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Days) {
+		} else if (timeUnit == GeoDataGdalImporterDateSelectDialog::TimeUnit::Days) {
 			qlonglong days = val.toLongLong();
 			int secs = static_cast<int>((val.toDouble() - days) * 24 * 60 * 60);
 			d = d.addDays(days);
 			d = d.addSecs(secs);
-		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Hours) {
+		} else if (timeUnit == GeoDataGdalImporterDateSelectDialog::TimeUnit::Hours) {
 			d = d.addSecs(val.toDouble() * 60 * 60);
-		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Minutes) {
+		} else if (timeUnit == GeoDataGdalImporterDateSelectDialog::TimeUnit::Minutes) {
 			d = d.addSecs(val.toDouble() * 60);
-		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Seconds) {
+		} else if (timeUnit == GeoDataGdalImporterDateSelectDialog::TimeUnit::Seconds) {
 			d = d.addSecs(val.toDouble());
 		}
 		d.setTimeZone(timeZone);

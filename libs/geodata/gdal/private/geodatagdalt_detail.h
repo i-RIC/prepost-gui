@@ -1,8 +1,8 @@
-#ifndef GEODATANETCDFT_DETAIL_H
-#define GEODATANETCDFT_DETAIL_H
+#ifndef GEODATAGDALT_DETAIL_H
+#define GEODATAGDALT_DETAIL_H
 
-#include "../geodatanetcdft.h"
-#include "geodatanetcdf_impl.h"
+#include "../geodatagdalt.h"
+#include "geodatagdal_impl.h"
 
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
@@ -11,8 +11,8 @@
 #include <vtkCellData.h>
 
 template <class V, class DA>
-GeoDataNetcdfT<V, DA>::GeoDataNetcdfT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataNetcdf {d, creator, condition}
+GeoDataGdalT<V, DA>::GeoDataGdalT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	GeoDataGdal {d, creator, condition}
 {
 	vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
 	values->SetName("values");
@@ -21,30 +21,30 @@ GeoDataNetcdfT<V, DA>::GeoDataNetcdfT(ProjectDataItem* d, GeoDataCreator* creato
 }
 
 template <class V, class DA>
-GeoDataNetcdfT<V, DA>::~GeoDataNetcdfT()
+GeoDataGdalT<V, DA>::~GeoDataGdalT()
 {}
 
 template <class V, class DA>
-DA* GeoDataNetcdfT<V, DA>::vtkValues() const
+DA* GeoDataGdalT<V, DA>::vtkValues() const
 {
 	vtkDataArray* da = m_grid->GetCellData()->GetArray("values");
 	return DA::SafeDownCast(da);
 }
 
 template <class V, class DA>
-V GeoDataNetcdfT<V, DA>::value(vtkIdType index) const
+V GeoDataGdalT<V, DA>::value(vtkIdType index) const
 {
 	return vtkValues()->GetValue(index);
 }
 
 template <class V, class DA>
-void GeoDataNetcdfT<V, DA>::setValue(vtkIdType index, V val)
+void GeoDataGdalT<V, DA>::setValue(vtkIdType index, V val)
 {
 	return vtkValues()->SetValue(index, val);
 }
 
 template <class V, class DA>
-bool GeoDataNetcdfT<V, DA>::getValueRange(double* min, double* max)
+bool GeoDataGdalT<V, DA>::getValueRange(double* min, double* max)
 {
 	if (vtkValues()->GetNumberOfTuples() == 0) {return false;}
 
@@ -67,13 +67,13 @@ bool GeoDataNetcdfT<V, DA>::getValueRange(double* min, double* max)
 }
 
 template <class V, class DA>
-int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, V* vals)
+int GeoDataGdalT<V, DA>::outputValues(int ncid, int varid, V* vals)
 {
 	return nc_put_var(ncid, varid, vals);
 }
 
 template <class V, class DA>
-int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, const std::vector<int>& indices, V* vals)
+int GeoDataGdalT<V, DA>::outputValues(int ncid, int varid, const std::vector<int>& indices, V* vals)
 {
 	std::vector<size_t> start(indices.size() + 2);
 	std::vector<size_t> len(indices.size() + 2);
@@ -96,20 +96,20 @@ int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, const std::vector<i
 }
 
 template <class V, class DA>
-void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex)
+void GeoDataGdalT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex)
 {
 	loadRasterData(newIndex);
 	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->informValueRangeChange();
 }
 
 template <class V, class DA>
-void GeoDataNetcdfT<V, DA>::doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
+void GeoDataGdalT<V, DA>::doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
 {
 	// @todo implement this
 }
 
 template <class V, class DA>
-void GeoDataNetcdfT<V, DA>::loadRasterData(int index)
+void GeoDataGdalT<V, DA>::loadRasterData(int index)
 {
 	std::string fname = iRIC::toStr(filename());
 	int ncid, ret, varId;
@@ -121,7 +121,7 @@ void GeoDataNetcdfT<V, DA>::loadRasterData(int index)
 
 	GridAttributeDimensionsContainer* dims = dimensions();
 
-	// @todo currently, netcdf does not support edit, so no save done.
+	// @todo currently, gdal does not support edit, so no save done.
 
 	std::vector<int> indices = dims->calculateIndices(index);
 	int ndims = static_cast<int>(dims->containers().size()) + 2;
@@ -161,5 +161,5 @@ void GeoDataNetcdfT<V, DA>::loadRasterData(int index)
 	nc_close(ncid);
 }
 
-#endif // GEODATANETCDFT_DETAIL_H
+#endif // GEODATAGDALT_DETAIL_H
 

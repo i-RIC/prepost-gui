@@ -1,21 +1,21 @@
-#include "geodatanetcdf.h"
-#include "geodatanetcdftimeseriescreator.h"
+#include "geodatagdal.h"
+#include "geodatagdaltimeseriescreator.h"
 
-GeoDataNetcdfTimeSeriesCreator::GeoDataNetcdfTimeSeriesCreator(const QString& typeName) :
+GeoDataGdalTimeSeriesCreator::GeoDataGdalTimeSeriesCreator(const QString& typeName) :
     GeoDataCreator {typeName, tr("Time Series Raster Data")}
 {}
 
-QString GeoDataNetcdfTimeSeriesCreator::name(unsigned int index) const
+QString GeoDataGdalTimeSeriesCreator::name(unsigned int index) const
 {
     return QString("timeseriesrasterdata%1").arg(index);
 }
 
-QString GeoDataNetcdfTimeSeriesCreator::defaultCaption(unsigned int index) const
+QString GeoDataGdalTimeSeriesCreator::defaultCaption(unsigned int index) const
 {
     return QString(tr("Time Series Raster Data%1")).arg(index);
 }
 
-bool GeoDataNetcdfTimeSeriesCreator::requestCoordinateSystem() const
+bool GeoDataGdalTimeSeriesCreator::requestCoordinateSystem() const
 {
     return true;
 }

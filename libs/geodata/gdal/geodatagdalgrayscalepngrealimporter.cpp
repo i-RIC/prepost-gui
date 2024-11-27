@@ -1,6 +1,6 @@
-#include "geodatanetcdfgrayscalepngrealimporter.h"
-#include "geodatanetcdfreal.h"
-#include "private/geodatanetcdf_impl.h"
+#include "geodatagdalgrayscalepngrealimporter.h"
+#include "geodatagdalreal.h"
+#include "private/geodatagdal_impl.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -25,36 +25,36 @@
 
 #include <vector>
 
-GeoDataNetcdfGrayscalePngRealImporter::GeoDataNetcdfGrayscalePngRealImporter(GeoDataCreator* creator) :
+GeoDataGdalGrayscalePngRealImporter::GeoDataGdalGrayscalePngRealImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"grayscalepng", tr("Grayscale 16bit PNG (for Unreal Engine 4)"), creator}
 {}
 
-const QStringList GeoDataNetcdfGrayscalePngRealImporter::fileDialogFilters()
+const QStringList GeoDataGdalGrayscalePngRealImporter::fileDialogFilters()
 {
 	QStringList ret;
 	ret.append(tr("Grayscale 16bit PNG files(*.png)"));
 	return ret;
 }
 
-const QStringList GeoDataNetcdfGrayscalePngRealImporter::acceptableExtensions()
+const QStringList GeoDataGdalGrayscalePngRealImporter::acceptableExtensions()
 {
 	QStringList ret;
 	ret.append("png");
 	return ret;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::importData(GeoData* data, int /*index*/, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	auto netcdf = dynamic_cast<GeoDataNetcdfReal*> (data);
+	auto gdal = dynamic_cast<GeoDataGdalReal*> (data);
 
-	if (! importPgw(netcdf, filename(), w)) {return false;}
-	if (! importMeta(netcdf, filename(), w)) {return false;}
-	if (! importPng(netcdf, filename(), w)) {return false;}
+	if (! importPgw(gdal, filename(), w)) {return false;}
+	if (! importMeta(gdal, filename(), w)) {return false;}
+	if (! importPng(gdal, filename(), w)) {return false;}
 
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
@@ -63,7 +63,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, 
 	return setCs(item, w);
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
 	std::string fname = iRIC::toStr(filename);
 
@@ -105,24 +105,24 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 	}
 	png_read_image(png_ptr, row_pointers.data());
 
-	netcdf->impl->m_coordinateSystemType = GeoDataNetcdf::XY;
-	netcdf->impl->m_coordinateSystemName = m_coordinateSystem->name();
+	gdal->impl->m_coordinateSystemType = GeoDataGdal::XY;
+	gdal->impl->m_coordinateSystemName = m_coordinateSystem->name();
 
-	netcdf->impl->m_xValues.clear();
-	double* transform = netcdf->geoTransform();
+	gdal->impl->m_xValues.clear();
+	double* transform = gdal->geoTransform();
 	for (int i = 0; i < width; ++i) {
-		netcdf->impl->m_xValues.push_back(*transform + *(transform + 1) * (i + 0.5));
+		gdal->impl->m_xValues.push_back(*transform + *(transform + 1) * (i + 0.5));
 	}
-	netcdf->impl->m_yValues.clear();
+	gdal->impl->m_yValues.clear();
 	for (int i = 0; i < height; ++i) {
-		netcdf->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
+		gdal->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
 	}
 
-	netcdf->impl->m_lonValues.clear();
-	for (int j = 0; j < netcdf->impl->m_yValues.size(); ++j) {
-		double y = netcdf->impl->m_yValues.at(j);
-		for (int i = 0; i < netcdf->impl->m_xValues.size(); ++i) {
-			double x = netcdf->impl->m_xValues.at(i);
+	gdal->impl->m_lonValues.clear();
+	for (int j = 0; j < gdal->impl->m_yValues.size(); ++j) {
+		double y = gdal->impl->m_yValues.at(j);
+		for (int i = 0; i < gdal->impl->m_xValues.size(); ++i) {
+			double x = gdal->impl->m_xValues.at(i);
 			double lon, lat;
 			if (m_coordinateSystem->isLongLat()) {
 				lon = x;
@@ -130,23 +130,23 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 			} else {
 				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
 			}
-			netcdf->impl->m_lonValues.push_back(lon);
-			netcdf->impl->m_latValues.push_back(lat);
+			gdal->impl->m_lonValues.push_back(lon);
+			gdal->impl->m_latValues.push_back(lat);
 		}
 	}
 
-	QFileInfo finfo(netcdf->filename());
+	QFileInfo finfo(gdal->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());
 
 	// delete the file if it already exists.
-	QFile f(netcdf->filename());
+	QFile f(gdal->filename());
 	f.remove();
 
 	int ncid_out, ret;
 
-	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
+	ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 
-	// save coordinates and dimensions to the netcdf file.
+	// save coordinates and dimensions to the gdal file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
 	std::vector<int> dimIds;
@@ -154,21 +154,21 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
-	netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-	netcdf->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
+	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+	gdal->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
 
 	ret = nc_enddef(ncid_out);
-	netcdf->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
 
 	std::vector<double> valuesBuffer(width * height);
 
-	double base = netcdf->base();
-	double resolution = netcdf->resolution();
+	double base = gdal->base();
+	double resolution = gdal->resolution();
 
-	for (int j = 0; j < netcdf->ySize(); ++j) {
-		for (int i = 0; i < netcdf->xSize(); ++i) {
-			int srcIndex = i + netcdf->xSize() * (netcdf->ySize() - 1 - j);
-			int trgIndex = i + netcdf->xSize() * j;
+	for (int j = 0; j < gdal->ySize(); ++j) {
+		for (int i = 0; i < gdal->xSize(); ++i) {
+			int srcIndex = i + gdal->xSize() * (gdal->ySize() - 1 - j);
+			int trgIndex = i + gdal->xSize() * j;
 
 			int intVal = 256 * *(buffer.data() + 2 * srcIndex) + *(buffer.data() + 2 * srcIndex + 1);
 			double v = intVal * resolution + base;
@@ -184,13 +184,13 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 
 	png_destroy_read_struct(&png_ptr, &png_info, nullptr);
 
-	netcdf->updateShapeData();
-	netcdf->handleDimensionCurrentIndexChange(0, 0);
+	gdal->updateShapeData();
+	gdal->handleDimensionCurrentIndexChange(0, 0);
 
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::importPgw(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::importPgw(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
 	QString pgwFilename = filename;
 	pgwFilename.replace(QRegExp("png$"), "pgw");
@@ -228,12 +228,12 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPgw(GeoDataNetcdfReal* netcdf,
 	geotransform[4] = 0;
 	geotransform[5] = t[3];
 
-	netcdf->setGeoTransform(&(geotransform[0]));
+	gdal->setGeoTransform(&(geotransform[0]));
 
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::importMeta(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::importMeta(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
 {
 	QString metaFilename = filename + ".meta";
 	QFile mf(metaFilename);
@@ -245,7 +245,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importMeta(GeoDataNetcdfReal* netcdf
 		YAML::Node config = YAML::LoadFile(iRIC::toStr(metaFilename));
 		double base = config["base"].as<double>();
 		double resolution = config["resolution"].as<double>();
-		netcdf->setBaseAndResolution(base, resolution);
+		gdal->setBaseAndResolution(base, resolution);
 		return true;
 	} catch (YAML::Exception&) {
 		QMessageBox::critical(w, tr("Error"), tr("Error occured while parsing %1.").arg(QDir::toNativeSeparators(metaFilename)));
@@ -254,7 +254,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importMeta(GeoDataNetcdfReal* netcdf
 }
 
 
-bool GeoDataNetcdfGrayscalePngRealImporter::setCs(PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::setCs(PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto csb = item->iricMainWindow()->coordinateSystemBuilder();
 

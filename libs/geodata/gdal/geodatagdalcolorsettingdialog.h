@@ -1,5 +1,5 @@
-#ifndef GEODATANETCDFCOLORSETTINGDIALOG_H
-#define GEODATANETCDFCOLORSETTINGDIALOG_H
+#ifndef GEODATAGDALCOLORSETTINGDIALOG_H
+#define GEODATAGDALCOLORSETTINGDIALOG_H
 
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
@@ -10,10 +10,10 @@
 
 namespace Ui
 {
-	class GeoDataNetcdfColorSettingDialog;
+	class GeoDataGdalColorSettingDialog;
 }
 
-class GeoDataNetcdfColorSettingDialog : public QDialog
+class GeoDataGdalColorSettingDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -31,8 +31,8 @@ public:
 		EnumContainerT<Mapping> mapping;
 	};
 
-	GeoDataNetcdfColorSettingDialog(QWidget* parent = nullptr);
-	~GeoDataNetcdfColorSettingDialog();
+	GeoDataGdalColorSettingDialog(QWidget* parent = nullptr);
+	~GeoDataGdalColorSettingDialog();
 
 	void setIsReferenceInformation(bool isRef);
 
@@ -40,7 +40,7 @@ public:
 	Setting setting() const;
 
 private:
-	Ui::GeoDataNetcdfColorSettingDialog* ui;
+	Ui::GeoDataGdalColorSettingDialog* ui;
 };
 
-#endif // GEODATANETCDFCOLORSETTINGDIALOG_H
+#endif // GEODATAGDALCOLORSETTINGDIALOG_H

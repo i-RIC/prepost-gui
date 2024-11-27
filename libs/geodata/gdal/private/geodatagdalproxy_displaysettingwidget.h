@@ -1,25 +1,25 @@
-#ifndef GEODATANETCDFPROXY_DISPLAYSETTINGWIDGET_H
-#define GEODATANETCDFPROXY_DISPLAYSETTINGWIDGET_H
+#ifndef GEODATAGDALPROXY_DISPLAYSETTINGWIDGET_H
+#define GEODATAGDALPROXY_DISPLAYSETTINGWIDGET_H
 
-#include "../geodatanetcdf.h"
-#include "../geodatanetcdfproxy.h"
+#include "../geodatagdal.h"
+#include "../geodatagdalproxy.h"
 
 #include <misc/modifycommandwidget.h>
 
 namespace Ui {
-class GeoDataNetcdfProxy_DisplaySettingWidget;
+class GeoDataGdalProxy_DisplaySettingWidget;
 }
 
 class DelegatedColorMapSettingEditWidget;
 
-class GeoDataNetcdfProxy::DisplaySettingWidget : public ModifyCommandWidget
+class GeoDataGdalProxy::DisplaySettingWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
 
 public:
-	explicit DisplaySettingWidget(GeoDataNetcdfProxy* proxy, QWidget *parent);
+	explicit DisplaySettingWidget(GeoDataGdalProxy* proxy, QWidget *parent);
 	~DisplaySettingWidget();
-	GeoDataNetcdf::DisplaySettingWidget* displaySettingWidget() const;
+	GeoDataGdal::DisplaySettingWidget* displaySettingWidget() const;
 
 	QUndoCommand* createModifyCommand(bool apply) override;
 
@@ -28,8 +28,8 @@ public:
 
 private:
 	DelegatedColorMapSettingEditWidget* m_colorMapEditWidget;
-	GeoDataNetcdfProxy* m_proxy;
-	Ui::GeoDataNetcdfProxy_DisplaySettingWidget *ui;
+	GeoDataGdalProxy* m_proxy;
+	Ui::GeoDataGdalProxy_DisplaySettingWidget *ui;
 };
 
-#endif // GEODATANETCDFPROXY_DISPLAYSETTINGWIDGET_H
+#endif // GEODATAGDALPROXY_DISPLAYSETTINGWIDGET_H

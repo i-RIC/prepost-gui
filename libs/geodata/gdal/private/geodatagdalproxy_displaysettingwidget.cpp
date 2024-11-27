@@ -1,8 +1,8 @@
-#include "geodatanetcdf_impl.h"
-#include "geodatanetcdfproxy_displaysetting.h"
-#include "geodatanetcdfproxy_displaysettingwidget.h"
-#include "geodatanetcdfproxy_impl.h"
-#include "ui_geodatanetcdfproxy_displaysettingwidget.h"
+#include "geodatagdal_impl.h"
+#include "geodatagdalproxy_displaysetting.h"
+#include "geodatagdalproxy_displaysettingwidget.h"
+#include "geodatagdalproxy_impl.h"
+#include "ui_geodatagdalproxy_displaysettingwidget.h"
 
 #include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
@@ -13,11 +13,11 @@
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
-GeoDataNetcdfProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataNetcdfProxy* proxy, QWidget *parent) :
+GeoDataGdalProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataGdalProxy* proxy, QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_colorMapEditWidget {nullptr},
 	m_proxy {proxy},
-	ui(new Ui::GeoDataNetcdfProxy_DisplaySettingWidget)
+	ui(new Ui::GeoDataGdalProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
 	ui->usePreCheckBox->hide();
@@ -35,26 +35,26 @@ GeoDataNetcdfProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataNetcdfProx
 	}
 
 	if (proxy->impl->m_displaySetting.usePreSetting) {
-		auto geoData = dynamic_cast<GeoDataNetcdf*> (proxy->geoData());
+		auto geoData = dynamic_cast<GeoDataGdal*> (proxy->geoData());
 		proxy->impl->m_displaySetting.displaySetting = geoData->impl->m_displaySetting;
 	}
 	setSetting(proxy->impl->m_displaySetting);
 	ui->displaySettingWidget->setSetting(&proxy->impl->m_displaySetting.displaySetting);
 }
 
-GeoDataNetcdfProxy::DisplaySettingWidget::~DisplaySettingWidget()
+GeoDataGdalProxy::DisplaySettingWidget::~DisplaySettingWidget()
 {
 	delete ui;
 }
 
-GeoDataNetcdf::DisplaySettingWidget* GeoDataNetcdfProxy::DisplaySettingWidget::displaySettingWidget() const
+GeoDataGdal::DisplaySettingWidget* GeoDataGdalProxy::DisplaySettingWidget::displaySettingWidget() const
 {
 	return ui->displaySettingWidget;
 }
 
-QUndoCommand* GeoDataNetcdfProxy::DisplaySettingWidget::createModifyCommand(bool apply)
+QUndoCommand* GeoDataGdalProxy::DisplaySettingWidget::createModifyCommand(bool apply)
 {
-	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("GeoDataNetcdfProxy::DisplaySettingWidget::Modify"), apply);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("GeoDataGdalProxy::DisplaySettingWidget::Modify"), apply);
 	command->addCommand(new ValueModifyCommmand<DisplaySetting> (iRIC::generateCommandId("UsePre"), true, setting(), &m_proxy->impl->m_displaySetting));
 	command->addCommand(ui->displaySettingWidget->createModifyCommand(apply));
 	if (m_colorMapEditWidget != nullptr) {
@@ -63,7 +63,7 @@ QUndoCommand* GeoDataNetcdfProxy::DisplaySettingWidget::createModifyCommand(bool
 	return command;
 }
 
-GeoDataNetcdfProxy::DisplaySetting GeoDataNetcdfProxy::DisplaySettingWidget::setting() const
+GeoDataGdalProxy::DisplaySetting GeoDataGdalProxy::DisplaySettingWidget::setting() const
 {
 	DisplaySetting setting;
 	setting.usePreSetting = ui->usePreCheckBox->isChecked();
@@ -71,7 +71,7 @@ GeoDataNetcdfProxy::DisplaySetting GeoDataNetcdfProxy::DisplaySettingWidget::set
 	return setting;
 }
 
-void GeoDataNetcdfProxy::DisplaySettingWidget::setSetting(const DisplaySetting& setting)
+void GeoDataGdalProxy::DisplaySettingWidget::setSetting(const DisplaySetting& setting)
 {
 	ui->usePreCheckBox->setChecked(setting.usePreSetting);
 }

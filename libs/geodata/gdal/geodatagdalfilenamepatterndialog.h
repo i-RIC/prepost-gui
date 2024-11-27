@@ -1,21 +1,21 @@
-#ifndef GEODATANETCDFFILENAMEPATTERNDIALOG_H
-#define GEODATANETCDFFILENAMEPATTERNDIALOG_H
+#ifndef GEODATAGDALFILENAMEPATTERNDIALOG_H
+#define GEODATAGDALFILENAMEPATTERNDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class GeoDataNetcdfFileNamePatternDialog;
+class GeoDataGdalFileNamePatternDialog;
 }
 
-class GeoDataNetcdfFileNameMatcher;
+class GeoDataGdalFileNameMatcher;
 
-class GeoDataNetcdfFileNamePatternDialog : public QDialog
+class GeoDataGdalFileNamePatternDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
-	explicit GeoDataNetcdfFileNamePatternDialog(QWidget *parent = nullptr);
-	~GeoDataNetcdfFileNamePatternDialog();
+	explicit GeoDataGdalFileNamePatternDialog(QWidget *parent = nullptr);
+	~GeoDataGdalFileNamePatternDialog();
 
 	void setFilename(const QString& filename);
 	void setPattern(const QString& pattern);
@@ -23,16 +23,16 @@ public:
 	QTimeZone timeZone() const;
 	void setTimeZone(const QTimeZone& timeZone);
 
-	GeoDataNetcdfFileNameMatcher* matcher();
+	GeoDataGdalFileNameMatcher* matcher();
 
 private slots:
 	void updateMatcher();
 
 private:
 	QString m_filename;
-	GeoDataNetcdfFileNameMatcher* m_matcher;
+	GeoDataGdalFileNameMatcher* m_matcher;
 
-	Ui::GeoDataNetcdfFileNamePatternDialog *ui;
+	Ui::GeoDataGdalFileNamePatternDialog *ui;
 };
 
-#endif // GEODATANETCDFFILENAMEPATTERNDIALOG_H
+#endif // GEODATAGDALFILENAMEPATTERNDIALOG_H

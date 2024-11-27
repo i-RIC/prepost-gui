@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFTIMESERIESREALCREATOR_H
-#define GEODATANETCDFTIMESERIESREALCREATOR_H
+#ifndef GEODATAGDALTIMESERIESREALCREATOR_H
+#define GEODATAGDALTIMESERIESREALCREATOR_H
 
-#include "gd_netcdf_global.h"
-#include "geodatanetcdftimeseriescreatort.h"
+#include "gd_gdal_global.h"
+#include "geodatagdaltimeseriescreatort.h"
 
 class vtkDoubleArray;
 
-class GD_NETCDF_EXPORT GeoDataNetcdfTimeSeriesRealCreator : public GeoDataNetcdfTimeSeriesCreatorT<double, vtkDoubleArray>
+class GD_GDAL_EXPORT GeoDataGdalTimeSeriesRealCreator : public GeoDataGdalTimeSeriesCreatorT<double, vtkDoubleArray>
 {
 public:
-	GeoDataNetcdfTimeSeriesRealCreator();
+	GeoDataGdalTimeSeriesRealCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 
-#endif // GEODATANETCDFTIMESERIESREALCREATOR_H
+#endif // GEODATAGDALTIMESERIESREALCREATOR_H

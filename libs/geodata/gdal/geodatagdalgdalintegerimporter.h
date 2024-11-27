@@ -1,18 +1,18 @@
-#ifndef GEODATANETCDFGDALINTEGERIMPORTER_H
-#define GEODATANETCDFGDALINTEGERIMPORTER_H
+#ifndef GEODATAGDALGDALINTEGERIMPORTER_H
+#define GEODATAGDALGDALINTEGERIMPORTER_H
 
-#include "gd_netcdf_global.h"
-#include "geodatanetcdfgdalimporter.h"
+#include "gd_gdal_global.h"
+#include "geodatagdalgdalimporter.h"
 
-class GD_NETCDF_EXPORT GeoDataNetcdfGdalIntegerImporter : public GeoDataNetcdfGdalImporter
+class GD_GDAL_EXPORT GeoDataGdalGdalIntegerImporter : public GeoDataGdalGdalImporter
 {
 public:
-	GeoDataNetcdfGdalIntegerImporter(GeoDataCreator* creator);
-	~GeoDataNetcdfGdalIntegerImporter();
+	GeoDataGdalGdalIntegerImporter(GeoDataCreator* creator);
+	~GeoDataGdalGdalIntegerImporter();
 
 private:
-	int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) override;
-	int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataNetcdf* data) override;
+	int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data) override;
+	int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data) override;
 };
 
-#endif // GEODATANETCDFGDALINTEGERIMPORTER_H
+#endif // GEODATAGDALGDALINTEGERIMPORTER_H

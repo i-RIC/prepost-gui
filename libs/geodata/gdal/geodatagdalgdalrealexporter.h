@@ -1,16 +1,16 @@
-#ifndef GEODATANETCDFGDALREALEXPORTER_H
-#define GEODATANETCDFGDALREALEXPORTER_H
+#ifndef GEODATAGDALGDALREALEXPORTER_H
+#define GEODATAGDALGDALREALEXPORTER_H
 
-#include "geodatanetcdfgdalexporter.h"
+#include "geodatagdalgdalexporter.h"
 
-class GeoDataNetcdfGdalRealExporter : public GeoDataNetcdfGdalExporter
+class GeoDataGdalGdalRealExporter : public GeoDataGdalGdalExporter
 {
 public:
-	GeoDataNetcdfGdalRealExporter(GeoDataCreator* creator);
+	GeoDataGdalGdalRealExporter(GeoDataCreator* creator);
 
 private:
 	GDALDataType gdalDataType() const override;
-	void copyData(GeoDataNetcdf* netcdf, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band) override;
+	void copyData(GeoDataGdal* gdal, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band) override;
 };
 
-#endif // GEODATANETCDFGDALREALEXPORTER_H
+#endif // GEODATAGDALGDALREALEXPORTER_H

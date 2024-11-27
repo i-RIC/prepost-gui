@@ -1,7 +1,7 @@
-#ifndef GEODATANETCDFNODEMAPPERT_DETAIL_H
-#define GEODATANETCDFNODEMAPPERT_DETAIL_H
+#ifndef GEODATAGDALNODEMAPPERT_DETAIL_H
+#define GEODATAGDALNODEMAPPERT_DETAIL_H
 
-#include "../geodatanetcdfnodemappert.h"
+#include "../geodatagdalnodemappert.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/grid/v4grid.h>
@@ -9,24 +9,24 @@
 
 #include <vector>
 
-class GeoDataNetcdfNodeMapperSetting : public GeoDataMapperSettingI
+class GeoDataGdalNodeMapperSetting : public GeoDataMapperSettingI
 {
 public:
 	std::vector<DoubleMappingSetting> settings;
 };
 
 template <class V, class DA>
-GeoDataNetcdfNodeMapperT<V, DA>::GeoDataNetcdfNodeMapperT(GeoDataCreator* parent) :
+GeoDataGdalNodeMapperT<V, DA>::GeoDataGdalNodeMapperT(GeoDataCreator* parent) :
 	GeoDataNodeMapperT<V, DA> ("Raster data node mapper", parent)
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataNetcdfNodeMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataGdalNodeMapperT<V, DA>::initialize(bool* boolMap)
 {
-	GeoDataNetcdfNodeMapperSetting* s = new GeoDataNetcdfNodeMapperSetting();
+	GeoDataGdalNodeMapperSetting* s = new GeoDataGdalNodeMapperSetting();
 	unsigned int count = GeoDataNodeMapperT<V, DA>::container()->dataCount();
-	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
-	vtkStructuredGrid* tmpgrid = netcdf->grid();
+	GeoDataGdalT<V, DA>* gdal = dynamic_cast<GeoDataGdalT<V, DA>* >(GeoDataMapper::geoData());
+	vtkStructuredGrid* tmpgrid = gdal->grid();
 
 	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
@@ -52,14 +52,14 @@ GeoDataMapperSettingI* GeoDataNetcdfNodeMapperT<V, DA>::initialize(bool* boolMap
 }
 
 template <class V, class DA>
-void GeoDataNetcdfNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataGdalNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
-	GeoDataNetcdfNodeMapperSetting* s2 =
-		dynamic_cast<GeoDataNetcdfNodeMapperSetting*>(s);
+	GeoDataGdalNodeMapperSetting* s2 =
+		dynamic_cast<GeoDataGdalNodeMapperSetting*>(s);
 	DA* da = GeoDataNodeMapperT<V, DA>::container()->dataArray();
-	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
-	DA* vals = netcdf->vtkValues();
-	V missingValue = netcdf->missingValue();
+	GeoDataGdalT<V, DA>* gdal = dynamic_cast<GeoDataGdalT<V, DA>* >(GeoDataMapper::geoData());
+	DA* vals = gdal->vtkValues();
+	V missingValue = gdal->missingValue();
 	for (int i = 0; i < s2->settings.size(); ++i) {
 		const DoubleMappingSetting& setting = s2->settings.at(i);
 		if (*(boolMap + setting.target) == false) {
@@ -74,9 +74,9 @@ void GeoDataNetcdfNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* 
 }
 
 template <class V, class DA>
-void GeoDataNetcdfNodeMapperT<V, DA>::terminate(GeoDataMapperSettingI* s)
+void GeoDataGdalNodeMapperT<V, DA>::terminate(GeoDataMapperSettingI* s)
 {
 	delete s;
 }
 
-#endif // GEODATANETCDFNODEMAPPERT_DETAIL_H
+#endif // GEODATAGDALNODEMAPPERT_DETAIL_H

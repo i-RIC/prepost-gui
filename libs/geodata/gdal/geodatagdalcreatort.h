@@ -1,21 +1,21 @@
-#ifndef GEODATANETCDFCREATORT_H
-#define GEODATANETCDFCREATORT_H
+#ifndef GEODATAGDALCREATORT_H
+#define GEODATAGDALCREATORT_H
 
-#include "geodatanetcdfcreator.h"
-#include "geodatanetcdft.h"
-#include "geodatanetcdfimportert.h"
+#include "geodatagdalcreator.h"
+#include "geodatagdalt.h"
+#include "geodatagdalimportert.h"
 
 class SolverDefinitionGridAttribute;
 
 template <class V, class DA>
-class GeoDataNetcdfCreatorT : public GeoDataNetcdfCreator
+class GeoDataGdalCreatorT : public GeoDataGdalCreator
 {
 public:
-	GeoDataNetcdfCreatorT(const QString& typeName);
+	GeoDataGdalCreatorT(const QString& typeName);
 
 	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 };
 
-#include "private/geodatanetcdfcreatort_detail.h"
+#include "private/geodatagdalcreatort_detail.h"
 
-#endif // GEODATANETCDFCREATORT_H
+#endif // GEODATAGDALCREATORT_H

@@ -1,12 +1,12 @@
-#ifndef GEODATANETCDFPROXY_IMPL_H
-#define GEODATANETCDFPROXY_IMPL_H
+#ifndef GEODATAGDALPROXY_IMPL_H
+#define GEODATAGDALPROXY_IMPL_H
 
-#include "../geodatanetcdfproxy.h"
-#include "geodatanetcdfproxy_displaysetting.h"
+#include "../geodatagdalproxy.h"
+#include "geodatagdalproxy_displaysetting.h"
 
 class vtkActor;
 
-class GeoDataNetcdfProxy::Impl
+class GeoDataGdalProxy::Impl
 {
 public:
 	Impl();
@@ -17,4 +17,4 @@ public:
 	DisplaySetting m_displaySetting;
 };
 
-#endif // GEODATANETCDFPROXY_IMPL_H
+#endif // GEODATAGDALPROXY_IMPL_H

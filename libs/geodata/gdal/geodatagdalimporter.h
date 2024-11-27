@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFIMPORTER_H
-#define GEODATANETCDFIMPORTER_H
+#ifndef GEODATAGDALIMPORTER_H
+#define GEODATAGDALIMPORTER_H
 
-#include "gd_netcdf_global.h"
-#include "geodatanetcdf.h"
+#include "gd_gdal_global.h"
+#include "geodatagdal.h"
 #include <guicore/pre/geodata/geodataimporter.h>
 
-class GD_NETCDF_EXPORT GeoDataNetcdfImporter : public GeoDataImporter
+class GD_GDAL_EXPORT GeoDataGdalImporter : public GeoDataImporter
 {
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfImporter(GeoDataCreator* creator);
-	virtual ~GeoDataNetcdfImporter();
+	GeoDataGdalImporter(GeoDataCreator* creator);
+	virtual ~GeoDataGdalImporter();
 
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
@@ -24,13 +24,13 @@ protected:
 	static std::vector<QVariant> convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled);
 
 private:
-	virtual int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataNetcdf* dat) = 0;
+	virtual int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataGdal* dat) = 0;
 
 protected:
 	std::vector<QString> m_dims;
 	QString m_valueVariable;
 
-	GeoDataNetcdf::CoordinateSystemType m_csType;
+	GeoDataGdal::CoordinateSystemType m_csType;
 
 	int m_xDimId;
 	int m_yDimId;
@@ -43,4 +43,4 @@ protected:
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 };
 
-#endif // GEODATANETCDFIMPORTER_H
+#endif // GEODATAGDALIMPORTER_H

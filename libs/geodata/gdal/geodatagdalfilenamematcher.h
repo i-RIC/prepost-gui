@@ -1,15 +1,15 @@
-#ifndef GEODATANETCDFFILENAMEMATCHER_H
-#define GEODATANETCDFFILENAMEMATCHER_H
+#ifndef GEODATAGDALFILENAMEMATCHER_H
+#define GEODATAGDALFILENAMEMATCHER_H
 
 #include <QRegExp>
 #include <QString>
 
 class QDateTime;
 
-class GeoDataNetcdfFileNameMatcher
+class GeoDataGdalFileNameMatcher
 {
 public:
-	GeoDataNetcdfFileNameMatcher(const QString& pattern);
+	GeoDataGdalFileNameMatcher(const QString& pattern);
 	bool setup(const QString& filename);
 
 	QString pattern() const;
@@ -27,4 +27,4 @@ private:
 	int m_ssCapId;
 };
 
-#endif // GEODATANETCDFFILENAMEMATCHER_H
+#endif // GEODATAGDALFILENAMEMATCHER_H

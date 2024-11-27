@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFTIMESERIESCREATORT_DETAIL_H
-#define GEODATANETCDFTIMESERIESCREATORT_DETAIL_H
+#ifndef GEODATAGDALTIMESERIESCREATORT_DETAIL_H
+#define GEODATAGDALTIMESERIESCREATORT_DETAIL_H
 
-#include "../geodatanetcdfcellmappert.h"
-#include "../geodatanetcdftimeseriescreatort.h"
-#include "../geodatanetcdfnodemappert.h"
+#include "../geodatagdalcellmappert.h"
+#include "../geodatagdaltimeseriescreatort.h"
+#include "../geodatagdalnodemappert.h"
 
 template <class V, class DA>
-GeoDataNetcdfTimeSeriesCreatorT<V, DA>::GeoDataNetcdfTimeSeriesCreatorT(const QString& typeName) :
-        GeoDataNetcdfTimeSeriesCreator(typeName)
+GeoDataGdalTimeSeriesCreatorT<V, DA>::GeoDataGdalTimeSeriesCreatorT(const QString& typeName) :
+        GeoDataGdalTimeSeriesCreator(typeName)
 {}
 
 template <class V, class DA>
-bool GeoDataNetcdfTimeSeriesCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
+bool GeoDataGdalTimeSeriesCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	auto cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
 	if (cond == nullptr) {return false;}
@@ -20,4 +20,4 @@ bool GeoDataNetcdfTimeSeriesCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGr
 	return true;
 }
 
-#endif // GEODATANETCDFTIMESERIESCREATORT_DETAIL_H
+#endif // GEODATAGDALTIMESERIESCREATORT_DETAIL_H

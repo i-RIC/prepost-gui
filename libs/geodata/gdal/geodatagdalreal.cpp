@@ -1,17 +1,17 @@
-#include "geodatanetcdfreal.h"
+#include "geodatagdalreal.h"
 
 #include <vtkDoubleArray.h>
 
-GeoDataNetcdfReal::GeoDataNetcdfReal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataNetcdfT<double, vtkDoubleArray> {d, creator, condition}
+GeoDataGdalReal::GeoDataGdalReal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	GeoDataGdalT<double, vtkDoubleArray> {d, creator, condition}
 {}
 
-double GeoDataNetcdfReal::missingValue() const
+double GeoDataGdalReal::missingValue() const
 {
 	return NC_FILL_DOUBLE;
 }
 
-double GeoDataNetcdfReal::thresholdValue() const
+double GeoDataGdalReal::thresholdValue() const
 {
 	double mval = missingValue();
 	return mval * 0.999;

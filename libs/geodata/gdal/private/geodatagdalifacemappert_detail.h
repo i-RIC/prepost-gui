@@ -1,7 +1,7 @@
-#ifndef GEODATANETCDFIFACEMAPPERT_DETAIL_H
-#define GEODATANETCDFIFACEMAPPERT_DETAIL_H
+#ifndef GEODATAGDALIFACEMAPPERT_DETAIL_H
+#define GEODATAGDALIFACEMAPPERT_DETAIL_H
 
-#include "../geodatanetcdfifacemappert.h"
+#include "../geodatagdalifacemappert.h"
 
 #include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guibase/vtktool/vtkpointsutil.h>
@@ -12,24 +12,24 @@
 
 #include <vector>
 
-class GeoDataNetcdfIFaceMapperSetting : public GeoDataMapperSettingI
+class GeoDataGdalIFaceMapperSetting : public GeoDataMapperSettingI
 {
 public:
 	std::vector<DoubleMappingSetting> settings;
 };
 
 template <class V, class DA>
-GeoDataNetcdfIFaceMapperT<V, DA>::GeoDataNetcdfIFaceMapperT(GeoDataCreator* parent) :
+GeoDataGdalIFaceMapperT<V, DA>::GeoDataGdalIFaceMapperT(GeoDataCreator* parent) :
 	GeoDataIFaceMapperT<V, DA> ("Raster data node mapper", parent)
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataNetcdfIFaceMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataGdalIFaceMapperT<V, DA>::initialize(bool* boolMap)
 {
-	GeoDataNetcdfIFaceMapperSetting* s = new GeoDataNetcdfIFaceMapperSetting();
+	GeoDataGdalIFaceMapperSetting* s = new GeoDataGdalIFaceMapperSetting();
 	unsigned int count = GeoDataIFaceMapperT<V, DA>::container()->dataCount();
-	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
-	vtkStructuredGrid* tmpgrid = netcdf->grid();
+	GeoDataGdalT<V, DA>* gdal = dynamic_cast<GeoDataGdalT<V, DA>* >(GeoDataMapper::geoData());
+	vtkStructuredGrid* tmpgrid = gdal->grid();
 
 	vtkPointSet* ifaceGrid = dynamic_cast<v4Structured2dGrid*> (GeoDataMapper::grid()->grid())->vtkIEdgeData()->data();
 	double edgeCenter[3];
@@ -58,14 +58,14 @@ GeoDataMapperSettingI* GeoDataNetcdfIFaceMapperT<V, DA>::initialize(bool* boolMa
 }
 
 template <class V, class DA>
-void GeoDataNetcdfIFaceMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataGdalIFaceMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
-	GeoDataNetcdfIFaceMapperSetting* s2 =
-		dynamic_cast<GeoDataNetcdfIFaceMapperSetting*>(s);
+	GeoDataGdalIFaceMapperSetting* s2 =
+		dynamic_cast<GeoDataGdalIFaceMapperSetting*>(s);
 	DA* da = GeoDataIFaceMapperT<V, DA>::container()->dataArray();
-	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
-	DA* vals = netcdf->vtkValues();
-	V missingValue = netcdf->missingValue();
+	GeoDataGdalT<V, DA>* gdal = dynamic_cast<GeoDataGdalT<V, DA>* >(GeoDataMapper::geoData());
+	DA* vals = gdal->vtkValues();
+	V missingValue = gdal->missingValue();
 	for (int i = 0; i < s2->settings.size(); ++i) {
 		const DoubleMappingSetting& setting = s2->settings.at(i);
 		if (*(boolMap + setting.target) == false) {
@@ -80,9 +80,9 @@ void GeoDataNetcdfIFaceMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI*
 }
 
 template <class V, class DA>
-void GeoDataNetcdfIFaceMapperT<V, DA>::terminate(GeoDataMapperSettingI* s)
+void GeoDataGdalIFaceMapperT<V, DA>::terminate(GeoDataMapperSettingI* s)
 {
 	delete s;
 }
 
-#endif // GEODATANETCDFIFACEMAPPERT_DETAIL_H
+#endif // GEODATAGDALIFACEMAPPERT_DETAIL_H

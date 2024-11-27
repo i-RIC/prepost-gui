@@ -1,37 +1,37 @@
-#include "geodatanetcdfreal.h"
-#include "geodatanetcdfgdalrealexporter.h"
+#include "geodatagdalreal.h"
+#include "geodatagdalgdalrealexporter.h"
 
 #include <gdal.h>
 #include <netcdf.h>
 
 #include <vector>
 
-GeoDataNetcdfGdalRealExporter::GeoDataNetcdfGdalRealExporter(GeoDataCreator* creator) :
-	GeoDataNetcdfGdalExporter {creator}
+GeoDataGdalGdalRealExporter::GeoDataGdalGdalRealExporter(GeoDataCreator* creator) :
+	GeoDataGdalGdalExporter {creator}
 {}
 
-GDALDataType GeoDataNetcdfGdalRealExporter::gdalDataType() const
+GDALDataType GeoDataGdalGdalRealExporter::gdalDataType() const
 {
 	return GDT_Float64;
 }
 
-void GeoDataNetcdfGdalRealExporter::copyData(GeoDataNetcdf* netcdf, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band)
+void GeoDataGdalGdalRealExporter::copyData(GeoDataGdal* gdal, int ncid, int varid, size_t* starts, size_t* ends, GDALRasterBand* band)
 {
 	size_t buffersize = *(ends) * *(ends + 1);
 	std::vector<double> buffer(buffersize);
 	std::vector<double> buffer2(buffersize);
 
-	auto netcdfr = dynamic_cast<GeoDataNetcdfReal*> (netcdf);
+	auto gdalr = dynamic_cast<GeoDataGdalReal*> (gdal);
 
-	band->SetNoDataValue(netcdfr->missingValue());
+	band->SetNoDataValue(gdalr->missingValue());
 
 	int ret = nc_get_vara_double(ncid, varid, starts, ends, buffer.data());
 
-	for (int j = 0; j < netcdf->ySize(); ++j) {
-		for (int i = 0; i < netcdf->xSize(); ++i) {
-			buffer2[(netcdf->ySize() - 1 - j) * netcdf->xSize() + i] = buffer[j * netcdf->xSize() + i];
+	for (int j = 0; j < gdal->ySize(); ++j) {
+		for (int i = 0; i < gdal->xSize(); ++i) {
+			buffer2[(gdal->ySize() - 1 - j) * gdal->xSize() + i] = buffer[j * gdal->xSize() + i];
 		}
 	}
 
-	GDALRasterIO(band, GF_Write, 0, 0, netcdf->xSize(), netcdf->ySize(), buffer2.data(), netcdf->xSize(), netcdf->ySize(), GDT_Float64, 0, 0);
+	GDALRasterIO(band, GF_Write, 0, 0, gdal->xSize(), gdal->ySize(), buffer2.data(), gdal->xSize(), gdal->ySize(), GDT_Float64, 0, 0);
 }

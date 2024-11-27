@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFINTEGER_H
-#define GEODATANETCDFINTEGER_H
+#ifndef GEODATAGDALINTEGER_H
+#define GEODATAGDALINTEGER_H
 
-#include "geodatanetcdft.h"
+#include "geodatagdalt.h"
 
 #include <vtkIntArray.h>
 
-class GeoDataNetcdfInteger : public GeoDataNetcdfT<int, vtkIntArray>
+class GeoDataGdalInteger : public GeoDataGdalT<int, vtkIntArray>
 {
 public:
-	GeoDataNetcdfInteger(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
+	GeoDataGdalInteger(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 
 	int missingValue() const override;
 	double thresholdValue() const override;
 };
 
-#endif // GEODATANETCDFINTEGER_H
+#endif // GEODATAGDALINTEGER_H

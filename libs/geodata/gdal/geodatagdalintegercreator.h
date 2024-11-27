@@ -1,17 +1,17 @@
-#ifndef GEODATANETCDFINTEGERCREATOR_H
-#define GEODATANETCDFINTEGERCREATOR_H
+#ifndef GEODATAGDALINTEGERCREATOR_H
+#define GEODATAGDALINTEGERCREATOR_H
 
-#include "gd_netcdf_global.h"
-#include "geodatanetcdfcreatort.h"
+#include "gd_gdal_global.h"
+#include "geodatagdalcreatort.h"
 
 class vtkIntArray;
 
-class GD_NETCDF_EXPORT GeoDataNetcdfIntegerCreator : public GeoDataNetcdfCreatorT<int, vtkIntArray>
+class GD_GDAL_EXPORT GeoDataGdalIntegerCreator : public GeoDataGdalCreatorT<int, vtkIntArray>
 {
 public:
-	GeoDataNetcdfIntegerCreator();
+	GeoDataGdalIntegerCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 
-#endif // GEODATANETCDFINTEGERCREATOR_H
+#endif // GEODATAGDALINTEGERCREATOR_H

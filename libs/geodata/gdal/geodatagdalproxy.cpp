@@ -1,8 +1,8 @@
-#include "geodatanetcdf.h"
-#include "geodatanetcdfproxy.h"
-#include "private/geodatanetcdf_impl.h"
-#include "private/geodatanetcdfproxy_impl.h"
-#include "private/geodatanetcdfproxy_displaysettingwidget.h"
+#include "geodatagdal.h"
+#include "geodatagdalproxy.h"
+#include "private/geodatagdal_impl.h"
+#include "private/geodatagdalproxy_impl.h"
+#include "private/geodatagdalproxy_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -13,14 +13,14 @@
 #include <vtkGeometryFilter.h>
 #include <vtkUnstructuredGrid.h>
 
-GeoDataNetcdfProxy::GeoDataNetcdfProxy(GeoDataNetcdf* geodata) :
+GeoDataGdalProxy::GeoDataGdalProxy(GeoDataGdal* geodata) :
 	GeoDataProxy(geodata),
 	impl {new Impl {}}
 {
 	impl->m_displaySetting.displaySetting = geodata->impl->m_displaySetting;
 }
 
-GeoDataNetcdfProxy::~GeoDataNetcdfProxy()
+GeoDataGdalProxy::~GeoDataGdalProxy()
 {
 	auto r = renderer();
 	r->RemoveActor(impl->m_actor);
@@ -28,7 +28,7 @@ GeoDataNetcdfProxy::~GeoDataNetcdfProxy()
 	delete impl;
 }
 
-void GeoDataNetcdfProxy::setupActors()
+void GeoDataGdalProxy::setupActors()
 {
 	auto r = renderer();
 	auto col = actorCollection();
@@ -39,17 +39,17 @@ void GeoDataNetcdfProxy::setupActors()
 	updateActorSetting();
 }
 
-void GeoDataNetcdfProxy::updateZDepthRangeItemCount(ZDepthRange& range)
+void GeoDataGdalProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 {
 	range.setItemCount(1);
 }
 
-void GeoDataNetcdfProxy::showPropertyDialog()
+void GeoDataGdalProxy::showPropertyDialog()
 {
 	showPropertyDialogModeless();
 }
 
-QDialog* GeoDataNetcdfProxy::propertyDialog(QWidget* parent)
+QDialog* GeoDataGdalProxy::propertyDialog(QWidget* parent)
 {
 	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoData()->gridAttribute()->name(), parent);
 	auto widget = new DisplaySettingWidget(this, dialog);
@@ -60,12 +60,12 @@ QDialog* GeoDataNetcdfProxy::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-void GeoDataNetcdfProxy::updateActorSetting()
+void GeoDataGdalProxy::updateActorSetting()
 {
-	auto netcdf = dynamic_cast<GeoDataNetcdf*> (geoData());
+	auto gdal = dynamic_cast<GeoDataGdal*> (geoData());
 	auto ds = impl->m_displaySetting.displaySetting;
 	if (impl->m_displaySetting.usePreSetting) {
-		ds = netcdf->impl->m_displaySetting;
+		ds = gdal->impl->m_displaySetting;
 	}
 
 	// color
@@ -76,11 +76,11 @@ void GeoDataNetcdfProxy::updateActorSetting()
 
 	// mapping
 	auto cm = colorMapSettingContainer();
-	if (ds.mapping == GeoDataNetcdf::DisplaySetting::Mapping::Value && (cm != nullptr)) {
+	if (ds.mapping == GeoDataGdal::DisplaySetting::Mapping::Value && (cm != nullptr)) {
 		vtkMapper* mapper = nullptr;
 
-		netcdf->m_threshold->Update();
-		mapper = cm->buildCellDataMapper(netcdf->m_threshold->GetOutput(), false);
+		gdal->m_threshold->Update();
+		mapper = cm->buildCellDataMapper(gdal->m_threshold->GetOutput(), false);
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 
@@ -89,7 +89,7 @@ void GeoDataNetcdfProxy::updateActorSetting()
 
 		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		auto geometry = vtkSmartPointer<vtkGeometryFilter>::New();
-		geometry->SetInputConnection(netcdf->m_threshold->GetOutputPort());
+		geometry->SetInputConnection(gdal->m_threshold->GetOutputPort());
 		mapper->SetInputConnection(geometry->GetOutputPort());
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
@@ -97,19 +97,19 @@ void GeoDataNetcdfProxy::updateActorSetting()
 	updateVisibilityWithoutRendering();
 }
 
-void GeoDataNetcdfProxy::assignActorZValues(const ZDepthRange& range)
+void GeoDataGdalProxy::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_actor->SetPosition(0, 0, range.min());
 }
 
-void GeoDataNetcdfProxy::doLoadFromProjectMainFile(const QDomNode& node)
+void GeoDataGdalProxy::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_displaySetting.load(node);
 
 	updateActorSetting();
 }
 
-void GeoDataNetcdfProxy::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void GeoDataGdalProxy::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	impl->m_displaySetting.save(writer);
 }

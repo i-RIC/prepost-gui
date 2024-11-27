@@ -1,19 +1,19 @@
-#ifndef GEODATANETCDFT_H
-#define GEODATANETCDFT_H
+#ifndef GEODATAGDALT_H
+#define GEODATAGDALT_H
 
-#include "geodatanetcdf.h"
+#include "geodatagdal.h"
 
 #include <vtkSmartPointer.h>
 
 #include <vector>
 
 template <class V, class DA>
-class GeoDataNetcdfT : public GeoDataNetcdf
+class GeoDataGdalT : public GeoDataGdal
 {
 
 public:
-	GeoDataNetcdfT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
-	virtual ~GeoDataNetcdfT();
+	GeoDataGdalT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
+	virtual ~GeoDataGdalT();
 
 	DA* vtkValues() const;
 
@@ -33,6 +33,6 @@ private:
 	void loadRasterData(int index) override;
 };
 
-#include "private/geodatanetcdft_detail.h"
+#include "private/geodatagdalt_detail.h"
 
-#endif // GEODATANETCDFT_H
+#endif // GEODATAGDALT_H

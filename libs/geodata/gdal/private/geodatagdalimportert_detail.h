@@ -1,21 +1,21 @@
-#ifndef GEODATANETCDFIMPORTERT_DETAIL_H
-#define GEODATANETCDFIMPORTERT_DETAIL_H
+#ifndef GEODATAGDALIMPORTERT_DETAIL_H
+#define GEODATAGDALIMPORTERT_DETAIL_H
 
-#include "../geodatanetcdfimportert.h"
+#include "../geodatagdalimportert.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 
 template <class V, class DA>
-GeoDataNetcdfImporterT<V, DA>::GeoDataNetcdfImporterT(GeoDataCreator* creator) :
-	GeoDataNetcdfImporter {creator}
+GeoDataGdalImporterT<V, DA>::GeoDataGdalImporterT(GeoDataCreator* creator) :
+	GeoDataGdalImporter {creator}
 {}
 
 template <class V, class DA>
-GeoDataNetcdfImporterT<V, DA>::~GeoDataNetcdfImporterT()
+GeoDataGdalImporterT<V, DA>::~GeoDataGdalImporterT()
 {}
 
 template <class V, class DA>
-int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataNetcdf* dat)
+int GeoDataGdalImporterT<V, DA>::importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataGdal* dat)
 {
 	std::vector<size_t> start_in(dimIds.size() + 2);
 	std::vector<size_t> start_out(dimIds.size() + 2);
@@ -53,10 +53,10 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int v
 		int idx = origDimIdList.indexOf(dimid);
 		dimMap[i] = idx;
 	}
-	if (m_csType == GeoDataNetcdf::XY) {
+	if (m_csType == GeoDataGdal::XY) {
 		xIdx = origDimIdList.indexOf(xDimId);
 		yIdx = origDimIdList.indexOf(yDimId);
-	} else if (m_csType == GeoDataNetcdf::LonLat) {
+	} else if (m_csType == GeoDataGdal::LonLat) {
 		xIdx = origDimIdList.indexOf(lonDimId);
 		yIdx = origDimIdList.indexOf(latDimId);
 	}
@@ -67,13 +67,13 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int v
 		len_out[dimIds.size() - 1 - i] = 1;
 	}
 	size_t bufferSize = 0;
-	if (m_csType == GeoDataNetcdf::XY) {
+	if (m_csType == GeoDataGdal::XY) {
 		len_in[yIdx] = dat->yValues().size();
 		len_in[xIdx] = dat->xValues().size();
 		len_out[dimIds.size()] = dat->yValues().size();
 		len_out[dimIds.size() + 1] = dat->xValues().size();
 		bufferSize = dat->xValues().size() * dat->yValues().size();
-	} else if (m_csType == GeoDataNetcdf::LonLat) {
+	} else if (m_csType == GeoDataGdal::LonLat) {
 		len_in[yIdx] = dat->latValues().size();
 		len_in[xIdx] = dat->lonValues().size();
 		len_out[dimIds.size()] = dat->latValues().size();
@@ -95,14 +95,14 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int icid_out, int v
 }
 
 template <class V, class DA>
-int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid_out, int loopid, int* dimMap, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V scale, V offset, GeoDataNetcdf* ncdf)
+int GeoDataGdalImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid_out, int loopid, int* dimMap, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V scale, V offset, GeoDataGdal* ncdf)
 {
-	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(ncdf);
+	GeoDataGdalT<V, DA>* gdal = dynamic_cast<GeoDataGdalT<V, DA>* >(ncdf);
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
 	if (dims->containers().size() == 0) {
 		*(start_in) = 0;
 		*(start_out) = 0;
-		return importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, netcdf->missingValue(), scale, offset);
+		return importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, gdal->missingValue(), scale, offset);
 	} else {
 		GridAttributeDimensionContainer* c = dims->containers().at(loopid);
 		int ret;
@@ -110,7 +110,7 @@ int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid
 			if (loopid == dims->containers().size() - 1) {
 				*(start_in + *(dimMap + loopid)) = i;
 				*(start_out + dims->containers().size() - 1 - loopid) = i;
-				ret = importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, netcdf->missingValue(), scale, offset);
+				ret = importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, gdal->missingValue(), scale, offset);
 				if (ret != NC_NOERR) { return ret; }
 			} else {
 				// recursive call
@@ -123,7 +123,7 @@ int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid
 }
 
 template <class V, class DA>
-int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int ncid_out, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V newMissingValue, V scale, V offset)
+int GeoDataGdalImporterT<V, DA>::importValues(int ncid_in, int ncid_out, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V newMissingValue, V scale, V offset)
 {
 	int ret = ncGetVarConvert(ncid_in, varIdIn, start_in, len_in, buffer);
 	if (ret != NC_NOERR) { return ret; }
@@ -139,4 +139,4 @@ int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int ncid_out, int v
 	return NC_NOERR;
 }
 
-#endif // GEODATANETCDFIMPORTERT_DETAIL_H
+#endif // GEODATAGDALIMPORTERT_DETAIL_H

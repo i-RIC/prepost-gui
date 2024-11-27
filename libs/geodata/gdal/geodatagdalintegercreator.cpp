@@ -1,33 +1,33 @@
-#include "geodatanetcdfgdalintegerexporter.h"
-#include "geodatanetcdfgdalintegerimporter.h"
-#include "geodatanetcdfifacemappert.h"
-#include "geodatanetcdfinteger.h"
-#include "geodatanetcdfintegercreator.h"
-#include "geodatanetcdfintegerimporter.h"
-#include "geodatanetcdfjfacemappert.h"
-#include "geodatanetcdfncexporter.h"
+#include "geodatagdalgdalintegerexporter.h"
+#include "geodatagdalgdalintegerimporter.h"
+#include "geodatagdalifacemappert.h"
+#include "geodatagdalinteger.h"
+#include "geodatagdalintegercreator.h"
+#include "geodatagdalintegerimporter.h"
+#include "geodatagdaljfacemappert.h"
+#include "geodatagdalncexporter.h"
 
-GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
-	GeoDataNetcdfCreatorT<int, vtkIntArray> {"integerNetcdf"}
+GeoDataGdalIntegerCreator::GeoDataGdalIntegerCreator() :
+	GeoDataGdalCreatorT<int, vtkIntArray> {"integerGdal"}
 {
-	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
-	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
+	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalIntegerImporter(this));
 
-	exporters().push_back(new GeoDataNetcdfGdalIntegerExporter(this));
-	exporters().push_back(new GeoDataNetcdfNcExporter(this));
+	exporters().push_back(new GeoDataGdalGdalIntegerExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }
 
-GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+GeoData* GeoDataGdalIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	auto data = new GeoDataNetcdfInteger(parent, this, condition);
+	auto data = new GeoDataGdalInteger(parent, this, condition);
 	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
-		data->setMapper(new GeoDataNetcdfNodeMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalNodeMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
-		data->setMapper(new GeoDataNetcdfCellMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalCellMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
-		data->setMapper(new GeoDataNetcdfIFaceMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalIFaceMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
-		data->setMapper(new GeoDataNetcdfJFaceMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataGdalJFaceMapperT<int, vtkIntArray>(this));
 	}
 	return data;
 }

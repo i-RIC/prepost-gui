@@ -1,32 +1,32 @@
-#include "geodatanetcdfgdalrealexporter.h"
-#include "geodatanetcdfgdalrealimporter.h"
-#include "geodatanetcdfncexporter.h"
-#include "geodatanetcdfgrayscalepngrealexporter.h"
-#include "geodatanetcdfgrayscalepngrealimporter.h"
-#include "geodatanetcdfreal.h"
-#include "geodatanetcdfrealimporter.h"
-#include "geodatanetcdftimeseriesrealcreator.h"
-#include "geodatanetcdfxbandimporter.h"
+#include "geodatagdalgdalrealexporter.h"
+#include "geodatagdalgdalrealimporter.h"
+#include "geodatagdalncexporter.h"
+#include "geodatagdalgrayscalepngrealexporter.h"
+#include "geodatagdalgrayscalepngrealimporter.h"
+#include "geodatagdalreal.h"
+#include "geodatagdalrealimporter.h"
+#include "geodatagdaltimeseriesrealcreator.h"
+#include "geodatagdalxbandimporter.h"
 
 #include <vtkDoubleArray.h>
 
-GeoDataNetcdfTimeSeriesRealCreator::GeoDataNetcdfTimeSeriesRealCreator() :
-	GeoDataNetcdfTimeSeriesCreatorT<double, vtkDoubleArray> {"timeSeriesRealNetcdf"}
+GeoDataGdalTimeSeriesRealCreator::GeoDataGdalTimeSeriesRealCreator() :
+	GeoDataGdalTimeSeriesCreatorT<double, vtkDoubleArray> {"timeSeriesRealGdal"}
 {
-	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
-	importers().push_back(new GeoDataNetcdfRealImporter(this));
-	importers().push_back(new GeoDataNetcdfXbandImporter(this));
+	importers().push_back(new GeoDataGdalGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalXbandImporter(this));
 
-	exporters().push_back(new GeoDataNetcdfNcExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }
 
-GeoData* GeoDataNetcdfTimeSeriesRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+GeoData* GeoDataGdalTimeSeriesRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	auto data = new GeoDataNetcdfReal(parent, this, condition);
+	auto data = new GeoDataGdalReal(parent, this, condition);
 	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
-		data->setMapper(new GeoDataNetcdfNodeMapperT<double, vtkDoubleArray>(this));
+		data->setMapper(new GeoDataGdalNodeMapperT<double, vtkDoubleArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
-		data->setMapper(new GeoDataNetcdfCellMapperT<double, vtkDoubleArray>(this));
+		data->setMapper(new GeoDataGdalCellMapperT<double, vtkDoubleArray>(this));
 	}
 	return data;
 }
