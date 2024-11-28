@@ -104,32 +104,12 @@ GeoDataGdal::~GeoDataGdal()
 	delete impl;
 }
 
-const std::vector<double> GeoDataGdal::lonValues() const
-{
-	return impl->m_lonValues;
-}
-
-const std::vector<double> GeoDataGdal::latValues() const
-{
-	return impl->m_latValues;
-}
-
-std::vector<double> GeoDataGdal::lonValues()
-{
-	return impl->m_lonValues;
-}
-
-std::vector<double> GeoDataGdal::latValues()
-{
-	return impl->m_latValues;
-}
-
-const std::vector<double> GeoDataGdal::xValues() const
+const std::vector<double>& GeoDataGdal::xValues() const
 {
 	return impl->m_xValues;
 }
 
-const std::vector<double> GeoDataGdal::yValues() const
+const std::vector<double>& GeoDataGdal::yValues() const
 {
 	return impl->m_yValues;
 }
@@ -142,16 +122,6 @@ std::vector<double> GeoDataGdal::xValues()
 std::vector<double> GeoDataGdal::yValues()
 {
 	return impl->m_yValues;
-}
-
-GeoDataGdal::CoordinateSystemType GeoDataGdal::coordinateSystemType() const
-{
-	return impl->m_coordinateSystemType;
-}
-
-QString GeoDataGdal::coordinateSystemName() const
-{
-	return impl->m_coordinateSystemName;
 }
 
 bool GeoDataGdal::geoTransformExists() const
@@ -263,89 +233,20 @@ void GeoDataGdal::loadExternalData(const QString& filename)
 	ret = nc_inq_varid(ncid, Y, &yVarId);
 	xyexist = xyexist && (ret == NC_NOERR);
 
-	if (xyexist) {
-		// the coordinate system type is XY.
-		impl->m_coordinateSystemType = XY;
+	// load X, Y values
+	int xDimId, yDimId;
+	ret = nc_inq_dimid(ncid, X, &xDimId);
+	ret = nc_inq_dimid(ncid, Y, &yDimId);
 
-		// load X, Y values
-		int xDimId, yDimId;
-		ret = nc_inq_dimid(ncid, X, &xDimId);
-		ret = nc_inq_dimid(ncid, Y, &yDimId);
+	size_t xSize, ySize, xySize;
+	ret = nc_inq_dimlen(ncid, xDimId, &xSize);
+	ret = nc_inq_dimlen(ncid, yDimId, &ySize);
 
-		size_t xSize, ySize, xySize;
-		ret = nc_inq_dimlen(ncid, xDimId, &xSize);
-		ret = nc_inq_dimlen(ncid, yDimId, &ySize);
+	impl->m_xValues.assign(xSize, 0);
+	impl->m_yValues.assign(ySize, 0);
 
-		std::vector<double> xs(xSize);
-		std::vector<double> ys(ySize);
-
-		ret = nc_get_var_double(ncid, xVarId, xs.data());
-		ret = nc_get_var_double(ncid, yVarId, ys.data());
-
-		impl->m_xValues.clear();
-		impl->m_xValues.reserve(static_cast<int>(xSize));
-		for (size_t i = 0; i < xSize; ++i) {
-			impl->m_xValues.push_back(xs[i]);
-		}
-		impl->m_yValues.clear();
-		impl->m_yValues.reserve(static_cast<int>(ySize));
-		for (size_t i = 0; i < ySize; ++i) {
-			impl->m_yValues.push_back(ys[i]);
-		}
-
-		// load Lon Lat Values
-		ret = nc_inq_varid(ncid, LAT, &latVarId);
-		ret = nc_inq_varid(ncid, LON, &lonVarId);
-		xySize = xSize * ySize;
-
-		std::vector<double> lons(xySize);
-		std::vector<double> lats(xySize);
-
-		ret = nc_get_var_double(ncid, lonVarId, lons.data());
-		ret = nc_get_var_double(ncid, latVarId, lats.data());
-
-		impl->m_lonValues.clear();
-		impl->m_lonValues.reserve(static_cast<int>(xySize));
-		for (size_t i = 0; i < xySize; ++i) {
-			impl->m_lonValues.push_back(lons[i]);
-		}
-		impl->m_latValues.clear();
-		impl->m_latValues.reserve(static_cast<int>(xySize));
-		for (size_t i = 0; i < xySize; ++i) {
-			impl->m_latValues.push_back(lats[i]);
-		}
-	} else {
-		// the coordinate system type is LonLat.
-		impl->m_coordinateSystemType = LonLat;
-		ret = nc_inq_varid(ncid, LAT, &latVarId);
-		ret = nc_inq_varid(ncid, LON, &lonVarId);
-
-		// load lon, lat values
-		int lonDimId, latDimId;
-		ret = nc_inq_dimid(ncid, LAT, &latDimId);
-		ret = nc_inq_dimid(ncid, LON, &lonDimId);
-
-		size_t lonSize, latSize;
-		ret = nc_inq_dimlen(ncid, latDimId, &latSize);
-		ret = nc_inq_dimlen(ncid, lonDimId, &lonSize);
-
-		std::vector<double> lons(lonSize);
-		std::vector<double> lats(latSize);
-
-		ret = nc_get_var_double(ncid, lonVarId, lons.data());
-		ret = nc_get_var_double(ncid, latVarId, lats.data());
-
-		impl->m_lonValues.clear();
-		impl->m_lonValues.reserve(static_cast<int>(lonSize));
-		for (size_t i = 0; i < lonSize; ++i) {
-			impl->m_lonValues.push_back(lons[i]);
-		}
-		impl->m_latValues.clear();
-		impl->m_latValues.reserve(static_cast<int>(latSize));
-		for (size_t i = 0; i < latSize; ++i) {
-			impl->m_latValues.push_back(lats[i]);
-		}
-	}
+	ret = nc_get_var_double(ncid, xVarId, impl->m_xValues.data());
+	ret = nc_get_var_double(ncid, yVarId, impl->m_yValues.data());
 
 	// ------------------------
 	// Load dimension values
@@ -417,7 +318,6 @@ void GeoDataGdal::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 	impl->m_displaySetting.load(node);
-	impl->m_coordinateSystemName = node.toElement().attribute("cs");
 	loadGeoTransform(node);
 	loadBaseAndResolution(node);
 }
@@ -426,7 +326,6 @@ void GeoDataGdal::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
 	impl->m_displaySetting.save(writer);
-	writer.writeAttribute("cs", impl->m_coordinateSystemName);
 	saveGeoTransform(writer);
 	saveBaseAndResolution(writer);
 }
@@ -463,168 +362,24 @@ void GeoDataGdal::doApplyOffset(double x, double y)
 void GeoDataGdal::updateShapeData()
 {
 	auto offset = projectData()->mainfile()->offset();
-	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
 
 	vtkPoints* points = m_grid->GetPoints();
-	if (impl->m_coordinateSystemType == XY) {
-		m_grid->SetDimensions(static_cast<int> (impl->m_xValues.size()) + 1, static_cast<int> (impl->m_yValues.size()) + 1, 1);
-		points->Initialize();
-		points->Allocate((impl->m_xValues.size() + 1) * (impl->m_yValues.size() + 1));
-		std::vector<double> longitudes, latitudes;
-		longitudes.assign((impl->m_xValues.size() + 1) * (impl->m_yValues.size() + 1), 0);
-		latitudes.assign((impl->m_xValues.size() + 1) * (impl->m_yValues.size() + 1), 0);
+	m_grid->SetDimensions(static_cast<int> (impl->m_xValues.size()) + 1, static_cast<int> (impl->m_yValues.size()) + 1, 1);
+	points->Initialize();
+	points->Allocate((impl->m_xValues.size() + 1) * (impl->m_yValues.size() + 1));
 
-		int xsize = static_cast<int> (impl->m_xValues.size());
-		int ysize = static_cast<int> (impl->m_yValues.size());
+	double dx = impl->m_xValues.at(1) - impl->m_xValues.at(0);
+	double dy = impl->m_xValues.at(1) - impl->m_xValues.at(0);
+	double x0 = impl->m_xValues.at(0) - dx * 0.5;
+	double y0 = impl->m_yValues.at(0) - dy * 0.5;
 
-		// middle points
-		for (int j = 1; j < ysize; ++j) {
-			for (int i = 1; i < xsize; ++i) {
-				double longitude = 0;
-				double latitude = 0;
-
-				for (int jj = 0; jj <= 1; ++jj) {
-					for (int ii = 0; ii <= 1; ++ii) {
-						longitude += impl->m_lonValues[calcIndex(i + ii - 1, j + jj - 1, xsize)];
-						latitude  += impl->m_latValues[calcIndex(i + ii - 1, j + jj - 1, xsize)];
-					}
-				}
-
-				longitude /= 4;
-				latitude  /= 4;
-
-				longitudes[calcIndex(i, j, xsize + 1)] = longitude;
-				latitudes[calcIndex(i, j, xsize + 1)] = latitude;
-			}
-		}
-		// i = 0
-		for (int j = 1; j < impl->m_yValues.size(); ++j) {
-			double longitude = longitudes[calcIndex(1, j, xsize + 1)] * 2;
-			double latitude = latitudes[calcIndex(1, j, xsize + 1)] * 2;
-			longitude -= longitudes[calcIndex(2, j, xsize + 1)];
-			latitude -= latitudes[calcIndex(2, j, xsize + 1)];
-			longitudes[calcIndex(0, j, xsize + 1)] = longitude;
-			latitudes[calcIndex(0, j, xsize + 1)] = latitude;
-		}
-
-		// i = impl->m_xValues.size()
-		for (int j = 1; j < impl->m_yValues.size(); ++j) {
-			double longitude = longitudes[calcIndex(xsize - 1, j, xsize + 1)] * 2;
-			double latitude = latitudes[calcIndex(xsize - 1, j, xsize + 1)] * 2;
-			longitude -= longitudes[calcIndex(xsize - 2, j, xsize + 1)];
-			latitude -= latitudes[calcIndex(xsize - 2, j, xsize + 1)];
-			longitudes[calcIndex(xsize, j, xsize + 1)] = longitude;
-			latitudes[calcIndex(xsize, j, xsize + 1)] = latitude;
-		}
-
-		// j = 0
-		for (int i = 1; i < impl->m_xValues.size(); ++i) {
-			double longitude = longitudes[calcIndex(i, 1, xsize + 1)] * 2;
-			double latitude = latitudes[calcIndex(i, 1, xsize + 1)] * 2;
-			longitude -= longitudes[calcIndex(i, 2, xsize + 1)];
-			latitude -= latitudes[calcIndex(i, 2, xsize + 1)];
-			longitudes[calcIndex(i, 0, xsize + 1)] = longitude;
-			latitudes[calcIndex(i, 0, xsize + 1)] = latitude;
-		}
-
-		// j = impl->m_yValues.size()
-		for (int i = 1; i < impl->m_xValues.size(); ++i) {
-			double longitude = longitudes[calcIndex(i, ysize - 1, xsize + 1)] * 2;
-			double latitude = latitudes[calcIndex(i, ysize - 1, xsize + 1)] * 2;
-			longitude -= longitudes[calcIndex(i, ysize - 2, xsize + 1)];
-			latitude  -= latitudes[calcIndex(i, ysize - 2, xsize + 1)];
-			longitudes[calcIndex(i, ysize, xsize + 1)] = longitude;
-			latitudes[calcIndex(i, ysize, xsize + 1)] = latitude;
-		}
-
-		// bottom-left
-		double longitude = longitudes[calcIndex(1, 1, xsize + 1)] * 2;
-		double latitude  = latitudes[calcIndex(1, 1, xsize + 1)] * 2;
-		longitude -= longitudes[calcIndex(2, 2, xsize + 1)];
-		latitude  -= latitudes[calcIndex(2, 2, xsize + 1)];
-		longitudes[calcIndex(0, 0, xsize + 1)] = longitude;
-		latitudes[calcIndex(0, 0, xsize + 1)] = latitude;
-
-		// bottom-right
-		longitude = longitudes[calcIndex(xsize - 1, 1, xsize + 1)] * 2;
-		latitude  = latitudes[calcIndex(xsize - 1, 1, xsize + 1)] * 2;
-		longitude -= longitudes[calcIndex(xsize - 2, 2, xsize + 1)];
-		latitude  -= latitudes[calcIndex(xsize - 2, 2, xsize + 1)];
-		longitudes[calcIndex(xsize, 0, xsize + 1)] = longitude;
-		latitudes[calcIndex(xsize, 0, xsize + 1)] = latitude;
-
-		// top-left
-		longitude = longitudes[calcIndex(1, ysize - 1, xsize + 1)] * 2;
-		latitude  = latitudes[calcIndex(1, ysize - 1, xsize + 1)] * 2;
-		longitude -= longitudes[calcIndex(2, ysize - 2, xsize + 1)];
-		latitude  -= latitudes[calcIndex(2, ysize - 2, xsize + 1)];
-		longitudes[calcIndex(0, ysize, xsize + 1)] = longitude;
-		latitudes[calcIndex(0, ysize, xsize + 1)] = latitude;
-
-		// top-right
-		longitude = longitudes[calcIndex(xsize - 1, ysize - 1, xsize + 1)] * 2;
-		latitude  = latitudes[calcIndex(xsize - 1, ysize - 1, xsize + 1)] * 2;
-		longitude -= longitudes[calcIndex(xsize - 2, ysize - 2, xsize + 1)];
-		latitude  -= latitudes[calcIndex(xsize - 2, ysize - 2, xsize + 1)];
-		longitudes[calcIndex(xsize, ysize, xsize + 1)] = longitude;
-		latitudes[calcIndex(xsize, ysize, xsize + 1)] = latitude;
-		bool isLonLat = cs->isLongLat();
-
-		for (int j = 0; j < impl->m_yValues.size() + 1; ++j) {
-			for (int i = 0; i < impl->m_xValues.size() + 1; ++i) {
-				double longitude = longitudes[calcIndex(i, j, xsize + 1)];
-				double latitude  = latitudes[calcIndex(i, j, xsize + 1)];
-				double x, y;
-				if (isLonLat) {
-					x = longitude;
-					y = latitude;
-				} else {
-					cs->mapGeoToGrid(longitude, latitude, &x, &y);
-				}
-				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
-			}
-		}
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		m_grid->SetDimensions(static_cast<int> (impl->m_lonValues.size()) + 1, static_cast<int> (impl->m_latValues.size()) + 1, 1);
-		points->Initialize();
-		points->Allocate((impl->m_lonValues.size() + 1) * (impl->m_latValues.size() + 1));
-		bool isLonLat = cs->isLongLat();
-
-		for (int j = 0; j < impl->m_latValues.size() + 1; ++j) {
-			double latitude;
-			if (j == 0) {
-				double cellsize = impl->m_latValues.at(1) - impl->m_latValues.at(0);
-				latitude = impl->m_latValues.at(0) - cellsize * 0.5;
-			} else if (j == impl->m_latValues.size()) {
-				double cellsize = impl->m_latValues.at(impl->m_latValues.size() - 1) - impl->m_latValues.at(impl->m_latValues.size() - 2);
-				latitude = impl->m_latValues.at(impl->m_latValues.size() - 1) + cellsize * 0.5;
-			} else {
-				latitude = (impl->m_latValues.at(j - 1) + impl->m_latValues.at(j)) * 0.5;
-			}
-			for (int i = 0; i < impl->m_lonValues.size() + 1; ++i) {
-				double longitude;
-				if (i == 0) {
-					double cellsize = impl->m_lonValues.at(1) - impl->m_lonValues.at(0);
-					longitude = impl->m_lonValues.at(0) - cellsize * 0.5;
-				} else if (i == impl->m_lonValues.size()) {
-					double cellsize = impl->m_lonValues.at(impl->m_lonValues.size() - 1) - impl->m_lonValues.at(impl->m_lonValues.size() - 2);
-					longitude = impl->m_lonValues.at(impl->m_lonValues.size() - 1) + cellsize * 0.5;
-				} else {
-					longitude = (impl->m_lonValues.at(i - 1) + impl->m_lonValues.at(i)) * 0.5;
-				}
-				double x, y;
-				if (isLonLat) {
-					x = longitude;
-					y = latitude;
-				} else {
-					cs->mapGeoToGrid(longitude, latitude, &x, &y);
-				}
-
-				points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
-			}
+	for (int j = 0; j < static_cast<int> (impl->m_yValues.size()) + 1; ++j) {
+		double y = y0 + dy * j;
+		for (int i = 0; i < static_cast<int> (impl->m_xValues.size()) + 1; ++i) {
+			double x = x0 + dx * i;
+			points->InsertNextPoint(x - offset.x(), y - offset.y(), 0);
 		}
 	}
-
 	points->Modified();
 
 	vtkDataArray* da = m_grid->GetCellData()->GetArray("values");
@@ -659,96 +414,43 @@ nc_type GeoDataGdal::getNcType(SolverDefinitionGridAttributeDimension* dim)
 	return NC_NAT;
 }
 
-int GeoDataGdal::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId)
+int GeoDataGdal::defineCoords(int ncid, int* xDimId, int* yDimId, int* xVarId, int* yVarId)
 {
 	int ret;
 	QString tmp;
 
-	if (impl->m_coordinateSystemType == XY) {
-		// define x, y dimensions
-		ret = nc_def_dim(ncid, X, static_cast<size_t>(impl->m_xValues.size()), xDimId);
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_def_dim(ncid, Y, static_cast<size_t>(impl->m_yValues.size()), yDimId);
-		if (ret != NC_NOERR) {return ret;}
+	// define x, y dimensions
+	ret = nc_def_dim(ncid, X, static_cast<size_t>(impl->m_xValues.size()), xDimId);
+	if (ret != NC_NOERR) {return ret;}
+	ret = nc_def_dim(ncid, Y, static_cast<size_t>(impl->m_yValues.size()), yDimId);
+	if (ret != NC_NOERR) {return ret;}
 
-		// define x, y variables
-		ret = nc_def_var(ncid, X, NC_DOUBLE, 1, xDimId, xVarId);
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_def_var(ncid, Y, NC_DOUBLE, 1, yDimId, yVarId);
-		if (ret != NC_NOERR) {return ret;}
+	// define x, y variables
+	ret = nc_def_var(ncid, X, NC_DOUBLE, 1, xDimId, xVarId);
+	if (ret != NC_NOERR) {return ret;}
+	ret = nc_def_var(ncid, Y, NC_DOUBLE, 1, yDimId, yVarId);
+	if (ret != NC_NOERR) {return ret;}
 
-		tmp = "x-coordinate in Cartesian system";
-		ret = nc_put_att_text(ncid, *xVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "m";
-		ret = nc_put_att_text(ncid, *xVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "X";
-		ret = nc_put_att_text(ncid, *xVarId, "axis", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
+	tmp = "x-coordinate in Cartesian system";
+	ret = nc_put_att_text(ncid, *xVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
+	tmp = "m";
+	ret = nc_put_att_text(ncid, *xVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
+	tmp = "X";
+	ret = nc_put_att_text(ncid, *xVarId, "axis", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
 
-		tmp = "y-coordinate in Cartesian system";
-		ret = nc_put_att_text(ncid, *yVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "m";
-		ret = nc_put_att_text(ncid, *yVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "Y";
-		ret = nc_put_att_text(ncid, *yVarId, "axis", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
+	tmp = "y-coordinate in Cartesian system";
+	ret = nc_put_att_text(ncid, *yVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
+	tmp = "m";
+	ret = nc_put_att_text(ncid, *yVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
+	tmp = "Y";
+	ret = nc_put_att_text(ncid, *yVarId, "axis", tmp.length(), iRIC::toStr(tmp).c_str());
+	if (ret != NC_NOERR) {return ret;}
 
-		// define lon, lat variables
-
-		int dims[2];
-		dims[0] = *yDimId;
-		dims[1] = *xDimId;
-
-		ret = nc_def_var(ncid, LON, NC_DOUBLE, 2, &(dims[0]), lonVarId);
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_def_var(ncid, LAT, NC_DOUBLE, 2, &(dims[0]), latVarId);
-		if (ret != NC_NOERR) {return ret;}
-
-		tmp = "Longitude";
-		ret = nc_put_att_text(ncid, *lonVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "degrees_east";
-		ret = nc_put_att_text(ncid, *lonVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "Latitude";
-		ret = nc_put_att_text(ncid, *latVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "degrees_north";
-		ret = nc_put_att_text(ncid, *latVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		return NC_NOERR;
-
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		// define lon, lat dimensions
-		ret = nc_def_dim(ncid, LON, static_cast<size_t>(impl->m_lonValues.size()), lonDimId);
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_def_dim(ncid, LAT, static_cast<size_t>(impl->m_latValues.size()), latDimId);
-		if (ret != NC_NOERR) {return ret;}
-
-		// define lon, lat variables
-		ret = nc_def_var(ncid, LON, NC_DOUBLE, 1, lonDimId, lonVarId);
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_def_var(ncid, LAT, NC_DOUBLE, 1, latDimId, latVarId);
-		if (ret != NC_NOERR) {return ret;}
-
-		tmp = "Longitude";
-		ret = nc_put_att_text(ncid, *lonVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "degrees_east";
-		ret = nc_put_att_text(ncid, *lonVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "Latitude";
-		ret = nc_put_att_text(ncid, *latVarId, "long_name", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		tmp = "degrees_north";
-		ret = nc_put_att_text(ncid, *latVarId, "units", tmp.length(), iRIC::toStr(tmp).c_str());
-		if (ret != NC_NOERR) {return ret;}
-		return NC_NOERR;
-	}
 	return NC_NOERR;
 }
 
@@ -756,7 +458,7 @@ int GeoDataGdal::defineDimensions(int ncid, std::vector<int>* dimIds, std::vecto
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
 	int ret;
-	for (int i = 0; i < dims->containers().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (dims->containers().size()); ++i) {
 		int dimId;
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		size_t len = c->count();
@@ -766,7 +468,7 @@ int GeoDataGdal::defineDimensions(int ncid, std::vector<int>* dimIds, std::vecto
 		if (ret != NC_NOERR) {return ret;}
 		dimIds->push_back(dimId);
 	}
-	for (int i = 0; i < dims->containers().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (dims->containers().size()); ++i) {
 		int varId;
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		nc_type ncType = getNcType(c->definition());
@@ -804,13 +506,8 @@ int GeoDataGdal::defineValue(int ncid, int xId, int yId, const std::vector<int> 
 	}
 	dimids[ndims - 2] = yId;
 	dimids[ndims - 1] = xId;
-	if (impl->m_coordinateSystemType == XY) {
-		chunksizes[ndims - 2] = impl->m_yValues.size();
-		chunksizes[ndims - 1] = impl->m_xValues.size();
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		chunksizes[ndims - 2] = impl->m_latValues.size();
-		chunksizes[ndims - 1] = impl->m_lonValues.size();
-	}
+	chunksizes[ndims - 2] = impl->m_yValues.size();
+	chunksizes[ndims - 1] = impl->m_xValues.size();
 	ret = nc_def_var(ncid, VALUE, getNcType(gridAttribute()), ndims, dimids.data(), varId);
 	ret = nc_def_var_deflate(ncid, *varId, 0, 1, 2);
 	ret = nc_def_var_chunking(ncid, *varId, NC_CHUNKED, chunksizes.data());
@@ -820,49 +517,31 @@ int GeoDataGdal::defineValue(int ncid, int xId, int yId, const std::vector<int> 
 	return NC_NOERR;
 }
 
-int GeoDataGdal::outputCoords(int ncid, int xId, int yId, int lonId, int latId)
+int GeoDataGdal::outputCoords(int ncid, int xId, int yId)
 {
-	if (impl->m_coordinateSystemType == XY) {
-		std::vector<double> xs(impl->m_xValues.size());
-		std::vector<double> ys(impl->m_yValues.size());
-		int ret = NC_NOERR;
+	std::vector<double> xs(impl->m_xValues.size());
+	std::vector<double> ys(impl->m_yValues.size());
+	int ret = NC_NOERR;
 
-		for (int i = 0; i < impl->m_xValues.size(); ++i) {
-			xs[i] = impl->m_xValues.at(i);
-		}
-		for (int i = 0; i < impl->m_yValues.size(); ++i) {
-			ys[i] = impl->m_yValues.at(i);
-		}
-		ret = nc_put_var_double(ncid, xId, xs.data());
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_put_var_double(ncid, yId, ys.data());
-		if (ret != NC_NOERR) {return ret;}
+	for (int i = 0; i < static_cast<int> (impl->m_xValues.size()); ++i) {
+		xs[i] = impl->m_xValues.at(i);
 	}
-
-	if (impl->m_coordinateSystemType == XY || impl->m_coordinateSystemType == LonLat) {
-		std::vector<double> lons(impl->m_lonValues.size());
-		std::vector<double> lats(impl->m_latValues.size());
-		int ret;
-
-		for (int i = 0; i < impl->m_lonValues.size(); ++i) {
-			lons[i] = impl->m_lonValues.at(i);
-		}
-		for (int i = 0; i < impl->m_latValues.size(); ++i) {
-			lats[i] = impl->m_latValues.at(i);
-		}
-		ret = nc_put_var_double(ncid, lonId, lons.data());
-		if (ret != NC_NOERR) {return ret;}
-		ret = nc_put_var_double(ncid, latId, lats.data());
-		if (ret != NC_NOERR) {return ret;}
+	for (int i = 0; i < static_cast<int> (impl->m_yValues.size()); ++i) {
+		ys[i] = impl->m_yValues.at(i);
 	}
+	ret = nc_put_var_double(ncid, xId, xs.data());
+	if (ret != NC_NOERR) {return ret;}
+	ret = nc_put_var_double(ncid, yId, ys.data());
+	if (ret != NC_NOERR) {return ret;}
+
 	return NC_NOERR;
 }
 
 int GeoDataGdal::outputDimensions(int ncid, const std::vector<int> &varIds)
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
-	for (int i = 0; i < dims->containers().size(); ++i) {
-		int ret;
+	for (int i = 0; i < static_cast<int> (dims->containers().size()); ++i) {
+		int ret = NC_NOERR;
 		int varId = varIds.at(i);
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		if (dynamic_cast<GridAttributeDimensionIntegerContainer*>(c) != nullptr) {
@@ -870,18 +549,18 @@ int GeoDataGdal::outputDimensions(int ncid, const std::vector<int> &varIds)
 				dynamic_cast<GridAttributeDimensionIntegerContainer*>(c);
 			std::vector<int> vals(c->count());
 			const std::vector<int>& listVals = c2->values();
-			for (int j = 0; j < listVals.size(); ++j) {
+			for (int j = 0; j < static_cast<int> (listVals.size()); ++j) {
 				vals[j] = listVals.at(j);
 			}
 			size_t start = 0;
 			size_t len = listVals.size();
 			ret = nc_put_vara_int(ncid, varId, &start, &len, vals.data());
-		} else if (dynamic_cast<GridAttributeDimensionRealContainer*>(c) != 0) {
+		} else if (dynamic_cast<GridAttributeDimensionRealContainer*>(c) != nullptr) {
 			GridAttributeDimensionRealContainer* c2 =
 				dynamic_cast<GridAttributeDimensionRealContainer*>(c);
 			std::vector<double> vals(c->count());
 			const std::vector<double>& listVals = c2->values();
-			for (int j = 0; j < listVals.size(); ++j) {
+			for (int j = 0; j < static_cast<int> (listVals.size()); ++j) {
 				vals[j] = listVals.at(j);
 			}
 			size_t start = 0;
@@ -1024,119 +703,29 @@ GeoDataProxy* GeoDataGdal::getProxy()
 
 void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
-	double xcenter = (xmin + xmax) * 0.5;
-	double ycenter = (ymin + ymax) * 0.5;
+	double dx = impl->m_xValues.at(1) - impl->m_xValues.at(0);
+	double dy = impl->m_xValues.at(1) - impl->m_xValues.at(0);
+	double x0 = impl->m_xValues.at(0) - dx * 0.5;
+	double y0 = impl->m_yValues.at(0) - dy * 0.5;
+	double x1 = x0 + dx * impl->m_xValues.size();
+	double y1 = y0 + dy * impl->m_yValues.size();
 
-	double xwidth = (xmax - xmin);
-	double ywidth = (ymax - ymin);
-
-	xmin -= xwidth * 0.2;
-	xmax += xwidth * 0.2;
-	ymin -= ywidth * 0.2;
-	ymax += ywidth * 0.2;
-
-	vtkIdType vid = m_grid->FindPoint(xcenter, ycenter, 0);
-	if (vid == -1) {return;}
-
-	double* cv = m_grid->GetPoint(vid);
-	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
+	if (x1 < xmin || x0 > xmax || y1 < ymin || y0 > ymax) {
 		m_simplifiedGrid = vtkSmartPointer<vtkStructuredGrid>::New();
 		m_threshold->SetInputData(m_simplifiedGrid);
 		m_threshold->Modified();
 		return;
 	}
-	int dimI = 1, dimJ = 1;
 
-	if (impl->m_coordinateSystemType == GeoDataGdal::XY) {
-		dimI = static_cast<int> (impl->m_xValues.size());
-		dimJ = static_cast<int> (impl->m_yValues.size());
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		dimI = static_cast<int> (impl->m_lonValues.size());
-		dimJ = static_cast<int> (impl->m_latValues.size());
-	}
+	int dimI = static_cast<int> (impl->m_xValues.size());
+	int dimJ = static_cast<int> (impl->m_yValues.size());
 
-	RectRegion region(xmin, xmax, ymin, ymax);
-	unsigned int centerI, centerJ;
-	getIJIndex(vid, &centerI, &centerJ);
-
-	int lineLimitIMin, lineLimitIMax, lineLimitJMin, lineLimitJMax;
+	int iMin =
+	int lineLimitIMax, lineLimitJMin, lineLimitJMax;
 	double tmpv[3];
 
-	// test I = 0
-	m_grid->GetPoint(vertexIndex(0, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMin = 0;
-	} else {
-		lineLimitIMin = lineLimitI(centerJ, centerI, 0, dimI, dimJ, region);
-	}
-	// test I = imax
-	m_grid->GetPoint(vertexIndex(dimI, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMax = dimI;
-	} else {
-		lineLimitIMax = lineLimitI(centerJ, centerI, dimI, dimI, dimJ, region);
-	}
-	// test J = 0
-	m_grid->GetPoint(vertexIndex(centerI, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMin = 0;
-	} else {
-		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, dimI, dimJ, region);
-	}
-	// test J = jmax
-	m_grid->GetPoint(vertexIndex(centerI, dimJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMax = dimJ;
-	} else {
-		lineLimitJMax = lineLimitJ(centerI, centerJ, dimJ, dimI, dimJ, region);
-	}
-
-	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
-
-	// test I min direction
-	if (lineLimitIMin == 0) {
-		lineLimitIMin2 = 0;
-	} else {
-		if (lineAtIIntersect(0, dimI, dimJ, region)) {
-			lineLimitIMin2 = 0;
-		} else {
-			lineLimitIMin2 = lineLimitI2(lineLimitIMin, 0, dimI, dimJ, region);
-		}
-	}
-	// test I max direction
-	if (lineLimitIMax == dimI) {
-		lineLimitIMax2 = dimI;
-	} else {
-		if (lineAtIIntersect(dimI, dimI, dimJ, region)) {
-			lineLimitIMax2 = dimI;
-		} else {
-			lineLimitIMax2 = lineLimitI2(lineLimitIMax, dimI, dimI, dimJ, region);
-		}
-	}
-
-	// test J min direction
-	if (lineLimitJMin == 0) {
-		lineLimitJMin2 = 0;
-	} else {
-		if (lineAtJIntersect(0, dimI, dimJ, region)) {
-			lineLimitJMin2 = 0;
-		} else {
-			lineLimitJMin2 = lineLimitJ2(lineLimitJMin, 0, dimI, dimJ, region);
-		}
-	}
-	// test J max direction
-	if (lineLimitJMax == dimJ) {
-		lineLimitJMax2 = dimJ;
-	} else {
-		if (lineAtJIntersect(dimJ, dimI, dimJ, region)) {
-			lineLimitJMax2 = dimJ;
-		} else {
-			lineLimitJMax2 = lineLimitI2(lineLimitJMax, dimJ, dimI, dimJ, region);
-		}
-	}
-
 	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
+	exGrid->SetVOI(iMin, iMax, jMin, jMax, 0, 0);
 	exGrid->SetInputData(m_grid);
 	exGrid->Update();
 	m_simplifiedGrid = exGrid->GetOutput();
@@ -1155,12 +744,7 @@ void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, dou
 
 void GeoDataGdal::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const
 {
-	int dimI = 1;
-	if (impl->m_coordinateSystemType == XY) {
-		dimI = static_cast<int> (impl->m_xValues.size()) + 1;
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		dimI = static_cast<int> (impl->m_lonValues.size()) + 1;
-	}
+	int dimI = static_cast<int> (impl->m_xValues.size()) + 1;
 
 	*i = id % dimI;
 	*j = id / dimI;
@@ -1168,99 +752,8 @@ void GeoDataGdal::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) con
 
 unsigned int GeoDataGdal::vertexIndex(unsigned int i, unsigned int j) const
 {
-	int dimI = 1;
-	if (impl->m_coordinateSystemType == XY) {
-		dimI = static_cast<int> (impl->m_xValues.size()) + 1;
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		dimI = static_cast<int> (impl->m_lonValues.size()) + 1;
-	}
+	int dimI = static_cast<int> (impl->m_xValues.size()) + 1;
 	return dimI * j + i;
-}
-
-int GeoDataGdal::lineLimitI(int j, int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	double tmpv[3];
-	m_grid->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitI(j, i, iOut, dimI, dimJ, region);
-	} else {
-		return lineLimitI(j, iIn, i, dimI, dimJ, region);
-	}
-}
-
-int GeoDataGdal::lineLimitJ(int i, int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	double tmpv[3];
-	m_grid->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitJ(i, j, jOut, dimI, dimJ, region);
-	} else {
-		return lineLimitJ(i, jIn, j, dimI, dimJ, region);
-	}
-}
-
-int GeoDataGdal::lineLimitI2(int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	if (lineAtIIntersect(i, dimI, dimJ, region)) {
-		return lineLimitI2(i, iOut, dimI, dimJ, region);
-	} else {
-		return lineLimitI2(iIn, i, dimI, dimJ, region);
-	}
-}
-
-int GeoDataGdal::lineLimitJ2(int jIn, int jOut, int dimI, int dimJ, const RectRegion& region) const
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	if (lineAtJIntersect(j, dimI, dimJ, region)) {
-		return lineLimitJ2(j, jOut, dimI, dimJ, region);
-	} else {
-		return lineLimitJ2(jIn, j, dimI, dimJ, region);
-	}
-}
-
-bool GeoDataGdal::lineAtIIntersect(int i, int /*dimI*/, int dimJ, const RectRegion& region) const
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	m_grid->GetPoint(vertexIndex(i, 0), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < dimJ; ++j) {
-		m_grid->GetPoint(vertexIndex(i, j), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
-}
-
-bool GeoDataGdal::lineAtJIntersect(int j, int dimI, int /*dimJ*/, const RectRegion& region) const
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	m_grid->GetPoint(vertexIndex(0, j), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < dimI; ++i) {
-		m_grid->GetPoint(vertexIndex(i, j), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
 }
 
 void GeoDataGdal::updateRegionPolyData()
@@ -1287,21 +780,12 @@ void GeoDataGdal::updateRegionPolyData()
 
 int GeoDataGdal::xSize() const
 {
-	if (impl->m_coordinateSystemType == XY) {
-		return static_cast<int> (impl->m_xValues.size());
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		return static_cast<int> (impl->m_lonValues.size());
-	}
-	return 0;
+	return static_cast<int> (impl->m_xValues.size());
 }
+
 int GeoDataGdal::ySize() const
 {
-	if (impl->m_coordinateSystemType == XY) {
-		return static_cast<int> (impl->m_yValues.size());
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		return static_cast<int> (impl->m_lonValues.size());
-	}
-	return 0;
+	return static_cast<int> (impl->m_yValues.size());
 }
 
 void GeoDataGdal::loadGeoTransform(const QDomNode& node)

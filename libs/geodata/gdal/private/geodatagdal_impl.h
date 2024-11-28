@@ -10,14 +10,8 @@ public:
 	Impl();
 	~Impl();
 
-	std::vector<double> m_lonValues;
-	std::vector<double> m_latValues;
-
 	std::vector<double> m_xValues;
 	std::vector<double> m_yValues;
-
-	CoordinateSystemType m_coordinateSystemType;
-	QString m_coordinateSystemName;
 
 	bool m_geoTransformExists;
 	double m_geoTransform[6];
