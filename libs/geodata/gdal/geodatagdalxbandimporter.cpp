@@ -151,7 +151,7 @@ bool GeoDataGdalXbandImporter::importData(GeoData* data, int /*index*/, QWidget*
 				return false;
 			}
 
-			gdal->impl->m_coordinateSystemType = GeoDataGdal::LonLat;
+			// gdal->impl->m_coordinateSystemType = GeoDataGdal::LonLat;
 
 			std::vector<double> lons(lonLen);
 			std::vector<double> lats(latLen);
@@ -160,14 +160,14 @@ bool GeoDataGdalXbandImporter::importData(GeoData* data, int /*index*/, QWidget*
 			nc_get_var_double(ncid_in, latVarId, lats.data());
 
 			// set lon and lat data
-			gdal->impl->m_lonValues.clear();
-			for (size_t i = 0; i < lonLen; ++i) {
-				gdal->impl->m_lonValues.push_back(lons[i]);
-			}
-			gdal->impl->m_latValues.clear();
-			for (size_t i = 0; i < latLen; ++i) {
-				gdal->impl->m_latValues.push_back(lats[i]);
-			}
+//			gdal->impl->m_lonValues.clear();
+//			for (size_t i = 0; i < lonLen; ++i) {
+//				gdal->impl->m_lonValues.push_back(lons[i]);
+//			}
+//			gdal->impl->m_latValues.clear();
+//			for (size_t i = 0; i < latLen; ++i) {
+//				gdal->impl->m_latValues.push_back(lats[i]);
+//			}
 			// set time dummy data
 			GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
 			GridAttributeDimensionContainer* c = dims->containers().at(0);
@@ -183,12 +183,14 @@ bool GeoDataGdalXbandImporter::importData(GeoData* data, int /*index*/, QWidget*
 			std::vector<int> dimIds;
 
 			ret = nc_redef(ncid_out);
-			gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+			// gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+			gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_xVarId, &out_yVarId);
 			gdal->defineDimensions(ncid_out, &dimIds, &varIds);
 			ret = gdal->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
 
 			ret = nc_enddef(ncid_out);
-			gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+			// gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+			gdal->outputCoords(ncid_out, out_xVarId, out_yVarId);
 		}
 
 		// read time value

@@ -2,14 +2,14 @@
 #include "geodatagdalgdalintegerimporter.h"
 #include "geodatagdalinteger.h"
 #include "geodatagdaltimeseriesintegercreator.h"
-#include "geodatagdalintegerimporter.h"
+#include "geodatagdalnetcdfintegerimporter.h"
 #include "geodatagdalncexporter.h"
 
 GeoDataGdalTimeSeriesIntegerCreator::GeoDataGdalTimeSeriesIntegerCreator() :
 	GeoDataGdalTimeSeriesCreatorT<int, vtkIntArray> {"timeSeriesIntegerGdal"}
 {
 	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
-	importers().push_back(new GeoDataGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
 
 	exporters().push_back(new GeoDataGdalNcExporter(this));
 }

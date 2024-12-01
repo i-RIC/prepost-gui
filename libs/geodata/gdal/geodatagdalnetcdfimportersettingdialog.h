@@ -1,18 +1,18 @@
-#ifndef GEODATAGDALIMPORTERSETTINGDIALOG_H
-#define GEODATAGDALIMPORTERSETTINGDIALOG_H
+#ifndef GEODATAGDALNETCDFIMPORTERSETTINGDIALOG_H
+#define GEODATAGDALNETCDFIMPORTERSETTINGDIALOG_H
 
 #include <QDialog>
 
 namespace Ui
 {
-	class GeoDataGdalImporterSettingDialog;
+	class GeoDataGdalNetcdfImporterSettingDialog;
 }
 
 class SolverDefinitionGridAttribute;
 
 class QComboBox;
 
-class GeoDataGdalImporterSettingDialog : public QDialog
+class GeoDataGdalNetcdfImporterSettingDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -25,8 +25,8 @@ public:
 		std::vector<QString> dimensions;
 	};
 
-	explicit GeoDataGdalImporterSettingDialog(QWidget* parent = 0);
-	~GeoDataGdalImporterSettingDialog();
+	explicit GeoDataGdalNetcdfImporterSettingDialog(QWidget* parent = nullptr);
+	~GeoDataGdalNetcdfImporterSettingDialog();
 
 	void setCondition(SolverDefinitionGridAttribute*	condition);
 	void setVariables(const std::vector<NcVariable>& vars);
@@ -41,7 +41,7 @@ private:
 	std::vector<QComboBox*> m_dimComboBoxes;
 	std::vector<NcVariable> m_variables;
 
-	Ui::GeoDataGdalImporterSettingDialog* ui;
+	Ui::GeoDataGdalNetcdfImporterSettingDialog* ui;
 };
 
-#endif // GEODATAGDALIMPORTERSETTINGDIALOG_H
+#endif // GEODATAGDALNETCDFIMPORTERSETTINGDIALOG_H

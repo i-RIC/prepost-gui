@@ -84,13 +84,8 @@ int GeoDataGdalT<V, DA>::outputValues(int ncid, int varid, const std::vector<int
 	}
 	start[indices.size()] = 0;
 	start[indices.size() + 1] = 0;
-	if (m_coordinateSystemType == XY) {
-		len[indices.size()] = m_yValues.size();
-		len[indices.size() + 1] = m_xValues.size();
-	} else if (m_coordinateSystemType == LonLat) {
-		len[indices.size()] = m_lonValues.size();
-		len[indices.size() + 1] = m_latValues.size();
-	}
+	len[indices.size()] = m_yValues.size();
+	len[indices.size() + 1] = m_xValues.size();
 	int ret = nc_put_vara(ncid, varid, start.data(), len.data(), vals);
 	return ret;
 }
@@ -136,15 +131,9 @@ void GeoDataGdalT<V, DA>::loadRasterData(int index)
 	}
 	start[indices.size()] = 0;
 	start[indices.size() + 1] = 0;
-	if (impl->m_coordinateSystemType == XY) {
-		len[indices.size()] = impl->m_yValues.size();
-		len[indices.size() + 1] = impl->m_xValues.size();
-		bufferSize = impl->m_xValues.size() * impl->m_yValues.size();
-	} else if (impl->m_coordinateSystemType == LonLat) {
-		len[indices.size()] = impl->m_latValues.size();
-		len[indices.size() + 1] = impl->m_lonValues.size();
-		bufferSize = impl->m_lonValues.size() * impl->m_latValues.size();
-	}
+	len[indices.size()] = impl->m_yValues.size();
+	len[indices.size() + 1] = impl->m_xValues.size();
+	bufferSize = impl->m_xValues.size() * impl->m_yValues.size();
 	vals.assign(bufferSize, 0);
 
 	ret = nc_get_vara(ncid, varId, start.data(), len.data(), vals.data());

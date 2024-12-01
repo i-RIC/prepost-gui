@@ -1,12 +1,12 @@
-#ifndef GEODATAGDALINTEGERIMPORTER_H
-#define GEODATAGDALINTEGERIMPORTER_H
+#ifndef GEODATAGDALNETCDFINTEGERIMPORTER_H
+#define GEODATAGDALNETCDFINTEGERIMPORTER_H
 
-#include "geodatagdalimportert.h"
+#include "geodatagdalnetcdfimportert.h"
 
-class GeoDataGdalIntegerImporter : public GeoDataGdalImporterT<int, vtkIntArray>
+class GeoDataGdalNetcdfIntegerImporter : public GeoDataGdalNetcdfImporterT<int, vtkIntArray>
 {
 public:
-	GeoDataGdalIntegerImporter(GeoDataCreator* creator);
+	GeoDataGdalNetcdfIntegerImporter(GeoDataCreator* creator);
 
 private:
 	int ncGetVarConvert(int ncid_in, int varId, size_t* start_in, size_t* len_in, int* buffer) const override;
@@ -16,4 +16,4 @@ private:
 	int ncGetAddOffsetValue(int ncid, int varid, int* value) const override;
 };
 
-#endif // GEODATAGDALINTEGERIMPORTER_H
+#endif // GEODATAGDALNETCDFINTEGERIMPORTER_H

@@ -148,20 +148,20 @@ HEADERS += gd_gdal_global.h \
            geodatagdalgrayscalepngrealexporter.h \
            geodatagdalgrayscalepngrealimporter.h \
            geodatagdalifacemappert.h \
-           geodatagdalimporter.h \
-           geodatagdalimporterdateselectdialog.h \
-           geodatagdalimportersettingdialog.h \
-           geodatagdalimportert.h \
            geodatagdalinteger.h \
            geodatagdalintegercreator.h \
-           geodatagdalintegerimporter.h \
            geodatagdaljfacemappert.h \
            geodatagdalncexporter.h \
+           geodatagdalnetcdfimporter.h \
+           geodatagdalnetcdfimporterdateselectdialog.h \
+           geodatagdalnetcdfimportersettingdialog.h \
+           geodatagdalnetcdfimportert.h \
+           geodatagdalnetcdfintegerimporter.h \
+           geodatagdalnetcdfrealimporter.h \
            geodatagdalnodemappert.h \
            geodatagdalproxy.h \
            geodatagdalreal.h \
            geodatagdalrealcreator.h \
-           geodatagdalrealimporter.h \
            geodatagdalt.h \
            geodatagdaltimeseriescreator.h \
            geodatagdaltimeseriescreatort.h \
@@ -173,8 +173,8 @@ HEADERS += gd_gdal_global.h \
            private/geodatagdalcellmappert_detail.h \
            private/geodatagdalcreatort_detail.h \
            private/geodatagdalifacemappert_detail.h \
-           private/geodatagdalimportert_detail.h \
            private/geodatagdaljfacemappert_detail.h \
+           private/geodatagdalnetcdfimportert_detail.h \
            private/geodatagdalnodemappert_detail.h \
            private/geodatagdalproxy_displaysetting.h \
            private/geodatagdalproxy_displaysettingwidget.h \
@@ -185,8 +185,8 @@ HEADERS += gd_gdal_global.h \
 FORMS += geodatagdalcolorsettingdialog.ui \
          geodatagdalfilelistdialog.ui \
          geodatagdalfilenamepatterndialog.ui \
-         geodatagdalimporterdateselectdialog.ui \
-         geodatagdalimportersettingdialog.ui \
+         geodatagdalnetcdfimporterdateselectdialog.ui \
+         geodatagdalnetcdfimportersettingdialog.ui \
          private/geodatagdalproxy_displaysettingwidget.ui \
          public/geodatagdal_displaysettingwidget.ui
 SOURCES += geodatagdal.cpp \
@@ -203,17 +203,17 @@ SOURCES += geodatagdal.cpp \
            geodatagdalgdalrealimporter.cpp \
            geodatagdalgrayscalepngrealexporter.cpp \
            geodatagdalgrayscalepngrealimporter.cpp \
-           geodatagdalimporter.cpp \
-           geodatagdalimporterdateselectdialog.cpp \
-           geodatagdalimportersettingdialog.cpp \
            geodatagdalinteger.cpp \
            geodatagdalintegercreator.cpp \
-           geodatagdalintegerimporter.cpp \
            geodatagdalncexporter.cpp \
+           geodatagdalnetcdfimporter.cpp \
+           geodatagdalnetcdfimporterdateselectdialog.cpp \
+           geodatagdalnetcdfimportersettingdialog.cpp \
+           geodatagdalnetcdfintegerimporter.cpp \
+           geodatagdalnetcdfrealimporter.cpp \
            geodatagdalproxy.cpp \
            geodatagdalreal.cpp \
            geodatagdalrealcreator.cpp \
-           geodatagdalrealimporter.cpp \
            geodatagdaltimeseriescreator.cpp \
            geodatagdaltimeseriesintegercreator.cpp \
            geodatagdaltimeseriesrealcreator.cpp \

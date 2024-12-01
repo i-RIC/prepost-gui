@@ -50,15 +50,24 @@ private:
 	bool setMode(SolverDefinitionGridAttribute* condition, QWidget* w);
 	bool setCoordinateSystem(const QString& filename, GDALDataset* dataset, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	bool setTransform(GDALDataset* dataset);
-	void setupCoordinates(GeoDataGdal* data, GDALRasterBand* band);
+	void setupCoordinates(GeoDataGdal* data);
 	bool setupFileNamePattern(const QString &filename, QWidget *w);
 	bool setupFilenames(const QString &filename, QWidget* w);
 	void clear();
 
-	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data) = 0;
-	virtual int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data) = 0;
+	virtual int outputValues(int ncid, int varId, int xSize, int ySize, GDALRasterBand* band, GeoDataGdal* data) = 0;
+	virtual int outputValuesWithTime(int ncid, int varId, int timeId, int xSize, int ySize, GDALRasterBand* band, GeoDataGdal* data) = 0;
 
-	double m_transform[6];
+protected:
+	int m_tgtISize;
+	int m_tgtJSize;
+
+	double m_tgtTransform[6];
+	std::vector<int> m_matrix;
+
+private:
+	double m_srcTransform[6];
+
 	std::vector<QString> m_filenames;
 	CoordinateSystem* m_coordinateSystem;
 	QTimeZone m_timeZone;

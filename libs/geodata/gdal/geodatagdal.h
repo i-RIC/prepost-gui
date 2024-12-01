@@ -18,7 +18,8 @@
 
 class QAction;
 class QPolygonF;
-class GeoDataGdalImporter;
+class CoordinateSystem;
+class GeoDataGdalNetcdfImporter;
 class GeoDataGdalXbandImporter;
 class GeoDataGdalGdalImporter;
 class GridAttributeDimensionContainer;
@@ -91,6 +92,9 @@ public:
 
 	GeoDataProxy* getProxy() override;
 
+	static void buildWarpMatrix(int srcIsize, int srcJsize, double* srcGeoTransform, CoordinateSystem* srcCs, CoordinateSystem* tgtCs,
+															int* tgtISize, int* tgtJSize, double* tgtGeoTransform, std::vector<int>* matrix);
+
 	class DisplaySettingWidget;
 
 public slots:
@@ -152,7 +156,7 @@ public:
 	friend class GeoDataGdalGdalImporter;
 	friend class GeoDataGdalGrayscalePngRealImporter;
 	friend class GeoDataGdalGrayscalePngRealExporter;
-	friend class GeoDataGdalImporter;
+	friend class GeoDataGdalNetcdfImporter;
 	friend class GeoDataGdalProxy;
 	friend class GeoDataGdalXbandImporter;
 };

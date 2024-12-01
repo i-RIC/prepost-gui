@@ -47,7 +47,11 @@
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
+#include <gdal_priv.h>
+#include <gdal_utils.h>
+#include <ogr_spatialref.h>
 #include <netcdf.h>
+
 #include <vector>
 
 #define VALUE "value"
@@ -224,21 +228,18 @@ void GeoDataGdal::loadExternalData(const QString& filename)
 	// Load coordinates values
 	// ------------------------
 
-	int xVarId, yVarId, lonVarId, latVarId;
+	int xVarId, yVarId;
 
 	// try to find x, y
-	bool xyexist = true;
 	ret = nc_inq_varid(ncid, X, &xVarId);
-	xyexist = xyexist && (ret == NC_NOERR);
 	ret = nc_inq_varid(ncid, Y, &yVarId);
-	xyexist = xyexist && (ret == NC_NOERR);
 
 	// load X, Y values
 	int xDimId, yDimId;
 	ret = nc_inq_dimid(ncid, X, &xDimId);
 	ret = nc_inq_dimid(ncid, Y, &yDimId);
 
-	size_t xSize, ySize, xySize;
+	size_t xSize, ySize;
 	ret = nc_inq_dimlen(ncid, xDimId, &xSize);
 	ret = nc_inq_dimlen(ncid, yDimId, &ySize);
 
@@ -254,7 +255,7 @@ void GeoDataGdal::loadExternalData(const QString& filename)
 	// ------------------------
 
 	GridAttributeDimensionsContainer* dims = dimensions();
-	for (int i = 0; i < dims->containers().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (dims->containers().size()); ++i) {
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		int dDimId, dVarId;
 		ret = nc_inq_varid(ncid, c->name().c_str(), &dVarId);
@@ -701,6 +702,61 @@ GeoDataProxy* GeoDataGdal::getProxy()
 	return new GeoDataGdalProxy(this);
 }
 
+void GeoDataGdal::buildWarpMatrix(int srcISize, int srcJSize, double* srcGeoTransform, CoordinateSystem* srcCs, CoordinateSystem* tgtCs,
+																	int* tgtISize, int* tgtJSize, double* tgtGeoTransform, std::vector<int>* matrix)
+{
+	GDALAllRegister();
+
+	char** papszOptions = nullptr;
+	auto driverManager = GetGDALDriverManager();
+	GDALDriver* memDriver = driverManager->GetDriverByName("MEM");
+	auto dataset = memDriver->Create("dummy", srcISize, srcJSize, 1, GDT_UInt32, papszOptions);
+	dataset->SetGeoTransform(srcGeoTransform);
+	OGRSpatialReference srcSRC;
+	srcSRC.importFromProj4(iRIC::toStr(srcCs->proj4PlaneStr()).c_str());
+	char* srcWktStr;
+	srcSRC.exportToWkt(&srcWktStr);
+	dataset->SetProjection(srcWktStr);
+
+	auto band = dataset->GetRasterBand(1);
+	std::vector<int> indices;
+	indices.assign(srcISize * srcJSize, 0);
+	for (int i = 0; i < indices.size(); ++i) {
+		indices[i] = i + 1;
+	}
+	GDALRasterIO(band, GF_Write, 0, 0, srcISize, srcJSize, indices.data(), srcISize, srcJSize, GDT_UInt32, 0, 0);
+
+	std::vector<char*> args;
+	char t_src1[] = "-t_srs";
+	std::string t_src2 = iRIC::toStr(tgtCs->proj4PlaneStr());
+	char of_1[] = "-of";
+	char of_2[] = "GTiff";
+	args.push_back(t_src1);
+	args.push_back(const_cast<char*>(t_src2.data()));
+	args.push_back(of_1);
+	args.push_back(of_2);
+	args.push_back(nullptr);
+	int error;
+	auto options = GDALWarpAppOptionsNew(args.data(), nullptr);
+	auto newDataset = reinterpret_cast<GDALDataset*> (GDALWarp("tmp.tif", nullptr, 1, reinterpret_cast<GDALDatasetH*>(&dataset), options, &error));
+	*tgtISize = newDataset->GetRasterXSize();
+	*tgtJSize = newDataset->GetRasterYSize();
+	newDataset->GetGeoTransform(tgtGeoTransform);
+
+	auto newBand = newDataset->GetRasterBand(1);
+	matrix->assign(*tgtISize * *tgtJSize, 0);
+	GDALRasterIO(newBand, GF_Read, 0, 0, *tgtISize, *tgtJSize, matrix->data(), *tgtISize, *tgtJSize, GDT_UInt32, 0, 0);
+	for (int i = 0; i < matrix->size(); ++i) {
+		(*matrix)[i] -= 1;
+	}
+
+	GDALWarpAppOptionsFree(options);
+	GDALClose(newDataset);
+	GDALClose(dataset);
+
+	QFile::remove("tmp.tif");
+}
+
 void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
 	double dx = impl->m_xValues.at(1) - impl->m_xValues.at(0);
@@ -717,14 +773,15 @@ void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, dou
 		return;
 	}
 
-	int dimI = static_cast<int> (impl->m_xValues.size());
-	int dimJ = static_cast<int> (impl->m_yValues.size());
+	int dimI = static_cast<int> (impl->m_xValues.size()) + 1;
+	int dimJ = static_cast<int> (impl->m_yValues.size()) + 1;
 
-	int iMin =
-	int lineLimitIMax, lineLimitJMin, lineLimitJMax;
-	double tmpv[3];
+	int iMin = std::max(static_cast<int> ((xmin - x0) / dx), 0);
+	int iMax = std::min(static_cast<int> ((xmax - x0) / dx) + 1, dimI);
+	int jMin = std::max(static_cast<int> ((ymin - y0) / dy), 0);
+	int jMax = std::min(static_cast<int> ((ymax - y0) / dy) + 1, dimJ);
 
-	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
+	auto exGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	exGrid->SetVOI(iMin, iMax, jMin, jMax, 0, 0);
 	exGrid->SetInputData(m_grid);
 	exGrid->Update();

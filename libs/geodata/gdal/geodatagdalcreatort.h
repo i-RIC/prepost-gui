@@ -3,7 +3,7 @@
 
 #include "geodatagdalcreator.h"
 #include "geodatagdalt.h"
-#include "geodatagdalimportert.h"
+#include "geodatagdalnetcdfimportert.h"
 
 class SolverDefinitionGridAttribute;
 

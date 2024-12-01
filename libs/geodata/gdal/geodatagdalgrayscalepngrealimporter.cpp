@@ -105,9 +105,6 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 	}
 	png_read_image(png_ptr, row_pointers.data());
 
-	gdal->impl->m_coordinateSystemType = GeoDataGdal::XY;
-	gdal->impl->m_coordinateSystemName = m_coordinateSystem->name();
-
 	gdal->impl->m_xValues.clear();
 	double* transform = gdal->geoTransform();
 	for (int i = 0; i < width; ++i) {
@@ -118,7 +115,6 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 		gdal->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
 	}
 
-	gdal->impl->m_lonValues.clear();
 	for (int j = 0; j < gdal->impl->m_yValues.size(); ++j) {
 		double y = gdal->impl->m_yValues.at(j);
 		for (int i = 0; i < gdal->impl->m_xValues.size(); ++i) {
@@ -130,8 +126,6 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 			} else {
 				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
 			}
-			gdal->impl->m_lonValues.push_back(lon);
-			gdal->impl->m_latValues.push_back(lat);
 		}
 	}
 
@@ -147,18 +141,18 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 	ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 
 	// save coordinates and dimensions to the gdal file.
-	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
-	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
+	int out_xDimId, out_yDimId;
+	int out_xVarId, out_yVarId;
 	std::vector<int> dimIds;
 
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
-	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_xVarId, &out_yVarId);
 	gdal->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
 
 	ret = nc_enddef(ncid_out);
-	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId);
 
 	std::vector<double> valuesBuffer(width * height);
 

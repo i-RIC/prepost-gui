@@ -11,8 +11,8 @@ public:
 	~GeoDataGdalGdalIntegerImporter();
 
 private:
-	int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataGdal* data) override;
-	int outputValuesWithTime(int ncid, int varId, int timeId, GDALRasterBand* band, GeoDataGdal* data) override;
+	int outputValues(int ncid, int varId, int xSize, int ySize, GDALRasterBand* band, GeoDataGdal* data) override;
+	int outputValuesWithTime(int ncid, int varId, int timeId, int xSize, int ySize, GDALRasterBand* band, GeoDataGdal* data) override;
 };
 
 #endif // GEODATAGDALGDALINTEGERIMPORTER_H

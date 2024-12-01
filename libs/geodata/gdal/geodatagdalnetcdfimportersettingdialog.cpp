@@ -1,26 +1,26 @@
-#include "ui_geodatagdalimportersettingdialog.h"
+#include "ui_geodatagdalnetcdfImportersettingdialog.h"
 
-#include "geodatagdalimportersettingdialog.h"
+#include "geodatagdalnetcdfimportersettingdialog.h"
 
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 
 #include <QLabel>
 
-GeoDataGdalImporterSettingDialog::GeoDataGdalImporterSettingDialog(QWidget* parent) :
+GeoDataGdalNetcdfImporterSettingDialog::GeoDataGdalNetcdfImporterSettingDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::GeoDataGdalImporterSettingDialog}
+	ui {new Ui::GeoDataGdalNetcdfImporterSettingDialog}
 {
 	ui->setupUi(this);
 	connect(ui->valueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleVarChange(int)));
 }
 
-GeoDataGdalImporterSettingDialog::~GeoDataGdalImporterSettingDialog()
+GeoDataGdalNetcdfImporterSettingDialog::~GeoDataGdalNetcdfImporterSettingDialog()
 {
 	delete ui;
 }
 
-void GeoDataGdalImporterSettingDialog::setCondition(SolverDefinitionGridAttribute* condition)
+void GeoDataGdalNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridAttribute* condition)
 {
 	auto& dims = condition->dimensions();
 	for (int i = 0; i < dims.size(); ++i) {
@@ -34,7 +34,7 @@ void GeoDataGdalImporterSettingDialog::setCondition(SolverDefinitionGridAttribut
 	}
 }
 
-void GeoDataGdalImporterSettingDialog::setVariables(const std::vector<NcVariable>& vars)
+void GeoDataGdalNetcdfImporterSettingDialog::setVariables(const std::vector<NcVariable>& vars)
 {
 	m_variables = vars;
 	for (int i = 0; i < vars.size(); ++i) {
@@ -44,7 +44,7 @@ void GeoDataGdalImporterSettingDialog::setVariables(const std::vector<NcVariable
 	ui->valueComboBox->setCurrentIndex(0);
 }
 
-bool GeoDataGdalImporterSettingDialog::needToShow() const
+bool GeoDataGdalNetcdfImporterSettingDialog::needToShow() const
 {
 	if (m_variables.size() != 1) {
 		return true;
@@ -59,14 +59,14 @@ bool GeoDataGdalImporterSettingDialog::needToShow() const
 	return true;
 }
 
-QString GeoDataGdalImporterSettingDialog::variableName() const
+QString GeoDataGdalNetcdfImporterSettingDialog::variableName() const
 {
 	int index = ui->valueComboBox->currentIndex();
 	if (index == -1) {return "";}
 	return m_variables.at(index).name;
 }
 
-std::vector<QString> GeoDataGdalImporterSettingDialog::dimensionMappingSetting() const
+std::vector<QString> GeoDataGdalNetcdfImporterSettingDialog::dimensionMappingSetting() const
 {
 	std::vector<QString> ret;
 	int index = ui->valueComboBox->currentIndex();
@@ -81,7 +81,7 @@ std::vector<QString> GeoDataGdalImporterSettingDialog::dimensionMappingSetting()
 	return ret;
 }
 
-void GeoDataGdalImporterSettingDialog::handleVarChange(int index)
+void GeoDataGdalNetcdfImporterSettingDialog::handleVarChange(int index)
 {
 	NcVariable v = m_variables.at(index);
 	for (int i = 0; i < m_dimComboBoxes.size(); ++i) {

@@ -7,7 +7,7 @@
 #include "geodatagdaljfacemappert.h"
 #include "geodatagdalreal.h"
 #include "geodatagdalrealcreator.h"
-#include "geodatagdalrealimporter.h"
+#include "geodatagdalnetcdfrealimporter.h"
 #include "geodatagdalxbandimporter.h"
 
 #include <vtkDoubleArray.h>
@@ -16,7 +16,7 @@ GeoDataGdalRealCreator::GeoDataGdalRealCreator() :
 	GeoDataGdalCreatorT<double, vtkDoubleArray> {"realGdal"}
 {
 	importers().push_back(new GeoDataGdalGdalRealImporter(this));
-	importers().push_back(new GeoDataGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
 	importers().push_back(new GeoDataGdalGrayscalePngRealImporter(this));
 
 	exporters().push_back(new GeoDataGdalGdalRealExporter(this));

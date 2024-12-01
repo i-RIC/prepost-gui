@@ -3,7 +3,7 @@
 #include "geodatagdalifacemappert.h"
 #include "geodatagdalinteger.h"
 #include "geodatagdalintegercreator.h"
-#include "geodatagdalintegerimporter.h"
+#include "geodatagdalnetcdfintegerimporter.h"
 #include "geodatagdaljfacemappert.h"
 #include "geodatagdalncexporter.h"
 
@@ -11,7 +11,7 @@ GeoDataGdalIntegerCreator::GeoDataGdalIntegerCreator() :
 	GeoDataGdalCreatorT<int, vtkIntArray> {"integerGdal"}
 {
 	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
-	importers().push_back(new GeoDataGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
 
 	exporters().push_back(new GeoDataGdalGdalIntegerExporter(this));
 	exporters().push_back(new GeoDataGdalNcExporter(this));

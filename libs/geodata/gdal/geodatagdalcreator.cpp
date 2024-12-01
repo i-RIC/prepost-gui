@@ -1,6 +1,6 @@
 #include "geodatagdal.h"
 #include "geodatagdalcreator.h"
-#include "geodatagdalimporter.h"
+#include "geodatagdalnetcdfimporter.h"
 //#include "geodatagdalimporter.h"
 //#include "geodatagdalshapeexporter.h"
 

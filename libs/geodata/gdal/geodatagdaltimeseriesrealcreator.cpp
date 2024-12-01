@@ -4,7 +4,7 @@
 #include "geodatagdalgrayscalepngrealexporter.h"
 #include "geodatagdalgrayscalepngrealimporter.h"
 #include "geodatagdalreal.h"
-#include "geodatagdalrealimporter.h"
+#include "geodatagdalnetcdfrealimporter.h"
 #include "geodatagdaltimeseriesrealcreator.h"
 #include "geodatagdalxbandimporter.h"
 
@@ -14,7 +14,7 @@ GeoDataGdalTimeSeriesRealCreator::GeoDataGdalTimeSeriesRealCreator() :
 	GeoDataGdalTimeSeriesCreatorT<double, vtkDoubleArray> {"timeSeriesRealGdal"}
 {
 	importers().push_back(new GeoDataGdalGdalRealImporter(this));
-	importers().push_back(new GeoDataGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
 	importers().push_back(new GeoDataGdalXbandImporter(this));
 
 	exporters().push_back(new GeoDataGdalNcExporter(this));

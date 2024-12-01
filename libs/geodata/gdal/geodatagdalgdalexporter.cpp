@@ -5,8 +5,9 @@
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <guicore/base/iricmainwindowi.h>
-#include <guicore/project/projectdata.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 
 #include <QMessageBox>
 
@@ -21,7 +22,7 @@ GeoDataGdalGdalExporter::GeoDataGdalGdalExporter(GeoDataCreator* creator) :
 GeoDataGdalGdalExporter::~GeoDataGdalGdalExporter()
 {}
 
-bool GeoDataGdalGdalExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* /*pd*/)
+bool GeoDataGdalGdalExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
 	GeoDataGdal* gdal = dynamic_cast<GeoDataGdal*> (data);
 	if (! gdal->geoTransformExists()) {
@@ -51,18 +52,10 @@ bool GeoDataGdalGdalExporter::doExport(GeoData* data, const QString& filename, c
 	GDALDataset* dataset = memDriver->Create("dummy", gdal->xSize(), gdal->ySize(), 1, gdalDataType(), papszOptions);
 	dataset->SetGeoTransform(gdal->geoTransform());
 
-	auto csName = gdal->coordinateSystemName();
-
-	CoordinateSystem* cs = gdal->projectData()->mainWindow()->coordinateSystemBuilder()->system(csName);
+	auto cs = pd->mainfile()->coordinateSystem();
 	if (cs != nullptr) {
 		OGRSpatialReference SRC;
 		SRC.importFromProj4(iRIC::toStr(cs->proj4PlaneStr()).c_str());
-		char* wktStr;
-		SRC.exportToWkt(&wktStr);
-		dataset->SetProjection(wktStr);
-	} else {
-		OGRSpatialReference SRC;
-		SRC.importFromProj4(iRIC::toStr(csName).c_str());
 		char* wktStr;
 		SRC.exportToWkt(&wktStr);
 		dataset->SetProjection(wktStr);

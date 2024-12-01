@@ -109,7 +109,7 @@ bool GeoDataGdalGdalImporter::doInit(const QString& filename, const QString& sel
 bool GeoDataGdalGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto gdal = dynamic_cast<GeoDataGdal*> (data);
-	gdal->setGeoTransform(m_transform);
+	gdal->setGeoTransform(m_tgtTransform);
 
 	if (m_mode == Mode::Single) {
 		return importDataForSingleMode(gdal, w);
@@ -160,9 +160,16 @@ bool GeoDataGdalGdalImporter::doInitForSingleMode(const QString& filename, const
 	ok = setTransform(dataset);
 	if (! ok) {return false;}
 
+	int srcISize = dataset->GetRasterXSize();
+	int srcJSize = dataset->GetRasterYSize();
+
 	GDALClose(dataset);
 
 	m_filenames.push_back(filename);
+
+	GeoDataGdal::buildWarpMatrix(srcISize, srcJSize, m_srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(),
+															 &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
+
 	return true;
 }
 
@@ -205,7 +212,13 @@ bool GeoDataGdalGdalImporter::doInitForTimeMode(const QString& filename, const Q
 	ok = setTransform(dataset);
 	if (! ok) {return false;}
 
+	int srcISize = dataset->GetRasterXSize();
+	int srcJSize = dataset->GetRasterYSize();
+
 	GDALClose(dataset);
+
+	GeoDataGdal::buildWarpMatrix(srcISize, srcJSize, m_srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(),
+															 &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
 
 	// find pattern to parse time value from filename
 	QFileInfo finfo(filename);
@@ -231,12 +244,13 @@ bool GeoDataGdalGdalImporter::doInitForTimeMode(const QString& filename, const Q
 
 bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget* /*w*/)
 {
+	setupCoordinates(gdal);
+
 	auto filename = *(m_filenames.begin());
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {return false;}
 
 	GDALRasterBand* band = dataset->GetRasterBand(1);
-	setupCoordinates(gdal, band);
 
 	int ncid_out;
 	int ret;
@@ -253,20 +267,20 @@ bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget
 	ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 
 	// save coordinates and dimensions to the gdal file.
-	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
-	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
+	int out_xDimId, out_yDimId;
+	int out_xVarId, out_yVarId;
 	std::vector<int> dimIds;
 
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
-	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+	gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_xVarId, &out_yVarId);
 	gdal->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
 
 	ret = nc_enddef(ncid_out);
-	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId);
 
-	outputValues(ncid_out, varOutId, band, gdal);
+	outputValues(ncid_out, varOutId, dataset->GetRasterXSize(), dataset->GetRasterYSize(), band, gdal);
 
 	nc_close(ncid_out);
 
@@ -306,24 +320,24 @@ bool GeoDataGdalGdalImporter::importDataForTimeMode(GeoDataGdal* gdal, QWidget* 
 		if (dataset == NULL) {return false;}
 		GDALRasterBand* band = dataset->GetRasterBand(1);
 		if (timeId == 0) {
-			setupCoordinates(gdal, band);
+			setupCoordinates(gdal);
 
 			// save coordinates and dimensions to the gdal file.
-			int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
-			int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
+			int out_xDimId, out_yDimId;
+			int out_xVarId, out_yVarId;
 
 			std::vector<int> dimIds, varIds;
 
 			ret = nc_redef(ncid_out);
-			gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+			gdal->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_xVarId, &out_yVarId);
 			gdal->defineDimensions(ncid_out, &dimIds, &varIds);
 			gdal->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
 
 			ret = nc_enddef(ncid_out);
-			gdal->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+			gdal->outputCoords(ncid_out, out_xVarId, out_yVarId);
 			gdal->outputDimensions(ncid_out, varIds);
 		}
-		outputValuesWithTime(ncid_out, varOutId, timeId, band, gdal);
+		outputValuesWithTime(ncid_out, varOutId, timeId, dataset->GetRasterXSize(), dataset->GetRasterYSize(), band, gdal);
 
 		GDALClose(dataset);
 
@@ -390,43 +404,20 @@ bool GeoDataGdalGdalImporter::setCoordinateSystem(const QString& filename, GDALD
 
 bool GeoDataGdalGdalImporter::setTransform(GDALDataset* dataset)
 {
-	OGRErr err = dataset->GetGeoTransform(m_transform);
+	OGRErr err = dataset->GetGeoTransform(m_srcTransform);
 
 	return (err == CE_None);
 }
 
-void GeoDataGdalGdalImporter::setupCoordinates(GeoDataGdal* data, GDALRasterBand* band)
+void GeoDataGdalGdalImporter::setupCoordinates(GeoDataGdal* data)
 {
-	int xsize = band->GetXSize();
-	int ysize = band->GetYSize();
-	data->impl->m_coordinateSystemType = GeoDataGdal::XY;
-	data->impl->m_coordinateSystemName = m_coordinateSystem->name();
-
 	data->impl->m_xValues.clear();
-	for (int i = 0; i < xsize; ++i) {
-		data->impl->m_xValues.push_back(m_transform[0] + m_transform[1] * (i + 0.5));
+	for (int i = 0; i < m_tgtISize; ++i) {
+		data->impl->m_xValues.push_back(m_tgtTransform[0] + m_tgtTransform[1] * (i + 0.5));
 	}
 	data->impl->m_yValues.clear();
-	for (int i = 0; i < ysize; ++i) {
-		data->impl->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - i - 0.5));
-	}
-
-	data->impl->m_lonValues.clear();
-	bool isLonLat = m_coordinateSystem->isLongLat();
-	for (int j = 0; j < data->impl->m_yValues.size(); ++j) {
-		double y = data->impl->m_yValues.at(j);
-		for (int i = 0; i < data->impl->m_xValues.size(); ++i) {
-			double x = data->impl->m_xValues.at(i);
-			double lon, lat;
-			if (isLonLat) {
-				lon = x;
-				lat = y;
-			} else {
-				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
-			}
-			data->impl->m_lonValues.push_back(lon);
-			data->impl->m_latValues.push_back(lat);
-		}
+	for (int i = 0; i < m_tgtJSize; ++i) {
+		data->impl->m_yValues.push_back(m_srcTransform[3] + m_srcTransform[5] * (m_tgtJSize - i - 0.5));
 	}
 }
 
