@@ -59,7 +59,9 @@ public:
 	{}
 
 	void undo() {
+		m_condition->m_mouseEventMode = GridCreatingConditionRiverSurvey::MouseEventMode::meNormal;
 		m_condition->cancelBackgroundGridUpdate();
+
 		for (GeoDataRiverSurveyCtrlPointBackup* backup : m_before) {
 			backup->restore();
 		}
@@ -70,6 +72,7 @@ public:
 	}
 
 	void redo() {
+		m_condition->m_mouseEventMode = GridCreatingConditionRiverSurvey::MouseEventMode::meNormal;
 		m_condition->cancelBackgroundGridUpdate();
 		for (GeoDataRiverSurveyCtrlPointBackup* backup : m_after) {
 			backup->restore();
