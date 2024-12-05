@@ -59,7 +59,7 @@ void TmsImageCache::GarbageCollectThread::run()
 			while (true) {
 				m_cache->m_entriesMutex.lock();
 				auto entries_it = m_cache->m_entries.find(epochs_it->second);
-				bool collect = entries_it->second->status == Entry::Status::CacheInMemory && entries_it->second->pixmap != nullptr;
+				bool collect = (entries_it != m_cache->m_entries.end() && entries_it->second->status == Entry::Status::CacheInMemory && entries_it->second->pixmap != nullptr);
 				m_cache->m_entriesMutex.unlock();
 
 				if (collect) {
