@@ -131,7 +131,7 @@ std::string Post2dWindowZoneDataItem::zoneName() const
 void Post2dWindowZoneDataItem::update(bool noParticle)
 {
 	double xmin, xmax, ymin, ymax;
-	dataModel()->graphicsView()->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	dataModel()->graphicsView()->getDrawnRegionWithMargin(&xmin, &xmax, &ymin, &ymax);
 
 	auto v4Cont = v4DataContainer();
 	if (v4Cont != nullptr) {

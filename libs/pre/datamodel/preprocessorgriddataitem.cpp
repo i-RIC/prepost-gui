@@ -487,7 +487,7 @@ bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid, bool noDimensions)
 
 	PreProcessorGraphicsViewI* view = dataModel()->graphicsView();
 	double xmin, xmax, ymin, ymax;
-	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	view->getDrawnRegionWithMargin(&xmin, &xmax, &ymin, &ymax);
 
 	auto grid2d = dynamic_cast<v4Grid2d*> (impl->m_grid->grid());
 	grid2d->updateFilteredData(xmin, xmax, ymin, ymax);
@@ -1350,7 +1350,7 @@ void PreProcessorGridDataItem::updateSimplifiedGrid(VTKGraphicsView* v)
 		}
 		auto view = dynamic_cast<PreProcessorGraphicsView*>(v);
 		double xmin, xmax, ymin, ymax;
-		view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+		view->getDrawnRegionWithMargin(&xmin, &xmax, &ymin, &ymax);
 
 		auto grid2d = dynamic_cast<v4Grid2d*> (impl->m_grid->grid());
 		grid2d->updateFilteredData(xmin, xmax, ymin, ymax);
