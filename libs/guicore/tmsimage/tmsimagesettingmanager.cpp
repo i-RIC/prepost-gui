@@ -36,7 +36,7 @@ TmsImageSetting buildGoogleMapSetting(const std::string& url, const QString& cap
 	setting.setValue("url", url.c_str());
 	setting.setValue("caption", caption);
 	setting.setValue("active", "true");
-	setting.setValue("maxNativeZoom", "22");
+	setting.setValue("maxNativeZoom", "18");
 
 	return setting;
 }
