@@ -34,7 +34,7 @@
 
 namespace {
 
-	const double MARGIN_RATIO = 0.3;
+	const double MARGIN_RATIO = 0.8;
 
 void getExtendedDrawnRegion(VTK2DGraphicsView* view, double* xmin, double* xmax, double* ymin, double* ymax)
 {
