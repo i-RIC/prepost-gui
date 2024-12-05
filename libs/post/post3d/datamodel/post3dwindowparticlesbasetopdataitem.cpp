@@ -91,6 +91,8 @@ void Post3dWindowParticlesBaseTopDataItem::updateColorMapLegendsVisibility()
 		cms->legendSetting()->imgSetting()->apply(view);
 		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
 	}
+
+	updateVisibilityOfActor2DCollection(true);
 }
 
 std::unordered_set<ColorMapSettingContainerI*> Post3dWindowParticlesBaseTopDataItem::activeColorMapsWithVisibleLegend() const
