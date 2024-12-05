@@ -20,6 +20,7 @@ public:
 	QPointF worldToViewport(QPointF p) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax);
+	void getDrawnRegionWithMargin(double* xmin, double* xmax, double* ymin, double* ymax, double marginRatio = 1.0);
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void ResetCameraClippingRange();
 	double stdRadius(int pixels) const;
