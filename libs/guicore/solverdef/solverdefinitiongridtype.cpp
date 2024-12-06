@@ -28,11 +28,15 @@ namespace {
 
 SolverDefinitionGridType::GridType stringToGridType(const QString& name)
 {
+/*
 	if (name == "1d") {
 		return SolverDefinitionGridType::gtNormal1DGrid;
 	} else if (name == "1.5d") {
 		return SolverDefinitionGridType::gtNormal1_5DGrid;
+
 	} else if (name == "1.5d_withcrosssection") {
+*/
+	if (name == "1.5d_withcrosssection") {
 		return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
 	} else if (name == "structured2d") {
 		return SolverDefinitionGridType::gtStructured2DGrid;
