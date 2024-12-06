@@ -86,6 +86,7 @@ HEADERS += colortool.h \
            graphicsmisc.h \
            guibase_global.h \
            iricactivecellfilter.h \
+           iricgeometrypartialcellfilter.h \
            irictoolbar.h \
            landxmlutil.h \
            objectbrowser.h \
@@ -242,6 +243,7 @@ SOURCES += colortool.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
            iricactivecellfilter.cpp \
+           iricgeometrypartialcellfilter.cpp \
            irictoolbar.cpp \
            landxmlutil.cpp \
            objectbrowser.cpp \

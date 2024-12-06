@@ -122,6 +122,20 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 	*ymax = qMax(*ymax, y);
 }
 
+void VTK2DGraphicsView::getDrawnRegionWithMargin(double* xmin, double* xmax, double* ymin, double* ymax, double marginRatio)
+{
+	double xmin0, xmax0, ymin0, ymax0;
+	getDrawnRegion(&xmin0, &xmax0, &ymin0, &ymax0);
+
+	double xmargin = (xmax0 - xmin0) * marginRatio;
+	*xmin = xmin0 - xmargin;
+	*xmax = xmax0 + xmargin;
+
+	double ymargin = (ymax0 - ymin0) * marginRatio;
+	*ymin = ymin0 - ymargin;
+	*ymax = ymax0 + ymargin;
+}
+
 void VTK2DGraphicsView::rotate(double r)
 {
 	mainRenderer()->GetActiveCamera()->Roll(r);
