@@ -168,6 +168,9 @@ protected:
 	void showPropertyDialogModal();
 	void showPropertyDialogModeless();
 
+	void updateVisibilityOfActorCollection(bool visible);
+	void updateVisibilityOfActor2DCollection(bool visible);
+
 	std::vector<GraphicsWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy;
@@ -184,9 +187,6 @@ protected:
 	/// If true, the PreProcessorDataItem tree is under destruction.
 	bool m_isDestructing {false};
 
-private:
-	void updateVisibilityOfActorCollection(bool visible);
-	void updateVisibilityOfActor2DCollection(bool visible);
 
 public:
 	friend class BackgroundImageInfo;

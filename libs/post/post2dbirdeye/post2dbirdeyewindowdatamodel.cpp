@@ -193,6 +193,8 @@ void Post2dBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode& nod
 	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
 	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
 	m_rootDataItem->updateZScale(m_zScale);
+
+	m_rootDataItem->updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)

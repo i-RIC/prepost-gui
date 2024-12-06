@@ -86,6 +86,8 @@ void Post2dWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
 	m_rootDataItem->updateZScale(m_zScale);
 	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
+
+	m_rootDataItem->updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)
