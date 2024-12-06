@@ -69,7 +69,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGra
 	pushRenderCommand(cmd, this, true);
 }
 
-void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
+void Post2dWindowNodeVectorParticleGroupDataItem::doUpdateActorSetting()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
 
@@ -87,7 +87,6 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
 
 	resetParticles();
 
-	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
 }
 

@@ -334,7 +334,7 @@ void Post2dWindowGraphGroupDataItem::innerUpdateZScale(double scale)
 	impl->m_graphLinesActor.linesActor()->SetScale(1, scale, 1);
 }
 
-void Post2dWindowGraphGroupDataItem::updateActorSetting()
+void Post2dWindowGraphGroupDataItem::doUpdateActorSetting()
 {
 	auto col = actorCollection();
 	col->RemoveItem(impl->m_baseLinesActor.actor());
@@ -459,6 +459,4 @@ void Post2dWindowGraphGroupDataItem::updateActorSetting()
 		col->AddItem(impl->m_baseLinesActor.actor());
 	}
 	col->AddItem(impl->m_graphLinesActor.linesActor());
-
-	updateVisibilityWithoutRendering();
 }

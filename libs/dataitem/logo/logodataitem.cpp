@@ -17,7 +17,7 @@ LogoDataItem::LogoDataItem(GraphicsWindowDataItem* parent) :
 
 	m_actor2DCollection->AddItem(impl->m_actor);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 LogoDataItem::~LogoDataItem()
@@ -66,7 +66,7 @@ void LogoDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 void LogoDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void LogoDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -74,10 +74,8 @@ void LogoDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	impl->m_setting.save(writer);
 }
 
-void LogoDataItem::updateActorSetting()
+void LogoDataItem::doUpdateActorSetting()
 {
-	updateVisibilityWithoutRendering();
-
 	auto view = dataModel()->graphicsView();
 	impl->m_setting.imageSetting.apply(view);
 }

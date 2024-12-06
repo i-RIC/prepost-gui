@@ -307,6 +307,11 @@ void PreProcessorGeoDataDataItem::doHandleResize(QResizeEvent* event, VTKGraphic
 	m_geoData->handleResize(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
+void PreProcessorGeoDataDataItem::doUpdateActorSetting()
+{
+	m_geoData->doUpdateActorSetting();
+}
+
 void PreProcessorGeoDataDataItem::setDeleteSilently(bool silent)
 {
 	m_deleteSilently = silent;

@@ -145,7 +145,6 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	actorCollection()->AddItem(impl->m_actor);
 	renderer()->AddActor(impl->m_actor);
 
-	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -1376,7 +1375,7 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 	}
 }
 
-void GeoDataPolygon::updateActorSetting()
+void GeoDataPolygon::doUpdateActorSetting()
 {
 	auto& ds = impl->m_displaySetting;
 
@@ -1406,8 +1405,6 @@ void GeoDataPolygon::updateActorSetting()
 		hole->updateActorSetting();
 	}
 	impl->m_regionPolygon->updateActorSetting();
-
-	updateVisibilityWithoutRendering();
 
 	emit updateActorSettingExecuted();
 }

@@ -52,7 +52,7 @@ private:
 	QString autoLabel() const;
 	void updateMouseCursor();
 	void updateMouseCursor(VTKGraphicsView* v);
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 private:
 	class Impl;

@@ -20,8 +20,6 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 	renderer()->AddActor(m_actor.actor());
 	m_actorCollection->AddItem(m_actor.actor());
 
-	updateVisibilityWithoutRendering();
-
 	m_georeferenceAction = new QAction(PreProcessorBackgroundImageDataItem::tr("&Georeference..."), this);
 
 	connect(m_georeferenceAction, SIGNAL(triggered()), this, SLOT(showGeoreferenceDialog()));

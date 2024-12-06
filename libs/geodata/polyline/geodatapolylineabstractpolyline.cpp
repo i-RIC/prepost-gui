@@ -71,8 +71,6 @@ GeoDataPolyLineAbstractPolyLine::GeoDataPolyLineAbstractPolyLine(GeoDataPolyLine
 
 	auto col = parent->actorCollection();
 	col->AddItem(impl->m_linesActor);
-
-	parent->updateVisibilityWithoutRendering();
 }
 
 GeoDataPolyLineAbstractPolyLine::~GeoDataPolyLineAbstractPolyLine()

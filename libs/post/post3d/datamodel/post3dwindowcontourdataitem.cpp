@@ -77,11 +77,10 @@ void Post3dWindowContourDataItem::innerUpdateZScale(double scale)
 	m_actor->SetScale(1, 1, scale);
 }
 
-void Post3dWindowContourDataItem::updateActorSetting()
+void Post3dWindowContourDataItem::doUpdateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
-	if (! isChecked()) {return;}
 
 	auto cont = groupDataItem()->data();
 	if (cont == nullptr) {return;}
@@ -106,8 +105,6 @@ void Post3dWindowContourDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 	m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth);
 	m_actorCollection->AddItem(m_actor);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post3dWindowContourDataItem::informSelection(VTKGraphicsView* v)

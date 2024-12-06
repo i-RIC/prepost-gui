@@ -75,7 +75,7 @@ void GridBirdEyeWindowGridShapeDataItem::update()
 	updateActorSetting();
 }
 
-void GridBirdEyeWindowGridShapeDataItem::updateActorSetting()
+void GridBirdEyeWindowGridShapeDataItem::doUpdateActorSetting()
 {
 	auto g = zoneDataItem()->grid();
 	if (g == nullptr) {return;}
@@ -90,8 +90,6 @@ void GridBirdEyeWindowGridShapeDataItem::updateActorSetting()
 									 m_gridWarp->GetOutput(), m_gridWarp->GetOutput(),
 									 dummyLabelData,
 									 v4GridUtil::LABEL_NAME);
-
-	updateVisibilityWithoutRendering();
 }
 
 void GridBirdEyeWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)

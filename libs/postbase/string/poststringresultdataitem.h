@@ -33,7 +33,7 @@ private:
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

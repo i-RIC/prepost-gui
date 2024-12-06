@@ -46,7 +46,7 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 public slots:
 	void showPropertyDialog() override;

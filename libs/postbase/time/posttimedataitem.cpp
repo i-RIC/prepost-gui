@@ -136,7 +136,7 @@ void PostTimeDataItem::update()
 	updateActorSetting();
 }
 
-void PostTimeDataItem::updateActorSetting()
+void PostTimeDataItem::doUpdateActorSetting()
 {
 	auto mainFile = projectData()->mainfile();
 
@@ -168,6 +168,4 @@ void PostTimeDataItem::updateActorSetting()
 	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToLeft();
 	prop->SetVerticalJustificationToBottom();
-
-	updateVisibilityWithoutRendering();
 }

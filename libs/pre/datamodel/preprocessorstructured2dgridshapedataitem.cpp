@@ -46,7 +46,7 @@ void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 	updateActorSetting();
 }
 
-void PreProcessorStructured2dGridShapeDataItem::updateActorSetting()
+void PreProcessorStructured2dGridShapeDataItem::doUpdateActorSetting()
 {
 	actorCollection()->RemoveAllItems();
 	actor2DCollection()->RemoveAllItems();
@@ -65,8 +65,6 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSetting()
 	m_setting.update(actorCollection(), actor2DCollection(),
 									 filteredData, filteredData,
 									 indexData, v4GridUtil::LABEL_NAME);
-
-	updateVisibilityWithoutRendering();
 }
 
 void PreProcessorStructured2dGridShapeDataItem::showPropertyDialog()

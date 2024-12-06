@@ -57,7 +57,7 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMain
 
 	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

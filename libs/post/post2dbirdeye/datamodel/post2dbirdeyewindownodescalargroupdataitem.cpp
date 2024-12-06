@@ -83,7 +83,7 @@ const std::string& Post2dBirdEyeWindowNodeScalarGroupDataItem::elevationTarget()
 	return impl->m_elevationTarget;
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
@@ -155,8 +155,6 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 	auto v = dataModel()->graphicsView();
 	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth * v->devicePixelRatioF());
 	m_actorCollection->AddItem(impl->m_actor);
-
-	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
@@ -167,7 +165,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 
 	m_actorCollection->AddItem(impl->m_actor);
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()

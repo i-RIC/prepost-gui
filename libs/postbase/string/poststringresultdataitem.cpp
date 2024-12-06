@@ -94,7 +94,7 @@ void PostStringResultDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsVi
 	m_setting.imageSetting.controller()->handleResize(event, v);
 }
 
-void PostStringResultDataItem::updateActorSetting()
+void PostStringResultDataItem::doUpdateActorSetting()
 {
 	m_setting.imageBuilder->setZoneDataContainer(zoneDataItem()->v4DataContainer());
 

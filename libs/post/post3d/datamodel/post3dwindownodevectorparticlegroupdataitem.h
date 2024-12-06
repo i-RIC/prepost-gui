@@ -23,7 +23,7 @@ public:
 	void setTarget(const std::string& target) override;
 	bool isOutput() const;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void handleStandardItemChange() override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);

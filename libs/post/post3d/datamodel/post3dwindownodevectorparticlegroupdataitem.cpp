@@ -64,14 +64,12 @@ void Post3dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGra
 	pushRenderCommand(cmd, this, true);
 }
 
-void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
+void Post3dWindowNodeVectorParticleGroupDataItem::doUpdateActorSetting()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
 
 	clearParticleActors();
 	clearParticles();
-
-	if (! isChecked()) {return;}
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr || cont->gridData() == nullptr) {return;}
@@ -84,7 +82,6 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
 
 	resetParticles();
 
-	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
 }
 

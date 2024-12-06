@@ -26,7 +26,7 @@ public:
 	void setTarget(const std::string& target) override;
 	bool isOutput() const;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;

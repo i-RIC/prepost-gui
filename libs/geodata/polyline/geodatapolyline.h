@@ -116,7 +116,7 @@ private:
 
 	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateScalarValues() override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	bool polylineHasThreeVertices();
 	void updateMouseEventMode();
 	void updateActionStatus();

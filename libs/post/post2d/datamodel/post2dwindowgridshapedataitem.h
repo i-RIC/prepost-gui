@@ -31,7 +31,7 @@ private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
 	void setupActors();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 
 	Post2dWindowGridDataItemI* gridDataItem() const;
 

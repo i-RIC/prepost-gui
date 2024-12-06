@@ -127,7 +127,7 @@ private slots:
 	void togglePolyonsEditMode();
 
 private:
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateMenu();
 	void updateMenu(QMenu* menu);
 

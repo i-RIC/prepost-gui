@@ -226,7 +226,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::setupActors()
 	update();
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
+void Post2dWindowParticlesBaseScalarGroupDataItem::doUpdateActorSetting()
 {
 	updateCheckState();
 
@@ -290,7 +290,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 		}
 	}
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -38,7 +38,7 @@ private:
 
 	GeoDataPolyDataGroupPolyData* createNewData() override;
 	GeoDataPolyData* createEditTargetData() override;
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateMenu() override;
 	void updateActorSettingForEditTargetPolyData() override;
 

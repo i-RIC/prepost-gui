@@ -274,7 +274,7 @@ void MeasuredDataVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKG
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void MeasuredDataVectorGroupDataItem::handleStandardItemChange()
@@ -283,7 +283,7 @@ void MeasuredDataVectorGroupDataItem::handleStandardItemChange()
 	topDataItem()->fileDataItem()->updateColorMapLegendsVisibility();
 }
 
-void MeasuredDataVectorGroupDataItem::updateActorSetting()
+void MeasuredDataVectorGroupDataItem::doUpdateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
 	impl->m_legendActor->VisibilityOff();

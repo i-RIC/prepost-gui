@@ -85,6 +85,7 @@ public:
 	virtual bool addToolBarButtons(QToolBar* parent);
 	virtual void applyColorMapSetting();
 	virtual void applyValueChangeMap(const std::vector<int>& valueMap);
+	void updateActorSetting();
 
 	QMenu* menu() const;
 
@@ -147,7 +148,7 @@ protected:
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
-	virtual void updateActorSetting();
+	virtual void doUpdateActorSetting();
 
 	PreProcessorWindowI* preProcessorWindow();
 	PreProcessorGraphicsViewI* graphicsView();
@@ -184,6 +185,7 @@ protected:
 
 public:
 	friend class GeoDataProxy;
+	friend class PreProcessorGeoDataDataItem;
 };
 
 #endif // GEODATA_H

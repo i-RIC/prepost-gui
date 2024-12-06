@@ -95,7 +95,6 @@ GeoDataPolyLine::GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, So
 {
 	impl->m_mouseEventMode = meBeforeDefining;
 
-	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -653,7 +652,7 @@ void GeoDataPolyLine::updateScalarValues()
 	impl->m_polyLine->updateScalarValues();
 }
 
-void GeoDataPolyLine::updateActorSetting()
+void GeoDataPolyLine::doUpdateActorSetting()
 {
 	impl->m_polyLine->updateActorSetting();
 

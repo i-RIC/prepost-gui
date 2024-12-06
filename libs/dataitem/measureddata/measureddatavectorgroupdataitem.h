@@ -44,7 +44,7 @@ private:
 	void doApplyOffset(double x, double y) override;
 	void handleStandardItemChange() override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateVisibility(bool visible) override;
 	MeasuredDataVectorGroupTopDataItem* topDataItem() const;
 

@@ -134,7 +134,7 @@ void MeasuredDataPointGroupDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		}
 	}
 
-	updateActorSetting();
+	doUpdateActorSetting();
 }
 
 void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -280,7 +280,7 @@ void MeasuredDataPointGroupDataItem::updateVisibility(bool visible)
 	impl->m_colorMapToolBarWidget->setEnabled(v && impl->m_setting.mappingMode == Setting::MappingMode::Value);
 }
 
-void MeasuredDataPointGroupDataItem::updateActorSetting()
+void MeasuredDataPointGroupDataItem::doUpdateActorSetting()
 {
 	impl->updateCheckState();
 

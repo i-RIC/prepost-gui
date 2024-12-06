@@ -208,7 +208,6 @@ void GeoDataPolygonAbstractPolygon::setSelected(bool selected)
 	} else {
 		paintActor->VisibilityOff();
 	}
-	impl->m_parent->updateVisibilityWithoutRendering();
 }
 
 void GeoDataPolygonAbstractPolygon::finishDefinition()

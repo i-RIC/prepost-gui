@@ -81,7 +81,6 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 
 GeoDataPolyLineGroup::~GeoDataPolyLineGroup()
 {
-	actorCollection()->RemoveAllItems();
 	renderer()->RemoveActor(impl->m_edgesActor);
 	renderer()->RemoveActor(impl->m_selectedPolyLinesEdgesActor);
 	renderer()->RemoveActor(impl->m_selectedPolyLinesPointsActor);
@@ -371,7 +370,7 @@ GeoDataPolyData* GeoDataPolyLineGroup::createEditTargetData()
 	return line;
 }
 
-void GeoDataPolyLineGroup::updateActorSetting()
+void GeoDataPolyLineGroup::doUpdateActorSetting()
 {
 	auto ds = impl->m_displaySetting;
 
@@ -552,5 +551,5 @@ void GeoDataPolyLineGroup::updateActorSettingForEditTargetPolyData()
 		l_ds.mapping = GeoDataPolyLine::DisplaySetting::Mapping::Value;
 	}
 
-	targetData->updateActorSetting();
+	targetData->doUpdateActorSetting();
 }

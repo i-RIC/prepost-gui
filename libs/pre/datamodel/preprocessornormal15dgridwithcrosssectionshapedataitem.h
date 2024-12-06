@@ -38,7 +38,7 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setupActors();
-	void updateActorSettings();
+	void doUpdateActorSetting() override;
 
 private slots:
 	void openCrossSectionWindow();

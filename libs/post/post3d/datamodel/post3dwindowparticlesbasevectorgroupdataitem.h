@@ -49,7 +49,7 @@ private:
 
 	void setupActors();
 	void updateCheckState();
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateVisibility(bool visible) override;
 
 	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;

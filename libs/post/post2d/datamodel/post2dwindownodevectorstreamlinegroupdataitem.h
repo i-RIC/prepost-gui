@@ -34,7 +34,7 @@ public:
 	Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupDataItem() override;
 
-	void updateActorSetting() override;
+	void doUpdateActorSetting() override;
 	void updateZDepthRangeItemCount() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
