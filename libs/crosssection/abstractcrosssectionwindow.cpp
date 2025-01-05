@@ -10,6 +10,7 @@
 #include "private/abstractcrosssectionwindow_updategraphicsviewcommand.h"
 #include "public/abstractcrosssectionwindow_controller.h"
 
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/iricundostack.h>
@@ -130,6 +131,26 @@ void AbstractCrosssectionWindow::applyTmpTargetSetting()
 {
 	impl->m_controller->setCellSide(impl->m_tmpCellSide);
 	impl->m_controller->setTarget(impl->m_tmpDirection, impl->m_tmpIndex);
+}
+
+void AbstractCrosssectionWindow::handleGridReplace()
+{
+	auto g = grid();
+	if (g == nullptr) {
+		setTarget(targetDirection(), 0);
+	} else {
+		auto dir = targetDirection();
+		vtkIdType dimI, dimJ;
+		g->getDimensions(&dimI, &dimJ);
+
+		auto index = targetIndex();
+		if (dir == Direction::I && index >= dimI) {
+			index = 0;
+		} else if (dir == Direction::J && index >= dimJ) {
+			index = 0;
+		}
+		setTarget(dir, index);
+	}
 }
 
 void AbstractCrosssectionWindow::update()

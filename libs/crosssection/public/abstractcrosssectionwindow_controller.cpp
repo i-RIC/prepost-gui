@@ -112,7 +112,10 @@ void AbstractCrosssectionWindow::Controller::handleSettingChange()
 void AbstractCrosssectionWindow::Controller::updateTargetRange()
 {
 	auto grid = m_window->grid();
-	if (grid == nullptr) {return;}
+	if (grid == nullptr) {
+		ui->positionSlider->setRange(1, 0);
+		return;
+	}
 
 	int dataCount = 0;
 	if (ui->iRadioButton->isChecked()) {

@@ -500,6 +500,10 @@ bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid, bool noDimensions)
 	// update vtk pipeline.
 	updateVtkObjectsForDrawing();
 
+	for (auto w : impl->m_crosssectionWindows) {
+		w->handleGridReplace();
+	}
+
 	// update the object browser tree structure.
 	updateObjectBrowserTree();
 	updateActionStatus();
@@ -782,6 +786,10 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	delete impl->m_grid;
 	impl->m_grid = nullptr;
 	impl->m_gridIsDeleted = true;
+
+	for (auto w : impl->m_crosssectionWindows) {
+		w->handleGridReplace();
+	}
 	updateObjectBrowserTree();
 	updateActionStatus();
 	updateVtkObjectsForDrawing();
