@@ -44,6 +44,8 @@ void PreProcessorGridCrosssectionInternalWindow::EditTableController::Delegate::
 	auto w = m_controller->impl->m_window;
 	auto preW = dynamic_cast<PreProcessorGridCrosssectionInternalWindow*> (w);
 	auto inputGrid = preW->m_item->grid();
+	if (inputGrid == nullptr) {return;}
+
 	auto container = inputGrid->attribute(setting->attributeName());
 	auto def = container->gridAttribute();
 
