@@ -309,6 +309,8 @@ void PreProcessorGeoDataDataItem::doHandleResize(QResizeEvent* event, VTKGraphic
 
 void PreProcessorGeoDataDataItem::doUpdateActorSetting()
 {
+	if (m_geoData == nullptr) {return;}
+
 	m_geoData->doUpdateActorSetting();
 }
 
