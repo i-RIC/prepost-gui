@@ -59,6 +59,7 @@ public:
 	Controller* controller() const;
 
 public slots:
+	void handleGridReplace();
 	void update();
 	void handleSettingChange();
 	void updateGraphicsView();

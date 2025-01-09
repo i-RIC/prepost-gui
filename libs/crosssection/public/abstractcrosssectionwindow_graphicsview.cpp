@@ -569,6 +569,7 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 	extractGrid->Update();
 	auto output = extractGrid->GetOutput();
 	auto points = output->GetPoints();
+	if (points == nullptr) {return positions;}
 
 	QPointF point, previousPoint;
 
