@@ -10,6 +10,8 @@
 #include <QPainter>
 #include <QRectF>
 
+#include <cmath>
+
 TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
 	m_centerLon {0},
 	m_centerLat {0},
@@ -181,15 +183,9 @@ void TmsRegionSelectWidget::mouseMoveEvent(QMouseEvent *e)
 void TmsRegionSelectWidget::wheelEvent(QWheelEvent* event)
 {
 	int delta = event->delta() / QWheelEvent::DefaultDeltasPerStep;
-	double zoomRate = 1.2;
-	if (delta < 0) {
-		delta = - delta;
-		zoomRate = 1 / zoomRate;
-	}
-	while (delta > 0) {
-		impl->m_zoomLevel *= zoomRate;
-		-- delta;
-	}
+	double delta2 = delta * 0.2;
+
+	impl->m_zoomLevel += delta2;
 
 	update();
 	requestUpdate();
@@ -252,8 +248,13 @@ void TmsRegionSelectWidget::requestUpdate()
 	TmsImageSettingManager manager;
 
 	QPointF center(impl->m_centerLon, impl->m_centerLat);
-	double scale = tmsloader::TmsUtil::meterPerPixel(center, impl->m_zoomLevel);
-	tmsloader::TmsRequest* req = manager.buildRequest(center, size(), scale, impl->m_mapSetting);
+	auto s = size();
+	auto zl2 = static_cast<int> (impl->m_zoomLevel);
+	double ratio = std::pow(2.0, zl2 - impl->m_zoomLevel);
+	s.setWidth(static_cast<int> (s.width() * ratio));
+	s.setHeight(static_cast<int> (s.height() * ratio));
+
+	tmsloader::TmsRequest* req = manager.buildRequest(center, s, zl2, impl->m_mapSetting);
 	if (req == nullptr) {return;}
 
 	int rId;
@@ -267,9 +268,9 @@ void TmsRegionSelectWidget::requestUpdate()
 
 	delete req;
 
-	QSize s = size();
-	impl->XYToLonLat(s, 0, 0, &(impl->m_imageLonMin), &(impl->m_imageLatMax));
-	impl->XYToLonLat(s, s.width(), s.height(), &(impl->m_imageLonMax), &(impl->m_imageLatMin));
+	QSize s2 = size();
+	impl->XYToLonLat(s2, 0, 0, &(impl->m_imageLonMin), &(impl->m_imageLatMax));
+	impl->XYToLonLat(s2, s2.width(), s2.height(), &(impl->m_imageLonMax), &(impl->m_imageLatMin));
 }
 
 void TmsRegionSelectWidget::zoomIn()
@@ -286,7 +287,7 @@ void TmsRegionSelectWidget::handleImageUpdate(int requestId)
 {
 	if (impl->m_requestId != requestId) {return;}
 
-	impl->m_image = impl->m_loader.getImage(requestId);
+	impl->m_image = impl->m_loader.getImage(requestId).scaled(size());
 	update();
 }
 
