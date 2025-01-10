@@ -37,7 +37,7 @@ void TmsImageCache::GarbageCollectThread::run()
 		if (m_abort) {return;}
 
 		if (! m_collect) {
-			msleep(50);
+			msleep(500);
 			continue;
 		}
 
@@ -79,5 +79,7 @@ void TmsImageCache::GarbageCollectThread::run()
 				if (epochs_it == epochs.end()) {break;}
 			}
 		}
+
+		m_collect = false;
 	}
 }
