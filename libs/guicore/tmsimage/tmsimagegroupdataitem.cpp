@@ -370,24 +370,6 @@ void TmsImageGroupDataItem::requestImage(bool force)
 	double oldImageScale = impl->m_imageScale;
 	calcRequestParameters(&center, &size, &imageScale, &imageLowerLeft, &zoomLevel, view, *cs, impl->m_offset);
 
-/*
-	QPointF center;
-	QSize size;
-	double scale;
-	QPointF imageLowerLeft;
-	double imageScale;
-
-	double oldImageScale = impl->m_imageScale;
-	calcImageParameters(&center, &size, &scale, &imageLowerLeft, &imageScale, view, *cs, impl->m_offset);
-
-	QSize imageSize;
-	double ratio;
-	int zoomLevel;
-	calcSizeAndZoomLevel(size, scale, center, &imageSize, &zoomLevel, &ratio);
-
-	imageScale /= ratio;
-	*/
-
 	double r = imageScale / oldImageScale;
 	all_ok = all_ok && (r < 1.2 && 1.0 / r < 1.2);
 
