@@ -47,8 +47,11 @@ PreProcessorStructured2dGridDataItem::~PreProcessorStructured2dGridDataItem()
 
 void PreProcessorStructured2dGridDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
 {
-	auto g = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
-	auto polyData = g->extractEdgeData(i, j);
+	auto g1 = grid();
+	if (g1 == nullptr) {return;}
+	auto g2 = dynamic_cast<v4Structured2dGrid*> (g1->grid());
+
+	auto polyData = g2->extractEdgeData(i, j);
 	m_edgeMapper->SetInputData(polyData);
 	polyData->Delete();
 	m_edgeActor->VisibilityOn();

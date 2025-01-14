@@ -17,6 +17,7 @@ public:
 
 	PreProcessorGridCrosssectionInternalWindow* internalWindow() const;
 
+	void handleGridReplace();
 	void update();
 
 	QPixmap snapshot() const override;

@@ -41,6 +41,11 @@ PreProcessorGridCrosssectionInternalWindow* PreProcessorGridCrosssectionWindow::
 	return m_internalWindow;
 }
 
+void PreProcessorGridCrosssectionWindow::handleGridReplace()
+{
+	m_internalWindow->handleGridReplace();
+}
+
 void PreProcessorGridCrosssectionWindow::update()
 {
 	m_internalWindow->update();
