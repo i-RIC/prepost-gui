@@ -3,6 +3,11 @@
 
 #include "tmsloader_api.h"
 
+#include <QPixmap>
+#include <QString>
+
+#include <unordered_map>
+
 class QPointF;
 class QSize;
 #if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
@@ -12,6 +17,8 @@ class QWebView;
 #endif
 class QWidget;
 
+class TmsImageCache;
+
 namespace tmsloader {
 
 class TmsRequestHandler;
@@ -19,19 +26,15 @@ class TmsRequestHandler;
 class TMSLOADER_API TmsRequest
 {
 public:
-	TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale);
+	TmsRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel);
 	virtual ~TmsRequest();
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	virtual TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const = 0;
-#else
-	virtual TmsRequestHandler* buildHandler(int requestId, QWebView* view) const = 0;
-#endif
+	virtual TmsRequestHandler* buildHandler(int requestId, TmsImageCache* imageCache) const = 0;
 
 protected:
 	QPointF center() const;
 	QSize size() const;
-	double scale() const;
+	int zoomLevel() const;
 
 private:
 	class Impl;

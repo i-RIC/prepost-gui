@@ -1,49 +1,35 @@
+#include "tmsimagecache.h"
 #include "tmsrequesthandler.h"
 #include "../tmsutil.h"
 
+#include <cs/webmercatorutil.h>
+#include <misc/qttool.h>
+
 #include <QFile>
 #include <QTextStream>
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-#include <QWebEngineView>
-#else
-#include <QWebView>
-#endif
 #include <QMutexLocker>
+#include <QNetworkReply>
+#include <QPainter>
 
 using namespace tmsloader;
 
 namespace {
 
-const int TIMER_INTERVAL_MSEC = 100;
-
-void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, const QPointF& center, QSize* size, int* zoomLevel)
-{
-	*zoomLevel = TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel) + 1;
-	while (true) {
-		-- *zoomLevel;
-		double mpp = TmsUtil::meterPerPixel(center, *zoomLevel);
-		double rate = targetMeterPerPixel / mpp;
-		*size = QSize(targetSize.width() * rate, targetSize.height() * rate);
-
-		if (rate < 1.0) {break;}
-	}
-}
+const int TIMER_MSEC_SHORT = 10;
+const int TIMER_MSEC_LONG = 200;
 
 } // namespace
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebEngineView* view) :
-#else
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebView* view) :
-#endif
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& templateName, int requestId, TmsImageCache* imageCache) :
 	QObject {nullptr},
 	m_center {centerLonLat},
 	m_size {size},
-	m_scale {scale},
+	m_zoomLevel {zoomLevel},
 	m_templateName {templateName},
 	m_requestId {requestId},
-	m_webView {view},
 	m_terminating {false},
+	m_webAccessManager {QtTool::networkAccessManager()},
+	m_imageCache {imageCache},
 	m_timer {this}
 {
 	// To see the view for debugging,, comment out the following line.
@@ -54,7 +40,6 @@ TmsRequestHandler::~TmsRequestHandler()
 {
 	m_terminating = true;
 	m_timer.stop();
-	m_webView->stop();
 }
 
 int TmsRequestHandler::requestId() const
@@ -66,15 +51,6 @@ QImage TmsRequestHandler::image() const
 {
 	QMutexLocker locker(&m_imageMutex);
 	return m_image;
-}
-
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-QWebEngineView* TmsRequestHandler::webView() const
-#else
-QWebView* TmsRequestHandler::webView() const
-#endif
-{
-	return m_webView;
 }
 
 void TmsRequestHandler::setArgs(const std::map<QString, QString>& args)
@@ -90,75 +66,120 @@ void TmsRequestHandler::setOptions(const std::map<QString, QString>& options)
 void TmsRequestHandler::setup()
 {
 	// calculate the appropriate window size and zoom level from m_size, m_scale, and m_center.
-	QSize size;
-	int zoomLevel;
+	QString url_template = m_args.at("%URL%");
 
-	calcSizeAndZoomLevel(m_size, m_scale, m_center, &size, &zoomLevel);
+	// calculate x, y at the center
+	double x, y;
+	WebMercatorUtil::project(m_center.x(), m_center.y(), &x, &y);
+	auto zl = m_zoomLevel;
+	auto maxZl = m_options.at("maxNativeZoom").toInt();
+	if (zl > maxZl) {zl = maxZl;}
 
-	m_webView->resize(size);
-
-	connect(m_webView, SIGNAL(loadFinished(bool)), this, SLOT(handleLoaded()));
-
-	QFile file(QString(":/data/%1").arg(m_templateName));
-	file.open(QFile::ReadOnly | QFile::Text);
-	QTextStream in(&file);
-
-	QString content = in.readAll();
-
-	std::map<QString, QString> newArgs = m_args;
-
-	newArgs.insert({"%LONGITUDE%", QString::number(m_center.x(), 'g', 10)});
-	newArgs.insert({"%LATITUDE%", QString::number(m_center.y(), 'g', 10)});
-	newArgs.insert({"%ZOOMLEVEL%", QString::number(zoomLevel)});
-	newArgs.insert({"%WIDTH%", QString::number(size.width())});
-	newArgs.insert({"%HEIGHT%", QString::number(size.height())});
-
-	m_options.insert({"maxZoom", QString::number(zoomLevel)});
-	newArgs.insert({"%OPTIONS%", optionsString()});
-
-	for (auto pair : newArgs) {
-		content.replace(pair.first, pair.second);
+	int s = 1;
+	for (int i = 0; i < m_zoomLevel; ++i) {
+		s *= 2;
 	}
-	m_webView->setHtml(content);
-	m_loading = true;
 
-	m_image = QImage(size.width(), size.height(), QImage::Format_ARGB32);
-	emit imageUpdated();
+	double lonMin, lonMax, latMin, latMax;
+	WebMercatorUtil::unproject(
+				x - m_size.width() / 2.0 / s, y + m_size.height() / 2.0 / s,
+				&lonMin, &latMin);
 
-	connect(&m_timer, SIGNAL(timeout()), this, SLOT(checkImage()));
-	m_timer.start(TIMER_INTERVAL_MSEC);
-}
+	WebMercatorUtil::unproject(
+				x + m_size.width() / 2.0 / s, y - m_size.height() / 2.0 / s,
+				&lonMax, &latMax);
 
-void TmsRequestHandler::checkImage()
-{
-	if (m_loading == true) {return;}
+	WebMercatorUtil wmUtil(zl);
+	wmUtil.getTileRegion(lonMin, latMax, lonMax, latMin, &m_xMin, &m_xMax, &m_yMin, &m_yMax);
 
-	QImage newImage(m_webView->size(), QImage::Format_ARGB32);
-	m_webView->render(&newImage);
+	m_imageCache->addRequests(url_template, zl, m_xMin, m_xMax, m_yMin, m_yMax, maxZl);
 
-	if (newImage == m_image) {return;}
+	m_image = QImage(m_size, QImage::Format_ARGB32);
 
-	m_imageMutex.lock();
-	m_image = newImage.scaled(m_size);
-	m_imageMutex.unlock();
-
-	emit imageUpdated();
+	m_timer.singleShot(TIMER_MSEC_SHORT, this, &TmsRequestHandler::handleLoaded);
 }
 
 void TmsRequestHandler::handleLoaded()
 {
 	if (m_terminating) {return;}
 
-	m_loading = false;
+	bool emitFlag = true;
+	QImage image(m_size, QImage::Format_ARGB32);
 
-	QImage image(m_webView->size(), QImage::Format_ARGB32);
-	m_webView->render(&image);
+	QPainter painter;
+	painter.begin(&image);
+	painter.fillRect(0, 0, image.width(), image.height(), Qt::lightGray);
+
+	double x, y;
+	WebMercatorUtil::project(m_center.x(), m_center.y(), &x, &y);
+	int s = 1;
+	for (int i = 0; i < m_zoomLevel; ++i) {
+		s *= 2;
+	}
+
+	long long scaledX = static_cast<long long> (x * s);
+	long long scaledY = static_cast<long long> (y * s);
+
+	auto zl = m_zoomLevel;
+	auto maxZl = m_options.at("maxNativeZoom").toInt();
+	if (zl > maxZl) {zl = maxZl;}
+
+	int s2 = 1;
+	if (m_zoomLevel > maxZl) {
+		for (int i = 0; i < (m_zoomLevel - maxZl); ++i) {
+			s2 *= 2;
+		}
+	}
+
+	bool allImagesExists = true;
+	QString url_template = m_args.at("%URL%");
+	for (int tileX = m_xMin; tileX <= m_xMax; ++tileX) {
+		for (int tileY = m_yMin; tileY <= m_yMax; ++tileY) {
+			QString url = url_template;
+			url.replace("{z}", QString::number(zl));
+			url.replace("{x}", QString::number(tileX));
+			url.replace("{y}", QString::number(tileY));
+
+			// auto httpUrl = url;
+			// httpUrl.replace("https", "http");
+
+			// QUrl qUrl(httpUrl);
+			QUrl qUrl(url);
+
+			auto pixmap = m_imageCache->load(qUrl.toString());
+			if (pixmap == nullptr) {
+				allImagesExists = false;
+				continue;
+			}
+
+			QPoint point;
+			point.setX(tileX * 256.0 * s2 - scaledX + m_size.width() * 0.5);
+			point.setY(tileY * 256.0 * s2 - scaledY + m_size.height() * 0.5);
+			QRect pixmapRect;
+			pixmapRect.setLeft(point.x());
+			pixmapRect.setTop(point.y());
+			pixmapRect.setRight(point.x() + pixmap->width() * s2 - 1);
+			pixmapRect.setBottom(point.y() + pixmap->height() * s2 - 1);
+			painter.drawPixmap(pixmapRect, *pixmap, pixmap->rect());
+		}
+	}
+	painter.end();
 
 	m_imageMutex.lock();
-	m_image = image.scaled(m_size);
+	m_image = image;
 	m_imageMutex.unlock();
 
-	emit imageUpdated();
+	if (emitFlag) {
+		emit imageUpdated();
+	}
+
+	if (! allImagesExists && emitFlag) {
+		m_timer.singleShot(TIMER_MSEC_LONG, this, &TmsRequestHandler::handleLoaded);
+	}
+
+	if (allImagesExists) {
+		m_imageCache->garbageCollect();
+	}
 }
 
 QString TmsRequestHandler::optionsString() const

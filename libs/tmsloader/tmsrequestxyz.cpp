@@ -11,8 +11,8 @@ TmsRequestXYZ::Impl::Impl(const QString &url, const std::map<QString, QString>& 
 
 // public interfaces
 
-TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url, std::map<QString, QString>& options) :
-	TmsRequest {centerLonLat, size, scale},
+TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& url, std::map<QString, QString>& options) :
+	TmsRequest {centerLonLat, size, zoomLevel},
 	impl {new Impl {url, options}}
 {}
 
@@ -21,11 +21,7 @@ TmsRequestXYZ::~TmsRequestXYZ()
 	delete impl;
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebEngineView* view) const
-#else
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebView* view) const
-#endif
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, TmsImageCache* imageCache) const
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, view);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), zoomLevel(), requestId, impl->m_options, imageCache);
 }

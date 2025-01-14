@@ -4,12 +4,8 @@
 
 using namespace tmsloader;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebEngineView* view) :
-#else
-TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWebView* view) :
-#endif
-	TmsRequestHandler(centerLonLat, size, scale, "xyz.html", requestId, view)
+TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, int zoomLevel, int requestId, const std::map<QString, QString>& options, TmsImageCache* imageCache) :
+	TmsRequestHandler(centerLonLat, size, zoomLevel, "xyz.html", requestId, imageCache)
 {
 	std::map<QString, QString> args;
 	args.insert({"%URL%", url});

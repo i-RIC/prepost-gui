@@ -1,15 +1,15 @@
 #ifndef TMSLOADER_TMSLOADER_IMPL_H
 #define TMSLOADER_TMSLOADER_IMPL_H
 
+#include "../tmsimagecache.h"
 #include "../tmsloader.h"
 
+#include <QPixmap>
+#include <QString>
+
+#include <unordered_map>
 #include <vector>
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-class QWebEngineView;
-#else
-class QWebView;
-#endif
 class QWidget;
 
 namespace tmsloader {
@@ -26,18 +26,8 @@ public:
 
 	QWidget* parentWidget() const;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	QWebEngineView* getWebView();
-#else
-	QWebView* getWebView();
-#endif
-
 	std::vector<TmsRequestHandler*> m_handlers;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	std::vector<QWebEngineView*> m_webViewPool;
-#else
-	std::vector<QWebView*> m_webViewPool;
-#endif
+	TmsImageCache m_imageCache;
 
 	TmsLoader* m_loader;
 };

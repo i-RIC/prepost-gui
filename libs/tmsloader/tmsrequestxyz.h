@@ -13,14 +13,10 @@ namespace tmsloader {
 class TMSLOADER_API TmsRequestXYZ : public TmsRequest
 {
 public:
-	TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url, std::map<QString, QString>& options);
+	TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& url, std::map<QString, QString>& options);
 	~TmsRequestXYZ();
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 5, 1))
-	TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
-#else
-	TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
-#endif
+	TmsRequestHandler* buildHandler(int requestId, TmsImageCache* imageCache) const override;
 
 private:
 	class Impl;
