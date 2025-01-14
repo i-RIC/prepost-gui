@@ -169,14 +169,16 @@ void TmsRequestHandler::handleLoaded()
 	m_image = image;
 	m_imageMutex.unlock();
 
-	m_imageCache->garbageCollect();
-
 	if (emitFlag) {
 		emit imageUpdated();
 	}
 
 	if (! allImagesExists && emitFlag) {
 		m_timer.singleShot(TIMER_MSEC_LONG, this, &TmsRequestHandler::handleLoaded);
+	}
+
+	if (allImagesExists) {
+		m_imageCache->garbageCollect();
 	}
 }
 

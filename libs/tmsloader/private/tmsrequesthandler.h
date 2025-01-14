@@ -60,7 +60,6 @@ private:
 
 	QNetworkAccessManager* m_webAccessManager;
 	TmsImageCache* m_imageCache;
-	std::unordered_set<QNetworkReply*> m_networkReplies;
 	int m_xMin;
 	int m_xMax;
 	int m_yMin;

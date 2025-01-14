@@ -48,11 +48,19 @@ QPixmap* TmsImageCache::load(const QString& url)
 		if (! QFile::exists(fileName(url))) {
 			// return null image, and remove the entry.
 			m_entries.erase(it);
+
+			auto it2 = m_inMemoryEntries.find(url);
+			if (it2 != m_inMemoryEntries.end()) {
+				m_inMemoryEntries.erase(it2);
+			}
+
 			return nullptr;
 		} else {
 			auto pixmap = new QPixmap();
 			pixmap->load(fname, "png");
 			it->second->pixmap = pixmap;
+
+			m_inMemoryEntries.insert({url, it->second});
 		}
 	}
 	it->second->lastAccess = QDateTime::currentMSecsSinceEpoch();
