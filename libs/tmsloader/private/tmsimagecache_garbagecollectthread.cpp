@@ -41,12 +41,11 @@ void TmsImageCache::GarbageCollectThread::run()
 			continue;
 		}
 
-		if (m_cache->m_entries.size() > COLLECT_THRESHOLD) {
-
+		if (m_cache->m_inMemoryEntries.size() > COLLECT_THRESHOLD) {
 			std::multimap<qint64, QString> epochs;
 
 			m_cache->m_entriesMutex.lock();
-			for (const auto& pair : m_cache->m_entries) {
+			for (const auto& pair : m_cache->m_inMemoryEntries) {
 				const auto& url = pair.first;
 				const qint64 epoch = pair.second->lastAccess;
 				epochs.insert({epoch, url});
@@ -55,23 +54,21 @@ void TmsImageCache::GarbageCollectThread::run()
 
 			auto epochs_it = epochs.begin();
 			unsigned int i = 0;
-			unsigned int imax = m_cache->m_entries.size() - MAX_IMAGES;
+			unsigned int imax = m_cache->m_inMemoryEntries.size() - MAX_IMAGES;
 			while (true) {
 				m_cache->m_entriesMutex.lock();
-				auto entries_it = m_cache->m_entries.find(epochs_it->second);
-				bool collect = (entries_it != m_cache->m_entries.end() && entries_it->second->status == Entry::Status::CacheInMemory && entries_it->second->pixmap != nullptr);
+				auto entries_it = m_cache->m_inMemoryEntries.find(epochs_it->second);
 				m_cache->m_entriesMutex.unlock();
 
-				if (collect) {
-					auto fname = m_cache->fileName(entries_it->first);
-					entries_it->second->pixmap->save(fname, "png");
+				auto fname = m_cache->fileName(entries_it->first);
+				entries_it->second->pixmap->save(fname, "png");
 
-					m_cache->m_entriesMutex.lock();
-					delete entries_it->second->pixmap;
-					entries_it->second->pixmap = nullptr;
-					entries_it->second->status = Entry::Status::CacheInFile;
-					m_cache->m_entriesMutex.unlock();
-				}
+				m_cache->m_entriesMutex.lock();
+				delete entries_it->second->pixmap;
+				entries_it->second->pixmap = nullptr;
+				entries_it->second->status = Entry::Status::CacheInFile;
+				m_cache->m_inMemoryEntries.erase(entries_it);
+				m_cache->m_entriesMutex.unlock();
 
 				++ epochs_it;
 				++ i;

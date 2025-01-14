@@ -32,6 +32,7 @@ private:
 	QMutex m_entriesMutex;
 	class Entry;
 	std::unordered_map<QString, Entry*> m_entries;
+	std::unordered_map<QString, Entry*> m_inMemoryEntries;
 
 	class NetworkAccessManager;
 	NetworkAccessManager* m_manager;

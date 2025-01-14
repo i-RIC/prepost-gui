@@ -54,6 +54,8 @@ void TmsImageCache::NetworkAccessManager::handleReply()
 	it->second->pixmap = pixmap;
 	it->second->status = Entry::Status::CacheInMemory;
 
+	m_cache->m_inMemoryEntries.insert({it->second->url, it->second});
+
 	// reply is needless
 	it->second->reply = nullptr;
 	delete reply;
