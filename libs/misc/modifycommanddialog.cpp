@@ -46,6 +46,7 @@ void ModifyCommandDialog::showExportButton()
 
 void ModifyCommandDialog::accept()
 {
+	m_widget->hide();
 	pushCommand(m_widget->createModifyCommand(false));
 	QDialog::accept();
 }
