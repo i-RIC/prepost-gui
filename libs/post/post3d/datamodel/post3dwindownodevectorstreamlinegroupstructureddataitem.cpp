@@ -9,6 +9,7 @@
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -103,6 +104,7 @@ QDialog* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Streamline Display Setting"));
+	dialog->resize(QScreenUtil::sizeWithinScreen(450, 650));
 
 	return dialog;
 }

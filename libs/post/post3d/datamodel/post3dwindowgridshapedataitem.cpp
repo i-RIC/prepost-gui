@@ -98,6 +98,7 @@ QDialog* Post3dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Grid Shape Display Setting"));
+	dialog->resize(dialog->sizeHint());
 
 	return dialog;
 }
