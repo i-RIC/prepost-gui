@@ -116,7 +116,7 @@ QRectF trimLonLatRect(const QRectF& rect)
 void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, const QPointF& center, QSize* size, int* zoomLevel, double* ratio)
 {
 	*zoomLevel = tmsloader::TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel) + 1;
-	while (true) {
+	while (*zoomLevel > 0) {
 		-- *zoomLevel;
 		double mpp = tmsloader::TmsUtil::meterPerPixel(center, *zoomLevel);
 		*ratio = targetMeterPerPixel / mpp;
