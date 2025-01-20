@@ -9,6 +9,7 @@
 #include <guicore/grid/v4gridutil.h>
 #include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -27,8 +28,11 @@ PreProcessorUnstructured2dGridShapeDataItem::~PreProcessorUnstructured2dGridShap
 
 void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
+
 	auto wa = m_setting.wireframeActor();
 	wa->GetProperty()->SetLighting(false);
+	wa->GetProperty()->SetLineWidth(1 * v->devicePixelRatioF());
 	renderer()->AddActor(wa);
 
 	auto ia = m_setting.indexActor();

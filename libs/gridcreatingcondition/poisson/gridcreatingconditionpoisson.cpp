@@ -62,8 +62,9 @@
 #include <QFile>
 #include <QLocale>
 #include <QMenu>
-#include <QKeyEvent>
 #include <QMessageBox>
+#include <QKeyEvent>
+#include <QSettings>
 
 namespace {
 
@@ -105,24 +106,25 @@ int getNumPoints(GeoDataRiverSurvey* riverSurvey)
 	return num;
 }
 
-void makeLineWideWithPoints(PolyLineController* controller)
+void makeLineWideWithPoints(PolyLineController* controller, double scale)
 {
-	controller->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_WIDE);
-	controller->pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	controller->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_WIDE * scale);
+	controller->pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale);
 }
 
-void makeLineNarrowNoPoints(PolyLineController* controller)
+void makeLineNarrowNoPoints(PolyLineController* controller, double scale)
 {
-	controller->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_NARROW);
+	controller->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_NARROW * scale);
 	controller->pointsActor()->GetProperty()->SetPointSize(1);
 }
 
-void setupLabelActor(vtkLabel2DActor* actor)
+void setupLabelActor(vtkLabel2DActor* actor, const QColor& col)
 {
 	actor->setLabelPosition(vtkLabel2DActor::lpMiddleRight);
 	auto prop = actor->labelTextProperty();
 	prop->SetFontSize(FONTSIZE);
 	prop->BoldOn();
+	prop->SetColor(col.redF(), col.greenF(), col.blueF());
 }
 
 } // namespace
@@ -639,10 +641,25 @@ void GridCreatingConditionPoisson::clear()
 
 void GridCreatingConditionPoisson::setupActors()
 {
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	double r = color.redF();
+	double g = color.greenF();
+	double b = color.blueF();
+
 	impl->m_upstreamActor.setLabel("Upstream");
-	setupLabelActor(&(impl->m_upstreamActor));
+	setupLabelActor(&(impl->m_upstreamActor), color);
 	impl->m_downstreamActor.setLabel("Downstream");
-	setupLabelActor(&(impl->m_downstreamActor));
+	setupLabelActor(&(impl->m_downstreamActor), color);
+
+	impl->m_centerLineSplineController.linesActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_centerLineController.pointsActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_leftBankLineSplineController.linesActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_leftBankLineController.pointsActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_rightBankLineSplineController.linesActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_rightBankLineController.pointsActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_upstreamLineController.linesActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_downstreamLineController.linesActor()->GetProperty()->SetColor(r, g, b);
 
 	impl->m_upstreamActor.actor()->VisibilityOff();
 	impl->m_downstreamActor.actor()->VisibilityOff();
@@ -720,27 +737,35 @@ void GridCreatingConditionPoisson::setupMenu()
 
 void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewI* v)
 {
-	makeLineWideWithPoints(&(impl->m_centerLineController));
-	makeLineWideWithPoints(&(impl->m_centerLineSplineController));
-	makeLineWideWithPoints(&(impl->m_leftBankLineController));
-	makeLineWideWithPoints(&(impl->m_leftBankLineSplineController));
-	makeLineWideWithPoints(&(impl->m_rightBankLineController));
-	makeLineWideWithPoints(&(impl->m_rightBankLineSplineController));
-	makeLineWideWithPoints(&(impl->m_upstreamLineController));
-	makeLineWideWithPoints(&(impl->m_downstreamLineController));
+	QSettings settings;
+	double scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	scale *= v->devicePixelRatioF();
+
+	makeLineWideWithPoints(&(impl->m_centerLineController), scale);
+	makeLineWideWithPoints(&(impl->m_centerLineSplineController), scale);
+	makeLineWideWithPoints(&(impl->m_leftBankLineController), scale);
+	makeLineWideWithPoints(&(impl->m_leftBankLineSplineController), scale);
+	makeLineWideWithPoints(&(impl->m_rightBankLineController), scale);
+	makeLineWideWithPoints(&(impl->m_rightBankLineSplineController), scale);
+	makeLineWideWithPoints(&(impl->m_upstreamLineController), scale);
+	makeLineWideWithPoints(&(impl->m_downstreamLineController), scale);
 	impl->updateMouseCursor(v);
 }
 
 void GridCreatingConditionPoisson::informDeselection(PreProcessorGraphicsViewI* v)
 {
-	makeLineNarrowNoPoints(&(impl->m_centerLineController));
-	makeLineNarrowNoPoints(&(impl->m_centerLineSplineController));
-	makeLineNarrowNoPoints(&(impl->m_leftBankLineController));
-	makeLineNarrowNoPoints(&(impl->m_leftBankLineSplineController));
-	makeLineNarrowNoPoints(&(impl->m_rightBankLineController));
-	makeLineNarrowNoPoints(&(impl->m_rightBankLineSplineController));
-	makeLineNarrowNoPoints(&(impl->m_upstreamLineController));
-	makeLineNarrowNoPoints(&(impl->m_downstreamLineController));
+	QSettings settings;
+	double scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	scale *= v->devicePixelRatioF();
+
+	makeLineNarrowNoPoints(&(impl->m_centerLineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_centerLineSplineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_leftBankLineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_leftBankLineSplineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_rightBankLineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_rightBankLineSplineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_upstreamLineController), scale);
+	makeLineNarrowNoPoints(&(impl->m_downstreamLineController), scale);
 	v->unsetCursor();
 }
 

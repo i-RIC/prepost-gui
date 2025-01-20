@@ -36,6 +36,8 @@
 #include <misc/mathsupport.h>
 #include <misc/splineinterpolator.h>
 
+#include <QSettings>
+
 namespace {
 
 const int LINEWIDTH_WIDE = 2;
@@ -98,32 +100,43 @@ LinePair divideLine(const std::vector<QPointF>& line, int edgeId)
 	return ret;
 }
 
-void setupEdgeController(PolyLineController* line, const ZDepthRange& zRange)
+void setupEdgeController(PolyLineController* line, const ZDepthRange& zRange, const QColor& col, double scale)
 {
 	line->pointsActor()->SetPosition(0, 0, zRange.max());
-	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale);
+	line->pointsActor()->GetProperty()->SetColor(col.redF(), col.greenF(), col.blueF());
 }
 
-void setupEdgeControllerForEdgeSelection(PolyLineController* line, const ZDepthRange& zRange)
+void setupEdgeControllerForEdgeSelection(PolyLineController* line, const ZDepthRange& zRange, const QColor& col, double scale)
 {
 	line->pointsActor()->SetPosition(0, 0, zRange.max());
-	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale);
+	line->pointsActor()->GetProperty()->SetColor(col.redF(), col.greenF(), col.blueF());
 	line->linesActor()->SetPosition(0, 0, (zRange.min() + zRange.max()) * 0.5);
-	line->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_NARROW);
+	line->linesActor()->GetProperty()->SetLineWidth(LINEWIDTH_NARROW * scale);
+	line->linesActor()->GetProperty()->SetColor(col.redF(), col.greenF(), col.blueF());
 }
 
-void setupEdgeControllerForDivisionPreview(PolyLineController* line, const ZDepthRange& zRange)
+void setupEdgeControllerForDivisionPreview(PolyLineController* line, const ZDepthRange& zRange, const QColor& col, double scale)
 {
 	line->pointsActor()->SetPosition(0, 0, zRange.max());
-	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE_DIVPREVIEW);
-	line->pointsActor()->GetProperty()->SetColor(0.3, 0.3, 0.3);
+	line->pointsActor()->GetProperty()->SetPointSize(POINTSIZE_DIVPREVIEW * scale);
+	double r = col.redF();
+	double g = col.greenF();
+	double b = col.blueF();
+
+	line->pointsActor()->GetProperty()->SetColor(r, g, b);
 }
 
-void setupSubRegionPolygon(PolygonController* polygon, const ZDepthRange& zRange)
+void setupSubRegionPolygon(PolygonController* polygon, const ZDepthRange& zRange, const QColor& col)
 {
+	double r = col.redF();
+	double g = col.greenF();
+	double b = col.blueF();
+
 	polygon->paintActor()->SetPosition(0, 0, zRange.min());
-	polygon->paintActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
-	polygon->paintActor()->GetProperty()->SetOpacity(0.7);
+	polygon->paintActor()->GetProperty()->SetColor(r, g, b);
+	polygon->paintActor()->GetProperty()->SetOpacity(0.3);
 }
 
 bool getPerpendicularLineOfLeg(const QPointF& p, PolyLineController& l, QPointF* leg)
@@ -237,12 +250,13 @@ void setGridPoint(vtkPoints* points, const QPointF& p, int i, int j, int imax)
 	points->SetPoint(idx, p.x(), p.y(), 0);
 }
 
-void setupLabelActor(vtkLabel2DActor* actor)
+void setupLabelActor(vtkLabel2DActor* actor, const QColor& color)
 {
 	actor->setLabelPosition(vtkLabel2DActor::lpMiddleRight);
 	auto prop = actor->labelTextProperty();
 	prop->SetFontSize(FONTSIZE);
 	prop->BoldOn();
+	prop->SetColor(color.redF(), color.greenF(), color.blueF());
 }
 
 std::vector<double> setupPoissonPotential(const std::vector<double>& lengths)
@@ -352,11 +366,19 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	m_clearDivisionSettingAction {new QAction(GridCreatingConditionLaplace::tr("&Clear Division Setting..."), cond)},
 	m_condition {cond}
 {
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	double red = color.redF();
+	double green = color.greenF();
+	double blue = color.blueF();
+	auto v = cond->dataModel()->graphicsView();
+
 	m_previewGridActor->SetMapper(m_previewGridMapper);
 	m_previewGridActor->GetProperty()->SetRepresentationToWireframe();
 	m_previewGridActor->GetProperty()->SetLighting(false);
-	m_previewGridActor->GetProperty()->SetColor(0.2, 0.2, 0.2);
-	m_previewGridActor->GetProperty()->SetLineWidth(1);
+	m_previewGridActor->GetProperty()->SetColor(red, green, blue);
+	m_previewGridActor->GetProperty()->SetLineWidth(1 * scale * v->devicePixelRatioF());
 	m_previewGridActor->VisibilityOff();
 
 	auto r = cond->renderer();
@@ -371,15 +393,24 @@ GridCreatingConditionLaplace::Impl::Impl(GridCreatingConditionLaplace* cond) :
 	r->AddActor2D(m_upstreamActor.actor());
 	r->AddActor2D(m_downstreamActor.actor());
 
-	setupEdgeControllerForEdgeSelection(&m_ctrlPointsController, m_zDepthRange);
+	setupEdgeControllerForEdgeSelection(&m_ctrlPointsController, m_zDepthRange, color, scale * v->devicePixelRatioF());
 
-	m_centerLine.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
-	m_ctrlPointsController.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
-	m_newEdgeLine.pointsActor()->GetProperty()->SetPointSize(POINTSIZE);
+	m_centerLine.pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale * v->devicePixelRatioF());
+	m_centerLine.pointsActor()->GetProperty()->SetColor(red, green, blue);
+	m_centerLineSpline.linesActor()->GetProperty()->SetLineWidth(1 * scale * v->devicePixelRatioF());
+	m_centerLineSpline.linesActor()->GetProperty()->SetColor(red, green, blue);
 
-	setupLabelActor(&m_upstreamActor);
+	m_ctrlPointsController.pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale * v->devicePixelRatioF());
+	m_ctrlPointsController.pointsActor()->GetProperty()->SetColor(red, green, blue);
+
+	m_newEdgeLine.pointsActor()->GetProperty()->SetPointSize(POINTSIZE * scale * v->devicePixelRatioF());
+	m_newEdgeLine.pointsActor()->GetProperty()->SetColor(red, green, blue);
+	m_newEdgeLine.linesActor()->GetProperty()->SetLineWidth(1 * scale * v->devicePixelRatioF());
+	m_newEdgeLine.linesActor()->GetProperty()->SetColor(red, green, blue);
+
+	setupLabelActor(&m_upstreamActor, color);
 	m_upstreamActor.setLabel("Upstream");
-	setupLabelActor(&m_downstreamActor);
+	setupLabelActor(&m_downstreamActor, color);
 	m_downstreamActor.setLabel("Downstream");
 
 	updateActorSetting();
@@ -836,8 +867,6 @@ void GridCreatingConditionLaplace::Impl::copyCenterLine(GeoDataRiverSurvey* data
 	m_centerLineOnlyMouseEventMode = CenterLineOnlyMouseEventMode::Normal;
 
 	updateActorSetting();
-	// updateLabelsAndSplines();
-	// updateActionStatus();
 }
 
 int GridCreatingConditionLaplace::Impl::getNumPoints(GeoDataRiverSurvey* riverSurvey)
@@ -907,11 +936,11 @@ PolygonController& GridCreatingConditionLaplace::Impl::subRegionPolygons(int i, 
 	return *(m_subRegionPolygons[i + j * (m_ctrlPointCountI - 1)]);
 }
 
-void GridCreatingConditionLaplace::Impl::insertEdgeLineStreamWise(PolyLineController* line, int idx)
+void GridCreatingConditionLaplace::Impl::insertEdgeLineStreamWise(PolyLineController* line, const QColor& color, double scale, int idx)
 {
 	auto r = m_condition->renderer();
 	r->AddActor(line->pointsActor());
-	setupEdgeController(line, m_zDepthRange);
+	setupEdgeController(line, m_zDepthRange, color, scale);
 	if (idx == -1) {
 		m_edgeLinesStreamWise.push_back(line);
 	} else {
@@ -919,11 +948,11 @@ void GridCreatingConditionLaplace::Impl::insertEdgeLineStreamWise(PolyLineContro
 	}
 }
 
-void GridCreatingConditionLaplace::Impl::insertEdgeLineCrossSection(PolyLineController* line, int idx)
+void GridCreatingConditionLaplace::Impl::insertEdgeLineCrossSection(PolyLineController* line, const QColor& color, double scale, int idx)
 {
 	auto r = m_condition->renderer();
 	r->AddActor(line->pointsActor());
-	setupEdgeController(line, m_zDepthRange);
+	setupEdgeController(line, m_zDepthRange, color, scale);
 	if (idx == -1) {
 		m_edgeLinesCrossSection.push_back(line);
 	} else {
@@ -1115,6 +1144,11 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLineCrossSection(int idx)
 
 void GridCreatingConditionLaplace::Impl::updateActorSetting()
 {
+	QSettings settings;
+	double scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	auto v = m_condition->dataModel()->graphicsView();
+	scale *= v->devicePixelRatioF();
+
 	m_centerLine.pointsActor()->VisibilityOff();
 	m_centerLineSpline.linesActor()->VisibilityOff();
 	m_newEdgeLine.pointsActor()->VisibilityOff();
@@ -1127,7 +1161,7 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 		line->pointsActor()->VisibilityOff();
 	}
 	for (auto line : m_edgeLinesStreamWiseForEdgeSelection) {
-		line->linesActor()->GetProperty()->SetLineWidth(1);
+		line->linesActor()->GetProperty()->SetLineWidth(1 * scale);
 		line->linesActor()->VisibilityOff();
 	}
 	for (auto line : m_edgeLinesStreamWiseForDivisionPreview) {
@@ -1137,7 +1171,7 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 		line->pointsActor()->VisibilityOff();
 	}
 	for (auto line : m_edgeLinesCrossSectionForEdgeSelection) {
-		line->linesActor()->GetProperty()->SetLineWidth(1);
+		line->linesActor()->GetProperty()->SetLineWidth(1 * scale);
 		line->linesActor()->VisibilityOff();
 	}
 	for (auto line : m_edgeLinesCrossSectionForDivisionPreview) {
@@ -1192,7 +1226,7 @@ void GridCreatingConditionLaplace::Impl::updateActorSetting()
 		if (m_itemSelected) {
 			auto selectedEdge = selectedSectionForEdgeSelection();
 			if (selectedEdge != nullptr) {
-				selectedEdge->linesActor()->GetProperty()->SetLineWidth(3);
+				selectedEdge->linesActor()->GetProperty()->SetLineWidth(3 * scale);
 			}
 			if (m_selectedSubRegionId != -1) {
 				auto region = m_subRegionPolygons[m_selectedSubRegionId];
@@ -1555,7 +1589,7 @@ void GridCreatingConditionLaplace::Impl::updateMouseCursor(PreProcessorGraphicsV
 	}
 }
 
-void GridCreatingConditionLaplace::Impl::buildBankLines()
+void GridCreatingConditionLaplace::Impl::buildBankLines(const QColor& color, double scale)
 {
 	if (m_editMode == EditMode::CenterLineOnly) {
 		if (m_centerLine.polyLine().size() < 2) {
@@ -1611,28 +1645,28 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 
 	for (int i = 0; i < 3; ++i) {
 		auto line = new PolyLineController();
-		setupEdgeController(line, m_zDepthRange);
+		setupEdgeController(line, m_zDepthRange, color, scale);
 		r->AddActor(line->pointsActor());
 		m_edgeLinesStreamWise.push_back(line);
 
 		m_edgeInterpolationStreamWise.push_back(InterpolationType::Spline);
 
-		addEdgeLinesStreamWiseForSelectionAndPreview(r);
+		addEdgeLinesStreamWiseForSelectionAndPreview(r, color, scale);
 	}
 	for (int i = 0; i < 4; ++i) {
 		auto line = new PolyLineController();
-		setupEdgeController(line, m_zDepthRange);
+		setupEdgeController(line, m_zDepthRange, color, scale);
 		r->AddActor(line->pointsActor());
 		m_edgeLinesCrossSection.push_back(line);
 
 		m_edgeInterpolationCrossSection.push_back(InterpolationType::Linear);
 
-		addEdgeLinesCrossSectionForSelectionAndPreview(r);
+		addEdgeLinesCrossSectionForSelectionAndPreview(r, color, scale);
 	}
 	for (int i = 0; i < 2; ++i) {
 		DeployParameter p;
 		m_subRegionDeployParameters.push_back(p);
-		addSubRegionPolygon(r);
+		addSubRegionPolygon(r, color);
 	}
 
 	rightBank.pop_back();
@@ -1663,7 +1697,7 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 	iRICUndoStack::instance().clear();
 }
 
-void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProcessorGraphicsViewI* v)
+void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, const QColor& color, double scale, PreProcessorGraphicsViewI* v)
 {
 	double x = pos.x();
 	double y = pos.y();
@@ -1724,29 +1758,29 @@ void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProces
 			m_edgeLinesStreamWise[m_newEdgeCtrlPointId - 1 + j * m_ctrlPointCountI]->setPolyLine(dividedLines[j].line1);
 			auto newPolyLineController = new PolyLineController();
 			newPolyLineController->setPolyLine(dividedLines[j].line2);
-			insertEdgeLineStreamWise(newPolyLineController, m_newEdgeCtrlPointId + j * m_ctrlPointCountI);
+			insertEdgeLineStreamWise(newPolyLineController, color, scale, m_newEdgeCtrlPointId + j * m_ctrlPointCountI);
 			m_edgeInterpolationStreamWise.insert(m_edgeInterpolationStreamWise.begin() + m_newEdgeCtrlPointId + j * m_ctrlPointCountI, edgeInterpolationStreamWise(m_newEdgeCtrlPointId - 1, j));
 			m_divModesStreamWise.insert(m_divModesStreamWise.begin() + m_newEdgeCtrlPointId + j * m_ctrlPointCountI, divModeStreamWise(m_newEdgeCtrlPointId - 1, j));
 			m_divCommonRatiosStreamWise.insert(m_divCommonRatiosStreamWise.begin() + m_newEdgeCtrlPointId + j * m_ctrlPointCountI, divCommonRatioStreamWise(m_newEdgeCtrlPointId - 1, j));
 
-			addEdgeLinesStreamWiseForSelectionAndPreview(renderer);
+			addEdgeLinesStreamWiseForSelectionAndPreview(renderer, color, scale);
 		}
 		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
 			auto newPolyLineController = new PolyLineController();
 			newPolyLineController->setPolyLine(newLines.at(j));
-			insertEdgeLineCrossSection(newPolyLineController, m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1));
+			insertEdgeLineCrossSection(newPolyLineController, color, scale, m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1));
 			m_edgeInterpolationCrossSection.insert(m_edgeInterpolationCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), InterpolationType::Linear);
 			m_divModesCrossSection.insert(m_divModesCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), DivisionMode::Equally);
 			m_divCommonRatiosCrossSection.insert(m_divCommonRatiosCrossSection.begin() + m_newEdgeCtrlPointId + j * (m_ctrlPointCountI + 1), 1);
 
-			addEdgeLinesCrossSectionForSelectionAndPreview(renderer);
+			addEdgeLinesCrossSectionForSelectionAndPreview(renderer, color, scale);
 		}
 
 		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
 			auto it = m_subRegionDeployParameters.begin() + m_newEdgeCtrlPointId - 1 + j * m_ctrlPointCountI;
 			auto pp = *it;
 			m_subRegionDeployParameters.insert(it + 1, pp);
-			addSubRegionPolygon(renderer);
+			addSubRegionPolygon(renderer, color);
 		}
 
 		m_divCountsStreamWise.insert(m_divCountsStreamWise.begin() + m_newEdgeCtrlPointId, 1);
@@ -1802,27 +1836,27 @@ void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProces
 			m_edgeLinesCrossSection[i + (m_newEdgeCtrlPointId - 1) * m_ctrlPointCountI]->setPolyLine(dividedLines[i].line1);
 			auto newPolyLineController = new PolyLineController();
 			newPolyLineController->setPolyLine(dividedLines[i].line2);
-			insertEdgeLineCrossSection(newPolyLineController, i + m_newEdgeCtrlPointId * m_ctrlPointCountI);
+			insertEdgeLineCrossSection(newPolyLineController, color, scale, i + m_newEdgeCtrlPointId * m_ctrlPointCountI);
 			m_edgeInterpolationCrossSection.insert(m_edgeInterpolationCrossSection.begin() + i * m_newEdgeCtrlPointId + m_ctrlPointCountI, edgeInterpolationCrossSection(i, m_newEdgeCtrlPointId - 1));
 			m_divModesCrossSection.insert(m_divModesCrossSection.begin() + i * m_newEdgeCtrlPointId + m_ctrlPointCountI, divModeCrossSection(i, m_newEdgeCtrlPointId - 1));
 			m_divCommonRatiosCrossSection.insert(m_divCommonRatiosCrossSection.begin() + i * m_newEdgeCtrlPointId + m_ctrlPointCountI, divCommonRatioCrossSection(i, m_newEdgeCtrlPointId - 1));
 
-			addEdgeLinesCrossSectionForSelectionAndPreview(renderer);
+			addEdgeLinesCrossSectionForSelectionAndPreview(renderer, color, scale);
 		}
 		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
 			auto newPolyLineController = new PolyLineController();
 			newPolyLineController->setPolyLine(newLines.at(i));
-			insertEdgeLineStreamWise(newPolyLineController, i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1));
+			insertEdgeLineStreamWise(newPolyLineController, color, scale, i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1));
 			m_edgeInterpolationStreamWise.insert(m_edgeInterpolationStreamWise.begin() + i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1), InterpolationType::Spline);
 			m_divModesStreamWise.insert(m_divModesStreamWise.begin() + i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1), DivisionMode::Auto);
 			m_divCommonRatiosStreamWise.insert(m_divCommonRatiosStreamWise.begin() + i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1), 1);
 
-			addEdgeLinesStreamWiseForSelectionAndPreview(renderer);
+			addEdgeLinesStreamWiseForSelectionAndPreview(renderer, color, scale);
 		}
 		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
 			auto pp = subRegionPoissonParameter(i, m_newEdgeCtrlPointId - 1);
 			m_subRegionDeployParameters.insert(m_subRegionDeployParameters.begin() + i + m_newEdgeCtrlPointId * (m_ctrlPointCountI - 1), pp);
-			addSubRegionPolygon(renderer);
+			addSubRegionPolygon(renderer, color);
 		}
 
 		m_divCountsCrossSection.insert(m_divCountsCrossSection.begin() + m_newEdgeCtrlPointId, 1);
@@ -2455,10 +2489,10 @@ double GridCreatingConditionLaplace::Impl::averageLength(const std::vector<PolyL
 	return tmpLen / lines.size();
 }
 
-void GridCreatingConditionLaplace::Impl::addEdgeLinesStreamWiseForSelectionAndPreview(vtkRenderer* renderer)
+void GridCreatingConditionLaplace::Impl::addEdgeLinesStreamWiseForSelectionAndPreview(vtkRenderer* renderer, const QColor& color, double scale)
 {
 	auto newLine2 = new PolyLineController();
-	setupEdgeControllerForEdgeSelection(newLine2, m_zDepthRange);
+	setupEdgeControllerForEdgeSelection(newLine2, m_zDepthRange, color, scale);
 	newLine2->linesActor()->VisibilityOff();
 	renderer->AddActor(newLine2->linesActor());
 	m_edgeLinesStreamWiseForEdgeSelection.push_back(newLine2);
@@ -2467,16 +2501,16 @@ void GridCreatingConditionLaplace::Impl::addEdgeLinesStreamWiseForSelectionAndPr
 	m_edgeLinesStreamWiseForNodeSelection.push_back(newLine3);
 
 	auto newLine4 = new PolyLineController();
-	setupEdgeControllerForDivisionPreview(newLine4, m_zDepthRange);
+	setupEdgeControllerForDivisionPreview(newLine4, m_zDepthRange, color, scale);
 	newLine4->pointsActor()->VisibilityOff();
 	renderer->AddActor(newLine4->pointsActor());
 	m_edgeLinesStreamWiseForDivisionPreview.push_back(newLine4);
 }
 
-void GridCreatingConditionLaplace::Impl::addEdgeLinesCrossSectionForSelectionAndPreview(vtkRenderer* renderer)
+void GridCreatingConditionLaplace::Impl::addEdgeLinesCrossSectionForSelectionAndPreview(vtkRenderer* renderer, const QColor& color, double scale)
 {
 	auto newLine2 = new PolyLineController();
-	setupEdgeControllerForEdgeSelection(newLine2, m_zDepthRange);
+	setupEdgeControllerForEdgeSelection(newLine2, m_zDepthRange, color, scale);
 	newLine2->linesActor()->VisibilityOff();
 	renderer->AddActor(newLine2->linesActor());
 	m_edgeLinesCrossSectionForEdgeSelection.push_back(newLine2);
@@ -2485,7 +2519,7 @@ void GridCreatingConditionLaplace::Impl::addEdgeLinesCrossSectionForSelectionAnd
 	m_edgeLinesCrossSectionForNodeSelection.push_back(newLine3);
 
 	auto newLine4 = new PolyLineController();
-	setupEdgeControllerForDivisionPreview(newLine4, m_zDepthRange);
+	setupEdgeControllerForDivisionPreview(newLine4, m_zDepthRange, color, scale);
 	newLine4->pointsActor()->VisibilityOff();
 	renderer->AddActor(newLine4->pointsActor());
 	m_edgeLinesCrossSectionForDivisionPreview.push_back(newLine4);
@@ -2511,10 +2545,10 @@ void GridCreatingConditionLaplace::Impl::removeEdgeLinesCrossSectionForSelection
 	m_edgeLinesCrossSectionForDivisionPreview.pop_back();
 }
 
-void GridCreatingConditionLaplace::Impl::addSubRegionPolygon(vtkRenderer* r)
+void GridCreatingConditionLaplace::Impl::addSubRegionPolygon(vtkRenderer* r, const QColor& color)
 {
 	auto newPolygon = new PolygonController();
-	setupSubRegionPolygon(newPolygon, m_zDepthRange);
+	setupSubRegionPolygon(newPolygon, m_zDepthRange, color);
 	newPolygon->paintActor()->VisibilityOff();
 	r->AddActor(newPolygon->paintActor());
 	m_subRegionPolygons.push_back(newPolygon);

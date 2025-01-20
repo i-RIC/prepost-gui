@@ -94,8 +94,8 @@ public:
 	PolyLineController& edgeLineCrossSectionForDivisionPreview(int i, int j);
 	PolygonController& subRegionPolygons(int i, int j);
 
-	void insertEdgeLineStreamWise(PolyLineController* line, int idx = -1);
-	void insertEdgeLineCrossSection(PolyLineController* line, int idx = -1);
+	void insertEdgeLineStreamWise(PolyLineController* line, const QColor& color, double scale, int idx = -1);
+	void insertEdgeLineCrossSection(PolyLineController* line, const QColor& color, double scale, int idx = -1);
 
 	DivisionMode& divModeStreamWise(int i, int j);
 	DivisionMode& divModeCrossSection(int i, int j);
@@ -124,8 +124,8 @@ public:
 	bool isNewEdgeFinishReady();
 	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 
-	void buildBankLines();
-	void addNewEdge(const QPoint& pos, PreProcessorGraphicsViewI* v);
+	void buildBankLines(const QColor& color, double scale);
+	void addNewEdge(const QPoint& pos, const QColor& color, double scale, PreProcessorGraphicsViewI* v);
 
 	void updateCenterLineLabelsAndSpline();
 	void updateEdgeLinesForSelection();
@@ -174,9 +174,9 @@ public:
 	static void makeLineNarrowNoPoints(PolyLineController* controller);
 	static double averageLength(const std::vector<PolyLineController*>& lines);
 
-	void addEdgeLinesStreamWiseForSelectionAndPreview(vtkRenderer* renderer);
-	void addEdgeLinesCrossSectionForSelectionAndPreview(vtkRenderer* renderer);
-	void addSubRegionPolygon(vtkRenderer* r);
+	void addEdgeLinesStreamWiseForSelectionAndPreview(vtkRenderer* renderer, const QColor& color, double scale);
+	void addEdgeLinesCrossSectionForSelectionAndPreview(vtkRenderer* renderer, const QColor& color, double scale);
+	void addSubRegionPolygon(vtkRenderer* r, const QColor& color);
 	void removeEdgeLinesStreamWiseForSelectionAndPreview(vtkActorCollection* col, vtkRenderer* r);
 	void removeEdgeLinesCrossSectionForSelectionAndPreview(vtkActorCollection* col, vtkRenderer* r);
 	void removeSubRegionPolygon(vtkActorCollection* col, vtkRenderer* r);

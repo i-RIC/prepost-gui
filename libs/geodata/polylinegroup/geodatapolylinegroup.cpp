@@ -372,6 +372,7 @@ GeoDataPolyData* GeoDataPolyLineGroup::createEditTargetData()
 
 void GeoDataPolyLineGroup::doUpdateActorSetting()
 {
+	auto v = dataModel()->graphicsView();
 	auto ds = impl->m_displaySetting;
 
 	// color
@@ -425,9 +426,9 @@ void GeoDataPolyLineGroup::doUpdateActorSetting()
 	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// line width and point sizes
-	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
-	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
-	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
+	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth * v->devicePixelRatioF());
+	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2 * v->devicePixelRatioF());
+	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5 * v->devicePixelRatioF());
 
 	updateActorSettingForEditTargetPolyData();
 
