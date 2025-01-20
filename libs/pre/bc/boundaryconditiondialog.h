@@ -21,6 +21,7 @@ namespace iRICLib {
 } // namespace iRICLib
 
 class InputConditionContainerSet;
+class InputConditionPage;
 class InputConditionWidgetSet;
 class iRICMainWindow;
 class OpacityContainer;
@@ -58,6 +59,8 @@ public:
 	void setEditMode();
 	void setPropertyMode();
 
+	QSize pageSizeHint() const;
+
 public slots:
 	void accept() override;
 
@@ -67,9 +70,9 @@ private slots:
 private:
 	void reset();
 
-	Ui::BoundaryConditionDialog* ui;
 	InputConditionContainerSet* m_containerSet;
 	InputConditionWidgetSet* m_widgetSet;
+	InputConditionPage* m_page;
 	PreProcessorBCDataItem* m_dataItem;
 	bool m_modified;
 
@@ -80,6 +83,8 @@ private:
 	InputConditionContainerInteger m_opacityContainer;
 	InputConditionContainerInteger m_showNameContainer;
 	InputConditionContainerInteger m_pointSizeContainer;
+
+	Ui::BoundaryConditionDialog* ui;
 
 public:
 	friend class InputConditionContainerSet;
