@@ -27,6 +27,8 @@ public:
 	virtual void setDisableOtherThanLegendVisible(bool disabled) = 0;
 	virtual QUndoCommand* createModifyCommand() const = 0;
 
+	static QSize standardDialogSize(int extraHeight = 0);
+
 public slots:
 	virtual void importSetting() = 0;
 	virtual void exportSetting() = 0;

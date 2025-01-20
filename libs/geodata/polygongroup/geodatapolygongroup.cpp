@@ -20,6 +20,7 @@
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <misc/qscreenutil.h>
 #include <misc/zdepthrange.h>
 
 #include <QMenu>
@@ -321,7 +322,7 @@ QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
 	widget->setSetting(&impl->m_displaySetting);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Polygons Display Setting"));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(140)));
 
 	return dialog;
 }

@@ -40,6 +40,7 @@
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/qscreenutil.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/tpoexporter.h>
 #include <misc/valuechangert.h>
@@ -141,7 +142,7 @@ QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 	dialog->setWidget(widget);
 
 	dialog->setSetting(&gItem->setting());
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(40)));
 
 	return dialog;
 }

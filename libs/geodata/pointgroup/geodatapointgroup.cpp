@@ -19,8 +19,8 @@
 #include <guicore/pre/geodata/private/geodata_propertydialog.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
-#include <misc/zdepthrange.h>
 #include <misc/stringtool.h>
+#include <misc/zdepthrange.h>
 
 #include <QMenu>
 
