@@ -246,6 +246,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 void GeoDataRiverSurvey::Impl::setupVtkObjects()
 {
 	auto r = m_rs->renderer();
+	auto v = m_rs->graphicsView();
 
 	r->AddActor2D(m_upstreamActor.actor());
 	r->AddActor2D(m_downstreamActor.actor());
@@ -270,7 +271,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_riverCenterPoints);
 	m_riverCenterPointsActor->SetMapper(mapper);
 	auto prop = m_riverCenterPointsActor->GetProperty();
-	prop->SetPointSize(5);
+	prop->SetPointSize(5 * v->devicePixelRatioF());
 	prop->SetColor(0, 0, 1);
 	m_riverCenterPointsActor->VisibilityOff();
 	r->AddActor(m_riverCenterPointsActor);
@@ -280,7 +281,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_crossSectionLines);
 	m_crossSectionLinesActor->SetMapper(mapper);
 	prop = m_crossSectionLinesActor->GetProperty();
-	prop->SetLineWidth(1);
+	prop->SetLineWidth(1 * v->devicePixelRatioF());
 	prop->SetColor(0, 0, 0);
 	m_crossSectionLinesActor->VisibilityOff();
 	r->AddActor(m_crossSectionLinesActor);
@@ -290,7 +291,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_centerAndBankLines);
 	m_centerAndBankLinesActor->SetMapper(mapper);
 	prop = m_centerAndBankLinesActor->GetProperty();
-	prop->SetLineWidth(1);
+	prop->SetLineWidth(1 * v->devicePixelRatioF());
 	prop->SetColor(0, 0, 0);
 	m_centerAndBankLinesActor->VisibilityOff();
 	r->AddActor(m_centerAndBankLinesActor);
@@ -300,7 +301,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_selectedRiverCenterPoints);
 	m_selectedRiverCenterPointsActor->SetMapper(mapper);
 	prop = m_selectedRiverCenterPointsActor->GetProperty();
-	prop->SetPointSize(9);
+	prop->SetPointSize(9 * v->devicePixelRatioF());
 	prop->SetColor(0, 0, 1);
 	m_selectedRiverCenterPointsActor->VisibilityOff();
 	r->AddActor(m_selectedRiverCenterPointsActor);
@@ -310,7 +311,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_selectedLeftBankPoints);
 	m_selectedLeftBankPointsActor->SetMapper(mapper);
 	prop = m_selectedLeftBankPointsActor->GetProperty();
-	prop->SetPointSize(5);
+	prop->SetPointSize(5 * v->devicePixelRatioF());
 	prop->SetColor(1, 0, 0);
 	m_selectedLeftBankPointsActor->VisibilityOff();
 	r->AddActor(m_selectedLeftBankPointsActor);
@@ -320,7 +321,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_selectedRightBankPoints);
 	m_selectedRightBankPointsActor->SetMapper(mapper);
 	prop = m_selectedRightBankPointsActor->GetProperty();
-	prop->SetPointSize(5);
+	prop->SetPointSize(5 * v->devicePixelRatioF());
 	prop->SetColor(0, 1, 0);
 	m_selectedRightBankPointsActor->VisibilityOff();
 	r->AddActor(m_selectedRightBankPointsActor);
@@ -330,7 +331,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	mapper->SetInputData(m_selectedCrossSectionLines);
 	m_selectedCrossSectionLinesActor->SetMapper(mapper);
 	prop = m_selectedCrossSectionLinesActor->GetProperty();
-	prop->SetLineWidth(3);
+	prop->SetLineWidth(3 * v->devicePixelRatioF());
 	prop->SetColor(0, 0, 0);
 	m_selectedCrossSectionLinesActor->VisibilityOff();
 	r->AddActor(m_selectedCrossSectionLinesActor);
@@ -341,7 +342,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	m_verticalCrossSectionLinesActor->SetMapper(mapper);
 	prop = m_verticalCrossSectionLinesActor->GetProperty();
 	prop->SetColor(0, 0, 0);
-	prop->SetLineWidth(1);
+	prop->SetLineWidth(1 * v->devicePixelRatioF());
 	m_verticalCrossSectionLinesActor->VisibilityOff();
 	r->AddActor(m_verticalCrossSectionLinesActor);
 
@@ -351,7 +352,7 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	m_focusedCrossSectionActor->SetMapper(mapper);
 	prop = m_focusedCrossSectionActor->GetProperty();
 	prop->SetColor(0, 0, 0);
-	prop->SetLineWidth(7);
+	prop->SetLineWidth(7 * v->devicePixelRatioF());
 	prop->SetOpacity(0.3);
 	m_focusedCrossSectionActor->VisibilityOff();
 	r->AddActor(m_focusedCrossSectionActor);

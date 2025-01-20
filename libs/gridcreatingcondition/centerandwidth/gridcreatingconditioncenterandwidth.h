@@ -15,7 +15,10 @@ class GridCreatingConditionCenterAndWidth : public GridCreatingCondition
 
 private:
 	const static int normalEdgeWidth = 1;
+	const static int normalPointSize = 1;
 	const static int selectedEdgeWidth = 2;
+	const static int selectedPointSize = 5;
+
 	const static int initialDivision = 100;
 
 public:

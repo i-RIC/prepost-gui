@@ -358,6 +358,7 @@ void GeoDataPoint::updateScalarValues()
 
 void GeoDataPoint::doUpdateActorSetting()
 {
+	auto v = dataModel()->graphicsView();
 	impl->m_actor->VisibilityOff();
 	impl->m_imageActor->VisibilityOff();
 
@@ -392,7 +393,7 @@ void GeoDataPoint::doUpdateActorSetting()
 		impl->m_actor->GetProperty()->SetOpacity(ds.opacity);
 
 		// pointSize
-		impl->m_actor->GetProperty()->SetPointSize(ds.pointSize);
+		impl->m_actor->GetProperty()->SetPointSize(ds.pointSize * v->devicePixelRatioF());
 
 		actorCollection()->AddItem(impl->m_actor);
 	} else {
