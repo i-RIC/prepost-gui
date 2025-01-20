@@ -18,14 +18,16 @@
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <postbase/polydata/polydatasettingtoolbarwidget.h>
 #include <misc/mergesupportedlistcommand.h>
+#include <misc/qscreenutil.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
-#include <postbase/polydata/polydatasettingtoolbarwidget.h>
 
 Post2dWindowPolyDataGroupDataItem::Impl::Impl(Post2dWindowPolyDataGroupDataItem* item) :
 	m_actor {vtkActor::New()},
@@ -201,7 +203,7 @@ QDialog* Post2dWindowPolyDataGroupDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Polygon Data Display Setting"));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(115)));
 
 	return dialog;
 }

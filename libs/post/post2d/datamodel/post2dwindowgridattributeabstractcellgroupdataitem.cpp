@@ -71,6 +71,8 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 	renderer()->AddActor(impl->m_actor);
 	renderer()->AddActor2D(impl->m_stringActor);
 
+	impl->m_stringActor->VisibilityOff();
+
 	impl->m_opacityWidget->setContainer(&impl->m_setting.opacity);
 	impl->m_opacityWidget->hide();
 

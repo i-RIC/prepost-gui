@@ -104,7 +104,7 @@ QDialog* Post3dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Particles Vector Setting (%1)").arg(m_standardItem->text()));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(130)));
 
 	return dialog;
 }
