@@ -65,6 +65,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/networksetting.h>
 #include <misc/qmdiareawithscrollbehaviormodification.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
@@ -1835,6 +1836,7 @@ void iRICMainWindow::openStartDialog()
 	StartPageDialog dialog(this);
 	dialog.setSolverList(m_solverDefinitionList);
 	dialog.setLocale(m_locale.name());
+	dialog.resize(QScreenUtil::sizeWithinScreen(dialog.size()));
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}

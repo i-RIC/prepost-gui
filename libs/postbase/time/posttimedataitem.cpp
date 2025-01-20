@@ -6,6 +6,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 
 #include <QDateTime>
@@ -127,6 +128,7 @@ QDialog* PostTimeDataItem::propertyDialog(QWidget* parent)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Time Setting"));
+	dialog->resize(QScreenUtil::sizeWithinScreen(500, 650));
 
 	return dialog;
 }

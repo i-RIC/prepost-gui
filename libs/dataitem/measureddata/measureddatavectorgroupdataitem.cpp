@@ -15,9 +15,11 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
+#include <misc/qscreenutil.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
@@ -197,7 +199,7 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Arrows Display Setting (%1)").arg(target().c_str()));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(120)));
 
 	return dialog;
 }

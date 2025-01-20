@@ -8,9 +8,9 @@
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
+#include <misc/qscreenutil.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
-
 
 ArrowsColorSettingEditSmallWidget::ArrowsColorSettingEditSmallWidget(QWidget *parent) :
 	QWidget(parent),
@@ -130,6 +130,7 @@ void ArrowsColorSettingEditSmallWidget::openColorMapEditDialog()
 
 	widget->setSetting(m_colorMapSetting);
 	dialog.setWindowTitle(tr("Colormap Setting (%1)").arg(m_colorMapSetting->valueCaption));
+	dialog.resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize()));
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 

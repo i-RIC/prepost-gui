@@ -8,6 +8,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 
 #include <QAction>
@@ -80,6 +81,8 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 	m_dialog->setFileName(fname);
 	// show dialog
 	m_dialog->setReadOnly(readonly);
+	m_dialog->resize(QScreenUtil::standardSizeWithinScreen());
+
 	m_dialog->exec();
 	// set the default folder back.
 	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);

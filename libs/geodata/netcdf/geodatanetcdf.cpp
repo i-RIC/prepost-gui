@@ -24,6 +24,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridattributerealdimension.h>
 #include <misc/modifycommanddialog.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
@@ -1005,7 +1006,7 @@ QDialog* GeoDataNetcdf::propertyDialog(QWidget* parent)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Raster Data Display Setting"));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(130)));
 
 	return dialog;
 }

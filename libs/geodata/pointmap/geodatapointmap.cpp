@@ -31,6 +31,7 @@
 #include <misc/mathsupport.h>
 #include <misc/modifycommanddialog.h>
 #include <misc/qpointfcompare.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 #include <misc/xmlsupport.h>
@@ -538,7 +539,7 @@ QDialog* GeoDataPointmap::propertyDialog(QWidget* parent)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Point Cloud Display Setting"));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(90)));
 
 	return dialog;
 }

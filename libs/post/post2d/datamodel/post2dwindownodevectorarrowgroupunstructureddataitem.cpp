@@ -4,10 +4,12 @@
 #include "private/post2dwindownodevectorarrowgroupunstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
-#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <misc/qscreenutil.h>
 
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(const std::string& name, Post2dWindowDataItem* p) :
 	Post2dWindowNodeVectorArrowGroupDataItem(name, p)
@@ -24,7 +26,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Arrows Setting (%1)").arg(m_standardItem->text()));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(115)));
 
 	return dialog;
 }

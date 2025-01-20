@@ -65,6 +65,7 @@ HEADERS += anms.h \
            qmdiareawithscrollbehaviormodification.h \
            qpointfcompare.h \
            qpointfcontainer.h \
+           qscreenutil.h \
            qspinboxwithfocussignals.h \
            qtimezoneselectcombobox.h \
            qttool.h \
@@ -165,6 +166,7 @@ SOURCES += anms.cpp \
            qmdiareawithscrollbehaviormodification.cpp \
            qpointfcompare.cpp \
            qpointfcontainer.cpp \
+           qscreenutil.cpp \
            qspinboxwithfocussignals.cpp \
            qtimezoneselectcombobox.cpp \
            qttool.cpp \

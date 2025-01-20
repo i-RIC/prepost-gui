@@ -14,10 +14,12 @@
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainerutil.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/qscreenutil.h>
 
 Post2dWindowAbstractCellScalarGroupDataItem::Post2dWindowAbstractCellScalarGroupDataItem(const std::string& target, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
@@ -165,7 +167,7 @@ QDialog* Post2dWindowAbstractCellScalarGroupDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Scalar Setting (%1)").arg(standardItem()->text()));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(90)));
 
 	return dialog;
 }

@@ -76,6 +76,9 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 			m_errorMessages.insert(errorCode, errorMessage);
 		}
 	}
+	QList<int> sizes;
+	sizes << 20 << 80;
+	ui->splitter->setSizes(sizes);
 }
 
 void GridCreatingConditionExternalProgramSettingDialog::setReadOnly(bool readOnly)

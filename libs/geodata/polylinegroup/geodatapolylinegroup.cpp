@@ -21,6 +21,7 @@
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/mathsupport.h>
 #include <misc/modifycommanddialog.h>
+#include <misc/qscreenutil.h>
 #include <misc/zdepthrange.h>
 
 #include <QMenu>
@@ -327,7 +328,7 @@ QDialog* GeoDataPolyLineGroup::propertyDialog(QWidget* parent)
 	widget->setSetting(&impl->m_displaySetting);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Lines Display Setting"));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(140)));
 
 	return dialog;
 }

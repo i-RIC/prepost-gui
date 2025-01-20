@@ -24,6 +24,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributestring.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <misc/qscreenutil.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/valuechangert.h>
 
@@ -67,7 +68,7 @@ QDialog* Post2dWindowGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 	dialog->setWidget(widget);
 
 	dialog->setSetting(&gItem->setting());
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(40)));
 
 	return dialog;
 }
