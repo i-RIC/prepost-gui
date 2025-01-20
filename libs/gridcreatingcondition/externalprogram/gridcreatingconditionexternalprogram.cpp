@@ -16,6 +16,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/mathsupport.h>
 #include <misc/pythonutil.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
@@ -71,6 +72,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* parent)
 	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
 	dialog.setFilename(fname);
 	dialog.load();
+	dialog.resize(QScreenUtil::sizeWithinScreen(900, 600));
 	int ret = dialog.exec();
 	if (ret != QDialog::Accepted) {return false;}
 
