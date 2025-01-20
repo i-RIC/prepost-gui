@@ -15,6 +15,11 @@ QSize QScreenUtil::standardSizeWithinScreen()
 	return sizeWithinScreen(900, 600);
 }
 
+QSize QScreenUtil::sizeWithinScreen(const QSize& size)
+{
+	return sizeWithinScreen(size.width(), size.height());
+}
+
 QSize QScreenUtil::sizeWithinScreen(int w, int h)
 {
 	auto geometry = QGuiApplication::primaryScreen()->geometry();

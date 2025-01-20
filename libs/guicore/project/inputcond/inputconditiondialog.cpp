@@ -134,7 +134,6 @@ void InputConditionDialog::setupComplexDialogsRec(const QDomNode& node, const So
 			auto dialog = new GridComplexConditionDialog(m_solverDefinition, defElem, this);
 			dialog->setWindowTitle(tr("Edit %1").arg(t.translate(elem.attribute("caption"))));
 			dialog->setCalculationConditionMode(true);
-			dialog->resize(QScreenUtil::standardSizeWithinScreen());
 
 			m_complexDialogs.insert({nameStr, dialog});
 
@@ -173,6 +172,8 @@ int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group, iRICL
 
 		ier = pair.second->loadFromCgnsFile(top->group(pair.first));
 		if (ier != IRIC_NO_ERROR) {return ier;}
+
+		pair.second->resize(QScreenUtil::sizeWithinScreen(pair.second->preferredSize()));
 	}
 
 	// select the first page.

@@ -328,6 +328,16 @@ void GridComplexConditionDialog::setCalculationConditionMode(bool mode)
 	m_calculationConditionMode = mode;
 }
 
+QSize GridComplexConditionDialog::preferredSize() const
+{
+	QSize size(600, 300);
+	if (m_groups.size() > 0) {
+		size = m_groups.at(0)->widget()->sizeHint();
+	}
+
+	return QSize(size.width() + 220, size.height() + 200);
+}
+
 int GridComplexConditionDialog::exec()
 {
 	m_backupGroups = m_groups;

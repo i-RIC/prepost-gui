@@ -177,7 +177,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		oldGroups.push_back(g);
 	}
 
-	m_dialog->resize(QScreenUtil::standardSizeWithinScreen());
+	m_dialog->resize(QScreenUtil::sizeWithinScreen(m_dialog->preferredSize()));
 	int ret = m_dialog->exec();
 	if (ret == QDialog::Rejected) {
 		return;

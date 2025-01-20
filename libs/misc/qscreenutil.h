@@ -7,6 +7,7 @@ class MISCDLL_EXPORT QScreenUtil
 {
 public:
 	static QSize standardSizeWithinScreen();
+	static QSize sizeWithinScreen(const QSize& size);
 	static QSize sizeWithinScreen(int w, int h);
 
 private:
