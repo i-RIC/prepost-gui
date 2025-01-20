@@ -38,6 +38,7 @@
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/qscreenutil.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/tpoexporter.h>
 #include <misc/valuechangert.h>
@@ -121,7 +122,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 		}
 	}
 
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(40)));
 
 	return dialog;
 }
