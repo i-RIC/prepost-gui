@@ -10,10 +10,12 @@
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/qscreenutil.h>
 #include <misc/valuechangert.h>
 
 #include <vtkActor2D.h>
@@ -144,7 +146,7 @@ QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Contour Setting (cell center) (%1)").arg(standardItem()->text()));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(100)));
 
 	return dialog;
 }

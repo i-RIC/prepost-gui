@@ -14,8 +14,10 @@
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 
@@ -287,7 +289,7 @@ QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Arrows Setting"));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(960, 700));
 
 	return dialog;
 }
