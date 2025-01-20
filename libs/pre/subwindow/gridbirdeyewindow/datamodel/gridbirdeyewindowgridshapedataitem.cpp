@@ -121,6 +121,7 @@ QDialog* GridBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Grid Shape Setting"));
+	dialog->resize(dialog->sizeHint());
 
 	return dialog;
 }
