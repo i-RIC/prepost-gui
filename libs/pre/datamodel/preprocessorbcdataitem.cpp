@@ -23,6 +23,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/opacitycontainer.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -654,6 +655,8 @@ bool PreProcessorBCDataItem::showDialog()
 	auto d = impl->m_dialog;
 	d->setOpacity(impl->m_opacity);
 	d->setEditMode();
+	auto s = d->pageSizeHint();
+	d->resize(QScreenUtil::sizeWithinScreen(s.width() + 40, s.height() + 240));
 	int ret = d->exec();
 	if (ret == QDialog::Rejected) {return false;}
 

@@ -27,6 +27,7 @@
 
 BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowI* mw, QWidget* parent) :
 	QDialog(parent),
+	m_page {nullptr},
 	ui(new Ui::BoundaryConditionDialog)
 {
 	m_modified = false;
@@ -72,11 +73,11 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	// setup WidgetSet.
 	m_widgetSet->setup(elem, *m_containerSet, *def, t, true);
 
-	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
+	m_page = new InputConditionPage(elem, m_widgetSet, t, this);
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(0);
-	layout->addWidget(page);
-	ui->settingGroupBox->setLayout(layout);
+	layout->addWidget(m_page);
+	ui->scrollAreaWidgetContents->setLayout(layout);
 }
 
 int BoundaryConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
@@ -231,4 +232,9 @@ void BoundaryConditionDialog::setPropertyMode()
 	setWindowTitle(tr("Boundary Condition Property"));
 	ui->nameEdit->setDisabled(true);
 	ui->settingGroupBox->hide();
+}
+
+QSize BoundaryConditionDialog::pageSizeHint() const
+{
+	return m_page->sizeHint();
 }
