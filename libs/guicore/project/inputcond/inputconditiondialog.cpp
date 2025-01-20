@@ -15,6 +15,7 @@
 #include <misc/errormessage.h>
 #include <misc/fileremover.h>
 #include <misc/filesystemfunction.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <misc/versionnumber.h>
@@ -133,6 +134,7 @@ void InputConditionDialog::setupComplexDialogsRec(const QDomNode& node, const So
 			auto dialog = new GridComplexConditionDialog(m_solverDefinition, defElem, this);
 			dialog->setWindowTitle(tr("Edit %1").arg(t.translate(elem.attribute("caption"))));
 			dialog->setCalculationConditionMode(true);
+			dialog->resize(QScreenUtil::standardSizeWithinScreen());
 
 			m_complexDialogs.insert({nameStr, dialog});
 

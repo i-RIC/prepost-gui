@@ -81,7 +81,7 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 	m_dialog->setFileName(fname);
 	// show dialog
 	m_dialog->setReadOnly(readonly);
-	m_dialog->resize(QScreenUtil::sizeWithinScreen(900, 600));
+	m_dialog->resize(QScreenUtil::standardSizeWithinScreen());
 
 	m_dialog->exec();
 	// set the default folder back.

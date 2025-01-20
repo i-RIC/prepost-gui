@@ -72,7 +72,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* parent)
 	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
 	dialog.setFilename(fname);
 	dialog.load();
-	dialog.resize(QScreenUtil::sizeWithinScreen(900, 600));
+	dialog.resize(QScreenUtil::standardSizeWithinScreen());
 	int ret = dialog.exec();
 	if (ret != QDialog::Accepted) {return false;}
 

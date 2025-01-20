@@ -10,6 +10,11 @@ const int MARGIN_HEIGHT = 100;
 
 }
 
+QSize QScreenUtil::standardSizeWithinScreen()
+{
+	return sizeWithinScreen(900, 600);
+}
+
 QSize QScreenUtil::sizeWithinScreen(int w, int h)
 {
 	auto geometry = QGuiApplication::primaryScreen()->geometry();

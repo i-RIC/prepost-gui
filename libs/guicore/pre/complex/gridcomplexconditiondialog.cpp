@@ -17,6 +17,7 @@
 
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QList>
 #include <QMessageBox>
 #include <QTextCodec>
 #include <QWidget>
@@ -46,6 +47,10 @@ GridComplexConditionDialog::GridComplexConditionDialog(SolverDefinition* def, co
 	ui->setupUi(this);
 
 	m_colorSource = new ColorSource(nullptr);
+
+	QList<int> sizes;
+	sizes << 5 << 100;
+	ui->splitter->setSizes(sizes);
 
 	connect(ui->listWidget, &QListWidget::currentRowChanged, this, &GridComplexConditionDialog::selectItem);
 	connect(ui->addButton, &QPushButton::clicked, this, &GridComplexConditionDialog::addItem);

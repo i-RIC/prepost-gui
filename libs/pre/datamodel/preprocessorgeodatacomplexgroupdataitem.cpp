@@ -25,6 +25,7 @@
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <geodata/polygon/geodatapolygon.h>
 
@@ -176,6 +177,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		oldGroups.push_back(g);
 	}
 
+	m_dialog->resize(QScreenUtil::standardSizeWithinScreen());
 	int ret = m_dialog->exec();
 	if (ret == QDialog::Rejected) {
 		return;
