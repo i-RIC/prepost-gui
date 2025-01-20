@@ -12,6 +12,7 @@
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/modifycommandandrenderdialog.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
@@ -368,6 +369,7 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 void GeoDataPolygonGroup::doUpdateActorSetting()
 {
 	auto ds = impl->m_displaySetting;
+	auto v = dataModel()->graphicsView();
 
 	// color
 	impl->m_edgesActor->GetProperty()->SetColor(ds.color);
@@ -423,9 +425,9 @@ void GeoDataPolygonGroup::doUpdateActorSetting()
 	}
 
 	// line width
-	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
-	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
-	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
+	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth * v->devicePixelRatioF());
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2 * v->devicePixelRatioF());
+	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5 * v->devicePixelRatioF());
 
 	updateActorSettingForEditTargetPolyData();
 

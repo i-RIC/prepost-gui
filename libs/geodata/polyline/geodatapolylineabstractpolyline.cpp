@@ -5,6 +5,7 @@
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 
 #include <vtkActor.h>
@@ -34,10 +35,11 @@ GeoDataPolyLineAbstractPolyLine::Impl::Impl(GeoDataPolyLine* parent) :
 	m_linesScalarValues {vtkDoubleArray::New()},
 	m_pointsScalarValues {vtkDoubleArray::New()}
 {
+	auto v = parent->graphicsView();
 	setupScalarValues();
 
-	m_linesActor->GetProperty()->SetLineWidth(2);
-	m_pointsActor->GetProperty()->SetPointSize(5);
+	m_linesActor->GetProperty()->SetLineWidth(2 * v->devicePixelRatioF());
+	m_pointsActor->GetProperty()->SetPointSize(5 * v->devicePixelRatioF());
 }
 
 GeoDataPolyLineAbstractPolyLine::Impl::~Impl()
@@ -165,6 +167,8 @@ int GeoDataPolyLineAbstractPolyLine::selectedEdgeId() const
 
 void GeoDataPolyLineAbstractPolyLine::setActive(bool active)
 {
+	auto v = impl->m_parent->graphicsView();
+
 	auto col = impl->m_parent->actorCollection();
 	col->RemoveItem(impl->m_pointsActor);
 	if (active) {
@@ -172,7 +176,7 @@ void GeoDataPolyLineAbstractPolyLine::setActive(bool active)
 		updateActorSetting();
 	} else {
 		impl->m_pointsActor->VisibilityOff();
-		impl->m_linesActor->GetProperty()->SetLineWidth(impl->m_parent->impl->m_displaySetting.lineWidth);
+		impl->m_linesActor->GetProperty()->SetLineWidth(impl->m_parent->impl->m_displaySetting.lineWidth * v->devicePixelRatioF());
 	}
 
 	impl->m_parent->updateVisibilityWithoutRendering();
@@ -183,6 +187,7 @@ void GeoDataPolyLineAbstractPolyLine::finishDefinition()
 
 void GeoDataPolyLineAbstractPolyLine::updateActorSetting()
 {
+	auto v = impl->m_parent->graphicsView();
 	auto ds = impl->m_parent->impl->m_displaySetting;
 
 	// color
@@ -194,8 +199,8 @@ void GeoDataPolyLineAbstractPolyLine::updateActorSetting()
 	impl->m_pointsActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// lineWidth
-	impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
-	impl->m_pointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
+	impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2 * v->devicePixelRatioF());
+	impl->m_pointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5 * v->devicePixelRatioF());
 
 	// mapping
 	auto cm = impl->m_parent->geoDataDataItem()->colorMapSettingContainer();

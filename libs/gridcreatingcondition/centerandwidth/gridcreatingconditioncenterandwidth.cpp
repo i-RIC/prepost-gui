@@ -31,11 +31,13 @@
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
+#include <QColor>
 #include <QDomNode>
 #include <QFile>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QSettings>
 #include <QToolBar>
 #include <QXmlStreamWriter>
 
@@ -47,6 +49,7 @@
 #include <vtkParametricFunctionSource.h>
 #include <vtkParametricSpline.h>
 #include <vtkProperty.h>
+#include <vtkProperty2D.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
@@ -103,6 +106,12 @@ void GridCreatingConditionCenterAndWidth::setPolyLine(const std::vector<QPointF>
 
 void GridCreatingConditionCenterAndWidth::updateShapeData()
 {
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	double r = color.redF();
+	double g = color.greenF();
+	double b = color.blueF();
+
 	auto col = actor2DCollection();
 
 	impl->m_upstreamActor.actor()->VisibilityOff();
@@ -115,11 +124,17 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 
 	impl->m_upstreamActor.setPosition(polyLine.at(0));
 	impl->m_downstreamActor.setPosition(polyLine.at(polyLine.size() - 1));
+
+	impl->m_setting.upDownText.fontColor = color;
 	impl->m_setting.upDownText.applySetting(impl->m_upstreamActor.labelTextProperty());
 	impl->m_setting.upDownText.applySetting(impl->m_downstreamActor.labelTextProperty());
 
 	col->AddItem(impl->m_upstreamActor.actor());
 	col->AddItem(impl->m_downstreamActor.actor());
+
+	auto v = dataModel()->graphicsView();
+	impl->m_polyLineController.linesActor()->GetProperty()->SetColor(r, g, b);
+	impl->m_polyLineController.pointsActor()->GetProperty()->SetColor(r, g, b);
 
 	updateVisibilityWithoutRendering();
 }
@@ -294,8 +309,6 @@ bool GridCreatingConditionCenterAndWidth::ready() const
 
 void GridCreatingConditionCenterAndWidth::setupActors()
 {
-	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(2);
-
 	auto r = renderer();
 	r->AddActor(impl->m_polyLineController.linesActor());
 	r->AddActor(impl->m_polyLineController.pointsActor());
@@ -338,15 +351,23 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 
 void GridCreatingConditionCenterAndWidth::informSelection(PreProcessorGraphicsViewI* v)
 {
-	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth);
-	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(5.0);
+	QSettings settings;
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+
+	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth * scale * v->devicePixelRatioF());
+	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(selectedPointSize * scale * v->devicePixelRatioF());
+
 	impl->updateMouseCursor(v);
 }
 
 void GridCreatingConditionCenterAndWidth::informDeselection(PreProcessorGraphicsViewI* v)
 {
-	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth);
-	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(1.0);
+	QSettings settings;
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+
+	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth * scale * v->devicePixelRatioF());
+	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(normalPointSize * scale * v->devicePixelRatioF());
+
 	v->unsetCursor();
 }
 

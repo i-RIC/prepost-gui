@@ -307,6 +307,7 @@ GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 
 void GeoDataPointGroup::doUpdateActorSetting()
 {
+	auto v = dataModel()->graphicsView();
 	auto r = renderer();
 	for (auto actor : impl->m_imageActors) {
 		r->RemoveActor2D(actor);
@@ -362,8 +363,8 @@ void GeoDataPointGroup::doUpdateActorSetting()
 		impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(ds.opacity);
 
 		// pointSize
-		impl->m_pointsActor->GetProperty()->SetPointSize(ds.pointSize);
-		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(ds.pointSize * 2);
+		impl->m_pointsActor->GetProperty()->SetPointSize(ds.pointSize * v->devicePixelRatioF());
+		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(ds.pointSize * 2 * v->devicePixelRatioF());
 
 		ac->AddItem(impl->m_pointsActor);
 	} else {

@@ -8,6 +8,7 @@
 #include <guicore/grid/v4gridutil.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guibase/gridshape/gridshapesettingeditwidget.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -28,13 +29,16 @@ PreProcessorStructured2dGridShapeDataItem::~PreProcessorStructured2dGridShapeDat
 
 void PreProcessorStructured2dGridShapeDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
+
 	auto oa = m_setting.outlineActor();
 	oa->GetProperty()->SetLighting(false);
-	oa->GetProperty()->SetLineWidth(normalOutlineWidth);
+	oa->GetProperty()->SetLineWidth(normalOutlineWidth * v->devicePixelRatioF());
 	renderer()->AddActor(oa);
 
 	auto wa = m_setting.wireframeActor();
 	wa->GetProperty()->SetLighting(false);
+	wa->GetProperty()->SetLineWidth(1 * v->devicePixelRatioF());
 	renderer()->AddActor(wa);
 
 	auto ia = m_setting.indexActor();

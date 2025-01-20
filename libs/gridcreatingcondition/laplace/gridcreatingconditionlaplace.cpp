@@ -16,6 +16,7 @@
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
@@ -36,6 +37,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QSettings>
 
 namespace {
 
@@ -255,14 +257,12 @@ void GridCreatingConditionLaplace::informSelection(PreProcessorGraphicsViewI* /*
 {
 	impl->m_itemSelected = true;
 	impl->updateActorSetting();
-	renderGraphicsView();
 }
 
 void GridCreatingConditionLaplace::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	impl->m_itemSelected = false;
 	impl->updateActorSetting();
-	renderGraphicsView();
 }
 
 void GridCreatingConditionLaplace::viewOperationEnded(PreProcessorGraphicsViewI* v)
@@ -408,6 +408,10 @@ void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProces
 		}
 	} else {
 		if (event->button() == Qt::LeftButton) {
+			QSettings settings;
+			QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+			int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+
 			switch (impl->m_regionDefinedMouseEventMode) {
 			case Impl::RegionDefinedMouseEventMode::AddEdgeLinePrepare:
 				impl->pushNewEdgeStartDefinitionCommand(true, event->pos(), v);
@@ -417,7 +421,7 @@ void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProces
 				impl->pushNewEdgeDefineNewVertexCommand(true, event->pos());
 				break;
 			case Impl::RegionDefinedMouseEventMode::AddEdgeLineFinishPrepare:
-				impl->addNewEdge(event->pos(), v);
+				impl->addNewEdge(event->pos(), color, scale * v->devicePixelRatioF(), v);
 				break;
 			case Impl::RegionDefinedMouseEventMode::MoveVertexPrepare:
 				impl->m_regionDefinedMouseEventMode = Impl::RegionDefinedMouseEventMode::MoveVertex;
@@ -524,7 +528,12 @@ void GridCreatingConditionLaplace::updateDeployParameterForSelectedSubRegion(con
 
 void GridCreatingConditionLaplace::buildBankLines()
 {
-	impl->buildBankLines();
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	auto v = dataModel()->graphicsView();
+
+	impl->buildBankLines(color, scale * v->devicePixelRatioF());
 }
 
 void GridCreatingConditionLaplace::newEdgeMode(bool on)
@@ -854,6 +863,11 @@ void GridCreatingConditionLaplace::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void GridCreatingConditionLaplace::loadExternalData(const QString& filename)
 {
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+	auto v = dataModel()->graphicsView();
+
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
@@ -875,16 +889,16 @@ void GridCreatingConditionLaplace::loadExternalData(const QString& filename)
 		for (int i = 0; i < impl->m_ctrlPointCountI - 1; ++i) {
 			auto line = new PolyLineController();
 			loadPolyLine(&s, line, offset());
-			impl->insertEdgeLineStreamWise(line);
-			impl->addEdgeLinesStreamWiseForSelectionAndPreview(r);
+			impl->insertEdgeLineStreamWise(line, color, scale * v->devicePixelRatioF());
+			impl->addEdgeLinesStreamWiseForSelectionAndPreview(r, color, scale * v->devicePixelRatioF());
 		}
 	}
 	for (int j = 0; j < impl->m_ctrlPointCountJ - 1; ++j) {
 		for (int i = 0; i < impl->m_ctrlPointCountI; ++i) {
 			auto line = new PolyLineController();
 			loadPolyLine(&s, line, offset());
-			impl->insertEdgeLineCrossSection(line);
-			impl->addEdgeLinesCrossSectionForSelectionAndPreview(r);
+			impl->insertEdgeLineCrossSection(line, color, scale * v->devicePixelRatioF());
+			impl->addEdgeLinesCrossSectionForSelectionAndPreview(r, color, scale * v->devicePixelRatioF());
 		}
 	}
 	for (int j = 0; j < impl->m_ctrlPointCountJ - 1; ++j) {
@@ -899,7 +913,7 @@ void GridCreatingConditionLaplace::loadExternalData(const QString& filename)
 
 	for (int j = 0; j < impl->m_ctrlPointCountJ - 1; ++j) {
 		for (int i = 0; i < impl->m_ctrlPointCountI - 1; ++i) {
-			impl->addSubRegionPolygon(r);
+			impl->addSubRegionPolygon(r, color);
 		}
 	}
 
