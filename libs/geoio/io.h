@@ -1,7 +1,7 @@
 #ifndef IO_H
 #define IO_H
 
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 
 #include <QFileDialog>
 #include <QFileInfo>
@@ -28,7 +28,7 @@ DATA importDataT(QWidget* w)
 	}
 	filters.push_front(QString(QObject::tr("All importable files (%1)")).arg(extensions.join(" ")));
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 
 	DATA ret;
@@ -60,7 +60,7 @@ DATA importDataT(QWidget* w)
 	ret = importer->importData(filename, selectedFilter, w);
 
 	if (! ret.size() == 0) {
-		LastIODirectory::setFromFilename(filename);
+		GeoLastIODirectory::setFromFilename(filename);
 	}
 
 	return ret;
@@ -76,14 +76,14 @@ void exportDataT(const DATA& data, QWidget* w)
 		filters << exporter->fileDialogFilters();
 	}
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 
 	QString filename = QFileDialog::getSaveFileName(w, QObject::tr("Select file to export"), dir, filters.join(";;"), &selectedFilter);
 
 	if (filename.isNull()) {return;}
 
-	LastIODirectory::setFromFilename(filename);
+	GeoLastIODirectory::setFromFilename(filename);
 
 	I* exporter = nullptr;
 	for (int i = 0; i < filters.size(); ++i) {
