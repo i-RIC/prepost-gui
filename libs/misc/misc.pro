@@ -31,6 +31,7 @@ HEADERS += anms.h \
            filesystemfunction.h \
            folderbackup.h \
            folderremover.h \
+           geolastiodirectory.h \
            informationdialog.h \
            intarraycontainer.h \
            intcontainer.h \
@@ -56,6 +57,7 @@ HEADERS += anms.h \
            opacitycontainer.h \
            orderedvalueselectdialog.h \
            primitiveview.h \
+           projectlastiodirectory.h \
            pythonutil.h \
            qfontcontainer.h \
            qfontdisplaylabel.h \
@@ -135,6 +137,7 @@ SOURCES += anms.cpp \
            filesystemfunction.cpp \
            folderbackup.cpp \
            folderremover.cpp \
+           geolastiodirectory.cpp \
            informationdialog.cpp \
            intarraycontainer.cpp \
            intcontainer.cpp \
@@ -158,6 +161,7 @@ SOURCES += anms.cpp \
            opacitycontainer.cpp \
            orderedvalueselectdialog.cpp \
            primitiveview.cpp \
+           projectlastiodirectory.cpp \
            pythonutil.cpp \
            qfontcontainer.cpp \
            qfontdisplaylabel.cpp \
