@@ -25,6 +25,7 @@ TmsImageCache::~TmsImageCache()
 
 void TmsImageCache::addRequests(const QString& urlPattern, int zoomLevel, int xMin, int xMax, int yMin, int yMax, int maxZoomLevel)
 {
+	m_manager->clearRequestQueue();
 	m_manager->addRequests(urlPattern, zoomLevel, xMin, xMax, yMin, yMax, maxZoomLevel);
 }
 
