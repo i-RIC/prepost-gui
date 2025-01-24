@@ -13,6 +13,7 @@ class TmsImageCache::Entry
 public:
 	enum class Status {
 		None,
+		InQueue,
 		Loading,
 		CacheInMemory,
 		CacheInFile,

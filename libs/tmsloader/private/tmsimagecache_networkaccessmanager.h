@@ -4,7 +4,11 @@
 #include "../tmsimagecache.h"
 
 #include <QMutex>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QObject>
+
+#include <queue>
 
 class QNetworkAccessManager;
 
@@ -17,9 +21,11 @@ public:
 	~NetworkAccessManager();
 
 	void addRequests(const QString& urlPattern, int zoomLevel, int xMin, int xMax, int yMin, int yMax, int maxZoomLevel);
+	void clearRequestQueue();
 
 private slots:
 	void handleReply();
+	void handleError(QNetworkReply::NetworkError);
 
 private:
 	void registerRequest(const QString& urlPattern, int z, int x, int y);
@@ -28,10 +34,13 @@ private:
 	void registerRequestLower(const QString& urlPattern, int z, int x, int y, int levels);
 	void registerRequestUpper(const QString& urlPattern, int z, int x, int y, int maxZoomLevel, int levels);
 	void doRegisterRequest(const QString& urlPattern, int z, int x, int y);
+	void sendRequests();
 
 	QMutex m_requestsMutex;
 	QNetworkAccessManager* m_networkAccessManager;
 
+	int m_requestsInProgress;
+	std::queue<QNetworkRequest> m_requestQueue;
 	TmsImageCache* m_cache;
 	bool m_abort;
 };
