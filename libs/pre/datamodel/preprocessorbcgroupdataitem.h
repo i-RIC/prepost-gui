@@ -49,6 +49,8 @@ public slots:
 private slots:
 	void deleteSelected();
 	void deleteAll();
+	void importBc();
+	void exportBc();
 
 signals:
 	void itemsUpdated();
@@ -64,6 +66,8 @@ private:
 	QList<QAction*> m_addActions;
 	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
+	QAction* m_importAction;
+	QAction* m_exportAction;
 
 	int m_projectBuildNumber;
 

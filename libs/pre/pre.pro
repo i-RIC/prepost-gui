@@ -3,6 +3,9 @@ TEMPLATE = lib
 
 
 DEFINES += PRE_LIBRARY
+win32 {
+        DEFINES += YAML_CPP_DLL
+}
 
 include( ../../paths.pri )
 
@@ -285,6 +288,15 @@ unix {
 
 win32 {
 	LIBS += -lshapelib_i
+}
+
+# yaml-cpp
+
+win32 {
+        LIBS += -lyaml-cpp
+}
+unix {
+        LIBS += -lyaml-cpp
 }
 
 win32 {

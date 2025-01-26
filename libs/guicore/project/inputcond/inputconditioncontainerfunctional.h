@@ -74,9 +74,10 @@ public:
 	QVariant variantValue() const override;
 
 	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
-	void exportToYaml(QTextStream* stream, const QDir& dir) override;
+	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "") override;
 	void importFromString(const QString& value, const QDir& dir) override;
 	void exportToString(QString* value, const QDir& dir) override;
+	void setFileNamePrefix(const QString& prefix);
 
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);

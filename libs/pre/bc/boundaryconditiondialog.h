@@ -5,6 +5,8 @@
 #include <guicore/project/inputcond/inputconditioncontainerstring.h>
 #include <guicore/project/inputcond/inputconditioncontainerinteger.h>
 
+#include <yaml-cpp/yaml.h>
+
 class QAbstractButton;
 class SolverDefinition;
 class QDomElement;
@@ -27,6 +29,8 @@ class iRICMainWindow;
 class OpacityContainer;
 class PreProcessorBCDataItem;
 
+class QTextStream;
+
 class BoundaryConditionDialog : public QDialog
 {
 	Q_OBJECT
@@ -38,6 +42,9 @@ public:
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
 	int load(const iRICLib::H5CgnsConditionGroup& group);
 	int save(iRICLib::H5CgnsConditionGroup* group);
+	void importFromYaml(const YAML::Node& node, const QDir& dir);
+	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "");
+	void setFileNamePrefix(const QString& prefix);
 
 	void setType(const QString& type);
 

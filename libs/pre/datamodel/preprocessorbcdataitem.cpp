@@ -596,6 +596,22 @@ int PreProcessorBCDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	return ret;
 }
 
+void PreProcessorBCDataItem::importFromYaml(const YAML::Node& node, const QDir& dir)
+{
+	impl->m_dialog->importFromYaml(node, dir);
+	setName(impl->m_dialog->caption());
+}
+
+void PreProcessorBCDataItem::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
+{
+	impl->m_dialog->exportToYaml(stream, dir, lineHeader);
+}
+
+void PreProcessorBCDataItem::setFileNamePrefix(const QString& prefix)
+{
+	impl->m_dialog->setFileNamePrefix(prefix);
+}
+
 void PreProcessorBCDataItem::handleStandardItemDoubleClicked()
 {
 	showDialog();

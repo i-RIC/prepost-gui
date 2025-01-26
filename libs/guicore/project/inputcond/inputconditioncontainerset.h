@@ -10,6 +10,8 @@
 #include <QObject>
 #include <QString>
 
+#include <yaml-cpp/yaml.h>
+
 #include <string>
 #include <map>
 
@@ -17,11 +19,13 @@ namespace iRICLib {
 	class H5CgnsConditionGroup;
 } // namespace iRICLib
 
-class QDomNode;
-class QWidget;
 class InputConditionDialog;
 class SolverDefinition;
 class SolverDefinitionTranslator;
+
+class QDomNode;
+class QTextStream;
+class QWidget;
 
 class GUICOREDLL_EXPORT InputConditionContainerSet : public QObject
 {
@@ -40,7 +44,10 @@ public:
 	void setDefaultValues();
 
 	bool importFromYaml(const QString& filename);
+	void importFromYaml(const YAML::Node& node, const QDir& dir);
 	bool exportToYaml(const QString& filename);
+	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader);
+	void setFileNamePrefix(const QString& prefix);
 
 	std::map<std::string, InputConditionContainerInteger>& integers();
 	const std::map<std::string, InputConditionContainerInteger>& integers() const;

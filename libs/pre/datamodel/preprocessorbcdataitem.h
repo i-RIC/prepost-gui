@@ -4,6 +4,8 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/edge.h>
 
+#include <yaml-cpp/yaml.h>
+
 #include <unordered_set>
 
 class OpacityContainer;
@@ -15,6 +17,7 @@ class VTKGraphicsView;
 class QAction;
 class QColor;
 class QString;
+class QTextStream;
 
 namespace iRICLib {
 	class H5CgnsZone;
@@ -31,6 +34,10 @@ public:
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
 	int importFromCgnsFile(const iRICLib::H5CgnsZone& zone);
+
+	void importFromYaml(const YAML::Node& node, const QDir& dir);
+	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "");
+	void setFileNamePrefix(const QString& prefix);
 
 	void handleStandardItemDoubleClicked() override;
 	void handleStandardItemChange() override;
