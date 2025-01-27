@@ -1440,6 +1440,7 @@ void PreProcessorGeoDataGroupDataItem::requestCrosssectionWindowDelete(GeoDataRi
 		if (*it == item) {
 			m_crosssectionWindows.erase(it);
 			delete item;
+			iricMainWindow()->updateWindowList();
 			return;
 		}
 	}
