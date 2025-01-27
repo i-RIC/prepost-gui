@@ -302,6 +302,7 @@ HEADERS += guicore_global.h \
            project/projectcgnsmanager.h \
            project/projectdata.h \
            project/projectdataitem.h \
+           project/projectdefaultcolormapsettings.h \
            project/projectmainfile.h \
            project/projectpostprocessors.h \
            project/projecttimesettingdialog.h \
@@ -891,6 +892,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            project/projectcgnsmanager.cpp \
            project/projectdata.cpp \
            project/projectdataitem.cpp \
+           project/projectdefaultcolormapsettings.cpp \
            project/projectmainfile.cpp \
            project/projectpostprocessors.cpp \
            project/projecttimesettingdialog.cpp \
