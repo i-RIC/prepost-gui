@@ -15,6 +15,7 @@
 #include <misc/errormessage.h>
 #include <misc/fileremover.h>
 #include <misc/filesystemfunction.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <misc/versionnumber.h>
@@ -171,6 +172,8 @@ int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group, iRICL
 
 		ier = pair.second->loadFromCgnsFile(top->group(pair.first));
 		if (ier != IRIC_NO_ERROR) {return ier;}
+
+		pair.second->resize(QScreenUtil::sizeWithinScreen(pair.second->preferredSize()));
 	}
 
 	// select the first page.

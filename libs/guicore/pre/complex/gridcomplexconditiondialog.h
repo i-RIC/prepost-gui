@@ -41,6 +41,7 @@ public:
 	bool exportToCsvFile(const QString& filename);
 
 	void setCalculationConditionMode(bool mode);
+	QSize preferredSize() const;
 
 public slots:
 	int exec() override;

@@ -17,11 +17,13 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
+#include <misc/qscreenutil.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
@@ -111,7 +113,7 @@ QDialog* Post2dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Particles Vector Setting (%1)").arg(m_standardItem->text()));
-	dialog->resize(900, 650);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(130)));
 
 	return dialog;
 }

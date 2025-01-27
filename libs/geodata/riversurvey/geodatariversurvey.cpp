@@ -53,11 +53,12 @@
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
 #include <misc/informationdialog.h>
+#include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/modifycommanddialog.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
-#include <misc/iricundostack.h>
 
 #include <QAction>
 #include <QDomElement>
@@ -544,7 +545,7 @@ QDialog* GeoDataRiverSurvey::propertyDialog(QWidget* parent)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Cross-Section Data Display Setting"));
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(80)));
 
 	return dialog;
 }

@@ -54,6 +54,7 @@ QDialog* PostTitleDataItem::propertyDialog(QWidget* parent)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Title Setting"));
+	dialog->resize(dialog->sizeHint());
 
 	return dialog;
 }

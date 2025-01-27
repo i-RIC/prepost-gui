@@ -21,6 +21,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 
 Post3dWindowNodeScalarGroupDataItem::Impl::Impl() :
@@ -176,6 +177,7 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Isosurface Setting"));
+	dialog->resize(QScreenUtil::sizeWithinScreen(380, 540));
 
 	return dialog;
 }

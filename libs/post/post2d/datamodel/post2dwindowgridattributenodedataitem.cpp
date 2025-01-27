@@ -20,6 +20,7 @@
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <misc/qscreenutil.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/valuechangert.h>
 
@@ -68,7 +69,7 @@ QDialog* Post2dWindowGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 		}
 	}
 
-	dialog->resize(900, 700);
+	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(40)));
 
 	return dialog;
 }

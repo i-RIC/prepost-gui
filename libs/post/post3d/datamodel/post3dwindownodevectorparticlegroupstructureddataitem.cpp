@@ -8,6 +8,7 @@
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <misc/qscreenutil.h>
 
 #include <QSettings>
 
@@ -82,6 +83,7 @@ QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Particles Display Setting"));
+	dialog->resize(QScreenUtil::sizeWithinScreen(500, 800));
 
 	return dialog;
 }

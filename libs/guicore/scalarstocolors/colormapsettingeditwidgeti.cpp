@@ -49,3 +49,8 @@ void ColorMapSettingEditWidgetI::setLegendSetting(ColorMapLegendSettingContainer
 
 	setupWidget();
 }
+
+QSize ColorMapSettingEditWidgetI::standardDialogSize(int extraHeight)
+{
+	return QSize(960, 780 + extraHeight);
+}
