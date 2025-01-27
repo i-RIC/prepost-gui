@@ -25,6 +25,8 @@ public:
 	void save(QXmlStreamWriter& writer);
 
 private:
+	void clear();
+
 	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMaps;
 };
 

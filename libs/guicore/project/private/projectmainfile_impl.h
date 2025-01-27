@@ -37,6 +37,7 @@ public:
 	std::vector<BackgroundImageInfo*> m_backgroundImages;
 	PostSolutionInfo* m_postSolutionInfo;
 	ProjectPostProcessors* m_postProcessors;
+	ProjectDefaultColorMapSettings* m_defaultColorMapSettings;
 	ProjectData* m_projectData;
 
 	CoordinateSystem* m_coordinateSystem;

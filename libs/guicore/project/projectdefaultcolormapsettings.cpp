@@ -11,9 +11,7 @@ ProjectDefaultColorMapSettings::ProjectDefaultColorMapSettings() :
 
 ProjectDefaultColorMapSettings::~ProjectDefaultColorMapSettings()
 {
-	for (auto& pair : m_colorMaps) {
-		delete pair.second;
-	}
+	clear();
 }
 
 
@@ -45,6 +43,8 @@ void ProjectDefaultColorMapSettings::add(const std::string& name, ColorMapSettin
 
 void ProjectDefaultColorMapSettings::load(const QDomNode& node)
 {
+	clear();
+
 	for (int i = 0; i < node.childNodes().size(); ++i) {
 		auto child = node.childNodes().at(i);
 		auto elem = child.toElement();
@@ -79,4 +79,13 @@ void ProjectDefaultColorMapSettings::save(QXmlStreamWriter& writer)
 
 		writer.writeEndElement();
 	}
+}
+
+void ProjectDefaultColorMapSettings::clear()
+{
+	for (auto& pair : m_colorMaps) {
+		delete pair.second;
+	}
+
+	m_colorMaps.clear();
 }
