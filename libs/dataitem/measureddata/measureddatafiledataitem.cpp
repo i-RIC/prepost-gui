@@ -140,7 +140,7 @@ void MeasuredDataFileDataItem::updateColorMapLegendsVisibility()
 		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
 	}
 
-	updateVisibilityWithoutRendering();
+	updateVisibilityOfActor2DCollection(isAncientChecked() && isChecked());
 }
 
 void MeasuredDataFileDataItem::doApplyOffset(double x, double y)
