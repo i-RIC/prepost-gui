@@ -6,8 +6,15 @@
 #include <QMutexLocker>
 #include <QNetworkReply>
 
+namespace {
+
+const int MAX_REQUESTS = 20;
+
+}
+
 TmsImageCache::NetworkAccessManager::NetworkAccessManager(TmsImageCache* cache) :
 	m_networkAccessManager {QtTool::networkAccessManager()},
+	m_requestsInProgress {0},
 	m_cache {cache},
 	m_abort {false}
 {}
@@ -34,6 +41,22 @@ void TmsImageCache::NetworkAccessManager::addRequests(const QString& urlPattern,
 	}
 }
 
+void TmsImageCache::NetworkAccessManager::clearRequestQueue()
+{
+	while (! m_requestQueue.empty()) {
+		auto r = m_requestQueue.front();
+
+		auto it = m_cache->m_entries.find(r.url().toString());
+		if (it != m_cache->m_entries.end()) {
+			QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
+
+			m_cache->m_entries.erase(it);
+		}
+
+		m_requestQueue.pop();
+	}
+}
+
 void TmsImageCache::NetworkAccessManager::handleReply()
 {
 	if (m_abort) {return;}
@@ -48,17 +71,43 @@ void TmsImageCache::NetworkAccessManager::handleReply()
 	bool ok = pixmap->loadFromData(reply->readAll());
 
 	auto it = m_cache->m_entries.find(reply->url().toString());
-	if (it == m_cache->m_entries.end()) {return;}
+	if (it != m_cache->m_entries.end()) {
+		QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
+		it->second->pixmap = pixmap;
+		it->second->status = Entry::Status::CacheInMemory;
 
-	QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
-	it->second->pixmap = pixmap;
-	it->second->status = Entry::Status::CacheInMemory;
-
-	m_cache->m_inMemoryEntries.insert({it->second->url, it->second});
+		m_cache->m_inMemoryEntries.insert({it->second->url, it->second});
+	}
 
 	// reply is needless
 	it->second->reply = nullptr;
 	delete reply;
+	-- m_requestsInProgress;
+
+	sendRequests();
+}
+
+void TmsImageCache::NetworkAccessManager::handleError(QNetworkReply::NetworkError)
+{
+	if (m_abort) {return;}
+
+	auto sndr = sender();
+	if (sndr == nullptr) {return;}
+
+	auto reply = qobject_cast<QNetworkReply*> (sndr);
+	if (reply == nullptr) {return;}
+
+	auto it = m_cache->m_entries.find(reply->url().toString());
+	if (it != m_cache->m_entries.end()) {
+		QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
+		m_cache->m_entries.erase(it);
+	}
+
+	// reply is needless
+	delete reply;
+	-- m_requestsInProgress;
+
+	sendRequests();
 }
 
 void TmsImageCache::NetworkAccessManager::registerRequest(const QString& urlPattern, int z, int x, int y)
@@ -133,13 +182,38 @@ void TmsImageCache::NetworkAccessManager::doRegisterRequest(const QString& urlPa
 	if (m_cache->exists(qUrl.toString())) {return;}
 
 	QNetworkRequest request(qUrl);
+	request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36");
+	m_requestQueue.push(request);
 
 	auto entry = new Entry();
-	entry->status = Entry::Status::Loading;
+	entry->status = Entry::Status::InQueue;
 	entry->url = qUrl.toString();
-	entry->reply = m_networkAccessManager->get(request);
-	connect(entry->reply, &QNetworkReply::finished, this, &NetworkAccessManager::handleReply);
 
-	QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
+	m_cache->m_entriesMutex.lock();
 	m_cache->m_entries.insert({qUrl.toString(), entry});
+	m_cache->m_entriesMutex.unlock();
+
+	sendRequests();
+}
+
+void TmsImageCache::NetworkAccessManager::sendRequests()
+{
+	if (m_requestsInProgress >= MAX_REQUESTS) {return;}
+
+	auto requestsToSend = std::min(MAX_REQUESTS - m_requestsInProgress, static_cast<int> (m_requestQueue.size()));
+	for (int i = 0; i < requestsToSend; ++i) {
+		auto r = m_requestQueue.front();
+
+		auto it = m_cache->m_entries.find(r.url().toString());
+		if (it != m_cache->m_entries.end()) {
+			QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
+
+			auto entry = it->second;
+			entry->reply = m_networkAccessManager->get(r);
+			connect(entry->reply, &QNetworkReply::finished, this, &NetworkAccessManager::handleReply);
+			connect<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(entry->reply, &QNetworkReply::error, this, &NetworkAccessManager::handleError);
+		}
+		++ m_requestsInProgress;
+		m_requestQueue.pop();
+	}
 }
