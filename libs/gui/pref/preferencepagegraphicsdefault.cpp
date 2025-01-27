@@ -14,6 +14,9 @@ PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget* parent) :
 
 	ui->gridColorWidget->setColor(m_settings.value("gridcolor", QColor(Qt::black)).value<QColor>());
 
+	ui->gridCreatingConditionColorWidget->setColor(m_settings.value("gcc_color", QColor(Qt::black)).value<QColor>());
+	ui->gridCreatingConditionLineWidthScaleSpinBox->setValue(m_settings.value("gcc_linewidth_scale", 1).toInt());
+
 	ui->vectorColorWidget->setColor(m_settings.value("arrow_color", QColor(Qt::black)).value<QColor>());
 	ui->vectorArrowSizeSpinBox->setValue(m_settings.value("arrow_size", ArrowsSettingContainer::DEFAULT_ARROWSIZE).toInt());
 	ui->vectorArrowLineWidthSpinBox->setValue(m_settings.value("arrow_linewidth", ArrowsSettingContainer::DEFAULT_LINEWIDTH).toInt());
@@ -35,6 +38,9 @@ PreferencePageGraphicsDefault::~PreferencePageGraphicsDefault()
 void PreferencePageGraphicsDefault::update()
 {
 	m_settings.setValue("gridcolor", ui->gridColorWidget->color());
+
+	m_settings.setValue("gcc_color", ui->gridCreatingConditionColorWidget->color());
+	m_settings.setValue("gcc_linewidth_scale", ui->gridCreatingConditionLineWidthScaleSpinBox->value());
 
 	m_settings.setValue("arrow_color", ui->vectorColorWidget->color());
 	m_settings.setValue("arrow_size", ui->vectorArrowSizeSpinBox->value());

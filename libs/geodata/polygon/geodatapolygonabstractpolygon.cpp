@@ -215,6 +215,7 @@ void GeoDataPolygonAbstractPolygon::finishDefinition()
 
 void GeoDataPolygonAbstractPolygon::updateActorSetting()
 {
+	auto v = impl->m_parent->graphicsView();
 	const auto& ds = impl->m_parent->impl->m_displaySetting;
 	auto col = impl->m_parent->actorCollection();
 
@@ -255,11 +256,11 @@ void GeoDataPolygonAbstractPolygon::updateActorSetting()
 
 	// line width and point size
 	if (impl->m_active) {
-		impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
-		impl->m_pointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
+		impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2 * v->devicePixelRatioF());
+		impl->m_pointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5 * v->devicePixelRatioF());
 		col->AddItem(impl->m_pointsActor);
 	} else {
-		impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth);
+		impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * v->devicePixelRatioF());
 		impl->m_pointsActor->VisibilityOff();
 	}
 }

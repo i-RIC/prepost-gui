@@ -20,6 +20,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QSettings>
 #include <QXmlStreamWriter>
 
 #include <vtkCollectionIterator.h>
@@ -120,6 +121,13 @@ void GridCreatingConditionRectangularRegionLonLat::setupMenu()
 
 void GridCreatingConditionRectangularRegionLonLat::setupActors()
 {
+	QSettings settings;
+	QColor color = settings.value("graphics/gcc_color", QColor(Qt::black)).value<QColor>();
+	double r = color.redF();
+	double g = color.greenF();
+	double b = color.blueF();
+	int scale = settings.value("graphics/gcc_linewidth_scale", 1).toInt();
+
 	if (actorCollection()->GetNumberOfItems() > 0) {
 		vtkCollectionIterator* it = actorCollection()->NewIterator();
 		it->GoToFirstItem();
@@ -130,28 +138,30 @@ void GridCreatingConditionRectangularRegionLonLat::setupActors()
 		}
 		actorCollection()->RemoveAllItems();
 	}
-	vtkSmartPointer<vtkDataSetMapper> mapper;
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	auto mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 
 	m_rectangularActor = vtkSmartPointer<vtkActor>::New();
 	m_rectangularActor->SetMapper(mapper);
-	m_rectangularActor->GetProperty()->SetColor(0.7, 0.7, 0.7);
-	m_rectangularActor->GetProperty()->SetOpacity(0.8);
+	m_rectangularActor->GetProperty()->SetColor(r, g, b);
+	m_rectangularActor->GetProperty()->SetOpacity(0.3);
 	m_rectangularActor->GetProperty()->SetRepresentationToSurface();
 	renderer()->AddActor(m_rectangularActor);
 
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	auto v = dataModel()->graphicsView();
+
 	m_rectangularFrameActor = vtkSmartPointer<vtkActor>::New();
 	m_rectangularFrameActor->SetMapper(mapper);
-	m_rectangularFrameActor->GetProperty()->SetColor(0, 0, 0);
+	m_rectangularFrameActor->GetProperty()->SetColor(r, g, b);
 	m_rectangularFrameActor->GetProperty()->SetRepresentationToWireframe();
-	m_rectangularFrameActor->GetProperty()->SetLineWidth(2);
+	m_rectangularFrameActor->GetProperty()->SetLineWidth(2 * scale * v->devicePixelRatioF());
 	renderer()->AddActor(m_rectangularFrameActor);
 
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_previewActor = vtkSmartPointer<vtkActor>::New();
 	m_previewActor->SetMapper(mapper);
-	m_previewActor->GetProperty()->SetColor(0, 0, 0);
+	m_previewActor->GetProperty()->SetColor(r, g, b);
+	m_previewActor->GetProperty()->SetLineWidth(1 * scale * v->devicePixelRatioF());
 	m_previewActor->GetProperty()->SetRepresentationToWireframe();
 	renderer()->AddActor(m_previewActor);
 
