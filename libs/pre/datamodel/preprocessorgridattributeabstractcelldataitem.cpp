@@ -126,7 +126,7 @@ QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 		widget->setSetting(setting);
 		dialog->setWidget(widget);
 		dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
-		dialog->resize(200, 80);
+		dialog->resize(QScreenUtil::sizeWithinScreen(200, 80));
 
 		return dialog;
 	}
