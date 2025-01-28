@@ -106,6 +106,8 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::setTarget(const std::st
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	impl->m_target = target;
+	m_isActorsReady = false;
+
 	updateActorSetting();
 }
 
