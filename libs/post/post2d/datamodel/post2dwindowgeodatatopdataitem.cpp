@@ -1,6 +1,8 @@
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 
+#include <guibase/objectbrowserview.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -17,123 +19,125 @@
 
 namespace {
 
+SolverDefinitionGridAttribute* getAttributeWithName(const std::string& name, SolverDefinitionGridType* gType, SolverDefinitionGridAttribute* ref)
+{
+	auto a = gType->gridAttribute(name);
+	if (a != nullptr) {return a;}
+
+	auto ca = gType->gridComplexAttribute(name);
+	if (ca != nullptr) {return ca;}
+
+	if (ref->name() == name) {return ref;}
+
+	return nullptr;
+}
+
 Post2dWindowGeoDataGroupDataItem* setupReferenceInformation(
 		std::vector<GraphicsWindowDataItem*>* children,
-		std::map<std::string, Post2dWindowGeoDataGroupDataItem*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		Post2dWindowDataItem* parent)
 {
 	auto i = new Post2dWindowGeoDataGroupDataItem(refAtt, parent);
 	children->push_back(i);
-	nameMap->insert({refAtt->name(), i});
 	return i;
 }
 
-void setupChildrenInGroups(
+void addIfNotExist(
+		SolverDefinitionGridAttribute* att,
+		int* pos,
+		std::vector<SolverDefinitionGridAttribute*>* addAtts,
+		std::vector<int>* addPositions,
+		const std::unordered_set<std::string> existingNames
+) {
+	if (existingNames.find(att->name()) != existingNames.end()) {
+		++ *pos;
+	} else {
+		addAtts->push_back(att);
+		addPositions->push_back(*pos);
+	}
+}
+
+void setupAddItemsInGroups(
 		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
 		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
-		std::vector<GraphicsWindowDataItem*>* children,
-		std::map<std::string, Post2dWindowGeoDataGroupDataItem*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
-		Post2dWindowDataItem* parent)
+		const std::unordered_set<std::string>& existingNames,
+		std::vector<SolverDefinitionGridAttribute*>* addAtts,
+		std::vector<int>* addPositions
+)
 {
+	int pos = 0;
 	// node simple items
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 	// node complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 	// cell simple items
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 	// cell complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 
 	// iedge simple items
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 	// iedge complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 
 	// jedge simple items
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 	// jedge complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
+		addIfNotExist(att, &pos, addAtts, addPositions, existingNames);
 	}
 
-	setupReferenceInformation(children, nameMap, refAtt, parent);
+	addIfNotExist(refAtt, &pos, addAtts, addPositions, existingNames);
 }
 
-void setupChildrenInOrder(
+void setupAddItemsInOrder(
 		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
 		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
-		std::vector<GraphicsWindowDataItem*>* children,
-		std::map<std::string, Post2dWindowGeoDataGroupDataItem*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
-		Post2dWindowDataItem* parent)
+		const std::unordered_set<std::string>& existingNames,
+		std::vector<SolverDefinitionGridAttribute*>* addAtts,
+		std::vector<int>* addPositions
+)
 {
-	std::map<int, Post2dWindowDataItem*> itemsInOrder;
+	std::map<int, SolverDefinitionGridAttribute*> attsInOrder;
 
 	// simple items
 	for (auto att : stdAtts){
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
-		itemsInOrder.insert({att->order(), i});
+		attsInOrder.insert({att->order(), att});
 	}
 	// complex items
 	for (auto att : clxAtts) {
-		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
-		children->push_back(i);
-		nameMap->insert({att->name(), i});
-		itemsInOrder.insert({att->order(), i});
+		attsInOrder.insert({att->order(), att});
 	}
-	auto ref = setupReferenceInformation(children, nameMap, refAtt, parent);
-	itemsInOrder.insert({10000, ref}); // Reference Information should be the last
+	attsInOrder.insert({10000, refAtt});
 
-	int rowC = parent->standardItem()->rowCount();
-	for (int i = 0; i < rowC; ++i) {
-		parent->standardItem()->takeRow(0);
-	}
 
-	for (auto pair : itemsInOrder) {
-		Post2dWindowDataItem* item = pair.second;
-		parent->standardItem()->appendRow(item->standardItem());
+	int pos = 0;
+	for (const auto& pair : attsInOrder) {
+		addIfNotExist(pair.second, &pos, addAtts, addPositions, existingNames);
 	}
 }
 
@@ -160,12 +164,9 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 	buildReferenceInformationAttribute();
 
-	auto gType = ditem->gridType();
-	if (gType->isKeepOrder()) {
-		setupChildrenInOrder(gType->gridAttributes(), gType->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
-	} else {
-		setupChildrenInGroups(gType->gridAttributes(), gType->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
-	}
+	// auto gType = ditem->gridType();
+	setupReferenceInformation(&m_childItems, m_referenceInformationAttribute, this);
+
 	removeNonGroupedComplexAttributes(this);
 
 	updateChildren();
@@ -179,9 +180,12 @@ PreProcessorGeoDataTopDataItemI* Post2dWindowGeoDataTopDataItem::preGeoDataTopDa
 
 Post2dWindowGeoDataGroupDataItem* Post2dWindowGeoDataTopDataItem::groupDataItem(const std::string& name) const
 {
-	auto it = m_itemNameMap.find(name);
-	if (it == m_itemNameMap.end()) {return nullptr;}
-	return it->second;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (child);
+		if (item->condition()->name() == name) {return item;}
+	}
+
+	return nullptr;
 }
 
 void Post2dWindowGeoDataTopDataItem::updateChildren()
@@ -195,14 +199,21 @@ void Post2dWindowGeoDataTopDataItem::updateChildren()
 
 void Post2dWindowGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	clearChildItems();
+
 	QDomNodeList children = node.childNodes();
+	auto gType = m_preGeoDataTopDataItem->gridType();
+
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
 		std::string name = iRIC::toStr(child.attribute("name"));
-		auto item = groupDataItem(name);
-		if (item != nullptr) {
-			item->loadFromProjectMainFile(child);
-		}
+
+		auto att = getAttributeWithName(name, gType, m_referenceInformationAttribute);
+		if (att == nullptr) {continue;}
+
+		auto item = new Post2dWindowGeoDataGroupDataItem(att, this);
+		m_childItems.push_back(item);
+		item->loadFromProjectMainFile(child);
 	}
 }
 
@@ -215,6 +226,62 @@ void Post2dWindowGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 	}
 }
 
+void Post2dWindowGeoDataTopDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(dataModel()->objectBrowserView()->addAction());
+}
+
+QDialog* Post2dWindowGeoDataTopDataItem::addDialog(QWidget* parent)
+{
+	m_addAttributes.clear();
+	m_addPositions.clear();
+	std::unordered_set<std::string> existingNames;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (child);
+		existingNames.insert(item->condition()->name());
+	}
+
+	auto gType = m_preGeoDataTopDataItem->gridType();
+	if (gType->isKeepOrder()) {
+		setupAddItemsInOrder(gType->gridAttributes(), gType->gridComplexAttributes(), m_referenceInformationAttribute, existingNames, &m_addAttributes, &m_addPositions);
+	} else {
+		setupAddItemsInGroups(gType->gridAttributes(), gType->gridComplexAttributes(), m_referenceInformationAttribute, existingNames, &m_addAttributes, &m_addPositions);
+	}
+	if (m_addAttributes.size() == 0) {return nullptr;}
+
+	std::vector<QString> captions;
+	for (const auto att : m_addAttributes) {
+		captions.push_back(att->caption());
+	}
+
+	auto dialog = new ItemSelectingDialog(parent);
+	dialog->setWindowTitle(tr("Add geographic data group"));
+	dialog->setMessage(tr("Select the geographic data group to add"));
+	dialog->setItems(captions);
+
+	return dialog;
+}
+
+void Post2dWindowGeoDataTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
+{
+	auto dialog = dynamic_cast<ItemSelectingDialog*> (propDialog);
+	auto selected = dialog->selectedIndex();
+	auto att = m_addAttributes.at(selected);
+	auto pos = m_addPositions.at(selected);
+
+	auto i = new Post2dWindowGeoDataGroupDataItem(att, this);
+	m_childItems.insert(m_childItems.begin() + pos, i);
+	i->updateChildren();
+
+	int rowC = standardItem()->rowCount();
+	for (int i = 0; i < rowC; ++i) {
+		standardItem()->takeRow(0);
+	}
+
+	for (auto item : m_childItems) {
+		standardItem()->appendRow(item->standardItem());
+	}
+}
 
 void Post2dWindowGeoDataTopDataItem::buildReferenceInformationAttribute()
 {
