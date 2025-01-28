@@ -40,7 +40,7 @@ public:
 	virtual QVariant variantValue() const = 0;
 
 	virtual void importFromYaml(const YAML::Node& doc, const QDir& dir) = 0;
-	virtual void exportToYaml(QTextStream* stream, const QDir& dir) = 0;
+	virtual void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "") = 0;
 	virtual void importFromString(const QString& value, const QDir& dir) = 0;
 	virtual void exportToString(QString* value, const QDir& dir) = 0;
 

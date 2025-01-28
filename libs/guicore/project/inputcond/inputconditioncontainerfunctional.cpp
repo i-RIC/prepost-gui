@@ -390,10 +390,11 @@ void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc, co
 	}
 }
 
-void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const QDir& dir)
+void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
 {
-	*stream << name().c_str() << ": " << name().c_str() << ".csv" << "\t#[function] " << caption() << "\r\n";
-	QString filename = QString("%1.csv").arg(name().c_str());
+	QString filename = QString("%1%2.csv").arg(impl->m_fileNamePrefix).arg(name().c_str());
+
+	*stream << lineHeader << name().c_str() << ": " << filename << "\t#[function] " << caption() << "\r\n";
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 
@@ -408,6 +409,11 @@ void InputConditionContainerFunctional::exportToString(QString* value, const QDi
 	QString filename = QString("%1.csv").arg(name().c_str());
 	*value = filename;
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
+}
+
+void InputConditionContainerFunctional::setFileNamePrefix(const QString& prefix)
+{
+	impl->m_fileNamePrefix = prefix;
 }
 
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)

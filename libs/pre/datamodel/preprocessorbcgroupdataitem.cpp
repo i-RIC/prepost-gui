@@ -7,23 +7,33 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
+
+#include <QFileDialog>
+#include <QRegExp>
 
 #include <h5cgnsbc.h>
 #include <h5cgnszone.h>
 #include <h5cgnszonebc.h>
 #include <iriclib_errorcodes.h>
 
+#include <yaml-cpp/yaml.h>
+
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorBCGroupDataItem::tr("&Import..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorBCGroupDataItem::tr("&Export..."), this)},
 	m_dummyEditAction {new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this)},
 	m_dummyDeleteAction {new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this)},
 	m_dummyAssignAction {new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this)},
@@ -54,6 +64,8 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 	}
 	connect(m_deleteSelectedAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::deleteSelected);
 	connect(m_deleteAllAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::deleteAll);
+	connect(m_importAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::importBc);
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::exportBc);
 
 	m_dummyEditAction->setDisabled(true);
 	m_dummyDeleteAction->setDisabled(true);
@@ -253,6 +265,9 @@ void PreProcessorBCGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
 	menu->addAction(m_deleteAllAction);
+	menu->addSeparator();
+	menu->addAction(m_importAction);
+	menu->addAction(m_exportAction);
 }
 
 void PreProcessorBCGroupDataItem::addCondition()
@@ -315,6 +330,80 @@ void PreProcessorBCGroupDataItem::deleteAll()
 	for (auto item : items) {
 		delete item;
 	}
+}
+
+void PreProcessorBCGroupDataItem::importBc()
+{
+	auto fname = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), LastIODirectory::get(), tr("YAML file (*.yaml)"));
+	if (fname.isNull()) {return;}
+
+	clearChildItems();
+
+	QFileInfo finfo(fname);
+	YAML::Node data = YAML::LoadFile(iRIC::toStr(fname));
+
+	auto gType = gridTypeDataItem()->gridType();
+
+	QRegExp exp("(.+)(\\d+)");
+	for (auto it = data.begin(); it != data.end(); ++it) {
+		auto name = it->first.Scalar();
+		int pos = exp.indexIn(name.c_str());
+		if (pos == -1) {continue;}
+
+		auto bcName = iRIC::toStr(exp.cap(1));
+		auto bc = gType->boundaryCondition(bcName);
+		if (bc == nullptr) {continue;}
+
+		auto item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, false);
+		item->importFromYaml(it->second, finfo.absoluteDir());
+		m_childItems.push_back(item);
+	}
+
+	auto gItem = gridDataItem();
+	if (gItem->grid() != nullptr) {
+		gItem->grid()->setIsModified(true);
+	}
+
+	updateItemMap();
+	assignActorZValues(m_zDepthRange);
+	emit itemsUpdated();
+
+	LastIODirectory::setFromFilename(fname);
+
+	projectData()->mainfile()->setModified();
+}
+
+void PreProcessorBCGroupDataItem::exportBc()
+{
+	renumberItemsForProject();
+
+	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), LastIODirectory::get(), tr("YAML file (*.yaml)"));
+	if (fname.isNull()) {return;}
+
+	QFileInfo finfo(fname);
+
+	QFile file(fname);
+	bool ok = file.open(QFile::WriteOnly);
+	if (! ok) {
+		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Cannot open file for writing"));
+		return;
+	}
+
+	QTextStream stream(&file);
+	QTextCodec* codec = QTextCodec::codecForName("UTF-8");
+	stream.setCodec(codec);
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCDataItem*> (child);
+		auto name = QString("%1%2").arg(item->condition()->name().c_str()).arg(item->projectNumber());
+		stream << name << ":" << "\r\n";
+		item->setFileNamePrefix(name);
+		item->exportToYaml(&stream, finfo.absoluteDir(), "  ");
+	}
+
+	file.close();
+
+	LastIODirectory::setFromFilename(fname);
 }
 
 PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, bool hideSetting)

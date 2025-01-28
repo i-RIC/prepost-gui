@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Окно обзора сетки с высоты птичьего полета</translation>
     </message>
 </context>
@@ -493,6 +495,34 @@ Do you really want to import grid from this file?</source>
         <source>Edit Display Setting</source>
         <translation>Изменить настройку дисплея</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished">Выберите файл для импорта</translation>
+    </message>
+    <message>
+        <source>YAML file (*.yaml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation type="unfinished">Выберите файл для экспорта</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ошибка</translation>
+    </message>
+    <message>
+        <source>Cannot open file for writing</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
@@ -617,7 +647,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation>YAML файл (*.yml)</translation>
+        <translation type="vanished">YAML файл (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
@@ -657,11 +687,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation>Все импортируемые файлы (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
+        <translation type="vanished">Все импортируемые файлы (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation>CGNS файл (*.cgns);;YAML file (*.yml)</translation>
+        <translation type="vanished">CGNS файл (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
@@ -796,8 +826,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не отображаются после последнего редактирования. Вы хотите выполнить отображение сейчас?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Установка граничных условий » %1 "не отображается после последнего редактирования. Вы хотите выполнить сопоставление сейчас?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Установка граничных условий » %1 &quot;не отображается после последнего редактирования. Вы хотите выполнить сопоставление сейчас?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -822,6 +852,18 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>P&amp;oint Cloud Data</source>
         <translation>Данные облака точек (&amp;O)</translation>
+    </message>
+    <message>
+        <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yaml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>YAML file (*.yaml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CGNS file (*.cgns);;YAML file (*.yaml)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1058,13 +1100,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>Примечание. Когда вариант включен, создается вариант с именем «По умолчанию», и все географические данные перемещаются в него. Вы можете добавлять, переименовывать, удалять варианты из «Обозревателя объектов». Вы можете перемещать, копировать географические данные между вариантами. Данные атрибута сетки, созданные из варианта, выбранного с помощью параметра «Вариант для передачи в решатель», передаются решателю. Вы можете подготовить несколько вариантов, выбрать, какой из них передать решателю, и убедиться в эффекте разницы.</translation>
     </message>
 </context>
@@ -1464,7 +1506,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Выполнять (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Следующие атрибуты не были сопоставлены, потому что для них были выведены значения генератора сетки. Если вы хотите сопоставить географические данные для них принудительно, выполните сопоставление вручную с помощью меню «Сетка» -&gt; «Сопоставление атрибутов» -&gt; «Выполнить».</translation>
     </message>
@@ -1485,12 +1527,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картографирование географических данных завершено</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибут сетки "%1"редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибут сетки &quot;%1&quot;редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Граничное условие "%1"редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Граничное условие &quot;%1&quot;редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
     </message>
 </context>
 <context>
@@ -1508,19 +1550,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; При создании сетки вас спрашивают, для выполнения сопоставления атрибутов каждый раз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; При создании сетки вас спрашивают, для выполнения сопоставления атрибутов каждый раз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Руководство по эксплуатации</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Сопоставление атрибутов выполняется только тогда, когда вы вручную выбираете меню «Выполнить».</translation>
     </message>
     <message>
@@ -2288,8 +2330,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Настройка цветовой карты</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; Используйте вкладку "Карта цветов" для редактирования настроек цвета&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание.&lt;/span&gt; Используйте вкладку &quot;Карта цветов&quot; для редактирования настроек цвета&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2406,7 +2448,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Настроить скалярную панель (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Открыть окно обзора с высоты птичьего полета (&amp;B)</translation>
     </message>
     <message>

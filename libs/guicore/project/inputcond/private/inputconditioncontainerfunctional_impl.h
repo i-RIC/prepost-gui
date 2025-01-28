@@ -12,6 +12,8 @@ public:
 	Data m_paramDefault;
 	std::vector<Data> m_valuesDefault;
 
+	QString m_fileNamePrefix;
+
 	// wml2 data
 	QString m_wml2URL;
 	Convert m_paramConvert;

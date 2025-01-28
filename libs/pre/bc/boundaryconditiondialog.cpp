@@ -148,6 +148,36 @@ int BoundaryConditionDialog::save(iRICLib::H5CgnsConditionGroup* group)
 	return IRIC_NO_ERROR;
 }
 
+void BoundaryConditionDialog::importFromYaml(const YAML::Node& node, const QDir& dir)
+{
+	m_containerSet->importFromYaml(node, dir);
+
+	m_captionContainer.importFromYaml(node, dir);
+	m_colorContainer.importFromYaml(node, dir);
+	m_opacityContainer.importFromYaml(node, dir);
+	m_showNameContainer.importFromYaml(node, dir);
+	m_pointSizeContainer.importFromYaml(node, dir);
+
+	ui->nameEdit->setText(m_captionContainer.value());
+}
+
+void BoundaryConditionDialog::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
+{
+	m_captionContainer.setValue(ui->nameEdit->text());
+	m_containerSet->exportToYaml(stream, dir, lineHeader);
+
+	m_captionContainer.exportToYaml(stream, dir, lineHeader);
+	m_colorContainer.exportToYaml(stream, dir, lineHeader);
+	m_opacityContainer.exportToYaml(stream, dir, lineHeader);
+	m_showNameContainer.exportToYaml(stream, dir, lineHeader);
+	m_pointSizeContainer.exportToYaml(stream, dir, lineHeader);
+}
+
+void BoundaryConditionDialog::setFileNamePrefix(const QString& prefix)
+{
+	m_containerSet->setFileNamePrefix(prefix);
+}
+
 void BoundaryConditionDialog::accept()
 {
 	QString name = ui->nameEdit->text();

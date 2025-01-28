@@ -108,9 +108,9 @@ void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const
 	}
 }
 
-void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir& /*dir*/)
+void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir& /*dir*/, const QString& lineHeader)
 {
-	*stream << name().c_str() << ": " << impl->m_value << "\t#[integer] " << caption() << "\r\n";
+	*stream << lineHeader <<  name().c_str() << ": " << impl->m_value << "\t#[integer] " << caption() << "\r\n";
 }
 
 void InputConditionContainerInteger::importFromString(const QString& value, const QDir& /*dir*/)

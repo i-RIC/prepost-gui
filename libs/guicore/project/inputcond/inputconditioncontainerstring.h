@@ -32,7 +32,7 @@ public:
 	virtual QVariant variantValue() const override;
 
 	void importFromYaml(const YAML::Node& doc, const QDir& dir);
-	void exportToYaml(QTextStream* stream, const QDir& dir);
+	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "");
 	void importFromString(const QString& value, const QDir& dir) override;
 	void exportToString(QString* value, const QDir& dir) override;
 

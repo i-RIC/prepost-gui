@@ -111,9 +111,9 @@ void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QD
 	}
 }
 
-void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir& /*dir*/)
+void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir& /*dir*/, const QString& lineHeader)
 {
-	*stream << name().c_str() << ": " << impl->m_value << "\t#[real] " << caption() << "\r\n";
+	*stream << lineHeader << name().c_str() << ": " << impl->m_value << "\t#[real] " << caption() << "\r\n";
 }
 
 void InputConditionContainerReal::setup(const QDomNode& defNode)

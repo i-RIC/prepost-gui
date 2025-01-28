@@ -217,11 +217,18 @@ bool InputConditionContainerSet::importFromYaml(const QString& filename)
 {
 	YAML::Node config = YAML::LoadFile(iRIC::toStr(filename));
 	QFileInfo finfo(filename);
+
+	importFromYaml(config, finfo.absoluteDir());
+
+	return true;
+}
+
+void InputConditionContainerSet::importFromYaml(const YAML::Node& node, const QDir& dir)
+{
 	for (auto pair : m_containers) {
 		InputConditionContainer* c = pair.second;
-		c->importFromYaml(config, finfo.absoluteDir());
+		c->importFromYaml(node, dir);
 	}
-	return true;
 }
 
 bool InputConditionContainerSet::exportToYaml(const QString& filename)
@@ -235,12 +242,25 @@ bool InputConditionContainerSet::exportToYaml(const QString& filename)
 	QTextCodec* codec = QTextCodec::codecForName("UTF-8");
 	stream.setCodec(codec);
 
-	for (auto pair : m_containers) {
-		InputConditionContainer* c = pair.second;
-		c->exportToYaml(&stream, finfo.absoluteDir());
-	}
+	exportToYaml(&stream, finfo.absoluteDir(), "");
+
 	yamlFile.close();
 	return true;
+}
+
+void InputConditionContainerSet::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
+{
+	for (auto& pair : m_containers) {
+		InputConditionContainer* c = pair.second;
+		c->exportToYaml(stream, dir, lineHeader);
+	}
+}
+
+void InputConditionContainerSet::setFileNamePrefix(const QString& prefix)
+{
+	for (auto& pair : m_functionals) {
+		pair.second.setFileNamePrefix(prefix);
+	}
 }
 
 std::map<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers()
