@@ -128,8 +128,6 @@ void Post2dWindowGridAttributeNodeDataItem::addCustomMenuItems(QMenu* menu)
 void Post2dWindowGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	groupDataItem()->initAttributeBrowser();
-
-	GraphicsWindowDataItem::updateVisibility();
 }
 
 void Post2dWindowGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /*v*/)
