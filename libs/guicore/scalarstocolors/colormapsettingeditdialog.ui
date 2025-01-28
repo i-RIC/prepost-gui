@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>950</width>
-    <height>650</height>
+    <height>566</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,6 +30,23 @@
       <widget class="QPushButton" name="exportButton">
        <property name="text">
         <string>&amp;Export...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="setAsDefaultButton">
+       <property name="text">
+        <string>Set as &amp;Default</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="TooltipLabel" name="setAsDefaultLabel">
+       <property name="toolTip">
+        <string>Set this as the default colormap setting of this project.</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -66,6 +83,11 @@
    <extends>QWidget</extends>
    <header>misc/qwidgetcontainer.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>misc/tooltiplabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

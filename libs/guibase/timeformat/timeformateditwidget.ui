@@ -190,7 +190,7 @@
   <customwidget>
    <class>TooltipLabel</class>
    <extends>QLabel</extends>
-   <header>guibase/tooltiplabel.h</header>
+   <header>misc/tooltiplabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>

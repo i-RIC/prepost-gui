@@ -18,6 +18,9 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -184,7 +187,12 @@ void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(So
 	ColorMapSettingContainerI* setting = nullptr;
 	auto it = m_colorMapSettings.find(name);
 	if (it == m_colorMapSettings.end()) {
-		setting = output->createColorMapSettingContainer();
+		auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(name);
+		if (defaultCs != nullptr) {
+			setting = defaultCs->copy();
+		} else {
+			setting = output->createColorMapSettingContainer();
+		}
 		setting->valueCaption = gtype->outputCaption(name);
 		setting->legendSetting()->setTitle(gtype->outputCaption(name));
 		m_colorMapSettings.insert({name, setting});

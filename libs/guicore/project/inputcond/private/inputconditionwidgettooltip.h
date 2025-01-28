@@ -1,7 +1,7 @@
 #ifndef INPUTCONDITIONWIDGETTOOLTIP_H
 #define INPUTCONDITIONWIDGETTOOLTIP_H
 
-#include "guibase/tooltiplabel.h"
+#include "misc/tooltiplabel.h"
 
 class InputConditionWidgetTooltip : public TooltipLabel
 {

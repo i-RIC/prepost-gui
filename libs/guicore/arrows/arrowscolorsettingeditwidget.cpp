@@ -2,6 +2,7 @@
 #include "arrowscolorsettingeditwidget.h"
 #include "ui_arrowscolorsettingeditwidget.h"
 
+#include <guicore/project/projectdefaultcolormapsettings.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -13,6 +14,7 @@ ArrowsColorSettingEditWidget::ArrowsColorSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
 	m_colorMapWidget {nullptr},
 	m_gridType {nullptr},
+	m_defaultColorMapSettings {nullptr},
 	ui(new Ui::ArrowsColorSettingEditWidget)
 {
 	ui->setupUi(this);
@@ -51,6 +53,11 @@ void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<
 		ui->customRadioButton->setDisabled(true);
 		ui->scalarRadioButton->setDisabled(true);
 	}
+}
+
+void ArrowsColorSettingEditWidget::setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings)
+{
+	m_defaultColorMapSettings = settings;
 }
 
 ArrowsSettingContainer ArrowsColorSettingEditWidget::setting() const
@@ -120,5 +127,17 @@ void ArrowsColorSettingEditWidget::handleColorScalarChange(int index)
 	m_colorMapWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapWidget->setSetting(colorSetting);
 	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	widget->showSetAsDefaultButton();
+	connect(widget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &ArrowsColorSettingEditWidget::setColorMapAsDefault);
+
 	ui->colorMapWidget->setWidget(widget);
+}
+
+void ArrowsColorSettingEditWidget::setColorMapAsDefault()
+{
+	if (m_defaultColorMapSettings == nullptr) {return;}
+
+	m_defaultColorMapSettings->add(m_colorMapNames.at(ui->scalarComboBox->currentIndex()), m_colorMapWidget->setting()->copy());
+
+	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }

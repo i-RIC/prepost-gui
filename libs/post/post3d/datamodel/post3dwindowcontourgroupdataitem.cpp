@@ -10,6 +10,9 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
@@ -45,7 +48,13 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	}
 
 	m_standardItem->setText(caption);
-	auto cs = output->createColorMapSettingContainer();
+	ColorMapSettingContainerI* cs = nullptr;
+	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
+	if (defaultCs != nullptr) {
+		cs = defaultCs->copy();
+	} else {
+		cs = output->createColorMapSettingContainer();
+	}
 	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;
 	impl->m_setting.contourSetting.setColorMapSetting(cs);

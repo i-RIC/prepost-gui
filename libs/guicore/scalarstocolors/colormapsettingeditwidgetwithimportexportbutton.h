@@ -19,7 +19,13 @@ public:
 	ColorMapSettingEditWidgetWithImportExportButton(ColorMapSettingEditWidgetI* widget, QWidget *parent);
 	~ColorMapSettingEditWidgetWithImportExportButton();
 
+	ColorMapSettingEditWidgetI* widget() const;
+	void showSetAsDefaultButton();
+
 	QUndoCommand* createModifyCommand(bool apply) override;
+
+signals:
+	void setAsDefaultClicked();
 
 private:
 	ColorMapSettingEditWidgetI* m_widget;

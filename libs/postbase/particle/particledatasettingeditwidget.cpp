@@ -3,6 +3,7 @@
 #include "ui_particledatasettingeditwidget.h"
 #include "private/particledatasettingeditwidget_modifycommand.h"
 
+#include <guicore/project/projectdefaultcolormapsettings.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -11,11 +12,14 @@
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
 
+#include <QMessageBox>
+
 ParticleDataSettingEditWidget::ParticleDataSettingEditWidget(QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_setting {nullptr},
 	m_colorMapWidget {nullptr},
 	m_gridType {nullptr},
+	m_defaultColorMapSettings {nullptr},
 	ui(new Ui::ParticleDataSettingEditWidget)
 {
 	ui->setupUi(this);
@@ -67,6 +71,11 @@ void ParticleDataSettingEditWidget::setColorMapSettings(const std::unordered_map
 	m_colorMapSettings = settings;
 }
 
+void ParticleDataSettingEditWidget::setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings)
+{
+	m_defaultColorMapSettings = settings;
+}
+
 QUndoCommand* ParticleDataSettingEditWidget::createModifyCommand(bool apply)
 {
 	auto settingCommand = new ValueModifyCommmand<ParticleDataSetting>(iRIC::generateCommandId("Edit setting"), apply, setting(), m_setting);
@@ -94,7 +103,18 @@ void ParticleDataSettingEditWidget::colorTargetChanged(int index)
 	m_colorMapWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapWidget->setSetting(cs);
 	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	widget->showSetAsDefaultButton();
+	connect(widget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &ParticleDataSettingEditWidget::setColorMapAsDefault);
 	ui->colorMapWidget->setWidget(widget);
+}
+
+void ParticleDataSettingEditWidget::setColorMapAsDefault()
+{
+	if (m_defaultColorMapSettings == nullptr) {return;}
+
+	m_defaultColorMapSettings->add(m_colorTargets.at(ui->valueComboBox->currentIndex()), m_colorMapWidget->setting()->copy());
+
+	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }
 
 ParticleDataSetting ParticleDataSettingEditWidget::setting() const

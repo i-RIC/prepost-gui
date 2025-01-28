@@ -11,6 +11,9 @@
 #include <guicore/filter/structured2dfilteringsettingeditwidget.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/region/region2dsettingeditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -39,6 +42,7 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::SettingEd
 	auto gridType = tItem->gridType();
 	ui->arrowsSettingWidget->setGridType(gridType);
 	ui->arrowsSettingWidget->setColorMapSettings(m_item->m_colorMapSettings);
+	ui->arrowsSettingWidget->setDefaultColorMapSettings(item->projectData()->mainfile()->defaultColorMapSettings());
 	ui->arrowsSettingWidget->setSetting(&item->m_setting);
 	m_additionalWidgets->samplingWidget()->setSetting(&item->m_filteringSetting);
 	m_additionalWidgets->regionWidget()->setSetting(&item->m_regionSetting);
