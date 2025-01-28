@@ -118,6 +118,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	impl->m_target = target;
+	m_isActorsReady = false;
 
 	updateActorSetting();
 }

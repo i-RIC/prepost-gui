@@ -521,15 +521,17 @@ void PreProcessorGridAttributeAbstractCellDataItem::assignActorZValues(const ZDe
 
 void PreProcessorGridAttributeAbstractCellDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	selectedDataController()->setVisibility(true);
 	groupDataItem()->initAttributeBrowser();
-	GraphicsWindowDataItem::updateVisibility();
+
+	selectedDataController()->setVisibility(true);
+	gridDataItem()->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	selectedDataController()->setVisibility(false);
 	groupDataItem()->clearAttributeBrowser();
+
+	selectedDataController()->setVisibility(false);
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeAbstractCellDataItem::condition() const

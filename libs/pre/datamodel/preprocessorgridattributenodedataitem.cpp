@@ -333,16 +333,17 @@ void PreProcessorGridAttributeNodeDataItem::editRatio()
 
 void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	gridDataItem()->selectedNodesController()->setVisibility(true);
 	groupDataItem()->initAttributeBrowser();
 
-	GraphicsWindowDataItem::updateVisibility();
+	gridDataItem()->selectedNodesController()->setVisibility(true);
+	gridDataItem()->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	gridDataItem()->selectedNodesController()->setVisibility(false);
 	groupDataItem()->clearAttributeBrowser();
+
+	gridDataItem()->selectedNodesController()->setVisibility(false);
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
