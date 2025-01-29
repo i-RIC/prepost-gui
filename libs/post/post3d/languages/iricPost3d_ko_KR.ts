@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -76,11 +74,11 @@
     <name>Post3dWindowCellContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>정보</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>이 프로젝트의 기본 설정으로 설정합니다.</translation>
     </message>
 </context>
 <context>
@@ -263,11 +261,11 @@
     <name>Post3dWindowContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>정보</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>이 프로젝트의 기본 설정으로 설정합니다.</translation>
     </message>
 </context>
 <context>
@@ -732,70 +730,70 @@
     </message>
     <message>
         <source>Isosurface Setting</source>
-        <translation type="unfinished">등가곡면 설정</translation>
+        <translation>등면 설정</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">물리적 가치:</translation>
+        <translation>물리적 가치:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">지역</translation>
+        <translation>지역</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation type="unfinished">전체 지역</translation>
+        <translation>전체 지역</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished">나는 ~ 안에있다</translation>
+        <translation>나는 민</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>나는 맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished">제이민</translation>
+        <translation>제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished">제이맥스</translation>
+        <translation>제이 맥스</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished"></translation>
+        <translation>케이 민</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished"></translation>
+        <translation>케이 맥스</translation>
     </message>
     <message>
         <source>Value Setting</source>
-        <translation type="unfinished">값 설정</translation>
+        <translation>값 설정</translation>
     </message>
     <message>
         <source>Max Value</source>
-        <translation type="unfinished">최대값</translation>
+        <translation>최대값</translation>
     </message>
     <message>
         <source>Min Value</source>
-        <translation type="unfinished">최소값</translation>
+        <translation>최소값</translation>
     </message>
     <message>
         <source>Iso Value</source>
-        <translation type="unfinished">ISO 값</translation>
+        <translation>ISO 값</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">색상:</translation>
+        <translation>색상:</translation>
     </message>
 </context>
 <context>
@@ -806,7 +804,7 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">계산 결과 선택</translation>
+        <translation>계산 결과 선택</translation>
     </message>
 </context>
 <context>
@@ -1235,16 +1233,16 @@
         <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1255,12 +1253,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">크기:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1464,14 +1462,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1502,12 +1500,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">너비:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

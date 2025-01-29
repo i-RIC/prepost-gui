@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>鳥瞰図可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
@@ -95,7 +93,7 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Color</source>
@@ -245,7 +243,7 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -321,7 +319,7 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Color</source>

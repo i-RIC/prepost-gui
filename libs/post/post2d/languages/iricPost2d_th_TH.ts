@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -58,8 +56,8 @@
         <translation>โปรดเลือกค่าที่จะส่งออก</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>ไม่มีการวาดรูปร่างใน &quot;โหมดไม่ต่อเนื่อง&quot;</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>ไม่มีการวาดรูปร่างใน "โหมดไม่ต่อเนื่อง"</translation>
     </message>
 </context>
 <context>
@@ -73,11 +71,11 @@
     <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">ข้อมูล</translation>
+        <translation>ข้อมูล</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>ตั้งค่าเป็นค่าเริ่มต้นสำหรับโครงการนี้</translation>
     </message>
 </context>
 <context>
@@ -522,8 +520,8 @@
         <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -663,117 +661,117 @@
     </message>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished">การตั้งค่ากราฟ</translation>
+        <translation>การตั้งค่ากราฟ</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished">ทิศทาง</translation>
+        <translation>ทิศทาง</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation type="unfinished">ฉันทิศทาง</translation>
+        <translation>ฉันกำหนดทิศทาง</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation type="unfinished">ทิศทางเจ</translation>
+        <translation>ทิศทางเจ</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>ภูมิภาค</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">ทั้งหมด</translation>
+        <translation>ทั้งหมด</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation type="unfinished">ภาคบางส่วน</translation>
+        <translation>พื้นที่บางส่วน</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished">เริ่ม:</translation>
+        <translation>เริ่ม:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished">จบ:</translation>
+        <translation>จบ:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation type="unfinished">ข้าม:</translation>
+        <translation>ข้าม:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">กำหนดเอง</translation>
+        <translation>กำหนดเอง</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">แก้ไข (&amp;E)...</translation>
+        <translation>แก้ไข (&amp;E) -</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation type="unfinished">วาดทิศทาง</translation>
+        <translation>วาดทิศทาง</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation type="unfinished">เส้นแนวตั้งเป็นเส้นกริด</translation>
+        <translation>เส้นแนวตั้งกับเส้นกริด</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation type="unfinished">เส้นขนานกับเส้นตาราง</translation>
+        <translation>ขนานกับเส้นกริด</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished">เส้นกริด</translation>
+        <translation>เส้นกริด</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished">วาด</translation>
+        <translation>วาด</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation type="unfinished">เส้นกราฟ</translation>
+        <translation>เส้นกราฟ</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">มูลค่าทางกายภาพ:</translation>
+        <translation>มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished">มาตราส่วน:</translation>
+        <translation>มาตราส่วน:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation type="unfinished">ไม่มีการดัดแปลง</translation>
+        <translation>ไม่ต้องดัดแปลง</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation type="unfinished">ลบค่าสูงสุดในแต่ละบรรทัด</translation>
+        <translation>ลบค่าสูงสุดในแต่ละบรรทัด</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation type="unfinished">ลบค่าต่ำสุดในแต่ละบรรทัด</translation>
+        <translation>ลบค่าต่ำสุดในแต่ละบรรทัด</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation type="unfinished">การตั้งค่าภูมิภาคที่กำหนดเอง</translation>
+        <translation>การตั้งค่าภูมิภาคที่กำหนดเอง</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation type="unfinished">เลือกทั้งหมด (&amp;S)</translation>
+        <translation>เลือกทั้งหมด (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation type="unfinished">ไม่เลือกทั้งหมด (&amp;U)</translation>
+        <translation>ยกเลิกการเลือกทั้งหมด (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -1122,27 +1120,27 @@
         <translation>การตั้งค่าสเกลาร์ (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation type="vanished">หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation type="vanished">หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น "โหมดแยก"</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>หากต้องการส่งออก KML สำหรับมุมมองถนน ค่าควรเป็นมูลค่าจริง ซึ่งเป็นค่าจำนวนเต็ม</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
+        <translation>หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น "โหมดแยก"</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">ข้อมูล</translation>
+        <translation>ข้อมูล</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>ตั้งค่าเป็นค่าเริ่มต้นสำหรับโครงการนี้</translation>
     </message>
 </context>
 <context>
@@ -1194,16 +1192,16 @@
         <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>สเกลาร์</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนการตั้งค่าสีเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนการตั้งค่าสีเป็น "โหมดแยก"</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -1866,16 +1864,16 @@
         <translation type="vanished">ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1886,12 +1884,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1997,12 +1995,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2293,14 +2291,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2331,12 +2329,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ความกว้าง:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2402,12 +2400,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ความกว้าง:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
