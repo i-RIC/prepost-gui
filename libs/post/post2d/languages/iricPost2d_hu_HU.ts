@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,8 +58,8 @@
         <translation>Kérjük, válassza ki az exportálandó értéket.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>"Diszkrét módban" nem rajzolódik kontúr.</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>&quot;Diszkrét módban&quot; nem rajzolódik kontúr.</translation>
     </message>
 </context>
 <context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>Skaláris beállítás (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Információ</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
 </context>
 <context>
@@ -509,8 +522,8 @@
         <translation type="vanished">Hiba</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a &quot;Kijelző beállítása&quot; &quot;Kontúr ábra&quot; -ra, nem pedig &quot;Színes szegély&quot; vagy &quot;Izolines&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>A grafikon beállításának frissítése</translation>
+        <translation type="vanished">A grafikon beállításának frissítése</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">Grafikon beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Irány</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">I irány</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">J irány</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Vidék</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Összes</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">Részleges régió</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">Rajt:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">Vége:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">Kihagyás:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Egyedi</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Szerkesztés (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">Rajzolja meg az irányt</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">Függőleges a rácsvonalakhoz</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">A rácsvonalakkal párhuzamosan</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">Rácsvonalak</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">Húz</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">Grafikonvonalak</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Fizikai érték:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">Skála:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">Nincs módosítás</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">Vonja le a maximális értéket minden sorból</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">Vonja le a minimális értéket minden sorból</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">Egyéni régió beállítás</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">Mindet kiválaszt (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">Minden kijelölés megszüntetése (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>Egyéni régió beállítás</translation>
+        <translation type="vanished">Egyéni régió beállítás</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>Mindet kiválaszt (&amp;S)</translation>
+        <translation type="vanished">Mindet kiválaszt (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>Minden kijelölés megszüntetése (&amp;U)</translation>
+        <translation type="vanished">Minden kijelölés megszüntetése (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>Grafikon beállítása</translation>
+        <translation type="vanished">Grafikon beállítása</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Irány</translation>
+        <translation type="vanished">Irány</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>I irány</translation>
+        <translation type="vanished">I irány</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>J irány</translation>
+        <translation type="vanished">J irány</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Vidék</translation>
+        <translation type="vanished">Vidék</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Összes</translation>
+        <translation type="vanished">Összes</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>Részleges régió</translation>
+        <translation type="vanished">Részleges régió</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Rajt:</translation>
+        <translation type="vanished">Rajt:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Vége:</translation>
+        <translation type="vanished">Vége:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>Kihagyás:</translation>
+        <translation type="vanished">Kihagyás:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Egyedi</translation>
+        <translation type="vanished">Egyedi</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Szerkesztés (&amp;E)...</translation>
+        <translation type="vanished">Szerkesztés (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>Rajzolja meg az irányt</translation>
+        <translation type="vanished">Rajzolja meg az irányt</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Függőleges a rácsvonalakhoz</translation>
+        <translation type="vanished">Függőleges a rácsvonalakhoz</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>A rácsvonalakkal párhuzamosan</translation>
+        <translation type="vanished">A rácsvonalakkal párhuzamosan</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>Rácsvonalak</translation>
+        <translation type="vanished">Rácsvonalak</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>Húz</translation>
+        <translation type="vanished">Húz</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>Grafikonvonalak</translation>
+        <translation type="vanished">Grafikonvonalak</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Skála:</translation>
+        <translation type="vanished">Skála:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>Nincs módosítás</translation>
+        <translation type="vanished">Nincs módosítás</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>Vonja le a maximális értéket minden sorból</translation>
+        <translation type="vanished">Vonja le a maximális értéket minden sorból</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>Vonja le a minimális értéket minden sorból</translation>
+        <translation type="vanished">Vonja le a minimális értéket minden sorból</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1122,27 @@
         <translation>Skaláris beállítás (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">A KML utcanézethez való exportálásához a Colormode-nak "Diszkrét mód"-nak kell lennie.</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">A KML utcanézethez való exportálásához a Colormode-nak &quot;Diszkrét mód&quot;-nak kell lennie.</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>KML exportálása utcanézethez: Az értéknek valós értéknek kell lennie. Ez egy egész érték.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
-        <translation>A KML utcanézethez való exportálásához a Színes módnak "Diszkrét mód"-nak kell lennie.</translation>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>A KML utcanézethez való exportálásához a Színes módnak &quot;Diszkrét mód&quot;-nak kell lennie.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Információ</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,16 +1194,16 @@
         <translation type="vanished">Hiba</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a &quot;Kijelző beállítása&quot; &quot;Kontúr ábra&quot; -ra, nem pedig &quot;Színes szegély&quot; vagy &quot;Izolines&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalár</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation type="vanished">Az alakfájl exportálásához állítsa a színbeállítást "Diszkrét módra".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Az alakfájl exportálásához állítsa a színbeállítást &quot;Diszkrét módra&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">Generációs térköz</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Ha 1 -et ad meg, akkor részecskék jönnek létre a rácscsomópontokban. &lt;/p&gt; &lt;p&gt; Ha 2 -et ad meg, akkor részecskék jönnek létre a rácscsomópontokban és a rácscsomópontok középső pontjaiban. &lt;/p&gt; &lt;p&gt; Ha adja meg 1/2, részecskék jönnek létre minden más rácscsomóponthoz. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Ha 1 -et ad meg, akkor részecskék jönnek létre a rácscsomópontokban. &lt;/p&gt; &lt;p&gt; Ha 2 -et ad meg, akkor részecskék jönnek létre a rácscsomópontokban és a rácscsomópontok középső pontjaiban. &lt;/p&gt; &lt;p&gt; Ha adja meg 1/2, részecskék jönnek létre minden más rácscsomóponthoz. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Méret:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Méret:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generációs térköz</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ha 1-et ad meg, az áramvonalak a rácscsomópontoknál kezdődnek. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Ha 2-t ad meg, az áramvonalak a rácscsomópontoknál és a rácscsomópontok középső pontjainál kezdődnek. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ha 1/2 értéket ad meg, az áramvonalak minden más rácscsomópontnál kezdődnek. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ha 1-et ad meg, az áramvonalak a rácscsomópontoknál kezdődnek. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Ha 2-t ad meg, az áramvonalak a rácscsomópontoknál és a rácscsomópontok középső pontjainál kezdődnek. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ha 1/2 értéket ad meg, az áramvonalak minden más rácscsomópontnál kezdődnek. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Szélesség:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Szélesség:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Adja meg a megjelenített pixelek számát. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

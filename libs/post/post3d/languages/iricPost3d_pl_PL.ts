@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -68,6 +70,17 @@
     <message>
         <source>Contour Setting (cell center) (%1)</source>
         <translation>Ustawienie konturu (środek komórki) (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -244,6 +257,17 @@
     <message>
         <source>Face%1</source>
         <translation>Twarz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -435,62 +459,62 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="vanished">Włączony</translation>
+        <translation>Włączony</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formularz</translation>
+        <translation type="vanished">Formularz</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Kierunek</translation>
+        <translation type="vanished">Kierunek</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>i</translation>
+        <translation type="vanished">i</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Zasięg</translation>
+        <translation type="vanished">Zasięg</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jestem w</translation>
+        <translation type="vanished">Jestem w</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Ja Max</translation>
+        <translation type="vanished">Ja Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Włączony</translation>
+        <translation type="vanished">Włączony</translation>
     </message>
 </context>
 <context>
@@ -522,63 +546,63 @@
     <name>Post3dWindowIsosurfaceSettingDialog</name>
     <message>
         <source>Isosurface Setting</source>
-        <translation>Ustawienie izopowierzchni</translation>
+        <translation type="vanished">Ustawienie izopowierzchni</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Włączony</translation>
+        <translation type="vanished">Włączony</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Wartość fizyczna:</translation>
+        <translation type="vanished">Wartość fizyczna:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Region</translation>
+        <translation type="vanished">Region</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Cały region</translation>
+        <translation type="vanished">Cały region</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jestem w</translation>
+        <translation type="vanished">Jestem w</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Ja Max</translation>
+        <translation type="vanished">Ja Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Value Setting</source>
-        <translation>Ustawienie wartości</translation>
+        <translation type="vanished">Ustawienie wartości</translation>
     </message>
     <message>
         <source>Max Value</source>
-        <translation>Maksymalna wartość</translation>
+        <translation type="vanished">Maksymalna wartość</translation>
     </message>
     <message>
         <source>Min Value</source>
-        <translation>Wartość minimalna</translation>
+        <translation type="vanished">Wartość minimalna</translation>
     </message>
     <message>
         <source>Iso Value</source>
-        <translation>Wartość ISO</translation>
+        <translation type="vanished">Wartość ISO</translation>
     </message>
     <message>
         <source>Color</source>
@@ -586,7 +610,7 @@
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation type="vanished">Kolor:</translation>
     </message>
 </context>
 <context>
@@ -704,7 +728,74 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizuj ustawienia konturu</translation>
+        <translation type="vanished">Aktualizuj ustawienia konturu</translation>
+    </message>
+    <message>
+        <source>Isosurface Setting</source>
+        <translation type="unfinished">Ustawienie izopowierzchni</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formularz</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Wartość fizyczna:</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Region</translation>
+    </message>
+    <message>
+        <source>Full region</source>
+        <translation type="unfinished">Cały region</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished">Jestem w</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Setting</source>
+        <translation type="unfinished">Ustawienie wartości</translation>
+    </message>
+    <message>
+        <source>Max Value</source>
+        <translation type="unfinished">Maksymalna wartość</translation>
+    </message>
+    <message>
+        <source>Min Value</source>
+        <translation type="unfinished">Wartość minimalna</translation>
+    </message>
+    <message>
+        <source>Iso Value</source>
+        <translation type="unfinished">Wartość ISO</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolor:</translation>
     </message>
 </context>
 <context>
@@ -712,6 +803,10 @@
     <message>
         <source>Isosurfaces</source>
         <translation>Izopowierzchnie</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished">Wybierz wynik obliczeń</translation>
     </message>
 </context>
 <context>
@@ -1140,16 +1235,16 @@
         <translation type="vanished">Przedział przestrzeni generowania</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { spacja: pre-wrap; } p {górny margines: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Jeśli określisz 1, cząstki są generowane w węzłach siatki.&lt;/p&gt; &lt;p&gt;Jeśli określisz 2, cząstki są generowane w węzłach siatki i środkowych punktach węzłów siatki.&lt;/p&gt; &lt;p&gt;Jeśli określisz określ 1/2, cząstki są generowane dla wszystkich pozostałych węzłów siatki.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { spacja: pre-wrap; } p {górny margines: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Jeśli określisz 1, cząstki są generowane w węzłach siatki.&lt;/p&gt; &lt;p&gt;Jeśli określisz 2, cząstki są generowane w węzłach siatki i środkowych punktach węzłów siatki.&lt;/p&gt; &lt;p&gt;Jeśli określisz określ 1/2, cząstki są generowane dla wszystkich pozostałych węzłów siatki.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1160,12 +1255,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Rozmiar:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style="margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Określ liczbę wyświetlanych pikseli.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot;margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Określ liczbę wyświetlanych pikseli.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1369,14 +1464,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Przedział przestrzeni generowania</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style="margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Jeśli określisz 1, usprawnienia zaczynają się od węzłów siatki.&lt;/p&gt; &lt;p style="margin-top: 3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Jeśli określisz 2, usprawnienia zaczynają się od węzłów siatki i środkowych punktów węzłów siatki.&lt;/p&gt; &lt;p style="margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Jeśli określisz 1/2, usprawnienia zaczynają się od wszystkich innych węzłów siatki.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot;margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jeśli określisz 1, usprawnienia zaczynają się od węzłów siatki.&lt;/p&gt; &lt;p style=&quot;margin-top: 3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Jeśli określisz 2, usprawnienia zaczynają się od węzłów siatki i środkowych punktów węzłów siatki.&lt;/p&gt; &lt;p style=&quot;margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jeśli określisz 1/2, usprawnienia zaczynają się od wszystkich innych węzłów siatki.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1407,12 +1502,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Szerokość:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style="margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Określ liczbę wyświetlanych pikseli.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot;margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Określ liczbę wyświetlanych pikseli.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1439,11 +1534,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Isosurface</source>
-        <translation>Utwórz izopowierzchnię</translation>
+        <translation type="vanished">Utwórz izopowierzchnię</translation>
     </message>
     <message>
         <source>Delete Isosurface</source>
-        <translation>Usuń izopowierzchnię</translation>
+        <translation type="vanished">Usuń izopowierzchnię</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>

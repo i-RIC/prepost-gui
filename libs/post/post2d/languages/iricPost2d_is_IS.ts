@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,8 +58,8 @@
         <translation>Vinsamlegast veldu hvaða gildi á að flytja út.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Engin útlínur er teiknaður í "Stöðugum ham".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Engin útlínur er teiknaður í &quot;Stöðugum ham&quot;.</translation>
     </message>
 </context>
 <context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>Skalarstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Upplýsingar</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Línubreidd:</translation>
+        <translation type="vanished">Línubreidd:</translation>
     </message>
 </context>
 <context>
@@ -509,7 +522,7 @@
         <translation type="vanished">Villa</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>Uppfæra grafstillingu</translation>
+        <translation type="vanished">Uppfæra grafstillingu</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">Línuritstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Stefna</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">Ég stefna</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">J átt</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Svæði</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Allt</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">Hlutasvæði</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">Byrja:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">Enda:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">Sleppa:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Sérsniðin</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Breyta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">Teikna stefnu</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">Lóðrétt að ristlínum</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">Samhliða ristlínum</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">Grid Lines</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">Teikna</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">Graflínur</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Líkamlegt gildi:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">Mælikvarði:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">Engin breyting</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">Dragðu hámarksgildi frá í hverri línu</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">Dragðu frá lágmarksgildi í hverri línu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">Sérsniðin svæðisstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">Velja allt (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">Afturkalla allt (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>Sérsniðin svæðisstilling</translation>
+        <translation type="vanished">Sérsniðin svæðisstilling</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>Velja allt (&amp;S)</translation>
+        <translation type="vanished">Velja allt (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>Afturkalla allt (&amp;U)</translation>
+        <translation type="vanished">Afturkalla allt (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>Línuritstilling</translation>
+        <translation type="vanished">Línuritstilling</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Stefna</translation>
+        <translation type="vanished">Stefna</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>Ég stefna</translation>
+        <translation type="vanished">Ég stefna</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>J átt</translation>
+        <translation type="vanished">J átt</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Svæði</translation>
+        <translation type="vanished">Svæði</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Allt</translation>
+        <translation type="vanished">Allt</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>Hlutasvæði</translation>
+        <translation type="vanished">Hlutasvæði</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Byrja:</translation>
+        <translation type="vanished">Byrja:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Enda:</translation>
+        <translation type="vanished">Enda:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>Sleppa:</translation>
+        <translation type="vanished">Sleppa:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Sérsniðin</translation>
+        <translation type="vanished">Sérsniðin</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Breyta (&amp;E)...</translation>
+        <translation type="vanished">Breyta (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>Teikna stefnu</translation>
+        <translation type="vanished">Teikna stefnu</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Lóðrétt að ristlínum</translation>
+        <translation type="vanished">Lóðrétt að ristlínum</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>Samhliða ristlínum</translation>
+        <translation type="vanished">Samhliða ristlínum</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>Grid Lines</translation>
+        <translation type="vanished">Grid Lines</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>Teikna</translation>
+        <translation type="vanished">Teikna</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>Graflínur</translation>
+        <translation type="vanished">Graflínur</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Líkamlegt gildi:</translation>
+        <translation type="vanished">Líkamlegt gildi:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Mælikvarði:</translation>
+        <translation type="vanished">Mælikvarði:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>Engin breyting</translation>
+        <translation type="vanished">Engin breyting</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>Dragðu hámarksgildi frá í hverri línu</translation>
+        <translation type="vanished">Dragðu hámarksgildi frá í hverri línu</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>Dragðu frá lágmarksgildi í hverri línu</translation>
+        <translation type="vanished">Dragðu frá lágmarksgildi í hverri línu</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Línubreidd:</translation>
+        <translation type="vanished">Línubreidd:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1122,27 @@
         <translation>Skalarstilling (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">Til að flytja út KML fyrir götusýn þarf Colormode að vera "Stöðug ham"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">Til að flytja út KML fyrir götusýn þarf Colormode að vera &quot;Stöðug ham&quot;</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>Til að flytja út KML fyrir götusýn, gildið ætti að vera raunverulegt gildi, þetta er heiltölugildi.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
-        <translation>Til að flytja út KML fyrir götusýn þarf litastillingin að vera "Stöðug stilling"</translation>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>Til að flytja út KML fyrir götusýn þarf litastillingin að vera &quot;Stöðug stilling&quot;</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Upplýsingar</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,7 +1194,7 @@
         <translation type="vanished">Villa</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -1064,7 +1202,7 @@
         <translation>Skalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Til að flytja út formskrá skaltu skipta um litastillingu yfir í „Stöðug ham“.</translation>
     </message>
     <message>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">Kynslóðabil bil</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Ef þú tilgreinir 1 myndast agnir í risthnútum. &lt;/p&gt; &lt;p&gt; Ef þú tilgreinir 2 myndast agnir í risthnoðum og miðpunktum risthnoða. &lt;/p&gt; &lt;p&gt; Ef þú tilgreindu 1/2, agnir eru búnar til fyrir hvern annan nethnút. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Ef þú tilgreinir 1 myndast agnir í risthnútum. &lt;/p&gt; &lt;p&gt; Ef þú tilgreinir 2 myndast agnir í risthnoðum og miðpunktum risthnoða. &lt;/p&gt; &lt;p&gt; Ef þú tilgreindu 1/2, agnir eru búnar til fyrir hvern annan nethnút. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Stærð:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Stærð:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Kynslóðabil bil</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ef þú tilgreinir 1, þá byrjar straumlínulagning á risthnútum. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Ef þú tilgreinir 2, byrjar straumlínur við risthnúta og miðpunkta risthnúta. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ef þú tilgreinir 1/2 byrja straumlínur við aðra hvern hnúthnút. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ef þú tilgreinir 1, þá byrjar straumlínulagning á risthnútum. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Ef þú tilgreinir 2, byrjar straumlínur við risthnúta og miðpunkta risthnúta. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ef þú tilgreinir 1/2 byrja straumlínur við aðra hvern hnúthnút. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Breidd:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Breidd:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Tilgreindu fjölda pixla á skjánum. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

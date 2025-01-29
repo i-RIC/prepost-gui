@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -68,6 +70,17 @@
     <message>
         <source>Contour Setting (cell center) (%1)</source>
         <translation>Настройка контура (центр ячейки) (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -244,6 +257,17 @@
     <message>
         <source>Face%1</source>
         <translation>Лицо %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -435,62 +459,62 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="vanished">Включено</translation>
+        <translation>Включено</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Направление</translation>
+        <translation type="vanished">Направление</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>я</translation>
+        <translation type="vanished">я</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>К Макс</translation>
+        <translation type="vanished">К Макс</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Включено</translation>
+        <translation type="vanished">Включено</translation>
     </message>
 </context>
 <context>
@@ -522,55 +546,55 @@
     <name>Post3dWindowIsosurfaceSettingDialog</name>
     <message>
         <source>Isosurface Setting</source>
-        <translation>Настройка изоповерхности</translation>
+        <translation type="vanished">Настройка изоповерхности</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Включено</translation>
+        <translation type="vanished">Включено</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Область</translation>
+        <translation type="vanished">Область</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Полный регион</translation>
+        <translation type="vanished">Полный регион</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>К Макс</translation>
+        <translation type="vanished">К Макс</translation>
     </message>
     <message>
         <source>Value Setting</source>
-        <translation>Настройка значения</translation>
+        <translation type="vanished">Настройка значения</translation>
     </message>
     <message>
         <source>Min Value</source>
-        <translation>Мин. Значение</translation>
+        <translation type="vanished">Мин. Значение</translation>
     </message>
     <message>
         <source>Color</source>
@@ -578,15 +602,15 @@
     </message>
     <message>
         <source>Max Value</source>
-        <translation>Максимальное значение</translation>
+        <translation type="vanished">Максимальное значение</translation>
     </message>
     <message>
         <source>Iso Value</source>
-        <translation>Изо-значение</translation>
+        <translation type="vanished">Изо-значение</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
 </context>
 <context>
@@ -704,7 +728,74 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Обновить настройку контура</translation>
+        <translation type="vanished">Обновить настройку контура</translation>
+    </message>
+    <message>
+        <source>Isosurface Setting</source>
+        <translation type="unfinished">Настройка изоповерхности</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Физическая ценность:</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Область</translation>
+    </message>
+    <message>
+        <source>Full region</source>
+        <translation type="unfinished">Полный регион</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Setting</source>
+        <translation type="unfinished">Настройка значения</translation>
+    </message>
+    <message>
+        <source>Max Value</source>
+        <translation type="unfinished">Максимальное значение</translation>
+    </message>
+    <message>
+        <source>Min Value</source>
+        <translation type="unfinished">Мин. Значение</translation>
+    </message>
+    <message>
+        <source>Iso Value</source>
+        <translation type="unfinished">Изо-значение</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
     </message>
 </context>
 <context>
@@ -712,6 +803,10 @@
     <message>
         <source>Isosurfaces</source>
         <translation>Изоповерхности</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished">Выберите результат расчета</translation>
     </message>
 </context>
 <context>
@@ -1140,16 +1235,16 @@
         <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1160,12 +1255,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Размер:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1369,14 +1464,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; »&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; »&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1407,12 +1502,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ширина:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1447,11 +1542,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Isosurface</source>
-        <translation>Создать изоповерхность</translation>
+        <translation type="vanished">Создать изоповерхность</translation>
     </message>
     <message>
         <source>Delete Isosurface</source>
-        <translation>Удалить Isosurface</translation>
+        <translation type="vanished">Удалить Isosurface</translation>
     </message>
 </context>
 </TS>

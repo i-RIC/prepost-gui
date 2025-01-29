@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,7 +58,7 @@
         <translation>請選擇要導出的值。</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>在“離散模式”下不繪製輪廓。</translation>
     </message>
 </context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>標量設定 ( %1 ）</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
 </context>
 <context>
@@ -509,7 +522,7 @@
         <translation type="vanished">錯誤</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
     <message>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>更新圖表設置</translation>
+        <translation type="vanished">更新圖表設置</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">圖形設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">方向</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">我方向</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">J方向</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">地區</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">全部</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">部分區域</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">開始：</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">結尾：</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">跳過：</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">風俗</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">編輯 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">繪製方向</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">垂直於網格線</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">平行於網格線</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">網格線</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">畫</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">圖線</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">物理價值：</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">規模：</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">無修改</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">減去每一行的最大值</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">每行減去最小值</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">自定義區域設置</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">全選 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">全部取消選擇 (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>自定義區域設置</translation>
+        <translation type="vanished">自定義區域設置</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>全選 (&amp;S)</translation>
+        <translation type="vanished">全選 (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>全部取消選擇 (&amp;U)</translation>
+        <translation type="vanished">全部取消選擇 (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>圖形設置</translation>
+        <translation type="vanished">圖形設置</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>我方向</translation>
+        <translation type="vanished">我方向</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>地區</translation>
+        <translation type="vanished">地區</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>全部</translation>
+        <translation type="vanished">全部</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>部分區域</translation>
+        <translation type="vanished">部分區域</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>開始：</translation>
+        <translation type="vanished">開始：</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>結尾：</translation>
+        <translation type="vanished">結尾：</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>跳過：</translation>
+        <translation type="vanished">跳過：</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>風俗</translation>
+        <translation type="vanished">風俗</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編輯 (&amp;E)...</translation>
+        <translation type="vanished">編輯 (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>繪製方向</translation>
+        <translation type="vanished">繪製方向</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>垂直於網格線</translation>
+        <translation type="vanished">垂直於網格線</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>平行於網格線</translation>
+        <translation type="vanished">平行於網格線</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>網格線</translation>
+        <translation type="vanished">網格線</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>畫</translation>
+        <translation type="vanished">畫</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>圖線</translation>
+        <translation type="vanished">圖線</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理價值：</translation>
+        <translation type="vanished">物理價值：</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>規模：</translation>
+        <translation type="vanished">規模：</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>無修改</translation>
+        <translation type="vanished">無修改</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>減去每一行的最大值</translation>
+        <translation type="vanished">減去每一行的最大值</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>每行減去最小值</translation>
+        <translation type="vanished">每行減去最小值</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,7 +1122,7 @@
         <translation>標量設置 (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
         <translation type="vanished">要為街景導出 KML，Colormode 需要為“離散模式”</translation>
     </message>
     <message>
@@ -1003,8 +1130,19 @@
         <translation>要導出街景的 KML，該值應該是實際值，這是一個整數值。</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
         <translation>要導出街景 KML，顏色模式需要為“離散模式”</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,7 +1194,7 @@
         <translation type="vanished">錯誤</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
     <message>
@@ -1064,7 +1202,7 @@
         <translation>標量</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">要導出形狀文件，請將顏色設置切換為“離散模式”。</translation>
     </message>
     <message>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">代空間間隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;如果指定 1，則在網格節點生成粒子。&lt;/p&gt; &lt;p&gt;如果指定 2，則在網格節點和網格節點的中點生成粒子。&lt;/p&gt; &lt;p&gt;如果您指定 1/2，每隔一個網格節點生成粒子。&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;如果指定 1，則在網格節點生成粒子。&lt;/p&gt; &lt;p&gt;如果指定 2，則在網格節點和網格節點的中點生成粒子。&lt;/p&gt; &lt;p&gt;如果您指定 1/2，每隔一個網格節點生成粒子。&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">尺寸：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">尺寸：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">代空間間隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果指定 1，流線從網格節點開始.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;如果指定 2，則流線從網格節點和網格節點的中點開始。&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;如果指定 1/2，則流線從每隔一個網格節點開始。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果指定 1，流線從網格節點開始.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;如果指定 2，則流線從網格節點和網格節點的中點開始。&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果指定 1/2，則流線從每隔一個網格節點開始。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">寬度：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">寬度：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指定顯示的像素數。&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

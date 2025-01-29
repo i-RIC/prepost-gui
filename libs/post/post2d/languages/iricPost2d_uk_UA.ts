@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,7 +58,7 @@
         <translation>Виберіть значення для експорту.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>У «Дискретному режимі» контур не малюється.</translation>
     </message>
 </context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>Скалярне налаштування (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Інформація</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
 </context>
 <context>
@@ -509,8 +522,8 @@
         <translation type="vanished">Помилка</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Щоб експортувати файл фігури, переведіть &quot;Параметри дисплея&quot; на &quot;Контурний малюнок&quot;, а не на &quot;Колір бахроми&quot; або &quot;Ізолінії&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>Оновити налаштування графіка</translation>
+        <translation type="vanished">Оновити налаштування графіка</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">Налаштування графіка</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Напрямок</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">I напрямок</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">Напрямок J</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Регіон</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Усі</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">Часткова область</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">Початок:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">Кінець:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">Пропустити:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">На замовлення</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Редагувати (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">Намалювати напрямок</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">Вертикальні до ліній сітки</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">Паралельно лініям сітки</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">Лінії сітки</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">Нічия</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">Графічні лінії</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">Масштаб:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">Без модифікацій</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">Відніміть максимальне значення в кожному рядку</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">Відніміть мінімальне значення в кожному рядку</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">Налаштування користувацького регіону</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">Вибрати все (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">Скасувати вибір усіх (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>Налаштування користувацького регіону</translation>
+        <translation type="vanished">Налаштування користувацького регіону</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>Вибрати все (&amp;S)</translation>
+        <translation type="vanished">Вибрати все (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>Скасувати вибір усіх (&amp;U)</translation>
+        <translation type="vanished">Скасувати вибір усіх (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>Налаштування графіка</translation>
+        <translation type="vanished">Налаштування графіка</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Напрямок</translation>
+        <translation type="vanished">Напрямок</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>I напрямок</translation>
+        <translation type="vanished">I напрямок</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>Напрямок J</translation>
+        <translation type="vanished">Напрямок J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Регіон</translation>
+        <translation type="vanished">Регіон</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Усі</translation>
+        <translation type="vanished">Усі</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>Часткова область</translation>
+        <translation type="vanished">Часткова область</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Початок:</translation>
+        <translation type="vanished">Початок:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Кінець:</translation>
+        <translation type="vanished">Кінець:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>Пропустити:</translation>
+        <translation type="vanished">Пропустити:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>На замовлення</translation>
+        <translation type="vanished">На замовлення</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Редагувати (&amp;E)...</translation>
+        <translation type="vanished">Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>Намалювати напрямок</translation>
+        <translation type="vanished">Намалювати напрямок</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Вертикальні до ліній сітки</translation>
+        <translation type="vanished">Вертикальні до ліній сітки</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>Паралельно лініям сітки</translation>
+        <translation type="vanished">Паралельно лініям сітки</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>Лінії сітки</translation>
+        <translation type="vanished">Лінії сітки</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>Нічия</translation>
+        <translation type="vanished">Нічия</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>Графічні лінії</translation>
+        <translation type="vanished">Графічні лінії</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Фізична цінність:</translation>
+        <translation type="vanished">Фізична цінність:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Масштаб:</translation>
+        <translation type="vanished">Масштаб:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>Без модифікацій</translation>
+        <translation type="vanished">Без модифікацій</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>Відніміть максимальне значення в кожному рядку</translation>
+        <translation type="vanished">Відніміть максимальне значення в кожному рядку</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>Відніміть мінімальне значення в кожному рядку</translation>
+        <translation type="vanished">Відніміть мінімальне значення в кожному рядку</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1122,27 @@
         <translation>Скалярне налаштування (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, Colormode має бути "Discrete Mode"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, Colormode має бути &quot;Discrete Mode&quot;</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>Щоб експортувати KML для перегляду вулиць, значення має бути реальним. Це ціле значення.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
         <translation>Щоб експортувати KML для перегляду вулиць, колірний режим має бути «Дискретний режим».</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Інформація</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,15 +1194,15 @@
         <translation type="vanished">Помилка</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Щоб експортувати файл фігури, переведіть &quot;Параметри дисплея&quot; на &quot;Контурний малюнок&quot;, а не на &quot;Колір бахроми&quot; або &quot;Ізолінії&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Скалярний</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Щоб експортувати шейп-файл, перемкніть налаштування кольору на «Дискретний режим».</translation>
     </message>
     <message>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">Інтервал генерації простору</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Якщо вказати 1, частинки генеруються у вузлах сітки. &lt;/p&gt; &lt;p&gt; Якщо вказати 2, частинки генеруються у вузлах сітки та середніх точках вузлів сітки. &lt;/p&gt; &lt;p&gt; Якщо ви вказати 1/2, частинки генеруються для всіх інших вузлів сітки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Якщо вказати 1, частинки генеруються у вузлах сітки. &lt;/p&gt; &lt;p&gt; Якщо вказати 2, частинки генеруються у вузлах сітки та середніх точках вузлів сітки. &lt;/p&gt; &lt;p&gt; Якщо ви вказати 1/2, частинки генеруються для всіх інших вузлів сітки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Розмір:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Розмір:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Інтервал генерації простору</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Якщо вказано 1, потокові потоки починаються з вузлів сітки. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Якщо вказати 2, потокові потоки починаються з вузлів сітки та середніх точок вузлів сітки. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Якщо вказати 1/2, потокові потоки починаються з усіх інших вузлів сітки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Якщо вказано 1, потокові потоки починаються з вузлів сітки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Якщо вказати 2, потокові потоки починаються з вузлів сітки та середніх точок вузлів сітки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Якщо вказати 1/2, потокові потоки починаються з усіх інших вузлів сітки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ширина:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ширина:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Вкажіть кількість пікселів на дисплеї. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

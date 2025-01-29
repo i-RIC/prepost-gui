@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>बर्ड्स-आई पोस्ट-प्रोसेसिंग (2D): %1</translation>
     </message>
     <message>
@@ -72,6 +74,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>अदिश सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -248,6 +261,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>अदिश सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
