@@ -46,6 +46,23 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="setAsDefaultButton">
+       <property name="text">
+        <string>Set as &amp;Default</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="TooltipLabel" name="setAsDefaultLabel">
+       <property name="toolTip">
+        <string>Set this as the default colormap setting of this project.</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -68,6 +85,11 @@
    <extends>QWidget</extends>
    <header>misc/qwidgetcontainer.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TooltipLabel</class>
+   <extends>QLabel</extends>
+   <header>misc/tooltiplabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

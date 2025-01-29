@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -55,6 +57,14 @@
     <message>
         <source>Colormap</source>
         <translation>bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Thông tin</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -894,6 +904,22 @@ Parse error %2 at %3, column %4</source>
         <source>Colormap Setting</source>
         <translation>Cài đặt bản đồ màu</translation>
     </message>
+    <message>
+        <source>Set as &amp;Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set this as the default colormap setting of this project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Thông tin</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
@@ -1087,6 +1113,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Xuất khẩu (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Set as &amp;Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set this as the default colormap setting of this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1744,8 +1778,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <source>"%1" is set to be default group, because you did not specify a default group.</source>
-        <translation>"%1" được đặt thành nhóm mặc định vì bạn chưa chỉ định nhóm mặc định.</translation>
+        <source>&quot;%1&quot; is set to be default group, because you did not specify a default group.</source>
+        <translation>&quot;%1&quot; được đặt thành nhóm mặc định vì bạn chưa chỉ định nhóm mặc định.</translation>
     </message>
 </context>
 <context>
@@ -1801,8 +1835,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Màu sắc:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1919,12 +1953,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Nút định nghĩa không được lưu trữ</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Giá trị sai %1 "được thiết lập.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Giá trị sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Điều kiện sai %1 "được thiết lập.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Điều kiện sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1995,8 +2029,8 @@ Do you really want to import this file?</source>
         <translation>Không mở được tệp CGNS.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>Thuộc tính tên không được xác định cho phần tử "Item"</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>Thuộc tính tên không được xác định cho phần tử &quot;Item&quot;</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2214,8 +2248,8 @@ Do you really want to import this file?</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt "Ctrl + C" và "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt &quot;Ctrl + C&quot; và &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2352,8 +2386,8 @@ Do you really want to import this file?</source>
         <translation>Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Hai cột đầu tiên phải là "X" và "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Hai cột đầu tiên phải là &quot;X&quot; và &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2518,8 +2552,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Định nghĩa về biến</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2597,8 +2631,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Xuống (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2983,8 +3017,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Định nghĩa đầu ra</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3220,8 +3254,8 @@ Do you really want to import this file?</source>
         <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
-        <translation>Tệp hình ảnh không hợp lệ được chỉ định. Hậu tố tệp phải là một trong các "jpg", "jpeg", "png" hoặc "tif".</translation>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
+        <translation>Tệp hình ảnh không hợp lệ được chỉ định. Hậu tố tệp phải là một trong các &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; hoặc &quot;tif&quot;.</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
@@ -3284,8 +3318,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Không gian làm việc "%1" có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Không gian làm việc &quot;%1&quot; có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3884,8 +3918,8 @@ Do you really want to import this file?</source>
         <translation>Định nghĩa biến</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m"&gt;&lt;span style=" -trang trí: gạch chân; màu:#0000ff;"&gt;tại đây&lt;/span&gt;&lt;/a&gt; để biết chi tiết.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m&quot;&gt;&lt;span style=&quot; -trang trí: gạch chân; màu:#0000ff;&quot;&gt;tại đây&lt;/span&gt;&lt;/a&gt; để biết chi tiết.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3975,8 +4009,8 @@ Do you really want to import this file?</source>
         <translation>Xuống (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý&lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính đơn giản làm biến, xuất hiện trước đó trong danh sách.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý&lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính đơn giản làm biến, xuất hiện trước đó trong danh sách.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

@@ -5,6 +5,9 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/image/imagesettingcontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -21,8 +24,14 @@ Post3dWindowParticlesBaseScalarDataItem::Post3dWindowParticlesBaseScalarDataItem
 
 	auto gtItem = groupDataItem()->topDataItem()->zoneDataItem()->gridTypeDataItem();
 	auto gType = gtItem->gridType();
-	auto output = gType->output(name);
-	m_colorMapSetting = output->createColorMapSettingContainer();
+	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(name);
+	if (defaultCs != nullptr) {
+			m_colorMapSetting = defaultCs->copy();
+	} else {
+			auto output = gType->output(name);
+			m_colorMapSetting = output->createColorMapSettingContainer();
+	}
+
 	m_colorMapSetting->valueCaption = caption;
 	m_colorMapSetting->legendSetting()->setTitle(caption);
 	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);

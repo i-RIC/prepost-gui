@@ -15,6 +15,7 @@ class ArrowsSettingEditWidget;
 
 class ArrowsSettingContainer;
 class ColorMapSettingContainer;
+class ProjectDefaultColorMapSettings;
 class SolverDefinitionGridType;
 
 class QTabWidget;
@@ -30,6 +31,7 @@ public:
 
 	void setGridType(SolverDefinitionGridType* gridType);
 	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
+	void setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings);
 	void setAdditionalSettingWidget(QWidget* widget);
 
 	QTabWidget* tabWidget() const;

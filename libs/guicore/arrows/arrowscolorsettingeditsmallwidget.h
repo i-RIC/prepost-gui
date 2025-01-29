@@ -14,6 +14,7 @@ class ArrowsColorSettingEditSmallWidget;
 }
 
 class ArrowsSettingContainer;
+class ProjectDefaultColorMapSettings;
 class SolverDefinitionGridType;
 
 class GUICOREDLL_EXPORT ArrowsColorSettingEditSmallWidget : public QWidget
@@ -26,6 +27,7 @@ public:
 
 	void setGridType(SolverDefinitionGridType* gridType);
 	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
+	void setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings);
 
 	ArrowsSettingContainer setting() const;
 	void updateSetting(ArrowsSettingContainer* setting) const;
@@ -40,6 +42,7 @@ private slots:
 private:
 	ColorMapSettingContainerI* m_colorMapSetting;
 	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
+	ProjectDefaultColorMapSettings* m_defaultColorMapSettings;
 
 	std::vector<std::string> m_colorMapNames;
 	SolverDefinitionGridType* m_gridType;

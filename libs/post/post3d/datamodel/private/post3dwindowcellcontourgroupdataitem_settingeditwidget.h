@@ -9,7 +9,7 @@ namespace Ui {
 class Post3dWindowCellContourGroupDataItem_SettingEditWidget;
 }
 
-class ColorMapSettingEditWidget;
+class ColorMapSettingEditWidgetWithImportExportButton;
 
 class Post3dWindowCellContourGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
@@ -21,10 +21,13 @@ public:
 
 	QUndoCommand* createModifyCommand(bool apply) override;
 
+public slots:
+	void setAsDefault();
+
 private:
+	ColorMapSettingEditWidgetWithImportExportButton* m_colorMapWidget;
 	Post3dWindowCellContourGroupDataItem* m_item;
 
-	ColorMapSettingEditWidget* m_colorMapWidget;
 	Ui::Post3dWindowCellContourGroupDataItem_SettingEditWidget *ui;
 };
 

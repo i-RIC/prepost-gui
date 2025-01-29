@@ -101,7 +101,6 @@ HEADERS += colortool.h \
            scalarbarwidget.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
-           tooltiplabel.h \
            vtk2dinteractorstyle.h \
            vtkCustomScalarBarActor.h \
            vtkCustomStreamTracer.h \
@@ -258,7 +257,6 @@ SOURCES += colortool.cpp \
            scalarbarwidget.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
-           tooltiplabel.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomScalarBarActor.cxx \
            vtkCustomStreamTracer.cxx \

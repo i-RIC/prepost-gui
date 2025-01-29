@@ -3,6 +3,9 @@
 #include "ui_post2dwindowparticlesbasescalargroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
@@ -25,6 +28,7 @@ Post2dWindowParticlesBaseScalarGroupDataItem::SettingEditWidget::SettingEditWidg
 	w->setGridType(gtype);
 	w->setValueNames(names);
 	w->setColorMapSettings(item->colorMapSettings());
+	w->setDefaultColorMapSettings(item->projectData()->mainfile()->defaultColorMapSettings());
 	w->setSetting(&item->m_setting);
 }
 

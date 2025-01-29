@@ -36,6 +36,11 @@ void ArrowsSettingEditWidget::setColorMapSettings(const std::unordered_map<std::
 	ui->colorSettingEditWidget->setColorMapSettings(settings);
 }
 
+void ArrowsSettingEditWidget::setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings)
+{
+	ui->colorSettingEditWidget->setDefaultColorMapSettings(settings);
+}
+
 void ArrowsSettingEditWidget::setAdditionalSettingWidget(QWidget* widget)
 {
 	ui->additionalSettingWidget->setWidget(widget);

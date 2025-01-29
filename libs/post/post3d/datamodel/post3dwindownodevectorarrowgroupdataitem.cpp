@@ -11,6 +11,9 @@
 #include <guibase/widget/boolcontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4grid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
@@ -45,9 +48,16 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_setting.legend.imageSetting.controller()->setItem(this);
 	m_setting.legend.title = caption;
 
+	auto defaultColorMaps = projectData()->mainfile()->defaultColorMapSettings();
 	for (const auto& pair : data()->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
-		auto output = gt->output(pair.first);
-		auto cs = output->createColorMapSettingContainer();
+		ColorMapSettingContainerI* cs = nullptr;
+		auto defaultCs = defaultColorMaps->colorMap(pair.first);
+		if (defaultCs != nullptr) {
+			cs = defaultCs->copy();
+		} else {
+			auto output = gt->output(pair.first);
+			cs = output->createColorMapSettingContainer();
+		}
 		auto caption = gt->outputCaption(pair.first);
 		cs->valueCaption = caption;
 		cs->legendSetting()->setTitle(caption);

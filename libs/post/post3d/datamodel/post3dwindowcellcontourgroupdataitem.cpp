@@ -9,6 +9,9 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -16,6 +19,7 @@
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/qscreenutil.h>
+#include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 
 #include <vtkActor2D.h>
@@ -23,7 +27,7 @@
 Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_target {target},
-	m_colorMapSetting {},
+	m_colorMapSetting {nullptr},
 	m_legendActor {vtkActor2D::New()},
 	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())}
 {
@@ -31,17 +35,35 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 
 	renderer()->AddActor2D(m_legendActor);
 
-	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
-	m_colorMapSetting.legend.title = data()->gridType()->outputCaption(target);
-	m_colorMapSetting.setAutoValueRange(valueRange());
+	auto gType = data()->gridType();
+	SolverDefinitionGridOutput* output = nullptr;
+	QRegExp re("^(.+) \\(magnitude\\)$");
+	auto pos = re.indexIn(target.c_str());
+	if (pos >= 0) {
+		auto target2 = iRIC::toStr(re.cap(1)) + "X";
+		output = gType->output(target2);
+	} else {
+		output = gType->output(target);
+	}
 
-	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();
+	ColorMapSettingContainerI* cs = nullptr;
+	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
+	if (defaultCs != nullptr) {
+		cs = defaultCs->copy();
+	} else {
+		cs = output->createColorMapSettingContainer();
+	}
+
+	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);
+	m_colorMapSetting->legendSetting()->setTitle(data()->gridType()->outputCaption(target));
+	m_colorMapSetting->setAutoValueRange(valueRange());
+
 	m_standardItem->setText(gType->outputCaption(m_target));
 
 	m_colorMapToolBarWidget->hide();
-	m_colorMapToolBarWidget->setSetting(&m_colorMapSetting);
+	m_colorMapToolBarWidget->setSetting(m_colorMapSetting);
 	connect(m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
-		auto com = new ColorMapSettingModifyCommand(m_colorMapToolBarWidget->modifiedSetting(), &m_colorMapSetting);
+		auto com = new ColorMapSettingModifyCommand(m_colorMapToolBarWidget->modifiedSetting(), m_colorMapSetting);
 		pushUpdateActorSettingCommand(com, this);
 	});
 
@@ -52,6 +74,7 @@ Post3dWindowCellContourGroupDataItem::~Post3dWindowCellContourGroupDataItem()
 {
 	renderer()->RemoveActor2D(m_legendActor);
 	m_legendActor->Delete();
+	delete m_colorMapSetting;
 }
 
 void Post3dWindowCellContourGroupDataItem::update()
@@ -66,7 +89,7 @@ void Post3dWindowCellContourGroupDataItem::updateColorMapVisibility()
 
 	ValueChangerT<bool> updatingChanger(&updating, true);
 
-	auto actor = m_colorMapSetting.legend.imageSetting.actor();
+	auto actor = m_colorMapSetting->legendSetting()->imgSetting()->actor();
 	m_actor2DCollection->RemoveItem(actor);
 	actor->VisibilityOff();
 
@@ -78,7 +101,7 @@ void Post3dWindowCellContourGroupDataItem::updateColorMapVisibility()
 	}
 	if (visible) {
 		auto v = dataModel()->graphicsView();
-		m_colorMapSetting.legend.imageSetting.apply(v);
+		m_colorMapSetting->legendSetting()->imgSetting()->apply(v);
 		m_actor2DCollection->AddItem(actor);
 	}
 }
@@ -98,7 +121,7 @@ void Post3dWindowCellContourGroupDataItem::gatherActiveColorMapLegends(std::vect
 	}
 	if (! visible) {return;}
 
-	legends->push_back(m_colorMapSetting.legendSetting());
+	legends->push_back(m_colorMapSetting->legendSetting());
 }
 
 void Post3dWindowCellContourGroupDataItem::showPropertyDialog()
@@ -108,7 +131,7 @@ void Post3dWindowCellContourGroupDataItem::showPropertyDialog()
 
 void Post3dWindowCellContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_colorMapSetting.load(node);
+	m_colorMapSetting->load(node);
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
@@ -128,7 +151,7 @@ void Post3dWindowCellContourGroupDataItem::doLoadFromProjectMainFile(const QDomN
 
 void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_colorMapSetting.save(writer);
+	m_colorMapSetting->save(writer);
 
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowCellContourDataItem*>(child);
@@ -153,8 +176,8 @@ QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 
 void Post3dWindowCellContourGroupDataItem::doUpdateActorSetting()
 {
-	m_colorMapSetting.setAutoValueRange(valueRange());
-	m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+	m_colorMapSetting->setAutoValueRange(valueRange());
+	m_colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowCellContourDataItem*> (child);
@@ -228,17 +251,17 @@ void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWin
 
 void Post3dWindowCellContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(this, event, v);
+	m_colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(this, event, v);
+	m_colorMapSetting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(this, event, v);
+	m_colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::handleStandardItemChange()
@@ -249,7 +272,7 @@ void Post3dWindowCellContourGroupDataItem::handleStandardItemChange()
 
 void Post3dWindowCellContourGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
+	m_colorMapSetting->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 bool Post3dWindowCellContourGroupDataItem::addToolBarButtons(QToolBar* toolBar)

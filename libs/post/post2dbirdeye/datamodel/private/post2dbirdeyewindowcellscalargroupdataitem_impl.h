@@ -27,6 +27,9 @@ public:
 	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
 	OpacityContainerWidget* m_opacityToolBarWidget;
+
+private:
+	Post2dBirdEyeWindowCellScalarGroupDataItem* m_parent;
 };
 
 #endif // POST2DBIRDEYEWINDOWCELLSCALARGROUPDATAITEM_IMPL_H

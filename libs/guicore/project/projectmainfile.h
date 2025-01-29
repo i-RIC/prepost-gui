@@ -21,6 +21,7 @@ class CoordinateSystem;
 class iRICMainWindowI;
 class MeasuredData;
 class PostSolutionInfo;
+class ProjectDefaultColorMapSettings;
 class ProjectCgnsManager;
 class ProjectData;
 class ProjectPostProcessors;
@@ -117,6 +118,8 @@ public:
 
 	CoordinateSystem* coordinateSystem() const;
 	void setCoordinateSystem(CoordinateSystem* system);
+
+	ProjectDefaultColorMapSettings* defaultColorMapSettings() const;
 
 	const QDateTime& zeroDateTime() const;
 	void setZeroDateTime(const QDateTime& dt);

@@ -5,6 +5,9 @@
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -18,6 +21,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 	ui(new Ui::Post3dWindowNodeVectorArrowGroupDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
+	ui->colorSettingWidget->setDefaultColorMapSettings(item->projectData()->mainfile()->defaultColorMapSettings());
 
 	connect(ui->faceAddButton, &QPushButton::clicked, [=](bool) {addFace();});
 	connect(ui->faceRemoveButton, &QPushButton::clicked, [=](bool) {removeFace();});

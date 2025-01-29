@@ -83,7 +83,7 @@ void Post3dWindowCellContourDataItem::doUpdateActorSetting()
 	auto extracted = m_setting.extractRegion(grid->vtkConcreteData()->concreteData());
 
 	extracted->GetCellData()->SetActiveScalars(groupDataItem()->target().c_str());
-	auto mapper = groupDataItem()->m_colorMapSetting.buildCellDataMapper(extracted, false);
+	auto mapper = groupDataItem()->m_colorMapSetting->buildCellDataMapper(extracted, false);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 	m_actorCollection->AddItem(m_actor);

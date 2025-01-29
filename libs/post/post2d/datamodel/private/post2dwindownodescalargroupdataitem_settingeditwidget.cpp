@@ -9,6 +9,9 @@
 #include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -19,6 +22,7 @@
 
 Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowNodeScalarGroupDataItem* item, QWidget *parent) :
 	ModifyCommandWidget {parent},
+	m_colorMapWidget {nullptr},
 	m_item {item},
 	ui(new Ui::Post2dWindowNodeScalarGroupDataItem_SettingEditWidget)
 {
@@ -53,6 +57,8 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 	auto cmw = output->createColorMapSettingEditWidget(this);
 	cmw->setSetting(item->impl->m_setting.colorMapSetting);
 	m_colorMapWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+	m_colorMapWidget->showSetAsDefaultButton();
+	connect(m_colorMapWidget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &SettingEditWidget::setAsDefault);
 
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	ui->rangeWidget->setSetting(&item->impl->m_setting.regionSetting);
@@ -63,11 +69,6 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 	if (cs == nullptr) {
 		ui->contourWidget->disable();
 	}
-
-	auto grid = cont->gridData()->grid();
-
-
-
 }
 
 Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::~SettingEditWidget()
@@ -84,4 +85,12 @@ QUndoCommand* Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::createModi
 	command->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
 
 	return command;
+}
+
+void Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::setAsDefault()
+{
+	auto cmw = m_colorMapWidget->widget();
+	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(m_item->target(), cmw->setting()->copy());
+
+	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }

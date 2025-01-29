@@ -80,6 +80,7 @@ HEADERS += anms.h \
            stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
+           tooltiplabel.h \
            tpoexporter.h \
            valuearraycontainert.h \
            valuechangert.h \
@@ -179,6 +180,7 @@ SOURCES += anms.cpp \
            stringcontainer.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
+           tooltiplabel.cpp \
            tpoexporter.cpp \
            valuerangecontainer.cpp \
            valueselectdialog.cpp \

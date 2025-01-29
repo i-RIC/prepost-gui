@@ -9,15 +9,29 @@ ColorMapSettingEditWidgetWithImportExportButton::ColorMapSettingEditWidgetWithIm
 {
 	ui->setupUi(this);
 	ui->widget->setWidget(widget);
+	ui->setAsDefaultButton->hide();
+	ui->setAsDefaultLabel->hide();
 
-	connect(ui->importButton, &QPushButton::clicked, [=](bool){widget->importSetting();});
-	connect(ui->exportButton, &QPushButton::clicked, [=](bool){widget->exportSetting();});
+	connect(ui->importButton, &QPushButton::clicked, widget, &ColorMapSettingEditWidgetI::importSetting);
+	connect(ui->exportButton, &QPushButton::clicked, widget, &ColorMapSettingEditWidgetI::exportSetting);
+	connect(ui->setAsDefaultButton, &QPushButton::clicked, this, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked);
 }
 
 ColorMapSettingEditWidgetWithImportExportButton::~ColorMapSettingEditWidgetWithImportExportButton()
 {
 	delete m_widget;
 	delete ui;
+}
+
+ColorMapSettingEditWidgetI* ColorMapSettingEditWidgetWithImportExportButton::widget() const
+{
+	return m_widget;
+}
+
+void ColorMapSettingEditWidgetWithImportExportButton::showSetAsDefaultButton()
+{
+	ui->setAsDefaultButton->show();
+	ui->setAsDefaultLabel->show();
 }
 
 QUndoCommand* ColorMapSettingEditWidgetWithImportExportButton::createModifyCommand(bool /*apply*/)

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -55,6 +57,14 @@
     <message>
         <source>Colormap</source>
         <translation>Farbkarte</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Information</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -894,6 +904,22 @@ Parse error %2 at %3, column %4</source>
         <source>Colormap Setting</source>
         <translation>Colormap-Einstellung</translation>
     </message>
+    <message>
+        <source>Set as &amp;Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set this as the default colormap setting of this project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Information</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
@@ -1087,6 +1113,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Export (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Set as &amp;Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set this as the default colormap setting of this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1498,7 +1532,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation>Wählen Sie einen Punkt im Dialogfeld "Georeferenz" aus.</translation>
+        <translation>Wählen Sie einen Punkt im Dialogfeld &quot;Georeferenz&quot; aus.</translation>
     </message>
     <message>
         <source>Delete Points</source>
@@ -1744,8 +1778,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Information</translation>
     </message>
     <message>
-        <source>"%1" is set to be default group, because you did not specify a default group.</source>
-        <translation>"%1" ist als Standardgruppe festgelegt, da Sie keine Standardgruppe angegeben haben.</translation>
+        <source>&quot;%1&quot; is set to be default group, because you did not specify a default group.</source>
+        <translation>&quot;%1&quot; ist als Standardgruppe festgelegt, da Sie keine Standardgruppe angegeben haben.</translation>
     </message>
 </context>
 <context>
@@ -1801,8 +1835,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Farbe:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis: Sie können nur ASCII-Zeichen für den Namen verwenden.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis: Sie können nur ASCII-Zeichen für den Namen verwenden.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1919,12 +1953,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitionsknoten wird nicht gespeichert</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Falscher Werttyp "%1" ist eingestellt.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Falscher Werttyp &quot;%1&quot; ist eingestellt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Falscher Bedingungstyp "%1"ist eingestellt.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Falscher Bedingungstyp &quot;%1&quot;ist eingestellt.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1995,7 +2029,7 @@ Do you really want to import this file?</source>
         <translation>Fehler beim Öffnen der CGNS-Datei.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>Das Namensattribut ist für das Element „Item“ nicht definiert</translation>
     </message>
     <message>
@@ -2214,8 +2248,8 @@ Do you really want to import this file?</source>
         <translation>Datei %1 wird nach dem Import in die Berechnungsbedingung aktualisiert %2. Möchten Sie die aktualisierte Datei importieren?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Sie können die Werte kopieren und einfügen, mit den Tastenkombinationen "Strg + C" und "Strg + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Sie können die Werte kopieren und einfügen, mit den Tastenkombinationen &quot;Strg + C&quot; und &quot;Strg + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2356,8 +2390,8 @@ Do you really want to import this file?</source>
         <translation>Beim Öffnen der Datei ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Die ersten beiden Spalten müssen "X" und "Y" sein.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Die ersten beiden Spalten müssen &quot;X&quot; und &quot;Y&quot; sein.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2518,8 +2552,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definition von Variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -Dekoration: unterstreichen; color:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -Dekoration: unterstreichen; color:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2527,7 +2561,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Definition testen, indem Sie darauf klicken. Wenn beim Parsen der Definition ein Fehler auftritt, wird die Fehlermeldung angezeigt. Wenn die Definition erfolgreich geparst wurde, wird der Wert, der unter Verwendung des "Werts zum Testen" berechnet wurde, berechnet. für jede Eingabe wird angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Definition testen, indem Sie darauf klicken. Wenn beim Parsen der Definition ein Fehler auftritt, wird die Fehlermeldung angezeigt. Wenn die Definition erfolgreich geparst wurde, wird der Wert, der unter Verwendung des &quot;Werts zum Testen&quot; berechnet wurde, berechnet. für jede Eingabe wird angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2597,8 +2631,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Runter (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Rechenoperationen als Variable verwenden, die weiter oben in der Liste erscheint.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Rechenoperationen als Variable verwenden, die weiter oben in der Liste erscheint.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2983,8 +3017,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Definition der Ausgabe</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -Dekoration: unterstreichen; color:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -Dekoration: unterstreichen; color:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3220,7 +3254,7 @@ Do you really want to import this file?</source>
         <translation>Alle Bilder (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
         <translation>Es wurde eine ungültige Bilddatei angegeben. Die Dateierweiterung sollte „jpg“, „jpeg“, „png“ oder „tif“ sein.</translation>
     </message>
     <message>
@@ -3284,8 +3318,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbeitsbereich "%1" hat %2 Projektordner, die anscheinend nicht mehr verwendet werden. Möchten Sie sie entfernen?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbeitsbereich &quot;%1&quot; hat %2 Projektordner, die anscheinend nicht mehr verwendet werden. Möchten Sie sie entfernen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3884,8 +3918,8 @@ Do you really want to import this file?</source>
         <translation>Definition der Variablen</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit der JavaScript-Sprache definieren. Bitte lesen Sie den Text &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -decoration: underline; color:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit der JavaScript-Sprache definieren. Bitte lesen Sie den Text &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; -decoration: underline; color:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3975,8 +4009,8 @@ Do you really want to import this file?</source>
         <translation>Runter (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Operationsberechnungen als Variable verwenden, die weiter oben in der Liste angezeigt wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Operationsberechnungen als Variable verwenden, die weiter oben in der Liste angezeigt wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

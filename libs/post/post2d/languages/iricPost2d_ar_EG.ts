@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,8 +58,8 @@
         <translation>الرجاء تحديد القيمة المطلوب تصديرها.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>لم يتم رسم كفاف في "الوضع المنفصل".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>لم يتم رسم كفاف في &quot;الوضع المنفصل&quot;.</translation>
     </message>
 </context>
 <context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>إعداد العددية (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">معلومة</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
 </context>
 <context>
@@ -509,8 +522,8 @@
         <translation type="vanished">خطأ</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>تحديث إعداد الرسم البياني</translation>
+        <translation type="vanished">تحديث إعداد الرسم البياني</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">إعداد الرسم البياني</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">استمارة</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">اتجاه</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">أنا أتوجه</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">اتجاه J</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">منطقة</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">الجميع</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">منطقة جزئية</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">يبدأ:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">نهاية:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">يتخطى:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">مخصص</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">يحرر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">ارسم الاتجاه</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">عمودي لخطوط الشبكة</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">بالتوازي مع خطوط الشبكة</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">خطوط الشبكة</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">يرسم</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">خطوط الرسم البياني</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">القيمة المادية:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">مقياس:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">لا تعديل</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">اطرح أقصى قيمة في كل سطر</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">اطرح الحد الأدنى للقيمة في كل سطر</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">إعداد المنطقة المخصصة</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">اختر الكل (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">إلغاء تحديد الكل (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>إعداد المنطقة المخصصة</translation>
+        <translation type="vanished">إعداد المنطقة المخصصة</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>اختر الكل (&amp;S)</translation>
+        <translation type="vanished">اختر الكل (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>إلغاء تحديد الكل (&amp;U)</translation>
+        <translation type="vanished">إلغاء تحديد الكل (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>إعداد الرسم البياني</translation>
+        <translation type="vanished">إعداد الرسم البياني</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>اتجاه</translation>
+        <translation type="vanished">اتجاه</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>أنا أتوجه</translation>
+        <translation type="vanished">أنا أتوجه</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>اتجاه J</translation>
+        <translation type="vanished">اتجاه J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>منطقة</translation>
+        <translation type="vanished">منطقة</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>الجميع</translation>
+        <translation type="vanished">الجميع</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>منطقة جزئية</translation>
+        <translation type="vanished">منطقة جزئية</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>يبدأ:</translation>
+        <translation type="vanished">يبدأ:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>نهاية:</translation>
+        <translation type="vanished">نهاية:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>يتخطى:</translation>
+        <translation type="vanished">يتخطى:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>مخصص</translation>
+        <translation type="vanished">مخصص</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>يحرر (&amp;E)...</translation>
+        <translation type="vanished">يحرر (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>ارسم الاتجاه</translation>
+        <translation type="vanished">ارسم الاتجاه</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>عمودي لخطوط الشبكة</translation>
+        <translation type="vanished">عمودي لخطوط الشبكة</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>بالتوازي مع خطوط الشبكة</translation>
+        <translation type="vanished">بالتوازي مع خطوط الشبكة</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>خطوط الشبكة</translation>
+        <translation type="vanished">خطوط الشبكة</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>يرسم</translation>
+        <translation type="vanished">يرسم</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>خطوط الرسم البياني</translation>
+        <translation type="vanished">خطوط الرسم البياني</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>القيمة المادية:</translation>
+        <translation type="vanished">القيمة المادية:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>مقياس:</translation>
+        <translation type="vanished">مقياس:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>لا تعديل</translation>
+        <translation type="vanished">لا تعديل</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>اطرح أقصى قيمة في كل سطر</translation>
+        <translation type="vanished">اطرح أقصى قيمة في كل سطر</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>اطرح الحد الأدنى للقيمة في كل سطر</translation>
+        <translation type="vanished">اطرح الحد الأدنى للقيمة في كل سطر</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1122,27 @@
         <translation>الإعداد العددي (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">لتصدير KML للتجوّل الافتراضي ، يجب أن يكون Colormode هو "الوضع المنفصل"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">لتصدير KML للتجوّل الافتراضي ، يجب أن يكون Colormode هو &quot;الوضع المنفصل&quot;</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن تكون القيمة قيمة حقيقية ، هذه قيمة عدد صحيح.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
-        <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن يكون وضع الألوان "الوضع المنفصل"</translation>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن يكون وضع الألوان &quot;الوضع المنفصل&quot;</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">معلومة</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,16 +1194,16 @@
         <translation type="vanished">خطأ</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>العددية</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، قم بتبديل إعداد اللون إلى "وضع منفصل".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، قم بتبديل إعداد اللون إلى &quot;وضع منفصل&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">فاصل مساحة الجيل</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } ص {margin-top: 3px؛ margin-bottom: 3px؛} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p&gt; إذا حددت 1 ، يتم إنشاء الجسيمات في عقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا حددت 2 ، يتم إنشاء الجسيمات في العقد الشبكية والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا قمت بتحديد حدد 1/2 ، يتم إنشاء الجسيمات لكل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } ص {margin-top: 3px؛ margin-bottom: 3px؛} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p&gt; إذا حددت 1 ، يتم إنشاء الجسيمات في عقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا حددت 2 ، يتم إنشاء الجسيمات في العقد الشبكية والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا قمت بتحديد حدد 1/2 ، يتم إنشاء الجسيمات لكل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">مقاس:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">مقاس:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">فاصل مساحة الجيل</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; إذا حددت 1 ، تبدأ التبسيط عند عقد الشبكة. &lt;/p&gt; &lt;p style = "margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛" &gt; إذا حددت 2 ، تبدأ التبسيط عند عقد الشبكة ، والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p style = "margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; إذا حددت 1/2 ، يبدأ التبسيط من كل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; إذا حددت 1 ، تبدأ التبسيط عند عقد الشبكة. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛&quot; &gt; إذا حددت 2 ، تبدأ التبسيط عند عقد الشبكة ، والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p style = &quot;margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; إذا حددت 1/2 ، يبدأ التبسيط من كل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">عرض:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">عرض:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
