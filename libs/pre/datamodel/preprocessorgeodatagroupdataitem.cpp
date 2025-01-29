@@ -38,7 +38,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <geodata/pointmap/geodatapointmap.h>
@@ -215,7 +215,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	}
 	filters.push_front(QString(tr("All importable files (%1)")).arg(availableExtensions.join(" ")));
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 	// Select the file to import.
 	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
@@ -547,7 +547,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(QObject* c)
 	}
 	filters.push_front(QString(tr("All importable files (%1)")).arg(availableExtensions.join(" ")));
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 	// Select the file to import.
 	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
@@ -739,7 +739,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		delete wDialog;
 	}
 	// All imports succeeded.
-	LastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::set(finfo.absolutePath());
 
 	updateItemMap();
 	updateZDepthRange();
@@ -1251,7 +1251,7 @@ void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 
 void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 {
-	QString filename = QFileDialog::getSaveFileName(mainWindow(), tr("Export Polygons"), LastIODirectory::get(), tr("ESRI Shapefile (*.shp)"));
+	QString filename = QFileDialog::getSaveFileName(mainWindow(), tr("Export Polygons"), GeoLastIODirectory::get(), tr("ESRI Shapefile (*.shp)"));
 	if (filename.isEmpty()) {return;}
 	QString dbfFilename;
 	GeoDataPolygonRealCreator* c = new GeoDataPolygonRealCreator();
