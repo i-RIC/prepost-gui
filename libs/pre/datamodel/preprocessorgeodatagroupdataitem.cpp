@@ -739,7 +739,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		delete wDialog;
 	}
 	// All imports succeeded.
-	GeoLastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(filename);
 
 	updateItemMap();
 	updateZDepthRange();

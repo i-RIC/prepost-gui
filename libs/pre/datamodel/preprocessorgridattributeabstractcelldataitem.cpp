@@ -409,8 +409,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::exportToFile()
 		}
 		exporter.close();
 		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
-		QFileInfo finfo(fname);
-		GeoLastIODirectory::set(finfo.absolutePath());
+		GeoLastIODirectory::setFromFilename(fname);
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}

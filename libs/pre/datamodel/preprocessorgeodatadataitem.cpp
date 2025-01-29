@@ -157,8 +157,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 
 	// execute export.
 	exporter->doExport(m_geoData, filename, selectedFilter, mainW, projectData());
-	QFileInfo finfo(filename);
-	GeoLastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(filename);
 }
 
 void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)

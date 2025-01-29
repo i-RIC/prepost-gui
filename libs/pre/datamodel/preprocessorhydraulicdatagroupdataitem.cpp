@@ -157,7 +157,7 @@ void PreProcessorHydraulicDataGroupDataItem::import()
 		}
 	}
 
-	GeoLastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(filename);
 
 	updateItemMap();
 
