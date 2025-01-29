@@ -16,7 +16,7 @@
 #include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/informationdialog.h>
 #include <misc/mathsupport.h>
 #include <misc/tpoexporter.h>
@@ -560,7 +560,7 @@ void GeoDataPointmap::PointsManager::filterSelectedPoints()
 void GeoDataPointmap::PointsManager::exportSelectedPoints()
 {
 	auto w = m_parent->preProcessorWindow();
-	auto dir = LastIODirectory::get();
+	auto dir = GeoLastIODirectory::get();
 	auto fname = QFileDialog::getSaveFileName(w, GeoDataPointmap::tr("Select file name to export"), dir,
 																						GeoDataPointmap::tr("Topography File (*.tpo)"));
 
@@ -584,8 +584,7 @@ void GeoDataPointmap::PointsManager::exportSelectedPoints()
 
 	exporter.close();
 
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(fname);
 }
 
 void GeoDataPointmap::PointsManager::remeshTinAndSwitchToTinEditMode()
