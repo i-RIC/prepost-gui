@@ -37,7 +37,7 @@
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/qscreenutil.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/tpoexporter.h>
@@ -367,7 +367,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::exportToFile()
 		return;
 	}
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString filter(tr("Topography File (*.tpo)"));
 
 	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Export as Topography Data"), dir, filter);
@@ -410,7 +410,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::exportToFile()
 		exporter.close();
 		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
-		LastIODirectory::set(finfo.absolutePath());
+		GeoLastIODirectory::set(finfo.absolutePath());
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}
