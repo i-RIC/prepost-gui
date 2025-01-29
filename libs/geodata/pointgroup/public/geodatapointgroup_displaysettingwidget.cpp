@@ -4,7 +4,7 @@
 #include "../private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller.h"
 #include "ui_geodatapointgroup_displaysettingwidget.h"
 
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
@@ -157,7 +157,7 @@ void GeoDataPointGroup::DisplaySettingWidget::setIsReferenceInformation(bool isR
 
 void GeoDataPointGroup::DisplaySettingWidget::importImage()
 {
-	auto fname = QFileDialog::getOpenFileName(this, tr("Select image file"), LastIODirectory::get(),
+	auto fname = QFileDialog::getOpenFileName(this, tr("Select image file"), GeoLastIODirectory::get(),
 																						tr("All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)"));
 	if (fname.isNull()) {return;}
 
