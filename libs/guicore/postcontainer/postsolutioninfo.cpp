@@ -28,7 +28,7 @@
 #include <guibase/widget/itemselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
 #include <misc/filesystemfunction.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -926,7 +926,7 @@ void PostSolutionInfo::exportCalculationResult()
 		expDialog.setIJKRange(dim[0], dim[1], dim[2]);
 	}
 	if (m_exportSetting.folder == "") {
-		m_exportSetting.folder = LastIODirectory::get();
+		m_exportSetting.folder = ProjectLastIODirectory::get();
 	}
 	expDialog.setExportSetting(m_exportSetting);
 
