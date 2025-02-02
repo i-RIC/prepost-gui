@@ -9,7 +9,7 @@
 #include <guibase/qwtplotcustomcurve.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/xmlsupport.h>
 
 #include <QClipboard>
@@ -466,28 +466,24 @@ void InputConditionWidgetFunctionalDialog::removeSelected()
 
 void InputConditionWidgetFunctionalDialog::importFromCsv()
 {
-	QString fileName;
-	QString dir = LastIODirectory::get();
-	fileName = QFileDialog::getOpenFileName(this, tr("Choose a text file"), dir, tr("Text files (*.csv *.txt);;All files (*.*)"));
+	QString dir = ProjectLastIODirectory::get();
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Choose a text file"), dir, tr("Text files (*.csv *.txt);;All files (*.*)"));
 	if (fileName.isEmpty()) {
 		return;
 	}
-	dir = QFileInfo(fileName).absolutePath();
-	LastIODirectory::set(dir);
+	ProjectLastIODirectory::setFromFilename(fileName);
 
 	importFromCsv(fileName);
 }
 
 void InputConditionWidgetFunctionalDialog::exportToCsv()
 {
-	QString fileName;
-	QString dir = LastIODirectory::get();
-	fileName = QFileDialog::getSaveFileName(this, tr("Specify file name to save"), dir, tr("CSV files (*.csv)"));
+	QString dir = ProjectLastIODirectory::get();
+	QString fileName = QFileDialog::getSaveFileName(this, tr("Specify file name to save"), dir, tr("CSV files (*.csv)"));
 	if (fileName.isEmpty()){
 		return;
 	}
-	dir = QFileInfo(fileName).absolutePath();
-	LastIODirectory::set(dir);
+	ProjectLastIODirectory::setFromFilename(fileName);
 
 	QFile file(fileName);
 	if (! file.open(QFile::WriteOnly | QFile::Text)){
