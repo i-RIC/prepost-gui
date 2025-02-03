@@ -48,7 +48,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -395,7 +395,7 @@ void PreProcessorGridDataItem::exportGrid()
 		}
 	}
 	logFile.close();
-	QString dir = LastIODirectory::get();
+	QString dir = ProjectLastIODirectory::get();
 	QString selectedFilter;
 	QStringList filters;
 	QList<GridExporterI*> exporters;
@@ -438,8 +438,7 @@ void PreProcessorGridDataItem::exportGrid()
 		projectData()->mainWindow()->statusBar()->clearMessage();
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Exporting grid to %1 failed.").arg(QDir::toNativeSeparators(filename)));
 	}
-	QFileInfo finfo(filename);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(filename);
 }
 
 void PreProcessorGridDataItem::showDisplaySettingDialog()
