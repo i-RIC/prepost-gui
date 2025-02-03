@@ -944,6 +944,26 @@ const GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection() const
 	return m_crosssection;
 }
 
+GeoDataRiverPathPointOdnData& GeoDataRiverPathPoint::odn()
+{
+	return m_odn;
+}
+
+const GeoDataRiverPathPointOdnData& GeoDataRiverPathPoint::odn() const
+{
+	return m_odn;
+}
+
+GeoDataRiverPathPointJmkData& GeoDataRiverPathPoint::jmk()
+{
+	return m_jmk;
+}
+
+const GeoDataRiverPathPointJmkData& GeoDataRiverPathPoint::jmk() const
+{
+	return m_jmk;
+}
+
 const QPointF& GeoDataRiverPathPoint::crosssectionDirection() const
 {
 	return m_crosssectionDirection;

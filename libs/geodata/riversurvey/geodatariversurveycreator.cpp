@@ -6,6 +6,7 @@
 #include "geodatariversurveylandxmlexporter.h"
 #include "geodatariversurveymlitimporter.h"
 #include "geodatariversurveynodemapper.h"
+#include "geodatariversurveyodnimporter.h"
 #include "geodatariversurveyvtkexporter.h"
 #include "geodatariversurveywebimporter.h"
 
@@ -17,6 +18,7 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	GeoDataCreator {"riversurvey", tr("Cross-Section Data")}
 {
 	importers().push_back(new GeoDataRiverSurveyImporter(this));
+	importers().push_back(new GeoDataRiverSurveyOdnImporter(this));
 	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
 
 	webImporters().push_back(new GeoDataRiverSurveyWebImporter(this));

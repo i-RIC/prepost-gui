@@ -3,6 +3,9 @@
 
 #include "gd_riversurvey_global.h"
 #include "geodatarivercrosssection.h"
+#include "geodatariverpathpointjmkdata.h"
+#include "geodatariverpathpointodndata.h"
+
 #include <misc/versionnumber.h>
 
 #include <QPointF>
@@ -113,6 +116,10 @@ public:
 	void setName(const QString& newname);
 	GeoDataRiverCrosssection& crosssection();
 	const GeoDataRiverCrosssection& crosssection() const;
+	GeoDataRiverPathPointOdnData& odn();
+	const GeoDataRiverPathPointOdnData& odn() const;
+	GeoDataRiverPathPointJmkData& jmk();
+	const GeoDataRiverPathPointJmkData& jmk() const;
 	/// The direction of crosssection along left bank to right bank
 	const QPointF& crosssectionDirection() const;
 	/// The direction of left-bank side "wing".
@@ -261,6 +268,8 @@ private:
 	vtkSmartPointer<vtkStructuredGrid> m_areaGrid;
 
 	GeoDataRiverCrosssection m_crosssection;
+	GeoDataRiverPathPointOdnData m_odn;
+	GeoDataRiverPathPointJmkData m_jmk;
 
 	Interpolator2D1* m_riverCenter;
 	Interpolator2D1* m_leftBank;

@@ -173,6 +173,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveymappointsdialog.h \
            geodatariversurveymlitimporter.h \
            geodatariversurveynodemapper.h \
+           geodatariversurveyodnimporter.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
            geodatariversurveywebimporter.h \
@@ -270,6 +271,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveymappointsdialog.cpp \
            geodatariversurveymlitimporter.cpp \
            geodatariversurveynodemapper.cpp \
+           geodatariversurveyodnimporter.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
            geodatariversurveywebimporter.cpp \

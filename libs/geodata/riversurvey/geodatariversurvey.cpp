@@ -48,10 +48,13 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatadataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -1511,6 +1514,13 @@ void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 {
 	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	gItem->informCtrlPointUpdateToCrosssectionWindows();
+}
+
+HydraulicDataRiverSurveyWaterElevation* GeoDataRiverSurvey::defaultWSE() const
+{
+	auto weGroup = hydraulicDataGroupDataItem("waterelevation");
+	auto weItem = dynamic_cast<PreProcessorHydraulicDataDataItemI*> (weGroup->childItems().at(0));
+	return dynamic_cast<HydraulicDataRiverSurveyWaterElevation*> (weItem->hydraulicData());
 }
 
 void GeoDataRiverSurvey::displaySetting()

@@ -14,13 +14,13 @@
 
 #include <QPoint>
 
+class GridCreatingConditionRiverSurveyI;
+class HydraulicDataRiverSurveyWaterElevation;
+
 class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
 
-class GridCreatingConditionRiverSurveyI;
-
-/// Polygon container.
 /**
  * GeoDataPolygon uses vtkPolygon instance as the container (m_polygon),
  * but has interfaces to use QPolygon instances for input / output.
@@ -80,6 +80,8 @@ public:
 
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
+
+	HydraulicDataRiverSurveyWaterElevation* defaultWSE() const;
 
 	GeoDataProxy* getProxy() override;
 
