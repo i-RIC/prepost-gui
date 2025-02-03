@@ -784,6 +784,7 @@ void ProjectMainFile::addBackgroundImage()
 		BackgroundImageInfo* image = new BackgroundImageInfo(to, this);
 		image->initializePosition(fname);
 		addBackgroundImage(image);
+		ProjectLastIODirectory::setFromFilename(fname);
 	} catch (ErrorMessage m) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
 	}

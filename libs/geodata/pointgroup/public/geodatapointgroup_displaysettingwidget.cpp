@@ -165,6 +165,7 @@ void GeoDataPointGroup::DisplaySettingWidget::importImage()
 	m_pixmap = QPixmap::fromImage(image);
 
 	updateImage();
+	GeoLastIODirectory::setFromFilename(fname);
 }
 
 void GeoDataPointGroup::DisplaySettingWidget::updateImage()
