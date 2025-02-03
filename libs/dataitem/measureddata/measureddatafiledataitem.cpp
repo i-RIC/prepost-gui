@@ -11,7 +11,7 @@
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/errormessage.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/xmlsupport.h>
 #include <pre/preprocessordatamodel.h>
 
@@ -89,7 +89,7 @@ void MeasuredDataFileDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 void MeasuredDataFileDataItem::exportToFile()
 {
-	QString dir = LastIODirectory::get();
+	QString dir = ProjectLastIODirectory::get();
 	QString filter(tr("CSV file (*.csv)"));
 	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Export Measured Data"), dir, filter);
 	if (fname == "") { return; }
@@ -102,6 +102,8 @@ void MeasuredDataFileDataItem::exportToFile()
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}
+
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 MeasuredData* MeasuredDataFileDataItem::measuredData() const
