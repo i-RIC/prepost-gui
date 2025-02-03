@@ -21,7 +21,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 
 PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* dataitem) :
 	PreProcessorGridCreatingConditionDataItemI {dataitem},
@@ -479,7 +479,7 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 
 void PreProcessorGridCreatingConditionDataItem::importData()
 {
-	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
+	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Select file to import"), ProjectLastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
 	if (fname.isNull()) {return;}
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
@@ -499,8 +499,7 @@ void PreProcessorGridCreatingConditionDataItem::importData()
 	connect(newcond, &GridCreatingCondition::gridCreated, this, &PreProcessorGridCreatingConditionDataItem::handleNewGrid);
 	connect(newcond, &GridCreatingCondition::tmpGridCreated, this, &PreProcessorGridCreatingConditionDataItem::handleTmpGrid);
 
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 
 	bool ret = newcond->init();
 	if (ret) {
@@ -525,10 +524,12 @@ void PreProcessorGridCreatingConditionDataItem::exportData()
 		return;
 	}
 
-	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Select file to export"), LastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
+	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Select file to export"), ProjectLastIODirectory::get(), tr("iRIC grid creating condition file(*.igcc)"));
 	if (fname.isNull()) {return;}
 
 	GridCreatingConditionIO::exportData(impl->m_condition, fname, projectData()->workDirectory());
+
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void PreProcessorGridCreatingConditionDataItem::doApplyOffset(double x, double y)
