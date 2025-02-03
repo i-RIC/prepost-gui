@@ -111,6 +111,8 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
 	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map geographic data to cross sections"), rs)},
 	m_generatePointMapAction {new QAction(GeoDataRiverSurvey::tr("Generate point cloud data"), rs)},
+	m_importJmkAction {new QAction(GeoDataRiverSurvey::tr("Import JMK file"), rs)},
+	m_exportJmkAction {new QAction(GeoDataRiverSurvey::tr("Export JMK file"), rs)},
 	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
 	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
 	m_pixmapMove {":/libs/guibase/images/cursorItemMove.png"},
@@ -219,10 +221,12 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeLeftExtensionPoint()));
 	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeRightExtensionPoint()));
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
-	connect(m_displaySettingAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
-	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
+	connect(m_displaySettingAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::displaySetting);
+	connect(m_interpolateSplineAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::switchInterpolateModeToSpline);
 	connect(m_mapPointsAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::mapPointsData);
-	connect(m_generatePointMapAction, SIGNAL(triggered()), m_rs, SLOT(generatePointMap()));
+	connect(m_generatePointMapAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::generatePointMap);
+	connect(m_importJmkAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::importJmk);
+	connect(m_exportJmkAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::exportJmk);
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToLinear()));
@@ -455,6 +459,10 @@ void GeoDataRiverSurvey::Impl::setupEditModeMenu(QMenu* m)
 	m->addSeparator();
 	m->addAction(m_mapPointsAction);
 	m->addAction(m_generatePointMapAction);
+
+	m->addSeparator();
+	m->addAction(m_importJmkAction);
+	m->addAction(m_exportJmkAction);
 
 	m->addSeparator();
 	m->addAction(m_rs->deleteAction());

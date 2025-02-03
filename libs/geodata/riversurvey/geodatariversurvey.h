@@ -115,6 +115,8 @@ private slots:
 	void switchInterpolateModeToSpline();
 	void mapPointsData();
 	void generatePointMap();
+	void importJmk();
+	void exportJmk();
 
 signals:
 	void dataUpdated();

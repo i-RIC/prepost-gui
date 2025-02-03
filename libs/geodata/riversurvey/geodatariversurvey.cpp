@@ -12,6 +12,8 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "geodatariversurveydisplaysettingdialog.h"
+#include "geodatariversurveyjmkexporter.h"
+#include "geodatariversurveyjmkimporter.h"
 #include "geodatariversurveygeneratedialog.h"
 #include "geodatariversurveymappointsdialog.h"
 #include "geodatariversurveyproxy.h"
@@ -58,6 +60,7 @@
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
+#include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/modifycommanddialog.h>
 #include <misc/qscreenutil.h>
@@ -66,6 +69,7 @@
 #include <QAction>
 #include <QDomElement>
 #include <QFile>
+#include <QFileDialog>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -1653,6 +1657,28 @@ void GeoDataRiverSurvey::generatePointMap()
 	gItem->addGeoData(item);
 
 	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
+}
+
+void GeoDataRiverSurvey::importJmk()
+{
+	auto fname = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), LastIODirectory::get(), tr("JMK file (*.jmk)"));
+	if (fname.isNull()) {return;}
+
+	GeoDataRiverSurveyJmkImporter importer;
+	bool ok = importer.import(fname, this, preProcessorWindow());
+	if (! ok) {return;}
+
+	updateCrosssectionWindows();
+}
+
+void GeoDataRiverSurvey::exportJmk()
+{
+	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), LastIODirectory::get(), tr("JMK file (*.jmk)"));
+	if (fname.isNull()) {return;}
+
+	GeoDataRiverSurveyJmkExporter exporter;
+	bool ok = exporter.doExport(fname, this, preProcessorWindow());
+
 }
 
 void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)
