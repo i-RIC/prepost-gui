@@ -232,6 +232,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 			drawLine(refPoint, c, painter);
 		}
 
+		drawJmkLine(painter);
 		drawLine(&m_oldLine, Qt::gray, painter);
 		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
@@ -341,6 +342,56 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 		oldpoint = newpoint;
 		first = false;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
+{
+	const auto& xsec = m_parentWindow->target()->crosssection();
+	auto& alist = xsec.AltitudeInfo();
+	const auto& jmk = m_parentWindow->target()->jmk();
+
+	painter.save();
+	painter.setPen(Qt::darkGreen);
+
+	for (const auto& item : jmk.items()) {
+		auto lb = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift(), 0));
+		auto ub = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift() + item.width, 0));
+		if (lb == alist.end() || ub == alist.end()) {continue;}
+
+		auto lb_idx = lb - alist.begin();
+		auto ub_idx = ub - alist.begin();
+		std::vector<QPointF> points;
+
+		// start
+		if (lb_idx == 0) {
+			const auto& a = alist.at(0);
+			points.push_back(m_matrix.map(QPointF(a.position(), a.height())));
+			points.push_back(m_matrix.map(QPointF(a.position(), a.height() + item.height)));
+		} else {
+			const auto& a1 = alist.at(lb_idx - 1);
+			const auto& a2 = alist.at(lb_idx);
+			auto r = (item.distance - xsec.leftShift() - a1.position()) / (a2.position() - a1.position());
+			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift(), (1 - r) * a1.height() + r * a2.height())));
+			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift(), (1 - r) * a1.height() + r * a2.height() + item.height)));
+		}
+		for (auto it = lb; it != ub; ++it) {
+			points.push_back(m_matrix.map(QPointF(it->position(), it->height() + item.height)));
+		}
+		// end
+		{
+			const auto& a1 = alist.at(ub_idx - 1);
+			const auto& a2 = alist.at(ub_idx);
+			auto r = (item.distance - xsec.leftShift() + item.width - a1.position()) / (a2.position() - a1.position());
+			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift() + item.width, (1 - r) * a1.height() + r * a2.height() + item.height)));
+			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift() + item.width, (1 - r) * a1.height() + r * a2.height())));
+		}
+
+		for (int i = 0; i < static_cast<int> (points.size()) - 1; ++i) {
+			painter.drawLine(QLineF(points.at(i), points.at(i + 1)));
+		}
+	}
+
+	painter.restore();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& painter)
