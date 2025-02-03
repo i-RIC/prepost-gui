@@ -4,7 +4,7 @@
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/xmlsupport.h>
 
 #include <QAction>
@@ -141,7 +141,7 @@ void SolverConsoleWindowProjectDataItem::close()
 
 void SolverConsoleWindowProjectDataItem::exportConsoleLog()
 {
-	QString defName =  QDir(LastIODirectory::get()).absoluteFilePath("consolelog.txt");
+	QString defName =  QDir(ProjectLastIODirectory::get()).absoluteFilePath("consolelog.txt");
 	QString fname = QFileDialog::getSaveFileName(
 										projectData()->mainWindow(), tr("Select File to Export"), defName, tr("Text file (*.txt)")
 									);
@@ -155,8 +155,7 @@ void SolverConsoleWindowProjectDataItem::exportConsoleLog()
 	ret = ret && QFile::copy(filename(), fname);
 	if (ret) {
 		projectData()->mainWindow()->statusBar()->showMessage(tr("Solver console log is successfully exported to %1.").arg(fname), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
-		QFileInfo finfo(fname);
-		LastIODirectory::set(finfo.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 	} else {
 		projectData()->mainWindow()->statusBar()->clearMessage();
 		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Exporting solver console log failed."));
