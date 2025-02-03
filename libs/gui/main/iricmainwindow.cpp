@@ -1715,7 +1715,7 @@ void iRICMainWindow::initSetting()
 	} else {
 		m_locale = QLocale(loc);
 	}
-	QString lastio = settings.value("general/lastiodir").toString();
+	QString lastio = settings.value("general/projectlastiodir").toString();
 	if (lastio == "" || ! QDir(lastio).exists()) {
 		lastio = QDir::homePath();
 	}
