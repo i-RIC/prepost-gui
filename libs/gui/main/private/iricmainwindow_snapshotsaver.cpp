@@ -2,7 +2,7 @@
 
 #include <guicore/base/qmainwindowwithsnapshot.h>
 #include <guicore/project/projectdata.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
@@ -22,7 +22,7 @@ iRICMainWindow::SnapshotSaver::SnapshotSaver(iRICMainWindow* mainWindow) :
 
 void iRICMainWindow::SnapshotSaver::save(QMainWindowWithSnapshot* enabledWindow)
 {
-	QString defaultname = QDir(LastIODirectory::get()).absoluteFilePath("snapshot");
+	QString defaultname = QDir(ProjectLastIODirectory::get()).absoluteFilePath("snapshot");
 	QString fileTypes = iRICMainWindow::tr("PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)");
 	if (enabledWindow->getVtkRenderWindow() != nullptr) {
 		fileTypes.append(iRICMainWindow::tr(";;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)"));
@@ -83,6 +83,6 @@ void iRICMainWindow::SnapshotSaver::save(QMainWindowWithSnapshot* enabledWindow)
 		QMessageBox::warning(m_mainWindow, tr("Warning"), tr("Wrong file name specified."));
 		return;
 	}
-	LastIODirectory::set(QFileInfo(filename).absolutePath());
+	ProjectLastIODirectory::setFromFilename(filename);
 	m_mainWindow->statusBar()->showMessage(iRICMainWindow::tr("Snapshot successfully saved to %1.").arg(QDir::toNativeSeparators(filename)), iRICMainWindow::STATUSBAR_DISPLAYTIME);
 }
