@@ -3,8 +3,10 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
 #include <guibase/vtktool/vtkpointsetvaluerangeset.h>
 #include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
@@ -139,6 +141,48 @@ const std::unordered_map<std::string, ValueRangeContainer>& Post3dWindowGridType
 	return m_cellValueRanges;
 }
 
+const ValueRangeContainer& Post3dWindowGridTypeDataItem::iFaceValueRange(const std::string& name) const
+{
+	const auto it = m_iFaceValueRanges.find(name);
+	if (it != m_iFaceValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post3dWindowGridTypeDataItem::iFaceValueRanges() const
+{
+	return m_iFaceValueRanges;
+}
+
+const ValueRangeContainer& Post3dWindowGridTypeDataItem::jFaceValueRange(const std::string& name) const
+{
+	const auto it = m_jFaceValueRanges.find(name);
+	if (it != m_jFaceValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post3dWindowGridTypeDataItem::jFaceValueRanges() const
+{
+	return m_jFaceValueRanges;
+}
+
+const ValueRangeContainer& Post3dWindowGridTypeDataItem::kFaceValueRange(const std::string& name) const
+{
+	const auto it = m_kFaceValueRanges.find(name);
+	if (it != m_kFaceValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post3dWindowGridTypeDataItem::kFaceValueRanges() const
+{
+	return m_kFaceValueRanges;
+}
+
 const ValueRangeContainer& Post3dWindowGridTypeDataItem::particleValueRange(const std::string& name) const
 {
 	const auto it = m_particleValueRanges.find(name);
@@ -180,6 +224,9 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 	if (zCont != nullptr) {
 		updateNodeValueRanges();
 		updateCellValueRanges();
+		updateiFaceValueRanges();
+		updatejFaceValueRanges();
+		updatekFaceValueRanges();
 		updateParticleValueRanges();
 	}
 
@@ -198,6 +245,9 @@ void Post3dWindowGridTypeDataItem::update()
 	// update value range.
 	updateNodeValueRanges();
 	updateCellValueRanges();
+	updateiFaceValueRanges();
+	updatejFaceValueRanges();
+	updatekFaceValueRanges();
 	updateParticleValueRanges();
 
 	for (Post3dWindowZoneDataItem* item : m_zoneDatas) {
@@ -224,6 +274,42 @@ void Post3dWindowGridTypeDataItem::updateCellValueRanges()
 		if (zItem->v4DataContainer() == nullptr) {continue;}
 
 		merge(zItem->v4DataContainer()->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+	}
+}
+
+void Post3dWindowGridTypeDataItem::updateiFaceValueRanges()
+{
+	m_iFaceValueRanges.clear();
+
+	for (auto zItem : m_zoneDatas) {
+		if (zItem->v4DataContainer() == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured3dGrid*> (zItem->v4DataContainer()->gridData()->grid());
+		merge(sGrid->vtkIFaceData()->valueRangeSet().cellDataValueRanges(), &m_iFaceValueRanges);
+	}
+}
+
+void Post3dWindowGridTypeDataItem::updatejFaceValueRanges()
+{
+	m_jFaceValueRanges.clear();
+
+	for (auto zItem : m_zoneDatas) {
+		if (zItem->v4DataContainer() == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured3dGrid*> (zItem->v4DataContainer()->gridData()->grid());
+		merge(sGrid->vtkJFaceData()->valueRangeSet().cellDataValueRanges(), &m_jFaceValueRanges);
+	}
+}
+
+void Post3dWindowGridTypeDataItem::updatekFaceValueRanges()
+{
+	m_kFaceValueRanges.clear();
+
+	for (auto zItem : m_zoneDatas) {
+		if (zItem->v4DataContainer() == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured3dGrid*> (zItem->v4DataContainer()->gridData()->grid());
+		merge(sGrid->vtkKFaceData()->valueRangeSet().cellDataValueRanges(), &m_kFaceValueRanges);
 	}
 }
 

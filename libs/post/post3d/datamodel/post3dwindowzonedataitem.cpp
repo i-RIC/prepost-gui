@@ -5,6 +5,9 @@
 #include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
+#include "post3dwindowifacecontourgrouptopdataitem.h"
+#include "post3dwindowjfacecontourgrouptopdataitem.h"
+#include "post3dwindowkfacecontourgrouptopdataitem.h"
 #include "post3dwindownodescalargroupdataitem.h"
 #include "post3dwindownodescalargrouptopdataitem.h"
 #include "post3dwindownodevectorarrowtopdataitem.h"
@@ -42,6 +45,9 @@ Post3dWindowZoneDataItem::Impl::Impl(const std::string& zoneName) :
 	m_shapeDataItem {nullptr},
 	m_contourGroupTopItem {nullptr},
 	m_cellContourGroupTopItem {nullptr},
+	m_iFaceContourGroupTopItem {nullptr},
+	m_jFaceContourGroupTopItem {nullptr},
+	m_kFaceContourGroupTopItem {nullptr},
 	m_scalarGroupDataItem {nullptr},
 	m_arrowTopDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
@@ -85,6 +91,16 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 		impl->m_cellContourGroupTopItem = new Post3dWindowCellContourGroupTopDataItem(this);
 	}
 
+	if (grid->scalarValueExists(v4SolutionGrid::Position::IFace)) {
+		impl->m_iFaceContourGroupTopItem = new Post3dWindowIFaceContourGroupTopDataItem(this);
+	}
+	if (grid->scalarValueExists(v4SolutionGrid::Position::JFace)) {
+		impl->m_jFaceContourGroupTopItem = new Post3dWindowJFaceContourGroupTopDataItem(this);
+	}
+	if (grid->scalarValueExists(v4SolutionGrid::Position::KFace)) {
+		impl->m_kFaceContourGroupTopItem = new Post3dWindowKFaceContourGroupTopDataItem(this);
+	}
+
 	if (grid->vectorValueExists(v4SolutionGrid::Position::Node)) {
 		impl->m_arrowTopDataItem = new Post3dWindowNodeVectorArrowTopDataItem(this);
 		impl->m_streamlineGroupDataItem = new Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
@@ -105,6 +121,9 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	addChildItem(impl->m_contourGroupTopItem);
 	addChildItem(impl->m_scalarGroupDataItem);
 	addChildItem(impl->m_cellContourGroupTopItem);
+	addChildItem(impl->m_iFaceContourGroupTopItem);
+	addChildItem(impl->m_jFaceContourGroupTopItem);
+	addChildItem(impl->m_kFaceContourGroupTopItem);
 	addChildItem(impl->m_arrowTopDataItem);
 	addChildItem(impl->m_streamlineGroupDataItem);
 	addChildItem(impl->m_particleGroupDataItem);
@@ -143,6 +162,21 @@ Post3dWindowContourGroupTopDataItem* Post3dWindowZoneDataItem::contourGroupTopIt
 Post3dWindowCellContourGroupTopDataItem* Post3dWindowZoneDataItem::cellContourGroupTopItem() const
 {
 	return impl->m_cellContourGroupTopItem;
+}
+
+Post3dWindowIFaceContourGroupTopDataItem* Post3dWindowZoneDataItem::iFaceContourGroupTopItem() const
+{
+	return impl->m_iFaceContourGroupTopItem;
+}
+
+Post3dWindowJFaceContourGroupTopDataItem* Post3dWindowZoneDataItem::jFaceContourGroupTopItem() const
+{
+	return impl->m_jFaceContourGroupTopItem;
+}
+
+Post3dWindowKFaceContourGroupTopDataItem* Post3dWindowZoneDataItem::kFaceContourGroupTopItem() const
+{
+	return impl->m_kFaceContourGroupTopItem;
 }
 
 Post3dWindowNodeScalarGroupTopDataItem* Post3dWindowZoneDataItem::scalarGroupDataItem() const
@@ -188,6 +222,18 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	QDomNode cellContoursNode = iRIC::getChildNode(node, "ScalarCellV4");
 	if (!cellContoursNode.isNull() && impl->m_cellContourGroupTopItem != nullptr) {
 		impl->m_cellContourGroupTopItem->loadFromProjectMainFile(cellContoursNode);
+	}
+	QDomNode iFaceContoursNode = iRIC::getChildNode(node, "ScalarIFaceV4");
+	if (!iFaceContoursNode.isNull() && impl->m_iFaceContourGroupTopItem != nullptr) {
+		impl->m_iFaceContourGroupTopItem->loadFromProjectMainFile(iFaceContoursNode);
+	}
+	QDomNode jFaceContoursNode = iRIC::getChildNode(node, "ScalarJFaceV4");
+	if (!jFaceContoursNode.isNull() && impl->m_jFaceContourGroupTopItem != nullptr) {
+		impl->m_jFaceContourGroupTopItem->loadFromProjectMainFile(jFaceContoursNode);
+	}
+	QDomNode kFaceContoursNode = iRIC::getChildNode(node, "ScalarKFaceV4");
+	if (!kFaceContoursNode.isNull() && impl->m_kFaceContourGroupTopItem != nullptr) {
+		impl->m_kFaceContourGroupTopItem->loadFromProjectMainFile(kFaceContoursNode);
 	}
 	QDomNode isosurfacesNode = iRIC::getChildNode(node, "Isosurfaces");
 	if (! isosurfacesNode.isNull() && impl->m_scalarGroupDataItem != nullptr) {
@@ -241,6 +287,21 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	if (impl->m_cellContourGroupTopItem != nullptr) {
 		writer.writeStartElement("ScalarCellV4");
 		impl->m_cellContourGroupTopItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (impl->m_iFaceContourGroupTopItem != nullptr) {
+		writer.writeStartElement("ScalarIFaceV4");
+		impl->m_iFaceContourGroupTopItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (impl->m_jFaceContourGroupTopItem != nullptr) {
+		writer.writeStartElement("ScalarJFaceV4");
+		impl->m_jFaceContourGroupTopItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (impl->m_kFaceContourGroupTopItem != nullptr) {
+		writer.writeStartElement("ScalarKFaceV4");
+		impl->m_kFaceContourGroupTopItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	if (impl->m_scalarGroupDataItem != nullptr) {

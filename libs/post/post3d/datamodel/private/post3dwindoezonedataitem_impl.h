@@ -12,6 +12,9 @@ public:
 	Post3dWindowGridShapeDataItem* m_shapeDataItem;
 	Post3dWindowContourGroupTopDataItem* m_contourGroupTopItem;
 	Post3dWindowCellContourGroupTopDataItem* m_cellContourGroupTopItem;
+	Post3dWindowIFaceContourGroupTopDataItem* m_iFaceContourGroupTopItem;
+	Post3dWindowJFaceContourGroupTopDataItem* m_jFaceContourGroupTopItem;
+	Post3dWindowKFaceContourGroupTopDataItem* m_kFaceContourGroupTopItem;
 	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
 	Post3dWindowNodeVectorArrowTopDataItem* m_arrowTopDataItem;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;

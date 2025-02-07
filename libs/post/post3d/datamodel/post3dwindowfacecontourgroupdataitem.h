@@ -1,0 +1,71 @@
+#ifndef POST3DWINDOWFACECONTOURGROUPDATAITEM_H
+#define POST3DWINDOWFACECONTOURGROUPDATAITEM_H
+
+#include "../post3dwindowcellrangesettingcontainer.h"
+#include "../post3dwindowdataitem.h"
+
+#include <string>
+
+class ColorMapSettingContainerI;
+class ColorMapSettingToolBarWidget;
+class Post3dWindowFaceContourGroupTopDataItem;
+class Post3dWindowZoneDataItem;
+class v4PostZoneDataContainer;
+class ValueRangeContainer;
+
+class vtkActor2D;
+
+class Post3dWindowFaceContourGroupDataItem : public Post3dWindowDataItem
+{
+public:
+	Post3dWindowFaceContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p);
+	~Post3dWindowFaceContourGroupDataItem();
+
+	void update();
+	void updateColorMapVisibility();
+
+	const std::string& target() const;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
+
+public slots:
+	void showPropertyDialog() override;
+
+private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	QDialog* propertyDialog(QWidget* p) override;
+
+	void doUpdateActorSetting() override;
+	void updateVisibility(bool visible) override;
+
+	const ValueRangeContainer& valueRange() const;
+	Post3dWindowZoneDataItem* zoneDataItem() const;
+	v4PostZoneDataContainer* data() const;
+
+	Post3dWindowFaceContourGroupTopDataItem* topDataItem() const;
+	std::vector<Post3dWindowCellRangeSettingContainer> ranges() const;
+	void setRanges(const std::vector<Post3dWindowCellRangeSettingContainer>& ranges);
+
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
+	std::string m_target;
+
+	ColorMapSettingContainerI* m_colorMapSetting;
+	vtkActor2D* m_legendActor;
+
+	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
+
+	class SetRangesCommand;
+	class SettingEditWidget;
+
+public:
+	friend class Post3dWindowFaceContourDataItem;
+};
+
+#endif // POST3DWINDOWFACECONTOURGROUPDATAITEM_H
