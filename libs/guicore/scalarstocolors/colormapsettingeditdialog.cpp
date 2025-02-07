@@ -65,7 +65,7 @@ QUndoCommand* ColorMapSettingEditDialog::createModifyCommand() const
 
 void ColorMapSettingEditDialog::setAsDefault()
 {
-	m_defaultColorMapSettings->add(m_targetName, m_widget->setting()->copy());
+	m_defaultColorMapSettings->add(m_targetName, m_widget->copySetting());
 
 	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }

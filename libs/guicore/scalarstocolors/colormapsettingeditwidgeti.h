@@ -21,6 +21,8 @@ public:
 	ColorMapSettingContainerI* setting() const;
 	void setSetting(ColorMapSettingContainerI* setting);
 
+	virtual ColorMapSettingContainerI* copySetting() const = 0;
+
 	ColorMapLegendSettingContainerI* legendSetting() const;
 	void setLegendSetting(ColorMapLegendSettingContainerI* setting);
 

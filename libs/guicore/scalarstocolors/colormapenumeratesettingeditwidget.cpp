@@ -66,6 +66,14 @@ void ColorMapEnumerateSettingEditWidget::setConcreteSetting(const ColorMapEnumer
 	applySetting();
 }
 
+ColorMapSettingContainerI* ColorMapEnumerateSettingEditWidget::copySetting() const
+{
+	auto ret = new ColorMapEnumerateSettingContainer();
+	*ret = concreteSetting();
+
+	return ret;
+}
+
 void ColorMapEnumerateSettingEditWidget::setDisableOtherThanLegendVisible(bool disabled)
 {
 	ui->colorsGroupBox->setDisabled(disabled);

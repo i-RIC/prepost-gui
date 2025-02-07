@@ -118,6 +118,14 @@ void ColorMapSettingEditWidget::setConcreteSetting(const ColorMapSettingContaine
 	ui->legendWidget->setSetting(m_concreteSetting.legend);
 }
 
+ColorMapSettingContainerI* ColorMapSettingEditWidget::copySetting() const
+{
+	auto ret = new ColorMapSettingContainer();
+	*ret = concreteSetting();
+
+	return ret;
+}
+
 void ColorMapSettingEditWidget::setDisableOtherThanLegendVisible(bool disabled)
 {
 	ui->colorModeGroupBox->setDisabled(disabled);

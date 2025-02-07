@@ -219,7 +219,7 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::setAsDefault
 		name = m_cellValueNames.at(ui->cellScalarComboBox->currentIndex());
 	}
 
-	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(name, cmw->setting()->copy());
+	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(name, cmw->copySetting());
 
 	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }
