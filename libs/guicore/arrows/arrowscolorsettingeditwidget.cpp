@@ -137,7 +137,7 @@ void ArrowsColorSettingEditWidget::setColorMapAsDefault()
 {
 	if (m_defaultColorMapSettings == nullptr) {return;}
 
-	m_defaultColorMapSettings->add(m_colorMapNames.at(ui->scalarComboBox->currentIndex()), m_colorMapWidget->setting()->copy());
+	m_defaultColorMapSettings->add(m_colorMapNames.at(ui->scalarComboBox->currentIndex()), m_colorMapWidget->copySetting());
 
 	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }

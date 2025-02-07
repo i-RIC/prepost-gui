@@ -55,7 +55,7 @@ QUndoCommand* Post3dWindowCellContourGroupDataItem::SettingEditWidget::createMod
 void Post3dWindowCellContourGroupDataItem::SettingEditWidget::setAsDefault()
 {
 	auto cmw = m_colorMapWidget->widget();
-	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(m_item->target(), cmw->setting()->copy());
+	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(m_item->target(), cmw->copySetting());
 
 	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }
