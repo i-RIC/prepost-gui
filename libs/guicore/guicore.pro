@@ -375,13 +375,13 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
-           datamodel/private/graphicswindowdataitem_updateactorsettingcommand.h \
            datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.h \
            datamodel/private/vtkgraphicsview_impl.h \
            datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.h \
+           datamodel/public/graphicswindowdataitem_updateactorsettingcommand.h \
            grid/private/v4grid1dt_detail.h \
            grid/private/v4grid2d_impl.h \
            grid/private/v4grid2dt_detail.h \
@@ -958,12 +958,12 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
-           datamodel/private/graphicswindowdataitem_updateactorsettingcommand.cpp \
            datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.cpp \
            datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.cpp \
+           datamodel/public/graphicswindowdataitem_updateactorsettingcommand.cpp \
            grid/private/v4grid_impl.cpp \
            grid/private/v4structured1dgrid_impl.cpp \
            grid/private/v4structured2dgrid_impl.cpp \

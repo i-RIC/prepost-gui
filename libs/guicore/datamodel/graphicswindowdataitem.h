@@ -189,6 +189,8 @@ protected:
 
 
 public:
+	class UpdateActorSettingCommand;
+
 	friend class BackgroundImageInfo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
 	friend class GraphicsWindowDataItemStandardItemEditTextCommand;
@@ -198,7 +200,6 @@ private:
 	class RenderCommand;
 	class RenderRedoOnlyCommand;
 	class StandardItemModifyCommand;
-	class UpdateActorSettingCommand;
 	class UpdateActorSettingRecursiveCommand;
 };
 

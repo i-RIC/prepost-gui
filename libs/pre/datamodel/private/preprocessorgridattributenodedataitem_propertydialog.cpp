@@ -1,8 +1,11 @@
+#include "../preprocessorgriddataitem.h"
 #include "../preprocessorgridattributenodegroupdataitem.h"
+#include "../preprocessorgridtypedataitem.h"
 #include "preprocessorgridattributenodedataitem_propertydialog.h"
 #include "ui_preprocessorgridattributenodedataitem_propertydialog.h"
 
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/datamodel/public/graphicswindowdataitem_updateactorsettingcommand.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -47,7 +50,7 @@ void PreProcessorGridAttributeNodeDataItem::PropertyDialog::setSetting(GridAttri
 
 void PreProcessorGridAttributeNodeDataItem::PropertyDialog::accept()
 {
-	m_item->pushUpdateActorSettingCommand(createModifyCommand(false), m_item);
+	m_item->pushCommand(createModifyCommand(false), m_item);
 	QDialog::accept();
 }
 
@@ -69,15 +72,18 @@ void PreProcessorGridAttributeNodeDataItem::PropertyDialog::handleButtonClick(QA
 
 void PreProcessorGridAttributeNodeDataItem::PropertyDialog::apply()
 {
-	m_item->pushUpdateActorSettingCommand(createModifyCommand(true), m_item);
+	m_item->pushCommand(createModifyCommand(true), m_item);
 	m_applied = true;
 }
 
 QUndoCommand* PreProcessorGridAttributeNodeDataItem::PropertyDialog::createModifyCommand(bool apply)
 {
-	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
-	ret->addCommand(widget()->createModifyCommand());
-	ret->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
+	command->addCommand(widget()->createModifyCommand());
+	command->addCommand(ui->gridNodeSettingWidget->createModifyCommand(apply));
 
-	return ret;
+	auto command2 = new GraphicsWindowDataItem::UpdateActorSettingCommand(command, m_item);
+
+	auto gtItem = m_item->gridDataItem()->gridTypeDataItem();
+	return gtItem->createApplyColorMapSettingAndRenderCommand(m_item->target(), command2, apply);
 }
