@@ -1,8 +1,11 @@
 #include "../preprocessorgridattributeabstractcellgroupdataitem.h"
+#include "../preprocessorgriddataitem.h"
+#include "../preprocessorgridtypedataitem.h"
 #include "preprocessorgridattributeabstractcelldataitem_propertydialog.h"
 #include "ui_preprocessorgridattributeabstractcelldataitem_propertydialog.h"
 
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/datamodel/public/graphicswindowdataitem_updateactorsettingcommand.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -48,7 +51,7 @@ void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::setSetting(G
 
 void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::accept()
 {
-	m_item->pushUpdateActorSettingCommand(createModifyCommand(false), m_item);
+	m_item->pushCommand(createModifyCommand(false), m_item);
 	QDialog::accept();
 }
 
@@ -70,15 +73,18 @@ void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::handleButton
 
 void PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::apply()
 {
-	m_item->pushUpdateActorSettingCommand(createModifyCommand(true), m_item);
+	m_item->pushCommand(createModifyCommand(true), m_item);
 	m_applied = true;
 }
 
 QUndoCommand* PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog::createModifyCommand(bool apply)
 {
-	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
-	ret->addCommand(widget()->createModifyCommand());
-	ret->addCommand(ui->gridCellSettingWidget->createModifyCommand(apply));
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
+	command->addCommand(widget()->createModifyCommand());
+	command->addCommand(ui->gridCellSettingWidget->createModifyCommand(apply));
 
-	return ret;
+	auto command2 = new GraphicsWindowDataItem::UpdateActorSettingCommand(command, m_item);
+
+	auto gtItem = m_item->gridDataItem()->gridTypeDataItem();
+	return gtItem->createApplyColorMapSettingAndRenderCommand(m_item->target(), command2, apply);
 }

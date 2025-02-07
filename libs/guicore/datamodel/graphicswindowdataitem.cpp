@@ -6,11 +6,11 @@
 #include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
 
+#include "public/graphicswindowdataitem_updateactorsettingcommand.h"
 #include "private/graphicswindowdataitem_modifycommand.h"
 #include "private/graphicswindowdataitem_rendercommand.h"
 #include "private/graphicswindowdataitem_renderredoonlycommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
-#include "private/graphicswindowdataitem_updateactorsettingcommand.h"
 #include "private/graphicswindowdataitem_updateactorsettingrecursivecommand.h"
 
 #include <guicore/base/iricmainwindowi.h>
