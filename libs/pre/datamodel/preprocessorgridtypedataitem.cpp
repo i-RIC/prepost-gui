@@ -275,7 +275,7 @@ void PreProcessorGridTypeDataItem::updateColorBarVisibility(const std::string& a
 		m_actor2DCollection->AddItem(actor);
 	}
 
-	updateVisibility();
+	updateVisibilityOfActor2DCollection(isAncientChecked() && isChecked());
 }
 
 QAction* PreProcessorGridTypeDataItem::addNewGridAction() const

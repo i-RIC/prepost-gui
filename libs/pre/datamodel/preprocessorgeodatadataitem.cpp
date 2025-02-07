@@ -75,7 +75,6 @@ void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 
 void PreProcessorGeoDataDataItem::handleStandardItemChange()
 {
-	PreProcessorDataItem::handleStandardItemChange();
 	QString newcaption = m_standardItem->data(Qt::EditRole).toString();
 	if (newcaption != m_geoData->caption()) {
 		if (dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent())->isChildCaptionAvailable(newcaption)) {
@@ -88,6 +87,8 @@ void PreProcessorGeoDataDataItem::handleStandardItemChange()
 	}
 	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*> (groupDataItem());
 	gItem->gridTypeDataItem()->updateColorBarVisibility(gItem->condition()->name());
+
+	PreProcessorDataItem::handleStandardItemChange();
 }
 
 void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -21,6 +21,7 @@ const std::string& NamedGraphicWindowDataItem::name() const
 void NamedGraphicWindowDataItem::handleStandardItemChange()
 {
 	emit changed(this);
+	GraphicsWindowDataItem::handleStandardItemChange();
 }
 
 void NamedGraphicWindowDataItem::doLoadFromProjectMainFile(const QDomNode&)

@@ -124,8 +124,6 @@ void Post2dWindowGridAttributeAbstractCellDataItem::showPropertyDialog()
 void Post2dWindowGridAttributeAbstractCellDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	groupDataItem()->initAttributeBrowser();
-
-	GraphicsWindowDataItem::updateVisibility();
 }
 
 void Post2dWindowGridAttributeAbstractCellDataItem::informDeselection(VTKGraphicsView* /*v*/)
