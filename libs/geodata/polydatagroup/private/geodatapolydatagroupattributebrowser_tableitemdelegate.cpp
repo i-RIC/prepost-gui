@@ -128,10 +128,9 @@ void GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate::setModelData(QWidg
 			if (targetData != nullptr) {offset = -1;}
 			m_group->data().at(index.row() + offset)->setValue(newValue);
 		}
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_group->parent());
 		m_group->updateVtkObjects();
-		p->informValueRangeChange();
-		p->informDataChange();
+		emit m_group->valueRangeChanged();
+		emit m_group->dataChanged();
 	}
 	else if (col == 2 || (col == 1 && isRef)) {
 		return;

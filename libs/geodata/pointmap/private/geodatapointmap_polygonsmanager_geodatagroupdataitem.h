@@ -15,6 +15,8 @@ public:
 
 	ProjectData* projectData() const override;
 	SolverDefinitionGridAttribute* condition() override;
+	void informValueRangeChange() override;
+	void informDataChange() override;
 	bool getValueRange(double* min, double* max) override;
 	void applyColorMapSetting() override;
 	void setupStringConverter(GridAttributeStringConverter* converter) override;

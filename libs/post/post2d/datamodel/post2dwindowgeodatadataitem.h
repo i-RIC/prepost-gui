@@ -5,6 +5,7 @@
 #include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
 
 class GeoDataProxy;
+class Post2dWindowGeoDataGroupDataItem;
 
 class Post2dWindowGeoDataDataItem : public GeoDataProxyDataItem, public Post2dWindowGeoDataDataItemI
 {
@@ -14,6 +15,7 @@ public:
 	Post2dWindowGeoDataDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowGeoDataDataItem();
 
+	Post2dWindowGeoDataGroupDataItem* groupDataItem() const;
 	GeoDataProxy* geoDataProxy() const;
 	void setGeoDataProxy(GeoDataProxy* proxy);
 
@@ -24,6 +26,8 @@ public:
 	void updateZDepthRangeItemCount() override;
 	GraphicsWindowDataModel* dataModel() const override;
 	void handleStandardItemChange() override;
+	void informValueRangeChange();
+	bool getValueRange(double* min, double* max);
 	void applyColorMapSetting();
 
 private slots:

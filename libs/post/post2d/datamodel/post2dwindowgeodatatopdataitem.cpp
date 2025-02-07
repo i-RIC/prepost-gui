@@ -272,6 +272,7 @@ void Post2dWindowGeoDataTopDataItem::handleAddDialogAccepted(QDialog* propDialog
 	auto i = new Post2dWindowGeoDataGroupDataItem(att, this);
 	m_childItems.insert(m_childItems.begin() + pos, i);
 	i->updateChildren();
+	i->handleStandardItemChange();
 
 	int rowC = standardItem()->rowCount();
 	for (int i = 0; i < rowC; ++i) {
@@ -281,6 +282,8 @@ void Post2dWindowGeoDataTopDataItem::handleAddDialogAccepted(QDialog* propDialog
 	for (auto item : m_childItems) {
 		standardItem()->appendRow(item->standardItem());
 	}
+
+	renderGraphicsView();
 }
 
 void Post2dWindowGeoDataTopDataItem::buildReferenceInformationAttribute()

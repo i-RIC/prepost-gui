@@ -55,13 +55,12 @@ public:
 	bool colorBarShouldBeVisible() const;
 	virtual void applyScalarsToColorsSetting();
 
-
 	int mappingCount() const;
 	void executeMapping(v4InputGrid* grid, WaitDialog* dialog);
 
 	void setDefaultValue(v4InputGrid* grid);
-	void informValueRangeChange();
-	void informDataChange();
+	void informValueRangeChange() override;
+	void informDataChange() override;
 	bool getValueRange(double* min, double* max) override;
 	void applyColorMapSetting() override;
 	void updateZDepthRangeItemCount() override;
