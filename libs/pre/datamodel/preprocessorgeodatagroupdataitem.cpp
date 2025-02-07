@@ -1010,7 +1010,7 @@ void PreProcessorGeoDataGroupDataItem::setDefaultValue(v4InputGrid* grid)
 
 void PreProcessorGeoDataGroupDataItem::informValueRangeChange()
 {
-	auto topItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
+	auto topItem = geoDataTopDataItem();
 	if (topItem != nullptr) {
 		topItem->informValueRangeChange(m_condition->name());
 	}
@@ -1018,7 +1018,7 @@ void PreProcessorGeoDataGroupDataItem::informValueRangeChange()
 
 void PreProcessorGeoDataGroupDataItem::informDataChange()
 {
-	dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent())->informDataChange();
+	geoDataTopDataItem()->informDataChange();
 	updateCrossectionWindows();
 
 	clearDimensionsIfNoDataExists();
@@ -1030,8 +1030,8 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 	*max = 0;
 	bool first = true;
 	bool result = false;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		// background item is not used for this.
 		if (m_backgroundItem == item) {continue;}
 		double tmpmin;

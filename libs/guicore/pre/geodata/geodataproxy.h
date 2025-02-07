@@ -48,6 +48,9 @@ public:
 	void applyColorMapSetting();
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 
+signals:
+	void valueRangeChanged();
+
 public slots:
 	virtual void updateActorSetting();
 

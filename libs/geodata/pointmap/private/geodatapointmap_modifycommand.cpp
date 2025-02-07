@@ -13,7 +13,7 @@ GeoDataPointmap::ModifyCommand::ModifyCommand(QUndoCommand* command, GeoDataPoin
 void GeoDataPointmap::ModifyCommand::redo()
 {
 	m_command->redo();
-	m_pointmap->geoDataDataItem()->informValueRangeChange();
+	emit m_pointmap->valueRangeChanged();
 	m_pointmap->updateActorSetting();
 	m_pointmap->setNeedRebuildTin();
 	m_pointmap->setMapped(false);
@@ -22,7 +22,7 @@ void GeoDataPointmap::ModifyCommand::redo()
 void GeoDataPointmap::ModifyCommand::undo()
 {
 	m_command->undo();
-	m_pointmap->geoDataDataItem()->informValueRangeChange();
+	emit m_pointmap->valueRangeChanged();
 	m_pointmap->updateActorSetting();
 	m_pointmap->setNeedRebuildTin(m_oldNeedRebuildTin);
 	m_pointmap->setMapped(m_oldMapped);

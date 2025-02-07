@@ -66,9 +66,8 @@ void GeoDataPolyData::setVariantValue(const QVariant& v, bool disableInform)
 	impl->m_variantValues[index] = v;
 	updateScalarValues();
 	if (! disableInform) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
-		p->informValueRangeChange();
-		p->informDataChange();
+		emit valueRangeChanged();
+		emit dataChanged();
 	}
 }
 

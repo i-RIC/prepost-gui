@@ -20,6 +20,10 @@ public:
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGeoDataGroupDataItemI*> groupDataItems() const = 0;
 	virtual PreProcessorGeoDataGroupDataItemI* groupDataItem(const std::string& name) const = 0;
+
+	virtual void informValueRangeChange(const std::string& name) = 0;
+	virtual void informDataChange() = 0;
+
 	/// Set all dimensions to the first.
 	virtual void setDimensionsToFirst() = 0;
 	virtual void clearDimensionsIfNoDataExists() = 0;

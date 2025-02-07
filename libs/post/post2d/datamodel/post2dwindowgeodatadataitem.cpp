@@ -20,6 +20,11 @@ Post2dWindowGeoDataDataItem::~Post2dWindowGeoDataDataItem()
 	delete m_geoDataProxy;
 }
 
+Post2dWindowGeoDataGroupDataItem* Post2dWindowGeoDataDataItem::groupDataItem() const
+{
+	return dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (parent());
+}
+
 GeoDataProxy* Post2dWindowGeoDataDataItem::geoDataProxy() const
 {
 	return m_geoDataProxy;
@@ -33,6 +38,9 @@ void Post2dWindowGeoDataDataItem::setGeoDataProxy(GeoDataProxy* proxy)
 	// setup vtk actors.
 	m_geoDataProxy->setupActors();
 	m_geoDataProxy->setupMenu();
+
+	connect(m_geoDataProxy, &GeoDataProxy::valueRangeChanged, this, &Post2dWindowGeoDataDataItem::informValueRangeChange);
+
 	updateZDepthRangeItemCount();
 }
 
@@ -54,15 +62,12 @@ void Post2dWindowGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 
 bool Post2dWindowGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(parent());
-
-	return gItem->addToolBarButtons(toolBar);
+	return groupDataItem()->addToolBarButtons(toolBar);
 }
 
 DelegatedColorMapSettingContainer* Post2dWindowGeoDataDataItem::colorMapSetting() const
 {
-	auto i = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(parent());
-	return i->colorMapSetting();
+	return groupDataItem()->colorMapSetting();
 }
 
 void Post2dWindowGeoDataDataItem::showPropertyDialog()
@@ -89,8 +94,19 @@ void Post2dWindowGeoDataDataItem::handleStandardItemChange()
 {
 	GraphicsWindowDataItem::handleStandardItemChange();
 
-	auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (parent());
+	auto gItem = groupDataItem();
 	gItem->gridTypeDataItem()->updateColorBarVisibility(gItem->condition()->name());
+}
+
+void Post2dWindowGeoDataDataItem::informValueRangeChange()
+{
+	groupDataItem()->handleValueRangeChange();
+}
+
+bool Post2dWindowGeoDataDataItem::getValueRange(double* min, double* max)
+{
+	if (m_geoDataProxy == nullptr) {return false;}
+	return m_geoDataProxy->geoData()->getValueRange(min, max);
 }
 
 void Post2dWindowGeoDataDataItem::applyColorMapSetting()

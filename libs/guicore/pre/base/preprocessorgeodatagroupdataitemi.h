@@ -37,6 +37,8 @@ public:
 	virtual PreProcessorGeoDataDataItemI* buildGeoDataDataItem() = 0;
 	virtual void addGeoData(PreProcessorGeoDataDataItemI *geoData) = 0;
 	virtual GeoDataCreator* getPointMapCreator() = 0;
+	virtual void informValueRangeChange() = 0;
+	virtual void informDataChange() = 0;
 
 	// @todo ugly interface!
 	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) = 0;

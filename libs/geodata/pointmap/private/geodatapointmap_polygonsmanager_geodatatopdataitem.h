@@ -15,6 +15,8 @@ public:
 	SolverDefinitionGridType* gridType() const override;
 	const QList<PreProcessorGeoDataGroupDataItemI*> groupDataItems() const override;
 	PreProcessorGeoDataGroupDataItemI* groupDataItem(const std::string& name) const override;
+	void informValueRangeChange(const std::string& name) override;
+	void informDataChange() override;
 	void setDimensionsToFirst() override;
 	void clearDimensionsIfNoDataExists() override;
 

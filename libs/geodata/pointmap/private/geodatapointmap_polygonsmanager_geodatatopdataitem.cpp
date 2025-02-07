@@ -30,6 +30,12 @@ PreProcessorGeoDataGroupDataItemI* GeoDataPointmap::PolygonsManager::GeoDataTopD
 	return nullptr;
 }
 
+void GeoDataPointmap::PolygonsManager::GeoDataTopDataItem::informValueRangeChange(const std::string& /*name*/)
+{}
+
+void GeoDataPointmap::PolygonsManager::GeoDataTopDataItem::informDataChange()
+{}
+
 void GeoDataPointmap::PolygonsManager::GeoDataTopDataItem::setDimensionsToFirst()
 {}
 

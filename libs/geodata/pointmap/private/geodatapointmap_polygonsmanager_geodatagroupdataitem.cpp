@@ -28,6 +28,12 @@ SolverDefinitionGridAttribute* GeoDataPointmap::PolygonsManager::GeoDataGroupDat
 	return m_condition;
 }
 
+void GeoDataPointmap::PolygonsManager::GeoDataGroupDataItem::informValueRangeChange()
+{}
+
+void GeoDataPointmap::PolygonsManager::GeoDataGroupDataItem::informDataChange()
+{}
+
 bool GeoDataPointmap::PolygonsManager::GeoDataGroupDataItem::getValueRange(double* /*min*/, double* /*max*/)
 {
 	return false;
