@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Jangkauan</translation>
+        <translation>Jangkauan</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">Pengaturan Kontur (%1)</translation>
+        <translation>Pengaturan Kontur (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">Jangkauan %1</translation>
+        <translation>Jangkauan %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasi</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tetapkan sebagai pengaturan default untuk proyek ini.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Jangkauan</translation>
+        <translation>Jangkauan</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Peta warna</translation>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">Pilih Hasil Perhitungan</translation>
+        <translation>Pilih Hasil Perhitungan</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur (wajahI)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur (wajahJ)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur (wajahK)</translation>
     </message>
 </context>
 <context>

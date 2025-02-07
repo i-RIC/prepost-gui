@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Rækkevidde</translation>
+        <translation>Rækkevidde</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">Kontur indstilling (%1)</translation>
+        <translation>Kontur indstilling (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">Rækkevidde %1</translation>
+        <translation>Rækkevidde %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angiv som standardindstilling for dette projekt.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Rækkevidde</translation>
+        <translation>Rækkevidde</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Farvekort</translation>
+        <translation>Farvekort</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">Vælg Beregningsresultat</translation>
+        <translation>Vælg Beregningsresultat</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>konturer (ansigt)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturer (ansigt J)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>konturer (faceK)</translation>
     </message>
 </context>
 <context>

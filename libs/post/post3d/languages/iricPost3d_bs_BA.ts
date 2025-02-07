@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Domet</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">Postavljanje konture (%1)</translation>
+        <translation>Postavljanje konture (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Domet %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavite kao zadanu postavku za ovaj projekat.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Domet</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Colormap</translation>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">Odaberite Rezultat izračuna</translation>
+        <translation>Odaberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Konture (lice I)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Konture (liceJ)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Konture (liceK)</translation>
     </message>
 </context>
 <context>

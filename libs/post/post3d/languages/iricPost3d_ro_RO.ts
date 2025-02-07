@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Gamă</translation>
+        <translation>Gamă</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">Setare contur (%1)</translation>
+        <translation>Setare contur (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">Gamă %1</translation>
+        <translation>Gamă %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informaţii</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setați ca setare implicită pentru acest proiect.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formă</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Gamă</translation>
+        <translation>Gamă</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Harta de culori</translation>
+        <translation>Harta de culori</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">Selectați Rezultatul calculului</translation>
+        <translation>Selectați Rezultatul calculului</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Contururi (fața I)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Contururi (fața J)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Contururi (fața K)</translation>
     </message>
 </context>
 <context>

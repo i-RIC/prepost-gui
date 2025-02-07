@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">श्रेणी</translation>
+        <translation>श्रेणी</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">कंटूर सेटिंग (%1)</translation>
+        <translation>कंटूर सेटिंग (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">श्रेणी %1</translation>
+        <translation>श्रेणी %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>जानकारी</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>इस प्रोजेक्ट के लिए डिफ़ॉल्ट सेटिंग के रूप में सेट करें.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">प्रपत्र</translation>
+        <translation>रूप</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">श्रेणी</translation>
+        <translation>श्रेणी</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">रंग मैप</translation>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">गणना परिणाम का चयन करें</translation>
+        <translation>गणना परिणाम चुनें</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>आकृतियाँ (चेहरा I)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>आकृतियाँ (चेहराJ)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>आकृतियाँ (चेहराK)</translation>
     </message>
 </context>
 <context>

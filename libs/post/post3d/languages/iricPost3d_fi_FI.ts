@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Alue</translation>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">Ääriviivan asetus (%1)</translation>
+        <translation>Ääriviivan asetus (%1)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">Alue %1</translation>
+        <translation>Alue %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedot</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta tämän projektin oletusasetukseksi.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Lomake</translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Alue</translation>
+        <translation>Alue</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Värikartta</translation>
+        <translation>Värikartta</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">Valitse Laskentatulos</translation>
+        <translation>Valitse Laskentatulos</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ääriviivat (faceI)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ääriviivat (kasvotJ)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ääriviivat (kasvotK)</translation>
     </message>
 </context>
 <context>

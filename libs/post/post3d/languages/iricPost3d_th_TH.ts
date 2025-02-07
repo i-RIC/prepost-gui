@@ -383,51 +383,51 @@
     <name>Post3dWindowFaceContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
     <message>
         <source>Contour Setting (%1)</source>
-        <translation type="unfinished">การตั้งค่าคอนทัวร์ (%1)</translation>
+        <translation>การตั้งค่าคอนทัวร์ ( %1 -</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished">พิสัย %1</translation>
+        <translation>พิสัย %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>ข้อมูล</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>ตั้งค่าเป็นค่าเริ่มต้นสำหรับโครงการนี้</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">แผนที่สี</translation>
+        <translation>แผนที่สี</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupTopDataItem</name>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">เลือกผลการคำนวณ</translation>
+        <translation>เลือกผลลัพธ์การคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@
     <name>Post3dWindowIFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceI)</source>
-        <translation type="unfinished"></translation>
+        <translation>คอนทัวร์ (หน้า)</translation>
     </message>
 </context>
 <context>
@@ -673,14 +673,14 @@
     <name>Post3dWindowJFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>คอนทัวร์ (ใบหน้าJ)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowKFaceContourGroupTopDataItem</name>
     <message>
         <source>Contours (faceK)</source>
-        <translation type="unfinished"></translation>
+        <translation>คอนทัวร์ (faceK)</translation>
     </message>
 </context>
 <context>
