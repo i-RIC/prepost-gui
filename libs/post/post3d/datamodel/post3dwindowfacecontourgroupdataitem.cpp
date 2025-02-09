@@ -93,7 +93,7 @@ void Post3dWindowFaceContourGroupDataItem::updateColorMapVisibility()
 	actor->VisibilityOff();
 
 	bool visible = false;
-	if (standardItem()->checkState() == Qt::Checked) {
+	if (isAncientChecked() && isChecked() && m_colorMapSetting->legendSetting()->getVisible()) {
 		for (auto child : m_childItems) {
 			visible = visible || child->standardItem()->checkState() == Qt::Checked;
 		}
