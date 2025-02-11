@@ -590,7 +590,7 @@ int GeoDataGdal::getValueVarId(int ncid, int* varId)
 	return nc_inq_varid(ncid, VALUE, varId);
 }
 
-void GeoDataGdal::updateActorSetting()
+void GeoDataGdal::doUpdateActorSetting()
 {
 	// color
 	m_actor->GetProperty()->SetColor(impl->m_displaySetting.color);
