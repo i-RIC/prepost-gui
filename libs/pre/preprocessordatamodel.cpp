@@ -704,12 +704,14 @@ MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItem(GraphicsWin
 MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItemRecursively(GraphicsWindowDataItem* item)
 {
 	if (item == nullptr) {return nullptr;}
-	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(item);
+
+	auto r = dynamic_cast<PreProcessorRootDataItem*>(item);
 	if (r != nullptr) {
 		// reached root data item.
 		return nullptr;
 	}
-	MeasuredDataFileDataItem* f = dynamic_cast<MeasuredDataFileDataItem*>(item);
+
+	auto f = dynamic_cast<MeasuredDataFileDataItem*>(item);
 	if (f != nullptr) {return f;}
 	return getMeasuredDataItemRecursively(dynamic_cast<GraphicsWindowDataItem*>(item->parent()));
 }
@@ -717,31 +719,31 @@ MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItemRecursively(
 PreProcessorBackgroundImageDataItem* PreProcessorDataModel::getBackgroundImageItem(GraphicsWindowDataItem* item)
 {
 	if (item == nullptr) {return nullptr;}
-	PreProcessorBackgroundImageDataItem* b = dynamic_cast<PreProcessorBackgroundImageDataItem*>(item);
-	return b;
+
+	return dynamic_cast<PreProcessorBackgroundImageDataItem*>(item);
 }
 
 PreProcessorBCSettingDataItem* PreProcessorDataModel::getBCSettingDataItem(GraphicsWindowDataItem* item)
 {
-	PreProcessorBCSettingDataItem* bcitem = dynamic_cast<PreProcessorBCSettingDataItem*>(item);
-	return bcitem;
+	return dynamic_cast<PreProcessorBCSettingDataItem*>(item);
 }
 
 
 void PreProcessorDataModel::addGridCreatingConditionImportMenu(QMenu* menu)
 {
 	// find how many grid types are available.
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool importAvailable = false;
 	if (gridTypes.count() == 0) {
 		// no menu available.
 	} else if (gridTypes.count() == 1) {
-		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
+		auto gt = gridTypes.at(0);
 		importAvailable = addGridCreatingConditionImportMenuForGridType(menu, gt, true);
 	} else {
 		for (int i = 0; i < gridTypes.count(); ++i) {
-			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
+			auto gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
 			if (addGridCreatingConditionImportMenuForGridType(gtMenu, gt, false)) {
 				importAvailable = true;
@@ -759,17 +761,17 @@ void PreProcessorDataModel::addGridCreatingConditionImportMenu(QMenu* menu)
 void PreProcessorDataModel::addGridCreatingConditionExportMenu(QMenu* menu)
 {
 	// find how many grid types are available.
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool exportAvailable = false;
 	if (gridTypes.count() == 0) {
 		// no menu available.
 	} else if (gridTypes.count() == 1) {
-		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
+		auto gt = gridTypes.at(0);
 		exportAvailable = addGridCreatingConditionExportMenuForGridType(menu, gt, true);
 	} else {
 		for (int i = 0; i < gridTypes.count(); ++i) {
-			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
+			auto gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
 			if (addGridCreatingConditionExportMenuForGridType(gtMenu, gt, false)) {
 				exportAvailable = true;
