@@ -14,6 +14,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
@@ -319,6 +320,11 @@ void PreProcessorBCGroupDataItem::deleteSelected()
 			delete items.at(i);
 		}
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCGroupDataItem::deleteAll()
@@ -330,6 +336,11 @@ void PreProcessorBCGroupDataItem::deleteAll()
 	for (auto item : items) {
 		delete item;
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCGroupDataItem::importBc()

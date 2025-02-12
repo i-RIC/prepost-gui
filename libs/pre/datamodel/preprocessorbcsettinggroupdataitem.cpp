@@ -12,6 +12,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
@@ -67,6 +68,11 @@ void PreProcessorBCSettingGroupDataItem::deleteSelected()
 			delete items.at(i)->bcDataItem();
 		}
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCSettingGroupDataItem::deleteAll()
@@ -80,6 +86,11 @@ void PreProcessorBCSettingGroupDataItem::deleteAll()
 		if (bcSettingItem->standardItem() == nullptr) {continue;}
 		delete bcSettingItem->bcDataItem();
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
