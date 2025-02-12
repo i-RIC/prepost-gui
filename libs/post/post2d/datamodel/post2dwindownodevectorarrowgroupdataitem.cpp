@@ -184,14 +184,13 @@ Post2dWindowNodeVectorArrowGroupTopDataItem* Post2dWindowNodeVectorArrowGroupDat
 void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(SolverDefinitionGridType* gtype, const std::string& name, const ValueRangeContainer& range)
 {
 	auto output = gtype->output(name);
-	ColorMapSettingContainerI* setting = nullptr;
 	auto it = m_colorMapSettings.find(name);
+	ColorMapSettingContainerI* setting = nullptr;
 	if (it == m_colorMapSettings.end()) {
+		setting = output->createColorMapSettingContainer();
 		auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(name);
 		if (defaultCs != nullptr) {
-			setting = defaultCs->copy();
-		} else {
-			setting = output->createColorMapSettingContainer();
+			setting->copyOtherThanCaption(*defaultCs);
 		}
 		setting->valueCaption = gtype->outputCaption(name);
 		setting->legendSetting()->setTitle(gtype->outputCaption(name));

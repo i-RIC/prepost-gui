@@ -49,6 +49,7 @@ public:
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;
 	void copy(const ColorMapSettingContainerI& c) override;
+	void copyOtherThanCaption(const ColorMapSettingContainerI& c) override;
 	ColorMapSettingContainerI* copy() override;
 
 	void copyValue(const XmlAttributeContainer& c) override;

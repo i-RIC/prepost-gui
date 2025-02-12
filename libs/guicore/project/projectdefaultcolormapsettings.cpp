@@ -51,13 +51,15 @@ void ProjectDefaultColorMapSettings::load(const QDomNode& node)
 		auto name = iRIC::toStr(elem.attribute("name"));
 		ColorMapSettingContainerI* cm = nullptr;
 		if (elem.tagName() == "ColorMapSetting") {
-			cm = new ColorMapSettingContainer();
+			auto cms = new ColorMapSettingContainer();
+			cms->load(elem);
+			cm = cms;
 		} else if (elem.tagName() == "EnumerateColorMapSetting") {
-			cm = new ColorMapEnumerateSettingContainer();
+			auto cmes = new ColorMapEnumerateSettingContainer();
+			cmes->loadForcibly(elem);
+			cm = cmes;
 		}
-
 		if (cm != nullptr) {
-			cm->load(elem);
 			m_colorMaps.insert({name, cm});
 		}
 	}
