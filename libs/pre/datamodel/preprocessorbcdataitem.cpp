@@ -36,6 +36,12 @@
 
 #define TMPBCNAME "bc"
 
+namespace {
+
+const std::string INDICES = "_indices";
+
+}
+
 PreProcessorBCDataItem::Impl::Impl(PreProcessorBCDataItem* item) :
 	m_projectNumber {1},
 	m_cgnsNumber {1},
@@ -599,12 +605,56 @@ int PreProcessorBCDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 void PreProcessorBCDataItem::importFromYaml(const YAML::Node& node, const QDir& dir)
 {
 	impl->m_dialog->importFromYaml(node, dir);
+	auto indices = node[INDICES];
+	if (indices.IsDefined() && indices.IsSequence()) {
+		impl->m_indices.clear();
+		impl->m_edges.clear();
+
+		for (auto it = indices.begin(); it != indices.end(); ++it) {
+			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::Position::pEdge) {
+				// pair
+				const auto& i = *it;
+				Edge e(i[0].as<int>(), i[1].as<int>());
+				impl->m_edges.insert(e);
+			} else {
+				vtkIdType i = it->as<int>();
+				impl->m_indices.insert(i);
+			}
+		}
+		updateElements();
+		updateNameActorSettings();
+	}
+
 	setName(impl->m_dialog->caption());
 }
 
 void PreProcessorBCDataItem::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
 {
 	impl->m_dialog->exportToYaml(stream, dir, lineHeader);
+
+	*stream << lineHeader << INDICES.c_str() << ": ";
+	*stream << "[";
+	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::Position::pEdge) {
+		auto first = true;
+		for (const auto& edge : impl->m_edges) {
+			if (! first) {
+				*stream << ", ";
+			}
+			*stream << "[" << edge.vertex1() << ", " << edge.vertex2() << "]";
+			first = false;
+		}
+	} else {
+		auto first = true;
+		for (const auto& i : impl->m_indices) {
+			if (! first) {
+				*stream << ", ";
+			}
+			*stream << i;
+			first = false;
+		}
+	}
+
+	*stream << "]\n";
 }
 
 void PreProcessorBCDataItem::setFileNamePrefix(const QString& prefix)

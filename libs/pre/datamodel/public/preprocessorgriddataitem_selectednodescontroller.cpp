@@ -60,6 +60,8 @@ void PreProcessorGridDataItem::SelectedNodesController::setVisibility(bool visib
 	if (visible) {
 		m_item->m_actorCollection->AddItem(m_actor);
 	}
+
+	m_item->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridDataItem::SelectedNodesController::handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*view*/)

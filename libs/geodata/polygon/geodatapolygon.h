@@ -105,6 +105,8 @@ public:
 	void addHolePolygon(const QPolygonF& p);
 	vtkPolyData* polyData() const;
 	geos::geom::Polygon* getGeosPolygon();
+	GeoDataPolygonRegionPolygon* regionPolygon() const;
+	const QList<GeoDataPolygonHolePolygon*>& holePolygons() const;
 
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
@@ -121,9 +123,9 @@ public:
 
 public slots:
 	void restoreMouseEventMode() override;
+	void updatePolyData(bool noDraw = false);
 
 private slots:
-	void updatePolyData(bool noDraw = false);
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
 	void editCoordinates();
@@ -163,10 +165,8 @@ private:
 
 	void setupTriangleThread();
 
-	GeoDataPolygonRegionPolygon* regionPolygon() const;
 	GeoDataPolygonAbstractPolygon* selectedPolygon() const;
 	void setSelectedPolygon(GeoDataPolygonAbstractPolygon* pol);
-	const QList<GeoDataPolygonHolePolygon*>& holePolygons() const;
 	QList<GeoDataPolygonHolePolygon*>& holePolygons();
 
 	vtkActor* paintActor() const;

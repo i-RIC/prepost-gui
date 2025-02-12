@@ -5,6 +5,8 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorbcsettinggroupdataitem_shpexporter.h"
+#include "private/preprocessorbcsettinggroupdataitem_shpimporter.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
@@ -12,6 +14,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
@@ -67,6 +70,11 @@ void PreProcessorBCSettingGroupDataItem::deleteSelected()
 			delete items.at(i)->bcDataItem();
 		}
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCSettingGroupDataItem::deleteAll()
@@ -80,6 +88,11 @@ void PreProcessorBCSettingGroupDataItem::deleteAll()
 		if (bcSettingItem->standardItem() == nullptr) {continue;}
 		delete bcSettingItem->bcDataItem();
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -199,6 +212,23 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 const QList<QAction*>& PreProcessorBCSettingGroupDataItem::addActions() const
 {
 	return m_addActions;
+}
+
+void PreProcessorBCSettingGroupDataItem::importPolygons(const QString& fileName)
+{
+	ShpImporter importer(fileName);
+
+	importer.importPolygons(this);
+}
+
+void PreProcessorBCSettingGroupDataItem::exportPolygons(const QString& fileName) const
+{
+	ShpExporter exporter(fileName);
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*>(child);
+		exporter.exportPolygon(item);
+	}
 }
 
 QAction* PreProcessorBCSettingGroupDataItem::dummyEditAction() const

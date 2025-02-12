@@ -1,6 +1,8 @@
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcgroupsettingdialog.h"
+#include "preprocessorbcsettinggroupdataitem.h"
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorbcgroupdataitem_setsettingcommand.h"
@@ -14,6 +16,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
@@ -319,6 +322,11 @@ void PreProcessorBCGroupDataItem::deleteSelected()
 			delete items.at(i);
 		}
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCGroupDataItem::deleteAll()
@@ -330,6 +338,11 @@ void PreProcessorBCGroupDataItem::deleteAll()
 	for (auto item : items) {
 		delete item;
 	}
+
+	renderGraphicsView();
+
+	// this operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorBCGroupDataItem::importBc()
@@ -366,7 +379,12 @@ void PreProcessorBCGroupDataItem::importBc()
 
 	updateItemMap();
 	assignActorZValues(m_zDepthRange);
+	renumberItemsForProject();
 	emit itemsUpdated();
+
+	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
+	auto shpFileName = fname.replace(".yaml", ".shp");
+	bcsItem->importPolygons(shpFileName);
 
 	LastIODirectory::setFromFilename(fname);
 
@@ -402,6 +420,10 @@ void PreProcessorBCGroupDataItem::exportBc()
 	}
 
 	file.close();
+
+	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
+	auto shpFileName = fname.replace(".yaml", ".shp");
+	bcsItem->exportPolygons(shpFileName);
 
 	LastIODirectory::setFromFilename(fname);
 }

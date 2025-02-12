@@ -178,6 +178,11 @@ PreProcessorGeoDataGroupDataItemI* PreProcessorBCSettingDataItem::groupDataItem(
 	return nullptr;
 }
 
+GeoDataPolygon* PreProcessorBCSettingDataItem::polygon() const
+{
+	return m_polygon;
+}
+
 GeoData* PreProcessorBCSettingDataItem::geoData() const
 {
 	return m_polygon;
@@ -313,4 +318,9 @@ void PreProcessorBCSettingDataItem::loadData()
 void PreProcessorBCSettingDataItem::doApplyOffset(double x, double y)
 {
 	this->m_polygon->doApplyOffset(x, y);
+}
+
+void PreProcessorBCSettingDataItem::doUpdateActorSetting()
+{
+	m_polygon->doUpdateActorSetting();
 }

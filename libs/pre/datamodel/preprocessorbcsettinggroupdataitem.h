@@ -27,6 +27,8 @@ public:
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
 	void setupAddActions();
 	const QList<QAction*>& addActions() const;
+	void importPolygons(const QString& fileName);
+	void exportPolygons(const QString& fileName) const;
 	QAction* dummyEditAction() const;
 	QAction* dummyDeleteAction() const;
 
@@ -54,6 +56,9 @@ private:
 
 	QAction* m_dummyEditAction;
 	QAction* m_dummyDeleteAction;
+
+	class ShpImporter;
+	class ShpExporter;
 };
 
 #endif // PREPROCESSORBCSETTINGGROUPDATAITEM_H
