@@ -33,11 +33,10 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::Impl::createOrUpdateColorMapsSe
 	ColorMapSettingContainerI* setting = nullptr;
 	auto it = m_colorMapSettings.find(output->name());
 	if (it == m_colorMapSettings.end()) {
+		setting = output->createColorMapSettingContainer();
 		auto defaultCs = m_parent->projectData()->mainfile()->defaultColorMapSettings()->colorMap(output->name());
 		if (defaultCs != nullptr) {
-			setting = defaultCs->copy();
-		} else {
-			setting = output->createColorMapSettingContainer();
+			setting->copyOtherThanCaption(*defaultCs);
 		}
 		setting->valueCaption = output->caption();
 		setting->legendSetting()->setTitle(output->caption());

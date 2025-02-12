@@ -46,11 +46,10 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 		output = gType->output(target);
 	}
 
+	m_colorMapSetting = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {
-		m_colorMapSetting = defaultCs->copy();
-	} else {
-		m_colorMapSetting = output->createColorMapSettingContainer();
+		m_colorMapSetting->copyOtherThanCaption(*defaultCs);
 	}
 	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);
 	m_colorMapSetting->legendSetting()->setTitle(data()->gridType()->outputCaption(target));

@@ -22,12 +22,11 @@ Post2dWindowParticlesBaseScalarDataItem::Post2dWindowParticlesBaseScalarDataItem
 
 	auto gtItem = groupDataItem()->topDataItem()->zoneDataItem()->gridTypeDataItem();
 	auto gType = gtItem->gridType();
+	auto output = gType->output(name);
+	m_colorMapSetting = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(name);
 	if (defaultCs != nullptr) {
-		m_colorMapSetting = defaultCs->copy();
-	} else {
-		auto output = gType->output(name);
-		m_colorMapSetting = output->createColorMapSettingContainer();
+		m_colorMapSetting->copyOtherThanCaption(*defaultCs);
 	}
 
 	m_colorMapSetting->valueCaption = caption;
