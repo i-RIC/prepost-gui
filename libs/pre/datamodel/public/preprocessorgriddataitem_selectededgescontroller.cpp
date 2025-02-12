@@ -66,6 +66,8 @@ void PreProcessorGridDataItem::SelectedEdgesController::setVisibility(bool visib
 	if (visible) {
 		m_item->m_actorCollection->AddItem(m_actor);
 	}
+
+	m_item->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridDataItem::SelectedEdgesController::handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*view*/)
