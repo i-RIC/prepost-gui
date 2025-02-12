@@ -379,6 +379,7 @@ void PreProcessorBCGroupDataItem::importBc()
 
 	updateItemMap();
 	assignActorZValues(m_zDepthRange);
+	renumberItemsForProject();
 	emit itemsUpdated();
 
 	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
