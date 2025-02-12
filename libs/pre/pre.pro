@@ -383,6 +383,7 @@ HEADERS += pre_global.h \
            misc/preprocessorlegendboxeditdialog.h \
            datamodel/private/preprocessorbcdataitem_impl.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
+           datamodel/private/preprocessorbcsettinggroupdataitem_shpexporter.h \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
@@ -548,6 +549,7 @@ SOURCES += preobjectbrowser.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/preprocessorbcsettinggroupdataitem_shpexporter.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \

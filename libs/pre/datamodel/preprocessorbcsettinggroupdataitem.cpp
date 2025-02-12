@@ -5,6 +5,7 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorbcsettinggroupdataitem_shpexporter.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
@@ -210,6 +211,16 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 const QList<QAction*>& PreProcessorBCSettingGroupDataItem::addActions() const
 {
 	return m_addActions;
+}
+
+void PreProcessorBCSettingGroupDataItem::exportPolygons(const QString& fileName) const
+{
+	ShpExporter exporter(fileName);
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*>(child);
+		exporter.exportPolygon(item);
+	}
 }
 
 QAction* PreProcessorBCSettingGroupDataItem::dummyEditAction() const

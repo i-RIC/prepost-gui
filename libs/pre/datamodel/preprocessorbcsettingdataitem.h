@@ -55,6 +55,7 @@ public:
 	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
 	PreProcessorGeoDataGroupDataItemI* groupDataItem() const override;
+	GeoDataPolygon* polygon() const;
 	GeoData* geoData() const override;
 	void setGeoData(GeoData *) override;
 

@@ -1,6 +1,8 @@
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcgroupsettingdialog.h"
+#include "preprocessorbcsettinggroupdataitem.h"
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorbcgroupdataitem_setsettingcommand.h"
@@ -413,6 +415,10 @@ void PreProcessorBCGroupDataItem::exportBc()
 	}
 
 	file.close();
+
+	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
+	auto shpFileName = fname.replace(".yaml", ".shp");
+	bcsItem->exportPolygons(shpFileName);
 
 	LastIODirectory::setFromFilename(fname);
 }

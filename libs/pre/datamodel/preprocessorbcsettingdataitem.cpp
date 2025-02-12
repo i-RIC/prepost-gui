@@ -178,6 +178,11 @@ PreProcessorGeoDataGroupDataItemI* PreProcessorBCSettingDataItem::groupDataItem(
 	return nullptr;
 }
 
+GeoDataPolygon* PreProcessorBCSettingDataItem::polygon() const
+{
+	return m_polygon;
+}
+
 GeoData* PreProcessorBCSettingDataItem::geoData() const
 {
 	return m_polygon;
