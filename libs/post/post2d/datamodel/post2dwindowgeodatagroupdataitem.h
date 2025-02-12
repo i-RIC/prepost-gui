@@ -24,6 +24,7 @@ public:
 	DelegatedColorMapSettingContainer* colorMapSetting() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void updateChildren();
+	void handleValueRangeChange();
 	void applyColorMapSetting();
 
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;

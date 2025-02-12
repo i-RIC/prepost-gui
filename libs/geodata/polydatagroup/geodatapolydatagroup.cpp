@@ -444,9 +444,8 @@ void GeoDataPolyDataGroup::deleteSelectedData()
 	impl->updateAttributeBrowser();
 	impl->updateActionStatus();
 
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (parent());
-	p->informValueRangeChange();
-	p->informDataChange();
+	emit valueRangeChanged();
+	emit dataChanged();
 }
 
 void GeoDataPolyDataGroup::editColorSetting()
@@ -826,6 +825,9 @@ GeoDataPolyDataGroupCreator* GeoDataPolyDataGroup::creator() const
 void GeoDataPolyDataGroup::setupNewEditTargetData()
 {
 	GeoDataPolyData* d = createEditTargetData();
+	connect(d, &GeoData::valueRangeChanged, this, &GeoData::valueRangeChanged);
+	connect(d, &GeoData::dataChanged, this, &GeoData::dataChanged);
+
 	impl->m_editTargetData = d;
 	d->setCaption(captionForData(static_cast<int> (impl->m_data.size()) + 1));
 	d->showInitialDialog();
@@ -860,10 +862,12 @@ void GeoDataPolyDataGroup::setupEditTargetDataFromSelectedData()
 	d->setCaption(sel->name());
 	sel->copyShapeTo(d);
 	d->setVariantValue(sel->value());
+	connect(d, &GeoData::valueRangeChanged, this, &GeoData::valueRangeChanged);
+	connect(d, &GeoData::dataChanged, this, &GeoData::dataChanged);
 	connect(d, SIGNAL(modified()), sel, SLOT(applyShape()));
 	d->informSelection(graphicsView());
 
-	selectedData().clear();;
+	selectedData().clear();
 	impl->m_mode = Mode::EditingData;
 
 	updateVtkObjects();

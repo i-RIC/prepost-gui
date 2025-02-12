@@ -37,7 +37,7 @@ void GeoDataPolyDataGroup::EditNameAndValueCommand::apply(const std::vector<QStr
 	m_group->updateVtkObjects();
 	m_group->updateSelectedDataVtkObjects();
 	m_group->updateAttributeBrowser();
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_group->parent());
-	p->informValueRangeChange();
-	p->informDataChange();
+
+	emit m_group->valueRangeChanged();
+	emit m_group->dataChanged();
 }

@@ -19,7 +19,7 @@ ColorMapSettingContainerI* GeoDataPointmap::PolygonsManager::GridTypeDataItem::c
 	return nullptr;
 }
 
-ModifyCommandDialog* GeoDataPointmap::PolygonsManager::GridTypeDataItem::createApplyColorMapSettingDialog(const std::string& name, QWidget *parent)
+ModifyCommandDialog* GeoDataPointmap::PolygonsManager::GridTypeDataItem::createApplyColorMapSettingDialog(const std::string& /*name*/, QWidget */*parent*/)
 {
 	return nullptr;
 }
@@ -31,11 +31,10 @@ SolverDefinitionGridType* GeoDataPointmap::PolygonsManager::GridTypeDataItem::gr
 
 const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& GeoDataPointmap::PolygonsManager::GridTypeDataItem::conditions() const
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> empty;
-	return empty;
+	return m_conditions;
 }
 
-GridAttributeDimensionsContainer* GeoDataPointmap::PolygonsManager::GridTypeDataItem::gridAttributeDimensions(const std::string& attName) const
+GridAttributeDimensionsContainer* GeoDataPointmap::PolygonsManager::GridTypeDataItem::gridAttributeDimensions(const std::string& /*attName*/) const
 {
 	return nullptr;
 }

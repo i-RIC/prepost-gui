@@ -30,9 +30,15 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
+	void addCustomMenuItems(QMenu* menu) override;
+	QDialog* addDialog(QWidget* parent) override;
+	void handleAddDialogAccepted(QDialog* propDialog) override;
+
 	void buildReferenceInformationAttribute();
 
-	std::map<std::string, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
+	std::vector<SolverDefinitionGridAttribute*> m_addAttributes;
+	std::vector<int> m_addPositions;
+
 	PreProcessorGeoDataTopDataItemI* m_preGeoDataTopDataItem;
 
 	SolverDefinitionGridAttribute* m_referenceInformationAttribute;

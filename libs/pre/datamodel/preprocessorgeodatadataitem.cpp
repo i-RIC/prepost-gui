@@ -68,6 +68,9 @@ void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 	// setup vtk actors.
 	m_geoData->setupActors();
 	m_geoData->setupMenu();
+	connect(m_geoData, &GeoData::valueRangeChanged, this, &PreProcessorGeoDataDataItem::informValueRangeChange);
+	connect(m_geoData, &GeoData::dataChanged, this, &PreProcessorGeoDataDataItem::informDataChange);
+
 	m_exportAction->setEnabled(isExportAvailable());
 
 	updateZDepthRangeItemCount();
@@ -236,12 +239,12 @@ void PreProcessorGeoDataDataItem::updateZDepthRangeItemCount()
 
 void PreProcessorGeoDataDataItem::informValueRangeChange()
 {
-	dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent())->informValueRangeChange();
+	groupDataItem()->informValueRangeChange();
 }
 
 void PreProcessorGeoDataDataItem::informDataChange()
 {
-	dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent())->informDataChange();
+	groupDataItem()->informDataChange();
 }
 
 bool PreProcessorGeoDataDataItem::getValueRange(double* min, double* max)

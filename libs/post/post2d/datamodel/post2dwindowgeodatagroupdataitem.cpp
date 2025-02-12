@@ -32,7 +32,7 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	Post2dWindowDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_condition {cond}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	applyColorMapSetting();
 
@@ -73,22 +73,22 @@ void Post2dWindowGeoDataGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
 
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
 {
-	Post2dWindowGeoDataTopDataItem* tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
-	PreProcessorGeoDataTopDataItemI* rtItem = tItem->preGeoDataTopDataItem();
-	PreProcessorGeoDataGroupDataItemI* gItem = rtItem->groupDataItem(m_condition->name());
+	auto tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
+	auto rtItem = tItem->preGeoDataTopDataItem();
+	auto gItem = rtItem->groupDataItem(m_condition->name());
 
-	std::vector<GraphicsWindowDataItem*> oldChildren = m_childItems;
+	auto oldChildren = m_childItems;
 	QMap<GeoData*, Post2dWindowGeoDataDataItem*> map;
-	for (int i = 0; i < oldChildren.size(); ++i) {
-		Post2dWindowGeoDataDataItem* item = dynamic_cast<Post2dWindowGeoDataDataItem*>(oldChildren.at(i));
+	for (int i = 0; i < static_cast<int> (oldChildren.size()); ++i) {
+		auto item = dynamic_cast<Post2dWindowGeoDataDataItem*>(oldChildren.at(i));
 		map.insert(item->geoDataProxy()->geoData(), item);
 		m_standardItem->takeRow(0);
 	}
 	m_childItems.clear();
 	m_itemNameMap.clear();
 
-	std::vector<GraphicsWindowDataItem*> origChildren = gItem->childItems();
-	for (int i = 0; i < origChildren.size(); ++i) {
+	auto origChildren = gItem->childItems();
+	for (int i = 0; i < static_cast<int> (origChildren.size()); ++i) {
 		PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(origChildren.at(i));
 		GeoData* geoData = item->geoData();
 		if (geoData == nullptr) {continue;}
@@ -103,8 +103,9 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 			// try to add.
 			GeoDataProxy* proxy = geoData->getProxy();
 			if (proxy != nullptr) {
+				connect(geoData, &GeoData::valueRangeChanged, proxy, &GeoDataProxy::valueRangeChanged);
 				connect(geoData, &GeoData::updateActorSettingExecuted, proxy, &GeoDataProxy::updateActorSetting);
-				Post2dWindowGeoDataDataItem* pItem = new Post2dWindowGeoDataDataItem(this);
+				auto pItem = new Post2dWindowGeoDataDataItem(this);
 				pItem->setGeoDataProxy(proxy);
 				proxy->setupDataItem();
 				m_childItems.push_back(pItem);
@@ -113,11 +114,41 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 			}
 		}
 	}
-	for (int i = 0; i < oldChildren.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (oldChildren.size()); ++i) {
 		delete oldChildren.at(i);
 	}
 	assignActorZValues(m_zDepthRange);
 	updateItemMap();
+	handleValueRangeChange();
+}
+
+void Post2dWindowGeoDataGroupDataItem::handleValueRangeChange()
+{
+	double min = 0;
+	double max = 0;
+
+	bool first = true;
+	bool result = false;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowGeoDataDataItem*>(child);
+		double tmpmin;
+		double tmpmax;
+		if (item->getValueRange(&tmpmin, &tmpmax)) {
+			if (first || tmpmin < min) {min = tmpmin;}
+			if (first || tmpmax > max) {max = tmpmax;}
+			result = true;
+			first = false;
+		}
+	}
+	if (! result) {return;}
+
+	auto cm = colorMapSetting();
+	if (cm == nullptr) {return;}
+
+	cm->customSetting->setAutoValueRange(min, max);
+	applyColorMapSetting();
+
+	renderGraphicsView();
 }
 
 void Post2dWindowGeoDataGroupDataItem::applyColorMapSetting()
@@ -178,9 +209,9 @@ bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 		added = true;
 	}
 
-	Post2dWindowGeoDataTopDataItem* tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
-	PreProcessorGeoDataTopDataItemI* rtItem = tItem->preGeoDataTopDataItem();
-	PreProcessorGeoDataGroupDataItemI* gItem = rtItem->groupDataItem(m_condition->name());
+	auto tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
+	auto rtItem = tItem->preGeoDataTopDataItem();
+	auto gItem = rtItem->groupDataItem(m_condition->name());
 	auto dims = gItem->dimensions();
 
 	for (auto w : dims->buildSelectWidgets()) {

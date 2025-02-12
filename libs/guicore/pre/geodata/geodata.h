@@ -130,6 +130,8 @@ public:
 	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 
 signals:
+	void valueRangeChanged();
+	void dataChanged();
 	void updateActorSettingExecuted();
 
 public slots:

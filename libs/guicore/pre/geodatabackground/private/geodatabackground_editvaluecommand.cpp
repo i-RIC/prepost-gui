@@ -27,7 +27,6 @@ void GeoDataBackground::EditValueCommand::applyValues(GeoDataBackground::Type t,
 	m_background->m_customValue = val;
 	m_background->setMapped(mapped);
 
-	auto geoData = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_background->parent());
-	geoData->informValueRangeChange();
-	geoData->informDataChange();
+	emit m_background->valueRangeChanged();
+	emit m_background->dataChanged();
 }

@@ -20,8 +20,8 @@ public:
 	SolverDefinitionGridType* gridType() const override;
 	const QList<PreProcessorGeoDataGroupDataItemI*> groupDataItems() const override;
 	PreProcessorGeoDataGroupDataItemI* groupDataItem(const std::string& name) const override;
-	void informValueRangeChange(const std::string& name);
-	void informDataChange();
+	void informValueRangeChange(const std::string& name) override;
+	void informDataChange() override;
 	void setupActors();
 	void updateActorSettings();
 	QStringList getGeoDatasNotMapped();

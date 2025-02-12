@@ -1461,7 +1461,7 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 	}
 	impl->m_gridThread->finishBGGridCopy();
 	impl->updateVtkBackgroundObjects();
-	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->informValueRangeChange();
+	emit valueRangeChanged();
 }
 
 void GeoDataRiverSurvey::showInitialDialog()

@@ -25,6 +25,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> m_conditions;
 	GeoDataTopDataItem* m_geoDataTopDataItem;
 
 	class ModifyDialog;
