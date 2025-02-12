@@ -2251,15 +2251,15 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow::DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid modification?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite atmesti tinklelio modifikaciją?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite atmesti skaičiavimo rezultatą?</translation>
     </message>
 </context>
 <context>

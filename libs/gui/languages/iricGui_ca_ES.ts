@@ -2251,15 +2251,15 @@ Option -&gt; Preferences</source>
     <name>iRICMainWindow::DiscardResultConfirmDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avís</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid modification?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteu segur que voleu descartar la modificació de la quadrícula?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteu segur que voleu descartar el resultat del càlcul?</translation>
     </message>
 </context>
 <context>
