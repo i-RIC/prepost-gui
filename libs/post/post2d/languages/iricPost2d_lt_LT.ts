@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,7 +58,7 @@
         <translation>Pasirinkite, kurią vertę eksportuoti.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>„Diskrečiajame režime“ nenubrėžiamas joks kontūras.</translation>
     </message>
 </context>
@@ -65,6 +67,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>Skaliarinis nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacija</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,7 +96,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
 </context>
 <context>
@@ -509,7 +522,7 @@
         <translation type="vanished">Klaida</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
@@ -646,117 +659,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>Atnaujinkite grafiko nustatymą</translation>
+        <translation type="vanished">Atnaujinkite grafiko nustatymą</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">Grafiko nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Kryptis</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">I kryptis</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">J kryptimi</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regionas</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Visi</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">Dalinis regionas</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">Pradėti:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">Galas:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">Praleisti:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Pasirinktinis</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Redaguoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">Nubrėžkite kryptį</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">Vertikalios iki tinklelio linijų</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">Lygiagrečiai tinklelio linijoms</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">Tinklelio linijos</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">Lygiosios</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">Grafiko linijos</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Fizinė vertė:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">Skalė:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">Jokios modifikacijos</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">Kiekvienoje eilutėje atimkite didžiausią vertę</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">Kiekvienoje eilutėje atimkite minimalią vertę</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">Pasirinktinis regiono nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">Pasirinkti viską (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">Panaikinti visų pasirinkimą (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>Pasirinktinis regiono nustatymas</translation>
+        <translation type="vanished">Pasirinktinis regiono nustatymas</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>Pasirinkti viską (&amp;S)</translation>
+        <translation type="vanished">Pasirinkti viską (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>Panaikinti visų pasirinkimą (&amp;U)</translation>
+        <translation type="vanished">Panaikinti visų pasirinkimą (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>Grafiko nustatymas</translation>
+        <translation type="vanished">Grafiko nustatymas</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Kryptis</translation>
+        <translation type="vanished">Kryptis</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>I kryptis</translation>
+        <translation type="vanished">I kryptis</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>J kryptimi</translation>
+        <translation type="vanished">J kryptimi</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Regionas</translation>
+        <translation type="vanished">Regionas</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Visi</translation>
+        <translation type="vanished">Visi</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>Dalinis regionas</translation>
+        <translation type="vanished">Dalinis regionas</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Pradėti:</translation>
+        <translation type="vanished">Pradėti:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Galas:</translation>
+        <translation type="vanished">Galas:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>Praleisti:</translation>
+        <translation type="vanished">Praleisti:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation type="vanished">Pasirinktinis</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redaguoti (&amp;E)...</translation>
+        <translation type="vanished">Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>Nubrėžkite kryptį</translation>
+        <translation type="vanished">Nubrėžkite kryptį</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Vertikalios iki tinklelio linijų</translation>
+        <translation type="vanished">Vertikalios iki tinklelio linijų</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>Lygiagrečiai tinklelio linijoms</translation>
+        <translation type="vanished">Lygiagrečiai tinklelio linijoms</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>Tinklelio linijos</translation>
+        <translation type="vanished">Tinklelio linijos</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>Lygiosios</translation>
+        <translation type="vanished">Lygiosios</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>Grafiko linijos</translation>
+        <translation type="vanished">Grafiko linijos</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Skalė:</translation>
+        <translation type="vanished">Skalė:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>Jokios modifikacijos</translation>
+        <translation type="vanished">Jokios modifikacijos</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>Kiekvienoje eilutėje atimkite didžiausią vertę</translation>
+        <translation type="vanished">Kiekvienoje eilutėje atimkite didžiausią vertę</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>Kiekvienoje eilutėje atimkite minimalią vertę</translation>
+        <translation type="vanished">Kiekvienoje eilutėje atimkite minimalią vertę</translation>
     </message>
 </context>
 <context>
@@ -778,7 +905,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1122,27 @@
         <translation>Skaliarinis nustatymas (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">Norint eksportuoti KML į gatvės vaizdą, Colormode turi būti "Diskrečiasis režimas"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">Norint eksportuoti KML į gatvės vaizdą, Colormode turi būti &quot;Diskrečiasis režimas&quot;</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>Norėdami eksportuoti KML, skirtą gatvės vaizdui, vertė turi būti tikroji vertė, tai yra sveikasis skaičius.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
         <translation>Norint eksportuoti KML į gatvės vaizdą, spalvų režimas turi būti „Diskretusis režimas“</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacija</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1056,7 +1194,7 @@
         <translation type="vanished">Klaida</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
@@ -1064,7 +1202,7 @@
         <translation>Skaliarinis</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Norėdami eksportuoti formos failą, perjunkite spalvų nustatymą į „Diskretus režimas“.</translation>
     </message>
     <message>
@@ -1728,16 +1866,16 @@
         <translation type="vanished">Erdvės generavimo intervalas</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Jei nurodysite 1, dalelės generuojamos tinklelio mazguose. &lt;/p&gt; &lt;p&gt; Jei nurodysite 2, dalelės generuojamos tinklelio mazguose ir tinklelio mazgų viduriniuose taškuose. &lt;/p&gt; &lt;p&gt; Jei nurodykite 1/2, dalelės generuojamos visiems kitiems tinklelio mazgams. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Jei nurodysite 1, dalelės generuojamos tinklelio mazguose. &lt;/p&gt; &lt;p&gt; Jei nurodysite 2, dalelės generuojamos tinklelio mazguose ir tinklelio mazgų viduriniuose taškuose. &lt;/p&gt; &lt;p&gt; Jei nurodykite 1/2, dalelės generuojamos visiems kitiems tinklelio mazgams. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1886,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Dydis:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1997,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Dydis:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2293,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Erdvės generavimo intervalas</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1, supaprastinimas prasideda nuo tinklelio mazgų. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Jei nurodote 2, supaprastinimai prasideda tinklelio mazgais ir tinklelio mazgų viduriniais taškais. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1/2, supaprastinimai prasideda nuo visų kitų tinklelio mazgų. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jei nurodysite 1, supaprastinimas prasideda nuo tinklelio mazgų. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Jei nurodote 2, supaprastinimai prasideda tinklelio mazgais ir tinklelio mazgų viduriniais taškais. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jei nurodysite 1/2, supaprastinimai prasideda nuo visų kitų tinklelio mazgų. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2331,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Plotis:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2402,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Plotis:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

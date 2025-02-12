@@ -13,6 +13,9 @@
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/region/region2dsettingcontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -92,7 +95,7 @@ QUndoCommand* Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::cre
 	auto com1 = new ValueModifyCommmand<Setting>(iRIC::generateCommandId("Setting"), apply, s, &m_item->impl->m_setting);
 	QUndoCommand* com2 = nullptr;
 	if (s.colorMode != Setting::ColorMode::Custom) {
-		com2 = m_colorMapEditWidget->createModifyCommand();
+		com2 = m_colorMapEditWidget->createModifyCommand(apply);
 	}
 
 	return new UpdateSettingCommand(apply, com1, com2);
@@ -173,15 +176,18 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleNodeSc
 	auto name = m_nodeValueNames.at(index);
 	auto cs = m_item->impl->m_colorMapSettings.find(name)->second;
 	if (m_colorMapEditWidget != nullptr) {
-		auto oldSetting = m_colorMapEditWidget->setting();
+		auto oldSetting = m_colorMapEditWidget->widget()->setting();
 		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
 
 	auto output = m_item->topDataItem()->zoneDataItem()->v4DataContainer()->gridType()->output(name);
-	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
-	m_colorMapEditWidget->setSetting(cs);
-	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
-	ui->colorMapWidget->setWidget(widget);
+	auto cmw = output->createColorMapSettingEditWidget(this);
+	cmw->setSetting(cs);
+	m_colorMapEditWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+	m_colorMapEditWidget->showSetAsDefaultButton();
+	connect(m_colorMapEditWidget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &SettingEditWidget::setAsDefault);
+
+	ui->colorMapWidget->setWidget(m_colorMapEditWidget);
 }
 
 void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellScalarChange(int index)
@@ -189,13 +195,31 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellSc
 	auto name = m_cellValueNames.at(index);
 	auto cs = m_item->impl->m_colorMapSettings.find(name)->second;
 	if (m_colorMapEditWidget != nullptr) {
-		auto oldSetting = m_colorMapEditWidget->setting();
+		auto oldSetting = m_colorMapEditWidget->widget()->setting();
 		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
 
 	auto output = m_item->topDataItem()->zoneDataItem()->v4DataContainer()->gridType()->output(name);
-	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
-	m_colorMapEditWidget->setSetting(cs);
-	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
-	ui->colorMapWidget->setWidget(widget);
+	auto cmw = output->createColorMapSettingEditWidget(this);
+	cmw->setSetting(cs);
+	m_colorMapEditWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+	m_colorMapEditWidget->showSetAsDefaultButton();
+	connect(m_colorMapEditWidget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &SettingEditWidget::setAsDefault);
+
+	ui->colorMapWidget->setWidget(m_colorMapEditWidget);
+}
+
+void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::setAsDefault()
+{
+	auto cmw = m_colorMapEditWidget->widget();
+	std::string name;
+	if (ui->nodeScalarRadioButton->isChecked()) {
+		name = m_nodeValueNames.at(ui->nodeScalarComboBox->currentIndex());
+	} else if (ui->cellScalarRadioButton->isChecked()) {
+		name = m_cellValueNames.at(ui->cellScalarComboBox->currentIndex());
+	}
+
+	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(name, cmw->copySetting());
+
+	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }

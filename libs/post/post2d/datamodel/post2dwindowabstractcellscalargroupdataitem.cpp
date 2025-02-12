@@ -13,6 +13,9 @@
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontainerutil.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -32,8 +35,15 @@ Post2dWindowAbstractCellScalarGroupDataItem::Post2dWindowAbstractCellScalarGroup
 	auto gType = topDataItem()->zoneDataItem()->v4DataContainer()->gridType();
 	QString caption = gType->outputCaption(target);
 	SolverDefinitionGridOutput* output = gType->output(target);
+
 	standardItem()->setText(caption);
-	auto cs = output->createColorMapSettingContainer();
+	ColorMapSettingContainerI* cs = nullptr;
+	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
+	if (defaultCs != nullptr) {
+		cs = defaultCs->copy();
+	} else {
+		cs = output->createColorMapSettingContainer();
+	}
 	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;
 

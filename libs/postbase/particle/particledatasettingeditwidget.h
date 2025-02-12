@@ -14,6 +14,7 @@ class ParticleDataSettingEditWidget;
 class ColorMapSettingContainerI;
 class ColorMapSettingEditWidgetI;
 class ParticleDataSetting;
+class ProjectDefaultColorMapSettings;
 class SolverDefinitionGridType;
 
 class POSTBASEDLL_EXPORT ParticleDataSettingEditWidget : public ModifyCommandWidget
@@ -27,12 +28,14 @@ public:
 	void setValueNames(const std::unordered_map<std::string, QString>& names);
 	void setGridType(SolverDefinitionGridType* gridType);
 	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
+	void setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings);
 	void setSetting(ParticleDataSetting* setting);
 
 	QUndoCommand* createModifyCommand(bool apply) override;
 
 private slots:
 	void colorTargetChanged(int index);
+	void setColorMapAsDefault();
 
 private:
 	ParticleDataSetting setting() const;
@@ -44,6 +47,7 @@ private:
 	std::vector<std::string> m_colorTargets;
 	ColorMapSettingEditWidgetI* m_colorMapWidget;
 	SolverDefinitionGridType* m_gridType;
+	ProjectDefaultColorMapSettings* m_defaultColorMapSettings;
 
 	Ui::ParticleDataSettingEditWidget *ui;
 

@@ -33,6 +33,7 @@ public:
 signals:
 	void importClicked();
 	void exportClicked();
+	void setAsDefaultClicked();
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);

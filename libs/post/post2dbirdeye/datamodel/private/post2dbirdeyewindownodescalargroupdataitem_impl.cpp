@@ -1,5 +1,8 @@
 #include "post2dbirdeyewindownodescalargroupdataitem_impl.h"
 
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -12,7 +15,8 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::Impl(const std::string& elevat
 	m_legendActor {vtkActor2D::New()},
 	m_colorMapSettings {},
 	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(item->mainWindow())},
-	m_opacityToolBarWidget {new OpacityContainerWidget(item->mainWindow())}
+	m_opacityToolBarWidget {new OpacityContainerWidget(item->mainWindow())},
+	m_parent {item}
 {}
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::~Impl()
@@ -30,7 +34,12 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::createOrUpdateColorMapsSe
 	ColorMapSettingContainerI* setting = nullptr;
 	auto it = m_colorMapSettings.find(output->name());
 	if (it == m_colorMapSettings.end()) {
-		setting = output->createColorMapSettingContainer();
+		auto defaultCs = m_parent->projectData()->mainfile()->defaultColorMapSettings()->colorMap(output->name());
+		if (defaultCs != nullptr) {
+			setting = defaultCs->copy();
+		} else {
+			setting = output->createColorMapSettingContainer();
+		}
 		setting->valueCaption = output->caption();
 		setting->legendSetting()->setTitle(output->caption());
 		m_colorMapSettings.insert({output->name(), setting});

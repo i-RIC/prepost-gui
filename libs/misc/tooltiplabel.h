@@ -1,11 +1,11 @@
 #ifndef TOOLTIPLABEL_H
 #define TOOLTIPLABEL_H
 
-#include "guibase_global.h"
+#include "misc_global.h"
 
 #include <QLabel>
 
-class GUIBASEDLL_EXPORT TooltipLabel : public QLabel
+class MISCDLL_EXPORT TooltipLabel : public QLabel
 {
 	Q_OBJECT
 

@@ -10,7 +10,7 @@ namespace Ui {
 class Post2dWindowAbstractCellScalarGroupDataItem_SettingEditWidget;
 }
 
-class ModifyCommandWidget;
+class ColorMapSettingEditWidgetWithImportExportButton;
 
 class Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
@@ -23,8 +23,11 @@ public:
 	void hideLineWidth();
 	QUndoCommand* createModifyCommand(bool apply);
 
+public slots:
+	void setAsDefault();
+
 private:
-	ModifyCommandWidget* m_colorMapWidget;
+	ColorMapSettingEditWidgetWithImportExportButton* m_colorMapWidget;
 	Post2dWindowAbstractCellScalarGroupDataItem* m_item;
 
 	Ui::Post2dWindowAbstractCellScalarGroupDataItem_SettingEditWidget *ui;

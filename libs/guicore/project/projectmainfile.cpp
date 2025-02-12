@@ -10,6 +10,7 @@
 #include "offsetsettingdialog.h"
 #include "projectcgnsfile.h"
 #include "projectcgnsmanager.h"
+#include "projectdefaultcolormapsettings.h"
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"
@@ -88,6 +89,7 @@ ProjectMainFile::Impl::Impl(ProjectData* data, ProjectMainFile *parent) :
 	m_cgnsManager {new ProjectCgnsManager(parent)},
 	m_postSolutionInfo {new PostSolutionInfo(parent)},
 	m_postProcessors {new ProjectPostProcessors(parent)},
+	m_defaultColorMapSettings {new ProjectDefaultColorMapSettings()},
 	m_projectData {data},
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
@@ -108,6 +110,7 @@ ProjectMainFile::Impl::~Impl()
 	}
 	delete m_cgnsManager;
 	delete m_postProcessors;
+	delete m_defaultColorMapSettings;
 	delete m_postSolutionInfo;
 }
 
@@ -426,6 +429,11 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->loadBackgrounds(tmpNode);
 	}
 	impl->m_projectData->mainWindow()->loadSubWindowsFromProjectMainFile(node);
+
+	tmpNode = iRIC::getChildNode(node, "DefaultColorMapSettings");
+	if (! tmpNode.isNull()) {
+		impl->m_defaultColorMapSettings->load(tmpNode);
+	}
 }
 
 void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -480,6 +488,11 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	impl->saveBackgrounds(writer);
 	writer.writeEndElement();
 	impl->deleteGarbageBackgroundImages();
+
+	// write default color map settings
+	writer.writeStartElement("DefaultColorMapSettings");
+	impl->m_defaultColorMapSettings->save(writer);
+	writer.writeEndElement();
 
 	impl->m_projectData->mainWindow()->saveSubWindowsToProjectMainFile(writer);
 }
@@ -1063,6 +1076,11 @@ void ProjectMainFile::setCoordinateSystem(CoordinateSystem* system)
 	}
 	impl->m_coordinateSystem = system;
 	if (impl->m_coordinateSystem != nullptr) {impl->m_coordinateSystem->init();}
+}
+
+ProjectDefaultColorMapSettings* ProjectMainFile::defaultColorMapSettings() const
+{
+	return impl->m_defaultColorMapSettings;
 }
 
 const QDateTime& ProjectMainFile::zeroDateTime() const

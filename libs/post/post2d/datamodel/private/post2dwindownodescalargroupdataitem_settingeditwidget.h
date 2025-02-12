@@ -9,6 +9,8 @@ namespace Ui {
 class Post2dWindowNodeScalarGroupDataItem_SettingEditWidget;
 }
 
+class ColorMapSettingEditWidgetWithImportExportButton;
+
 class Post2dWindowNodeScalarGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
@@ -19,8 +21,11 @@ public:
 
 	QUndoCommand* createModifyCommand(bool apply);
 
+public slots:
+	void setAsDefault();
+
 private:
-	ModifyCommandWidget* m_colorMapWidget;
+	ColorMapSettingEditWidgetWithImportExportButton* m_colorMapWidget;
 	Post2dWindowNodeScalarGroupDataItem* m_item;
 
 	Ui::Post2dWindowNodeScalarGroupDataItem_SettingEditWidget *ui;

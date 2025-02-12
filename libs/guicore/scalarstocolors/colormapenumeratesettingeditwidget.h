@@ -24,6 +24,8 @@ public:
 	ColorMapEnumerateSettingContainer concreteSetting() const;
 	void setConcreteSetting(const ColorMapEnumerateSettingContainer& setting);
 
+	ColorMapSettingContainerI* copySetting() const override;
+
 	void setDisableOtherThanLegendVisible(bool disabled) override;
 	QUndoCommand* createModifyCommand() const override;
 

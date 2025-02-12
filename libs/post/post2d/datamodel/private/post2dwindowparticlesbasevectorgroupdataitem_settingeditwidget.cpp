@@ -7,6 +7,9 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/filter/generalfilteringsettingeditwidget.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowParticlesBaseVectorGroupDataItem* item, QWidget *parent) :
@@ -26,6 +29,7 @@ Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::SettingEditWidg
 	auto colorMaps = m_item->topDataItem()->scalarGroupDataItem()->colorMapSettings();
 	ui->arrowsSettingWidget->setGridType(gtype);
 	ui->arrowsSettingWidget->setColorMapSettings(colorMaps);
+	ui->arrowsSettingWidget->setDefaultColorMapSettings(item->projectData()->mainfile()->defaultColorMapSettings());
 	ui->arrowsSettingWidget->setSetting(&m_item->m_setting.arrowsSetting);
 	m_filteringEditWidget->setSetting(&m_item->m_setting.filteringSetting);
 }

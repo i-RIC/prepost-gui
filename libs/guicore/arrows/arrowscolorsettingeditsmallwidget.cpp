@@ -16,6 +16,7 @@ ArrowsColorSettingEditSmallWidget::ArrowsColorSettingEditSmallWidget(QWidget *pa
 	QWidget(parent),
 	m_colorMapSetting {nullptr},
 	m_colorMapSettings {},
+	m_defaultColorMapSettings {nullptr},
 	m_gridType {nullptr},
 	ui(new Ui::ArrowsColorSettingEditSmallWidget)
 {
@@ -57,6 +58,11 @@ void ArrowsColorSettingEditSmallWidget::setColorMapSettings(const std::unordered
 		ui->customRadioButton->setDisabled(true);
 		ui->scalarRadioButton->setDisabled(true);
 	}
+}
+
+void ArrowsColorSettingEditSmallWidget::setDefaultColorMapSettings(ProjectDefaultColorMapSettings* settings)
+{
+	m_defaultColorMapSettings = settings;
 }
 
 ArrowsSettingContainer ArrowsColorSettingEditSmallWidget::setting() const
@@ -130,6 +136,7 @@ void ArrowsColorSettingEditSmallWidget::openColorMapEditDialog()
 
 	widget->setSetting(m_colorMapSetting);
 	dialog.setWindowTitle(tr("Colormap Setting (%1)").arg(m_colorMapSetting->valueCaption));
+	dialog.setupSetAsDefaultButton(name, m_defaultColorMapSettings);
 	dialog.resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize()));
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}

@@ -18,6 +18,7 @@
 #include <guicore/grid/v4grid2d.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
@@ -56,7 +57,13 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	QString caption = adProvider->caption(target);
 
 	standardItem()->setText(caption);
-	auto cs = adProvider->createColorMapSetting(target);
+	ColorMapSettingContainerI* cs = nullptr;
+	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
+	if (defaultCs != nullptr) {
+		cs = defaultCs->copy();
+	} else {
+		cs = adProvider->createColorMapSetting(target);
+	}
 	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;
 	impl->m_setting.contourSetting.setColorMapSetting(cs);
@@ -197,10 +204,13 @@ void Post2dWindowNodeScalarGroupDataItem::showPropertyDialog()
 QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Scalar Setting (%1)").arg(standardItem()->text()));
 	dialog->resize(QScreenUtil::sizeWithinScreen(ColorMapSettingEditWidgetI::standardDialogSize(115)));
+
+	connect(dialog, &GraphicsWindowDataItemUpdateActorSettingDialog::setAsDefaultClicked, widget, &SettingEditWidget::setAsDefault);
 
 	return dialog;
 }

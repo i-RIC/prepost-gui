@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>鳥瞰図可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
@@ -79,10 +81,21 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation>このプロジェクトでのデフォルト設定にされました。</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Color</source>
@@ -232,7 +245,7 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -260,6 +273,17 @@
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation>このプロジェクトでのデフォルト設定にされました。</translation>
     </message>
 </context>
 <context>
@@ -297,7 +321,7 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Color</source>

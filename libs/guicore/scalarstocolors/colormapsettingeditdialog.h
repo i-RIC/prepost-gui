@@ -11,6 +11,7 @@ class ColorMapSettingEditDialog;
 
 class ColorMapSettingContainerI;
 class ColorMapSettingEditWidgetI;
+class ProjectDefaultColorMapSettings;
 
 class GUICOREDLL_EXPORT ColorMapSettingEditDialog : public QDialog
 {
@@ -27,11 +28,19 @@ public:
 
 	ColorMapSettingContainerI* setting() const;
 	void setSetting(ColorMapSettingContainerI* setting);
+	void setupSetAsDefaultButton(const std::string& name, ProjectDefaultColorMapSettings* settings);
 
 	QUndoCommand* createModifyCommand() const;
 
+private slots:
+	void setAsDefault();
+
 private:
 	ColorMapSettingEditWidgetI* m_widget;
+
+	std::string m_targetName;
+	ProjectDefaultColorMapSettings* m_defaultColorMapSettings;
+
 	Ui::ColorMapSettingEditDialog *ui;
 };
 

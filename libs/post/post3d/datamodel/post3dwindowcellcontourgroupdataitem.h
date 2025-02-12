@@ -4,10 +4,9 @@
 #include "../post3dwindowcellrangesettingcontainer.h"
 #include "../post3dwindowdataitem.h"
 
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
-
 #include <string>
 
+class ColorMapSettingContainerI;
 class ColorMapSettingToolBarWidget;
 class Post3dWindowZoneDataItem;
 class v4PostZoneDataContainer;
@@ -55,7 +54,7 @@ private:
 
 	std::string m_target;
 
-	ColorMapSettingContainer m_colorMapSetting;
+	ColorMapSettingContainerI* m_colorMapSetting;
 	vtkActor2D* m_legendActor;
 
 	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;

@@ -9,7 +9,7 @@ namespace Ui {
 class Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget;
 }
 
-class ColorMapSettingEditWidgetI;
+class ColorMapSettingEditWidgetWithImportExportButton;
 
 class Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
@@ -30,13 +30,14 @@ private slots:
 	void handleCellRadioButtonClick();
 	void handleNodeScalarChange(int index);
 	void handleCellScalarChange(int index);
+	void setAsDefault();
 
 private:
 	Setting* m_setting;
 	std::vector<std::string> m_nodeValueNames;
 	std::vector<std::string> m_cellValueNames;
 
-	ColorMapSettingEditWidgetI* m_colorMapEditWidget;
+	ColorMapSettingEditWidgetWithImportExportButton* m_colorMapEditWidget;
 	Post2dBirdEyeWindowCellScalarGroupDataItem* m_item;
 
 	Ui::Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget *ui;

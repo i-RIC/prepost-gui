@@ -8,6 +8,9 @@
 #include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdefaultcolormapsettings.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -30,6 +33,8 @@ Post3dWindowContourGroupDataItem::SettingEditWidget::SettingEditWidget(Post3dWin
 	auto cmw = output->createColorMapSettingEditWidget(this);
 	cmw->setSetting(item->impl->m_setting.colorMapSetting);
 	m_colorMapWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+	m_colorMapWidget->showSetAsDefaultButton();
+	connect(m_colorMapWidget, &ColorMapSettingEditWidgetWithImportExportButton::setAsDefaultClicked, this, &SettingEditWidget::setAsDefault);
 
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	setSetting(item->impl->m_setting);
@@ -53,6 +58,14 @@ QUndoCommand* Post3dWindowContourGroupDataItem::SettingEditWidget::createModifyC
 	command->addCommand(new SetFacesCommand(ui->faceListWidget->faces(), m_item));
 
 	return command;
+}
+
+void Post3dWindowContourGroupDataItem::SettingEditWidget::setAsDefault()
+{
+	auto cmw = m_colorMapWidget->widget();
+	m_item->projectData()->mainfile()->defaultColorMapSettings()->add(m_item->target(), cmw->copySetting());
+
+	QMessageBox::information(this, tr("Information"), tr("Set as the default setting for this project."));
 }
 
 Post3dWindowContourGroupDataItem::Setting Post3dWindowContourGroupDataItem::SettingEditWidget::setting() const

@@ -11,7 +11,7 @@ namespace Ui {
 class Post3dWindowContourGroupDataItem_SettingEditWidget;
 }
 
-class ColorMapSettingEditWidget;
+class ColorMapSettingEditWidgetWithImportExportButton;
 
 class Post3dWindowContourGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
@@ -23,11 +23,14 @@ public:
 
 	QUndoCommand* createModifyCommand(bool apply) override;
 
+public slots:
+	void setAsDefault();
+
 private:
 	Setting setting() const;
 	void setSetting(const Setting& setting);
 
-	ModifyCommandWidget* m_colorMapWidget;
+	ColorMapSettingEditWidgetWithImportExportButton* m_colorMapWidget;
 	Post3dWindowContourGroupDataItem* m_item;
 
 	Ui::Post3dWindowContourGroupDataItem_SettingEditWidget *ui;
