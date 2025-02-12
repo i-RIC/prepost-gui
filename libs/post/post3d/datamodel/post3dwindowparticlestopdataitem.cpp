@@ -14,7 +14,10 @@ v4Particles3d* Post3dWindowParticlesTopDataItem::particleData() const
 	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Particles3d*> (cont->particleData()->grid());
+	auto pd = cont->particleData();
+	if (pd == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Particles3d*> (pd->grid());
 }
 
 Post3dWindowZoneDataItem* Post3dWindowParticlesTopDataItem::zoneDataItem() const
