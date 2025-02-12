@@ -1,13 +1,15 @@
 #ifndef GRAPHICSWINDOWDATAITEM_UPDATEACTORSETTINGCOMMAND_H
 #define GRAPHICSWINDOWDATAITEM_UPDATEACTORSETTINGCOMMAND_H
 
+#include "../../guicore_global.h"
+
 #include "../graphicswindowdataitem.h"
 
 #include <QUndoCommand>
 
 #include <memory>
 
-class GraphicsWindowDataItem::UpdateActorSettingCommand : public QUndoCommand
+class GUICOREDLL_EXPORT GraphicsWindowDataItem::UpdateActorSettingCommand : public QUndoCommand
 {
 public:
 	UpdateActorSettingCommand(QUndoCommand* child, GraphicsWindowDataItem* item);
