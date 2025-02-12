@@ -77,6 +77,7 @@ protected:
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
+	void doUpdateActorSetting() override;
 
 private:
 	void setupActors();

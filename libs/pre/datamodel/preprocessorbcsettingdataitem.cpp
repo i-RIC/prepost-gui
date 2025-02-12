@@ -314,3 +314,8 @@ void PreProcessorBCSettingDataItem::doApplyOffset(double x, double y)
 {
 	this->m_polygon->doApplyOffset(x, y);
 }
+
+void PreProcessorBCSettingDataItem::doUpdateActorSetting()
+{
+	m_polygon->doUpdateActorSetting();
+}
