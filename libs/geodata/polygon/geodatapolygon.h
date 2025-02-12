@@ -123,9 +123,9 @@ public:
 
 public slots:
 	void restoreMouseEventMode() override;
+	void updatePolyData(bool noDraw = false);
 
 private slots:
-	void updatePolyData(bool noDraw = false);
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
 	void editCoordinates();

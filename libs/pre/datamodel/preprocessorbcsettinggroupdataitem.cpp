@@ -6,6 +6,7 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorbcsettinggroupdataitem_shpexporter.h"
+#include "private/preprocessorbcsettinggroupdataitem_shpimporter.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
@@ -211,6 +212,13 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 const QList<QAction*>& PreProcessorBCSettingGroupDataItem::addActions() const
 {
 	return m_addActions;
+}
+
+void PreProcessorBCSettingGroupDataItem::importPolygons(const QString& fileName)
+{
+	ShpImporter importer(fileName);
+
+	importer.importPolygons(this);
 }
 
 void PreProcessorBCSettingGroupDataItem::exportPolygons(const QString& fileName) const

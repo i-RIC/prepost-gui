@@ -381,6 +381,10 @@ void PreProcessorBCGroupDataItem::importBc()
 	assignActorZValues(m_zDepthRange);
 	emit itemsUpdated();
 
+	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
+	auto shpFileName = fname.replace(".yaml", ".shp");
+	bcsItem->importPolygons(shpFileName);
+
 	LastIODirectory::setFromFilename(fname);
 
 	projectData()->mainfile()->setModified();
