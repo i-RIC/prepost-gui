@@ -11,6 +11,7 @@
 #include "../base/preprocessorwindowi.h"
 #include "geodata.h"
 #include "geodatacreator.h"
+#include "geodataimportersetting.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
@@ -33,6 +34,8 @@ GeoData::Setting::Setting() :
 
 GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	ProjectDataItem {d},
+	m_setting {},
+	m_importerSetting {nullptr},
 	m_creator {creator},
 	m_gridAttribute {condition}
 {
@@ -42,6 +45,7 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 }
 GeoData::~GeoData()
 {
+	delete m_importerSetting;
 	delete m_menu;
 }
 
@@ -78,6 +82,16 @@ SolverDefinitionGridAttribute* GeoData::gridAttribute() const
 GeoDataCreator* GeoData::creator() const
 {
 	return m_creator;
+}
+
+GeoDataImporterSetting* GeoData::importerSetting() const
+{
+	return m_importerSetting;
+}
+
+void GeoData::setImporterSetting(GeoDataImporterSetting* setting)
+{
+	m_importerSetting = setting;
 }
 
 std::vector<GeoDataImporter*> GeoData::importers() const

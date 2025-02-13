@@ -11,6 +11,7 @@
 
 class GeoDataCreator;
 class GeoDataImporter;
+class GeoDataImporterSetting;
 class GeoDataExporter;
 class GeoDataMapper;
 class GeoDataProxy;
@@ -71,6 +72,9 @@ public:
 
 	SolverDefinitionGridAttribute* gridAttribute() const;
 	GeoDataCreator* creator() const;
+
+	GeoDataImporterSetting* importerSetting() const;
+	void setImporterSetting(GeoDataImporterSetting* setting);
 
 	virtual GeoDataMapper* mapper() const = 0;
 
@@ -173,6 +177,7 @@ protected:
 	GridAttributeDimensionsContainer* dimensions() const;
 
 	Setting m_setting;
+	GeoDataImporterSetting* m_importerSetting;
 
 	GeoDataCreator* m_creator;
 	SolverDefinitionGridAttribute* m_gridAttribute;

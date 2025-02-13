@@ -10,11 +10,13 @@
 class GeoDataImporter::Impl
 {
 public:
+	Impl();
+	~Impl();
+
 	std::string m_name;
 	QString m_caption;
 
-	QString m_filename;
-	QString m_selectedFilter;
+	GeoDataImporterSetting* m_setting;
 };
 
 #endif // GEODATAIMPORTER_IMPL_H
