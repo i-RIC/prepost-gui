@@ -62,7 +62,7 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 {
 	auto c = dynamic_cast<GeoDataPolyDataGroupCreator*> (creator());
 
-	auto filename = impl->m_setting->fileName();
+	auto filename = setting()->fileName();
 	auto fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 

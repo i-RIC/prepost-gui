@@ -111,7 +111,7 @@ bool GeoDataNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute
 
 	char nameBuffer[200];
 
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	int ncid;
 	int ndims, nvars, ngatts, unlimdimid;
 
@@ -163,7 +163,7 @@ bool GeoDataNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute
 	} else if (m_latDimId != -1 && m_lonDimId != -1){
 		m_csType = GeoDataNetcdf::LonLat;
 	} else {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 
@@ -216,7 +216,7 @@ bool GeoDataNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute
 	}
 
 	if (variables.size() == 0) {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 
@@ -243,7 +243,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	int ret;
 	char nameBuffer[200];
 
-	ret = nc_open(iRIC::toStr(impl->m_setting->fileName()).c_str(), NC_NOWRITE, &ncid_in);
+	ret = nc_open(iRIC::toStr(setting()->fileName()).c_str(), NC_NOWRITE, &ncid_in);
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer(ncid_in);
 

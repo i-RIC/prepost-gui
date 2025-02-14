@@ -47,9 +47,9 @@ bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int /*index*/, QW
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 
-	QFile file(impl->m_setting->fileName());
+	QFile file(setting()->fileName());
 	if (! file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-		QMessageBox::critical(w, tr("Error"), tr("Error occured while opening %1").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
+		QMessageBox::critical(w, tr("Error"), tr("Error occured while opening %1").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 	QTextStream stream(&file);
@@ -216,7 +216,7 @@ bool GeoDataPolygonGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGrid
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = impl->m_setting->fileName();
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.csv$"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code

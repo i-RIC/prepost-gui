@@ -48,9 +48,9 @@ bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*
 {
 	auto gdal = dynamic_cast<GeoDataGdalReal*> (data);
 
-	if (! importPgw(gdal, impl->m_setting->fileName(), w)) {return false;}
-	if (! importMeta(gdal, impl->m_setting->fileName(), w)) {return false;}
-	if (! importPng(gdal, impl->m_setting->fileName(), w)) {return false;}
+	if (! importPgw(gdal, setting()->fileName(), w)) {return false;}
+	if (! importMeta(gdal, setting()->fileName(), w)) {return false;}
+	if (! importPng(gdal, setting()->fileName(), w)) {return false;}
 
 	return true;
 }

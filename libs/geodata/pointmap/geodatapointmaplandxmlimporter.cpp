@@ -85,7 +85,7 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 
 		QElapsedTimer timer;
 		timer.start();
-		QFile f(impl->m_setting->fileName());
+		QFile f(setting()->fileName());
 		bool ok = f.open(QFile::ReadOnly);
 
 		QDomDocument doc;
@@ -120,7 +120,7 @@ bool GeoDataPointmapLandXmlImporter::doInit(int* /*count*/, SolverDefinitionGrid
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = impl->m_setting->fileName();
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.xml"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -152,7 +152,7 @@ bool GeoDataPointmapLandXmlImporter::doInit(int* /*count*/, SolverDefinitionGrid
 
 bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/, QWidget* w)
 {
-	QFile f(impl->m_setting->fileName());
+	QFile f(setting()->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	QDomDocument doc;
@@ -220,7 +220,7 @@ bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/,
 
 bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/, QWidget* /*w*/)
 {
-	QFile f(impl->m_setting->fileName());
+	QFile f(setting()->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	auto pmap = dynamic_cast<GeoDataPointmap*> (data);

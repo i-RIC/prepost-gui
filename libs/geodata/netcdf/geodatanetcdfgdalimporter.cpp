@@ -142,7 +142,7 @@ bool GeoDataNetcdfGdalImporter::setMode(SolverDefinitionGridAttribute* condition
 
 bool GeoDataNetcdfGdalImporter::doInitForSingleMode(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	auto filename = impl->m_setting->fileName();
+	auto filename = setting()->fileName();
 	if (! iRIC::isAscii(filename)) {
 		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
 		return false;
@@ -150,7 +150,7 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(int* count, SolverDefinition
 
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
-		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 
@@ -170,7 +170,7 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(int* count, SolverDefinition
 
 bool GeoDataNetcdfGdalImporter::doInitForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	auto filename = impl->m_setting->fileName();
+	auto filename = setting()->fileName();
 	m_timeZone = item->projectData()->mainfile()->timeZone();
 
 	if (item->geoDatas().size() > 1) {

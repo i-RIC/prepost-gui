@@ -69,7 +69,7 @@ bool GeoDataGdalXbandImporter::doInit(int* /*count*/, SolverDefinitionGridAttrib
 		return false;
 	}
 
-	QFileInfo finfo(impl->m_setting->fileName());
+	QFileInfo finfo(setting()->fileName());
 	QDir dir = finfo.absoluteDir();
 
 	m_dirName = dir.path();

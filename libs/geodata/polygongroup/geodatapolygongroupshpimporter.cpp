@@ -166,13 +166,13 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 
 	auto shapeInfos = buildPolygonShapeInfos(fname, m_converter);
 
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	QString dbfFilename = impl->m_setting->fileName();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

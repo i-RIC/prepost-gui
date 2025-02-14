@@ -112,13 +112,14 @@ void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	}
 
 	if (m_geoData->creator()->isReadOnly()) {
+		m_geoData->loadFromProjectMainFileOnly(node);
+
 		int dataCount;
 		importer->setSetting(is);
 		importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
 		importer->importData(m_geoData, 0, preProcessorWindow());
 		importer->setSetting(nullptr);
 		m_geoData->setImporterSetting(is);
-		m_geoData->loadFromProjectMainFileOnly(node);
 	} else {
 		m_geoData->loadFromProjectMainFile(node);
 		m_geoData->setImporterSetting(is);

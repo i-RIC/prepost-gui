@@ -111,7 +111,7 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 
 	char nameBuffer[200];
 
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	int ncid;
 	int ndims, nvars, ngatts, unlimdimid;
 
@@ -203,7 +203,7 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 	}
 
 	if (variables.size() == 0) {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 
@@ -230,7 +230,7 @@ bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget
 	int ret;
 	char nameBuffer[200];
 
-	ret = nc_open(iRIC::toStr(impl->m_setting->fileName()).c_str(), NC_NOWRITE, &ncid_in);
+	ret = nc_open(iRIC::toStr(setting()->fileName()).c_str(), NC_NOWRITE, &ncid_in);
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer(ncid_in);
 

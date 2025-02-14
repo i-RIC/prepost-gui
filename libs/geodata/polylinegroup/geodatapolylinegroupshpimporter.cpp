@@ -59,10 +59,10 @@ bool GeoDataPolyLineGroupShpImporter::importData(GeoData* data, int /*index*/, Q
 {
 	auto group = dynamic_cast<GeoDataPolyLineGroup*>(data);
 
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	QString dbfFilename = impl->m_setting->fileName();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

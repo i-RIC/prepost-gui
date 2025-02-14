@@ -133,7 +133,7 @@ const QStringList GeoDataPolygonImporter::acceptableExtensions()
 
 bool GeoDataPolygonImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	int numEntities;
@@ -146,7 +146,7 @@ bool GeoDataPolygonImporter::doInit(int* count, SolverDefinitionGridAttribute* c
 		QMessageBox::critical(w, tr("Error"), tr("The shape type contained in this shape file is not polygon."));
 		return false;
 	}
-	QString dbfFilename = impl->m_setting->fileName();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
@@ -169,7 +169,7 @@ bool GeoDataPolygonImporter::doInit(int* count, SolverDefinitionGridAttribute* c
 	GridAttributeEditWidget* widget = condition->editWidget(0);
 	item->setupEditWidget(widget);
 	widget->setVariantValue(condition->variantDefaultValue());
-	GeoDataPolygonImporterSettingDialog dialog(impl->m_setting->fileName(), widget, w);
+	GeoDataPolygonImporterSettingDialog dialog(setting()->fileName(), widget, w);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
@@ -190,7 +190,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 
 	PolygonShapeInfo info = m_shapeInfos.at(index);
 
-	std::string fname = iRIC::toStr(impl->m_setting->fileName());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	SHPObject* shpo = SHPReadObject(shph, info.item);
@@ -229,7 +229,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	SHPDestroyObject(shpo);
 	SHPClose(shph);
 
-	QString dbfFilename = impl->m_setting->fileName();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

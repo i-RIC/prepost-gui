@@ -48,9 +48,9 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importData(GeoData* data, int /*inde
 {
 	auto netcdf = dynamic_cast<GeoDataNetcdfReal*> (data);
 
-	if (! importPgw(netcdf, impl->m_setting->fileName(), w)) {return false;}
-	if (! importMeta(netcdf, impl->m_setting->fileName(), w)) {return false;}
-	if (! importPng(netcdf, impl->m_setting->fileName(), w)) {return false;}
+	if (! importPgw(netcdf, setting()->fileName(), w)) {return false;}
+	if (! importMeta(netcdf, setting()->fileName(), w)) {return false;}
+	if (! importPng(netcdf, setting()->fileName(), w)) {return false;}
 
 	return true;
 }
