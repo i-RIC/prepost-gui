@@ -112,6 +112,11 @@ std::vector<GeoDataExporter*> GeoData::exporters() const
 	return m_creator->exporters();
 }
 
+void GeoData::loadFromProjectMainFileOnly(const QDomNode& node)
+{
+	doLoadFromProjectMainFile(node);
+}
+
 void GeoData::setupDataItem()
 {
 	auto item = geoDataDataItem();

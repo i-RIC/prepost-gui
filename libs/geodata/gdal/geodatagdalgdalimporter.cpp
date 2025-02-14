@@ -107,6 +107,12 @@ bool GeoDataGdalGdalImporter::doInit(int* count, SolverDefinitionGridAttribute* 
 	return false;
 }
 
+bool GeoDataGdalGdalImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+
+	return doInit(count, condition, item, w);
+}
+
 bool GeoDataGdalGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto gdal = dynamic_cast<GeoDataGdal*> (data);
@@ -291,6 +297,9 @@ bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget
 
 	gdal->updateShapeData();
 	gdal->handleDimensionCurrentIndexChange(0, 0);
+
+	// delete the needless file
+	f.remove();
 
 	return true;
 }

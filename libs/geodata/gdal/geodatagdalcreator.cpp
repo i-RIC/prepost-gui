@@ -27,3 +27,8 @@ bool GeoDataGdalCreator::requestCoordinateSystem() const
 {
 	return true;
 }
+
+bool GeoDataGdalCreator::isReadOnly() const
+{
+	return true;
+}

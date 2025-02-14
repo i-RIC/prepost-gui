@@ -81,6 +81,7 @@ public:
 	std::vector<GeoDataImporter*> importers() const;
 	std::vector<GeoDataExporter*> exporters() const;
 
+	void loadFromProjectMainFileOnly(const QDomNode& node);
 	virtual void setupDataItem();
 	/// setup VTK actors.
 	virtual void setupActors();
