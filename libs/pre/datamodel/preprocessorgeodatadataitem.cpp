@@ -4,6 +4,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
+#include "private/preprocessorgeodatadataitem_importsettingdialog.h"
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
@@ -24,13 +25,14 @@
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemI {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_geoData {nullptr},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataDataItem::tr("&Export..."), this)},
+	m_showImportSettingAction {new QAction(PreProcessorGeoDataDataItem::tr("Show &import setting..."), this)},
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
-	m_exportAction = new QAction(PreProcessorGeoDataDataItem::tr("&Export..."), this);
-	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::exportGeoData);
+	connect(m_showImportSettingAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::showImportSetting);
 }
 
 PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
@@ -50,6 +52,9 @@ void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 	m_geoData->addCustomMenuItems(menu);
 	// Add export Action.
 	menu->addAction(m_exportAction);
+	if (m_geoData->importerSetting() != nullptr) {
+		menu->addAction(m_showImportSettingAction);
+	}
 }
 
 PreProcessorGeoDataGroupDataItemI* PreProcessorGeoDataDataItem::groupDataItem() const
@@ -186,6 +191,16 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 	exporter->doExport(m_geoData, filename, selectedFilter, mainW, projectData());
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
+}
+
+void PreProcessorGeoDataDataItem::showImportSetting()
+{
+	auto is = m_geoData->importerSetting();
+	if (is == nullptr) {return;}
+
+	ImportSettingDialog dialog(preProcessorWindow());
+	dialog.setItems(is->items());
+	dialog.exec();
 }
 
 void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)

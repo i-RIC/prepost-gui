@@ -58,6 +58,7 @@ signals:
 
 public slots:
 	void exportGeoData();
+	void showImportSetting();
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -72,9 +73,11 @@ protected:
 	GeoData* m_geoData;
 
 private:
-	/// Action to export current data
 	QAction* m_exportAction;
+	QAction* m_showImportSettingAction;
 	bool m_deleteSilently;
+
+	class ImportSettingDialog;
 };
 
 #endif // PREPROCESSORGEODATADATAITEM_H

@@ -121,7 +121,6 @@ GeoDataImporterSetting* GeoDataImporter::setting() const
 
 void GeoDataImporter::setSetting(GeoDataImporterSetting* setting)
 {
-	delete impl->m_setting;
 	impl->m_setting = setting;
 }
 

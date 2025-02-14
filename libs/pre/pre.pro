@@ -377,6 +377,7 @@ HEADERS += pre_global.h \
            misc/preprocessorlegendboxeditdialog.h \
            datamodel/private/preprocessorbcdataitem_impl.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
+           datamodel/private/preprocessorgeodatadataitem_importsettingdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
@@ -453,6 +454,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
+         datamodel/private/preprocessorgeodatadataitem_importsettingdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
          datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.ui \
@@ -542,6 +544,7 @@ SOURCES += preobjectbrowser.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/preprocessorgeodatadataitem_importsettingdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \

@@ -4,7 +4,10 @@
 #include <misc/xmlsupport.h>
 
 GeoDataImporterSetting::GeoDataImporterSetting() :
-	m_name {""}
+	m_name {},
+	m_copiedToProject {true},
+	m_fileName {},
+	m_selectedFilter {}
 {}
 
 GeoDataImporterSetting::~GeoDataImporterSetting()
@@ -70,8 +73,32 @@ void GeoDataImporterSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 	doSaveToProjectMainFile(writer);
 }
 
+std::vector<GeoDataImporterSetting::Item> GeoDataImporterSetting::items() const
+{
+	std::vector<Item> ret;
+	ret.push_back(Item {tr("File name"), m_fileName});
+	QString copied;
+	if (m_copiedToProject) {
+		copied = tr("Copied");
+	} else {
+		copied = tr("Not copied");
+	}
+	ret.push_back(Item {tr("Copied to project"), copied});
+	for (auto item : customItems()) {
+		ret.push_back(item);
+	}
+	return ret;
+}
+
 void GeoDataImporterSetting::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
 
 void GeoDataImporterSetting::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
+
+std::vector<GeoDataImporterSetting::Item> GeoDataImporterSetting::customItems() const
+{
+	std::vector<Item> ret;
+
+	return ret;
+}

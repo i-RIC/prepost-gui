@@ -3,9 +3,18 @@
 
 #include "../../guicore_global.h"
 
-class GUICOREDLL_EXPORT GeoDataImporterSetting
+#include <QObject>
+
+class GUICOREDLL_EXPORT GeoDataImporterSetting : public QObject
 {
+	Q_OBJECT
+
 public:
+	struct Item {
+		QString name;
+		QString value;
+	};
+
 	GeoDataImporterSetting();
 	virtual ~GeoDataImporterSetting();
 
@@ -24,9 +33,12 @@ public:
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 
+	std::vector<Item> items() const;
+
 private:
 	virtual void doLoadFromProjectMainFile(const QDomNode& node);
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	virtual std::vector<Item> customItems() const;
 
 	std::string m_name;
 
