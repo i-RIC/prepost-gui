@@ -9,6 +9,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -89,7 +90,7 @@ const QStringList GeoDataNetcdfImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (item->geoDatas().size() > 1) {
 		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
@@ -110,7 +111,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 
 	char nameBuffer[200];
 
-	std::string fname = iRIC::toStr(filename);
+	std::string fname = iRIC::toStr(impl->m_setting->fileName());
 	int ncid;
 	int ndims, nvars, ngatts, unlimdimid;
 
@@ -162,7 +163,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	} else if (m_latDimId != -1 && m_lonDimId != -1){
 		m_csType = GeoDataNetcdf::LonLat;
 	} else {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(filename)));
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
 		return false;
 	}
 
@@ -186,7 +187,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			m_latVarId = i;
 			continue;
 		}
-		if (nDims != 2 + condition->dimensions().size()) {
+		if (nDims != 2 + static_cast<int> (condition->dimensions().size())) {
 			// this is not a variable for value.
 			continue;
 		}
@@ -215,7 +216,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	}
 
 	if (variables.size() == 0) {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(filename)));
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(impl->m_setting->fileName())));
 		return false;
 	}
 
@@ -242,7 +243,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	int ret;
 	char nameBuffer[200];
 
-	ret = nc_open(iRIC::toStr(filename()).c_str(), NC_NOWRITE, &ncid_in);
+	ret = nc_open(iRIC::toStr(impl->m_setting->fileName()).c_str(), NC_NOWRITE, &ncid_in);
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer(ncid_in);
 
@@ -339,7 +340,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 	// load dimension values
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
-	for (int i = 0; i < dims->containers().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (dims->containers().size()); ++i) {
 		QString dim = m_dims.at(i);
 		int dimid;
 		int varid;
@@ -506,7 +507,7 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	auto timeZone = dialog.timeZone();
 
 	std::vector<QVariant> ret;
-	for (int i = 0; i < values.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (values.size()); ++i) {
 		QVariant val = values.at(i);
 		QDateTime d = zeroDate;
 		if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Years) {

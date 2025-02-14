@@ -2,6 +2,7 @@
 #include "geodatapointmapriter3dimporter.h"
 #include "geodatapointmapriter3dloader.h"
 
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 
@@ -21,7 +22,7 @@ bool GeoDataPointmapRiter3dImporter::importData(GeoData* data, int /*index*/, QW
 	bool ok = m_loader->load(pointmap, w);
 	if (! ok) {return false;}
 
-	pointmap->setRiter3dProject(m_fileName);
+	pointmap->setRiter3dProject(impl->m_setting->fileName());
 	return true;
 }
 
@@ -39,10 +40,9 @@ const QStringList GeoDataPointmapRiter3dImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPointmapRiter3dImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointmapRiter3dImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	m_fileName = filename;
-	m_loader = new GeoDataPointmapRiter3dLoader(filename);
+	m_loader = new GeoDataPointmapRiter3dLoader(impl->m_setting->fileName());
 
 	bool ok = m_loader->open(item->projectData()->tmpFileName(), item->iricMainWindow());
 	if (! ok) {return false;}

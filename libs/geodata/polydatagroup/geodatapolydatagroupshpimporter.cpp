@@ -7,6 +7,7 @@
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -57,10 +58,11 @@ QVariant GeoDataPolyDataGroupShpImporter::readData(DBFHandle handle, int dataid,
 	return val;
 }
 
-bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto c = dynamic_cast<GeoDataPolyDataGroupCreator*> (creator());
 
+	auto filename = impl->m_setting->fileName();
 	auto fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 

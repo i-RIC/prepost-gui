@@ -7,16 +7,17 @@ GeoDataImporterSetting::GeoDataImporterSetting() :
 	m_name {""}
 {}
 
-GeoDataImporterSetting::GeoDataImporterSetting(const std::string& name) :
-	m_name {name}
-{}
-
 GeoDataImporterSetting::~GeoDataImporterSetting()
 {}
 
 const std::string& GeoDataImporterSetting::name() const
 {
 	return m_name;
+}
+
+void GeoDataImporterSetting::setName(const std::string& name)
+{
+	m_name = name;
 }
 
 bool GeoDataImporterSetting::copiedToProject() const
@@ -52,6 +53,9 @@ void GeoDataImporterSetting::setSelectedFilter(const QString& filter)
 void GeoDataImporterSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	m_name = iRIC::toStr(node.toElement().attribute("name"));
+	m_copiedToProject = iRIC::getBooleanAttribute(node, "copiedToProject", true);
+	m_fileName = node.toElement().attribute("fileName");
+	m_selectedFilter = node.toElement().attribute("selectedFilter");
 
 	doLoadFromProjectMainFile(node);
 }
@@ -59,6 +63,9 @@ void GeoDataImporterSetting::loadFromProjectMainFile(const QDomNode& node)
 void GeoDataImporterSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_name.c_str());
+	iRIC::setBooleanAttribute(writer, "copiedToProject", m_copiedToProject);
+	writer.writeAttribute("fileName", m_fileName);
+	writer.writeAttribute("selectedFilter", m_selectedFilter);
 
 	doSaveToProjectMainFile(writer);
 }

@@ -5,6 +5,7 @@
 #include "geodatariversurveyimportersettingdialog.h"
 #include "private/geodatariversurveyimporter_problemsdialog.h"
 
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <misc/errormessage.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
@@ -268,18 +269,6 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 	return true;
 }
 
-GeoDataRiverSurveyImporter::Alt lowestAlt(const std::vector<GeoDataRiverSurveyImporter::Alt>& alts)
-{
-	auto ret = alts[0];
-	for (int i = 1; i < alts.size(); ++i) {
-		const auto& a = alts.at(i);
-		if (a.elevation < ret.elevation) {
-			ret = a;
-		}
-	}
-	return ret;
-}
-
 // load coordinates of points from csvFileName and store the data to points
 bool loadPoints(const QString& csvFileName, std::vector<QPointF>* points, QWidget* parent)
 {
@@ -328,7 +317,7 @@ bool loadPoints(const QString& csvFileName, std::vector<QPointF>* points, QWidge
 
 bool findCrossSection(const GeoDataRiverSurveyImporter::RivPathPoint& p, const std::vector<QPointF>& points, double* pos)
 {
-	for (int i = 0; i < points.size() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (points.size()) - 1; ++i) {
 		QPointF p1 = points.at(i);
 		QPointF p2 = points.at(i + 1);
 
@@ -388,15 +377,15 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 	GeoDataImporter("riversurvey", tr("Cross-Section data (*.riv)"), creator)
 {}
 
-bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
+bool GeoDataRiverSurveyImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	clearPoints(&m_points);
-	if (! readRivFile(filename, &m_points, &m_with4Points, &m_allNamesAreNumber, w)) {return false;}
+	if (! readRivFile(impl->m_setting->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, w)) {return false;}
 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(m_with4Points);
 	dialog.setAllNamesAreNumber(m_allNamesAreNumber);
-	dialog.setFileName(filename);
+	dialog.setFileName(impl->m_setting->fileName());
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
 		clearPoints(&m_points);
@@ -449,7 +438,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 		if (! loadPoints(csvFileName, &centerPoints, w)) {return false;}
 	}
 
-	for (int i = 0; i < points->size(); ++i) {
+	for (int i = 0; i < static_cast<int> (points->size()); ++i) {
 		RivPathPoint* p = points->at(i);
 
 		auto leftp = p->leftBank;
@@ -461,7 +450,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 
 		if (with4Points) {
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
-			for (int j = 0; j < p->altitudes.size(); ++j) {
+			for (int j = 0; j < static_cast<int> (p->altitudes.size()); ++j) {
 				const auto& a = p->altitudes.at(j);
 				GeoDataRiverCrosssection::Altitude alt(a.distance, a.elevation);
 				if (j + 1 < p->divIndices[0] || j + 1 > p->divIndices[3]) {continue;}
@@ -506,7 +495,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 			newPoint->CenterToRightCtrlPoints.push_back(rightPoint);
 		} else {
 			GeoDataRiverCrosssection::Altitude prevAlt(0, 0);
-			for (int j = 0; j < p->altitudes.size(); ++j) {
+			for (int j = 0; j < static_cast<int> (p->altitudes.size()); ++j) {
 				const auto& a = p->altitudes.at(j);
 				if (j == 0 || a.elevation < minval) {
 					minpos = a.distance;
@@ -553,7 +542,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 void GeoDataRiverSurveyImporter::removePointsWithoutBanks(std::vector<RivPathPoint*>* points)
 {
 	int idx = 0;
-	while (idx < points->size()) {
+	while (idx < static_cast<int> (points->size())) {
 		if (! points->at(idx)->banksIsSet) {
 			delete points->at(idx);
 			points->erase(points->begin() + idx);
@@ -566,7 +555,7 @@ void GeoDataRiverSurveyImporter::removePointsWithoutBanks(std::vector<RivPathPoi
 void GeoDataRiverSurveyImporter::removePointsWithoutAltitudes(std::vector<RivPathPoint*>* points)
 {
 	int idx = 0;
-	while (idx < points->size()) {
+	while (idx < static_cast<int> (points->size())) {
 		if (points->at(idx)->altitudes.size() < 2) {
 			delete points->at(idx);
 			points->erase(points->begin() + idx);
@@ -597,7 +586,7 @@ void GeoDataRiverSurveyImporter::sortByKP(std::vector<GeoDataRiverSurveyImporter
 void GeoDataRiverSurveyImporter::shiftUniqueAlts(std::vector<GeoDataRiverSurveyImporter::Alt>* altitudes, bool* shifted)
 {
 	*shifted = false;
-	for (int i = 1; i < altitudes->size(); ++i) {
+	for (int i = 1; i < static_cast<int> (altitudes->size()); ++i) {
 		Alt& a = altitudes->at(i);
 		const Alt& a_prev = altitudes->at(i - 1);
 		if (a.distance > a_prev.distance) {continue;}

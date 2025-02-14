@@ -7,6 +7,7 @@
 #include <cs/coordinatesystemselectdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/filesystemfunction.h>
@@ -47,14 +48,14 @@ bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*
 {
 	auto gdal = dynamic_cast<GeoDataGdalReal*> (data);
 
-	if (! importPgw(gdal, filename(), w)) {return false;}
-	if (! importMeta(gdal, filename(), w)) {return false;}
-	if (! importPng(gdal, filename(), w)) {return false;}
+	if (! importPgw(gdal, impl->m_setting->fileName(), w)) {return false;}
+	if (! importMeta(gdal, impl->m_setting->fileName(), w)) {return false;}
+	if (! importPng(gdal, impl->m_setting->fileName(), w)) {return false;}
 
 	return true;
 }
 
-bool GeoDataGdalGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGrayscalePngRealImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
@@ -115,9 +116,9 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 		gdal->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
 	}
 
-	for (int j = 0; j < gdal->impl->m_yValues.size(); ++j) {
+	for (int j = 0; j < static_cast<int> (gdal->impl->m_yValues.size()); ++j) {
 		double y = gdal->impl->m_yValues.at(j);
-		for (int i = 0; i < gdal->impl->m_xValues.size(); ++i) {
+		for (int i = 0; i < static_cast<int> (gdal->impl->m_xValues.size()); ++i) {
 			double x = gdal->impl->m_xValues.at(i);
 			double lon, lat;
 			if (m_coordinateSystem->isLongLat()) {

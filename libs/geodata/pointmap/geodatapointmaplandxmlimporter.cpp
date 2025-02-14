@@ -7,6 +7,7 @@
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
@@ -50,6 +51,7 @@ bool readUntil(QXmlStreamReader& xml, const char* elemName)
 	return false; // failure
 }
 
+/*
 bool readUntilAndSkip(QXmlStreamReader& xml, const char* elemName)
 {
 	while (! xml.atEnd()) {
@@ -61,6 +63,7 @@ bool readUntilAndSkip(QXmlStreamReader& xml, const char* elemName)
 	}
 	return false; // failure
 }
+*/
 
 } // namespace
 
@@ -82,7 +85,7 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 
 		QElapsedTimer timer;
 		timer.start();
-		QFile f(filename());
+		QFile f(impl->m_setting->fileName());
 		bool ok = f.open(QFile::ReadOnly);
 
 		QDomDocument doc;
@@ -107,7 +110,7 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 	return ret;
 }
 
-bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointmapLandXmlImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}
@@ -117,7 +120,7 @@ bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QStri
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = filename;
+	auto prjFilename = impl->m_setting->fileName();
 	prjFilename.replace(QRegExp("\\.xml"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -149,7 +152,7 @@ bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QStri
 
 bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/, QWidget* w)
 {
-	QFile f(filename());
+	QFile f(impl->m_setting->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	QDomDocument doc;
@@ -217,7 +220,7 @@ bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/,
 
 bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/, QWidget* /*w*/)
 {
-	QFile f(filename());
+	QFile f(impl->m_setting->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	auto pmap = dynamic_cast<GeoDataPointmap*> (data);

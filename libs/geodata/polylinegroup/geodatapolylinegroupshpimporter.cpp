@@ -3,6 +3,7 @@
 #include "geodatapolylinegroupshpimporter.h"
 #include "private/geodatapolylinegroup_impl.h"
 
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <cs/coordinatesystemconverter.h>
 #include <misc/stringtool.h>
 
@@ -58,10 +59,10 @@ bool GeoDataPolyLineGroupShpImporter::importData(GeoData* data, int /*index*/, Q
 {
 	auto group = dynamic_cast<GeoDataPolyLineGroup*>(data);
 
-	std::string fname = iRIC::toStr(filename());
+	std::string fname = iRIC::toStr(impl->m_setting->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	QString dbfFilename = filename();
+	QString dbfFilename = impl->m_setting->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

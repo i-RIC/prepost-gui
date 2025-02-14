@@ -16,6 +16,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -90,7 +91,7 @@ void GeoDataGdalGdalImporter::cancel()
 	m_canceled = true;
 }
 
-bool GeoDataGdalGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGdalImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	clear();
 	GDALAllRegister();
@@ -99,9 +100,9 @@ bool GeoDataGdalGdalImporter::doInit(const QString& filename, const QString& sel
 	if (! ok) {return false;}
 
 	if (m_mode == Mode::Single) {
-		return doInitForSingleMode(filename, selectedFilter, count, condition, item, w);
+		return doInitForSingleMode(count, condition, item, w);
 	} else if (m_mode == Mode::Time) {
-		return doInitForTimeMode(filename, selectedFilter, count, condition, item, w);
+		return doInitForTimeMode(count, condition, item, w);
 	}
 	return false;
 }
@@ -139,8 +140,9 @@ bool GeoDataGdalGdalImporter::setMode(SolverDefinitionGridAttribute* condition, 
 	return true;
 }
 
-bool GeoDataGdalGdalImporter::doInitForSingleMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGdalImporter::doInitForSingleMode(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	auto filename = impl->m_setting->fileName();
 	if (! iRIC::isAscii(filename)) {
 		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
 		return false;
@@ -173,8 +175,9 @@ bool GeoDataGdalGdalImporter::doInitForSingleMode(const QString& filename, const
 	return true;
 }
 
-bool GeoDataGdalGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataGdalGdalImporter::doInitForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	auto filename = impl->m_setting->fileName();
 	m_timeZone = item->projectData()->mainfile()->timeZone();
 
 	if (item->geoDatas().size() > 1) {

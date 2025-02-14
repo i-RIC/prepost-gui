@@ -20,7 +20,7 @@ public:
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 	static void addNewPolygon(GeoDataPolygonGroup* group, const QString& name, double value, QPolygonF polygon);
 
 	CoordinateSystemConverter* m_converter;

@@ -25,6 +25,7 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/geodata/geodatawebimporter.h>
 #include <guicore/pre/geodata/geodatamapper.h>
 #include <guicore/pre/geodatabackground/geodatabackground.h>
@@ -252,8 +253,14 @@ void PreProcessorGeoDataGroupDataItem::import()
 		}
 	}
 	Q_ASSERT(importer != nullptr);
-
-	importGeoData(importer, filename, selectedFilter);
+	bool copyToProject = true;
+	if (importer->creator()->isReadOnly()) {
+		int ret = QMessageBox::information(preProcessorWindow(), tr("Confirm data copy"), tr("Do you want to copy the data to project?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret == QMessageBox::No) {
+			copyToProject = false;
+		}
+	}
+	importGeoData(importer, filename, copyToProject, selectedFilter);
 }
 
 void PreProcessorGeoDataGroupDataItem::importFromWeb()
@@ -584,8 +591,14 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(QObject* c)
 		}
 	}
 	Q_ASSERT(importer != nullptr);
-
-	importGeoData(importer, filename, selectedFilter);
+	bool copyToProject = true;
+	if (importer->creator()->isReadOnly()) {
+		int ret = QMessageBox::information(preProcessorWindow(), tr("Confirm data copy"), tr("Do you want to copy the data to project?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret == QMessageBox::No) {
+			copyToProject = false;
+		}
+	}
+	importGeoData(importer, filename, copyToProject, selectedFilter);
 }
 
 void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
@@ -655,7 +668,7 @@ void PreProcessorGeoDataGroupDataItem::editVariationSetting()
 	auto newSetting = dialog.setting();
 }
 
-void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter)
+void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, const QString& filename, bool copyToProject, const QString& selectedFilter)
 {
 	if (importer->creator()->requestCoordinateSystem()) {
 		if (projectData()->mainfile()->coordinateSystem() == nullptr) {
@@ -668,9 +681,16 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 	}
 
 	// execute import.
+	auto setting = importer->createSetting();
+	setting->setName(importer->name());
+	setting->setFileName(filename);
+	setting->setCopiedToProject(copyToProject);
+	setting->setSelectedFilter(selectedFilter);
+	importer->setSetting(setting);
+
 	int dataCount;
 	QWidget* w = preProcessorWindow();
-	bool ret = importer->importInit(filename, selectedFilter, &dataCount, m_condition, this, w);
+	bool ret = importer->importInit(&dataCount, m_condition, this, w, false);
 	if (! ret) {
 		return;
 	}
@@ -733,6 +753,8 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			wDialog->setProgress(i + 1);
 			qApp->processEvents();
 		}
+		geodata->setImporterSetting(setting);
+		importer->setSetting(nullptr);
 	}
 	if (wDialog != nullptr) {
 		wDialog->hide();
@@ -829,6 +851,7 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);
+
 		writer.writeEndElement();
 
 		for (auto file : child->containedFiles()) {

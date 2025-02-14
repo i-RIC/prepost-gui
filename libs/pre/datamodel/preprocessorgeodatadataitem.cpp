@@ -11,6 +11,7 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataexporter.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -18,6 +19,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemI {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
@@ -93,7 +95,28 @@ void PreProcessorGeoDataDataItem::handleStandardItemChange()
 
 void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_geoData->loadFromProjectMainFile(node);
+	GeoDataImporterSetting* is = nullptr;
+	GeoDataImporter* importer = nullptr;
+
+	auto isNode = iRIC::getChildNode(node, "ImporterSetting");
+	if (! isNode.isNull()) {
+		auto importerName = iRIC::toStr(isNode.toElement().attribute("name"));
+		importer = m_geoData->creator()->importer(importerName);
+		is = importer->createSetting();
+		is->loadFromProjectMainFile(isNode);
+	}
+
+	if (m_geoData->creator()->isReadOnly()) {
+		int dataCount;
+		importer->setSetting(is);
+		importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
+		importer->importData(m_geoData, 0, preProcessorWindow());
+		importer->setSetting(nullptr);
+		m_geoData->setImporterSetting(is);
+	} else {
+		m_geoData->loadFromProjectMainFile(node);
+		m_geoData->setImporterSetting(is);
+	}
 	updateVisibilityWithoutRendering();
 }
 
@@ -101,6 +124,13 @@ void PreProcessorGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 {
 	writer.writeAttribute("type", m_geoData->typeName());
 	m_geoData->saveToProjectMainFile(writer);
+
+	auto is = m_geoData->importerSetting();
+	if (is != nullptr) {
+		writer.writeStartElement("ImporterSetting");
+		is->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
 
 bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)

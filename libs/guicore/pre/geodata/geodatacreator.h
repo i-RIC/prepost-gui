@@ -40,6 +40,7 @@ public:
 	virtual GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) = 0;
 	virtual GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition);
 
+	GeoDataImporter* importer(const std::string& name) const;
 	const std::vector<GeoDataImporter*>& importers() const;
 	std::vector<GeoDataImporter*>& importers();
 

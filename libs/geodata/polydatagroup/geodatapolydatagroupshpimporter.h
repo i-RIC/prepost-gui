@@ -28,7 +28,7 @@ protected:
 	static QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec);
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 protected:
 	GeoDataPolyDataGroupShpImporterSettingDialog::NameSetting m_nameSetting;

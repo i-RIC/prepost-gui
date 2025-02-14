@@ -20,7 +20,7 @@ public:
 	bool importInit(const QString& filename, const QString& csFolder, QWidget* w);
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	std::vector<GeoDataRiverSurveyImporter::RivPathPoint*> m_points;
 	bool m_with4Points;

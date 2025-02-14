@@ -7,10 +7,10 @@ class GUICOREDLL_EXPORT GeoDataImporterSetting
 {
 public:
 	GeoDataImporterSetting();
-	GeoDataImporterSetting(const std::string& name);
 	virtual ~GeoDataImporterSetting();
 
 	const std::string& name() const;
+	void setName(const std::string& name);
 
 	bool copiedToProject() const;
 	void setCopiedToProject(bool copied);

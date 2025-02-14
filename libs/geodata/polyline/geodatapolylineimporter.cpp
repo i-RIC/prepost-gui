@@ -4,6 +4,7 @@
 #include "geodatapolylineimportersettingdialog.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
@@ -94,9 +95,9 @@ const QStringList GeoDataPolyLineImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPolyLineImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolyLineImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	std::string fname = iRIC::toStr(filename);
+	std::string fname = iRIC::toStr(impl->m_setting->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	int numEntities;
@@ -109,7 +110,7 @@ bool GeoDataPolyLineImporter::doInit(const QString& filename, const QString& /*s
 		QMessageBox::critical(w, tr("Error"), tr("The shape type contained in this shape file is not polyline."));
 		return false;
 	}
-	QString dbfFilename = filename;
+	QString dbfFilename = impl->m_setting->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
@@ -132,7 +133,7 @@ bool GeoDataPolyLineImporter::doInit(const QString& filename, const QString& /*s
 	GridAttributeEditWidget* widget = condition->editWidget(nullptr);
 	item->setupEditWidget(widget);
 	widget->setVariantValue(condition->variantDefaultValue());
-	GeoDataPolyLineImporterSettingDialog dialog(filename, widget, w);
+	GeoDataPolyLineImporterSettingDialog dialog(impl->m_setting->fileName(), widget, w);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
@@ -151,7 +152,7 @@ bool GeoDataPolyLineImporter::importData(GeoData* data, int index, QWidget* /*w*
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	GeoDataPolyLine* poly = dynamic_cast<GeoDataPolyLine*>(data);
 
-	std::string fname = iRIC::toStr(filename());
+	std::string fname = iRIC::toStr(impl->m_setting->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	SHPObject* shpo = SHPReadObject(shph, index);
@@ -163,7 +164,7 @@ bool GeoDataPolyLineImporter::importData(GeoData* data, int index, QWidget* /*w*
 	SHPDestroyObject(shpo);
 	SHPClose(shph);
 
-	QString dbfFilename = filename();
+	QString dbfFilename = impl->m_setting->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

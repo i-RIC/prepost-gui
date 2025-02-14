@@ -4,6 +4,7 @@
 #include "geodatariversurveymlitimporter.h"
 #include "private/geodatariversurveymlitimporter_problemsdialog.h"
 
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/geodata/private/geodataimporter_impl.h>
 #include <misc/stringtool.h>
 
@@ -281,7 +282,7 @@ const QStringList GeoDataRiverSurveyMlitImporter::acceptableExtensions()
 
 bool GeoDataRiverSurveyMlitImporter::importInit(const QString& filename, const QString& csFolder, QWidget* w)
 {
-	impl->m_filename = filename;
+	impl->m_setting->setFileName(filename);
 
 	if (! readMlitRivFile(filename, csFolder, &m_points, &m_with4Points, w)) {return false;}
 
@@ -301,9 +302,9 @@ bool GeoDataRiverSurveyMlitImporter::importInit(const QString& filename, const Q
 	return true;
 }
 
-bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
+bool GeoDataRiverSurveyMlitImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
-	if (! readMlitRivFile(filename, &m_points, &m_with4Points, w)) {return false;}
+	if (! readMlitRivFile(impl->m_setting->fileName(), &m_points, &m_with4Points, w)) {return false;}
 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(m_with4Points);

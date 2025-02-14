@@ -1,3 +1,4 @@
+#include "geodata.h"
 #include "geodatacreator.h"
 #include "geodataimporter.h"
 #include "geodataimportersetting.h"
@@ -26,12 +27,12 @@ GeoDataImporter::GeoDataImporter(const std::string& name, const QString& caption
 GeoDataImporter::~GeoDataImporter()
 {}
 
-std::string GeoDataImporter::name() const
+const std::string& GeoDataImporter::name() const
 {
 	return impl->m_name;
 }
 
-QString GeoDataImporter::caption() const
+const QString& GeoDataImporter::caption() const
 {
 	return impl->m_caption;
 }
@@ -60,6 +61,8 @@ PreProcessorGeoDataDataItemI* GeoDataImporter::import(const QString& filename, b
 		delete ret;
 		return nullptr;
 	}
+	data->setImporterSetting(impl->m_setting);
+	impl->m_setting = nullptr;
 
 	return ret;
 }
@@ -79,14 +82,21 @@ PreProcessorGeoDataDataItemI* GeoDataImporter::import(GeoDataImporterSetting* se
 	creator()->setNameAndDefaultCaption(item->childItems(), data, item->projectData());
 	ret->setGeoData(data);
 
+	auto sourceFileName = setting->fileName();
+	if (setting->copiedToProject()) {
+		setting->setFileName(data->filename());
+	}
+
 	ok = importData(data, 0, w);
 	if (! ok) {
 		delete ret;
 		return nullptr;
 	}
+	setting->setFileName(sourceFileName);
+	data->setImporterSetting(impl->m_setting);
+	impl->m_setting = nullptr;
 
 	return ret;
-
 }
 
 GeoDataCreator* GeoDataImporter::creator() const
@@ -107,6 +117,12 @@ bool GeoDataImporter::importInit(int* count, SolverDefinitionGridAttribute* cond
 GeoDataImporterSetting* GeoDataImporter::setting() const
 {
 	return impl->m_setting;
+}
+
+void GeoDataImporter::setSetting(GeoDataImporterSetting* setting)
+{
+	delete impl->m_setting;
+	impl->m_setting = setting;
 }
 
 bool GeoDataImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* /*w*/)
