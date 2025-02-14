@@ -109,6 +109,8 @@ bool GeoDataGdalGdalImporter::doInit(int* count, SolverDefinitionGridAttribute* 
 
 bool GeoDataGdalGdalImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	// TODO fix this:
+	// load coordinate system from existing setting
 
 	return doInit(count, condition, item, w);
 }
