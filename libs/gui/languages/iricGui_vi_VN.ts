@@ -2248,6 +2248,21 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>iRICMainWindow::DiscardResultConfirmDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the grid modification?</source>
+        <translation>Bạn có chắc chắn muốn hủy bỏ sửa đổi lưới không?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the calculation result?</source>
+        <translation>Bạn có chắc chắn muốn loại bỏ kết quả tính toán không?</translation>
+    </message>
+</context>
+<context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>

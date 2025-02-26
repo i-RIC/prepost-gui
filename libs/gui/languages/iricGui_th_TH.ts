@@ -2248,6 +2248,21 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>iRICMainWindow::DiscardResultConfirmDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>คำเตือน</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the grid modification?</source>
+        <translation>คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการปรับเปลี่ยนตาราง?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the calculation result?</source>
+        <translation>คุณแน่ใจว่าต้องการยกเลิกผลการคำนวณหรือไม่?</translation>
+    </message>
+</context>
+<context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>

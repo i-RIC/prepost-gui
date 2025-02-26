@@ -2248,6 +2248,21 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>iRICMainWindow::DiscardResultConfirmDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>Viðvörun</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the grid modification?</source>
+        <translation>Ertu viss um að þú viljir henda töflubreytingunni?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the calculation result?</source>
+        <translation>Ertu viss um að þú viljir henda útreikningsniðurstöðunni?</translation>
+    </message>
+</context>
+<context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>

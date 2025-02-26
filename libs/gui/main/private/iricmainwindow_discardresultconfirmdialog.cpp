@@ -25,12 +25,18 @@ iRICMainWindow::DiscardResultConfirmDialog::Result iRICMainWindow::DiscardResult
 
 void iRICMainWindow::DiscardResultConfirmDialog::submitDiscardGrid()
 {
+	int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to discard the grid modification?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
 	m_result = Result::DiscardGrid;
 	QDialog::accept();
 }
 
 void iRICMainWindow::DiscardResultConfirmDialog::submitDiscardResult()
 {
+	int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to discard the calculation result?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
 	m_result = Result::DiscardCalculationResult;
 	QDialog::accept();
 }
