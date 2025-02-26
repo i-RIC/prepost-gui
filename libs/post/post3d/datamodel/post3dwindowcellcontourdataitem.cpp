@@ -42,7 +42,7 @@ void Post3dWindowCellContourDataItem::setSetting(const Post3dWindowCellRangeSett
 
 void Post3dWindowCellContourDataItem::update()
 {
-	doUpdateActorSetting();
+	updateActorSetting();
 }
 
 Post3dWindowCellContourGroupDataItem* Post3dWindowCellContourDataItem::groupDataItem() const
