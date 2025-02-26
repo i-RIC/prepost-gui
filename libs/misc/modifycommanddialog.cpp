@@ -46,6 +46,8 @@ void ModifyCommandDialog::showExportButton()
 
 void ModifyCommandDialog::accept()
 {
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setFocus();
+
 	pushCommand(m_widget->createModifyCommand(false));
 	QDialog::accept();
 }
