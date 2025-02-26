@@ -57,12 +57,10 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	QString caption = adProvider->caption(target);
 
 	standardItem()->setText(caption);
-	ColorMapSettingContainerI* cs = nullptr;
+	auto cs = adProvider->createColorMapSetting(target);
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {
-		cs = defaultCs->copy();
-	} else {
-		cs = adProvider->createColorMapSetting(target);
+		cs->copyOtherThanCaption(*defaultCs);
 	}
 	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;

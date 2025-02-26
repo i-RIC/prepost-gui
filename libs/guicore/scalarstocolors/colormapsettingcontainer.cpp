@@ -157,6 +157,11 @@ void ColorMapSettingContainer::copy(const ColorMapSettingContainerI& c)
 	copyValue(dynamic_cast<const ColorMapSettingContainer&> (c));
 }
 
+void ColorMapSettingContainer::copyOtherThanCaption(const ColorMapSettingContainerI& c)
+{
+	copy(c);
+}
+
 ColorMapSettingContainerI* ColorMapSettingContainer::copy()
 {
 	auto s = new ColorMapSettingContainer();

@@ -33,8 +33,10 @@ public:
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	void load(const QDomNode& node) override;
+	void loadForcibly(const QDomNode& node);
 	void save(QXmlStreamWriter& writer) const override;
 	void copy(const ColorMapSettingContainerI& c) override;
+	void copyOtherThanCaption(const ColorMapSettingContainerI& c) override;
 	ColorMapSettingContainerI* copy() override;
 
 	void copyValue(const XmlAttributeContainer& c) override;

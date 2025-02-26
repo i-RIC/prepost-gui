@@ -48,12 +48,10 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	}
 
 	m_standardItem->setText(caption);
-	ColorMapSettingContainerI* cs = nullptr;
+	auto cs = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {
-		cs = defaultCs->copy();
-	} else {
-		cs = output->createColorMapSettingContainer();
+		cs->copyOtherThanCaption(*defaultCs);
 	}
 	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;

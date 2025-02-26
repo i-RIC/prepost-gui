@@ -75,6 +75,23 @@ void ColorMapEnumerateSettingContainer::load(const QDomNode& node)
 	emit ColorMapSettingContainerI::updated();
 }
 
+void ColorMapEnumerateSettingContainer::loadForcibly(const QDomNode& node)
+{
+	CompositeContainer::load(node);
+
+	const auto& children = node.childNodes();
+	for (int i = 0; i < children.size(); ++i) {
+		QDomNode itemNode = children.at(i);
+		if (itemNode.nodeName() != "Item") {continue;}
+
+		ColorMapSettingValueColorPairContainer pair;
+		pair.load(itemNode);
+
+		colors.push_back(pair);
+	}
+	emit ColorMapSettingContainerI::updated();
+}
+
 void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
 {
 	CompositeContainer::save(writer);
@@ -89,6 +106,16 @@ void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
 void ColorMapEnumerateSettingContainer::copy(const ColorMapSettingContainerI& c)
 {
 	copyValue(dynamic_cast<const ColorMapEnumerateSettingContainer&> (c));
+}
+
+void ColorMapEnumerateSettingContainer::copyOtherThanCaption(const ColorMapSettingContainerI& c)
+{
+	const auto& c2 = dynamic_cast<const ColorMapEnumerateSettingContainer&>(c);
+	CompositeContainer::copyValue(c2);
+
+	colors = c2.colors;
+
+	emit ColorMapSettingContainerI::updated();
 }
 
 ColorMapSettingContainerI* ColorMapEnumerateSettingContainer::copy()

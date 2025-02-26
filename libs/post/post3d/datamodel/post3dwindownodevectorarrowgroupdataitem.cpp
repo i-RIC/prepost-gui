@@ -50,13 +50,11 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 
 	auto defaultColorMaps = projectData()->mainfile()->defaultColorMapSettings();
 	for (const auto& pair : data()->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
-		ColorMapSettingContainerI* cs = nullptr;
+		auto output = gt->output(pair.first);
+		auto cs = output->createColorMapSettingContainer();
 		auto defaultCs = defaultColorMaps->colorMap(pair.first);
 		if (defaultCs != nullptr) {
-			cs = defaultCs->copy();
-		} else {
-			auto output = gt->output(pair.first);
-			cs = output->createColorMapSettingContainer();
+			cs->copyOtherThanCaption(*defaultCs);
 		}
 		auto caption = gt->outputCaption(pair.first);
 		cs->valueCaption = caption;
