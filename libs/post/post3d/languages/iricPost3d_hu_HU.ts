@@ -382,6 +382,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowFaceContourDataItem</name>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Hatótávolság</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceContourGroupDataItem</name>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation type="unfinished">Kontúr beállítása (%1)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished">Hatótávolság %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceContourGroupDataItem::SettingEditWidget</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as the default setting for this project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Hatótávolság</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Colormap</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceContourGroupTopDataItem</name>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished">Válassza a Számítási eredmény lehetőséget</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
@@ -543,6 +594,13 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowIFaceContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (faceI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowIsosurfaceSettingDialog</name>
     <message>
         <source>Isosurface Setting</source>
@@ -611,6 +669,20 @@
     <message>
         <source>Color:</source>
         <translation type="vanished">Szín:</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowJFaceContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (faceJ)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowKFaceContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (faceK)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

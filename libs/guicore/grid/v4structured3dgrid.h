@@ -9,6 +9,8 @@
 
 class vtkPolyDataExtended3d;
 
+class vtkPolyData;
+
 class GUICOREDLL_EXPORT v4Structured3dGrid : public v4Grid3dT<vtkStructuredGridExtended3d>
 {
 public:
@@ -43,6 +45,10 @@ public:
 	vtkPolyDataExtended3d* vtkIFaceData() const;
 	vtkPolyDataExtended3d* vtkJFaceData() const;
 	vtkPolyDataExtended3d* vtkKFaceData() const;
+
+	vtkPolyData* extractIFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax);
+	vtkPolyData* extractJFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax);
+	vtkPolyData* extractKFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax);
 
 	vtkPolyData* extractEdgeData(vtkIdType i, vtkIdType j, vtkIdType k) const;
 

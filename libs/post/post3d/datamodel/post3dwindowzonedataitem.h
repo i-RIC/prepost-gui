@@ -18,8 +18,15 @@ class QSignalMapper;
 
 class Post3dWindowGridShapeDataItem;
 class Post3dWindowGridTypeDataItem;
+
+
+
+
 class Post3dWindowCellContourGroupTopDataItem;
 class Post3dWindowContourGroupTopDataItem;
+class Post3dWindowIFaceContourGroupTopDataItem;
+class Post3dWindowJFaceContourGroupTopDataItem;
+class Post3dWindowKFaceContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
 class Post3dWindowNodeScalarGroupTopDataItem;
 class Post3dWindowNodeVectorArrowTopDataItem;
@@ -52,6 +59,9 @@ public:
 	Post3dWindowGridShapeDataItem* gridShapeDataItem() const;
 	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const;
 	Post3dWindowCellContourGroupTopDataItem* cellContourGroupTopItem() const;
+	Post3dWindowIFaceContourGroupTopDataItem* iFaceContourGroupTopItem() const;
+	Post3dWindowJFaceContourGroupTopDataItem* jFaceContourGroupTopItem() const;
+	Post3dWindowKFaceContourGroupTopDataItem* kFaceContourGroupTopItem() const;
 	Post3dWindowNodeScalarGroupTopDataItem* scalarGroupDataItem() const;
 	Post3dWindowNodeVectorArrowTopDataItem* arrowTopDataItem() const;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const;

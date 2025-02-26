@@ -251,6 +251,114 @@ vtkPolyDataExtended3d* v4Structured3dGrid::vtkKFaceData() const
 	return &impl->m_vtkKFaceData;
 }
 
+vtkPolyData* v4Structured3dGrid::extractIFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax)
+{
+	auto ret = vtkPolyData::New();
+	ret->SetPoints(vtkData()->data()->GetPoints());
+
+	auto srcCd = impl->m_vtkIFaceData.data()->GetCellData();
+	auto tgtCd = ret->GetCellData();
+	vtkIdType size = (imax - imin + 1) * (jmax - jmin + 1) * (kmax - kmin + 1);
+	tgtCd->CopyAllocate(srcCd, size);
+
+	vtkIdType indices[4];
+	auto polys = vtkSmartPointer<vtkCellArray>::New();
+	polys->Allocate((imax - imin) * (jmax - jmin) * (kmax - kmin));
+	auto fromIds = vtkSmartPointer<vtkIdList>::New();
+	auto toIds = vtkSmartPointer<vtkIdList>::New();
+
+	vtkIdType id = 0;
+	for (int k = kmin; k <= kmax; ++k) {
+		for (int j = jmin; j <= jmax; ++j) {
+			for (int i = imin; i <= imax; ++i) {
+				indices[0] = pointIndex(i, j, k);
+				indices[1] = pointIndex(i, j + 1, k);
+				indices[2] = pointIndex(i, j + 1, k + 1);
+				indices[3] = pointIndex(i, j, k + 1);
+				polys->InsertNextCell(4, indices);
+
+				fromIds->InsertNextId(iFaceIndex(i, j, k));
+				toIds->InsertNextId(id ++);
+			}
+		}
+	}
+	tgtCd->CopyData(srcCd, fromIds, toIds);
+	ret->SetPolys(polys);
+	return ret;
+}
+
+vtkPolyData* v4Structured3dGrid::extractJFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax)
+{
+	auto ret = vtkPolyData::New();
+	ret->SetPoints(vtkData()->data()->GetPoints());
+
+	auto srcCd = impl->m_vtkJFaceData.data()->GetCellData();
+	auto tgtCd = ret->GetCellData();
+	vtkIdType size = (imax - imin + 1) * (jmax - jmin + 1) * (kmax - kmin + 1);
+	tgtCd->CopyAllocate(srcCd, size);
+
+	vtkIdType indices[4];
+	auto polys = vtkSmartPointer<vtkCellArray>::New();
+	polys->Allocate((imax - imin) * (jmax - jmin) * (kmax - kmin));
+	auto fromIds = vtkSmartPointer<vtkIdList>::New();
+	auto toIds = vtkSmartPointer<vtkIdList>::New();
+
+	vtkIdType id = 0;
+	for (int k = kmin; k <= kmax; ++k) {
+		for (int j = jmin; j <= jmax; ++j) {
+			for (int i = imin; i <= imax; ++i) {
+				indices[0] = pointIndex(i, j, k);
+				indices[1] = pointIndex(i + 1, j, k);
+				indices[2] = pointIndex(i + 1, j, k + 1);
+				indices[3] = pointIndex(i, j, k + 1);
+				polys->InsertNextCell(4, indices);
+
+				fromIds->InsertNextId(jFaceIndex(i, j, k));
+				toIds->InsertNextId(id ++);
+			}
+		}
+	}
+	tgtCd->CopyData(srcCd, fromIds, toIds);
+	ret->SetPolys(polys);
+	return ret;
+}
+
+vtkPolyData* v4Structured3dGrid::extractKFaceData(vtkIdType imin, vtkIdType imax, vtkIdType jmin, vtkIdType jmax, vtkIdType kmin, vtkIdType kmax)
+{
+	auto ret = vtkPolyData::New();
+	ret->SetPoints(vtkData()->data()->GetPoints());
+
+	auto srcCd = impl->m_vtkKFaceData.data()->GetCellData();
+	auto tgtCd = ret->GetCellData();
+	vtkIdType size = (imax - imin + 1) * (jmax - jmin + 1) * (kmax - kmin + 1);
+	tgtCd->CopyAllocate(srcCd, size);
+
+	vtkIdType indices[4];
+	auto polys = vtkSmartPointer<vtkCellArray>::New();
+	polys->Allocate((imax - imin) * (jmax - jmin) * (kmax - kmin));
+	auto fromIds = vtkSmartPointer<vtkIdList>::New();
+	auto toIds = vtkSmartPointer<vtkIdList>::New();
+
+	vtkIdType id = 0;
+	for (int k = kmin; k <= kmax; ++k) {
+		for (int j = jmin; j <= jmax; ++j) {
+			for (int i = imin; i <= imax; ++i) {
+				indices[0] = pointIndex(i, j, k);
+				indices[1] = pointIndex(i + 1, j, k);
+				indices[2] = pointIndex(i + 1, j + 1, k);
+				indices[3] = pointIndex(i, j + 1, k);
+				polys->InsertNextCell(4, indices);
+
+				fromIds->InsertNextId(kFaceIndex(i, j, k));
+				toIds->InsertNextId(id ++);
+			}
+		}
+	}
+	tgtCd->CopyData(srcCd, fromIds, toIds);
+	ret->SetPolys(polys);
+	return ret;
+}
+
 vtkPolyData* v4Structured3dGrid::extractEdgeData(vtkIdType i, vtkIdType j, vtkIdType k) const
 {
 	auto ret = vtkPolyData::New();

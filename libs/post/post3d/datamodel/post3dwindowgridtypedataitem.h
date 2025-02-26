@@ -37,6 +37,12 @@ public:
 	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;
 	const ValueRangeContainer& cellValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& cellValueRanges() const;
+	const ValueRangeContainer& iFaceValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& iFaceValueRanges() const;
+	const ValueRangeContainer& jFaceValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& jFaceValueRanges() const;
+	const ValueRangeContainer& kFaceValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& kFaceValueRanges() const;
 	const ValueRangeContainer& particleValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& particleValueRanges() const;
 
@@ -46,6 +52,9 @@ public:
 private:
 	void updateNodeValueRanges();
 	void updateCellValueRanges();
+	void updateiFaceValueRanges();
+	void updatejFaceValueRanges();
+	void updatekFaceValueRanges();
 	void updateParticleValueRanges();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -54,6 +63,9 @@ private:
 	SolverDefinitionGridType* m_gridType;
 	std::unordered_map<std::string, ValueRangeContainer> m_nodeValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_cellValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_iFaceValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_jFaceValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_kFaceValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_particleValueRanges;
 	ValueRangeContainer m_dummyRange;
 
