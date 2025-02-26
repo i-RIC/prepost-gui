@@ -135,7 +135,7 @@ TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& caption, 
 	return ret;
 }
 
-TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const TmsImageSetting& setting) const
+TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel, bool lonLat, const TmsImageSetting& setting) const
 {
 	QString tms = setting.value("tms");
 	if (tms == "xyz") {
@@ -145,7 +145,7 @@ TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, co
 		if (! maxZoom.isNull()) {
 			options.insert({"maxNativeZoom", maxZoom});
 		}
-		return new TmsRequestXYZ(centerLonLat, size, zoomLevel, url, options);
+		return new TmsRequestXYZ(centerLonLat, size, zoomLevel, lonLat, url, options);
 	}
 
 	return nullptr;

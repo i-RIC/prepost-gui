@@ -11,8 +11,8 @@ TmsRequestXYZ::Impl::Impl(const QString &url, const std::map<QString, QString>& 
 
 // public interfaces
 
-TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& url, std::map<QString, QString>& options) :
-	TmsRequest {centerLonLat, size, zoomLevel},
+TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, int zoomLevel, bool lonLat, const QString& url, std::map<QString, QString>& options) :
+	TmsRequest {centerLonLat, size, zoomLevel, lonLat},
 	impl {new Impl {url, options}}
 {}
 
@@ -21,7 +21,7 @@ TmsRequestXYZ::~TmsRequestXYZ()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, TmsImageCache* imageCache) const
+TmsRequestHandler* TmsRequestXYZ::buildHandler(int requestId, TmsImageCache* imageCache) const
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), zoomLevel(), requestId, impl->m_options, imageCache);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), zoomLevel(), requestId, lonLat(), impl->m_options, imageCache);
 }

@@ -26,7 +26,7 @@ class TmsRequestHandler;
 class TMSLOADER_API TmsRequest
 {
 public:
-	TmsRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel);
+	TmsRequest(const QPointF& centerLonLat, const QSize& size, int zoomLevel, bool lonLat);
 	virtual ~TmsRequest();
 
 	virtual TmsRequestHandler* buildHandler(int requestId, TmsImageCache* imageCache) const = 0;
@@ -35,6 +35,7 @@ protected:
 	QPointF center() const;
 	QSize size() const;
 	int zoomLevel() const;
+	bool lonLat() const;
 
 private:
 	class Impl;

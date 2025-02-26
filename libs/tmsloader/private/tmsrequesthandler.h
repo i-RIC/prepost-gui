@@ -26,7 +26,7 @@ class TmsRequestHandler : public QObject
 	Q_OBJECT
 
 public:
-	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& templateName, int requestId, TmsImageCache* imageCache);
+	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& templateName, int requestId, bool lonLat, TmsImageCache* imageCache);
 	~TmsRequestHandler();
 
 	int requestId() const;
@@ -50,6 +50,7 @@ private:
 	int m_zoomLevel;
 	QString m_templateName;
 	int m_requestId;
+	bool m_lonLat;
 
 	std::map<QString, QString> m_args;
 	std::map<QString, QString> m_options;
