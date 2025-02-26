@@ -384,7 +384,7 @@ void TmsImageGroupDataItem::requestImage(bool force)
 
 	TmsImageSettingManager manager;
 	auto setting = TmsImageSetting::buildFromString(impl->m_target);
-	tmsloader::TmsRequest* request = manager.buildRequest(center, size, zoomLevel, setting);
+	tmsloader::TmsRequest* request = manager.buildRequest(center, size, zoomLevel, cs->isLongLat(), setting);
 	if (request == nullptr) {return;}
 
 	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));

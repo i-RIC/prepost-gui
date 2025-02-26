@@ -17,16 +17,18 @@ namespace {
 
 const int TIMER_MSEC_SHORT = 10;
 const int TIMER_MSEC_LONG = 200;
+const int TIMER_MSEC_LONLAT = 1000;
 
 } // namespace
 
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& templateName, int requestId, TmsImageCache* imageCache) :
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, int zoomLevel, const QString& templateName, int requestId, bool lonLat, TmsImageCache* imageCache) :
 	QObject {nullptr},
 	m_center {centerLonLat},
 	m_size {size},
 	m_zoomLevel {zoomLevel},
 	m_templateName {templateName},
 	m_requestId {requestId},
+	m_lonLat {lonLat},
 	m_terminating {false},
 	m_webAccessManager {QtTool::networkAccessManager()},
 	m_imageCache {imageCache},
@@ -174,7 +176,11 @@ void TmsRequestHandler::handleLoaded()
 	}
 
 	if (! allImagesExists && emitFlag) {
-		m_timer.singleShot(TIMER_MSEC_LONG, this, &TmsRequestHandler::handleLoaded);
+		if (m_lonLat) {
+			m_timer.singleShot(TIMER_MSEC_LONLAT, this, &TmsRequestHandler::handleLoaded);
+		} else {
+			m_timer.singleShot(TIMER_MSEC_LONG, this, &TmsRequestHandler::handleLoaded);
+		}
 	}
 
 	if (allImagesExists) {

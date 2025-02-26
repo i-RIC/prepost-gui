@@ -254,7 +254,7 @@ void TmsRegionSelectWidget::requestUpdate()
 	s.setWidth(static_cast<int> (s.width() * ratio));
 	s.setHeight(static_cast<int> (s.height() * ratio));
 
-	tmsloader::TmsRequest* req = manager.buildRequest(center, s, zl2, impl->m_mapSetting);
+	tmsloader::TmsRequest* req = manager.buildRequest(center, s, zl2, false, impl->m_mapSetting);
 	if (req == nullptr) {return;}
 
 	int rId;
