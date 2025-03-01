@@ -142,6 +142,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	impl->m_inactivateByWEAllAction = new QAction(tr("All cross-sections"), this);
 	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point"), this);
 	impl->m_editFromSelectedPointWithDialogAction = new QAction(tr("&Edit from Dialog..."), this);
+	impl->m_leftAddAction = new QAction ("Left Side Add");
+	impl->m_leftSubAction = new QAction ("Left Side Sub");
+	impl->m_rightAddAction = new QAction ("Right Side Add");
+	impl->m_rightSubAction = new QAction ("Right Side Sub");
 	impl->m_odnLeftStartAction = new QAction(tr("Left Start Point"), this);
 	impl->m_odnLeftMiddleAction = new QAction(tr("Left Middle Point"), this);
 	impl->m_odnLeftLowAction = new QAction(tr("Left Low Point"), this);
@@ -154,6 +158,12 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	connect(impl->m_editFromSelectedPointWithDialogAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointWithDialog);
 	connect(impl->m_inactivateByWEOnlyThisAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis);
 	connect(impl->m_inactivateByWEAllAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll);
+
+	connect(impl->m_leftAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftAdd);
+	connect(impl->m_leftSubAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftSub);
+	connect(impl->m_rightAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startRightAdd);
+	connect(impl->m_rightSubAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startRightSub);
+
 	connect(impl->m_odnLeftStartAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftStart);
 	connect(impl->m_odnLeftMiddleAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftMiddle);
 	connect(impl->m_odnLeftLowAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftLow);
@@ -405,6 +415,26 @@ QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThisAction() co
 QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAllAction() const
 {
 	return impl->m_inactivateByWEAllAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::leftAddAction() const
+{
+	return impl->m_leftAddAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::leftSubAction() const
+{
+	return impl->m_leftSubAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::rightAddAction() const
+{
+	return impl->m_rightAddAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::rightSubAction() const
+{
+	return impl->m_rightSubAction;
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindow::odnLeftStartAction() const
@@ -764,6 +794,26 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 	} else {
 		delete group;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::startLeftAdd()
+{
+
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::startLeftSub()
+{
+
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::startRightAdd()
+{
+
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::startRightSub()
+{
+
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftStart()

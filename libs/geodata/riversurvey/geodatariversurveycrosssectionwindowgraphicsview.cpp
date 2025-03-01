@@ -195,6 +195,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 
 		m_rightClickingMenu->addAction(m_parentWindow->editFromSelectedPointAction());
 
+		auto startEditMenu = m_rightClickingMenu->addMenu("Edit by specyfing slope point");
+		startEditMenu->addAction(m_parentWindow->leftAddAction());
+		startEditMenu->addAction(m_parentWindow->leftSubAction());
+		startEditMenu->addAction(m_parentWindow->rightAddAction());
+		startEditMenu->addAction(m_parentWindow->rightSubAction());
+
 		auto odnMenu = m_rightClickingMenu->addMenu(tr("Set to ODN data point"));
 		odnMenu->addAction(m_parentWindow->odnLeftStartAction());
 		odnMenu->addAction(m_parentWindow->odnLeftMiddleAction());

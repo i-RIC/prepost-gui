@@ -62,6 +62,12 @@ public:
 	QAction* m_editFromSelectedPointWithDialogAction;
 	QAction* m_inactivateByWEOnlyThisAction;
 	QAction* m_inactivateByWEAllAction;
+
+	QAction* m_leftAddAction;
+	QAction* m_leftSubAction;
+	QAction* m_rightAddAction;
+	QAction* m_rightSubAction;
+
 	QAction* m_odnLeftStartAction;
 	QAction* m_odnLeftMiddleAction;
 	QAction* m_odnLeftLowAction;

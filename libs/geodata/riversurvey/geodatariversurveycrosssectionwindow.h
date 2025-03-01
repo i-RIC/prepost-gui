@@ -57,6 +57,10 @@ public:
 	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
+	QAction* leftAddAction() const;
+	QAction* leftSubAction() const;
+	QAction* rightAddAction() const;
+	QAction* rightSubAction() const;
 	QAction* odnLeftStartAction() const;
 	QAction* odnLeftMiddleAction() const;
 	QAction* odnLeftLowAction() const;
@@ -107,6 +111,10 @@ private slots:
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void startLeftAdd();
+	void startLeftSub();
+	void startRightAdd();
+	void startRightSub();
 	void setSelectedPointToOdnLeftStart();
 	void setSelectedPointToOdnLeftMiddle();
 	void setSelectedPointToOdnLeftLow();
