@@ -1669,6 +1669,8 @@ void GeoDataRiverSurvey::importJmk()
 	if (! ok) {return;}
 
 	updateCrosssectionWindows();
+
+	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Vegetation data is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
 }
 
 void GeoDataRiverSurvey::exportJmk()
@@ -1679,6 +1681,9 @@ void GeoDataRiverSurvey::exportJmk()
 	GeoDataRiverSurveyJmkExporter exporter;
 	bool ok = exporter.doExport(fname, this, preProcessorWindow());
 
+	if (! ok) {return;}
+
+	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Vegetation data is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)));
 }
 
 void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)
