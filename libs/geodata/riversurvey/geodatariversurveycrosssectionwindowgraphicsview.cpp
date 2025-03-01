@@ -54,6 +54,7 @@ namespace {
 
 const int bankHOffset = 10;
 const int bankVOffset = 35;
+const int ODN_VOFFSET = 10;
 const int PREVIEW_LABEL_OFFSET = 3;
 const int WSE_WIDTH = 120;
 
@@ -233,6 +234,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		}
 
 		drawJmkLine(painter);
+		drawOdnNbPoints(painter);
 		drawLine(&m_oldLine, Qt::gray, painter);
 		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
@@ -342,6 +344,49 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 		oldpoint = newpoint;
 		first = false;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter& painter)
+{
+	const auto& odn = m_parentWindow->target()->odn();
+
+	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter);
+	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter);
+
+	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter);
+	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter);
+
+	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter);
+	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter);
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter)
+{
+	const auto& xsec = m_parentWindow->target()->crosssection();
+	const auto& alist = xsec.AltitudeInfo();
+	if (index < 0 || index >= static_cast<int> (alist.size())) {return;}
+
+	painter.save();
+	const auto alt = alist.at(index);
+
+	if (m_parentWindow->target() == nullptr) {return;}
+
+	QPen pen(color, 1, Qt::SolidLine);
+	QBrush brush(color, Qt::SolidPattern);
+
+	painter.setPen(pen);
+	painter.setBrush(brush);
+	QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+	QRectF r(point.x() - odnEllipseR, point.y() - odnEllipseR, odnEllipseR * 2, odnEllipseR * 2);
+	painter.drawEllipse(r);
+
+	painter.setFont(m_displaySetting.odnNbFont);
+	QFontMetricsF metrics(m_displaySetting.odnNbFont);
+
+	auto rect = metrics.boundingRect(label);
+	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, label);
+	painter.save();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)

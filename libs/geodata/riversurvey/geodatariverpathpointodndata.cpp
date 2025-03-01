@@ -1,7 +1,7 @@
 #include "geodatariverpathpointodndata.h"
 
 GeoDataRiverPathPointOdnData::GeoDataRiverPathPointOdnData() :
-	m_nb {0, 0, 0, 0, 0, 0},
+	m_nb {-1, -1, -1, -1, -1, -1},
 	m_spanDistance {0}
 {}
 

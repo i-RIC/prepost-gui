@@ -103,6 +103,8 @@ private:
 	void drawSquare(QPainter& painter);
 	void drawSelectionSquare(QPainter& painter);
 	void drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter);
+	void drawOdnNbPoints(QPainter& painter);
+	void drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter);
 	void drawJmkLine(QPainter& painter);
 	void drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix);
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);
@@ -129,6 +131,7 @@ private:
 
 	const static int ellipseR = 2;
 	const static int selectedEllipseR = 4;
+	const static int odnEllipseR = 6;
 	const static int squareR = 2;
 	const static int selectedSquareR = 4;
 	const static int fontRectWidth = 250;
