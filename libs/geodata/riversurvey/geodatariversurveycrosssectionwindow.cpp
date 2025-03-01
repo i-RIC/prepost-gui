@@ -10,6 +10,7 @@
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_wsetabledelegate.h"
+#include "private/geodatariversurvey_setodnpointcommand.h"
 
 #include <guibase/widget/realnumbereditwidget.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
@@ -141,13 +142,25 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	impl->m_inactivateByWEAllAction = new QAction(tr("All cross-sections"), this);
 	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point"), this);
 	impl->m_editFromSelectedPointWithDialogAction = new QAction(tr("&Edit from Dialog..."), this);
+	impl->m_odnLeftStartAction = new QAction(tr("Left Start Point"), this);
+	impl->m_odnLeftMiddleAction = new QAction(tr("Left Middle Point"), this);
+	impl->m_odnLeftLowAction = new QAction(tr("Left Low Point"), this);
+	impl->m_odnRightLowAction = new QAction(tr("Right Low Point"), this);
+	impl->m_odnRightMiddleAction = new QAction(tr("Right Middle Point"), this);
+	impl->m_odnRightStartAction = new QAction(tr("Right Start Point"), this);
 	impl->m_deleteAction = new QAction(tr("&Delete"), this);
 
-	connect(impl->m_editFromSelectedPointAction, SIGNAL(triggered()), this, SLOT(editFromSelectedPoint()));
-	connect(impl->m_editFromSelectedPointWithDialogAction, SIGNAL(triggered()), this, SLOT(editFromSelectedPointWithDialog()));
-	connect(impl->m_inactivateByWEOnlyThisAction, SIGNAL(triggered()), this, SLOT(inactivateByWEOnlyThis()));
-	connect(impl->m_inactivateByWEAllAction, SIGNAL(triggered()), this, SLOT(inactivateByWEAll()));
-	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedRows()));
+	connect(impl->m_editFromSelectedPointAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPoint);
+	connect(impl->m_editFromSelectedPointWithDialogAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointWithDialog);
+	connect(impl->m_inactivateByWEOnlyThisAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis);
+	connect(impl->m_inactivateByWEAllAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll);
+	connect(impl->m_odnLeftStartAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftStart);
+	connect(impl->m_odnLeftMiddleAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftMiddle);
+	connect(impl->m_odnLeftLowAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftLow);
+	connect(impl->m_odnRightLowAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightLow);
+	connect(impl->m_odnRightMiddleAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightMiddle);
+	connect(impl->m_odnRightStartAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightStart);
+	connect(impl->m_deleteAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
@@ -392,6 +405,36 @@ QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThisAction() co
 QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAllAction() const
 {
 	return impl->m_inactivateByWEAllAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnLeftStartAction() const
+{
+	return impl->m_odnLeftStartAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnLeftMiddleAction() const
+{
+	return impl->m_odnLeftMiddleAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnLeftLowAction() const
+{
+	return impl->m_odnLeftLowAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnRightLowAction() const
+{
+	return impl->m_odnRightLowAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnRightMiddleAction() const
+{
+	return impl->m_odnRightMiddleAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::odnRightStartAction() const
+{
+	return impl->m_odnRightStartAction;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupData()
@@ -721,6 +764,83 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 	} else {
 		delete group;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftStart()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 0, row, this));
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftMiddle()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 1, row, this));
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftLow()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 2, row, this));
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightLow()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 3, row, this));
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightMiddle()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 4, row, this));
+}
+void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightStart()
+{
+	QModelIndexList rows = impl->m_selectionModel->selectedRows();
+	if (rows.count() != 1) {
+		QMessageBox::information(this, tr("Information"), tr("To use this function, please select only one point."));
+		return;
+	}
+
+	int row = rows.at(0).row();
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::SetOdnPointCommand(impl->m_editTargetPoint, 5, row, this));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateActionStatus()

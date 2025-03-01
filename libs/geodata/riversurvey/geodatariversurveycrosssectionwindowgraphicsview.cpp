@@ -192,7 +192,17 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		submenu->addAction(m_parentWindow->inactivateByWEAllAction());
 
 		m_rightClickingMenu->addSeparator();
+
 		m_rightClickingMenu->addAction(m_parentWindow->editFromSelectedPointAction());
+
+		auto odnMenu = m_rightClickingMenu->addMenu(tr("Set to ODN data point"));
+		odnMenu->addAction(m_parentWindow->odnLeftStartAction());
+		odnMenu->addAction(m_parentWindow->odnLeftMiddleAction());
+		odnMenu->addAction(m_parentWindow->odnLeftLowAction());
+		odnMenu->addAction(m_parentWindow->odnRightLowAction());
+		odnMenu->addAction(m_parentWindow->odnRightMiddleAction());
+		odnMenu->addAction(m_parentWindow->odnRightStartAction());
+
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
 	}

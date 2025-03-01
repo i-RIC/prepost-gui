@@ -189,6 +189,7 @@ private:
 	class RotateRiverCrosssectionCommand;
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
+	class SetOdnPointCommand;
 
 	class Impl;
 	Impl* impl;

@@ -62,6 +62,12 @@ public:
 	QAction* m_editFromSelectedPointWithDialogAction;
 	QAction* m_inactivateByWEOnlyThisAction;
 	QAction* m_inactivateByWEAllAction;
+	QAction* m_odnLeftStartAction;
+	QAction* m_odnLeftMiddleAction;
+	QAction* m_odnLeftLowAction;
+	QAction* m_odnRightLowAction;
+	QAction* m_odnRightMiddleAction;
+	QAction* m_odnRightStartAction;
 	QAction* m_deleteAction;
 
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;

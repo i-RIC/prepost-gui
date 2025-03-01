@@ -57,6 +57,13 @@ public:
 	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
+	QAction* odnLeftStartAction() const;
+	QAction* odnLeftMiddleAction() const;
+	QAction* odnLeftLowAction() const;
+	QAction* odnRightLowAction() const;
+	QAction* odnRightMiddleAction() const;
+	QAction* odnRightStartAction() const;
+
 	void setupData();
 	void updateSurveysTable();
 	void updateWaterSurfaceElevationTable();
@@ -100,6 +107,12 @@ private slots:
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void setSelectedPointToOdnLeftStart();
+	void setSelectedPointToOdnLeftMiddle();
+	void setSelectedPointToOdnLeftLow();
+	void setSelectedPointToOdnRightLow();
+	void setSelectedPointToOdnRightMiddle();
+	void setSelectedPointToOdnRightStart();
 	void crosssectionComboBoxChange(int newindex);
 	void handleDataChange();
 	void handleSurveyTableItemEdit(QTableWidgetItem* item);
