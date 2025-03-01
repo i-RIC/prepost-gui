@@ -4,6 +4,7 @@
 #include "geodatarivercrosssection.h"
 #include "geodatariverpathpoint.h"
 #include "geodatariversurveycrosssectiondisplaysetting.h"
+#include "geodatariversurveycrosssectionslopepointeditdialog.h"
 
 #include <QAbstractItemView>
 
@@ -24,7 +25,8 @@ public:
 		meSelecting,
 		meMove,
 		meMovePrepare,
-		meEditCrosssection
+		meEditCrosssection,
+		meEditWithSlopePoint,
 	};
 	enum ViewMouseEventMode {
 		vmeNormal,
@@ -46,6 +48,7 @@ public:
 	void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags command) override;
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
+	void setSlopePointEditModeSetting(const QPointF& point, int slope);
 
 	double aspectRatio() const;
 	void setAspectRatio(double ratio);
@@ -67,11 +70,13 @@ public:
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
 	void enterEditCrosssectionMode();
+	void enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode mode);
 	void editDisplaySetting();
 
 public slots:
 	void informModelessDialogOpen();
 	void informModelessDialogClose();
+	void restoreMouseEventMode();
 
 private slots:
 	void activateSelectedRows();
@@ -80,6 +85,7 @@ private slots:
 
 signals:
 	void drawnRegionChanged();
+	void positionClicked(const QPointF& point);
 
 private:
 	int moveWidth();
@@ -112,6 +118,7 @@ private:
 	void drawAspectRatio(QPainter &painter);
 	void drawPolyLineCrossPoints(QPainter& painter);
 	void drawEditPreview(QPainter& painter);
+	void drawSlopePointEditPreview(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);
 	void translate(int x, int y);
@@ -165,6 +172,7 @@ private:
 		bool maxSet;
 		double max;
 	} m_dragLimit;
+
 	GeoDataRiverSurveyCrosssectionWindow* m_parentWindow;
 	QRubberBand* m_rubberBand;
 
@@ -181,6 +189,11 @@ private:
 	QMatrix m_matrix;
 	GeoDataRiverCrosssection::Altitude m_editAltitudePreview;
 	GeoDataRiverPathPoint m_oldLine;
+
+	GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode m_slopePointEditMode;
+	QPointF m_slopePointEditModeSlopePoint;
+	int m_slopePointEditModeSlope;
+
 	QString m_editRatio;
 	bool m_gridMode;
 	GeoDataRiverSurveyCrossSectionDisplaySetting m_displaySetting;

@@ -4,6 +4,7 @@
 #include "geodatariverpathpoint.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectiondisplaysettingdialog.h"
+#include "geodatariversurveycrosssectionslopepointeditdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
@@ -15,6 +16,7 @@
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
@@ -149,6 +151,9 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	m_viewMouseEventMode {vmeNormal},
 	m_modelessDialogIsOpen {false},
 	m_oldLine (nullptr),
+	m_slopePointEditMode {GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd},
+	m_slopePointEditModeSlopePoint {},
+	m_slopePointEditModeSlope {10},
 	m_gridMode {false}
 {
 	// Set cursors for mouse view change events.
@@ -266,6 +271,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		drawSelectionCircle(painter);
 		// draw edit preview
 		drawEditPreview(painter);
+		drawSlopePointEditPreview(painter);
 	}
 	else {
 		// draw black lines.
@@ -327,6 +333,13 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectionChanged(const QI
 QRegion GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRegionForSelection(const QItemSelection& /*selection*/) const
 {
 	return QRegion();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSetting(const QPointF& point, int slope)
+{
+	m_slopePointEditModeSlopePoint = point;
+	m_slopePointEditModeSlope = slope;
+	viewport()->update();
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateAction() const
@@ -1059,6 +1072,50 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 	painter.restore();
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSlopePointEditPreview(QPainter& painter)
+{
+	if (m_mouseEventMode != MouseEventMode::meEditWithSlopePoint) {return;}
+
+	painter.save();
+	QPointF point = m_matrix.map(m_slopePointEditModeSlopePoint);
+	auto invMatrix = m_matrix.inverted();
+	auto size = viewport()->size();
+	QPen pen(QColor(150, 150, 150), 1, Qt::PenStyle::DashLine);
+	painter.setPen(pen);
+
+	if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd) {
+		painter.drawLine(QLineF(QPointF(0, point.y()), point));
+
+		QPointF point2 = invMatrix.map(QPointF(0, size.height()));
+		auto dx = (m_slopePointEditModeSlopePoint.y() - point2.y()) * m_slopePointEditModeSlope;
+
+		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() + dx, point2.y())), point));
+	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftSub) {
+		painter.drawLine(QLineF(QPointF(size.width(), point.y()), point));
+
+		QPointF point2 = invMatrix.map(QPointF(0, 0));
+		auto dx = (point2.y() - m_slopePointEditModeSlopePoint.y()) * m_slopePointEditModeSlope;
+
+		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() - dx, point2.y())), point));
+	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightAdd) {
+		painter.drawLine(QLineF(QPointF(size.width(), point.y()), point));
+
+		QPointF point2 = invMatrix.map(QPointF(0, size.height()));
+		auto dx = (m_slopePointEditModeSlopePoint.y() - point2.y()) * m_slopePointEditModeSlope;
+
+		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() - dx, point2.y())), point));
+	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightSub) {
+		painter.drawLine(QLineF(QPointF(0, point.y()), point));
+
+		QPointF point2 = invMatrix.map(QPointF(0, 0));
+		auto dx = (point2.y() - m_slopePointEditModeSlopePoint.y()) * m_slopePointEditModeSlope;
+
+		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() + dx, point2.y())), point));
+	}
+
+	painter.restore();
+}
+
 QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 {
 	QRectF ret(0., 0., 0., 0.);
@@ -1285,7 +1342,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		bool ctrlPressed = ((event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier);
 		m_editAltitudePreview = createAltitude(event->pos(), &m_editRatio, ctrlPressed);
 		viewport()->update();
+	} else if (m_mouseEventMode == meEditWithSlopePoint) {
+		auto invMatrix = m_matrix.inverted();
+		m_slopePointEditModeSlopePoint = invMatrix.map(QPointF(event->pos()));
+		viewport()->update();
 	}
+
 	m_oldPosition = event->pos();
 }
 
@@ -1335,6 +1397,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			m_dragStartPoint = event->pos();
 		}
 		break;
+	case meEditWithSlopePoint:
+		if (event->button() == Qt::LeftButton) {
+			QMatrix invMatrix = m_matrix.inverted();
+			QPointF point = invMatrix.map(QPointF(event->pos()));
+
+			emit positionClicked(point);
+		}
+		break;
+
 	case meMovePrepare:
 		if (event->button() == Qt::LeftButton) {
 			// start dragging points.
@@ -1610,6 +1681,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogOpen(
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogClose()
 {
 	m_modelessDialogIsOpen = false;
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode()
+{
+	m_mouseEventMode = MouseEventMode::meNormal;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
@@ -1948,6 +2024,24 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode
 	m_oldLine.crosssection().AltitudeInfo() = alist;
 
 	updateMouseCursor();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode mode)
+{
+	auto dialog = new GeoDataRiverSurveyCrosssectionSlopePointEditDialog(m_parentWindow);
+	dialog->setMode(mode);
+	dialog->setSlope(m_slopePointEditModeSlope);
+	dialog->show();
+
+	m_mouseEventMode = MouseEventMode::meEditWithSlopePoint;
+	m_slopePointEditMode = mode;
+
+	auto mainWindow = m_parentWindow->groupDataItem()->iricMainWindow();
+	mainWindow->enterModelessDialogMode();
+
+	connect(this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionClicked, dialog, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::setPoint);
+	connect(dialog, &QDialog::destroyed, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode);
+	connect(dialog, &QDialog::destroyed, mainWindow, &iRICMainWindowI::exitModelessDialogMode);
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editDisplaySetting()

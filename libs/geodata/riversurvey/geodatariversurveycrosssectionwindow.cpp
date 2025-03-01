@@ -3,6 +3,7 @@
 #include "geodatarivercrosssection.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectioneditfrompointdialog.h"
+#include "geodatariversurveycrosssectionslopepointeditdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "private/geodatariversurveycrosssectionwindow_datatabledelegate.h"
@@ -798,22 +799,22 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 
 void GeoDataRiverSurveyCrosssectionWindow::startLeftAdd()
 {
-
+	ui->graphicsView->enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::startLeftSub()
 {
-
+	ui->graphicsView->enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftSub);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::startRightAdd()
 {
-
+	ui->graphicsView->enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightAdd);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::startRightSub()
 {
-
+	ui->graphicsView->enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightSub);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnLeftStart()
@@ -992,6 +993,11 @@ const std::shared_ptr<QToolBar>& GeoDataRiverSurveyCrosssectionWindow::getAdditi
 PreProcessorGeoDataGroupDataItemI* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
 {
 	return impl->m_groupDataItem;
+}
+
+GeoDataRiverSurveyCrosssectionWindowGraphicsView* GeoDataRiverSurveyCrosssectionWindow::graphicsView() const
+{
+	return ui->graphicsView;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setSelectedRow(int row)

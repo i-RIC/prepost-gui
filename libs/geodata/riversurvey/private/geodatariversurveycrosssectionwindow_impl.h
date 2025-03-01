@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOW_IMPL_H
 
 #include "../geodatariversurveycrosssectionwindow.h"
+#include "../geodatariversurveycrosssectionslopepointeditdialog.h"
 
 #include <QIcon>
 

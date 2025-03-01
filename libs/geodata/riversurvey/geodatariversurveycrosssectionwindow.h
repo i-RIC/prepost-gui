@@ -85,6 +85,7 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	PreProcessorGeoDataGroupDataItemI* groupDataItem() const;
+	GeoDataRiverSurveyCrosssectionWindowGraphicsView* graphicsView() const;
 	void setSelectedRow(int row);
 	bool isAspectRatioFixed() const;
 	bool isRegionFixed() const;
