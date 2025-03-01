@@ -14,6 +14,9 @@ public:
 	const QStringList acceptableExtensions() override;
 
 	bool importData(GeoData* data, int index, QWidget* w) override;
+
+private:
+	class PositionSettingDialog;
 };
 
 #endif // GEODATARIVERSURVEYODNIMPORTER_H

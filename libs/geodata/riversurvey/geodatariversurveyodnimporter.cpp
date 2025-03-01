@@ -1,7 +1,10 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveyodnimporter.h"
+#include "private/geodatariversurveyodnimporter_positionsettingdialog.h"
 
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
+
+#include <vector>
 
 GeoDataRiverSurveyOdnImporter::GeoDataRiverSurveyOdnImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"riverurvey_odn", tr("Cross-Section data (*.odn)"), creator}
@@ -20,7 +23,7 @@ const QStringList GeoDataRiverSurveyOdnImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int index, QWidget* w)
+bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto rs = dynamic_cast<GeoDataRiverSurvey*> (data);
 	rs->setEditMode();
@@ -35,6 +38,9 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int index, QWidget
 	QTextStream stream(&f);
 	int lineNum = 1;
 	std::vector<GeoDataRiverPathPoint*> points;
+	std::vector<double> totalDistances;
+	bool distanceContainsZero = false;
+	double totalDistance = 0;
 	while (true) {
 		if (stream.atEnd()) {break;}
 
@@ -49,7 +55,8 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int index, QWidget
 		auto newPoint = new GeoDataRiverPathPoint(name, x, y, rs);
 		newPoint->odn().setNb(2, QStringRef(&str, 0, 5).toInt());
 		newPoint->odn().setNb(3, QStringRef(&str, 5, 5).toInt());
-		newPoint->odn().setSpanDistance(QStringRef(&str, 25, 10).toDouble());
+		double distance = QStringRef(&str, 25, 10).toDouble();
+		newPoint->odn().setSpanDistance(distance);
 		wse->addItem(name, true, QStringRef(&str, 35, 10).toDouble());
 		newPoint->odn().setNb(1, QStringRef(&str, 45, 5).toInt());
 		newPoint->odn().setNb(4, QStringRef(&str, 50, 5).toInt());
@@ -85,13 +92,36 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int index, QWidget
 
 		points.push_back(newPoint);
 
+		totalDistances.push_back(totalDistance);
+		totalDistance += distance;
+
 		++ lineNum;
 	}
 	auto tail = rs->headPoint();
 	for (auto it = points.rbegin(); it != points.rend(); ++it) {
 		auto p = *it;
+		if (it != points.rbegin() && p->odn().spanDistance() == 0) {
+			distanceContainsZero = true;
+		}
+
 		tail->addPathPoint(p);
 		tail = p;
+	}
+	PositionSettingDialog dialog(w);
+	if (distanceContainsZero) {
+		dialog.disableDistance();
+	}
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		return false;
+	}
+	auto pos = dialog.position();
+	if (pos == PositionSettingDialog::Position::Distance) {
+		for (int i = 0; i < points.size(); ++i) {
+			auto p = points[i];
+			auto totalDistance = totalDistances[i];
+			p->setPosition(QPointF(0, - totalDistance));
+		}
 	}
 
 	rs->updateInterpolators();
