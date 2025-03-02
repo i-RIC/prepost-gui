@@ -185,6 +185,7 @@ private:
 	Impl* impl;
 
 	class DataTableDelegate;
+	class JmkDataEditDialog;
 	class VegetationDataTableDelegate;
 	class RiverSurveyTableDelegate;
 	class WseTableDelegate;

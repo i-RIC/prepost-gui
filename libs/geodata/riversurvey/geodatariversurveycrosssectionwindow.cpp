@@ -8,6 +8,7 @@
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "private/geodatariversurveycrosssectionwindow_datatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_editjmkdatacommand.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
@@ -883,7 +884,25 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 
 void GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation()
 {
+	auto rows = impl->m_vegetationSelectionModel->selectedRows();
+	if (rows.size() == 0) {return;}
+	auto row = rows.at(0).row();
 
+	auto item = impl->m_editTargetPoint->jmk().items().at(row);
+
+	JmkDataEditDialog dialog(this);
+	dialog.setItem(item);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto oldJmk = impl->m_editTargetPoint->jmk();
+	auto newJmk = oldJmk;
+
+	auto newItems = oldJmk.items();
+	newItems[row] = dialog.item();
+	newJmk.items() = newItems;
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(newJmk, oldJmk, impl->m_editTargetPoint, this));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::startLeftAdd()

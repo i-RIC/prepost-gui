@@ -216,6 +216,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
+		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->editSelectedVegetationAction());
 	}
 	if (m_rightClickingMenuForEditCrosssectionMode == nullptr) {
 		m_rightClickingMenuForEditCrosssectionMode = new QMenu(this);
