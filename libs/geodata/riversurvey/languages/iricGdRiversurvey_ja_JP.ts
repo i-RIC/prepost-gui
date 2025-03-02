@@ -489,6 +489,34 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Map geographic data to cross sections</source>
         <translation>地形データから断面データを抽出</translation>
     </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>インポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>JMK file (*.jmk)</source>
+        <translation>JMKファイル (*.jmk)</translation>
+    </message>
+    <message>
+        <source>Vegetation data is successfully imported from %1.</source>
+        <translation>植生データは %1 から正常にインポートされました。</translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation>エクスポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>Vegetation data is successfully exported to %1.</source>
+        <translation>植生データは %1 に正常にエクスポートされました。</translation>
+    </message>
+    <message>
+        <source>Import JMK file</source>
+        <translation>JMKファイルのインポート</translation>
+    </message>
+    <message>
+        <source>Export JMK file</source>
+        <translation>JMKファイルのエクスポート</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -738,6 +766,69 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
+    <message>
+        <source>Edit crosssection by spefifying slope point</source>
+        <translation>法尻部を指定して断面を編集</translation>
+    </message>
+    <message>
+        <source>Mode:</source>
+        <translation>モード:</translation>
+    </message>
+    <message>
+        <source>---</source>
+        <translation>---</translation>
+    </message>
+    <message>
+        <source>Slope:</source>
+        <translation>法面勾配:</translation>
+    </message>
+    <message>
+        <source>1 / </source>
+        <translation>1 / </translation>
+    </message>
+    <message>
+        <source>Slope start point position</source>
+        <translation>法尻部の位置</translation>
+    </message>
+    <message>
+        <source>Mouse Click</source>
+        <translation>マウスクリック</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>座標</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Left Add</source>
+        <translation>左岸側 盛土</translation>
+    </message>
+    <message>
+        <source>Left Sub</source>
+        <translation>左岸側 掘削</translation>
+    </message>
+    <message>
+        <source>Right Add</source>
+        <translation>右岸側 盛土</translation>
+    </message>
+    <message>
+        <source>Right Sub</source>
+        <translation>右岸側 掘削</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Please specify the setting so that the lines crosses the original cross-section.</source>
+        <translation>設定内容を見直し、線がオリジナルの断面と交差するように設定してください。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
@@ -947,6 +1038,110 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Aspect ratio (V/H): 1 / </source>
         <translation>縦横比: (V/H) 1 / </translation>
     </message>
+    <message>
+        <source>Altitudes</source>
+        <translation>標高</translation>
+    </message>
+    <message>
+        <source>Vegetations</source>
+        <translation>植生</translation>
+    </message>
+    <message>
+        <source>Edit selected vegetation</source>
+        <translation>選択した植生の編集</translation>
+    </message>
+    <message>
+        <source>Left Start Point</source>
+        <translation>左岸計算開始点</translation>
+    </message>
+    <message>
+        <source>Left Middle Point</source>
+        <translation>左岸中水敷変化点</translation>
+    </message>
+    <message>
+        <source>Left Low Point</source>
+        <translation>左岸低水路変化点</translation>
+    </message>
+    <message>
+        <source>Right Low Point</source>
+        <translation>右岸低水路変化点</translation>
+    </message>
+    <message>
+        <source>Right Middle Point</source>
+        <translation>右岸中水敷変化点</translation>
+    </message>
+    <message>
+        <source>Right Start Point</source>
+        <translation>右岸計算開始点</translation>
+    </message>
+    <message>
+        <source>Distance</source>
+        <translation>距離</translation>
+    </message>
+    <message>
+        <source>Width</source>
+        <translation>幅</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation>高さ</translation>
+    </message>
+    <message>
+        <source>Submerged</source>
+        <translation>水没</translation>
+    </message>
+    <message>
+        <source>Dense</source>
+        <translation>密</translation>
+    </message>
+    <message>
+        <source>Dead</source>
+        <translation>死水域</translation>
+    </message>
+    <message>
+        <source>HighLow</source>
+        <translation>高低</translation>
+    </message>
+    <message>
+        <source>Low Branch Height</source>
+        <translation>枝下高さ</translation>
+    </message>
+    <message>
+        <source>Sparse</source>
+        <translation>疎</translation>
+    </message>
+    <message>
+        <source>Real trees</source>
+        <translation>実在の樹木</translation>
+    </message>
+    <message>
+        <source>Upstream trees</source>
+        <translation>樹竜川樹木による死水域</translation>
+    </message>
+    <message>
+        <source>High trees</source>
+        <translation>高木</translation>
+    </message>
+    <message>
+        <source>Low trees</source>
+        <translation>低木</translation>
+    </message>
+    <message>
+        <source>Left Side Add</source>
+        <translation>左岸側 盛土</translation>
+    </message>
+    <message>
+        <source>Left Side Sub</source>
+        <translation>左岸側 掘削</translation>
+    </message>
+    <message>
+        <source>Right Side Add</source>
+        <translation>右岸側 盛土</translation>
+    </message>
+    <message>
+        <source>Right Side Sub</source>
+        <translation>右岸側 掘削</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -1012,6 +1207,38 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Aspect ratio (V/H): 1 / %1</source>
         <translation>縦横比: (V/H) 1 / %1</translation>
     </message>
+    <message>
+        <source>Set to ODN data point</source>
+        <translation>ODNデータの変化点に指定</translation>
+    </message>
+    <message>
+        <source>Left Start</source>
+        <translation>左岸計算開始点</translation>
+    </message>
+    <message>
+        <source>Right Start</source>
+        <translation>右岸計算開始点</translation>
+    </message>
+    <message>
+        <source>Left Middle</source>
+        <translation>左岸中水敷変化点</translation>
+    </message>
+    <message>
+        <source>Right Middle</source>
+        <translation>右岸中水敷変化点</translation>
+    </message>
+    <message>
+        <source>Left Low</source>
+        <translation>左岸低水路変化点</translation>
+    </message>
+    <message>
+        <source>Right Low</source>
+        <translation>右岸低水路変化点</translation>
+    </message>
+    <message>
+        <source>Edit by specifying slope point</source>
+        <translation>法尻部を指定して断面を編集</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
@@ -1038,6 +1265,73 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Delete</source>
         <translation>削除</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
+    <message>
+        <source>Edit Vegetation</source>
+        <translation>植生の編集</translation>
+    </message>
+    <message>
+        <source>Distance:</source>
+        <translation>距離:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+    <message>
+        <source>Submerged:</source>
+        <translation>水没:</translation>
+    </message>
+    <message>
+        <source>submerged</source>
+        <translation>水没</translation>
+    </message>
+    <message>
+        <source>Sparse / Dense:</source>
+        <translation>疎密:</translation>
+    </message>
+    <message>
+        <source>Sparse</source>
+        <translation>疎</translation>
+    </message>
+    <message>
+        <source>Dense</source>
+        <translation>密</translation>
+    </message>
+    <message>
+        <source>Dead:</source>
+        <translation>死水域:</translation>
+    </message>
+    <message>
+        <source>Upstream trees</source>
+        <translation>上流側樹木による死水域</translation>
+    </message>
+    <message>
+        <source>Real trees</source>
+        <translation>実在の樹木</translation>
+    </message>
+    <message>
+        <source>High / Low:</source>
+        <translation>高低:</translation>
+    </message>
+    <message>
+        <source>Low trees</source>
+        <translation>低木</translation>
+    </message>
+    <message>
+        <source>High trees</source>
+        <translation>高木</translation>
+    </message>
+    <message>
+        <source>Low branch height:</source>
+        <translation>枝下高さ:</translation>
     </message>
 </context>
 <context>
@@ -1457,6 +1751,28 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyJmkExporter</name>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Cannot open file for writing</source>
+        <translation>ファイルを書き込み用に開けません</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyJmkImporter</name>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く処理でエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
@@ -1650,6 +1966,55 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>The problems above is found. If you click on OK button, the data with Problems are ignored.</source>
         <translation type="vanished">上の問題が見つかりました。OKボタンを押すと、問題の見つかった断面を無視してインポートします。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>Cross-Section Data (*.odn)</source>
+        <translation>横断測量データ (*.odn)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnImporter</name>
+    <message>
+        <source>Cross-Section data (*.odn)</source>
+        <translation>横断測量データ (*.odn)</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.odn)</source>
+        <translation>横断測量データ (*.odn)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く処理でエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occered while reading line %1. Too short.</source>
+        <translation>%1 行目の読み込みでエラーが発生しました。 短すぎます。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
+    <message>
+        <source>Position Setting</source>
+        <translation>横断面位置の設定</translation>
+    </message>
+    <message>
+        <source>Decided from span distance</source>
+        <translation>区間距離から計算</translation>
+    </message>
+    <message>
+        <source>Decided from KP name</source>
+        <translation>キロポスト名から計算</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考&lt;/span&gt;: もし区間距離の値に 0 が含まれていた場合、「区間距離から計算」は選べません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
