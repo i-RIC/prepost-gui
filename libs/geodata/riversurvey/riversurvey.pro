@@ -188,6 +188,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_deleteriverpathpointcommand.h \
            private/geodatariversurvey_displaysetting.h \
            private/geodatariversurvey_editcrosssectioncommand.h \
+           private/geodatariversurvey_editjmkdatacommand.h \
            private/geodatariversurvey_editslopepointcommand.h \
            private/geodatariversurvey_expandcrosssectioncommand.h \
            private/geodatariversurvey_impl.h \
@@ -296,6 +297,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_deleteriverpathpointcommand.cpp \
            private/geodatariversurvey_displaysetting.cpp \
            private/geodatariversurvey_editcrosssectioncommand.cpp \
+           private/geodatariversurvey_editjmkdatacommand.cpp \
            private/geodatariversurvey_editslopepointcommand.cpp \
            private/geodatariversurvey_expandcrosssectioncommand.cpp \
            private/geodatariversurvey_impl.cpp \

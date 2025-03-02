@@ -124,6 +124,7 @@ private slots:
 	void setSelectedPointToOdnRightStart();
 	void crosssectionComboBoxChange(int newindex);
 	void handleDataChange();
+	void handleVegetationDataChange();
 	void handleSurveyTableItemEdit(QTableWidgetItem* item);
 	void handleSurveyTableItemClick(QTableWidgetItem* item);
 	void handleWseTableItemEdit(QTableWidgetItem* item);
@@ -146,6 +147,7 @@ private:
 	void setupSurveyTable();
 	void setupWaterSurfaceElevationTable();
 	bool syncData();
+	bool syncVegetationData();
 	void updateRiverPathPoints();
 	void setupActions();
 	void setupMenu();

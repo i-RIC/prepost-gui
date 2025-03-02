@@ -9,6 +9,7 @@
 #include "private/geodatariversurveycrosssectionwindow_datatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
+#include "private/geodatariversurvey_editjmkdatacommand.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_wsetabledelegate.h"
@@ -121,13 +122,14 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	setupWaterSurfaceElevationTable();
 	updateRiverSurveys();
 
-	connect(impl->m_model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), this, SLOT(handleDataChange()));
-	connect(ui->surveysTableWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(handleSurveyTableItemClick(QTableWidgetItem*)));
-	connect(ui->surveysTableWidget, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(handleSurveyTableItemEdit(QTableWidgetItem*)));
-	connect(ui->surveysTableWidget, SIGNAL(currentCellChanged(int,int,int,int)), this, SLOT(handleSurveyTablecurrentCellChange(int,int,int,int)));
-	connect(ui->wsesTableWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(handleWseTableItemClick(QTableWidgetItem*)));
-	connect(ui->wsesTableWidget, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(handleWseTableItemEdit(QTableWidgetItem*)));
-	connect(ui->graphicsView, SIGNAL(drawnRegionChanged()), this, SLOT(handleDrawnRegionChanged()));
+	connect(impl->m_model, &QStandardItemModel::dataChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleDataChange);
+	connect(impl->m_vegetationModel, &QStandardItemModel::dataChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleVegetationDataChange);
+	connect(ui->surveysTableWidget, &QTableWidget::itemClicked, this, &GeoDataRiverSurveyCrosssectionWindow::handleSurveyTableItemClick);
+	connect(ui->surveysTableWidget, &QTableWidget::itemChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleSurveyTableItemEdit);
+	connect(ui->surveysTableWidget, &QTableWidget::currentCellChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleSurveyTablecurrentCellChange);
+	connect(ui->wsesTableWidget, &QTableWidget::itemClicked, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemClick);
+	connect(ui->wsesTableWidget, &QTableWidget::itemChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemEdit);
+	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawnRegionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleDrawnRegionChanged);
 }
 
 
@@ -651,6 +653,16 @@ void GeoDataRiverSurveyCrosssectionWindow::handleDataChange()
 	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Elevation Point"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, this, impl->m_targetRiverSurvey, true));
 }
 
+void GeoDataRiverSurveyCrosssectionWindow::handleVegetationDataChange()
+{
+	if (impl->m_settingUp) {return;}
+	GeoDataRiverPathPointJmkData before, after;
+	before = impl->m_editTargetPoint->jmk();
+	if (! syncVegetationData()) {return;}
+	after = impl->m_editTargetPoint->jmk();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(after, before, impl->m_editTargetPoint, this));
+}
+
 bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 {
 	impl->m_settingUp = true;
@@ -711,6 +723,33 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 	}
 	updateView();
 	impl->m_targetRiverSurvey->updateShapeData();
+	impl->m_settingUp = false;
+	return true;
+}
+
+bool GeoDataRiverSurveyCrosssectionWindow::syncVegetationData()
+{
+	impl->m_settingUp = true;
+	auto& jmk = impl->m_editTargetPoint->jmk();
+
+	std::vector<GeoDataRiverPathPointJmkData::Item> newItems;
+	auto vModel = impl->m_vegetationModel;
+	for (int i = 0; i < vModel->rowCount(); ++i) {
+		GeoDataRiverPathPointJmkData::Item item;
+		item.distance = vModel->data(vModel->index(i, 0)).toDouble();
+		item.width = vModel->data(vModel->index(i, 1)).toDouble();
+		item.height = vModel->data(vModel->index(i, 2)).toDouble();
+		item.submerged = vModel->data(vModel->index(i, 3)).toInt();
+		item.dense = vModel->data(vModel->index(i, 4)).toInt();
+		item.dead = vModel->data(vModel->index(i, 5)).toInt();
+		item.highLow = vModel->data(vModel->index(i, 6)).toInt();
+		item.lowBranchHeight = vModel->data(vModel->index(i, 7)).toDouble();
+		newItems.push_back(item);
+	}
+
+	jmk.items() = newItems;
+
+	updateView();
 	impl->m_settingUp = false;
 	return true;
 }

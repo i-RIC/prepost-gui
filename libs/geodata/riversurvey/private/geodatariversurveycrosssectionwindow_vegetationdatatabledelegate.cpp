@@ -130,7 +130,27 @@ void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::setEdito
 
 void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
 {
-
+	auto col = index.column();
+	if (col == 0 || col == 1 || col == 2 || col == 7) {
+		auto w = dynamic_cast<RealNumberEditWidget*> (editor);
+		model->setData(index, w->value());
+	} else if (col == 3) {
+		int v = 0;
+		auto checkBox = dynamic_cast<CenteredCheckBox*>(editor);
+		if (checkBox->isChecked()) {
+			v = 1;
+		}
+		model->setData(index, 1);
+	} else if (col == 4) {
+		auto comboBox = dynamic_cast<QComboBox*> (editor);
+		model->setData(index, comboBox->currentIndex());
+	} else if (col == 5) {
+		auto comboBox = dynamic_cast<QComboBox*> (editor);
+		model->setData(index, comboBox->currentIndex());
+	} else if (col == 6) {
+		auto comboBox = dynamic_cast<QComboBox*> (editor);
+		model->setData(index, comboBox->currentIndex());
+	}
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const

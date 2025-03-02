@@ -177,6 +177,7 @@ private:
 	class ChangeSelectionCommand;
 	class DeleteRiverPathPointCommand;
 	class EditCrosssectionCommand;
+	class EditJmkDataCommand;
 	class EditSlopePointCommand;
 	class ExpandCrosssectionCommand;
 	class InsertRiverPathPointCommand;
