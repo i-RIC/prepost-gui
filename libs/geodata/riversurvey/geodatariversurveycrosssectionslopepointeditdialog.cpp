@@ -124,7 +124,6 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleButtonClick(QAbst
 
 void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::apply()
 {
-
 	auto com = createCommand(true);
 	if (com == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("Please specify the setting so that the lines crosses the original cross-section."));
@@ -173,7 +172,7 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 		newAList.push_back(m_original.at(i));
 	}
 
-	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, crosssectionWindow());
+	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, m_original, crosssectionWindow());
 }
 
 void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec)
@@ -227,7 +226,7 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 			QPointF p2(a2.position(), a2.height());
 
 			bool intersect = iRIC::intersectionPoint(point, right, p1, p2, &intersection, &r, &s);
-			if (! intersect) {continue;}
+			if (! intersect || r < 0 || r > 1 || s < 0 || s > 1) {continue;}
 
 			*rightFound = true;
 			*rightIndex = i + 1;

@@ -3,10 +3,10 @@
 
 #include <misc/qundocommandhelper.h>
 
-GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& alist, GeoDataRiverSurveyCrosssectionWindow* w) :
+GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& newAlist, const GeoDataRiverCrosssection::AltitudeList& oldAlist, GeoDataRiverSurveyCrosssectionWindow* w) :
 	QUndoCommand {},
-	m_after {alist},
-	m_before {p->crosssection().AltitudeInfo()},
+	m_after {newAlist},
+	m_before {oldAlist},
 	m_apply {apply},
 	m_point {p},
 	m_window {w}
