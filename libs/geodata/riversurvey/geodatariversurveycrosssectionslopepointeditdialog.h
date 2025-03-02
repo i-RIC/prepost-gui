@@ -1,6 +1,8 @@
 #ifndef GEODATARIVERSURVEYCROSSSECTIONSLOPEPOINTEDITDIALOG_H
 #define GEODATARIVERSURVEYCROSSSECTIONSLOPEPOINTEDITDIALOG_H
 
+#include "geodatarivercrosssection.h"
+
 #include <QDialog>
 
 class GeoDataRiverSurveyCrosssectionWindow;
@@ -29,6 +31,8 @@ public:
 	void setSlope(int slope);
 	void apply();
 
+	static void calculateLeftAndRightPoints(const GeoDataRiverCrosssection::AltitudeList& alist, Mode mode, const QPointF& point, int slope, QPointF* left, QPointF* right);
+
 public slots:
 	void accept() override;
 	void reject() override;
@@ -40,6 +44,7 @@ private slots:
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* crosssectionWindow() const;
+	QUndoCommand* createCommand(bool apply) const;
 
 	Mode m_mode;
 	bool m_applied;

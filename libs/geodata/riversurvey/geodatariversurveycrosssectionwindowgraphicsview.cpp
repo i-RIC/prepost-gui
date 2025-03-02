@@ -1083,35 +1083,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSlopePointEditPreview
 	QPen pen(QColor(150, 150, 150), 1, Qt::PenStyle::DashLine);
 	painter.setPen(pen);
 
-	if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd) {
-		painter.drawLine(QLineF(QPointF(0, point.y()), point));
+	QPointF left, right;
+	GeoDataRiverSurveyCrosssectionSlopePointEditDialog::calculateLeftAndRightPoints(m_parentWindow->target()->crosssection().AltitudeInfo(), m_slopePointEditMode, m_slopePointEditModeSlopePoint, m_slopePointEditModeSlope, &left, &right);
 
-		QPointF point2 = invMatrix.map(QPointF(0, size.height()));
-		auto dx = (m_slopePointEditModeSlopePoint.y() - point2.y()) * m_slopePointEditModeSlope;
-
-		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() + dx, point2.y())), point));
-	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftSub) {
-		painter.drawLine(QLineF(QPointF(size.width(), point.y()), point));
-
-		QPointF point2 = invMatrix.map(QPointF(0, 0));
-		auto dx = (point2.y() - m_slopePointEditModeSlopePoint.y()) * m_slopePointEditModeSlope;
-
-		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() - dx, point2.y())), point));
-	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightAdd) {
-		painter.drawLine(QLineF(QPointF(size.width(), point.y()), point));
-
-		QPointF point2 = invMatrix.map(QPointF(0, size.height()));
-		auto dx = (m_slopePointEditModeSlopePoint.y() - point2.y()) * m_slopePointEditModeSlope;
-
-		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() - dx, point2.y())), point));
-	} else if (m_slopePointEditMode == GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::RightSub) {
-		painter.drawLine(QLineF(QPointF(0, point.y()), point));
-
-		QPointF point2 = invMatrix.map(QPointF(0, 0));
-		auto dx = (point2.y() - m_slopePointEditModeSlopePoint.y()) * m_slopePointEditModeSlope;
-
-		painter.drawLine(QLineF(m_matrix.map(QPointF(m_slopePointEditModeSlopePoint.x() + dx, point2.y())), point));
-	}
+	painter.drawLine(QLineF(m_matrix.map(left), point));
+	painter.drawLine(QLineF(m_matrix.map(right), point));
 
 	painter.restore();
 }
