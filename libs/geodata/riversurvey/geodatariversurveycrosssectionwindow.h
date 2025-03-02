@@ -177,6 +177,7 @@ private:
 	Impl* impl;
 
 	class DataTableDelegate;
+	class VegetationDataTableDelegate;
 	class RiverSurveyTableDelegate;
 	class WseTableDelegate;
 

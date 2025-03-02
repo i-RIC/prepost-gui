@@ -160,6 +160,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveycrosssectionwindowgraphicsview.h \
            geodatariversurveycrosssectionwindowprojectdataitem.h \
            geodatariversurveycrosssectionwindowtableview.h \
+           geodatariversurveycrosssectionwindowvegetationtableview.h \
            geodatariversurveycrosssectionwindowwsetablewidget.h \
            geodatariversurveyctrlpointbackup.h \
            geodatariversurveydisplaysetting.h \
@@ -208,6 +209,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
+           private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.h \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h \
            private/geodatariversurveyimporter_problemsdialog.h \
@@ -267,6 +269,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveycrosssectionwindowgraphicsview.cpp \
            geodatariversurveycrosssectionwindowprojectdataitem.cpp \
            geodatariversurveycrosssectionwindowtableview.cpp \
+           geodatariversurveycrosssectionwindowvegetationtableview.cpp \
            geodatariversurveycrosssectionwindowwsetablewidget.cpp \
            geodatariversurveyctrlpointbackup.cpp \
            geodatariversurveydisplaysetting.cpp \
@@ -313,6 +316,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_translateriverpathpointcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
+           private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.cpp \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.cpp \
            private/geodatariversurveyimporter_problemsdialog.cpp \

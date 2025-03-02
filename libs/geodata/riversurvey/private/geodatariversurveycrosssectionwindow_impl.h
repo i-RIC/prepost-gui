@@ -56,6 +56,9 @@ public:
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
 
+	QStandardItemModel* m_vegetationModel;
+	QItemSelectionModel* m_vegetationSelectionModel;
+
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 
 	QMenu* m_elevationPointMenu;

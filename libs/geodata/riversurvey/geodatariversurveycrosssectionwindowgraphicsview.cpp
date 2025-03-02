@@ -420,9 +420,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index,
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
 {
-	const auto& xsec = m_parentWindow->target()->crosssection();
+	auto target = m_parentWindow->target();
+	if (target == nullptr) {return;}
+
+	const auto& xsec = target->crosssection();
 	auto& alist = xsec.AltitudeInfo();
-	const auto& jmk = m_parentWindow->target()->jmk();
+	const auto& jmk = target->jmk();
 
 	painter.save();
 	painter.setPen(Qt::darkGreen);

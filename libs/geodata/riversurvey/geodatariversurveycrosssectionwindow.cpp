@@ -10,6 +10,7 @@
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
+#include "private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_wsetabledelegate.h"
 #include "private/geodatariversurvey_setodnpointcommand.h"
 
@@ -294,6 +295,18 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 
 	impl->m_selectionModel = new QItemSelectionModel(impl->m_model, this);
 	connect(impl->m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
+
+	impl->m_vegetationModel = new QStandardItemModel(0, 8, this);
+	impl->m_vegetationModel->setHeaderData(0, Qt::Horizontal, tr("Distance"));
+	impl->m_vegetationModel->setHeaderData(1, Qt::Horizontal, tr("Width"));
+	impl->m_vegetationModel->setHeaderData(2, Qt::Horizontal, tr("Height"));
+	impl->m_vegetationModel->setHeaderData(3, Qt::Horizontal, tr("Submerged"));
+	impl->m_vegetationModel->setHeaderData(4, Qt::Horizontal, tr("Dense"));
+	impl->m_vegetationModel->setHeaderData(5, Qt::Horizontal, tr("Dead"));
+	impl->m_vegetationModel->setHeaderData(6, Qt::Horizontal, tr("HighLow"));
+	impl->m_vegetationModel->setHeaderData(7, Qt::Horizontal, tr("Low Branch Height"));
+
+	impl->m_vegetationSelectionModel = new QItemSelectionModel(impl->m_vegetationModel, this);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateCrossSectionComboBox()
@@ -520,6 +533,25 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 	for (int i = 0; i < impl->m_model->rowCount(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
+
+	const auto& jmk = impl->m_editTargetPoint->jmk();
+	row = 0;
+	for (auto it = jmk.items().begin(); it != jmk.items().end(); ++it) {
+		const auto& item = *it;
+		impl->m_vegetationModel->insertRow(row);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 0), item.distance);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 1), item.width);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 2), item.height);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 3), item.submerged);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 4), item.dense);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 5), item.dead);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 6), item.highLow);
+		impl->m_vegetationModel->setData(impl->m_vegetationModel->index(row, 7), item.lowBranchHeight);
+		++ row;
+	}
+	ui->vegetationTableView->setModel(impl->m_vegetationModel);
+	ui->vegetationTableView->setSelectionModel(impl->m_vegetationSelectionModel);
+
 	impl->m_settingUp = false;
 	updateActionStatus();
 }
@@ -528,8 +560,11 @@ void GeoDataRiverSurveyCrosssectionWindow::setupView()
 {
 	ui->tableView->setModel(impl->m_model);
 	ui->tableView->setSelectionModel(impl->m_selectionModel);
-
 	ui->tableView->setItemDelegate(new DataTableDelegate());
+
+	ui->vegetationTableView->setModel(impl->m_vegetationModel);
+	ui->vegetationTableView->setSelectionModel(impl->m_vegetationSelectionModel);
+	ui->vegetationTableView->setItemDelegate(new VegetationDataTableDelegate());
 
 	ui->graphicsView->setParentWindow(this);
 	ui->graphicsView->setModel(impl->m_model);
@@ -540,6 +575,9 @@ void GeoDataRiverSurveyCrosssectionWindow::clear()
 {
 	int rows = impl->m_model->rowCount();
 	impl->m_model->removeRows(0, rows);
+
+	int vRows = impl->m_vegetationModel->rowCount();
+	impl->m_vegetationModel->removeRows(0, vRows);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateView()
@@ -1296,11 +1334,15 @@ void GeoDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 	}
 
 	auto del = dynamic_cast<DataTableDelegate*>(ui->tableView->itemDelegate());
+	auto vegDel = dynamic_cast<VegetationDataTableDelegate*>(ui->vegetationTableView->itemDelegate());
 	if (impl->m_editTargetPoint == nullptr) {
 		del->setCrosssection(nullptr);
+		vegDel->setData(nullptr);
 	} else {
 		del->setCrosssection(&(impl->m_editTargetPoint->crosssection()));
+		vegDel->setData(&(impl->m_editTargetPoint->jmk()));
 	}
+
 	setupData();
 	updateWaterSurfaceElevationTable();
 	updateView();

@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>680</width>
-    <height>526</height>
+    <width>634</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QSplitter" name="hSplitter">
       <property name="orientation">
@@ -31,7 +31,31 @@
         </property>
        </widget>
        <widget class="GeoDataRiverSurveyCrosssectionWindowWseTableWidget" name="wsesTableWidget"/>
-       <widget class="GeoDataRiverSurveyCrosssectionWindowTableView" name="tableView"/>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="altitudesTab">
+         <attribute name="title">
+          <string>Altitudes</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="GeoDataRiverSurveyCrosssectionWindowTableView" name="tableView"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="vegetationsTab">
+         <attribute name="title">
+          <string>Vegetations</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="GeoDataRiverSurveyCrosssectionWindowVegetationTableView" name="vegetationTableView"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -96,6 +120,11 @@
    <class>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</class>
    <extends>QTableWidget</extends>
    <header>geodatariversurveycrosssectionwindowwsetablewidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GeoDataRiverSurveyCrosssectionWindowVegetationTableView</class>
+   <extends>QTableView</extends>
+   <header>geodatariversurveycrosssectionwindowvegetationtableview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
