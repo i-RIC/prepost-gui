@@ -200,7 +200,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 
 		m_rightClickingMenu->addAction(m_parentWindow->editFromSelectedPointAction());
 
-		auto startEditMenu = m_rightClickingMenu->addMenu("Edit by specyfing slope point");
+		auto startEditMenu = m_rightClickingMenu->addMenu(tr("Edit by specifying slope point"));
 		startEditMenu->addAction(m_parentWindow->leftAddAction());
 		startEditMenu->addAction(m_parentWindow->leftSubAction());
 		startEditMenu->addAction(m_parentWindow->rightAddAction());

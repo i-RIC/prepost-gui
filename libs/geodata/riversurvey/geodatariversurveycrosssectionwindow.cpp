@@ -148,10 +148,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	impl->m_editSelectedVegetationAction = new QAction(tr("Edit selected vegetation"), this);
 	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point"), this);
 	impl->m_editFromSelectedPointWithDialogAction = new QAction(tr("&Edit from Dialog..."), this);
-	impl->m_leftAddAction = new QAction ("Left Side Add");
-	impl->m_leftSubAction = new QAction ("Left Side Sub");
-	impl->m_rightAddAction = new QAction ("Right Side Add");
-	impl->m_rightSubAction = new QAction ("Right Side Sub");
+	impl->m_leftAddAction = new QAction(tr("Left Side Add"));
+	impl->m_leftSubAction = new QAction(tr("Left Side Sub"));
+	impl->m_rightAddAction = new QAction(tr("Right Side Add"));
+	impl->m_rightSubAction = new QAction(tr("Right Side Sub"));
 	impl->m_odnLeftStartAction = new QAction(tr("Left Start Point"), this);
 	impl->m_odnLeftMiddleAction = new QAction(tr("Left Middle Point"), this);
 	impl->m_odnLeftLowAction = new QAction(tr("Left Low Point"), this);
