@@ -420,6 +420,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index,
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
 {
+	std::unordered_set<int> selected;
+	for (const QModelIndex& index : m_parentWindow->vegetationSelectionModel()->selectedIndexes()) {
+		selected.insert(index.row());
+	}
+
 	auto target = m_parentWindow->target();
 	if (target == nullptr) {return;}
 
@@ -427,10 +432,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& pai
 	auto& alist = xsec.AltitudeInfo();
 	const auto& jmk = target->jmk();
 
+	QPen normalPen(Qt::darkGreen);
+	QPen selectedPen(Qt::darkGreen, 3);
+
 	painter.save();
 	painter.setPen(Qt::darkGreen);
 
-	for (const auto& item : jmk.items()) {
+	for (int idx = 0; idx < jmk.items().size(); ++idx) {
+		const auto& item = jmk.items().at(idx);
+
 		auto lb = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift(), 0));
 		auto ub = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift() + item.width, 0));
 		if (lb == alist.end() || ub == alist.end()) {continue;}
@@ -461,6 +471,13 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& pai
 			auto r = (item.distance - xsec.leftShift() + item.width - a1.position()) / (a2.position() - a1.position());
 			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift() + item.width, (1 - r) * a1.height() + r * a2.height() + item.height)));
 			points.push_back(m_matrix.map(QPointF(item.distance - xsec.leftShift() + item.width, (1 - r) * a1.height() + r * a2.height())));
+		}
+
+		auto it = selected.find(idx);
+		if (it != selected.end()) {
+			painter.setPen(selectedPen);
+		} else {
+			painter.setPen(normalPen);
 		}
 
 		for (int i = 0; i < static_cast<int> (points.size()) - 1; ++i) {

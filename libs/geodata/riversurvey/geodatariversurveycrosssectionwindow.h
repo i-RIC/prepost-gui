@@ -57,6 +57,7 @@ public:
 	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
+	QAction* editSelectedVegetationAction() const;
 	QAction* leftAddAction() const;
 	QAction* leftSubAction() const;
 	QAction* rightAddAction() const;
@@ -107,11 +108,13 @@ public slots:
 
 private slots:
 	void updateActionStatus();
+	void handleVegetationSelectionChange();
 	void deleteSelectedRows();
 	void editFromSelectedPoint();
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void editSelectedVegetation();
 	void startLeftAdd();
 	void startLeftSub();
 	void startRightAdd();
@@ -170,6 +173,9 @@ private:
 
 	QStandardItemModel* model() const;
 	QItemSelectionModel* selectionModel() const;
+	QStandardItemModel* vegetationModel() const;
+	QItemSelectionModel* vegetationSelectionModel() const;
+
 	PreProcessorHydraulicDataGroupDataItemI* waterElevationGroup();
 	HydraulicDataRiverSurveyWaterElevation* waterElevation(int index);
 

@@ -67,6 +67,8 @@ public:
 	QAction* m_inactivateByWEOnlyThisAction;
 	QAction* m_inactivateByWEAllAction;
 
+	QAction* m_editSelectedVegetationAction;
+
 	QAction* m_leftAddAction;
 	QAction* m_leftSubAction;
 	QAction* m_rightAddAction;

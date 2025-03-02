@@ -144,6 +144,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 {
 	impl->m_inactivateByWEOnlyThisAction = new QAction(tr("&This cross-section only"), this);
 	impl->m_inactivateByWEAllAction = new QAction(tr("All cross-sections"), this);
+	impl->m_editSelectedVegetationAction = new QAction(tr("Edit selected vegetation"), this);
 	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point"), this);
 	impl->m_editFromSelectedPointWithDialogAction = new QAction(tr("&Edit from Dialog..."), this);
 	impl->m_leftAddAction = new QAction ("Left Side Add");
@@ -162,7 +163,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	connect(impl->m_editFromSelectedPointWithDialogAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointWithDialog);
 	connect(impl->m_inactivateByWEOnlyThisAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis);
 	connect(impl->m_inactivateByWEAllAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll);
-
+	connect(impl->m_editSelectedVegetationAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation);
 	connect(impl->m_leftAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftAdd);
 	connect(impl->m_leftSubAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftSub);
 	connect(impl->m_rightAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startRightAdd);
@@ -296,7 +297,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 	impl->m_model->setHeaderData(3, Qt::Horizontal, tr("Elevation"));
 
 	impl->m_selectionModel = new QItemSelectionModel(impl->m_model, this);
-	connect(impl->m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
+	connect(impl->m_selectionModel, &QItemSelectionModel::selectionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::updateActionStatus);
 
 	impl->m_vegetationModel = new QStandardItemModel(0, 8, this);
 	impl->m_vegetationModel->setHeaderData(0, Qt::Horizontal, tr("Distance"));
@@ -309,6 +310,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 	impl->m_vegetationModel->setHeaderData(7, Qt::Horizontal, tr("Low Branch Height"));
 
 	impl->m_vegetationSelectionModel = new QItemSelectionModel(impl->m_vegetationModel, this);
+	connect(impl->m_vegetationSelectionModel, &QItemSelectionModel::selectionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleVegetationSelectionChange);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateCrossSectionComboBox()
@@ -431,6 +433,11 @@ QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThisAction() co
 QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAllAction() const
 {
 	return impl->m_inactivateByWEAllAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetationAction() const
+{
+	return impl->m_editSelectedVegetationAction;
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindow::leftAddAction() const
@@ -874,6 +881,11 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 	}
 }
 
+void GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation()
+{
+
+}
+
 void GeoDataRiverSurveyCrosssectionWindow::startLeftAdd()
 {
 	ui->graphicsView->enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd);
@@ -976,6 +988,14 @@ void GeoDataRiverSurveyCrosssectionWindow::updateActionStatus()
 	QModelIndexList rows = impl->m_selectionModel->selectedRows();
 	impl->m_editFromSelectedPointWithDialogAction->setEnabled(rows.count() > 0);
 	impl->m_deleteAction->setEnabled(rows.count() > 0);
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::handleVegetationSelectionChange()
+{
+	graphicsView()->viewport()->update();
+	QModelIndexList rows = impl->m_vegetationSelectionModel->selectedRows();
+
+	impl->m_editSelectedVegetationAction->setEnabled(rows.count() == 1);
 }
 
 QTableView* GeoDataRiverSurveyCrosssectionWindow::tableView()
@@ -1475,6 +1495,16 @@ QStandardItemModel* GeoDataRiverSurveyCrosssectionWindow::model() const
 QItemSelectionModel* GeoDataRiverSurveyCrosssectionWindow::selectionModel() const
 {
 	return impl->m_selectionModel;
+}
+
+QStandardItemModel* GeoDataRiverSurveyCrosssectionWindow::vegetationModel() const
+{
+	return impl->m_vegetationModel;
+}
+
+QItemSelectionModel* GeoDataRiverSurveyCrosssectionWindow::vegetationSelectionModel() const
+{
+	return impl->m_vegetationSelectionModel;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
