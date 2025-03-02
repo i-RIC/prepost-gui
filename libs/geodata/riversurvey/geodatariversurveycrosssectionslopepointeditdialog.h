@@ -45,8 +45,10 @@ private slots:
 private:
 	GeoDataRiverSurveyCrosssectionWindow* crosssectionWindow() const;
 	QUndoCommand* createCommand(bool apply) const;
+	static void findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec);
 
 	Mode m_mode;
+	GeoDataRiverCrosssection::AltitudeList m_original;
 	bool m_applied;
 
 	Ui::GeoDataRiverSurveyCrosssectionSlopePointEditDialog *ui;

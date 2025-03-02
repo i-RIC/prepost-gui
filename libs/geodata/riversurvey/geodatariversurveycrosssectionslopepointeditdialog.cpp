@@ -2,17 +2,21 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
 #include "ui_geodatariversurveycrosssectionslopepointeditdialog.h"
+#include "private/geodatariversurvey_editslopepointcommand.h"
 
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <QMessageBox>
 
 GeoDataRiverSurveyCrosssectionSlopePointEditDialog::GeoDataRiverSurveyCrosssectionSlopePointEditDialog(GeoDataRiverSurveyCrosssectionWindow *parent) :
 	QDialog(parent),
+	m_applied {false},
 	ui(new Ui::GeoDataRiverSurveyCrosssectionSlopePointEditDialog)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
+	m_original = parent->target()->crosssection().AltitudeInfo();
 
 	connect<void (QSpinBox::*)(int)>(ui->slopeSpinBox, &QSpinBox::valueChanged, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit);
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleButtonClick);
@@ -79,12 +83,19 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::accept()
 		return;
 	}
 
+	if (m_applied) {
+		iRICUndoStack::instance().undo();
+	}
 	iRICUndoStack::instance().push(com);
 	QDialog::accept();
 }
 
 void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::reject()
 {
+	if (m_applied) {
+		iRICUndoStack::instance().undo();
+	}
+
 	QDialog::reject();
 }
 
@@ -113,13 +124,19 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleButtonClick(QAbst
 
 void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::apply()
 {
+
 	auto com = createCommand(true);
 	if (com == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("Please specify the setting so that the lines crosses the original cross-section."));
 		return;
 	}
 
+	if (m_applied) {
+		iRICUndoStack::instance().undo();
+	}
 	iRICUndoStack::instance().push(com);
+
+	m_applied = true;
 }
 
 GeoDataRiverSurveyCrosssectionWindow* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::crosssectionWindow() const
@@ -129,5 +146,93 @@ GeoDataRiverSurveyCrosssectionWindow* GeoDataRiverSurveyCrosssectionSlopePointEd
 
 QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(bool apply) const
 {
-	return nullptr;
+	QPointF left, right;
+
+	auto target = crosssectionWindow()->target();
+	QPointF point(ui->positionXEdit->value(), ui->positionYEdit->value());
+	calculateLeftAndRightPoints(m_original, m_mode, point, ui->slopeSpinBox->value(), &left, &right);
+
+	bool leftFound, rightFound;
+	int leftIndex, rightIndex;
+	QPointF leftXSec, rightXSec;
+
+	findLeftAndRightCrossSections(m_original, point, left, right, &leftFound, &leftIndex, &leftXSec, &rightFound, &rightIndex, &rightXSec);
+	if (! (leftFound && rightFound)) {
+		return nullptr;
+	}
+
+	GeoDataRiverCrosssection::AltitudeList newAList;
+	for (int i = 0; i <= leftIndex; ++i) {
+		newAList.push_back(m_original.at(i));
+	}
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(leftXSec.x(), leftXSec.y()));
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(point.x(), point.y()));
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(rightXSec.x(), rightXSec.y()));
+
+	for (int i = rightIndex; i < static_cast<int> (m_original.size()); ++i) {
+		newAList.push_back(m_original.at(i));
+	}
+
+	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, crosssectionWindow());
+}
+
+void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec)
+{
+	int index = -1;
+
+	*leftFound = false;
+	for (int i = 0; i < alist.size(); ++i) {
+		const auto& a = alist.at(i);
+		if (a.position() >= point.x()) {
+			index = i;
+			break;
+		}
+	}
+	QPointF intersection;
+	double r, s;
+
+	if (index != -1) {
+		for (int i = index - 1; i > 0; --i) {
+			const auto& a1 = alist.at(i);
+			const auto& a2 = alist.at(i + 1);
+
+			QPointF p1(a1.position(), a1.height());
+			QPointF p2(a2.position(), a2.height());
+
+			bool intersect = iRIC::intersectionPoint(point, left, p1, p2, &intersection, &r, &s);
+			if (! intersect) {continue;}
+
+			*leftFound = true;
+			*leftIndex = i;
+			*leftXsec = intersection;
+			break;
+		}
+	}
+
+	*rightFound = false;
+	for (int i = 0; i < alist.size(); ++i) {
+		const auto& a = alist.at(i);
+		if (a.position() > point.x()) {
+			index = i - 1;
+			break;
+		}
+	}
+
+	if (index != -1) {
+		for (int i = index; i < static_cast<int> (alist.size()) - 1; ++i) {
+			const auto& a1 = alist.at(i);
+			const auto& a2 = alist.at(i + 1);
+
+			QPointF p1(a1.position(), a1.height());
+			QPointF p2(a2.position(), a2.height());
+
+			bool intersect = iRIC::intersectionPoint(point, right, p1, p2, &intersection, &r, &s);
+			if (! intersect) {continue;}
+
+			*rightFound = true;
+			*rightIndex = i + 1;
+			*rightXsec = intersection;
+			break;
+		}
+	}
 }

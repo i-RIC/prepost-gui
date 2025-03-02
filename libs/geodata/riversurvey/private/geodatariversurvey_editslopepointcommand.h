@@ -8,7 +8,7 @@
 class GeoDataRiverSurvey::EditSlopePointCommand : public QUndoCommand
 {
 public:
-	EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& alist, GeoDataRiverSurvey* rs, GeoDataRiverSurveyCrosssectionWindow* w);
+	EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& alist, GeoDataRiverSurveyCrosssectionWindow* w);
 
 	void redo() override;
 	void undo() override;
@@ -24,7 +24,6 @@ private:
 
 	bool m_apply;
 	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurvey* m_rs;
 	GeoDataRiverSurveyCrosssectionWindow* m_window;
 };
 

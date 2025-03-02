@@ -98,6 +98,7 @@ public:
 	 * @note The first point is the dummy point. It does not have crosssection information.
 	 */
 	bool firstPoint() const;
+	GeoDataRiverSurvey* riverSurvey() const;
 	QPointF crosssectionPosition(double x);
 	/// Add new river path point before this point.
 	void insertPathPoint(GeoDataRiverPathPoint* p);

@@ -207,6 +207,7 @@ public:
 	friend class GeoDataRiverPathPointExpandDialog;
 	friend class GeoDataRiverCrosssectionAltitudeMoveDialog;
 	friend class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
+	friend class GeoDataRiverSurveyCrosssectionSlopePointEditDialog;
 	friend class GeoDataRiverSurveyCrosssectionWindow;
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 

@@ -903,6 +903,11 @@ QPointF GeoDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (GeoData
 	return interpolator->interpolate(d);
 }
 
+GeoDataRiverSurvey* GeoDataRiverPathPoint::riverSurvey() const
+{
+	return m_rs;
+}
+
 QPointF GeoDataRiverPathPoint::crosssectionPosition(double x)
 {
 	QPointF dir = m_crosssectionDirection;

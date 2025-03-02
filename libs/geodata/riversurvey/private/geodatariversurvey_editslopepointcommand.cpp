@@ -3,13 +3,12 @@
 
 #include <misc/qundocommandhelper.h>
 
-GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& alist, GeoDataRiverSurvey* rs, GeoDataRiverSurveyCrosssectionWindow* w) :
+GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& alist, GeoDataRiverSurveyCrosssectionWindow* w) :
 	QUndoCommand {},
 	m_after {alist},
 	m_before {p->crosssection().AltitudeInfo()},
 	m_apply {apply},
 	m_point {p},
-	m_rs {rs},
 	m_window {w}
 {}
 
@@ -35,7 +34,6 @@ bool GeoDataRiverSurvey::EditSlopePointCommand::mergeWith(const QUndoCommand *ot
 
 	if (! m_apply) {return false;}
 	if (m_point != com->m_point) {return false;}
-	if (m_rs != com->m_rs) {return false;}
 	if (m_window != com->m_window) {return false;}
 
 	m_apply = com->m_apply;
@@ -50,5 +48,5 @@ void GeoDataRiverSurvey::EditSlopePointCommand::apply(const GeoDataRiverCrosssec
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	m_window->updateView();
-	m_rs->setMapped(false);
+	m_point->riverSurvey()->setMapped(false);
 }
