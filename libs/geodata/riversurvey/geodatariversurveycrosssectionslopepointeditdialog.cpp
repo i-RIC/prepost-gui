@@ -199,7 +199,7 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 			QPointF p2(a2.position(), a2.height());
 
 			bool intersect = iRIC::intersectionPoint(point, left, p1, p2, &intersection, &r, &s);
-			if (! intersect) {continue;}
+			if (! intersect || r < 0 || r > 1 || s < 0 || s > 1) {continue;}
 
 			*leftFound = true;
 			*leftIndex = i;
