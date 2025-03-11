@@ -65,6 +65,7 @@ private:
 	int m_xMax;
 	int m_yMin;
 	int m_yMax;
+	int m_requestsLeft;
 
 	QTimer m_timer;
 };

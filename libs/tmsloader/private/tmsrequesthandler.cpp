@@ -32,6 +32,7 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 	m_terminating {false},
 	m_webAccessManager {QtTool::networkAccessManager()},
 	m_imageCache {imageCache},
+	m_requestsLeft {50},
 	m_timer {this}
 {
 	// To see the view for debugging,, comment out the following line.
@@ -175,7 +176,9 @@ void TmsRequestHandler::handleLoaded()
 		emit imageUpdated();
 	}
 
-	if (! allImagesExists && emitFlag) {
+	-- m_requestsLeft;
+
+	if (! allImagesExists && emitFlag && m_requestsLeft > 0) {
 		if (m_lonLat) {
 			m_timer.singleShot(TIMER_MSEC_LONLAT, this, &TmsRequestHandler::handleLoaded);
 		} else {
