@@ -48,10 +48,11 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 	m_rightClickingMenu->addAction(m_polygon->holeModeAction());
 	m_rightClickingMenu->addAction(m_polygon->deleteAction());
 
-	PreProcessorBCSettingGroupDataItem* gditem = dynamic_cast<PreProcessorBCSettingGroupDataItem*>(parent);
-	connect(item, SIGNAL(itemUpdated()), this, SLOT(updateItem()));
-	connect(item, SIGNAL(destroyed()), gditem, SLOT(updateItems()));
-	connect(m_editAction, SIGNAL(triggered()), item, SLOT(showDialog()));
+	auto gditem = dynamic_cast<PreProcessorBCSettingGroupDataItem*>(parent);
+
+	connect(item, &PreProcessorBCDataItem::itemUpdated, this, &PreProcessorBCSettingDataItem::updateItem);
+	connect(item, &PreProcessorBCDataItem::destroyed, gditem, &PreProcessorBCSettingGroupDataItem::updateItems);
+	connect(m_editAction, &QAction::triggered, item, &PreProcessorBCDataItem::showDialog);
 
 	updateFilename();
 }

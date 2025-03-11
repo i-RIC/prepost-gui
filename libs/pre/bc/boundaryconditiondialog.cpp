@@ -153,23 +153,43 @@ void BoundaryConditionDialog::importFromYaml(const YAML::Node& node, const QDir&
 	m_containerSet->importFromYaml(node, dir);
 
 	m_captionContainer.importFromYaml(node, dir);
-	m_colorContainer.importFromYaml(node, dir);
-	m_opacityContainer.importFromYaml(node, dir);
-	m_showNameContainer.importFromYaml(node, dir);
-	m_pointSizeContainer.importFromYaml(node, dir);
-
 	ui->nameEdit->setText(m_captionContainer.value());
+
+	m_colorContainer.importFromYaml(node, dir);
+	QColor color(m_colorContainer.value());
+	ui->colorWidget->setColor(color);
+
+	m_opacityContainer.importFromYaml(node, dir);
+	ui->transparencyWidget->setOpacityPercent(m_opacityContainer.value());
+
+	m_showNameContainer.importFromYaml(node, dir);
+	ui->showNameCheckBox->setChecked(m_showNameContainer.value() == 1);
+
+	m_pointSizeContainer.importFromYaml(node, dir);
+	ui->pointSizeSpinBox->setValue(m_pointSizeContainer.value());
 }
 
 void BoundaryConditionDialog::exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader)
 {
-	m_captionContainer.setValue(ui->nameEdit->text());
 	m_containerSet->exportToYaml(stream, dir, lineHeader);
 
+	m_captionContainer.setValue(ui->nameEdit->text());
 	m_captionContainer.exportToYaml(stream, dir, lineHeader);
+
+	m_colorContainer.setValue(ui->colorWidget->color().name());
 	m_colorContainer.exportToYaml(stream, dir, lineHeader);
+
+	m_opacityContainer.setValue(ui->transparencyWidget->opacityPercent());
 	m_opacityContainer.exportToYaml(stream, dir, lineHeader);
+
+	if (ui->showNameCheckBox->isChecked()) {
+		m_showNameContainer.setValue(1);
+	} else {
+		m_showNameContainer.setValue(0);
+	}
 	m_showNameContainer.exportToYaml(stream, dir, lineHeader);
+
+	m_pointSizeContainer.setValue(ui->pointSizeSpinBox->value());
 	m_pointSizeContainer.exportToYaml(stream, dir, lineHeader);
 }
 

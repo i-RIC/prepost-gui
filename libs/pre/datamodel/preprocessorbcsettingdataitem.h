@@ -68,10 +68,10 @@ public:
 
 public slots:
 	void executeMapping(bool noDraw, WaitDialog* dialog);
+	void updateItem();
 
 private slots:
 	void setModified(bool modified = true) override;
-	void updateItem();
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;

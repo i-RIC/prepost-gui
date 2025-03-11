@@ -622,7 +622,7 @@ void PreProcessorBCDataItem::importFromYaml(const YAML::Node& node, const QDir& 
 			}
 		}
 		updateElements();
-		updateNameActorSettings();
+		updateActorSettings();
 	}
 
 	setName(impl->m_dialog->caption());
