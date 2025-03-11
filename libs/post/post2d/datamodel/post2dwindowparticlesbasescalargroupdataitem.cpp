@@ -294,6 +294,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 	}
 
 	doUpdateActorSetting();
+	m_toolBarWidget->applySetting();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
