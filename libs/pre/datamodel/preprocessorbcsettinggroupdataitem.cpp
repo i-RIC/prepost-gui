@@ -159,6 +159,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		auto bcsItem = tmpItemMap.value(bcItem, nullptr);
 		if (bcsItem == nullptr) {
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
+			bcsItem->updateItem();
 			if (bcsItem->standardItem() != nullptr) {
 				auto it = m_itemCheckState.find(bcItem->uniqueName());
 				if (it != m_itemCheckState.end()) {
