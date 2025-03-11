@@ -1223,13 +1223,14 @@ void Graph2dHybridWindowDataModel::updateTitle()
 
 bool Graph2dHybridWindowDataModel::setupInitialSetting()
 {
-	PostSolutionInfo* sInfo = postSolutionInfo();
+	auto sInfo = postSolutionInfo();
+	sInfo->open();
 	if (! sInfo->isDataAvailable()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
 		return false;
 	}
 	// initially, setup physical value settings.
-	bool loaded = m_setting.init(postSolutionInfo(), projectData()->solverDefinition());
+	bool loaded = m_setting.init(sInfo, projectData()->solverDefinition());
 	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
@@ -1241,9 +1242,9 @@ bool Graph2dHybridWindowDataModel::setupInitialSetting()
 		return false;
 	}
 
-	Graph2dHybridWindowDataSourceDialog* dialog = new Graph2dHybridWindowDataSourceDialog(mainWindow());
-	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
-	Graph2dHybridWindowImportDataGroupDataItem* gItem = rItem->importDataGroupItem();
+	auto dialog = new Graph2dHybridWindowDataSourceDialog(mainWindow());
+	auto rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
+	auto gItem = rItem->importDataGroupItem();
 
 	dialog->setMainWindow(projectData()->mainWindow());
 	dialog->setSetting(m_setting);
