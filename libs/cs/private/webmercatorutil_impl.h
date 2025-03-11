@@ -14,6 +14,8 @@ public:
 	double Cc;
 	double zcx;
 	double zcy;
+
+	int zoomLevel;
 };
 
 #endif // WEBMERCATORUTIL_IMPL_H
