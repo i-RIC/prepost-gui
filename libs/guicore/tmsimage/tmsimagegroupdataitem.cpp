@@ -6,6 +6,7 @@
 #include "../named/namedqstringgraphicswindowdataitemtool.h"
 
 #include <cs/coordinatesystem.h>
+#include <cs/convertwebmercatortolonglatthread.h>
 #include <cs/webmercatorutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
@@ -163,12 +164,16 @@ void calcRequestParameters(QPointF* center, QSize* size, double* scale, QPointF*
 } // namespace
 
 TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
+	m_convertThread {new ConvertWebMercatorToLongLatThread()},
 	m_tmsLoader {parent->iricMainWindow()},
 	m_tmsRequestId {-1},
 	m_actorIsVisible {false},
 	m_offset {parent->offset().x(), parent->offset().y()},
 	m_parent {parent}
 {
+	connect(m_convertThread, &ConvertWebMercatorToLongLatThread::imageOutput, m_parent, &TmsImageGroupDataItem::handleImageOutput);
+	m_convertThread->start();
+
 	m_texture = vtkSmartPointer<vtkTexture>::New();
 	m_texture->InterpolateOn();
 
@@ -191,6 +196,11 @@ TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_actor->SetMapper(mapper);
 	m_actor->SetTexture(m_texture);
 	m_actor->VisibilityOff();
+}
+
+TmsImageGroupDataItem::Impl::~Impl()
+{
+	delete m_convertThread;
 }
 
 TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
@@ -304,12 +314,16 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 		QRectF rect = calcRect(view, impl->m_offset);
 		rect = trimLonLatRect(rect);
-		impl->m_image = WebMercatorUtil::convertWebMercatorToLongLat(rect, impl->m_tmsLoader.getImage(impl->m_tmsRequestId), projectData()->workDirectory());
-	} else {
-		impl->m_image = impl->m_tmsLoader.getImage(impl->m_tmsRequestId);
-	}
 
-	// m_image.save("E:/debug.png"); // only for debug
+		impl->m_convertThread->addJob(rect, impl->m_tmsLoader.getImage(impl->m_tmsRequestId), projectData()->workDirectory());
+	} else {
+		handleImageOutput(impl->m_tmsLoader.getImage(impl->m_tmsRequestId));
+	}
+}
+
+void TmsImageGroupDataItem::handleImageOutput(const QImage& image)
+{
+	impl->m_image = image;
 	impl->m_imgToImg->Modified();
 
 	impl->m_plane->SetPoint1(impl->m_image.width(), 0, 0);

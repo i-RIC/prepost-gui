@@ -5,6 +5,8 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../misc/targeted/targetedqstringitemi.h"
 
+#include <QImage>
+
 class NamedQStringGraphicWindowDataItem;
 
 class GUICOREDLL_EXPORT TmsImageGroupDataItem : public GraphicsWindowDataItem, public TargetedQStringItemI
@@ -32,6 +34,7 @@ public slots:
 
 private slots:
 	void handleImageUpdate(int requestId);
+	void handleImageOutput(const QImage& image);
 
 protected:
 	void doApplyOffset(double x_diff, double y_diff) override;

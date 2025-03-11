@@ -86,6 +86,7 @@ bool convertGeoTiffToLongLat(const std::string& from, const std::string& to, dou
 
 	QStringList args;
 	args << "-s_srs" << EPSG3857STR << "-t_srs" << EPSG4326STR;
+	args << "-multi";
 	args << from.c_str() << to.c_str();
 
 	int ret = QProcess::execute(exeName, args);
@@ -102,6 +103,8 @@ bool loadGeoTIFF(const std::string& fname, QImage* img)
 
 void WebMercatorUtil::Impl::init(int zoomlevel)
 {
+	zoomLevel = zoomlevel;
+
 	double c = 256;
 	for (int i = 0; i < zoomlevel; ++i) {
 		c *= 2;
@@ -148,6 +151,12 @@ void WebMercatorUtil::getCoordinates(int tilex, int tiley, int pixelx, int pixel
 
 void WebMercatorUtil::getTileRegion(double topLeftLon, double topLeftLat, double bottomRightLon, double bottomRightLat, int* xMin, int* xMax, int* yMin, int *yMax)
 {
+	int maxNum = 1;
+	for (int i = 0; i < impl->zoomLevel; ++i) {
+		maxNum *= 2;
+	}
+	maxNum -= 1;
+
 	double xmin, ymin, xmax, ymax;
 
 	impl->project_plxel(topLeftLon, topLeftLat, &xmin, &ymin);
@@ -158,10 +167,10 @@ void WebMercatorUtil::getTileRegion(double topLeftLon, double topLeftLat, double
 	xmax /= 256;
 	ymax /= 256;
 
-	*xMin = static_cast<int>(std::floor(xmin));
-	*yMin = static_cast<int>(std::floor(ymin));
-	*xMax = static_cast<int>(std::ceil(xmax));
-	*yMax = static_cast<int>(std::ceil(ymax));
+	*xMin = std::max(static_cast<int>(std::floor(xmin)), 0);
+	*yMin = std::max(static_cast<int>(std::floor(ymin)), 0);
+	*xMax = std::min(static_cast<int>(std::ceil(xmax)), maxNum);
+	*yMax = std::min(static_cast<int>(std::ceil(ymax)), maxNum);
 }
 
 
