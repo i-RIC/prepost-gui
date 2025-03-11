@@ -25,7 +25,7 @@
 #include <misc/errormessage.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
@@ -551,8 +551,7 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 		// error occured reading solver information.
 		projectData()->setPostOnlyMode();
 	}
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::set(fname);
 
 	loadFromCgnsFile();
 
@@ -737,7 +736,7 @@ bool ProjectMainFile::hasResults()
 
 void ProjectMainFile::addBackgroundImage()
 {
-	QString dir = LastIODirectory::get();
+	QString dir = ProjectLastIODirectory::get();
 	QString filter(tr("All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)"));
 	auto mdiArea = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
 	QString fname = QFileDialog::getOpenFileName(mdiArea->currentSubWindow(), tr("Open Image file"), dir, filter);
@@ -785,6 +784,7 @@ void ProjectMainFile::addBackgroundImage()
 		BackgroundImageInfo* image = new BackgroundImageInfo(to, this);
 		image->initializePosition(fname);
 		addBackgroundImage(image);
+		ProjectLastIODirectory::setFromFilename(fname);
 	} catch (ErrorMessage m) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
 	}
@@ -951,19 +951,18 @@ void ProjectMainFile::checkVersionCompatibility()
 
 void ProjectMainFile::addMeasuredData()
 {
-	QString dir = LastIODirectory::get();
+	QString dir = ProjectLastIODirectory::get();
 	QString filter(tr("Text Files (*.csv *.txt);;All Files (*.*)"));
 	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Open Measured Data File"), dir, filter);
 	if (fname == "") {return;}
 
-	QFileInfo finfo(fname);
 	try {
 		MeasuredDataCsvImporter importer;
 		MeasuredData* md = importer.importData(fname, offset(), this);
 		impl->m_measuredDatas.push_back(md);
 		emit measuredDataAdded();
 		setModified();
-		LastIODirectory::set(finfo.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}

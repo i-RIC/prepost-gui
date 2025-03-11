@@ -7,7 +7,7 @@
 #include <gui/solverdef/solverdefinitionlist.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricrootpath.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
@@ -75,7 +75,7 @@ void iRICMIMainWindow::Impl::makeConnections()
 bool iRICMIMainWindow::Impl::newProject()
 {
 	QFileDialog dialog(m_mainWindow);
-	dialog.setDirectory(LastIODirectory::get());
+	dialog.setDirectory(ProjectLastIODirectory::get());
 	dialog.setFileMode(QFileDialog::Directory);
 	dialog.setOption(QFileDialog::ShowDirsOnly, true);
 	dialog.setWindowTitle(tr("Select folder to save project"));
@@ -91,7 +91,7 @@ bool iRICMIMainWindow::Impl::newProject()
 			continue;
 		}
 
-		LastIODirectory::set(dir.absolutePath());
+		ProjectLastIODirectory::set(dir.absolutePath());
 
 		m_project = new iRICMIProject(dir.absolutePath(), m_mainWindow);
 		updateModelsColumnWidths();
@@ -104,7 +104,7 @@ bool iRICMIMainWindow::Impl::newProject()
 
 bool iRICMIMainWindow::Impl::openProject()
 {
-	auto name = QFileDialog::getOpenFileName(m_mainWindow, tr("Select project file to open"), LastIODirectory::get(),
+	auto name = QFileDialog::getOpenFileName(m_mainWindow, tr("Select project file to open"), ProjectLastIODirectory::get(),
 															 tr("iRIC-MI project file (iricmi_project.xml)"));
 	if (name.isEmpty()) {return false;}
 
@@ -121,7 +121,7 @@ bool iRICMIMainWindow::Impl::openProject(const QString& folderName)
 		return false;
 	}
 
-	LastIODirectory::set(folderName);
+	ProjectLastIODirectory::set(folderName);
 	RecentProjectsManager::append(folderName);
 
 	updateModelsColumnWidths();

@@ -24,7 +24,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <geodata/polygon/geodatapolygon.h>
@@ -169,7 +169,7 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 {
 	// set default folder for filename input conditions.
-	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	InputConditionWidgetFilename::defaultFolder = ProjectLastIODirectory::get();
 
 	std::vector<std::weak_ptr<GridComplexConditionGroup> > oldGroups;
 	for (const auto& group : m_dialog->groups()) {
@@ -238,7 +238,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	}
 
 	// set the default folder back.
-	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
+	ProjectLastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();

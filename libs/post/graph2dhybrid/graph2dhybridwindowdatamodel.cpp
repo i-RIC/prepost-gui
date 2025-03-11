@@ -46,7 +46,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <post/graph2d/datamodel/graph2dwindowmarkergroupdataitem.h>
@@ -127,7 +127,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	dialog.setTimesteps(projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
 	dialog.setCurrentStep(projectData()->mainfile()->postSolutionInfo()->currentStep());
 
-	dialog.setFolder(LastIODirectory::get());
+	dialog.setFolder(ProjectLastIODirectory::get());
 	dialog.setPrefix(m_prefix);
 	dialog.setRegionMode(m_regionMode);
 	dialog.setIMin(m_iMin);
@@ -148,7 +148,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	if (ret == QDialog::Rejected) {return;}
 
 	QString folder = dialog.folder();
-	LastIODirectory::set(folder);
+	ProjectLastIODirectory::set(folder);
 	m_prefix = dialog.prefix();
 	m_regionMode = dialog.regionMode();
 	m_iMin = dialog.iMin();
@@ -489,7 +489,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	dialog.setTimesteps(projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
 	dialog.setCurrentStep(projectData()->mainfile()->postSolutionInfo()->currentStep());
 
-	dialog.setFolder(LastIODirectory::get());
+	dialog.setFolder(ProjectLastIODirectory::get());
 	dialog.setPrefix(m_csvPrefix);
 	dialog.setRegionMode(m_regionMode);
 	dialog.setIMin(m_iMin);
@@ -511,7 +511,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	if (ret == QDialog::Rejected) {return;}
 
 	QString folder = dialog.folder();
-	LastIODirectory::set(folder);
+	ProjectLastIODirectory::set(folder);
 	m_csvPrefix = dialog.prefix();
 	m_regionMode = dialog.regionMode();
 	m_iMin = dialog.iMin();
@@ -996,7 +996,7 @@ void Graph2dHybridWindowDataModel::markerSettiing()
 void Graph2dHybridWindowDataModel::exportCsv()
 {
 	iRICMainWindowI* mainW = projectData()->mainWindow();
-	QString iodir = LastIODirectory::get();
+	QString iodir = ProjectLastIODirectory::get();
 	if (mainW->isSolverRunning()) {
 		mainW->warnSolverRunning();
 		return;
@@ -1011,8 +1011,7 @@ void Graph2dHybridWindowDataModel::exportCsv()
 		return;
 	}
 	mainW->statusBar()->showMessage(tr("CSV file successfully exported."), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 template <typename DataItem>

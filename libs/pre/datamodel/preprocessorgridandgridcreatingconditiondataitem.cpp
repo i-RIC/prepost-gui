@@ -34,7 +34,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/folderbackup.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -376,7 +376,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 		mw->warnSolverRunning();
 		return;
 	}
-	QString dir = LastIODirectory::get();
+	QString dir = ProjectLastIODirectory::get();
 	QSet<QString> filters;
 	QMap<QString, QList<GridImporterI*> > importers;
 
@@ -442,8 +442,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	// import succeeded.
 	m_gridDataItem->grid()->setIsModified(true);
 
-	QFileInfo finfo(filename);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(filename);
 	dataModel()->graphicsView()->cameraFit();
 
 	mainWindow()->setFocus();

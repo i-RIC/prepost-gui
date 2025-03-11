@@ -16,7 +16,7 @@
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/stringtool.h>
 
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
@@ -141,7 +141,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 			exporters.append(exp);
 		}
 	}
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 	// Select the file to export.
 	QString filename = QFileDialog::getSaveFileName(mainW, tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
@@ -157,8 +157,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 
 	// execute export.
 	exporter->doExport(m_geoData, filename, selectedFilter, mainW, projectData());
-	QFileInfo finfo(filename);
-	LastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(filename);
 }
 
 void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)

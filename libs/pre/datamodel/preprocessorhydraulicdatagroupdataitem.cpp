@@ -9,7 +9,7 @@
 #include <guicore/pre/hydraulicdata/hydraulicdataimporter.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationcreator.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/geolastiodirectory.h>
 
 #include <QAction>
 #include <QDomNode>
@@ -104,7 +104,7 @@ void PreProcessorHydraulicDataGroupDataItem::import()
 	}
 	filters.push_front(tr("All importable files (%1)").arg(extensions.join(" ")));
 
-	QString dir = LastIODirectory::get();
+	QString dir = GeoLastIODirectory::get();
 	QString selectedFilter;
 	QString filename = QFileDialog::getOpenFileName(pre, tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
 	if (filename.isNull()) {return;}
@@ -157,7 +157,7 @@ void PreProcessorHydraulicDataGroupDataItem::import()
 		}
 	}
 
-	LastIODirectory::set(finfo.absolutePath());
+	GeoLastIODirectory::setFromFilename(filename);
 
 	updateItemMap();
 

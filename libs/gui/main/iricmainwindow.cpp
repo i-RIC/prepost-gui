@@ -62,7 +62,7 @@
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/iricrootpath.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/networksetting.h>
 #include <misc/qmdiareawithscrollbehaviormodification.h>
 #include <misc/qscreenutil.h>
@@ -191,7 +191,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 iRICMainWindow::~iRICMainWindow()
 {
 	QSettings settings;
-	settings.setValue("general/lastiodir", LastIODirectory::get());
+	settings.setValue("general/projectlastiodir", ProjectLastIODirectory::get());
 
 	delete m_metaData;
 
@@ -330,7 +330,7 @@ void iRICMainWindow::openProject()
 		return;
 	}
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Open iRIC project file"), LastIODirectory::get(), tr("iRIC project file (*.ipro project.xml)"));
+		this, tr("Open iRIC project file"), ProjectLastIODirectory::get(), tr("iRIC project file (*.ipro project.xml)"));
 	if (fname == "") {return;}
 	QFileInfo finfo(fname);
 	if (finfo.fileName() == "project.xml") {
@@ -481,7 +481,7 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	m_preProcessorWindow->setupCgnsFilesIfNeeded(false);
 
-	LastIODirectory::set(QFileInfo(filename).absolutePath());
+	ProjectLastIODirectory::setFromFilename(filename);
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
 	m_coordinateSystemWidget->setProjectData(m_projectData);
@@ -522,7 +522,7 @@ void iRICMainWindow::exportCalcCondition()
 void iRICMainWindow::importCalculationResult()
 {
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Open Calculation result"), LastIODirectory::get(), tr("CGNS file (*.cgn *.cgns)")
+		this, tr("Open Calculation result"), ProjectLastIODirectory::get(), tr("CGNS file (*.cgn *.cgns)")
 		);
 	if (fname == "") {return;}
 	importCalculationResult(fname);
@@ -595,7 +595,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 		m_solverConsoleWindow->parentWidget()->hide();
 	}
 
-	LastIODirectory::set(QFileInfo(fname).absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 	m_projectData->mainfile()->setModified();
 
 	// update recently opened projects.
@@ -812,7 +812,7 @@ bool iRICMainWindow::saveProjectAsFile()
 		return false;
 	}
 	QString fname = QFileDialog::getSaveFileName(
-		this, tr("Save iRIC project file"), LastIODirectory::get(), tr("iRIC project file (*.ipro)"));
+		this, tr("Save iRIC project file"), ProjectLastIODirectory::get(), tr("iRIC project file (*.ipro)"));
 	if (fname == "") {return false;}
 	return saveProject(fname, false, false);
 }
@@ -824,7 +824,7 @@ bool iRICMainWindow::saveProjectAsFolder()
 		return false;
 	}
 INPUTFOLDERNAME:
-	QString foldername = QFileDialog::getExistingDirectory(this, tr("Save iRIC project"), LastIODirectory::get());
+	QString foldername = QFileDialog::getExistingDirectory(this, tr("Save iRIC project"), ProjectLastIODirectory::get());
 	if (foldername == "") {return false;}
 	if (! iRIC::isAscii(foldername)) {
 		QMessageBox::critical(this, tr("Error"), tr("Project folder path has to consist of only English characters."));
@@ -972,7 +972,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 	m_projectData->mainfile()->postSolutionInfo()->loadFromCgnsFile();
 	updatePostActionStatus();
 
-	LastIODirectory::set(QFileInfo(filename).absolutePath());
+	ProjectLastIODirectory::setFromFilename(filename);
 	RecentProjectsManager::append(filename);
 	statusBar()->showMessage(tr("Project successfully saved to %1.").arg(QDir::toNativeSeparators(filename)), STATUSBAR_DISPLAYTIME);
 
@@ -1715,14 +1715,14 @@ void iRICMainWindow::initSetting()
 	} else {
 		m_locale = QLocale(loc);
 	}
-	QString lastio = settings.value("general/lastiodir").toString();
+	QString lastio = settings.value("general/projectlastiodir").toString();
 	if (lastio == "" || ! QDir(lastio).exists()) {
 		lastio = QDir::homePath();
 	}
-	LastIODirectory::set(lastio);
+	ProjectLastIODirectory::set(lastio);
 
 	// for continuous snapshot
-	m_continuousSnapshotSetting.exportTargetFolder = QDir(LastIODirectory::get()).filePath("imgs");
+	m_continuousSnapshotSetting.exportTargetFolder = QDir(ProjectLastIODirectory::get()).filePath("imgs");
 
 	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
 }
@@ -2064,7 +2064,7 @@ void iRICMainWindow::exportParticles()
 
 	PostExportSetting s = pInfo->exportSetting();
 	if (s.folder == "") {
-		s.folder = LastIODirectory::get();
+		s.folder = ProjectLastIODirectory::get();
 	}
 
 	expDialog.setExportSetting(s);
@@ -2160,7 +2160,7 @@ void iRICMainWindow::exportCfShape()
 
 	PostExportSetting s = pInfo->exportSetting();
 	if (s.folder == "") {
-		s.folder = LastIODirectory::get();
+		s.folder = ProjectLastIODirectory::get();
 	}
 
 	expDialog.setExportSetting(s);
@@ -2210,7 +2210,7 @@ void iRICMainWindow::exportStKMZ()
 {
 	static QString outputFileName;
 	if (outputFileName == "") {
-		QDir dir(LastIODirectory::get());
+		QDir dir(ProjectLastIODirectory::get());
 		outputFileName = dir.absoluteFilePath("output.kmz");
 	}
 
@@ -2404,7 +2404,7 @@ void iRICMainWindow::launchExternalTool()
 void iRICMainWindow::importVisGraphSetting()
 {
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Import Visualization/Graph Settings"), LastIODirectory::get(), tr("Setting file (*.vgsetting *.xml)")
+		this, tr("Import Visualization/Graph Settings"), ProjectLastIODirectory::get(), tr("Setting file (*.vgsetting *.xml)")
 		);
 	if (fname == "") {return;}
 
@@ -2418,23 +2418,21 @@ void iRICMainWindow::importVisGraphSetting()
 	bool ok = m_projectData->mainfile()->importVisGraphSetting(fname);
 
 	if (ok) {
-		QFileInfo info(fname);
-		LastIODirectory::set(info.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 	}
 }
 
 void iRICMainWindow::exportVisGraphSetting()
 {
 	QString fname = QFileDialog::getSaveFileName(
-		this, tr("Export Visualization/Graph Settings"), LastIODirectory::get(), tr("Setting file (*.vgsetting)")
+		this, tr("Export Visualization/Graph Settings"), ProjectLastIODirectory::get(), tr("Setting file (*.vgsetting)")
 		);
 	if (fname == "") {return;}
 
 	bool ok = m_projectData->mainfile()->exportVisGraphSetting(fname);
 
 	if (ok) {
-		QFileInfo info(fname);
-		LastIODirectory::set(info.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 	}
 }
 

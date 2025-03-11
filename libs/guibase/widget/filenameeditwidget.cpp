@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <misc/projectlastiodirectory.h>
 
 namespace {
 
@@ -69,6 +70,10 @@ void FilenameEditWidget::openDialog()
 {
 	QFileInfo finfo(ui->lineEdit->text());
 	QString dir = finfo.absolutePath();
+
+	if (dir == "") {
+		dir = ProjectLastIODirectory::get();
+	}
 
 	QString fname;
 	if (m_saveMode) {

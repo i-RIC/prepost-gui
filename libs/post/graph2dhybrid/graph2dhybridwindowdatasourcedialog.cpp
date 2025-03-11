@@ -10,7 +10,7 @@
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <guicore/base/iricmainwindowi.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 
 #include <QApplication>
@@ -888,7 +888,7 @@ void Graph2dHybridWindowDataSourceDialog::setImportData(Graph2dHybridWindowImpor
 
 void Graph2dHybridWindowDataSourceDialog::importCsv()
 {
-	QString iodir = LastIODirectory::get();
+	QString iodir = ProjectLastIODirectory::get();
 	if (m_mainWindow->isSolverRunning()) {
 		m_mainWindow->warnSolverRunning();
 		return;

@@ -12,7 +12,7 @@
 
 #include <misc/valuechangert.h>
 #include <misc/csviohelper.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 
 #include <QFileDialog>
@@ -517,7 +517,7 @@ void GridComplexConditionDialog::switchView()
 
 void GridComplexConditionDialog::importCsvFile()
 {
-	auto dir = LastIODirectory::get();
+	auto dir = ProjectLastIODirectory::get();
 	auto fname = QFileDialog::getOpenFileName(this, tr("Select file to import"), dir, tr("CSV file (*.csv)"));
 	if (fname.isNull()) {return;}
 
@@ -526,13 +526,12 @@ void GridComplexConditionDialog::importCsvFile()
 		QMessageBox::critical(this, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(fname)));
 	}
 
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void GridComplexConditionDialog::exportCsvFile()
 {
-	auto dir = LastIODirectory::get();
+	auto dir = ProjectLastIODirectory::get();
 	auto fname = QFileDialog::getSaveFileName(this, tr("Select file to export"), dir, tr("CSV file (*.csv)"));
 	if (fname.isNull()) {return;}
 
@@ -541,8 +540,7 @@ void GridComplexConditionDialog::exportCsvFile()
 		QMessageBox::critical(this, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(fname)));
 	}
 
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void GridComplexConditionDialog::updateList()

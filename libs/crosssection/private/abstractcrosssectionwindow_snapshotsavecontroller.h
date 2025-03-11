@@ -18,7 +18,6 @@ private slots:
 	void cancel();
 
 private:
-	QString m_dirName;
 	QString m_prefix;
 
 	ExportSettingDialog::CrossSectionMode m_mode;

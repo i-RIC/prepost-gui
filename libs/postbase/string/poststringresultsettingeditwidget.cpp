@@ -8,7 +8,7 @@
 #include <guicore/grid/v4unstructured2dgrid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
@@ -86,7 +86,7 @@ QUndoCommand* PostStringResultSettingEditWidget::createModifyCommand(bool apply)
 void PostStringResultSettingEditWidget::importSetting()
 {
 	auto fname = QFileDialog::getOpenFileName(this, tr("Input file name to import"),
-												LastIODirectory::get(), tr("Label setting (*.labelsetting)"));
+												ProjectLastIODirectory::get(), tr("Label setting (*.labelsetting)"));
 	if (fname.isNull()) {return;}
 
 	PostStringResultSettingContainer s;
@@ -99,13 +99,13 @@ void PostStringResultSettingEditWidget::importSetting()
 	}
 	setSetting(s);
 
-	LastIODirectory::setFromFilename(fname);
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void PostStringResultSettingEditWidget::exportSetting()
 {
 	auto fname = QFileDialog::getSaveFileName(this, tr("Input file name to export"),
-												LastIODirectory::get(), tr("Label setting (*.labelsetting)"));
+												ProjectLastIODirectory::get(), tr("Label setting (*.labelsetting)"));
 	if (fname.isNull()) {return;}
 
 	auto s = setting();
@@ -117,7 +117,7 @@ void PostStringResultSettingEditWidget::exportSetting()
 		return;
 	}
 
-	LastIODirectory::setFromFilename(fname);
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void PostStringResultSettingEditWidget::addArgument()

@@ -7,7 +7,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 
@@ -76,7 +76,7 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 	projectData()->mainfile()->postSolutionInfo()->close();
 
 	// set default folder for filename input conditions.
-	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	InputConditionWidgetFilename::defaultFolder = ProjectLastIODirectory::get();
 	auto fname = projectData()->currentCgnsFileName();
 	m_dialog->setFileName(fname);
 	// show dialog
@@ -85,7 +85,7 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 
 	m_dialog->exec();
 	// set the default folder back.
-	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
+	ProjectLastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
 	m_isSet = true;
 }
 

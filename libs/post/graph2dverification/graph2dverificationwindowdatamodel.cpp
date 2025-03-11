@@ -23,7 +23,7 @@
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -225,7 +225,7 @@ void Graph2dVerificationWindowDataModel::doSaveToProjectMainFile(QXmlStreamWrite
 
 void Graph2dVerificationWindowDataModel::exportData()
 {
-	QString iodir = LastIODirectory::get();
+	QString iodir = ProjectLastIODirectory::get();
 	QString fname = QFileDialog::getSaveFileName(
 		this->mainWindow(), tr("Export CSV file"), iodir, tr("CSV file (*.csv)"));
 	if (fname == "") { return; }
@@ -267,8 +267,7 @@ void Graph2dVerificationWindowDataModel::exportData()
 		break;
 	}
 	f.close();
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 	QMessageBox::information(this->mainWindow(), tr("Information"), tr("Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)));
 }
 

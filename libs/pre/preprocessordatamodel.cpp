@@ -46,7 +46,7 @@
 #include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <misc/folderremover.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <geodata/pointmap/geodatapointmap.h>
 #include <geodata/polygongroup/geodatapolygongroup.h>
@@ -204,7 +204,7 @@ void PreProcessorDataModel::importCalcCondition()
 {
 	QString selectedFilter;
 	QString fname = QFileDialog::getOpenFileName(
-		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yaml)"), &selectedFilter);
+		iricMainWindow(), tr("Select file to import"), ProjectLastIODirectory::get(), tr("All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yaml)"), &selectedFilter);
 	if (fname == "") {return;}
 	if (selectedFilter == tr("iRIC project file (*.ipro)")) {
 		importCalcConditionFromOtherProject(fname);
@@ -223,13 +223,11 @@ void PreProcessorDataModel::importCalcCondition()
 			importCalcConditionFromYaml(fname);
 		}
 	}
-	QFileInfo finfo(fname);
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& fname)
 {
-	QFileInfo finfo(fname);
 	// load the project data.
 	ProjectWorkspace* w = projectData()->mainWindow()->workspace();
 	QString tmpWorkfolder = ProjectData::newWorkfolderName(w->workspace());
@@ -248,7 +246,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	}
 
 	QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
-	LastIODirectory::set(finfo.absolutePath());
+	ProjectLastIODirectory::setFromFilename(fname);
 	setModified();
 }
 
@@ -257,8 +255,7 @@ void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	if (pre->importInputCondition(fname)) {
 		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
-		QFileInfo finfo(fname);
-		LastIODirectory::set(finfo.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 		setModified();
 	} else {
 		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Importing calculation condition failed."));
@@ -270,8 +267,7 @@ void PreProcessorDataModel::importCalcConditionFromYaml(const QString& fname)
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	if (pre->importInputCondition(fname)){
 		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
-		QFileInfo finfo(fname);
-		LastIODirectory::set(finfo.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 		setModified();
 	} else {
 		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Importing calculation condition failed."));
@@ -281,15 +277,14 @@ void PreProcessorDataModel::importCalcConditionFromYaml(const QString& fname)
 void PreProcessorDataModel::exportCalcCondition()
 {
 	QString fname = QFileDialog::getSaveFileName(
-		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgns);;YAML file (*.yaml)"));
+		projectData()->mainWindow(), tr("Select File to Export"), ProjectLastIODirectory::get(), tr("CGNS file (*.cgns);;YAML file (*.yaml)"));
 	if (fname == "") {return;}
 	iRICMainWindowI* mainW = projectData()->mainWindow();
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(mainW->preProcessorWindow());
 	mainW->statusBar()->showMessage(tr("Exporting calculation condition..."));
 	if (pre->exportInputCondition(fname)) {
 		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
-		QFileInfo finfo(fname);
-		LastIODirectory::set(finfo.absolutePath());
+		ProjectLastIODirectory::setFromFilename(fname);
 	} else {
 		mainW->statusBar()->clearMessage();
 		QMessageBox::critical(mainW, tr("Fail"), tr("Exporting calculation condition failed."));

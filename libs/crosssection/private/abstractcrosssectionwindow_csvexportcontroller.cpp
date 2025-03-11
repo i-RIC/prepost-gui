@@ -3,13 +3,12 @@
 
 #include <guibase/widget/waitdialog.h>
 #include <misc/filesystemfunction.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 
 #include <QDir>
 #include <QMessageBox>
 
 AbstractCrosssectionWindow::CsvExportController::CsvExportController(AbstractCrosssectionWindow* window) :
-	m_dirName {LastIODirectory::get()},
 	m_prefix {"crosssection_"},
 	m_mode {ExportSettingDialog::CrossSectionMode::Current},
 	m_min {0},
@@ -26,7 +25,7 @@ void AbstractCrosssectionWindow::CsvExportController::save()
 
 	ExportSettingDialog dialog(m_window);
 	dialog.setWindowTitle(tr("Export CSV Files"));
-	dialog.setDirName(m_dirName);
+	dialog.setDirName(ProjectLastIODirectory::get());
 	dialog.setPrefix(m_prefix);
 	dialog.setMode(m_mode);
 	if (m_mode == ExportSettingDialog::CrossSectionMode::Custom) {
@@ -38,18 +37,20 @@ void AbstractCrosssectionWindow::CsvExportController::save()
 
 	if (ret == QDialog::Rejected) {return;}
 
-	m_dirName = dialog.dirName();
+	auto dirName = dialog.dirName();
+	ProjectLastIODirectory::set(dirName);
+
 	m_prefix = dialog.prefix();
 	m_mode = dialog.mode();
 	m_min = dialog.min();
 	m_max = dialog.max();
 	m_skipRate = dialog.skipRate();
 
-	if (! iRIC::mkdirRecursively(m_dirName)) {
-		QMessageBox::critical(m_window, AbstractCrosssectionWindow::tr("Error"), AbstractCrosssectionWindow::tr("Error occured while making %1.").arg(QDir::toNativeSeparators(m_dirName)));
+	if (! iRIC::mkdirRecursively(dirName)) {
+		QMessageBox::critical(m_window, AbstractCrosssectionWindow::tr("Error"), AbstractCrosssectionWindow::tr("Error occured while making %1.").arg(QDir::toNativeSeparators(dirName)));
 		return;
 	}
-	QDir dir(m_dirName);
+	QDir dir(dirName);
 
 	WaitDialog waitDialog(m_window);
 	waitDialog.setRange(m_min, m_max);

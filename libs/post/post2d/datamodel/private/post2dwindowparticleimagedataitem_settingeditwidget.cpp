@@ -4,7 +4,7 @@
 #include "post2dwindowparticleimagedataitem_settingeditwidget_valuesizepairtablecontroller.h"
 #include "ui_post2dwindowparticleimagedataitem_settingeditwidget.h"
 
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
@@ -88,7 +88,7 @@ void Post2dWindowParticleImageDataItem::SettingEditWidget::setSetting(const Sett
 
 void Post2dWindowParticleImageDataItem::SettingEditWidget::importImage()
 {
-	auto fname = QFileDialog::getOpenFileName(this, tr("Select image file"), LastIODirectory::get(),
+	auto fname = QFileDialog::getOpenFileName(this, tr("Select image file"), ProjectLastIODirectory::get(),
 																						tr("All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)"));
 	if (fname.isNull()) {return;}
 
