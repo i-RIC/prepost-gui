@@ -266,6 +266,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 	}
 
 	updateActorSetting();
+	m_toolBarWidget->applySetting();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
