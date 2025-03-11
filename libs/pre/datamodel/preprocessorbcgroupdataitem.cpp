@@ -17,7 +17,7 @@
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
@@ -347,7 +347,7 @@ void PreProcessorBCGroupDataItem::deleteAll()
 
 void PreProcessorBCGroupDataItem::importBc()
 {
-	auto fname = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), LastIODirectory::get(), tr("YAML file (*.yaml)"));
+	auto fname = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), ProjectLastIODirectory::get(), tr("YAML file (*.yaml)"));
 	if (fname.isNull()) {return;}
 
 	clearChildItems();
@@ -386,7 +386,7 @@ void PreProcessorBCGroupDataItem::importBc()
 	auto shpFileName = fname.replace(".yaml", ".shp");
 	bcsItem->importPolygons(shpFileName);
 
-	LastIODirectory::setFromFilename(fname);
+	ProjectLastIODirectory::setFromFilename(fname);
 
 	projectData()->mainfile()->setModified();
 }
@@ -395,7 +395,7 @@ void PreProcessorBCGroupDataItem::exportBc()
 {
 	renumberItemsForProject();
 
-	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), LastIODirectory::get(), tr("YAML file (*.yaml)"));
+	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), ProjectLastIODirectory::get(), tr("YAML file (*.yaml)"));
 	if (fname.isNull()) {return;}
 
 	QFileInfo finfo(fname);
@@ -425,7 +425,7 @@ void PreProcessorBCGroupDataItem::exportBc()
 	auto shpFileName = fname.replace(".yaml", ".shp");
 	bcsItem->exportPolygons(shpFileName);
 
-	LastIODirectory::setFromFilename(fname);
+	ProjectLastIODirectory::setFromFilename(fname);
 }
 
 PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, bool hideSetting)
