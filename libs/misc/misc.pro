@@ -41,7 +41,6 @@ HEADERS += anms.h \
            iricrootpath.h \
            iricundostack.h \
            keyboardsupport.h \
-           lastiodirectory.h \
            latitudelongitude.h \
            latitudelongitudeangle.h \
            linearinterpolator.h \
@@ -147,7 +146,6 @@ SOURCES += anms.cpp \
            iricrootpath.cpp \
            iricundostack.cpp \
            keyboardsupport.cpp \
-           lastiodirectory.cpp \
            latitudelongitude.cpp \
            latitudelongitudeangle.cpp \
            linearinterpolator.cpp \

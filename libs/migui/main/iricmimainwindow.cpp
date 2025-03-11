@@ -14,7 +14,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/iricrootpath.h>
 #include <misc/filesystemfunction.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 
 #include <QCloseEvent>
 #include <QFileDialog>
@@ -38,7 +38,7 @@ iRICMIMainWindow::iRICMIMainWindow(QWidget *parent) :
 	if (lastio == "" || ! QDir(lastio).exists()) {
 		lastio = QDir::homePath();
 	}
-	LastIODirectory::set(lastio);
+	ProjectLastIODirectory::set(lastio);
 }
 
 iRICMIMainWindow::~iRICMIMainWindow()
@@ -46,7 +46,7 @@ iRICMIMainWindow::~iRICMIMainWindow()
 	closeProject();
 
 	QSettings settings;
-	settings.setValue("general/lastiodir", LastIODirectory::get());
+	settings.setValue("general/lastiodir", ProjectLastIODirectory::get());
 
 	delete impl;
 	delete ui;

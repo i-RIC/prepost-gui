@@ -21,8 +21,8 @@
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
-#include <misc/lastiodirectory.h>
 #include <misc/opacitycontainer.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -650,7 +650,7 @@ SolverDefinitionBoundaryCondition* PreProcessorBCDataItem::condition() const
 bool PreProcessorBCDataItem::showDialog()
 {
 	// set default folder for filename input conditions.
-	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	InputConditionWidgetFilename::defaultFolder = ProjectLastIODirectory::get();
 	// show dialog
 	auto d = impl->m_dialog;
 	d->setOpacity(impl->m_opacity);
@@ -670,7 +670,7 @@ bool PreProcessorBCDataItem::showDialog()
 	updateActorSettings();
 
 	// set the default folder back.
-	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
+	ProjectLastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
 

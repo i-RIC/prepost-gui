@@ -5,7 +5,7 @@
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/grid/v4structured2dgrid.h>
-#include <misc/lastiodirectory.h>
+#include <misc/projectlastiodirectory.h>
 
 AbstractCrosssectionWindow::ExportSettingDialog::ExportSettingDialog(AbstractCrosssectionWindow* window) :
 	QDialog(window),
@@ -113,7 +113,7 @@ void AbstractCrosssectionWindow::ExportSettingDialog::setSkipRate(int skipRate)
 
 void AbstractCrosssectionWindow::ExportSettingDialog::accept()
 {
-	LastIODirectory::set(dirName());
+	ProjectLastIODirectory::set(dirName());
 	QDialog::accept();
 }
 
