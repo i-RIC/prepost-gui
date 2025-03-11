@@ -86,6 +86,7 @@ bool convertGeoTiffToLongLat(const std::string& from, const std::string& to, dou
 
 	QStringList args;
 	args << "-s_srs" << EPSG3857STR << "-t_srs" << EPSG4326STR;
+	args << "-multi";
 	args << from.c_str() << to.c_str();
 
 	int ret = QProcess::execute(exeName, args);

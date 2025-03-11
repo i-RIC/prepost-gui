@@ -14,10 +14,15 @@
 #include <QImage>
 #include <QPointF>
 
+class ConvertWebMercatorToLongLatThread;
+
 class TmsImageGroupDataItem::Impl
 {
 public:
 	Impl(TmsImageGroupDataItem* parent);
+	~Impl();
+
+	ConvertWebMercatorToLongLatThread* m_convertThread;
 
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPlaneSource> m_plane;

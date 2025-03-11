@@ -64,6 +64,7 @@ win32 {
 
 # Input
 HEADERS += coordinatesystem.h \
+           convertwebmercatortolonglatthread.h \
            coordinatesystembuilder.h \
            coordinatesystemconvertdialog.h \
            coordinatesystemconverter.h \
@@ -79,6 +80,7 @@ FORMS += coordinatesystemselectdialog.ui \
     coordinatesystemconvertdialog.ui \
     coordinatesystemconvertwidget.ui
 SOURCES += coordinatesystem.cpp \
+           convertwebmercatortolonglatthread.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemconvertdialog.cpp \
            coordinatesystemconverter.cpp \
