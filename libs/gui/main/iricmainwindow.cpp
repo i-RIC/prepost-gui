@@ -1715,12 +1715,6 @@ void iRICMainWindow::initSetting()
 	} else {
 		m_locale = QLocale(loc);
 	}
-	QString lastio = settings.value("general/projectlastiodir").toString();
-	if (lastio == "" || ! QDir(lastio).exists()) {
-		lastio = QDir::homePath();
-	}
-	ProjectLastIODirectory::set(lastio);
-
 	// for continuous snapshot
 	m_continuousSnapshotSetting.exportTargetFolder = QDir(ProjectLastIODirectory::get()).filePath("imgs");
 
