@@ -7,6 +7,7 @@
 #include "inputconditioncontainerset.h"
 #include "inputconditiondialog.h"
 #include "inputconditionwidgetcomplexbutton.h"
+#include "inputconditionwidgetfilename.h"
 #include "inputconditionwidgetset.h"
 
 #include "private/inputconditioncgnsfile.h"
@@ -15,6 +16,7 @@
 #include <misc/errormessage.h>
 #include <misc/fileremover.h>
 #include <misc/filesystemfunction.h>
+#include <misc/projectlastiodirectory.h>
 #include <misc/qscreenutil.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -402,6 +404,7 @@ bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool
 	// already setup correctly
 	if (allOK) {return true;}
 
+	InputConditionWidgetFilename::defaultFolder = ProjectLastIODirectory::get();
 	InputConditionCgnsFileSelectDialog dialog(cgnsFileForGrid, m_widgetSet, this);
 	int ret = dialog.exec();
 	*updated = true;
