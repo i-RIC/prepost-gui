@@ -1746,7 +1746,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>The solver is older than the solver used to create the project.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador es más antiguo que el solucionador utilizado para crear el proyecto.</translation>
     </message>
 </context>
 <context>
