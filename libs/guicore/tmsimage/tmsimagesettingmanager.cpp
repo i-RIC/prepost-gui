@@ -54,7 +54,7 @@ std::vector<TmsImageSetting> standardSettings()
 	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=t&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Terrain")));
 
 	// Open Street Map
-	ret.push_back(buildSetting("tms=xyz&url=https://tile.openstreetmap.org/{z}/{x}/{y}.png&maxNativeZoom=24", TmsImageSettingManager::tr("Open Street Map"), true));
+	ret.push_back(buildSetting("tms=xyz&url=https://tile.openstreetmap.jp/{z}/{x}/{y}.png&maxNativeZoom=24", TmsImageSettingManager::tr("Open Street Map"), true));
 
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
