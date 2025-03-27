@@ -521,6 +521,10 @@ Do you really want to import grid from this file?</source>
         <source>Cannot open file for writing</source>
         <translation>Nevar atvērt failu rakstīšanai</translation>
     </message>
+    <message>
+        <source>Boundar condition successfully exported to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
@@ -862,6 +866,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yaml)</source>
         <translation>CGNS fails (*.cgns);;YAML file (*.yaml)</translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition</source>
+        <translation type="unfinished">Robežas stāvoklis (&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -2875,6 +2887,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid...</source>
         <translation>Režģis...</translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -521,6 +521,10 @@ Do you really want to import grid from this file?</source>
         <source>Cannot open file for writing</source>
         <translation>Δεν είναι δυνατό το άνοιγμα του αρχείου για εγγραφή</translation>
     </message>
+    <message>
+        <source>Boundar condition successfully exported to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
@@ -862,6 +866,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yaml)</source>
         <translation>αρχείο CGNS (*.cgns);;YAML file (*.yaml)</translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition</source>
+        <translation type="unfinished">Οριακή κατάσταση (&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -2875,6 +2887,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid...</source>
         <translation>Πλέγμα...</translation>
+    </message>
+    <message>
+        <source>&amp;Boundary Condition...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

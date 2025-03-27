@@ -377,7 +377,7 @@ QMenu* PreProcessorWindow::calcCondMenu() const
 
 void PreProcessorWindow::addGridCreatingConditionImportMenu(QMenu* menu)
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {
 		// add dummy disabled menu
 		QAction* no = menu->addAction(tr("Gr&id Creating Condition..."));
@@ -394,7 +394,7 @@ void PreProcessorWindow::addGridCreatingConditionExportMenu(QMenu* menu)
 
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {
 		// add dummy disabled menu
 		QAction* no = menu->addAction(tr("Grid..."));
@@ -407,6 +407,23 @@ void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 void PreProcessorWindow::addGridExportMenu(QMenu* menu)
 {
 	model()->addGridExportMenu(menu);
+}
+
+void PreProcessorWindow::addBcImportMenu(QMenu* menu)
+{
+	auto m = model();
+	if (m == nullptr) {
+		// add dummy disabled menu
+		QAction* no = menu->addAction(tr("&Boundary Condition..."));
+		no->setDisabled(true);
+		return;
+	}
+	m->addBcImportMenu(menu);
+}
+
+void PreProcessorWindow::addBcExportMenu(QMenu* menu)
+{
+	model()->addBcExportMenu(menu);
 }
 
 void PreProcessorWindow::setupGeoDataImportMenu()

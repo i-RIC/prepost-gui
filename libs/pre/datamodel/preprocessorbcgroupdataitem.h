@@ -45,12 +45,12 @@ public:
 
 public slots:
 	void addCondition();
+	void importBc();
+	void exportBc();
 
 private slots:
 	void deleteSelected();
 	void deleteAll();
-	void importBc();
-	void exportBc();
 
 signals:
 	void itemsUpdated();

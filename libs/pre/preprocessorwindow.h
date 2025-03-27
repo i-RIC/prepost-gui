@@ -90,6 +90,8 @@ public:
 	void addGridCreatingConditionExportMenu(QMenu* menu);
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
+	void addBcImportMenu(QMenu* menu);
+	void addBcExportMenu(QMenu* menu);
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
