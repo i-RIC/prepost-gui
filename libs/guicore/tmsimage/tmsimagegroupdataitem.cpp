@@ -36,6 +36,7 @@
 namespace {
 
 	const double MARGIN_RATIO = 0.8;
+	const int TIMER_INTERVAL_MSEC = 200;
 
 void getExtendedDrawnRegion(VTK2DGraphicsView* view, double* xmin, double* xmax, double* ymin, double* ymax)
 {
@@ -168,6 +169,7 @@ TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_tmsLoader {parent->iricMainWindow()},
 	m_tmsRequestId {-1},
 	m_actorIsVisible {false},
+	m_timer {},
 	m_offset {parent->offset().x(), parent->offset().y()},
 	m_parent {parent}
 {
@@ -196,6 +198,9 @@ TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 	m_actor->SetMapper(mapper);
 	m_actor->SetTexture(m_texture);
 	m_actor->VisibilityOff();
+
+	m_timer.setSingleShot(true);
+	m_timer.setInterval(TIMER_INTERVAL_MSEC);
 }
 
 TmsImageGroupDataItem::Impl::~Impl()
@@ -212,7 +217,8 @@ TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 	renderer()->AddActor(impl->m_actor);
 	m_actorCollection->AddItem(impl->m_actor);
 
-	connect(&impl->m_tmsLoader, SIGNAL(imageUpdated(int)), this, SLOT(handleImageUpdate(int)));
+	connect(&impl->m_tmsLoader, &tmsloader::TmsLoader::imageUpdated, this, &TmsImageGroupDataItem::handleImageUpdate);
+	connect(&impl->m_timer, &QTimer::timeout, this, &TmsImageGroupDataItem::handleTimerTimeout);
 
 	rebuildChildItems();
 }
@@ -274,7 +280,8 @@ void TmsImageGroupDataItem::rebuildChildItems()
 
 void TmsImageGroupDataItem::viewOperationEndedGlobal(VTKGraphicsView*)
 {
-	requestImage();
+	impl->m_timer.stop();
+	impl->m_timer.start();
 }
 
 void TmsImageGroupDataItem::disableActor()
@@ -301,6 +308,11 @@ void TmsImageGroupDataItem::handleNamedItemChange(NamedQStringGraphicWindowDataI
 
 	auto cmd = TargetedQStringItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Background Image change"));
 	pushRenderCommand(cmd, this, true);
+}
+
+void TmsImageGroupDataItem::handleTimerTimeout()
+{
+	requestImage();
 }
 
 void TmsImageGroupDataItem::handleImageUpdate(int requestId)

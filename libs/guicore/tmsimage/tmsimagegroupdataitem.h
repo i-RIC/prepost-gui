@@ -31,6 +31,7 @@ public:
 
 public slots:
 	void handleNamedItemChange(NamedQStringGraphicWindowDataItem* item);
+	void handleTimerTimeout();
 
 private slots:
 	void handleImageUpdate(int requestId);

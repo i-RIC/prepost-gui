@@ -13,6 +13,7 @@
 
 #include <QImage>
 #include <QPointF>
+#include <QTimer>
 
 class ConvertWebMercatorToLongLatThread;
 
@@ -38,6 +39,7 @@ public:
 	double m_imageScale;
 	bool m_actorIsVisible;
 
+	QTimer m_timer;
 	QPointF m_offset;
 
 	TmsImageGroupDataItem* m_parent;
