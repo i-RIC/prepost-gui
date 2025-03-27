@@ -64,5 +64,6 @@ void PreProcessorBCSettingGroupDataItem::ShpImporter::importPolygons(PreProcesso
 
 		it->second->polygon()->regionPolygon()->setPolygon(polygon);
 		it->second->polygon()->updatePolyData(true);
+		it->second->polygon()->restoreMouseEventMode();
 	}
 }
