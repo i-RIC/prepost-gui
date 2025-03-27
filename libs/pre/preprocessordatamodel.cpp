@@ -994,6 +994,62 @@ void PreProcessorDataModel::addGridExportMenu(QMenu* menu)
 	}
 }
 
+void PreProcessorDataModel::addBcImportMenu(QMenu* menu)
+{
+	// find how many grid types are available.
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto gridTypes = root->gridTypeDataItems();
+	bool exportAvailable = false;
+	if (gridTypes.count() == 0) {
+		// no menu available.
+	} else if (gridTypes.count() == 1) {
+		auto gt = gridTypes.at(0);
+		exportAvailable = addBcImportMenuForGridType(menu, gt, true);
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
+			auto gt = gridTypes.at(i);
+			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
+			if (addBcImportMenuForGridType(gtMenu, gt, false)) {
+				exportAvailable = true;
+			} else {
+				delete gtMenu;
+			}
+		}
+	}
+	if (! exportAvailable) {
+		QAction* no = menu->addAction(tr("&Boundary Condition..."));
+		no->setDisabled(true);
+	}
+}
+
+void PreProcessorDataModel::addBcExportMenu(QMenu* menu)
+{
+	// find how many grid types are available.
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto gridTypes = root->gridTypeDataItems();
+	bool exportAvailable = false;
+	if (gridTypes.count() == 0) {
+		// no menu available.
+	} else if (gridTypes.count() == 1) {
+		auto gt = gridTypes.at(0);
+		exportAvailable = addBcExportMenuForGridType(menu, gt, true);
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
+			auto gt = gridTypes.at(i);
+			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
+			if (addBcExportMenuForGridType(gtMenu, gt, false)) {
+				exportAvailable = true;
+			} else {
+				delete gtMenu;
+			}
+		}
+	}
+	if (! exportAvailable) {
+		QAction* no = menu->addAction(tr("&Boundary Condition..."));
+		no->setDisabled(true);
+	}
+}
+
 bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
 	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
@@ -1041,6 +1097,108 @@ bool PreProcessorDataModel::addGridExportMenuForGrid(QMenu* menu, PreProcessorGr
 	QAction* action = new QAction(cap, menu);
 	menu->addAction(action);
 	connect(action, SIGNAL(triggered()), gdi, SLOT(exportGrid()));
+	return true;
+}
+
+bool PreProcessorDataModel::addBcImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
+{
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
+	if (conds.count() == 0) {
+		// no menu available.
+		return false;
+	} else if (conds.count() == 1) {
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
+		if (alone) {
+			// this is the only existing grid.
+			if (! addBcImportMenuForGrid(menu, di, tr("&Boundary Condition"))) {
+				return false;
+			}
+		} else {
+			if (! addBcImportMenuForGrid(menu, di, di->caption())) {
+				return false;
+			}
+		}
+		return true;
+	} else {
+		// there are multiple grids.
+		bool okExists = false;
+		QMenu* tMenu = menu->addMenu(tr("&Boundary Condition"));
+		for (int i = 0; i < conds.count(); ++i) {
+			auto di = conds.at(i);
+			QMenu* gMenu = tMenu->addMenu(di->caption());
+			if (addBcImportMenuForGrid(gMenu, di, di->caption())) {
+				okExists = true;
+			} else {
+				delete gMenu;
+			}
+		}
+		if (! okExists) {
+			delete tMenu;
+		}
+		return okExists;
+	}
+}
+
+bool PreProcessorDataModel::addBcImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
+{
+	QString cap = QString("%1...").arg(name);
+	auto gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
+	if (gdi->bcGroupDataItem() == nullptr) {return false;}
+	QAction* action = new QAction(cap, menu);
+	menu->addAction(action);
+	auto bcgDataItem = gdi->bcGroupDataItem();
+	connect(action, &QAction::triggered, bcgDataItem, &PreProcessorBCGroupDataItem::importBc);
+	return true;
+}
+
+bool PreProcessorDataModel::addBcExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
+{
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
+	if (conds.count() == 0) {
+		// no menu available.
+		return false;
+	} else if (conds.count() == 1) {
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
+		if (alone) {
+			// this is the only existing grid.
+			if (! addBcExportMenuForGrid(menu, di, tr("&Boundary Condition"))) {
+				return false;
+			}
+		} else {
+			if (! addBcExportMenuForGrid(menu, di, di->caption())) {
+				return false;
+			}
+		}
+		return true;
+	} else {
+		// there are multiple grids.
+		bool okExists = false;
+		QMenu* tMenu = menu->addMenu(tr("&Boundary Condition"));
+		for (int i = 0; i < conds.count(); ++i) {
+			auto di = conds.at(i);
+			QMenu* gMenu = tMenu->addMenu(di->caption());
+			if (addBcExportMenuForGrid(gMenu, di, di->caption())) {
+				okExists = true;
+			} else {
+				delete gMenu;
+			}
+		}
+		if (! okExists) {
+			delete tMenu;
+		}
+		return okExists;
+	}
+}
+
+bool PreProcessorDataModel::addBcExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
+{
+	QString cap = QString("%1...").arg(name);
+	auto gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
+	if (gdi->bcGroupDataItem() == nullptr) {return false;}
+	QAction* action = new QAction(cap, menu);
+	menu->addAction(action);
+	auto bcgDataItem = gdi->bcGroupDataItem();
+	connect(action, &QAction::triggered, bcgDataItem, &PreProcessorBCGroupDataItem::exportBc);
 	return true;
 }
 

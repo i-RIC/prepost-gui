@@ -247,6 +247,7 @@ void iRICMainWindowActionManager::setupImportMenu()
 
 	addGridCreatingConditionImportMenu(importMenu);
 	addGridImportMenu(importMenu);
+	addBcImportMenu(importMenu);
 	importMenu->addAction(importCalcCondAction);
 	importMenu->addAction(importCgnsAction);
 	importMenu->addAction(importMeasuredAction);
@@ -261,6 +262,7 @@ void iRICMainWindowActionManager::setupExportMenu()
 	connect(m_geoDataExportMenu, &QMenu::aboutToShow, m_parent->preProcessorWindow(), &PreProcessorWindow::setupGeoDataExportMenu);
 	addGridCreatingConditionExportMenu(m_exportMenu);
 	addGridExportMenu(m_exportMenu);
+	addBcExportMenu(m_exportMenu);
 //	exportCgnsAction = new QAction(tr("&Case (CGNS file)..."), m_exportMenu);
 //	m_exportMenu->addAction(exportCgnsAction);
 	m_exportMenu->addAction(exportCalcCondAction);
@@ -1177,26 +1179,38 @@ void iRICMainWindowActionManager::updateWindowList()
 
 void iRICMainWindowActionManager::addGridCreatingConditionImportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridCreatingConditionImportMenu(menu);
 }
 
 void iRICMainWindowActionManager::addGridCreatingConditionExportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridCreatingConditionExportMenu(menu);
 }
 
 void iRICMainWindowActionManager::addGridImportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridImportMenu(menu);
 }
 
 void iRICMainWindowActionManager::addGridExportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridExportMenu(menu);
+}
+
+void iRICMainWindowActionManager::addBcImportMenu(QMenu* menu)
+{
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	pre->addBcImportMenu(menu);
+}
+
+void iRICMainWindowActionManager::addBcExportMenu(QMenu* menu)
+{
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
+	pre->addBcExportMenu(menu);
 }
 
 void iRICMainWindowActionManager::activateWindow(QWidget* w)

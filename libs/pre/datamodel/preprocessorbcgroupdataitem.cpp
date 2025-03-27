@@ -9,6 +9,7 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/colorsource.h>
@@ -424,6 +425,9 @@ void PreProcessorBCGroupDataItem::exportBc()
 	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
 	auto shpFileName = fname.replace(".yaml", ".shp");
 	bcsItem->exportPolygons(shpFileName);
+
+	// exporting succeeded.
+	projectData()->mainWindow()->statusBar()->showMessage(tr("Boundar condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 
 	LastIODirectory::setFromFilename(fname);
 }
