@@ -1746,6 +1746,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>Възникна грешка при зареждане на файл с дефиниция на решаващо средство в папка &quot; %1 Този решател се игнорира. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

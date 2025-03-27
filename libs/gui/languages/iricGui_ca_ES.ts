@@ -1746,6 +1746,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador a la carpeta &quot;%1&quot;. Aquest solucionador s&apos;ignora. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

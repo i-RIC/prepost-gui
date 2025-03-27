@@ -1746,6 +1746,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida &quot;%1&quot;. Šis sprendėjas ignoruojamas. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

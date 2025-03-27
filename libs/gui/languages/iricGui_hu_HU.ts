@@ -1746,6 +1746,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába &quot; %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

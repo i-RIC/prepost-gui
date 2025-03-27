@@ -1762,6 +1762,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
         <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

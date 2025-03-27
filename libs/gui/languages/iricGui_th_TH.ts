@@ -1746,6 +1746,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ &quot;%1&quot; ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
