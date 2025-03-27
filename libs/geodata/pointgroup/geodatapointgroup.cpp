@@ -416,8 +416,24 @@ void GeoDataPointGroup::updateMenu()
 		p = dynamic_cast<GeoDataPoint*> (editTargetData());
 	}
 
-	auto m = m_menu;
+	if (creator()->isReadOnly()) {
+		auto m = m_menu;
+		m->clear();
 
+		m->addAction(editDisplaySettingAction());
+		m->addAction(attributeBrowserAction());
+
+		// right clicking menu
+
+		m = rightClickingMenu();
+		m->clear();
+
+		m->addAction(editDisplaySettingAction());
+		m->addAction(attributeBrowserAction());
+		return;
+	}
+
+	auto m = m_menu;
 	m->clear();
 
 	m->addAction(editNameAction());

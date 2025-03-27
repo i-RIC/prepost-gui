@@ -515,6 +515,12 @@ void GeoDataPolygonGroup::updateMenu(QMenu* menu)
 		p = dynamic_cast<GeoDataPolygon*> (editTargetData());
 	}
 
+	if (creator()->isReadOnly()) {
+		menu->addAction(editDisplaySettingAction());
+		menu->addAction(attributeBrowserAction());
+		return;
+	}
+
 	menu->addAction(addAction());
 
 	menu->addSeparator();

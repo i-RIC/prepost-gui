@@ -26,7 +26,7 @@ QString GeoDataPolyLineGroupReadOnlyCreator::defaultCaption(unsigned int index) 
 
 bool GeoDataPolyLineGroupReadOnlyCreator::isCreatable() const
 {
-	return true;
+	return false;
 }
 
 int GeoDataPolyLineGroupReadOnlyCreator::shapeType() const
