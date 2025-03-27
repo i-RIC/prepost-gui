@@ -24,6 +24,7 @@
 
 #include <QFileDialog>
 #include <QRegExp>
+#include <QTimer>
 
 #include <h5cgnsbc.h>
 #include <h5cgnszone.h>
@@ -390,6 +391,8 @@ void PreProcessorBCGroupDataItem::importBc()
 	LastIODirectory::setFromFilename(fname);
 
 	projectData()->mainfile()->setModified();
+
+	QTimer::singleShot(400, [this](){this->renderGraphicsView();});
 }
 
 void PreProcessorBCGroupDataItem::exportBc()
