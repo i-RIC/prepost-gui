@@ -18,7 +18,9 @@
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
 #include <geodata/polygongroup/geodatapolygongroupintegercreator.h>
+#include <geodata/polygongroup/geodatapolygongroupintegerreadonlycreator.h>
 #include <geodata/polygongroup/geodatapolygongrouprealcreator.h>
+#include <geodata/polygongroup/geodatapolygongrouprealreadonlycreator.h>
 #include <geodata/polyline/geodatapolylineintegercreator.h>
 #include <geodata/polyline/geodatapolylinerealcreator.h>
 #include <geodata/polylinegroup/geodatapolylinegroupintegercreator.h>
@@ -45,7 +47,9 @@ void GeoDataFactorySetup::setup()
 	factory.addCreator(new GeoDataPolygonIntegerCreator());
 	factory.addCreator(new GeoDataPolygonRealCreator());
 	factory.addCreator(new GeoDataPolygonGroupIntegerCreator());
+	factory.addCreator(new GeoDataPolygonGroupIntegerReadOnlyCreator());
 	factory.addCreator(new GeoDataPolygonGroupRealCreator());
+	factory.addCreator(new GeoDataPolygonGroupRealReadOnlyCreator());
 
 	factory.addCreator(new GeoDataPolyLineIntegerCreator());
 	factory.addCreator(new GeoDataPolyLineRealCreator());
