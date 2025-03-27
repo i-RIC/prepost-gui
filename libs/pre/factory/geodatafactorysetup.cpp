@@ -16,7 +16,9 @@
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealreadonlycreator.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
+#include <geodata/pointmap/geodatapointmaprealreadonlycreator.h>
 #include <geodata/pointmap/geodatapointmaptincreator.h>
+#include <geodata/pointmap/geodatapointmaptinreadonlycreator.h>
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
 #include <geodata/polygongroup/geodatapolygongroupintegercreator.h>
@@ -41,6 +43,7 @@ void GeoDataFactorySetup::setup()
 
 	// cross-section data, point cloud data, rasterdata
 	factory.addCreator(new GeoDataPointmapRealCreator());
+	factory.addCreator(new GeoDataPointmapRealReadOnlyCreator());
 	factory.addCreator(new GeoDataRiverSurveyCreator());
 	factory.addCreator(new GeoDataGdalIntegerCreator());
 	factory.addCreator(new GeoDataGdalRealCreator());
@@ -69,6 +72,7 @@ void GeoDataFactorySetup::setup()
 	factory.addCreator(new GeoDataPointGroupRealReadOnlyCreator());
 
 	factory.addCreator(new GeoDataPointmapTINCreator());
+	factory.addCreator(new GeoDataPointmapTINReadOnlyCreator());
 
 	factory.setIsSetup(true);
 }
