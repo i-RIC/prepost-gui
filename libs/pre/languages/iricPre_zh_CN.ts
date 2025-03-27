@@ -525,7 +525,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Boundar condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>边界条件已成功导出至 %1 。</translation>
     </message>
 </context>
 <context>
@@ -887,11 +887,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>边界条件 (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished">&amp;边界条件</translation>
+        <translation>边界条件 (&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -2947,7 +2947,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>边界条件 (&amp;B)...</translation>
     </message>
 </context>
 <context>

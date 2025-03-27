@@ -523,7 +523,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Boundar condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ribinė sąlyga sėkmingai eksportuota į %1.</translation>
     </message>
 </context>
 <context>
@@ -869,11 +869,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ribinė sąlyga (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished">Ribinė sąlyga (&amp;B)</translation>
+        <translation>Ribinė sąlyga (&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -2890,7 +2890,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ribinė sąlyga (&amp;B)...</translation>
     </message>
 </context>
 <context>

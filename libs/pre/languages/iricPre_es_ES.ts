@@ -523,7 +523,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Boundar condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición límite exportada exitosamente a %1.</translation>
     </message>
 </context>
 <context>
@@ -873,11 +873,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de contorno (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished">&amp;Condicion de Contorno</translation>
+        <translation>Condición de contorno (&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -2922,7 +2922,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Boundary Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de contorno (&amp;B)...</translation>
     </message>
 </context>
 <context>
