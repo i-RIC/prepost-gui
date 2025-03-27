@@ -1744,6 +1744,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta "%1". Este solucionador se ignora. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

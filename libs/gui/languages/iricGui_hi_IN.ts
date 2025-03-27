@@ -1744,6 +1744,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई "%1"। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

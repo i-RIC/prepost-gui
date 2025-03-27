@@ -15635,6 +15635,10 @@ Do you really want to import this file?</source>
         <source>Error occured while loading solver definition file in folder %1. This solver is ignored.</source>
         <translation type="obsolete">フォルダ %1 ないのソルバー定義ファイルを読み込み中にエラーが発生しました。このソルバーは無視されます。</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation>プロジェクトを作成した時に使われたソルバより古いソルバです。</translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>

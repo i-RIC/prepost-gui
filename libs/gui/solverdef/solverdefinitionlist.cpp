@@ -102,6 +102,10 @@ QString SolverDefinitionList::supportingSolverFolder(ProjectData* p, QWidget* pa
 	dialog.execToSelectSolver();
 
 	auto selectedSolver = compatibleSolvers.at(dialog.selectedSolver());
+	if (p->mainfile()->solverVersion() < selectedSolver->version()) {
+		QMessageBox::warning(parent, tr("Warning"), tr("The solver is older than the solver used to create the project."));
+	}
+
 	return selectedSolver->absoluteFolderName();
 }
 

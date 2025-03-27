@@ -1744,6 +1744,10 @@ Do you want to launch iRIC Maintainance?</source>
 %2</source>
         <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map "%1". Deze oplosser wordt genegeerd. %2</translation>
     </message>
+    <message>
+        <source>The solver is older than the solver used to create the project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
