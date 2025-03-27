@@ -21,6 +21,8 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorBCGroupDataItem::tr("&Import..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorBCGroupDataItem::tr("&Export..."), this)},
 	m_dummyEditAction {new QAction("&Edit Condition...", this)},
 	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), "&Delete...", this)}
 {
@@ -32,8 +34,10 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 	m_dummyDeleteAction->setDisabled(true);
 	setupAddActions();
 
-	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
+	connect(m_deleteSelectedAction, &QAction::triggered, this, &PreProcessorBCSettingGroupDataItem::deleteSelected);
+	connect(m_deleteAllAction, &QAction::triggered, this, &PreProcessorBCSettingGroupDataItem::deleteAll);
+	connect(m_importAction, &QAction::triggered, this, &PreProcessorBCSettingGroupDataItem::importBc);
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorBCSettingGroupDataItem::exportBc);
 }
 
 PreProcessorBCSettingGroupDataItem::~PreProcessorBCSettingGroupDataItem()
@@ -95,6 +99,30 @@ void PreProcessorBCSettingGroupDataItem::deleteAll()
 	iRICUndoStack::instance().clear();
 }
 
+void PreProcessorBCSettingGroupDataItem::importBc()
+{
+	auto gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
+	if (gItem == nullptr) {return;}
+
+	auto bcgitem = gItem->bcGroupDataItem();
+	if (bcgitem == nullptr) {return;}
+
+	bcgitem->importBc();
+}
+
+void PreProcessorBCSettingGroupDataItem::exportBc()
+{
+	auto gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
+	if (gItem == nullptr) {return;}
+
+	auto bcgitem = gItem->bcGroupDataItem();
+	if (bcgitem == nullptr) {return;}
+
+	bcgitem->exportBc();
+}
+
 void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_itemCheckState.clear();
@@ -126,6 +154,9 @@ void PreProcessorBCSettingGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
 	menu->addAction(m_deleteAllAction);
+	menu->addSeparator();
+	menu->addAction(m_importAction);
+	menu->addAction(m_exportAction);
 }
 
 void PreProcessorBCSettingGroupDataItem::updateZDepthRangeItemCount()

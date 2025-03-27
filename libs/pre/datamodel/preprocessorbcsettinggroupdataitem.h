@@ -41,6 +41,8 @@ public slots:
 private slots:
 	void deleteSelected();
 	void deleteAll();
+	void importBc();
+	void exportBc();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -53,6 +55,8 @@ private:
 	QList<QAction*> m_addActions;
 	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
+	QAction* m_importAction;
+	QAction* m_exportAction;
 
 	QAction* m_dummyEditAction;
 	QAction* m_dummyDeleteAction;
