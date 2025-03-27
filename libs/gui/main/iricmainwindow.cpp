@@ -1076,10 +1076,13 @@ void iRICMainWindow::continuousSnapshot()
 	auto widget = m_centralWidget->activeSubWindow()->widget();
 	auto snapshotEnabledWindow = dynamic_cast<QMainWindowWithSnapshot*>(widget);
 	if (snapshotEnabledWindow != nullptr) {
-		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
+		auto wizard = new ContinuousSnapshotWizard(this);
+
+		if (m_continuousSnapshotSetting.exportTargetFolder.isEmpty()) {
+			m_continuousSnapshotSetting.exportTargetFolder = ProjectLastIODirectory::get();
+		}
 
 		wizard->setSetting(m_continuousSnapshotSetting);
-
 		wizard->setProjectMainFile(m_projectData->mainfile());
 
 		if (wizard->exec() == QDialog::Accepted) {
@@ -1715,14 +1718,6 @@ void iRICMainWindow::initSetting()
 	} else {
 		m_locale = QLocale(loc);
 	}
-	QString lastio = settings.value("general/projectlastiodir").toString();
-	if (lastio == "" || ! QDir(lastio).exists()) {
-		lastio = QDir::homePath();
-	}
-	ProjectLastIODirectory::set(lastio);
-
-	// for continuous snapshot
-	m_continuousSnapshotSetting.exportTargetFolder = QDir(ProjectLastIODirectory::get()).filePath("imgs");
 
 	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
 }
