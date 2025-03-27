@@ -69,6 +69,7 @@ public:
 	bool compatibleWith(const VersionNumber& v) const;
 	bool operator ==(const VersionNumber& v) const;
 	bool operator !=(const VersionNumber& v) const;
+	bool operator < (const VersionNumber& v) const;
 
 private:
 	class Impl;

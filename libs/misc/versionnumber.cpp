@@ -152,10 +152,10 @@ QString VersionNumber::toAboutString() const
 	return ret;
 }
 
-bool VersionNumber::compatibleWith(const VersionNumber& v)const
+bool VersionNumber::compatibleWith(const VersionNumber& v) const
 {
 	if (major() < v.major()) {return false;}
-	if (minor() < v.minor()) {return false;}
+
 	return true;
 }
 
@@ -171,4 +171,17 @@ bool VersionNumber::operator ==(const VersionNumber& v) const
 bool VersionNumber::operator !=(const VersionNumber& v) const
 {
 	return !(operator==(v));
+}
+
+bool VersionNumber::operator < (const VersionNumber& v) const
+{
+	if (major() < v.major()) {
+		return true;
+	} else if (major() == v.major()) {
+		if (minor() < v.minor()) {
+			return true;
+		}
+	}
+
+	return false;
 }
