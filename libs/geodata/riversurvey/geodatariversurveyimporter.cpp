@@ -380,12 +380,12 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 bool GeoDataRiverSurveyImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	clearPoints(&m_points);
-	if (! readRivFile(impl->m_setting->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, w)) {return false;}
+	if (! readRivFile(setting()->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, w)) {return false;}
 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(m_with4Points);
 	dialog.setAllNamesAreNumber(m_allNamesAreNumber);
-	dialog.setFileName(impl->m_setting->fileName());
+	dialog.setFileName(setting()->fileName());
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
 		clearPoints(&m_points);

@@ -33,7 +33,7 @@ GeoDataPointmapSTLImporter::~GeoDataPointmapSTLImporter()
 
 bool GeoDataPointmapSTLImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	bool ok = checkHeader(impl->m_setting->fileName(), w);
+	bool ok = checkHeader(setting()->fileName(), w);
 	if (! ok) {return false;}
 
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
@@ -44,7 +44,7 @@ bool GeoDataPointmapSTLImporter::doInit(int* /*count*/, SolverDefinitionGridAttr
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = impl->m_setting->fileName();
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.stl$"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -79,7 +79,7 @@ bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidge
 	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 
 	auto reader = vtkSmartPointer<vtkSTLReader>::New();
-	reader->SetFileName(iRIC::toStr(impl->m_setting->fileName()).c_str());
+	reader->SetFileName(iRIC::toStr(setting()->fileName()).c_str());
 	reader->Update();
 	vtkPolyData* polydata = reader->GetOutput();
 

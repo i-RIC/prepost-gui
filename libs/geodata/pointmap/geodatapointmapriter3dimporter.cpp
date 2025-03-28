@@ -22,7 +22,7 @@ bool GeoDataPointmapRiter3dImporter::importData(GeoData* data, int /*index*/, QW
 	bool ok = m_loader->load(pointmap, w);
 	if (! ok) {return false;}
 
-	pointmap->setRiter3dProject(impl->m_setting->fileName());
+	pointmap->setRiter3dProject(setting()->fileName());
 	return true;
 }
 
@@ -42,7 +42,7 @@ const QStringList GeoDataPointmapRiter3dImporter::acceptableExtensions()
 
 bool GeoDataPointmapRiter3dImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	m_loader = new GeoDataPointmapRiter3dLoader(impl->m_setting->fileName());
+	m_loader = new GeoDataPointmapRiter3dLoader(setting()->fileName());
 
 	bool ok = m_loader->open(item->projectData()->tmpFileName(), item->iricMainWindow());
 	if (! ok) {return false;}

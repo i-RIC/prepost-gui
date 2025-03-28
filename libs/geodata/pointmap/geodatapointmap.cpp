@@ -557,6 +557,11 @@ void GeoDataPointmap::updateMenu()
 
 void GeoDataPointmap::updateMenu(QMenu* menu)
 {
+	if (creator()->isReadOnly()) {
+		menu->addAction(impl->m_displaySettingAction);
+		return;
+	}
+
 	impl->m_activeController->addActionsToMenu(menu);
 	menu->addSeparator();
 	menu->addMenu(impl->m_modeMenu);
@@ -640,6 +645,8 @@ void GeoDataPointmap::openMappingSettingDialog()
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleMousePressEvent(event, v);
 
 	if (event->button() == Qt::RightButton) {
@@ -649,6 +656,8 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 }
 void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleMouseReleaseEvent(event, v);
 
 	if (event->button() == Qt::RightButton) {
@@ -671,11 +680,15 @@ QStringList GeoDataPointmap::containedFiles() const
 
 void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleMouseMoveEvent(event, v);
 }
 
 void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleMouseDoubleClickEvent(event, v);
 }
 
@@ -692,11 +705,15 @@ void GeoDataPointmap::handleResize(QResizeEvent* event, PreProcessorGraphicsView
 
 void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleKeyPressEvent(event, v);
 }
 
 void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (creator()->isReadOnly()) {return;}
+
 	impl->m_activeController->handleKeyReleaseEvent(event, v);
 }
 
