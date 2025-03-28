@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Herken resultaat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gebruik de volgende letters om het patroon te definiëren:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;Jaar: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;Maand: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;Dag: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Uur: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minuut: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Tweede: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gebruik de volgende letters om het patroon te definiëren:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;Jaar: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;Maand: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dag: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Uur: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minuut: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tweede: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Deze gegevens kunnen niet worden geëxporteerd. Het lijkt erop dat het niet is geïmporteerd uit *.tif of *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie "Tijd" kunnen niet worden geëxporteerd naar *.tif of *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie &quot;Tijd&quot; kunnen niet worden geëxporteerd naar *.tif of *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Deze gegevens kunnen niet worden geëxporteerd. Het lijkt erop dat het niet is geïmporteerd uit *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie "Tijd" kunnen niet worden geëxporteerd naar *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie &quot;Tijd&quot; kunnen niet worden geëxporteerd naar *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF-bestand (*.nc)</translation>
+        <translation type="vanished">NetCDF-bestand (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 heeft geen variabele die kan worden geïmporteerd.</translation>
+        <translation type="vanished">%1 heeft geen variabele die kan worden geïmporteerd.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 heeft geen lengte-, breedtegraad of x, y-gegevens.</translation>
+        <translation type="vanished">%1 heeft geen lengte-, breedtegraad of x, y-gegevens.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
+        <translation type="vanished">Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Specificeer originele datum</translation>
+        <translation type="vanished">Specificeer originele datum</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Automatische herkenning van de oorspronkelijke tijd is mislukt. Geef de oorspronkelijke datum op.</translation>
+        <translation type="vanished">Automatische herkenning van de oorspronkelijke tijd is mislukt. Geef de oorspronkelijke datum op.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Eenheden:</translation>
+        <translation type="vanished">Eenheden:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dagen sinds 01-01-2014</translation>
+        <translation type="vanished">dagen sinds 01-01-2014</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Eenheid:</translation>
+        <translation type="vanished">Eenheid:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>jaar</translation>
+        <translation type="vanished">jaar</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dagen</translation>
+        <translation type="vanished">dagen</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>uur</translation>
+        <translation type="vanished">uur</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minuten</translation>
+        <translation type="vanished">minuten</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>seconden</translation>
+        <translation type="vanished">seconden</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Oorspronkelijke tijd:</translation>
+        <translation type="vanished">Oorspronkelijke tijd:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Tijdzone:</translation>
+        <translation type="vanished">Tijdzone:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Instelling voor dimensietoewijzing</translation>
+        <translation type="vanished">Instelling voor dimensietoewijzing</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Waarde:</translation>
+        <translation type="vanished">Waarde:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensies</translation>
+        <translation type="vanished">Dimensies</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF-bestanden (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF-bestand (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 heeft geen variabele die kan worden geïmporteerd.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Specificeer originele datum</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Automatische herkenning van de oorspronkelijke tijd is mislukt. Geef de oorspronkelijke datum op.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Eenheden:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dagen sinds 01-01-2014</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Eenheid:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">jaar</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dagen</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">uur</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minuten</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">seconden</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Oorspronkelijke tijd:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Tijdzone:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Instelling voor dimensietoewijzing</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Waarde:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimensies</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X-band MP-radergegevens kunnen worden geïmporteerd voor netcondities met de dimensie "Tijd".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X-band MP-radergegevens kunnen worden geïmporteerd voor netcondities met de dimensie &quot;Tijd&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

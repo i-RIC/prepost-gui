@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Tunnista tulos:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Määrittele kuvio seuraavilla kirjaimilla: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -oikea: 0px; -qt-list-sisennys: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sisennys: 0; text-indent: 0px; "&gt; Vuosi: VVVV &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -lohko-sisennys: 0; text-indent: 0px; "&gt; Kuukausi: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Päivä: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- oikea: 0px; -qt-block-sisennys: 0; text-indent: 0px; "&gt; Tunti: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-sisennys: 0; text-indent: 0px; "&gt; Minuutti: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Toinen: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Määrittele kuvio seuraavilla kirjaimilla: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -oikea: 0px; -qt-list-sisennys: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sisennys: 0; text-indent: 0px; &quot;&gt; Vuosi: VVVV &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -lohko-sisennys: 0; text-indent: 0px; &quot;&gt; Kuukausi: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Päivä: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- oikea: 0px; -qt-block-sisennys: 0; text-indent: 0px; &quot;&gt; Tunti: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-sisennys: 0; text-indent: 0px; &quot;&gt; Minuutti: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Toinen: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Näitä tietoja ei voi viedä. Näyttää siltä, että sitä ei ole tuotu tiedostosta *.tif tai *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Näitä tietoja ei voi viedä. Aika -ulottuvuuden tietoja ei voi viedä *.tif- tai *.asc -tiedostoihin.</translation>
     </message>
     <message>
@@ -219,7 +221,7 @@
         <translation>Näitä tietoja ei voi viedä. Näyttää siltä, että sitä ei ole tuotu tiedostosta *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Näitä tietoja ei voi viedä. Aika -ulottuvuuden tietoja ei voi viedä *.png -tiedostoon</translation>
     </message>
     <message>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF -tiedosto (*.nc)</translation>
+        <translation type="vanished">NetCDF -tiedosto (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 ei ole muuttujaa, joka voidaan tuoda.</translation>
+        <translation type="vanished">%1 ei ole muuttujaa, joka voidaan tuoda.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 ei ole pituus-, leveys- eikä x, y -tietoja.</translation>
+        <translation type="vanished">%1 ei ole pituus-, leveys- eikä x, y -tietoja.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
+        <translation type="vanished">Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Määritä alkuperäinen päivämäärä</translation>
+        <translation type="vanished">Määritä alkuperäinen päivämäärä</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Alkuperäisen ajan automaattinen tunnistus epäonnistui. Määritä alkuperäinen päivämäärä.</translation>
+        <translation type="vanished">Alkuperäisen ajan automaattinen tunnistus epäonnistui. Määritä alkuperäinen päivämäärä.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Yksiköt:</translation>
+        <translation type="vanished">Yksiköt:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>päivää 2014-01-01 jälkeen</translation>
+        <translation type="vanished">päivää 2014-01-01 jälkeen</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Yksikkö:</translation>
+        <translation type="vanished">Yksikkö:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>vuotta</translation>
+        <translation type="vanished">vuotta</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>päivää</translation>
+        <translation type="vanished">päivää</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>tuntia</translation>
+        <translation type="vanished">tuntia</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>pöytäkirja</translation>
+        <translation type="vanished">pöytäkirja</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekuntia</translation>
+        <translation type="vanished">sekuntia</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Alkuperäinen aika:</translation>
+        <translation type="vanished">Alkuperäinen aika:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Aikavyöhyke:</translation>
+        <translation type="vanished">Aikavyöhyke:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Dimension Mapping -asetus</translation>
+        <translation type="vanished">Dimension Mapping -asetus</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Arvo:</translation>
+        <translation type="vanished">Arvo:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Mitat</translation>
+        <translation type="vanished">Mitat</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF -tiedostot (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF -tiedosto (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 ei ole muuttujaa, joka voidaan tuoda.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Määritä alkuperäinen päivämäärä</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Alkuperäisen ajan automaattinen tunnistus epäonnistui. Määritä alkuperäinen päivämäärä.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Yksiköt:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">päivää 2014-01-01 jälkeen</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Yksikkö:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">vuotta</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">päivää</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">tuntia</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">pöytäkirja</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekuntia</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Alkuperäinen aika:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Aikavyöhyke:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Dimension Mapping -asetus</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Arvo:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Mitat</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X -kaistan MP -rader -tiedot voidaan tuoda ruudukko -olosuhteille, joiden ulottuvuus on "Time".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X -kaistan MP -rader -tiedot voidaan tuoda ruudukko -olosuhteille, joiden ulottuvuus on &quot;Time&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

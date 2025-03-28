@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Rozpoznat výsledek:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; K definování vzoru použijte následující písmena: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- odsazení: 0; odsazení textu: 0px; "&gt; Rok: RRRR &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Měsíc: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- vpravo: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hodina: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; K definování vzoru použijte následující písmena: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- odsazení: 0; odsazení textu: 0px; &quot;&gt; Rok: RRRR &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Měsíc: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Day: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- vpravo: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hodina: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Tato data nelze exportovat. Zdá se, že nebyl importován z *.tif nebo *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Tato data nelze exportovat. Data s dimenzí „Čas“ nelze exportovat do formátu *.tif nebo *.asc.</translation>
     </message>
     <message>
@@ -219,8 +221,8 @@
         <translation>Tato data nelze exportovat. Zdá se, že nebyl importován z *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Tato data nelze exportovat. Data s dimenzí "Čas" nelze exportovat do *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Tato data nelze exportovat. Data s dimenzí &quot;Čas&quot; nelze exportovat do *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>Soubor NetCDF (*.nc)</translation>
+        <translation type="vanished">Soubor NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 nemá proměnnou, kterou lze importovat.</translation>
+        <translation type="vanished">%1 nemá proměnnou, kterou lze importovat.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 nemá data zeměpisné délky, šířky ani x, y.</translation>
+        <translation type="vanished">%1 nemá data zeměpisné délky, šířky ani x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
+        <translation type="vanished">Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Zadejte původní datum</translation>
+        <translation type="vanished">Zadejte původní datum</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Automatické rozpoznání původního času se nezdařilo. Uveďte prosím původní datum.</translation>
+        <translation type="vanished">Automatické rozpoznání původního času se nezdařilo. Uveďte prosím původní datum.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jednotky:</translation>
+        <translation type="vanished">Jednotky:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dnů od 1. ledna 2014</translation>
+        <translation type="vanished">dnů od 1. ledna 2014</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Jednotka:</translation>
+        <translation type="vanished">Jednotka:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>let</translation>
+        <translation type="vanished">let</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dny</translation>
+        <translation type="vanished">dny</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hodiny</translation>
+        <translation type="vanished">hodiny</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minut</translation>
+        <translation type="vanished">minut</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekundy</translation>
+        <translation type="vanished">sekundy</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Původní čas:</translation>
+        <translation type="vanished">Původní čas:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Časové pásmo:</translation>
+        <translation type="vanished">Časové pásmo:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Nastavení mapování dimenzí</translation>
+        <translation type="vanished">Nastavení mapování dimenzí</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Hodnota:</translation>
+        <translation type="vanished">Hodnota:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Rozměry</translation>
+        <translation type="vanished">Rozměry</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Soubory NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">Soubor NetCDF (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 nemá proměnnou, kterou lze importovat.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Zadejte původní datum</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Automatické rozpoznání původního času se nezdařilo. Uveďte prosím původní datum.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Jednotky:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dnů od 1. ledna 2014</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Jednotka:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">let</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dny</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">hodiny</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minut</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekundy</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Původní čas:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Časové pásmo:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Nastavení mapování dimenzí</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Hodnota:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Rozměry</translation>
     </message>
 </context>
 <context>
@@ -430,7 +521,7 @@
         <translation>Varování</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation>Data MP radaru X pásma lze importovat pro podmínky sítě s dimenzí „Čas“.</translation>
     </message>
     <message>

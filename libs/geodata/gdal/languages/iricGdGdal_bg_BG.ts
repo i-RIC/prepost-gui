@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Разпознайте резултата:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Моля, използвайте следните букви, за да определите модела: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -право: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- отстъп: 0; текст-отстъп: 0px; "&gt; Година: ГГГГ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Месец: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Ден: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- вдясно: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Час: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- ляво: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Второ: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Моля, използвайте следните букви, за да определите модела: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -право: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- отстъп: 0; текст-отстъп: 0px; &quot;&gt; Година: ГГГГ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Месец: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ден: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- вдясно: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Час: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- ляво: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Второ: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Тези данни не могат да бъдат експортирани. Изглежда, че не е импортиран от *.tif или *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Тези данни не могат да бъдат експортирани. Данните с измерение "Време" не могат да бъдат експортирани в *.tif или *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Тези данни не могат да бъдат експортирани. Данните с измерение &quot;Време&quot; не могат да бъдат експортирани в *.tif или *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Тези данни не могат да бъдат експортирани. Изглежда, че не е внесен от *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Тези данни не могат да бъдат експортирани. Данните с измерение "Време" не могат да бъдат експортирани в *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Тези данни не могат да бъдат експортирани. Данните с измерение &quot;Време&quot; не могат да бъдат експортирани в *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF файл (*.nc)</translation>
+        <translation type="vanished">NetCDF файл (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 няма променлива, която може да бъде импортирана.</translation>
+        <translation type="vanished">%1 няма променлива, която може да бъде импортирана.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 няма данни за дължина, ширина и x, y.</translation>
+        <translation type="vanished">%1 няма данни за дължина, ширина и x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Растерните данни от времеви серии вече са импортирани. Ако искате да импортирате други данни, моля, първо изтрийте вече импортираните данни.</translation>
+        <translation type="vanished">Растерните данни от времеви серии вече са импортирани. Ако искате да импортирате други данни, моля, първо изтрийте вече импортираните данни.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Посочете оригиналната дата</translation>
+        <translation type="vanished">Посочете оригиналната дата</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Автоматичното разпознаване на първоначалното време не бе успешно. Моля, посочете оригиналната дата.</translation>
+        <translation type="vanished">Автоматичното разпознаване на първоначалното време не бе успешно. Моля, посочете оригиналната дата.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Единици:</translation>
+        <translation type="vanished">Единици:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>дни от 2014-01-01</translation>
+        <translation type="vanished">дни от 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Мерна единица:</translation>
+        <translation type="vanished">Мерна единица:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>години</translation>
+        <translation type="vanished">години</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>дни</translation>
+        <translation type="vanished">дни</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>часа</translation>
+        <translation type="vanished">часа</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>минути</translation>
+        <translation type="vanished">минути</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>секунди</translation>
+        <translation type="vanished">секунди</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Оригинално време:</translation>
+        <translation type="vanished">Оригинално време:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Часова зона:</translation>
+        <translation type="vanished">Часова зона:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Настройка за картографиране на размерите</translation>
+        <translation type="vanished">Настройка за картографиране на размерите</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Стойност:</translation>
+        <translation type="vanished">Стойност:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Размери</translation>
+        <translation type="vanished">Размери</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF файлове (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF файл (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Грешка</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Растерните данни от времеви серии вече са импортирани. Ако искате да импортирате други данни, моля, първо изтрийте вече импортираните данни.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 няма променлива, която може да бъде импортирана.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Посочете оригиналната дата</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Автоматичното разпознаване на първоначалното време не бе успешно. Моля, посочете оригиналната дата.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Единици:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">дни от 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Мерна единица:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">години</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">дни</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">часа</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">минути</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">секунди</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Оригинално време:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Часова зона:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Настройка за картографиране на размерите</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Стойност:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Размери</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Внимание</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Данните за рейдер от X лента MP могат да бъдат импортирани за условия на мрежата с размер "Време".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Данните за рейдер от X лента MP могат да бъдат импортирани за условия на мрежата с размер &quot;Време&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataGdal</name>
@@ -114,8 +116,8 @@
         <translation>Resultado de reconhecimento :</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Favor usar as seguintes letras para definir o padrao:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Ano: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Mes: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Dia: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Hora: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Minuto: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; Segundo: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Favor usar as seguintes letras para definir o padrao:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Ano: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Mes: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Dia: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Hora: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Minuto: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Segundo: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -141,8 +143,8 @@
         <translation>Esses dados não podem ser exportados. Parece que não foi importado de *.tif ou *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Esses dados não podem ser exportados. Dados com dimensão "Tempo" não podem ser exportados para *.tif ou *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Esses dados não podem ser exportados. Dados com dimensão &quot;Tempo&quot; não podem ser exportados para *.tif ou *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -227,8 +229,8 @@
         <translation>Esses dados não podem ser exportados. Parece que não foi importado de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Esses dados não podem ser exportados. Dados com dimensão "Tempo" não podem ser exportados para *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Esses dados não podem ser exportados. Dados com dimensão &quot;Tempo&quot; não podem ser exportados para *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -290,15 +292,15 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>Arquivo NetCDF  (*.nc)</translation>
+        <translation type="vanished">Arquivo NetCDF  (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>%1 does not have longitude and latitude data.</source>
@@ -306,7 +308,7 @@
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>% 1 nao possui numero variavel que possa ser importada.</translation>
+        <translation type="vanished">% 1 nao possui numero variavel que possa ser importada.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -318,77 +320,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 não tem longitude, latitude nem dados x, y.</translation>
+        <translation type="vanished">%1 não tem longitude, latitude nem dados x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Os dados raster de séries temporais já foram importados. Se você deseja importar outros dados, exclua primeiro os dados já importados.</translation>
+        <translation type="vanished">Os dados raster de séries temporais já foram importados. Se você deseja importar outros dados, exclua primeiro os dados já importados.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Especificar a data basica</translation>
+        <translation type="vanished">Especificar a data basica</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>O reconhecimento automatico sobre o horario basico falhou. Especifique a data basica.</translation>
+        <translation type="vanished">O reconhecimento automatico sobre o horario basico falhou. Especifique a data basica.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Unidade :</translation>
+        <translation type="vanished">Unidade :</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dias desde 2014-01-01</translation>
+        <translation type="vanished">dias desde 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Unidade :</translation>
+        <translation type="vanished">Unidade :</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>Anos</translation>
+        <translation type="vanished">Anos</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>Dias</translation>
+        <translation type="vanished">Dias</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>Tempo</translation>
+        <translation type="vanished">Tempo</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>Minutos</translation>
+        <translation type="vanished">Minutos</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>Segundos</translation>
+        <translation type="vanished">Segundos</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Data e horario de referencia:</translation>
+        <translation type="vanished">Data e horario de referencia:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Fuso horário:</translation>
+        <translation type="vanished">Fuso horário:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Configuracao para mapeamento de dimensoes</translation>
+        <translation type="vanished">Configuracao para mapeamento de dimensoes</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Valor :</translation>
+        <translation type="vanished">Valor :</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensoes</translation>
+        <translation type="vanished">Dimensoes</translation>
     </message>
 </context>
 <context>
@@ -396,6 +398,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Arquivos NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">Arquivo NetCDF  (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Os dados raster de séries temporais já foram importados. Se você deseja importar outros dados, exclua primeiro os dados já importados.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">% 1 nao possui numero variavel que possa ser importada.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Especificar a data basica</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">O reconhecimento automatico sobre o horario basico falhou. Especifique a data basica.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Unidade :</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dias desde 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Unidade :</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">Anos</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">Dias</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">Tempo</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">Minutos</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">Segundos</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Data e horario de referencia:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Fuso horário:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Configuracao para mapeamento de dimensoes</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Valor :</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimensoes</translation>
     </message>
 </context>
 <context>
@@ -442,8 +533,8 @@
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Os dados de radar MP de banda X  poderao ser importados somente para os atributos da grade com dimensao do "tempo".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Os dados de radar MP de banda X  poderao ser importados somente para os atributos da grade com dimensao do &quot;tempo&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -459,7 +550,7 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="vanished">Valores de dimensao para " tempo" sao incompativeis.</translation>
+        <translation type="vanished">Valores de dimensao para &quot; tempo&quot; sao incompativeis.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>

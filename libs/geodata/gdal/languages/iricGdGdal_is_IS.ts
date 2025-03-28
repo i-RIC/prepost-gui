@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Viðurkenna niðurstöðu:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Vinsamlegast notaðu eftirfarandi stafi til að skilgreina mynstur: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- inndráttur: 0; textiinndráttur: 0px; "&gt; Ár: ÁÁÁÁ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mánuður: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- hægri: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Klukkustund: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- vinstri: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Í öðru lagi: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Vinsamlegast notaðu eftirfarandi stafi til að skilgreina mynstur: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- inndráttur: 0; textiinndráttur: 0px; &quot;&gt; Ár: ÁÁÁÁ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mánuður: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Day: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- hægri: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Klukkustund: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- vinstri: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Í öðru lagi: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Ekki er hægt að flytja þessi gögn út. Svo virðist sem það hafi ekki verið flutt inn frá *.tif eða *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Ekki er hægt að flytja þessi gögn út. Ekki er hægt að flytja gögn með „tíma“ vídd til *.tif eða *.asc.</translation>
     </message>
     <message>
@@ -219,7 +221,7 @@
         <translation>Ekki er hægt að flytja þessi gögn út. Svo virðist sem það hafi ekki verið flutt inn frá *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Ekki er hægt að flytja þessi gögn út. Ekki er hægt að flytja gögn með „tíma“ vídd til *.png</translation>
     </message>
     <message>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF skrá (*.nc)</translation>
+        <translation type="vanished">NetCDF skrá (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 hefur ekki breytu sem hægt er að flytja inn.</translation>
+        <translation type="vanished">%1 hefur ekki breytu sem hægt er að flytja inn.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 hefur ekki lengdargráðu, breiddargráðu né x, y gögn.</translation>
+        <translation type="vanished">%1 hefur ekki lengdargráðu, breiddargráðu né x, y gögn.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
+        <translation type="vanished">Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Tilgreindu upphaflega dagsetningu</translation>
+        <translation type="vanished">Tilgreindu upphaflega dagsetningu</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Sjálfvirk viðurkenning á upphaflegum tíma mistókst. Vinsamlegast tilgreindu upphaflega dagsetninguna.</translation>
+        <translation type="vanished">Sjálfvirk viðurkenning á upphaflegum tíma mistókst. Vinsamlegast tilgreindu upphaflega dagsetninguna.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Einingar:</translation>
+        <translation type="vanished">Einingar:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>daga síðan 2014-01-01</translation>
+        <translation type="vanished">daga síðan 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Eining:</translation>
+        <translation type="vanished">Eining:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>ár</translation>
+        <translation type="vanished">ár</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>daga</translation>
+        <translation type="vanished">daga</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>klukkustundir</translation>
+        <translation type="vanished">klukkustundir</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>mínútur</translation>
+        <translation type="vanished">mínútur</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekúndur</translation>
+        <translation type="vanished">sekúndur</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Upphaflegur tími:</translation>
+        <translation type="vanished">Upphaflegur tími:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Tímabelti:</translation>
+        <translation type="vanished">Tímabelti:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Stilling kortlagningarvíddar</translation>
+        <translation type="vanished">Stilling kortlagningarvíddar</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Gildi:</translation>
+        <translation type="vanished">Gildi:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Stærðir</translation>
+        <translation type="vanished">Stærðir</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF skrár (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF skrá (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Villa</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 hefur ekki breytu sem hægt er að flytja inn.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Tilgreindu upphaflega dagsetningu</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Sjálfvirk viðurkenning á upphaflegum tíma mistókst. Vinsamlegast tilgreindu upphaflega dagsetninguna.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Einingar:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">daga síðan 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Eining:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">ár</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">daga</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">klukkustundir</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">mínútur</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekúndur</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Upphaflegur tími:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Tímabelti:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Stilling kortlagningarvíddar</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Gildi:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Stærðir</translation>
     </message>
 </context>
 <context>
@@ -430,7 +521,7 @@
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation>Hægt er að flytja inn X band MP rader gögn fyrir ristaðstæður með víddinni „Time“.</translation>
     </message>
     <message>

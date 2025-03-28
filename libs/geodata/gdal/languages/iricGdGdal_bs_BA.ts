@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Prepoznajte rezultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Molimo vas da koristite sljedeća slova za definiranje uzorka: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -desno: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; Godina: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mjesec: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Dan: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- desno: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sat: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minuta: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- lijevo: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Drugo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Molimo vas da koristite sljedeća slova za definiranje uzorka: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -desno: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; &quot;&gt; Godina: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mjesec: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Dan: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- desno: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sat: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minuta: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- lijevo: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Drugo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Ovi se podaci ne mogu izvesti. Čini se da nije uvezen iz *.tif ili *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom "Vrijeme" ne mogu se izvesti u *.tif ili *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom &quot;Vrijeme&quot; ne mogu se izvesti u *.tif ili *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Ovi se podaci ne mogu izvesti. Izgleda da nije uvezen iz *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom "Vrijeme" ne mogu se izvesti u *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom &quot;Vrijeme&quot; ne mogu se izvesti u *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF datoteka (*.nc)</translation>
+        <translation type="vanished">NetCDF datoteka (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 nema varijablu koja se može uvesti.</translation>
+        <translation type="vanished">%1 nema varijablu koja se može uvesti.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 nema podatke o zemljopisnoj dužini, širini niti x, y.</translation>
+        <translation type="vanished">%1 nema podatke o zemljopisnoj dužini, širini niti x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
+        <translation type="vanished">Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Navedite originalni datum</translation>
+        <translation type="vanished">Navedite originalni datum</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Automatsko prepoznavanje izvornog vremena nije uspjelo. Molimo navedite originalni datum.</translation>
+        <translation type="vanished">Automatsko prepoznavanje izvornog vremena nije uspjelo. Molimo navedite originalni datum.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jedinice:</translation>
+        <translation type="vanished">Jedinice:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dana od 2014-01-01</translation>
+        <translation type="vanished">dana od 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Jedinica:</translation>
+        <translation type="vanished">Jedinica:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>godine</translation>
+        <translation type="vanished">godine</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dana</translation>
+        <translation type="vanished">dana</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>sati</translation>
+        <translation type="vanished">sati</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minuta</translation>
+        <translation type="vanished">minuta</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekundi</translation>
+        <translation type="vanished">sekundi</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Originalno vreme:</translation>
+        <translation type="vanished">Originalno vreme:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Vremenska zona:</translation>
+        <translation type="vanished">Vremenska zona:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Postavka mapiranja dimenzija</translation>
+        <translation type="vanished">Postavka mapiranja dimenzija</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Vrijednost:</translation>
+        <translation type="vanished">Vrijednost:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimenzije</translation>
+        <translation type="vanished">Dimenzije</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF datoteke (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF datoteka (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Greška</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 nema varijablu koja se može uvesti.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Navedite originalni datum</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Automatsko prepoznavanje izvornog vremena nije uspjelo. Molimo navedite originalni datum.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Jedinice:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dana od 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Jedinica:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">godine</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dana</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">sati</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minuta</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekundi</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Originalno vreme:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Vremenska zona:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Postavka mapiranja dimenzija</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Vrijednost:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimenzije</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Podaci o raderu X opsega MP mogu se uvesti za mrežne uvjete s dimenzijom "Vrijeme".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Podaci o raderu X opsega MP mogu se uvesti za mrežne uvjete s dimenzijom &quot;Vrijeme&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

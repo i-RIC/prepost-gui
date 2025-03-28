@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Recunoașteți rezultatul:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vă rugăm să utilizați următoarele litere pentru a defini modelul: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; An: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Luna: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Ziua: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreapta: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vă rugăm să utilizați următoarele litere pentru a defini modelul: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; &quot;&gt; An: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Luna: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ziua: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreapta: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ora: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Aceste date nu pot fi exportate. Se pare că nu a fost importat din *.tif sau *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Aceste date nu pot fi exportate. Datele cu dimensiunea „Timp” nu pot fi exportate în *.tif sau *.asc.</translation>
     </message>
     <message>
@@ -219,7 +221,7 @@
         <translation>Aceste date nu pot fi exportate. Se pare că nu a fost importat din *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Aceste date nu pot fi exportate. Datele cu dimensiunea „Timp” nu pot fi exportate în *.png</translation>
     </message>
     <message>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>Fișier NetCDF (*.nc)</translation>
+        <translation type="vanished">Fișier NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 nu are variabilă care poate fi importată.</translation>
+        <translation type="vanished">%1 nu are variabilă care poate fi importată.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 nu are longitudine, latitudine și nici date x, y.</translation>
+        <translation type="vanished">%1 nu are longitudine, latitudine și nici date x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
+        <translation type="vanished">Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Specificați data originală</translation>
+        <translation type="vanished">Specificați data originală</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Recunoașterea automată a timpului inițial a eșuat. Vă rugăm să specificați data originală.</translation>
+        <translation type="vanished">Recunoașterea automată a timpului inițial a eșuat. Vă rugăm să specificați data originală.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Unități:</translation>
+        <translation type="vanished">Unități:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>zile de la 01.01.2014</translation>
+        <translation type="vanished">zile de la 01.01.2014</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Unitate:</translation>
+        <translation type="vanished">Unitate:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>ani</translation>
+        <translation type="vanished">ani</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>zile</translation>
+        <translation type="vanished">zile</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>ore</translation>
+        <translation type="vanished">ore</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minute</translation>
+        <translation type="vanished">minute</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>secunde</translation>
+        <translation type="vanished">secunde</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Ora inițială:</translation>
+        <translation type="vanished">Ora inițială:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Fus orar:</translation>
+        <translation type="vanished">Fus orar:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Setarea mapării dimensiunilor</translation>
+        <translation type="vanished">Setarea mapării dimensiunilor</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Valoare:</translation>
+        <translation type="vanished">Valoare:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensiuni</translation>
+        <translation type="vanished">Dimensiuni</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Fișiere NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">Fișier NetCDF (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Eroare</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 nu are variabilă care poate fi importată.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Specificați data originală</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Recunoașterea automată a timpului inițial a eșuat. Vă rugăm să specificați data originală.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Unități:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">zile de la 01.01.2014</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Unitate:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">ani</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">zile</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">ore</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minute</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">secunde</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Ora inițială:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Fus orar:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Setarea mapării dimensiunilor</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Valoare:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimensiuni</translation>
     </message>
 </context>
 <context>
@@ -430,7 +521,7 @@
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation>Datele rader MP în bandă X pot fi importate pentru condiții de rețea cu dimensiunea „Timp”.</translation>
     </message>
     <message>

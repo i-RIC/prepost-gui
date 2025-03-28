@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Atpazīt rezultātu:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Lai definētu modeli, lūdzu, izmantojiet šādus burtus: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -pa labi: 0 pikseļi; -qt-list-ievilkums: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- atkāpe: 0; text-indent: 0px; "&gt; Gads: GGGG &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mēnesis: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Diena: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- pa labi: 0 pikseļi; -qt-block-indent: 0; text-indent: 0px; "&gt; Stunda: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minūte: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- pa kreisi: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Otrkārt: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Lai definētu modeli, lūdzu, izmantojiet šādus burtus: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -pa labi: 0 pikseļi; -qt-list-ievilkums: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- atkāpe: 0; text-indent: 0px; &quot;&gt; Gads: GGGG &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mēnesis: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Diena: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- pa labi: 0 pikseļi; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Stunda: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minūte: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- pa kreisi: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Otrkārt: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Šos datus nevar eksportēt. Šķiet, ka tas netika importēts no *.tif vai *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Šos datus nevar eksportēt. Datus ar “laika” dimensiju nevar eksportēt uz *.tif vai *.asc.</translation>
     </message>
     <message>
@@ -219,7 +221,7 @@
         <translation>Šos datus nevar eksportēt. Šķiet, ka tas netika importēts no *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Šos datus nevar eksportēt. Datus ar “laika” kategoriju nevar eksportēt uz *.png</translation>
     </message>
     <message>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF fails (*.nc)</translation>
+        <translation type="vanished">NetCDF fails (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 nav maināmā, ko var importēt.</translation>
+        <translation type="vanished">%1 nav maināmā, ko var importēt.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 nav garuma, platuma un x, y datu.</translation>
+        <translation type="vanished">%1 nav garuma, platuma un x, y datu.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
+        <translation type="vanished">Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Norādiet sākotnējo datumu</translation>
+        <translation type="vanished">Norādiet sākotnējo datumu</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Neizdevās automātiski atpazīt sākotnējo laiku. Lūdzu, norādiet sākotnējo datumu.</translation>
+        <translation type="vanished">Neizdevās automātiski atpazīt sākotnējo laiku. Lūdzu, norādiet sākotnējo datumu.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Vienības:</translation>
+        <translation type="vanished">Vienības:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dienas kopš 2014. gada 1. janvāra</translation>
+        <translation type="vanished">dienas kopš 2014. gada 1. janvāra</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Vienība:</translation>
+        <translation type="vanished">Vienība:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>gadiem</translation>
+        <translation type="vanished">gadiem</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dienas</translation>
+        <translation type="vanished">dienas</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>stundas</translation>
+        <translation type="vanished">stundas</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minūtes</translation>
+        <translation type="vanished">minūtes</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekundes</translation>
+        <translation type="vanished">sekundes</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Sākotnējais laiks:</translation>
+        <translation type="vanished">Sākotnējais laiks:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Laika zona:</translation>
+        <translation type="vanished">Laika zona:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Dimensiju kartēšanas iestatījums</translation>
+        <translation type="vanished">Dimensiju kartēšanas iestatījums</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Vērtība:</translation>
+        <translation type="vanished">Vērtība:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Izmēri</translation>
+        <translation type="vanished">Izmēri</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF faili (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF fails (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Kļūda</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 nav maināmā, ko var importēt.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Norādiet sākotnējo datumu</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Neizdevās automātiski atpazīt sākotnējo laiku. Lūdzu, norādiet sākotnējo datumu.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Vienības:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dienas kopš 2014. gada 1. janvāra</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Vienība:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">gadiem</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dienas</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">stundas</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minūtes</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekundes</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Sākotnējais laiks:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Laika zona:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Dimensiju kartēšanas iestatījums</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Vērtība:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Izmēri</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X joslas MP vērtētāja datus var importēt režģa nosacījumiem ar izmēru "Laiks".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X joslas MP vērtētāja datus var importēt režģa nosacījumiem ar izmēru &quot;Laiks&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

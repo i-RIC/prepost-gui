@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataGdal</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>S'ha produït un error en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
@@ -76,7 +78,7 @@
     </message>
     <message>
         <source>The time interval between the selected files are not the same.</source>
-        <translation>L'interval de temps entre els fitxers seleccionats no és el mateix.</translation>
+        <translation>L&apos;interval de temps entre els fitxers seleccionats no és el mateix.</translation>
     </message>
 </context>
 <context>
@@ -87,11 +89,11 @@
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l'hora.</translation>
+        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l&apos;hora.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Pattern:</source>
@@ -106,8 +108,8 @@
         <translation>Reconeix el resultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; "&gt; Any: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mes: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Dia: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minut: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; &quot;&gt; Any: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mes: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Dia: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hora: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minut: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.tif o *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -153,7 +155,7 @@
     <name>GeoDataGdalGdalImporter</name>
     <message>
         <source>Importing data...</source>
-        <translation>S'estan important dades...</translation>
+        <translation>S&apos;estan important dades...</translation>
     </message>
     <message>
         <source>GDAL</source>
@@ -189,7 +191,7 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation>Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -219,16 +221,16 @@
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation>S'ha produït un error en inicialitzar libpng.</translation>
+        <translation>S&apos;ha produït un error en inicialitzar libpng.</translation>
     </message>
 </context>
 <context>
@@ -255,11 +257,11 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation>S'ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
@@ -271,30 +273,30 @@
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation>S'ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
+        <translation>S&apos;ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation>S'ha produït un error en analitzar %1.</translation>
+        <translation>S&apos;ha produït un error en analitzar %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>Fitxer NetCDF (*.nc)</translation>
+        <translation type="vanished">Fitxer NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 no té una variable que es pugui importar.</translation>
+        <translation type="vanished">%1 no té una variable que es pugui importar.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -302,81 +304,81 @@
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="vanished">S'ha produït un error en analitzar la definició del temps: %1</translation>
+        <translation type="vanished">S&apos;ha produït un error en analitzar la definició del temps: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 no té dades de longitud, latitud ni x, y.</translation>
+        <translation type="vanished">%1 no té dades de longitud, latitud ni x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation type="vanished">Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Especifiqueu la data original</translation>
+        <translation type="vanished">Especifiqueu la data original</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Ha fallat el reconeixement automàtic de l'hora original. Especifiqueu la data original.</translation>
+        <translation type="vanished">Ha fallat el reconeixement automàtic de l&apos;hora original. Especifiqueu la data original.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Unitats:</translation>
+        <translation type="vanished">Unitats:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dies des del 01.01.2014</translation>
+        <translation type="vanished">dies des del 01.01.2014</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Unitat:</translation>
+        <translation type="vanished">Unitat:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>anys</translation>
+        <translation type="vanished">anys</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dies</translation>
+        <translation type="vanished">dies</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hores</translation>
+        <translation type="vanished">hores</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minuts</translation>
+        <translation type="vanished">minuts</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>segons</translation>
+        <translation type="vanished">segons</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Hora original:</translation>
+        <translation type="vanished">Hora original:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Fus horari:</translation>
+        <translation type="vanished">Fus horari:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Configuració del mapatge de dimensions</translation>
+        <translation type="vanished">Configuració del mapatge de dimensions</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Valor:</translation>
+        <translation type="vanished">Valor:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensions</translation>
+        <translation type="vanished">Dimensions</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Fitxers NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">Fitxer NetCDF (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 no té una variable que es pugui importar.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Especifiqueu la data original</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Ha fallat el reconeixement automàtic de l&apos;hora original. Especifiqueu la data original.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Unitats:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dies des del 01.01.2014</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Unitat:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">anys</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dies</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">hores</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minuts</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">segons</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Hora original:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Fus horari:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Configuració del mapatge de dimensions</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Valor:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimensions</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió "Temps".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió &quot;Temps&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -451,15 +542,15 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation>Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
     <message>
         <source>Error occured when importing data converted from %1.</source>
-        <translation>S'ha produït un error en importar les dades des de convertides %1.</translation>
+        <translation>S&apos;ha produït un error en importar les dades des de convertides %1.</translation>
     </message>
     <message>
         <source>Error occured when opening %1.</source>
-        <translation>S'ha produït un error en obrir %1.</translation>
+        <translation>S&apos;ha produït un error en obrir %1.</translation>
     </message>
 </context>
 <context>

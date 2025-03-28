@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Genkend resultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Brug følgende bogstaver til at definere mønster: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indrykning: 0; tekst-indrykning: 0px; "&gt; År: ÅÅÅÅ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Måned: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- højre: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Time: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- venstre: 0px; margin-højre: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Andet: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Brug følgende bogstaver til at definere mønster: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indrykning: 0; tekst-indrykning: 0px; &quot;&gt; År: ÅÅÅÅ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Måned: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Day: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- højre: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Time: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- venstre: 0px; margin-højre: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Andet: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Disse data kan ikke eksporteres. Det ser ud til, at det ikke blev importeret fra *.tif eller *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Disse data kan ikke eksporteres. Data med dimensionen "Tid" kan ikke eksporteres til *.tif eller *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Disse data kan ikke eksporteres. Data med dimensionen &quot;Tid&quot; kan ikke eksporteres til *.tif eller *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Disse data kan ikke eksporteres. Det ser ud til, at den ikke blev importeret fra *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Disse data kan ikke eksporteres. Data med dimensionen "Tid" kan ikke eksporteres til *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Disse data kan ikke eksporteres. Data med dimensionen &quot;Tid&quot; kan ikke eksporteres til *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF -fil (*.nc)</translation>
+        <translation type="vanished">NetCDF -fil (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 ikke har en variabel, der kan importeres.</translation>
+        <translation type="vanished">%1 ikke har en variabel, der kan importeres.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 har ikke data om længdegrad, breddegrad eller x, y.</translation>
+        <translation type="vanished">%1 har ikke data om længdegrad, breddegrad eller x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Tidsserierasterdata er allerede importeret. Hvis du vil importere andre data, skal du først slette de allerede importerede data.</translation>
+        <translation type="vanished">Tidsserierasterdata er allerede importeret. Hvis du vil importere andre data, skal du først slette de allerede importerede data.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Angiv original dato</translation>
+        <translation type="vanished">Angiv original dato</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Automatisk genkendelse af den originale tid mislykkedes. Angiv den originale dato.</translation>
+        <translation type="vanished">Automatisk genkendelse af den originale tid mislykkedes. Angiv den originale dato.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Enheder:</translation>
+        <translation type="vanished">Enheder:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>dage siden 2014-01-01</translation>
+        <translation type="vanished">dage siden 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Enhed:</translation>
+        <translation type="vanished">Enhed:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>flere år</translation>
+        <translation type="vanished">flere år</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dage</translation>
+        <translation type="vanished">dage</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>timer</translation>
+        <translation type="vanished">timer</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutter</translation>
+        <translation type="vanished">minutter</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekunder</translation>
+        <translation type="vanished">sekunder</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Original tid:</translation>
+        <translation type="vanished">Original tid:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Tidszone:</translation>
+        <translation type="vanished">Tidszone:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Indstilling af dimensionskortlægning</translation>
+        <translation type="vanished">Indstilling af dimensionskortlægning</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Værdi:</translation>
+        <translation type="vanished">Værdi:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensioner</translation>
+        <translation type="vanished">Dimensioner</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF -filer (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF -fil (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Tidsserierasterdata er allerede importeret. Hvis du vil importere andre data, skal du først slette de allerede importerede data.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 ikke har en variabel, der kan importeres.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Angiv original dato</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Automatisk genkendelse af den originale tid mislykkedes. Angiv den originale dato.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Enheder:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">dage siden 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Enhed:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">flere år</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">dage</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">timer</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minutter</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">sekunder</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Original tid:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Tidszone:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Indstilling af dimensionskortlægning</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Værdi:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Dimensioner</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X -bånd MP -rader -data kan importeres til netforhold med dimensionen "Tid".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X -bånd MP -rader -data kan importeres til netforhold med dimensionen &quot;Tid&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

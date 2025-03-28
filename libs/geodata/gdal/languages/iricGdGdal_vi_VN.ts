@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Ghi nhận kết quả:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vui lòng sử dụng các chữ cái sau để xác định mẫu: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- thụt lề: 0; text-indent: 0px; "&gt; Năm: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Tháng: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Giờ: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vui lòng sử dụng các chữ cái sau để xác định mẫu: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- thụt lề: 0; text-indent: 0px; &quot;&gt; Năm: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Tháng: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Day: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Giờ: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Không thể xuất dữ liệu này. Có vẻ như nó không được nhập từ *.tif hoặc *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Không thể xuất dữ liệu này. Không thể xuất dữ liệu có thứ nguyên "Thời gian" sang *.tif hoặc *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Không thể xuất dữ liệu này. Không thể xuất dữ liệu có thứ nguyên &quot;Thời gian&quot; sang *.tif hoặc *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Không thể xuất dữ liệu này. Có vẻ như nó không được nhập từ *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Không thể xuất dữ liệu này. Không thể xuất dữ liệu có thứ nguyên "Thời gian" sang *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Không thể xuất dữ liệu này. Không thể xuất dữ liệu có thứ nguyên &quot;Thời gian&quot; sang *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>Tệp NetCDF (*.nc)</translation>
+        <translation type="vanished">Tệp NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 không có biến có thể được nhập.</translation>
+        <translation type="vanished">%1 không có biến có thể được nhập.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 không có kinh độ, vĩ độ cũng như dữ liệu x, y.</translation>
+        <translation type="vanished">%1 không có kinh độ, vĩ độ cũng như dữ liệu x, y.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
+        <translation type="vanished">Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Chỉ định ngày ban đầu</translation>
+        <translation type="vanished">Chỉ định ngày ban đầu</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Tự động nhận dạng thời gian gốc không thành công. Vui lòng ghi rõ ngày ban đầu.</translation>
+        <translation type="vanished">Tự động nhận dạng thời gian gốc không thành công. Vui lòng ghi rõ ngày ban đầu.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Các đơn vị:</translation>
+        <translation type="vanished">Các đơn vị:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>ngày kể từ 2014-01-01</translation>
+        <translation type="vanished">ngày kể từ 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Đơn vị:</translation>
+        <translation type="vanished">Đơn vị:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>năm</translation>
+        <translation type="vanished">năm</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>ngày</translation>
+        <translation type="vanished">ngày</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>giờ</translation>
+        <translation type="vanished">giờ</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>phút</translation>
+        <translation type="vanished">phút</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>giây</translation>
+        <translation type="vanished">giây</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Thời gian ban đầu:</translation>
+        <translation type="vanished">Thời gian ban đầu:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Múi giờ:</translation>
+        <translation type="vanished">Múi giờ:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Cài đặt ánh xạ thứ nguyên</translation>
+        <translation type="vanished">Cài đặt ánh xạ thứ nguyên</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Giá trị:</translation>
+        <translation type="vanished">Giá trị:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Kích thước</translation>
+        <translation type="vanished">Kích thước</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>Tệp NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">Tệp NetCDF (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 không có biến có thể được nhập.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Chỉ định ngày ban đầu</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Tự động nhận dạng thời gian gốc không thành công. Vui lòng ghi rõ ngày ban đầu.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Các đơn vị:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">ngày kể từ 2014-01-01</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Đơn vị:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">năm</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">ngày</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">giờ</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">phút</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">giây</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Thời gian ban đầu:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Múi giờ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Cài đặt ánh xạ thứ nguyên</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Giá trị:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Kích thước</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Dữ liệu rader MP băng tần X có thể được nhập cho các điều kiện lưới với thứ nguyên "Thời gian".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Dữ liệu rader MP băng tần X có thể được nhập cho các điều kiện lưới với thứ nguyên &quot;Thời gian&quot;.</translation>
     </message>
     <message>
         <source>Information</source>

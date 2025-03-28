@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataGdal</name>
@@ -106,8 +108,8 @@
         <translation>Aitortu emaitza:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Erabili letra hauek eredua definitzeko: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -eskuina: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- koska: 0; testu-koska: 0px; "&gt; Urtea: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-koska: 0; text-koska: 0px; "&gt; Hilabetea: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Eguna: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- eskuina: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ordua: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px; "&gt; Minutu: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Bigarrena: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Erabili letra hauek eredua definitzeko: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -eskuina: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- koska: 0; testu-koska: 0px; &quot;&gt; Urtea: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-koska: 0; text-koska: 0px; &quot;&gt; Hilabetea: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Eguna: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- eskuina: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ordua: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px; &quot;&gt; Minutu: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Bigarrena: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Datu hauek ezin dira esportatu. Badirudi ez zela *.tif edo *.asc-etik inportatu.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Datu hauek ezin dira esportatu. "Denbora" dimentsioa duten datuak ezin dira esportatu *.tif edo *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Datu hauek ezin dira esportatu. &quot;Denbora&quot; dimentsioa duten datuak ezin dira esportatu *.tif edo *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -219,8 +221,8 @@
         <translation>Datu hauek ezin dira esportatu. Badirudi ez zela *.png-tik inportatu.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Datu hauek ezin dira esportatu. "Denbora" dimentsioa duten datuak ezin dira esportatu *.png-ra</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Datu hauek ezin dira esportatu. &quot;Denbora&quot; dimentsioa duten datuak ezin dira esportatu *.png-ra</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -282,19 +284,19 @@
     <name>GeoDataGdalImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation>NetCDF</translation>
+        <translation type="vanished">NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation>NetCDF fitxategia (*.nc)</translation>
+        <translation type="vanished">NetCDF fitxategia (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation>%1 ez du inporta daitekeen aldagairik.</translation>
+        <translation type="vanished">%1 ez du inporta daitekeen aldagairik.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
@@ -306,77 +308,77 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation>%1 ez du longitudea, latitudea ezta x, y datuak.</translation>
+        <translation type="vanished">%1 ez du longitudea, latitudea ezta x, y datuak.</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
+        <translation type="vanished">Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation>Zehaztu Jatorrizko Data</translation>
+        <translation type="vanished">Zehaztu Jatorrizko Data</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Jatorrizko denbora automatikoki aitortzeak huts egin du. Mesedez, zehaztu jatorrizko data.</translation>
+        <translation type="vanished">Jatorrizko denbora automatikoki aitortzeak huts egin du. Mesedez, zehaztu jatorrizko data.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Unitateak:</translation>
+        <translation type="vanished">Unitateak:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation>egunak 2014-01-01etik</translation>
+        <translation type="vanished">egunak 2014-01-01etik</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Unitatea:</translation>
+        <translation type="vanished">Unitatea:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation>urteak</translation>
+        <translation type="vanished">urteak</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>egunak</translation>
+        <translation type="vanished">egunak</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>ordu</translation>
+        <translation type="vanished">ordu</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutu</translation>
+        <translation type="vanished">minutu</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>segundo</translation>
+        <translation type="vanished">segundo</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation>Jatorrizko ordua:</translation>
+        <translation type="vanished">Jatorrizko ordua:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation>Ordu eremu:</translation>
+        <translation type="vanished">Ordu eremu:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation>Dimentsioen mapen ezarpena</translation>
+        <translation type="vanished">Dimentsioen mapen ezarpena</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Balioa:</translation>
+        <translation type="vanished">Balioa:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Neurriak</translation>
+        <translation type="vanished">Neurriak</translation>
     </message>
 </context>
 <context>
@@ -384,6 +386,95 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF fitxategiak (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporter</name>
+    <message>
+        <source>NetCDF</source>
+        <translation type="unfinished">NetCDF</translation>
+    </message>
+    <message>
+        <source>NetCDF file (*.nc)</source>
+        <translation type="unfinished">NetCDF fitxategia (*.nc)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Errorea</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished">Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
+    </message>
+    <message>
+        <source>%1 does not have variable that can be imported.</source>
+        <translation type="unfinished">%1 ez du inporta daitekeen aldagairik.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
+    <message>
+        <source>Specify Original Date</source>
+        <translation type="unfinished">Zehaztu Jatorrizko Data</translation>
+    </message>
+    <message>
+        <source>Automatic recognition of original time failed. Please specify the original date.</source>
+        <translation type="unfinished">Jatorrizko denbora automatikoki aitortzeak huts egin du. Mesedez, zehaztu jatorrizko data.</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Unitateak:</translation>
+    </message>
+    <message>
+        <source>days since 2014-01-01</source>
+        <translation type="unfinished">egunak 2014-01-01etik</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished">Unitatea:</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished">urteak</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished">egunak</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished">ordu</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished">minutu</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished">segundo</translation>
+    </message>
+    <message>
+        <source>Original time:</source>
+        <translation type="unfinished">Jatorrizko ordua:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation type="unfinished">Ordu eremu:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalNetcdfImporterSettingDialog</name>
+    <message>
+        <source>Dimension Mapping Setting</source>
+        <translation type="unfinished">Dimentsioen mapen ezarpena</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Balioa:</translation>
+    </message>
+    <message>
+        <source>Dimensions</source>
+        <translation type="unfinished">Neurriak</translation>
     </message>
 </context>
 <context>
@@ -430,8 +521,8 @@
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X bandako MP rader datuak inporta daitezke "Denbora" dimentsioko sarearen baldintzetarako.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X bandako MP rader datuak inporta daitezke &quot;Denbora&quot; dimentsioko sarearen baldintzetarako.</translation>
     </message>
     <message>
         <source>Information</source>
