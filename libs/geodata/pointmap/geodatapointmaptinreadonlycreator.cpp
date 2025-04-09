@@ -15,7 +15,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapTINReadOnlyCreator::GeoDataPointmapTINReadOnlyCreator() :
-	GeoDataCreator {"tinReadOnly", tr("TIN (read only)")}
+	GeoDataCreator {"tinReadOnly", tr("TIN")}
 {
 	importers().push_back(new GeoDataPointmapSTLImporter(this));
 	importers().push_back(new GeoDataPointmapLandXmlImporter(this));

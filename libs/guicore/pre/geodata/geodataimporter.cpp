@@ -43,7 +43,7 @@ PreProcessorGeoDataDataItemI* GeoDataImporter::import(const QString& filename, b
 	impl->m_setting = createSetting();
 
 	impl->m_setting->setFileName(filename);
-	impl->m_setting->setCopiedToProject(copyToProject);
+	// impl->m_setting->setCopiedToProject(copyToProject);
 	impl->m_setting->setSelectedFilter(selectedFilter);
 
 	int count;
@@ -83,9 +83,11 @@ PreProcessorGeoDataDataItemI* GeoDataImporter::import(GeoDataImporterSetting* se
 	ret->setGeoData(data);
 
 	auto sourceFileName = setting->fileName();
+	/*
 	if (setting->copiedToProject()) {
 		setting->setFileName(data->filename());
 	}
+	*/
 
 	ok = importData(data, 0, w);
 	if (! ok) {

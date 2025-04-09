@@ -5,6 +5,8 @@
 
 #include <QObject>
 
+class GeoDataCreator;
+
 class GUICOREDLL_EXPORT GeoDataImporterSetting : public QObject
 {
 	Q_OBJECT
@@ -21,9 +23,6 @@ public:
 	const std::string& name() const;
 	void setName(const std::string& name);
 
-	bool copiedToProject() const;
-	void setCopiedToProject(bool copied);
-
 	QString fileName() const;
 	void setFileName(const QString& fileName);
 
@@ -33,7 +32,7 @@ public:
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 
-	std::vector<Item> items() const;
+	std::vector<Item> items(GeoDataCreator* creator) const;
 
 private:
 	virtual void doLoadFromProjectMainFile(const QDomNode& node);
@@ -42,7 +41,6 @@ private:
 
 	std::string m_name;
 
-	bool m_copiedToProject;
 	QString m_fileName;
 	QString m_selectedFilter;
 };

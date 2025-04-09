@@ -15,7 +15,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapRealReadOnlyCreator::GeoDataPointmapRealReadOnlyCreator() :
-	GeoDataCreator {"realPointmapReadOnly", tr("Point Cloud Data (read only)")}
+	GeoDataCreator {"realPointmapReadOnly", tr("Point Cloud Data")}
 {
 	// importers().push_back(new GeoDataPointmapRealImporter(this));
 	importers().push_back(new GeoDataPointmapRealTextImporter(this));

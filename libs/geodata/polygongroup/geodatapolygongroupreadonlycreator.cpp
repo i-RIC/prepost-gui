@@ -7,7 +7,7 @@
 #include <shapefil.h>
 
 GeoDataPolygonGroupReadOnlyCreator::GeoDataPolygonGroupReadOnlyCreator(const QString& typeName) :
-	GeoDataPolyDataGroupCreator {typeName, tr("Polygons (read only)")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Polygons")}
 {
 	importers().push_back(new GeoDataPolygonGroupShpImporter(this));
 	importers().push_back(new GeoDataPolygonGroupCsvImporter(this));

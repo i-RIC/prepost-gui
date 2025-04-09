@@ -76,6 +76,9 @@ void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 	m_geoData->setupActors();
 	m_geoData->setupMenu();
 	m_exportAction->setEnabled(isExportAvailable());
+	if (geodata->creator()->isReadOnly()) {
+		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
+	}
 
 	updateZDepthRangeItemCount();
 }
@@ -120,6 +123,7 @@ void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		importer->importData(m_geoData, 0, preProcessorWindow());
 		importer->setSetting(nullptr);
 		m_geoData->setImporterSetting(is);
+		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
 	} else {
 		m_geoData->loadFromProjectMainFile(node);
 		m_geoData->setImporterSetting(is);
@@ -201,7 +205,7 @@ void PreProcessorGeoDataDataItem::showImportSetting()
 	if (is == nullptr) {return;}
 
 	ImportSettingDialog dialog(preProcessorWindow());
-	dialog.setItems(is->items());
+	dialog.setItems(is->items(m_geoData->creator()));
 	dialog.exec();
 }
 

@@ -55,7 +55,7 @@ std::string VALUE = "value";
 GeoDataCreator* getPointGroupCreator(PreProcessorGeoDataDataItemI* /*geoData*/, SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
-	auto creators = factory.compatibleCreators(att);
+	auto creators = factory.compatibleCreators(att, false);
 	for (auto c : creators) {
 		auto c2 = dynamic_cast <GeoDataPointGroupCreator*> (c);
 		if (c2 != nullptr) {return c2;}

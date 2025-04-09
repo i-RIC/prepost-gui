@@ -344,7 +344,8 @@ void PreProcessorDataModel::setupGeoDataMenus()
 
 	if (item != nullptr) {
 		// GeoData dataitem is selected.
-		auto creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
+		auto mainFile = projectData()->mainfile();
+		auto creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition(), mainFile->geoDataLink());
 		for (auto creator : creators) {
 			if (dynamic_cast<GeoDataPolygonGroupCreator*>(creator) != nullptr) {
 				polygonGroupCreator = creator;
@@ -399,7 +400,8 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		PreProcessorGeoDataGroupDataItem* gitem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(m_selectedItem);
 		if (gitem != nullptr) {
 			// GeoDatagroup dataitem is selected.
-			auto creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
+			auto mainFile = projectData()->mainfile();
+			auto creators = GeoDataFactory::instance().compatibleCreators(gitem->condition(), mainFile->geoDataLink());
 			for (auto creator : creators) {
 				if (dynamic_cast<GeoDataPolygonGroupCreator*>(creator) != nullptr) {
 					polygonGroupCreator = creator;
@@ -1347,7 +1349,8 @@ void PreProcessorDataModel::setupGeoDataAddActions(PreProcessorGeoDataGroupDataI
 		delete *it;
 	}
 	m_geoDataAddActions.clear();
-	auto creators = GeoDataFactory::instance().compatibleCreators(item->condition());
+	auto mainFile = projectData()->mainfile();
+	auto creators = GeoDataFactory::instance().compatibleCreators(item->condition(), mainFile->geoDataLink());
 	for (auto creator : creators) {
 		QAction* action = new QAction(tr("Add New %1").arg(creator->caption()), this);
 		m_geoDataAddActions.insert(creator, action);

@@ -1,3 +1,4 @@
+#include "geodatacreator.h"
 #include "geodataimportersetting.h"
 
 #include <misc/stringtool.h>
@@ -5,7 +6,6 @@
 
 GeoDataImporterSetting::GeoDataImporterSetting() :
 	m_name {},
-	m_copiedToProject {true},
 	m_fileName {},
 	m_selectedFilter {}
 {}
@@ -21,16 +21,6 @@ const std::string& GeoDataImporterSetting::name() const
 void GeoDataImporterSetting::setName(const std::string& name)
 {
 	m_name = name;
-}
-
-bool GeoDataImporterSetting::copiedToProject() const
-{
-	return m_copiedToProject;
-}
-
-void GeoDataImporterSetting::setCopiedToProject(bool copied)
-{
-	m_copiedToProject = copied;
 }
 
 QString GeoDataImporterSetting::fileName() const
@@ -56,7 +46,6 @@ void GeoDataImporterSetting::setSelectedFilter(const QString& filter)
 void GeoDataImporterSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	m_name = iRIC::toStr(node.toElement().attribute("name"));
-	m_copiedToProject = iRIC::getBooleanAttribute(node, "copiedToProject", true);
 	m_fileName = node.toElement().attribute("fileName");
 	m_selectedFilter = node.toElement().attribute("selectedFilter");
 
@@ -66,24 +55,23 @@ void GeoDataImporterSetting::loadFromProjectMainFile(const QDomNode& node)
 void GeoDataImporterSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_name.c_str());
-	iRIC::setBooleanAttribute(writer, "copiedToProject", m_copiedToProject);
 	writer.writeAttribute("fileName", m_fileName);
 	writer.writeAttribute("selectedFilter", m_selectedFilter);
 
 	doSaveToProjectMainFile(writer);
 }
 
-std::vector<GeoDataImporterSetting::Item> GeoDataImporterSetting::items() const
+std::vector<GeoDataImporterSetting::Item> GeoDataImporterSetting::items(GeoDataCreator* creator) const
 {
 	std::vector<Item> ret;
 	ret.push_back(Item {tr("File name"), m_fileName});
 	QString copied;
-	if (m_copiedToProject) {
-		copied = tr("Copied");
+	if (creator->isReadOnly()) {
+		copied = tr("No");
 	} else {
-		copied = tr("Not copied");
+		copied = tr("Yes");
 	}
-	ret.push_back(Item {tr("Copied to project"), copied});
+	ret.push_back(Item {tr("Saved to to project"), copied});
 	for (auto item : customItems()) {
 		ret.push_back(item);
 	}

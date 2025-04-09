@@ -126,7 +126,7 @@ signals:
 	void selectGeoData(const QModelIndex& current);
 
 protected:
-	void importGeoData(GeoDataImporter* importer, const QString& filename, bool copyToProject, const QString& selectedFilter);
+	void importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

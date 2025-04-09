@@ -6,7 +6,7 @@
 #include "geodatapolylinegroupshpimporter.h"
 
 GeoDataPolyLineGroupReadOnlyCreator::GeoDataPolyLineGroupReadOnlyCreator(const QString& typeName) :
-	GeoDataPolyDataGroupCreator {typeName, tr("Lines (read only)")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Lines")}
 {
 	importers().push_back(new GeoDataPolyLineGroupShpImporter(this));
 	importers().push_back(new GeoDataPolyLineGroupCsvImporter(this));

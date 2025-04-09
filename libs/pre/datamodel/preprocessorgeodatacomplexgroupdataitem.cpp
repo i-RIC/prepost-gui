@@ -99,7 +99,8 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
+	auto mainFile = projectData()->mainfile();
+	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
 		QString title = creator->caption();
 		if (creator->importers().size() > 0) {
 			QAction* importAction = m_importMenu->addAction(title.append("..."));

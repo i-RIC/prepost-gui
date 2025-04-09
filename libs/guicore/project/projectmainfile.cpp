@@ -95,6 +95,7 @@ ProjectMainFile::Impl::Impl(ProjectData* data, ProjectMainFile *parent) :
 	m_timeFormat {TimeFormat::elapsed_SS_sec},
 	m_showTimeZone {false},
 	m_separateResult {false},
+	m_geoDataLink {false},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
 	m_cgnsFile {nullptr},
@@ -705,6 +706,16 @@ void ProjectMainFile::setSeparateResult(bool separate)
 bool ProjectMainFile::separateResultExists() const
 {
 	return impl->m_cgnsManager->separateResultExists();
+}
+
+bool ProjectMainFile::geoDataLink() const
+{
+	return impl->m_geoDataLink;
+}
+
+void ProjectMainFile::setGeoDataLink(bool link)
+{
+	impl->m_geoDataLink = link;
 }
 
 ProjectCgnsManager* ProjectMainFile::cgnsManager() const
