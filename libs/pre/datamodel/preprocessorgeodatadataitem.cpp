@@ -124,17 +124,8 @@ void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node
 
 	if (m_geoData->creator()->isReadOnly()) {
 		m_geoData->loadFromProjectMainFileOnly(node);
-
-		int dataCount;
 		m_geoData->setImporterSetting(is);
 
-		//importer->setSetting(is);
-		/*
-		importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
-		importer->importData(m_geoData, 0, preProcessorWindow());
-		importer->setSetting(nullptr);
-		m_geoData->setImporterSetting(is);
-		*/
 		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
 	} else {
 		m_geoData->loadFromProjectMainFile(node);
@@ -185,6 +176,11 @@ void PreProcessorGeoDataDataItem::importGeoData()
 	importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
 	importer->importData(m_geoData, 0, preProcessorWindow());
 	importer->setSetting(nullptr);
+
+	updateZDepthRange();
+	m_geoData->updateActorSetting();
+	informValueRangeChange();
+	renderGraphicsView();
 }
 
 void PreProcessorGeoDataDataItem::exportGeoData()

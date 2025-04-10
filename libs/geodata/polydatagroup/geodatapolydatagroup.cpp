@@ -139,7 +139,10 @@ void GeoDataPolyDataGroup::updateFilename()
 
 void GeoDataPolyDataGroup::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(impl->m_addAction);
+	if (! creator()->isReadOnly()) {
+		menu->addAction(impl->m_addAction);
+	}
+
 	menu->addSeparator();
 	menu->addAction(m_editNameAction);
 	menu->addSeparator();

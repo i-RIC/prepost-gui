@@ -43,6 +43,8 @@ public:
 
 	QString codecName() const;
 
+	QStringList getLabels(QTextCodec* codec) const;
+
 public slots:
 	void accept() override;
 

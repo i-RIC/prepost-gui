@@ -94,7 +94,8 @@ HEADERS += gd_polydatagroup_global.h \
            private/geodatapolydatagroup_sortcommand.h \
            private/geodatapolydatagroup_sortedittargetdatacommand.h \
            private/geodatapolydatagroupattributebrowser_tableitemdelegate.h \
-           private/geodatapolydatagrouppolydata_impl.h
+           private/geodatapolydatagrouppolydata_impl.h \
+           private/geodatapolydatagroupshpimporter_importersetting.h
 FORMS += geodatapolydatagroupcopysettingdialog.ui \
          geodatapolydatagroupmergesettingdialog.ui \
          geodatapolydatagroupshpimportersettingdialog.ui
@@ -111,7 +112,8 @@ SOURCES += geodatapolydatagroup.cpp \
            private/geodatapolydatagroup_impl.cpp \
            private/geodatapolydatagroup_sortcommand.cpp \
            private/geodatapolydatagroup_sortedittargetdatacommand.cpp \
-           private/geodatapolydatagroupattributebrowser_tableitemdelegate.cpp
+           private/geodatapolydatagroupattributebrowser_tableitemdelegate.cpp \
+           private/geodatapolydatagroupshpimporter_importersetting.cpp
 TRANSLATIONS += languages/iricGdPolydataGroup_ar_EG.ts \
                 languages/iricGdPolydataGroup_bg_BG.ts \
                 languages/iricGdPolydataGroup_bs_BA.ts \

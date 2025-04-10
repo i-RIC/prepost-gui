@@ -7,6 +7,9 @@
 
 class GeoDataCreator;
 
+class QDomNode;
+class QXmlStreamWriter;
+
 class GUICOREDLL_EXPORT GeoDataImporterSetting : public QObject
 {
 	Q_OBJECT

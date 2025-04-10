@@ -1,5 +1,6 @@
 #include "geodatapolydatagroupcreator.h"
 #include "geodatapolydatagroupshpimporter.h"
+#include "private/geodatapolydatagroupshpimporter_importersetting.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -36,6 +37,11 @@ const QStringList GeoDataPolyDataGroupShpImporter::acceptableExtensions()
 	QStringList ret;
 	ret.append("shp");
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPolyDataGroupShpImporter::createSetting() const
+{
+	return new ImporterSetting();
 }
 
 QVariant GeoDataPolyDataGroupShpImporter::readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec)
@@ -141,9 +147,68 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 	m_codec = QTextCodec::codecForName(dialog.codecName().toLatin1());
 	auto cs = dialog.coordinateSystem();
 
+	QStringList labels = dialog.getLabels(m_codec);
+	m_nameAttributeName = labels.at(m_nameAttribute);
+	m_valueAttributeName = labels.at(m_valueAttribute);
+
 	if (projectCs != nullptr && projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
 
+	auto s = dynamic_cast<ImporterSetting*>(setting());
+	s->nameSetting = m_nameSetting;
+	if (m_nameSetting == GeoDataPolyDataGroupShpImporterSettingDialog::NameSetting::nsLoadFromDBF) {
+		s->nameAttribute = m_nameAttributeName;
+	} else {
+		s->nameAttribute = "";
+	}
+	s->valueSetting = m_valueSetting;
+	if (m_valueSetting == GeoDataPolyDataGroupShpImporterSettingDialog::ValueSetting::vsLoadFromDBF) {
+		s->valueAttribute = m_valueAttributeName;
+		s->specifiedValue = "";
+	} else {
+		s->valueAttribute = "";
+		s->specifiedValue = m_specifiedValue.toString();
+	}
+	s->codecName = m_codec->name();
+	s->csName = cs->name();
+
 	return true;
 }
+
+bool GeoDataPolyDataGroupShpImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto c = dynamic_cast<GeoDataPolyDataGroupCreator*> (creator());
+
+	auto filename = setting()->fileName();
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	m_nameSetting = s->nameSetting;
+	m_nameAttributeName = s->nameAttribute;
+	m_valueSetting = s->valueSetting;
+	m_valueAttributeName = s->valueAttribute;
+	m_specifiedValue = s->specifiedValue.value();
+	m_codec = QTextCodec::codecForName(s->codecName.value().toLatin1());
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
+	GridAttributeEditWidget* widget = condition->editWidget(0);
+	item->setupEditWidget(widget);
+	widget->setVariantValue(condition->variantDefaultValue());
+	GeoDataPolyDataGroupShpImporterSettingDialog dialog(filename, widget, w);
+
+	auto labels = dialog.getLabels(m_codec);
+	m_nameAttribute = labels.indexOf(m_nameAttributeName);
+	m_valueAttribute = labels.indexOf(m_valueAttributeName);
+
+	return true;
+}
+
