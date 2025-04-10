@@ -36,6 +36,7 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 	ProjectDataItem {d},
 	m_setting {},
 	m_importerSetting {nullptr},
+	m_dataLoaded {false},
 	m_creator {creator},
 	m_gridAttribute {condition}
 {
@@ -92,6 +93,16 @@ GeoDataImporterSetting* GeoData::importerSetting() const
 void GeoData::setImporterSetting(GeoDataImporterSetting* setting)
 {
 	m_importerSetting = setting;
+}
+
+bool GeoData::dataLoaded() const
+{
+	return m_dataLoaded;
+}
+
+void GeoData::setDataLoaded(bool loaded)
+{
+	m_dataLoaded = loaded;
 }
 
 std::vector<GeoDataImporter*> GeoData::importers() const

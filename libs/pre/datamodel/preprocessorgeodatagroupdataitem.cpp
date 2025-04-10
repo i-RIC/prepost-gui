@@ -342,6 +342,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
+			geodata->setDataLoaded(true);
 			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.
@@ -727,6 +728,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
+			geodata->setDataLoaded(true);
 			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.

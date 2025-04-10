@@ -75,6 +75,8 @@ public:
 
 	GeoDataImporterSetting* importerSetting() const;
 	void setImporterSetting(GeoDataImporterSetting* setting);
+	bool dataLoaded() const;
+	void setDataLoaded(bool loaded);
 
 	virtual GeoDataMapper* mapper() const = 0;
 
@@ -179,6 +181,7 @@ protected:
 
 	Setting m_setting;
 	GeoDataImporterSetting* m_importerSetting;
+	bool m_dataLoaded;
 
 	GeoDataCreator* m_creator;
 	SolverDefinitionGridAttribute* m_gridAttribute;

@@ -25,12 +25,14 @@
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemI {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_geoData {nullptr},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataDataItem::tr("&Import..."), this)},
 	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataDataItem::tr("&Export..."), this)},
 	m_showImportSettingAction {new QAction(PreProcessorGeoDataDataItem::tr("Show &import setting..."), this)},
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
+	connect(m_importAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::importGeoData);
 	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::exportGeoData);
 	connect(m_showImportSettingAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::showImportSetting);
 }
@@ -50,8 +52,14 @@ void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 {
 	// Add custom menu first.
 	m_geoData->addCustomMenuItems(menu);
+
 	// Add export Action.
-	menu->addAction(m_exportAction);
+	if (m_geoData->dataLoaded()) {
+		menu->addAction(m_exportAction);
+	} else {
+		menu->addAction(m_importAction);
+	}
+
 	if (m_geoData->importerSetting() != nullptr) {
 		menu->addAction(m_showImportSettingAction);
 	}
@@ -118,15 +126,20 @@ void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		m_geoData->loadFromProjectMainFileOnly(node);
 
 		int dataCount;
-		importer->setSetting(is);
+		m_geoData->setImporterSetting(is);
+
+		//importer->setSetting(is);
+		/*
 		importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
 		importer->importData(m_geoData, 0, preProcessorWindow());
 		importer->setSetting(nullptr);
 		m_geoData->setImporterSetting(is);
+		*/
 		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
 	} else {
 		m_geoData->loadFromProjectMainFile(node);
 		m_geoData->setImporterSetting(is);
+		m_geoData->setDataLoaded(true);
 	}
 	updateVisibilityWithoutRendering();
 }
@@ -158,6 +171,20 @@ bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
 		toolBar->removeAction(sep);
 	}
 	return added || added2;
+}
+
+void PreProcessorGeoDataDataItem::importGeoData()
+{
+	if (m_geoData->dataLoaded()) {return;}
+
+	auto is = m_geoData->importerSetting();
+	auto importer = m_geoData->creator()->importer(is->name());
+	importer->setSetting(is);
+
+	int dataCount;
+	importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
+	importer->importData(m_geoData, 0, preProcessorWindow());
+	importer->setSetting(nullptr);
 }
 
 void PreProcessorGeoDataDataItem::exportGeoData()

@@ -759,6 +759,8 @@ void GeoDataGdal::buildWarpMatrix(int srcISize, int srcJSize, double* srcGeoTran
 
 void GeoDataGdal::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
+	if (! dataLoaded()) {return;}
+
 	double dx = impl->m_xValues.at(1) - impl->m_xValues.at(0);
 	double dy = impl->m_xValues.at(1) - impl->m_xValues.at(0);
 	double x0 = impl->m_xValues.at(0) - dx * 0.5;

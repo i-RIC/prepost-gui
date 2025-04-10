@@ -57,6 +57,7 @@ signals:
 	void captionChanged(const QString& newcaption);
 
 public slots:
+	void importGeoData();
 	void exportGeoData();
 	void showImportSetting();
 
@@ -73,6 +74,7 @@ protected:
 	GeoData* m_geoData;
 
 private:
+	QAction* m_importAction;
 	QAction* m_exportAction;
 	QAction* m_showImportSettingAction;
 	bool m_deleteSilently;

@@ -409,6 +409,9 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	// separeteResult
 	impl->m_separateResult = iRIC::getBooleanAttribute(node, "separateResult", false);
 
+	// geoDataLink
+	impl->m_geoDataLink = iRIC::getBooleanAttribute(node, "geoDataLink", false);
+
 	// read measured data
 	auto tmpNode = iRIC::getChildNode(node, "MeasuredDatas");
 	if (! tmpNode.isNull()) {
@@ -451,6 +454,9 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	// separeteResult
 	iRIC::setBooleanAttribute(writer, "separateResult", impl->m_separateResult);
+
+	// geoDataLink
+	iRIC::setBooleanAttribute(writer, "geoDataLink", impl->m_geoDataLink);
 
 	// write cgns file list
 	writer.writeStartElement("CgnsFileList");
