@@ -1,6 +1,8 @@
 #include "geodatapointmaplandxmlimporter.h"
 #include "geodatapointmap.h"
+#include "private/geodatapointmaplandxmlimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
@@ -50,20 +52,6 @@ bool readUntil(QXmlStreamReader& xml, const char* elemName)
 	}
 	return false; // failure
 }
-
-/*
-bool readUntilAndSkip(QXmlStreamReader& xml, const char* elemName)
-{
-	while (! xml.atEnd()) {
-		xml.readNextStartElement();
-		if (xml.name().toString().compare(elemName) == 0) {
-			xml.skipCurrentElement();
-			return true; // success
-		}
-	}
-	return false; // failure
-}
-*/
 
 } // namespace
 
@@ -147,6 +135,27 @@ bool GeoDataPointmapLandXmlImporter::doInit(int* /*count*/, SolverDefinitionGrid
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPointmapLandXmlImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* /*w*/)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
 
@@ -315,4 +324,9 @@ const QStringList GeoDataPointmapLandXmlImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "xml";
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPointmapLandXmlImporter::createSetting() const
+{
+	return new ImporterSetting();
 }

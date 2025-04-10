@@ -230,6 +230,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_tinmanager_tinbuilder.h \
            private/geodatapointmap_tinmanager_triangleswithlongedgeremover.h \
            private/geodatapointmap_tinnodemapper.h \
+           private/geodatapointmaplandxmlimporter_importersetting.h \
            private/geodatapointmapproxy_displaysetting.h \
            private/geodatapointmapproxy_displaysettingwidget.h \
            private/geodatapointmapproxy_impl.h \
@@ -334,6 +335,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_tinmanager_tinbuilder.cpp \
            private/geodatapointmap_tinmanager_triangleswithlongedgeremover.cpp \
            private/geodatapointmap_tinnodemapper.cpp \
+           private/geodatapointmaplandxmlimporter_importersetting.cpp \
            private/geodatapointmapproxy_displaysetting.cpp \
            private/geodatapointmapproxy_displaysettingwidget.cpp \
            private/geodatapointmapproxy_impl.cpp \
