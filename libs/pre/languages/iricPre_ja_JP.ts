@@ -957,6 +957,10 @@ Do you really want to import grid from this file?</source>
         <source>Show &amp;import setting...</source>
         <translation>インポート設定の表示 (&amp;I)...</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
@@ -1154,11 +1158,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Confirm data copy</source>
-        <translation>データコピーの確認</translation>
+        <translation type="vanished">データコピーの確認</translation>
     </message>
     <message>
         <source>Do you want to copy the data to project?</source>
-        <translation>このデータをプロジェクトにコピーしますか?</translation>
+        <translation type="vanished">このデータをプロジェクトにコピーしますか?</translation>
     </message>
 </context>
 <context>

@@ -875,6 +875,10 @@ Do you really want to import grid from this file?</source>
         <source>Show &amp;import setting...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
@@ -1056,14 +1060,6 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Por favor seleccione el tipo de datos para importar</translation>
-    </message>
-    <message>
-        <source>Confirm data copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you want to copy the data to project?</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

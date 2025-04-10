@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>本当に選択した%1を削除していいですか?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>"%1" グループにはマージできるデータがありません。</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -222,6 +224,49 @@
     <message>
         <source>%1 Group Import Setting</source>
         <translation>%1グループ インポート設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>自動的に設定する (例: ポリゴン1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>シェープファイルの属性から読み込む</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>値を指定する</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>文字コード</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>名前の設定</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>名前のインポート元属性</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>値の設定</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>値のインポート元属性</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>指定した値</translation>
     </message>
 </context>
 <context>

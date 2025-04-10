@@ -1611,6 +1611,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Output calculation results in separate files</source>
         <translation>O cálculo de saída resulta em arquivos separados</translation>
     </message>
+    <message>
+        <source>Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic data is not saved in project</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>

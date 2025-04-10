@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>¿Está seguro de que desea eliminar los seleccionados? %1 ¿s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>No hay otros datos para fusionar "%1" grupo.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>No hay otros datos para fusionar &quot;%1&quot; grupo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -222,6 +224,49 @@
     <message>
         <source>%1 Group Import Setting</source>
         <translation>%1 Configuración de importación de grupo</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation type="unfinished">El nombre se establece automáticamente (por ejemplo, PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation type="unfinished">Especificar Valor</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
