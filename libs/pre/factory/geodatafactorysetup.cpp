@@ -32,6 +32,7 @@
 #include <geodata/polylinegroup/geodatapolylinegrouprealcreator.h>
 #include <geodata/polylinegroup/geodatapolylinegrouprealreadonlycreator.h>
 #include <geodata/riversurvey/geodatariversurveycreator.h>
+#include <geodata/riversurvey/geodatariversurveyreadonlycreator.h>
 
 GeoDataFactorySetup::GeoDataFactorySetup()
 {}
@@ -44,7 +45,10 @@ void GeoDataFactorySetup::setup()
 	// cross-section data, point cloud data, rasterdata
 	factory.addCreator(new GeoDataPointmapRealCreator());
 	factory.addCreator(new GeoDataPointmapRealReadOnlyCreator());
+
 	factory.addCreator(new GeoDataRiverSurveyCreator());
+	factory.addCreator(new GeoDataRiverSurveyReadOnlyCreator());
+
 	factory.addCreator(new GeoDataGdalIntegerCreator());
 	factory.addCreator(new GeoDataGdalRealCreator());
 	factory.addCreator(new GeoDataGdalTimeSeriesIntegerCreator());
