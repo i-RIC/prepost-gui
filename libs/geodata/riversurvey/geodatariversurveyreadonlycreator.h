@@ -4,7 +4,7 @@
 #include "gd_riversurvey_global.h"
 #include <guicore/pre/geodata/geodatacreator.h>
 
-class GeoDataRiverSurveyReadOnlyCreator : public GeoDataCreator
+class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyReadOnlyCreator : public GeoDataCreator
 {
 	Q_OBJECT
 
