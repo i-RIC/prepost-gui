@@ -43,6 +43,11 @@ const QStringList GeoDataPolygonGroupCsvImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataPolygonGroupCsvImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
@@ -239,6 +244,27 @@ bool GeoDataPolygonGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGrid
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPolygonGroupCsvImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
 
