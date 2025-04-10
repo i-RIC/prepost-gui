@@ -1,7 +1,9 @@
 #include "geodatapointgroup.h"
 #include "geodatapointgroupcsvimporter.h"
 #include "geodatapointgrouppoint.h"
+#include "private/geodatapointgroupcsvimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
@@ -39,6 +41,11 @@ const QStringList GeoDataPointGroupCsvImporter::acceptableExtensions()
 	QStringList ret;
 	ret.append("csv");
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPointGroupCsvImporter::createSetting() const
+{
+	return new ImporterSetting();
 }
 
 bool GeoDataPointGroupCsvImporter::importData(GeoData* data, int /*index*/, QWidget* w)
@@ -181,5 +188,26 @@ bool GeoDataPointGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGridAt
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPointGroupCsvImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
