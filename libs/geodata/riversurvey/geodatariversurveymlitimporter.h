@@ -16,11 +16,13 @@ public:
 	bool importData(GeoData* data, int index, QWidget* w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
+	GeoDataImporterSetting* createSetting() const override;
 
 	bool importInit(const QString& filename, const QString& csFolder, QWidget* w);
 
 private:
 	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	std::vector<GeoDataRiverSurveyImporter::RivPathPoint*> m_points;
 	bool m_with4Points;
@@ -28,6 +30,7 @@ private:
 	QString m_csvFilename;
 
 public:
+	class ImporterSetting;
 	class ProblemsDialog;
 };
 

@@ -195,7 +195,7 @@ bool GeoDataPointGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGridAt
 	return true;
 }
 
-bool GeoDataPointGroupCsvImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointGroupCsvImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* /*w*/)
 {
 	auto s = dynamic_cast<ImporterSetting*> (setting());
 

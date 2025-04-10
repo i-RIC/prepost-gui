@@ -3,6 +3,7 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveyimporter.h"
 #include "geodatariversurveyimportersettingdialog.h"
+#include "private/geodatariversurveyimporter_importersetting.h"
 #include "private/geodatariversurveyimporter_problemsdialog.h"
 
 #include <guicore/pre/geodata/geodataimportersetting.h>
@@ -400,6 +401,27 @@ bool GeoDataRiverSurveyImporter::doInit(int* count, SolverDefinitionGridAttribut
 		sortReverse(&m_points);
 	}
 	*count = 1;
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->cpSetting = m_cpSetting;
+	s->csvFilename = m_csvFilename;
+	s->allNamesAreNumber = m_allNamesAreNumber;
+	s->reverseOrder = m_reverseOrder;
+
+	return true;
+}
+
+bool GeoDataRiverSurveyImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* /*w*/)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	m_cpSetting = s->cpSetting;
+	m_csvFilename = s->csvFilename;
+	m_allNamesAreNumber = s->allNamesAreNumber;
+	m_reverseOrder = s->reverseOrder;
+
 	return true;
 }
 
@@ -423,6 +445,11 @@ const QStringList GeoDataRiverSurveyImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "riv";
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataRiverSurveyImporter::createSetting() const
+{
+	return new ImporterSetting();
 }
 
 bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<RivPathPoint*>* points, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, const QString &csvFileName, QWidget* w)
@@ -603,35 +630,6 @@ void GeoDataRiverSurveyImporter::sortAlts(std::vector<GeoDataRiverSurveyImporter
 
 	*sorted = (*altitudes != origAltitudes);
 }
-
-/*
-void GeoDataRiverSurveyImporter::uniqueAlts(std::vector<Alt>* altitudes, std::vector<double>* distlist)
-{
-	std::vector<Alt> ret;
-	auto it = altitudes->begin();
-	std::vector<Alt> alts;
-	while (it != altitudes->end()) {
-		if (alts.size() == 0 || alts[0].distance == it->distance) {
-			alts.push_back(*it);
-		} else {
-			if (alts.size() > 1) {
-				distlist->push_back(alts[0].distance);
-			}
-			ret.push_back(lowestAlt(alts));
-			alts.clear();
-			alts.push_back(*it);
-		}
-		++ it;
-	}
-	if (alts.size() == 1) {
-		ret.push_back(alts[0]);
-	} else if (alts.size() > 1) {
-		distlist->push_back(alts[0].distance);
-		ret.push_back(lowestAlt(alts));
-	}
-	*altitudes = ret;
-}
-*/
 
 QString GeoDataRiverSurveyImporter::distListString(const std::vector<double>& distlist)
 {

@@ -52,6 +52,7 @@ public:
 	bool importData(GeoData* data, int index, QWidget* w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
+	GeoDataImporterSetting* createSetting() const override;
 
 	static bool importData(GeoDataRiverSurvey* data, std::vector<RivPathPoint*>* inputData, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, const QString& csvFileName, QWidget* w);
 	static void removePointsWithoutBanks(std::vector<RivPathPoint*>* points);
@@ -67,6 +68,7 @@ public:
 
 private:
 	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	std::vector<RivPathPoint*> m_points;
 	bool m_with4Points;
@@ -76,6 +78,7 @@ private:
 	QString m_csvFilename;
 
 public:
+	class ImporterSetting;
 	class ProblemsDialog;
 };
 

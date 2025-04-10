@@ -2,6 +2,7 @@
 #include "geodatariverpathpoint.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveymlitimporter.h"
+#include "private/geodatariversurveymlitimporter_importersetting.h"
 #include "private/geodatariversurveymlitimporter_problemsdialog.h"
 
 #include <guicore/pre/geodata/geodataimportersetting.h>
@@ -280,6 +281,11 @@ const QStringList GeoDataRiverSurveyMlitImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataRiverSurveyMlitImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 bool GeoDataRiverSurveyMlitImporter::importInit(const QString& filename, const QString& csFolder, QWidget* w)
 {
 	impl->m_setting->setFileName(filename);
@@ -320,5 +326,22 @@ bool GeoDataRiverSurveyMlitImporter::doInit(int* count, SolverDefinitionGridAttr
 
 	GeoDataRiverSurveyImporter::sortByKP(&m_points);
 	*count = 1;
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->cpSetting = m_cpSetting;
+	s->csvFilename = m_csvFilename;
+
+	return true;
+}
+
+bool GeoDataRiverSurveyMlitImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	m_cpSetting = s->cpSetting;
+	m_csvFilename = s->csvFilename;
+
 	return true;
 }

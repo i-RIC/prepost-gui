@@ -52,3 +52,16 @@ bool GeoDataPointmapRiter3dImporter::doInit(int* /*count*/, SolverDefinitionGrid
 
 	return true;
 }
+
+bool GeoDataPointmapRiter3dImporter::doInitWithSetting(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	m_loader = new GeoDataPointmapRiter3dLoader(setting()->fileName());
+
+	bool ok = m_loader->open(item->projectData()->tmpFileName(), item->iricMainWindow());
+	if (! ok) {return false;}
+
+	ok = m_loader->check(w);
+	if (! ok) {return false;}
+
+	return true;
+}

@@ -202,7 +202,9 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.h \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h \
+           private/geodatariversurveyimporter_importersetting.h \
            private/geodatariversurveyimporter_problemsdialog.h \
+           private/geodatariversurveymlitimporter_importersetting.h \
            private/geodatariversurveymlitimporter_problemsdialog.h \
            private/geodatariversurveyproxy_displaysetting.h \
            private/geodatariversurveyproxy_displaysettingwidget.h \
@@ -296,7 +298,9 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.cpp \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.cpp \
+           private/geodatariversurveyimporter_importersetting.cpp \
            private/geodatariversurveyimporter_problemsdialog.cpp \
+           private/geodatariversurveymlitimporter_importersetting.cpp \
            private/geodatariversurveymlitimporter_problemsdialog.cpp \
            private/geodatariversurveyproxy_displaysetting.cpp \
            private/geodatariversurveyproxy_displaysettingwidget.cpp \
