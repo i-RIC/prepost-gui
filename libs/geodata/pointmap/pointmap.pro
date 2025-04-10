@@ -238,6 +238,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
            private/geodatapointmapriter3dloader_tarheaderblock.h \
+           private/geodatapointmapstlimporter_importersetting.h \
            private/geodatapointmapwebimportersetting_impl.h \
            public/geodatapointmap_displaysettingwidget.h
 FORMS += geodatapointmapmergesettingdialog.ui \
@@ -339,6 +340,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmaprealtextimporter_lineparser.cpp \
            private/geodatapointmaprealtextimporter_settingdialog.cpp \
            private/geodatapointmapriter3dloader_tarheaderblock.cpp \
+           private/geodatapointmapstlimporter_importersetting.cpp \
            public/geodatapointmap_displaysettingwidget.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \

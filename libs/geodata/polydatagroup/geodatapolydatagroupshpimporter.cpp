@@ -171,7 +171,10 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 		s->specifiedValue = m_specifiedValue.toString();
 	}
 	s->codecName = m_codec->name();
-	s->csName = cs->name();
+
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	}
 
 	return true;
 }
@@ -195,7 +198,10 @@ bool GeoDataPolyDataGroupShpImporter::doInitWithSetting(int* count, SolverDefini
 	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
 
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
-	auto cs = csBuilder->system(s->csName);
+	CoordinateSystem* cs = nullptr;
+	if (! s->csName.value().isEmpty()) {
+		cs = csBuilder->system(s->csName);
+	}
 	if (projectCs != nullptr && projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}

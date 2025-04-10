@@ -2,7 +2,9 @@
 #include "geodatapolygongroupcsvimporter.h"
 #include "geodatapolygongrouppolygon.h"
 #include "private/geodatapolygongroup_impl.h"
+#include "private/geodatapolygongroupcsvimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>

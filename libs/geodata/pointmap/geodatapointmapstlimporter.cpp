@@ -1,6 +1,8 @@
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmap.h"
+#include "private/geodatapointmapstlimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
@@ -71,6 +73,27 @@ bool GeoDataPointmapSTLImporter::doInit(int* /*count*/, SolverDefinitionGridAttr
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPointmapSTLImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* /*w*/)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
 
@@ -122,6 +145,11 @@ const QStringList GeoDataPointmapSTLImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "stl";
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPointmapSTLImporter::createSetting() const
+{
+	return new ImporterSetting();
 }
 
 bool GeoDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w)
