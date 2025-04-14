@@ -36,8 +36,8 @@ bool GeoDataRiverSurveyOdnExporter::doExport(GeoData* data, const QString& filen
 
 	for (auto it = points.rbegin(); it != points.rend(); ++it) {
 		auto point = *it;
-		outstream << QString("%1").arg(point->odn().nb(2), 5);
-		outstream << QString("%1").arg(point->odn().nb(3), 5);
+		outstream << QString("%1").arg(point->odn().nb(2) + 1, 5);
+		outstream << QString("%1").arg(point->odn().nb(3) + 1, 5);
 		outstream << QString("%1").arg(point->crosssection().AltitudeInfo().size(), 5);
 		outstream << QString("%1").arg(point->name(), 10);
 		outstream << QString("%1").arg(point->odn().spanDistance(), 10, 'f', 2);
@@ -47,10 +47,10 @@ bool GeoDataRiverSurveyOdnExporter::doExport(GeoData* data, const QString& filen
 			hwl = item->value();
 		}
 		outstream << QString("%1").arg(hwl, 10, 'f', 2);
-		outstream << QString("%1").arg(point->odn().nb(1), 5);
-		outstream << QString("%1").arg(point->odn().nb(4), 5);
-		outstream << QString("%1").arg(point->odn().nb(0), 5);
-		outstream << QString("%1").arg(point->odn().nb(5), 5);
+		outstream << QString("%1").arg(point->odn().nb(1) + 1, 5);
+		outstream << QString("%1").arg(point->odn().nb(4) + 1, 5);
+		outstream << QString("%1").arg(point->odn().nb(0) + 1, 5);
+		outstream << QString("%1").arg(point->odn().nb(5) + 1, 5);
 		outstream << "\n";
 
 		const auto& cs = point->crosssection();

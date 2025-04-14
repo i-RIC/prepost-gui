@@ -53,15 +53,15 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int /*index*/, QWi
 		double x = 0;
 		double y = - name.toFloat() * 1000;
 		auto newPoint = new GeoDataRiverPathPoint(name, x, y, rs);
-		newPoint->odn().setNb(2, QStringRef(&str, 0, 5).toInt());
-		newPoint->odn().setNb(3, QStringRef(&str, 5, 5).toInt());
+		newPoint->odn().setNb(2, QStringRef(&str, 0, 5).toInt() - 1);
+		newPoint->odn().setNb(3, QStringRef(&str, 5, 5).toInt() - 1);
 		double distance = QStringRef(&str, 25, 10).toDouble();
 		newPoint->odn().setSpanDistance(distance);
 		wse->addItem(name, true, QStringRef(&str, 35, 10).toDouble());
-		newPoint->odn().setNb(1, QStringRef(&str, 45, 5).toInt());
-		newPoint->odn().setNb(4, QStringRef(&str, 50, 5).toInt());
-		newPoint->odn().setNb(0, QStringRef(&str, 55, 5).toInt());
-		newPoint->odn().setNb(5, QStringRef(&str, 60, 5).toInt());
+		newPoint->odn().setNb(1, QStringRef(&str, 45, 5).toInt() - 1);
+		newPoint->odn().setNb(4, QStringRef(&str, 50, 5).toInt() - 1);
+		newPoint->odn().setNb(0, QStringRef(&str, 55, 5).toInt() - 1);
+		newPoint->odn().setNb(5, QStringRef(&str, 60, 5).toInt() - 1);
 
 		auto pointCount = QStringRef(&str, 10, 5).toInt();
 		int pointReadCount = 0;
