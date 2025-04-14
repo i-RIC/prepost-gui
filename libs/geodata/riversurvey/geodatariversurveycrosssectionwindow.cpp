@@ -301,7 +301,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupModel()
 	connect(impl->m_selectionModel, &QItemSelectionModel::selectionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::updateActionStatus);
 
 	impl->m_vegetationModel = new QStandardItemModel(0, 8, this);
-	impl->m_vegetationModel->setHeaderData(0, Qt::Horizontal, tr("Distance"));
+	impl->m_vegetationModel->setHeaderData(0, Qt::Horizontal, tr("Distance from left bank"));
 	impl->m_vegetationModel->setHeaderData(1, Qt::Horizontal, tr("Width"));
 	impl->m_vegetationModel->setHeaderData(2, Qt::Horizontal, tr("Height"));
 	impl->m_vegetationModel->setHeaderData(3, Qt::Horizontal, tr("Submerged"));
