@@ -507,6 +507,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">坐標系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -610,12 +617,12 @@
 <context>
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
-        <source>Point Cloud Data (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">點雲數據 %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished">點雲數據</translation>
     </message>
 </context>
 <context>
@@ -699,6 +706,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>數據僅包含 %1 點。點雲資料必須至少包含 3 個點。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation type="unfinished">逗號</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished">標籤</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation type="unfinished">空間</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation type="unfinished">冒號</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation type="unfinished">分號</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">坐標系</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation type="unfinished">分隔符</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation type="unfinished">要忽略的標題行</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -939,6 +1013,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">坐標系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -952,12 +1033,12 @@
 <context>
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
-        <source>TIN (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">點雲數據 %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">錫</translation>
     </message>
 </context>
 <context>

@@ -235,6 +235,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmapproxy_displaysettingwidget.h \
            private/geodatapointmapproxy_impl.h \
            private/geodatapointmaprealbuilder_impl.h \
+           private/geodatapointmaprealtextimporter_importersetting.h \
            private/geodatapointmaprealtextimporter_lineparser.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
@@ -339,6 +340,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmapproxy_displaysetting.cpp \
            private/geodatapointmapproxy_displaysettingwidget.cpp \
            private/geodatapointmapproxy_impl.cpp \
+           private/geodatapointmaprealtextimporter_importersetting.cpp \
            private/geodatapointmaprealtextimporter_lineparser.cpp \
            private/geodatapointmaprealtextimporter_settingdialog.cpp \
            private/geodatapointmapriter3dloader_tarheaderblock.cpp \

@@ -507,6 +507,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Koordinaatide süsteem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -610,12 +617,12 @@
 <context>
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
-        <source>Point Cloud Data (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">Punktipilve andmed %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished">Punktipilve andmed</translation>
     </message>
 </context>
 <context>
@@ -699,6 +706,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Andmed sisaldavad ainult %1 punktid. Punktipilve andmed peavad sisaldama vähemalt 3 punkti.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation type="unfinished">Koma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished">Tab</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation type="unfinished">Kosmos</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation type="unfinished">Koolon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation type="unfinished">Semikoolon</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Koordinaatide süsteem</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation type="unfinished">Eraldajad</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation type="unfinished">Päiseread, mida eirata</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -939,6 +1013,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Koordinaatide süsteem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -952,12 +1033,12 @@
 <context>
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
-        <source>TIN (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">Punktipilve andmed %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">TIN</translation>
     </message>
 </context>
 <context>

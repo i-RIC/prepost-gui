@@ -190,7 +190,11 @@ bool GeoDataPointGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGridAt
 	}
 
 	auto s = dynamic_cast<ImporterSetting*> (setting());
-	s->csName = cs->name();
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	} else {
+		s->csName = "";
+	}
 
 	return true;
 }

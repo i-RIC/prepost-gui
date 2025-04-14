@@ -1,3 +1,4 @@
+#include "geodatapointmaprealtextimporter_importersetting.h"
 #include "geodatapointmaprealtextimporter_lineparser.h"
 #include "geodatapointmaprealtextimporter_settingdialog.h"
 #include "ui_geodatapointmaprealtextimporter_settingdialog.h"
@@ -13,26 +14,25 @@ GeoDataPointmapRealTextImporter::SettingDialog::SettingDialog(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	connect(ui->csvRadioButton, SIGNAL(toggled(bool)), this, SLOT(csvToggled(bool)));
-	connect(ui->headerLinesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(headerLinesChange(int)));
-
-	connect(ui->encodingComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updatePreview()));
-	connect(ui->csvRadioButton, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->commaCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->tabCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->spaceCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->colonCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->semicolonCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->otherCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->otherLineEdit, SIGNAL(textChanged(QString)), this, SLOT(updatePreview()));
-	connect(ui->quoteLineEdit, SIGNAL(textChanged(QString)), this, SLOT(updatePreview()));
-	connect(ui->escapeLineEdit, SIGNAL(textChanged(QString)), this, SLOT(updatePreview()));
-	connect(ui->headerLinesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updatePreview()));
-	connect(ui->fieldNameCheckBox, SIGNAL(toggled(bool)), this, SLOT(updatePreview()));
-	connect(ui->xFieldComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updatePreview()));
-	connect(ui->yFieldComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updatePreview()));
-	connect(ui->valueFieldComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updatePreview()));
-	connect(ui->skipRateSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updatePreview()));
+	connect(ui->csvRadioButton, &QRadioButton::toggled, this, &SettingDialog::csvToggled);
+	connect<void (QSpinBox::*)(int)>(ui->headerLinesSpinBox, &QSpinBox::valueChanged, this, &SettingDialog::headerLinesChange);
+	connect<void (QComboBox::*)(int)>(ui->encodingComboBox, &QComboBox::currentIndexChanged, this, &SettingDialog::updatePreview);
+	connect(ui->csvRadioButton, &QRadioButton::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->commaCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->tabCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->spaceCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->colonCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->semicolonCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->otherCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect(ui->otherLineEdit, &QLineEdit::textChanged, this, &SettingDialog::updatePreview);
+	connect(ui->quoteLineEdit, &QLineEdit::textChanged, this, &SettingDialog::updatePreview);
+	connect(ui->escapeLineEdit, &QLineEdit::textChanged, this, &SettingDialog::updatePreview);
+	connect<void (QSpinBox::*)(int)>(ui->headerLinesSpinBox, &QSpinBox::valueChanged, this, &SettingDialog::updatePreview);
+	connect(ui->fieldNameCheckBox, &QCheckBox::toggled, this, &SettingDialog::updatePreview);
+	connect<void (QComboBox::*)(int)>(ui->xFieldComboBox, &QComboBox::currentIndexChanged, this, &SettingDialog::updatePreview);
+	connect<void (QComboBox::*)(int)>(ui->yFieldComboBox, &QComboBox::currentIndexChanged, this, &SettingDialog::updatePreview);
+	connect<void (QComboBox::*)(int)>(ui->valueFieldComboBox, &QComboBox::currentIndexChanged, this, &SettingDialog::updatePreview);
+	connect<void (QSpinBox::*)(int)>(ui->skipRateSpinBox, &QSpinBox::valueChanged, this, &SettingDialog::updatePreview);
 
 	QList<QByteArray> codecs = QTextCodec::availableCodecs();
 	qSort(codecs);
@@ -113,9 +113,7 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 
 	bool ok;
 	QString error;
-
-	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
-
+	setupImporterSetting(&m_importerSetting, &ok, &error);
 	if (! ok) {
 		for (QComboBox* c : comboBoxes) {
 			c->clear();
@@ -124,6 +122,9 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 		}
 		return;
 	}
+
+	std::unique_ptr<LineParser> parser(m_importerSetting.buildParser());
+
 	QStringList fields = getFields(parser.get());
 
 	for (int i = 0; i < static_cast<int> (comboBoxes.size()); ++i) {
@@ -142,68 +143,49 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 	}
 }
 
-GeoDataPointmapRealTextImporter::LineParser* GeoDataPointmapRealTextImporter::SettingDialog::buildParser(bool *ok, QString *error) const
+void GeoDataPointmapRealTextImporter::SettingDialog::setupImporterSetting(ImporterSetting* setting, bool* ok, QString* error) const
 {
 	*ok = true;
 	*error = "";
 
-	auto parser = new LineParser();
+	setting->codecName = ui->encodingComboBox->currentText();
 
-	auto codec = QTextCodec::codecForName(ui->encodingComboBox->currentText().toLatin1());
-	parser->setTextCodec(codec);
+	bool delimiterSpecified = false;
 
-	std::vector<QChar> delimiters;
+	setting->delimiterComma = ui->commaCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterComma;
 
-	if (ui->commaCheckBox->isChecked()) {
-		delimiters.push_back(',');
-	}
-	if (ui->tabCheckBox->isChecked()) {
-		delimiters.push_back('\t');
-	}
-	if (ui->spaceCheckBox->isChecked()) {
-		delimiters.push_back(' ');
-	}
-	if (ui->colonCheckBox->isChecked()) {
-		delimiters.push_back(':');
-	}
-	if (ui->semicolonCheckBox->isChecked()) {
-		delimiters.push_back(';');
-	}
-	if (ui->otherCheckBox->isChecked()) {
-		auto other = ui->otherLineEdit->text();
-		for (int i = 0; i < other.size(); ++i) {
-			delimiters.push_back(other.at(i));
-		}
-	}
-	if (delimiters.size() == 0) {
+	setting->delimiterTab = ui->tabCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterTab;
+
+	setting->delimiterSpace = ui->spaceCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterSpace;
+
+	setting->delimiterColon = ui->colonCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterColon;
+
+	setting->delimiterSemicolon = ui->semicolonCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterSemicolon;
+
+	setting->delimiterOther = ui->otherCheckBox->isChecked();
+	delimiterSpecified = delimiterSpecified || setting->delimiterOther;
+
+	setting->otherDelimiter = ui->otherLineEdit->text();
+
+	if (! delimiterSpecified) {
 		*ok = false;
 		*error = GeoDataPointmapRealTextImporter::tr("No delimiter specified");
-		return parser;
+		return;
 	}
-	parser->setDelimiters(delimiters);
 
-	std::vector<QChar> quotes;
-	auto quoteStr = ui->quoteLineEdit->text();
-	for (int i = 0; i < quoteStr.size(); ++i) {
-		quotes.push_back(quoteStr.at(i));
-	}
-	parser->setQuoteChars(quotes);
+	setting->quoteCharacter = ui->quoteLineEdit->text();
+	setting->escapeCharacter = ui->escapeLineEdit->text();
 
-	QChar escape;
-	auto escapeStr = ui->escapeLineEdit->text();
-	if (escapeStr.size() > 0) {
-		escape = escapeStr.at(0);
-	}
-	parser->setEscapeChar(escape);
-
-	parser->setHeaderLines(ui->headerLinesSpinBox->value());
-	parser->setIsFirstLineFieldNames(ui->fieldNameCheckBox->isChecked());
-	parser->setXColumn(ui->xFieldComboBox->currentIndex());
-	parser->setYColumn(ui->yFieldComboBox->currentIndex());
-	parser->setValueColumn(ui->valueFieldComboBox->currentIndex());
-	parser->setSkipRate(ui->skipRateSpinBox->value());
-
-	return parser;
+	setting->headerLines = ui->headerLinesSpinBox->value();
+	setting->fieldX = ui->xFieldComboBox->currentIndex();
+	setting->fieldY = ui->yFieldComboBox->currentIndex();
+	setting->fieldValue = ui->valueFieldComboBox->currentIndex();
+	setting->skipRate = ui->skipRateSpinBox->value();
 }
 
 void GeoDataPointmapRealTextImporter::SettingDialog::csvToggled(bool toggled)
@@ -248,11 +230,13 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 
 	ui->errorsLabel->setText("");
 
-	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
+	setupImporterSetting(&m_importerSetting, &ok, &error);
 	if (! ok) {
 		showErrorMessageAndDisableOkButton(error);
 		return;
 	}
+
+	std::unique_ptr<LineParser> parser(m_importerSetting.buildParser());
 
 	auto fields = getFields(parser.get());
 	auto lines = getDataLinesForPreview();
@@ -302,8 +286,10 @@ void GeoDataPointmapRealTextImporter::SettingDialog::autoDetectHeaderLines()
 
 	bool ok;
 	QString	error;
-	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
+	setupImporterSetting(&m_importerSetting, &ok, &error);
 	if (! ok) {return;}
+
+	std::unique_ptr<LineParser> parser(m_importerSetting.buildParser());
 
 	for (int i = 0; i < m_previewData.size(); ++i) {
 		auto line = QString(m_previewData.at(i));

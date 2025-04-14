@@ -4,6 +4,7 @@
 #include "private/geodatapointmaprealtextimporter_settingdialog.h"
 #include "private/geodatapointmaprealtextimporter_values.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
@@ -177,6 +178,11 @@ const QStringList GeoDataPointmapRealTextImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataPointmapRealTextImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 void GeoDataPointmapRealTextImporter::cancel()
 {
 	m_canceled = true;
@@ -232,11 +238,40 @@ bool GeoDataPointmapRealTextImporter::doInit(int* /*count*/, SolverDefinitionGri
 	bool ok;
 	QString error;
 
-	m_parser = dialog.buildParser(&ok, &error);
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	dialog.setupImporterSetting(s, &ok, &error);
+
+	m_parser = s->buildParser();
 	auto cs = dialog.coordinateSystem();
+	s->csName = "";
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	}
+
 	if (projectCs != nullptr && projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
 
 	return true;
 }
+
+bool GeoDataPointmapRealTextImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	m_parser = s->buildParser();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
+	return true;
+}
+
+

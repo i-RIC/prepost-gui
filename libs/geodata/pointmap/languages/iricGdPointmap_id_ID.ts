@@ -507,6 +507,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Sistem koordinasi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -610,12 +617,12 @@
 <context>
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
-        <source>Point Cloud Data (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">Data Awan Titik %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished">Data Awan Titik</translation>
     </message>
 </context>
 <context>
@@ -699,6 +706,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Datanya hanya berisi %1 poin. Data point cloud harus berisi minimal 3 poin.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation type="unfinished">Koma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished">tab</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation type="unfinished">Ruang angkasa</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation type="unfinished">Usus besar</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation type="unfinished">Titik koma</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Sistem koordinasi</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation type="unfinished">Pembatas</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation type="unfinished">Baris header untuk diabaikan</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -939,6 +1013,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished">Sistem koordinasi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -952,12 +1033,12 @@
 <context>
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
-        <source>TIN (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Cloud Data%1</source>
         <translation type="unfinished">Data Awan Titik %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">TIMAH</translation>
     </message>
 </context>
 <context>

@@ -248,7 +248,11 @@ bool GeoDataPolygonGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGrid
 	}
 
 	auto s = dynamic_cast<ImporterSetting*> (setting());
-	s->csName = cs->name();
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	} else {
+		s->csName = "";
+	}
 
 	return true;
 }
