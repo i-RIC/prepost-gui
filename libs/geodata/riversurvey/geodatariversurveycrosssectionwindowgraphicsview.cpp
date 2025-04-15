@@ -177,11 +177,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setParentWindow(GeoDataRi
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupActions()
 {
 	m_activateAction = new QAction(tr("&Activate"), this);
-	connect(m_activateAction, SIGNAL(triggered()), this, SLOT(activateSelectedRows()));
+	connect(m_activateAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows);
 	m_inactivateAction = new QAction(tr("&Inactivate"), this);
-	connect(m_inactivateAction, SIGNAL(triggered()), this, SLOT(inactivateSelectedRows()));
+	connect(m_inactivateAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows);
 	m_moveAction = new QAction(tr("&Move"), this);
-	connect(m_moveAction, SIGNAL(triggered()), this, SLOT(moveSelectedRows()));
+	connect(m_moveAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows);
 	m_activateAction->setEnabled(false);
 	m_inactivateAction->setEnabled(false);
 	m_moveAction->setEnabled(false);
