@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation>垂直移動量:</translation>
+        <translation type="vanished">垂直移動量:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
@@ -34,6 +34,10 @@
     <message>
         <source>Move Elevation Points</source>
         <translation>標高点の移動</translation>
+    </message>
+    <message>
+        <source>Vertical Variation (V):</source>
+        <translation>垂直移動量 (V):</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1080,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Distance</source>
-        <translation>距離</translation>
+        <translation type="vanished">距離</translation>
     </message>
     <message>
         <source>Width</source>
@@ -1141,6 +1145,14 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     <message>
         <source>Right Side Sub</source>
         <translation>右岸側 掘削</translation>
+    </message>
+    <message>
+        <source>Add vegetation</source>
+        <translation>植生の追加</translation>
+    </message>
+    <message>
+        <source>Delete selected vegetation</source>
+        <translation>選択した植生の削除</translation>
     </message>
 </context>
 <context>
@@ -1238,6 +1250,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit by specifying slope point</source>
         <translation>法尻部を指定して断面を編集</translation>
+    </message>
+    <message>
+        <source>Drag the region where you want to add a new vegetation</source>
+        <translation>新しい植生データを追加したい領域をドラッグして指定してください</translation>
     </message>
 </context>
 <context>

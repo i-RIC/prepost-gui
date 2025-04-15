@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation>Variacao de movimento vertical:</translation>
+        <translation type="vanished">Variacao de movimento vertical:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
@@ -34,6 +34,10 @@
     <message>
         <source>Move Elevation Points</source>
         <translation>Remover os pontos de elevacao</translation>
+    </message>
+    <message>
+        <source>Vertical Variation (V):</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -992,10 +996,6 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Distance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Width</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1057,6 +1057,14 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Right Side Sub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add vegetation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete selected vegetation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1153,6 +1161,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Edit by specifying slope point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag the region where you want to add a new vegetation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
