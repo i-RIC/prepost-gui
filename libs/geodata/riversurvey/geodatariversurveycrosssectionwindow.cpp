@@ -145,7 +145,9 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 {
 	impl->m_inactivateByWEOnlyThisAction = new QAction(tr("&This cross-section only"), this);
 	impl->m_inactivateByWEAllAction = new QAction(tr("All cross-sections"), this);
+	impl->m_addVegetationAction = new QAction(tr("Add vegetation"), this);
 	impl->m_editSelectedVegetationAction = new QAction(tr("Edit selected vegetation"), this);
+	impl->m_deleteSelectedVegetationAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), tr("Delete selected vegetation"), this);
 	impl->m_editFromSelectedPointAction = new QAction(tr("&Edit cross section from the selected point"), this);
 	impl->m_editFromSelectedPointWithDialogAction = new QAction(tr("&Edit from Dialog..."), this);
 	impl->m_leftAddAction = new QAction(tr("Left Side Add"));
@@ -164,7 +166,9 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	connect(impl->m_editFromSelectedPointWithDialogAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointWithDialog);
 	connect(impl->m_inactivateByWEOnlyThisAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis);
 	connect(impl->m_inactivateByWEAllAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll);
+	connect(impl->m_addVegetationAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::enterAddVegetationMode);
 	connect(impl->m_editSelectedVegetationAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation);
+	connect(impl->m_deleteSelectedVegetationAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::deleteSelectedVegetation);
 	connect(impl->m_leftAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftAdd);
 	connect(impl->m_leftSubAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startLeftSub);
 	connect(impl->m_rightAddAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::startRightAdd);
@@ -436,9 +440,19 @@ QAction* GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAllAction() const
 	return impl->m_inactivateByWEAllAction;
 }
 
+QAction* GeoDataRiverSurveyCrosssectionWindow::addVegetationAction() const
+{
+	return impl->m_addVegetationAction;
+}
+
 QAction* GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetationAction() const
 {
 	return impl->m_editSelectedVegetationAction;
+}
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::deleteSelectedVegetationAction() const
+{
+	return impl->m_deleteSelectedVegetationAction;
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindow::leftAddAction() const
@@ -882,6 +896,11 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 	}
 }
 
+void GeoDataRiverSurveyCrosssectionWindow::enterAddVegetationMode()
+{
+	ui->graphicsView->enterAddVegetationMode();
+}
+
 void GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation()
 {
 	auto rows = impl->m_vegetationSelectionModel->selectedRows();
@@ -901,6 +920,26 @@ void GeoDataRiverSurveyCrosssectionWindow::editSelectedVegetation()
 	auto newItems = oldJmk.items();
 	newItems[row] = dialog.item();
 	newJmk.items() = newItems;
+
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(newJmk, oldJmk, impl->m_editTargetPoint, this));
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedVegetation()
+{
+	auto rows = impl->m_vegetationSelectionModel->selectedRows();
+	if (rows.size() == 0) {return;}
+
+	std::vector<int> ids;
+	for (const auto& row : rows) {
+		ids.push_back(row.row());
+	}
+
+	auto oldJmk = impl->m_editTargetPoint->jmk();
+	auto newJmk = oldJmk;
+
+	for (auto it = ids.rbegin(); it != ids.rend(); ++it) {
+		newJmk.items().erase(newJmk.items().begin() + *it);
+	}
 
 	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(newJmk, oldJmk, impl->m_editTargetPoint, this));
 }
@@ -1015,6 +1054,7 @@ void GeoDataRiverSurveyCrosssectionWindow::handleVegetationSelectionChange()
 	QModelIndexList rows = impl->m_vegetationSelectionModel->selectedRows();
 
 	impl->m_editSelectedVegetationAction->setEnabled(rows.count() == 1);
+	impl->m_deleteSelectedVegetationAction->setEnabled(rows.count() > 0);
 }
 
 QTableView* GeoDataRiverSurveyCrosssectionWindow::tableView()

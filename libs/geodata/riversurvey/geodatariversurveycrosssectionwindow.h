@@ -57,7 +57,9 @@ public:
 	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
+	QAction* addVegetationAction() const;
 	QAction* editSelectedVegetationAction() const;
+	QAction* deleteSelectedVegetationAction() const;
 	QAction* leftAddAction() const;
 	QAction* leftSubAction() const;
 	QAction* rightAddAction() const;
@@ -114,7 +116,9 @@ private slots:
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void enterAddVegetationMode();
 	void editSelectedVegetation();
+	void deleteSelectedVegetation();
 	void startLeftAdd();
 	void startLeftSub();
 	void startRightAdd();

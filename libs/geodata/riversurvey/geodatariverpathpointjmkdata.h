@@ -8,6 +8,7 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverPathPointJmkData
 public:
 	struct Item {
 		Item();
+		bool operator<(const Item& item) const;
 
 		double distance;
 		double width;

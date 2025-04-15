@@ -13,7 +13,7 @@ public:
 	void redo() override;
 	void undo() override;
 
-private:
+protected:
 	GeoDataRiverPathPointJmkData m_after;
 	GeoDataRiverPathPointJmkData m_before;
 

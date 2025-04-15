@@ -27,6 +27,9 @@ public:
 		meMovePrepare,
 		meEditCrosssection,
 		meEditWithSlopePoint,
+		meAddVegetation,
+		meDragVegetationPrepare,
+		meDragVegetation,
 	};
 	enum ViewMouseEventMode {
 		vmeNormal,
@@ -49,6 +52,7 @@ public:
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
 	void setSlopePointEditModeSetting(const QPointF& point, int slope);
+	void enterAddVegetationMode();
 
 	double aspectRatio() const;
 	void setAspectRatio(double ratio);
@@ -182,6 +186,9 @@ private:
 
 	MouseEventMode m_mouseEventMode;
 	ViewMouseEventMode m_viewMouseEventMode;
+	int m_dragJmkItemIndex;
+	bool m_dragJmkRight;
+
 	bool m_modelessDialogIsOpen;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;

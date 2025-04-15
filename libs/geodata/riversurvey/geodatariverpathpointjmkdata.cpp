@@ -11,6 +11,11 @@ GeoDataRiverPathPointJmkData::Item::Item() :
 	lowBranchHeight {0}
 {}
 
+bool GeoDataRiverPathPointJmkData::Item::operator<(const Item& item) const
+{
+	return distance < item.distance;
+}
+
 GeoDataRiverPathPointJmkData::GeoDataRiverPathPointJmkData() :
 	m_items {}
 {}

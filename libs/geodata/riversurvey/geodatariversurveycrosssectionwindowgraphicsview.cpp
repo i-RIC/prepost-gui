@@ -11,6 +11,9 @@
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
+#include "private/geodatariversurvey_editjmkdatabydragcommand.h"
+#include "private/geodatariversurvey_editjmkdatacommand.h"
 
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
@@ -217,7 +220,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
 		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->addVegetationAction());
 		m_rightClickingMenu->addAction(m_parentWindow->editSelectedVegetationAction());
+		m_rightClickingMenu->addAction(m_parentWindow->deleteSelectedVegetationAction());
 	}
 	if (m_rightClickingMenuForEditCrosssectionMode == nullptr) {
 		m_rightClickingMenuForEditCrosssectionMode = new QMenu(this);
@@ -342,6 +347,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSett
 	m_slopePointEditModeSlopePoint = point;
 	m_slopePointEditModeSlope = slope;
 	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterAddVegetationMode()
+{
+	m_mouseEventMode = MouseEventMode::meAddVegetation;
+	InformationDialog::information(this, tr("Information"), tr("Drag the region where you want to add a new vegetation"), "geodatariversurvey_add_vegetation");
+
+	updateMouseCursor();
 }
 
 QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateAction() const
@@ -1248,7 +1261,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		} else {
 			zoom(scaleX, scaleY);
 		}
-	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
+	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare || m_mouseEventMode == meDragVegetationPrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
@@ -1289,15 +1302,35 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 				}
 			}
 		} else {
-			// find selected points near the mouse cursor.
-			QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
-			GeoDataRiverPathPoint* p = m_parentWindow->target();
-			GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			QPointF mins(event->x() - 5, event->y() + 5);
 			QPointF maxs(event->x() + 5, event->y() - 5);
 			QMatrix invMatrix = m_matrix.inverted();
 			QPointF mappedMins = invMatrix.map(mins);
 			QPointF mappedMaxs = invMatrix.map(maxs);
+
+			// find jmk data near the mouse cursor;
+			const auto& jmkItems = m_parentWindow->target()->jmk().items();
+			for (int i = 0; i < jmkItems.size(); ++i) {
+				const auto& jmkItem = jmkItems.at(i);
+				double left = jmkItem.distance - m_parentWindow->target()->crosssection().leftShift();
+				double right = left + jmkItem.width;
+
+				if (left >= mappedMins.x() && left <= mappedMaxs.x()) {
+					m_mouseEventMode = meDragVegetationPrepare;
+					m_dragJmkItemIndex = i;
+					m_dragJmkRight = false;
+				}
+				if (right >= mappedMins.x() && right <= mappedMaxs.x()) {
+					m_mouseEventMode = meDragVegetationPrepare;
+					m_dragJmkItemIndex = i;
+					m_dragJmkRight = true;
+				}
+			}
+
+			// find selected points near the mouse cursor.
+			QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
+			GeoDataRiverPathPoint* p = m_parentWindow->target();
+			GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			if (continuousSelection()) {
 				for (auto it = selectedPoints.begin(); it != selectedPoints.end(); ++it) {
 					int index = it->row();
@@ -1350,6 +1383,38 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		auto invMatrix = m_matrix.inverted();
 		m_slopePointEditModeSlopePoint = invMatrix.map(QPointF(event->pos()));
 		viewport()->update();
+	} else if (m_mouseEventMode == meAddVegetation) {
+		QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
+		QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
+		QRect rect(topLeft, size);
+		m_rubberBand->setGeometry(rect);
+		viewport()->update();
+	} else if (m_mouseEventMode == meDragVegetation) {
+		GeoDataRiverPathPointJmkData::Item item;
+		auto invMatrix = m_matrix.inverted();
+		auto oldP = invMatrix.map(QPointF(m_oldPosition));
+		auto newP = invMatrix.map(QPointF(event->pos()));
+		auto dx = newP.x() - oldP.x();
+
+		auto target = m_parentWindow->target();
+		auto oldJmk = target->jmk();
+		auto newJmk = oldJmk;
+		auto& editTargetItem = newJmk.items().at(m_dragJmkItemIndex);
+		if (m_dragJmkRight) {
+			editTargetItem.width += dx;
+			if (editTargetItem.width < 0) {
+				editTargetItem.width = 0.01;
+			}
+		} else {
+			editTargetItem.width -= dx;
+			if (editTargetItem.width < 0) {
+				dx -= (0.01 - editTargetItem.width);
+				editTargetItem.width = 0.01;
+			}
+			editTargetItem.distance += dx;
+		}
+
+		iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(true, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
 	}
 
 	m_oldPosition = event->pos();
@@ -1428,6 +1493,23 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			m_dragStartPoint = event->pos();
 		}
 		break;
+
+	case meAddVegetation:
+		if (event->button() == Qt::LeftButton) {
+			// start selecting.
+			if (m_rubberBand == nullptr) {
+				m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
+			}
+			m_rubberOrigin = event->pos();
+			m_rubberBand->setGeometry(m_rubberOrigin.x(), m_rubberOrigin.y(), 0, 0);
+			m_rubberBand->show();
+		}
+		break;
+	case meDragVegetationPrepare:
+		if (event->button() == Qt::LeftButton) {
+			m_mouseEventMode = meDragVegetation;
+		}
+
 	default:
 		break;
 	}
@@ -1494,6 +1576,48 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 		}
 		updateMouseCursor();
 		break;
+
+	case meAddVegetation:
+		{
+			// finish selecting.
+			m_rubberBand->hide();
+			m_mouseEventMode = meNormal;
+
+			QMatrix invMatrix = m_matrix.inverted();
+			QPointF mappedLeft = invMatrix.map(QPointF(qMin(event->x(), m_rubberOrigin.x()), 0));
+			QPointF mappedRight = invMatrix.map(QPointF(qMax(event->x(), m_rubberOrigin.x()), 0));
+
+			GeoDataRiverPathPointJmkData::Item item;
+			auto target = m_parentWindow->target();
+			item.distance = mappedLeft.x() + target->crosssection().leftShift();
+			item.width = mappedRight.x() - mappedLeft.x();
+			item.height = 10;
+
+			GeoDataRiverSurveyCrosssectionWindow::JmkDataEditDialog dialog(this);
+			dialog.setItem(item);
+			int ret = dialog.exec();
+			if (ret == QDialog::Rejected) {return;}
+
+			item = dialog.item();
+			auto oldJmk = target->jmk();
+			auto newJmk = oldJmk;
+
+			newJmk.items().push_back(item);
+			std::sort(newJmk.items().begin(), newJmk.items().end());
+
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(newJmk, oldJmk, target, m_parentWindow));
+		}
+		break;
+
+	case meDragVegetation:
+		{
+			auto target = m_parentWindow->target();
+			auto oldJmk = target->jmk();
+			auto newJmk = oldJmk;
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(false, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
+			m_mouseEventMode = meDragVegetationPrepare;
+		}
+		break;
 	}
 }
 
@@ -1515,6 +1639,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent
 		m_oldLine.crosssection().AltitudeInfo().clear();
 		updateMouseCursor();
 		viewport()->update();
+	}
+	if (m_mouseEventMode == meAddVegetation && event->key() == Qt::Key_Escape) {
+		m_mouseEventMode = meNormal;
+		updateMouseCursor();
 	}
 }
 
@@ -1574,6 +1702,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateMouseCursor()
 		setCursor(Qt::OpenHandCursor);
 	} else if (m_mouseEventMode == meEditCrosssection) {
 		setCursor(Qt::CrossCursor);
+	} else if (m_mouseEventMode == meAddVegetation) {
+		setCursor(Qt::CrossCursor);
+	} else if (m_mouseEventMode == meDragVegetationPrepare || m_mouseEventMode == meDragVegetation) {
+		setCursor(Qt::SizeHorCursor);
 	} else {
 		setCursor(Qt::ArrowCursor);
 	}
