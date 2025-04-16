@@ -4,6 +4,7 @@
 #include "../../guicore_global.h"
 
 #include "inputconditioncontainer.h"
+
 class QDomNode;
 
 class GUICOREDLL_EXPORT InputConditionContainerInteger : public InputConditionContainer

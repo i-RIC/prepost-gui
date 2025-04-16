@@ -501,8 +501,9 @@ void GeoDataRiverSurvey::saveExternalData(const QString& filename)
 			p = p->nextPoint();
 		}
 		rs->save(iRIC::toStr(filename).c_str());
-
 		delete rs;
+
+		// ODN data
 	} else if (impl->m_mode == Impl::Mode::CreateMode) {
 		QFile f(filename);
 		f.open(QIODevice::WriteOnly);

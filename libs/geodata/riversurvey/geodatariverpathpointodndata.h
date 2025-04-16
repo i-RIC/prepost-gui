@@ -3,6 +3,10 @@
 
 #include "gd_riversurvey_global.h"
 
+namespace YAML {
+	class Node;
+} // namespace YAML
+
 class GD_RIVERSURVEY_EXPORT GeoDataRiverPathPointOdnData
 {
 public:
@@ -12,6 +16,9 @@ public:
 
 	double spanDistance() const;
 	void setSpanDistance(double distance);
+
+	void importFromYaml(const YAML::Node& node);
+	void exportToYaml(QTextStream* stream, const QString& head);
 
 private:
 	int m_nb[6];

@@ -1,5 +1,7 @@
 #include "geodatariverpathpointodndata.h"
 
+#include <yaml-cpp/yaml.h>
+
 GeoDataRiverPathPointOdnData::GeoDataRiverPathPointOdnData() :
 	m_nb {-1, -1, -1, -1, -1, -1},
 	m_spanDistance {0}
@@ -28,3 +30,22 @@ void GeoDataRiverPathPointOdnData::setSpanDistance(double distance)
 {
 	m_spanDistance = distance;
 }
+
+void GeoDataRiverPathPointOdnData::importFromYaml(const YAML::Node& node)
+{
+	auto nbNode = node["nb"].as();
+
+	m_spanDistance = node["spanDistance"].as<double>();
+}
+
+void GeoDataRiverPathPointOdnData::exportToYaml(QTextStream* stream, const QString& head)
+{
+	QStringList nb_strs;
+	for (const auto& nb : m_nb) {
+		nb_strs.push_back(QString::number(nb));
+	}
+
+	*stream << head << "nb: [" << nb_strs.join(", ") << "]" << "\n";
+	*stream << head << "spanDistance: " << m_spanDistance << "\n";
+}
+

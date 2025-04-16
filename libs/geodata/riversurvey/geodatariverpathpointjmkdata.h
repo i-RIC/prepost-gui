@@ -3,6 +3,10 @@
 
 #include "gd_riversurvey_global.h"
 
+namespace YAML {
+	class Node;
+} // namespace YAML
+
 class GD_RIVERSURVEY_EXPORT GeoDataRiverPathPointJmkData
 {
 public:
@@ -24,6 +28,9 @@ public:
 
 	const std::vector<Item>& items() const;
 	std::vector<Item>& items();
+
+	void importFromYaml(const YAML::Node& node);
+	void exportToYaml(QTextStream* stream, const QString& head);
 
 private:
 	std::vector<Item> m_items;

@@ -29,3 +29,13 @@ std::vector<GeoDataRiverPathPointJmkData::Item>& GeoDataRiverPathPointJmkData::i
 {
 	return m_items;
 }
+
+void GeoDataRiverPathPointJmkData::importFromYaml(const YAML::Node& node)
+{
+
+}
+
+void GeoDataRiverPathPointJmkData::exportToYaml(QTextStream* stream, const QString& head)
+{
+
+}
