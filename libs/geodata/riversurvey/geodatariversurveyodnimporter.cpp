@@ -52,31 +52,66 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int /*index*/, QWi
 		auto name = QStringRef(&str, 15, 10).toString().trimmed();
 		double x = 0;
 		double y = - name.toFloat() * 1000;
+
+		bool all_ok = true;
+		bool ok = true;
+
 		auto newPoint = new GeoDataRiverPathPoint(name, x, y, rs);
-		newPoint->odn().setNb(2, QStringRef(&str, 0, 5).toInt() - 1);
-		newPoint->odn().setNb(3, QStringRef(&str, 5, 5).toInt() - 1);
-		double distance = QStringRef(&str, 25, 10).toDouble();
+		newPoint->odn().setNb(2, QStringRef(&str, 0, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
+		newPoint->odn().setNb(3, QStringRef(&str, 5, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
+		double distance = QStringRef(&str, 25, 10).toDouble(&ok);
+		all_ok = all_ok && ok;
 		newPoint->odn().setSpanDistance(distance);
-		wse->addItem(name, true, QStringRef(&str, 35, 10).toDouble());
-		newPoint->odn().setNb(1, QStringRef(&str, 45, 5).toInt() - 1);
-		newPoint->odn().setNb(4, QStringRef(&str, 50, 5).toInt() - 1);
-		newPoint->odn().setNb(0, QStringRef(&str, 55, 5).toInt() - 1);
-		newPoint->odn().setNb(5, QStringRef(&str, 60, 5).toInt() - 1);
+		wse->addItem(name, true, QStringRef(&str, 35, 10).toDouble(&ok));
+		all_ok = all_ok && ok;
+		newPoint->odn().setNb(1, QStringRef(&str, 45, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
+		newPoint->odn().setNb(4, QStringRef(&str, 50, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
+		newPoint->odn().setNb(0, QStringRef(&str, 55, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
+		newPoint->odn().setNb(5, QStringRef(&str, 60, 5).toInt(&ok) - 1);
+		all_ok = all_ok && ok;
 
-		auto pointCount = QStringRef(&str, 10, 5).toInt();
+		auto pointCount = QStringRef(&str, 10, 5).toInt(&ok);
+		all_ok = all_ok && ok;
+
+		if (! all_ok) {
+			QMessageBox::critical(w, GeoDataRiverSurveyOdnImporter::tr("Error"), GeoDataRiverSurveyOdnImporter::tr("Error occered while reading line %1").arg(lineNum));
+			return false;
+		}
+		++ lineNum;
+
 		int pointReadCount = 0;
-
 		auto& cs = newPoint->crosssection();
 		while (pointReadCount < pointCount) {
+			if (stream.atEnd()) { break; }
+
+			all_ok = true;
+			ok = true;
+
 			str = stream.readLine();
 			auto frags = str.split(" ", Qt::SkipEmptyParts);
 			for (int i = 0; i < frags.size() / 2; ++i) {
-				double pos = frags.at(i * 2).toDouble();
-				double e = frags.at(i * 2 + 1).toDouble();
-
+				double pos = frags.at(i * 2).toDouble(&ok);
+				all_ok = all_ok && ok;
+				double e = frags.at(i * 2 + 1).toDouble(&ok);
+				all_ok = all_ok && ok;
 				cs.addPoint(pos, e);
 			}
 			pointReadCount += frags.size() / 2;
+			if (! all_ok) {
+				QMessageBox::critical(w, GeoDataRiverSurveyOdnImporter::tr("Error"), GeoDataRiverSurveyOdnImporter::tr("Error occered while reading line %1").arg(lineNum));
+				return false;
+			}
+
+			++ lineNum;
+		}
+		if (pointReadCount != pointCount) {
+			QMessageBox::critical(w, GeoDataRiverSurveyOdnImporter::tr("Error"), GeoDataRiverSurveyOdnImporter::tr("Elevation data is not read correctly. Maybe point count for %1 is invalid.").arg(newPoint->name()));
+			return false;
 		}
 
 		// shift
@@ -95,8 +130,21 @@ bool GeoDataRiverSurveyOdnImporter::importData(GeoData* data, int /*index*/, QWi
 		totalDistances.push_back(totalDistance);
 		totalDistance += distance;
 
-		++ lineNum;
+		// check Nb values
+		auto& odn = newPoint->odn();
+		for (int i = 0; i < 6; ++i) {
+			auto nb = odn.nb(i);
+			if (nb < 0 || nb >= pointCount) {
+				// invalid value!
+				if (i < 3) {
+					odn.setNb(i, 0);
+				} else {
+					odn.setNb(i, pointCount - 1);
+				}
+			}
+		}
 	}
+
 	auto tail = rs->headPoint();
 	for (auto it = points.rbegin(); it != points.rend(); ++it) {
 		auto p = *it;
