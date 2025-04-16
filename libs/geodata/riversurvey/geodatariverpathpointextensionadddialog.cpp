@@ -12,20 +12,17 @@
 
 #include <QUndoCommand>
 
-GeoDataRiverPathPointExtensionAddDialog::GeoDataRiverPathPointExtensionAddDialog(GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs, QWidget* parent)
-	: QDialog(parent),
-		ui(new Ui::GeoDataRiverPathPointExtensionAddDialog)
+GeoDataRiverPathPointExtensionAddDialog::GeoDataRiverPathPointExtensionAddDialog(GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs, QWidget* parent) :
+	QDialog(parent),
+	m_point {p},
+	m_rs {rs},
+	m_applyed {false},
+	ui(new Ui::GeoDataRiverPathPointExtensionAddDialog)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
-	m_point = p;
-	m_rs = rs;
-	m_applyed = false;
-	ui->clickRadioButton->setChecked(true);
-	ui->positionXEdit->setEnabled(false);
-	ui->positionYEdit->setEnabled(false);
 
-	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
+	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &GeoDataRiverPathPointExtensionAddDialog::handleButtonClick);
 }
 
 GeoDataRiverPathPointExtensionAddDialog::~GeoDataRiverPathPointExtensionAddDialog()

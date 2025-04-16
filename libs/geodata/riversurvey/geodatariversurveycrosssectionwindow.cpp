@@ -160,6 +160,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	impl->m_odnRightLowAction = new QAction(tr("Right Low Point"), this);
 	impl->m_odnRightMiddleAction = new QAction(tr("Right Middle Point"), this);
 	impl->m_odnRightStartAction = new QAction(tr("Right Start Point"), this);
+	impl->m_addPointAction = new QAction(tr("&Add point"), this);
 	impl->m_deleteAction = new QAction(tr("&Delete"), this);
 
 	connect(impl->m_editFromSelectedPointAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPoint);
@@ -180,6 +181,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	connect(impl->m_odnRightLowAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightLow);
 	connect(impl->m_odnRightMiddleAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightMiddle);
 	connect(impl->m_odnRightStartAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightStart);
+	connect(impl->m_addPointAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::enterAddPointMode);
 	connect(impl->m_deleteAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows);
 }
 
@@ -197,6 +199,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
 
 	impl->m_elevationPointMenu->addSeparator();
 	impl->m_elevationPointMenu->addAction(impl->m_editFromSelectedPointWithDialogAction);
+	impl->m_elevationPointMenu->addAction(impl->m_addPointAction);
 	impl->m_elevationPointMenu->addAction(gview->moveAction());
 	impl->m_elevationPointMenu->addAction(impl->m_deleteAction);
 }
@@ -414,6 +417,11 @@ struct SelectionRange {
 	int bottom;
 	int right;
 };
+
+QAction* GeoDataRiverSurveyCrosssectionWindow::addPointAction() const
+{
+	return impl->m_addPointAction;
+}
 
 QAction* GeoDataRiverSurveyCrosssectionWindow::deleteAction() const
 {
@@ -894,6 +902,11 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 	} else {
 		delete group;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::enterAddPointMode()
+{
+	ui->graphicsView->enterAddPointMode();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::enterAddVegetationMode()

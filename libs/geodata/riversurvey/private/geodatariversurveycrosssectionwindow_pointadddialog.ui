@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GeoDataRiverPathPointExtensionAddDialog</class>
- <widget class="QDialog" name="GeoDataRiverPathPointExtensionAddDialog">
+ <class>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</class>
+ <widget class="QDialog" name="GeoDataRiverSurveyCrosssectionWindow_PointAddDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>323</width>
-    <height>115</height>
+    <width>358</width>
+    <height>107</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add Extension Line</string>
+   <string>Add new elevation point</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>End Point of Extension Line</string>
-     </property>
-    </widget>
-   </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -94,6 +87,19 @@
     </layout>
    </item>
    <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -117,32 +123,32 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>GeoDataRiverPathPointExtensionAddDialog</receiver>
+   <receiver>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>105</y>
+     <x>227</x>
+     <y>85</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
-     <y>274</y>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>GeoDataRiverPathPointExtensionAddDialog</receiver>
+   <receiver>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>313</x>
-     <y>105</y>
+     <x>295</x>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
-     <y>274</y>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -153,12 +159,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>37</x>
-     <y>68</y>
+     <x>43</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>103</x>
-     <y>67</y>
+     <x>90</x>
+     <y>46</y>
     </hint>
    </hints>
   </connection>
@@ -169,12 +175,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>50</x>
-     <y>63</y>
+     <x>63</x>
+     <y>51</y>
     </hint>
     <hint type="destinationlabel">
-     <x>213</x>
-     <y>59</y>
+     <x>211</x>
+     <y>51</y>
     </hint>
    </hints>
   </connection>

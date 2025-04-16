@@ -18,9 +18,11 @@ public:
 	void redo() override;
 	void undo() override;
 
+	int id() const override;
+	bool mergeWith(const QUndoCommand* other) override;
+
 private:
 	bool m_apply;
-	bool m_first;
 	bool m_tableaction;
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverCrosssection::AltitudeList m_before;

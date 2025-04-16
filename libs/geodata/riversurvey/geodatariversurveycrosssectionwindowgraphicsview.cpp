@@ -11,6 +11,7 @@
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurveycrosssectionwindow_pointadddialog.h"
 #include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
 #include "private/geodatariversurvey_editjmkdatabydragcommand.h"
 #include "private/geodatariversurvey_editjmkdatacommand.h"
@@ -217,6 +218,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		odnMenu->addAction(m_parentWindow->odnRightMiddleAction());
 		odnMenu->addAction(m_parentWindow->odnRightStartAction());
 
+		m_rightClickingMenu->addAction(m_parentWindow->addPointAction());
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
 		m_rightClickingMenu->addSeparator();
@@ -347,6 +349,19 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSett
 	m_slopePointEditModeSlopePoint = point;
 	m_slopePointEditModeSlope = slope;
 	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterAddPointMode()
+{
+	auto p = m_parentWindow->target();
+	auto rs = p->riverSurvey();
+	auto dialog = new GeoDataRiverSurveyCrosssectionWindow::PointAddDialog(p, rs, m_parentWindow);
+	connect(this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionClicked, dialog, &GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::setPoint);
+
+	m_mouseEventMode = meAddPoint;
+	dialog->show();
+
+	connect(dialog, &QObject::destroyed, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode);
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterAddVegetationMode()
@@ -1508,6 +1523,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 	case meDragVegetationPrepare:
 		if (event->button() == Qt::LeftButton) {
 			m_mouseEventMode = meDragVegetation;
+		}
+	case meAddPoint:
+		if (event->button() == Qt::LeftButton) {
+			auto invMatrix = m_matrix.inverted();
+			auto newPoint = invMatrix.map(QPointF(event->pos()));
+			emit positionClicked(newPoint);
 		}
 
 	default:

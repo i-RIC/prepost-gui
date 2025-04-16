@@ -30,12 +30,14 @@ public:
 		meAddVegetation,
 		meDragVegetationPrepare,
 		meDragVegetation,
+		meAddPoint,
 	};
 	enum ViewMouseEventMode {
 		vmeNormal,
 		vmeZooming,
 		vmeTranslating
 	};
+
 	GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w);
 
 	void setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w);
@@ -52,6 +54,7 @@ public:
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
 	void setSlopePointEditModeSetting(const QPointF& point, int slope);
+	void enterAddPointMode();
 	void enterAddVegetationMode();
 
 	double aspectRatio() const;

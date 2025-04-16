@@ -52,6 +52,7 @@ public:
 	QString crosssectionName() const;
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const;
+	QAction* addPointAction() const;
 	QAction* deleteAction() const;
 	QAction* editFromSelectedPointAction() const;
 	QAction* editFromSelectedPointWithDialogAction() const;
@@ -116,6 +117,7 @@ private slots:
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void enterAddPointMode();
 	void enterAddVegetationMode();
 	void editSelectedVegetation();
 	void deleteSelectedVegetation();
@@ -190,8 +192,9 @@ private:
 
 	class DataTableDelegate;
 	class JmkDataEditDialog;
-	class VegetationDataTableDelegate;
+	class PointAddDialog;
 	class RiverSurveyTableDelegate;
+	class VegetationDataTableDelegate;
 	class WseTableDelegate;
 
 public:

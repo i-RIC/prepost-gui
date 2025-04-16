@@ -82,6 +82,7 @@ public:
 	QAction* m_odnRightLowAction;
 	QAction* m_odnRightMiddleAction;
 	QAction* m_odnRightStartAction;
+	QAction* m_addPointAction;
 	QAction* m_deleteAction;
 
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;

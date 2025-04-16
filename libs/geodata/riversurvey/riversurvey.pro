@@ -211,6 +211,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
            private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h \
+           private/geodatariversurveycrosssectionwindow_pointadddialog.h \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
            private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.h \
@@ -242,6 +243,7 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariversurveyimportersettingdialog.ui \
          geodatariversurveymappointsdialog.ui \
          private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.ui \
+         private/geodatariversurveycrosssectionwindow_pointadddialog.ui \
          private/geodatariversurveyimporter_problemsdialog.ui \
          private/geodatariversurveymlitimporter_problemsdialog.ui \
          private/geodatariversurveyodnimporter_positionsettingdialog.ui \
@@ -322,6 +324,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_translateriverpathpointcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.cpp \
+           private/geodatariversurveycrosssectionwindow_pointadddialog.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.cpp \
