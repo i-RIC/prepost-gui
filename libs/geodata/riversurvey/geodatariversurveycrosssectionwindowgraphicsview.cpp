@@ -2074,6 +2074,7 @@ GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsV
 	QMatrix invMatrix = m_matrix.inverted();
 	QPointF posF(pos.x(), pos.y());
 	auto mappedPos = invMatrix.map(posF);
+	mappedPos.setX(mappedPos.x() - xsec.leftShift());
 
 	double distX = mappedPos.x() - selectedAlt.position();
 	double distY = mappedPos.y() - selectedAlt.height();
