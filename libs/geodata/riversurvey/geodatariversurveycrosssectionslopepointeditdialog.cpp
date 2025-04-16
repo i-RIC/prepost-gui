@@ -51,10 +51,10 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::setSlope(int slope)
 	ui->slopeSpinBox->setValue(slope);
 }
 
-void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::calculateLeftAndRightPoints(const GeoDataRiverCrosssection::AltitudeList& alist, Mode mode, const QPointF& point, int slope, QPointF* left, QPointF* right)
+void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::calculateLeftAndRightPoints(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, Mode mode, const QPointF& point, int slope, QPointF* left, QPointF* right)
 {
-	double leftX = alist.begin()->position();
-	double rightX = alist.rbegin()->position();
+	double leftX = alist.begin()->position() + leftShift;
+	double rightX = alist.rbegin()->position() + leftShift;
 
 	if (mode == Mode::LeftAdd) {
 		*left = QPointF(leftX, point.y());
@@ -148,14 +148,16 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 	QPointF left, right;
 
 	auto target = crosssectionWindow()->target();
+	double leftShift = target->crosssection().leftShift();
+
 	QPointF point(ui->positionXEdit->value(), ui->positionYEdit->value());
-	calculateLeftAndRightPoints(m_original, m_mode, point, ui->slopeSpinBox->value(), &left, &right);
+	calculateLeftAndRightPoints(m_original, leftShift, m_mode, point, ui->slopeSpinBox->value(), &left, &right);
 
 	bool leftFound, rightFound;
 	int leftIndex, rightIndex;
 	QPointF leftXSec, rightXSec;
 
-	findLeftAndRightCrossSections(m_original, point, left, right, &leftFound, &leftIndex, &leftXSec, &rightFound, &rightIndex, &rightXSec);
+	findLeftAndRightCrossSections(m_original, leftShift, point, left, right, &leftFound, &leftIndex, &leftXSec, &rightFound, &rightIndex, &rightXSec);
 	if (! (leftFound && rightFound)) {
 		return nullptr;
 	}
@@ -164,9 +166,9 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 	for (int i = 0; i <= leftIndex; ++i) {
 		newAList.push_back(m_original.at(i));
 	}
-	newAList.push_back(GeoDataRiverCrosssection::Altitude(leftXSec.x(), leftXSec.y()));
-	newAList.push_back(GeoDataRiverCrosssection::Altitude(point.x(), point.y()));
-	newAList.push_back(GeoDataRiverCrosssection::Altitude(rightXSec.x(), rightXSec.y()));
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(leftXSec.x() - leftShift, leftXSec.y()));
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(point.x() - leftShift, point.y()));
+	newAList.push_back(GeoDataRiverCrosssection::Altitude(rightXSec.x() - leftShift, rightXSec.y()));
 
 	for (int i = rightIndex; i < static_cast<int> (m_original.size()); ++i) {
 		newAList.push_back(m_original.at(i));
@@ -175,14 +177,14 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, m_original, crosssectionWindow());
 }
 
-void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec)
+void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec)
 {
 	int index = -1;
 
 	*leftFound = false;
 	for (int i = 0; i < alist.size(); ++i) {
 		const auto& a = alist.at(i);
-		if (a.position() >= point.x()) {
+		if (a.position() + leftShift >= point.x()) {
 			index = i;
 			break;
 		}
@@ -191,12 +193,12 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 	double r, s;
 
 	if (index != -1) {
-		for (int i = index - 1; i > 0; --i) {
+		for (int i = index - 1; i >= 0; --i) {
 			const auto& a1 = alist.at(i);
 			const auto& a2 = alist.at(i + 1);
 
-			QPointF p1(a1.position(), a1.height());
-			QPointF p2(a2.position(), a2.height());
+			QPointF p1(a1.position() + leftShift, a1.height());
+			QPointF p2(a2.position() + leftShift, a2.height());
 
 			bool intersect = iRIC::intersectionPoint(point, left, p1, p2, &intersection, &r, &s);
 			if (! intersect || r < 0 || r > 1 || s < 0 || s > 1) {continue;}
@@ -208,10 +210,11 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 		}
 	}
 
+	index = -1;
 	*rightFound = false;
 	for (int i = 0; i < alist.size(); ++i) {
 		const auto& a = alist.at(i);
-		if (a.position() > point.x()) {
+		if (a.position() + leftShift > point.x()) {
 			index = i - 1;
 			break;
 		}
@@ -222,8 +225,8 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 			const auto& a1 = alist.at(i);
 			const auto& a2 = alist.at(i + 1);
 
-			QPointF p1(a1.position(), a1.height());
-			QPointF p2(a2.position(), a2.height());
+			QPointF p1(a1.position() + leftShift, a1.height());
+			QPointF p2(a2.position() + leftShift, a2.height());
 
 			bool intersect = iRIC::intersectionPoint(point, right, p1, p2, &intersection, &r, &s);
 			if (! intersect || r < 0 || r > 1 || s < 0 || s > 1) {continue;}

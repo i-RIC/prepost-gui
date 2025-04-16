@@ -121,7 +121,7 @@ private:
 	void drawJmkLine(QPainter& painter);
 	void drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix);
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);
-	void drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
+	void drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, double leftShift, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
 	void drawAspectRatio(QPainter &painter);
 	void drawPolyLineCrossPoints(QPainter& painter);
 	void drawEditPreview(QPainter& painter);

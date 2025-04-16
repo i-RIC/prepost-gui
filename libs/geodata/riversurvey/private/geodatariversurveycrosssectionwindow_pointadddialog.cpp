@@ -74,7 +74,7 @@ void GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::apply()
 GeoDataRiverCrosssection::AltitudeList GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::createNewList(int* insertPosition) const
 {
 	auto newlist = m_alist;
-	GeoDataRiverCrosssection::Altitude newAlt(ui->positionXEdit->value(), ui->positionYEdit->value());
+	GeoDataRiverCrosssection::Altitude newAlt(ui->positionXEdit->value() - m_point->crosssection().leftShift(), ui->positionYEdit->value());
 	bool inserted = false;
 	for (auto it = newlist.begin(); it != newlist.end(); ++it) {
 		if (newAlt.position() < it->position()) {

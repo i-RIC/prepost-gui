@@ -72,6 +72,7 @@ bool GeoDataRiverSurvey::EditCrosssectionCommand::mergeWith(const QUndoCommand* 
 	if (m_rs != com->m_rs) {return false;}
 	if (m_window != com->m_window) {return false;}
 
+	m_apply = com->m_apply;
 	m_after = com->m_after;
 	return true;
 }

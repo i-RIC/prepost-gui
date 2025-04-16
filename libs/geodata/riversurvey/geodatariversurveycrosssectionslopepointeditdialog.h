@@ -31,7 +31,7 @@ public:
 	void setSlope(int slope);
 	void apply();
 
-	static void calculateLeftAndRightPoints(const GeoDataRiverCrosssection::AltitudeList& alist, Mode mode, const QPointF& point, int slope, QPointF* left, QPointF* right);
+	static void calculateLeftAndRightPoints(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, Mode mode, const QPointF& point, int slope, QPointF* left, QPointF* right);
 
 public slots:
 	void accept() override;
@@ -45,7 +45,7 @@ private slots:
 private:
 	GeoDataRiverSurveyCrosssectionWindow* crosssectionWindow() const;
 	QUndoCommand* createCommand(bool apply) const;
-	static void findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec);
+	static void findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec);
 
 	Mode m_mode;
 	GeoDataRiverCrosssection::AltitudeList m_original;
