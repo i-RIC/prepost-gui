@@ -2181,6 +2181,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode
 	const auto& selectedAlt = alist.at(index.row());
 	m_editAltitudePreview = selectedAlt;
 	m_oldLine.crosssection().AltitudeInfo() = alist;
+	m_oldLine.crosssection().setLeftShift(xsec.leftShift());
 
 	updateMouseCursor();
 }
