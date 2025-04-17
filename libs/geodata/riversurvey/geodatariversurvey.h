@@ -169,6 +169,7 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
+	class AreaCalculator;
 	class DisplaySetting;
 	class CalcAreaConditionDialog;
 

@@ -193,6 +193,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveywebimporter.h \
            gridcreatingconditionriversurveyi.h \
            private/geodatariversurvey_addextensioncommand.h \
+           private/geodatariversurvey_areacalculator.h \
            private/geodatariversurvey_calcareaconditiondialog.h \
            private/geodatariversurvey_changeselectioncommand.h \
            private/geodatariversurvey_deleteriverpathpointcommand.h \
@@ -309,6 +310,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveyvtkexporter.cpp \
            geodatariversurveywebimporter.cpp \
            private/geodatariversurvey_addextensioncommand.cpp \
+           private/geodatariversurvey_areacalculator.cpp \
            private/geodatariversurvey_calcareaconditiondialog.cpp \
            private/geodatariversurvey_changeselectioncommand.cpp \
            private/geodatariversurvey_deleteriverpathpointcommand.cpp \

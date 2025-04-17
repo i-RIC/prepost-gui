@@ -17,6 +17,7 @@
 #include "geodatariversurveygeneratedialog.h"
 #include "geodatariversurveymappointsdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_areacalculator.h"
 #include "private/geodatariversurvey_calcareaconditiondialog.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
@@ -1767,7 +1768,7 @@ void GeoDataRiverSurvey::calcArea()
 		if (rs == this) {continue;}
 
 		rslist.push_back(rs);
-		rsNames.push_back(rs->name());
+		rsNames.push_back(rs->caption());
 	}
 	if (rsNames.size() == 0) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("To use this function, you need to import another river survey data for comparison."));
@@ -1781,7 +1782,13 @@ void GeoDataRiverSurvey::calcArea()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
+	auto before = rslist.at(dialog.compareTargetIndex());
+	AreaCalculator calculator(before, this, dialog.filename());
 
+	bool ok = calculator.calculate(preProcessorWindow());
+	if (ok) {
+		QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Calculation result is saved to %1.").arg(QDir::toNativeSeparators(dialog.filename())));
+	}
 }
 
 void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)

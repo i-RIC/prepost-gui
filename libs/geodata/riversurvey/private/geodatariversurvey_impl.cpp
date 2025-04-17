@@ -467,6 +467,9 @@ void GeoDataRiverSurvey::Impl::setupEditModeMenu(QMenu* m)
 	m->addAction(m_exportJmkAction);
 
 	m->addSeparator();
+	m->addAction(m_calcAreaAction);
+
+	m->addSeparator();
 	m->addAction(m_rs->deleteAction());
 }
 

@@ -15,6 +15,7 @@
 #include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
 #include "private/geodatariversurvey_editjmkdatabydragcommand.h"
 #include "private/geodatariversurvey_editjmkdatacommand.h"
+#include "private/geodatariversurvey_impl.h"
 
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
@@ -225,6 +226,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		m_rightClickingMenu->addAction(m_parentWindow->addVegetationAction());
 		m_rightClickingMenu->addAction(m_parentWindow->editSelectedVegetationAction());
 		m_rightClickingMenu->addAction(m_parentWindow->deleteSelectedVegetationAction());
+
+		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->targetRiverSurvey()->impl->m_calcAreaAction);
 	}
 	if (m_rightClickingMenuForEditCrosssectionMode == nullptr) {
 		m_rightClickingMenuForEditCrosssectionMode = new QMenu(this);
@@ -410,7 +414,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPath
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter& painter)
 {
-	const auto& odn = m_parentWindow->target()->odn();
+	auto target = m_parentWindow->target();
+	if (target == nullptr) { return; }
+
+	const auto& odn = target->odn();
 
 	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter);
 	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter);
@@ -424,6 +431,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter&
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter)
 {
+	if (m_parentWindow->target() == nullptr) { return; }
+
 	const auto& xsec = m_parentWindow->target()->crosssection();
 	double leftShift = xsec.leftShift();
 	const auto& alist = xsec.AltitudeInfo();
@@ -431,8 +440,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index,
 
 	painter.save();
 	const auto alt = alist.at(index);
-
-	if (m_parentWindow->target() == nullptr) {return;}
 
 	QPen pen(color, 1, Qt::SolidLine);
 	QBrush brush(color, Qt::SolidPattern);
