@@ -118,6 +118,7 @@ private slots:
 	void generatePointMap();
 	void importJmk();
 	void exportJmk();
+	void calcArea();
 
 signals:
 	void dataUpdated();
@@ -169,6 +170,7 @@ private:
 	RiverRightBankSolver m_RightBankSolver;
 
 	class DisplaySetting;
+	class CalcAreaConditionDialog;
 
 	class PolyLineFinishDefiningCommand;
 	class PolyLineUpdateLabelsCommand;
@@ -191,9 +193,9 @@ private:
 	class RemoveExtensionCommand;
 	class RenameRiverPathPointCommand;
 	class RotateRiverCrosssectionCommand;
+	class SetOdnPointCommand;
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
-	class SetOdnPointCommand;
 
 	class Impl;
 	Impl* impl;

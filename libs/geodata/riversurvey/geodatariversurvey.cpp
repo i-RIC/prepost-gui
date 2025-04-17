@@ -17,6 +17,7 @@
 #include "geodatariversurveygeneratedialog.h"
 #include "geodatariversurveymappointsdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_calcareaconditiondialog.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
 #include "private/geodatariversurvey_impl.h"
@@ -1745,6 +1746,42 @@ void GeoDataRiverSurvey::exportJmk()
 	if (! ok) {return;}
 
 	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Vegetation data is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)));
+}
+
+void GeoDataRiverSurvey::calcArea()
+{
+	if (impl->m_calcAreaFilename.isEmpty()) {
+		QDir dir(LastIODirectory::get());
+		impl->m_calcAreaFilename = dir.absoluteFilePath("calcAreaResult.csv");
+	}
+
+	std::vector<GeoDataRiverSurvey*> rslist;
+	QStringList rsNames;
+
+	auto group = geoDataDataItem()->groupDataItem();
+	for (auto child : group->childItems()) {
+		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemI*> (child);
+		auto geoData = geoDataItem->geoData();
+		auto rs = dynamic_cast<GeoDataRiverSurvey*> (geoData);
+		if (rs == nullptr) {continue;}
+		if (rs == this) {continue;}
+
+		rslist.push_back(rs);
+		rsNames.push_back(rs->name());
+	}
+	if (rsNames.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("To use this function, you need to import another river survey data for comparison."));
+		return;
+	}
+
+	CalcAreaConditionDialog dialog(preProcessorWindow());
+	dialog.setFilename(impl->m_calcAreaFilename);
+	dialog.setCompareTargets(rsNames);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+
 }
 
 void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)

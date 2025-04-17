@@ -113,6 +113,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_generatePointMapAction {new QAction(GeoDataRiverSurvey::tr("Generate point cloud data"), rs)},
 	m_importJmkAction {new QAction(GeoDataRiverSurvey::tr("Import JMK file"), rs)},
 	m_exportJmkAction {new QAction(GeoDataRiverSurvey::tr("Export JMK file"), rs)},
+	m_calcAreaAction {new QAction(GeoDataRiverSurvey::tr("Calculate difference areas"), rs)},
 	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
 	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
 	m_pixmapMove {":/libs/guibase/images/cursorItemMove.png"},
@@ -227,6 +228,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_generatePointMapAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::generatePointMap);
 	connect(m_importJmkAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::importJmk);
 	connect(m_exportJmkAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::exportJmk);
+	connect(m_calcAreaAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::calcArea);
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToLinear()));
