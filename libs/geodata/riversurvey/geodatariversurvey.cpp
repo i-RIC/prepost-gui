@@ -504,6 +504,34 @@ void GeoDataRiverSurvey::saveExternalData(const QString& filename)
 		delete rs;
 
 		// ODN data
+		auto odnFilename = filename;
+		odnFilename.append(".odn");
+		QFile odnf(odnFilename);
+		odnf.open(QIODevice::WriteOnly | QIODevice::Text);
+		QTextStream odns(&odnf);
+		p = m_headPoint->nextPoint();
+		while (p != nullptr) {
+			odns << p->name() << ":\n";
+			p->odn().exportToYaml(&odns, "  ");
+
+			p = p->nextPoint();
+		}
+		odnf.close();
+
+		// JMK data
+		auto jmkFilename = filename;
+		jmkFilename.append(".jmk");
+		QFile jmkf(jmkFilename);
+		jmkf.open(QIODevice::WriteOnly | QIODevice::Text);
+		QTextStream jmks(&jmkf);
+		p = m_headPoint->nextPoint();
+		while (p != nullptr) {
+			jmks << p->name() << ":\n";
+			p->jmk().exportToYaml(&jmks, "  ");
+
+			p = p->nextPoint();
+		}
+		jmkf.close();
 	} else if (impl->m_mode == Impl::Mode::CreateMode) {
 		QFile f(filename);
 		f.open(QIODevice::WriteOnly);
@@ -1724,6 +1752,22 @@ void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 GeoDataProxy* GeoDataRiverSurvey::getProxy()
 {
 	return new GeoDataRiverSurveyProxy(this);
+}
+
+QStringList GeoDataRiverSurvey::containedFiles() const
+{
+	QStringList ret;
+	if (filename() != "") {
+		auto relFilename = relativeFilename();
+		ret.append(relFilename);
+
+		if (impl->m_mode == Impl::Mode::EditMode) {
+			ret.append(relFilename + ".odn");
+			ret.append(relFilename + ".jmk");
+		}
+	}
+
+	return ret;
 }
 
 void GeoDataRiverSurvey::updateFilename()

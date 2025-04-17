@@ -84,6 +84,7 @@ public:
 	HydraulicDataRiverSurveyWaterElevation* defaultWSE() const;
 
 	GeoDataProxy* getProxy() override;
+	QStringList containedFiles() const override;
 
 	class DisplaySettingWidget;
 

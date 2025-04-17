@@ -114,6 +114,15 @@ LIBS += \
 
 LIBS += -lgeos
 
+# yaml-cpp
+
+win32 {
+        LIBS += -lyaml-cpp
+}
+unix {
+        LIBS += -lyaml-cpp
+}
+
 # iriclib
 
 win32 {
