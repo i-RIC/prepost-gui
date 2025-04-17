@@ -19,11 +19,35 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 	m_window {w},
 	m_groupDataItem {w->groupDataItem()},
 	m_rs {rs}
-{}
+{
+	m_beforeOdn = p->odn();
+	m_afterOdn = p->odn();
+
+	std::vector<double> posvec;
+	for (const auto& alt : after) {
+		posvec.push_back(alt.position());
+	}
+
+	for (int i = 0; i < 6; ++i) {
+		auto odnPos = before.at(m_beforeOdn.nb(i)).position();
+		auto it = std::lower_bound(posvec.begin(), posvec.end(), odnPos);
+
+		if (*it == odnPos) {
+			m_afterOdn.setNb(i, it - posvec.begin());
+		} else {
+			if (i < 3) {
+				m_afterOdn.setNb(i, 0);
+			} else {
+				m_afterOdn.setNb(i, posvec.size() - 1);
+			}
+		}
+	}
+}
 
 void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 {
 	m_point->crosssection().AltitudeInfo() = m_after;
+	m_point->odn() = m_afterOdn;
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	if (m_apply) {
@@ -42,6 +66,7 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 void GeoDataRiverSurvey::EditCrosssectionCommand::undo()
 {
 	m_point->crosssection().AltitudeInfo() = m_before;
+	m_point->odn() = m_beforeOdn;
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	if (m_apply) {

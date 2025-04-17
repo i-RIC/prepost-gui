@@ -17,10 +17,13 @@ public:
 	bool mergeWith(const QUndoCommand *other) override;
 
 private:
-	void apply(const GeoDataRiverCrosssection::AltitudeList& alist);
+	void apply(const GeoDataRiverCrosssection::AltitudeList& alist, const GeoDataRiverPathPointOdnData& odn);
 
 	GeoDataRiverCrosssection::AltitudeList m_after;
+	GeoDataRiverPathPointOdnData m_afterOdn;
+
 	GeoDataRiverCrosssection::AltitudeList m_before;
+	GeoDataRiverPathPointOdnData m_beforeOdn;
 
 	bool m_apply;
 	GeoDataRiverPathPoint* m_point;

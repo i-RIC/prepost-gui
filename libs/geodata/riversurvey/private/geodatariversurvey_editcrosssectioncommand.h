@@ -26,8 +26,10 @@ private:
 	bool m_tableaction;
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverCrosssection::AltitudeList m_before;
+	GeoDataRiverPathPointOdnData m_beforeOdn;
 	int m_beforeSelection;
 	GeoDataRiverCrosssection::AltitudeList m_after;
+	GeoDataRiverPathPointOdnData m_afterOdn;
 	int m_afterSelection;
 	GeoDataRiverSurveyCrosssectionWindow* m_window;
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
