@@ -33,7 +33,11 @@ void GeoDataRiverPathPointOdnData::setSpanDistance(double distance)
 
 void GeoDataRiverPathPointOdnData::importFromYaml(const YAML::Node& node)
 {
-
+	auto nb = node["nb"];
+	for (int i = 0; i < 6; ++i) {
+		m_nb[i] = nb[i].as<int>();
+	}
+	node["nb"].IsSequence();
 	m_spanDistance = node["spanDistance"].as<double>();
 }
 

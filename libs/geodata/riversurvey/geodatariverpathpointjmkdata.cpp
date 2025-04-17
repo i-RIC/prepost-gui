@@ -1,5 +1,7 @@
 #include "geodatariverpathpointjmkdata.h"
 
+#include <yaml-cpp/yaml.h>
+
 GeoDataRiverPathPointJmkData::Item::Item() :
 	distance {0},
 	width {0},
@@ -32,6 +34,20 @@ std::vector<GeoDataRiverPathPointJmkData::Item>& GeoDataRiverPathPointJmkData::i
 
 void GeoDataRiverPathPointJmkData::importFromYaml(const YAML::Node& node)
 {
+	for (auto it = node.begin(); it != node.end(); ++it) {
+		auto i = *it;
+
+		Item item;
+		item.distance = i["distance"].as<double>();
+		item.width = i["width"].as<double>();
+		item.height = i["height"].as<double>();
+		item.submerged = i["submerged"].as<int>();
+		item.dense = i["dense"].as<int>();
+		item.dead = i["dead"].as<int>();
+		item.highLow = i["highLow"].as<int>();
+		item.lowBranchHeight = i["lowBranchHeight"].as<double>();
+		m_items.push_back(item);
+	}
 }
 
 void GeoDataRiverPathPointJmkData::exportToYaml(QTextStream* stream, const QString& head)

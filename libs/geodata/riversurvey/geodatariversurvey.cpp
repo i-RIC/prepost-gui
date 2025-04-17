@@ -94,6 +94,8 @@
 
 #include <iriclib_riversurvey.h>
 
+#include <yaml-cpp/yaml.h>
+
 namespace {
 
 QPointF nearestInterSection(const QPointF& p1, const QPointF& p2, std::vector<QPointF>& polyLine)
@@ -438,6 +440,36 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 				before = newPoint;
 			}
 			delete rs;
+
+			// ODN data
+			auto odnFilename = filename;
+			odnFilename.append(".odn");
+			YAML::Node odn = YAML::LoadFile(iRIC::toStr(odnFilename));
+
+			auto p = m_headPoint->nextPoint();
+			while (p != nullptr) {
+				auto pname = iRIC::toStr(p->name());
+				if (odn[pname]) {
+					auto odn_p = odn[pname];
+					p->odn().importFromYaml(odn_p);
+				}
+				p = p->nextPoint();
+			}
+
+			// JMK data
+			auto jmkFilename = filename;
+			jmkFilename.append(".jmk");
+			YAML::Node jmk = YAML::LoadFile(iRIC::toStr(jmkFilename));
+
+			p = m_headPoint->nextPoint();
+			while (p != nullptr) {
+				auto pname = iRIC::toStr(p->name());
+				if (jmk[pname]) {
+					auto jmk_p = jmk[pname];
+					p->jmk().importFromYaml(jmk_p);
+				}
+				p = p->nextPoint();
+			}
 		} else if (impl->m_mode == Impl::Mode::CreateMode) {
 			// implement this
 			QFile f(filename);
