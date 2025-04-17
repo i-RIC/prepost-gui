@@ -1610,7 +1610,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 
 			GeoDataRiverPathPointJmkData::Item item;
 			auto target = m_parentWindow->target();
-			item.distance = mappedLeft.x() + target->crosssection().leftShift();
+			item.distance = mappedLeft.x();
 			item.width = mappedRight.x() - mappedLeft.x();
 			item.height = 10;
 
