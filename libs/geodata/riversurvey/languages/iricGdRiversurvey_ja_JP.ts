@@ -521,6 +521,66 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Export JMK file</source>
         <translation>JMKファイルのエクスポート</translation>
     </message>
+    <message>
+        <source>To use this function, you need to import another river survey data for comparison.</source>
+        <translation>この機能を使うには、比較対象とする河川横断データをインポートする必要があります。</translation>
+    </message>
+    <message>
+        <source>Calculation result is saved to %1.</source>
+        <translation>計算結果は %1 に保存されました。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>%1 を開けません。</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>横断線</translation>
+    </message>
+    <message>
+        <source>Start position</source>
+        <translation>開始位置</translation>
+    </message>
+    <message>
+        <source>End position</source>
+        <translation>終了位置</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Area</source>
+        <translation>面積</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>備考</translation>
+    </message>
+    <message>
+        <source>%1 does not have a cross section named &quot;%2&quot;</source>
+        <translation>%1 には &quot;%2&quot; という名前の横断線がありません。</translation>
+    </message>
+    <message>
+        <source>Embankment</source>
+        <translation>盛土</translation>
+    </message>
+    <message>
+        <source>Cutting</source>
+        <translation>切土</translation>
+    </message>
+    <message>
+        <source>No difference found</source>
+        <translation>違いがありませんでした</translation>
+    </message>
+    <message>
+        <source>Calculate difference areas</source>
+        <translation>差分の面積を計算</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1154,6 +1214,17 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Delete selected vegetation</source>
         <translation>選択した植生の削除</translation>
     </message>
+    <message>
+        <source>&amp;Add point</source>
+        <translation>点の追加 (&amp;A)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
+    <message>
+        <source>Add point</source>
+        <translation>点の追加</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -1348,6 +1419,25 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Low branch height:</source>
         <translation>枝下高さ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
+    <message>
+        <source>Add new elevation point</source>
+        <translation>新しい標高点の追加</translation>
+    </message>
+    <message>
+        <source>Mouse Click</source>
+        <translation>マウスクリック</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>座標</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -2013,6 +2103,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Error occered while reading line %1. Too short.</source>
         <translation>%1 行目の読み込みでエラーが発生しました。 短すぎます。</translation>
     </message>
+    <message>
+        <source>Error occered while reading line %1</source>
+        <translation>%1 行目の読み込みでエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
+        <translation>標高データが正しく読み込めませんでした。%1 の点数の値が正しくない可能性があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
@@ -2109,6 +2207,21 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Year:</source>
         <translation>年:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
+    <message>
+        <source>Calculate Area Setting</source>
+        <translation>面積の計算設定</translation>
+    </message>
+    <message>
+        <source>Compare target:</source>
+        <translation>比較対象:</translation>
+    </message>
+    <message>
+        <source>Output Filename:</source>
+        <translation>出力ファイル名:</translation>
     </message>
 </context>
 <context>

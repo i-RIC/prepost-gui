@@ -208,6 +208,9 @@ bool GeoDataRiverSurvey::AreaCalculator::calculate(QWidget* w)
 	}
 
 	QTextStream s(&f);
+	s.setCodec("UTF-8");
+	s.setGenerateByteOrderMark(true);
+
 	s << GeoDataRiverSurvey::tr("Cross Section") << "," << GeoDataRiverSurvey::tr("Start position") << "," << GeoDataRiverSurvey::tr("End position") << "," << GeoDataRiverSurvey::tr("Type") << "," << GeoDataRiverSurvey::tr("Area") << "," << GeoDataRiverSurvey::tr("Notice") << "\n";
 
 	std::unordered_map<QString, GeoDataRiverPathPoint*> before_points;

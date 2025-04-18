@@ -474,6 +474,66 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Export JMK file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>To use this function, you need to import another river survey data for comparison.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation result is saved to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished">开幕 %1 失败的。</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">类型</translation>
+    </message>
+    <message>
+        <source>Area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not have a cross section named &quot;%2&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Embankment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cutting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No difference found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculate difference areas</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1055,6 +1115,17 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Delete selected vegetation</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&amp;Add point</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
+    <message>
+        <source>Add point</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -1245,6 +1316,25 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Low branch height:</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
+    <message>
+        <source>Add new elevation point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse Click</source>
+        <translation type="unfinished">鼠标点击</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">位置</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
     </message>
 </context>
 <context>
@@ -1782,6 +1872,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Error occered while reading line %1. Too short.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error occered while reading line %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
@@ -1878,6 +1976,21 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Year:</source>
         <translation>年：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
+    <message>
+        <source>Calculate Area Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output Filename:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
