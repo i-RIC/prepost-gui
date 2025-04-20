@@ -11,13 +11,6 @@ class GD_POINTMAP_EXPORT GeoDataPointmapRealReadOnlyCreator : public GeoDataCrea
 public:
 	GeoDataPointmapRealReadOnlyCreator();
 
-	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
-
-	QString name(unsigned int index) const override;
-	QString defaultCaption(unsigned int index) const override;
-
-	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-
 	bool isReadOnly() const override;
 };
 

@@ -8,6 +8,7 @@
 class GD_POINTMAP_EXPORT GeoDataPointmapRealCreator : public GeoDataCreator
 {
 	Q_OBJECT
+
 public:
 	GeoDataPointmapRealCreator();
 
@@ -17,6 +18,9 @@ public:
 	QString defaultCaption(unsigned int index) const override;
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+protected:
+	GeoDataPointmapRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOINTMAPREALCREATOR_H
