@@ -11,6 +11,10 @@ class GeoDataGdalNetcdfImporter::ImporterSetting : public GeoDataImporterSetting
 public:
 	ImporterSetting();
 
+	StringContainer csName;
+	StringContainer valueVariable;
+	StringContainer dims;
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

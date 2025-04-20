@@ -5,6 +5,7 @@
 #include "private/geodatagdal_impl.h"
 #include "private/geodatagdalnetcdfimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemselectdialog.h>
 #include <guicore/base/iricmainwindowi.h>
@@ -34,6 +35,7 @@
 #include <QStringList>
 #include <QTimeZone>
 
+#include <gdal_priv.h>
 #include <udunits2.h>
 
 namespace {
@@ -77,7 +79,7 @@ int getVarLen(int ncid, int varid)
 } // namespace
 
 GeoDataGdalNetcdfImporter::GeoDataGdalNetcdfImporter(GeoDataCreator* creator) :
-	GeoDataImporter("gdal", tr("NetCDF"), creator)
+	GeoDataImporter("netcdf", tr("NetCDF"), creator)
 {}
 
 GeoDataGdalNetcdfImporter::~GeoDataGdalNetcdfImporter()
@@ -279,7 +281,127 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 
 	GeoDataGdal::buildWarpMatrix(xlen, ylen, srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(), &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
 
-	// todo save setting data
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = m_coordinateSystem->name();
+	s->valueVariable = m_valueVariable;
+
+	QStringList dimsList;
+	for (const auto& dim : dims) {
+		dimsList.append(dim);
+	}
+	s->dims = dimsList.join(",");
+
+	return true;
+}
+
+bool GeoDataGdalNetcdfImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	GDALAllRegister();
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	m_coordinateSystem = csBuilder->system(s->csName);
+
+	m_valueVariable = s->valueVariable;
+	m_dims.clear();
+	for (const auto& dim : s->dims.value().split(",")) {
+		m_dims.push_back(dim);
+	}
+
+	// grid attributes cleared
+	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
+	for (auto cond : conds) {
+		auto grid = cond->gridDataItem()->grid();
+		if (grid == nullptr) {continue;}
+
+		auto att = grid->attribute(condition->name());
+		att->clearTemporaryData();
+		att->setDefaultValue();
+	}
+
+	m_groupDataItem = item;
+
+	char nameBuffer[200];
+
+	std::string fname = iRIC::toStr(setting()->fileName());
+	int ncid;
+	int ndims, nvars, ngatts, unlimdimid;
+
+	m_xDimId = -1;
+	m_yDimId = -1;
+
+	int ret = nc_open(fname.c_str(), NC_NOWRITE, &ncid);
+	if (ret != 0) {return false;}
+	nc_closer closer(ncid);
+
+	ret = nc_inq(ncid, &ndims, &nvars, &ngatts, &unlimdimid);
+	if (ret != 0) {return false;}
+
+	// investigate dimensions
+	std::vector<int> dimids(ndims);
+	ret = nc_inq_dimids(ncid, &ndims, dimids.data(), 0);
+	if (ret != 0) {return false;}
+
+	std::vector<QString> dims;
+	std::vector<int> dimIds;
+
+	for (int i = 0; i < ndims; ++i) {
+		int dimid = dimids[i];
+		ret = nc_inq_dimname(ncid, dimid, &(nameBuffer[0]));
+		if (ret != 0) {return false;}
+		QString name = QString(nameBuffer);
+		if (name.toLower() == "x") {
+			// x found
+			m_xDimId = dimid;
+		} else if (name.toLower() == "y") {
+			// y found
+			m_yDimId = dimid;
+		} else if (name.toLower() == "lon" || name.toLower() == "longitude") {
+			// longitude found
+			m_xDimId = dimid;
+		} else if (name.toLower() == "lat" || name.toLower() == "latitude") {
+			// latitude found
+			m_yDimId = dimid;
+		}	else {
+			dims.push_back(name);
+			dimIds.push_back(dimid);
+		}
+	}
+
+	// load X and Y
+	size_t xlen, ylen;
+	ret = nc_inq_dimlen(ncid, m_xDimId, &xlen);
+	ret = nc_inq_dimlen(ncid, m_yDimId, &ylen);
+	m_srcISize = xlen;
+	m_srcJSize = ylen;
+
+	std::vector<double> xs(xlen);
+	std::vector<double> ys(ylen);
+
+	int varid;
+	ret = nc_inq_dimname(ncid, m_xDimId, nameBuffer);
+	ret = nc_inq_varid(ncid, nameBuffer, &varid);
+	ret = ncGetVariableAsDouble(ncid, varid, xlen, xs.data());
+
+	ret = nc_inq_dimname(ncid, m_yDimId, nameBuffer);
+	ret = nc_inq_varid(ncid, nameBuffer, &varid);
+	ret = ncGetVariableAsDouble(ncid, varid, ylen, ys.data());
+
+	double dx = xs[1] - xs[0];
+	double dy = ys[1] - ys[0];
+
+	double srcTransform[6];
+	srcTransform[0] = xs[0] - dx * 0.5;
+	srcTransform[1] = dx;
+	srcTransform[2] = 0;
+	srcTransform[3] = ys[0] + (ys.size() - 0.5) * dy;
+	srcTransform[4] = 0;
+	srcTransform[5] = - dy;
+
+	GeoDataGdal::buildWarpMatrix(xlen, ylen, srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(), &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
 
 	return true;
 }

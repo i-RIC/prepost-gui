@@ -21,6 +21,7 @@ public:
 
 protected:
 	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 	void setupCoordinates(GeoDataGdal* data);
 
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
