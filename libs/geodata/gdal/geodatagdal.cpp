@@ -11,6 +11,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
@@ -100,6 +101,13 @@ GeoDataGdal::GeoDataGdal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefi
 
 GeoDataGdal::~GeoDataGdal()
 {
+	if (creator()->isReadOnly()) {
+		QFile f(filename());
+		if (f.exists()) {
+			f.remove();
+		}
+	}
+
 	actorCollection()->RemoveItem(m_regionActor);
 	actorCollection()->RemoveItem(m_actor);
 	renderer()->RemoveActor(m_regionActor);
