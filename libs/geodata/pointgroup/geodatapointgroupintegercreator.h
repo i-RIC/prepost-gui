@@ -9,6 +9,9 @@ class GD_POINTGROUP_EXPORT GeoDataPointGroupIntegerCreator : public GeoDataPoint
 {
 public:
 	GeoDataPointGroupIntegerCreator();
+
+protected:
+	GeoDataPointGroupIntegerCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOINTGROUPINTEGERCREATOR_H

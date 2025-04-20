@@ -1,14 +1,15 @@
 #ifndef GEODATAPOINTGROUPREALREADONLYCREATOR_H
 #define GEODATAPOINTGROUPREALREADONLYCREATOR_H
 
-#include "geodatapointgroupreadonlycreatort.h"
+#include "geodatapointgrouprealcreator.h"
 
-#include <vtkDoubleArray.h>
-
-class GD_POINTGROUP_EXPORT GeoDataPointGroupRealReadOnlyCreator : public GeoDataPointGroupReadOnlyCreatorT<double, vtkDoubleArray>
+class GD_POINTGROUP_EXPORT GeoDataPointGroupRealReadOnlyCreator : public GeoDataPointGroupRealCreator
 {
 public:
 	GeoDataPointGroupRealReadOnlyCreator();
+
+	bool isCreatable() const override;
+	bool isReadOnly() const override;
 };
 
 #endif // GEODATAPOINTGROUPREALREADONLYCREATOR_H

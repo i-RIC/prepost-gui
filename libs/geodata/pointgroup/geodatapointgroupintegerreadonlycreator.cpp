@@ -1,5 +1,15 @@
 #include "geodatapointgroupintegerreadonlycreator.h"
 
 GeoDataPointGroupIntegerReadOnlyCreator::GeoDataPointGroupIntegerReadOnlyCreator() :
-	GeoDataPointGroupReadOnlyCreatorT<int, vtkIntArray> {"integerPointGroupReadOnly"}
+	GeoDataPointGroupIntegerCreator {"integerPointGroupReadOnly"}
 {}
+
+bool GeoDataPointGroupIntegerReadOnlyCreator::isCreatable() const
+{
+	return false;
+}
+
+bool GeoDataPointGroupIntegerReadOnlyCreator::isReadOnly() const
+{
+	return true;
+}

@@ -9,6 +9,9 @@ class GD_POINTGROUP_EXPORT GeoDataPointGroupRealCreator : public GeoDataPointGro
 {
 public:
 	GeoDataPointGroupRealCreator();
+
+protected:
+	GeoDataPointGroupRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOINTGROUPREALCREATOR_H

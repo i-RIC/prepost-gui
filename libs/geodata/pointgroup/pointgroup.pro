@@ -116,8 +116,6 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupnodemappert.h \
            geodatapointgrouppoint.h \
            geodatapointgroupproxy.h \
-           geodatapointgroupreadonlycreator.h \
-           geodatapointgroupreadonlycreatort.h \
            geodatapointgrouprealcreator.h \
            geodatapointgrouprealreadonlycreator.h \
            geodatapointgroupshpexporter.h \
@@ -135,7 +133,6 @@ HEADERS += gd_pointgroup_global.h \
            private/geodatapointgroupproxy_displaysetting.h \
            private/geodatapointgroupproxy_displaysettingwidget.h \
            private/geodatapointgroupproxy_impl.h \
-           private/geodatapointgroupreadonlycreatort_detail.h \
            public/geodatapointgroup_displaysettingwidget.h
 FORMS += geodatapointgroupcolorsettingdialog.ui \
          private/geodatapointgroupproxy_displaysettingwidget.ui \
@@ -149,7 +146,6 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgroupintegerreadonlycreator.cpp \
            geodatapointgrouppoint.cpp \
            geodatapointgroupproxy.cpp \
-           geodatapointgroupreadonlycreator.cpp \
            geodatapointgrouprealcreator.cpp \
            geodatapointgrouprealreadonlycreator.cpp \
            geodatapointgroupshpexporter.cpp \

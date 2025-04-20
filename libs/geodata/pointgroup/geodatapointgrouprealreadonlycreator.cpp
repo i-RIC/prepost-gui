@@ -1,5 +1,15 @@
 #include "geodatapointgrouprealreadonlycreator.h"
 
 GeoDataPointGroupRealReadOnlyCreator::GeoDataPointGroupRealReadOnlyCreator() :
-	GeoDataPointGroupReadOnlyCreatorT<double, vtkDoubleArray> {"realPointGroupReadOnly"}
+	GeoDataPointGroupRealCreator {"realPointGroupReadOnly"}
 {}
+
+bool GeoDataPointGroupRealReadOnlyCreator::isCreatable() const
+{
+	return false;
+}
+
+bool GeoDataPointGroupRealReadOnlyCreator::isReadOnly() const
+{
+	return true;
+}
