@@ -9,6 +9,9 @@ class GD_POLYLINEGROUP_EXPORT GeoDataPolyLineGroupRealCreator : public GeoDataPo
 {
 public:
 	GeoDataPolyLineGroupRealCreator();
+
+protected:
+	GeoDataPolyLineGroupRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOLYLINEGROUPREALCREATOR_H

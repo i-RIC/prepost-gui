@@ -1,5 +1,15 @@
 #include "geodatapolylinegroupintegerreadonlycreator.h"
 
 GeoDataPolyLineGroupIntegerReadOnlyCreator::GeoDataPolyLineGroupIntegerReadOnlyCreator() :
-	GeoDataPolyLineGroupReadOnlyCreatorT<int, vtkIntArray> {"integerPolyLineGroupReadOnly"}
+	GeoDataPolyLineGroupIntegerCreator {"integerPolyLineGroupReadOnly"}
 {}
+
+bool GeoDataPolyLineGroupIntegerReadOnlyCreator::isCreatable() const
+{
+	return false;
+}
+
+bool GeoDataPolyLineGroupIntegerReadOnlyCreator::isReadOnly() const
+{
+	return true;
+}

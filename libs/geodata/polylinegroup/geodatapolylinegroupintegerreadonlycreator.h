@@ -1,14 +1,17 @@
 #ifndef GEODATAPOLYLINEGROUPINTEGERREADONLYCREATOR_H
 #define GEODATAPOLYLINEGROUPINTEGERREADONLYCREATOR_H
 
-#include "geodatapolylinegroupreadonlycreatort.h"
+#include "geodatapolylinegroupintegercreator.h"
 
 #include <vtkDoubleArray.h>
 
-class GD_POLYLINEGROUP_EXPORT GeoDataPolyLineGroupIntegerReadOnlyCreator : public GeoDataPolyLineGroupReadOnlyCreatorT<int, vtkIntArray>
+class GD_POLYLINEGROUP_EXPORT GeoDataPolyLineGroupIntegerReadOnlyCreator : public GeoDataPolyLineGroupIntegerCreator
 {
 public:
 	GeoDataPolyLineGroupIntegerReadOnlyCreator();
+
+	bool isCreatable() const override;
+	bool isReadOnly() const override;
 };
 
 

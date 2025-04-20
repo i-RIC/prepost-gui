@@ -115,8 +115,6 @@ HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroupnodemappert.h \
            geodatapolylinegrouppolyline.h \
            geodatapolylinegroupproxy.h \
-           geodatapolylinegroupreadonlycreator.h \
-           geodatapolylinegroupreadonlycreatort.h \
            geodatapolylinegrouprealcreator.h \
            geodatapolylinegrouprealreadonlycreator.h \
            geodatapolylinegroupshpexporter.h \
@@ -133,7 +131,6 @@ HEADERS += gd_polylinegroup_global.h \
            private/geodatapolylinegroupproxy_displaysetting.h \
            private/geodatapolylinegroupproxy_displaysettingwidget.h \
            private/geodatapolylinegroupproxy_impl.h \
-           private/geodatapolylinegroupreadonlycreatort_detail.h \
            public/geodatapolylinegroup_displaysettingwidget.h
 FORMS += \
          private/geodatapolylinegroupproxy_displaysettingwidget.ui \
@@ -146,7 +143,6 @@ SOURCES += geodatapolylinegroup.cpp \
            geodatapolylinegroupintegerreadonlycreator.cpp \
            geodatapolylinegrouppolyline.cpp \
            geodatapolylinegroupproxy.cpp \
-           geodatapolylinegroupreadonlycreator.cpp \
            geodatapolylinegrouprealcreator.cpp \
            geodatapolylinegrouprealreadonlycreator.cpp \
            geodatapolylinegroupshpexporter.cpp \
