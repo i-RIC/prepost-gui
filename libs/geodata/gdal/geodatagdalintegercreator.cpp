@@ -1,21 +1,17 @@
+#include "geodatagdalcellmappert.h"
 #include "geodatagdalgdalintegerexporter.h"
 #include "geodatagdalgdalintegerimporter.h"
 #include "geodatagdalifacemappert.h"
 #include "geodatagdalinteger.h"
 #include "geodatagdalintegercreator.h"
 #include "geodatagdalnetcdfintegerimporter.h"
+#include "geodatagdalnodemappert.h"
 #include "geodatagdaljfacemappert.h"
 #include "geodatagdalncexporter.h"
 
 GeoDataGdalIntegerCreator::GeoDataGdalIntegerCreator() :
-	GeoDataGdalCreatorT<int, vtkIntArray> {"integerGdal"}
-{
-	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
-	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
-
-	exporters().push_back(new GeoDataGdalGdalIntegerExporter(this));
-	exporters().push_back(new GeoDataGdalNcExporter(this));
-}
+	GeoDataGdalIntegerCreator {"integerGdal"}
+{}
 
 GeoData* GeoDataGdalIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
@@ -30,4 +26,14 @@ GeoData* GeoDataGdalIntegerCreator::create(ProjectDataItem* parent, SolverDefini
 		data->setMapper(new GeoDataGdalJFaceMapperT<int, vtkIntArray>(this));
 	}
 	return data;
+}
+
+GeoDataGdalIntegerCreator::GeoDataGdalIntegerCreator(const QString& typeName) :
+	GeoDataGdalCreatorT<int, vtkIntArray> {typeName}
+{
+	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
+
+	exporters().push_back(new GeoDataGdalGdalIntegerExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }

@@ -12,6 +12,9 @@ public:
 	GeoDataGdalTimeSeriesIntegerCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+protected:
+	GeoDataGdalTimeSeriesIntegerCreator(const QString& typeName);
 };
 
 #endif // GEODATAGDALTIMESERIESINTEGERCREATOR_H

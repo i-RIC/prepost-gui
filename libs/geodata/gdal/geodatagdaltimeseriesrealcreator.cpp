@@ -11,14 +11,8 @@
 #include <vtkDoubleArray.h>
 
 GeoDataGdalTimeSeriesRealCreator::GeoDataGdalTimeSeriesRealCreator() :
-	GeoDataGdalTimeSeriesCreatorT<double, vtkDoubleArray> {"timeSeriesRealGdal"}
-{
-	importers().push_back(new GeoDataGdalGdalRealImporter(this));
-	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
-	importers().push_back(new GeoDataGdalXbandImporter(this));
-
-	exporters().push_back(new GeoDataGdalNcExporter(this));
-}
+	GeoDataGdalTimeSeriesRealCreator {"timeSeriesRealGdal"}
+{}
 
 GeoData* GeoDataGdalTimeSeriesRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
@@ -29,4 +23,14 @@ GeoData* GeoDataGdalTimeSeriesRealCreator::create(ProjectDataItem* parent, Solve
 		data->setMapper(new GeoDataGdalCellMapperT<double, vtkDoubleArray>(this));
 	}
 	return data;
+}
+
+GeoDataGdalTimeSeriesRealCreator::GeoDataGdalTimeSeriesRealCreator(const QString& typeName) :
+	GeoDataGdalTimeSeriesCreatorT<double, vtkDoubleArray> {typeName}
+{
+	importers().push_back(new GeoDataGdalGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
+	importers().push_back(new GeoDataGdalXbandImporter(this));
+
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }

@@ -12,6 +12,9 @@ public:
 	GeoDataGdalRealCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+protected:
+	GeoDataGdalRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAGDALREALCREATOR_H

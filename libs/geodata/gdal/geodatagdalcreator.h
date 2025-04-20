@@ -15,7 +15,6 @@ public:
 	QString defaultCaption(unsigned int index) const override;
 
 	bool requestCoordinateSystem() const override;
-	bool isReadOnly() const override;
 };
 
 #endif // GEODATAGDALCREATOR_H

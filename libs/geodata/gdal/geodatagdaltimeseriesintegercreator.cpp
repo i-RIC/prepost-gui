@@ -6,13 +6,8 @@
 #include "geodatagdalncexporter.h"
 
 GeoDataGdalTimeSeriesIntegerCreator::GeoDataGdalTimeSeriesIntegerCreator() :
-	GeoDataGdalTimeSeriesCreatorT<int, vtkIntArray> {"timeSeriesIntegerGdal"}
-{
-	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
-	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
-
-	exporters().push_back(new GeoDataGdalNcExporter(this));
-}
+	GeoDataGdalTimeSeriesIntegerCreator {"timeSeriesIntegerGdal"}
+{}
 
 GeoData* GeoDataGdalTimeSeriesIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
@@ -23,4 +18,13 @@ GeoData* GeoDataGdalTimeSeriesIntegerCreator::create(ProjectDataItem* parent, So
 		data->setMapper(new GeoDataGdalCellMapperT<int, vtkIntArray>(this));
 	}
 	return data;
+}
+
+GeoDataGdalTimeSeriesIntegerCreator::GeoDataGdalTimeSeriesIntegerCreator(const QString& typeName) :
+	GeoDataGdalTimeSeriesCreatorT<int, vtkIntArray> {typeName}
+{
+	importers().push_back(new GeoDataGdalGdalIntegerImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfIntegerImporter(this));
+
+	exporters().push_back(new GeoDataGdalNcExporter(this));
 }

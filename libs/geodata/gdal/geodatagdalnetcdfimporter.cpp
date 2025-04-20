@@ -9,6 +9,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
@@ -224,7 +225,7 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 
 bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	GeoDataGdal* gdal = dynamic_cast<GeoDataGdal*>(data);
+	auto gdal = dynamic_cast<GeoDataGdal*>(data);
 
 	int ncid_in, ncid_out;
 	int ret;
@@ -329,8 +330,8 @@ bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget
 		c->setVariantValues(convertedVals);
 	}
 	// save coordinates and dimensions to the gdal file.
-	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
-	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
+	int out_xDimId, out_yDimId;
+	int out_xVarId, out_yVarId;
 	std::vector<int> dimIds;
 	std::vector<int> varIds;
 	int varOutId;
@@ -349,6 +350,11 @@ bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget
 
 	gdal->updateShapeData();
 	gdal->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
+
+	if (gdal->creator()->isReadOnly()) {
+		// delete the needless file
+		f.remove();
+	}
 
 	return true;
 }

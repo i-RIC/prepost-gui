@@ -7,6 +7,7 @@
 #include <cs/coordinatesystemselectdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -51,6 +52,12 @@ bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*
 	if (! importPgw(gdal, setting()->fileName(), w)) {return false;}
 	if (! importMeta(gdal, setting()->fileName(), w)) {return false;}
 	if (! importPng(gdal, setting()->fileName(), w)) {return false;}
+
+	if (gdal->creator()->isReadOnly()) {
+		// delete the needless file
+		QFile f(gdal->filename());
+		f.remove();
+	}
 
 	return true;
 }

@@ -2,8 +2,6 @@
 #define GEODATAGDALCREATORT_H
 
 #include "geodatagdalcreator.h"
-#include "geodatagdalt.h"
-#include "geodatagdalnetcdfimportert.h"
 
 class SolverDefinitionGridAttribute;
 

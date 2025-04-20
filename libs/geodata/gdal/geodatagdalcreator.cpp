@@ -1,8 +1,6 @@
 #include "geodatagdal.h"
 #include "geodatagdalcreator.h"
 #include "geodatagdalnetcdfimporter.h"
-//#include "geodatagdalimporter.h"
-//#include "geodatagdalshapeexporter.h"
 
 #include <guibase/irictoolbar.h>
 
@@ -24,11 +22,6 @@ QString GeoDataGdalCreator::defaultCaption(unsigned int index) const
 }
 
 bool GeoDataGdalCreator::requestCoordinateSystem() const
-{
-	return true;
-}
-
-bool GeoDataGdalCreator::isReadOnly() const
 {
 	return true;
 }

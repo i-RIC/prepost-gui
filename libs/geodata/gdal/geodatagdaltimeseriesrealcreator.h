@@ -12,6 +12,9 @@ public:
 	GeoDataGdalTimeSeriesRealCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+protected:
+	GeoDataGdalTimeSeriesRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAGDALTIMESERIESREALCREATOR_H

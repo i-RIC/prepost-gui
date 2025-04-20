@@ -1,10 +1,12 @@
+#include "geodatagdalcellmappert.h"
 #include "geodatagdalgdalrealexporter.h"
 #include "geodatagdalgdalrealimporter.h"
-#include "geodatagdalncexporter.h"
 #include "geodatagdalgrayscalepngrealexporter.h"
 #include "geodatagdalgrayscalepngrealimporter.h"
 #include "geodatagdalifacemappert.h"
 #include "geodatagdaljfacemappert.h"
+#include "geodatagdalncexporter.h"
+#include "geodatagdalnodemappert.h"
 #include "geodatagdalreal.h"
 #include "geodatagdalrealcreator.h"
 #include "geodatagdalnetcdfrealimporter.h"
@@ -13,16 +15,8 @@
 #include <vtkDoubleArray.h>
 
 GeoDataGdalRealCreator::GeoDataGdalRealCreator() :
-	GeoDataGdalCreatorT<double, vtkDoubleArray> {"realGdal"}
-{
-	importers().push_back(new GeoDataGdalGdalRealImporter(this));
-	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
-	importers().push_back(new GeoDataGdalGrayscalePngRealImporter(this));
-
-	exporters().push_back(new GeoDataGdalGdalRealExporter(this));
-	exporters().push_back(new GeoDataGdalGrayscalePngRealExporter(this));
-	exporters().push_back(new GeoDataGdalNcExporter(this));
-}
+	GeoDataGdalRealCreator {"realGdal"}
+{}
 
 GeoData* GeoDataGdalRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
@@ -38,3 +32,17 @@ GeoData* GeoDataGdalRealCreator::create(ProjectDataItem* parent, SolverDefinitio
 	}
 	return data;
 }
+
+GeoDataGdalRealCreator::GeoDataGdalRealCreator(const QString& typeName) :
+	GeoDataGdalCreatorT<double, vtkDoubleArray> {typeName}
+{
+	importers().push_back(new GeoDataGdalGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
+	importers().push_back(new GeoDataGdalGrayscalePngRealImporter(this));
+
+	exporters().push_back(new GeoDataGdalGdalRealExporter(this));
+	exporters().push_back(new GeoDataGdalGrayscalePngRealExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
+}
+
+

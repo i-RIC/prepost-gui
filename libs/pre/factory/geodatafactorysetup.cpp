@@ -3,9 +3,13 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <geodata/gdal/geodatagdalintegercreator.h>
+#include <geodata/gdal/geodatagdalintegerreadonlycreator.h>
 #include <geodata/gdal/geodatagdalrealcreator.h>
+#include <geodata/gdal/geodatagdalrealreadonlycreator.h>
 #include <geodata/gdal/geodatagdaltimeseriesintegercreator.h>
+#include <geodata/gdal/geodatagdaltimeseriesintegerreadonlycreator.h>
 #include <geodata/gdal/geodatagdaltimeseriesrealcreator.h>
+#include <geodata/gdal/geodatagdaltimeseriesrealreadonlycreator.h>
 // #include <geodata/netcdf/geodatanetcdfintegercreator.h>
 // #include <geodata/netcdf/geodatanetcdfrealcreator.h>
 // #include <geodata/netcdf/geodatanetcdftimeseriesintegercreator.h>
@@ -50,7 +54,9 @@ void GeoDataFactorySetup::setup()
 	factory.addCreator(new GeoDataRiverSurveyReadOnlyCreator());
 
 	factory.addCreator(new GeoDataGdalIntegerCreator());
+	factory.addCreator(new GeoDataGdalIntegerReadOnlyCreator());
 	factory.addCreator(new GeoDataGdalRealCreator());
+	factory.addCreator(new GeoDataGdalRealReadOnlyCreator());
 	factory.addCreator(new GeoDataGdalTimeSeriesIntegerCreator());
 	factory.addCreator(new GeoDataGdalTimeSeriesRealCreator());
 

@@ -16,6 +16,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
@@ -300,8 +301,10 @@ bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget
 	gdal->updateShapeData();
 	gdal->handleDimensionCurrentIndexChange(0, 0);
 
-	// delete the needless file
-	f.remove();
+	if (gdal->creator()->isReadOnly()) {
+		// delete the needless file
+		f.remove();
+	}
 
 	return true;
 }
