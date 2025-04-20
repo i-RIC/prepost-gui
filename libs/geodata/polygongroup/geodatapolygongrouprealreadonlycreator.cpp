@@ -1,5 +1,15 @@
 #include "geodatapolygongrouprealreadonlycreator.h"
 
 GeoDataPolygonGroupRealReadOnlyCreator::GeoDataPolygonGroupRealReadOnlyCreator() :
-	GeoDataPolygonGroupReadOnlyCreatorT<double, vtkDoubleArray>("realPolygonGroupReadOnly")
+	GeoDataPolygonGroupRealCreator {"realPolygonGroupReadOnly"}
 {}
+
+bool GeoDataPolygonGroupRealReadOnlyCreator::isCreatable() const
+{
+	return false;
+}
+
+bool GeoDataPolygonGroupRealReadOnlyCreator::isReadOnly() const
+{
+	return true;
+}

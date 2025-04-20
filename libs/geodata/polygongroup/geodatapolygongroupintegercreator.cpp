@@ -1,5 +1,9 @@
 #include "geodatapolygongroupintegercreator.h"
 
 GeoDataPolygonGroupIntegerCreator::GeoDataPolygonGroupIntegerCreator() :
-	GeoDataPolygonGroupCreatorT<int, vtkIntArray> {"integerPolygonGroup"}
+	GeoDataPolygonGroupIntegerCreator {"integerPolygonGroup"}
+{}
+
+GeoDataPolygonGroupIntegerCreator::GeoDataPolygonGroupIntegerCreator(const QString& typeName) :
+	GeoDataPolygonGroupCreatorT<int, vtkIntArray> {typeName}
 {}

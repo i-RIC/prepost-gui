@@ -1,5 +1,15 @@
 #include "geodatapolygongroupintegerreadonlycreator.h"
 
 GeoDataPolygonGroupIntegerReadOnlyCreator::GeoDataPolygonGroupIntegerReadOnlyCreator() :
-	GeoDataPolygonGroupReadOnlyCreatorT<int, vtkIntArray>("integerPolygonGroupReadOnly")
+	GeoDataPolygonGroupIntegerCreator {"integerPolygonGroupReadOnly"}
 {}
+
+bool GeoDataPolygonGroupIntegerReadOnlyCreator::isCreatable() const
+{
+	return false;
+}
+
+bool GeoDataPolygonGroupIntegerReadOnlyCreator::isReadOnly() const
+{
+	return true;
+}
