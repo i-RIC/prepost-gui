@@ -52,7 +52,7 @@ int GeoDataGdalGdalRealImporter::outputValuesWithTime(int ncid, int varId, int t
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
 	auto rData = dynamic_cast<GeoDataGdalReal*> (data);
 
-	std::vector<double> buffer1(xSize, ySize);
+	std::vector<double> buffer1(xSize * ySize);
 	std::vector<double> buffer2(data->xSize() * data->ySize());
 	band->RasterIO(GF_Read, 0, 0, xSize, ySize, buffer1.data(), xSize, ySize, GDT_Float64, 0, 0);
 	for (int j = 0; j < data->ySize(); ++j) {

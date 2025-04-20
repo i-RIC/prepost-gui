@@ -33,6 +33,8 @@ public:
 
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
+	GeoDataImporterSetting* createSetting() const override;
+
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
 private slots:
@@ -44,6 +46,8 @@ private:
 
 	bool doInitForSingleMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	bool doInitForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	bool doInitWithSettingForSingleMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	bool doInitWithSettingForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	bool importDataForSingleMode(GeoDataGdal* data, QWidget* w);
 	bool importDataForTimeMode(GeoDataGdal* data, QWidget* w);
@@ -75,6 +79,8 @@ private:
 	Mode m_mode;
 	GeoDataGdalFileNameMatcher* m_matcher;
 	bool m_canceled;
+
+	class ImporterSetting;
 };
 
 #endif // GEODATAGDALGDALIMPORTER_H

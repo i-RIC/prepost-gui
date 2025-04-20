@@ -4,6 +4,7 @@
 #include "geodatagdalfilenamepatterndialog.h"
 #include "geodatagdalgdalimporter.h"
 #include "private/geodatagdal_impl.h"
+#include "private/geodatagdalgdalimporter_importersetting.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -11,6 +12,7 @@
 #include <cs/gdalutil.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
@@ -87,6 +89,11 @@ const QStringList GeoDataGdalGdalImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataGdalGdalImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 void GeoDataGdalGdalImporter::cancel()
 {
 	m_canceled = true;
@@ -101,19 +108,66 @@ bool GeoDataGdalGdalImporter::doInit(int* count, SolverDefinitionGridAttribute* 
 	if (! ok) {return false;}
 
 	if (m_mode == Mode::Single) {
-		return doInitForSingleMode(count, condition, item, w);
+		ok = doInitForSingleMode(count, condition, item, w);
 	} else if (m_mode == Mode::Time) {
-		return doInitForTimeMode(count, condition, item, w);
+		ok = doInitForTimeMode(count, condition, item, w);
 	}
-	return false;
+
+	if (! ok) {return false;}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->timeMode = (m_mode == Mode::Time);
+	s->csName = m_coordinateSystem->name();
+	if (m_matcher != nullptr) {
+		s->fileNamePattern = m_matcher->pattern();
+	} else {
+		s->fileNamePattern = "";
+	}
+	s->timeZone = m_timeZone.id();
+	QStringList tmpFileNames;
+	for (const auto& name : m_filenames) {
+		tmpFileNames.append(name);
+	}
+	s->fileNames = tmpFileNames.join("\n");
+
+	return true;
 }
 
 bool GeoDataGdalGdalImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	// TODO fix this:
-	// load coordinate system from existing setting
+	clear();
+	GDALAllRegister();
 
-	return doInit(count, condition, item, w);
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	if (s->timeMode) {
+		m_mode = Mode::Time;
+	} else {
+		m_mode = Mode::Single;
+	}
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	m_coordinateSystem = csBuilder->system(s->csName);
+	if (m_coordinateSystem == nullptr) {
+		m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(s->csName);
+	}
+
+	delete m_matcher;
+	m_matcher = new GeoDataGdalFileNameMatcher(s->fileNamePattern);
+	m_timeZone = QTimeZone(s->timeZone.value().toUtf8());
+	auto names = s->fileNames.value();
+	m_filenames.clear();
+	for (const auto& name : names.split("\n")) {
+		m_filenames.push_back(name);
+	}
+
+	if (m_mode == Mode::Single) {
+		doInitWithSettingForSingleMode(count, condition, item, w);
+	} else {
+		doInitWithSettingForTimeMode(count, condition, item, w);
+	}
+	return true;
 }
 
 bool GeoDataGdalGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)
@@ -239,6 +293,91 @@ bool GeoDataGdalGdalImporter::doInitForTimeMode(int* count, SolverDefinitionGrid
 
 	ok = setupFilenames(filename, w);
 	if (! ok) {return false;}
+
+	std::vector<double> timeVals;
+	for (const auto& fname : m_filenames) {
+		QFileInfo finfo(fname);
+		bool ok;
+		QDateTime dt = m_matcher->getDateTime(finfo.fileName(), &ok);
+		dt.setTimeZone(m_timeZone);
+		timeVals.push_back(dt.toMSecsSinceEpoch() / 1000.0);
+	}
+	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
+	timeContainer->setValues(timeVals);
+
+	return true;
+}
+
+bool GeoDataGdalGdalImporter::doInitWithSettingForSingleMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto filename = setting()->fileName();
+	if (! iRIC::isAscii(filename)) {
+		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
+		return false;
+	}
+
+	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
+	if (dataset == NULL) {
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(filename)));
+		return false;
+	}
+
+	*count = 1;
+
+	bool ok = setTransform(dataset);
+	if (! ok) {return false;}
+
+	int srcISize = dataset->GetRasterXSize();
+	int srcJSize = dataset->GetRasterYSize();
+
+	GDALClose(dataset);
+
+	m_filenames.push_back(filename);
+
+	GeoDataGdal::buildWarpMatrix(srcISize, srcJSize, m_srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(),
+															 &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
+
+	return true;
+}
+
+bool GeoDataGdalGdalImporter::doInitWithSettingForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto filename = setting()->fileName();
+
+	// grid attributes cleared
+	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
+	for (auto cond : conds) {
+		auto grid = cond->gridDataItem()->grid();
+		if (grid == nullptr) {continue;}
+
+		auto att = grid->attribute(condition->name());
+		att->clearTemporaryData();
+		att->setDefaultValue();
+	}
+
+	if (! iRIC::isAscii(filename)) {
+		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
+		return false;
+	}
+
+	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
+	if (dataset == NULL) {
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(filename)));
+		return false;
+	}
+
+	*count = 1;
+
+	bool ok = setTransform(dataset);
+	if (! ok) {return false;}
+
+	int srcISize = dataset->GetRasterXSize();
+	int srcJSize = dataset->GetRasterYSize();
+
+	GDALClose(dataset);
+
+	GeoDataGdal::buildWarpMatrix(srcISize, srcJSize, m_srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(),
+															 &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
 
 	std::vector<double> timeVals;
 	for (const auto& fname : m_filenames) {

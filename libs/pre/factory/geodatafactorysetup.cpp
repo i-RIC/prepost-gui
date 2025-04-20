@@ -10,10 +10,6 @@
 #include <geodata/gdal/geodatagdaltimeseriesintegerreadonlycreator.h>
 #include <geodata/gdal/geodatagdaltimeseriesrealcreator.h>
 #include <geodata/gdal/geodatagdaltimeseriesrealreadonlycreator.h>
-// #include <geodata/netcdf/geodatanetcdfintegercreator.h>
-// #include <geodata/netcdf/geodatanetcdfrealcreator.h>
-// #include <geodata/netcdf/geodatanetcdftimeseriesintegercreator.h>
-// #include <geodata/netcdf/geodatanetcdftimeseriesrealcreator.h>
 #include <geodata/point/geodatapointrealcreator.h>
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgroupintegerreadonlycreator.h>
@@ -58,7 +54,9 @@ void GeoDataFactorySetup::setup()
 	factory.addCreator(new GeoDataGdalRealCreator());
 	factory.addCreator(new GeoDataGdalRealReadOnlyCreator());
 	factory.addCreator(new GeoDataGdalTimeSeriesIntegerCreator());
+	factory.addCreator(new GeoDataGdalTimeSeriesIntegerReadOnlyCreator());
 	factory.addCreator(new GeoDataGdalTimeSeriesRealCreator());
+	factory.addCreator(new GeoDataGdalTimeSeriesRealReadOnlyCreator());
 
 	// vector data
 	factory.addCreator(new GeoDataPolygonIntegerCreator());
