@@ -2,12 +2,12 @@
 #define GEODATAPOINTMAPREALREADONLYCREATOR_H
 
 #include "gd_pointmap_global.h"
+#include "geodatapointmaprealcreator.h"
 
-#include <guicore/pre/geodata/geodatacreator.h>
-
-class GD_POINTMAP_EXPORT GeoDataPointmapRealReadOnlyCreator : public GeoDataCreator
+class GD_POINTMAP_EXPORT GeoDataPointmapRealReadOnlyCreator : public GeoDataPointmapRealCreator
 {
 	Q_OBJECT
+
 public:
 	GeoDataPointmapRealReadOnlyCreator();
 

@@ -34,7 +34,15 @@
 #include <vtkRenderer.h>
 
 PreProcessorWindow::PreProcessorWindow(QWidget* parent) :
-	PreProcessorWindowI(parent)
+	PreProcessorWindowI(parent),
+	m_objectBrowser {new PreObjectBrowser(this)},
+	m_dataModel {nullptr},
+	m_projectDataItem {nullptr},
+	m_actionManager {new PreProcessorWindowActionManager(this)},
+	m_graphicsView {new PreProcessorGraphicsView(this)},
+	m_initialState {saveState()},
+	m_isFirstHiding {true},
+	m_isLastHiding {false}
 {
 	init();
 }
@@ -46,28 +54,23 @@ void PreProcessorWindow::init()
 {
 	setWindowTitle(tr("Pre-processing Window"));
 
-	// setup graphics view
-	m_graphicsView = new PreProcessorGraphicsView(this);
 	setCentralWidget(m_graphicsView);
 	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), this, SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
-	m_dataModel = 0;
-	m_actionManager = new PreProcessorWindowActionManager(this);
-	m_objectBrowser = new PreObjectBrowser(this);
 	addDockWidget(Qt::LeftDockWidgetArea, m_objectBrowser);
 	m_propertyBrowser = new PrePropertyBrowser(this);
 	m_propertyBrowser->hide();
 	addDockWidget(Qt::LeftDockWidgetArea, m_propertyBrowser);
-
-	m_initialState = saveState();
-
-	m_isFirstHiding = true;
-	m_isLastHiding = false;
 }
 
 void PreProcessorWindow::setProjectData(ProjectData* d)
 {
-	m_projectDataItem = new PreProcessorWindowProjectDataItem(this, d->mainfile());
+	delete m_projectDataItem;
+	m_projectDataItem = nullptr;
+
+	if (d != nullptr) {
+		m_projectDataItem = new PreProcessorWindowProjectDataItem(this, d->mainfile());
+	}
 }
 
 PreProcessorWindowProjectDataItem* PreProcessorWindow::projectDataItem()
@@ -342,7 +345,7 @@ void PreProcessorWindow::closeEvent(QCloseEvent* e)
 
 void PreProcessorWindow::showEvent(QShowEvent* /*e*/)
 {
-	ProjectMainFile* mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
+	auto mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
 	if (mainfile == nullptr) {return;}
 	mainfile->addRenderer(m_dataModel->graphicsView()->mainRenderer());
 }
@@ -357,9 +360,9 @@ void PreProcessorWindow::hideEvent(QHideEvent* /*e*/)
 		m_isLastHiding = false;
 		return;
 	}
-	if (m_projectDataItem == 0) {return;}
-	ProjectMainFile* mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
-	if (mainfile == 0) {return;}
+	if (m_projectDataItem == nullptr) {return;}
+	auto mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
+	if (mainfile == nullptr) {return;}
 	mainfile->removeRenderer(m_dataModel->graphicsView()->mainRenderer());
 }
 
@@ -377,7 +380,7 @@ QMenu* PreProcessorWindow::calcCondMenu() const
 
 void PreProcessorWindow::addGridCreatingConditionImportMenu(QMenu* menu)
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {
 		// add dummy disabled menu
 		QAction* no = menu->addAction(tr("Gr&id Creating Condition..."));
@@ -394,7 +397,7 @@ void PreProcessorWindow::addGridCreatingConditionExportMenu(QMenu* menu)
 
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {
 		// add dummy disabled menu
 		QAction* no = menu->addAction(tr("Grid..."));
@@ -411,7 +414,7 @@ void PreProcessorWindow::addGridExportMenu(QMenu* menu)
 
 void PreProcessorWindow::setupGeoDataImportMenu()
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
 	m->setupGeoDataImportMenu(menu);
@@ -419,7 +422,7 @@ void PreProcessorWindow::setupGeoDataImportMenu()
 
 void PreProcessorWindow::setupGeoDataImportFromWebMenu()
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
 	m->setupGeoDataImportFromWebMenu(menu);
@@ -433,7 +436,7 @@ void PreProcessorWindow::setupGeoDataExportMenu()
 
 void PreProcessorWindow::setupHydraulicDataImportMenu()
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
 	m->setupHydraulicDataImportMenu(menu);
@@ -441,7 +444,7 @@ void PreProcessorWindow::setupHydraulicDataImportMenu()
 
 void PreProcessorWindow::informUnfocusRiverCrosssectionWindows()
 {
-	PreProcessorDataModel* m = model();
+	auto m = model();
 	if (m == nullptr) {return;}
 	m->informUnfocusRiverCrosssectionWindows();
 }
