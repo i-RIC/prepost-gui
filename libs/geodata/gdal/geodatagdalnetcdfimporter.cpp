@@ -3,7 +3,11 @@
 #include "geodatagdalnetcdfimporterdateselectdialog.h"
 #include "geodatagdalnetcdfimportersettingdialog.h"
 #include "private/geodatagdal_impl.h"
+#include "private/geodatagdalnetcdfimporter_importersetting.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemselectdialog.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
@@ -15,6 +19,8 @@
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -91,6 +97,11 @@ const QStringList GeoDataGdalNetcdfImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataGdalNetcdfImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (item->geoDatas().size() > 1) {
@@ -133,6 +144,7 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 
 	std::vector<QString> dims;
 	std::vector<int> dimIds;
+	bool isLonLat = false;
 
 	for (int i = 0; i < ndims; ++i) {
 		int dimid = dimids[i];
@@ -148,9 +160,11 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 		} else if (name.toLower() == "lon" || name.toLower() == "longitude") {
 			// longitude found
 			m_xDimId = dimid;
+			isLonLat = true;
 		} else if (name.toLower() == "lat" || name.toLower() == "latitude") {
 			// latitude found
 			m_yDimId = dimid;
+			isLonLat = true;
 		}	else {
 			dims.push_back(name);
 			dimIds.push_back(dimid);
@@ -207,6 +221,19 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
+	auto csBuilder= item->iricMainWindow()->coordinateSystemBuilder();
+	if (isLonLat) {
+		m_coordinateSystem = csBuilder->system("EPSG:4326");
+	} else {
+		CoordinateSystemSelectDialog csDialog(w);
+		csDialog.setBuilder(csBuilder);
+		csDialog.setCoordinateSystem(item->projectData()->mainfile()->coordinateSystem());
+		csDialog.setForceSelect(true);
+
+		int ret = csDialog.exec();
+		if (ret == QDialog::Rejected) {return false;}
+		m_coordinateSystem = csDialog.coordinateSystem();
+	}
 
 	GeoDataGdalNetcdfImporterSettingDialog dialog(w);
 	dialog.setCondition(condition);
@@ -220,7 +247,53 @@ bool GeoDataGdalNetcdfImporter::doInit(int* /*count*/, SolverDefinitionGridAttri
 	m_valueVariable = dialog.variableName();
 	m_dims = dialog.dimensionMappingSetting();
 
+	// load X and Y
+	size_t xlen, ylen;
+	ret = nc_inq_dimlen(ncid, m_xDimId, &xlen);
+	ret = nc_inq_dimlen(ncid, m_yDimId, &ylen);
+	m_srcISize = xlen;
+	m_srcJSize = ylen;
+
+	std::vector<double> xs(xlen);
+	std::vector<double> ys(ylen);
+
+	int varid;
+	ret = nc_inq_dimname(ncid, m_xDimId, nameBuffer);
+	ret = nc_inq_varid(ncid, nameBuffer, &varid);
+	ret = ncGetVariableAsDouble(ncid, varid, xlen, xs.data());
+
+	ret = nc_inq_dimname(ncid, m_yDimId, nameBuffer);
+	ret = nc_inq_varid(ncid, nameBuffer, &varid);
+	ret = ncGetVariableAsDouble(ncid, varid, ylen, ys.data());
+
+	double dx = xs[1] - xs[0];
+	double dy = ys[1] - ys[0];
+
+	double srcTransform[6];
+	srcTransform[0] = xs[0] - dx * 0.5;
+	srcTransform[1] = dx;
+	srcTransform[2] = 0;
+	srcTransform[3] = ys[0] + (ys.size() - 0.5) * dy;
+	srcTransform[4] = 0;
+	srcTransform[5] = - dy;
+
+	GeoDataGdal::buildWarpMatrix(xlen, ylen, srcTransform, m_coordinateSystem, item->projectData()->mainfile()->coordinateSystem(), &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
+
+	// todo save setting data
+
 	return true;
+}
+
+void GeoDataGdalNetcdfImporter::setupCoordinates(GeoDataGdal* data)
+{
+	data->impl->m_xValues.clear();
+	for (int i = 0; i < m_tgtISize; ++i) {
+		data->impl->m_xValues.push_back(m_tgtTransform[0] + m_tgtTransform[1] * (i + 0.5));
+	}
+	data->impl->m_yValues.clear();
+	for (int i = 0; i < m_tgtJSize; ++i) {
+		data->impl->m_yValues.push_back(m_tgtTransform[3] + m_tgtTransform[5] * (m_tgtJSize - i - 0.5));
+	}
 }
 
 bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
@@ -247,53 +320,7 @@ bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget
 	nc_closer closer_new(ncid_out);
 
 	// load coordinate values
-
-	// load X and Y
-	size_t xlen, ylen;
-	ret = nc_inq_dimlen(ncid_in, m_xDimId, &xlen);
-	ret = nc_inq_dimlen(ncid_in, m_yDimId, &ylen);
-
-	std::vector<double> xs(xlen);
-	std::vector<double> ys(ylen);
-
-	int varid;
-	ret = nc_inq_dimname(ncid_in, m_xDimId, nameBuffer);
-	ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-	ret = ncGetVariableAsDouble(ncid_in, varid, xlen, xs.data());
-
-	ret = nc_inq_dimname(ncid_in, m_yDimId, nameBuffer);
-	ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-	ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys.data());
-
-	gdal->impl->m_xValues.clear();
-	for (size_t i = 0; i < xlen; ++i) {
-		gdal->impl->m_xValues.push_back(xs[i]);
-	}
-	gdal->impl->m_yValues.clear();
-	for (size_t i = 0; i < ylen; ++i) {
-		gdal->impl->m_yValues.push_back(ys[i]);
-	}
-
-	// load Lon and Lat
-	size_t lonLen, latLen;
-
-	lonLen = getVarLen(ncid_in, m_xVarId);
-	latLen = getVarLen(ncid_in, m_yVarId);
-
-	std::vector<double> lons(lonLen);
-	std::vector<double> lats(latLen);
-
-	ret = ncGetVariableAsDouble(ncid_in, m_xVarId, lonLen, lons.data());
-	ret = ncGetVariableAsDouble(ncid_in, m_yVarId, latLen, lats.data());
-
-	gdal->impl->m_xValues.clear();
-	for (size_t i = 0; i < lonLen; ++i) {
-		gdal->impl->m_xValues.push_back(lons[i]);
-	}
-	gdal->impl->m_yValues.clear();
-	for (size_t i = 0; i < latLen; ++i) {
-		gdal->impl->m_yValues.push_back(lats[i]);
-	}
+	setupCoordinates(gdal);
 
 	// load dimension values
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();

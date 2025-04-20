@@ -570,7 +570,7 @@ void GeoDataGdalGdalImporter::setupCoordinates(GeoDataGdal* data)
 	}
 	data->impl->m_yValues.clear();
 	for (int i = 0; i < m_tgtJSize; ++i) {
-		data->impl->m_yValues.push_back(m_srcTransform[3] + m_srcTransform[5] * (m_tgtJSize - i - 0.5));
+		data->impl->m_yValues.push_back(m_tgtTransform[3] + m_tgtTransform[5] * (m_tgtJSize - i - 0.5));
 	}
 }
 
