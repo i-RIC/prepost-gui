@@ -176,6 +176,7 @@ HEADERS += gd_gdal_global.h \
            private/geodatagdal_impl.h \
            private/geodatagdalcellmappert_detail.h \
            private/geodatagdalcreatort_detail.h \
+           private/geodatagdalgrayscalepngrealimporter_importersetting.h \
            private/geodatagdalifacemappert_detail.h \
            private/geodatagdaljfacemappert_detail.h \
            private/geodatagdalnetcdfimportert_detail.h \
@@ -228,6 +229,7 @@ SOURCES += geodatagdal.cpp \
            geodatagdalxbandimporter.cpp \
            private/geodatagdal_displaysetting.cpp \
            private/geodatagdal_impl.cpp \
+           private/geodatagdalgrayscalepngrealimporter_importersetting.cpp \
            private/geodatagdalproxy_displaysetting.cpp \
            private/geodatagdalproxy_displaysettingwidget.cpp \
            private/geodatagdalproxy_impl.cpp \

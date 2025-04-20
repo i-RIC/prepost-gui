@@ -264,17 +264,14 @@ bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget
 
 	GDALRasterBand* band = dataset->GetRasterBand(1);
 
-	int ncid_out;
-	int ret;
-
-	Q_UNUSED(ret)
-
 	QFileInfo finfo(gdal->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());
 
 	// delete the file if it already exists.
 	QFile f(gdal->filename());
 	f.remove();
+
+	int ncid_out, ret;
 
 	ret = nc_create(iRIC::toStr(gdal->filename()).c_str(), NC_NETCDF4, &ncid_out);
 

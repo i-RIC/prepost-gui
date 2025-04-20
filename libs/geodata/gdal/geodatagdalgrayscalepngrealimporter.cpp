@@ -1,6 +1,7 @@
 #include "geodatagdalgrayscalepngrealimporter.h"
 #include "geodatagdalreal.h"
 #include "private/geodatagdal_impl.h"
+#include "private/geodatagdalgrayscalepngrealimporter_importersetting.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -45,6 +46,11 @@ const QStringList GeoDataGdalGrayscalePngRealImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataGdalGrayscalePngRealImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto gdal = dynamic_cast<GeoDataGdalReal*> (data);
@@ -64,11 +70,34 @@ bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*
 
 bool GeoDataGdalGrayscalePngRealImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	m_item = item;
+
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
 		return false;
 	}
-	return setCs(item, w);
+
+	bool ok = setCs(item, w);
+	if (! ok) {return false;}
+
+	auto s = dynamic_cast<ImporterSetting*>(setting());
+	s->csName = m_coordinateSystem->name();
+
+	return true;
+}
+
+bool GeoDataGdalGrayscalePngRealImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	m_item = item;
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	m_coordinateSystem = csBuilder->system(s->csName);
+
+	return true;
 }
 
 bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const QString& filename, QWidget* w)
@@ -113,28 +142,17 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 	}
 	png_read_image(png_ptr, row_pointers.data());
 
+	GeoDataGdal::buildWarpMatrix(width, height, m_srcTransform, m_coordinateSystem, m_item->projectData()->mainfile()->coordinateSystem(),
+															 &m_tgtISize, &m_tgtJSize, m_tgtTransform, &m_matrix);
+
+	gdal->setGeoTransform(m_tgtTransform);
 	gdal->impl->m_xValues.clear();
-	double* transform = gdal->geoTransform();
-	for (int i = 0; i < width; ++i) {
-		gdal->impl->m_xValues.push_back(*transform + *(transform + 1) * (i + 0.5));
+	for (int i = 0; i < m_tgtISize; ++i) {
+		gdal->impl->m_xValues.push_back(m_tgtTransform[0] + m_tgtTransform[1] * (i + 0.5));
 	}
 	gdal->impl->m_yValues.clear();
-	for (int i = 0; i < height; ++i) {
-		gdal->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
-	}
-
-	for (int j = 0; j < static_cast<int> (gdal->impl->m_yValues.size()); ++j) {
-		double y = gdal->impl->m_yValues.at(j);
-		for (int i = 0; i < static_cast<int> (gdal->impl->m_xValues.size()); ++i) {
-			double x = gdal->impl->m_xValues.at(i);
-			double lon, lat;
-			if (m_coordinateSystem->isLongLat()) {
-				lon = x;
-				lat = y;
-			} else {
-				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
-			}
-		}
+	for (int i = 0; i < m_tgtJSize; ++i) {
+		gdal->impl->m_yValues.push_back(m_srcTransform[3] + m_srcTransform[5] * (m_tgtJSize - i - 0.5));
 	}
 
 	QFileInfo finfo(gdal->filename());
@@ -162,7 +180,7 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 	ret = nc_enddef(ncid_out);
 	gdal->outputCoords(ncid_out, out_xVarId, out_yVarId);
 
-	std::vector<double> valuesBuffer(width * height);
+	std::vector<double> buffer2(gdal->xSize() * gdal->ySize());
 
 	double base = gdal->base();
 	double resolution = gdal->resolution();
@@ -172,14 +190,19 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 			int srcIndex = i + gdal->xSize() * (gdal->ySize() - 1 - j);
 			int trgIndex = i + gdal->xSize() * j;
 
-			int intVal = 256 * *(buffer.data() + 2 * srcIndex) + *(buffer.data() + 2 * srcIndex + 1);
-			double v = intVal * resolution + base;
-
-			valuesBuffer[trgIndex] = v;
+			int srcIndex2 = m_matrix.at(srcIndex);
+			double v = 0;
+			if (srcIndex2 == -1) {
+				v = gdal->missingValue();
+			} else {
+				int intVal = 256 * *(buffer.data() + 2 * srcIndex) + *(buffer.data() + 2 * srcIndex + 1);
+				v = intVal * resolution + base;
+			}
+			buffer2[trgIndex] = v;
 		}
 	}
 
-	ret = nc_put_var_double(ncid_out, varOutId, valuesBuffer.data());
+	ret = nc_put_var_double(ncid_out, varOutId, buffer2.data());
 	if (ret != NC_NOERR) {return false;}
 
 	nc_close(ncid_out);
@@ -188,6 +211,11 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 
 	gdal->updateShapeData();
 	gdal->handleDimensionCurrentIndexChange(0, 0);
+
+	if (gdal->creator()->isReadOnly()) {
+		// delete the needless file
+		f.remove();
+	}
 
 	return true;
 }
@@ -222,15 +250,13 @@ bool GeoDataGdalGrayscalePngRealImporter::importPgw(GeoDataGdalReal* gdal, const
 		}
 	}
 	f.close();
-	double geotransform[6];
-	geotransform[0] = t[4] - t[0] * 0.5;
-	geotransform[1] = t[0];
-	geotransform[2] = 0;
-	geotransform[3] = t[5] - t[3] * 0.5;
-	geotransform[4] = 0;
-	geotransform[5] = t[3];
 
-	gdal->setGeoTransform(&(geotransform[0]));
+	m_srcTransform[0] = t[4] - t[0] * 0.5;
+	m_srcTransform[1] = t[0];
+	m_srcTransform[2] = 0;
+	m_srcTransform[3] = t[5] - t[3] * 0.5;
+	m_srcTransform[4] = 0;
+	m_srcTransform[5] = t[3];
 
 	return true;
 }
@@ -269,5 +295,6 @@ bool GeoDataGdalGrayscalePngRealImporter::setCs(PreProcessorGeoDataGroupDataItem
 	if (ret == QDialog::Rejected) {return false;}
 
 	m_coordinateSystem = csDialog.coordinateSystem();
+
 	return true;
 }
