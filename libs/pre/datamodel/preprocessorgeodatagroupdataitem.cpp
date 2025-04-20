@@ -894,8 +894,13 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 	if (dimensions()->containers().size() > 0) {
 		dimCount = dimensions()->maxIndex() + 1;
 	}
-	int geodataCount = static_cast<int> (m_childItems.size());
-	return dimCount * geodataCount;
+	int loadedChildCount = 0;
+	for (const auto& child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+		if (item->geoData()->dataLoaded()) {++ loadedChildCount;}
+	}
+
+	return dimCount * loadedChildCount;
 }
 
 void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDialog* dialog)
@@ -915,6 +920,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			settings.append(mapper->initialize(boolMap));
@@ -929,6 +936,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			mapper->map(boolMap, settings.at(idx));
@@ -958,6 +967,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			settings.append(mapper->initialize(boolMap));
@@ -972,6 +983,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 			for (auto child : m_childItems) {
 				auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 				GeoData* geodata = item->geoData();
+				if (! geodata->dataLoaded()) {continue;}
+
 				GeoDataMapper* mapper = geodata->mapper();
 				mapper->setTarget(grid, container, geodata);
 				mapper->map(boolMap, settings.at(idx));
@@ -987,6 +1000,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
 			geodata->setMapped();
