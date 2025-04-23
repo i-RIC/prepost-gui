@@ -167,9 +167,11 @@ bool PostZoneDataTpoExporter::exportToFile(v4PostZoneDataContainer* c, const QSt
 		}
 	}
 
-	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
-														 PostSolutionInfo::tr("tpo files export calculation result defined at grid nodes."),
-														 "postzonedatatpoexporter_warning");
+	if (m_isFirstStep) {
+		InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+															 PostSolutionInfo::tr("tpo files export calculation result defined at grid nodes."),
+															 "postzonedatatpoexporter_warning");
+	}
 
 	return true;
 }
