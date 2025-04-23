@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrá ristar í möppu “ %1 ". Þessi rithöfundur er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrá ristar í möppu “ %1 &quot;. Þessi rithöfundur er hunsaður. %2</translation>
     </message>
 </context>
 <context>

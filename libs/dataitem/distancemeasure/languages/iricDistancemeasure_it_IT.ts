@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -224,7 +226,7 @@
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="vanished">Dimensione dell'indicatore:</translation>
+        <translation type="vanished">Dimensione dell&apos;indicatore:</translation>
     </message>
     <message>
         <source>Color:</source>

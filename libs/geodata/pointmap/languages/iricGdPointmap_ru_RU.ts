@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Данные облака точек %1</translation>
+        <translation type="obsolete">Данные облака точек %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Данные облака точек</translation>
+        <translation type="obsolete">Данные облака точек</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Данные облака точек %1</translation>
+        <translation type="obsolete">Данные облака точек %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">БАНКА</translation>
+        <translation type="obsolete">БАНКА</translation>
     </message>
 </context>
 <context>

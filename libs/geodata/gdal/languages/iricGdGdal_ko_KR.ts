@@ -205,6 +205,22 @@
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
         <translation>파일 이름에 ASCII가 아닌 문자가 포함되어 있습니다. 파일을 이동하거나 이름을 변경하세요.</translation>
     </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filename pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Names</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataGdalGrayscalePngRealExporter</name>
@@ -278,6 +294,13 @@
     <message>
         <source>Error occured while parsing %1.</source>
         <translation>구문 분석 중 오류가 발생했습니다. %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -409,6 +432,10 @@
     <message>
         <source>%1 does not have variable that can be imported.</source>
         <translation type="unfinished">%1 가져올 수 있는 변수가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>AboutDialog</name>
@@ -192,7 +194,7 @@
         <translation>A keresztmetszet még nincs meghatározva.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation>Érvénytelen keresztmetszeti név. A név legyen „X1”, „X2”,... vagy „XS1”, „XS2”,...</translation>
     </message>
 </context>

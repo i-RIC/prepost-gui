@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Point Cloud adatok %1</translation>
+        <translation type="obsolete">Point Cloud adatok %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Point Cloud adatok</translation>
+        <translation type="obsolete">Point Cloud adatok</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Point Cloud adatok %1</translation>
+        <translation type="obsolete">Point Cloud adatok %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">ÓN</translation>
+        <translation type="obsolete">ÓN</translation>
     </message>
 </context>
 <context>

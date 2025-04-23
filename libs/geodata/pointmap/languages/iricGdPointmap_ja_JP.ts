@@ -713,11 +713,11 @@
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation>点群データ%1</translation>
+        <translation type="vanished">点群データ%1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation>点群データ</translation>
+        <translation type="vanished">点群データ</translation>
     </message>
 </context>
 <context>
@@ -1181,11 +1181,11 @@
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation>点群データ%1</translation>
+        <translation type="vanished">点群データ%1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
 </context>
 <context>

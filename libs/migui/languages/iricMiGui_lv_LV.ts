@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Varat izmantot tikai ASCII rakstzīmes.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Mape "%1" jau eksistē.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Mape &quot;%1&quot; jau eksistē.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projekts veiksmīgi saglabāts %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Sagatavojot datus modelim, radās kļūda %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Sagatavojot datus modelim, radās kļūda %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Mapē "" netika atrasta neviena esoša projekta mape %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Mapē &quot;&quot; netika atrasta neviena esoša projekta mape %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,12 @@
         <translation>Projekts tiek pārveidots. Vai vēlaties ietaupīt?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Saglabā"%1" neizdevās. Lūdzu, pārbaudiet, vai cita programma atver failu, un mēģiniet vēlreiz.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Saglabā&quot;%1&quot; neizdevās. Lūdzu, pārbaudiet, vai cita programma atver failu, un mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>f1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -278,6 +284,14 @@
     <message>
         <source>Input value</source>
         <translation>Ievades vērtība</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Kļūda</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

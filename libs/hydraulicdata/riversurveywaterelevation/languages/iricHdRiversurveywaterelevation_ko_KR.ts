@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -21,8 +23,8 @@
         <translation>경고</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>에 대한 열에서 %1, 가치 "%2"단면용"%3"은(는) 유효하지 않습니다. 값은 무시됩니다.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>에 대한 열에서 %1, 가치 &quot;%2&quot;단면용&quot;%3&quot;은(는) 유효하지 않습니다. 값은 무시됩니다.</translation>
     </message>
     <message>
         <source>Information</source>

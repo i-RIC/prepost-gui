@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Beim Laden der Grid Creator-Definitionsdatei in den Ordner ist ein Fehler aufgetreten. %1 ". Dieser Rasterersteller wird ignoriert. %2</translation>
+        <translation>Beim Laden der Grid Creator-Definitionsdatei in den Ordner ist ein Fehler aufgetreten. %1 &quot;. Dieser Rasterersteller wird ignoriert. %2</translation>
     </message>
 </context>
 <context>

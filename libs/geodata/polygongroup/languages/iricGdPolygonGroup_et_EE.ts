@@ -181,6 +181,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -205,20 +212,16 @@
 <context>
     <name>GeoDataPolygonGroupReadOnlyCreator</name>
     <message>
-        <source>Polygons (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Polygons%1</source>
-        <translation type="unfinished">Hulknurgad %1</translation>
+        <translation type="obsolete">Hulknurgad %1</translation>
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished">hulknurk</translation>
+        <translation type="obsolete">hulknurk</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished">Hulknurk</translation>
+        <translation type="obsolete">Hulknurk</translation>
     </message>
 </context>
 <context>

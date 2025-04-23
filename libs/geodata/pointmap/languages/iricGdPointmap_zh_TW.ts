@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">點雲數據 %1</translation>
+        <translation type="obsolete">點雲數據 %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">點雲數據</translation>
+        <translation type="obsolete">點雲數據</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">點雲數據 %1</translation>
+        <translation type="obsolete">點雲數據 %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">錫</translation>
+        <translation type="obsolete">錫</translation>
     </message>
 </context>
 <context>

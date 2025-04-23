@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Saate kasutada ainult ASCII-märke.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>kaust "%1" juba eksisteerib.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>kaust &quot;%1&quot; juba eksisteerib.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projekt edukalt salvestatud asukohta %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Mudeli jaoks andmete ettevalmistamisel ilmnes viga %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Mudeli jaoks andmete ettevalmistamisel ilmnes viga %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>"Kaustast" ei leitud ühtegi olemasolevat projektikausta %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>&quot;Kaustast&quot; ei leitud ühtegi olemasolevat projektikausta %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,12 @@
         <translation>Projekti muudetakse. Kas soovite salvestada?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Salvestamine "%1" nurjus. Veenduge, et faili avab mõni muu programm, ja proovige uuesti.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Salvestamine &quot;%1&quot; nurjus. Veenduge, et faili avab mõni muu programm, ja proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>f1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -278,6 +284,14 @@
     <message>
         <source>Input value</source>
         <translation>Sisendväärtus</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Viga</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Ielādējot režģa radītāja definīcijas failu mapē, radās kļūda " %1 Šis režģa veidotājs tiek ignorēts. %2</translation>
+        <translation>Ielādējot režģa radītāja definīcijas failu mapē, radās kļūda &quot; %1 Šis režģa veidotājs tiek ignorēts. %2</translation>
     </message>
 </context>
 <context>

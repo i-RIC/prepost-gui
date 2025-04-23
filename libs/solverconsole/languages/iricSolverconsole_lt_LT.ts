@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>SolverConsoleWindow</name>
@@ -152,8 +154,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Įsitikinkite:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Jei skaičiavimo rezultatas jau yra, jis ištrintas.&lt;/li&gt; &lt;li&gt;Skaičiavimo sąlyga ir įvesties tinklelis kurią galite matyti išankstinio apdorojimo lange, įrašyta į Case1.cgn.&lt;/li&gt; &lt;li&gt;Spręstuvas nuskaitys duomenis iš Case1.cgn ir pradės veikti.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Ar jūs ar tikrai gerai?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Įsitikinkite, kad:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Jei skaičiavimo rezultatas jau yra, jis bus ištrintas.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Projektas bus išsaugotas.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Ar esate tikri, kad viskas gerai?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Įsitikinkite, kad:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Jei skaičiavimo rezultatas jau yra, jis bus ištrintas.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Projektas bus išsaugotas.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Ar esate tikri, kad viskas gerai?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

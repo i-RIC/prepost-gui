@@ -181,6 +181,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -205,20 +212,16 @@
 <context>
     <name>GeoDataPolyLineGroupReadOnlyCreator</name>
     <message>
-        <source>Lines (read only)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lines%1</source>
-        <translation type="unfinished">Línur %1</translation>
+        <translation type="obsolete">Línur %1</translation>
     </message>
     <message>
         <source>line</source>
-        <translation type="unfinished">línu</translation>
+        <translation type="obsolete">línu</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished">Lína</translation>
+        <translation type="obsolete">Lína</translation>
     </message>
 </context>
 <context>

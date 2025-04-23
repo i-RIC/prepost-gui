@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,8 +58,8 @@
         <translation>कृपया चुनें कि कौन सा मूल्य निर्यात करना है.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>"अलग-अलग मोड" में कोई रूपरेखा नहीं बनाई जाती है।</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>&quot;अलग-अलग मोड&quot; में कोई रूपरेखा नहीं बनाई जाती है।</translation>
     </message>
 </context>
 <context>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
 </context>
 <context>
@@ -509,8 +511,8 @@
         <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -646,117 +648,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>ग्राफ़ सेटिंग अपडेट करें</translation>
+        <translation type="vanished">ग्राफ़ सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">ग्राफ़ सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">दिशा</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">मैं दिशा</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">जे दिशा</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">क्षेत्र</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">सभी</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">आंशिक क्षेत्र</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">शुरू:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">समाप्त:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">छोड़ें:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">रीति</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">संपादित करें (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">ड्रा डायरेक्शन</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">ग्रिड लाइनों के लिए लंबवत</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">ग्रिड लाइनों के समानांतर</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">ग्रिड लाइन्स</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">खींचना</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">ग्राफ लाइन्स</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">पैमाना:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">कोई संशोधन नहीं</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">प्रत्येक पंक्ति में अधिकतम मान घटाएँ</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">प्रत्येक पंक्ति में न्यूनतम मान घटाएँ</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">कस्टम क्षेत्र सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">सभी का चयन करे (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">सभी को अचयनित करें (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>कस्टम क्षेत्र सेटिंग</translation>
+        <translation type="vanished">कस्टम क्षेत्र सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>सभी का चयन करे (&amp;S)</translation>
+        <translation type="vanished">सभी का चयन करे (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>सभी को अचयनित करें (&amp;U)</translation>
+        <translation type="vanished">सभी को अचयनित करें (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>ग्राफ़ सेटिंग</translation>
+        <translation type="vanished">ग्राफ़ सेटिंग</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>दिशा</translation>
+        <translation type="vanished">दिशा</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>मैं दिशा</translation>
+        <translation type="vanished">मैं दिशा</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>जे दिशा</translation>
+        <translation type="vanished">जे दिशा</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>क्षेत्र</translation>
+        <translation type="vanished">क्षेत्र</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>सभी</translation>
+        <translation type="vanished">सभी</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>आंशिक क्षेत्र</translation>
+        <translation type="vanished">आंशिक क्षेत्र</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>शुरू:</translation>
+        <translation type="vanished">शुरू:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>समाप्त:</translation>
+        <translation type="vanished">समाप्त:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>छोड़ें:</translation>
+        <translation type="vanished">छोड़ें:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>रीति</translation>
+        <translation type="vanished">रीति</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>संपादित करें (&amp;E)...</translation>
+        <translation type="vanished">संपादित करें (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>ड्रा डायरेक्शन</translation>
+        <translation type="vanished">ड्रा डायरेक्शन</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>ग्रिड लाइनों के लिए लंबवत</translation>
+        <translation type="vanished">ग्रिड लाइनों के लिए लंबवत</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>ग्रिड लाइनों के समानांतर</translation>
+        <translation type="vanished">ग्रिड लाइनों के समानांतर</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>ग्रिड लाइन्स</translation>
+        <translation type="vanished">ग्रिड लाइन्स</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>खींचना</translation>
+        <translation type="vanished">खींचना</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>ग्राफ लाइन्स</translation>
+        <translation type="vanished">ग्राफ लाइन्स</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>पैमाना:</translation>
+        <translation type="vanished">पैमाना:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>कोई संशोधन नहीं</translation>
+        <translation type="vanished">कोई संशोधन नहीं</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>प्रत्येक पंक्ति में अधिकतम मान घटाएँ</translation>
+        <translation type="vanished">प्रत्येक पंक्ति में अधिकतम मान घटाएँ</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>प्रत्येक पंक्ति में न्यूनतम मान घटाएँ</translation>
+        <translation type="vanished">प्रत्येक पंक्ति में न्यूनतम मान घटाएँ</translation>
     </message>
 </context>
 <context>
@@ -778,7 +894,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -995,16 +1111,16 @@
         <translation>अदिश सेटिंग (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए Colormode को "डिस्क्रीट मोड" होना चाहिए</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए Colormode को &quot;डिस्क्रीट मोड&quot; होना चाहिए</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, मान वास्तविक मान होना चाहिए, यह एक पूर्णांक मान है।</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, रंग मोड को "अलग मोड" होना आवश्यक है</translation>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, रंग मोड को &quot;अलग मोड&quot; होना आवश्यक है</translation>
     </message>
 </context>
 <context>
@@ -1056,16 +1172,16 @@
         <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>अदिश</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, रंग सेटिंग को "असतत मोड" पर स्विच करें।</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, रंग सेटिंग को &quot;असतत मोड&quot; पर स्विच करें।</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -1728,16 +1844,16 @@
         <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1864,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">आकार:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1975,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">आकार:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2155,14 +2271,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;" &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;"&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot; &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2309,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2264,12 +2380,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

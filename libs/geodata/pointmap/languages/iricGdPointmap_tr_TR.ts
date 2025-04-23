@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Nokta Bulutu Verileri %1</translation>
+        <translation type="obsolete">Nokta Bulutu Verileri %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Nokta Bulutu Verileri</translation>
+        <translation type="obsolete">Nokta Bulutu Verileri</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Nokta Bulutu Verileri %1</translation>
+        <translation type="obsolete">Nokta Bulutu Verileri %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">TENEKE</translation>
+        <translation type="obsolete">TENEKE</translation>
     </message>
 </context>
 <context>

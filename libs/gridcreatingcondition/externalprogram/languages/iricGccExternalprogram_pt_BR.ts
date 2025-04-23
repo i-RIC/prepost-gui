@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,13 +8,13 @@
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.</source>
-        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta "%1" . Este programa de criacao sera ignorado.</translation>
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.</source>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o programa de criacao da grade, o qual se encontra na pasta &quot;%1&quot; . Este programa de criacao sera ignorado.</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Ocorreu um erro ao carregar o arquivo de definição do criador da grade na pasta "%1". Este criador de grade é ignorado. %2</translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do criador da grade na pasta &quot;%1&quot;. Este criador de grade é ignorado. %2</translation>
     </message>
 </context>
 <context>

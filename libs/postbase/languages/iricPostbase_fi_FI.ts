@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -72,17 +74,17 @@
         <translation>Sukupolven aikaväli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -575,8 +577,8 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Tuotoksen määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voit määrittää muuttujan JavaScript-kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -koristelu: alleviivaus; color:#0000ff;"&gt;täältä&lt;/span&gt;&lt;/a&gt; lisätietoja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voit määrittää muuttujan JavaScript-kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -koristelu: alleviivaus; color:#0000ff;&quot;&gt;täältä&lt;/span&gt;&lt;/a&gt; lisätietoja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -663,22 +665,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Muokkaa aika -asetusta</translation>
+        <translation type="vanished">Muokkaa aika -asetusta</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation type="unfinished">Ajan asetus</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="unfinished">Käytä projektiasetuksia</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="unfinished">Aikamuoto</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Ajan asetus</translation>
+        <translation type="vanished">Ajan asetus</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Käytä projektiasetuksia</translation>
+        <translation type="vanished">Käytä projektiasetuksia</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Aikamuoto</translation>
+        <translation type="vanished">Aikamuoto</translation>
     </message>
 </context>
 <context>
@@ -687,20 +708,39 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Otsikko</translation>
     </message>
+    <message>
+        <source>Title Setting</source>
+        <translation type="unfinished">Otsikon asetus</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">Otsikko:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="unfinished">Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
+    </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Otsikon asetus</translation>
+        <translation type="vanished">Otsikon asetus</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Otsikko:</translation>
+        <translation type="vanished">Otsikko:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
+        <translation type="vanished">Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
     </message>
 </context>
 </TS>

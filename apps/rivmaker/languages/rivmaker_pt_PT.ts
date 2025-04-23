@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>AboutDialog</name>
@@ -192,8 +194,8 @@
         <translation>A seção transversal ainda não foi definida.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>Nome inválido para seção transversal. O nome deve ser "X1", "X2",... ou "XS1", "XS2",...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>Nome inválido para seção transversal. O nome deve ser &quot;X1&quot;, &quot;X2&quot;,... ou &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
     </message>
 </context>
 <context>

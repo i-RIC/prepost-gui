@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>फोल्डर में ग्रिड क्रिएटर डेफिनिशन फाइल लोड करते समय त्रुटि हुई "%1". इस ग्रिड निर्माता की उपेक्षा की जाती है। %2</translation>
+        <translation>फोल्डर में ग्रिड क्रिएटर डेफिनिशन फाइल लोड करते समय त्रुटि हुई &quot;%1&quot;. इस ग्रिड निर्माता की उपेक्षा की जाती है। %2</translation>
     </message>
 </context>
 <context>

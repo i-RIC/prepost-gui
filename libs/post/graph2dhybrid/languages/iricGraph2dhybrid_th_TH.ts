@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -330,6 +332,10 @@
         <source>Please input prefix.</source>
         <translation>กรุณาใส่คำนำหน้า</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +390,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>การตั้งค่าแบบอักษร (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -485,8 +495,8 @@
         <translation>การตั้งค่าหน้าต่างกราฟล้มเหลว โหลดผลการคำนวณไม่ถูกต้อง</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>สามารถใช้ฟังก์ชันนี้เมื่อตรงตามเงื่อนไขต่อไปนี้: &lt;ul&gt;&lt;li&gt;วาดกราฟสำหรับผลลัพธ์กริดที่มีโครงสร้างสองมิติ&lt;/li&gt;&lt;li&gt;แกน X คือทิศทาง I ในกริด&lt;/li &gt;&lt;li&gt;กริดถูกสร้างขึ้นโดยใช้อัลกอริธึม "สร้างกริดจากข้อมูลข้ามส่วน"&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>สามารถใช้ฟังก์ชันนี้เมื่อตรงตามเงื่อนไขต่อไปนี้: &lt;ul&gt;&lt;li&gt;วาดกราฟสำหรับผลลัพธ์กริดที่มีโครงสร้างสองมิติ&lt;/li&gt;&lt;li&gt;แกน X คือทิศทาง I ในกริด&lt;/li &gt;&lt;li&gt;กริดถูกสร้างขึ้นโดยใช้อัลกอริธึม &quot;สร้างกริดจากข้อมูลข้ามส่วน&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +590,8 @@
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>ชื่อคอลัมน์แรกต้องเป็น "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>ชื่อคอลัมน์แรกต้องเป็น &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -660,8 +670,8 @@
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>ชื่อคอลัมน์แรกต้องเป็น "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>ชื่อคอลัมน์แรกต้องเป็น &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>

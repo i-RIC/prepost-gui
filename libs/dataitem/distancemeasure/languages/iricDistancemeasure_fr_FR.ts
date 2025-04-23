@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -58,7 +60,7 @@
     </message>
     <message>
         <source>Show Label</source>
-        <translation>Afficher l'étiquette</translation>
+        <translation>Afficher l&apos;étiquette</translation>
     </message>
     <message>
         <source>Content</source>
@@ -137,7 +139,7 @@
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation>Il n'y a pas de mesure de distance.</translation>
+        <translation>Il n&apos;y a pas de mesure de distance.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
@@ -149,7 +151,7 @@
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation>Voulez-vous vraiment supprimer toutes les mesures de distance ?</translation>
+        <translation>Voulez-vous vraiment supprimer toutes les mesures de distance&#xa0;?</translation>
     </message>
 </context>
 <context>
@@ -172,7 +174,7 @@
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="vanished">Point final :</translation>
+        <translation type="vanished">Point final&#xa0;:</translation>
     </message>
     <message>
         <source>Label</source>
@@ -180,7 +182,7 @@
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="vanished">Afficher l'étiquette</translation>
+        <translation type="vanished">Afficher l&apos;étiquette</translation>
     </message>
     <message>
         <source>Content</source>
@@ -224,7 +226,7 @@
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="vanished">Taille du marqueur :</translation>
+        <translation type="vanished">Taille du marqueur&#xa0;:</translation>
     </message>
     <message>
         <source>Color:</source>

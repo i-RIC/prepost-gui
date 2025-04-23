@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>DistanceMeasureDataItem</name>
@@ -38,7 +40,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Start Point:</source>
@@ -160,7 +162,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Ім'я:</translation>
+        <translation type="vanished">Ім&apos;я:</translation>
     </message>
     <message>
         <source>Start Point:</source>

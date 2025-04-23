@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>경고</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>" 폴더에서 그리드 작성자 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 ". 이 그리드 생성자는 무시됩니다. %2</translation>
+        <translation>&quot; 폴더에서 그리드 작성자 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 &quot;. 이 그리드 생성자는 무시됩니다. %2</translation>
     </message>
 </context>
 <context>

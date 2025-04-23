@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -330,6 +332,10 @@
         <source>Please input prefix.</source>
         <translation>Bitte Präfix eingeben.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +390,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Schriftarteinstellung (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -485,8 +495,8 @@
         <translation>Die Einrichtung des Diagrammfensters ist fehlgeschlagen. Berechnungsergebnis wird nicht richtig geladen.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Diese Funktion kann verwendet werden, wenn die folgenden Bedingungen erfüllt sind: &lt;ul&gt;&lt;li&gt;Grafik für zweidimensional strukturiertes Gitterergebnis wird gezeichnet.&lt;/li&gt;&lt;li&gt;X-Achse ist I-Richtung im Gitter.&lt;/li &gt;&lt;li&gt;Das Raster wird mit dem Algorithmus "Raster aus Querschnittsdaten erstellen" erstellt&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Diese Funktion kann verwendet werden, wenn die folgenden Bedingungen erfüllt sind: &lt;ul&gt;&lt;li&gt;Grafik für zweidimensional strukturiertes Gitterergebnis wird gezeichnet.&lt;/li&gt;&lt;li&gt;X-Achse ist I-Richtung im Gitter.&lt;/li &gt;&lt;li&gt;Das Raster wird mit dem Algorithmus &quot;Raster aus Querschnittsdaten erstellen&quot; erstellt&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +590,8 @@
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Der Titel der ersten Spalte muss "X" sein</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Der Titel der ersten Spalte muss &quot;X&quot; sein</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -660,8 +670,8 @@
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Der Titel der ersten Spalte muss "X" sein</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Der Titel der ersten Spalte muss &quot;X&quot; sein</translation>
     </message>
     <message>
         <source>Warning</source>

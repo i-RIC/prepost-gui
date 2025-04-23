@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -56,8 +58,8 @@
         <translation>Seleziona il valore da esportare.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Nessun contorno viene disegnato in "Modalità discreta".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Nessun contorno viene disegnato in &quot;Modalità discreta&quot;.</translation>
     </message>
 </context>
 <context>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Larghezza della linea:</translation>
+        <translation type="vanished">Larghezza della linea:</translation>
     </message>
 </context>
 <context>
@@ -365,7 +367,7 @@
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation>Non c'è nessuna immagine di sfondo.</translation>
+        <translation>Non c&apos;è nessuna immagine di sfondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
@@ -441,7 +443,7 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per esportare KML per Street View, l'intervallo di valori deve essere impostato manualmente.</translation>
+        <translation type="vanished">Per esportare KML per Street View, l&apos;intervallo di valori deve essere impostato manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -509,8 +511,8 @@
         <translation type="vanished">Errore</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Per esportare il file di forma, cambia "Impostazioni di visualizzazione" su "Contour Figure", non "Color Fringe" o "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Per esportare il file di forma, cambia &quot;Impostazioni di visualizzazione&quot; su &quot;Contour Figure&quot;, non &quot;Color Fringe&quot; o &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -545,7 +547,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l&apos;intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -564,23 +566,23 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
+        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
     </message>
     <message>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
-        <translation>L'impostazione della freccia non è disponibile, poiché questo risultato non contiene valori vettoriali.</translation>
+        <translation>L&apos;impostazione della freccia non è disponibile, poiché questo risultato non contiene valori vettoriali.</translation>
     </message>
     <message>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
-        <translation>L'impostazione Semplifica non è disponibile perché questo risultato non contiene valori vettoriali.</translation>
+        <translation>L&apos;impostazione Semplifica non è disponibile perché questo risultato non contiene valori vettoriali.</translation>
     </message>
     <message>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
-        <translation>L'impostazione delle particelle non è disponibile perché questo risultato non contiene valori vettoriali.</translation>
+        <translation>L&apos;impostazione delle particelle non è disponibile perché questo risultato non contiene valori vettoriali.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
+        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
     </message>
 </context>
 <context>
@@ -646,117 +648,231 @@
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation>Aggiorna impostazione grafico</translation>
+        <translation type="vanished">Aggiorna impostazione grafico</translation>
+    </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="unfinished">Impostazione del grafico</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Modulo</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Direzione</translation>
+    </message>
+    <message>
+        <source>I direction</source>
+        <translation type="unfinished">io dirigo</translation>
+    </message>
+    <message>
+        <source>J direction</source>
+        <translation type="unfinished">direzione J</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regione</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Tutto</translation>
+    </message>
+    <message>
+        <source>Partial region</source>
+        <translation type="unfinished">regione parziale</translation>
+    </message>
+    <message>
+        <source>Start:</source>
+        <translation type="unfinished">Cominciare:</translation>
+    </message>
+    <message>
+        <source>End:</source>
+        <translation type="unfinished">Fine:</translation>
+    </message>
+    <message>
+        <source>Skip:</source>
+        <translation type="unfinished">Saltare:</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Costume</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Modificare (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Draw Direction</source>
+        <translation type="unfinished">Direzione di disegno</translation>
+    </message>
+    <message>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished">Verticale alle linee della griglia</translation>
+    </message>
+    <message>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished">Parallelo alle linee della griglia</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished">Linee della griglia</translation>
+    </message>
+    <message>
+        <source>Draw</source>
+        <translation type="unfinished">Disegno</translation>
+    </message>
+    <message>
+        <source>Graph Lines</source>
+        <translation type="unfinished">Linee del grafico</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Valore fisico:</translation>
+    </message>
+    <message>
+        <source>Scale:</source>
+        <translation type="unfinished">Scala:</translation>
+    </message>
+    <message>
+        <source>No modification</source>
+        <translation type="unfinished">Nessuna modifica</translation>
+    </message>
+    <message>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished">Sottrai il valore massimo in ogni riga</translation>
+    </message>
+    <message>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished">Sottrai il valore minimo in ogni riga</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
+    <message>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished">Impostazione della regione personalizzata</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">Seleziona tutto (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished">Deseleziona tutto (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation>Impostazione della regione personalizzata</translation>
+        <translation type="vanished">Impostazione della regione personalizzata</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation>Seleziona tutto (&amp;S)</translation>
+        <translation type="vanished">Seleziona tutto (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation>Deseleziona tutto (&amp;U)</translation>
+        <translation type="vanished">Deseleziona tutto (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation>Impostazione del grafico</translation>
+        <translation type="vanished">Impostazione del grafico</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Direzione</translation>
+        <translation type="vanished">Direzione</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation>io dirigo</translation>
+        <translation type="vanished">io dirigo</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation>direzione J</translation>
+        <translation type="vanished">direzione J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Regione</translation>
+        <translation type="vanished">Regione</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Tutto</translation>
+        <translation type="vanished">Tutto</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation>regione parziale</translation>
+        <translation type="vanished">regione parziale</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation>Cominciare:</translation>
+        <translation type="vanished">Cominciare:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation>Fine:</translation>
+        <translation type="vanished">Fine:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation>Saltare:</translation>
+        <translation type="vanished">Saltare:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Costume</translation>
+        <translation type="vanished">Costume</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Modificare (&amp;E)...</translation>
+        <translation type="vanished">Modificare (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation>Direzione di disegno</translation>
+        <translation type="vanished">Direzione di disegno</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Verticale alle linee della griglia</translation>
+        <translation type="vanished">Verticale alle linee della griglia</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation>Parallelo alle linee della griglia</translation>
+        <translation type="vanished">Parallelo alle linee della griglia</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation>Linee della griglia</translation>
+        <translation type="vanished">Linee della griglia</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation>Disegno</translation>
+        <translation type="vanished">Disegno</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation>Linee del grafico</translation>
+        <translation type="vanished">Linee del grafico</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valore fisico:</translation>
+        <translation type="vanished">Valore fisico:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation>Scala:</translation>
+        <translation type="vanished">Scala:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation>Nessuna modifica</translation>
+        <translation type="vanished">Nessuna modifica</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation>Sottrai il valore massimo in ogni riga</translation>
+        <translation type="vanished">Sottrai il valore massimo in ogni riga</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation>Sottrai il valore minimo in ogni riga</translation>
+        <translation type="vanished">Sottrai il valore minimo in ogni riga</translation>
     </message>
 </context>
 <context>
@@ -778,7 +894,7 @@
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Larghezza della linea:</translation>
+        <translation type="vanished">Larghezza della linea:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -984,7 +1100,7 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per esportare KML per Street View, l'intervallo di valori deve essere impostato manualmente.</translation>
+        <translation type="vanished">Per esportare KML per Street View, l&apos;intervallo di valori deve essere impostato manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -995,16 +1111,16 @@
         <translation>Impostazione scalare (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation type="vanished">Per esportare KML per Street View, Colormode deve essere "Discrete Mode"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="vanished">Per esportare KML per Street View, Colormode deve essere &quot;Discrete Mode&quot;</translation>
     </message>
     <message>
         <source>To export KML for street view, The value should be real value, This is an integer value.</source>
         <translation>Per esportare KML per Street View, il valore deve essere un valore reale, questo è un valore intero.</translation>
     </message>
     <message>
-        <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
-        <translation>Per esportare KML per Street View, la modalità colore deve essere "Modalità discreta"</translation>
+        <source>To export KML for street view, Color mode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>Per esportare KML per Street View, la modalità colore deve essere &quot;Modalità discreta&quot;</translation>
     </message>
 </context>
 <context>
@@ -1056,16 +1172,16 @@
         <translation type="vanished">Errore</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Per esportare il file di forma, cambia "Impostazioni di visualizzazione" su "Contour Figure", non "Color Fringe" o "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Per esportare il file di forma, cambia &quot;Impostazioni di visualizzazione&quot; su &quot;Contour Figure&quot;, non &quot;Color Fringe&quot; o &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Scalare</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation type="vanished">Per esportare il file di forma, cambia l'impostazione del colore in "Modalità discreta".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Per esportare il file di forma, cambia l&apos;impostazione del colore in &quot;Modalità discreta&quot;.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
@@ -1219,7 +1335,7 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="vanished">Aggiorna l'impostazione delle particelle</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione delle particelle</translation>
     </message>
     <message>
         <source>Particles Display Setting</source>
@@ -1261,11 +1377,11 @@
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation>Specificare l'area da cui iniziare le particelle</translation>
+        <translation>Specificare l&apos;area da cui iniziare le particelle</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation>Specificare l'area da cui iniziare le particelle, in base all'intervallo degli indici della griglia (I, J).</translation>
+        <translation>Specificare l&apos;area da cui iniziare le particelle, in base all&apos;intervallo degli indici della griglia (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
@@ -1288,7 +1404,7 @@
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="vanished">Aggiorna l'impostazione delle particelle</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione delle particelle</translation>
     </message>
     <message>
         <source>Particles Display Setting</source>
@@ -1422,11 +1538,11 @@
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Specificare l'area in cui iniziare le linee di flusso</translation>
+        <translation>Specificare l&apos;area in cui iniziare le linee di flusso</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Specificare l'area in cui iniziare le linee di flusso, in base all'intervallo degli indici di griglia (I, J).</translation>
+        <translation>Specificare l&apos;area in cui iniziare le linee di flusso, in base all&apos;intervallo degli indici di griglia (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
@@ -1627,11 +1743,11 @@
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Riempi l'area inferiore</translation>
+        <translation>Riempi l&apos;area inferiore</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Riempi l'area superiore</translation>
+        <translation>Riempi l&apos;area superiore</translation>
     </message>
 </context>
 <context>
@@ -1701,11 +1817,11 @@
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation type="vanished">Specificare l'area per generare le particelle.</translation>
+        <translation type="vanished">Specificare l&apos;area per generare le particelle.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation type="vanished">Specificare l'area per generare le particelle, in base all'intervallo degli indici della griglia (I, J).</translation>
+        <translation type="vanished">Specificare l&apos;area per generare le particelle, in base all&apos;intervallo degli indici della griglia (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
@@ -1728,16 +1844,16 @@
         <translation type="vanished">Intervallo di spazio di generazione</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {margine in alto: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Se specifichi 1, le particelle vengono generate nei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifichi 2, le particelle vengono generate nei nodi della griglia e nei punti intermedi dei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifica 1/2, le particelle vengono generate per ogni altro nodo della griglia.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margine in alto: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Se specifichi 1, le particelle vengono generate nei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifichi 2, le particelle vengono generate nei nodi della griglia e nei punti intermedi dei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifica 1/2, le particelle vengono generate per ogni altro nodo della griglia.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1748,12 +1864,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Taglia:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1859,12 +1975,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Taglia:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2112,7 +2228,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="vanished">Semplifica l'impostazione</translation>
+        <translation type="vanished">Semplifica l&apos;impostazione</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -2128,11 +2244,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="vanished">Specificare l'area per iniziare a ottimizzare</translation>
+        <translation type="vanished">Specificare l&apos;area per iniziare a ottimizzare</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="vanished">Specificare l'area per iniziare le linee di flusso, per intervallo di indici di griglia (I, J).</translation>
+        <translation type="vanished">Specificare l&apos;area per iniziare le linee di flusso, per intervallo di indici di griglia (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
@@ -2155,14 +2271,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Intervallo di spazio di generazione</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Se specifichi 1, le linee di flusso iniziano dai nodi della griglia.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Se specifichi 2, le linee di flusso iniziano dai nodi della griglia e dai punti medi dei nodi della griglia.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Se specifichi 1/2, le linee di flusso iniziano da ogni altro nodo della griglia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se specifichi 1, le linee di flusso iniziano dai nodi della griglia.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Se specifichi 2, le linee di flusso iniziano dai nodi della griglia e dai punti medi dei nodi della griglia.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se specifichi 1/2, le linee di flusso iniziano da ogni altro nodo della griglia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -2193,12 +2309,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Larghezza:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2217,7 +2333,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="vanished">Semplifica l'impostazione</translation>
+        <translation type="vanished">Semplifica l&apos;impostazione</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -2264,12 +2380,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Larghezza:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -2307,7 +2423,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="vanished">Aggiorna l'impostazione della forma della griglia</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione della forma della griglia</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

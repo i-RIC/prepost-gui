@@ -9,6 +9,8 @@
 
 class GeoDataGdalGdalImporter::ImporterSetting : public GeoDataImporterSetting
 {
+	Q_OBJECT
+
 public:
 	ImporterSetting();
 

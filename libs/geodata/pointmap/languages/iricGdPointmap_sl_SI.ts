@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Podatki v oblaku točk %1</translation>
+        <translation type="obsolete">Podatki v oblaku točk %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Podatki v oblaku točk</translation>
+        <translation type="obsolete">Podatki v oblaku točk</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Podatki v oblaku točk %1</translation>
+        <translation type="obsolete">Podatki v oblaku točk %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">KOSITER</translation>
+        <translation type="obsolete">KOSITER</translation>
     </message>
 </context>
 <context>

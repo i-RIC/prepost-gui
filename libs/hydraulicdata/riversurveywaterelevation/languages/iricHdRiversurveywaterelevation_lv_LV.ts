@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -29,8 +31,8 @@
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>Slejā par %1, vērtība "%2"šķērsgriezumam"%3"nav derīgs. Vērtība tiek ignorēta.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>Slejā par %1, vērtība &quot;%2&quot;šķērsgriezumam&quot;%3&quot;nav derīgs. Vērtība tiek ignorēta.</translation>
     </message>
     <message>
         <source>Information</source>

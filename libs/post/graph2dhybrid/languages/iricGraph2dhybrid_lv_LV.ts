@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -330,6 +332,10 @@
         <source>Please input prefix.</source>
         <translation>Lūdzu, ievadiet prefiksu.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +390,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Fonta iestatījums (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -485,8 +495,8 @@
         <translation>Diagrammas loga iestatīšana neizdodas. Aprēķina rezultāts nav pareizi ielādēts.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Šo funkciju var izmantot, ja ir izpildīti šādi nosacījumi: &lt;ul&gt; &lt;li&gt; tiek uzzīmēts divdimensiju strukturēta režģa rezultāta grafiks. &lt;/li&gt; &lt;li&gt; X ass ir I virziens režģī. &lt;/Li &gt; &lt;li&gt; Režģis tiek veidots, izmantojot algoritmu "Izveidot režģi no šķērsgriezuma datiem" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Šo funkciju var izmantot, ja ir izpildīti šādi nosacījumi: &lt;ul&gt; &lt;li&gt; tiek uzzīmēts divdimensiju strukturēta režģa rezultāta grafiks. &lt;/li&gt; &lt;li&gt; X ass ir I virziens režģī. &lt;/Li &gt; &lt;li&gt; Režģis tiek veidots, izmantojot algoritmu &quot;Izveidot režģi no šķērsgriezuma datiem&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +590,8 @@
         <translation>Kļūda</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Pirmās slejas nosaukumam jābūt "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Pirmās slejas nosaukumam jābūt &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -660,8 +670,8 @@
         <translation>Kļūda</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Pirmās slejas nosaukumam jābūt "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Pirmās slejas nosaukumam jābūt &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>

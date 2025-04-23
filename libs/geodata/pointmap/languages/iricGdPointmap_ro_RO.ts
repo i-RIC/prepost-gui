@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Date din cloud punct %1</translation>
+        <translation type="obsolete">Date din cloud punct %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Date din cloud punct</translation>
+        <translation type="obsolete">Date din cloud punct</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Date din cloud punct %1</translation>
+        <translation type="obsolete">Date din cloud punct %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">STANIU</translation>
+        <translation type="obsolete">STANIU</translation>
     </message>
 </context>
 <context>

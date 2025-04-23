@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPolygon</name>
@@ -188,7 +190,7 @@
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation>Configuració d'importació de polígons</translation>
+        <translation>Configuració d&apos;importació de polígons</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -200,11 +202,11 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l'atribut del fitxer Forma</translation>
+        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>El nom s'estableix automàticament (per exemple, polígon1)</translation>
+        <translation>El nom s&apos;estableix automàticament (per exemple, polígon1)</translation>
     </message>
     <message>
         <source>Value</source>

@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Data Awan Titik %1</translation>
+        <translation type="obsolete">Data Awan Titik %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Data Awan Titik</translation>
+        <translation type="obsolete">Data Awan Titik</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Data Awan Titik %1</translation>
+        <translation type="obsolete">Data Awan Titik %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">TIMAH</translation>
+        <translation type="obsolete">TIMAH</translation>
     </message>
 </context>
 <context>

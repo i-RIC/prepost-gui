@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -21,8 +23,8 @@
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>ในคอลัมน์สำหรับ %1, มูลค่า "%2" สำหรับภาคตัดขวาง "%3" ไม่ถูกต้อง ค่าจะถูกละเว้น</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>ในคอลัมน์สำหรับ %1, มูลค่า &quot;%2&quot; สำหรับภาคตัดขวาง &quot;%3&quot; ไม่ถูกต้อง ค่าจะถูกละเว้น</translation>
     </message>
     <message>
         <source>Information</source>

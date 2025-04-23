@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -29,8 +31,8 @@
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>في العمود %1 ، القيمة "%2"للمقطع العرضي"%3"غير صالح. تم تجاهل القيمة.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>في العمود %1 ، القيمة &quot;%2&quot;للمقطع العرضي&quot;%3&quot;غير صالح. تم تجاهل القيمة.</translation>
     </message>
     <message>
         <source>Information</source>

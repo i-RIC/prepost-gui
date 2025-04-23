@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -170,7 +172,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>

@@ -1480,15 +1480,15 @@ Parse error %2 at %3, column %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copied</source>
+        <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not copied</source>
+        <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copied to project</source>
+        <source>Saved to to project</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

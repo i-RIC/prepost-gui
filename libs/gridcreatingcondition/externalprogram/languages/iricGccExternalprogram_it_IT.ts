@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Si è verificato un errore durante il caricamento del file di definizione del creatore della griglia nella cartella "%1". Questo creatore di griglia viene ignorato. %2</translation>
+        <translation>Si è verificato un errore durante il caricamento del file di definizione del creatore della griglia nella cartella &quot;%1&quot;. Questo creatore di griglia viene ignorato. %2</translation>
     </message>
 </context>
 <context>

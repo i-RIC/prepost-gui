@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -537,62 +539,62 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="vanished">Habilitado</translation>
+        <translation>Habilitado</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Direcao  </translation>
+        <translation type="vanished">Direcao  </translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Alcance</translation>
+        <translation type="vanished">Alcance</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Minimo</translation>
+        <translation type="vanished">I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Maximo</translation>
+        <translation type="vanished">I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J minimo</translation>
+        <translation type="vanished">J minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J maximo</translation>
+        <translation type="vanished">J maximo</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K minimo</translation>
+        <translation type="vanished">K minimo</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K maximo</translation>
+        <translation type="vanished">K maximo</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Exibir</translation>
+        <translation type="vanished">Exibir</translation>
     </message>
 </context>
 <context>
@@ -624,55 +626,55 @@
     <name>Post3dWindowIsosurfaceSettingDialog</name>
     <message>
         <source>Isosurface Setting</source>
-        <translation>Configuracao de isossuperficie</translation>
+        <translation type="vanished">Configuracao de isossuperficie</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Exibir</translation>
+        <translation type="vanished">Exibir</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation>Regiao  </translation>
+        <translation type="vanished">Regiao  </translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation>Regiao inteira</translation>
+        <translation type="vanished">Regiao inteira</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Minimo</translation>
+        <translation type="vanished">I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Maximo</translation>
+        <translation type="vanished">I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J minimo</translation>
+        <translation type="vanished">J minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J maximo</translation>
+        <translation type="vanished">J maximo</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K minimo</translation>
+        <translation type="vanished">K minimo</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K maximo</translation>
+        <translation type="vanished">K maximo</translation>
     </message>
     <message>
         <source>Value Setting</source>
-        <translation>Configuracao de valor</translation>
+        <translation type="vanished">Configuracao de valor</translation>
     </message>
     <message>
         <source>Min Value</source>
-        <translation>Valor minimo </translation>
+        <translation type="vanished">Valor minimo </translation>
     </message>
     <message>
         <source>Color</source>
@@ -680,15 +682,15 @@
     </message>
     <message>
         <source>Max Value</source>
-        <translation>Valor maximo </translation>
+        <translation type="vanished">Valor maximo </translation>
     </message>
     <message>
         <source>Iso Value</source>
-        <translation>Valor de Isossuperficie</translation>
+        <translation type="vanished">Valor de Isossuperficie</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor:</translation>
+        <translation type="vanished">Cor:</translation>
     </message>
 </context>
 <context>
@@ -806,7 +808,74 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atualizar configuração de contorno</translation>
+        <translation type="vanished">Atualizar configuração de contorno</translation>
+    </message>
+    <message>
+        <source>Isosurface Setting</source>
+        <translation type="unfinished">Configuracao de isossuperficie</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regiao  </translation>
+    </message>
+    <message>
+        <source>Full region</source>
+        <translation type="unfinished">Regiao inteira</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Setting</source>
+        <translation type="unfinished">Configuracao de valor</translation>
+    </message>
+    <message>
+        <source>Max Value</source>
+        <translation type="unfinished">Valor maximo </translation>
+    </message>
+    <message>
+        <source>Min Value</source>
+        <translation type="unfinished">Valor minimo </translation>
+    </message>
+    <message>
+        <source>Iso Value</source>
+        <translation type="unfinished">Valor de Isossuperficie</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -814,6 +883,10 @@
     <message>
         <source>Isosurfaces</source>
         <translation>Isossuperficies</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished">Selecione o resultado do cálculo</translation>
     </message>
 </context>
 <context>
@@ -1258,24 +1331,24 @@
         <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Se você especificar 1, as partículas serão geradas nos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 2, as partículas serão geradas nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 1/2, as partículas são geradas para todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Se você especificar 1, as partículas serão geradas nos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 2, as partículas serão geradas nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 1/2, as partículas são geradas para todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1507,22 +1580,22 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1, as linhas de fluxo começam nos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Se você especificar 2, as simplificações começam nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1/2, as linhas de fluxo começam em todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Se você especificar 1, as linhas de fluxo começam nos nós da grade. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Se você especificar 2, as simplificações começam nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Se você especificar 1/2, as linhas de fluxo começam em todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1553,11 +1626,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Isosurface</source>
-        <translation>Criar isosuperficie</translation>
+        <translation type="vanished">Criar isosuperficie</translation>
     </message>
     <message>
         <source>Delete Isosurface</source>
-        <translation>Excluir isosuperficie</translation>
+        <translation type="vanished">Excluir isosuperficie</translation>
     </message>
 </context>
 </TS>

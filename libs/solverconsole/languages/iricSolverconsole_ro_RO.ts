@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>SolverConsoleWindow</name>
@@ -152,8 +154,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Vă rugăm să vă asigurați că:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Dacă rezultatul calculului există deja, acesta este șters.&lt;/li&gt; &lt;li&gt;Condiția de calcul și grila de intrare pe care îl puteți vedea în fereastra de preprocesare este scris în Case1.cgn.&lt;/li&gt; &lt;li&gt;Rezolvatorul va citi datele din Case1.cgn și va începe să ruleze.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Ești sigur că este în regulă?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Asigurați-vă că:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Dacă rezultatul calculului există deja, acesta va fi șters.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Proiectul va fi salvat.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Sunteți sigur că este în regulă?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Asigurați-vă că:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Dacă rezultatul calculului există deja, acesta va fi șters.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Proiectul va fi salvat.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Sunteți sigur că este în regulă?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

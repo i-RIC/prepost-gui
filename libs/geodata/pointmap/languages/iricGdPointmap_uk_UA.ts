@@ -618,11 +618,11 @@
     <name>GeoDataPointmapRealReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Дані хмари точок %1</translation>
+        <translation type="obsolete">Дані хмари точок %1</translation>
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished">Дані хмари точок</translation>
+        <translation type="obsolete">Дані хмари точок</translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1034,11 @@
     <name>GeoDataPointmapTINReadOnlyCreator</name>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished">Дані хмари точок %1</translation>
+        <translation type="obsolete">Дані хмари точок %1</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">ІПН</translation>
+        <translation type="obsolete">ІПН</translation>
     </message>
 </context>
 <context>

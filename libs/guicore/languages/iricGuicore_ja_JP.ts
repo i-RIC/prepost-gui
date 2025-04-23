@@ -1871,15 +1871,27 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Copied</source>
-        <translation>コピーされた</translation>
+        <translation type="vanished">コピーされた</translation>
     </message>
     <message>
         <source>Not copied</source>
-        <translation>コピーされていない</translation>
+        <translation type="vanished">コピーされていない</translation>
     </message>
     <message>
         <source>Copied to project</source>
-        <translation>プロジェクトへのコピー</translation>
+        <translation type="vanished">プロジェクトへのコピー</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>保存されていない</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>保存されている</translation>
+    </message>
+    <message>
+        <source>Saved to to project</source>
+        <translation>プロジェクトへの保存</translation>
     </message>
 </context>
 <context>

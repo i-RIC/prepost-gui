@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Graph2dWindowDataModel</name>
@@ -124,7 +126,7 @@
     <name>Graph2dWindowVerticalAxisSettingDialog</name>
     <message>
         <source>Vertical Axis Setting</source>
-        <translation>Réglage de l'axe vertical</translation>
+        <translation>Réglage de l&apos;axe vertical</translation>
     </message>
     <message>
         <source>Value Range</source>
@@ -155,15 +157,15 @@
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation>Modification de l'élément du navigateur d'objets</translation>
+        <translation>Modification de l&apos;élément du navigateur d&apos;objets</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation>Déplacer l'élément vers le haut</translation>
+        <translation>Déplacer l&apos;élément vers le haut</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Déplacer l'élément vers le bas</translation>
+        <translation>Déplacer l&apos;élément vers le bas</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -330,6 +332,10 @@
         <source>Please input prefix.</source>
         <translation>Insira o prefixo.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +390,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Configuração de fonte (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -485,8 +495,8 @@
         <translation>Falha na configuração da janela de gráfico. O resultado do cálculo não foi carregado corretamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta função pode ser usada quando as seguintes condições são satisfeitas: &lt;ul&gt; &lt;li&gt; O gráfico para o resultado da grade estruturada bidimensional é desenhado. &lt;/li&gt; &lt;li&gt; O eixo X é a direção I na grade. &lt;/ Li &gt; &lt;li&gt; A grade é criada usando o algoritmo "Criar grade a partir de dados de seção cruzada" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Esta função pode ser usada quando as seguintes condições são satisfeitas: &lt;ul&gt; &lt;li&gt; O gráfico para o resultado da grade estruturada bidimensional é desenhado. &lt;/li&gt; &lt;li&gt; O eixo X é a direção I na grade. &lt;/ Li &gt; &lt;li&gt; A grade é criada usando o algoritmo &quot;Criar grade a partir de dados de seção cruzada&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +590,8 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>O título da primeira coluna deve ser "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>O título da primeira coluna deve ser &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -660,8 +670,8 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>O título da primeira coluna deve ser "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>O título da primeira coluna deve ser &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>

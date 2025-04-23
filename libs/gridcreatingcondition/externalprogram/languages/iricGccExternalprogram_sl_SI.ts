@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Pri nalaganju datoteke z definicijo ustvarjalca mreže v mapo je prišlo do napake "%1". Ta ustvarjalec mreže je prezrt. %2</translation>
+        <translation>Pri nalaganju datoteke z definicijo ustvarjalca mreže v mapo je prišlo do napake &quot;%1&quot;. Ta ustvarjalec mreže je prezrt. %2</translation>
     </message>
 </context>
 <context>

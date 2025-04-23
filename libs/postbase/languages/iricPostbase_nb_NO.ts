@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -72,17 +74,17 @@
         <translation>Generasjonstidsintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -575,8 +577,8 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Definisjon av utgang</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definere variabelen med JavaScript-språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;her&lt;/span&gt;&lt;/a&gt; for detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definere variabelen med JavaScript-språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;her&lt;/span&gt;&lt;/a&gt; for detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -663,22 +665,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Rediger tidsinnstilling</translation>
+        <translation type="vanished">Rediger tidsinnstilling</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation type="unfinished">Tidsinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Skjema</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="unfinished">Bruk prosjektinnstilling</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="unfinished">Tidsformat</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Tidsinnstilling</translation>
+        <translation type="vanished">Tidsinnstilling</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Bruk prosjektinnstilling</translation>
+        <translation type="vanished">Bruk prosjektinnstilling</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Tidsformat</translation>
+        <translation type="vanished">Tidsformat</translation>
     </message>
 </context>
 <context>
@@ -687,20 +708,39 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Tittel</translation>
     </message>
+    <message>
+        <source>Title Setting</source>
+        <translation type="unfinished">Tittelinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Skjema</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">Tittel:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="unfinished">Merk: Bare engelske tegn kan brukes som tittel.</translation>
+    </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Tittelinnstilling</translation>
+        <translation type="vanished">Tittelinnstilling</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Tittel:</translation>
+        <translation type="vanished">Tittel:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Merk: Bare engelske tegn kan brukes som tittel.</translation>
+        <translation type="vanished">Merk: Bare engelske tegn kan brukes som tittel.</translation>
     </message>
 </context>
 </TS>

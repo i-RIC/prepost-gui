@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AboutDialog</name>
@@ -196,15 +198,15 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...</source>
-        <translation type="vanished">无效的横截面名称。 名称应该为 "X1", "X2", ...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <translation type="vanished">无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>横截面未定义</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation>横截面名称无效。名称应为“X1”、“X2”、...或“XS1”、“XS2”、...</translation>
     </message>
 </context>
