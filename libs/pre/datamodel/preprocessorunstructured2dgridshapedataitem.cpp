@@ -88,7 +88,7 @@ QDialog* PreProcessorUnstructured2dGridShapeDataItem::propertyDialog(QWidget* pa
 void PreProcessorUnstructured2dGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	gridDataItem()->selectedNodesController()->setVisibility(true);
-	updateVisibility();
+	gridDataItem()->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorUnstructured2dGridShapeDataItem::informDeselection(VTKGraphicsView* /*v*/)
