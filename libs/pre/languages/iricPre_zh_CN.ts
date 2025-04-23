@@ -529,6 +529,10 @@ Do you really want to import grid from this file?</source>
         <source>Boundar condition successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
