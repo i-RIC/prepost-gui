@@ -357,7 +357,7 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_mouseEventMode = Impl::meBeforeDefining;
 	}
 
-	doUpdateActorSetting();
+	updateActorSetting();
 }
 
 void DistanceMeasureDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
