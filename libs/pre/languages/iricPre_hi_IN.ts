@@ -527,7 +527,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्रिड का आकार उस प्रोजेक्ट के ग्रिड से अलग है, जहाँ से सीमा स्थिति डेटा निर्यात किया जाता है। क्या आप इंडेक्स डेटा आयात करना चाहते हैं?</translation>
     </message>
 </context>
 <context>
