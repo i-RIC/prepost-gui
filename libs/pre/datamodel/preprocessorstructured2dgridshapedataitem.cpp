@@ -93,7 +93,7 @@ void PreProcessorStructured2dGridShapeDataItem::informSelection(VTKGraphicsView*
 {
 	m_setting.outlineActor()->GetProperty()->SetLineWidth(selectedOutlineWidth);
 	gridDataItem()->selectedNodesController()->setVisibility(true);
-	updateVisibility();
+	gridDataItem()->updateVisibilityWithoutRendering();
 }
 
 void PreProcessorStructured2dGridShapeDataItem::informDeselection(VTKGraphicsView* /*v*/)
