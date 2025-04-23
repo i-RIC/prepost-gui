@@ -64,10 +64,11 @@ bool PostZoneDataVtkExporter::exportToFile(v4PostZoneDataContainer* data, const 
 		return false;
 	}
 
-
-	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
-														 PostSolutionInfo::tr("VTK files export calculation result defined at grid nodes and cells."),
-														 "postzonedatavtkexporter_warning");
+	if (m_isFirstStep) {
+		InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+															 PostSolutionInfo::tr("VTK files export calculation result defined at grid nodes and cells."),
+															 "postzonedatavtkexporter_warning");
+	}
 
 	return true;
 }
