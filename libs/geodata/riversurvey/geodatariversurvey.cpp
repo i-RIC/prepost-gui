@@ -1216,6 +1216,8 @@ void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorG
 
 void GeoDataRiverSurvey::editModeMouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
+	impl->m_keyboardModifiers = Qt::NoModifier;
+
 	GeoDataRiverPathPoint* selP = singleSelectedPoint();
 	if (selP == nullptr) {
 		// no point is selected.
@@ -1406,6 +1408,7 @@ void GeoDataRiverSurvey::editModeMouseReleaseEvent(QMouseEvent* event, PreProces
 			impl->setupMenu();
 			impl->m_rightClickingMenu->move(event->globalPos());
 			impl->m_rightClickingMenu->show();
+			impl->m_keyboardModifiers = Qt::NoModifier;
 			impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
 		}
 	}
