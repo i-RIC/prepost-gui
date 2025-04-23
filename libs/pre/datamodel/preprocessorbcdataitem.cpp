@@ -114,8 +114,23 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 
 PreProcessorBCDataItem::~PreProcessorBCDataItem()
 {
-	auto g = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->grid();
-	if (g != nullptr) {g->setIsModified(true);}
+	auto gItem = groupDataItem()->gridDataItem();
+	if (gItem != nullptr) {
+		auto grid = gItem->grid();
+		if (grid != nullptr) {
+			grid->setIsModified(true);
+		}
+
+		PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
+		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+			controller = gItem->selectedNodesController();
+		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+			controller = gItem->selectedCellsController();
+		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+			controller = gItem->selectedEdgesController();
+		}
+		controller->clearSelection();
+	}
 
 	renderer()->RemoveActor(impl->m_actor);
 	renderer()->RemoveActor2D(impl->m_nameActor);
