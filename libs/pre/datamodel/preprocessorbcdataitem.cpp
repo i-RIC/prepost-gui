@@ -602,11 +602,11 @@ int PreProcessorBCDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	return ret;
 }
 
-void PreProcessorBCDataItem::importFromYaml(const YAML::Node& node, const QDir& dir)
+void PreProcessorBCDataItem::importFromYaml(const YAML::Node& node, const QDir& dir, bool importIndices)
 {
 	impl->m_dialog->importFromYaml(node, dir);
 	auto indices = node[INDICES];
-	if (indices.IsDefined() && indices.IsSequence()) {
+	if (importIndices && indices.IsDefined() && indices.IsSequence()) {
 		impl->m_indices.clear();
 		impl->m_edges.clear();
 

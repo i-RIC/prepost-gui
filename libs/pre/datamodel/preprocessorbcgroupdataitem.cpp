@@ -10,6 +10,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/colorsource.h>
@@ -358,6 +359,36 @@ void PreProcessorBCGroupDataItem::importBc()
 	YAML::Node data = YAML::LoadFile(iRIC::toStr(fname));
 
 	auto gType = gridTypeDataItem()->gridType();
+	auto gItem = gridDataItem();
+
+	bool gridSizeChanged = false;
+
+	bool importIndices = true;
+	auto grid = gItem->grid()->grid();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid);
+	if (data["_gridsize"]) {
+		auto gridsize = data["_gridsize"];
+		if (sgrid != nullptr) {
+			if (! gridsize.IsSequence()) {
+				gridSizeChanged = true;
+			} else {
+				auto isize = gridsize[0].as<int>();
+				auto jsize = gridsize[1].as<int>();
+				gridSizeChanged = (sgrid->dimensionI() != isize || sgrid->dimensionJ() != jsize);
+			}
+		} else {
+			if (! gridsize.IsScalar()) {
+				gridSizeChanged = true;
+			} else {
+				auto size = gridsize.as<int>();
+				gridSizeChanged = (grid->nodeCount() != size);
+			}
+		}
+	}
+	if (gridSizeChanged) {
+		auto ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		importIndices = (ret == QMessageBox::Yes);
+	}
 
 	QRegExp exp("(.+)(\\d+)");
 	for (auto it = data.begin(); it != data.end(); ++it) {
@@ -370,11 +401,10 @@ void PreProcessorBCGroupDataItem::importBc()
 		if (bc == nullptr) {continue;}
 
 		auto item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, false);
-		item->importFromYaml(it->second, finfo.absoluteDir());
+		item->importFromYaml(it->second, finfo.absoluteDir(), importIndices);
 		m_childItems.push_back(item);
 	}
 
-	auto gItem = gridDataItem();
 	if (gItem->grid() != nullptr) {
 		gItem->grid()->setIsModified(true);
 	}
@@ -421,6 +451,14 @@ void PreProcessorBCGroupDataItem::exportBc()
 		stream << name << ":" << "\r\n";
 		item->setFileNamePrefix(name);
 		item->exportToYaml(&stream, finfo.absoluteDir(), "  ");
+	}
+
+	auto grid = gridDataItem()->grid()->grid();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid);
+	if (sgrid != nullptr) {
+		stream << "_gridsize: [" << sgrid->dimensionI() << ", " << sgrid->dimensionJ() << "]\n";
+	} else {
+		stream << "_gridsize: [" << grid->nodeCount() << "]\n";
 	}
 
 	file.close();

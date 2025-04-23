@@ -35,7 +35,7 @@ public:
 	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
 	int importFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 
-	void importFromYaml(const YAML::Node& node, const QDir& dir);
+	void importFromYaml(const YAML::Node& node, const QDir& dir, bool importIndices);
 	void exportToYaml(QTextStream* stream, const QDir& dir, const QString& lineHeader = "");
 	void setFileNamePrefix(const QString& prefix);
 
