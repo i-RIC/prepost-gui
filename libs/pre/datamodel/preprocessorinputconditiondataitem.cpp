@@ -20,6 +20,7 @@
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
 
 PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {parent}
@@ -56,7 +57,12 @@ void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 int PreProcessorInputConditionDataItem::loadFromCgnsFile()
 {
 	auto cgnsFile = projectData()->mainfile()->cgnsFile();
-	return m_dialog->load(*(cgnsFile->ccBase()->ccGroup()), cgnsFile->ccBase()->gccTop());
+	auto ccBase = cgnsFile->ccBase();
+	if (ccBase == nullptr) {
+		return IRIC_NO_DATA;
+	}
+
+	return m_dialog->load(*(ccBase->ccGroup()), ccBase->gccTop());
 }
 
 int PreProcessorInputConditionDataItem::saveToCgnsFile()

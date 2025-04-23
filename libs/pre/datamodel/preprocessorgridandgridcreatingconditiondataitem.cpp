@@ -253,7 +253,11 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4Input
 int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 {
 	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
-	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
+
+	auto ccBase = mainFile->cgnsFile()->ccBase();
+	if (ccBase == nullptr) {return IRIC_NO_DATA;}
+
+	auto zone = ccBase->zone(m_zoneName);
 	if (zone == nullptr) {return IRIC_NO_ERROR;}
 
 	auto gtItem = gridTypeDataItem();
