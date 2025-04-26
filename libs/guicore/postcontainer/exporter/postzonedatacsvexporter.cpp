@@ -539,9 +539,11 @@ bool PostZoneDataCsvExporter::exportToFile(v4PostZoneDataContainer* c, const QSt
 	}
 	f.close();
 
-	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
-														 PostSolutionInfo::tr("CSV files export calculation result defined at grid nodes, cells, and edges."),
-														 "postzonedatacsvexporter_warning");
+	if (m_isFirstStep) {
+		InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+															 PostSolutionInfo::tr("CSV files export calculation result defined at grid nodes, cells, and edges."),
+															 "postzonedatacsvexporter_warning");
+	}
 
 	return true;
 }

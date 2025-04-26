@@ -254,10 +254,11 @@ bool PostZoneDataShapeExporter::exportToFile(v4PostZoneDataContainer* data, cons
 	ok = exportPrj(prj, projectData);
 	if (! ok) {return false;}
 
-
-	InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
-														 PostSolutionInfo::tr("shapefiles export calculation result defined at grid nodes."),
-														 "postzonedatashapeexporter_warning");
+	if (m_isFirstStep) {
+		InformationDialog::warning(projectData->mainWindow(), PostSolutionInfo::tr("Warning"),
+															 PostSolutionInfo::tr("shapefiles export calculation result defined at grid nodes."),
+															 "postzonedatashapeexporter_warning");
+	}
 
 	return moveFiles(tmpFile.c_str(), shp);
 }

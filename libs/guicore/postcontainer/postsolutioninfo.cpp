@@ -981,6 +981,7 @@ void PostSolutionInfo::exportCalculationResult()
 	} else if (m_exportFormat == PostDataExportDialog::Format::ESRIShape) {
 		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataShapeExporter {projectData()->workDirectory()}};
 	}
+	exporter->setIsFirstStep(true);
 	while (step <= m_exportSetting.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
@@ -1002,6 +1003,7 @@ void PostSolutionInfo::exportCalculationResult()
 		}
 		step += m_exportSetting.skipRate;
 		++ fileIndex;
+		exporter->setIsFirstStep(false);
 	}
 	iricMainWindow()->setContinuousSnapshotInProgress(false);
 	setCurrentStep(stepBackup);

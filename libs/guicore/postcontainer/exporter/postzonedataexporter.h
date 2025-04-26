@@ -12,7 +12,13 @@ class v4PostZoneDataContainer;
 class PostZoneDataExporter
 {
 public:
+	PostZoneDataExporter() :
+		m_isFirstStep {false}
+	{}
+
 	virtual ~PostZoneDataExporter() {}
+
+	void setIsFirstStep(bool first) {m_isFirstStep = first;}
 	virtual QString filename(const QString& prefix, int index) const = 0;
 	virtual bool exportToFile(v4PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd, const QPointF& offset) const = 0;
 
@@ -36,6 +42,9 @@ public:
 		}
 		return dest;
 	}
+
+protected:
+	bool m_isFirstStep;
 };
 
 #endif // POSTZONEDATAEXPORTER_H
