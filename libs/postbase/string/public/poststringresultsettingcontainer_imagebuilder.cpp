@@ -27,7 +27,12 @@ bool PostStringResultSettingContainer::ImageBuilder::build(QImage* image)
 	if (text.isEmpty()) {return false;}
 
 	// todo control mergin
+
 	QFontMetrics metrics(m_setting->font);
+	QPen pen(m_setting->fontColor);
+	painter.setPen(pen);
+	painter.setFont(m_setting->font);
+
 	auto lines = text.split("\n");
 	int lnum = 0;
 	for (auto l : lines) {
