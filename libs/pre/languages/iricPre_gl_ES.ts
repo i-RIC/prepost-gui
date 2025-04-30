@@ -529,7 +529,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation type="unfinished"></translation>
+        <translation>O tamaño da grella é diferente da grella do proxecto desde o que se exportan os datos da condición de contorno. Quere importar os datos do índice?</translation>
     </message>
 </context>
 <context>

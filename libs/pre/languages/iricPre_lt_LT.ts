@@ -529,7 +529,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelio dydis skiriasi nuo projekto, iš kurio eksportuojami ribinių sąlygų duomenys, tinklelio. Ar norite importuoti indekso duomenis?</translation>
     </message>
 </context>
 <context>

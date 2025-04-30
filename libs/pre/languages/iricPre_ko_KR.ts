@@ -529,7 +529,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation type="unfinished"></translation>
+        <translation>그리드 크기가 경계 조건 데이터를 내보낸 프로젝트의 그리드 크기와 다릅니다. 색인 데이터를 가져오시겠습니까?</translation>
     </message>
 </context>
 <context>

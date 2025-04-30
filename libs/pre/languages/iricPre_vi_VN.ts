@@ -529,7 +529,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích thước lưới khác với lưới trong dự án mà dữ liệu điều kiện biên được xuất ra. Bạn có muốn nhập dữ liệu chỉ mục không?</translation>
     </message>
 </context>
 <context>
