@@ -219,6 +219,11 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 	}
 
 	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr) {
+		m_nextStepToAddParticles = 0;
+		return;
+	}
+
 	unsigned int currentStep = cont->solutionInfo()->currentStep();
 	if (m_setting.timeMode == ParticleSettingContainer::TimeMode::Skip) {
 		m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
