@@ -177,6 +177,8 @@ void PreProcessorGeoDataDataItem::importGeoData()
 	importer->importData(m_geoData, 0, preProcessorWindow());
 	importer->setSetting(nullptr);
 	m_geoData->setDataLoaded(true);
+	auto o = offset();
+	m_geoData->applyOffset(o.x(), o.y());
 
 	updateZDepthRange();
 	m_geoData->updateActorSetting();

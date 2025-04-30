@@ -267,7 +267,7 @@ bool GeoDataPolygonGroupCsvImporter::doInitWithSetting(int* count, SolverDefinit
 
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	auto cs = csBuilder->system(s->csName);
-	if (projectCs != nullptr && projectCs != cs) {
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
 

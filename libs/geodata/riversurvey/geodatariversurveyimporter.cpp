@@ -85,7 +85,7 @@ void parseKP(const QString& tok, double* realKP, std::string* strKP, bool* allNu
 	}
 }
 
-bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool* with4points, bool* allNamesAreNumber, QWidget* w)
+bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool* with4points, bool* allNamesAreNumber, bool showWarningDialog, QWidget* w)
 {
 	QFile f(fname);
 	QFileInfo finfo(f);
@@ -257,7 +257,7 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 			}
 		}
 	}
-	if (problems.size() > 0) {
+	if (problems.size() > 0 && showWarningDialog) {
 		GeoDataRiverSurveyImporter::ProblemsDialog dialog(w);
 		dialog.setProblems(problems);
 		int result = dialog.exec();
@@ -381,7 +381,7 @@ GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) 
 bool GeoDataRiverSurveyImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	clearPoints(&m_points);
-	if (! readRivFile(setting()->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, w)) {return false;}
+	if (! readRivFile(setting()->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, true, w)) {return false;}
 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(m_with4Points);
@@ -411,9 +411,11 @@ bool GeoDataRiverSurveyImporter::doInit(int* count, SolverDefinitionGridAttribut
 	return true;
 }
 
-bool GeoDataRiverSurveyImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* /*w*/)
+bool GeoDataRiverSurveyImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	auto s = dynamic_cast<ImporterSetting*> (setting());
+	clearPoints(&m_points);
+	if (! readRivFile(setting()->fileName(), &m_points, &m_with4Points, &m_allNamesAreNumber, false, w)) { return false; }
 
 	*count = 1;
 
