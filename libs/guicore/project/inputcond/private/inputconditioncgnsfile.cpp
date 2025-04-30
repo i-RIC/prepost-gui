@@ -1,4 +1,5 @@
 #include "inputconditioncgnsfile.h"
+#include "../inputconditioncontainer.h"
 
 #include <guicore/project/projectcgnsfile.h>
 #include <misc/stringtool.h>
@@ -10,6 +11,9 @@
 #include <h5cgnsflowsolution.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
+
+#include <QDir>
+#include <QFileInfo>
 
 #include <string>
 
@@ -146,8 +150,15 @@ bool InputConditionCgnsFile::loadData()
 	m_gridEdgeJIntegerResults.clear();
 	m_gridEdgeJRealResults.clear();
 
+	QString fileName = m_fileName;
+	QFileInfo fInfo(fileName);
+
+	if (fInfo.isRelative()) {
+		QDir dir(InputConditionContainer::currentFolder);
+		fileName = dir.absoluteFilePath(m_fileName);
+	}
 	try {
-		iRICLib::H5CgnsFile file(iRIC::toStr(m_fileName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		iRICLib::H5CgnsFile file(iRIC::toStr(fileName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 
 		std::string solverName;
 		VersionNumber solverVersion;

@@ -1051,6 +1051,8 @@ vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 
 void PreProcessorGridDataItem::updateObjectBrowserTree()
 {
+	setIsCommandExecuting(true);
+
 	QStandardItem* sItem = m_shapeDataItem->standardItem();
 	if (sItem->row() != - 1) {
 		// remove.
@@ -1133,6 +1135,8 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 			m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
 		}
 	}
+
+	setIsCommandExecuting(false);
 }
 
 void PreProcessorGridDataItem::setupGenerateAttributeActions(QMenu* menu)

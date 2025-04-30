@@ -2041,7 +2041,7 @@ Do you really want to import this file?</source>
         <translation type="vanished">編輯</translation>
     </message>
     <message>
-        <source>Specified CGNS files are not found. Do you want to edi setting now?</source>
+        <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

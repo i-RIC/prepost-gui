@@ -402,7 +402,7 @@ bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool
 	// already setup correctly
 	if (allOK) {return true;}
 
-	int ret = QMessageBox::warning(this, tr("Warning"), tr("Specified CGNS files are not found. Do you want to edi setting now?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
+	int ret = QMessageBox::warning(this, tr("Warning"), tr("Specified CGNS files are not found. Do you want to edit setting now?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 	if (ret == QMessageBox::Cancel) {
 		return false;
 	} else if (ret == QMessageBox::No) {

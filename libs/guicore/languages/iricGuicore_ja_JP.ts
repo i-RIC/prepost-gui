@@ -2537,6 +2537,10 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Specified CGNS files are not found. Do you want to edi setting now?</source>
+        <translation type="vanished">計算条件で指定された CGNSファイルが見つかりません。今すぐ設定を編集しますか?</translation>
+    </message>
+    <message>
+        <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
         <translation>計算条件で指定された CGNSファイルが見つかりません。今すぐ設定を編集しますか?</translation>
     </message>
 </context>
