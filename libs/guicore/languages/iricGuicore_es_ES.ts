@@ -2033,6 +2033,10 @@ Do you really want to import this file?</source>
         <source>Edit</source>
         <translation type="vanished">Editar</translation>
     </message>
+    <message>
+        <source>Specified CGNS files are not found. Do you want to edi setting now?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionPageList</name>

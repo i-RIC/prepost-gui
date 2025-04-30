@@ -479,8 +479,6 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	iRICUndoStack::instance().clear();
 
-	m_preProcessorWindow->setupCgnsFilesIfNeeded(false);
-
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
