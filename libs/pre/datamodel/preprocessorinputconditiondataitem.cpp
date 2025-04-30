@@ -52,8 +52,6 @@ void PreProcessorInputConditionDataItem::doLoadFromProjectMainFile(const QDomNod
 
 void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	InputConditionContainer::currentFolder = projectData()->workDirectory();
-
 	QString isSetStr;
 	if (m_isSet) {isSetStr = "true";} else {isSetStr = "false";}
 	writer.writeAttribute("isSet", isSetStr);

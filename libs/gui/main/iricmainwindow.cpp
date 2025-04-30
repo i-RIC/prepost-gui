@@ -37,12 +37,9 @@
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexi.h>
 #include <guicore/datamodel/vtkgraphicsviewscalewidget.h>
+#include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/datamodel/vtk2dgraphicsviewanglewidget.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
-#include <postbase/autoparticlewindowi.h>
-#include <postbase/particleexportwindowi.h>
-#include <postbase/svkmlexportwindowi.h>
-#include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/misc/iricmetadata.h>
 #include <guicore/misc/coordinatesystemdisplaywidget.h>
 #include <guicore/misc/mousepositionwidget.h>
@@ -50,6 +47,7 @@
 #include <guicore/postcontainer/postdataexportdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
+#include <guicore/project/inputcond/inputconditioncontainer.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -70,7 +68,10 @@
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
 #include <misc/ziparchive.h>
+#include <postbase/autoparticlewindowi.h>
 #include <postbase/cfshapeexportwindowi.h>
+#include <postbase/particleexportwindowi.h>
+#include <postbase/svkmlexportwindowi.h>
 #include <post/crosssection/postcrosssectionwindowprojectdataitem.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
@@ -932,6 +933,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 				ret = m_projectData->copyTo(filename, false);
 			} else {
 				ret = m_projectData->moveTo(filename);
+				InputConditionContainer::currentFolder = filename;
 			}
 		}
 	} else {
