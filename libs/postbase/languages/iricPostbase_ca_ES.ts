@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -74,17 +72,17 @@
         <translation>Interval de temps de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
@@ -211,7 +209,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d&apos;atribut</translation>
+        <translation type="vanished">Color per valor d'atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -234,7 +232,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valor de l&apos;atribut:</translation>
+        <translation type="vanished">Valor de l'atribut:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -332,7 +330,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d&apos;atribut</translation>
+        <translation type="vanished">Color per valor d'atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -358,7 +356,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <name>PostStringResultArgumentSettingEditDialog</name>
     <message>
         <source>Label Input Setting</source>
-        <translation>Configuració d&apos;entrada d&apos;etiquetes</translation>
+        <translation>Configuració d'entrada d'etiquetes</translation>
     </message>
     <message>
         <source>Position:</source>
@@ -437,11 +435,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="vanished">Canvieu la mida de l&apos;etiqueta</translation>
+        <translation type="vanished">Canvieu la mida de l'etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="vanished">Edita la configuració de l&apos;etiqueta</translation>
+        <translation type="vanished">Edita la configuració de l'etiqueta</translation>
     </message>
 </context>
 <context>
@@ -452,14 +450,14 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S&apos;ha produït un error: %1</translation>
+        <translation>S'ha produït un error: %1</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="vanished">Configuració d&apos;etiquetes</translation>
+        <translation type="vanished">Configuració d'etiquetes</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -538,7 +536,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul per a l&apos;entrada</translation>
+        <translation>Resultats del càlcul per a l'entrada</translation>
     </message>
     <message>
         <source>Type</source>
@@ -577,8 +575,8 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Definició de sortida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu definir la variable amb llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoració: subratllat; color:#0000ff;&quot;&gt;aquí&lt;/span&gt;&lt;/a&gt; per obtenir més detalls.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu definir la variable amb llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoració: subratllat; color:#0000ff;"&gt;aquí&lt;/span&gt;&lt;/a&gt; per obtenir més detalls.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -610,11 +608,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Label setting (*.labelsetting)</source>
-        <translation>Configuració de l&apos;etiqueta (*.labelsetting)</translation>
+        <translation>Configuració de l'etiqueta (*.labelsetting)</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S&apos;ha produït un error en obrir %1</translation>
+        <translation>S'ha produït un error en obrir %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -665,26 +663,26 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="vanished">Editeu la configuració de l&apos;hora</translation>
+        <translation type="vanished">Editeu la configuració de l'hora</translation>
     </message>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished">Configuració del temps</translation>
+        <translation>Configuració de l'hora</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished">Utilitzeu la configuració del projecte</translation>
+        <translation>Utilitza la configuració del projecte</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished">Format d’hora</translation>
+        <translation>Format de temps</translation>
     </message>
 </context>
 <context>
@@ -710,22 +708,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished">Configuració del títol</translation>
+        <translation>Configuració del títol</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">Títol:</translation>
+        <translation>Títol:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished">Nota: només es poden utilitzar caràcters en anglès per al títol.</translation>
+        <translation>Nota: Només es poden utilitzar caràcters anglesos per al títol.</translation>
     </message>
 </context>
 <context>

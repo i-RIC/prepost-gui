@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Sigur doriți să ștergeți selectate %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nu există alte date în care să fuzionați &quot;%1&quot; grup.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nu există alte date în care să fuzionați "%1" grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Numele este setat automat (de ex. PolyData1)</translation>
+        <translation>Numele este setat automat (ex. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Încărcare din atributul Shapefile</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Specificați valoarea</translation>
+        <translation>Specificați valoarea</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificare</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem de coordonate</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea numelui</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume atribut țintă import</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea valorii</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributul țintă de import al valorii</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare specificată</translation>
     </message>
 </context>
 <context>

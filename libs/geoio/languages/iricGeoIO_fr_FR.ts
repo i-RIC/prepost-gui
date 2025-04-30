@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>DBFItemSelectDialog</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation>Veuillez sélectionner l&apos;élément à importer.</translation>
+        <translation>Veuillez sélectionner l'élément à importer.</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -49,7 +47,7 @@
     </message>
     <message>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation>Le type de forme contenu dans ce fichier n&apos;est pas un polygone.</translation>
+        <translation>Le type de forme contenu dans ce fichier n'est pas un polygone.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation>Le type de forme contenu dans ce fichier n&apos;est pas polyligne.</translation>
+        <translation>Le type de forme contenu dans ce fichier n'est pas polyligne.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation>Le type de fichier ne peut pas être reconnu à partir de l&apos;extension de fichier. : %1</translation>
+        <translation>Le type de fichier ne peut pas être reconnu à partir de l'extension de fichier. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>

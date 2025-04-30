@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Внимание</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Възникна грешка при зареждането на файла за определяне на създателя на мрежа в папка &quot; %1 Този създател на мрежа се игнорира. %2</translation>
+        <translation>Възникна грешка при зареждането на файла за определяне на създателя на мрежа в папка " %1 Този създател на мрежа се игнорира. %2</translation>
     </message>
 </context>
 <context>

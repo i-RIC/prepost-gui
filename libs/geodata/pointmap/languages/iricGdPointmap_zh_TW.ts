@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,7 +229,7 @@
         <translation type="vanished">合併...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <source>There is no other data to merge in "%1" group.</source>
         <translation>沒有其他數據可以合併到“ %1 “ 團體。</translation>
     </message>
     <message>
@@ -510,7 +508,7 @@
     <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">坐標系</translation>
+        <translation>座標系</translation>
     </message>
 </context>
 <context>
@@ -676,12 +674,12 @@
         <translation>未指定分隔符</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>沒有足夠的值來讀取“ %1 “。” %1 &quot; 列是 %2 但 %3 值輸入。</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>沒有足夠的值來讀取“ %1 “。” %1 " 列是 %2 但 %3 值輸入。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>讀取時發生錯誤“ %1 “ 價值。 ” %1 &quot; 值應該是實數，但是 &quot; %2 “ 指定的。</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>讀取時發生錯誤“ %1 “ 價值。 ” %1 " 值應該是實數，但是 " %2 “ 指定的。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -712,67 +710,67 @@
     <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
     <message>
         <source>Comma</source>
-        <translation type="unfinished">逗號</translation>
+        <translation>逗號</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished">標籤</translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished">空間</translation>
+        <translation>空間</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished">冒號</translation>
+        <translation>冒號</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished">分號</translation>
+        <translation>分號</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>編碼</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">坐標系</translation>
+        <translation>座標系</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished">分隔符</translation>
+        <translation>分隔符</translation>
     </message>
     <message>
         <source>Quote character</source>
-        <translation type="unfinished"></translation>
+        <translation>引號字符</translation>
     </message>
     <message>
         <source>Escape character</source>
-        <translation type="unfinished"></translation>
+        <translation>轉義字符</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished">要忽略的標題行</translation>
+        <translation>要忽略的標題行</translation>
     </message>
     <message>
         <source>X field</source>
-        <translation type="unfinished"></translation>
+        <translation>X 字段</translation>
     </message>
     <message>
         <source>Y field</source>
-        <translation type="unfinished"></translation>
+        <translation>Y 字段</translation>
     </message>
     <message>
         <source>Value field</source>
-        <translation type="unfinished"></translation>
+        <translation>值字段</translation>
     </message>
     <message>
         <source>Skip rate</source>
-        <translation type="unfinished"></translation>
+        <translation>跳躍率</translation>
     </message>
     <message>
         <source>Column %1</source>
-        <translation type="unfinished"></translation>
+        <translation>柱子 %1</translation>
     </message>
 </context>
 <context>
@@ -830,7 +828,7 @@
         <translation>引用字符：</translation>
     </message>
     <message>
-        <source>&quot;</source>
+        <source>"</source>
         <translation>”</translation>
     </message>
     <message>
@@ -1016,7 +1014,7 @@
     <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">坐標系</translation>
+        <translation>座標系</translation>
     </message>
 </context>
 <context>
@@ -1203,8 +1201,8 @@
         <translation>表面</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1433,8 +1431,8 @@
         <translation>加權指數 k：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; 在計算這些值的加權平均值時用作權重。 r 是點到值映射到的節點或單元中心的距離。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; 在計算這些值的加權平均值時用作權重。 r 是點到值映射到的節點或單元中心的距離。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1484,8 +1482,8 @@
         <translation type="vanished">表面</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1531,8 +1529,8 @@
         <translation>閾值邊長：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：當&amp;quot;Previewquot;單擊按鈕，將被刪除的三角形顯示為灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：當&amp;quot;Previewquot;單擊按鈕，將被刪除的三角形顯示為灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1550,8 +1548,8 @@
         <translation type="vanished">限制邊長：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

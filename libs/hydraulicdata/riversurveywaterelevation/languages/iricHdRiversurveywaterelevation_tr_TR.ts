@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Uyarı</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>için sütunda %1, değer &quot;%2&quot;kesit için&quot;%3&quot; geçersiz. Değer yok sayılır.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>için sütunda %1, değer "%2"kesit için"%3" geçersiz. Değer yok sayılır.</translation>
     </message>
     <message>
         <source>Information</source>

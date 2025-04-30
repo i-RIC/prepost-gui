@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>AboutDialog</name>
@@ -194,8 +192,8 @@
         <translation>Поперечное сечение еще не определено.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Недействительное имя поперечного сечения. Имя должно быть &quot;X1&quot;, &quot;X2&quot;,... или &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Недействительное имя поперечного сечения. Имя должно быть "X1", "X2",... или "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

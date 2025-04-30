@@ -1601,11 +1601,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos geográficos</translation>
     </message>
     <message>
         <source>Geographic data is not saved in project</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos geográficos no se guardan en el proyecto</translation>
     </message>
 </context>
 <context>

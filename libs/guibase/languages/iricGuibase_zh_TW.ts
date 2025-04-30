@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -535,9 +533,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>以 printf 格式指定數字格式。例如： ” %5.2f&quot; 為 3.141592 --&gt; 3.14&quot; %4.2e&quot; 代表 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>以 printf 格式指定數字格式。例如： ” %5.2f" 為 3.141592 --&gt; 3.14" %4.2e" 代表 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>Az eredmény felismerése:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A minta meghatározásához használja a következő betűket: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -jobb: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- behúzás: 0; text-indent: 0px; &quot;&gt; Év: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Hónap: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Nap: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- jobb: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Óra: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Perc: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- bal: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Második: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A minta meghatározásához használja a következő betűket: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -jobb: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- behúzás: 0; text-indent: 0px; "&gt; Év: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Hónap: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Nap: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- jobb: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Óra: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Perc: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- bal: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Második: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>Ezeket az adatokat nem lehet exportálni. Úgy tűnik, hogy nem a *.tif vagy a *.asc fájlból importálták.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Ezeket az adatokat nem lehet exportálni. Az &quot;Idő&quot; dimenziójú adatok nem exportálhatók *.tif vagy *.asc fájlokba.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Ezeket az adatokat nem lehet exportálni. Az "Idő" dimenziójú adatok nem exportálhatók *.tif vagy *.asc fájlokba.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinátarendszer</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájlnévminta</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Időzóna</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájlnevek</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>Ezeket az adatokat nem lehet exportálni. Úgy tűnik, hogy nem a *.png fájlból importálták.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Ezeket az adatokat nem lehet exportálni. Az &quot;Idő&quot; dimenzióval rendelkező adatok nem exportálhatók a *.png fájlba</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Ezeket az adatokat nem lehet exportálni. Az "Idő" dimenzióval rendelkező adatok nem exportálhatók a *.png fájlba</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinátarendszer</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">NetCDF fájl (*.nc)</translation>
+        <translation>NetCDF fájl (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hiba</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az idősoros raszteres adatok már importálva vannak. Ha más adatokat szeretne importálni, először törölje a már importált adatokat.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 nem rendelkezik importálható változóval.</translation>
+        <translation>%1 nincs importálható változója.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinátarendszer</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">Adja meg az eredeti dátumot</translation>
+        <translation>Eredeti dátum megadása</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">Az eredeti idő automatikus felismerése nem sikerült. Kérjük, adja meg az eredeti dátumot.</translation>
+        <translation>Az eredeti idő automatikus felismerése sikertelen. Kérjük, adja meg az eredeti dátumot.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Egységek:</translation>
+        <translation>Egységek:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">2014-01-01 óta eltelt nap</translation>
+        <translation>nap 2014. január 1-je óta</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">Mértékegység:</translation>
+        <translation>Egység:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">évek</translation>
+        <translation>évek</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">napok</translation>
+        <translation>napok</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">órák</translation>
+        <translation>órák</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">percek</translation>
+        <translation>jegyzőkönyv</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">másodperc</translation>
+        <translation>másodperc</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">Eredeti idő:</translation>
+        <translation>Eredeti időpont:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">Időzóna:</translation>
+        <translation>Időzóna:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">Dimenzióleképezési beállítás</translation>
+        <translation>Dimenzióleképezési beállítás</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Érték:</translation>
+        <translation>Érték:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">Méretek</translation>
+        <translation>Méretek</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>Az X sáv MP rader adatai importálhatók az &quot;Idő&quot; dimenziójú rácsfeltételekhez.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>Az X sáv MP rader adatai importálhatók az "Idő" dimenziójú rácsfeltételekhez.</translation>
     </message>
     <message>
         <source>Information</source>

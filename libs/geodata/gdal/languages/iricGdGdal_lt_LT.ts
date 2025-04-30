@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>Pripažinkite rezultatą:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Norėdami apibrėžti modelį, naudokite šias raides: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -dešinys: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- įtrauka: 0; text-indent: 0px; &quot;&gt; Metai: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mėnuo: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Diena: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dešinėje: 0 taškų; -qt-block-indent: 0; text-indent: 0 taškų; &quot;&gt; Valanda: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minutė: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- kairė: 0 taškų; paraštė-dešinė: 0 taškų; -qt-block-indent: 0; text-indent: 0 taškų; &quot;&gt; Antra: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Norėdami apibrėžti modelį, naudokite šias raides: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -dešinys: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- įtrauka: 0; text-indent: 0px; "&gt; Metai: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mėnuo: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Diena: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dešinėje: 0 taškų; -qt-block-indent: 0; text-indent: 0 taškų; "&gt; Valanda: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minutė: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- kairė: 0 taškų; paraštė-dešinė: 0 taškų; -qt-block-indent: 0; text-indent: 0 taškų; "&gt; Antra: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,7 +133,7 @@
         <translation>Šių duomenų negalima eksportuoti. Atrodo, kad jis nebuvo importuotas iš *.tif arba *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Šių duomenų negalima eksportuoti. Duomenų, turinčių „laiko“ dimensiją, negalima eksportuoti į *.tif arba *.asc.</translation>
     </message>
     <message>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinačių sistema</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Failo pavadinimo šablonas</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Laiko juosta</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Failų vardai</translation>
     </message>
 </context>
 <context>
@@ -237,7 +235,7 @@
         <translation>Šių duomenų negalima eksportuoti. Atrodo, kad jis nebuvo importuotas iš *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
         <translation>Šių duomenų negalima eksportuoti. Duomenų, turinčių „laiko“ dimensiją, negalima eksportuoti į *.png</translation>
     </message>
     <message>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinačių sistema</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">NetCDF failas (*.nc)</translation>
+        <translation>NetCDF failas (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Klaida</translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">Laiko eilučių rastriniai duomenys jau importuoti. Jei norite importuoti kitus duomenis, pirmiausia ištrinkite jau importuotus duomenis.</translation>
+        <translation>Laiko eilučių rastriniai duomenys jau importuoti. Jei norite importuoti kitus duomenis, pirmiausia ištrinkite jau importuotus duomenis.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 neturi kintamojo, kurį būtų galima importuoti.</translation>
+        <translation>%1 neturi kintamojo, kurį būtų galima importuoti.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinačių sistema</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">Nurodykite pradinę datą</translation>
+        <translation>Nurodykite pradinę datą</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">Nepavyko automatiškai atpažinti pradinio laiko. Nurodykite pradinę datą.</translation>
+        <translation>Automatinis pradinio laiko atpažinimas nepavyko. Nurodykite pradinę datą.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Vienetai:</translation>
+        <translation>Vienetai:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">dienos nuo 2014-01-01</translation>
+        <translation>dienų nuo 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">Vienetas:</translation>
+        <translation>Vienetas:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">metų</translation>
+        <translation>metų</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">dienų</translation>
+        <translation>dienos</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">valandų</translation>
+        <translation>valandos</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">minučių</translation>
+        <translation>minutės</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">sekundžių</translation>
+        <translation>sekundės</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">Originalus laikas:</translation>
+        <translation>Originalus laikas:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">Laiko zona:</translation>
+        <translation>Laiko juosta:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">Matmenų atvaizdavimo nustatymas</translation>
+        <translation>Matmenų susiejimo nustatymas</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Vertė:</translation>
+        <translation>Vertė:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">Matmenys</translation>
+        <translation>Matmenys</translation>
     </message>
 </context>
 <context>
@@ -548,7 +546,7 @@
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
         <translation>X juostos MP reiderio duomenis galima importuoti tinklelio sąlygoms, kurių matmuo yra „Laikas“.</translation>
     </message>
     <message>

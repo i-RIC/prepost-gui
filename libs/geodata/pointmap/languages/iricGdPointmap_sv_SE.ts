@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Sammanfoga...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Det finns ingen annan data att slå ihop &quot;%1&quot; grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Det finns ingen annan data att slå ihop "%1" grupp.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -510,7 +508,7 @@
     <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinatsystem</translation>
+        <translation>Koordinatsystem</translation>
     </message>
 </context>
 <context>
@@ -676,12 +674,12 @@
         <translation>Ingen avgränsare specificerad</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Inte tillräckligt med värden för att läsa &quot;%1&quot;.&quot;%1&quot;kolumn är %2 men %3 värden input.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Inte tillräckligt med värden för att läsa "%1"."%1"kolumn är %2 men %3 värden input.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Ett fel uppstod när du läste &quot;%1&quot;värde.&quot;%1&quot;värdet ska vara det verkliga talet, men&quot;%2&quot; specificerad.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Ett fel uppstod när du läste "%1"värde."%1"värdet ska vara det verkliga talet, men"%2" specificerad.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -712,67 +710,67 @@
     <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
     <message>
         <source>Comma</source>
-        <translation type="unfinished">Kommatecken</translation>
+        <translation>Kommatecken</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished">Flik</translation>
+        <translation>Flik</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished">Plats</translation>
+        <translation>Utrymme</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished">Kolon</translation>
+        <translation>Kolon</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished">Semikolon</translation>
+        <translation>Semikolon</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodning</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinatsystem</translation>
+        <translation>Koordinatsystem</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished">Avgränsare</translation>
+        <translation>Avgränsare</translation>
     </message>
     <message>
         <source>Quote character</source>
-        <translation type="unfinished"></translation>
+        <translation>Citatkaraktär</translation>
     </message>
     <message>
         <source>Escape character</source>
-        <translation type="unfinished"></translation>
+        <translation>Flyktkaraktär</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished">Rubrikrader att ignorera</translation>
+        <translation>Rubrikrader att ignorera</translation>
     </message>
     <message>
         <source>X field</source>
-        <translation type="unfinished"></translation>
+        <translation>X-fält</translation>
     </message>
     <message>
         <source>Y field</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-fält</translation>
     </message>
     <message>
         <source>Value field</source>
-        <translation type="unfinished"></translation>
+        <translation>Värdefält</translation>
     </message>
     <message>
         <source>Skip rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Överhoppningsfrekvens</translation>
     </message>
     <message>
         <source>Column %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolumn %1</translation>
     </message>
 </context>
 <context>
@@ -830,8 +828,8 @@
         <translation>Citat tecken:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1016,7 +1014,7 @@
     <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinatsystem</translation>
+        <translation>Koordinatsystem</translation>
     </message>
 </context>
 <context>
@@ -1203,8 +1201,8 @@
         <translation>Yta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1433,8 +1431,8 @@
         <translation>Viktningsexponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; används som vikt vid beräkning av viktat medelvärde av värdena. r är avståndet från punkten till noden eller cellcentrum som värdet är mappat till.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; används som vikt vid beräkning av viktat medelvärde av värdena. r är avståndet från punkten till noden eller cellcentrum som värdet är mappat till.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1484,8 +1482,8 @@
         <translation type="vanished">Yta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1531,8 +1529,8 @@
         <translation>Tröskelkantslängd:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs&lt;/span&gt;: När &amp;quot;Previewquot; knappen är klick, trianglarna som kommer att tas bort visas gråmålade.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs&lt;/span&gt;: När &amp;quot;Previewquot; knappen är klick, trianglarna som kommer att tas bort visas gråmålade.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1550,8 +1548,8 @@
         <translation type="vanished">Gräns för kantlängd:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

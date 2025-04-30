@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>Αναγνώριση αποτελέσματος:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Χρησιμοποιήστε τα ακόλουθα γράμματα για να ορίσετε μοτίβο: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- εσοχή: 0; text-indent: 0px; &quot;&gt; Έτος: ΕΕΕΕ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Μήνας: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ημέρα: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; ourρα: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- αριστερά: 0px; περιθώριο-δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Δεύτερο: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Χρησιμοποιήστε τα ακόλουθα γράμματα για να ορίσετε μοτίβο: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- εσοχή: 0; text-indent: 0px; "&gt; Έτος: ΕΕΕΕ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Μήνας: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Ημέρα: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; ourρα: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- αριστερά: 0px; περιθώριο-δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Δεύτερο: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Φαίνεται ότι δεν έγινε εισαγωγή από *.tif ή *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με ιδιότητα &quot;Timeρα&quot; σε *.tif ή *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με ιδιότητα "Timeρα" σε *.tif ή *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα Συντεταγμένων</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Μοτίβο ονόματος αρχείου</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Ζώνη ώρας</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονόματα αρχείων</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Φαίνεται ότι δεν εισήχθη από το *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με την ιδιότητα &quot;Timeρα&quot; στο *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με την ιδιότητα "Timeρα" στο *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα Συντεταγμένων</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">Αρχείο NetCDF (*.nc)</translation>
+        <translation>Αρχείο NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Λάθος</translation>
+        <translation>Σφάλμα</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">Τα δεδομένα ράστερ χρονοσειρών έχουν ήδη εισαχθεί. Εάν θέλετε να εισαγάγετε άλλα δεδομένα, διαγράψτε πρώτα τα δεδομένα που έχουν ήδη εισαχθεί.</translation>
+        <translation>Τα δεδομένα raster χρονοσειρών έχουν ήδη εισαχθεί. Εάν θέλετε να εισαγάγετε άλλα δεδομένα, διαγράψτε πρώτα τα δεδομένα που έχουν ήδη εισαχθεί.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 δεν έχει μεταβλητή που μπορεί να εισαχθεί.</translation>
+        <translation>%1 δεν έχει μεταβλητή που μπορεί να εισαχθεί.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα Συντεταγμένων</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">Καθορίστε την αρχική ημερομηνία</translation>
+        <translation>Καθορισμός αρχικής ημερομηνίας</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">Η αυτόματη αναγνώριση της αρχικής ώρας απέτυχε. Παρακαλώ προσδιορίστε την αρχική ημερομηνία.</translation>
+        <translation>Η αυτόματη αναγνώριση της αρχικής ώρας απέτυχε. Παρακαλώ καθορίστε την αρχική ημερομηνία.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Μονάδες:</translation>
+        <translation>Μονάδες:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">ημέρες από την 01-01-2014</translation>
+        <translation>ημέρες από 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">Μονάδα:</translation>
+        <translation>Μονάδα:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">χρόνια</translation>
+        <translation>χρόνια</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">μέρες</translation>
+        <translation>ημέρες</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">ώρες</translation>
+        <translation>ώρες</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">λεπτά</translation>
+        <translation>πρακτικά</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">δευτερόλεπτα</translation>
+        <translation>δευτερόλεπτα</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">Αρχική ώρα:</translation>
+        <translation>Αρχική ώρα:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">Ζώνη ώρας:</translation>
+        <translation>Ζώνη ώρας:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">Ρύθμιση χαρτογράφησης διαστάσεων</translation>
+        <translation>Ρύθμιση αντιστοίχισης διαστάσεων</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Αξία:</translation>
+        <translation>Αξία:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">Διαστάσεις</translation>
+        <translation>Διαστάσεις</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>Τα δεδομένα του rader MP band rader μπορούν να εισαχθούν για συνθήκες δικτύου με διάσταση &quot;Χρόνος&quot;.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>Τα δεδομένα του rader MP band rader μπορούν να εισαχθούν για συνθήκες δικτύου με διάσταση "Χρόνος".</translation>
     </message>
     <message>
         <source>Information</source>

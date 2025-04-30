@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -74,17 +72,17 @@
         <translation>생성 시간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
@@ -577,8 +575,8 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>출력의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;자바스크립트 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하세요. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;자바스크립트 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m"&gt;&lt;span style=" 텍스트를 참조하세요. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -669,22 +667,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished">시간 설정</translation>
+        <translation>시간 설정</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished">프로젝트 설정 사용</translation>
+        <translation>프로젝트 설정 사용</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished">시간 형식</translation>
+        <translation>시간 형식</translation>
     </message>
 </context>
 <context>
@@ -710,22 +708,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished">제목 설정</translation>
+        <translation>제목 설정</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">제목:</translation>
+        <translation>제목:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished">참고: 제목에는 영어 문자만 사용할 수 있습니다.</translation>
+        <translation>참고: 제목에는 영어 문자만 사용할 수 있습니다.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε επιλεγμένα %1 μικρό?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση &quot;%1&quot;ομάδα.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση "%1"ομάδα.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Το όνομα ορίζεται αυτόματα (π.χ. PolyData1)</translation>
+        <translation>Το όνομα ορίζεται αυτόματα (π.χ. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρτωση από χαρακτηριστικό Shapefile</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Καθορίστε την τιμή</translation>
+        <translation>Καθορίστε τιμή</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωδικοποίηση</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα Συντεταγμένων</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση ονόματος</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Χαρακτηριστικό στόχου εισαγωγής ονόματος</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση τιμής</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Χαρακτηριστικό στόχου εισαγωγής τιμής</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορισμένη τιμή</translation>
     </message>
 </context>
 <context>

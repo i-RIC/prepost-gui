@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -23,8 +21,8 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>在%1的列中，横截面&quot;%3&quot;的值&quot;%2&quot;无效。 该值将被忽略。</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>在%1的列中，横截面"%3"的值"%2"无效。 该值将被忽略。</translation>
     </message>
     <message>
         <source>Information</source>

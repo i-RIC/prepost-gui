@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Er du sikker på, at du vil slette markerede %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Der er ingen andre data at flette ind &quot;%1&quot;gruppe.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Der er ingen andre data at flette ind "%1"gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Navn indstilles automatisk (f.eks. PolyData1)</translation>
+        <translation>Navnet indstilles automatisk (f.eks. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlæs fra Shapefile-attribut</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Angiv værdi</translation>
+        <translation>Angiv værdi</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodning</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatsystem</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Navneindstilling</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn import målattribut</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Værdiindstilling</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Værdiimportmålattribut</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeret værdi</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Na coluna de %1, O valor que &quot;%2&quot;para seção transversal&quot;%3&quot;é inválido. O valor é ignorado.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Na coluna de %1, O valor que "%2"para seção transversal"%3"é inválido. O valor é ignorado.</translation>
     </message>
     <message>
         <source>Information</source>

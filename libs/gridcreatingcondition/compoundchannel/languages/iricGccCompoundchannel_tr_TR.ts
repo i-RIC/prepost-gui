@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -129,7 +127,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex&apos;i kaldır (&amp;R)</translation>
+        <translation>Vertex'i kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>

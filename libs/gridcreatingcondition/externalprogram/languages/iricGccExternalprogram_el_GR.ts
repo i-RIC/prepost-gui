@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού δημιουργού πλέγματος στο φάκελο &quot;%1&quot;. Αυτός ο δημιουργός πλέγματος αγνοείται. %2</translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού δημιουργού πλέγματος στο φάκελο "%1". Αυτός ο δημιουργός πλέγματος αγνοείται. %2</translation>
     </message>
 </context>
 <context>

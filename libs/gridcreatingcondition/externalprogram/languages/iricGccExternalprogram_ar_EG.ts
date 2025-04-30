@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>حدث خطأ أثناء تحميل ملف تعريف منشئ الشبكة في المجلد &quot;%1&quot;. تم تجاهل منشئ الشبكة هذا. %2</translation>
+        <translation>حدث خطأ أثناء تحميل ملف تعريف منشئ الشبكة في المجلد "%1". تم تجاهل منشئ الشبكة هذا. %2</translation>
     </message>
 </context>
 <context>

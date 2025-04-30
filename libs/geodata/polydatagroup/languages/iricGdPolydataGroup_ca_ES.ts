@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Esteu segur que voleu suprimir els seleccionats? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -128,7 +126,7 @@
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation>Barra d&apos;eines d&apos;ordenació</translation>
+        <translation>Barra d'eines d'ordenació</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -223,57 +221,57 @@
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation>%1 Configuració d&apos;importació de grup</translation>
+        <translation>%1 Configuració d'importació de grup</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">El nom s&apos;estableix automàticament (per exemple, PolyData1)</translation>
+        <translation>El nom es defineix automàticament (ex. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Carrega des de l'atribut Shapefile</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Especifiqueu el valor</translation>
+        <translation>Especifica el valor</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificació</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de coordenades</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del nom</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut de destinació d'importació de noms</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del valor</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut de destinació d'importació de valor</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor especificat</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation>Configuració d&apos;importació de PolyData</translation>
+        <translation>Configuració d'importació de PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -285,11 +283,11 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
+        <translation>Carrega des de l'atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation>El nom s&apos;estableix automàticament (per exemple, PolyData1)</translation>
+        <translation>El nom s'estableix automàticament (per exemple, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>

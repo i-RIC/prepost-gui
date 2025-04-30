@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>PostCrosssectionInternalWindow</name>
@@ -28,7 +26,7 @@
     <name>PostCrosssectionWindow</name>
     <message>
         <source>Post Crosssection: %1</source>
-        <translation>Post-coupe transversale&#xa0;: %1</translation>
+        <translation>Post-coupe transversale : %1</translation>
     </message>
     <message>
         <source>Controller</source>

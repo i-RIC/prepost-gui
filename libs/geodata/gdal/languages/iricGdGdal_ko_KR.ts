@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>결과 인식:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;패턴을 정의하려면 다음 문자를 사용하십시오.&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -오른쪽: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;연도: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;월: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;요일: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;시: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;분: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- 왼쪽:0px; 여백-오른쪽:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;두 번째: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;패턴을 정의하려면 다음 문자를 사용하십시오.&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -오른쪽: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;연도: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;월: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;요일: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;시: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;분: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- 왼쪽:0px; 여백-오른쪽:0px; -qt-block-indent:0; text-indent:0px;"&gt;두 번째: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>이 데이터는 내보낼 수 없습니다. *.tif 또는 *.asc에서 가져오지 않은 것 같습니다.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>이 데이터는 내보낼 수 없습니다. &quot;시간&quot; 차원이 있는 데이터는 *.tif 또는 *.asc로 내보낼 수 없습니다.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>이 데이터는 내보낼 수 없습니다. "시간" 차원이 있는 데이터는 *.tif 또는 *.asc로 내보낼 수 없습니다.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>좌표계</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 이름 패턴</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>시간대</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 이름</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>이 데이터는 내보낼 수 없습니다. *.png에서 가져오지 않은 것 같습니다.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>이 데이터는 내보낼 수 없습니다. &quot;시간&quot; 차원이 있는 데이터는 *.png로 내보낼 수 없습니다.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>이 데이터는 내보낼 수 없습니다. "시간" 차원이 있는 데이터는 *.png로 내보낼 수 없습니다.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>좌표계</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>넷씨디에프</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">NetCDF 파일 (*.nc)</translation>
+        <translation>NetCDF 파일 (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">시계열 래스터 데이터를 이미 가져왔습니다. 다른 데이터를 가져오려면 이미 가져온 데이터를 먼저 삭제하십시오.</translation>
+        <translation>시계열 래스터 데이터를 이미 가져왔습니다. 다른 데이터를 가져오려면 먼저 이미 가져온 데이터를 삭제하세요.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 가져올 수 있는 변수가 없습니다.</translation>
+        <translation>%1 가져올 수 있는 변수가 없습니다.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>좌표계</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">원래 날짜 지정</translation>
+        <translation>원래 날짜 지정</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">원래 시간의 자동 인식에 실패했습니다. 원래 날짜를 지정하십시오.</translation>
+        <translation>원래 시간을 자동으로 인식하지 못했습니다. 원래 날짜를 지정해 주세요.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">단위:</translation>
+        <translation>단위:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">2014-01-01 이후 일</translation>
+        <translation>2014-01-01 이후 일수</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">단위:</translation>
+        <translation>단위:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">연령</translation>
+        <translation>연령</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">날</translation>
+        <translation>날</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">시간</translation>
+        <translation>시간</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">분</translation>
+        <translation>분</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">초</translation>
+        <translation>초</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">원래 시간:</translation>
+        <translation>원래 시간:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">시간대:</translation>
+        <translation>시간대:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">차원 매핑 설정</translation>
+        <translation>차원 매핑 설정</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">값:</translation>
+        <translation>값:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">치수</translation>
+        <translation>치수</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>경고</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>X 밴드 MP 레이더 데이터는 &quot;시간&quot; 차원이 있는 그리드 조건에 대해 가져올 수 있습니다.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X 밴드 MP 레이더 데이터는 "시간" 차원이 있는 그리드 조건에 대해 가져올 수 있습니다.</translation>
     </message>
     <message>
         <source>Information</source>

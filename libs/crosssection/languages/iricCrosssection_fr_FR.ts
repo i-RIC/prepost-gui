@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -13,7 +11,7 @@
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Une erreur s&apos;est produite lors de la création %1.</translation>
+        <translation>Une erreur s'est produite lors de la création %1.</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Barre d&apos;outils des paramètres d&apos;affichage</translation>
+        <translation>Barre d'outils des paramètres d'affichage</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barre d&apos;outils des paramètres d&apos;affichage</translation>
+        <translation>Barre d'outils des paramètres d'affichage</translation>
     </message>
     <message>
         <source>Auto rescale</source>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Rapport d&apos;aspect (V/H) : 1 /</translation>
+        <translation>Rapport d'aspect (V/H) : 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -65,11 +63,11 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Ratio d&apos;aspect</translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Paramètres d&apos;affichage</translation>
+        <translation>Paramètres d'affichage</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -118,7 +116,7 @@
     </message>
     <message>
         <source>Value Display Setting (%1)</source>
-        <translation>Paramètre d&apos;affichage de la valeur (%1)</translation>
+        <translation>Paramètre d'affichage de la valeur (%1)</translation>
     </message>
 </context>
 <context>
@@ -141,7 +139,7 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Rapport d&apos;aspect (V/H) : 1 / %1</translation>
+        <translation>Rapport d'aspect (V/H) : 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -198,7 +196,7 @@
     <name>AbstractCrosssectionWindow_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Paramètres d&apos;affichage de la fenêtre de section transversale de la grille</translation>
+        <translation>Paramètres d'affichage de la fenêtre de section transversale de la grille</translation>
     </message>
     <message>
         <source>Background grid</source>
@@ -254,14 +252,14 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Ratio d&apos;aspect</translation>
+        <translation>Ratio d'aspect</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Paramètres d&apos;exportation</translation>
+        <translation>Paramètres d'exportation</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
@@ -293,22 +291,22 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>J&apos;en suis:</translation>
+        <translation>J'en suis:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Je Max&#xa0;:</translation>
+        <translation>Je Max :</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Taux de saut&#xa0;:</translation>
+        <translation>Taux de saut :</translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Paramètre d&apos;affichage des attributs de grille</translation>
+        <translation>Paramètre d'affichage des attributs de grille</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -324,7 +322,7 @@
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Carte d&apos;élévation</translation>
+        <translation>Carte d'élévation</translation>
     </message>
     <message>
         <source>Independent chart</source>
@@ -336,7 +334,7 @@
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Paramètre de graphique d&apos;élévation</translation>
+        <translation>Paramètre de graphique d'élévation</translation>
     </message>
     <message>
         <source>Line Color:</source>
@@ -368,7 +366,7 @@
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Taux de saut&#xa0;:</translation>
+        <translation>Taux de saut :</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
@@ -376,7 +374,7 @@
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Hauteur du graphique&#xa0;:</translation>
+        <translation>Hauteur du graphique :</translation>
     </message>
     <message>
         <source>[pixels]</source>
@@ -392,11 +390,11 @@
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Couleur de l&apos;axe&#xa0;:</translation>
+        <translation>Couleur de l'axe :</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Police de l&apos;axe&#xa0;:</translation>
+        <translation>Police de l'axe :</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -407,8 +405,8 @@
         <translation>Couleur du titre</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Remarque&#xa0;:&lt;/span&gt; Utilisez l&apos;onglet Palette de couleurs pour modifier les paramètres de couleur&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque :&lt;/span&gt; Utilisez l'onglet Palette de couleurs pour modifier les paramètres de couleur&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

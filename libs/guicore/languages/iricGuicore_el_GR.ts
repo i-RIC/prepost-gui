@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1484,19 +1482,19 @@ Parse error %2 at %3, column %4</source>
     <name>GeoDataImporterSetting</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα αρχείου</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Οχι</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ναί</translation>
     </message>
     <message>
         <source>Saved to to project</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθηκεύτηκε στο έργο</translation>
     </message>
 </context>
 <context>
@@ -1765,8 +1763,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Πληροφορίες</translation>
     </message>
     <message>
-        <source>&quot;%1&quot; is set to be default group, because you did not specify a default group.</source>
-        <translation>&quot; %1 Το &quot; έχει οριστεί ως προεπιλεγμένη ομάδα, επειδή δεν καθορίσατε μια προεπιλεγμένη ομάδα.</translation>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>" %1 Το " έχει οριστεί ως προεπιλεγμένη ομάδα, επειδή δεν καθορίσατε μια προεπιλεγμένη ομάδα.</translation>
     </message>
 </context>
 <context>
@@ -1822,8 +1820,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Χρώμα:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση: Μπορείτε να χρησιμοποιήσετε μόνο χαρακτήρες ASCII για το όνομα.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση: Μπορείτε να χρησιμοποιήσετε μόνο χαρακτήρες ASCII για το όνομα.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1940,12 +1938,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Ο κόμβος ορισμού δεν αποθηκεύεται</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Λάθος τιμήType &quot;%1&quot;έχει οριστεί.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Λάθος τιμήType "%1"έχει οριστεί.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Λάθος κατάσταση Τύπος &quot;%1&quot;έχει οριστεί.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Λάθος κατάσταση Τύπος "%1"έχει οριστεί.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -2016,8 +2014,8 @@ Do you really want to import this file?</source>
         <translation>Το άνοιγμα του αρχείου CGNS απέτυχε.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>Το χαρακτηριστικό name δεν έχει οριστεί για το στοιχείο &quot;Item&quot;.</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>Το χαρακτηριστικό name δεν έχει οριστεί για το στοιχείο "Item".</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2026,6 +2024,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Edit</source>
         <translation type="vanished">Επεξεργασία</translation>
+    </message>
+    <message>
+        <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
+        <translation>Δεν βρέθηκαν τα καθορισμένα αρχεία CGNS. Θέλετε να επεξεργαστείτε τη ρύθμιση τώρα;</translation>
     </message>
 </context>
 <context>
@@ -2235,8 +2237,8 @@ Do you really want to import this file?</source>
         <translation>Αρχείο %1 ενημερώνεται μετά την εισαγωγή στην κατάσταση υπολογισμού %2 Το Θέλετε να εισαγάγετε το ενημερωμένο αρχείο;</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Μπορείτε να αντιγράψετε και να επικολλήσετε τις τιμές, με συντόμευση &quot;Ctrl + C&quot; και &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Μπορείτε να αντιγράψετε και να επικολλήσετε τις τιμές, με συντόμευση "Ctrl + C" και "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2377,8 +2379,8 @@ Do you really want to import this file?</source>
         <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Οι δύο πρώτες στήλες πρέπει να είναι &quot;X&quot; και &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Οι δύο πρώτες στήλες πρέπει να είναι "X" και "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2539,8 +2541,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Ορισμός μεταβλητής</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2618,8 +2620,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Κάτω (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -3004,8 +3006,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Ορισμός εξόδου</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3241,8 +3243,8 @@ Do you really want to import this file?</source>
         <translation>Όλες οι εικόνες (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
-        <translation>Καθορίζεται μη έγκυρο αρχείο εικόνας. Το επίθημα αρχείου πρέπει να είναι ένα από τα &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; ή &quot;tif&quot;.</translation>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>Καθορίζεται μη έγκυρο αρχείο εικόνας. Το επίθημα αρχείου πρέπει να είναι ένα από τα "jpg", "jpeg", "png" ή "tif".</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
@@ -3305,8 +3307,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Χώρος εργασίας &quot;%1&quot;έχει %2 φακέλους έργου που φαίνεται να μην χρησιμοποιούνται πλέον. Θέλετε να τα αφαιρέσετε;</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Χώρος εργασίας "%1"έχει %2 φακέλους έργου που φαίνεται να μην χρησιμοποιούνται πλέον. Θέλετε να τα αφαιρέσετε;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3905,8 +3907,8 @@ Do you really want to import this file?</source>
         <translation>Ορισμός μεταβλητής</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff;&quot;&gt;εδώ&lt;/span&gt;&lt;/a&gt; για λεπτομέρειες.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff;"&gt;εδώ&lt;/span&gt;&lt;/a&gt; για λεπτομέρειες.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3996,8 +3998,8 @@ Do you really want to import this file?</source>
         <translation>Κάτω (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση&lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση&lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

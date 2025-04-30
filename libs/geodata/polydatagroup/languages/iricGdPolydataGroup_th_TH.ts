@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>คุณแน่ใจหรือว่าต้องการลบรายการที่เลือก %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน &quot;%1&quot; กลุ่ม.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน "%1" กลุ่ม.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">ตั้งชื่อโดยอัตโนมัติ (เช่น PolyData1)</translation>
+        <translation>ชื่อจะถูกตั้งโดยอัตโนมัติ (เช่น PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>โหลดจากแอตทริบิวต์ของ Shapefile</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">ระบุค่า</translation>
+        <translation>ระบุค่า</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>การเข้ารหัส</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบบพิกัด</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งชื่อ</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อแอตทริบิวต์เป้าหมายการนำเข้า</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การกำหนดค่าค่า</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>ค่าแอตทริบิวต์เป้าหมายการนำเข้า</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>ค่าที่ระบุ</translation>
     </message>
 </context>
 <context>

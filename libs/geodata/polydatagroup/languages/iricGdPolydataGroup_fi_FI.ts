@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Haluatko varmasti poistaa valitut %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Muita tietoja ei voi yhdistää &quot;%1&quot; ryhmä.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Nimi asetetaan automaattisesti (esim. PolyData1)</translation>
+        <translation>Nimi asetetaan automaattisesti (esim. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa Shapefile-attribuutista</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Määritä arvo</translation>
+        <translation>Määritä arvo</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Koodaus</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinaattijärjestelmä</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimen asetus</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi tuontikohteen attribuutti</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Arvon asettaminen</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Arvon tuonnin kohdeattribuutti</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Määritetty arvo</translation>
     </message>
 </context>
 <context>

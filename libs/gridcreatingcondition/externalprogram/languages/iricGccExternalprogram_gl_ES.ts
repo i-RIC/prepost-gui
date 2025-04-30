@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Produciuse un erro ao cargar o ficheiro de definición do creador de cuadrícula no cartafol &quot;%1&quot;. Este creador de cuadrícula ignórase. %2</translation>
+        <translation>Produciuse un erro ao cargar o ficheiro de definición do creador de cuadrícula no cartafol "%1". Este creador de cuadrícula ignórase. %2</translation>
     </message>
 </context>
 <context>

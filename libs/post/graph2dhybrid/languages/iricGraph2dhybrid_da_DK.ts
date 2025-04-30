@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -334,7 +332,7 @@
     </message>
     <message>
         <source>Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linje:</translation>
     </message>
 </context>
 <context>
@@ -393,7 +391,7 @@
     </message>
     <message>
         <source>Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linje:</translation>
     </message>
 </context>
 <context>
@@ -495,8 +493,8 @@
         <translation>Opsætning af grafvindue mislykkedes. Beregningsresultatet indlæses ikke korrekt.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Denne funktion kan bruges, når følgende betingelser er opfyldt: &lt;ul&gt; &lt;li&gt; Graf for todimensionalt struktureret gitterresultat tegnes. &lt;/li&gt; &lt;li&gt; X-akse er I-retning i gitteret. &lt;/Li &gt; &lt;li&gt; Gitteret oprettes ved hjælp af algoritmen &quot;Opret gitter ud fra tværsnitsdata&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Denne funktion kan bruges, når følgende betingelser er opfyldt: &lt;ul&gt; &lt;li&gt; Graf for todimensionalt struktureret gitterresultat tegnes. &lt;/li&gt; &lt;li&gt; X-akse er I-retning i gitteret. &lt;/Li &gt; &lt;li&gt; Gitteret oprettes ved hjælp af algoritmen "Opret gitter ud fra tværsnitsdata" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -590,8 +588,8 @@
         <translation>Fejl</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Titlen på den første kolonne skal være &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Titlen på den første kolonne skal være "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -670,8 +668,8 @@
         <translation>Fejl</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Titlen på den første kolonne skal være &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Titlen på den første kolonne skal være "X"</translation>
     </message>
     <message>
         <source>Warning</source>

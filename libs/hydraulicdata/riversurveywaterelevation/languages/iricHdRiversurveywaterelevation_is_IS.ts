@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Í dálknum fyrir %1, verðmæti &quot;%2&quot;fyrir þversnið&quot;%3&quot;er ógilt. Gildið er hunsað.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Í dálknum fyrir %1, verðmæti "%2"fyrir þversnið"%3"er ógilt. Gildið er hunsað.</translation>
     </message>
     <message>
         <source>Information</source>

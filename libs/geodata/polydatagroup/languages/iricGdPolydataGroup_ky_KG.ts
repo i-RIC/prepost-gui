@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Тандалгандарды чын эле жок кылгыңыз келеби? %1 с?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Биригүүгө башка маалымат жок &quot;%1&quot;тобу.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Биригүүгө башка маалымат жок "%1"тобу.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Аты автоматтык түрдө коюлат (мис. PolyData1)</translation>
+        <translation>Аты автоматтык түрдө коюлат (мис. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile атрибутунан жүктөө</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Маани көрсөтүңүз</translation>
+        <translation>Маани көрсөт</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Коддоо</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттар системасы</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Аты жөндөө</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттун максаттуу атрибутун атаңыз</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани орнотуу</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Баалуу импорттун максаттуу атрибуту</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгиленген маани</translation>
     </message>
 </context>
 <context>

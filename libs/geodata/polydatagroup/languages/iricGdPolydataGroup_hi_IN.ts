@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>क्या आप वाकई चयनित को हटाना चाहते हैं %1 एस?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">नाम अपने आप सेट हो जाता है (उदा. PolyData1)</translation>
+        <translation>नाम स्वचालित रूप से सेट हो जाता है (उदा. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>शेपफाइल विशेषता से लोड करें</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">मान निर्दिष्ट करें</translation>
+        <translation>मान निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>एन्कोडिंग</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्देशांक तरीका</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>नाम सेटिंग</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>नाम आयात लक्ष्य विशेषता</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>मूल्य निर्धारण</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>मूल्य आयात लक्ष्य विशेषता</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्दिष्ट मूल्य</translation>
     </message>
 </context>
 <context>

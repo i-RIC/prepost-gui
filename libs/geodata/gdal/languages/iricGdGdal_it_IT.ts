@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataGdal</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore durante l'apertura %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
@@ -78,7 +76,7 @@
     </message>
     <message>
         <source>The time interval between the selected files are not the same.</source>
-        <translation>L&apos;intervallo di tempo tra i file selezionati non è lo stesso.</translation>
+        <translation>L'intervallo di tempo tra i file selezionati non è lo stesso.</translation>
     </message>
 </context>
 <context>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation>Specificare il modello del nome file per riconoscere la data e l&apos;ora.</translation>
+        <translation>Specificare il modello del nome file per riconoscere la data e l'ora.</translation>
     </message>
     <message>
         <source>File name:</source>
@@ -108,8 +106,8 @@
         <translation>Riconosci il risultato:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Utilizzare le seguenti lettere per definire il modello:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;Anno: AAAA&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;Mese: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Giorno: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ora: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minuto: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Secondo: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Utilizzare le seguenti lettere per definire il modello:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;Anno: AAAA&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;Mese: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;Giorno: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ora: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minuto: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Secondo: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>Questi dati non possono essere esportati. Sembra che non sia stato importato da *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Questi dati non possono essere esportati. I dati con dimensione &quot;Tempo&quot; non possono essere esportati in *.tif o *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Questi dati non possono essere esportati. I dati con dimensione "Tempo" non possono essere esportati in *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema di coordinate</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Modello di nome file</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuso orario</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomi dei file</translation>
     </message>
 </context>
 <context>
@@ -237,16 +235,16 @@
         <translation>Questi dati non possono essere esportati. Sembra che non sia stato importato da *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Questi dati non possono essere esportati. I dati con dimensione &quot;Tempo&quot; non possono essere esportati in *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Questi dati non possono essere esportati. I dati con dimensione "Tempo" non possono essere esportati in *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation>Si è verificato un errore durante l&apos;inizializzazione di libpng.</translation>
+        <translation>Si è verificato un errore durante l'inizializzazione di libpng.</translation>
     </message>
 </context>
 <context>
@@ -273,15 +271,15 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1. Sembra non essere un file PNG.</translation>
+        <translation>Si è verificato un errore durante l'apertura %1. Sembra non essere un file PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
-        <translation>%1 non è un&apos;immagine in scala di grigi a 16 bit.</translation>
+        <translation>%1 non è un'immagine in scala di grigi a 16 bit.</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
@@ -293,14 +291,14 @@
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation>Si è verificato un errore durante l&apos;analisi %1.</translation>
+        <translation>Si è verificato un errore durante l'analisi %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema di coordinate</translation>
     </message>
 </context>
 <context>
@@ -327,7 +325,7 @@
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="vanished">Si è verificato un errore durante l&apos;analisi della definizione dell&apos;ora: %1</translation>
+        <translation type="vanished">Si è verificato un errore durante l'analisi della definizione dell'ora: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
@@ -346,7 +344,7 @@
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="vanished">Riconoscimento automatico dell&apos;ora originale non riuscito. Si prega di specificare la data originale.</translation>
+        <translation type="vanished">Riconoscimento automatico dell'ora originale non riuscito. Si prega di specificare la data originale.</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">File NetCDF (*.nc)</translation>
+        <translation>File NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">I dati raster delle serie temporali sono già stati importati. Se desideri importare altri dati, elimina prima i dati già importati.</translation>
+        <translation>I dati raster delle serie temporali sono già stati importati. Se desideri importare altri dati, elimina prima quelli già importati.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 non ha una variabile che può essere importata.</translation>
+        <translation>%1 non ha variabili che possono essere importate.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema di coordinate</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">Specifica data originale</translation>
+        <translation>Specificare la data originale</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">Riconoscimento automatico dell&apos;ora originale non riuscito. Si prega di specificare la data originale.</translation>
+        <translation>Riconoscimento automatico dell'ora originale non riuscito. Specificare la data originale.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Unità:</translation>
+        <translation>Unità:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">giorni dal 01/01/2014</translation>
+        <translation>giorni dal 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">Unità:</translation>
+        <translation>Unità:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">anni</translation>
+        <translation>anni</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">giorni</translation>
+        <translation>giorni</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">ore</translation>
+        <translation>ore</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">minuti</translation>
+        <translation>minuti</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">secondi</translation>
+        <translation>secondi</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">Ora originale:</translation>
+        <translation>Ora originale:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">Fuso orario:</translation>
+        <translation>Fuso orario:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">Impostazione della mappatura delle quote</translation>
+        <translation>Impostazione della mappatura delle dimensioni</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Valore:</translation>
+        <translation>Valore:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">Dimensioni</translation>
+        <translation>Dimensioni</translation>
     </message>
 </context>
 <context>
@@ -519,7 +517,7 @@
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>I dati del radar MP in banda X possono essere importati per condizioni di rete con dimensione &quot;Tempo&quot;.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>I dati del radar MP in banda X possono essere importati per condizioni di rete con dimensione "Tempo".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -573,11 +571,11 @@
     </message>
     <message>
         <source>Error occured when importing data converted from %1.</source>
-        <translation>Si è verificato un errore durante l&apos;importazione dei dati convertiti da %1.</translation>
+        <translation>Si è verificato un errore durante l'importazione dei dati convertiti da %1.</translation>
     </message>
     <message>
         <source>Error occured when opening %1.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore durante l'apertura %1.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>V stolpcu za %1, vrednost &quot;%2&quot;za prerez&quot;%3&quot;ni veljavna. Vrednost se prezre.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>V stolpcu za %1, vrednost "%2"za prerez"%3"ni veljavna. Vrednost se prezre.</translation>
     </message>
     <message>
         <source>Information</source>

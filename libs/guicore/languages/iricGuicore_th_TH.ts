@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1484,19 +1482,19 @@ Parse error %2 at %3, column %4</source>
     <name>GeoDataImporterSetting</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อไฟล์</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>เลขที่</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>ใช่</translation>
     </message>
     <message>
         <source>Saved to to project</source>
-        <translation type="unfinished"></translation>
+        <translation>บันทึกไปยังโครงการ</translation>
     </message>
 </context>
 <context>
@@ -1765,8 +1763,8 @@ Parse error %2 at %3, column %4</source>
         <translation>ข้อมูล</translation>
     </message>
     <message>
-        <source>&quot;%1&quot; is set to be default group, because you did not specify a default group.</source>
-        <translation>- %1 &quot; ถูกกำหนดให้เป็นกลุ่มเริ่มต้น เนื่องจากคุณไม่ได้ระบุกลุ่มเริ่มต้น</translation>
+        <source>"%1" is set to be default group, because you did not specify a default group.</source>
+        <translation>- %1 " ถูกกำหนดให้เป็นกลุ่มเริ่มต้น เนื่องจากคุณไม่ได้ระบุกลุ่มเริ่มต้น</translation>
     </message>
 </context>
 <context>
@@ -1822,8 +1820,8 @@ Parse error %2 at %3, column %4</source>
         <translation>สี:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ: คุณสามารถใช้ได้เฉพาะอักขระ ASCII สำหรับชื่อเท่านั้น&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ: คุณสามารถใช้ได้เฉพาะอักขระ ASCII สำหรับชื่อเท่านั้น&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1940,12 +1938,12 @@ Parse error %2 at %3, column %4</source>
         <translation>โหนดนิยามไม่ถูกเก็บไว้</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>ค่าผิดประเภท &quot;%1&quot; ถูกตั้งค่า</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ค่าผิดประเภท "%1" ถูกตั้งค่า</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>เงื่อนไขผิดประเภท &quot;%1&quot;ถูกตั้งค่า</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>เงื่อนไขผิดประเภท "%1"ถูกตั้งค่า</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -2016,8 +2014,8 @@ Do you really want to import this file?</source>
         <translation>การเปิดไฟล์ CGNS ล้มเหลว</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>ไม่ได้กำหนดแอตทริบิวต์ชื่อสำหรับองค์ประกอบ &quot;รายการ&quot;</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>ไม่ได้กำหนดแอตทริบิวต์ชื่อสำหรับองค์ประกอบ "รายการ"</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2026,6 +2024,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Edit</source>
         <translation type="vanished">แก้ไข</translation>
+    </message>
+    <message>
+        <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
+        <translation>ไม่พบไฟล์ CGNS ที่ระบุ คุณต้องการแก้ไขการตั้งค่าทันทีหรือไม่</translation>
     </message>
 </context>
 <context>
@@ -2235,8 +2237,8 @@ Do you really want to import this file?</source>
         <translation>ข้อมูล</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด &quot;Ctrl + C&quot; และ &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด "Ctrl + C" และ "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2373,8 +2375,8 @@ Do you really want to import this file?</source>
         <translation>เกิดข้อผิดพลาดขณะเปิดไฟล์</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>สองคอลัมน์แรกต้องเป็น &quot;X&quot; และ &quot;Y&quot;</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>สองคอลัมน์แรกต้องเป็น "X" และ "Y"</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2539,8 +2541,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">ความหมายของตัวแปร</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2618,8 +2620,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">ลง (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -3004,8 +3006,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">ความหมายของผลลัพธ์</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3241,8 +3243,8 @@ Do you really want to import this file?</source>
         <translation>ภาพทั้งหมด (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
     <message>
-        <source>Invalid image file is specified. File suffix should be one of &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, or &quot;tif&quot;.</source>
-        <translation>ระบุไฟล์ภาพที่ไม่ถูกต้อง ส่วนต่อท้ายไฟล์ควรเป็นหนึ่งใน &quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot; หรือ &quot;tif&quot;</translation>
+        <source>Invalid image file is specified. File suffix should be one of "jpg", "jpeg", "png", or "tif".</source>
+        <translation>ระบุไฟล์ภาพที่ไม่ถูกต้อง ส่วนต่อท้ายไฟล์ควรเป็นหนึ่งใน "jpg", "jpeg", "png" หรือ "tif"</translation>
     </message>
     <message>
         <source>Error occured while creating folder %1</source>
@@ -3305,8 +3307,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>พื้นที่ทำงาน &quot;%1&quot; มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>พื้นที่ทำงาน "%1" มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3905,8 +3907,8 @@ Do you really want to import this file?</source>
         <translation>ความหมายของตัวแปร</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ที่นี่&lt;/span&gt;&lt;/a&gt; เพื่อดูรายละเอียด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ที่นี่&lt;/span&gt;&lt;/a&gt; เพื่อดูรายละเอียด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3996,8 +3998,8 @@ Do you really want to import this file?</source>
         <translation>ลง (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปรที่ปรากฏก่อนหน้าในรายการได้&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปรที่ปรากฏก่อนหน้าในรายการได้&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

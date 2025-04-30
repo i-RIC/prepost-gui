@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>在文件夾“中加載網格創建者定義文件時發生錯誤” %1 &quot;。這個網格創建者被忽略了。 %2</translation>
+        <translation>在文件夾“中加載網格創建者定義文件時發生錯誤” %1 "。這個網格創建者被忽略了。 %2</translation>
     </message>
 </context>
 <context>

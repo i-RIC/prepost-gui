@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Ertu viss um að þú viljir eyða völdum %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Það eru engin önnur gögn til að sameinast “ %1 &quot;hópur.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Það eru engin önnur gögn til að sameinast “ %1 "hópur.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Nafn er stillt sjálfkrafa (td PolyData1)</translation>
+        <translation>Nafnið er stillt sjálfkrafa (t.d. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlaða úr Shapefile eigindinni</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Tilgreindu gildi</translation>
+        <translation>Tilgreindu gildi</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kóðun</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Hnitakerfi</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nafnastilling</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Nafn innflutningsmarkseiginleiki</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Gildisstilling</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Markmiðseiginleiki gildis innflutnings</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilgreint gildi</translation>
     </message>
 </context>
 <context>

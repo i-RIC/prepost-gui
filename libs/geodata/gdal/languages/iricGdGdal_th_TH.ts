@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>รับรู้ผล:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;โปรดใช้ตัวอักษรต่อไปนี้เพื่อกำหนดรูปแบบ:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- เยื้อง:0; text-indent:0px;&quot;&gt;ปี: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;เดือน: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;วัน: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ชั่วโมง: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;วินาที: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;โปรดใช้ตัวอักษรต่อไปนี้เพื่อกำหนดรูปแบบ:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- เยื้อง:0; text-indent:0px;"&gt;ปี: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;เดือน: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;วัน: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ชั่วโมง: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;วินาที: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ดูเหมือนว่าไม่ได้นำเข้าจาก *.tif หรือ *.asc</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ข้อมูลที่มีมิติ &quot;เวลา&quot; ไม่สามารถส่งออกไปยัง *.tif หรือ *.asc</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ข้อมูลที่มีมิติ "เวลา" ไม่สามารถส่งออกไปยัง *.tif หรือ *.asc</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบบพิกัด</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปแบบชื่อไฟล์</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>เขตเวลา</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อไฟล์</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ดูเหมือนว่าไม่ได้นำเข้าจาก *.png</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ข้อมูลที่มีมิติ &quot;เวลา&quot; ไม่สามารถส่งออกไปยัง *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>ข้อมูลนี้ไม่สามารถส่งออกได้ ข้อมูลที่มีมิติ "เวลา" ไม่สามารถส่งออกไปยัง *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบบพิกัด</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>เน็ตซีดีเอฟ</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">ไฟล์ NetCDF (*.nc)</translation>
+        <translation>ไฟล์ NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">ข้อผิดพลาด</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">นำเข้าข้อมูลแรสเตอร์อนุกรมเวลาแล้ว หากคุณต้องการนำเข้าข้อมูลอื่น โปรดลบข้อมูลที่นำเข้าแล้วก่อน</translation>
+        <translation>ข้อมูลแรสเตอร์แบบอนุกรมเวลาได้รับการนำเข้าแล้ว หากคุณต้องการนำเข้าข้อมูลอื่น ๆ โปรดลบข้อมูลที่นำเข้าไปแล้วก่อน</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 ไม่มีตัวแปรที่สามารถนำเข้าได้</translation>
+        <translation>%1 ไม่มีตัวแปรที่สามารถนำเข้าได้</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบบพิกัด</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">ระบุวันที่เดิม</translation>
+        <translation>ระบุวันที่ต้นฉบับ</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">การรับรู้เวลาเดิมโดยอัตโนมัติล้มเหลว โปรดระบุวันที่เดิม</translation>
+        <translation>การระบุเวลาเดิมโดยอัตโนมัติล้มเหลว โปรดระบุวันที่เดิม</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">หน่วย:</translation>
+        <translation>หน่วย:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">วันตั้งแต่ 2014-01-01</translation>
+        <translation>วันตั้งแต่ 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">หน่วย:</translation>
+        <translation>หน่วย:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">ปีที่</translation>
+        <translation>ปี</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">วัน</translation>
+        <translation>วัน</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">ชั่วโมง</translation>
+        <translation>ชั่วโมง</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">นาที</translation>
+        <translation>นาที</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">วินาที</translation>
+        <translation>วินาที</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">เวลาเดิม:</translation>
+        <translation>เวลาเดิม:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">เขตเวลา:</translation>
+        <translation>เขตเวลา:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">การตั้งค่าการทำแผนที่มิติ</translation>
+        <translation>การตั้งค่าการแมปมิติ</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">ค่า:</translation>
+        <translation>ค่า:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">ขนาด</translation>
+        <translation>ขนาด</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>สามารถนำเข้าข้อมูล X band MP rader สำหรับเงื่อนไขกริดที่มีมิติ &quot;เวลา&quot;</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>สามารถนำเข้าข้อมูล X band MP rader สำหรับเงื่อนไขกริดที่มีมิติ "เวลา"</translation>
     </message>
     <message>
         <source>Information</source>

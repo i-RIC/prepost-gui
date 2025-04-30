@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>선택 항목을 삭제하시겠습니까? %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>&quot;에 병합할 다른 데이터가 없습니다. %1 &quot; 그룹.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>"에 병합할 다른 데이터가 없습니다. %1 " 그룹.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">이름은 자동으로 설정됩니다(예: PolyData1).</translation>
+        <translation>이름은 자동으로 설정됩니다(예: PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile 속성에서 로드</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">값 지정</translation>
+        <translation>값을 지정하세요</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>부호화</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>좌표계</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>이름 설정</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>이름 가져오기 대상 속성</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>값 설정</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>값 가져오기 대상 속성</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>지정된 값</translation>
     </message>
 </context>
 <context>

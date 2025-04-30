@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Στη στήλη για %1, η αξία &quot;%2&quot;για διατομή&quot;%3&quot;δεν είναι έγκυρη. Η τιμή αγνοείται.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Στη στήλη για %1, η αξία "%2"για διατομή"%3"δεν είναι έγκυρη. Η τιμή αγνοείται.</translation>
     </message>
     <message>
         <source>Information</source>

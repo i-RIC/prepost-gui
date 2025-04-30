@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Weet je zeker dat je de geselecteerde wilt verwijderen? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Er zijn geen andere gegevens om in te voegen &quot;%1&quot; groep.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Er zijn geen andere gegevens om in te voegen "%1" groep.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Naam wordt automatisch ingesteld (bijv. PolyData1)</translation>
+        <translation>Naam wordt automatisch ingesteld (bijv. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden vanuit Shapefile-kenmerk</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Geef waarde op</translation>
+        <translation>Geef waarde op</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codering</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinatensysteem</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Naaminstelling</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam import doelkenmerk</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde-instelling</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde import doelattribuut</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespecificeerde waarde</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>Możesz stworzyć gładką siatkę rozwiązując równanie Laplace&apos;a.</translation>
+        <translation>Możesz stworzyć gładką siatkę rozwiązując równanie Laplace'a.</translation>
     </message>
 </context>
 <context>

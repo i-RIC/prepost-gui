@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>AboutDialog</name>
@@ -194,8 +192,8 @@
         <translation>Šķērsgriezums vēl nav definēts.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Nederīgs šķērsgriezuma nosaukums. Nosaukumam jābūt &quot;X1&quot;, &quot;X2&quot;,... vai &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nederīgs šķērsgriezuma nosaukums. Nosaukumam jābūt "X1", "X2",... vai "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

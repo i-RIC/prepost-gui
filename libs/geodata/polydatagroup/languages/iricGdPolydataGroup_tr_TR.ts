@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Seçilenleri silmek istediğinizden emin misiniz? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Birleştirilecek başka veri yok &quot;%1&quot;grup.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Birleştirilecek başka veri yok "%1"grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Ad otomatik olarak ayarlanır (örn. PolyData1)</translation>
+        <translation>İsim otomatik olarak ayarlanır (örn. PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile özniteliğinden yükleme</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Değeri belirtin</translation>
+        <translation>Değeri belirtin</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodlama</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinat Sistemi</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim ayarı</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ad içe aktarma hedef niteliği</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Değer ayarı</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Değer içe aktarma hedef niteliği</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Belirtilen değer</translation>
     </message>
 </context>
 <context>

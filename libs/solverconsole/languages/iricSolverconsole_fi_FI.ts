@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>SolverConsoleWindow</name>
@@ -154,8 +152,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Varmista:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Jos laskentatulos on jo olemassa, se poistetaan.&lt;/li&gt; &lt;li&gt;Laskentaehto ja syöttöruudukko jonka näet esikäsittelyikkunassa, kirjoitetaan tiedostoon Case1.cgn.&lt;/li&gt; &lt;li&gt;Ratkaisija lukee Case1.cgn:n tiedot ja alkaa toimia.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Oletko sinä onko se varmasti kunnossa?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Varmista:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Jos laskentatulos on jo olemassa, se poistetaan.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Projekti tallennetaan.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Oletko varma, että se on kunnossa?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Varmista:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Jos laskentatulos on jo olemassa, se poistetaan.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Projekti tallennetaan.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Oletko varma, että se on kunnossa?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

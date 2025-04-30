@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>Жыйынтыгын таануу:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Үлгү аныктоо үчүн төмөнкү тамгаларды колдонуңуз: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -оң: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- чегинүү: 0; текст-чегинүү: 0px; &quot;&gt; Жылы: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Ай: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Күн: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- оңдо: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Саат: чш &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Мүнөт: мм &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- сол: 0px; маржа-оң: 0px; -qt-блок-чегинүү: 0; текст-чегинүү: 0px; &quot;&gt; Экинчи: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Үлгү аныктоо үчүн төмөнкү тамгаларды колдонуңуз: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -оң: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- чегинүү: 0; текст-чегинүү: 0px; "&gt; Жылы: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Ай: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Күн: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- оңдо: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Саат: чш &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Мүнөт: мм &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- сол: 0px; маржа-оң: 0px; -qt-блок-чегинүү: 0; текст-чегинүү: 0px; "&gt; Экинчи: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>Бул маалыматтарды экспорттоого болбойт. Ал *.tif же *.asc импорттолгон эмес окшойт.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Бул маалыматтарды экспорттоого болбойт. &quot;Убакыт&quot; өлчөмү бар маалыматтарды *.tif же *.ascга экспорттоого болбойт.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Бул маалыматтарды экспорттоого болбойт. "Убакыт" өлчөмү бар маалыматтарды *.tif же *.ascга экспорттоого болбойт.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттар системасы</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлдын үлгүсү</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт алкагы</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл аттары</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>Бул маалыматтарды экспорттоого болбойт. Ал *.png импорттолгон эмес окшойт.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Бул маалыматтарды экспорттоого болбойт. &quot;Убакыт&quot; өлчөмү бар маалыматтарды *.png форматына экспорттоого болбойт</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Бул маалыматтарды экспорттоого болбойт. "Убакыт" өлчөмү бар маалыматтарды *.png форматына экспорттоого болбойт</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттар системасы</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">NetCDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">NetCDF файлы (*.nc)</translation>
+        <translation>NetCDF файлы (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ката</translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">Убакыт сериясынын растр маалыматтары мурунтан эле импорттолгон. Башка дайындарды импорттоону кааласаңыз, алгач импорттолгон дайындарды жок кылыңыз.</translation>
+        <translation>Убакыт сериясынын растр маалыматтары мурунтан эле импорттолгон. Башка дайындарды импорттоону кааласаңыз, алгач импорттолгон дайындарды жок кылыңыз.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 импорттоого боло турган өзгөрмөсү жок.</translation>
+        <translation>%1 импорттоого мүмкүн болгон өзгөрмө жок.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттар системасы</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">Оригиналдуу датаны көрсөтүңүз</translation>
+        <translation>Түпнуска датаны көрсөтүңүз</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">Баштапкы убакытты автоматтык түрдө таануу ишке ашкан жок. Сураныч, баштапкы күндү көрсөтүңүз.</translation>
+        <translation>Түпнуска убакытты автоматтык түрдө таануу ишке ашкан жок. Сураныч, баштапкы датасын көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Бирдиктер:</translation>
+        <translation>Бирдиктер:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">күндөр 2014-01-01</translation>
+        <translation>2014-01-01 бери күн</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">Бирдиги:</translation>
+        <translation>Бирдиги:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">жылдар</translation>
+        <translation>жыл</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">күндөр</translation>
+        <translation>күн</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">саат</translation>
+        <translation>саат</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">мүнөт</translation>
+        <translation>мүнөт</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">секунд</translation>
+        <translation>секунд</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">Баштапкы убакыт:</translation>
+        <translation>Баштапкы убакыт:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">Убакыт зонасы:</translation>
+        <translation>Убакыт алкагы:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">Өлчөм картасын коюу</translation>
+        <translation>Өлчөмдөрдүн картасын орнотуу</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Мааниси:</translation>
+        <translation>Маани:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">Өлчөмдөр</translation>
+        <translation>Өлчөмдөр</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>X band MP rader маалыматтарын &quot;Time&quot; өлчөмү менен тор шарттары үчүн импорттоого болот.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X band MP rader маалыматтарын "Time" өлчөмү менен тор шарттары үчүн импорттоого болот.</translation>
     </message>
     <message>
         <source>Information</source>

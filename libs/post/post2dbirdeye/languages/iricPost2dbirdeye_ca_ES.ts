@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Postprocessament ocular (2D): %1</translation>
     </message>
     <message>
@@ -142,7 +140,7 @@
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valor escalar d&apos;elevació</translation>
+        <translation type="vanished">Valor escalar d'elevació</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -178,7 +176,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és més petit que el valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és més petit que el valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -223,7 +221,7 @@
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="vanished">Valor escalar per a l&apos;elevació</translation>
+        <translation type="vanished">Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
@@ -234,7 +232,7 @@
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Valor escalar per a l&apos;elevació</translation>
+        <translation>Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>

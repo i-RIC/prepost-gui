@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,7 +30,7 @@
         <translation>您確定要刪除選定的 %1 ?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <source>There is no other data to merge in "%1" group.</source>
         <translation>沒有其他數據可以合併到“ %1 “ 團體。</translation>
     </message>
     <message>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">名稱是自動設置的（例如 PolyData1）</translation>
+        <translation>名稱自動設定（例如 PolyData1）</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>從 Shapefile 屬性載入</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">指定值</translation>
+        <translation>指定值</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>編碼</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>座標系</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>名稱設定</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>命名導入目標屬性</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>值設定</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>值匯入目標屬性</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>指定值</translation>
     </message>
 </context>
 <context>

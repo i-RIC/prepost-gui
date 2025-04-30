@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -23,8 +21,8 @@
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Di kolom untuk %1, nilai &quot;%2&quot;untuk penampang&quot;%3&quot; tidak valid. Nilai diabaikan.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Di kolom untuk %1, nilai "%2"untuk penampang"%3" tidak valid. Nilai diabaikan.</translation>
     </message>
     <message>
         <source>Information</source>

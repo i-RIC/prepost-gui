@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -48,7 +46,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taille des points&#xa0;:</translation>
+        <translation>Taille des points :</translation>
     </message>
 </context>
 <context>
@@ -59,7 +57,7 @@
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valeur physique&#xa0;:</translation>
+        <translation>Valeur physique :</translation>
     </message>
     <message>
         <source>Time</source>
@@ -74,17 +72,17 @@
         <translation>Intervalle de temps de génération</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
@@ -165,7 +163,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Type de grille&#xa0;:</translation>
+        <translation>Type de grille :</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
@@ -211,7 +209,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
+        <translation type="vanished">Couleur par valeur d'attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -234,7 +232,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valeur de l&apos;attribut&#xa0;:</translation>
+        <translation type="vanished">Valeur de l'attribut :</translation>
     </message>
     <message>
         <source>Length</source>
@@ -254,7 +252,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="vanished">Durée à l&apos;écran&#xa0;:</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -262,7 +260,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="vanished">Valeur minimale à tirer&#xa0;:</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Sampling</source>
@@ -274,7 +272,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="vanished">Taux d&apos;échantillonnage:</translation>
+        <translation type="vanished">Taux d'échantillonnage:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
@@ -332,7 +330,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
+        <translation type="vanished">Couleur par valeur d'attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -358,7 +356,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <name>PostStringResultArgumentSettingEditDialog</name>
     <message>
         <source>Label Input Setting</source>
-        <translation>Paramètre d&apos;entrée d&apos;étiquette</translation>
+        <translation>Paramètre d'entrée d'étiquette</translation>
     </message>
     <message>
         <source>Position:</source>
@@ -366,7 +364,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Nom du résultat&#xa0;:</translation>
+        <translation>Nom du résultat :</translation>
     </message>
     <message>
         <source>Variable Name:</source>
@@ -378,11 +376,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>J:</source>
-        <translation>J&#xa0;:</translation>
+        <translation>J :</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K&#xa0;:</translation>
+        <translation>K :</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -433,15 +431,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Move label</source>
-        <translation type="vanished">Déplacer l&apos;étiquette</translation>
+        <translation type="vanished">Déplacer l'étiquette</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="vanished">Redimensionner l&apos;étiquette</translation>
+        <translation type="vanished">Redimensionner l'étiquette</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="vanished">Modifier le paramètre d&apos;étiquette</translation>
+        <translation type="vanished">Modifier le paramètre d'étiquette</translation>
     </message>
 </context>
 <context>
@@ -459,7 +457,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="vanished">Paramètre d&apos;étiquette</translation>
+        <translation type="vanished">Paramètre d'étiquette</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -527,7 +525,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="vanished">Couleur de l&apos;arrière plan:</translation>
+        <translation type="vanished">Couleur de l'arrière plan:</translation>
     </message>
 </context>
 <context>
@@ -577,8 +575,8 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Définition de la sortie</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez définir la variable avec le langage JavaScript. Veuillez consulter le &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; texte -décoration&#xa0;: souligner&#xa0;; couleur&#xa0;:#0000ff;&quot;&gt;ici&lt;/span&gt;&lt;/a&gt; pour plus de détails.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez définir la variable avec le langage JavaScript. Veuillez consulter le &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" texte -décoration : souligner ; couleur :#0000ff;"&gt;ici&lt;/span&gt;&lt;/a&gt; pour plus de détails.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -598,7 +596,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Background color:</source>
-        <translation>Couleur de l&apos;arrière plan:</translation>
+        <translation>Couleur de l'arrière plan:</translation>
     </message>
     <message>
         <source>Size and Position</source>
@@ -606,15 +604,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Input file name to import</source>
-        <translation>Nom du fichier d&apos;entrée à importer</translation>
+        <translation>Nom du fichier d'entrée à importer</translation>
     </message>
     <message>
         <source>Label setting (*.labelsetting)</source>
-        <translation>Paramétrage de l&apos;étiquette (*.labelsetting)</translation>
+        <translation>Paramétrage de l'étiquette (*.labelsetting)</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Une erreur s&apos;est produite lors de l&apos;ouverture %1</translation>
+        <translation>Une erreur s'est produite lors de l'ouverture %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -622,7 +620,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation>Nom du fichier d&apos;entrée à exporter</translation>
+        <translation>Nom du fichier d'entrée à exporter</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -665,33 +663,33 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="vanished">Modifier le réglage de l&apos;heure</translation>
+        <translation type="vanished">Modifier le réglage de l'heure</translation>
     </message>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished">Réglage de l&apos;heure</translation>
+        <translation>Réglage de l'heure</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished">Utiliser les paramètres du projet</translation>
+        <translation>Utiliser les paramètres du projet</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished">Format de l&apos;heure</translation>
+        <translation>Format de l'heure</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation type="vanished">Réglage de l&apos;heure</translation>
+        <translation type="vanished">Réglage de l'heure</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -699,7 +697,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="vanished">Format de l&apos;heure</translation>
+        <translation type="vanished">Format de l'heure</translation>
     </message>
 </context>
 <context>
@@ -710,22 +708,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished">Réglage du titre</translation>
+        <translation>Réglage du titre</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulaire</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">Titre:</translation>
+        <translation>Titre:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished">Remarque : seuls les caractères anglais peuvent être utilisés pour le titre.</translation>
+        <translation>Remarque : seuls les caractères anglais peuvent être utilisés pour le titre.</translation>
     </message>
 </context>
 <context>

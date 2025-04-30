@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Vai tiešām vēlaties dzēst atlasīto %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nav citu datu, ko apvienot &quot;%1&quot;grupa.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nav citu datu, ko apvienot "%1"grupa.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Nosaukums tiek iestatīts automātiski (piem., PolyData1)</translation>
+        <translation>Nosaukums tiek iestatīts automātiski (piem., PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ielādēt no Shapefile atribūta</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Norādiet vērtību</translation>
+        <translation>Norādiet vērtību</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodēšana</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinātu sistēma</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosaukuma iestatīšana</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosaukuma importēšanas mērķa atribūts</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtības iestatīšana</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtības importēšanas mērķa atribūts</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādītā vērtība</translation>
     </message>
 </context>
 <context>

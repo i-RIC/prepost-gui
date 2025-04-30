@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AboutDialog</name>
@@ -194,8 +192,8 @@
         <translation>Ristlõige pole veel määratletud.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Ristlõike vale nimi. Nimi peaks olema &quot;X1&quot;, &quot;X2&quot;,... või &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Ristlõike vale nimi. Nimi peaks olema "X1", "X2",... või "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

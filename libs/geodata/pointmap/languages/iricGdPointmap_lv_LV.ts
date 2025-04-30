@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Apvienot...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nav citu datu, ko apvienot &quot;%1&quot;grupa.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nav citu datu, ko apvienot "%1"grupa.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -510,7 +508,7 @@
     <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinātu sistēma</translation>
+        <translation>Koordinātu sistēma</translation>
     </message>
 </context>
 <context>
@@ -676,12 +674,12 @@
         <translation>Nav norādīts norobežotājs</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Nav pietiekami daudz vērtību, lai lasītu &quot;%1&quot;&quot;. %1 &quot;kolonna ir %2 bet %3 ievades vērtības.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Nav pietiekami daudz vērtību, lai lasītu "%1"". %1 "kolonna ir %2 bet %3 ievades vērtības.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Lasīšanas laikā radās kļūda &quot;%1&quot;vērtība&quot;. %1 &quot;Vērtībai jābūt reālam skaitlim, bet&quot;%2&quot;norādīts.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Lasīšanas laikā radās kļūda "%1"vērtība". %1 "Vērtībai jābūt reālam skaitlim, bet"%2"norādīts.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -712,67 +710,67 @@
     <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
     <message>
         <source>Comma</source>
-        <translation type="unfinished">Komats</translation>
+        <translation>Komats</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished">Tab</translation>
+        <translation>Cilne</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished">Kosmoss</translation>
+        <translation>Kosmoss</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished">Kols</translation>
+        <translation>Kols</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished">Semikols</translation>
+        <translation>Semikols</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodēšana</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinātu sistēma</translation>
+        <translation>Koordinātu sistēma</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished">Atdalītāji</translation>
+        <translation>Atdalītāji</translation>
     </message>
     <message>
         <source>Quote character</source>
-        <translation type="unfinished"></translation>
+        <translation>Citāta rakstzīme</translation>
     </message>
     <message>
         <source>Escape character</source>
-        <translation type="unfinished"></translation>
+        <translation>Iziešanas rakstzīme</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished">Galvenes rindas, kuras ignorēt</translation>
+        <translation>Ignorējamās galvenes rindas</translation>
     </message>
     <message>
         <source>X field</source>
-        <translation type="unfinished"></translation>
+        <translation>X lauks</translation>
     </message>
     <message>
         <source>Y field</source>
-        <translation type="unfinished"></translation>
+        <translation>Y lauks</translation>
     </message>
     <message>
         <source>Value field</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtības lauks</translation>
     </message>
     <message>
         <source>Skip rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlaišanas biežums</translation>
     </message>
     <message>
         <source>Column %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolonna %1</translation>
     </message>
 </context>
 <context>
@@ -830,8 +828,8 @@
         <translation>Citāta raksturs:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1016,7 +1014,7 @@
     <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">Koordinātu sistēma</translation>
+        <translation>Koordinātu sistēma</translation>
     </message>
 </context>
 <context>
@@ -1203,8 +1201,8 @@
         <translation>Virsma</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1433,8 +1431,8 @@
         <translation>Svēruma eksponents k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; tiek izmantots kā svars, aprēķinot vērtību vidējo svērto vērtību. r ir attālums no punkta līdz mezgla vai šūnas centram, kuram vērtība ir kartēta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; tiek izmantots kā svars, aprēķinot vērtību vidējo svērto vērtību. r ir attālums no punkta līdz mezgla vai šūnas centram, kuram vērtība ir kartēta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1484,8 +1482,8 @@
         <translation type="vanished">Virsma</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1531,8 +1529,8 @@
         <translation>Sliekšņa malas garums:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme&lt;/span&gt;. Kad &amp;quot;Previewquot; Noklikšķinot uz pogas, trīsstūri, kas tiks noņemti, tiek parādīti pelēkā krāsā.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme&lt;/span&gt;. Kad &amp;quot;Previewquot; Noklikšķinot uz pogas, trīsstūri, kas tiks noņemti, tiek parādīti pelēkā krāsā.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1550,8 +1548,8 @@
         <translation type="vanished">Malu garuma ierobežojums:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

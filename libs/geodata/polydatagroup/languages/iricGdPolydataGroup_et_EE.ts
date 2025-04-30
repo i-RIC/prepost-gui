@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Kas olete kindel, et soovite valitud kustutada %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Teisi andmeid ei saa ühendada &quot;%1&quot; Grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Teisi andmeid ei saa ühendada "%1" Grupp.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -230,43 +228,43 @@
     <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished">Nimi määratakse automaatselt (nt PolyData1)</translation>
+        <translation>Nimi määratakse automaatselt (nt PolyData1)</translation>
     </message>
     <message>
         <source>Load from Shapefile attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadi Shapefile'i atribuudilt</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished">Määrake väärtus</translation>
+        <translation>Määrake väärtus</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodeerimine</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinaatide süsteem</translation>
     </message>
     <message>
         <source>Name setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nime määramine</translation>
     </message>
     <message>
         <source>Name import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Nime impordi sihtmärgi atribuut</translation>
     </message>
     <message>
         <source>Value setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtuse seadistamine</translation>
     </message>
     <message>
         <source>Value import target attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtuse impordi sihtmärgi atribuut</translation>
     </message>
     <message>
         <source>Specified value</source>
-        <translation type="unfinished"></translation>
+        <translation>Määratud väärtus</translation>
     </message>
 </context>
 <context>

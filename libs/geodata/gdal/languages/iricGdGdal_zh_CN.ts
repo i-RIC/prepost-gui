@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataGdal</name>
@@ -116,8 +114,8 @@
         <translation>识别结果：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请使用以下字母定义模式：&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;年份：YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;月份：MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;日：DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;小时：hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;分钟：毫米&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;第二个：ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请使用以下字母定义模式：&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;年份：YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;月份：MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;日：DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;小时：hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;分钟：毫米&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;第二个：ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -143,7 +141,7 @@
         <translation>此数据无法导出。它似乎不是从 *.tif 或 *.asc 导入的。</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
         <translation>此数据无法导出。无法将具有“时间”维度的数据导出为 *.tif 或 *.asc。</translation>
     </message>
     <message>
@@ -219,19 +217,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标系</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名模式</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>时区</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名</translation>
     </message>
 </context>
 <context>
@@ -249,7 +247,7 @@
         <translation>此数据无法导出。似乎它不是从 *.png 导入的。</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
         <translation>此数据无法导出。无法将具有“时间”维度的数据导出为 *.png</translation>
     </message>
     <message>
@@ -312,7 +310,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标系</translation>
     </message>
 </context>
 <context>
@@ -431,93 +429,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">网络CDF</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">NetCDF 文件 (*.nc)</translation>
+        <translation>NetCDF 文件 (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">时间序列栅格数据已导入。如需导入其他数据，请先删除已导入的数据。</translation>
+        <translation>时间序列栅格数据已导入。如需导入其他数据，请先删除已导入的数据。</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished"> %1 无可导入变量</translation>
+        <translation>%1 没有可以导入的变量。</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标系</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">指明原始日期</translation>
+        <translation>指定原始日期</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">自动识别原始时间失败。 请指定原始日期。</translation>
+        <translation>自动识别原始时间失败。请指定原始日期。</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">单位：</translation>
+        <translation>单位：</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">从2012-01-01起的天数</translation>
+        <translation>自 2014 年 1 月 1 日以来的天数</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">单位：</translation>
+        <translation>单元：</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">年</translation>
+        <translation>年</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">日</translation>
+        <translation>天</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">小时</translation>
+        <translation>小时</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">分钟</translation>
+        <translation>分钟</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">秒</translation>
+        <translation>秒</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">原始时间：</translation>
+        <translation>原始时间：</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">时区：</translation>
+        <translation>时区：</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">维度地图设置</translation>
+        <translation>维度映射设置</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">值：</translation>
+        <translation>价值：</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">维度</translation>
+        <translation>方面</translation>
     </message>
 </context>
 <context>
@@ -564,7 +562,7 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
         <translation>X波段MP光栅数据可以针对具有时间的网格条件导入</translation>
     </message>
     <message>

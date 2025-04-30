@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataGdal</name>
@@ -108,8 +106,8 @@
         <translation>التعرف على النتيجة:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يرجى استخدام الأحرف التالية لتحديد النمط: &lt;/ p&gt; &lt;ul style = &quot;margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin -right: 0px؛ -qt-list-indent: 1؛ &quot;&gt; &lt;li style =&quot; margin-top: 12px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block- مسافة بادئة: 0؛ text-indent: 0px؛ &quot;&gt; السنة: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt -block-indent: 0؛ text-indent: 0px؛ &quot;&gt; الشهر: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px ؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; اليوم: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin- right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; الساعة: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px ؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px؛ margin-bottom: 12px؛ margin- اليسار: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; الثاني: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يرجى استخدام الأحرف التالية لتحديد النمط: &lt;/ p&gt; &lt;ul style = "margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin -right: 0px؛ -qt-list-indent: 1؛ "&gt; &lt;li style =" margin-top: 12px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block- مسافة بادئة: 0؛ text-indent: 0px؛ "&gt; السنة: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt -block-indent: 0؛ text-indent: 0px؛ "&gt; الشهر: MM &lt;/li&gt; &lt;li style =" margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px ؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; اليوم: DD &lt;/li&gt; &lt;li style =" margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin- right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; الساعة: hh &lt;/li&gt; &lt;li style =" margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px ؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px؛ margin-bottom: 12px؛ margin- اليسار: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; الثاني: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -135,8 +133,8 @@
         <translation>لا يمكن تصدير هذه البيانات. يبدو أنه لم يتم استيراده من *.tif أو *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>لا يمكن تصدير هذه البيانات. لا يمكن تصدير البيانات ذات البعد &quot;الوقت&quot; إلى *.tif أو *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>لا يمكن تصدير هذه البيانات. لا يمكن تصدير البيانات ذات البعد "الوقت" إلى *.tif أو *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -207,19 +205,19 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>نظام الإحداثيات</translation>
     </message>
     <message>
         <source>Filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>نمط اسم الملف</translation>
     </message>
     <message>
         <source>Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>المنطقة الزمنية</translation>
     </message>
     <message>
         <source>File Names</source>
-        <translation type="unfinished"></translation>
+        <translation>أسماء الملفات</translation>
     </message>
 </context>
 <context>
@@ -237,8 +235,8 @@
         <translation>لا يمكن تصدير هذه البيانات. يبدو أنه لم يتم استيراده من *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>لا يمكن تصدير هذه البيانات. لا يمكن تصدير البيانات ذات البعد &quot;الوقت&quot; إلى *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>لا يمكن تصدير هذه البيانات. لا يمكن تصدير البيانات ذات البعد "الوقت" إلى *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -300,7 +298,7 @@
     <name>GeoDataGdalGrayscalePngRealImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>نظام الإحداثيات</translation>
     </message>
 </context>
 <context>
@@ -415,93 +413,93 @@
     <name>GeoDataGdalNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished">نت سي دي إف</translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished">ملف NetCDF (*.nc)</translation>
+        <translation>ملف NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished">تم بالفعل استيراد البيانات النقطية للسلاسل الزمنية. إذا كنت ترغب في استيراد بيانات أخرى ، يرجى حذف البيانات التي تم استيرادها بالفعل أولاً.</translation>
+        <translation>تم استيراد بيانات الراستر للسلاسل الزمنية. إذا كنت ترغب في استيراد بيانات أخرى، يُرجى حذف البيانات المستوردة أولاً.</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished">%1 لا يحتوي على متغير يمكن استيراده.</translation>
+        <translation>%1 لا يحتوي على متغير يمكن استيراده.</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>نظام الإحداثيات</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished">حدد التاريخ الأصلي</translation>
+        <translation>حدد التاريخ الأصلي</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished">فشل التعرف التلقائي على الوقت الأصلي. يرجى تحديد التاريخ الأصلي.</translation>
+        <translation>فشل التعرف التلقائي على الوقت الأصلي. يُرجى تحديد التاريخ الأصلي.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">الوحدات:</translation>
+        <translation>الوحدات:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished">يوم منذ 2014/01/01</translation>
+        <translation>أيام منذ 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished">وحدة:</translation>
+        <translation>وحدة:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished">سنوات</translation>
+        <translation>سنين</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished">أيام</translation>
+        <translation>أيام</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished">ساعات</translation>
+        <translation>ساعات</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished">الدقائق</translation>
+        <translation>دقائق</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished">ثواني</translation>
+        <translation>ثواني</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished">الوقت الأصلي:</translation>
+        <translation>الوقت الأصلي:</translation>
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished">وحدة زمنية:</translation>
+        <translation>المنطقة الزمنية:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataGdalNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished">إعداد رسم الخرائط البعد</translation>
+        <translation>إعداد تعيين الأبعاد</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">قيمة:</translation>
+        <translation>قيمة:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished">أبعاد</translation>
+        <translation>أبعاد</translation>
     </message>
 </context>
 <context>
@@ -548,8 +546,8 @@
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>يمكن استيراد بيانات رادار النطاق X MP لظروف الشبكة ذات البعد &quot;الوقت&quot;.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>يمكن استيراد بيانات رادار النطاق X MP لظروف الشبكة ذات البعد "الوقت".</translation>
     </message>
     <message>
         <source>Information</source>

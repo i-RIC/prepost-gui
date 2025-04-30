@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
@@ -53,11 +51,11 @@
     </message>
     <message>
         <source>No Physical Value is selected.</source>
-        <translation>No s&apos;ha seleccionat cap valor físic.</translation>
+        <translation>No s'ha seleccionat cap valor físic.</translation>
     </message>
     <message>
         <source>No Value is selected.</source>
-        <translation>No s&apos;ha seleccionat cap valor.</translation>
+        <translation>No s'ha seleccionat cap valor.</translation>
     </message>
 </context>
 <context>
@@ -130,7 +128,7 @@
     </message>
     <message>
         <source>Setting...</source>
-        <translation>S&apos;està configurant...</translation>
+        <translation>S'està configurant...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation>Error quadrat de la mitjana de l&apos;arrel: %1</translation>
+        <translation>Error quadrat de la mitjana de l'arrel: %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
@@ -208,7 +206,7 @@
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>

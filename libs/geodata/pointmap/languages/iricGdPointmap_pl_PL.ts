@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Łączyć...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nie ma innych danych do scalenia w „ %1 &quot; Grupa.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nie ma innych danych do scalenia w „ %1 " Grupa.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -510,7 +508,7 @@
     <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">System współrzędnych</translation>
+        <translation>Układ współrzędnych</translation>
     </message>
 </context>
 <context>
@@ -676,12 +674,12 @@
         <translation>Nie określono ogranicznika</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Za mało wartości, aby przeczytać ” %1 &quot;. &quot;%1&quot; kolumna to %2 ale %3 wprowadzanie wartości.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Za mało wartości, aby przeczytać ” %1 ". "%1" kolumna to %2 ale %3 wprowadzanie wartości.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Wystąpił błąd podczas odczytu „ %1 &quot; wartość. &quot;%1&quot; wartość powinna być liczbą rzeczywistą, ale &quot; %2 określone.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Wystąpił błąd podczas odczytu „ %1 " wartość. "%1" wartość powinna być liczbą rzeczywistą, ale " %2 określone.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -712,67 +710,67 @@
     <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
     <message>
         <source>Comma</source>
-        <translation type="unfinished">Przecinek</translation>
+        <translation>Przecinek</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished">Patka</translation>
+        <translation>Patka</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished">Przestrzeń</translation>
+        <translation>Przestrzeń</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished">Okrężnica</translation>
+        <translation>Okrężnica</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished">Średnik</translation>
+        <translation>Średnik</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodowanie</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">System współrzędnych</translation>
+        <translation>Układ współrzędnych</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished">Ograniczniki</translation>
+        <translation>Ograniczniki</translation>
     </message>
     <message>
         <source>Quote character</source>
-        <translation type="unfinished"></translation>
+        <translation>Cytat znaku</translation>
     </message>
     <message>
         <source>Escape character</source>
-        <translation type="unfinished"></translation>
+        <translation>Ucieczka z postaci</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished">Linie nagłówka do zignorowania</translation>
+        <translation>Wiersze nagłówka, które należy zignorować</translation>
     </message>
     <message>
         <source>X field</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole X</translation>
     </message>
     <message>
         <source>Y field</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole Y</translation>
     </message>
     <message>
         <source>Value field</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole wartości</translation>
     </message>
     <message>
         <source>Skip rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Współczynnik pominięć</translation>
     </message>
     <message>
         <source>Column %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolumna %1</translation>
     </message>
 </context>
 <context>
@@ -830,8 +828,8 @@
         <translation>Cytat postać:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1016,7 +1014,7 @@
     <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">System współrzędnych</translation>
+        <translation>Układ współrzędnych</translation>
     </message>
 </context>
 <context>
@@ -1203,8 +1201,8 @@
         <translation>Powierzchnia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga:&lt;/span&gt; w „Trybie edycji punktów” to ustawienie jest ignorowane, a dane TIN są zawsze pokazane jako punkty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga:&lt;/span&gt; w „Trybie edycji punktów” to ustawienie jest ignorowane, a dane TIN są zawsze pokazane jako punkty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1433,8 +1431,8 @@
         <translation>Wykładnik wagowy k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; służy jako waga podczas obliczania średniej ważonej wartości. r to odległość od punktu do węzła lub środka komórki, na który mapowana jest wartość.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; służy jako waga podczas obliczania średniej ważonej wartości. r to odległość od punktu do węzła lub środka komórki, na który mapowana jest wartość.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1484,8 +1482,8 @@
         <translation type="vanished">Powierzchnia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga:&lt;/span&gt; w „Trybie edycji punktów” to ustawienie jest ignorowane, a dane TIN są zawsze pokazane jako punkty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga:&lt;/span&gt; w „Trybie edycji punktów” to ustawienie jest ignorowane, a dane TIN są zawsze pokazane jako punkty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1531,8 +1529,8 @@
         <translation>Długość krawędzi progowej:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: Kiedy „Podgląd” jest kliknięcie, trójkąty, które zostaną usunięte, są pomalowane na szaro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: Kiedy „Podgląd” jest kliknięcie, trójkąty, które zostaną usunięte, są pomalowane na szaro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1550,8 +1548,8 @@
         <translation type="vanished">Limit długości krawędzi:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: po kliknięciu przycisku Zastosuj trójkąty, które zostaną usunięte, zostaną pomalowane na ciemny szary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: po kliknięciu przycisku Zastosuj trójkąty, które zostaną usunięte, zostaną pomalowane na ciemny szary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

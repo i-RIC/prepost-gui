@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>DBFItemSelectDialog</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation>Seleziona l&apos;elemento da importare.</translation>
+        <translation>Seleziona l'elemento da importare.</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation>Il tipo di file non può essere riconosciuto dall&apos;estensione del file. : %1</translation>
+        <translation>Il tipo di file non può essere riconosciuto dall'estensione del file. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>

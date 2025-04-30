@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
@@ -17,7 +15,7 @@
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation>%1 N&apos;existe pas.</translation>
+        <translation>%1 N'existe pas.</translation>
     </message>
 </context>
 </TS>

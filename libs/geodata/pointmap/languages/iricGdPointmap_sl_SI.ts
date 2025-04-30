@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Združi...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Drugih podatkov za združevanje ni &quot;%1&quot;skupina.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Drugih podatkov za združevanje ni "%1"skupina.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -510,7 +508,7 @@
     <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">koordinatni sistem</translation>
+        <translation>Koordinatni sistem</translation>
     </message>
 </context>
 <context>
@@ -676,12 +674,12 @@
         <translation>Ločilo ni določeno</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Ni dovolj vrednosti za branje &quot;%1&quot;.&quot;%1&quot;stolpec je %2 ampak %3 vnos vrednosti.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Ni dovolj vrednosti za branje "%1"."%1"stolpec je %2 ampak %3 vnos vrednosti.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Pri branju je prišlo do napake &quot;%1&quot;vrednost.&quot;%1&quot;vrednost bi morala biti resnično število, vendar&quot;%2&quot;določeno.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Pri branju je prišlo do napake "%1"vrednost."%1"vrednost bi morala biti resnično število, vendar"%2"določeno.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -712,67 +710,67 @@
     <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
     <message>
         <source>Comma</source>
-        <translation type="unfinished">Vejica</translation>
+        <translation>Vejica</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished">Zavihek</translation>
+        <translation>Zavihek</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished">Vesolje</translation>
+        <translation>Vesolje</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished">Debelo črevo</translation>
+        <translation>Debelo črevo</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished">Podpičje</translation>
+        <translation>Podpičje</translation>
     </message>
     <message>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodiranje</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">koordinatni sistem</translation>
+        <translation>Koordinatni sistem</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished">Ločilniki</translation>
+        <translation>Ločila</translation>
     </message>
     <message>
         <source>Quote character</source>
-        <translation type="unfinished"></translation>
+        <translation>Citat znaka</translation>
     </message>
     <message>
         <source>Escape character</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubežni znak</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished">Vrstice glave, ki jih je treba prezreti</translation>
+        <translation>Glavne vrstice, ki jih je treba prezreti</translation>
     </message>
     <message>
         <source>X field</source>
-        <translation type="unfinished"></translation>
+        <translation>X polje</translation>
     </message>
     <message>
         <source>Y field</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-polje</translation>
     </message>
     <message>
         <source>Value field</source>
-        <translation type="unfinished"></translation>
+        <translation>Polje z vrednostjo</translation>
     </message>
     <message>
         <source>Skip rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopnja preskoka</translation>
     </message>
     <message>
         <source>Column %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Stolpec %1</translation>
     </message>
 </context>
 <context>
@@ -830,8 +828,8 @@
         <translation>Navedite znak:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1016,7 +1014,7 @@
     <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished">koordinatni sistem</translation>
+        <translation>Koordinatni sistem</translation>
     </message>
 </context>
 <context>
@@ -1203,8 +1201,8 @@
         <translation>Površina</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1433,8 +1431,8 @@
         <translation>Utežni eksponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; se uporablja kot utež pri izračunu tehtanega povprečja vrednosti. r je razdalja od točke do središča vozlišča ali celice, v katero je preslikana vrednost.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; se uporablja kot utež pri izračunu tehtanega povprečja vrednosti. r je razdalja od točke do središča vozlišča ali celice, v katero je preslikana vrednost.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1484,8 +1482,8 @@
         <translation type="vanished">Površina</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1531,8 +1529,8 @@
         <translation>Dolžina roba praga:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba&lt;/span&gt;: Ko &amp;quot;Predogledquot; Kliknite gumb, so trikotniki, ki bodo odstranjeni, prikazani pobarvani sivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba&lt;/span&gt;: Ko &amp;quot;Predogledquot; Kliknite gumb, so trikotniki, ki bodo odstranjeni, prikazani pobarvani sivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1550,8 +1548,8 @@
         <translation type="vanished">Mejna dolžina roba:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Opomba &lt;/span&gt;: Ko kliknete gumb za uporabo, bodo trikotniki, ki jih boste odstranili, pobarvani s temno siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Ko kliknete gumb za uporabo, bodo trikotniki, ki jih boste odstranili, pobarvani s temno siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
