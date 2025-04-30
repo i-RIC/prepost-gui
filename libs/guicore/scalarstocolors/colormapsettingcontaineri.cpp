@@ -4,7 +4,8 @@
 ColorMapSettingContainerI::ColorMapSettingContainerI() :
 	valueCaption {},
 	autoMinValue {0},
-	autoMaxValue {0}
+	autoMaxValue {0},
+	defaultValue {nan("")}
 {}
 
 ColorMapSettingContainerI::~ColorMapSettingContainerI()

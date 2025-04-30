@@ -182,7 +182,7 @@ vtkMapper* ColorMapEnumerateSettingContainer::buildCellDataMapper(vtkDataSet* da
 
 	auto activeScalar = getActiveScalarOrFirst(polyData->GetCellData());
 	if (activeScalar != nullptr) {
-		auto scalar = DiscreteValuesUtil::buildValuesEnumerate(activeScalar, colors, ignoreTransparent);
+		auto scalar = DiscreteValuesUtil::buildValuesEnumerate(activeScalar, colors, ignoreTransparent, defaultValue);
 		polyData2->GetCellData()->AddArray(scalar);
 		polyData2->GetCellData()->SetActiveScalars(scalar->GetName());
 		scalar->Delete();
@@ -220,7 +220,7 @@ vtkMapper* ColorMapEnumerateSettingContainer::buildPointDataMapper(vtkDataSet* d
 
 	auto activeScalar = getActiveScalarOrFirst(polyData->GetPointData());
 	if (activeScalar != nullptr) {
-		auto scalar = DiscreteValuesUtil::buildValuesEnumerate(activeScalar, colors, true);
+		auto scalar = DiscreteValuesUtil::buildValuesEnumerate(activeScalar, colors, true, defaultValue);
 		polyData2->GetPointData()->AddArray(scalar);
 		polyData2->GetPointData()->SetActiveScalars(scalar->GetName());
 		scalar->Delete();

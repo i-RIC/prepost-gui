@@ -150,10 +150,12 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 
 	auto groups = m_dialog->groups();
 
+	double defaultVal = nan("");
 	for (int i = 0; i < static_cast<int> (groups.size()); ++i) {
 		auto g = groups.at(i);
 
 		double val = i + 1;
+		if (g->isDefault()) {defaultVal = val;}
 		captions.insert({val, g->caption()});
 
 		ColorMapSettingValueColorPairContainer pair;
@@ -163,6 +165,7 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 	}
 	es->colors = cols;
 	es->valueCaptions = captions;
+	es->defaultValue = defaultVal;
 
 	informValueRangeChange();
 }

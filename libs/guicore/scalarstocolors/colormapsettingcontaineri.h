@@ -43,6 +43,7 @@ public:
 
 	double autoMinValue;
 	double autoMaxValue;
+	double defaultValue;
 
 signals:
 	void updated();
