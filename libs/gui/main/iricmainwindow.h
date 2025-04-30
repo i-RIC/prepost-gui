@@ -102,6 +102,7 @@ public:
 	void updateCrosssectionWindows() override;
 
 	ExecuterWatcher* buildExecuteWatcher(ExecuterI* executer) override;
+	void updateCoordinateSystemDisplay();
 	bool cuiMode() const override;
 
 private:

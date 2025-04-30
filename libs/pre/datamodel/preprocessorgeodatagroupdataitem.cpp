@@ -664,6 +664,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			if (dialogRet == QDialog::Rejected) {
 				return;
 			}
+			iricMainWindow()->updateCoordinateSystemDisplay();
 		}
 	}
 

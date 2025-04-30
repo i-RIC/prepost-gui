@@ -61,6 +61,7 @@ public:
 	virtual void updateCrosssectionWindows() = 0;
 
 	virtual ExecuterWatcher* buildExecuteWatcher(ExecuterI* executer) = 0;
+	virtual void updateCoordinateSystemDisplay() = 0;
 	virtual bool cuiMode() const = 0;
 
 public slots:
