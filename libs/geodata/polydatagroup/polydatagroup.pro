@@ -31,6 +31,13 @@ unix {
 }
 LIBS += -liricGdPolydata
 
+# iricGeoio
+
+unix {
+        LIBS += -L"../../geoio"
+}
+LIBS += -liricGeoio
+
 # iricGuibase
 
 unix {

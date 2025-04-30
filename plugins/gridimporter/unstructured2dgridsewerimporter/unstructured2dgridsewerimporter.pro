@@ -14,6 +14,10 @@ include( ../../../paths.pri )
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = unstructured2dgridsewerimporter_pch.h
 
+# iricGeoio library
+
+LIBS += -liricGeoio
+
 # iricGuibase library
 
 LIBS += -liricGuibase
@@ -25,6 +29,12 @@ LIBS += -liricGuicore
 # iricMisc library
 
 LIBS += -liricMisc
+
+# shapelib
+
+win32 {
+        LIBS += -lshapelib_i
+}
 
 # VTK
 
