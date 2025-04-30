@@ -713,6 +713,20 @@ GeoDataProxy* GeoDataGdal::getProxy()
 void GeoDataGdal::buildWarpMatrix(int srcISize, int srcJSize, double* srcGeoTransform, CoordinateSystem* srcCs, CoordinateSystem* tgtCs,
 																	int* tgtISize, int* tgtJSize, double* tgtGeoTransform, std::vector<int>* matrix)
 {
+	if (srcCs == tgtCs) {
+		*tgtISize = srcISize;
+		*tgtJSize = srcJSize;
+		matrix->assign(srcISize * srcJSize, 0);
+		for (int i = 0; i < matrix->size(); ++i) {
+			(*matrix)[i] = i;
+		}
+		for (int i = 0; i < 6; ++i) {
+			*(tgtGeoTransform + i) = *(srcGeoTransform + i);
+		}
+
+		return;
+	}
+
 	GDALAllRegister();
 
 	char** papszOptions = nullptr;
