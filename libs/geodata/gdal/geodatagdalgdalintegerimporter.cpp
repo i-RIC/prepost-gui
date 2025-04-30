@@ -20,7 +20,7 @@ int GeoDataGdalGdalIntegerImporter::outputValues(int ncid, int varId, int xSize,
 	noDataValue = band->GetNoDataValue(&noDataSuccess);
 	auto rData = dynamic_cast<GeoDataGdalInteger*> (data);
 
-	std::vector<double> buffer1(xSize, ySize);
+	std::vector<double> buffer1(xSize * ySize);
 	std::vector<int> buffer2(data->xSize() * data->ySize());
 	band->RasterIO(GF_Read, 0, 0, xSize, ySize, buffer1.data(), xSize, ySize, GDT_Float64, 0, 0);
 	for (int j = 0; j < data->ySize(); ++j) {
