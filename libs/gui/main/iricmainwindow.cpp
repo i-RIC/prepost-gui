@@ -626,6 +626,11 @@ ExecuterWatcher* iRICMainWindow::buildExecuteWatcher(ExecuterI* executer)
 	}
 }
 
+void iRICMainWindow::updateCoordinateSystemDisplay()
+{
+	m_coordinateSystemWidget->updateDisplay();
+}
+
 bool iRICMainWindow::cuiMode() const
 {
 	return m_cuiMode;
