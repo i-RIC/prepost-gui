@@ -17,6 +17,8 @@ PostStringResultSettingContainer::ImageBuilder::ImageBuilder(PostStringResultSet
 
 bool PostStringResultSettingContainer::ImageBuilder::build(QImage* image)
 {
+	if (m_zoneDataContainer == nullptr) {return false;}
+
 	QPainter painter(image);
 
 	QBrush brush(m_setting->backgroundColor);
@@ -45,6 +47,10 @@ bool PostStringResultSettingContainer::ImageBuilder::build(QImage* image)
 
 QSize PostStringResultSettingContainer::ImageBuilder::autoSize() const
 {
+	if (m_zoneDataContainer == nullptr) {
+		return QSize();
+	}
+
 	auto text = m_engine.getValue(m_zoneDataContainer);
 	if (text.isEmpty()) {
 		return QSize();

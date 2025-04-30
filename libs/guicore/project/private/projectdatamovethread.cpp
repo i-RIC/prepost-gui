@@ -16,5 +16,17 @@ bool ProjectDataMoveThread::result() const
 
 void ProjectDataMoveThread::run()
 {
-	m_result = iRIC::moveDirContent(m_from, m_to);
+	bool ok = iRIC::moveDirContent(m_from, m_to);
+	if (! ok) {
+		m_result = false;
+		return;
+	}
+
+	ok = iRIC::rmdirRecursively(m_from);
+	if (! ok) {
+		m_result = false;
+		return;
+	}
+
+	m_result = true;
 }
