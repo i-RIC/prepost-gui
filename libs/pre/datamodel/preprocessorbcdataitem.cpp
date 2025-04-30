@@ -95,6 +95,7 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 		impl->m_dialog = new BoundaryConditionDialog(this, iricMainWindow(), mainWindow());
 		QLocale locale = iricMainWindow()->locale();
 		impl->m_dialog->setup(def, cond->element(), locale);
+		impl->m_dialog->setOpacity(impl->m_opacity);
 		connect(impl->m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));
 	} catch (ErrorMessage&) {
 		// m_dialog = nullptr;
