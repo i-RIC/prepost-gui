@@ -2,6 +2,7 @@
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
+#include <guicore/project/inputcond/inputconditioncontainer.h>
 #include <guicore/project/inputcond/inputconditiondialog.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
@@ -25,6 +26,8 @@
 PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {parent}
 {
+	InputConditionContainer::currentFolder = parent->projectData()->workDirectory();
+
 	try {
 		iRICMainWindowI* mainW = projectData()->mainWindow();
 		m_dialog = new InputConditionDialog(projectData()->solverDefinition(), mainW->locale() , mainW);
@@ -140,9 +143,9 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 	}
 }
 
-bool PreProcessorInputConditionDataItem::setupCgnsFilesIfNeeded(QString *cgnsFileForGrid, bool* updated)
+bool PreProcessorInputConditionDataItem::setupCgnsFilesIfNeeded(QString *cgnsFileForGrid, bool* updated, bool openProject)
 {
-	return m_dialog->setupCgnsFilesIfNeeded(cgnsFileForGrid, updated);
+	return m_dialog->setupCgnsFilesIfNeeded(cgnsFileForGrid, updated, openProject);
 }
 
 bool PreProcessorInputConditionDataItem::isSet() const

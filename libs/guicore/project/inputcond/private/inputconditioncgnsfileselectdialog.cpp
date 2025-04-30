@@ -31,7 +31,7 @@ InputConditionCgnsFileSelectDialog::InputConditionCgnsFileSelectDialog(QString* 
 			newLabel->setText(label->text());
 		}
 		ui->gridLayout->addWidget(newLabel, row, 0);
-		InputConditionWidgetCgnsFile* widget = dynamic_cast<InputConditionWidgetCgnsFile*> (wset->widget(name))->clone();
+		auto widget = dynamic_cast<InputConditionWidgetCgnsFile*> (wset->widget(name))->clone();
 		ui->gridLayout->addWidget(widget, row, 1);
 		++ row;
 

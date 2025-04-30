@@ -24,6 +24,8 @@ class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 	Q_OBJECT
 
 public:
+	static QString currentFolder;
+
 	InputConditionContainer();
 	InputConditionContainer(const std::string& name, const QString& caption);
 	InputConditionContainer(const InputConditionContainer& c);
