@@ -378,7 +378,7 @@ void GeoDataGdal::updateShapeData()
 	points->Allocate((impl->m_xValues.size() + 1) * (impl->m_yValues.size() + 1));
 
 	double dx = impl->m_xValues.at(1) - impl->m_xValues.at(0);
-	double dy = impl->m_xValues.at(1) - impl->m_xValues.at(0);
+	double dy = impl->m_yValues.at(1) - impl->m_yValues.at(0);
 	double x0 = impl->m_xValues.at(0) - dx * 0.5;
 	double y0 = impl->m_yValues.at(0) - dy * 0.5;
 
