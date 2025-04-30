@@ -54,7 +54,7 @@ public:
 
 	void checkImportSourceUpdate();
 
-	bool setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool *updated);
+	bool setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool *updated, bool openProject);
 
 public slots:
 	int exec() override;

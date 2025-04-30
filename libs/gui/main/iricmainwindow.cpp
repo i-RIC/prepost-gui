@@ -302,7 +302,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 
 	handleCgnsSwitch();
 
-	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true, false);
 	if (! ok) {
 		closeProject();
 		return;
@@ -445,7 +445,7 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	handleCgnsSwitch();
 
-	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true, true);
 	if (! ok) {
 		closeProject();
 		return;

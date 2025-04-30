@@ -95,7 +95,7 @@ public:
 	bool checkMappingStatus() override;
 	PreProcessorDataModelI* dataModel() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
-	bool setupCgnsFilesIfNeeded(bool readGrid);
+	bool setupCgnsFilesIfNeeded(bool readGrid, bool openProject);
 
 	void updateTmsList() override;
 

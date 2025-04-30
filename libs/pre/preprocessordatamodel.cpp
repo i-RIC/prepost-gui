@@ -124,7 +124,7 @@ bool PreProcessorDataModel::exportInputCondition(const QString& filename)
 	return root->m_inputConditionDataItem->exportInputCondition(filename);
 }
 
-bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid)
+bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid, bool openProject)
 {
 	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 
@@ -136,7 +136,7 @@ bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid)
 	}
 
 	bool updated;
-	bool ok = root->m_inputConditionDataItem->setupCgnsFilesIfNeeded(cgnsFilePointer, &updated);
+	bool ok = root->m_inputConditionDataItem->setupCgnsFilesIfNeeded(cgnsFilePointer, &updated, openProject);
 	if (! ok) {return false;}
 
 	if (! cgnsFileForGrid.isEmpty() && updated) {
