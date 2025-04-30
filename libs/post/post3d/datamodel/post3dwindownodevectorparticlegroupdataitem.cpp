@@ -109,16 +109,18 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
 	if (m_setting.target == "") {return;}
 
-	auto cont = zoneDataItem()->v4DataContainer();
+	auto zoneContainer = zoneDataItem()->v4DataContainer();
+	if (zoneContainer == nullptr) {return;}
+
 	int currentStep = 0;
-	if (cont == nullptr || cont->gridData() == nullptr) {
+	if (zoneContainer != nullptr) {
+		currentStep = zoneContainer->solutionInfo()->currentStep();
+	}
+	setupActors();
+	if (zoneContainer == nullptr || zoneContainer->gridData() == nullptr) {
 		resetParticles();
 		goto TIMEHANDLING;
 	}
-
-	currentStep = cont->solutionInfo()->currentStep();
-
-	setupActors();
 
 	if (currentStep != 0 && (currentStep == m_previousStep + 1 || projectData()->mainWindow()->continuousSnapshotInProgress())) {
 		addParticles();
@@ -130,8 +132,9 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	assignActorZValues(m_zDepthRange);
 
 TIMEHANDLING:
+
 	m_previousStep = currentStep;
-	PostTimeSteps* tSteps = cont->solutionInfo()->timeSteps();
+	PostTimeSteps* tSteps = zoneContainer->solutionInfo()->timeSteps();
 	if (m_previousStep < tSteps->timesteps().count()) {
 		m_previousTime = tSteps->timesteps().at(m_previousStep);
 	} else {
