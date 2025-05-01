@@ -952,6 +952,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (!geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
 			geodata->setMapped();
