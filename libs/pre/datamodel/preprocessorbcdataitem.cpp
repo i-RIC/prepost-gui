@@ -114,22 +114,27 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 
 PreProcessorBCDataItem::~PreProcessorBCDataItem()
 {
-	auto gItem = groupDataItem()->gridDataItem();
-	if (gItem != nullptr) {
-		auto grid = gItem->grid();
-		if (grid != nullptr) {
-			grid->setIsModified(true);
-		}
+	auto gdItem = groupDataItem();
+	if (gdItem != nullptr) {
+		auto gItem = gdItem->gridDataItem();
+		if (gItem != nullptr) {
+			auto grid = gItem->grid();
+			if (grid != nullptr) {
+				grid->setIsModified(true);
+			}
 
-		PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
-		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			controller = gItem->selectedNodesController();
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			controller = gItem->selectedCellsController();
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			controller = gItem->selectedEdgesController();
+			PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
+			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+				controller = gItem->selectedNodesController();
+			}
+			else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+				controller = gItem->selectedCellsController();
+			}
+			else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+				controller = gItem->selectedEdgesController();
+			}
+			controller->clearSelection();
 		}
-		controller->clearSelection();
 	}
 
 	renderer()->RemoveActor(impl->m_actor);
