@@ -2038,7 +2038,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
-        <translation type="unfinished"></translation>
+        <translation>未找到指定的 CGNS 文件。您要立即编辑设置吗？</translation>
     </message>
 </context>
 <context>

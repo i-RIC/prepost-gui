@@ -2040,7 +2040,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Specified CGNS files are not found. Do you want to edit setting now?</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่พบไฟล์ CGNS ที่ระบุ คุณต้องการแก้ไขการตั้งค่าทันทีหรือไม่</translation>
     </message>
 </context>
 <context>
