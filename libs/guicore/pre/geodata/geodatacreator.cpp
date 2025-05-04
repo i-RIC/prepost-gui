@@ -143,9 +143,3 @@ bool GeoDataCreator::isCreatable() const
 {
 	return false;
 }
-
-bool GeoDataCreator::isReadOnly() const
-{
-	return false;
-}
-

@@ -101,7 +101,7 @@ GeoDataGdal::GeoDataGdal(ProjectDataItem* d, GeoDataCreator* creator, SolverDefi
 
 GeoDataGdal::~GeoDataGdal()
 {
-	if (creator()->isReadOnly()) {
+	if (isReadOnly()) {
 		QFile f(filename());
 		if (f.exists()) {
 			f.remove();

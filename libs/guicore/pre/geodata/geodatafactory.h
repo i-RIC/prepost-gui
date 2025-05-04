@@ -20,7 +20,7 @@ public:
 
 	GeoDataCreator* creator(const QString& typeName);
 	const std::vector<GeoDataCreator*>& creators() const;
-	std::vector<GeoDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition, bool readOnly) const;
+	std::vector<GeoDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition) const;
 
 	void setIsSetup(bool setup);
 	bool isSetup() const;

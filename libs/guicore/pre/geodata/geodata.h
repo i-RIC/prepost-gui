@@ -77,6 +77,7 @@ public:
 	void setImporterSetting(GeoDataImporterSetting* setting);
 	bool dataLoaded() const;
 	void setDataLoaded(bool loaded);
+	bool isReadOnly() const;
 
 	virtual GeoDataMapper* mapper() const = 0;
 

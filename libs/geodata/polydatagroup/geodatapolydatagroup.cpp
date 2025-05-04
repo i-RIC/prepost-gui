@@ -139,7 +139,7 @@ void GeoDataPolyDataGroup::updateFilename()
 
 void GeoDataPolyDataGroup::addCustomMenuItems(QMenu* menu)
 {
-	if (! creator()->isReadOnly()) {
+	if (! isReadOnly()) {
 		menu->addAction(impl->m_addAction);
 	}
 
@@ -181,7 +181,7 @@ void GeoDataPolyDataGroup::viewOperationEnded(PreProcessorGraphicsViewI* /*v*/)
 
 void GeoDataPolyDataGroup::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode != Mode::EditingData) {return;}
 
@@ -190,7 +190,7 @@ void GeoDataPolyDataGroup::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsV
 
 void GeoDataPolyDataGroup::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode != Mode::EditingData) {return;}
 
@@ -199,7 +199,7 @@ void GeoDataPolyDataGroup::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphic
 
 void GeoDataPolyDataGroup::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode != Mode::EditingData) {return;}
 
@@ -208,7 +208,7 @@ void GeoDataPolyDataGroup::mouseDoubleClickEvent(QMouseEvent* event, PreProcesso
 
 void GeoDataPolyDataGroup::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Mode::EditingData) {
 		impl->m_editTargetData->mouseMoveEvent(event, v);
@@ -222,7 +222,7 @@ void GeoDataPolyDataGroup::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphi
 
 void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (event->button() == Qt::LeftButton) {
 		if (impl->m_mode == Mode::EditingData) {
@@ -247,7 +247,7 @@ void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraph
 
 void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Mode::EditingData) {
 		if (event->button() == Qt::LeftButton) {

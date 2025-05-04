@@ -161,7 +161,6 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaprealbuilder.h \
            geodatapointmaprealcreator.h \
            geodatapointmaprealexporter.h \
-           geodatapointmaprealreadonlycreator.h \
            geodatapointmaprealtextimporter.h \
            geodatapointmapriter3dimporter.h \
            geodatapointmapriter3dloader.h \
@@ -171,7 +170,6 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaptemplatemappingsetting.h \
            geodatapointmaptemplatenodemapper.h \
            geodatapointmaptincreator.h \
-           geodatapointmaptinreadonlycreator.h \
            geodatapointmapvtkexporter.h \
            geodatapointmapwebimporter.h \
            geodatapointmapwebimporterregionselectdialog.h \
@@ -267,7 +265,6 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaprealbuilder.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \
-           geodatapointmaprealreadonlycreator.cpp \
            geodatapointmaprealtextimporter.cpp \
            geodatapointmapriter3dimporter.cpp \
            geodatapointmapriter3dloader.cpp \
@@ -277,7 +274,6 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
            geodatapointmaptemplatenodemapper.cpp \
            geodatapointmaptincreator.cpp \
-           geodatapointmaptinreadonlycreator.cpp \
            geodatapointmapvtkexporter.cpp \
            geodatapointmapwebimporter.cpp \
            geodatapointmapwebimporterregionselectdialog.cpp \

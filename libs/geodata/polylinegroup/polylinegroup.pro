@@ -110,13 +110,11 @@ HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroupcsvimporter.h \
            geodatapolylinegroupifacemappert.h \
            geodatapolylinegroupintegercreator.h \
-           geodatapolylinegroupintegerreadonlycreator.h \
            geodatapolylinegroupjfacemappert.h \
            geodatapolylinegroupnodemappert.h \
            geodatapolylinegrouppolyline.h \
            geodatapolylinegroupproxy.h \
            geodatapolylinegrouprealcreator.h \
-           geodatapolylinegrouprealreadonlycreator.h \
            geodatapolylinegroupshpexporter.h \
            geodatapolylinegroupshpimporter.h \
            private/geodatapolylinegroup_displaysetting.h \
@@ -140,11 +138,9 @@ SOURCES += geodatapolylinegroup.cpp \
            geodatapolylinegroupcsvexporter.cpp \
            geodatapolylinegroupcsvimporter.cpp \
            geodatapolylinegroupintegercreator.cpp \
-           geodatapolylinegroupintegerreadonlycreator.cpp \
            geodatapolylinegrouppolyline.cpp \
            geodatapolylinegroupproxy.cpp \
            geodatapolylinegrouprealcreator.cpp \
-           geodatapolylinegrouprealreadonlycreator.cpp \
            geodatapolylinegroupshpexporter.cpp \
            geodatapolylinegroupshpimporter.cpp \
            private/geodatapolylinegroup_displaysetting.cpp \

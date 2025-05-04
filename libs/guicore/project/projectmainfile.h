@@ -82,9 +82,6 @@ public:
 	void setSeparateResult(bool separate);
 	bool separateResultExists() const;
 
-	bool geoDataLink() const;
-	void setGeoDataLink(bool link);
-
 	/// CGNS file manager
 	ProjectCgnsManager* cgnsManager() const;
 	/// Solution information

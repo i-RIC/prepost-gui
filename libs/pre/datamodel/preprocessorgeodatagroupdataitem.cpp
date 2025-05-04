@@ -133,7 +133,6 @@ PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 
 void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	auto mainFile = projectData()->mainfile();
 	auto& factory = GeoDataFactory::instance();
 	// create import menu and add menu.
 	m_importMenu = new QMenu(tr("&Import"), menu);
@@ -146,7 +145,7 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
 		QString title = creator->caption();
 		title += "...";
 		if (creator->importers().size() > 0) {
@@ -188,7 +187,6 @@ SolverDefinitionGridAttribute* PreProcessorGeoDataGroupDataItem::condition()
 
 void PreProcessorGeoDataGroupDataItem::import()
 {
-	auto mainFile = projectData()->mainfile();
 	QStringList filters;
 	std::vector<GeoDataImporter*> importers;
 
@@ -196,7 +194,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	QStringList availableExtensions;
 	QMap<QString, std::vector<GeoDataImporter*> > extMap;
 
-	for (auto creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		for (auto importer : creator->importers()) {
 			QStringList fils = importer->fileDialogFilters();
 			QStringList exts = importer->acceptableExtensions();
@@ -260,12 +258,11 @@ void PreProcessorGeoDataGroupDataItem::import()
 
 void PreProcessorGeoDataGroupDataItem::importFromWeb()
 {
-	auto mainFile = projectData()->mainfile();
 	std::vector<GeoDataWebImporter*> importers;
 
 	GeoDataFactory& factory = GeoDataFactory::instance();
 
-	for (auto creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		for (auto importer : creator->webImporters()) {
 			if (! importer->isCompatibleWith(m_condition)) {continue;}
 			importers.push_back(importer);
@@ -474,12 +471,11 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemI *
 
 std::vector<GeoDataImporter*> PreProcessorGeoDataGroupDataItem::importers() const
 {
-	auto mainFile = projectData()->mainfile();
 	std::vector<GeoDataImporter*> ret;
 
 	GeoDataFactory& f = GeoDataFactory::instance();
 
-	const auto creators = f.compatibleCreators(m_condition, mainFile->geoDataLink());
+	const auto creators = f.compatibleCreators(m_condition);
 	for (auto c : creators) {
 		auto importers = c->importers();
 		for (auto imp : importers) {
@@ -671,11 +667,13 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		}
 	}
 
+	int conf_ret = QMessageBox::information(preProcessorWindow(), tr("Confirm importing as link"), tr("Do you want to import the geographic data in \"Link mode\"?\n\nWhen geographic data is imported in \"Link Mode\", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with \"Link Mode\", the project data becomes much smaller.\n\nPlease note that the geographic data imported in \"Link Mode\" can not be edited.\n"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+
 	// execute import.
 	auto setting = importer->createSetting();
 	setting->setName(importer->name());
 	setting->setFileName(filename);
-	// setting->setCopiedToProject(copyToProject);
+	setting->setIsLink(conf_ret == QMessageBox::Yes);
 	setting->setSelectedFilter(selectedFilter);
 	importer->setSetting(setting);
 
@@ -714,13 +712,14 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		item = buildGeoDataDataItem();
 		// first, create an empty geodata.
 		GeoData* geodata = importer->creator()->create(item, m_condition);
+		geodata->setImporterSetting(setting);
 		item->setGeoData(geodata);
 		// set name and caption
 		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		QWidget *w = wDialog;
-		if (w == nullptr) w = mainWindow();
+		if (w == nullptr) {w = mainWindow();}
 		bool ret = importer->importData(geodata, i, w);
 		if (! ret) {
 			// failed.
@@ -745,7 +744,6 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			wDialog->setProgress(i + 1);
 			qApp->processEvents();
 		}
-		geodata->setImporterSetting(setting);
 		importer->setSetting(nullptr);
 	}
 	if (wDialog != nullptr) {
@@ -1137,10 +1135,9 @@ bool PreProcessorGeoDataGroupDataItem::addImportFromWebAction(QMenu* menu)
 
 bool PreProcessorGeoDataGroupDataItem::importAvailable()
 {
-	auto mainFile = projectData()->mainfile();
 	GeoDataFactory& factory = GeoDataFactory::instance();
 
-	for (auto creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		const auto& imps = creator->importers();
 		if (imps.size() > 0) {return true;}
 	}
@@ -1149,10 +1146,9 @@ bool PreProcessorGeoDataGroupDataItem::importAvailable()
 
 bool PreProcessorGeoDataGroupDataItem::webImportAvailable()
 {
-	auto mainFile = projectData()->mainfile();
 	GeoDataFactory& factory = GeoDataFactory::instance();
 
-	for (auto creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		const auto& imps = creator->webImporters();
 		for (auto i : imps) {
 			if (i->isCompatibleWith(m_condition)) {return true;}
@@ -1191,10 +1187,9 @@ QStringList PreProcessorGeoDataGroupDataItem::getGeoDatasNotMapped()
 
 void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 {
-	auto mainFile = projectData()->mainfile();
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	GeoDataPolygonCreator* c = nullptr;
-	for (auto creator : factory.compatibleCreators(m_condition, mainFile->geoDataLink())) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		c = dynamic_cast<GeoDataPolygonCreator*>(creator);
 		if (c != nullptr) {break;}
 	}

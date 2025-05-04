@@ -84,7 +84,7 @@ void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 	m_geoData->setupActors();
 	m_geoData->setupMenu();
 	m_exportAction->setEnabled(isExportAvailable());
-	if (geodata->creator()->isReadOnly()) {
+	if (geodata->isReadOnly()) {
 		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
 	}
 
@@ -122,14 +122,13 @@ void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		is->loadFromProjectMainFile(isNode);
 	}
 
-	if (m_geoData->creator()->isReadOnly()) {
-		m_geoData->loadFromProjectMainFileOnly(node);
-		m_geoData->setImporterSetting(is);
+	m_geoData->setImporterSetting(is);
 
+	if (m_geoData->isReadOnly()) {
+		m_geoData->loadFromProjectMainFileOnly(node);
 		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
 	} else {
 		m_geoData->loadFromProjectMainFile(node);
-		m_geoData->setImporterSetting(is);
 		m_geoData->setDataLoaded(true);
 	}
 	updateVisibilityWithoutRendering();
@@ -169,13 +168,24 @@ void PreProcessorGeoDataDataItem::importGeoData()
 	if (m_geoData->dataLoaded()) {return;}
 
 	auto is = m_geoData->importerSetting();
+	QFile f(is->fileName());
+	if (! f.exists()) {
+		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Import target file \"%1\" does not exists.").arg(QDir::toNativeSeparators(f.fileName())));
+		return;
+	}
+
 	auto importer = m_geoData->creator()->importer(is->name());
 	importer->setSetting(is);
 
 	int dataCount;
-	importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
-	importer->importData(m_geoData, 0, preProcessorWindow());
-	importer->setSetting(nullptr);
+	bool ok = importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
+	if (! ok) {
+		goto CLEAN;
+	}
+	ok = importer->importData(m_geoData, 0, preProcessorWindow());
+	if (! ok) {
+		goto CLEAN;
+	}
 	m_geoData->setDataLoaded(true);
 	auto o = offset();
 	m_geoData->applyOffset(o.x(), o.y());
@@ -184,6 +194,9 @@ void PreProcessorGeoDataDataItem::importGeoData()
 	m_geoData->updateActorSetting();
 	informValueRangeChange();
 	renderGraphicsView();
+
+CLEAN:
+	importer->setSetting(nullptr);
 }
 
 void PreProcessorGeoDataDataItem::exportGeoData()

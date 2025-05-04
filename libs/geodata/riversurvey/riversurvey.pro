@@ -172,7 +172,6 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveymlitimporter.h \
            geodatariversurveynodemapper.h \
            geodatariversurveyproxy.h \
-           geodatariversurveyreadonlycreator.h \
            geodatariversurveyvtkexporter.h \
            geodatariversurveywebimporter.h \
            gridcreatingconditionriversurveyi.h \
@@ -270,7 +269,6 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveymlitimporter.cpp \
            geodatariversurveynodemapper.cpp \
            geodatariversurveyproxy.cpp \
-           geodatariversurveyreadonlycreator.cpp \
            geodatariversurveyvtkexporter.cpp \
            geodatariversurveywebimporter.cpp \
            private/geodatariversurvey_addextensioncommand.cpp \

@@ -26,7 +26,6 @@ private slots:
 	void showSetOffsetDialog();
 	void showTimeDialog();
 	void setSeparateResult(bool separate);
-	void setGeoDataLink(bool link);
 
 private:
 	void updateCoordinateSystem();

@@ -36,11 +36,10 @@ const std::vector<GeoDataCreator*>& GeoDataFactory::creators() const
 	return m_creators;
 }
 
-std::vector<GeoDataCreator*> GeoDataFactory::compatibleCreators(SolverDefinitionGridAttribute* condition, bool readOnly) const
+std::vector<GeoDataCreator*> GeoDataFactory::compatibleCreators(SolverDefinitionGridAttribute* condition) const
 {
 	std::vector<GeoDataCreator*> ret;
 	for (auto c : m_creators) {
-		if (c->isReadOnly() != readOnly) {continue;}
 		if (! c->isCompatibleWith(condition)) {continue;}
 
 		ret.push_back(c);

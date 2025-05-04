@@ -312,7 +312,7 @@ void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewI* v)
 
 void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyPressEvent(event, v);
@@ -323,7 +323,7 @@ void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsVie
 
 void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyReleaseEvent(event, v);
@@ -334,7 +334,7 @@ void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 
 void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseDoubleClickEvent(event, v);
@@ -345,7 +345,7 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorG
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseMoveEvent(event, v);
@@ -356,7 +356,7 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 
 void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMousePressEvent(event, v);
@@ -367,7 +367,7 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseReleaseEvent(event, v);

@@ -51,7 +51,6 @@ public:
 	std::vector<GeoDataExporter*>& exporters();
 
 	virtual bool isCreatable() const;
-	virtual bool isReadOnly() const;
 
 private:
 	class Impl;

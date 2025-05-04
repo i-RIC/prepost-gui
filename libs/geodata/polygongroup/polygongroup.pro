@@ -116,13 +116,11 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongroupcsvimporter.h \
            geodatapolygongroupifacemappert.h \
            geodatapolygongroupintegercreator.h \
-           geodatapolygongroupintegerreadonlycreator.h \
            geodatapolygongroupjfacemappert.h \
            geodatapolygongroupnodemappert.h \
            geodatapolygongrouppolygon.h \
            geodatapolygongroupproxy.h \
            geodatapolygongrouprealcreator.h \
-           geodatapolygongrouprealreadonlycreator.h \
            geodatapolygongroupshpexporter.h \
            geodatapolygongroupshpimporter.h \
            polygongroup_pch.h \
@@ -149,11 +147,9 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupcsvexporter.cpp \
            geodatapolygongroupcsvimporter.cpp \
            geodatapolygongroupintegercreator.cpp \
-           geodatapolygongroupintegerreadonlycreator.cpp \
            geodatapolygongrouppolygon.cpp \
            geodatapolygongroupproxy.cpp \
            geodatapolygongrouprealcreator.cpp \
-           geodatapolygongrouprealreadonlycreator.cpp \
            geodatapolygongroupshpexporter.cpp \
            geodatapolygongroupshpimporter.cpp \
            private/geodatapolygongroup_displaysetting.cpp \

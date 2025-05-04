@@ -123,6 +123,8 @@ GeoDataMapper* GeoDataPointmap::mapper() const
 			return &impl->m_polygonsCellMapper;
 		}
 	}
+
+	return nullptr;
 }
 
 vtkPolyData* GeoDataPointmap::points() const
@@ -557,7 +559,7 @@ void GeoDataPointmap::updateMenu()
 
 void GeoDataPointmap::updateMenu(QMenu* menu)
 {
-	if (creator()->isReadOnly()) {
+	if (isReadOnly()) {
 		menu->addAction(impl->m_displaySettingAction);
 		return;
 	}
@@ -645,7 +647,7 @@ void GeoDataPointmap::openMappingSettingDialog()
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleMousePressEvent(event, v);
 
@@ -656,7 +658,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 }
 void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleMouseReleaseEvent(event, v);
 
@@ -680,14 +682,14 @@ QStringList GeoDataPointmap::containedFiles() const
 
 void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleMouseMoveEvent(event, v);
 }
 
 void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleMouseDoubleClickEvent(event, v);
 }
@@ -705,14 +707,14 @@ void GeoDataPointmap::handleResize(QResizeEvent* event, PreProcessorGraphicsView
 
 void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleKeyPressEvent(event, v);
 }
 
 void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
-	if (creator()->isReadOnly()) {return;}
+	if (isReadOnly()) {return;}
 
 	impl->m_activeController->handleKeyReleaseEvent(event, v);
 }

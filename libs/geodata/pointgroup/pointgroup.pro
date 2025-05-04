@@ -112,12 +112,10 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupcsvexporter.h \
            geodatapointgroupcsvimporter.h \
            geodatapointgroupintegercreator.h \
-           geodatapointgroupintegerreadonlycreator.h \
            geodatapointgroupnodemappert.h \
            geodatapointgrouppoint.h \
            geodatapointgroupproxy.h \
            geodatapointgrouprealcreator.h \
-           geodatapointgrouprealreadonlycreator.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
            private/geodatapointgroup_displaysetting.h \
@@ -143,11 +141,9 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgroupcsvexporter.cpp \
            geodatapointgroupcsvimporter.cpp \
            geodatapointgroupintegercreator.cpp \
-           geodatapointgroupintegerreadonlycreator.cpp \
            geodatapointgrouppoint.cpp \
            geodatapointgroupproxy.cpp \
            geodatapointgrouprealcreator.cpp \
-           geodatapointgrouprealreadonlycreator.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
            private/geodatapointgroup_displaysetting.cpp \

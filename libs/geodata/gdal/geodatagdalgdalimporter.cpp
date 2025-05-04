@@ -437,7 +437,7 @@ bool GeoDataGdalGdalImporter::importDataForSingleMode(GeoDataGdal* gdal, QWidget
 	gdal->updateShapeData();
 	gdal->handleDimensionCurrentIndexChange(0, 0);
 
-	if (gdal->creator()->isReadOnly()) {
+	if (gdal->isReadOnly()) {
 		// delete the needless file
 		f.remove();
 	}

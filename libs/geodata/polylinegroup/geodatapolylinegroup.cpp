@@ -52,7 +52,7 @@ std::string VALUE = "value";
 GeoDataCreator* getPolyLineGroupCreator(PreProcessorGeoDataDataItemI* geoData, SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
-	auto creators = factory.compatibleCreators(att, false);
+	auto creators = factory.compatibleCreators(att);
 	for (auto c : creators) {
 		auto c2 = dynamic_cast <GeoDataPolyLineGroupCreator*> (c);
 		if (c2 != nullptr) {return c2;}
@@ -445,7 +445,7 @@ void GeoDataPolyLineGroup::updateMenu()
 		p = dynamic_cast<GeoDataPolyLine*> (editTargetData());
 	}
 
-	if (creator()->isReadOnly()) {
+	if (isReadOnly()) {
 		auto m = m_menu;
 
 		m->clear();

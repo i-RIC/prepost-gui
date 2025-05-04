@@ -43,6 +43,16 @@ void GeoDataImporterSetting::setSelectedFilter(const QString& filter)
 	m_selectedFilter = filter;
 }
 
+bool GeoDataImporterSetting::isLink() const
+{
+	return m_isLink;
+}
+
+void GeoDataImporterSetting::setIsLink(bool link)
+{
+	m_isLink = link;
+}
+
 void GeoDataImporterSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	m_name = iRIC::toStr(node.toElement().attribute("name"));
@@ -66,7 +76,7 @@ std::vector<GeoDataImporterSetting::Item> GeoDataImporterSetting::items(GeoDataC
 	std::vector<Item> ret;
 	ret.push_back(Item {tr("File name"), m_fileName});
 	QString copied;
-	if (creator->isReadOnly()) {
+	if (m_isLink) {
 		copied = tr("No");
 	} else {
 		copied = tr("Yes");

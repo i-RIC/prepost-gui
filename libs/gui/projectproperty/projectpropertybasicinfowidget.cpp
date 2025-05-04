@@ -24,7 +24,6 @@ ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget* parent) 
 	connect(ui->coEditButton, &QPushButton::clicked, this, &ProjectPropertyBasicInfoWidget::showSetOffsetDialog);
 	connect(ui->timeEditButton, &QPushButton::clicked, this, &ProjectPropertyBasicInfoWidget::showTimeDialog);
 	connect(ui->separateOutputCheckBox, &QCheckBox::toggled, this, &ProjectPropertyBasicInfoWidget::setSeparateResult);
-	connect(ui->geoDataLinkCheckBox, &QCheckBox::toggled, this, &ProjectPropertyBasicInfoWidget::setGeoDataLink);
 }
 
 ProjectPropertyBasicInfoWidget::~ProjectPropertyBasicInfoWidget()
@@ -81,7 +80,6 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 	updateTimeString();
 
 	ui->separateOutputCheckBox->setChecked(data->mainfile()->separateResult());
-	ui->geoDataLinkCheckBox->setChecked(data->mainfile()->geoDataLink());
 }
 
 void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
@@ -117,11 +115,6 @@ void ProjectPropertyBasicInfoWidget::showTimeDialog()
 void ProjectPropertyBasicInfoWidget::setSeparateResult(bool separate)
 {
 	m_projectData->mainfile()->setSeparateResult(separate);
-}
-
-void ProjectPropertyBasicInfoWidget::setGeoDataLink(bool link)
-{
-	m_projectData->mainfile()->setGeoDataLink(link);
 }
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()

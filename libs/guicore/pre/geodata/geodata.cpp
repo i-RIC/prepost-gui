@@ -105,6 +105,14 @@ void GeoData::setDataLoaded(bool loaded)
 	m_dataLoaded = loaded;
 }
 
+bool GeoData::isReadOnly() const
+{
+	auto is = importerSetting();
+	if (is == nullptr) {return false;}
+
+	return is->isLink();
+}
+
 std::vector<GeoDataImporter*> GeoData::importers() const
 {
 	if (m_creator == nullptr) {

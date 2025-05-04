@@ -51,7 +51,7 @@ std::string VALUE = "value";
 GeoDataCreator* getPolygonGroupCreator(SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
-	auto creators = factory.compatibleCreators(att, false);
+	auto creators = factory.compatibleCreators(att);
 	for (auto c : creators) {
 		auto c2 = dynamic_cast <GeoDataPolygonGroupCreator*> (c);
 		if (c2 != nullptr) {return c2;}
@@ -515,7 +515,7 @@ void GeoDataPolygonGroup::updateMenu(QMenu* menu)
 		p = dynamic_cast<GeoDataPolygon*> (editTargetData());
 	}
 
-	if (creator()->isReadOnly()) {
+	if (isReadOnly()) {
 		menu->addAction(editDisplaySettingAction());
 		menu->addAction(attributeBrowserAction());
 		return;

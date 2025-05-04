@@ -500,7 +500,7 @@ bool GeoDataGdalNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget
 	gdal->updateShapeData();
 	gdal->doHandleDimensionCurrentIndexChange(0, dims->currentIndex());
 
-	if (gdal->creator()->isReadOnly()) {
+	if (gdal->isReadOnly()) {
 		// delete the needless file
 		f.remove();
 	}

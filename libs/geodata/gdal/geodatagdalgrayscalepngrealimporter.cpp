@@ -59,7 +59,7 @@ bool GeoDataGdalGrayscalePngRealImporter::importData(GeoData* data, int /*index*
 	if (! importMeta(gdal, setting()->fileName(), w)) {return false;}
 	if (! importPng(gdal, setting()->fileName(), w)) {return false;}
 
-	if (gdal->creator()->isReadOnly()) {
+	if (gdal->isReadOnly()) {
 		// delete the needless file
 		QFile f(gdal->filename());
 		f.remove();
@@ -212,7 +212,7 @@ bool GeoDataGdalGrayscalePngRealImporter::importPng(GeoDataGdalReal* gdal, const
 	gdal->updateShapeData();
 	gdal->handleDimensionCurrentIndexChange(0, 0);
 
-	if (gdal->creator()->isReadOnly()) {
+	if (gdal->isReadOnly()) {
 		// delete the needless file
 		f.remove();
 	}

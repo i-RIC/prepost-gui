@@ -150,7 +150,6 @@ HEADERS += gd_gdal_global.h \
            geodatagdalifacemappert.h \
            geodatagdalinteger.h \
            geodatagdalintegercreator.h \
-           geodatagdalintegerreadonlycreator.h \
            geodatagdaljfacemappert.h \
            geodatagdalncexporter.h \
            geodatagdalnetcdfimporter.h \
@@ -163,14 +162,11 @@ HEADERS += gd_gdal_global.h \
            geodatagdalproxy.h \
            geodatagdalreal.h \
            geodatagdalrealcreator.h \
-           geodatagdalrealreadonlycreator.h \
            geodatagdalt.h \
            geodatagdaltimeseriescreator.h \
            geodatagdaltimeseriescreatort.h \
            geodatagdaltimeseriesintegercreator.h \
-           geodatagdaltimeseriesintegerreadonlycreator.h \
            geodatagdaltimeseriesrealcreator.h \
-           geodatagdaltimeseriesrealreadonlycreator.h \
            geodatagdalxbandimporter.h \
            private/geodatagdal_displaysetting.h \
            private/geodatagdal_impl.h \
@@ -212,7 +208,6 @@ SOURCES += geodatagdal.cpp \
            geodatagdalgrayscalepngrealimporter.cpp \
            geodatagdalinteger.cpp \
            geodatagdalintegercreator.cpp \
-           geodatagdalintegerreadonlycreator.cpp \
            geodatagdalncexporter.cpp \
            geodatagdalnetcdfimporter.cpp \
            geodatagdalnetcdfimporterdateselectdialog.cpp \
@@ -222,12 +217,9 @@ SOURCES += geodatagdal.cpp \
            geodatagdalproxy.cpp \
            geodatagdalreal.cpp \
            geodatagdalrealcreator.cpp \
-           geodatagdalrealreadonlycreator.cpp \
            geodatagdaltimeseriescreator.cpp \
            geodatagdaltimeseriesintegercreator.cpp \
-           geodatagdaltimeseriesintegerreadonlycreator.cpp \
            geodatagdaltimeseriesrealcreator.cpp \
-           geodatagdaltimeseriesrealreadonlycreator.cpp \
            geodatagdalxbandimporter.cpp \
            private/geodatagdal_displaysetting.cpp \
            private/geodatagdal_impl.cpp \

@@ -32,6 +32,9 @@ public:
 	QString selectedFilter() const;
 	void setSelectedFilter(const QString& filter);
 
+	bool isLink() const;
+	void setIsLink(bool link);
+
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 
@@ -46,6 +49,7 @@ private:
 
 	QString m_fileName;
 	QString m_selectedFilter;
+	bool m_isLink;
 };
 
 #endif // GEODATAIMPORTERSETTING_H
