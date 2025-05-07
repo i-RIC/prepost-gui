@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Wprowadź prefiks.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Linia:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Ustawienie czcionki (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Linia:</translation>
     </message>
 </context>
 <context>

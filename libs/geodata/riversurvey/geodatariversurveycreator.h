@@ -4,8 +4,6 @@
 #include "gd_riversurvey_global.h"
 #include <guicore/pre/geodata/geodatacreator.h>
 
-class SolverDefinitionGridAttribute;
-
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCreator : public GeoDataCreator
 {
 	Q_OBJECT
@@ -19,9 +17,10 @@ public:
 	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-	GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 
 	bool isCreatable() const override;
+
+	GeoDataRiverSurveyCreator(const QString& typeName);
 };
 
 #endif // GEODATARIVERSURVEYCREATOR_H

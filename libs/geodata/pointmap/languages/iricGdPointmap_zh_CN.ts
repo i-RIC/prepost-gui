@@ -540,6 +540,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>坐标系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -653,6 +660,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">点云数据 %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">点云数据</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -733,6 +751,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>数据仅包含 %1 点。点云数据必须至少包含 3 个点。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>逗号</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>空间</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>冒号</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>分号</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>编码</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>坐标系</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>分隔符</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>引号字符</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>转义字符</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>要忽略的标题行</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X 字段</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y 字段</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>值字段</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>跳跃率</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>柱子 %1</translation>
     </message>
 </context>
 <context>
@@ -973,6 +1058,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>坐标系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -981,6 +1073,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>点云数据 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">点云数据 %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">锡</translation>
     </message>
 </context>
 <context>

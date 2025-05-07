@@ -144,6 +144,12 @@ unix {
 }
 LIBS += -liricGdNetcdf
 
+# iricGdGdal
+unix {
+        LIBS += -L"../geodata/gdal"
+}
+LIBS += -liricGdGdal
+
 # iricGccCenterandwidth
 
 unix {
@@ -385,6 +391,7 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
            datamodel/private/preprocessorbcsettinggroupdataitem_shpexporter.h \
            datamodel/private/preprocessorbcsettinggroupdataitem_shpimporter.h \
+           datamodel/private/preprocessorgeodatadataitem_importsettingdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
@@ -461,6 +468,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
+         datamodel/private/preprocessorgeodatadataitem_importsettingdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
          datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.ui \
@@ -552,6 +560,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
            datamodel/private/preprocessorbcsettinggroupdataitem_shpexporter.cpp \
            datamodel/private/preprocessorbcsettinggroupdataitem_shpimporter.cpp \
+           datamodel/private/preprocessorgeodatadataitem_importsettingdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_applyscalarstocolorssettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \

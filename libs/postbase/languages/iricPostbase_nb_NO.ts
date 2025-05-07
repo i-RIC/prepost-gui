@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Rediger tidsinnstilling</translation>
+        <translation type="vanished">Rediger tidsinnstilling</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Tidsinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Bruk prosjektinnstillingen</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Tidsformat</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Tidsinnstilling</translation>
+        <translation type="vanished">Tidsinnstilling</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Bruk prosjektinnstilling</translation>
+        <translation type="vanished">Bruk prosjektinnstilling</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Tidsformat</translation>
+        <translation type="vanished">Tidsformat</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Tittel</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Tittelinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Merk: Bare engelske tegn kan brukes som tittel.</translation>
+        <translation>Merk: Kun engelske tegn kan brukes i tittelen.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Tittelinnstilling</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Tittel:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Merk: Bare engelske tegn kan brukes som tittel.</translation>
     </message>
 </context>
 </TS>

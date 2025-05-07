@@ -9,26 +9,17 @@
 #include "geodatariversurveyvtkexporter.h"
 #include "geodatariversurveywebimporter.h"
 
-#include <QAction>
 #include <QDomElement>
-#include <QIcon>
 
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
-	GeoDataCreator {"riversurvey", tr("Cross-Section Data")}
+	GeoDataRiverSurveyCreator {"riversurvey"}
 {
-	importers().push_back(new GeoDataRiverSurveyImporter(this));
-	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
-
 	webImporters().push_back(new GeoDataRiverSurveyWebImporter(this));
-
-	exporters().push_back(new GeoDataRiverSurveyExporter(this));
-	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
-	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
 }
 
 GeoData* GeoDataRiverSurveyCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	GeoDataRiverSurvey* rs = new GeoDataRiverSurvey(parent, this, condition);
+	auto rs = new GeoDataRiverSurvey(parent, this, condition);
 	rs->setMapper(new GeoDataRiverSurveyNodeMapper(this));
 	return rs;
 }
@@ -41,18 +32,6 @@ QString GeoDataRiverSurveyCreator::name(unsigned int index) const
 QString GeoDataRiverSurveyCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("Cross-Section Data%1")).arg(index);
-}
-
-GeoData* GeoDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	GeoData* geodata = GeoDataCreator::restore(node, parent, condition);
-	if (geodata != nullptr) {return geodata;}
-	QDomElement elem = node.toElement();
-	QString name = elem.attribute("name");
-	if (name.contains("riversurvey")) {
-		return create(parent, condition);
-	}
-	return nullptr;
 }
 
 bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
@@ -69,4 +48,15 @@ bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* 
 bool GeoDataRiverSurveyCreator::isCreatable() const
 {
 	return true;
+}
+
+GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator(const QString& typeName) :
+	GeoDataCreator {typeName, tr("Cross-Section Data")}
+{
+	importers().push_back(new GeoDataRiverSurveyImporter(this));
+	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
+
+	exporters().push_back(new GeoDataRiverSurveyExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
 }

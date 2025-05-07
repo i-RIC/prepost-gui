@@ -1,5 +1,9 @@
 #include "geodatapointgroupintegercreator.h"
 
 GeoDataPointGroupIntegerCreator::GeoDataPointGroupIntegerCreator() :
-	GeoDataPointGroupCreatorT<int, vtkIntArray> {"integerPointGroup"}
+	GeoDataPointGroupIntegerCreator {"integerPointGroup"}
+{}
+
+GeoDataPointGroupIntegerCreator::GeoDataPointGroupIntegerCreator(const QString& typeName) :
+	GeoDataPointGroupCreatorT<int, vtkIntArray> {typeName}
 {}

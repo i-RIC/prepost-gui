@@ -377,6 +377,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -415,6 +422,25 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupReadOnlyCreator</name>
+    <message>
+        <source>Lines (read only)</source>
+        <translation type="vanished">ラインデータ (読み込み専用)</translation>
+    </message>
+    <message>
+        <source>Lines%1</source>
+        <translation type="vanished">ラインデータ%1</translation>
+    </message>
+    <message>
+        <source>line</source>
+        <translation type="vanished">ライン</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="vanished">ライン</translation>
     </message>
 </context>
 <context>

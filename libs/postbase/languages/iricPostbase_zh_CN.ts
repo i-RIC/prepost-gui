@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>编辑时间设置</translation>
+        <translation type="vanished">编辑时间设置</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>时间设置</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>使用项目设置</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>时间格式</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>时间设置</translation>
+        <translation type="vanished">时间设置</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>使用项目设定</translation>
+        <translation type="vanished">使用项目设定</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>时间格式</translation>
+        <translation type="vanished">时间格式</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>标题</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>标题设置</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>注意：标题只能使用英文字符</translation>
+        <translation>注意：标题只能使用英文字符。</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">标题设置</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">标题：</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">注意：标题只能使用英文字符</translation>
     </message>
 </context>
 </TS>

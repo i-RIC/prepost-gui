@@ -201,6 +201,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>

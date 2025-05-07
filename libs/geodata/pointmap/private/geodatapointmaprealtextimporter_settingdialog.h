@@ -2,6 +2,7 @@
 #define GEODATAPOINTMAPREALTEXTIMPORTER_SETTINGDIALOG_H
 
 #include "../geodatapointmaprealtextimporter.h"
+#include "geodatapointmaprealtextimporter_importersetting.h"
 
 #include <QByteArray>
 #include <QDialog>
@@ -34,7 +35,7 @@ public:
 	void setCoordinateSystem(CoordinateSystem* cs);
 
 	void updateComboBoxes();
-	LineParser* buildParser(bool* ok, QString* error) const;
+	void setupImporterSetting(ImporterSetting* setting, bool* ok, QString* error) const;
 
 private slots:
 	void csvToggled(bool toggled);
@@ -51,6 +52,7 @@ private:
 	void showErrorMessageAndDisableOkButton(const QString& message);
 
 	std::vector<QByteArray> m_previewData;
+	ImporterSetting m_importerSetting;
 
 	Ui::GeoDataPointmapRealTextImporter_SettingDialog *ui;
 };

@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Nama diatur secara otomatis (mis. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Muat dari atribut Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Tentukan nilai</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Pengkodean</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem Koordinat</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Pengaturan nama</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Nama target impor atribut</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Pengaturan nilai</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Atribut target impor nilai</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Nilai yang ditentukan</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

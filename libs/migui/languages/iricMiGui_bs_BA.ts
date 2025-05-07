@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>spremanje "%1" nije uspjelo. Uvjerite se da drugi program otvara datoteku i pokušajte ponovo.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Unesite vrijednost</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Greška</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Model za fasciklu %3 nije pronađen u sistemu.</translation>
     </message>
 </context>
 </TS>

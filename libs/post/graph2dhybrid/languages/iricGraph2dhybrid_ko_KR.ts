@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>접두사를 입력하세요.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>선:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>글꼴 설정 (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>선:</translation>
     </message>
 </context>
 <context>

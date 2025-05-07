@@ -18,10 +18,10 @@ public:
 	const QStringList acceptableExtensions() override;
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	GeoDataPointmapRiter3dLoader* m_loader;
-	QString m_fileName;
 };
 
 #endif // GEODATAPOINTMAPRITER3DIMPORTER_H

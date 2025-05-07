@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Redaguoti laiko nustatymą</translation>
+        <translation type="vanished">Redaguoti laiko nustatymą</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Laiko nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Naudoti projekto nustatymą</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Laiko formatas</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Laiko nustatymas</translation>
+        <translation type="vanished">Laiko nustatymas</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Naudokite projekto nustatymus</translation>
+        <translation type="vanished">Naudokite projekto nustatymus</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Laiko formatas</translation>
+        <translation type="vanished">Laiko formatas</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Pavadinimas</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Pavadinimo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Pastaba: Pavadinimui galima naudoti tik anglų simbolius.</translation>
+        <translation>Pastaba: Pavadinime galima naudoti tik angliškus simbolius.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Pavadinimo nustatymas</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Pastaba: Pavadinimui galima naudoti tik anglų simbolius.</translation>
     </message>
 </context>
 </TS>

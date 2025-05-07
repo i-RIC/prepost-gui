@@ -9,6 +9,9 @@ class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroupIntegerCreator : public GeoDataP
 {
 public:
 	GeoDataPolygonGroupIntegerCreator();
+
+protected:
+	GeoDataPolygonGroupIntegerCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOLYGONGROUPINTEGERCREATOR_H

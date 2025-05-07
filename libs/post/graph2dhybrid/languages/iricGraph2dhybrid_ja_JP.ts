@@ -334,6 +334,10 @@
         <source>Please input prefix.</source>
         <translation>プレフィックスを入力してください。</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>ライン：</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -388,6 +392,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>フォント設定 (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>ライン：</translation>
     </message>
 </context>
 <context>

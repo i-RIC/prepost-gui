@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Mentés "%1" sikertelen. Győződjön meg arról, hogy más program nyitja meg a fájlt, és próbálja újra.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Bemeneti érték</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>A mappa modellje %3 nem található a rendszerben.</translation>
     </message>
 </context>
 </TS>

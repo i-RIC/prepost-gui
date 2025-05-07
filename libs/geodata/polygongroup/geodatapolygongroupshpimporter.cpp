@@ -4,6 +4,7 @@
 #include "private/geodatapolygongroup_impl.h"
 
 #include <cs/coordinatesystemconverter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/stringtool.h>
@@ -165,13 +166,13 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 
-	std::string fname = iRIC::toStr(filename());
+	std::string fname = iRIC::toStr(setting()->fileName());
 
 	auto shapeInfos = buildPolygonShapeInfos(fname, m_converter);
 
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	QString dbfFilename = filename();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

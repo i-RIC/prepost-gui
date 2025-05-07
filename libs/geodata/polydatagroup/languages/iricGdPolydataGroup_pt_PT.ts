@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>O nome é definido automaticamente (ex. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Carregar do atributo Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Especificar valor</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Codificação</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de Coordenadas</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Configuração de nome</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Atributo de destino de importação de nome</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Definição de valor</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Atributo de destino de importação de valor</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Valor especificado</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Παρακαλώ εισάγετε πρόθεμα.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Γραμμή:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Ρύθμιση γραμματοσειράς (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Γραμμή:</translation>
     </message>
 </context>
 <context>

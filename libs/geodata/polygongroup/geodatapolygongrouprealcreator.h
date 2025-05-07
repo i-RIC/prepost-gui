@@ -9,6 +9,9 @@ class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroupRealCreator : public GeoDataPoly
 {
 public:
 	GeoDataPolygonGroupRealCreator();
+
+protected:
+	GeoDataPolygonGroupRealCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOLYGONGROUPREALCREATOR_H

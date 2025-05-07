@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem Koordinat</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupReadOnlyCreator</name>
+    <message>
+        <source>Lines%1</source>
+        <translation type="obsolete">Garis %1</translation>
+    </message>
+    <message>
+        <source>line</source>
+        <translation type="obsolete">garis</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="obsolete">Garis</translation>
     </message>
 </context>
 <context>

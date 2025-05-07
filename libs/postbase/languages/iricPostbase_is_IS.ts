@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Breyta tímastillingu</translation>
+        <translation type="vanished">Breyta tímastillingu</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Tímastilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Eyðublað</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Nota verkefnastillingu</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Tímasnið</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Tímastilling</translation>
+        <translation type="vanished">Tímastilling</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Notaðu verkefnastillingu</translation>
+        <translation type="vanished">Notaðu verkefnastillingu</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Tímaform</translation>
+        <translation type="vanished">Tímaform</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Titill</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Stilling titils</translation>
+        <translation>Titillstilling</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Eyðublað</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Athugið: Aðeins er hægt að nota enska stafi fyrir titil.</translation>
+        <translation>Athugið: Aðeins má nota enska stafi í titil.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Stilling titils</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Titill:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Athugið: Aðeins er hægt að nota enska stafi fyrir titil.</translation>
     </message>
 </context>
 </TS>

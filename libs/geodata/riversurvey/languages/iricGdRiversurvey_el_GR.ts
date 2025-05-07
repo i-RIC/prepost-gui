@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Μέσο σημείο αριστερής και δεξιάς όχθης</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Όπου το υψόμετρο είναι το μικρότερο</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Εισαγωγή κεντρικής γραμμής από αρχείο CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Κατάντη προς ανάντη</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Ανοδικά προς τα κατάντη</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Πού να ορίσετε το κεντρικό σημείο του ποταμού</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Όνομα αρχείου CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Σειρά διατομών</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 γραμμή 1: Η κεφαλίδα δεν περιέχει αρκετά δεδομένα.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Μέσο σημείο αριστερής και δεξιάς όχθης</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Όπου το υψόμετρο είναι το μικρότερο</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Εισαγωγή κεντρικής γραμμής από αρχείο CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Πού να ορίσετε το κεντρικό σημείο του ποταμού</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Όνομα αρχείου CSV</translation>
     </message>
 </context>
 <context>

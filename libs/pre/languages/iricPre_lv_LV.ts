@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Atlasiet Eksportējamais fails</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Rādīt importēšanas iestatījumu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importēt mērķa failu "%1"neeksistē.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Vārds</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vērtība</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Importēšanas iestatījums</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Lūdzu, atlasiet importējamo datu veidu</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Apstiprināt importēšanu kā saiti</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Vai vēlaties importēt ģeogrāfiskos datus "Saites režīmā"? Importējot ģeogrāfiskos datus "Saites režīmā", paši ģeogrāfiskie dati projektā netiek saglabāti, bet tikai faila nosaukums un importēšanas iestatījums. Tāpēc, importējot projekta datus "Saites režīmā", tie kļūst daudz mazāki. Lūdzu, ņemiet vērā, ka ģeogrāfiskos datus, kas importēti "Saites režīmā", nevar rediģēt.</translation>
     </message>
 </context>
 <context>

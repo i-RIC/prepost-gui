@@ -26,5 +26,6 @@
         <file>images/iconPolygonRefine.svg</file>
         <file>images/iconPolygonRegion.svg</file>
         <file>images/iconNew.svg</file>
+        <file>images/iconLink.svg</file>
     </qresource>
 </RCC>

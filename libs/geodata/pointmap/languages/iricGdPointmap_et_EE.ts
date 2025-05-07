@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaatide süsteem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Punktipilve andmed %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Punktipilve andmed</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Andmed sisaldavad ainult %1 punktid. Punktipilve andmed peavad sisaldama vähemalt 3 punkti.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Koma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Vahekaart</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Kosmos</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Käärsool</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Semikoolon</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodeerimine</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaatide süsteem</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Eraldajad</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Tsitaadimärk</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Põgenemismärk</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Ignoreeritavad päiseread</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X-väli</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y-väli</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Väärtuse väli</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Vahelejätmise määr</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Veerg %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaatide süsteem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Punktipilve andmed %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Punktipilve andmed %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TIN</translation>
     </message>
 </context>
 <context>

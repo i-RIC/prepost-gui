@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Zaman ayarını düzenle</translation>
+        <translation type="vanished">Zaman ayarını düzenle</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Zaman Ayarı</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>Zaman ayarı</translation>
+        <source>Form</source>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -678,7 +682,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Zaman formatı</translation>
+        <translation>Zaman Biçimi</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Zaman ayarı</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Proje ayarını kullan</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Zaman formatı</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Başlık</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Başlık Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Not: Başlık için sadece İngilizce Karakterler kullanılabilir.</translation>
+        <translation>Not: Başlık için yalnızca İngilizce karakterler kullanılabilir.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Başlık Ayarı</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Başlık:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Not: Başlık için sadece İngilizce Karakterler kullanılabilir.</translation>
     </message>
 </context>
 </TS>

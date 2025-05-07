@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punt mig entre la riba esquerra i la riba dreta</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>On l'elevació és la més petita</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importa la línia central des d'un fitxer CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>De riu avall a riu amunt</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>De riu amunt a riu avall</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>On definir el punt central del riu</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nom del fitxer CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Ordre de les seccions transversals</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 línia 1: la capçalera no conté prou dades.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punt mig entre la riba esquerra i la riba dreta</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>On l'elevació és la més petita</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importa la línia central des d'un fitxer CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>On definir el punt central del riu</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nom del fitxer CSV</translation>
     </message>
 </context>
 <context>

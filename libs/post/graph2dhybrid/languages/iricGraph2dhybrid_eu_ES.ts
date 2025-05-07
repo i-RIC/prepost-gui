@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Mesedez, sartu aurrizkia.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Lerroa:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Letra-tipoaren ezarpena (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Lerroa:</translation>
     </message>
 </context>
 <context>

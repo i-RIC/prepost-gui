@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Rediģēt laika iestatījumu</translation>
+        <translation type="vanished">Rediģēt laika iestatījumu</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Laika iestatīšana</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Izmantot projekta iestatījumu</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Laika formāts</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Laika iestatīšana</translation>
+        <translation type="vanished">Laika iestatīšana</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Izmantojiet projekta iestatījumus</translation>
+        <translation type="vanished">Izmantojiet projekta iestatījumus</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Laika formāts</translation>
+        <translation type="vanished">Laika formāts</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Nosaukums</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Nosaukuma iestatīšana</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Piezīme. Nosaukumam var izmantot tikai angļu rakstzīmes.</translation>
+        <translation>Piezīme. Nosaukumā var izmantot tikai angļu valodas rakstzīmes.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Nosaukuma iestatīšana</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Piezīme. Nosaukumam var izmantot tikai angļu rakstzīmes.</translation>
     </message>
 </context>
 </TS>

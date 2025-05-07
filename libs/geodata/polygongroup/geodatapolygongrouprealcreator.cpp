@@ -1,5 +1,9 @@
 #include "geodatapolygongrouprealcreator.h"
 
 GeoDataPolygonGroupRealCreator::GeoDataPolygonGroupRealCreator() :
-	GeoDataPolygonGroupCreatorT<double, vtkDoubleArray> {"realPolygonGroup"}
+	GeoDataPolygonGroupRealCreator {"realPolygonGroup"}
+{}
+
+GeoDataPolygonGroupRealCreator::GeoDataPolygonGroupRealCreator(const QString& typeName) :
+	GeoDataPolygonGroupCreatorT<double, vtkDoubleArray> {typeName}
 {}

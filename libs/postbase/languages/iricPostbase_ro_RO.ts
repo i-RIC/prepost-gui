@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editați setarea orei</translation>
+        <translation type="vanished">Editați setarea orei</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Setarea orei</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Utilizați setările proiectului</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Format de oră</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Setarea timpului</translation>
+        <translation type="vanished">Setarea timpului</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Utilizați setarea proiectului</translation>
+        <translation type="vanished">Utilizați setarea proiectului</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format oră</translation>
+        <translation type="vanished">Format oră</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Titlu</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Setarea titlului</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Notă: Numai caractere englezești pot fi folosite pentru titlu.</translation>
+        <translation>Notă: Pentru titlu se pot folosi doar caractere în limba engleză.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Setarea titlului</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Titlu:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Notă: Numai caractere englezești pot fi folosite pentru titlu.</translation>
     </message>
 </context>
 </TS>

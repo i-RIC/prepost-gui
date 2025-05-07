@@ -71,7 +71,7 @@ vtkIntArray* DiscreteValuesUtil::buildValues(vtkDataArray* data, bool fillLower,
 	return ret;
 }
 
-vtkIntArray* DiscreteValuesUtil::buildValuesEnumerate(vtkDataArray* data, const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent)
+vtkIntArray* DiscreteValuesUtil::buildValuesEnumerate(vtkDataArray* data, const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent, double defaultValue)
 {
 	auto inputInt = vtkIntArray::SafeDownCast(data);
 	auto inputDouble = vtkDoubleArray::SafeDownCast(data);
@@ -85,6 +85,11 @@ vtkIntArray* DiscreteValuesUtil::buildValuesEnumerate(vtkDataArray* data, const 
 		valueMap.insert({pair.value.value(), value});
 		value += 1;
 	}
+	int defaultIndex = 0;
+	auto def_it = valueMap.find(defaultValue);
+	if (def_it != valueMap.end()) {
+		defaultIndex = def_it->second;
+	}
 
 	auto ret = vtkIntArray::New();
 	ret->SetName("MappedValue");
@@ -94,7 +99,7 @@ vtkIntArray* DiscreteValuesUtil::buildValuesEnumerate(vtkDataArray* data, const 
 		for (int i = 0; i < inputInt->GetNumberOfValues(); ++i) {
 			double val = inputInt->GetValue(i);
 			auto it = valueMap.find(val);
-			int intVal = 0;
+			int intVal = defaultIndex;
 			if (it != valueMap.end()) {
 				intVal = it->second;
 			}
@@ -104,7 +109,7 @@ vtkIntArray* DiscreteValuesUtil::buildValuesEnumerate(vtkDataArray* data, const 
 		for (int i = 0; i < inputDouble->GetNumberOfValues(); ++i) {
 			double val = inputDouble->GetValue(i);
 			auto it = valueMap.find(val);
-			int intVal = 0;
+			int intVal = defaultIndex;
 			if (it != valueMap.end()) {
 				intVal = it->second;
 			}

@@ -4,6 +4,7 @@
 #include "private/geodatapointmaprealtextimporter_settingdialog.h"
 #include "private/geodatapointmaprealtextimporter_values.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
@@ -11,6 +12,7 @@
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -75,11 +77,11 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 	bool ok;
 	int lineCount;
 
-	ok = countLines(filename(), &lineCount);
+	ok = countLines(setting()->fileName(), &lineCount);
 
-	QFile file(filename());
+	QFile file(setting()->fileName());
 	if (! file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(filename())));
+		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 	int lineNo = 1;
@@ -88,7 +90,7 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 		// skip header lines
 		stream.readLine();
 		if (stream.atEnd()) {
-			QMessageBox::critical(w, tr("Error"), tr("Not enough header lines found in the file.").arg(QDir::toNativeSeparators(filename())));
+			QMessageBox::critical(w, tr("Error"), tr("Not enough header lines found in the file.").arg(QDir::toNativeSeparators(setting()->fileName())));
 			return false;
 		}
 		++ lineNo;
@@ -176,18 +178,23 @@ const QStringList GeoDataPointmapRealTextImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataPointmapRealTextImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 void GeoDataPointmapRealTextImporter::cancel()
 {
 	m_canceled = true;
 }
 
 
-bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointmapRealTextImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	std::vector<QByteArray> lines;
-	QFile file_preview(filename);
+	QFile file_preview(setting()->fileName());
 	if (! file_preview.open(QIODevice::ReadOnly)) {
-		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(filename)));
+		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 	int linesRead = 0;
@@ -202,13 +209,13 @@ bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QStr
 	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
 
 	SettingDialog dialog(w);
-	dialog.setFileName(QDir::toNativeSeparators(filename));
-	dialog.setIsCsv(filename.contains(".csv"));
+	dialog.setFileName(QDir::toNativeSeparators(setting()->fileName()));
+	dialog.setIsCsv(setting()->fileName().contains(".csv"));
 	dialog.setPreviewData(lines);
 	dialog.setCsEnabled(projectCs != nullptr);
 	dialog.setBuilder(csBuilder);
 
-	auto prjFilename = filename;
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.([a-z]+)$"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -231,11 +238,40 @@ bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QStr
 	bool ok;
 	QString error;
 
-	m_parser = dialog.buildParser(&ok, &error);
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	dialog.setupImporterSetting(s, &ok, &error);
+
+	m_parser = s->buildParser();
 	auto cs = dialog.coordinateSystem();
-	if (projectCs != nullptr && projectCs != cs) {
+	s->csName = "";
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	}
+
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
 
 	return true;
 }
+
+bool GeoDataPointmapRealTextImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	m_parser = s->buildParser();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
+	return true;
+}
+
+

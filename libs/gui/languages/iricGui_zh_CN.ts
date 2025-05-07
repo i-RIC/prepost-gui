@@ -1600,6 +1600,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Output calculation results in separate files</source>
         <translation>在单独的文件中输出计算结果</translation>
     </message>
+    <message>
+        <source>Geographic Data</source>
+        <translation>地理数据</translation>
+    </message>
+    <message>
+        <source>Geographic data is not saved in project</source>
+        <translation>地理数据未保存在项目中</translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>

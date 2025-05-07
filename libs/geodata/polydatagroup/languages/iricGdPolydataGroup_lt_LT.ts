@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Pavadinimas nustatomas automatiškai (pvz., PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Įkelti iš Shapefile atributo</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Nurodykite reikšmę</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodavimas</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinačių sistema</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Vardo nustatymas</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Importavimo paskirties atributo pavadinimas</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Vertės nustatymas</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Vertės importavimo tikslo atributas</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Nurodyta vertė</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

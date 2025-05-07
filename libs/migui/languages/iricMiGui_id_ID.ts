@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Menyimpan "%1" gagal. Pastikan program lain membuka file tersebut, dan coba lagi.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Nilai masukan</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Model untuk folder %3 tidak ditemukan dalam sistem.</translation>
     </message>
 </context>
 </TS>

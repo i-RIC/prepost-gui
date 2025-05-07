@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Shranjevanje "%1" ni uspelo. Preverite, ali drug program odpira datoteko, in poskusite znova.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Vhodna vrednost</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Model za mapo %3 v sistemu ni bilo mogoče najti.</translation>
     </message>
 </context>
 </TS>

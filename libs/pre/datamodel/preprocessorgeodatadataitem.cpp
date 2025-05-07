@@ -4,6 +4,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
+#include "private/preprocessorgeodatadataitem_importsettingdialog.h"
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
@@ -11,6 +12,7 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataexporter.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -18,17 +20,21 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/geolastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemI {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_geoData {nullptr},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataDataItem::tr("&Import..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataDataItem::tr("&Export..."), this)},
+	m_showImportSettingAction {new QAction(PreProcessorGeoDataDataItem::tr("Show &import setting..."), this)},
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
-	m_exportAction = new QAction(PreProcessorGeoDataDataItem::tr("&Export..."), this);
-	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
+	connect(m_importAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::importGeoData);
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::exportGeoData);
+	connect(m_showImportSettingAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::showImportSetting);
 }
 
 PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
@@ -46,8 +52,17 @@ void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 {
 	// Add custom menu first.
 	m_geoData->addCustomMenuItems(menu);
+
 	// Add export Action.
-	menu->addAction(m_exportAction);
+	if (m_geoData->dataLoaded()) {
+		menu->addAction(m_exportAction);
+	} else {
+		menu->addAction(m_importAction);
+	}
+
+	if (m_geoData->importerSetting() != nullptr) {
+		menu->addAction(m_showImportSettingAction);
+	}
 }
 
 PreProcessorGeoDataGroupDataItemI* PreProcessorGeoDataDataItem::groupDataItem() const
@@ -72,6 +87,9 @@ void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 	connect(m_geoData, &GeoData::dataChanged, this, &PreProcessorGeoDataDataItem::informDataChange);
 
 	m_exportAction->setEnabled(isExportAvailable());
+	if (geodata->isReadOnly()) {
+		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
+	}
 
 	updateZDepthRangeItemCount();
 }
@@ -96,7 +114,26 @@ void PreProcessorGeoDataDataItem::handleStandardItemChange()
 
 void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_geoData->loadFromProjectMainFile(node);
+	GeoDataImporterSetting* is = nullptr;
+	GeoDataImporter* importer = nullptr;
+
+	auto isNode = iRIC::getChildNode(node, "ImporterSetting");
+	if (! isNode.isNull()) {
+		auto importerName = iRIC::toStr(isNode.toElement().attribute("name"));
+		importer = m_geoData->creator()->importer(importerName);
+		is = importer->createSetting();
+		is->loadFromProjectMainFile(isNode);
+	}
+
+	m_geoData->setImporterSetting(is);
+
+	if (m_geoData->isReadOnly()) {
+		m_geoData->loadFromProjectMainFileOnly(node);
+		m_standardItem->setIcon(QIcon(":/libs/guibase/images/iconLink.svg"));
+	} else {
+		m_geoData->loadFromProjectMainFile(node);
+		m_geoData->setDataLoaded(true);
+	}
 	updateVisibilityWithoutRendering();
 }
 
@@ -104,6 +141,13 @@ void PreProcessorGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 {
 	writer.writeAttribute("type", m_geoData->typeName());
 	m_geoData->saveToProjectMainFile(writer);
+
+	auto is = m_geoData->importerSetting();
+	if (is != nullptr) {
+		writer.writeStartElement("ImporterSetting");
+		is->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
 
 bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
@@ -120,6 +164,42 @@ bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
 		toolBar->removeAction(sep);
 	}
 	return added || added2;
+}
+
+void PreProcessorGeoDataDataItem::importGeoData()
+{
+	if (m_geoData->dataLoaded()) {return;}
+
+	auto is = m_geoData->importerSetting();
+	QFile f(is->fileName());
+	if (! f.exists()) {
+		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Import target file \"%1\" does not exists.").arg(QDir::toNativeSeparators(f.fileName())));
+		return;
+	}
+
+	auto importer = m_geoData->creator()->importer(is->name());
+	importer->setSetting(is);
+
+	int dataCount;
+	bool ok = importer->importInit(&dataCount, groupDataItem()->condition(), groupDataItem(), preProcessorWindow(), true);
+	if (! ok) {
+		goto CLEAN;
+	}
+	ok = importer->importData(m_geoData, 0, preProcessorWindow());
+	if (! ok) {
+		goto CLEAN;
+	}
+	m_geoData->setDataLoaded(true);
+	auto o = offset();
+	m_geoData->applyOffset(o.x(), o.y());
+
+	updateZDepthRange();
+	m_geoData->updateActorSetting();
+	informValueRangeChange();
+	renderGraphicsView();
+
+CLEAN:
+	importer->setSetting(nullptr);
 }
 
 void PreProcessorGeoDataDataItem::exportGeoData()
@@ -158,6 +238,16 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 	// execute export.
 	exporter->doExport(m_geoData, filename, selectedFilter, mainW, projectData());
 	GeoLastIODirectory::setFromFilename(filename);
+}
+
+void PreProcessorGeoDataDataItem::showImportSetting()
+{
+	auto is = m_geoData->importerSetting();
+	if (is == nullptr) {return;}
+
+	ImportSettingDialog dialog(preProcessorWindow());
+	dialog.setItems(is->items(m_geoData->creator()));
+	dialog.exec();
 }
 
 void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)

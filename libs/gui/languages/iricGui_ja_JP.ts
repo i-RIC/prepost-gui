@@ -13260,6 +13260,14 @@ Do you really want to import this file?</source>
         <source>Output calculation results in separate files</source>
         <translation>計算結果をタイムステップごとに別のファイルに出力する</translation>
     </message>
+    <message>
+        <source>Geographic Data</source>
+        <translation>地理情報</translation>
+    </message>
+    <message>
+        <source>Geographic data is not saved in project</source>
+        <translation>地理情報をプロジェクトに保存しない</translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>

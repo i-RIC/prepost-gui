@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Uredite postavku vremena</translation>
+        <translation type="vanished">Uredite postavku vremena</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Podešavanje vremena</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Koristi postavku projekta</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Format vremena</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Podešavanje vremena</translation>
+        <translation type="vanished">Podešavanje vremena</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Koristite postavke projekta</translation>
+        <translation type="vanished">Koristite postavke projekta</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format vremena</translation>
+        <translation type="vanished">Format vremena</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Naslov</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Postavka naslova</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>Napomena: Za naslov se mogu koristiti samo engleski znakovi.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Postavka naslova</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Naslov:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Napomena: Za naslov se mogu koristiti samo engleski znakovi.</translation>
     </message>
 </context>
 </TS>

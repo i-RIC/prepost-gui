@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Salvando "%1"falhou. Certifique-se de que outro programa esteja abrindo o arquivo e tente novamente.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Valor de entrada</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>O modelo para a pasta %3 não foi encontrado no sistema.</translation>
     </message>
 </context>
 </TS>

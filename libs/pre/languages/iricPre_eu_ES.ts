@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Aukeratu Esportatzeko fitxategia</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Erakutsi inportazio ezarpena (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errorea</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Inportatu helburuko fitxategia "%1"ez da existitzen.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Balioa</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Inportazio ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Mesedez, hautatu inportatu beharreko datu mota</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Berretsi esteka gisa inportatzea</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Datu geografikoak "Lotura moduan" inportatu nahi dituzu? Datu geografikoak "Lotura moduan" inportatzen direnean, datu geografikoak ez dira proiektuan gordetzen, fitxategiaren izena eta inportazio ezarpena baizik. Hori dela eta, "Lotura moduan" inportatzen direnean, proiektuaren datuak askoz txikiagoak dira. Kontuan izan "Lotura moduan" inportatutako datu geografikoak ezin direla editatu.</translation>
     </message>
 </context>
 <context>

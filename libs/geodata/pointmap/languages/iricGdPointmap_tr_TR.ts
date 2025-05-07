@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinat Sistemi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Nokta Bulutu Verileri %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Nokta Bulutu Verileri</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Veriler yalnızca %1 puan. Nokta bulutu verileri en az 3 nokta içermelidir.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Virgül</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Sekme</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Uzay</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Kolon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Noktalı virgül</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodlama</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinat Sistemi</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Ayırıcılar</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Alıntı karakteri</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Kaçış karakteri</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Göz ardı edilecek başlık satırları</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X alanı</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y alanı</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Değer alanı</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Atlama oranı</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Kolon %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinat Sistemi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Nokta Bulutu Verileri %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Nokta Bulutu Verileri %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TENEKE</translation>
     </message>
 </context>
 <context>

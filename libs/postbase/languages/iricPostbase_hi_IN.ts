@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>समय सेटिंग संपादित करें</translation>
+        <translation type="vanished">समय सेटिंग संपादित करें</translation>
     </message>
-</context>
-<context>
-    <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
         <translation>समय सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>रूप</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">समय सेटिंग</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">प्रोजेक्ट सेटिंग का उपयोग करें</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">समय स्वरूप</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>शीर्षक</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>शीर्षक सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>रूप</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>नोट: शीर्षक के लिए केवल अंग्रेजी अक्षरों का उपयोग किया जा सकता है।</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">शीर्षक सेटिंग</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">नोट: शीर्षक के लिए केवल अंग्रेजी अक्षरों का उपयोग किया जा सकता है।</translation>
     </message>
 </context>
 </TS>

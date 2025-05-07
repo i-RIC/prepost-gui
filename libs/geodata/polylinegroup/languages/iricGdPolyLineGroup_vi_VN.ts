@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupReadOnlyCreator</name>
+    <message>
+        <source>Lines%1</source>
+        <translation type="obsolete">Dòng %1</translation>
+    </message>
+    <message>
+        <source>line</source>
+        <translation type="obsolete">hàng</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="obsolete">Hàng</translation>
     </message>
 </context>
 <context>

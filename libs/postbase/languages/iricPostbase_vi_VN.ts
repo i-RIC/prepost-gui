@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Chỉnh sửa cài đặt thời gian</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt thời gian</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Thiết lập thời gian</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Sử dụng thiết lập dự án</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Định dạng thời gian</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Cài đặt thời gian</translation>
+        <translation type="vanished">Cài đặt thời gian</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Sử dụng cài đặt dự án</translation>
+        <translation type="vanished">Sử dụng cài đặt dự án</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Định dạng thời gian</translation>
+        <translation type="vanished">Định dạng thời gian</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Tiêu đề</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Cài đặt tiêu đề</translation>
+        <translation>Thiết lập tiêu đề</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Lưu ý: Chỉ các Ký tự tiếng Anh mới có thể được sử dụng cho tiêu đề.</translation>
+        <translation>Lưu ý: Chỉ có thể sử dụng ký tự tiếng Anh cho tiêu đề.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Cài đặt tiêu đề</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Tiêu đề:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Lưu ý: Chỉ các Ký tự tiếng Anh mới có thể được sử dụng cho tiêu đề.</translation>
     </message>
 </context>
 </TS>

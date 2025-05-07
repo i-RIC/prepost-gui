@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>ชื่อจะถูกตั้งโดยอัตโนมัติ (เช่น PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>โหลดจากแอตทริบิวต์ของ Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>ระบุค่า</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>การเข้ารหัส</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>ระบบพิกัด</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>การตั้งชื่อ</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>ชื่อแอตทริบิวต์เป้าหมายการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>การกำหนดค่าค่า</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>ค่าแอตทริบิวต์เป้าหมายการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>ค่าที่ระบุ</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

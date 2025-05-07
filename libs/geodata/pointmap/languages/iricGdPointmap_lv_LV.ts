@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Punktu mākoņa dati %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Punktu mākoņa dati</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Dati satur tikai %1 punktus. Punktu mākoņa datos jāsatur vismaz 3 punkti.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Komats</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Cilne</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Kosmoss</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Kols</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Semikols</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodēšana</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Atdalītāji</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Citāta rakstzīme</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Iziešanas rakstzīme</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Ignorējamās galvenes rindas</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X lauks</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y lauks</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Vērtības lauks</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Izlaišanas biežums</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Kolonna %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Punktu mākoņa dati %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Punktu mākoņa dati %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TIN</translation>
     </message>
 </context>
 <context>

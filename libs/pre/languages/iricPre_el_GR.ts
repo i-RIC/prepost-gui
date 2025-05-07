@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Επιλέξτε Αρχείο για εξαγωγή</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Εμφάνιση ρύθμισης εισαγωγής (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Σφάλμα</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Εισαγωγή αρχείου προορισμού " %1 «δεν υπάρχει.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Ονομα</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Αξία</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Ρύθμιση εισαγωγής</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Επιλέξτε τον τύπο δεδομένων για εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Επιβεβαίωση εισαγωγής ως σύνδεσμος</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Θέλετε να εισαγάγετε τα γεωγραφικά δεδομένα σε "Λειτουργία σύνδεσης"; Όταν εισάγονται γεωγραφικά δεδομένα σε "Λειτουργία σύνδεσης", τα ίδια τα γεωγραφικά δεδομένα δεν αποθηκεύονται στο έργο, αλλά μόνο το όνομα αρχείου και η ρύθμιση εισαγωγής. Εξαιτίας αυτού, όταν εισάγονται με "Λειτουργία σύνδεσης", τα δεδομένα του έργου γίνονται πολύ μικρότερα. Λάβετε υπόψη ότι τα γεωγραφικά δεδομένα που εισάγονται σε "Λειτουργία σύνδεσης" δεν μπορούν να υποστούν επεξεργασία.</translation>
     </message>
 </context>
 <context>

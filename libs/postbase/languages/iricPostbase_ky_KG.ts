@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Убакыт жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Убакыт жөндөөсүн түзөтүү</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Убакытты орнотуу</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Долбоор жөндөөлөрүн колдонуңуз</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Убакыт форматы</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Убакытты жөндөө</translation>
+        <translation type="vanished">Убакытты жөндөө</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Долбоордун жөндөөлөрүн колдонуу</translation>
+        <translation type="vanished">Долбоордун жөндөөлөрүн колдонуу</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Убакыт форматы</translation>
+        <translation type="vanished">Убакыт форматы</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Аталышы</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Аталышты жөндөө</translation>
+        <translation>Title Setting</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Эскертүү: Аталыш үчүн англис тамгалары гана колдонулушу мүмкүн.</translation>
+        <translation>Эскертүү: аталышы үчүн англисче тамгалар гана колдонулушу мүмкүн.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Аталышты жөндөө</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Аталышы:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Эскертүү: Аталыш үчүн англис тамгалары гана колдонулушу мүмкүн.</translation>
     </message>
 </context>
 </TS>

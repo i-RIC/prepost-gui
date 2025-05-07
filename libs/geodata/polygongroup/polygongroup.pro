@@ -128,6 +128,7 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongroup_impl.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
+           private/geodatapolygongroupcsvimporter_importersetting.h \
            private/geodatapolygongroupifacemappert_detail.h \
            private/geodatapolygongroupjfacemappert_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
@@ -153,6 +154,7 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongroupshpimporter.cpp \
            private/geodatapolygongroup_displaysetting.cpp \
            private/geodatapolygongroup_impl.cpp \
+           private/geodatapolygongroupcsvimporter_importersetting.cpp \
            private/geodatapolygongroupproxy_displaysetting.cpp \
            private/geodatapolygongroupproxy_displaysettingwidget.cpp \
            private/geodatapolygongroupproxy_impl.cpp \

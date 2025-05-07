@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Сол жээк менен оң жээктин орто чекити</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Бийиктик эң кичине болгон жерде</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSV файлынан борбор линиясын импорттоо</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Агымдан өйдө карай</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Агымдан өйдө карай</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Дарыянын борбордук пунктун кайда аныктоо керек</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV файл аты</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Көлөмдүү кесилиштердин тартиби</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 1-сап: Баш маалымат жетиштүү маалыматты камтыбайт.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Сол жээк менен оң жээктин орто чекити</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Бийиктик эң кичине болгон жерде</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSV файлынан борбор линиясын импорттоо</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Дарыянын борбордук пунктун кайда аныктоо керек</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV файл аты</translation>
     </message>
 </context>
 <context>

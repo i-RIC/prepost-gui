@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>จุดกึ่งกลางของฝั่งซ้ายและฝั่งขวา</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>ที่มีความสูงน้อยที่สุด</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>นำเข้าเส้นกึ่งกลางจากไฟล์ CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>ปลายน้ำถึงต้นน้ำ</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>ต้นน้ำถึงปลายน้ำ</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>จุดศูนย์กลางแม่น้ำจะกำหนดไว้ตรงไหน</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>ชื่อไฟล์ CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>ลำดับของหน้าตัด</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 บรรทัดที่ 1: ส่วนหัวมีข้อมูลไม่เพียงพอ</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>จุดกึ่งกลางของฝั่งซ้ายและฝั่งขวา</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>ที่มีความสูงน้อยที่สุด</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>นำเข้าเส้นกึ่งกลางจากไฟล์ CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>จุดศูนย์กลางแม่น้ำจะกำหนดไว้ตรงไหน</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>ชื่อไฟล์ CSV</translation>
     </message>
 </context>
 <context>

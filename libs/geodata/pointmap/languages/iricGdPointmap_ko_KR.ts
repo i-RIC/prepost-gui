@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">포인트 클라우드 데이터 %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">포인트 클라우드 데이터</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>데이터에는 다음과 같은 내용만 포함됩니다. %1 포인트들. 포인트 클라우드 데이터에는 최소 3개의 포인트가 포함되어야 합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>콤마</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>꼬리표</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>공간</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>콜론</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>세미콜론</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>부호화</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>구분 기호</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>인용 문자</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>이스케이프 문자</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>무시할 헤더 줄</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X 필드</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y 필드</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>값 필드</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>스킵율</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>열 %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>포인트 클라우드 데이터 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">포인트 클라우드 데이터 %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">주석</translation>
     </message>
 </context>
 <context>

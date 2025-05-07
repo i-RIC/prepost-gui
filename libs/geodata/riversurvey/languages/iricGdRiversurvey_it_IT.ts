@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punto medio della riva sinistra e della riva destra</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Dove l'elevazione è minima</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importa la linea centrale dal file CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Da valle a monte</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Da monte a valle</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Dove definire il punto centrale del fiume</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nome del file CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Ordine delle sezioni trasversali</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 riga 1: l'intestazione non contiene dati sufficienti.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punto medio della riva sinistra e della riva destra</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Dove l'elevazione è minima</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importa la linea centrale dal file CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Dove definire il punto centrale del fiume</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nome del file CSV</translation>
     </message>
 </context>
 <context>

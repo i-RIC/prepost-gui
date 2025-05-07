@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenadas</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>Use a configuración da xanela de preprocesamento</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupReadOnlyCreator</name>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="obsolete">Polígonos %1</translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="obsolete">polígono</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="obsolete">Polígono</translation>
     </message>
 </context>
 <context>

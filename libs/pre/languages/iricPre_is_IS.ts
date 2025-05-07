@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Veldu Skrá til útflutnings</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Sýna innflutningsstillingu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Innflutningur (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Flytja inn markskrá " %1 „er ekki til.“</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nafn</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gildi</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Innflutningsstilling</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Vinsamlegast veldu tegund gagna til að flytja inn</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Staðfesta innflutning sem tengil</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Viltu flytja inn landfræðileg gögn í „Tengistillingu“? Þegar landfræðileg gögn eru flutt inn í „Tengistillingu“ eru landfræðilegu gögnin sjálf ekki geymd í verkefninu, heldur aðeins skráarnafnið og innflutningsstillingarnar. Vegna þessa, þegar þau eru flutt inn með „Tengistillingu“, verða verkefnisgögnin mun minni. Athugið að ekki er hægt að breyta landfræðilegum gögnum sem flutt eru inn í „Tengistillingu“.</translation>
     </message>
 </context>
 <context>

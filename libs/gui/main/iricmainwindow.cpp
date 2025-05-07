@@ -694,6 +694,7 @@ bool iRICMainWindow::closeProject()
 	m_postWindowFactory->resetWindowCounts();
 	activeSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 
+	m_preProcessorWindow->setProjectData(nullptr);
 	m_solverConsoleWindow->setProjectData(nullptr);
 	delete m_projectData;
 	m_projectData = nullptr;

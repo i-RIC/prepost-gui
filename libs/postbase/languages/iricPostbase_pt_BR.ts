@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Alteracao de configuracao para exibicao de tempo</translation>
+        <translation type="vanished">Alteracao de configuracao para exibicao de tempo</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Configuração de tempo</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Usar configuração de projeto</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Formato de hora</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Configuracao de horario</translation>
+        <translation type="vanished">Configuracao de horario</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Usar a configuracao de projeto</translation>
+        <translation type="vanished">Usar a configuracao de projeto</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Formato de horario</translation>
+        <translation type="vanished">Formato de horario</translation>
     </message>
 </context>
 <context>
@@ -687,20 +706,39 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Titulo</translation>
     </message>
+    <message>
+        <source>Title Setting</source>
+        <translation>Configuração do título</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation>Observação: somente caracteres em inglês podem ser usados no título.</translation>
+    </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Configuracao de titulo</translation>
+        <translation type="vanished">Configuracao de titulo</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Titulo :</translation>
+        <translation type="vanished">Titulo :</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Atencao: Somente os caracteres alfanumericos e simbolos poderao ser usados para o titulo.</translation>
+        <translation type="vanished">Atencao: Somente os caracteres alfanumericos e simbolos poderao ser usados para o titulo.</translation>
     </message>
 </context>
 </TS>

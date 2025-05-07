@@ -1511,6 +1511,25 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GeoDataImporterSetting</name>
+    <message>
+        <source>File name</source>
+        <translation>Dosya adı</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>HAYIR</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Saved to to project</source>
+        <translation>Projeye kaydedildi</translation>
+    </message>
+</context>
+<context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>

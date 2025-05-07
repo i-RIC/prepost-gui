@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Selectați Fișier de exportat</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Afișați setările de import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importați fișierul țintă " %1 „nu există.”</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Setare de import</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Vă rugăm să selectați tipul de date de importat</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Confirmați importul ca link</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Doriți să importați datele geografice în „Modul de legătură”? Când datele geografice sunt importate în „Modul de legătură”, datele geografice în sine nu sunt stocate în proiect, ci doar numele fișierului și setările de import. Din această cauză, atunci când sunt importate cu „Modul de legătură”, datele proiectului devin mult mai mici. Rețineți că datele geografice importate în „Modul de legătură” nu pot fi editate.</translation>
     </message>
 </context>
 <context>

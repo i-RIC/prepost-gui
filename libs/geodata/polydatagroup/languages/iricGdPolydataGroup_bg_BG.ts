@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Името се задава автоматично (напр. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Зареждане от атрибут Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Посочете стойност</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Кодиране</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координатна система</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Настройка на името</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Атрибут на целта за импортиране на име</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Настройка на стойността</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Атрибут на целта за импортиране на стойност</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Зададена стойност</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

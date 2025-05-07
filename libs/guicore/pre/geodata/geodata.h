@@ -11,6 +11,7 @@
 
 class GeoDataCreator;
 class GeoDataImporter;
+class GeoDataImporterSetting;
 class GeoDataExporter;
 class GeoDataMapper;
 class GeoDataProxy;
@@ -72,11 +73,18 @@ public:
 	SolverDefinitionGridAttribute* gridAttribute() const;
 	GeoDataCreator* creator() const;
 
+	GeoDataImporterSetting* importerSetting() const;
+	void setImporterSetting(GeoDataImporterSetting* setting);
+	bool dataLoaded() const;
+	void setDataLoaded(bool loaded);
+	bool isReadOnly() const;
+
 	virtual GeoDataMapper* mapper() const = 0;
 
 	std::vector<GeoDataImporter*> importers() const;
 	std::vector<GeoDataExporter*> exporters() const;
 
+	void loadFromProjectMainFileOnly(const QDomNode& node);
 	virtual void setupDataItem();
 	/// setup VTK actors.
 	virtual void setupActors();
@@ -175,6 +183,8 @@ protected:
 	GridAttributeDimensionsContainer* dimensions() const;
 
 	Setting m_setting;
+	GeoDataImporterSetting* m_importerSetting;
+	bool m_dataLoaded;
 
 	GeoDataCreator* m_creator;
 	SolverDefinitionGridAttribute* m_gridAttribute;

@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>시간 설정 수정</translation>
+        <translation type="vanished">시간 설정 수정</translation>
     </message>
-</context>
-<context>
-    <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
         <translation>시간 설정</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">시간 설정</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">프로젝트 설정 사용</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">시간 형식</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>제목</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>제목 설정</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>참고: 제목에는 영어 문자만 사용할 수 있습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">제목 설정</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">제목:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">참고: 제목에는 영어 문자만 사용할 수 있습니다.</translation>
     </message>
 </context>
 </TS>

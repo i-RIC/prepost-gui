@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Saglabā"%1" neizdevās. Lūdzu, pārbaudiet, vai cita programma atver failu, un mēģiniet vēlreiz.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Ievades vērtība</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Mapes modelis %3 sistēmā netika atrasts.</translation>
     </message>
 </context>
 </TS>

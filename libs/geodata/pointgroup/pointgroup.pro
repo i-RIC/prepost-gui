@@ -125,6 +125,7 @@ HEADERS += gd_pointgroup_global.h \
            private/geodatapointgroup_scalesizepair.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
+           private/geodatapointgroupcsvimporter_importersetting.h \
            private/geodatapointgroupnodemappert_detail.h \
            private/geodatapointgrouppoint_impl.h \
            private/geodatapointgroupproxy_displaysetting.h \
@@ -150,6 +151,7 @@ SOURCES += geodatapointgroup.cpp \
            private/geodatapointgroup_displaysettingwidget_scalesizepairtablecontroller_delegate.cpp \
            private/geodatapointgroup_impl.cpp \
            private/geodatapointgroup_scalesizepair.cpp \
+           private/geodatapointgroupcsvimporter_importersetting.cpp \
            private/geodatapointgroupproxy_displaysetting.cpp \
            private/geodatapointgroupproxy_displaysettingwidget.cpp \
            private/geodatapointgroupproxy_impl.cpp \

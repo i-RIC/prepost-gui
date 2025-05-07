@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>저장 중 "%1" 실패했습니다. 다른 프로그램이 파일을 열고 있는지 확인한 후 다시 시도하십시오.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>에프1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>입력값</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>폴더의 모델 %3 시스템에서 발견되지 않았습니다.</translation>
     </message>
 </context>
 </TS>

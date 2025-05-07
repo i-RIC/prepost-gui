@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>左岸與右岸中點</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>海拔最低的地方</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>從 CSV 檔案匯入中心線</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>下游到上游</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>上游至下游</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>河川中心點定義位置</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV 檔案名</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>橫斷面的順序</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 第 1 行：標頭未包含足夠的資料。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>左岸與右岸中點</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>海拔最低的地方</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>從 CSV 檔案匯入中心線</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>河川中心點定義位置</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV 檔案名</translation>
     </message>
 </context>
 <context>

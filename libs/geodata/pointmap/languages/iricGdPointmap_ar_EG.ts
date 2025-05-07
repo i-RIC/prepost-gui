@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>نظام الإحداثيات</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">بيانات سحابة النقطة %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">بيانات سحابة النقطة</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>البيانات تحتوي فقط %1 نقاط. يجب أن تحتوي بيانات سحابة النقاط على 3 نقاط على الأقل.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>فاصلة</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>فاتورة غير مدفوعة</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>فضاء</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>القولون</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>الفاصلة المنقوطة</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>الترميز</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>نظام الإحداثيات</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>الفواصل</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>حرف الاقتباس</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>شخصية الهروب</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>خطوط العنوان التي يجب تجاهلها</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>حقل X</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>حقل Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>حقل القيمة</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>معدل التخطي</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>عمود %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>نظام الإحداثيات</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,13 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>بيانات سحابة النقطة %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">بيانات سحابة النقطة %1</translation>
     </message>
 </context>
 <context>

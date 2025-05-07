@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Szerkessze az időbeállítást</translation>
+        <translation type="vanished">Szerkessze az időbeállítást</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Időbeállítás</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Projektbeállítás használata</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Időformátum</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Idő beállítás</translation>
+        <translation type="vanished">Idő beállítás</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Használja a projektbeállítást</translation>
+        <translation type="vanished">Használja a projektbeállítást</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Idő formátum</translation>
+        <translation type="vanished">Idő formátum</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Cím</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Cím beállítása</translation>
+        <translation>Címbeállítás</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>Megjegyzés: A címhez csak angol karakterek használhatók.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Cím beállítása</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Cím:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Megjegyzés: A címhez csak angol karakterek használhatók.</translation>
     </message>
 </context>
 </TS>

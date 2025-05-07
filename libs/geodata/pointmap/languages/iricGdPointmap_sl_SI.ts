@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatni sistem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Podatki v oblaku točk %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Podatki v oblaku točk</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Podatki vsebujejo samo %1 točke. Podatki oblaka točk morajo vsebovati vsaj 3 točke.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Vejica</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Zavihek</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Vesolje</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Debelo črevo</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Podpičje</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodiranje</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatni sistem</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Ločila</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Citat znaka</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Ubežni znak</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Glavne vrstice, ki jih je treba prezreti</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X polje</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y-polje</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Polje z vrednostjo</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Stopnja preskoka</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Stolpec %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatni sistem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Podatki v oblaku točk %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Podatki v oblaku točk %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">KOSITER</translation>
     </message>
 </context>
 <context>

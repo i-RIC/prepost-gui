@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координатна система</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Облачни данни за точки %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Облачни данни за точки</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Данните съдържат само %1 точки. Данните от облака от точки трябва да съдържат поне 3 точки.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Запетая</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Раздел</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Космос</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Колон</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Точка и запетая</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Кодиране</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координатна система</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Разделители</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Цитат на символа</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>символ за бягство</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Заглавни редове, които да се игнорират</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X поле</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y поле</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Поле за стойност</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Процент на пропускане</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Колона %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координатна система</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,13 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Облачни данни за точки %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Облачни данни за точки %1</translation>
     </message>
 </context>
 <context>

@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Valitse vietävä tiedosto</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Näytä tuontiasetus (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuoda (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Tuo kohdetiedosto "%1"ei ole olemassa.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Tuontiasetus</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Valitse tuotavan tiedon tyyppi</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Vahvista tuonti linkkinä</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Haluatko tuoda maantieteelliset tiedot "Linkkitilassa"? Kun maantieteelliset tiedot tuodaan "Linkkitilassa", itse maantieteelliset tiedot eivät tallennu projektiin, vaan vain tiedostonimi ja tuontiasetukset. Tästä johtuen projektitiedot pienenevät huomattavasti "Linkkitilassa" tuotaessa. Huomaa, että "Linkkitilassa" tuotuja maantieteellisiä tietoja ei voi muokata.</translation>
     </message>
 </context>
 <context>

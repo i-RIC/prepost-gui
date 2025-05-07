@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Виберіть Файл для експорту</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Показати налаштування імпорту (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Імпортувати цільовий файл "%1"не існує.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Ім'я</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Налаштування імпорту</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Виберіть тип даних для імпорту</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Підтвердити імпорт як посилання</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Ви хочете імпортувати географічні дані в "режимі посилання"? Коли географічні дані імпортуються в "режимі посилання", самі географічні дані не зберігаються в проекті, а лише ім'я файлу та налаштування імпорту. Через це, під час імпорту в "режимі посилання", дані проекту стають значно меншими. Зверніть увагу, що географічні дані, імпортовані в "режимі посилання", не можна редагувати.</translation>
     </message>
 </context>
 <context>

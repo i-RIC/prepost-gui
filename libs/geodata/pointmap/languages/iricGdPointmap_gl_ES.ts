@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenadas</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Datos da nube de puntos %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Datos da nube de puntos</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Os datos só contén %1 puntos. Os datos da nube de puntos deben conter polo menos 3 puntos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Coma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Pestana</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Espazo</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Colón</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Punto e coma</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Codificación</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenadas</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Delimitadores</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Carácter de cita</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Personaxe de escape</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Liñas de cabeceira para ignorar</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>Campo X</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Campo Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Campo de valor</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Taxa de salto</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Columna %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenadas</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Datos da nube de puntos %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Datos da nube de puntos %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TIN</translation>
     </message>
 </context>
 <context>

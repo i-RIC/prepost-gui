@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinačių sistema</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupReadOnlyCreator</name>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="obsolete">Daugiakampiai %1</translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="obsolete">poligonas</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="obsolete">Poligonas</translation>
     </message>
 </context>
 <context>

@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Điểm giữa bờ trái và bờ phải</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Nơi có độ cao nhỏ nhất</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Nhập đường trung tâm từ tệp CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Từ hạ lưu đến thượng lưu</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Từ thượng nguồn đến hạ nguồn</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Nơi xác định điểm trung tâm sông</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Tên tệp CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Thứ tự các mặt cắt ngang</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 dòng 1: Tiêu đề không chứa đủ dữ liệu.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Điểm giữa bờ trái và bờ phải</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Nơi có độ cao nhỏ nhất</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Nhập đường trung tâm từ tệp CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Nơi xác định điểm trung tâm sông</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Tên tệp CSV</translation>
     </message>
 </context>
 <context>

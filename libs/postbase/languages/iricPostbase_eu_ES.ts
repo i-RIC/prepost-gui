@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editatu denbora ezarpena</translation>
+        <translation type="vanished">Editatu denbora ezarpena</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Orduaren ezarpena</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>Denboraren ezarpena</translation>
+        <source>Form</source>
+        <translation>Inprimakia</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Denboraren ezarpena</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Erabili proiektuaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Ordu formatua</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>Izenburua</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Izenburua ezartzea</translation>
+        <translation>Izenburuaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Inprimakia</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Oharra: ingelesezko karaktereak soilik erabil daitezke izenbururako.</translation>
+        <translation>Oharra: Ingelesezko karaktereak bakarrik erabil daitezke izenbururako.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Izenburua ezartzea</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Izenburua:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Oharra: ingelesezko karaktereak soilik erabil daitezke izenbururako.</translation>
     </message>
 </context>
 </TS>

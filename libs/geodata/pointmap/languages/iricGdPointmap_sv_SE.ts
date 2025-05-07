@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatsystem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Point Cloud -data %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Point Cloud -data</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Uppgifterna innehåller endast %1 poäng. Punktmolnsdata måste innehålla minst 3 punkter.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Kommatecken</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Flik</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Utrymme</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Kolon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Semikolon</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodning</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatsystem</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Avgränsare</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Citatkaraktär</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Flyktkaraktär</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Rubrikrader att ignorera</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X-fält</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y-fält</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Värdefält</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Överhoppningsfrekvens</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Kolumn %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatsystem</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Point Cloud -data %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Point Cloud -data %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TENN</translation>
     </message>
 </context>
 <context>

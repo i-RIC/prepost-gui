@@ -10,6 +10,7 @@
 
 class GeoData;
 class GeoDataCreator;
+class GeoDataImporterSetting;
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataDataItemI;
 class PreProcessorGeoDataGroupDataItemI;
@@ -21,24 +22,27 @@ public:
 	GeoDataImporter(const std::string& name, const QString& caption, GeoDataCreator* creator);
 	virtual ~GeoDataImporter();
 
-	std::string name() const;
-	QString caption() const;
+	const std::string& name() const;
+	const QString& caption() const;
 
-	PreProcessorGeoDataDataItemI* import(const QString& filename, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	PreProcessorGeoDataDataItemI* import(const QString& filename, bool copyToProject, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	PreProcessorGeoDataDataItemI* import(GeoDataImporterSetting* setting, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	GeoDataCreator* creator() const;
 
 	virtual const QStringList fileDialogFilters() = 0;
 	virtual const QStringList acceptableExtensions() = 0;
 
-	bool importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	bool importInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w, bool withSetting);
 	virtual bool importData(GeoData* data, int index, QWidget* w) = 0;
+	virtual GeoDataImporterSetting* createSetting() const;
+
+	GeoDataImporterSetting* setting() const;
+	void setSetting(GeoDataImporterSetting* setting);
 
 protected:
-	QString filename() const;
-	QString selectedFilter() const;
-
-	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	virtual bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
+	virtual bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	class Impl;
 	std::unique_ptr<Impl> impl;

@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Vistar"%1" mistókst. Gakktu úr skugga um að annað forrit sé að opna skrána og reyndu aftur.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Inntaksgildi</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Fyrirmyndin fyrir möppuna %3 fannst ekki í kerfinu.</translation>
     </message>
 </context>
 </TS>

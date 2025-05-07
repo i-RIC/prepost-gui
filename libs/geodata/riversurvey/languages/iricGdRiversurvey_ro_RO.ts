@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punctul de mijloc dintre malul stâng și malul drept</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Unde altitudinea este cea mai mică</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importați linia centrală din fișierul CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Din aval în amonte</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Din amonte în aval</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Unde se definește punctul central al râului</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nume fișier CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Ordinea secțiunilor transversale</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 linia 1: Antetul nu conține suficiente date.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punctul de mijloc dintre malul stâng și malul drept</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Unde altitudinea este cea mai mică</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importați linia centrală din fișierul CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Unde se definește punctul central al râului</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nume fișier CSV</translation>
     </message>
 </context>
 <context>

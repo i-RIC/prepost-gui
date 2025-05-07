@@ -49,6 +49,7 @@ public:
 	bool m_showTimeZone;
 
 	bool m_separateResult;
+	bool m_geoDataLink;
 
 	QPointF m_offset;
 

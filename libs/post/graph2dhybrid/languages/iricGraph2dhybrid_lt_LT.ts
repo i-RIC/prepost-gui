@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Įveskite priešdėlį.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Eilutė:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Šrifto nustatymas (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Eilutė:</translation>
     </message>
 </context>
 <context>

@@ -341,6 +341,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -379,6 +386,25 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupReadOnlyCreator</name>
+    <message>
+        <source>Polygons (read only)</source>
+        <translation type="vanished">ポリゴンデータ (読み込み専用)</translation>
+    </message>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="vanished">ポリゴンデータ%1</translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="vanished">ポリゴン</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="vanished">ポリゴン</translation>
     </message>
 </context>
 <context>

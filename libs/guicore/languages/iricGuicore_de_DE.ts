@@ -1511,6 +1511,25 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GeoDataImporterSetting</name>
+    <message>
+        <source>File name</source>
+        <translation>Dateiname</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>NEIN</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Saved to to project</source>
+        <translation>Im Projekt gespeichert</translation>
+    </message>
+</context>
+<context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>

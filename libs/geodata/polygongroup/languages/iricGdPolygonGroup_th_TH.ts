@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>ระบบพิกัด</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupReadOnlyCreator</name>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="obsolete">รูปหลายเหลี่ยม %1</translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="obsolete">รูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="obsolete">รูปหลายเหลี่ยม</translation>
     </message>
 </context>
 <context>

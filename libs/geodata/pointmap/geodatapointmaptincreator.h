@@ -18,6 +18,9 @@ public:
 	QString defaultCaption(unsigned int index) const override;
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+
+protected:
+	GeoDataPointmapTINCreator(const QString& typeName);
 };
 
 #endif // GEODATAPOINTMAPTINCREATOR_H

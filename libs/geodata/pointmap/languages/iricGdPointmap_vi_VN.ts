@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Dữ liệu đám mây điểm %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Dữ liệu đám mây điểm</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Dữ liệu chỉ chứa %1 điểm. Dữ liệu đám mây điểm phải chứa ít nhất 3 điểm.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Dấu phẩy</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Thẻ</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Không gian</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>dấu hai chấm</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>dấu chấm phẩy</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Mã hóa</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Các dấu phân cách</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Trích dẫn nhân vật</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Nhân vật thoát hiểm</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Dòng tiêu đề cần bỏ qua</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>Trường X</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Trường Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Trường giá trị</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Tỷ lệ bỏ qua</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Cột %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,13 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Dữ liệu đám mây điểm %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Dữ liệu đám mây điểm %1</translation>
     </message>
 </context>
 <context>

@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Upravit nastavení času</translation>
+        <translation type="vanished">Upravit nastavení času</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Nastavení času</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Použít nastavení projektu</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Formát času</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Nastavení času</translation>
+        <translation type="vanished">Nastavení času</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Použijte nastavení projektu</translation>
+        <translation type="vanished">Použijte nastavení projektu</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Časový formát</translation>
+        <translation type="vanished">Časový formát</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Titul</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Nastavení názvu</translation>
+        <translation>Nastavení titulu</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Poznámka: K názvu lze použít pouze anglické znaky.</translation>
+        <translation>Poznámka: Pro název lze použít pouze anglické znaky.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Nastavení názvu</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Titul:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Poznámka: K názvu lze použít pouze anglické znaky.</translation>
     </message>
 </context>
 </TS>

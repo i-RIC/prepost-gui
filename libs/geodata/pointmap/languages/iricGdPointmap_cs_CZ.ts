@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Souřadnicový systém</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Data mračna bodů %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Data mračna bodů</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Údaje obsahují pouze %1 body. Data mračna bodů musí obsahovat alespoň 3 body.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Čárka</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Záložka</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Plocha</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Dvojtečka</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Středník</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kódování</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Souřadnicový systém</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Oddělovače</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Citát postavy</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Znak Escape</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Řádky záhlaví, které se mají ignorovat</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X-pole</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Pole Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Pole hodnoty</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Míra přeskočení</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Sloupec %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Souřadnicový systém</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Data mračna bodů %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Data mračna bodů %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">CÍN</translation>
     </message>
 </context>
 <context>

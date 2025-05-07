@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>नाम स्वचालित रूप से सेट हो जाता है (उदा. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>शेपफाइल विशेषता से लोड करें</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>मान निर्दिष्ट करें</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>एन्कोडिंग</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>निर्देशांक तरीका</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>नाम सेटिंग</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>नाम आयात लक्ष्य विशेषता</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>मूल्य निर्धारण</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>मूल्य आयात लक्ष्य विशेषता</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>निर्दिष्ट मूल्य</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

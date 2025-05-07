@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Střední bod levého a pravého břehu</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kde je nadmořská výška nejmenší</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importovat středovou čáru ze souboru CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Po proudu k proudu</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Proti proudu k proudu</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kde definovat středový bod řeky</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Název souboru CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Pořadí průřezů</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 řádek 1: Záhlaví neobsahuje dostatek dat.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Střední bod levého a pravého břehu</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kde je nadmořská výška nejmenší</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importovat středovou čáru ze souboru CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kde definovat středový bod řeky</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Název souboru CSV</translation>
     </message>
 </context>
 <context>

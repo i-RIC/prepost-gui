@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Palun sisestage eesliide.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Rida:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Fondi seadistus (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Rida:</translation>
     </message>
 </context>
 <context>

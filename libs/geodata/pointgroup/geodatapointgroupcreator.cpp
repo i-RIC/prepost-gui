@@ -7,8 +7,6 @@
 
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
-#include <QStandardItem>
-
 GeoDataPointGroupCreator::GeoDataPointGroupCreator(const QString& typeName) :
 	GeoDataPolyDataGroupCreator {typeName, tr("Points")}
 {

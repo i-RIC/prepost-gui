@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Lütfen önek girin.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Astar:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Yazı Tipi Ayarı (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Astar:</translation>
     </message>
 </context>
 <context>

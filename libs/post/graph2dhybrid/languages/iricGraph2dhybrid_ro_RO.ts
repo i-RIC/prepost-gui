@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Introduceți prefixul.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Linia:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Setarea fontului (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Linia:</translation>
     </message>
 </context>
 <context>

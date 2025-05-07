@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Veuillez saisir le préfixe.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Doubler:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Paramètre de police (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Doubler:</translation>
     </message>
 </context>
 <context>

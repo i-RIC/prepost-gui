@@ -11,6 +11,7 @@
 #include "../base/preprocessorwindowi.h"
 #include "geodata.h"
 #include "geodatacreator.h"
+#include "geodataimportersetting.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
@@ -33,6 +34,9 @@ GeoData::Setting::Setting() :
 
 GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	ProjectDataItem {d},
+	m_setting {},
+	m_importerSetting {nullptr},
+	m_dataLoaded {false},
 	m_creator {creator},
 	m_gridAttribute {condition}
 {
@@ -42,6 +46,7 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 }
 GeoData::~GeoData()
 {
+	delete m_importerSetting;
 	delete m_menu;
 }
 
@@ -80,6 +85,34 @@ GeoDataCreator* GeoData::creator() const
 	return m_creator;
 }
 
+GeoDataImporterSetting* GeoData::importerSetting() const
+{
+	return m_importerSetting;
+}
+
+void GeoData::setImporterSetting(GeoDataImporterSetting* setting)
+{
+	m_importerSetting = setting;
+}
+
+bool GeoData::dataLoaded() const
+{
+	return m_dataLoaded;
+}
+
+void GeoData::setDataLoaded(bool loaded)
+{
+	m_dataLoaded = loaded;
+}
+
+bool GeoData::isReadOnly() const
+{
+	auto is = importerSetting();
+	if (is == nullptr) {return false;}
+
+	return is->isLink();
+}
+
 std::vector<GeoDataImporter*> GeoData::importers() const
 {
 	if (m_creator == nullptr) {
@@ -96,6 +129,11 @@ std::vector<GeoDataExporter*> GeoData::exporters() const
 		return l;
 	}
 	return m_creator->exporters();
+}
+
+void GeoData::loadFromProjectMainFileOnly(const QDomNode& node)
+{
+	doLoadFromProjectMainFile(node);
 }
 
 void GeoData::setupDataItem()

@@ -4,6 +4,7 @@
 #include "../geodatabackground/geodatabackground.h"
 #include "geodata.h"
 #include "geodatacreator.h"
+#include "geodataimporter.h"
 #include "private/geodatacreator_impl.h"
 
 #include <QDomElement>
@@ -95,6 +96,17 @@ void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDa
 bool GeoDataCreator::requestCoordinateSystem() const
 {
 	return false;
+}
+
+GeoDataImporter* GeoDataCreator::importer(const std::string& name) const
+{
+	for (auto i : impl->m_importers) {
+		if (i->name() == name) {
+			return i;
+		}
+	}
+
+	return nullptr;
 }
 
 const std::vector<GeoDataImporter*>& GeoDataCreator::importers() const

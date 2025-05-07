@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Змінити налаштування часу</translation>
+        <translation type="vanished">Змінити налаштування часу</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Налаштування часу</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Використати налаштування проекту</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Формат часу</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Налаштування часу</translation>
+        <translation type="vanished">Налаштування часу</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Використовуйте налаштування проекту</translation>
+        <translation type="vanished">Використовуйте налаштування проекту</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Формат часу</translation>
+        <translation type="vanished">Формат часу</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Заголовок</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Налаштування заголовка</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Примітка. Для заголовка можна використовувати лише англійські символи.</translation>
+        <translation>Примітка: Для заголовка можна використовувати лише англійські символи.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Налаштування заголовка</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Назва:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Примітка. Для заголовка можна використовувати лише англійські символи.</translation>
     </message>
 </context>
 </TS>

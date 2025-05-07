@@ -4,6 +4,7 @@
 
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
@@ -49,7 +50,7 @@ const QStringList GeoDataNetcdfXbandImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfXbandImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_groupDataItem = item;
 
@@ -68,7 +69,7 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 		return false;
 	}
 
-	QFileInfo finfo(filename);
+	QFileInfo finfo(setting()->fileName());
 	QDir dir = finfo.absoluteDir();
 
 	m_dirName = dir.path();
@@ -172,7 +173,7 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 			GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
 			GridAttributeDimensionContainer* c = dims->containers().at(0);
 			std::vector<QVariant> timeVals;
-			for (size_t i = 0; i < m_fileNames.size(); ++i) {
+			for (size_t i = 0; i < static_cast<size_t> (m_fileNames.size()); ++i) {
 				timeVals.push_back(0);
 			}
 			c->setVariantValues(timeVals);

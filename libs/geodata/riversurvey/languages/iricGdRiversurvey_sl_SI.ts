@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Srednja točka levega in desnega brega</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kjer je nadmorska višina najmanjša</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Uvozi središčno črto iz datoteke CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Nizvodno do gorvodno</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Gorvodno do dolvodno</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kje določiti središčno točko reke</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Ime datoteke CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Vrstni red prečnih prerezov</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 vrstica 1: Glava ne vsebuje dovolj podatkov.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Srednja točka levega in desnega brega</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kjer je nadmorska višina najmanjša</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Uvozi središčno črto iz datoteke CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kje določiti središčno točko reke</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Ime datoteke CSV</translation>
     </message>
 </context>
 <context>

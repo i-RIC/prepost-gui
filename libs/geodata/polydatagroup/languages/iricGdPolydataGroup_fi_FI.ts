@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Nimi asetetaan automaattisesti (esim. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Lataa Shapefile-attribuutista</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Määritä arvo</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Koodaus</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaattijärjestelmä</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Nimen asetus</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Nimi tuontikohteen attribuutti</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Arvon asettaminen</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Arvon tuonnin kohdeattribuutti</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Määritetty arvo</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

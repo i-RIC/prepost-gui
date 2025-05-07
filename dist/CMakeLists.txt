@@ -478,6 +478,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey15d.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccTriangle.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdGdal.dll
   ${PREPOST_GUI}/libdlls/Release/iricGdNetcdf.dll
   ${PREPOST_GUI}/libdlls/Release/iricGdPoint.dll
   ${PREPOST_GUI}/libdlls/Release/iricGdPointGroup.dll
@@ -794,6 +795,45 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_vi_VN.qm
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_zh_CN.qm
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_zh_TW.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ar_EG.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_bg_BG.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_bs_BA.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ca_ES.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_cs_CZ.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_da_DK.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_de_DE.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_el_GR.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_es_ES.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_et_EE.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_eu_ES.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_fi_FI.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_fr_FR.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_gl_ES.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_hi_IN.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_hu_HU.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_id_ID.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_is_IS.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_it_IT.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ja_JP.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ko_KR.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ky_KG.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_lt_LT.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_lv_LV.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_nb_NO.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_nl_NL.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_pl_PL.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_pt_BR.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_pt_PT.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ro_RO.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_ru_RU.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_sl_SI.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_sv_SE.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_th_TH.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_tr_TR.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_uk_UA.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_vi_VN.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_zh_CN.qm
+  ${PREPOST_GUI}/libs/geodata/gdal/languages/iricGdGdal_zh_TW.qm
   ${PREPOST_GUI}/libs/geodata/netcdf/languages/iricGdNetcdf_ar_EG.qm
   ${PREPOST_GUI}/libs/geodata/netcdf/languages/iricGdNetcdf_bg_BG.qm
   ${PREPOST_GUI}/libs/geodata/netcdf/languages/iricGdNetcdf_bs_BA.qm

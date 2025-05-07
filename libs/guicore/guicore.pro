@@ -462,6 +462,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatafactory.h \
            pre/geodata/geodataifacemappert.h \
            pre/geodata/geodataimporter.h \
+           pre/geodata/geodataimportersetting.h \
            pre/geodata/geodatajfacemappert.h \
            pre/geodata/geodatamapper.h \
            pre/geodata/geodatamappersettingi.h \
@@ -1030,6 +1031,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/geodata/geodataexporter.cpp \
            pre/geodata/geodatafactory.cpp \
            pre/geodata/geodataimporter.cpp \
+           pre/geodata/geodataimportersetting.cpp \
            pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
            pre/geodata/geodatawebimporter.cpp \

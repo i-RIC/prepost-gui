@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>A név automatikusan beállításra kerül (pl. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Betöltés Shapefile attribútumból</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Érték megadása</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kódolás</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinátarendszer</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Névbeállítás</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Név importálási cél attribútum</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Értékbeállítás</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Érték importálási cél attribútum</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Megadott érték</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

@@ -1511,6 +1511,25 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>GeoDataImporterSetting</name>
+    <message>
+        <source>File name</source>
+        <translation>檔案名稱</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>不</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是的</translation>
+    </message>
+    <message>
+        <source>Saved to to project</source>
+        <translation>儲存至項目</translation>
+    </message>
+</context>
+<context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>

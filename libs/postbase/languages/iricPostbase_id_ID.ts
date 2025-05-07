@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Edit pengaturan waktu</translation>
+        <translation type="vanished">Edit pengaturan waktu</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Pengaturan Waktu</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>Pengaturan waktu</translation>
+        <source>Form</source>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -678,7 +682,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format waktu</translation>
+        <translation>Format Waktu</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Pengaturan waktu</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Gunakan pengaturan proyek</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Format waktu</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Judul</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Pengaturan Judul</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>Catatan: Hanya Karakter Bahasa Inggris yang dapat digunakan untuk judul.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Pengaturan Judul</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Judul:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Catatan: Hanya Karakter Bahasa Inggris yang dapat digunakan untuk judul.</translation>
     </message>
 </context>
 </TS>

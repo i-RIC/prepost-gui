@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Система координат</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Данные облака точек %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Данные облака точек</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Данные содержат только %1 точки. Данные облака точек должны содержать как минимум 3 точки.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Запятая</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Вкладка</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Космос</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Колон</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Точка с запятой</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Кодирование</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Система координат</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Разделители</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Цитата персонажа</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Escape-символ</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Строки заголовка, которые следует игнорировать</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X-поле</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y-поле</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Поле значения</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Пропустить скорость</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Столбец %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Система координат</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Данные облака точек %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Данные облака точек %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">БАНКА</translation>
     </message>
 </context>
 <context>

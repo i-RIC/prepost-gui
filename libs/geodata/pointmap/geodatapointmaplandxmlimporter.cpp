@@ -1,12 +1,15 @@
 #include "geodatapointmaplandxmlimporter.h"
 #include "geodatapointmap.h"
+#include "private/geodatapointmaplandxmlimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
@@ -50,18 +53,6 @@ bool readUntil(QXmlStreamReader& xml, const char* elemName)
 	return false; // failure
 }
 
-bool readUntilAndSkip(QXmlStreamReader& xml, const char* elemName)
-{
-	while (! xml.atEnd()) {
-		xml.readNextStartElement();
-		if (xml.name().toString().compare(elemName) == 0) {
-			xml.skipCurrentElement();
-			return true; // success
-		}
-	}
-	return false; // failure
-}
-
 } // namespace
 
 GeoDataPointmapLandXmlImporter::GeoDataPointmapLandXmlImporter(GeoDataCreator* creator) :
@@ -82,7 +73,7 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 
 		QElapsedTimer timer;
 		timer.start();
-		QFile f(filename());
+		QFile f(setting()->fileName());
 		bool ok = f.open(QFile::ReadOnly);
 
 		QDomDocument doc;
@@ -107,7 +98,7 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 	return ret;
 }
 
-bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointmapLandXmlImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}
@@ -117,7 +108,7 @@ bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QStri
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = filename;
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.xml"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -144,12 +135,33 @@ bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QStri
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPointmapLandXmlImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* /*w*/)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
 
 bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/, QWidget* w)
 {
-	QFile f(filename());
+	QFile f(setting()->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	QDomDocument doc;
@@ -217,7 +229,7 @@ bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/,
 
 bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/, QWidget* /*w*/)
 {
-	QFile f(filename());
+	QFile f(setting()->fileName());
 	bool ok = f.open(QFile::ReadOnly);
 
 	auto pmap = dynamic_cast<GeoDataPointmap*> (data);
@@ -312,4 +324,9 @@ const QStringList GeoDataPointmapLandXmlImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "xml";
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPointmapLandXmlImporter::createSetting() const
+{
+	return new ImporterSetting();
 }

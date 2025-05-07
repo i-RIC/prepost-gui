@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Сактоо "%1" ишке ашкан жок. Башка программа файлды ачып жатканын текшерип, кайра аракет кылыңыз.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Киргизүү мааниси</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Папка үчүн үлгү %3 системасында табылган жок.</translation>
     </message>
 </context>
 </TS>

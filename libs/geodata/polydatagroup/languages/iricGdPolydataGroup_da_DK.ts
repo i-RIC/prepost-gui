@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Navnet indstilles automatisk (f.eks. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Indlæs fra Shapefile-attribut</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Angiv værdi</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodning</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatsystem</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Navneindstilling</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Navn import målattribut</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Værdiindstilling</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Værdiimportmålattribut</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Specificeret værdi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

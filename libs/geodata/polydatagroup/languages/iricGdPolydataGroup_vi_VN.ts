@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Tên được đặt tự động (ví dụ: PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Tải từ thuộc tính Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Chỉ định giá trị</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Mã hóa</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Thiết lập tên</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Tên nhập khẩu mục tiêu thuộc tính</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Thiết lập giá trị</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Thuộc tính mục tiêu nhập giá trị</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Giá trị được chỉ định</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

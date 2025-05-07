@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Muutke kellaaega</translation>
+        <translation type="vanished">Muutke kellaaega</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Aja seadistamine</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Kasuta projekti seadeid</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Ajavorming</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Aja seadistamine</translation>
+        <translation type="vanished">Aja seadistamine</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Kasutage projekti seadistust</translation>
+        <translation type="vanished">Kasutage projekti seadistust</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Aja vorming</translation>
+        <translation type="vanished">Aja vorming</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Pealkiri</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>Pealkirja seadistus</translation>
+        <translation>Pealkirja seadmine</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Märkus. Pealkirjas saab kasutada ainult ingliskeelseid märke.</translation>
+        <translation>Märkus: Pealkirja jaoks saab kasutada ainult ingliskeelseid tähti.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Pealkirja seadistus</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Pealkiri:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Märkus. Pealkirjas saab kasutada ainult ingliskeelseid märke.</translation>
     </message>
 </context>
 </TS>

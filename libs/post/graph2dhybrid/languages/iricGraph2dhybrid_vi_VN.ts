@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Vui lòng nhập tiền tố.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Đường kẻ:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Cài đặt phông chữ (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Đường kẻ:</translation>
     </message>
 </context>
 <context>

@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Nosaukums tiek iestatīts automātiski (piem., PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Ielādēt no Shapefile atribūta</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Norādiet vērtību</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodēšana</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Nosaukuma iestatīšana</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Nosaukuma importēšanas mērķa atribūts</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Vērtības iestatīšana</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Vērtības importēšanas mērķa atribūts</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Norādītā vērtība</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

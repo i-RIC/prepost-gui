@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Izena automatikoki ezartzen da (adib. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Kargatu Shapefile atribututik</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Zehaztu balioa</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodeketa</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordenatu Sistema</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Izenaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Izena inportatzeko helburu-atributua</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Balio ezarpena</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Balio inportazio helburu atributua</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Zehaztutako balioa</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

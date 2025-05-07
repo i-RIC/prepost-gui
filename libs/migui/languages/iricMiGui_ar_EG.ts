@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>إنقاذ "%1"فشل. الرجاء التأكد من قيام برنامج آخر بفتح الملف، ثم حاول مرة أخرى.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>ف1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>قيمة المدخلات</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>نموذج للمجلد %3 لم يتم العثور عليه في النظام.</translation>
     </message>
 </context>
 </TS>

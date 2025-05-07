@@ -16,12 +16,14 @@ public:
 	bool importData(GeoData *data, int index, QWidget *w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
+	GeoDataImporterSetting* createSetting() const override;
 
 private slots:
 	void cancel();
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	bool m_canceled;
 
@@ -31,6 +33,7 @@ private:
 	CoordinateSystemConverter* m_converter;
 
 	class Values;
+	class ImporterSetting;
 	class SettingDialog;
 };
 

@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Επεξεργασία ρύθμισης ώρας</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης ώρας</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Ρύθμιση ώρας</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Χρήση ρύθμισης έργου</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Μορφή ώρας</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>ΡΥΘΜΙΣΗ ΩΡΑΣ</translation>
+        <translation type="vanished">ΡΥΘΜΙΣΗ ΩΡΑΣ</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Χρησιμοποιήστε τη ρύθμιση έργου</translation>
+        <translation type="vanished">Χρησιμοποιήστε τη ρύθμιση έργου</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Μορφή ώρας</translation>
+        <translation type="vanished">Μορφή ώρας</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Τίτλος</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Ρύθμιση τίτλου</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Σημείωση: Μόνο Αγγλικοί χαρακτήρες μπορούν να χρησιμοποιηθούν για τον τίτλο.</translation>
+        <translation>Σημείωση: Μόνο αγγλικοί χαρακτήρες μπορούν να χρησιμοποιηθούν για τον τίτλο.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Ρύθμιση τίτλου</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Σημείωση: Μόνο Αγγλικοί χαρακτήρες μπορούν να χρησιμοποιηθούν για τον τίτλο.</translation>
     </message>
 </context>
 </TS>

@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>कृपया उपसर्ग इनपुट करें।</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>रेखा:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>फ़ॉन्ट सेटिंग (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>रेखा:</translation>
     </message>
 </context>
 <context>

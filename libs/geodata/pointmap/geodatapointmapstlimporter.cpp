@@ -1,12 +1,15 @@
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmap.h"
+#include "private/geodatapointmapstlimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
@@ -30,9 +33,9 @@ GeoDataPointmapSTLImporter::~GeoDataPointmapSTLImporter()
 	delete m_converter;
 }
 
-bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPointmapSTLImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	bool ok = checkHeader(filename, w);
+	bool ok = checkHeader(setting()->fileName(), w);
 	if (! ok) {return false;}
 
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
@@ -43,7 +46,7 @@ bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& 
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = filename;
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.stl$"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -70,6 +73,27 @@ bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& 
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	s->csName = cs->name();
+
+	return true;
+}
+
+bool GeoDataPointmapSTLImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* /*w*/)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }
 
@@ -78,7 +102,7 @@ bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidge
 	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 
 	auto reader = vtkSmartPointer<vtkSTLReader>::New();
-	reader->SetFileName(iRIC::toStr(filename()).c_str());
+	reader->SetFileName(iRIC::toStr(setting()->fileName()).c_str());
 	reader->Update();
 	vtkPolyData* polydata = reader->GetOutput();
 
@@ -121,6 +145,11 @@ const QStringList GeoDataPointmapSTLImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "stl";
 	return ret;
+}
+
+GeoDataImporterSetting* GeoDataPointmapSTLImporter::createSetting() const
+{
+	return new ImporterSetting();
 }
 
 bool GeoDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w)

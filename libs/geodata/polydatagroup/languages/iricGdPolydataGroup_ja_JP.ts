@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>自動的に設定する (例: ポリゴン1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>シェープファイルの属性から読み込む</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>値を指定する</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>文字コード</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>名前の設定</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>名前のインポート元属性</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>値の設定</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>値のインポート元属性</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>指定した値</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

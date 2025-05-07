@@ -23,22 +23,27 @@ public:
 	~GeoDataPolyDataGroupShpImporter() override;
 
 	const QStringList acceptableExtensions() override;
+	GeoDataImporterSetting* createSetting() const override;
 
 protected:
 	static QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec);
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 protected:
 	GeoDataPolyDataGroupShpImporterSettingDialog::NameSetting m_nameSetting;
 	int m_nameAttribute;
+	QString m_nameAttributeName;
 	GeoDataPolyDataGroupShpImporterSettingDialog::ValueSetting m_valueSetting;
-	// std::vector<PolygonShapeInfo> m_shapeInfos;
 	int m_valueAttribute;
+	QString m_valueAttributeName;
 	QVariant m_specifiedValue;
 	QTextCodec* m_codec;
 	CoordinateSystemConverter* m_converter;
+
+	class ImporterSetting;
 };
 
 #endif // GEODATAPOLYDATAGROUPSHPIMPORTER_H

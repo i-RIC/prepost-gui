@@ -179,6 +179,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координаттар системасы</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
@@ -198,6 +205,21 @@
     <message>
         <source>Use Setting of Pre-Processing Window</source>
         <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupReadOnlyCreator</name>
+    <message>
+        <source>Polygons%1</source>
+        <translation type="obsolete">Полигондор %1</translation>
+    </message>
+    <message>
+        <source>polygon</source>
+        <translation type="obsolete">көп бурчтук</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="obsolete">Полигон</translation>
     </message>
 </context>
 <context>

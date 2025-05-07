@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Αποθήκευση "%1" απέτυχε. Βεβαιωθείτε ότι άλλο πρόγραμμα ανοίγει το αρχείο και δοκιμάστε ξανά.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>f1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Τιμή εισόδου</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Σφάλμα</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Το μοντέλο για τον φάκελο %3 δεν βρέθηκε στο σύστημα.</translation>
     </message>
 </context>
 </TS>

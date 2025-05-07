@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>A bal és jobb part középpontja</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Ahol a legkisebb a tengerszint feletti magasság</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Középvonal importálása CSV fájlból</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Lefelé, felfelé</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Felfelé, lefelé</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Hol kell meghatározni a folyó középpontját</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-fájl neve</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>A keresztmetszetek sorrendje</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 1. sor: A fejléc nem tartalmaz elegendő adatot.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>A bal és jobb part középpontja</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Ahol a legkisebb a tengerszint feletti magasság</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Középvonal importálása CSV fájlból</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Hol kell meghatározni a folyó középpontját</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-fájl neve</translation>
     </message>
 </context>
 <context>

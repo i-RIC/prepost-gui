@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Средняя точка левого берега и правого берега</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Где высота самая маленькая</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Импорт центральной линии из CSV-файла</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>От нисходящего к восходящему течению</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Вверх по течению вниз по течению</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Где определить центральную точку реки</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Имя CSV-файла</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Порядок сечений</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 строка 1: заголовок не содержит достаточно данных.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Средняя точка левого берега и правого берега</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Где высота самая маленькая</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Импорт центральной линии из CSV-файла</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Где определить центральную точку реки</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Имя CSV-файла</translation>
     </message>
 </context>
 <context>

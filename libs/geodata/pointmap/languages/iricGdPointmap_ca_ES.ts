@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenades</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Dades del núvol de punts %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Dades del núvol de punts</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Les dades només contenen %1 punts. Les dades del núvol de punts han de contenir com a mínim 3 punts.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Coma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Pestanya</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Espai</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Colon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Punt i coma</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Codificació</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenades</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Delimitadors</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>caràcter de cita</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Personatge d'escapada</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Línies de capçalera per ignorar</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>Camp X</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Camp Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Camp de valor</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Taxa de salt</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Columna %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenades</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Dades del núvol de punts %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Dades del núvol de punts %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TIN</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,9 @@
 #include "geodatapointgrouprealcreator.h"
 
 GeoDataPointGroupRealCreator::GeoDataPointGroupRealCreator() :
-	GeoDataPointGroupCreatorT<double, vtkDoubleArray> {"realPointGroup"}
+	GeoDataPointGroupRealCreator {"realPointGroup"}
+{}
+
+GeoDataPointGroupRealCreator::GeoDataPointGroupRealCreator(const QString& typeName) :
+	GeoDataPointGroupCreatorT<double, vtkDoubleArray> {typeName}
 {}

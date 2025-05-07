@@ -25,6 +25,7 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/geodata/geodatawebimporter.h>
 #include <guicore/pre/geodata/geodatamapper.h>
 #include <guicore/pre/geodatabackground/geodatabackground.h>
@@ -252,7 +253,6 @@ void PreProcessorGeoDataGroupDataItem::import()
 		}
 	}
 	Q_ASSERT(importer != nullptr);
-
 	importGeoData(importer, filename, selectedFilter);
 }
 
@@ -339,6 +339,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
+			geodata->setDataLoaded(true);
 			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.
@@ -584,7 +585,6 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(QObject* c)
 		}
 	}
 	Q_ASSERT(importer != nullptr);
-
 	importGeoData(importer, filename, selectedFilter);
 }
 
@@ -668,10 +668,19 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		}
 	}
 
+	int conf_ret = QMessageBox::information(preProcessorWindow(), tr("Confirm importing as link"), tr("Do you want to import the geographic data in \"Link mode\"?\n\nWhen geographic data is imported in \"Link Mode\", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with \"Link Mode\", the project data becomes much smaller.\n\nPlease note that the geographic data imported in \"Link Mode\" can not be edited.\n"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+
 	// execute import.
+	auto setting = importer->createSetting();
+	setting->setName(importer->name());
+	setting->setFileName(filename);
+	setting->setIsLink(conf_ret == QMessageBox::Yes);
+	setting->setSelectedFilter(selectedFilter);
+	importer->setSetting(setting);
+
 	int dataCount;
 	QWidget* w = preProcessorWindow();
-	bool ret = importer->importInit(filename, selectedFilter, &dataCount, m_condition, this, w);
+	bool ret = importer->importInit(&dataCount, m_condition, this, w, false);
 	if (! ret) {
 		return;
 	}
@@ -704,13 +713,14 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		item = buildGeoDataDataItem();
 		// first, create an empty geodata.
 		GeoData* geodata = importer->creator()->create(item, m_condition);
+		geodata->setImporterSetting(setting);
 		item->setGeoData(geodata);
 		// set name and caption
 		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 		geodata->setupDataItem();
 		// import data from the specified file
 		QWidget *w = wDialog;
-		if (w == nullptr) w = mainWindow();
+		if (w == nullptr) {w = mainWindow();}
 		bool ret = importer->importData(geodata, i, w);
 		if (! ret) {
 			// failed.
@@ -718,6 +728,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			item = nullptr;
 			failedIds.push_back(i + 1);
 		} else {
+			geodata->setDataLoaded(true);
 			auto o = offset();
 			geodata->applyOffset(o.x(), o.y());
 			// the standarditem is set at the last position, so make it the first.
@@ -734,6 +745,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 			wDialog->setProgress(i + 1);
 			qApp->processEvents();
 		}
+		importer->setSetting(nullptr);
 	}
 	if (wDialog != nullptr) {
 		wDialog->hide();
@@ -830,6 +842,7 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);
+
 		writer.writeEndElement();
 
 		for (auto file : child->containedFiles()) {
@@ -880,8 +893,13 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 	if (dimensions()->containers().size() > 0) {
 		dimCount = dimensions()->maxIndex() + 1;
 	}
-	int geodataCount = static_cast<int> (m_childItems.size());
-	return dimCount * geodataCount;
+	int loadedChildCount = 0;
+	for (const auto& child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+		if (item->geoData()->dataLoaded()) {++ loadedChildCount;}
+	}
+
+	return dimCount * loadedChildCount;
 }
 
 void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDialog* dialog)
@@ -901,6 +919,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			settings.append(mapper->initialize(boolMap));
@@ -915,6 +935,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			mapper->map(boolMap, settings.at(idx));
@@ -929,6 +951,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (!geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
 			geodata->setMapped();
@@ -944,6 +968,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
 			settings.append(mapper->initialize(boolMap));
@@ -958,6 +984,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 			for (auto child : m_childItems) {
 				auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 				GeoData* geodata = item->geoData();
+				if (! geodata->dataLoaded()) {continue;}
+
 				GeoDataMapper* mapper = geodata->mapper();
 				mapper->setTarget(grid, container, geodata);
 				mapper->map(boolMap, settings.at(idx));
@@ -973,6 +1001,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		for (auto child : m_childItems) {
 			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
+			if (! geodata->dataLoaded()) {continue;}
+
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
 			geodata->setMapped();

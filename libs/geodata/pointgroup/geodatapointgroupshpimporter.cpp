@@ -4,6 +4,7 @@
 #include "private/geodatapointgroup_impl.h"
 
 #include <cs/coordinatesystemconverter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/informationdialog.h>
@@ -44,10 +45,10 @@ bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWid
 {
 	auto group = dynamic_cast<GeoDataPointGroup*>(data);
 
-	std::string fname = iRIC::toStr(filename());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	QString dbfFilename = filename();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

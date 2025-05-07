@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>내보낼 파일 선택</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>가져오기 설정 표시 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>대상 파일 가져오기 "%1"는 존재하지 않습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>가져오기 설정</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>가져올 데이터 유형을 선택하세요.</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>링크로 가져오기 확인</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>"링크 모드"로 지리 데이터를 가져오시겠습니까? "링크 모드"로 지리 데이터를 가져오면 프로젝트에 지리 데이터 자체가 저장되지 않고 파일 이름과 가져오기 설정만 저장됩니다. 따라서 "링크 모드"로 가져오면 프로젝트 데이터의 크기가 훨씬 작아집니다. "링크 모드"로 가져온 지리 데이터는 편집할 수 없습니다.</translation>
     </message>
 </context>
 <context>

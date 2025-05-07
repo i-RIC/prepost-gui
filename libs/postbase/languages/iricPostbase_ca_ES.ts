@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editeu la configuració de l'hora</translation>
+        <translation type="vanished">Editeu la configuració de l'hora</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Configuració de l'hora</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Utilitza la configuració del projecte</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Format de temps</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Configuració del temps</translation>
+        <translation type="vanished">Configuració del temps</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Utilitzeu la configuració del projecte</translation>
+        <translation type="vanished">Utilitzeu la configuració del projecte</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format d’hora</translation>
+        <translation type="vanished">Format d’hora</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Títol</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Configuració del títol</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Nota: només es poden utilitzar caràcters en anglès per al títol.</translation>
+        <translation>Nota: Només es poden utilitzar caràcters anglesos per al títol.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Configuració del títol</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Títol:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Nota: només es poden utilitzar caràcters en anglès per al títol.</translation>
     </message>
 </context>
 </TS>

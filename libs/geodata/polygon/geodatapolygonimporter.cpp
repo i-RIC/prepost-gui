@@ -5,8 +5,9 @@
 #include "geodatapolygonimportersettingdialog.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
-#include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/geodata/geodatacreator.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
+#include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/stringtool.h>
@@ -130,9 +131,9 @@ const QStringList GeoDataPolygonImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolygonImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
-	std::string fname = iRIC::toStr(filename);
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	int numEntities;
@@ -145,7 +146,7 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 		QMessageBox::critical(w, tr("Error"), tr("The shape type contained in this shape file is not polygon."));
 		return false;
 	}
-	QString dbfFilename = filename;
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
@@ -168,7 +169,7 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 	GridAttributeEditWidget* widget = condition->editWidget(0);
 	item->setupEditWidget(widget);
 	widget->setVariantValue(condition->variantDefaultValue());
-	GeoDataPolygonImporterSettingDialog dialog(filename, widget, w);
+	GeoDataPolygonImporterSettingDialog dialog(setting()->fileName(), widget, w);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
@@ -189,7 +190,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 
 	PolygonShapeInfo info = m_shapeInfos.at(index);
 
-	std::string fname = iRIC::toStr(filename());
+	std::string fname = iRIC::toStr(setting()->fileName());
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
 	SHPObject* shpo = SHPReadObject(shph, info.item);
@@ -228,7 +229,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	SHPDestroyObject(shpo);
 	SHPClose(shph);
 
-	QString dbfFilename = filename();
+	QString dbfFilename = setting()->fileName();
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");

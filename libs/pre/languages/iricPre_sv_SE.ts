@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Välj fil att exportera</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Visa importinställning (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importera målfilen %1 "existerar inte.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Värde</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Importinställning</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Välj typ av data att importera</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Bekräfta import som länk</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Vill du importera geografiska data i "Länkläge"? När geografiska data importeras i "Länkläge" lagras inte själva geografiska data i projektet, utan endast filnamnet och importinställningarna. På grund av detta blir projektdata mycket mindre när de importeras med "Länkläge". Observera att geografiska data som importeras i "Länkläge" inte kan redigeras.</translation>
     </message>
 </context>
 <context>

@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>बाएँ किनारे और दाएँ किनारे का मध्य बिंदु</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>जहां ऊंचाई सबसे कम है</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSV फ़ाइल से केंद्र रेखा आयात करें</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>नीचे की ओर से ऊपर की ओर</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>ऊपर से नीचे की ओर</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>नदी का केंद्र बिंदु कहां निर्धारित करें</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV फ़ाइल नाम</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>क्रॉस सेक्शन का क्रम</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 पंक्ति 1: हेडर में पर्याप्त डेटा नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>बाएँ किनारे और दाएँ किनारे का मध्य बिंदु</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>जहां ऊंचाई सबसे कम है</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSV फ़ाइल से केंद्र रेखा आयात करें</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>नदी का केंद्र बिंदु कहां निर्धारित करें</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV फ़ाइल नाम</translation>
     </message>
 </context>
 <context>

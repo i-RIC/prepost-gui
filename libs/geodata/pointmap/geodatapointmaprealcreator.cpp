@@ -14,17 +14,9 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
-	GeoDataCreator {"realPointmap", tr("Point Cloud Data")}
+	GeoDataPointmapRealCreator {"realPointmap"}
 {
-	// importers().push_back(new GeoDataPointmapRealImporter(this));
-	importers().push_back(new GeoDataPointmapRealTextImporter(this));
-
 	webImporters().push_back(new GeoDataPointmapWebImporter(this));
-
-	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
-	exporters().push_back(new GeoDataPointmapRealExporter(this));
-	exporters().push_back(new GeoDataPointmapSTLExporter(this));
-	exporters().push_back(new GeoDataPointmapVTKExporter(this));
 }
 
 GeoData* GeoDataPointmapRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
@@ -50,4 +42,15 @@ bool GeoDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridAttribute*
 	if (condition->dimensions().size() > 0) {return false;}
 	if (condition->isReferenceInformation()) {return false;}
 	return true;
+}
+
+GeoDataPointmapRealCreator::GeoDataPointmapRealCreator(const QString& typeName) :
+	GeoDataCreator {typeName, tr("Point Cloud Data")}
+{
+	importers().push_back(new GeoDataPointmapRealTextImporter(this));
+
+	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
+	exporters().push_back(new GeoDataPointmapRealExporter(this));
+	exporters().push_back(new GeoDataPointmapSTLExporter(this));
+	exporters().push_back(new GeoDataPointmapVTKExporter(this));
 }

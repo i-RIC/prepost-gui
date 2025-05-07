@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Redigera tidsinställning</translation>
+        <translation type="vanished">Redigera tidsinställning</translation>
     </message>
-</context>
-<context>
-    <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
         <translation>Tidsinställning</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Tidsinställning</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Använd projektinställning</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Tidsformat</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Titelinställning</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Obs! Endast engelska tecken kan användas för titel.</translation>
+        <translation>Obs: Endast engelska tecken kan användas för titeln.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Titelinställning</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Titel:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Obs! Endast engelska tecken kan användas för titel.</translation>
     </message>
 </context>
 </TS>

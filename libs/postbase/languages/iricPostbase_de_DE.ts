@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Zeiteinstellung bearbeiten</translation>
+        <translation type="vanished">Zeiteinstellung bearbeiten</translation>
     </message>
-</context>
-<context>
-    <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
         <translation>Zeiteinstellung</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Bilden</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Zeiteinstellung</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Projekteinstellung verwenden</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Zeitformat</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Titeleinstellung</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Bilden</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -701,6 +724,21 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Note: Only English Characters can be used for title.</source>
         <translation>Hinweis: Für den Titel können nur englische Zeichen verwendet werden.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Titeleinstellung</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Titel:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Hinweis: Für den Titel können nur englische Zeichen verwendet werden.</translation>
     </message>
 </context>
 </TS>

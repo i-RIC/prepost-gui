@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Název se nastaví automaticky (např. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Atribut Načíst z shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Zadejte hodnotu</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kódování</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Souřadnicový systém</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Nastavení názvu</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Atribut cíle importu názvu</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Nastavení hodnoty</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Atribut cíle importu hodnoty</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Zadaná hodnota</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

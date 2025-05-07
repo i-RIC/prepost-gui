@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>Запазване "%1" е неуспешно. Моля, уверете се, че друга програма отваря файла, и опитайте отново.</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>ф1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>Входна стойност</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Грешка</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>Моделът за папката %3 не беше намерен в системата.</translation>
     </message>
 </context>
 </TS>

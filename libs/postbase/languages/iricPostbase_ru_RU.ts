@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Изменить настройку времени</translation>
+        <translation type="vanished">Изменить настройку времени</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Установка времени</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>Настройки времени</translation>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Настройки времени</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Использовать настройки проекта</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Формат времени</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>Заголовок</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Настройка заголовка</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Примечание. В заголовке можно использовать только английские символы.</translation>
+        <translation>Примечание: в названии можно использовать только английские символы.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Настройка заголовка</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Заголовок:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Примечание. В заголовке можно использовать только английские символы.</translation>
     </message>
 </context>
 </TS>

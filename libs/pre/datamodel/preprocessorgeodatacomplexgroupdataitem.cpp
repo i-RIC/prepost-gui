@@ -99,7 +99,7 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
+	for (auto creator : factory.compatibleCreators(m_condition)) {
 		QString title = creator->caption();
 		if (creator->importers().size() > 0) {
 			QAction* importAction = m_importMenu->addAction(title.append("..."));
@@ -149,10 +149,12 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 
 	auto groups = m_dialog->groups();
 
+	double defaultVal = nan("");
 	for (int i = 0; i < static_cast<int> (groups.size()); ++i) {
 		auto g = groups.at(i);
 
 		double val = i + 1;
+		if (g->isDefault()) {defaultVal = val;}
 		captions.insert({val, g->caption()});
 
 		ColorMapSettingValueColorPairContainer pair;
@@ -162,6 +164,7 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 	}
 	es->colors = cols;
 	es->valueCaptions = captions;
+	es->defaultValue = defaultVal;
 
 	informValueRangeChange();
 }

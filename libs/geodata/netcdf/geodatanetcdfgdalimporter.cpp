@@ -16,6 +16,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -90,7 +91,7 @@ void GeoDataNetcdfGdalImporter::cancel()
 	m_canceled = true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	clear();
 	GDALAllRegister();
@@ -99,9 +100,9 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& s
 	if (! ok) {return false;}
 
 	if (m_mode == Mode::Single) {
-		return doInitForSingleMode(filename, selectedFilter, count, condition, item, w);
+		return doInitForSingleMode(count, condition, item, w);
 	} else if (m_mode == Mode::Time) {
-		return doInitForTimeMode(filename, selectedFilter, count, condition, item, w);
+		return doInitForTimeMode(count, condition, item, w);
 	}
 	return false;
 }
@@ -139,8 +140,9 @@ bool GeoDataNetcdfGdalImporter::setMode(SolverDefinitionGridAttribute* condition
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInitForSingleMode(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	auto filename = setting()->fileName();
 	if (! iRIC::isAscii(filename)) {
 		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
 		return false;
@@ -148,7 +150,7 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
-		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(filename)));
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 
@@ -166,8 +168,9 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInitForTimeMode(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	auto filename = setting()->fileName();
 	m_timeZone = item->projectData()->mainfile()->timeZone();
 
 	if (item->geoDatas().size() > 1) {
@@ -299,7 +302,7 @@ bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoDataNetcdf* netcdf, QWi
 	setupWaitDialog(&wDialog, m_filenames);
 	connect(&wDialog, SIGNAL(canceled()), this, SLOT(cancel()));
 
-	for (int timeId = 0; timeId < m_filenames.size(); ++timeId) {
+	for (int timeId = 0; timeId < static_cast<int> (m_filenames.size()); ++timeId) {
 		auto filename = m_filenames.at(timeId);
 
 		auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
@@ -413,9 +416,9 @@ void GeoDataNetcdfGdalImporter::setupCoordinates(GeoDataNetcdf* data, GDALRaster
 
 	data->impl->m_lonValues.clear();
 	bool isLonLat = m_coordinateSystem->isLongLat();
-	for (int j = 0; j < data->impl->m_yValues.size(); ++j) {
+	for (int j = 0; j < static_cast<int> (data->impl->m_yValues.size()); ++j) {
 		double y = data->impl->m_yValues.at(j);
-		for (int i = 0; i < data->impl->m_xValues.size(); ++i) {
+		for (int i = 0; i < static_cast<int> (data->impl->m_xValues.size()); ++i) {
 			double x = data->impl->m_xValues.at(i);
 			double lon, lat;
 			if (isLonLat) {

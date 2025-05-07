@@ -1,0 +1,48 @@
+#include "geodatagdalcellmappert.h"
+#include "geodatagdalgdalrealexporter.h"
+#include "geodatagdalgdalrealimporter.h"
+#include "geodatagdalgrayscalepngrealexporter.h"
+#include "geodatagdalgrayscalepngrealimporter.h"
+#include "geodatagdalifacemappert.h"
+#include "geodatagdaljfacemappert.h"
+#include "geodatagdalncexporter.h"
+#include "geodatagdalnodemappert.h"
+#include "geodatagdalreal.h"
+#include "geodatagdalrealcreator.h"
+#include "geodatagdalnetcdfrealimporter.h"
+#include "geodatagdalxbandimporter.h"
+
+#include <vtkDoubleArray.h>
+
+GeoDataGdalRealCreator::GeoDataGdalRealCreator() :
+	GeoDataGdalRealCreator {"realGdal"}
+{}
+
+GeoData* GeoDataGdalRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+{
+	GeoDataGdal* data = new GeoDataGdalReal(parent, this, condition);
+	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
+		data->setMapper(new GeoDataGdalNodeMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		data->setMapper(new GeoDataGdalCellMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		data->setMapper(new GeoDataGdalIFaceMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		data->setMapper(new GeoDataGdalJFaceMapperT<double, vtkDoubleArray>(this));
+	}
+	return data;
+}
+
+GeoDataGdalRealCreator::GeoDataGdalRealCreator(const QString& typeName) :
+	GeoDataGdalCreatorT<double, vtkDoubleArray> {typeName}
+{
+	importers().push_back(new GeoDataGdalGdalRealImporter(this));
+	importers().push_back(new GeoDataGdalNetcdfRealImporter(this));
+	importers().push_back(new GeoDataGdalGrayscalePngRealImporter(this));
+
+	exporters().push_back(new GeoDataGdalGdalRealExporter(this));
+	exporters().push_back(new GeoDataGdalGrayscalePngRealExporter(this));
+	exporters().push_back(new GeoDataGdalNcExporter(this));
+}
+
+

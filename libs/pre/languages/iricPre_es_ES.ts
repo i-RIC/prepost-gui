@@ -925,6 +925,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Seleccionar Archivo para Exportar</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Mostrar configuración de importación (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importar archivo de destino "%1" no existe.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Configuración de importación</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1088,6 +1122,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Por favor seleccione el tipo de datos para importar</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Confirmar la importación como enlace</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>¿Desea importar los datos geográficos en "Modo Enlace"? Al importar datos geográficos en "Modo Enlace", no se almacenan en el proyecto, sino solo el nombre del archivo y la configuración de importación. Por ello, al importarlos en "Modo Enlace", el tamaño de los datos del proyecto se reduce considerablemente. Tenga en cuenta que los datos geográficos importados en "Modo Enlace" no se pueden editar.</translation>
     </message>
 </context>
 <context>

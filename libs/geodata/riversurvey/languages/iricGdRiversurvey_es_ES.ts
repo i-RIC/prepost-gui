@@ -1205,6 +1205,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punto medio de la margen izquierda y la margen derecha</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Donde la elevación es la más pequeña</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importar línea central desde archivo CSV</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>De aguas abajo a aguas arriba</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>De aguas arriba a aguas abajo</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>¿Dónde definir el punto central del río?</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nombre del archivo CSV</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Orden de secciones transversales</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1393,6 +1428,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 Línea 1: el encabezado no contiene suficientes datos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Punto medio de la margen izquierda y la margen derecha</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Donde la elevación es la más pequeña</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importar línea central desde un archivo CSV</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>¿Dónde definir el punto central del río?</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>Nombre del archivo CSV</translation>
     </message>
 </context>
 <context>

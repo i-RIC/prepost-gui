@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>แก้ไขการตั้งค่าเวลา</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าเวลา</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>การตั้งเวลา</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>ตั้งเวลา</translation>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">ตั้งเวลา</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">ใช้การตั้งค่าโครงการ</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">รูปแบบเวลา</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>ชื่อ</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>การตั้งชื่อ</translation>
+        <translation>การตั้งค่าชื่อเรื่อง</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>หมายเหตุ: เฉพาะตัวอักษรภาษาอังกฤษเท่านั้นที่ใช้สำหรับชื่อเรื่อง</translation>
+        <translation>หมายเหตุ: ใช้เฉพาะตัวอักษรภาษาอังกฤษสำหรับชื่อเรื่องเท่านั้น</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">การตั้งชื่อ</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">หมายเหตุ: เฉพาะตัวอักษรภาษาอังกฤษเท่านั้นที่ใช้สำหรับชื่อเรื่อง</translation>
     </message>
 </context>
 </TS>

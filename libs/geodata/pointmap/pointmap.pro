@@ -228,14 +228,17 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_tinmanager_tinbuilder.h \
            private/geodatapointmap_tinmanager_triangleswithlongedgeremover.h \
            private/geodatapointmap_tinnodemapper.h \
+           private/geodatapointmaplandxmlimporter_importersetting.h \
            private/geodatapointmapproxy_displaysetting.h \
            private/geodatapointmapproxy_displaysettingwidget.h \
            private/geodatapointmapproxy_impl.h \
            private/geodatapointmaprealbuilder_impl.h \
+           private/geodatapointmaprealtextimporter_importersetting.h \
            private/geodatapointmaprealtextimporter_lineparser.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
            private/geodatapointmapriter3dloader_tarheaderblock.h \
+           private/geodatapointmapstlimporter_importersetting.h \
            private/geodatapointmapwebimportersetting_impl.h \
            public/geodatapointmap_displaysettingwidget.h
 FORMS += geodatapointmapmergesettingdialog.ui \
@@ -329,12 +332,15 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_tinmanager_tinbuilder.cpp \
            private/geodatapointmap_tinmanager_triangleswithlongedgeremover.cpp \
            private/geodatapointmap_tinnodemapper.cpp \
+           private/geodatapointmaplandxmlimporter_importersetting.cpp \
            private/geodatapointmapproxy_displaysetting.cpp \
            private/geodatapointmapproxy_displaysettingwidget.cpp \
            private/geodatapointmapproxy_impl.cpp \
+           private/geodatapointmaprealtextimporter_importersetting.cpp \
            private/geodatapointmaprealtextimporter_lineparser.cpp \
            private/geodatapointmaprealtextimporter_settingdialog.cpp \
            private/geodatapointmapriter3dloader_tarheaderblock.cpp \
+           private/geodatapointmapstlimporter_importersetting.cpp \
            public/geodatapointmap_displaysettingwidget.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \

@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Ime se nastavi samodejno (npr. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Naloži iz atributa Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Določite vrednost</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodiranje</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatni sistem</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Nastavitev imena</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Atribut cilja uvoza imena</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Nastavitev vrednosti</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Atribut cilja uvoza vrednosti</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Določena vrednost</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

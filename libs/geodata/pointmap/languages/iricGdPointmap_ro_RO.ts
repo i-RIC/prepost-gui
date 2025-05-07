@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem de coordonate</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Date din cloud punct %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Date din cloud punct</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Datele conțin doar %1 puncte. Datele din norul de puncte trebuie să conțină cel puțin 3 puncte.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Virgulă</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Spaţiu</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Colon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Punct şi virgulă</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Codificare</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem de coordonate</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Delimitatori</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Caracter citat</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Personaj de evadare</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Linii de antet de ignorat</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>Câmpul X</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Câmpul Y</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Câmp de valoare</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Rată de omitere</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Coloană %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem de coordonate</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Date din cloud punct %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Date din cloud punct %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">STANIU</translation>
     </message>
 </context>
 <context>

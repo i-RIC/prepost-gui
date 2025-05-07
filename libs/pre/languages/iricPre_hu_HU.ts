@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Válassza ki az exportálni kívánt fájlt</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Importálási beállítás megjelenítése (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Célfájl importálása "%1"nem létezik.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Importálási beállítás</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Kérjük, válassza ki az importálandó adattípust</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Importálás megerősítése linkként</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>„Kapcsolat módban” szeretné importálni a földrajzi adatokat? Amikor a földrajzi adatokat „Kapcsolat módban” importálja, maga a földrajzi adat nem tárolódik a projektben, hanem csak a fájlnév és az importálási beállítás. Emiatt „Kapcsolat módban” importálva a projektadatok mérete sokkal kisebb lesz. Felhívjuk figyelmét, hogy a „Kapcsolat módban” importált földrajzi adatok nem szerkeszthetők.</translation>
     </message>
 </context>
 <context>

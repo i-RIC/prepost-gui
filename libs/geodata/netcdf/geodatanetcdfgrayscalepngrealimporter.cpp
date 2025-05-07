@@ -7,6 +7,7 @@
 #include <cs/coordinatesystemselectdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/filesystemfunction.h>
@@ -47,14 +48,14 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importData(GeoData* data, int /*inde
 {
 	auto netcdf = dynamic_cast<GeoDataNetcdfReal*> (data);
 
-	if (! importPgw(netcdf, filename(), w)) {return false;}
-	if (! importMeta(netcdf, filename(), w)) {return false;}
-	if (! importPng(netcdf, filename(), w)) {return false;}
+	if (! importPgw(netcdf, setting()->fileName(), w)) {return false;}
+	if (! importMeta(netcdf, setting()->fileName(), w)) {return false;}
+	if (! importPng(netcdf, setting()->fileName(), w)) {return false;}
 
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfGrayscalePngRealImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
@@ -119,9 +120,9 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 	}
 
 	netcdf->impl->m_lonValues.clear();
-	for (int j = 0; j < netcdf->impl->m_yValues.size(); ++j) {
+	for (int j = 0; j < static_cast<int> (netcdf->impl->m_yValues.size()); ++j) {
 		double y = netcdf->impl->m_yValues.at(j);
-		for (int i = 0; i < netcdf->impl->m_xValues.size(); ++i) {
+		for (int i = 0; i < static_cast<int> (netcdf->impl->m_xValues.size()); ++i) {
 			double x = netcdf->impl->m_xValues.at(i);
 			double lon, lat;
 			if (m_coordinateSystem->isLongLat()) {

@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Vasemman ja oikean rannan keskipiste</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Missä korkeus on pienin</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Tuo keskiviiva CSV-tiedostosta</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Alavirtaan ylävirtaan</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Ylävirtaan alavirtaan</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Missä määritellään joen keskipiste</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Poikkileikkausten järjestys</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 rivi 1: Otsikko ei sisällä tarpeeksi tietoa.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Vasemman ja oikean rannan keskipiste</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Missä korkeus on pienin</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Tuo keskiviiva CSV-tiedostosta</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Missä määritellään joen keskipiste</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-tiedoston nimi</translation>
     </message>
 </context>
 <context>

@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>กำลังบันทึก "%1" ล้มเหลว โปรดตรวจสอบให้แน่ใจว่าโปรแกรมอื่นกำลังเปิดไฟล์อยู่ แล้วลองอีกครั้ง</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>เอฟ1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>ค่าอินพุต</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>แบบจำลองสำหรับโฟลเดอร์ %3 ไม่พบในระบบ.</translation>
     </message>
 </context>
 </TS>

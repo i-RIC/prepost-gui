@@ -244,6 +244,10 @@
         <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>सहेजा जा रहा है"%1"विफल। कृपया सुनिश्चित करें कि अन्य प्रोग्राम फ़ाइल खोल रहा है, और पुनः प्रयास करें।</translation>
     </message>
+    <message>
+        <source>f1</source>
+        <translation>एफ1</translation>
+    </message>
 </context>
 <context>
     <name>iRICMIProject</name>
@@ -278,6 +282,14 @@
     <message>
         <source>Input value</source>
         <translation>इनपुट मान</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>The model for the folder %3 was not found in the system.</source>
+        <translation>फ़ोल्डर के लिए मॉडल %3 सिस्टम में नहीं पाया गया.</translation>
     </message>
 </context>
 </TS>

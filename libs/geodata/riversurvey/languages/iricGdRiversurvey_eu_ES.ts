@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Ezkerreko eta eskuineko ibaiertzen arteko erdiko puntua</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Altuera txikiena den lekuan</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Inportatu erdiko lerroa CSV fitxategitik</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Beherantz gora</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Gorantz beherantz</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Non definitu ibaiaren erdigunea</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV fitxategiaren izena</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Zeharkako sekzioen ordena</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 1. lerroa: goiburuak ez du datu nahikorik.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Ezkerreko eta eskuineko ibaiertzen erdiko puntua</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Altuera txikiena den lekuan</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Inportatu erdiko lerroa CSV fitxategitik</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Non definitu ibaiaren erdigunea</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV fitxategiaren izena</translation>
     </message>
 </context>
 <context>

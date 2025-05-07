@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Valige Eksporditav fail</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Kuva impordiseade (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Viga</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Impordi sihtfail "%1"ei eksisteeri.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Väärtus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Impordi seade</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Valige imporditavate andmete tüüp</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Kinnita importimine lingina</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Kas soovite geograafilisi andmeid importida "Lingirežiimis"? Kui geograafilisi andmeid imporditakse "Lingirežiimis", siis geograafilisi andmeid ennast projektis ei salvestata, vaid ainult failinime ja impordiseadeid. Seetõttu muutuvad projekti andmed "Lingirežiimis" importimisel palju väiksemaks. Pange tähele, et "Lingirežiimis" imporditud geograafilisi andmeid ei saa muuta.</translation>
     </message>
 </context>
 <context>

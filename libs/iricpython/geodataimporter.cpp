@@ -11,6 +11,6 @@ iRICPython::GeoDataImporter::GeoDataImporter(::GeoDataImporter* importer, Solver
 
 iRICPython::GeoData* iRICPython::GeoDataImporter::importGeoData(const std::string& filename)
 {
-	auto geoData =  m_importer->import(filename.c_str(), "", m_att, m_groupItem, nullptr);
+	auto geoData =  m_importer->import(filename.c_str(), false, "", m_att, m_groupItem, nullptr);
 	return new iRICPython::GeoData(geoData);
 }

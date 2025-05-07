@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Nafnið er stillt sjálfkrafa (t.d. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Hlaða úr Shapefile eigindinni</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Tilgreindu gildi</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kóðun</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hnitakerfi</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Nafnastilling</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Nafn innflutningsmarkseiginleiki</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Gildisstilling</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Markmiðseiginleiki gildis innflutnings</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Tilgreint gildi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

@@ -196,3 +196,25 @@ QString GeoDataPolyDataGroupShpImporterSettingDialog::codecName() const
 {
 	return ui->encodingComboBox->currentText();
 }
+
+QStringList GeoDataPolyDataGroupShpImporterSettingDialog::getLabels(QTextCodec* codec) const
+{
+	QString dbfFilename = m_filename;
+	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
+	std::string dbfname = iRIC::toStr(dbfFilename);
+	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
+
+	int fieldCount = DBFGetFieldCount(dbfh);
+
+	QStringList labels;
+	for (int i = 0; i < fieldCount; ++i) {
+		DBFFieldType type;
+		char fieldName[12];
+		type = DBFGetFieldInfo(dbfh, i, fieldName, NULL, NULL);
+		labels.append(codec->toUnicode(fieldName));
+	}
+
+	DBFClose(dbfh);
+	return labels;
+}
+

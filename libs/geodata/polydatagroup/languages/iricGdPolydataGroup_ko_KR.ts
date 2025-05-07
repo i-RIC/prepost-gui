@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>이름은 자동으로 설정됩니다(예: PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Shapefile 속성에서 로드</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>값을 지정하세요</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>부호화</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>이름 설정</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>이름 가져오기 대상 속성</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>값 설정</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>값 가져오기 대상 속성</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>지정된 값</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

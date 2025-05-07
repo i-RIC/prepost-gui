@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Izberite Datoteka za izvoz</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Prikaži nastavitve uvoza (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Uvozi ciljno datoteko "%1"ne obstaja.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Ime</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrednost</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Uvozi nastavitve</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Izberite vrsto podatkov za uvoz</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Potrdi uvoz kot povezavo</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Ali želite uvoziti geografske podatke v »načinu povezave«? Ko so geografski podatki uvoženi v »načinu povezave«, se v projektu ne shranijo sami geografski podatki, temveč le ime datoteke in nastavitve uvoza. Zaradi tega so podatki projekta pri uvozu v »načinu povezave« precej manjši. Upoštevajte, da geografskih podatkov, uvoženih v »načinu povezave«, ni mogoče urejati.</translation>
     </message>
 </context>
 <context>

@@ -1,13 +1,16 @@
 #include "geodatapolylinegroup.h"
 #include "geodatapolylinegroupcsvimporter.h"
 #include "geodatapolylinegrouppolyline.h"
+#include "private/geodatapolylinegroupcsvimporter_importersetting.h"
 
+#include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -52,13 +55,18 @@ const QStringList GeoDataPolyLineGroupCsvImporter::acceptableExtensions()
 	return ret;
 }
 
+GeoDataImporterSetting* GeoDataPolyLineGroupCsvImporter::createSetting() const
+{
+	return new ImporterSetting();
+}
+
 bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
 	auto group = dynamic_cast<GeoDataPolyLineGroup*>(data);
 
-	QFile file(filename());
+	QFile file(setting()->fileName());
 	if (! file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-		QMessageBox::critical(w, tr("Error"), tr("Error occured while opening %1").arg(QDir::toNativeSeparators(filename())));
+		QMessageBox::critical(w, tr("Error"), tr("Error occured while opening %1").arg(QDir::toNativeSeparators(setting()->fileName())));
 		return false;
 	}
 	QTextStream stream(&file);
@@ -219,7 +227,7 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int /*index*/, Q
 }
 
 
-bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataPolyLineGroupCsvImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}
@@ -229,7 +237,7 @@ bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QStr
 	dialog.setBuilder(csBuilder);
 	dialog.setEnabled(true);
 
-	auto prjFilename = filename;
+	auto prjFilename = setting()->fileName();
 	prjFilename.replace(QRegExp("\\.csv$"), ".prj");
 	if (QFile::exists(prjFilename)) {
 		// read and get EPSG code
@@ -252,5 +260,30 @@ bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QStr
 	if (projectCs != cs) {
 		m_converter = new CoordinateSystemConverter(cs, projectCs);
 	}
+
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+	if (cs != nullptr) {
+		s->csName = cs->name();
+	} else {
+		s->csName = "";
+	}
+
+	return true;
+}
+
+bool GeoDataPolyLineGroupCsvImporter::doInitWithSetting(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+{
+	auto s = dynamic_cast<ImporterSetting*> (setting());
+
+	*count = 1;
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto cs = csBuilder->system(s->csName);
+	if (projectCs != nullptr && cs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
 	return true;
 }

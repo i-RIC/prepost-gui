@@ -18,7 +18,7 @@ public:
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
 	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list);
 	static std::vector<QVariant> convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled);

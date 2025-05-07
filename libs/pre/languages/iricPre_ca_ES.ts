@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Seleccioneu Fitxer per exportar</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Mostra la configuració d'importació (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importa (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importa el fitxer de destinació "%1"no existeix.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Configuració d'importació</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Seleccioneu el tipus de dades que voleu importar</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Confirma la importació com a enllaç</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Voleu importar les dades geogràfiques en "Mode d'enllaç"? Quan les dades geogràfiques s'importen en "Mode d'enllaç", les dades geogràfiques en si no s'emmagatzemen al projecte, sinó només el nom del fitxer i la configuració d'importació. Per això, quan s'importen amb "Mode d'enllaç", les dades del projecte es tornen molt més petites. Tingueu en compte que les dades geogràfiques importades en "Mode d'enllaç" no es poden editar.</translation>
     </message>
 </context>
 <context>

@@ -121,6 +121,7 @@ HEADERS += gd_polylinegroup_global.h \
            private/geodatapolylinegroup_impl.h \
            private/geodatapolylinegroupcellmappert_detail.h \
            private/geodatapolylinegroupcreatort_detail.h \
+           private/geodatapolylinegroupcsvimporter_importersetting.h \
            private/geodatapolylinegroupifacemappert_detail.h \
            private/geodatapolylinegroupjfacemappert_detail.h \
            private/geodatapolylinegroupnodemappert_detail.h \
@@ -144,6 +145,7 @@ SOURCES += geodatapolylinegroup.cpp \
            geodatapolylinegroupshpimporter.cpp \
            private/geodatapolylinegroup_displaysetting.cpp \
            private/geodatapolylinegroup_impl.cpp \
+           private/geodatapolylinegroupcsvimporter_importersetting.cpp \
            private/geodatapolylinegroupproxy_displaysetting.cpp \
            private/geodatapolylinegroupproxy_displaysettingwidget.cpp \
            private/geodatapolylinegroupproxy_impl.cpp \

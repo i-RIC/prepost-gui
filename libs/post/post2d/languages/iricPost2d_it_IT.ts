@@ -720,7 +720,7 @@
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Verticale alle linee della griglia</translation>
+        <translation>Verticale rispetto alle linee della griglia</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>

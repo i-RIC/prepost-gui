@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Pilih File untuk Diekspor</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Tampilkan pengaturan impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Impor file target "%1" tidak ada.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Pengaturan Impor</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Silakan pilih jenis data yang akan diimpor</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Konfirmasi impor sebagai tautan</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Apakah Anda ingin mengimpor data geografis dalam "Mode Tautan"? Saat data geografis diimpor dalam "Mode Tautan", data geografis itu sendiri tidak disimpan dalam proyek, tetapi hanya nama file dan pengaturan impor. Karena itu, saat diimpor dengan "Mode Tautan", data proyek menjadi jauh lebih kecil. Harap perhatikan bahwa data geografis yang diimpor dalam "Mode Tautan" tidak dapat diedit.</translation>
     </message>
 </context>
 <context>

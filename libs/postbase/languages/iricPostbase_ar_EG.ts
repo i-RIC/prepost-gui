@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>تحرير ضبط الوقت</translation>
+        <translation type="vanished">تحرير ضبط الوقت</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>ضبط الوقت</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>استخدم إعدادات المشروع</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>تنسيق الوقت</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>ضبط الوقت</translation>
+        <translation type="vanished">ضبط الوقت</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>استخدم إعداد المشروع</translation>
+        <translation type="vanished">استخدم إعداد المشروع</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>تنسيق الوقت</translation>
+        <translation type="vanished">تنسيق الوقت</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>عنوان</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>إعداد العنوان</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>ملاحظة: يمكن استخدام الأحرف الإنجليزية فقط في العنوان.</translation>
+        <translation>ملحوظة: يمكن استخدام الأحرف الإنجليزية فقط للعنوان.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">إعداد العنوان</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">عنوان:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">ملاحظة: يمكن استخدام الأحرف الإنجليزية فقط في العنوان.</translation>
     </message>
 </context>
 </TS>

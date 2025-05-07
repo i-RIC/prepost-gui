@@ -686,22 +686,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>時刻表示の設定変更</translation>
+        <translation type="vanished">時刻表示の設定変更</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>時間設定</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形状</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>プロジェクト設定を使用する</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>時刻形式</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>時刻設定</translation>
+        <translation type="vanished">時刻設定</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>プロジェクトの設定を使用</translation>
+        <translation type="vanished">プロジェクトの設定を使用</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>時間の書式</translation>
+        <translation type="vanished">時間の書式</translation>
     </message>
     <message>
         <source>Format</source>
@@ -738,20 +757,39 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Edit title setting</source>
         <translation type="vanished">時刻表示の設定変更</translation>
     </message>
+    <message>
+        <source>Title Setting</source>
+        <translation>タイトル設定</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形状</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル：</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation>注意: タイトルには英語の文字のみ使用できます。</translation>
+    </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation>タイトル設定</translation>
+        <translation type="vanished">タイトル設定</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>タイトル:</translation>
+        <translation type="vanished">タイトル:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>警告: タイトルには、英数字と記号のみ利用することができます。</translation>
+        <translation type="vanished">警告: タイトルには、英数字と記号のみ利用することができます。</translation>
     </message>
     <message>
         <source>Color:</source>

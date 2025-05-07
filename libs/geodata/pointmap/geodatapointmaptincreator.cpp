@@ -15,17 +15,8 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapTINCreator::GeoDataPointmapTINCreator() :
-	GeoDataCreator {"tin", tr("TIN")}
-{
-	importers().push_back(new GeoDataPointmapSTLImporter(this));
-	importers().push_back(new GeoDataPointmapLandXmlImporter(this));
-	importers().push_back(new GeoDataPointmapRiter3dImporter(this));
-
-	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
-	exporters().push_back(new GeoDataPointmapRealExporter(this));
-	exporters().push_back(new GeoDataPointmapSTLExporter(this));
-	exporters().push_back(new GeoDataPointmapVTKExporter(this));
-}
+	GeoDataPointmapTINCreator {"tin"}
+{}
 
 GeoData* GeoDataPointmapTINCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
@@ -50,4 +41,17 @@ bool GeoDataPointmapTINCreator::isCompatibleWith(SolverDefinitionGridAttribute* 
 	if (condition->dimensions().size() > 0) {return false;}
 	if (condition->isReferenceInformation()) {return false;}
 	return true;
+}
+
+GeoDataPointmapTINCreator::GeoDataPointmapTINCreator(const QString& typeName) :
+	GeoDataCreator {typeName, tr("TIN")}
+{
+	importers().push_back(new GeoDataPointmapSTLImporter(this));
+	importers().push_back(new GeoDataPointmapLandXmlImporter(this));
+	importers().push_back(new GeoDataPointmapRiter3dImporter(this));
+
+	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
+	exporters().push_back(new GeoDataPointmapRealExporter(this));
+	exporters().push_back(new GeoDataPointmapSTLExporter(this));
+	exporters().push_back(new GeoDataPointmapVTKExporter(this));
 }

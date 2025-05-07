@@ -312,6 +312,8 @@ void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewI* v)
 
 void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyPressEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -321,6 +323,8 @@ void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsVie
 
 void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyReleaseEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -330,6 +334,8 @@ void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 
 void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseDoubleClickEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -339,6 +345,8 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorG
 
 void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseMoveEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -348,6 +356,8 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 
 void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMousePressEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -357,6 +367,8 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
+	if (isReadOnly()) {return;}
+
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseReleaseEvent(event, v);
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
@@ -367,8 +379,11 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 void GeoDataRiverSurvey::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
-	menu->addSeparator();
-	menu->addAction(impl->m_generatePointMapAction);
+
+	if (dataLoaded()) {
+		menu->addSeparator();
+		menu->addAction(impl->m_generatePointMapAction);
+	}
 }
 
 void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)

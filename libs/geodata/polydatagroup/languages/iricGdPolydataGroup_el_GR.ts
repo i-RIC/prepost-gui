@@ -225,6 +225,49 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyDataGroupShpImporter::ImporterSetting</name>
+    <message>
+        <source>Name is set automatically (ex. PolyData1)</source>
+        <translation>Το όνομα ορίζεται αυτόματα (π.χ. PolyData1)</translation>
+    </message>
+    <message>
+        <source>Load from Shapefile attribute</source>
+        <translation>Φόρτωση από χαρακτηριστικό Shapefile</translation>
+    </message>
+    <message>
+        <source>Specify value</source>
+        <translation>Καθορίστε τιμή</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Κωδικοποίηση</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Σύστημα Συντεταγμένων</translation>
+    </message>
+    <message>
+        <source>Name setting</source>
+        <translation>Ρύθμιση ονόματος</translation>
+    </message>
+    <message>
+        <source>Name import target attribute</source>
+        <translation>Χαρακτηριστικό στόχου εισαγωγής ονόματος</translation>
+    </message>
+    <message>
+        <source>Value setting</source>
+        <translation>Ρύθμιση τιμής</translation>
+    </message>
+    <message>
+        <source>Value import target attribute</source>
+        <translation>Χαρακτηριστικό στόχου εισαγωγής τιμής</translation>
+    </message>
+    <message>
+        <source>Specified value</source>
+        <translation>Καθορισμένη τιμή</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>

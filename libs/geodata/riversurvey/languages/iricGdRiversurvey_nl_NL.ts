@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Middenpunt van linkeroever en rechteroever</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Waar de hoogte het kleinst is</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importeer middellijn uit CSV-bestand</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Stroomafwaarts naar stroomopwaarts</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Stroomopwaarts naar stroomafwaarts</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Waar het middelpunt van de rivier moet worden gedefinieerd</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-bestandsnaam</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Volgorde van dwarsdoorsneden</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 regel 1: Header bevat niet voldoende gegevens.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Middenpunt van linkeroever en rechteroever</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Waar de hoogte het kleinst is</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importeer middellijn uit CSV-bestand</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Waar het middelpunt van de rivier moet worden gedefinieerd</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-bestandsnaam</translation>
     </message>
 </context>
 <context>

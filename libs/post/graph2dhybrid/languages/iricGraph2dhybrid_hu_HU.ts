@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Kérjük, adja meg az előtagot.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Vonal:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Betűtípus beállítása (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Vonal:</translation>
     </message>
 </context>
 <context>

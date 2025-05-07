@@ -505,6 +505,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapLandXmlImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordenatu Sistema</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
@@ -606,6 +613,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapRealReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Puntu hodeiko datuak %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="obsolete">Puntu hodeiko datuak</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
@@ -686,6 +704,73 @@
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation>Datuek bakarrik daukate %1 puntuak. Puntu-hodeiaren datuek 3 puntu izan behar dituzte gutxienez.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRealTextImporter::ImporterSetting</name>
+    <message>
+        <source>Comma</source>
+        <translation>Koma</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Fitxa</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation>Espazioa</translation>
+    </message>
+    <message>
+        <source>Colon</source>
+        <translation>Kolon</translation>
+    </message>
+    <message>
+        <source>Semicolon</source>
+        <translation>Puntu eta koma</translation>
+    </message>
+    <message>
+        <source>Encoding</source>
+        <translation>Kodeketa</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordenatu Sistema</translation>
+    </message>
+    <message>
+        <source>Delimiters</source>
+        <translation>Mugatzaileak</translation>
+    </message>
+    <message>
+        <source>Quote character</source>
+        <translation>Aipamen-karakterea</translation>
+    </message>
+    <message>
+        <source>Escape character</source>
+        <translation>Ihes-karakterea</translation>
+    </message>
+    <message>
+        <source>Header lines to ignore</source>
+        <translation>Goiburuko lerroak baztertu beharrekoak</translation>
+    </message>
+    <message>
+        <source>X field</source>
+        <translation>X eremua</translation>
+    </message>
+    <message>
+        <source>Y field</source>
+        <translation>Y eremua</translation>
+    </message>
+    <message>
+        <source>Value field</source>
+        <translation>Balio eremua</translation>
+    </message>
+    <message>
+        <source>Skip rate</source>
+        <translation>Salto-tasa</translation>
+    </message>
+    <message>
+        <source>Column %1</source>
+        <translation>Zutabea %1</translation>
     </message>
 </context>
 <context>
@@ -926,6 +1011,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapSTLImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordenatu Sistema</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
@@ -934,6 +1026,17 @@
     <message>
         <source>Point Cloud Data%1</source>
         <translation>Puntu hodeiko datuak %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINReadOnlyCreator</name>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="obsolete">Puntu hodeiko datuak %1</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="obsolete">TIN</translation>
     </message>
 </context>
 <context>

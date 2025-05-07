@@ -720,7 +720,7 @@
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation>Vertical para linhas de grade</translation>
+        <translation>Vertical às linhas da grade</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>

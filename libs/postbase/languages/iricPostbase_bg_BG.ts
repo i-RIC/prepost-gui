@@ -663,22 +663,41 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Редактиране на настройката за час</translation>
+        <translation type="vanished">Редактиране на настройката за час</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Настройка на времето</translation>
+    </message>
+</context>
+<context>
+    <name>PostTimeDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Формуляр</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation>Използвайте настройката на проекта</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation>Формат на времето</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Настройка на времето</translation>
+        <translation type="vanished">Настройка на времето</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Използвайте настройките на проекта</translation>
+        <translation type="vanished">Използвайте настройките на проекта</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Времеви формат</translation>
+        <translation type="vanished">Времеви формат</translation>
     </message>
 </context>
 <context>
@@ -687,12 +706,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Title</source>
         <translation>Заглавие</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Настройка на заглавието</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Формуляр</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Забележка: Само английски знаци могат да се използват за заглавие.</translation>
+        <translation>Забележка: За заглавие могат да се използват само английски букви.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Настройка на заглавието</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Заглавие:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Забележка: Само английски знаци могат да се използват за заглавие.</translation>
     </message>
 </context>
 </TS>

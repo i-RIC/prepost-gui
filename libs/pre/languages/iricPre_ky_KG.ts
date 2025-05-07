@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Экспорттоо үчүн Файлды тандаңыз</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Импорттоо жөндөөсүн көрсөтүү (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Максаттуу файлды импорттоо "%1"жок.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>аты</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Нарк</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Импорт жөндөө</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Сураныч, импорттоо үчүн берилиштердин түрүн тандаңыз</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Шилтеме катары импорттоону ырастаңыз</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>"Шилтеме режиминде" географиялык маалыматтарды импорттоону каалайсызбы? Географиялык маалыматтар "Шилтеме режиминде" импорттолгондо, географиялык маалыматтардын өзү долбоордо сакталбайт, файлдын аталышы жана импорттоо жөндөөлөрү гана. Ушундан улам, "Шилтеме режими" менен импорттолгондо, долбоордун маалыматтары бир топ кичирейет. "Шилтеме режиминде" импорттолгон географиялык маалыматтарды түзөтүү мүмкүн эмес экенин эске алыңыз.</translation>
     </message>
 </context>
 <context>

@@ -939,6 +939,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>选择导出文件</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>显示导入设置 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>导入目标文件” %1 “不存在。”</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>导入设置</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1103,6 +1137,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>请选择要导入的数据类型</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>确认导入为链接</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>您是否要以“链接模式”导入地理数据？在“链接模式”下导入地理数据时，地理数据本身不会存储在项目中，而仅会保存文件名和导入设置。因此，使用“链接模式”导入时，项目数据会变得非常小。请注意，在“链接模式”下导入的地理数据无法编辑。</translation>
     </message>
 </context>
 <context>

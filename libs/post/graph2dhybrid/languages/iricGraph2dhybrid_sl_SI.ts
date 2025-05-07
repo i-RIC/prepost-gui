@@ -330,6 +330,10 @@
         <source>Please input prefix.</source>
         <translation>Vnesite predpono.</translation>
     </message>
+    <message>
+        <source>Line:</source>
+        <translation>Vrstica:</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
@@ -384,6 +388,10 @@
     <message>
         <source>&amp;Font Setting</source>
         <translation>Nastavitev pisave (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Line:</source>
+        <translation>Vrstica:</translation>
     </message>
 </context>
 <context>

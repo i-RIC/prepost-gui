@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Pasirinkite Failas, kurį norite eksportuoti</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Rodyti importavimo nustatymą (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importuoti paskirties failą "%1"neegzistuoja.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Vardas</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vertė</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Importavimo nustatymas</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Pasirinkite importuojamų duomenų tipą</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Patvirtinti importavimą kaip nuorodą</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Ar norite importuoti geografinius duomenis „Susiejimo režimu“? Kai geografiniai duomenys importuojami „Susiejimo režimu“, patys geografiniai duomenys projekte nėra saugomi, o tik failo pavadinimas ir importavimo nustatymai. Dėl šios priežasties, importuojant projekto duomenis „Susiejimo režimu“, jie tampa daug mažesni. Atkreipkite dėmesį, kad geografinių duomenų, importuotų „Susiejimo režimu“, redaguoti negalima.</translation>
     </message>
 </context>
 <context>

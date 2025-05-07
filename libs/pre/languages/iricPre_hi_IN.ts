@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>निर्यात करने के लिए फ़ाइल का चयन करें</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>आयात सेटिंग दिखाएँ (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>लक्ष्य फ़ाइल आयात करें "%1" मौजूद नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>कीमत</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>आयात सेटिंग</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>कृपया आयात करने के लिए डेटा का प्रकार चुनें</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>लिंक के रूप में आयात की पुष्टि करें</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>क्या आप भौगोलिक डेटा को "लिंक मोड" में आयात करना चाहते हैं? जब भौगोलिक डेटा को "लिंक मोड" में आयात किया जाता है, तो भौगोलिक डेटा स्वयं प्रोजेक्ट में संग्रहीत नहीं होता है, बल्कि केवल फ़ाइल नाम और आयात सेटिंग होती है। इस वजह से, जब "लिंक मोड" के साथ आयात किया जाता है, तो प्रोजेक्ट डेटा बहुत छोटा हो जाता है। कृपया ध्यान दें कि "लिंक मोड" में आयात किए गए भौगोलिक डेटा को संपादित नहीं किया जा सकता है।</translation>
     </message>
 </context>
 <context>

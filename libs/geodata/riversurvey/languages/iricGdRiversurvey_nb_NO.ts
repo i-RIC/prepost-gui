@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Midtpunktet på venstre og høyre bredd</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Der høyden er minst</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importer midtlinje fra CSV-fil</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Nedstrøms til oppstrøms</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Oppstrøms til nedstrøms</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Hvor skal man definere elvens midtpunkt</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-filnavn</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Rekkefølge på tverrsnitt</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 linje 1: Overskriften inneholder ikke nok data.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Midtpunktet på venstre og høyre bredd</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Der høyden er minst</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Importer midtlinje fra CSV-fil</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Hvor skal man definere elvens midtpunkt</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-filnavn</translation>
     </message>
 </context>
 <context>

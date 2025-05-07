@@ -2,10 +2,10 @@
 
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodatafactory.h>
-#include <geodata/netcdf/geodatanetcdfintegercreator.h>
-#include <geodata/netcdf/geodatanetcdfrealcreator.h>
-#include <geodata/netcdf/geodatanetcdftimeseriesintegercreator.h>
-#include <geodata/netcdf/geodatanetcdftimeseriesrealcreator.h>
+#include <geodata/gdal/geodatagdalintegercreator.h>
+#include <geodata/gdal/geodatagdalrealcreator.h>
+#include <geodata/gdal/geodatagdaltimeseriesintegercreator.h>
+#include <geodata/gdal/geodatagdaltimeseriesrealcreator.h>
 #include <geodata/point/geodatapointrealcreator.h>
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
@@ -31,11 +31,13 @@ void GeoDataFactorySetup::setup()
 
 	// cross-section data, point cloud data, rasterdata
 	factory.addCreator(new GeoDataPointmapRealCreator());
+
 	factory.addCreator(new GeoDataRiverSurveyCreator());
-	factory.addCreator(new GeoDataNetcdfIntegerCreator());
-	factory.addCreator(new GeoDataNetcdfRealCreator());
-	factory.addCreator(new GeoDataNetcdfTimeSeriesIntegerCreator());
-	factory.addCreator(new GeoDataNetcdfTimeSeriesRealCreator());
+
+	factory.addCreator(new GeoDataGdalIntegerCreator());
+	factory.addCreator(new GeoDataGdalRealCreator());
+	factory.addCreator(new GeoDataGdalTimeSeriesIntegerCreator());
+	factory.addCreator(new GeoDataGdalTimeSeriesRealCreator());
 
 	// vector data
 	factory.addCreator(new GeoDataPolygonIntegerCreator());

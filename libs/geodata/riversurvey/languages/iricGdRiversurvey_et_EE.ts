@@ -1173,6 +1173,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurveyImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Vasaku ja parema kalda keskpunkt</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kus kõrgus on kõige väiksem</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Keskjoone importimine CSV-failist</translation>
+    </message>
+    <message>
+        <source>Downstream to upstream</source>
+        <translation>Allavoolust ülesvoolu</translation>
+    </message>
+    <message>
+        <source>Upstream to downstream</source>
+        <translation>Ülesvoolust allavoolu</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kus määratleda jõe keskpunkt</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-faili nimi</translation>
+    </message>
+    <message>
+        <source>Order of cross sections</source>
+        <translation>Ristlõigete järjekord</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
@@ -1361,6 +1396,29 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
         <translation>%1 rida 1: päis ei sisalda piisavalt andmeid.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyMlitImporter::ImporterSetting</name>
+    <message>
+        <source>Middle point of left bank and right bank</source>
+        <translation>Vasaku ja parema kalda keskpunkt</translation>
+    </message>
+    <message>
+        <source>Where the elevation is the smallest</source>
+        <translation>Kus kõrgus on kõige väiksem</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>Keskjoone importimine CSV-failist</translation>
+    </message>
+    <message>
+        <source>Where to define River center point</source>
+        <translation>Kus määratleda jõe keskpunkt</translation>
+    </message>
+    <message>
+        <source>CSV file name</source>
+        <translation>CSV-faili nimi</translation>
     </message>
 </context>
 <context>

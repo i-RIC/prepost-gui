@@ -663,14 +663,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Muokkaa aika -asetusta</translation>
+        <translation type="vanished">Muokkaa aika -asetusta</translation>
+    </message>
+    <message>
+        <source>Time Setting</source>
+        <translation>Aika-asetus</translation>
     </message>
 </context>
 <context>
-    <name>PostTimeEditDialog</name>
+    <name>PostTimeDataItem_EditWidget</name>
     <message>
-        <source>Time Setting</source>
-        <translation>Ajan asetus</translation>
+        <source>Form</source>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -682,17 +686,36 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PostTimeEditDialog</name>
+    <message>
+        <source>Time Setting</source>
+        <translation type="vanished">Ajan asetus</translation>
+    </message>
+    <message>
+        <source>Use project setting</source>
+        <translation type="vanished">Käytä projektiasetuksia</translation>
+    </message>
+    <message>
+        <source>Time Format</source>
+        <translation type="vanished">Aikamuoto</translation>
+    </message>
+</context>
+<context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
         <translation>Otsikko</translation>
     </message>
-</context>
-<context>
-    <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
         <translation>Otsikon asetus</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleDataItem_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -700,7 +723,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation>Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
+        <translation>Huomautus: Otsikossa voi käyttää vain englanninkielisiä merkkejä.</translation>
+    </message>
+</context>
+<context>
+    <name>PostTitleEditDialog</name>
+    <message>
+        <source>Title Setting</source>
+        <translation type="vanished">Otsikon asetus</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="vanished">Otsikko:</translation>
+    </message>
+    <message>
+        <source>Note: Only English Characters can be used for title.</source>
+        <translation type="vanished">Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
     </message>
 </context>
 </TS>

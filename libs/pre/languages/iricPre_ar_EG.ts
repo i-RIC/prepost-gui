@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>حدد ملف للتصدير</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>إظهار إعدادات الاستيراد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>استيراد ملف الهدف "%1"لا يوجد."</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>اسم</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>إعدادات الاستيراد</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>الرجاء تحديد نوع البيانات المراد استيرادها</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>تأكيد الاستيراد كرابط</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>هل ترغب في استيراد البيانات الجغرافية في "وضع الربط"؟ عند استيراد البيانات الجغرافية في "وضع الربط"، لا تُخزَّن البيانات الجغرافية نفسها في المشروع، بل اسم الملف وإعدادات الاستيراد فقط. لهذا السبب، عند استيرادها في "وضع الربط"، تصبح بيانات المشروع أصغر بكثير. يُرجى العلم أنه لا يمكن تعديل البيانات الجغرافية المستوردة في "وضع الربط".</translation>
     </message>
 </context>
 <context>

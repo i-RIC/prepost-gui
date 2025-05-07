@@ -177,6 +177,13 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointGroupCsvImporter::ImporterSetting</name>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema de coordenades</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>

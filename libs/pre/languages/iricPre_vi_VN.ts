@@ -921,6 +921,40 @@ Do you really want to import grid from this file?</source>
         <source>Select File to Export</source>
         <translation>Chọn tệp để xuất</translation>
     </message>
+    <message>
+        <source>Show &amp;import setting...</source>
+        <translation>Hiển thị cài đặt nhập (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Lỗi</translation>
+    </message>
+    <message>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Nhập tệp mục tiêu "%1" không tồn tại.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Giá trị</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
+    <message>
+        <source>Import Setting</source>
+        <translation>Nhập Cài Đặt</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
@@ -1080,6 +1114,19 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Please select type of data to import</source>
         <translation>Vui lòng chọn loại dữ liệu để nhập</translation>
+    </message>
+    <message>
+        <source>Confirm importing as link</source>
+        <translation>Xác nhận nhập dưới dạng liên kết</translation>
+    </message>
+    <message>
+        <source>Do you want to import the geographic data in "Link mode"?
+
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+
+Please note that the geographic data imported in "Link Mode" can not be edited.
+</source>
+        <translation>Bạn có muốn nhập dữ liệu địa lý ở "Chế độ liên kết" không? Khi dữ liệu địa lý được nhập ở "Chế độ liên kết", bản thân dữ liệu địa lý không được lưu trữ trong dự án mà chỉ có tên tệp và cài đặt nhập. Do đó, khi nhập bằng "Chế độ liên kết", dữ liệu dự án trở nên nhỏ hơn nhiều. Xin lưu ý rằng dữ liệu địa lý được nhập ở "Chế độ liên kết" không thể chỉnh sửa được.</translation>
     </message>
 </context>
 <context>
