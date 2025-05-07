@@ -822,14 +822,14 @@
     </message>
     <message>
         <source>Isosurface Setting</source>
-        <translation type="unfinished">等値面設定</translation>
+        <translation>等値面設定</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">フォーム</translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -896,7 +896,7 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished">計算結果の選択</translation>
+        <translation>計算結果を選択</translation>
     </message>
 </context>
 <context>

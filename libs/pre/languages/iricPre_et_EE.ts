@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Võrgustik linnulennult</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 ei kaardistata pärast viimast redigeerimist. Kas soovite kaardistamise praegu teostada?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Piiritingimuste seadmine &quot;%1&quot;pole kaardistatud pärast seda, kui seda viimati redigeeriti. Kas soovite kaardistamise praegu teostada?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Piiritingimuste seadmine "%1"pole kaardistatud pärast seda, kui seda viimati redigeeriti. Kas soovite kaardistamise praegu teostada?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -877,11 +875,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
-        <source>Import target file &quot;%1&quot; does not exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Impordi sihtfail "%1"ei eksisteeri.</translation>
     </message>
 </context>
 <context>
@@ -1063,16 +1061,16 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Confirm importing as link</source>
-        <translation type="unfinished"></translation>
+        <translation>Kinnita importimine lingina</translation>
     </message>
     <message>
-        <source>Do you want to import the geographic data in &quot;Link mode&quot;?
+        <source>Do you want to import the geographic data in "Link mode"?
 
-When geographic data is imported in &quot;Link Mode&quot;, the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with &quot;Link Mode&quot;, the project data becomes much smaller.
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
 
-Please note that the geographic data imported in &quot;Link Mode&quot; can not be edited.
+Please note that the geographic data imported in "Link Mode" can not be edited.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Kas soovite geograafilisi andmeid importida "Lingirežiimis"? Kui geograafilisi andmeid imporditakse "Lingirežiimis", siis geograafilisi andmeid ennast projektis ei salvestata, vaid ainult failinime ja impordiseadeid. Seetõttu muutuvad projekti andmed "Lingirežiimis" importimisel palju väiksemaks. Pange tähele, et "Lingirežiimis" imporditud geograafilisi andmeid ei saa muuta.</translation>
     </message>
 </context>
 <context>
@@ -1107,14 +1105,14 @@ Please note that the geographic data imported in &quot;Link Mode&quot; can not b
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Märkus. Kui variatsioon on lubatud, luuakse variatsioon nimega &quot;Vaikimisi&quot; ja kõik geograafilised andmed teisaldatakse sinna. Saate lisada, ümber nimetada, eemaldada variatsioone &quot;Objektibrauseris&quot;. Geograafilisi andmeid saate variatsioonide vahel teisaldada ja kopeerida. Variatsioonist, mille valite valikuga „Variatsioon lahendajale edastamiseks”, loodud ruudustiku atribuudi andmed edastatakse lahendajale. Saate valmistada mitu varianti, vahetada need, mis edastatakse lahendajale, ja veenduda erinevuse mõjus.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Märkus. Kui variatsioon on lubatud, luuakse variatsioon nimega "Vaikimisi" ja kõik geograafilised andmed teisaldatakse sinna. Saate lisada, ümber nimetada, eemaldada variatsioone "Objektibrauseris". Geograafilisi andmeid saate variatsioonide vahel teisaldada ja kopeerida. Variatsioonist, mille valite valikuga „Variatsioon lahendajale edastamiseks”, loodud ruudustiku atribuudi andmed edastatakse lahendajale. Saate valmistada mitu varianti, vahetada need, mis edastatakse lahendajale, ja veenduda erinevuse mõjus.</translation>
     </message>
 </context>
 <context>
@@ -1513,9 +1511,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Käivita (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Järgmisi atribuute ei kaardistatud, kuna võrgugeneraatori väljundväärtused nende jaoks. Kui soovite nende jaoks geograafilisi andmeid sunniviisiliselt kaardistada, kaardistage need käsitsi menüüga &quot;Grid&quot; -&gt; &quot;Atribuutide kaardistamine&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Järgmisi atribuute ei kaardistatud, kuna võrgugeneraatori väljundväärtused nende jaoks. Kui soovite nende jaoks geograafilisi andmeid sunniviisiliselt kaardistada, kaardistage need käsitsi menüüga "Grid" -&gt; "Atribuutide kaardistamine" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1534,12 +1532,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Geograafiliste andmete kaardistamine on lõpetatud</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Ruudustiku atribuut &quot;%1&quot;redigeeritakse käsitsi. Kui teostate kaardistamise, jäetakse kõik teie tehtud muudatused kõrvale. Kas soovite tõesti kaardistamise teostada?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Ruudustiku atribuut "%1"redigeeritakse käsitsi. Kui teostate kaardistamise, jäetakse kõik teie tehtud muudatused kõrvale. Kas soovite tõesti kaardistamise teostada?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Piiritingimused &quot;%1&quot;redigeeritakse käsitsi. Kui teostate kaardistamise, jäetakse kõik teie tehtud muudatused kõrvale. Kas soovite tõesti kaardistamise teostada?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Piiritingimused "%1"redigeeritakse käsitsi. Kui teostate kaardistamise, jäetakse kõik teie tehtud muudatused kõrvale. Kas soovite tõesti kaardistamise teostada?</translation>
     </message>
 </context>
 <context>
@@ -1557,20 +1555,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automaatne</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // ET&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ruudustiku loomisel küsitakse, kas atribuutide kaardistamist igal ajal. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // ET" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ruudustiku loomisel küsitakse, kas atribuutide kaardistamist igal ajal. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Käsitsi</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Atribuutide kaardistamine toimub ainult siis, kui valite käsitsi menüü &quot;Käivita&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Atribuutide kaardistamine toimub ainult siis, kui valite käsitsi menüü "Käivita".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2337,8 +2335,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Värvikaardi seadistus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus.&lt;/span&gt; Kasutage värviseadete muutmiseks vahekaarti Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Kasutage värviseadete muutmiseks vahekaarti Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2451,7 +2449,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Scalarbar seadistamine (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Avage linnulennult aken (&amp;B)</translation>
     </message>
     <message>

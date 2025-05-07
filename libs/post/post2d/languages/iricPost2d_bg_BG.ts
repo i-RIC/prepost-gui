@@ -650,7 +650,7 @@
     </message>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished">Настройка на графиката</translation>
+        <translation>Настройка на графиката</translation>
     </message>
 </context>
 <context>

@@ -678,7 +678,7 @@
     </message>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished">グラフ設定</translation>
+        <translation>グラフ設定</translation>
     </message>
 </context>
 <context>
