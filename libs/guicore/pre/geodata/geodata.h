@@ -95,6 +95,8 @@ public:
 	virtual void applyValueChangeMap(const std::vector<int>& valueMap);
 	void updateActorSetting();
 
+	void saveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	QMenu* menu() const;
 
 	virtual void handleStandardItemChange();

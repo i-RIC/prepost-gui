@@ -175,6 +175,15 @@ void GeoData::updateActorSetting()
 	geoDataDataItem()->updateActorSetting();
 }
 
+void GeoData::saveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	// save data to project main file.
+	doSaveToProjectMainFile(writer);
+	if (isReadOnly()) {return;}
+
+	saveExternalData(filename());
+}
+
 QMenu* GeoData::menu() const
 {
 	return m_menu;

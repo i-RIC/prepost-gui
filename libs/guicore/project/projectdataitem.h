@@ -104,7 +104,6 @@ protected:
 	virtual void doApplyOffset(double x, double y);
 	//@}
 
-private:
 	/// @name Virtual functions to implement project.xml I/O function
 	//@{
 	/// Load information to restore data from ProjectMainFile.
