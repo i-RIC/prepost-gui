@@ -7,7 +7,7 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 
-GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, int after_sel, const GeoDataRiverCrosssection::AltitudeList& before, int before_sel, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction, QUndoCommand* parentcommand) :
+GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, int after_sel, const GeoDataRiverCrosssection::AltitudeList& before, int before_sel, const GeoDataRiverPathPointOdnData& odn, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction, QUndoCommand* parentcommand) :
 	QUndoCommand(title, parentcommand),
 	m_apply {apply},
 	m_tableaction {tableaction},
@@ -20,8 +20,8 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 	m_groupDataItem {w->groupDataItem()},
 	m_rs {rs}
 {
-	m_beforeOdn = p->odn();
-	m_afterOdn = p->odn();
+	m_beforeOdn = odn;
+	m_afterOdn = odn;
 
 	std::vector<double> posvec;
 	for (const auto& alt : after) {
@@ -99,5 +99,7 @@ bool GeoDataRiverSurvey::EditCrosssectionCommand::mergeWith(const QUndoCommand* 
 
 	m_apply = com->m_apply;
 	m_after = com->m_after;
+	m_afterOdn = com->m_afterOdn;
+
 	return true;
 }

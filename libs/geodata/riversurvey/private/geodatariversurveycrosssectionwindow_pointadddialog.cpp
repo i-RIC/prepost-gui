@@ -18,6 +18,7 @@ GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::PointAddDialog(GeoDataRive
 	ui->setupUi(this);
 
 	m_alist = m_point->crosssection().AltitudeInfo();
+	m_odn = m_point->odn();
 
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PointAddDialog::handleButtonClick);
 }
@@ -32,7 +33,7 @@ void GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::accept()
 	int pos;
 	auto newlist = createNewList(&pos);
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Add point"), m_point, newlist, pos, m_alist, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*> (parentWidget()), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Add point"), m_point, newlist, pos, m_alist, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_odn, dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*> (parentWidget()), m_rs));
 
 	QDialog::accept();
 }
@@ -68,7 +69,9 @@ void GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::apply()
 	int pos;
 	auto newlist = createNewList(&pos);
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Add point"), m_point, newlist, pos, m_alist, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*> (parentWidget()), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Add point"), m_point, newlist, pos, m_alist, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_odn, dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*> (parentWidget()), m_rs));
+
+	m_applyed = true;
 }
 
 GeoDataRiverCrosssection::AltitudeList GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::createNewList(int* insertPosition) const

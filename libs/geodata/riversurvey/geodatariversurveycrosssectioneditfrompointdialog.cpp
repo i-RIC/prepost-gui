@@ -46,8 +46,9 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::accept()
 	int newIndex;
 	update(&newIndex);
 	auto after = m_point->crosssection().AltitudeInfo();
+	auto odn = m_point->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, odn, m_window, m_rs));
 	QDialog::accept();
 }
 
@@ -74,8 +75,9 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::continueEdit()
 		++ newIndex;
 	}
 	m_startIndex = newIndex;
+	auto odn = m_point->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, odn, m_window, m_rs));
 	m_applied = false;
 }
 
@@ -94,8 +96,9 @@ void GeoDataRiverSurveyCrossSectionEditFromPointDialog::apply()
 	int newIndex;
 	update(&newIndex);
 	auto after = m_point->crosssection().AltitudeInfo();
+	auto odn = m_point->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Edit Crosssection"), m_point, after, newIndex, before, oldIndex, odn, m_window, m_rs));
 	m_applied = true;
 }
 

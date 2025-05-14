@@ -1,6 +1,7 @@
 #ifndef GEODATARIVERSURVEYCROSSSECTIONWINDOW_POINTADDDIALOG_H
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOW_POINTADDDIALOG_H
 
+#include "../geodatariverpathpointodndata.h"
 #include "../geodatariversurveycrosssectionwindow.h"
 
 #include <QDialog>
@@ -35,6 +36,7 @@ private:
 	GeoDataRiverSurvey* m_rs;
 	bool m_applyed;
 	GeoDataRiverCrosssection::AltitudeList m_alist;
+	GeoDataRiverPathPointOdnData m_odn;
 
 	Ui::GeoDataRiverSurveyCrosssectionWindow_PointAddDialog *ui;
 };

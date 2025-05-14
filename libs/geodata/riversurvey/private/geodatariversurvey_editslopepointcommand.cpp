@@ -3,7 +3,7 @@
 
 #include <misc/qundocommandhelper.h>
 
-GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& newAlist, const GeoDataRiverCrosssection::AltitudeList& oldAlist, GeoDataRiverSurveyCrosssectionWindow* w) :
+GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& newAlist, const GeoDataRiverCrosssection::AltitudeList& oldAlist, const GeoDataRiverPathPointOdnData& odn, GeoDataRiverSurveyCrosssectionWindow* w) :
 	QUndoCommand {},
 	m_after {newAlist},
 	m_before {oldAlist},
@@ -11,8 +11,8 @@ GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, Geo
 	m_point {p},
 	m_window {w}
 {
-	m_beforeOdn = p->odn();
-	m_afterOdn = p->odn();
+	m_beforeOdn = odn;
+	m_afterOdn = odn;
 
 	std::vector<double> posvec;
 	for (const auto& alt : m_after) {

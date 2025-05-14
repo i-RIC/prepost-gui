@@ -680,7 +680,8 @@ void GeoDataRiverSurveyCrosssectionWindow::handleDataChange()
 	before = cross.AltitudeInfo();
 	if (! syncData()) { return; }
 	after = cross.AltitudeInfo();
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Elevation Point"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, this, impl->m_targetRiverSurvey, true));
+	GeoDataRiverPathPointOdnData odn = impl->m_editTargetPoint->odn();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Elevation Point"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, this, impl->m_targetRiverSurvey, true));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::handleVegetationDataChange()
@@ -826,7 +827,8 @@ void GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Delete Elevation Points"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, this, impl->m_targetRiverSurvey));
+	auto odn = impl->m_editTargetPoint->odn();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Delete Elevation Points"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, this, impl->m_targetRiverSurvey));
 	impl->m_selectionModel->clear();
 }
 
@@ -869,7 +871,8 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEOnlyThis()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, this, impl->m_targetRiverSurvey));
+	auto odn = impl->m_editTargetPoint->odn();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), impl->m_editTargetPoint, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, this, impl->m_targetRiverSurvey));
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
@@ -893,7 +896,8 @@ void GeoDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 			alist = before;
 		}
 		after = alist;
-		new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), p, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, this, impl->m_targetRiverSurvey, true, group);
+		auto odn = p->odn();
+		new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points using water elevation"), p, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn,  this, impl->m_targetRiverSurvey, true, group);
 		exec = true;
 		p = p->nextPoint();
 	}

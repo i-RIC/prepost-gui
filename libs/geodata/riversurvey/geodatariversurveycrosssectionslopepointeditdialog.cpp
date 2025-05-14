@@ -17,6 +17,7 @@ GeoDataRiverSurveyCrosssectionSlopePointEditDialog::GeoDataRiverSurveyCrosssecti
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
 	m_original = parent->target()->crosssection().AltitudeInfo();
+	m_originalOdn = parent->target()->odn();
 
 	connect<void (QSpinBox::*)(int)>(ui->slopeSpinBox, &QSpinBox::valueChanged, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit);
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleButtonClick);
@@ -174,7 +175,7 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 		newAList.push_back(m_original.at(i));
 	}
 
-	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, m_original, crosssectionWindow());
+	return new GeoDataRiverSurvey::EditSlopePointCommand(apply, target, newAList, m_original, m_originalOdn, crosssectionWindow());
 }
 
 void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec)

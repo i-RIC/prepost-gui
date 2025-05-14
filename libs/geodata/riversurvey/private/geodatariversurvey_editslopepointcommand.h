@@ -1,6 +1,7 @@
 #ifndef GEODATARIVERSURVEY_EDITSLOPEPOINTCOMMAND_H
 #define GEODATARIVERSURVEY_EDITSLOPEPOINTCOMMAND_H
 
+#include "../geodatariverpathpointodndata.h"
 #include "../geodatariversurvey.h"
 
 #include <QUndoCommand>
@@ -8,7 +9,7 @@
 class GeoDataRiverSurvey::EditSlopePointCommand : public QUndoCommand
 {
 public:
-	EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& newAlist, const GeoDataRiverCrosssection::AltitudeList& oldAlist, GeoDataRiverSurveyCrosssectionWindow* w);
+	EditSlopePointCommand(bool apply, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& newAlist, const GeoDataRiverCrosssection::AltitudeList& oldAlist, const GeoDataRiverPathPointOdnData& odn, GeoDataRiverSurveyCrosssectionWindow* w);
 
 	void redo() override;
 	void undo() override;

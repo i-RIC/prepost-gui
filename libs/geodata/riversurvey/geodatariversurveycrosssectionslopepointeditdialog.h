@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONSLOPEPOINTEDITDIALOG_H
 
 #include "geodatarivercrosssection.h"
+#include "geodatariverpathpointodndata.h"
 
 #include <QDialog>
 
@@ -49,6 +50,7 @@ private:
 
 	Mode m_mode;
 	GeoDataRiverCrosssection::AltitudeList m_original;
+	GeoDataRiverPathPointOdnData m_originalOdn;
 	bool m_applied;
 
 	Ui::GeoDataRiverSurveyCrosssectionSlopePointEditDialog *ui;
