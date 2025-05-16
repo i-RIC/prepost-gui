@@ -90,7 +90,7 @@ GeoDataRiverCrosssection::AltitudeList GeoDataRiverSurveyCrosssectionWindow::Poi
 
 	if (! inserted) {
 		newlist.push_back(newAlt);
-		*insertPosition = newlist.size() - 1;
+		*insertPosition = static_cast<int>(newlist.size()) - 1;
 	}
 
 	return newlist;

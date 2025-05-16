@@ -53,7 +53,7 @@ public:
 	void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags command) override;
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
-	void setSlopePointEditModeSetting(const QPointF& point, int slope);
+	void setSlopePointEditModeSetting(const QPointF& point, double slope);
 	void enterAddPointMode();
 	void enterAddVegetationMode();
 
@@ -202,7 +202,7 @@ private:
 
 	GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode m_slopePointEditMode;
 	QPointF m_slopePointEditModeSlopePoint;
-	int m_slopePointEditModeSlope;
+	double m_slopePointEditModeSlope;
 
 	QString m_editRatio;
 	bool m_gridMode;

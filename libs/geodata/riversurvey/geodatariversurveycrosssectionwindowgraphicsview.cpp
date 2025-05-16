@@ -348,7 +348,7 @@ QRegion GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRegionForSelecti
 	return QRegion();
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSetting(const QPointF& point, int slope)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSetting(const QPointF& point, double slope)
 {
 	m_slopePointEditModeSlopePoint = point;
 	m_slopePointEditModeSlope = slope;
@@ -1344,7 +1344,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 
 			// find jmk data near the mouse cursor;
 			const auto& jmkItems = m_parentWindow->target()->jmk().items();
-			for (int i = 0; i < jmkItems.size(); ++i) {
+			for (int i = 0; i < static_cast<int>(jmkItems.size()); ++i) {
 				const auto& jmkItem = jmkItems.at(i);
 				double left = jmkItem.distance;
 				double right = left + jmkItem.width;
@@ -1969,7 +1969,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minli
 		left = 0;
 		*minlimit = false;
 	}
-	if (right == alist.size()) {
+	if (right == static_cast<int>(alist.size())) {
 		right = static_cast<int>(alist.size()) - 1;
 		*maxlimit = false;
 	}

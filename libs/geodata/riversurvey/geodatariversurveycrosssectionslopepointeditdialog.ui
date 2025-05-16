@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>401</width>
-    <height>201</height>
+    <width>373</width>
+    <height>188</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QGridLayout" name="gridLayout">
+    <layout class="QGridLayout" name="gridLayout" columnstretch="0,1">
      <item row="0" column="0">
       <widget class="QLabel" name="modeLabel">
        <property name="text">
@@ -47,12 +47,15 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="slopeSpinBox">
+        <widget class="QDoubleSpinBox" name="slopeSpinBox">
          <property name="minimum">
-          <number>1</number>
+          <double>0.010000000000000</double>
          </property>
          <property name="maximum">
-          <number>9999</number>
+          <double>9999.989999999999782</double>
+         </property>
+         <property name="value">
+          <double>10.000000000000000</double>
          </property>
         </widget>
        </item>

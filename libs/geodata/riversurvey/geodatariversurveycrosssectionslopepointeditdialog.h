@@ -40,7 +40,7 @@ public slots:
 	void setPoint(const QPointF& point);
 
 private slots:
-	void handleSlopeEdit(int slope);
+	void handleSlopeEdit(double slope);
 	void handleButtonClick(QAbstractButton* button);
 
 private:

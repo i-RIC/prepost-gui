@@ -19,7 +19,7 @@ GeoDataRiverSurveyCrosssectionSlopePointEditDialog::GeoDataRiverSurveyCrosssecti
 	m_original = parent->target()->crosssection().AltitudeInfo();
 	m_originalOdn = parent->target()->odn();
 
-	connect<void (QSpinBox::*)(int)>(ui->slopeSpinBox, &QSpinBox::valueChanged, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit);
+	connect<void (QDoubleSpinBox::*)(double)>(ui->slopeSpinBox, &QDoubleSpinBox::valueChanged, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit);
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleButtonClick);
 }
 
@@ -110,7 +110,7 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::setPoint(const QPointF&
 	apply();
 }
 
-void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit(int slope)
+void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::handleSlopeEdit(double slope)
 {
 	QPointF point(ui->positionXEdit->value(), ui->positionYEdit->value());
 	crosssectionWindow()->graphicsView()->setSlopePointEditModeSetting(point, slope);

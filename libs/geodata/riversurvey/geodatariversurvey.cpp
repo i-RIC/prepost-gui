@@ -1738,11 +1738,14 @@ void GeoDataRiverSurvey::importJmk()
 
 void GeoDataRiverSurvey::exportJmk()
 {
+	auto ok = GeoDataRiverSurveyJmkExporter::check(this, preProcessorWindow());
+	if (! ok) {return;}
+
 	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), LastIODirectory::get(), tr("JMK file (*.jmk)"));
 	if (fname.isNull()) {return;}
 
 	GeoDataRiverSurveyJmkExporter exporter;
-	bool ok = exporter.doExport(fname, this, preProcessorWindow());
+	ok = exporter.doExport(fname, this, preProcessorWindow());
 
 	if (! ok) {return;}
 
