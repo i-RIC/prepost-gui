@@ -1866,6 +1866,44 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Cannot open file for writing</source>
         <translation>ファイルを書き込み用に開けません</translation>
     </message>
+    <message>
+        <source>Overwrap found between item %1 and %2.</source>
+        <translation>%1番目と%2番目の植生が重なっています。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Problems are copied to clipboard.</source>
+        <translation>問題の情報がクリップボードにコピーされました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
+    <message>
+        <source>Problems of JMK data</source>
+        <translation>JMKデータの問題</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>横断線</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>問題</translation>
+    </message>
+    <message>
+        <source>The problems above is found. Do you want to continue exporting?</source>
+        <translation>上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
+    </message>
+    <message>
+        <source>&amp;Copy to Clipboard</source>
+        <translation>クリップボードにコピー(&amp;C)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
@@ -2079,6 +2117,44 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Cross-Section Data (*.odn)</source>
         <translation>横断測量データ (*.odn)</translation>
+    </message>
+    <message>
+        <source>ODN data points are not ordered correctly.</source>
+        <translation>ODNデータが正しく並んでいません。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Problems are copied to clipboard.</source>
+        <translation>問題の情報がクリップボードにコピーされました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
+    <message>
+        <source>Problems of ODN data</source>
+        <translation>ODNデータの問題</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>横断線</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>問題</translation>
+    </message>
+    <message>
+        <source>The problems above is found. Do you want to continue exporting?</source>
+        <translation>上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
+    </message>
+    <message>
+        <source>&amp;Copy to Clipboard</source>
+        <translation>クリップボードにコピー(&amp;C)</translation>
     </message>
 </context>
 <context>

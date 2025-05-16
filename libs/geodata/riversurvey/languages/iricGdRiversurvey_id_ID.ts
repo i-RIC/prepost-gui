@@ -1642,6 +1642,44 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Cannot open file for writing</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Overwrap found between item %1 and %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informasi</translation>
+    </message>
+    <message>
+        <source>Problems are copied to clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
+    <message>
+        <source>Problems of JMK data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished">Masalah</translation>
+    </message>
+    <message>
+        <source>The problems above is found. Do you want to continue exporting?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Copy to Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
@@ -1810,6 +1848,44 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ODN data points are not ordered correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informasi</translation>
+    </message>
+    <message>
+        <source>Problems are copied to clipboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
+    <message>
+        <source>Problems of ODN data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished">Masalah</translation>
+    </message>
+    <message>
+        <source>The problems above is found. Do you want to continue exporting?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Copy to Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
