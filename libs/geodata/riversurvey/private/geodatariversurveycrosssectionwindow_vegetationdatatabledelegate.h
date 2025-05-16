@@ -10,6 +10,8 @@ class GeoDataRiverPathPointJmkData;
 
 class GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate : public QStyledItemDelegate
 {
+	Q_OBJECT
+
 public:
 	VegetationDataTableDelegate();
 	void setData(GeoDataRiverPathPointJmkData* data);

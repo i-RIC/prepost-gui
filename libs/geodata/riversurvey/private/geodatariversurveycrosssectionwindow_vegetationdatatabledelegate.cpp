@@ -49,21 +49,21 @@ void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::paint(QP
 		painter->drawPixmap(option.rect, pixmap);
 	} else if (col == 4) {
 		if (dat.toInt() == 1) {
-			drawComboBox(tr("Dense"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("Dense"), option.rect, painter);
 		} else {
-			drawComboBox(tr("Sparse"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("Sparse"), option.rect, painter);
 		}
 	} else if (col == 5) {
 		if (dat.toInt() == 1) {
-			drawComboBox(tr("Real trees"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("Real trees"), option.rect, painter);
 		} else {
-			drawComboBox(tr("Upstream trees"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("Upstream trees"), option.rect, painter);
 		}
 	} else if (col == 6) {
 		if (dat.toInt() == 1) {
-			drawComboBox(tr("High trees"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("High trees"), option.rect, painter);
 		} else {
-			drawComboBox(tr("Low trees"), option.rect, painter);
+			drawComboBox(GeoDataRiverSurveyCrosssectionWindow::tr("Low trees"), option.rect, painter);
 		}
 	}
 }
@@ -86,18 +86,18 @@ QWidget* GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::crea
 		return m_checkBox;
 	} else if (col == 4) {
 		auto w = new QComboBox(parent);
-		w->addItem(tr("Sparse"));
-		w->addItem(tr("Dense"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("Sparse"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("Dense"));
 		return w;
 	} else if (col == 5) {
 		auto w = new QComboBox(parent);
-		w->addItem(tr("Upstream trees"));
-		w->addItem(tr("Real trees"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("Upstream trees"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("Real trees"));
 		return w;
 	} else if (col == 6) {
 		auto w = new QComboBox(parent);
-		w->addItem(tr("Low trees"));
-		w->addItem(tr("High trees"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("Low trees"));
+		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("High trees"));
 		return w;
 	}
 }
