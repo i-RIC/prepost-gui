@@ -1,5 +1,6 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveyodnexporter.h"
+#include "private/geodatariversurveyodnexporter_problemsdialog.h"
 
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -14,6 +15,10 @@ GeoDataRiverSurveyOdnExporter::GeoDataRiverSurveyOdnExporter(GeoDataCreator* cre
 
 bool GeoDataRiverSurveyOdnExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
+	auto rs = dynamic_cast<GeoDataRiverSurvey*>(data);
+	auto ok = check(rs, w);
+	if (! ok) {return false;}
+
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
 		std::cerr << "Cannot open file for writing: "
@@ -23,7 +28,6 @@ bool GeoDataRiverSurveyOdnExporter::doExport(GeoData* data, const QString& filen
 
 	QTextStream outstream(&file);
 
-	auto rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	auto offset = pd->mainfile()->offset();
 
 	std::vector<GeoDataRiverPathPoint*> points;
@@ -78,4 +82,44 @@ const QStringList GeoDataRiverSurveyOdnExporter::fileDialogFilters()
 	QStringList ret;
 	ret << tr("Cross-Section Data (*.odn)");
 	return ret;
+}
+
+bool GeoDataRiverSurveyOdnExporter::check(GeoDataRiverSurvey* rs, QWidget* w)
+{
+	std::vector<GeoDataRiverPathPoint*> points;
+	auto point = rs->headPoint()->nextPoint();
+	while (point != nullptr) {
+		points.push_back(point);
+		point = point->nextPoint();
+	}
+
+	std::vector<Problem> problems;
+	for (auto it = points.rbegin(); it != points.rend(); ++it) {
+		const auto point = *it;
+		const auto& odn = point->odn();
+		int nb[6];
+		for (int i = 0; i < 6; ++i) {
+			nb[i] = odn.nb(i);
+		}
+		bool all_ok = true;
+		for (int i = 0; i < 5; ++i) {
+			const auto& nb1 = nb[i];
+			const auto& nb2 = nb[i + 1];
+			if (nb2 < nb1) {
+				all_ok = false;
+			}
+		}
+		if (! all_ok) {
+			Problem p {point->name(), tr("ODN data points are not ordered correctly.")};
+			problems.push_back(p);
+		}
+	}
+
+	if (problems.size() == 0) {return true;}
+
+	ProblemsDialog dialog(w);
+	dialog.setProblems(problems);
+	int ret = dialog.exec();
+
+	return ret == QDialog::Accepted;
 }
