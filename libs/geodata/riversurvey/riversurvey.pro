@@ -186,6 +186,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveymappointsdialog.h \
            geodatariversurveymlitimporter.h \
            geodatariversurveynodemapper.h \
+           geodatariversurveyodnchecker.h \
            geodatariversurveyodnexporter.h \
            geodatariversurveyodnimporter.h \
            geodatariversurveyproxy.h \
@@ -230,7 +231,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveyimporter_problemsdialog.h \
            private/geodatariversurveyjmkexporter_problemsdialog.h \
            private/geodatariversurveymlitimporter_problemsdialog.h \
-           private/geodatariversurveyodnexporter_problemsdialog.h \
+           private/geodatariversurveyodnchecker_problemsdialog.h \
            private/geodatariversurveyodnimporter_positionsettingdialog.h \
            private/geodatariversurveyproxy_displaysetting.h \
            private/geodatariversurveyproxy_displaysettingwidget.h \
@@ -261,7 +262,7 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          private/geodatariversurveyimporter_problemsdialog.ui \
          private/geodatariversurveyjmkexporter_problemsdialog.ui \
          private/geodatariversurveymlitimporter_problemsdialog.ui \
-         private/geodatariversurveyodnexporter_problemsdialog.ui \
+         private/geodatariversurveyodnchecker_problemsdialog.ui \
          private/geodatariversurveyodnimporter_positionsettingdialog.ui \
          private/geodatariversurveyproxy_displaysettingwidget.ui \
          private/geodatariversurveywebimporter_settingdialog.ui \
@@ -308,6 +309,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveymappointsdialog.cpp \
            geodatariversurveymlitimporter.cpp \
            geodatariversurveynodemapper.cpp \
+           geodatariversurveyodnchecker.cpp \
            geodatariversurveyodnexporter.cpp \
            geodatariversurveyodnimporter.cpp \
            geodatariversurveyproxy.cpp \
@@ -350,7 +352,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurveyimporter_problemsdialog.cpp \
            private/geodatariversurveyjmkexporter_problemsdialog.cpp \
            private/geodatariversurveymlitimporter_problemsdialog.cpp \
-           private/geodatariversurveyodnexporter_problemsdialog.cpp \
+           private/geodatariversurveyodnchecker_problemsdialog.cpp \
            private/geodatariversurveyodnimporter_positionsettingdialog.cpp \
            private/geodatariversurveyproxy_displaysetting.cpp \
            private/geodatariversurveyproxy_displaysettingwidget.cpp \

@@ -31,7 +31,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>The problems above is found. Do you want to continue exporting?</string>
+      <string>The problems above are found. Do you want to continue exporting?</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

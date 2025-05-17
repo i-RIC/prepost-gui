@@ -1786,7 +1786,9 @@ void GeoDataRiverSurvey::calcArea()
 	if (ret == QDialog::Rejected) {return;}
 
 	auto before = rslist.at(dialog.compareTargetIndex());
-	AreaCalculator calculator(before, this, dialog.filename());
+
+	bool statistic = (dialog.mode() == CalcAreaConditionDialog::Mode::Statistic);
+	AreaCalculator calculator(before, this, dialog.filename(), statistic);
 
 	bool ok = calculator.calculate(preProcessorWindow());
 	if (ok) {

@@ -14,6 +14,8 @@ class GeoDataRiverSurvey::CalcAreaConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
+	enum Mode {Statistic, Each};
+
 	explicit CalcAreaConditionDialog(QWidget *parent = nullptr);
 	~CalcAreaConditionDialog();
 
@@ -23,6 +25,8 @@ public:
 
 	QString filename() const;
 	void setFilename(const QString& name);
+
+	Mode mode() const;
 
 private:
 	Ui::GeoDataRiverSurvey_CalcAreaConditionDialog *ui;

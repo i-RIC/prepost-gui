@@ -36,3 +36,15 @@ void GeoDataRiverSurvey::CalcAreaConditionDialog::setFilename(const QString& nam
 {
 	ui->filenameEdit->setFilename(name);
 }
+
+GeoDataRiverSurvey::CalcAreaConditionDialog::Mode GeoDataRiverSurvey::CalcAreaConditionDialog::mode() const
+{
+	auto index = ui->modeComboBox->currentIndex();
+	if (index == 0) {
+		return Mode::Each;
+	} else if (index == 1) {
+		return Mode::Statistic;
+	}
+
+	return Mode::Each;
+}

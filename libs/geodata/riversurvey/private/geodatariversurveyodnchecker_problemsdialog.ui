@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GeoDataRiverSurveyOdnExporter_ProblemsDialog</class>
- <widget class="QDialog" name="GeoDataRiverSurveyOdnExporter_ProblemsDialog">
+ <class>GeoDataRiverSurveyOdnChecker_ProblemsDialog</class>
+ <widget class="QDialog" name="GeoDataRiverSurveyOdnChecker_ProblemsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>461</height>
+    <width>629</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Problems of ODN data</string>
+   <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -29,9 +29,9 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="messageLabel">
      <property name="text">
-      <string>The problems above is found. Do you want to continue exporting?</string>
+      <string>The problems above are found. Do you want to continue exporting?</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -39,7 +39,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="copyToClipboardButton">
        <property name="text">
@@ -79,7 +79,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>GeoDataRiverSurveyOdnExporter_ProblemsDialog</receiver>
+   <receiver>GeoDataRiverSurveyOdnChecker_ProblemsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -95,7 +95,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>GeoDataRiverSurveyOdnExporter_ProblemsDialog</receiver>
+   <receiver>GeoDataRiverSurveyOdnChecker_ProblemsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

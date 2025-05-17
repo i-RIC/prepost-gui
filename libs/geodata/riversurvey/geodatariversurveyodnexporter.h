@@ -16,13 +16,6 @@ public:
 
 private:
 	bool check(GeoDataRiverSurvey* rs, QWidget* w);
-
-	struct Problem {
-		QString name;
-		QString message;
-	};
-
-	class ProblemsDialog;
 };
 
 #endif // GEODATARIVERSURVEYODNEXPORTER_H

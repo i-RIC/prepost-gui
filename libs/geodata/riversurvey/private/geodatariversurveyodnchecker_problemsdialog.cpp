@@ -1,5 +1,5 @@
-#include "geodatariversurveyodnexporter_problemsdialog.h"
-#include "ui_geodatariversurveyodnexporter_problemsdialog.h"
+#include "geodatariversurveyodnchecker_problemsdialog.h"
+#include "ui_geodatariversurveyodnchecker_problemsdialog.h"
 
 #include <QClipboard>
 
@@ -10,9 +10,9 @@ const int MESSAGE_WIDTH = 400;
 
 } // namespace
 
-GeoDataRiverSurveyOdnExporter::ProblemsDialog::ProblemsDialog(QWidget *parent) :
+GeoDataRiverSurveyOdnChecker::ProblemsDialog::ProblemsDialog(QWidget *parent) :
 	QDialog(parent),
-	ui(new Ui::GeoDataRiverSurveyOdnExporter_ProblemsDialog)
+	ui(new Ui::GeoDataRiverSurveyOdnChecker_ProblemsDialog)
 {
 	ui->setupUi(this);
 
@@ -23,12 +23,12 @@ GeoDataRiverSurveyOdnExporter::ProblemsDialog::ProblemsDialog(QWidget *parent) :
 	connect(ui->copyToClipboardButton, &QPushButton::clicked, this, &ProblemsDialog::copyToClipboard);
 }
 
-GeoDataRiverSurveyOdnExporter::ProblemsDialog::~ProblemsDialog()
+GeoDataRiverSurveyOdnChecker::ProblemsDialog::~ProblemsDialog()
 {
 	delete ui;
 }
 
-void GeoDataRiverSurveyOdnExporter::ProblemsDialog::setProblems(const std::vector<Problem>& problems)
+void GeoDataRiverSurveyOdnChecker::ProblemsDialog::setProblems(const std::vector<Problem>& problems)
 {
 	m_problems = problems;
 
@@ -44,7 +44,15 @@ void GeoDataRiverSurveyOdnExporter::ProblemsDialog::setProblems(const std::vecto
 	}
 }
 
-void GeoDataRiverSurveyOdnExporter::ProblemsDialog::copyToClipboard()
+void GeoDataRiverSurveyOdnChecker::ProblemsDialog::setForceFix(bool forceFix)
+{
+	if (! forceFix) {return;}
+
+	ui->messageLabel->setText(tr("The problems above are found. Please fix them before continuing."));
+	ui->buttonBox->removeButton(ui->buttonBox->button(QDialogButtonBox::Cancel));
+}
+
+void GeoDataRiverSurveyOdnChecker::ProblemsDialog::copyToClipboard()
 {
 	QString buffer;
 	QTextStream stream(&buffer);
