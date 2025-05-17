@@ -203,25 +203,25 @@ GeoDataRiverSurvey::Impl::~Impl()
 
 void GeoDataRiverSurvey::Impl::setupActions()
 {
-	connect(m_generateAction, SIGNAL(triggered()), m_rs, SLOT(generateData()));
-	connect(m_buildBankLinesAction, SIGNAL(triggered()), m_rs, SLOT(buildBankLines()));
-	connect(m_addVertexAction, SIGNAL(triggered(bool)), m_rs, SLOT(addVertexMode(bool)));
-	connect(m_removeVertexAction, SIGNAL(triggered(bool)), m_rs, SLOT(removeVertexMode(bool)));
-	connect(m_importCenterLineAction, SIGNAL(triggered()), m_rs, SLOT(importCenterLine()));
-	connect(m_exportCenterLineAction, SIGNAL(triggered()), m_rs, SLOT(exportCenterLine()));
-	connect(m_addUpperSideAction, SIGNAL(triggered()), m_rs, SLOT(insertNewPoint()));
-	connect(m_addLowerSideAction, SIGNAL(triggered()), m_rs, SLOT(addNewPoint()));
-	connect(m_moveAction, SIGNAL(triggered()), m_rs, SLOT(moveSelectedPoints()));
-	connect(m_rotateAction, SIGNAL(triggered()), m_rs, SLOT(rotateSelectedPoint()));
-	connect(m_shiftAction, SIGNAL(triggered()), m_rs, SLOT(shiftSelectedPoints()));
-	connect(m_expandAction, SIGNAL(triggered()), m_rs, SLOT(expandSelectedPoints()));
-	connect(m_deleteAction, SIGNAL(triggered()), m_rs, SLOT(deleteSelectedPoints()));
-	connect(m_renameAction, SIGNAL(triggered()), m_rs, SLOT(renameSelectedPoint()));
-	connect(m_addLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(addLeftExtensionPoint()));
-	connect(m_addRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(addRightExtensionPoint()));
-	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeLeftExtensionPoint()));
-	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeRightExtensionPoint()));
-	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
+	connect(m_generateAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::generateData);
+	connect(m_buildBankLinesAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::buildBankLines);
+	connect(m_addVertexAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::addVertexMode);
+	connect(m_removeVertexAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::removeVertexMode);
+	connect(m_importCenterLineAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::importCenterLine);
+	connect(m_exportCenterLineAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::exportCenterLine);
+	connect(m_addUpperSideAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::insertNewPoint);
+	connect(m_addLowerSideAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::addNewPoint);
+	connect(m_moveAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::moveSelectedPoints);
+	connect(m_rotateAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::rotateSelectedPoint);
+	connect(m_shiftAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::shiftSelectedPoints);
+	connect(m_expandAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::expandSelectedPoints);
+	connect(m_deleteAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::deleteSelectedPoints);
+	connect(m_renameAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::renameSelectedPoint);
+	connect(m_addLeftExtensionPointAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::addLeftExtensionPoint);
+	connect(m_addRightExtensionPointAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::addRightExtensionPoint);
+	connect(m_removeLeftExtensionPointAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::removeLeftExtensionPoint);
+	connect(m_removeRightExtensionPointAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::removeRightExtensionPoint);
+	connect(m_openCrossSectionWindowAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::openCrossSectionWindow);
 	connect(m_displaySettingAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::displaySetting);
 	connect(m_interpolateSplineAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::switchInterpolateModeToSpline);
 	connect(m_mapPointsAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::mapPointsData);
