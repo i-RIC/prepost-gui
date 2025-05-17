@@ -581,6 +581,42 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Calculate difference areas</source>
         <translation>差分の面積を計算</translation>
     </message>
+    <message>
+        <source>Span name</source>
+        <translation>区間名</translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation>総計</translation>
+    </message>
+    <message>
+        <source>Left than Left Start Point</source>
+        <translation>左岸計算開始点より左側</translation>
+    </message>
+    <message>
+        <source>Between Left Start Point and Left Middle Point</source>
+        <translation>左岸計算開始点と左岸中水敷変化点の間</translation>
+    </message>
+    <message>
+        <source>Between Left Middle Point and Left Low Point</source>
+        <translation>左岸中水敷変化点と左岸低水敷変化点の間</translation>
+    </message>
+    <message>
+        <source>Between Left Low Point and Right Low Point</source>
+        <translation>左岸低水敷変化点と右岸低水敷変化点の間</translation>
+    </message>
+    <message>
+        <source>Between Right Low Point and Right Middle Point</source>
+        <translation>右岸低水敷変化点と右岸中水敷変化点の間</translation>
+    </message>
+    <message>
+        <source>Between Right Middle Point and Right Start Point</source>
+        <translation>右岸中水敷変化点と右岸計算開始点の間</translation>
+    </message>
+    <message>
+        <source>Right than Right Start Point</source>
+        <translation>右岸計算開始点より右側</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1898,11 +1934,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>The problems above is found. Do you want to continue exporting?</source>
-        <translation>上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
+        <translation type="vanished">上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
         <translation>クリップボードにコピー(&amp;C)</translation>
+    </message>
+    <message>
+        <source>The problems above are found. Do you want to continue exporting?</source>
+        <translation>上の問題が見つかりました。エクスポートを続行しますか?</translation>
     </message>
 </context>
 <context>
@@ -2113,18 +2153,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter</name>
-    <message>
-        <source>Cross-Section Data (*.odn)</source>
-        <translation>横断測量データ (*.odn)</translation>
-    </message>
+    <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
         <translation>ODNデータが正しく並んでいません。</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
+    <message>
+        <source>The problems above are found. Please fix them before continuing.</source>
+        <translation>上の問題が見つかりました。続行するには先に問題を修正してください。</translation>
+    </message>
     <message>
         <source>Information</source>
         <translation>情報</translation>
@@ -2135,10 +2175,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
+    <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
-        <source>Problems of ODN data</source>
-        <translation>ODNデータの問題</translation>
+        <source>Dialog</source>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Cross Section</source>
@@ -2149,12 +2189,61 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>問題</translation>
     </message>
     <message>
-        <source>The problems above is found. Do you want to continue exporting?</source>
-        <translation>上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
+        <source>The problems above are found. Do you want to continue exporting?</source>
+        <translation>上の問題が見つかりました。エクスポートを続行しますか?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
         <translation>クリップボードにコピー(&amp;C)</translation>
+    </message>
+    <message>
+        <source>ODN data checking result</source>
+        <translation>ODNデータの変化点の確認結果</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>Cross-Section Data (*.odn)</source>
+        <translation>横断測量データ (*.odn)</translation>
+    </message>
+    <message>
+        <source>ODN data points are not ordered correctly.</source>
+        <translation type="vanished">ODNデータが正しく並んでいません。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation type="vanished">情報</translation>
+    </message>
+    <message>
+        <source>Problems are copied to clipboard.</source>
+        <translation type="vanished">問題の情報がクリップボードにコピーされました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
+    <message>
+        <source>Problems of ODN data</source>
+        <translation type="vanished">ODNデータの問題</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="vanished">横断線</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="vanished">問題</translation>
+    </message>
+    <message>
+        <source>The problems above is found. Do you want to continue exporting?</source>
+        <translation type="vanished">上の問題が見つかりました。エクスポートの操作を続けますか?</translation>
+    </message>
+    <message>
+        <source>&amp;Copy to Clipboard</source>
+        <translation type="vanished">クリップボードにコピー(&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -2298,6 +2387,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Output Filename:</source>
         <translation>出力ファイル名:</translation>
+    </message>
+    <message>
+        <source>Calculation Mode:</source>
+        <translation>計算モード:</translation>
+    </message>
+    <message>
+        <source>Calculate for each area enclosed by intersection points</source>
+        <translation>交点で囲まれた区間ごとに計算</translation>
+    </message>
+    <message>
+        <source>Statistics for each segment</source>
+        <translation>ODNデータの変化点で囲まれた区間ごとに統計値を計算</translation>
     </message>
 </context>
 <context>

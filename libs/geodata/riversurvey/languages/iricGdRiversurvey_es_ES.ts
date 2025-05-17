@@ -530,6 +530,42 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Calculate difference areas</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Span name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left than Left Start Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Between Left Start Point and Left Middle Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Between Left Middle Point and Left Low Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Between Left Low Point and Right Low Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Between Right Low Point and Right Middle Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Between Right Middle Point and Right Start Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right than Right Start Point</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1705,11 +1741,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished">Problema</translation>
     </message>
     <message>
-        <source>The problems above is found. Do you want to continue exporting?</source>
+        <source>&amp;Copy to Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Copy to Clipboard</source>
+        <source>The problems above are found. Do you want to continue exporting?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1877,18 +1913,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter</name>
-    <message>
-        <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
-    </message>
+    <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
+    <message>
+        <source>The problems above are found. Please fix them before continuing.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Information</source>
         <translation type="unfinished">Informacion</translation>
@@ -1899,11 +1935,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
-    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
-    <message>
-        <source>Problems of ODN data</source>
-        <translation type="unfinished"></translation>
-    </message>
+    <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
         <translation type="unfinished"></translation>
@@ -1913,12 +1945,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished">Problema</translation>
     </message>
     <message>
-        <source>The problems above is found. Do you want to continue exporting?</source>
+        <source>The problems above are found. Do you want to continue exporting?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ODN data checking result</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>Cross-Section Data (*.odn)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter::ProblemsDialog</name>
+    <message>
+        <source>Information</source>
+        <translation type="obsolete">Informacion</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter_ProblemsDialog</name>
+    <message>
+        <source>Problem</source>
+        <translation type="obsolete">Problema</translation>
     </message>
 </context>
 <context>
@@ -2061,6 +2118,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Output Filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation Mode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculate for each area enclosed by intersection points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statistics for each segment</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
