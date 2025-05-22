@@ -11,6 +11,7 @@
 #include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_editjmkdatacommand.h"
+#include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h"
 #include "private/geodatariversurveycrosssectionwindow_wsetabledelegate.h"
@@ -162,6 +163,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	impl->m_odnRightStartAction = new QAction(tr("Right Start Point"), this);
 	impl->m_addPointAction = new QAction(tr("&Add point"), this);
 	impl->m_deleteAction = new QAction(tr("&Delete"), this);
+	impl->m_calcAreaAction = new QAction(tr("Calculate difference areas"), this);
 
 	connect(impl->m_editFromSelectedPointAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPoint);
 	connect(impl->m_editFromSelectedPointWithDialogAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::editFromSelectedPointWithDialog);
@@ -183,6 +185,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupActions()
 	connect(impl->m_odnRightStartAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::setSelectedPointToOdnRightStart);
 	connect(impl->m_addPointAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::enterAddPointMode);
 	connect(impl->m_deleteAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::deleteSelectedRows);
+	connect(impl->m_calcAreaAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindow::calcArea);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
@@ -199,9 +202,32 @@ void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
 
 	impl->m_elevationPointMenu->addSeparator();
 	impl->m_elevationPointMenu->addAction(impl->m_editFromSelectedPointWithDialogAction);
+
+	auto startEditMenu = impl->m_elevationPointMenu->addMenu(tr("Edit by specifying slope point"));
+	startEditMenu->addAction(leftAddAction());
+	startEditMenu->addAction(leftSubAction());
+	startEditMenu->addAction(rightAddAction());
+	startEditMenu->addAction(rightSubAction());
+
+	auto odnMenu = startEditMenu->addMenu(tr("Set to ODN data point"));
+	odnMenu->addAction(odnLeftStartAction());
+	odnMenu->addAction(odnLeftMiddleAction());
+	odnMenu->addAction(odnLeftLowAction());
+	odnMenu->addAction(odnRightLowAction());
+	odnMenu->addAction(odnRightMiddleAction());
+	odnMenu->addAction(odnRightStartAction());
+
 	impl->m_elevationPointMenu->addAction(impl->m_addPointAction);
 	impl->m_elevationPointMenu->addAction(gview->moveAction());
 	impl->m_elevationPointMenu->addAction(impl->m_deleteAction);
+
+	impl->m_elevationPointMenu->addSeparator();
+	impl->m_elevationPointMenu->addAction(addVegetationAction());
+	impl->m_elevationPointMenu->addAction(editSelectedVegetationAction());
+	impl->m_elevationPointMenu->addAction(deleteSelectedVegetationAction());
+
+	impl->m_elevationPointMenu->addSeparator();
+	impl->m_elevationPointMenu->addAction(impl->m_calcAreaAction);
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
@@ -1430,6 +1456,14 @@ void GeoDataRiverSurveyCrosssectionWindow::handleFixRegion(bool fix)
 void GeoDataRiverSurveyCrosssectionWindow::handleDrawnRegionChanged()
 {
 	impl->m_aspectRatioEdit->setValue(ui->graphicsView->aspectRatio());
+}
+
+void GeoDataRiverSurveyCrosssectionWindow::calcArea()
+{
+	auto rs = targetRiverSurvey();
+	if (rs == nullptr) {return;}
+
+	rs->calcArea();
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::moveUpWse(int index)

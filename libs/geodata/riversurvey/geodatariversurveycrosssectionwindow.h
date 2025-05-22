@@ -71,6 +71,7 @@ public:
 	QAction* odnRightLowAction() const;
 	QAction* odnRightMiddleAction() const;
 	QAction* odnRightStartAction() const;
+	QAction* calcAreaAction() const;
 
 	void setupData();
 	void updateSurveysTable();
@@ -143,6 +144,7 @@ private slots:
 	void handleFixAspectRatio(bool fix);
 	void handleFixRegion(bool fix);
 	void handleDrawnRegionChanged();
+	void calcArea();
 
 	void moveUpWse(int index);
 	void moveDownWse(int index);
