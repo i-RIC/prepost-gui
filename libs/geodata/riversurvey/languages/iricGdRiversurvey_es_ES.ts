@@ -1151,6 +1151,18 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>&amp;Add point</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Calculate difference areas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit by specifying slope point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set to ODN data point</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
