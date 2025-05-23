@@ -141,6 +141,18 @@ void calcAutoScale(double width, double* scale, double* subScale)
 	}
 }
 
+double round2(double value)
+{
+	return std::round(value * 100) / 100.0;
+}
+
+QPointF round2(QPointF point)
+{
+	double x = round2(point.x());
+	double y = round2(point.y());
+	return QPointF(x, y);
+}
+
 } // namespace
 
 GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w) :
@@ -1414,11 +1426,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		}
 		viewport()->update();
 	} else if (m_mouseEventMode == meDragVegetation) {
-		GeoDataRiverPathPointJmkData::Item item;
 		auto invMatrix = m_matrix.inverted();
 		auto oldP = invMatrix.map(QPointF(m_oldPosition));
 		auto newP = invMatrix.map(QPointF(event->pos()));
-		auto dx = newP.x() - oldP.x();
+		auto dx = round2(newP.x() - oldP.x());
 
 		auto target = m_parentWindow->target();
 		auto oldJmk = target->jmk();
@@ -1614,8 +1625,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 			m_mouseEventMode = meNormal;
 
 			QMatrix invMatrix = m_matrix.inverted();
-			QPointF mappedLeft = invMatrix.map(QPointF(qMin(event->x(), m_rubberOrigin.x()), 0));
-			QPointF mappedRight = invMatrix.map(QPointF(qMax(event->x(), m_rubberOrigin.x()), 0));
+			QPointF mappedLeft = round2(invMatrix.map(QPointF(qMin(event->x(), m_rubberOrigin.x()), 0)));
+			QPointF mappedRight = round2(invMatrix.map(QPointF(qMax(event->x(), m_rubberOrigin.x()), 0)));
 
 			GeoDataRiverPathPointJmkData::Item item;
 			auto target = m_parentWindow->target();
