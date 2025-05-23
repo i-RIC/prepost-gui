@@ -553,7 +553,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateStatistic(GeoDataRiverPathPoin
 		}
 		if (add != 0 || sub != 0) {
 			*s << after_p->name() << "," << segmentNames.at(i) << "," << start + after_p->crosssection().leftShift() << "," << end + after_p->crosssection().leftShift() << ",";
-			*s << add << "," << sub << "," << add - sub << ",\n";
+			*s << add << "," << - sub << "," << add - sub << ",\n";
 			output = true;
 		}
 	}
