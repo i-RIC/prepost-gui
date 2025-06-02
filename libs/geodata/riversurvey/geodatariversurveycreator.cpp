@@ -6,6 +6,8 @@
 #include "geodatariversurveylandxmlexporter.h"
 #include "geodatariversurveymlitimporter.h"
 #include "geodatariversurveynodemapper.h"
+#include "geodatariversurveyodnexporter.h"
+#include "geodatariversurveyodnimporter.h"
 #include "geodatariversurveyvtkexporter.h"
 #include "geodatariversurveywebimporter.h"
 
@@ -55,8 +57,10 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator(const QString& typeName) :
 {
 	importers().push_back(new GeoDataRiverSurveyImporter(this));
 	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
+	importers().push_back(new GeoDataRiverSurveyOdnImporter(this));
 
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
+	exporters().push_back(new GeoDataRiverSurveyOdnExporter(this));
 }

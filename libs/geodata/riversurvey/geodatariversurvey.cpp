@@ -12,9 +12,13 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "geodatariversurveydisplaysettingdialog.h"
+#include "geodatariversurveyjmkexporter.h"
+#include "geodatariversurveyjmkimporter.h"
 #include "geodatariversurveygeneratedialog.h"
 #include "geodatariversurveymappointsdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_areacalculator.h"
+#include "private/geodatariversurvey_calcareaconditiondialog.h"
 #include "private/geodatariversurvey_changeselectioncommand.h"
 #include "private/geodatariversurvey_deleteriverpathpointcommand.h"
 #include "private/geodatariversurvey_impl.h"
@@ -48,10 +52,14 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatadataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
+#include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -63,6 +71,7 @@
 #include <QAction>
 #include <QDomElement>
 #include <QFile>
+#include <QFileDialog>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -86,6 +95,8 @@
 #include <vtkRenderWindow.h>
 
 #include <iriclib_riversurvey.h>
+
+#include <yaml-cpp/yaml.h>
 
 namespace {
 
@@ -446,6 +457,36 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 				before = newPoint;
 			}
 			delete rs;
+
+			// ODN data
+			auto odnFilename = filename;
+			odnFilename.append(".odn");
+			YAML::Node odn = YAML::LoadFile(iRIC::toStr(odnFilename));
+
+			auto p = m_headPoint->nextPoint();
+			while (p != nullptr) {
+				auto pname = iRIC::toStr(p->name());
+				if (odn[pname]) {
+					auto odn_p = odn[pname];
+					p->odn().importFromYaml(odn_p);
+				}
+				p = p->nextPoint();
+			}
+
+			// JMK data
+			auto jmkFilename = filename;
+			jmkFilename.append(".jmk");
+			YAML::Node jmk = YAML::LoadFile(iRIC::toStr(jmkFilename));
+
+			p = m_headPoint->nextPoint();
+			while (p != nullptr) {
+				auto pname = iRIC::toStr(p->name());
+				if (jmk[pname]) {
+					auto jmk_p = jmk[pname];
+					p->jmk().importFromYaml(jmk_p);
+				}
+				p = p->nextPoint();
+			}
 		} else if (impl->m_mode == Impl::Mode::CreateMode) {
 			// implement this
 			QFile f(filename);
@@ -509,8 +550,37 @@ void GeoDataRiverSurvey::saveExternalData(const QString& filename)
 			p = p->nextPoint();
 		}
 		rs->save(iRIC::toStr(filename).c_str());
-
 		delete rs;
+
+		// ODN data
+		auto odnFilename = filename;
+		odnFilename.append(".odn");
+		QFile odnf(odnFilename);
+		odnf.open(QIODevice::WriteOnly | QIODevice::Text);
+		QTextStream odns(&odnf);
+		p = m_headPoint->nextPoint();
+		while (p != nullptr) {
+			odns << p->name() << ":\n";
+			p->odn().exportToYaml(&odns, "  ");
+
+			p = p->nextPoint();
+		}
+		odnf.close();
+
+		// JMK data
+		auto jmkFilename = filename;
+		jmkFilename.append(".jmk");
+		QFile jmkf(jmkFilename);
+		jmkf.open(QIODevice::WriteOnly | QIODevice::Text);
+		QTextStream jmks(&jmkf);
+		p = m_headPoint->nextPoint();
+		while (p != nullptr) {
+			jmks << p->name() << ":\n";
+			p->jmk().exportToYaml(&jmks, "  ");
+
+			p = p->nextPoint();
+		}
+		jmkf.close();
 	} else if (impl->m_mode == Impl::Mode::CreateMode) {
 		QFile f(filename);
 		f.open(QIODevice::WriteOnly);
@@ -1531,6 +1601,13 @@ void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 	gItem->informCtrlPointUpdateToCrosssectionWindows();
 }
 
+HydraulicDataRiverSurveyWaterElevation* GeoDataRiverSurvey::defaultWSE() const
+{
+	auto weGroup = hydraulicDataGroupDataItem("waterelevation");
+	auto weItem = dynamic_cast<PreProcessorHydraulicDataDataItemI*> (weGroup->childItems().at(0));
+	return dynamic_cast<HydraulicDataRiverSurveyWaterElevation*> (weItem->hydraulicData());
+}
+
 void GeoDataRiverSurvey::displaySetting()
 {
 	showPropertyDialog();
@@ -1663,6 +1740,80 @@ void GeoDataRiverSurvey::generatePointMap()
 	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
 }
 
+void GeoDataRiverSurvey::importJmk()
+{
+	auto fname = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), GeoLastIODirectory::get(), tr("JMK file (*.jmk)"));
+	if (fname.isNull()) {return;}
+
+	GeoDataRiverSurveyJmkImporter importer;
+	bool ok = importer.import(fname, this, preProcessorWindow());
+	if (! ok) {return;}
+
+	updateCrosssectionWindows();
+
+	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Vegetation data is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
+}
+
+void GeoDataRiverSurvey::exportJmk()
+{
+	auto ok = GeoDataRiverSurveyJmkExporter::check(this, preProcessorWindow());
+	if (! ok) {return;}
+
+	auto fname = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select file to export"), GeoLastIODirectory::get(), tr("JMK file (*.jmk)"));
+	if (fname.isNull()) {return;}
+
+	GeoDataRiverSurveyJmkExporter exporter;
+	ok = exporter.doExport(fname, this, preProcessorWindow());
+
+	if (! ok) {return;}
+
+	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Vegetation data is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)));
+}
+
+void GeoDataRiverSurvey::calcArea()
+{
+	if (impl->m_calcAreaFilename.isEmpty()) {
+		QDir dir(GeoLastIODirectory::get());
+		impl->m_calcAreaFilename = dir.absoluteFilePath("calcAreaResult.csv");
+	}
+
+	std::vector<GeoDataRiverSurvey*> rslist;
+	QStringList rsNames;
+
+	auto group = geoDataDataItem()->groupDataItem();
+	for (auto child : group->childItems()) {
+		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemI*> (child);
+		auto geoData = geoDataItem->geoData();
+		auto rs = dynamic_cast<GeoDataRiverSurvey*> (geoData);
+		if (rs == nullptr) {continue;}
+		if (rs == this) {continue;}
+
+		rslist.push_back(rs);
+		rsNames.push_back(rs->caption());
+	}
+	if (rsNames.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("To use this function, you need to import another river survey data for comparison."));
+		return;
+	}
+
+	CalcAreaConditionDialog dialog(preProcessorWindow());
+	dialog.setFilename(impl->m_calcAreaFilename);
+	dialog.setCompareTargets(rsNames);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto before = rslist.at(dialog.compareTargetIndex());
+
+	bool statistic = (dialog.mode() == CalcAreaConditionDialog::Mode::Statistic);
+	AreaCalculator calculator(before, this, dialog.filename(), statistic);
+
+	bool ok = calculator.calculate(preProcessorWindow());
+	if (ok) {
+		QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Calculation result is saved to %1.").arg(QDir::toNativeSeparators(dialog.filename())));
+	}
+}
+
 void GeoDataRiverSurvey::setFocusedPoint(GeoDataRiverPathPoint* point)
 {
 	impl->m_focusedPoint = point;
@@ -1700,6 +1851,22 @@ void GeoDataRiverSurvey::cancelBackgroundGridUpdate()
 GeoDataProxy* GeoDataRiverSurvey::getProxy()
 {
 	return new GeoDataRiverSurveyProxy(this);
+}
+
+QStringList GeoDataRiverSurvey::containedFiles() const
+{
+	QStringList ret;
+	if (filename() != "") {
+		auto relFilename = relativeFilename();
+		ret.append(relFilename);
+
+		if (impl->m_mode == Impl::Mode::EditMode) {
+			ret.append(relFilename + ".odn");
+			ret.append(relFilename + ".jmk");
+		}
+	}
+
+	return ret;
 }
 
 void GeoDataRiverSurvey::updateFilename()

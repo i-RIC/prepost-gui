@@ -14,13 +14,13 @@
 
 #include <QPoint>
 
+class GridCreatingConditionRiverSurveyI;
+class HydraulicDataRiverSurveyWaterElevation;
+
 class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
 
-class GridCreatingConditionRiverSurveyI;
-
-/// Polygon container.
 /**
  * GeoDataPolygon uses vtkPolygon instance as the container (m_polygon),
  * but has interfaces to use QPolygon instances for input / output.
@@ -81,7 +81,10 @@ public:
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
 
+	HydraulicDataRiverSurveyWaterElevation* defaultWSE() const;
+
 	GeoDataProxy* getProxy() override;
+	QStringList containedFiles() const override;
 
 	class DisplaySettingWidget;
 
@@ -113,6 +116,9 @@ private slots:
 	void switchInterpolateModeToSpline();
 	void mapPointsData();
 	void generatePointMap();
+	void importJmk();
+	void exportJmk();
+	void calcArea();
 
 signals:
 	void dataUpdated();
@@ -163,7 +169,9 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
+	class AreaCalculator;
 	class DisplaySetting;
+	class CalcAreaConditionDialog;
 
 	class PolyLineFinishDefiningCommand;
 	class PolyLineUpdateLabelsCommand;
@@ -173,6 +181,9 @@ private:
 	class ChangeSelectionCommand;
 	class DeleteRiverPathPointCommand;
 	class EditCrosssectionCommand;
+	class EditJmkDataCommand;
+	class EditJmkDataByDragCommand;
+	class EditSlopePointCommand;
 	class ExpandCrosssectionCommand;
 	class InsertRiverPathPointCommand;
 	class MouseEditCrosssectionCommand;
@@ -183,6 +194,7 @@ private:
 	class RemoveExtensionCommand;
 	class RenameRiverPathPointCommand;
 	class RotateRiverCrosssectionCommand;
+	class SetOdnPointCommand;
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
 
@@ -201,6 +213,7 @@ public:
 	friend class GeoDataRiverPathPointExpandDialog;
 	friend class GeoDataRiverCrosssectionAltitudeMoveDialog;
 	friend class GeoDataRiverSurveyCrossSectionEditFromPointDialog;
+	friend class GeoDataRiverSurveyCrosssectionSlopePointEditDialog;
 	friend class GeoDataRiverSurveyCrosssectionWindow;
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 

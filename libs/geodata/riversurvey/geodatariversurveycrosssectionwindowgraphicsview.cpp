@@ -4,17 +4,24 @@
 #include "geodatariverpathpoint.h"
 #include "geodatariversurvey.h"
 #include "geodatariversurveycrosssectiondisplaysettingdialog.h"
+#include "geodatariversurveycrosssectionslopepointeditdialog.h"
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowgraphicsview.h"
 #include "private/geodatariversurvey_editcrosssectioncommand.h"
 #include "private/geodatariversurvey_mouseeditcrosssectioncommand.h"
 #include "private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h"
 #include "private/geodatariversurveycrosssectionwindow_impl.h"
+#include "private/geodatariversurveycrosssectionwindow_pointadddialog.h"
+#include "private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h"
+#include "private/geodatariversurvey_editjmkdatabydragcommand.h"
+#include "private/geodatariversurvey_editjmkdatacommand.h"
+#include "private/geodatariversurvey_impl.h"
 
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
@@ -54,6 +61,7 @@ namespace {
 
 const int bankHOffset = 10;
 const int bankVOffset = 35;
+const int ODN_VOFFSET = 10;
 const int PREVIEW_LABEL_OFFSET = 3;
 const int WSE_WIDTH = 120;
 
@@ -133,6 +141,18 @@ void calcAutoScale(double width, double* scale, double* subScale)
 	}
 }
 
+double round2(double value)
+{
+	return std::round(value * 100) / 100.0;
+}
+
+QPointF round2(QPointF point)
+{
+	double x = round2(point.x());
+	double y = round2(point.y());
+	return QPointF(x, y);
+}
+
 } // namespace
 
 GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w) :
@@ -148,6 +168,9 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	m_viewMouseEventMode {vmeNormal},
 	m_modelessDialogIsOpen {false},
 	m_oldLine (nullptr),
+	m_slopePointEditMode {GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode::LeftAdd},
+	m_slopePointEditModeSlopePoint {},
+	m_slopePointEditModeSlope {10},
 	m_gridMode {false}
 {
 	// Set cursors for mouse view change events.
@@ -168,11 +191,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setParentWindow(GeoDataRi
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupActions()
 {
 	m_activateAction = new QAction(tr("&Activate"), this);
-	connect(m_activateAction, SIGNAL(triggered()), this, SLOT(activateSelectedRows()));
+	connect(m_activateAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows);
 	m_inactivateAction = new QAction(tr("&Inactivate"), this);
-	connect(m_inactivateAction, SIGNAL(triggered()), this, SLOT(inactivateSelectedRows()));
+	connect(m_inactivateAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows);
 	m_moveAction = new QAction(tr("&Move"), this);
-	connect(m_moveAction, SIGNAL(triggered()), this, SLOT(moveSelectedRows()));
+	connect(m_moveAction, &QAction::triggered, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows);
 	m_activateAction->setEnabled(false);
 	m_inactivateAction->setEnabled(false);
 	m_moveAction->setEnabled(false);
@@ -191,9 +214,33 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 		submenu->addAction(m_parentWindow->inactivateByWEAllAction());
 
 		m_rightClickingMenu->addSeparator();
+
 		m_rightClickingMenu->addAction(m_parentWindow->editFromSelectedPointAction());
+
+		auto startEditMenu = m_rightClickingMenu->addMenu(tr("Edit by specifying slope point"));
+		startEditMenu->addAction(m_parentWindow->leftAddAction());
+		startEditMenu->addAction(m_parentWindow->leftSubAction());
+		startEditMenu->addAction(m_parentWindow->rightAddAction());
+		startEditMenu->addAction(m_parentWindow->rightSubAction());
+
+		auto odnMenu = m_rightClickingMenu->addMenu(tr("Set to ODN data point"));
+		odnMenu->addAction(m_parentWindow->odnLeftStartAction());
+		odnMenu->addAction(m_parentWindow->odnLeftMiddleAction());
+		odnMenu->addAction(m_parentWindow->odnLeftLowAction());
+		odnMenu->addAction(m_parentWindow->odnRightLowAction());
+		odnMenu->addAction(m_parentWindow->odnRightMiddleAction());
+		odnMenu->addAction(m_parentWindow->odnRightStartAction());
+
+		m_rightClickingMenu->addAction(m_parentWindow->addPointAction());
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
+		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->addVegetationAction());
+		m_rightClickingMenu->addAction(m_parentWindow->editSelectedVegetationAction());
+		m_rightClickingMenu->addAction(m_parentWindow->deleteSelectedVegetationAction());
+
+		m_rightClickingMenu->addSeparator();
+		m_rightClickingMenu->addAction(m_parentWindow->targetRiverSurvey()->impl->m_calcAreaAction);
 	}
 	if (m_rightClickingMenuForEditCrosssectionMode == nullptr) {
 		m_rightClickingMenuForEditCrosssectionMode = new QMenu(this);
@@ -232,6 +279,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 			drawLine(refPoint, c, painter);
 		}
 
+		drawJmkLine(painter);
+		drawOdnNbPoints(painter);
 		drawLine(&m_oldLine, Qt::gray, painter);
 		for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 			GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints().at(i);
@@ -247,6 +296,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 		drawSelectionCircle(painter);
 		// draw edit preview
 		drawEditPreview(painter);
+		drawSlopePointEditPreview(painter);
 	}
 	else {
 		// draw black lines.
@@ -310,6 +360,34 @@ QRegion GeoDataRiverSurveyCrosssectionWindowGraphicsView::visualRegionForSelecti
 	return QRegion();
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::setSlopePointEditModeSetting(const QPointF& point, double slope)
+{
+	m_slopePointEditModeSlopePoint = point;
+	m_slopePointEditModeSlope = slope;
+	viewport()->update();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterAddPointMode()
+{
+	auto p = m_parentWindow->target();
+	auto rs = p->riverSurvey();
+	auto dialog = new GeoDataRiverSurveyCrosssectionWindow::PointAddDialog(p, rs, m_parentWindow);
+	connect(this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionClicked, dialog, &GeoDataRiverSurveyCrosssectionWindow::PointAddDialog::setPoint);
+
+	m_mouseEventMode = meAddPoint;
+	dialog->show();
+
+	connect(dialog, &QObject::destroyed, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode);
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterAddVegetationMode()
+{
+	m_mouseEventMode = MouseEventMode::meAddVegetation;
+	InformationDialog::information(this, tr("Information"), tr("Drag the region where you want to add a new vegetation"), "geodatariversurvey_add_vegetation");
+
+	updateMouseCursor();
+}
+
 QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateAction() const
 {
 	return m_activateAction;
@@ -328,19 +406,145 @@ QAction* GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveAction() const
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter)
 {
 	if (point == nullptr) {return;}
-	GeoDataRiverCrosssection& cross = point->crosssection();
+
+	auto& cross = point->crosssection();
+	double leftShift = cross.leftShift();
 	bool first = true;
 	QPointF oldpoint, newpoint;
 	painter.setPen(color);
 	for (const GeoDataRiverCrosssection::Altitude& alt : cross.AltitudeInfo()) {
 		if (! alt.active()) {continue;}
-		newpoint = m_matrix.map(QPointF(alt.position(), alt.height()));
+
+		newpoint = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		if (! first) {
 			painter.drawLine(oldpoint, newpoint);
 		}
 		oldpoint = newpoint;
 		first = false;
 	}
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter& painter)
+{
+	auto target = m_parentWindow->target();
+	if (target == nullptr) { return; }
+
+	const auto& odn = target->odn();
+
+	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter);
+	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter);
+
+	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter);
+	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter);
+
+	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter);
+	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter);
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter)
+{
+	if (m_parentWindow->target() == nullptr) { return; }
+
+	const auto& xsec = m_parentWindow->target()->crosssection();
+	double leftShift = xsec.leftShift();
+	const auto& alist = xsec.AltitudeInfo();
+	if (index < 0 || index >= static_cast<int> (alist.size())) {return;}
+
+	painter.save();
+	const auto alt = alist.at(index);
+
+	QPen pen(color, 1, Qt::SolidLine);
+	QBrush brush(color, Qt::SolidPattern);
+
+	painter.setPen(pen);
+	painter.setBrush(brush);
+	QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
+	QRectF r(point.x() - odnEllipseR, point.y() - odnEllipseR, odnEllipseR * 2, odnEllipseR * 2);
+	painter.drawEllipse(r);
+
+	painter.setFont(m_displaySetting.odnNbFont);
+	QFontMetricsF metrics(m_displaySetting.odnNbFont);
+
+	auto rect = metrics.boundingRect(label);
+	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, label);
+	painter.save();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
+{
+	std::unordered_set<int> selected;
+	for (const QModelIndex& index : m_parentWindow->vegetationSelectionModel()->selectedIndexes()) {
+		selected.insert(index.row());
+	}
+
+	auto target = m_parentWindow->target();
+	if (target == nullptr) {return;}
+
+	const auto& xsec = target->crosssection();
+	double leftShift = xsec.leftShift();
+	auto& alist = xsec.AltitudeInfo();
+	const auto& jmk = target->jmk();
+
+	painter.save();
+
+	for (int idx = 0; idx < static_cast<int> (jmk.items().size()); ++idx) {
+		const auto& item = jmk.items().at(idx);
+		QPen pen(Qt::darkGreen, 2);
+
+		if (item.dense == 0) {
+			pen.setStyle(Qt::PenStyle::DashLine);
+		}
+
+		if (item.dead == 0) {
+			pen.setColor(Qt::darkGray);
+		}
+
+		auto it = selected.find(idx);
+		if (it != selected.end()) {
+			pen.setWidth(4);
+		}
+
+		painter.setPen(pen);
+
+		auto lb = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift(), 0));
+		auto ub = std::lower_bound(alist.begin(), alist.end(), GeoDataRiverCrosssection::Altitude(item.distance - xsec.leftShift() + item.width, 0));
+		if (lb == alist.end() || ub == alist.end()) {continue;}
+
+		auto lb_idx = lb - alist.begin();
+		auto ub_idx = ub - alist.begin();
+		std::vector<QPointF> points;
+
+		// start
+		if (lb_idx == 0) {
+			const auto& a = alist.at(0);
+			points.push_back(m_matrix.map(QPointF(a.position() + leftShift, a.height())));
+			points.push_back(m_matrix.map(QPointF(a.position() + leftShift, a.height() + item.height)));
+		} else {
+			const auto& a1 = alist.at(lb_idx - 1);
+			const auto& a2 = alist.at(lb_idx);
+			auto r = (item.distance - xsec.leftShift() - a1.position()) / (a2.position() - a1.position());
+			points.push_back(m_matrix.map(QPointF(item.distance, (1 - r) * a1.height() + r * a2.height())));
+			points.push_back(m_matrix.map(QPointF(item.distance, (1 - r) * a1.height() + r * a2.height() + item.height)));
+		}
+		for (auto it = lb; it != ub; ++it) {
+			points.push_back(m_matrix.map(QPointF(it->position() + leftShift, it->height() + item.height)));
+		}
+		// end
+		{
+			const auto& a1 = alist.at(ub_idx - 1);
+			const auto& a2 = alist.at(ub_idx);
+			auto r = (item.distance - xsec.leftShift() + item.width - a1.position()) / (a2.position() - a1.position());
+			points.push_back(m_matrix.map(QPointF(item.distance + item.width, (1 - r) * a1.height() + r * a2.height() + item.height)));
+			points.push_back(m_matrix.map(QPointF(item.distance + item.width, (1 - r) * a1.height() + r * a2.height())));
+		}
+
+		for (int i = 0; i < static_cast<int> (points.size()) - 1; ++i) {
+			painter.drawLine(QLineF(points.at(i), points.at(i + 1)));
+		}
+	}
+
+	painter.restore();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& painter)
@@ -352,7 +556,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 	QBrush inactiveBrush(Qt::green, Qt::SolidPattern);
 	QBrush fixBrush(Qt::gray, Qt::SolidPattern);
 
-	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
+	const auto& cross = m_parentWindow->target()->crosssection();
+	double leftShift = cross.leftShift();
+
 	painter.setPen(pen);
 	const GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	for (const GeoDataRiverCrosssection::Altitude& alt : alist) {
@@ -361,7 +567,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 		} else {
 			painter.setBrush(inactiveBrush);
 		}
-		QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		QRectF r(point.x() - ellipseR, point.y() - ellipseR, ellipseR * 2, ellipseR * 2);
 		painter.drawEllipse(r);
 	}
@@ -371,14 +577,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 	if (cross.fixedPointLSet()) {
 		int lindex = cross.fixedPointLIndex();
 		GeoDataRiverCrosssection::Altitude alt = alist.at(lindex);
-		QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		QRectF r(point.x() - selectedEllipseR, point.y() - selectedEllipseR, selectedEllipseR * 2, selectedEllipseR * 2);
 		painter.drawEllipse(r);
 	}
 	if (cross.fixedPointRSet()) {
 		int lindex = cross.fixedPointRIndex();
 		GeoDataRiverCrosssection::Altitude alt = alist.at(lindex);
-		QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		QRectF r(point.x() - selectedEllipseR, point.y() - selectedEllipseR, selectedEllipseR * 2, selectedEllipseR * 2);
 		painter.drawEllipse(r);
 	}
@@ -392,7 +598,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionCircle(QPain
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
 	QBrush inactiveBrush(Qt::green, Qt::SolidPattern);
 
-	GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
+	auto& cross = m_parentWindow->target()->crosssection();
+	double leftShift = cross.leftShift();
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	painter.setPen(pen);
 	QSet<int> drawnRows;
@@ -404,7 +611,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionCircle(QPain
 		} else {
 			painter.setBrush(inactiveBrush);
 		}
-		QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		QRectF r(point.x() - selectedEllipseR, point.y() - selectedEllipseR, selectedEllipseR * 2, selectedEllipseR * 2);
 		painter.drawEllipse(r);
 		drawnRows.insert(index.row());
@@ -419,25 +626,26 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 
 	GeoDataRiverPathPoint* blackpoint = m_parentWindow->gridCreatingConditionPoint();
 	if (blackpoint == nullptr) {return;}
-	GeoDataRiverCrosssection& cross = blackpoint->crosssection();
+	auto& cross = blackpoint->crosssection();
+	double leftShift = cross.leftShift();
 	painter.setPen(pen);
 	painter.setBrush(inactiveBrush);
 
 	// left bank
 	GeoDataRiverCrosssection::Altitude leftbank = cross.leftBank(true);
-	QPointF point = m_matrix.map(QPointF(leftbank.position(), leftbank.height()));
+	QPointF point = m_matrix.map(QPointF(leftbank.position() + leftShift, leftbank.height()));
 	QRectF r(point.x() - squareR, point.y() - squareR, squareR * 2, squareR * 2);
 	painter.drawRect(r);
 
 	// right bank
 	GeoDataRiverCrosssection::Altitude rightbank = cross.rightBank(true);
-	point = m_matrix.map(QPointF(rightbank.position(), rightbank.height()));
+	point = m_matrix.map(QPointF(rightbank.position() + leftShift, rightbank.height()));
 	r = QRectF(point.x() - squareR, point.y() - squareR, squareR * 2, squareR * 2);
 	painter.drawRect(r);
 
 	// river center
 	double height = blackpoint->lXSec()->interpolate(0).height();
-	point = m_matrix.map(QPointF(0, height));
+	point = m_matrix.map(QPointF(leftShift, height));
 	r = QRectF(point.x() - squareR, point.y() - squareR, squareR * 2, squareR * 2);
 	painter.drawRect(r);
 
@@ -445,14 +653,14 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 	// control points between rivercenter and left bank
 	for (double v : blackpoint->CenterToLeftCtrlPoints) {
 		GeoDataRiverCrosssection::Altitude alt = blackpoint->lXSec()->interpolate(v);
-		point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		r = QRectF(point.x() - squareR, point.y() - squareR, squareR * 2, squareR * 2);
 		painter.drawRect(r);
 	}
 	// control points between rivercenter and right bank
 	for (double v : blackpoint->CenterToRightCtrlPoints) {
 		GeoDataRiverCrosssection::Altitude alt = blackpoint->rXSec()->interpolate(v);
-		point = m_matrix.map(QPointF(alt.position(), alt.height()));
+		point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 		r = QRectF(point.x() - squareR, point.y() - squareR, squareR * 2, squareR * 2);
 		painter.drawRect(r);
 	}
@@ -466,16 +674,17 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionSquare(QPain
 
 	for (const CtrlPointSelectionInfo& info : sel) {
 		if (info.Point == blackpoint) {
+			double leftShift = blackpoint->crosssection().leftShift();
 			if (info.Position == GeoDataRiverPathPoint::pposCenterToLeft) {
 				double v = blackpoint->CenterToLeftCtrlPoints[info.Index];
 				GeoDataRiverCrosssection::Altitude alt = blackpoint->lXSec()->interpolate(v);
-				QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+				QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 				QRectF r(point.x() - selectedSquareR, point.y() - selectedSquareR, selectedSquareR * 2, selectedSquareR * 2);
 				painter.drawRect(r);
 			} else if (info.Position == GeoDataRiverPathPoint::pposCenterToRight) {
 				double v = blackpoint->CenterToRightCtrlPoints[info.Index];
 				GeoDataRiverCrosssection::Altitude alt = blackpoint->rXSec()->interpolate(v);
-				QPointF point = m_matrix.map(QPointF(alt.position(), alt.height()));
+				QPointF point = m_matrix.map(QPointF(alt.position() + leftShift, alt.height()));
 				QRectF r(point.x() - selectedSquareR, point.y() - selectedSquareR, selectedSquareR * 2, selectedSquareR * 2);
 				painter.drawRect(r);
 			}
@@ -773,7 +982,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation
 	painter.setPen(oldPen);
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, double leftShift, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter)
 {
 	int topMargin = 80;
 	int lineHeight = 15;
@@ -793,7 +1002,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawCrossPoint(const QPoi
 	QPointF diff(crossPoint.x() - origin.x(), crossPoint.y() - origin.y());
 	double pos = QPointF::dotProduct(direction, diff);
 
-	QPointF mappedPos = m_matrix.map(QPointF(pos, 0));
+	QPointF mappedPos = m_matrix.map(QPointF(pos + leftShift, 0));
 
 	painter.save();
 	painter.setPen(color);
@@ -877,7 +1086,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 				QPointF p1 = line.at(i);
 				QPointF p2 = line.at(i + 1);
 
-				drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, polyLine->caption(), polyLine->color(), &drawnRects, painter);
+				drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, targetPoint->crosssection().leftShift(), polyLine->caption(), polyLine->color(), &drawnRects, painter);
 			}
 		}
 		auto polyLineGroup = dynamic_cast<GeoDataPolyLineGroup*> (geoDataItem->geoData());
@@ -891,7 +1100,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 					QPointF p1(c1.x, c1.y);
 					QPointF p2(c2.x, c2.y);
 
-					drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, l->name() , polyLineGroup->color(), &drawnRects, painter);
+					drawCrossPoint(origin, targetPoint->crosssectionDirection(), marginedLeft, marginedRight, p1, p2, targetPoint->crosssection().leftShift(), l->name() , polyLineGroup->color(), &drawnRects, painter);
 				}
 			}
 		}
@@ -904,11 +1113,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 
 	const auto index = selectionModel()->selectedIndexes().at(0);
 	auto& xsec = m_parentWindow->target()->crosssection();
+	double leftShift = xsec.leftShift();
 	const auto& alist = xsec.AltitudeInfo();
 	const auto& selectedAlt = alist.at(index.row());
 
-	auto startP = m_matrix.map(QPointF(selectedAlt.position(), selectedAlt.height()));
-	auto endP = m_matrix.map(QPointF(m_editAltitudePreview.position(), m_editAltitudePreview.height()));
+	auto startP = m_matrix.map(QPointF(selectedAlt.position() + leftShift, selectedAlt.height()));
+	auto endP = m_matrix.map(QPointF(m_editAltitudePreview.position() + leftShift, m_editAltitudePreview.height()));
 
 	painter.save();
 	painter.setPen(Qt::black);
@@ -920,7 +1130,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 
 	painter.setPen(Qt::blue);
 
-	QPointF endPH = m_matrix.map(QPointF(m_editAltitudePreview.position(), selectedAlt.height()));
+	QPointF endPH = m_matrix.map(QPointF(m_editAltitudePreview.position() + leftShift, selectedAlt.height()));
 	painter.drawLine(QLineF(startP, endPH));
 	painter.drawLine(QLineF(endP, endPH));
 
@@ -947,6 +1157,24 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawEditPreview(QPainter&
 	painter.restore();
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawSlopePointEditPreview(QPainter& painter)
+{
+	if (m_mouseEventMode != MouseEventMode::meEditWithSlopePoint) {return;}
+
+	painter.save();
+	QPointF point = m_matrix.map(m_slopePointEditModeSlopePoint);
+	QPen pen(QColor(150, 150, 150), 1, Qt::PenStyle::DashLine);
+	painter.setPen(pen);
+
+	QPointF left, right;
+	GeoDataRiverSurveyCrosssectionSlopePointEditDialog::calculateLeftAndRightPoints(m_parentWindow->target()->crosssection().AltitudeInfo(), m_parentWindow->target()->crosssection().leftShift(), m_slopePointEditMode, m_slopePointEditModeSlopePoint, m_slopePointEditModeSlope, &left, &right);
+
+	painter.drawLine(QLineF(m_matrix.map(left), point));
+	painter.drawLine(QLineF(m_matrix.map(right), point));
+
+	painter.restore();
+}
+
 QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 {
 	QRectF ret(0., 0., 0., 0.);
@@ -954,11 +1182,15 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 	for (int i = 0; i < m_parentWindow->riverPathPoints().count(); ++i) {
 		GeoDataRiverPathPoint* p = m_parentWindow->riverPathPoints()[i];
 		if (p == nullptr) {continue;}
+
+		double leftShift = p->crosssection().leftShift();
 		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		for (int j = 0; j < alist.size(); ++j) {
 			GeoDataRiverCrosssection::Altitude alt = alist.at(j);
-			if (first || alt.position() < ret.left()) {ret.setLeft(alt.position());}
-			if (first || alt.position() > ret.right()) {ret.setRight(alt.position());}
+			double pos = alt.position() + leftShift;
+
+			if (first || pos < ret.left()) {ret.setLeft(pos);}
+			if (first || pos > ret.right()) {ret.setRight(pos);}
 			if (first || alt.height() < ret.top()) {ret.setTop(alt.height());}
 			if (first || alt.height() > ret.bottom()) {ret.setBottom(alt.height());}
 			first = false;
@@ -1075,7 +1307,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		} else {
 			zoom(scaleX, scaleY);
 		}
-	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) && ! m_modelessDialogIsOpen) {
+	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare || m_mouseEventMode == meDragVegetationPrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
@@ -1116,21 +1348,42 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 				}
 			}
 		} else {
-			// find selected points near the mouse cursor.
-			QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
-			GeoDataRiverPathPoint* p = m_parentWindow->target();
-			GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			QPointF mins(event->x() - 5, event->y() + 5);
 			QPointF maxs(event->x() + 5, event->y() - 5);
 			QMatrix invMatrix = m_matrix.inverted();
 			QPointF mappedMins = invMatrix.map(mins);
 			QPointF mappedMaxs = invMatrix.map(maxs);
+
+			// find jmk data near the mouse cursor;
+			const auto& jmkItems = m_parentWindow->target()->jmk().items();
+			for (int i = 0; i < static_cast<int>(jmkItems.size()); ++i) {
+				const auto& jmkItem = jmkItems.at(i);
+				double left = jmkItem.distance;
+				double right = left + jmkItem.width;
+
+				if (left >= mappedMins.x() && left <= mappedMaxs.x()) {
+					m_mouseEventMode = meDragVegetationPrepare;
+					m_dragJmkItemIndex = i;
+					m_dragJmkRight = false;
+				}
+				if (right >= mappedMins.x() && right <= mappedMaxs.x()) {
+					m_mouseEventMode = meDragVegetationPrepare;
+					m_dragJmkItemIndex = i;
+					m_dragJmkRight = true;
+				}
+			}
+
+			// find selected points near the mouse cursor.
+			QModelIndexList selectedPoints = m_parentWindow->selectionModel()->selectedRows();
+			GeoDataRiverPathPoint* p = m_parentWindow->target();
+			double leftShift = p->crosssection().leftShift();
+			GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			if (continuousSelection()) {
 				for (auto it = selectedPoints.begin(); it != selectedPoints.end(); ++it) {
 					int index = it->row();
 					GeoDataRiverCrosssection::Altitude& alt = alist[index];
-					if (alt.position() >= mappedMins.x() &&
-							alt.position() <= mappedMaxs.x() &&
+					if (alt.position() + leftShift >= mappedMins.x() &&
+							alt.position() + leftShift <= mappedMaxs.x() &&
 							alt.height() >= mappedMins.y() &&
 							alt.height() <= mappedMaxs.y()) {
 						// one of the selected points is near enough to the mouse pointer.
@@ -1151,19 +1404,6 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 			double offset = getGridCtrlPointOffset(m_dragStartPoint, event->pos());
 			iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand(true, offset, m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()));
-			/*
-						std::list<CtrlPointSelectionInfo> sel =  m_parentWindow->m_targetRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
-						CtrlPointSelectionInfo info = sel.front();
-						std::list<CtrlPointSelectionInfo> newSel = m_parentWindow->m_targetRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
-						updateGridCtrlPointList(newSel, m_dragStartPoint, event->pos());
-						iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionDragEditCommand(m_parentWindow->m_blackLinePoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, true));
-			*/
-
-			/*
-						GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
-						updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
-						iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionDragEditCommand(m_parentWindow->m_blackLinePoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, true));
-			*/
 		} else {
 			GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
@@ -1173,7 +1413,45 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		bool ctrlPressed = ((event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier);
 		m_editAltitudePreview = createAltitude(event->pos(), &m_editRatio, ctrlPressed);
 		viewport()->update();
+	} else if (m_mouseEventMode == meEditWithSlopePoint) {
+		auto invMatrix = m_matrix.inverted();
+		m_slopePointEditModeSlopePoint = invMatrix.map(QPointF(event->pos()));
+		viewport()->update();
+	} else if (m_mouseEventMode == meAddVegetation) {
+		QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
+		QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
+		QRect rect(topLeft, size);
+		if (m_rubberBand != nullptr) {
+			m_rubberBand->setGeometry(rect);
+		}
+		viewport()->update();
+	} else if (m_mouseEventMode == meDragVegetation) {
+		auto invMatrix = m_matrix.inverted();
+		auto oldP = invMatrix.map(QPointF(m_oldPosition));
+		auto newP = invMatrix.map(QPointF(event->pos()));
+		auto dx = round2(newP.x() - oldP.x());
+
+		auto target = m_parentWindow->target();
+		auto oldJmk = target->jmk();
+		auto newJmk = oldJmk;
+		auto& editTargetItem = newJmk.items().at(m_dragJmkItemIndex);
+		if (m_dragJmkRight) {
+			editTargetItem.width += dx;
+			if (editTargetItem.width < 0) {
+				editTargetItem.width = 0.01;
+			}
+		} else {
+			editTargetItem.width -= dx;
+			if (editTargetItem.width < 0) {
+				dx -= (0.01 - editTargetItem.width);
+				editTargetItem.width = 0.01;
+			}
+			editTargetItem.distance += dx;
+		}
+
+		iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(true, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
 	}
+
 	m_oldPosition = event->pos();
 }
 
@@ -1223,6 +1501,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			m_dragStartPoint = event->pos();
 		}
 		break;
+	case meEditWithSlopePoint:
+		if (event->button() == Qt::LeftButton) {
+			QMatrix invMatrix = m_matrix.inverted();
+			QPointF point = invMatrix.map(QPointF(event->pos()));
+
+			emit positionClicked(point);
+		}
+		break;
+
 	case meMovePrepare:
 		if (event->button() == Qt::LeftButton) {
 			// start dragging points.
@@ -1241,6 +1528,29 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			m_dragStartPoint = event->pos();
 		}
 		break;
+
+	case meAddVegetation:
+		if (event->button() == Qt::LeftButton) {
+			// start selecting.
+			if (m_rubberBand == nullptr) {
+				m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
+			}
+			m_rubberOrigin = event->pos();
+			m_rubberBand->setGeometry(m_rubberOrigin.x(), m_rubberOrigin.y(), 0, 0);
+			m_rubberBand->show();
+		}
+		break;
+	case meDragVegetationPrepare:
+		if (event->button() == Qt::LeftButton) {
+			m_mouseEventMode = meDragVegetation;
+		}
+	case meAddPoint:
+		if (event->button() == Qt::LeftButton) {
+			auto invMatrix = m_matrix.inverted();
+			auto newPoint = invMatrix.map(QPointF(event->pos()));
+			emit positionClicked(newPoint);
+		}
+
 	default:
 		break;
 	}
@@ -1307,6 +1617,48 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 		}
 		updateMouseCursor();
 		break;
+
+	case meAddVegetation:
+		{
+			// finish selecting.
+			m_rubberBand->hide();
+			m_mouseEventMode = meNormal;
+
+			QMatrix invMatrix = m_matrix.inverted();
+			QPointF mappedLeft = round2(invMatrix.map(QPointF(qMin(event->x(), m_rubberOrigin.x()), 0)));
+			QPointF mappedRight = round2(invMatrix.map(QPointF(qMax(event->x(), m_rubberOrigin.x()), 0)));
+
+			GeoDataRiverPathPointJmkData::Item item;
+			auto target = m_parentWindow->target();
+			item.distance = mappedLeft.x();
+			item.width = mappedRight.x() - mappedLeft.x();
+			item.height = 10;
+
+			GeoDataRiverSurveyCrosssectionWindow::JmkDataEditDialog dialog(this);
+			dialog.setItem(item);
+			int ret = dialog.exec();
+			if (ret == QDialog::Rejected) {return;}
+
+			item = dialog.item();
+			auto oldJmk = target->jmk();
+			auto newJmk = oldJmk;
+
+			newJmk.items().push_back(item);
+			std::sort(newJmk.items().begin(), newJmk.items().end());
+
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataCommand(newJmk, oldJmk, target, m_parentWindow));
+		}
+		break;
+
+	case meDragVegetation:
+		{
+			auto target = m_parentWindow->target();
+			auto oldJmk = target->jmk();
+			auto newJmk = oldJmk;
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(false, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
+			m_mouseEventMode = meDragVegetationPrepare;
+		}
+		break;
 	}
 }
 
@@ -1328,6 +1680,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::keyReleaseEvent(QKeyEvent
 		m_oldLine.crosssection().AltitudeInfo().clear();
 		updateMouseCursor();
 		viewport()->update();
+	}
+	if (m_mouseEventMode == meAddVegetation && event->key() == Qt::Key_Escape) {
+		m_mouseEventMode = meNormal;
+		updateMouseCursor();
 	}
 }
 
@@ -1387,6 +1743,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::updateMouseCursor()
 		setCursor(Qt::OpenHandCursor);
 	} else if (m_mouseEventMode == meEditCrosssection) {
 		setCursor(Qt::CrossCursor);
+	} else if (m_mouseEventMode == meAddVegetation) {
+		setCursor(Qt::CrossCursor);
+	} else if (m_mouseEventMode == meDragVegetationPrepare || m_mouseEventMode == meDragVegetation) {
+		setCursor(Qt::SizeHorCursor);
 	} else {
 		setCursor(Qt::ArrowCursor);
 	}
@@ -1403,6 +1763,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 
 	if (m_gridMode) {
 		GeoDataRiverPathPoint* blackpoint = m_parentWindow->gridCreatingConditionPoint();
+		double leftShift = blackpoint->crosssection().leftShift();
 		std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
 		sel.clear();
 		CtrlPointSelectionInfo selInfo;
@@ -1412,8 +1773,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 		for (int i = 0; i < blackpoint->CenterToLeftCtrlPoints.count(); ++i) {
 			double v = blackpoint->CenterToLeftCtrlPoints.at(i);
 			GeoDataRiverCrosssection::Altitude alt = blackpoint->lXSec()->interpolate(v);
-			if (alt.position() >= mappedMins.x() &&
-					alt.position() <= mappedMaxs.x() &&
+			if (alt.position() + leftShift >= mappedMins.x() &&
+					alt.position() + leftShift <= mappedMaxs.x() &&
 					alt.height() >= mappedMins.y() &&
 					alt.height() <= mappedMaxs.y()) {
 				selInfo.Position = GeoDataRiverPathPoint::pposCenterToLeft;
@@ -1425,8 +1786,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 		for (int i = 0; i < blackpoint->CenterToRightCtrlPoints.count(); ++i) {
 			double v = blackpoint->CenterToRightCtrlPoints.at(i);
 			GeoDataRiverCrosssection::Altitude alt = blackpoint->rXSec()->interpolate(v);
-			if (alt.position() >= mappedMins.x() &&
-					alt.position() <= mappedMaxs.x() &&
+			if (alt.position() + leftShift >= mappedMins.x() &&
+					alt.position() + leftShift <= mappedMaxs.x() &&
 					alt.height() >= mappedMins.y() &&
 					alt.height() <= mappedMaxs.y()) {
 				selInfo.Position = GeoDataRiverPathPoint::pposCenterToRight;
@@ -1441,14 +1802,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 		QItemSelection selection;
 
 		GeoDataRiverCrosssection& cross = m_parentWindow->target()->crosssection();
+		double leftShift = cross.leftShift();
 		GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 		int row = 0;
 		QModelIndex firstIndex;
 		bool firstset = false;
 		for (auto it = alist.begin(); it != alist.end(); ++it) {
 			GeoDataRiverCrosssection::Altitude alt = *it;
-			if (alt.position() >= mappedMins.x() &&
-					alt.position() <= mappedMaxs.x() &&
+			if (alt.position() + leftShift >= mappedMins.x() &&
+					alt.position() + leftShift <= mappedMaxs.x() &&
 					alt.height() >= mappedMins.y() &&
 					alt.height() <= mappedMaxs.y()) {
 				selection.merge(QItemSelection(model()->index(row, 0), model()->index(row, 2)), QItemSelectionModel::Select);
@@ -1500,6 +1862,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::informModelessDialogClose
 	m_modelessDialogIsOpen = false;
 }
 
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode()
+{
+	m_mouseEventMode = MouseEventMode::meNormal;
+}
+
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 {
 	if (m_parentWindow->target() == nullptr) {return;}
@@ -1513,7 +1880,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 		alist[index.row()].setActive(true);
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	auto odn = m_parentWindow->target()->odn();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
@@ -1534,7 +1902,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	auto odn = m_parentWindow->target()->odn();
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->target(), after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
@@ -1611,7 +1980,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inspectLimits(bool* minli
 		left = 0;
 		*minlimit = false;
 	}
-	if (right == alist.size()) {
+	if (right == static_cast<int>(alist.size())) {
 		right = static_cast<int>(alist.size()) - 1;
 		*maxlimit = false;
 	}
@@ -1727,6 +2096,7 @@ GeoDataRiverCrosssection::Altitude GeoDataRiverSurveyCrosssectionWindowGraphicsV
 	QMatrix invMatrix = m_matrix.inverted();
 	QPointF posF(pos.x(), pos.y());
 	auto mappedPos = invMatrix.map(posF);
+	mappedPos.setX(mappedPos.x() - xsec.leftShift());
 
 	double distX = mappedPos.x() - selectedAlt.position();
 	double distY = mappedPos.y() - selectedAlt.height();
@@ -1793,8 +2163,9 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editCrossSection(GeoDataR
 	after.erase(eraseBegin, eraseEnd);
 	after.push_back(alt);
 	std::sort(after.begin(), after.end());
+	auto odn = m_parentWindow->target()->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Cross Section"), m_parentWindow->target(), after, newIndex, before, index.row(), m_parentWindow, m_parentWindow->targetRiverSurvey()));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Edit Cross Section"), m_parentWindow->target(), after, newIndex, before, index.row(), odn, m_parentWindow, m_parentWindow->targetRiverSurvey()));
 	QItemSelection sel(model()->index(newIndex, 0), model()->index(newIndex, 2));
 	auto selModel = selectionModel();
 	selModel->clearSelection();
@@ -1834,8 +2205,27 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterEditCrosssectionMode
 	const auto& selectedAlt = alist.at(index.row());
 	m_editAltitudePreview = selectedAlt;
 	m_oldLine.crosssection().AltitudeInfo() = alist;
+	m_oldLine.crosssection().setLeftShift(xsec.leftShift());
 
 	updateMouseCursor();
+}
+
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode mode)
+{
+	auto dialog = new GeoDataRiverSurveyCrosssectionSlopePointEditDialog(m_parentWindow);
+	dialog->setMode(mode);
+	dialog->setSlope(m_slopePointEditModeSlope);
+	dialog->show();
+
+	m_mouseEventMode = MouseEventMode::meEditWithSlopePoint;
+	m_slopePointEditMode = mode;
+
+	auto mainWindow = m_parentWindow->groupDataItem()->iricMainWindow();
+	mainWindow->enterModelessDialogMode();
+
+	connect(this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionClicked, dialog, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::setPoint);
+	connect(dialog, &QDialog::destroyed, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode);
+	connect(dialog, &QDialog::destroyed, mainWindow, &iRICMainWindowI::exitModelessDialogMode);
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editDisplaySetting()

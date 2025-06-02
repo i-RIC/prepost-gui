@@ -621,7 +621,7 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGrid(const std:
 	}
 }
 
-std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp)
+std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& /*pp*/)
 {
 	std::vector<double> lenStreamWise1, lenStreamWise2, lenCrossSection1, lenCrossSection2;
 	std::vector<double> p0, p1, q0, q1;
@@ -660,7 +660,6 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(con
 		double r_c = (lenCrossSection1[j] / lenCrossSection1.back() + lenCrossSection2[j] / lenCrossSection2.back()) * 0.5;
 		double s = j / static_cast<double>(jsize);
 		for (int i = 1; i < static_cast<int> (edgeLineStreamWise1.size()) - 1; ++i) {
-			double r_s = (lenStreamWise1[i] / lenStreamWise1.back() + lenStreamWise2[i] / lenStreamWise2.back()) * 0.5;
 			double r = i / static_cast<double>(isize);
 
 			auto p_s = edgeLineStreamWise1.at(i) * (1 - r_c) + edgeLineStreamWise2.at(i) * r_c;
@@ -727,8 +726,8 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByPoisson(c
 	lenCrossSection1 = buildLengths(edgeLineCrossSection1);
 	lenCrossSection2 = buildLengths(edgeLineCrossSection2);
 
-	int isize = edgeLineStreamWise1.size();
-	int jsize = edgeLineCrossSection1.size();
+	int isize = static_cast<int> (edgeLineStreamWise1.size());
+	int jsize = static_cast<int> (edgeLineCrossSection1.size());
 
 	TmpGrid grid(isize, jsize);
 	TmpGrid newGrid(isize, jsize);
@@ -752,8 +751,6 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByPoisson(c
 	for (int j = 1; j < edgeLineCrossSection1.size() - 1; ++j) {
 		double r_c = (lenCrossSection1[j] / lenCrossSection1.back() + lenCrossSection2[j] / lenCrossSection2.back()) * 0.5;
 		for (int i = 1; i < edgeLineStreamWise1.size() - 1; ++i) {
-			double r_s = (lenStreamWise1[i] / lenStreamWise1.back() + lenStreamWise2[i] / lenStreamWise2.back()) * 0.5;
-
 			auto p_s = edgeLineStreamWise1.at(i) * (1 - r_c) + edgeLineStreamWise2.at(i) * r_c;
 			grid.x(i, j) = p_s.x();
 			grid.y(i, j) = p_s.y();
@@ -1950,7 +1947,7 @@ void GridCreatingConditionLaplace::Impl::updateEdgeLinesForSelection()
 				line.push_back(linePoints.at(k + offset));
 			}
 			edgeLineStreamWiseForEdgeSelection(i, j).setPolyLine(line);
-			offset += pointCount - 1;
+			offset += static_cast<int> (pointCount) - 1;
 			selLines.push_back(line);
 		}
 	}
@@ -1983,7 +1980,7 @@ void GridCreatingConditionLaplace::Impl::updateEdgeLinesForSelection()
 				line.push_back(linePoints.at(k + offset));
 			}
 			edgeLineCrossSectionForEdgeSelection(i, j).setPolyLine(line);
-			offset += pointCount - 1;
+			offset += static_cast<int> (pointCount) - 1;
 			selLines.push_back(line);
 		}
 	}
@@ -2453,7 +2450,7 @@ double GridCreatingConditionLaplace::Impl::edgeOptimizeFunc(const std::vector<do
 	return ret;
 }
 
-double GridCreatingConditionLaplace::Impl::edgeOptimizeFuncEx(int n, const double* x0, void* ex)
+double GridCreatingConditionLaplace::Impl::edgeOptimizeFuncEx(int /*n*/, const double* x0, void* ex)
 {
 	auto params = reinterpret_cast<CROptimizeParams*> (ex);
 	std::vector<double> ratios = params->commonRatios;

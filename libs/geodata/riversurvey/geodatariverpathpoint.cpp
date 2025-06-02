@@ -903,6 +903,11 @@ QPointF GeoDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (GeoData
 	return interpolator->interpolate(d);
 }
 
+GeoDataRiverSurvey* GeoDataRiverPathPoint::riverSurvey() const
+{
+	return m_rs;
+}
+
 QPointF GeoDataRiverPathPoint::crosssectionPosition(double x)
 {
 	QPointF dir = m_crosssectionDirection;
@@ -942,6 +947,26 @@ GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection()
 const GeoDataRiverCrosssection& GeoDataRiverPathPoint::crosssection() const
 {
 	return m_crosssection;
+}
+
+GeoDataRiverPathPointOdnData& GeoDataRiverPathPoint::odn()
+{
+	return m_odn;
+}
+
+const GeoDataRiverPathPointOdnData& GeoDataRiverPathPoint::odn() const
+{
+	return m_odn;
+}
+
+GeoDataRiverPathPointJmkData& GeoDataRiverPathPoint::jmk()
+{
+	return m_jmk;
+}
+
+const GeoDataRiverPathPointJmkData& GeoDataRiverPathPoint::jmk() const
+{
+	return m_jmk;
 }
 
 const QPointF& GeoDataRiverPathPoint::crosssectionDirection() const

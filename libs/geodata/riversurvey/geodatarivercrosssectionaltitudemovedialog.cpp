@@ -64,11 +64,12 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	GeoDataRiverCrosssection::AltitudeList before = m_point->crosssection().AltitudeInfo();
+	auto before = m_point->crosssection().AltitudeInfo();
 	updateCrosssection();
-	GeoDataRiverCrosssection::AltitudeList after = m_point->crosssection().AltitudeInfo();
+	auto after = m_point->crosssection().AltitudeInfo();
+	auto odn = m_point->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, m_window, m_rs));
 	QDialog::accept();
 }
 
@@ -104,11 +105,12 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	GeoDataRiverCrosssection::AltitudeList before = m_point->crosssection().AltitudeInfo();
+	auto before = m_point->crosssection().AltitudeInfo();
 	updateCrosssection();
-	GeoDataRiverCrosssection::AltitudeList after = m_point->crosssection().AltitudeInfo();
+	auto after = m_point->crosssection().AltitudeInfo();
+	auto odn = m_point->odn();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, odn, m_window, m_rs));
 	m_applyed = true;
 }
 

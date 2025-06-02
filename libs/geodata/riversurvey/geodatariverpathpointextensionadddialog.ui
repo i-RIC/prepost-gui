@@ -28,6 +28,9 @@
        <property name="text">
         <string>Mouse Click</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -55,7 +58,11 @@
       </widget>
      </item>
      <item>
-      <widget class="RealNumberEditWidget" name="positionXEdit"/>
+      <widget class="RealNumberEditWidget" name="positionXEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="commaLabel">
@@ -65,7 +72,11 @@
       </widget>
      </item>
      <item>
-      <widget class="RealNumberEditWidget" name="positionYEdit"/>
+      <widget class="RealNumberEditWidget" name="positionYEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="horizontalSpacer_2">

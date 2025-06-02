@@ -32,6 +32,11 @@ public:
 
 	QColor lbBankMarkersColor;
 	QFont lbBankMarkersFont;
+
+	QColor odnStartColor;
+	QColor odnMiddleColor;
+	QColor odnLowColor;
+	QFont odnNbFont;
 };
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONDISPLAYSETTING_H

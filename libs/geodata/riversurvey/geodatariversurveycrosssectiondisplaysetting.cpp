@@ -14,5 +14,9 @@ GeoDataRiverSurveyCrossSectionDisplaySetting::GeoDataRiverSurveyCrossSectionDisp
 	distanceMarkersColor {160, 160, 50},
 	distanceMarkersFont {"Helvetica", 10},
 	lbBankMarkersColor {160, 160, 50},
-	lbBankMarkersFont {"Helvetica", 10}
+	lbBankMarkersFont {"Helvetica", 10},
+	odnStartColor {255, 128, 128},
+	odnMiddleColor {64, 180, 64},
+	odnLowColor {128, 128, 255},
+	odnNbFont {"Helvetica", 10}
 {}

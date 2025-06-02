@@ -114,6 +114,15 @@ LIBS += \
 
 LIBS += -lgeos
 
+# yaml-cpp
+
+win32 {
+        LIBS += -lyaml-cpp
+}
+unix {
+        LIBS += -lyaml-cpp
+}
+
 # iriclib
 
 win32 {
@@ -141,7 +150,9 @@ HEADERS += gd_riversurvey_global.h \
            geodatariverpathpointexpanddialog.h \
            geodatariverpathpointextensionadddialog.h \
            geodatariverpathpointinsertdialog.h \
+           geodatariverpathpointjmkdata.h \
            geodatariverpathpointmovedialog.h \
+           geodatariverpathpointodndata.h \
            geodatariverpathpointrenamedialog.h \
            geodatariverpathpointrotatedialog.h \
            geodatariverpathpointshiftdialog.h \
@@ -153,10 +164,12 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveycrosssectiondisplaysetting.h \
            geodatariversurveycrosssectiondisplaysettingdialog.h \
            geodatariversurveycrosssectioneditfrompointdialog.h \
+           geodatariversurveycrosssectionslopepointeditdialog.h \
            geodatariversurveycrosssectionwindow.h \
            geodatariversurveycrosssectionwindowgraphicsview.h \
            geodatariversurveycrosssectionwindowprojectdataitem.h \
            geodatariversurveycrosssectionwindowtableview.h \
+           geodatariversurveycrosssectionwindowvegetationtableview.h \
            geodatariversurveycrosssectionwindowwsetablewidget.h \
            geodatariversurveyctrlpointbackup.h \
            geodatariversurveydisplaysetting.h \
@@ -167,19 +180,29 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveyhonryuexportersettingdialog.h \
            geodatariversurveyimporter.h \
            geodatariversurveyimportersettingdialog.h \
+           geodatariversurveyjmkexporter.h \
+           geodatariversurveyjmkimporter.h \
            geodatariversurveylandxmlexporter.h \
            geodatariversurveymappointsdialog.h \
            geodatariversurveymlitimporter.h \
            geodatariversurveynodemapper.h \
+           geodatariversurveyodnchecker.h \
+           geodatariversurveyodnexporter.h \
+           geodatariversurveyodnimporter.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
            geodatariversurveywebimporter.h \
            gridcreatingconditionriversurveyi.h \
            private/geodatariversurvey_addextensioncommand.h \
+           private/geodatariversurvey_areacalculator.h \
+           private/geodatariversurvey_calcareaconditiondialog.h \
            private/geodatariversurvey_changeselectioncommand.h \
            private/geodatariversurvey_deleteriverpathpointcommand.h \
            private/geodatariversurvey_displaysetting.h \
            private/geodatariversurvey_editcrosssectioncommand.h \
+           private/geodatariversurvey_editjmkdatabydragcommand.h \
+           private/geodatariversurvey_editjmkdatacommand.h \
+           private/geodatariversurvey_editslopepointcommand.h \
            private/geodatariversurvey_expandcrosssectioncommand.h \
            private/geodatariversurvey_impl.h \
            private/geodatariversurvey_insertriverpathpointcommand.h \
@@ -194,17 +217,24 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_removeextensioncommand.h \
            private/geodatariversurvey_renameriverpathpointcommand.h \
            private/geodatariversurvey_rotaterivercrosssectioncommand.h \
+           private/geodatariversurvey_setodnpointcommand.h \
            private/geodatariversurvey_shiftriverpathcentercommand.h \
            private/geodatariversurvey_translateriverpathpointcommand.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_impl.h \
+           private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.h \
+           private/geodatariversurveycrosssectionwindow_pointadddialog.h \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.h \
+           private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.h \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.h \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h \
            private/geodatariversurveyimporter_importersetting.h \
            private/geodatariversurveyimporter_problemsdialog.h \
+           private/geodatariversurveyjmkexporter_problemsdialog.h \
            private/geodatariversurveymlitimporter_importersetting.h \
            private/geodatariversurveymlitimporter_problemsdialog.h \
+           private/geodatariversurveyodnchecker_problemsdialog.h \
+           private/geodatariversurveyodnimporter_positionsettingdialog.h \
            private/geodatariversurveyproxy_displaysetting.h \
            private/geodatariversurveyproxy_displaysettingwidget.h \
            private/geodatariversurveyproxy_impl.h \
@@ -221,14 +251,21 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariversurveybuildbanklinesdialog.ui \
          geodatariversurveycrosssectiondisplaysettingdialog.ui \
          geodatariversurveycrosssectioneditfrompointdialog.ui \
+         geodatariversurveycrosssectionslopepointeditdialog.ui \
          geodatariversurveycrosssectionwindow.ui \
          geodatariversurveydisplaysettingdialog.ui \
          geodatariversurveygeneratedialog.ui \
          geodatariversurveyhonryuexportersettingdialog.ui \
          geodatariversurveyimportersettingdialog.ui \
          geodatariversurveymappointsdialog.ui \
+         private/geodatariversurvey_calcareaconditiondialog.ui \
+         private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.ui \
+         private/geodatariversurveycrosssectionwindow_pointadddialog.ui \
          private/geodatariversurveyimporter_problemsdialog.ui \
+         private/geodatariversurveyjmkexporter_problemsdialog.ui \
          private/geodatariversurveymlitimporter_problemsdialog.ui \
+         private/geodatariversurveyodnchecker_problemsdialog.ui \
+         private/geodatariversurveyodnimporter_positionsettingdialog.ui \
          private/geodatariversurveyproxy_displaysettingwidget.ui \
          private/geodatariversurveywebimporter_settingdialog.ui \
          public/geodatariversurvey_displaysettingwidget.ui
@@ -238,7 +275,9 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariverpathpointexpanddialog.cpp \
            geodatariverpathpointextensionadddialog.cpp \
            geodatariverpathpointinsertdialog.cpp \
+           geodatariverpathpointjmkdata.cpp \
            geodatariverpathpointmovedialog.cpp \
+           geodatariverpathpointodndata.cpp \
            geodatariverpathpointrenamedialog.cpp \
            geodatariverpathpointrotatedialog.cpp \
            geodatariverpathpointshiftdialog.cpp \
@@ -250,10 +289,12 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveycrosssectiondisplaysetting.cpp \
            geodatariversurveycrosssectiondisplaysettingdialog.cpp \
            geodatariversurveycrosssectioneditfrompointdialog.cpp \
+           geodatariversurveycrosssectionslopepointeditdialog.cpp \
            geodatariversurveycrosssectionwindow.cpp \
            geodatariversurveycrosssectionwindowgraphicsview.cpp \
            geodatariversurveycrosssectionwindowprojectdataitem.cpp \
            geodatariversurveycrosssectionwindowtableview.cpp \
+           geodatariversurveycrosssectionwindowvegetationtableview.cpp \
            geodatariversurveycrosssectionwindowwsetablewidget.cpp \
            geodatariversurveyctrlpointbackup.cpp \
            geodatariversurveydisplaysetting.cpp \
@@ -264,18 +305,28 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveyhonryuexportersettingdialog.cpp \
            geodatariversurveyimporter.cpp \
            geodatariversurveyimportersettingdialog.cpp \
+           geodatariversurveyjmkexporter.cpp \
+           geodatariversurveyjmkimporter.cpp \
            geodatariversurveylandxmlexporter.cpp \
            geodatariversurveymappointsdialog.cpp \
            geodatariversurveymlitimporter.cpp \
            geodatariversurveynodemapper.cpp \
+           geodatariversurveyodnchecker.cpp \
+           geodatariversurveyodnexporter.cpp \
+           geodatariversurveyodnimporter.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
            geodatariversurveywebimporter.cpp \
            private/geodatariversurvey_addextensioncommand.cpp \
+           private/geodatariversurvey_areacalculator.cpp \
+           private/geodatariversurvey_calcareaconditiondialog.cpp \
            private/geodatariversurvey_changeselectioncommand.cpp \
            private/geodatariversurvey_deleteriverpathpointcommand.cpp \
            private/geodatariversurvey_displaysetting.cpp \
            private/geodatariversurvey_editcrosssectioncommand.cpp \
+           private/geodatariversurvey_editjmkdatabydragcommand.cpp \
+           private/geodatariversurvey_editjmkdatacommand.cpp \
+           private/geodatariversurvey_editslopepointcommand.cpp \
            private/geodatariversurvey_expandcrosssectioncommand.cpp \
            private/geodatariversurvey_impl.cpp \
            private/geodatariversurvey_insertriverpathpointcommand.cpp \
@@ -290,16 +341,23 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_removeextensioncommand.cpp \
            private/geodatariversurvey_renameriverpathpointcommand.cpp \
            private/geodatariversurvey_rotaterivercrosssectioncommand.cpp \
+           private/geodatariversurvey_setodnpointcommand.cpp \
            private/geodatariversurvey_shiftriverpathcentercommand.cpp \
            private/geodatariversurvey_translateriverpathpointcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
+           private/geodatariversurveycrosssectionwindow_jmkdataeditdialog.cpp \
+           private/geodatariversurveycrosssectionwindow_pointadddialog.cpp \
            private/geodatariversurveycrosssectionwindow_riversurveytabledelegate.cpp \
+           private/geodatariversurveycrosssectionwindow_vegetationdatatabledelegate.cpp \
            private/geodatariversurveycrosssectionwindow_wsetabledelegate.cpp \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.cpp \
            private/geodatariversurveyimporter_importersetting.cpp \
            private/geodatariversurveyimporter_problemsdialog.cpp \
+           private/geodatariversurveyjmkexporter_problemsdialog.cpp \
            private/geodatariversurveymlitimporter_importersetting.cpp \
            private/geodatariversurveymlitimporter_problemsdialog.cpp \
+           private/geodatariversurveyodnchecker_problemsdialog.cpp \
+           private/geodatariversurveyodnimporter_positionsettingdialog.cpp \
            private/geodatariversurveyproxy_displaysetting.cpp \
            private/geodatariversurveyproxy_displaysettingwidget.cpp \
            private/geodatariversurveyproxy_impl.cpp \

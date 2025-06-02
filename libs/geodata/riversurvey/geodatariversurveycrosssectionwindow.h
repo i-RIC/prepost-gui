@@ -52,11 +52,27 @@ public:
 	QString crosssectionName() const;
 	void setCrosssection(const QString& name);
 	GeoDataRiverPathPoint* target() const;
+	QAction* addPointAction() const;
 	QAction* deleteAction() const;
 	QAction* editFromSelectedPointAction() const;
 	QAction* editFromSelectedPointWithDialogAction() const;
 	QAction* inactivateByWEOnlyThisAction() const;
 	QAction* inactivateByWEAllAction() const;
+	QAction* addVegetationAction() const;
+	QAction* editSelectedVegetationAction() const;
+	QAction* deleteSelectedVegetationAction() const;
+	QAction* leftAddAction() const;
+	QAction* leftSubAction() const;
+	QAction* rightAddAction() const;
+	QAction* rightSubAction() const;
+	QAction* odnLeftStartAction() const;
+	QAction* odnLeftMiddleAction() const;
+	QAction* odnLeftLowAction() const;
+	QAction* odnRightLowAction() const;
+	QAction* odnRightMiddleAction() const;
+	QAction* odnRightStartAction() const;
+	QAction* calcAreaAction() const;
+
 	void setupData();
 	void updateSurveysTable();
 	void updateWaterSurfaceElevationTable();
@@ -74,6 +90,7 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	PreProcessorGeoDataGroupDataItemI* groupDataItem() const;
+	GeoDataRiverSurveyCrosssectionWindowGraphicsView* graphicsView() const;
 	void setSelectedRow(int row);
 	bool isAspectRatioFixed() const;
 	bool isRegionFixed() const;
@@ -95,13 +112,29 @@ public slots:
 
 private slots:
 	void updateActionStatus();
+	void handleVegetationSelectionChange();
 	void deleteSelectedRows();
 	void editFromSelectedPoint();
 	void editFromSelectedPointWithDialog();
 	void inactivateByWEOnlyThis();
 	void inactivateByWEAll();
+	void enterAddPointMode();
+	void enterAddVegetationMode();
+	void editSelectedVegetation();
+	void deleteSelectedVegetation();
+	void startLeftAdd();
+	void startLeftSub();
+	void startRightAdd();
+	void startRightSub();
+	void setSelectedPointToOdnLeftStart();
+	void setSelectedPointToOdnLeftMiddle();
+	void setSelectedPointToOdnLeftLow();
+	void setSelectedPointToOdnRightLow();
+	void setSelectedPointToOdnRightMiddle();
+	void setSelectedPointToOdnRightStart();
 	void crosssectionComboBoxChange(int newindex);
 	void handleDataChange();
+	void handleVegetationDataChange();
 	void handleSurveyTableItemEdit(QTableWidgetItem* item);
 	void handleSurveyTableItemClick(QTableWidgetItem* item);
 	void handleWseTableItemEdit(QTableWidgetItem* item);
@@ -111,6 +144,7 @@ private slots:
 	void handleFixAspectRatio(bool fix);
 	void handleFixRegion(bool fix);
 	void handleDrawnRegionChanged();
+	void calcArea();
 
 	void moveUpWse(int index);
 	void moveDownWse(int index);
@@ -124,6 +158,7 @@ private:
 	void setupSurveyTable();
 	void setupWaterSurfaceElevationTable();
 	bool syncData();
+	bool syncVegetationData();
 	void updateRiverPathPoints();
 	void setupActions();
 	void setupMenu();
@@ -146,6 +181,9 @@ private:
 
 	QStandardItemModel* model() const;
 	QItemSelectionModel* selectionModel() const;
+	QStandardItemModel* vegetationModel() const;
+	QItemSelectionModel* vegetationSelectionModel() const;
+
 	PreProcessorHydraulicDataGroupDataItemI* waterElevationGroup();
 	HydraulicDataRiverSurveyWaterElevation* waterElevation(int index);
 
@@ -155,7 +193,10 @@ private:
 	Impl* impl;
 
 	class DataTableDelegate;
+	class JmkDataEditDialog;
+	class PointAddDialog;
 	class RiverSurveyTableDelegate;
+	class VegetationDataTableDelegate;
 	class WseTableDelegate;
 
 public:

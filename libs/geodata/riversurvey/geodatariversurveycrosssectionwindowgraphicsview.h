@@ -4,6 +4,7 @@
 #include "geodatarivercrosssection.h"
 #include "geodatariverpathpoint.h"
 #include "geodatariversurveycrosssectiondisplaysetting.h"
+#include "geodatariversurveycrosssectionslopepointeditdialog.h"
 
 #include <QAbstractItemView>
 
@@ -24,13 +25,19 @@ public:
 		meSelecting,
 		meMove,
 		meMovePrepare,
-		meEditCrosssection
+		meEditCrosssection,
+		meEditWithSlopePoint,
+		meAddVegetation,
+		meDragVegetationPrepare,
+		meDragVegetation,
+		meAddPoint,
 	};
 	enum ViewMouseEventMode {
 		vmeNormal,
 		vmeZooming,
 		vmeTranslating
 	};
+
 	GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w);
 
 	void setParentWindow(GeoDataRiverSurveyCrosssectionWindow* w);
@@ -46,6 +53,9 @@ public:
 	void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags command) override;
 	void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
 	QRegion visualRegionForSelection(const QItemSelection& selection) const override;
+	void setSlopePointEditModeSetting(const QPointF& point, double slope);
+	void enterAddPointMode();
+	void enterAddVegetationMode();
 
 	double aspectRatio() const;
 	void setAspectRatio(double ratio);
@@ -67,11 +77,13 @@ public:
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
 	void enterEditCrosssectionMode();
+	void enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode mode);
 	void editDisplaySetting();
 
 public slots:
 	void informModelessDialogOpen();
 	void informModelessDialogClose();
+	void restoreMouseEventMode();
 
 private slots:
 	void activateSelectedRows();
@@ -80,6 +92,7 @@ private slots:
 
 signals:
 	void drawnRegionChanged();
+	void positionClicked(const QPointF& point);
 
 private:
 	int moveWidth();
@@ -103,12 +116,16 @@ private:
 	void drawSquare(QPainter& painter);
 	void drawSelectionSquare(QPainter& painter);
 	void drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter);
+	void drawOdnNbPoints(QPainter& painter);
+	void drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter);
+	void drawJmkLine(QPainter& painter);
 	void drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix);
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);
-	void drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
+	void drawCrossPoint(const QPointF& origin, const QPointF& direction, const QPointF& left, const QPointF& right, const QPointF& q1, const QPointF& q2, double leftShift, const QString& name, const QColor& color, std::vector<std::vector<QRectF> >* drawnRects, QPainter& painter);
 	void drawAspectRatio(QPainter &painter);
 	void drawPolyLineCrossPoints(QPainter& painter);
 	void drawEditPreview(QPainter& painter);
+	void drawSlopePointEditPreview(QPainter& painter);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);
 	void translate(int x, int y);
@@ -128,6 +145,7 @@ private:
 
 	const static int ellipseR = 2;
 	const static int selectedEllipseR = 4;
+	const static int odnEllipseR = 6;
 	const static int squareR = 2;
 	const static int selectedSquareR = 4;
 	const static int fontRectWidth = 250;
@@ -161,6 +179,7 @@ private:
 		bool maxSet;
 		double max;
 	} m_dragLimit;
+
 	GeoDataRiverSurveyCrosssectionWindow* m_parentWindow;
 	QRubberBand* m_rubberBand;
 
@@ -170,6 +189,9 @@ private:
 
 	MouseEventMode m_mouseEventMode;
 	ViewMouseEventMode m_viewMouseEventMode;
+	int m_dragJmkItemIndex;
+	bool m_dragJmkRight;
+
 	bool m_modelessDialogIsOpen;
 	QPoint m_oldPosition;
 	QPoint m_rubberOrigin;
@@ -177,6 +199,11 @@ private:
 	QMatrix m_matrix;
 	GeoDataRiverCrosssection::Altitude m_editAltitudePreview;
 	GeoDataRiverPathPoint m_oldLine;
+
+	GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode m_slopePointEditMode;
+	QPointF m_slopePointEditModeSlopePoint;
+	double m_slopePointEditModeSlope;
+
 	QString m_editRatio;
 	bool m_gridMode;
 	GeoDataRiverSurveyCrossSectionDisplaySetting m_displaySetting;

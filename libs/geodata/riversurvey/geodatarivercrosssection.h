@@ -60,6 +60,13 @@ public:
 		bool operator <(const Altitude& alt) const {
 			return m_position < alt.m_position;
 		}
+		bool operator ==(const Altitude& alt) const {
+			if (m_position != alt.m_position) {return false;}
+			if (m_height != alt.m_height) {return false;}
+			if (m_active != alt.m_active) {return false;}
+
+			return true;
+		}
 
 	private:
 		void init() {

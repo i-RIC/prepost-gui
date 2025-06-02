@@ -208,6 +208,9 @@ public:
 	QAction* m_interpolateLinearAction;
 	QAction* m_mapPointsAction;
 	QAction* m_generatePointMapAction;
+	QAction* m_importJmkAction;
+	QAction* m_exportJmkAction;
+	QAction* m_calcAreaAction;
 
 	QPixmap m_pixmapAdd;
 	QPixmap m_pixmapRemove;
@@ -231,6 +234,8 @@ public:
 
 	int m_selectedVertexId;
 	int m_selectedEdgeId;
+
+	QString m_calcAreaFilename;
 
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyI* m_gridCreatingCondition;

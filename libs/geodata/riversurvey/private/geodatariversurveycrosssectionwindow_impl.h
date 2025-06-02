@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOW_IMPL_H
 
 #include "../geodatariversurveycrosssectionwindow.h"
+#include "../geodatariversurveycrosssectionslopepointeditdialog.h"
 
 #include <QIcon>
 
@@ -55,6 +56,9 @@ public:
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
 
+	QStandardItemModel* m_vegetationModel;
+	QItemSelectionModel* m_vegetationSelectionModel;
+
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 
 	QMenu* m_elevationPointMenu;
@@ -62,7 +66,25 @@ public:
 	QAction* m_editFromSelectedPointWithDialogAction;
 	QAction* m_inactivateByWEOnlyThisAction;
 	QAction* m_inactivateByWEAllAction;
+
+	QAction* m_addVegetationAction;
+	QAction* m_editSelectedVegetationAction;
+	QAction* m_deleteSelectedVegetationAction;
+
+	QAction* m_leftAddAction;
+	QAction* m_leftSubAction;
+	QAction* m_rightAddAction;
+	QAction* m_rightSubAction;
+
+	QAction* m_odnLeftStartAction;
+	QAction* m_odnLeftMiddleAction;
+	QAction* m_odnLeftLowAction;
+	QAction* m_odnRightLowAction;
+	QAction* m_odnRightMiddleAction;
+	QAction* m_odnRightStartAction;
+	QAction* m_addPointAction;
 	QAction* m_deleteAction;
+	QAction* m_calcAreaAction;
 
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;
 	QIcon m_icon;
