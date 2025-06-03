@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Vertical Variation (V):</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikální variace (V):</translation>
     </message>
 </context>
 <context>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Data průřezů jsou generována pomocí dat mračna bodů. Chcete -li znovu upravit polohu příčného řezu a data mapového bodu clouod, můžete použít „Data mračna mapových bodů“</translation>
     </message>
     <message>
@@ -398,14 +396,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít &quot;Mapovat data mračna bodů&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít "Mapovat data mračna bodů"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. V některých oblastech data v datech mračna bodů neexistovala a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít &quot;Mapovat data mračna bodů&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. V některých oblastech data v datech mračna bodů neexistovala a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít "Mapovat data mračna bodů"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -417,7 +415,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -425,14 +423,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Vygenerují se data průřezu. Pokud chcete znovu upravit polohu průřezu a mapu, můžete použít nabídku &quot;Mapová data mračna bodů nebo rastrová data&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Vygenerují se data průřezu. Pokud chcete znovu upravit polohu průřezu a mapu, můžete použít nabídku "Mapová data mračna bodů nebo rastrová data".</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Vygenerují se data průřezu. V některých oblastech se mapování v některých bodech nezdařilo a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu průřezu a mapu, můžete použít nabídku &quot;Mapová data mračna bodů nebo rastrová data&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Vygenerují se data průřezu. V některých oblastech se mapování v některých bodech nezdařilo a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu průřezu a mapu, můžete použít nabídku "Mapová data mračna bodů nebo rastrová data".</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -440,127 +438,127 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte soubor k importu</translation>
     </message>
     <message>
         <source>JMK file (*.jmk)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor JMK (*.jmk)</translation>
     </message>
     <message>
         <source>Vegetation data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Data o vegetaci byla úspěšně importována z %1.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte soubor k exportu</translation>
     </message>
     <message>
         <source>Vegetation data is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Data o vegetaci byla úspěšně exportována do %1.</translation>
     </message>
     <message>
         <source>Import JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovat soubor JMK</translation>
     </message>
     <message>
         <source>Export JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovat soubor JMK</translation>
     </message>
     <message>
         <source>To use this function, you need to import another river survey data for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete-li tuto funkci použít, je nutné importovat další data z průzkumu řeky pro porovnání.</translation>
     </message>
     <message>
         <source>Calculation result is saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledek výpočtu se uloží do %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished">Otevírací %1 neuspěl.</translation>
+        <translation>Otevírací %1 selhal.</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřez</translation>
     </message>
     <message>
         <source>Start position</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí pozice</translation>
     </message>
     <message>
         <source>End position</source>
-        <translation type="unfinished"></translation>
+        <translation>Koncová poloha</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
+        <translation>Plocha</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznámení</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>%1 does not have a cross section named "%2"</source>
+        <translation>%1 nemá průřez s názvem „ %2 "</translation>
     </message>
     <message>
         <source>Embankment</source>
-        <translation type="unfinished"></translation>
+        <translation>Nábřeží</translation>
     </message>
     <message>
         <source>Cutting</source>
-        <translation type="unfinished"></translation>
+        <translation>Řezání</translation>
     </message>
     <message>
         <source>No difference found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebyl nalezen žádný rozdíl</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypočítejte diferenční plochy</translation>
     </message>
     <message>
         <source>Span name</source>
-        <translation type="unfinished"></translation>
+        <translation>Název v španělštině</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Celkový</translation>
     </message>
     <message>
         <source>Left than Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlevo než vlevo – počáteční bod</translation>
     </message>
     <message>
         <source>Between Left Start Point and Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi levým počátečním bodem a levým středovým bodem</translation>
     </message>
     <message>
         <source>Between Left Middle Point and Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi levým středním bodem a levým dolním bodem</translation>
     </message>
     <message>
         <source>Between Left Low Point and Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi levým a pravým nejnižším bodem</translation>
     </message>
     <message>
         <source>Between Right Low Point and Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi pravým dolním bodem a pravým středním bodem</translation>
     </message>
     <message>
         <source>Between Right Middle Point and Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi pravým středem a pravým počátečním bodem</translation>
     </message>
     <message>
         <source>Right than Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý než pravý počáteční bod</translation>
     </message>
 </context>
 <context>
@@ -770,7 +768,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Nastavení nadmořské výšky a přechodu jsou neplatná.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
         <translation>Když zadáte výšku koncového bodu, nemůže být stejná jako počáteční bod. Pokud chcete nakreslit vodorovnou čáru, vyberte „Zadat vodorovnou vzdálenost“.</translation>
     </message>
 </context>
@@ -778,63 +776,63 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
     <message>
         <source>Edit crosssection by spefifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Úprava průřezu zadáním bodu sklonu</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Slope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sklon:</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1 /</translation>
     </message>
     <message>
         <source>Slope start point position</source>
-        <translation type="unfinished"></translation>
+        <translation>Poloha počátečního bodu svahu</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Kliknutí myší</translation>
+        <translation>Kliknutí myší</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozice</translation>
+        <translation>Pozice</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Left Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat zleva</translation>
     </message>
     <message>
         <source>Left Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý sub</translation>
     </message>
     <message>
         <source>Right Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat vpravo</translation>
     </message>
     <message>
         <source>Right Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý podřízený</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Please specify the setting so that the lines crosses the original cross-section.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosím, zadejte nastavení tak, aby čáry protínaly původní průřez.</translation>
     </message>
 </context>
 <context>
@@ -1021,134 +1019,134 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Altitudes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nadmořské výšky</translation>
     </message>
     <message>
         <source>Vegetations</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetace</translation>
     </message>
     <message>
         <source>Edit selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit vybranou vegetaci</translation>
     </message>
     <message>
         <source>Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý počáteční bod</translation>
     </message>
     <message>
         <source>Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý střední bod</translation>
     </message>
     <message>
         <source>Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý nízký bod</translation>
     </message>
     <message>
         <source>Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý nízký bod</translation>
     </message>
     <message>
         <source>Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý střední bod</translation>
     </message>
     <message>
         <source>Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý počáteční bod</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Šířka</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Výška</translation>
     </message>
     <message>
         <source>Submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponořené</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Hustý</translation>
     </message>
     <message>
         <source>Dead</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrtvý</translation>
     </message>
     <message>
         <source>HighLow</source>
-        <translation type="unfinished"></translation>
+        <translation>VysokáNízká</translation>
     </message>
     <message>
         <source>Low Branch Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Nízká výška větve</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Řídké</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Skutečné stromy</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Stromy proti proudu</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Vysoké stromy</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Nízké stromy</translation>
     </message>
     <message>
         <source>Left Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat na levou stranu</translation>
     </message>
     <message>
         <source>Left Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý subwoofer</translation>
     </message>
     <message>
         <source>Right Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat na pravou stranu</translation>
     </message>
     <message>
         <source>Right Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý subwoofer</translation>
     </message>
     <message>
         <source>Add vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat vegetaci</translation>
     </message>
     <message>
         <source>Delete selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat vybranou vegetaci</translation>
     </message>
     <message>
         <source>&amp;Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat bod (&amp;A)</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypočítejte rozdílové plochy</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit zadáním bodu sklonu</translation>
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaveno na datový bod ODN</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
     <message>
         <source>Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat bod</translation>
     </message>
 </context>
 <context>
@@ -1195,7 +1193,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Upravte průřez kliknutím myši. Dokončete úpravy dvojitým kliknutím nebo stisknutím klávesy Return. Průřez můžete přesně upravit zadáním hodnot z dialogu. Vstupte do režimu úprav dialogu z nabídky „Upravit z dialogu“ v nabídce klepnutím pravým tlačítkem.</translation>
     </message>
     <message>
@@ -1212,39 +1210,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaveno na datový bod ODN</translation>
     </message>
     <message>
         <source>Left Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý start</translation>
     </message>
     <message>
         <source>Right Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Správný start</translation>
     </message>
     <message>
         <source>Left Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý prostřední</translation>
     </message>
     <message>
         <source>Right Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý prostřední</translation>
     </message>
     <message>
         <source>Left Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Levý dolní</translation>
     </message>
     <message>
         <source>Right Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravý dolní</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit zadáním bodu sklonu</translation>
     </message>
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Přetáhněte oblast, kam chcete přidat novou vegetaci</translation>
     </message>
 </context>
 <context>
@@ -1278,86 +1276,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
     <message>
         <source>Edit Vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit vegetaci</translation>
     </message>
     <message>
         <source>Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálenost:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Šířka:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výška:</translation>
     </message>
     <message>
         <source>Submerged:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponořené:</translation>
     </message>
     <message>
         <source>submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>ponořený</translation>
     </message>
     <message>
         <source>Sparse / Dense:</source>
-        <translation type="unfinished"></translation>
+        <translation>Řídké / Husté:</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Řídké</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Hustý</translation>
     </message>
     <message>
         <source>Dead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrtvý:</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Stromy proti proudu</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Skutečné stromy</translation>
     </message>
     <message>
         <source>High / Low:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vysoká / Nízká:</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Nízké stromy</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Vysoké stromy</translation>
     </message>
     <message>
         <source>Low branch height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nízká výška větve:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
     <message>
         <source>Add new elevation point</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat nový výškový bod</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Kliknutí myší</translation>
+        <translation>Kliknutí myší</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozice</translation>
+        <translation>Pozice</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -1522,40 +1520,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Chyba</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota LX je neplatná</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota LX je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota LY je neplatná</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota LY je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota RX je neplatná</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota RX je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota RY je neplatná</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota RY je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Počet bodů je neplatný.&quot;</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 čára %2 "%3": Počet bodů je neplatný."</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Neplatná hodnota indexu.&quot;</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 čára %2 "%3": Neplatná hodnota indexu."</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 čára %2 : data průřezu pro %3 nedostatek</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota vzdálenosti je neplatná</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota vzdálenosti je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 čára %2 &quot;%3&quot;: Hodnota nadmořské výšky je neplatná</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 čára %2 "%3": Hodnota nadmořské výšky je neplatná</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1594,8 +1592,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Čára %2 : Chyba čtení. Vyžaduje alespoň dvě hodnoty.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Čára %2 : Chyba čtení. Není skutečná hodnota čísla “ %3 &quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Čára %2 : Chyba čtení. Není skutečná hodnota čísla “ %3 ".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1719,60 +1717,60 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyJmkExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Cannot open file for writing</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít soubor pro zápis</translation>
     </message>
     <message>
         <source>Overwrap found between item %1 and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezi položkou nalezen přebal %1 a %2.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informace</translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Problémy se zkopírují do schránky.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
     <message>
         <source>Problems of JMK data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problémy s daty JMK</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřez</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Problém</translation>
+        <translation>Problém</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat do schránky (&amp;C)</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Výše uvedené problémy byly nalezeny. Chcete pokračovat v exportu?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Při otevírání došlo k chybě %1</translation>
+        <translation>Při otevírání došlo k chybě %1</translation>
     </message>
 </context>
 <context>
@@ -1832,36 +1830,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Čára %2 : KP není zadán</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota LX je neplatná</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Čára %2 "%3": Hodnota LX je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota LY je neplatná</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Čára %2 "%3": Hodnota LY je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota RX je neplatná</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Čára %2 "%3": Hodnota RX je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota RY je neplatná</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Čára %2 "%3": Hodnota RY je neplatná</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Data značky vzdálenosti nebyla nalezena. Bude ignorováno.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 čára %2 : &quot;%3&quot;: Údaje o vlajce jsou neplatné.&quot;</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 čára %2 : "%3": Údaje o vlajce jsou neplatné."</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 čára %2 : &quot;%3&quot;: Údaje o vzdálenosti jsou neplatné.&quot;</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 čára %2 : "%3": Údaje o vzdálenosti jsou neplatné."</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 čára %2 : &quot;%3&quot;: Údaje o nadmořské výšce jsou neplatné.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 čára %2 : "%3": Údaje o nadmořské výšce jsou neplatné.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1954,52 +1952,52 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datové body ODN nejsou správně seřazeny.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
     <message>
         <source>The problems above are found. Please fix them before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Výše uvedené problémy byly nalezeny. Před pokračováním je prosím opravte.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informace</translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Problémy se zkopírují do schránky.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřez</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Problém</translation>
+        <translation>Problém</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Výše uvedené problémy byly nalezeny. Chcete pokračovat v exportu?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat do schránky (&amp;C)</translation>
     </message>
     <message>
         <source>ODN data checking result</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledek kontroly dat ODN</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřezová data (*.odn)</translation>
     </message>
 </context>
 <context>
@@ -2020,50 +2018,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnImporter</name>
     <message>
         <source>Cross-Section data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřezová data (*.odn)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Průřezová data (*.odn)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Při otevírání došlo k chybě %1</translation>
+        <translation>Při otevírání došlo k chybě %1</translation>
     </message>
     <message>
         <source>Error occered while reading line %1. Too short.</source>
-        <translation type="unfinished"></translation>
+        <translation>Při čtení řádku došlo k chybě %1 Příliš krátké.</translation>
     </message>
     <message>
         <source>Error occered while reading line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Při čtení řádku došlo k chybě %1</translation>
     </message>
     <message>
         <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Údaje o nadmořské výšce se nečtou správně. Možná počet bodů pro %1 je neplatný.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
     <message>
         <source>Position Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení polohy</translation>
     </message>
     <message>
         <source>Decided from span distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozhodnuto z rozpětí vzdálenosti</translation>
     </message>
     <message>
         <source>Decided from KP name</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozhodnuto z názvu KP</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka&lt;/span&gt;: Pokud hodnota vzdálenosti rozpětí obsahuje 0, je možnost „Rozhodnuto z vzdálenosti rozpětí“ zakázána.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2148,27 +2146,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
     <message>
         <source>Calculate Area Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Výpočet nastavení plochy</translation>
     </message>
     <message>
         <source>Compare target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Porovnat cíl:</translation>
     </message>
     <message>
         <source>Output Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název výstupního souboru:</translation>
     </message>
     <message>
         <source>Calculation Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim výpočtu:</translation>
     </message>
     <message>
         <source>Calculate for each area enclosed by intersection points</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypočítejte pro každou oblast ohraničenou průsečíky</translation>
     </message>
     <message>
         <source>Statistics for each segment</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistiky pro každý segment</translation>
     </message>
 </context>
 <context>
@@ -2190,8 +2188,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Viditelné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; Barvu si můžete přizpůsobit pomocí karty Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; Barvu si můžete přizpůsobit pomocí karty Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Vertical Variation (V):</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticale variatie (V):</translation>
     </message>
 </context>
 <context>
@@ -385,8 +383,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -398,14 +396,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio&apos;s bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio's bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -417,7 +415,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -425,14 +423,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu &quot;Puntenwolkgegevens of rastergegevens in kaart brengen&quot; gebruiken.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu "Puntenwolkgegevens of rastergegevens in kaart brengen" gebruiken.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. In sommige regio&apos;s is het in kaart brengen op sommige punten niet gelukt en is voor die punten de waarde 0 in kaart gebracht. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu &quot;Puntenwolkgegevens of rastergegevens in kaart brengen&quot; gebruiken.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. In sommige regio's is het in kaart brengen op sommige punten niet gelukt en is voor die punten de waarde 0 in kaart gebracht. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu "Puntenwolkgegevens of rastergegevens in kaart brengen" gebruiken.</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -440,127 +438,127 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand om te importeren</translation>
     </message>
     <message>
         <source>JMK file (*.jmk)</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK-bestand (*.jmk)</translation>
     </message>
     <message>
         <source>Vegetation data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetatiegegevens zijn succesvol geïmporteerd uit %1.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand om te exporteren</translation>
     </message>
     <message>
         <source>Vegetation data is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetatiegegevens zijn succesvol geëxporteerd naar %1.</translation>
     </message>
     <message>
         <source>Import JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK-bestand importeren</translation>
     </message>
     <message>
         <source>Export JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK-bestand exporteren</translation>
     </message>
     <message>
         <source>To use this function, you need to import another river survey data for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om deze functie te kunnen gebruiken, moet u andere rivieronderzoeksgegevens importeren ter vergelijking.</translation>
     </message>
     <message>
         <source>Calculation result is saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat wordt opgeslagen in %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished">Opening %1 mislukt.</translation>
+        <translation>Opening %1 mislukt.</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Start position</source>
-        <translation type="unfinished"></translation>
+        <translation>Startpositie</translation>
     </message>
     <message>
         <source>End position</source>
-        <translation type="unfinished"></translation>
+        <translation>Eindpositie</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebied</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennisgeving</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>%1 does not have a cross section named "%2"</source>
+        <translation>%1 heeft geen doorsnede met de naam "%2"</translation>
     </message>
     <message>
         <source>Embankment</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijk</translation>
     </message>
     <message>
         <source>Cutting</source>
-        <translation type="unfinished"></translation>
+        <translation>Snijden</translation>
     </message>
     <message>
         <source>No difference found</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen verschil gevonden</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereken verschilgebieden</translation>
     </message>
     <message>
         <source>Span name</source>
-        <translation type="unfinished"></translation>
+        <translation>Spannaam</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Totaal</translation>
     </message>
     <message>
         <source>Left than Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Links dan linker startpunt</translation>
     </message>
     <message>
         <source>Between Left Start Point and Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen linker startpunt en linker middenpunt</translation>
     </message>
     <message>
         <source>Between Left Middle Point and Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen het linkermiddenpunt en het linkerlaagste punt</translation>
     </message>
     <message>
         <source>Between Left Low Point and Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen het linker dieptepunt en het rechter dieptepunt</translation>
     </message>
     <message>
         <source>Between Right Low Point and Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen het rechter dieptepunt en het rechter middenpunt</translation>
     </message>
     <message>
         <source>Between Right Middle Point and Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen het rechtermiddenpunt en het rechterstartpunt</translation>
     </message>
     <message>
         <source>Right than Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts dan Rechts Startpunt</translation>
     </message>
 </context>
 <context>
@@ -770,71 +768,71 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>De instellingen voor hoogte en helling zijn ongeldig.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u &quot;Specificeer horizontale afstand&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u "Specificeer horizontale afstand".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
     <message>
         <source>Edit crosssection by spefifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerk de doorsnede door het hellingpunt te specificeren</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Slope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Helling:</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1 /</translation>
     </message>
     <message>
         <source>Slope start point position</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie van het startpunt van de helling</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Muis klik</translation>
+        <translation>Muisklik</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Positie</translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Left Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Links toevoegen</translation>
     </message>
     <message>
         <source>Left Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker sub</translation>
     </message>
     <message>
         <source>Right Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts toevoegen</translation>
     </message>
     <message>
         <source>Right Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechter Sub</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Please specify the setting so that the lines crosses the original cross-section.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de instelling zo op dat de lijnen de oorspronkelijke doorsnede kruisen.</translation>
     </message>
 </context>
 <context>
@@ -1021,134 +1019,134 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Altitudes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtes</translation>
     </message>
     <message>
         <source>Vegetations</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetaties</translation>
     </message>
     <message>
         <source>Edit selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerk geselecteerde vegetatie</translation>
     </message>
     <message>
         <source>Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker startpunt</translation>
     </message>
     <message>
         <source>Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker middenpunt</translation>
     </message>
     <message>
         <source>Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker dieptepunt</translation>
     </message>
     <message>
         <source>Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Juiste dieptepunt</translation>
     </message>
     <message>
         <source>Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechter middenpunt</translation>
     </message>
     <message>
         <source>Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Juiste startpunt</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte</translation>
     </message>
     <message>
         <source>Submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondergedompeld</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespannen</translation>
     </message>
     <message>
         <source>Dead</source>
-        <translation type="unfinished"></translation>
+        <translation>Dood</translation>
     </message>
     <message>
         <source>HighLow</source>
-        <translation type="unfinished"></translation>
+        <translation>HoogLaag</translation>
     </message>
     <message>
         <source>Low Branch Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Lage takhoogte</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaars</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Echte bomen</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Bomen stroomopwaarts</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoge bomen</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Lage bomen</translation>
     </message>
     <message>
         <source>Left Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkerkant toevoegen</translation>
     </message>
     <message>
         <source>Left Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkerkant Sub</translation>
     </message>
     <message>
         <source>Right Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechterkant toevoegen</translation>
     </message>
     <message>
         <source>Right Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechterkant Sub</translation>
     </message>
     <message>
         <source>Add vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg vegetatie toe</translation>
     </message>
     <message>
         <source>Delete selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Geselecteerde vegetatie verwijderen</translation>
     </message>
     <message>
         <source>&amp;Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereken verschilgebieden</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerken door hellingpunt op te geven</translation>
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellen op ODN-gegevenspunt</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
     <message>
         <source>Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt toevoegen</translation>
     </message>
 </context>
 <context>
@@ -1195,8 +1193,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via &quot;Bewerken vanuit dialoogvenster&quot; in het rechtsklikmenu.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via "Bewerken vanuit dialoogvenster" in het rechtsklikmenu.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1212,39 +1210,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellen op ODN-gegevenspunt</translation>
     </message>
     <message>
         <source>Left Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker start</translation>
     </message>
     <message>
         <source>Right Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Goede start</translation>
     </message>
     <message>
         <source>Left Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Links Midden</translation>
     </message>
     <message>
         <source>Right Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts midden</translation>
     </message>
     <message>
         <source>Left Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Links Laag</translation>
     </message>
     <message>
         <source>Right Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts Laag</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerken door hellingpunt op te geven</translation>
     </message>
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Versleep het gebied waar u een nieuwe vegetatie wilt toevoegen</translation>
     </message>
 </context>
 <context>
@@ -1278,86 +1276,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
     <message>
         <source>Edit Vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetatie bewerken</translation>
     </message>
     <message>
         <source>Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte:</translation>
     </message>
     <message>
         <source>Submerged:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondergedompeld:</translation>
     </message>
     <message>
         <source>submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>ondergedompeld</translation>
     </message>
     <message>
         <source>Sparse / Dense:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spaarzaam / Dicht:</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaars</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespannen</translation>
     </message>
     <message>
         <source>Dead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dood:</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Bomen stroomopwaarts</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Echte bomen</translation>
     </message>
     <message>
         <source>High / Low:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoog / Laag:</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Lage bomen</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoge bomen</translation>
     </message>
     <message>
         <source>Low branch height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lage takhoogte:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
     <message>
         <source>Add new elevation point</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw hoogtepunt toevoegen</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Muis klik</translation>
+        <translation>Muisklik</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Positie</translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -1522,40 +1520,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fout</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Puntentelling is ongeldig</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 lijn %2 "%3": Puntentelling is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Ongeldige indexwaarde</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 lijn %2 "%3": Ongeldige indexwaarde</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 lijn %2 : doorsnedegegevens voor %3 niet genoeg</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Afstandswaarde is ongeldig</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 lijn %2 "%3": Afstandswaarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Hoogtewaarde is ongeldig</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 lijn %2 "%3": Hoogtewaarde is ongeldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1594,8 +1592,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : Leesfout. Heeft minimaal twee waarden nodig.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1719,60 +1717,60 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyJmkExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Cannot open file for writing</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan bestand niet openen om te schrijven</translation>
     </message>
     <message>
         <source>Overwrap found between item %1 and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Overwrap gevonden tussen item %1 En %2.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informatie</translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen worden naar het klembord gekopieerd.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
     <message>
         <source>Problems of JMK data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen met JMK-gegevens</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Probleem</translation>
+        <translation>Probleem</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiëren naar klembord (&amp;C)</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>De bovenstaande problemen zijn gevonden. Wilt u doorgaan met exporteren?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Er is een fout opgetreden tijdens het openen %1</translation>
+        <translation>Er is een fout opgetreden tijdens het openen %1</translation>
     </message>
 </context>
 <context>
@@ -1832,36 +1830,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : KP wordt niet ingevoerd</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Afstandsmarkeringsgegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 lijn %2 : &quot;%3&quot;: Vlaggegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 lijn %2 : &quot;%3&quot;: Afstandsgegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Afstandsgegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 lijn %2 : &quot;%3&quot;: Hoogtegegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Hoogtegegevens zijn ongeldig.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1954,52 +1952,52 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN-datapunten zijn niet correct geordend.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
     <message>
         <source>The problems above are found. Please fix them before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation>De bovenstaande problemen zijn gevonden. Los ze op voordat u verdergaat.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informatie</translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen worden naar het klembord gekopieerd.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Probleem</translation>
+        <translation>Probleem</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>De bovenstaande problemen zijn gevonden. Wilt u doorgaan met exporteren?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiëren naar klembord (&amp;C)</translation>
     </message>
     <message>
         <source>ODN data checking result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultaat van ODN-gegevenscontrole</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedegegevens (*.odn)</translation>
     </message>
 </context>
 <context>
@@ -2020,50 +2018,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnImporter</name>
     <message>
         <source>Cross-Section data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedegegevens (*.odn)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedegegevens (*.odn)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Er is een fout opgetreden tijdens het openen %1</translation>
+        <translation>Er is een fout opgetreden tijdens het openen %1</translation>
     </message>
     <message>
         <source>Error occered while reading line %1. Too short.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Te kort.</translation>
     </message>
     <message>
         <source>Error occered while reading line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1</translation>
     </message>
     <message>
         <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtegegevens worden niet correct gelezen. Mogelijk puntentelling voor %1 is ongeldig.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
     <message>
         <source>Position Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie-instelling</translation>
     </message>
     <message>
         <source>Decided from span distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Besloten op basis van overspanningsafstand</translation>
     </message>
     <message>
         <source>Decided from KP name</source>
-        <translation type="unfinished"></translation>
+        <translation>Besloten vanuit KP-naam</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: Als de waarde voor de spanafstand 0 bevat, is &amp;quot;Geselecteerd op basis van spanafstandquot; uitgeschakeld.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2148,27 +2146,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
     <message>
         <source>Calculate Area Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereken oppervlakte-instelling</translation>
     </message>
     <message>
         <source>Compare target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergelijk doel:</translation>
     </message>
     <message>
         <source>Output Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoerbestandsnaam:</translation>
     </message>
     <message>
         <source>Calculation Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsmodus:</translation>
     </message>
     <message>
         <source>Calculate for each area enclosed by intersection points</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereken voor elk gebied dat wordt omsloten door snijpunten</translation>
     </message>
     <message>
         <source>Statistics for each segment</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistieken voor elk segment</translation>
     </message>
 </context>
 <context>
@@ -2190,8 +2188,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Zichtbaar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

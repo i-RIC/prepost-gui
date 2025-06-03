@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Vertical Variation (V):</source>
-        <translation type="unfinished"></translation>
+        <translation>Variazione verticale (V):</translation>
     </message>
 </context>
 <context>
@@ -385,8 +383,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare &quot;Mappa dati nuvola di punti&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare "Mappa dati nuvola di punti"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -398,14 +396,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare &quot;Mappa dati nuvola di punti&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare "Mappa dati nuvola di punti"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. In alcune regioni, i dati non esistevano nei dati della nuvola di punti e il valore 0 è stato mappato per quei punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare &quot;Mappa dati nuvola di punti&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">I dati della sezione trasversale vengono generati utilizzando i dati della nuvola di punti. In alcune regioni, i dati non esistevano nei dati della nuvola di punti e il valore 0 è stato mappato per quei punti. Se si desidera regolare nuovamente la posizione della sezione trasversale e mappare i dati della nuvola di punti, è possibile utilizzare "Mappa dati nuvola di punti"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -417,7 +415,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -425,14 +423,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Vengono generati i dati della sezione trasversale. Se si desidera regolare nuovamente la posizione della sezione trasversale e la mappa, è possibile utilizzare il menu &quot;Dati nuvola di punti mappa o dati raster&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Vengono generati i dati della sezione trasversale. Se si desidera regolare nuovamente la posizione della sezione trasversale e la mappa, è possibile utilizzare il menu "Dati nuvola di punti mappa o dati raster".</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>Vengono generati i dati della sezione trasversale. In alcune regioni, la mappatura non è riuscita in alcuni punti e per tali punti è stato mappato il valore 0. Se si desidera regolare nuovamente la posizione della sezione trasversale e la mappa, è possibile utilizzare il menu &quot;Dati nuvola di punti mappa o dati raster&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Vengono generati i dati della sezione trasversale. In alcune regioni, la mappatura non è riuscita in alcuni punti e per tali punti è stato mappato il valore 0. Se si desidera regolare nuovamente la posizione della sezione trasversale e la mappa, è possibile utilizzare il menu "Dati nuvola di punti mappa o dati raster".</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -440,127 +438,127 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il file da importare</translation>
     </message>
     <message>
         <source>JMK file (*.jmk)</source>
-        <translation type="unfinished"></translation>
+        <translation>File JMK (*.jmk)</translation>
     </message>
     <message>
         <source>Vegetation data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>I dati sulla vegetazione sono stati importati correttamente da %1.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il file da esportare</translation>
     </message>
     <message>
         <source>Vegetation data is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>I dati sulla vegetazione vengono esportati correttamente in %1.</translation>
     </message>
     <message>
         <source>Import JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa file JMK</translation>
     </message>
     <message>
         <source>Export JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta file JMK</translation>
     </message>
     <message>
         <source>To use this function, you need to import another river survey data for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per utilizzare questa funzione, è necessario importare i dati di un altro rilievo fluviale per effettuare un confronto.</translation>
     </message>
     <message>
         <source>Calculation result is saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il risultato del calcolo viene salvato in %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished">Apertura %1 fallito.</translation>
+        <translation>Apertura %1 fallito.</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sezione trasversale</translation>
     </message>
     <message>
         <source>Start position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione di partenza</translation>
     </message>
     <message>
         <source>End position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione finale</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Tipo</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
+        <translation>Zona</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation type="unfinished"></translation>
+        <translation>Avviso</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>%1 does not have a cross section named "%2"</source>
+        <translation>%1 non ha una sezione trasversale denominata "%2"</translation>
     </message>
     <message>
         <source>Embankment</source>
-        <translation type="unfinished"></translation>
+        <translation>Argine</translation>
     </message>
     <message>
         <source>Cutting</source>
-        <translation type="unfinished"></translation>
+        <translation>Taglio</translation>
     </message>
     <message>
         <source>No difference found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna differenza trovata</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcola le aree delle differenze</translation>
     </message>
     <message>
         <source>Span name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome dello span</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Totale</translation>
     </message>
     <message>
         <source>Left than Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto di partenza più a sinistra che a sinistra</translation>
     </message>
     <message>
         <source>Between Left Start Point and Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tra il punto iniziale sinistro e il punto centrale sinistro</translation>
     </message>
     <message>
         <source>Between Left Middle Point and Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tra il punto medio sinistro e il punto basso sinistro</translation>
     </message>
     <message>
         <source>Between Left Low Point and Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tra il punto più basso sinistro e il punto più basso destro</translation>
     </message>
     <message>
         <source>Between Right Low Point and Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tra il punto basso destro e il punto medio destro</translation>
     </message>
     <message>
         <source>Between Right Middle Point and Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tra il punto centrale destro e il punto iniziale destro</translation>
     </message>
     <message>
         <source>Right than Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto di partenza più giusto del punto di partenza giusto</translation>
     </message>
 </context>
 <context>
@@ -711,7 +709,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation>Specifica l&apos;elevazione del punto finale</translation>
+        <translation>Specifica l'elevazione del punto finale</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
@@ -735,11 +733,11 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation>Specificare la frazione tra distanza verticale e distanza orizzontale. Ad esempio, l&apos;immissione di 10 indica una pendenza del 10% e 20 indica una pendenza del 5%.</translation>
+        <translation>Specificare la frazione tra distanza verticale e distanza orizzontale. Ad esempio, l'immissione di 10 indica una pendenza del 10% e 20 indica una pendenza del 5%.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation>Verso l&apos;alto</translation>
+        <translation>Verso l'alto</translation>
     </message>
     <message>
         <source>Downward</source>
@@ -759,7 +757,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation>Non c&apos;è un punto croce. Si prega di controllare l&apos;impostazione.</translation>
+        <translation>Non c'è un punto croce. Si prega di controllare l'impostazione.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
@@ -770,71 +768,71 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Le impostazioni di elevazione e pendenza non sono valide.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Quando si specifica l&apos;elevazione del punto finale, non può essere uguale al punto iniziale. Se vuoi disegnare una linea orizzontale, seleziona &quot;Specifica distanza orizzontale&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Quando si specifica l'elevazione del punto finale, non può essere uguale al punto iniziale. Se vuoi disegnare una linea orizzontale, seleziona "Specifica distanza orizzontale".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
     <message>
         <source>Edit crosssection by spefifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica la sezione trasversale specificando il punto di pendenza</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Slope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pendenza:</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1 /</translation>
     </message>
     <message>
         <source>Slope start point position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione del punto di partenza della pendenza</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Clic del mouse</translation>
+        <translation>Clic del mouse</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizione</translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Left Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi a sinistra</translation>
     </message>
     <message>
         <source>Left Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottotitolo sinistro</translation>
     </message>
     <message>
         <source>Right Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi a destra</translation>
     </message>
     <message>
         <source>Right Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottotitolo destro</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avvertimento</translation>
+        <translation>Avvertimento</translation>
     </message>
     <message>
         <source>Please specify the setting so that the lines crosses the original cross-section.</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificare l'impostazione in modo che le linee attraversino la sezione trasversale originale.</translation>
     </message>
 </context>
 <context>
@@ -881,7 +879,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation>Disattivare utilizzando l&apos;elevazione dell&apos;acqua (&amp;W)</translation>
+        <translation>Disattivare utilizzando l'elevazione dell'acqua (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
@@ -981,7 +979,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation>Disattivare i punti di elevazione utilizzando l&apos;elevazione dell&apos;acqua</translation>
+        <translation>Disattivare i punti di elevazione utilizzando l'elevazione dell'acqua</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
@@ -993,7 +991,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation>Elimina l&apos;elevazione della superficie dell&apos;acqua</translation>
+        <translation>Elimina l'elevazione della superficie dell'acqua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1001,15 +999,15 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation>I dati sull&apos;elevazione della superficie dell&apos;acqua non esistono.</translation>
+        <translation>I dati sull'elevazione della superficie dell'acqua non esistono.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation>Seleziona l&apos;elevazione della superficie dell&apos;acqua</translation>
+        <translation>Seleziona l'elevazione della superficie dell'acqua</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation>Seleziona l&apos;elevazione della superficie dell&apos;acqua da utilizzare</translation>
+        <translation>Seleziona l'elevazione della superficie dell'acqua da utilizzare</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
@@ -1021,134 +1019,134 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Altitudes</source>
-        <translation type="unfinished"></translation>
+        <translation>Altitudini</translation>
     </message>
     <message>
         <source>Vegetations</source>
-        <translation type="unfinished"></translation>
+        <translation>Vegetazioni</translation>
     </message>
     <message>
         <source>Edit selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica la vegetazione selezionata</translation>
     </message>
     <message>
         <source>Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto di partenza sinistro</translation>
     </message>
     <message>
         <source>Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto medio sinistro</translation>
     </message>
     <message>
         <source>Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto basso sinistro</translation>
     </message>
     <message>
         <source>Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto basso destro</translation>
     </message>
     <message>
         <source>Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto medio destro</translation>
     </message>
     <message>
         <source>Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto di partenza corretto</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Larghezza</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Altezza</translation>
     </message>
     <message>
         <source>Submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>Sommerso</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Denso</translation>
     </message>
     <message>
         <source>Dead</source>
-        <translation type="unfinished"></translation>
+        <translation>Morto</translation>
     </message>
     <message>
         <source>HighLow</source>
-        <translation type="unfinished"></translation>
+        <translation>AltoBasso</translation>
     </message>
     <message>
         <source>Low Branch Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Altezza bassa dei rami</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparsi</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi veri</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi a monte</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi alti</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi bassi</translation>
     </message>
     <message>
         <source>Left Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi lato sinistro</translation>
     </message>
     <message>
         <source>Left Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottotitolo sinistro</translation>
     </message>
     <message>
         <source>Right Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi lato destro</translation>
     </message>
     <message>
         <source>Right Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottotitolo destro</translation>
     </message>
     <message>
         <source>Add vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungere vegetazione</translation>
     </message>
     <message>
         <source>Delete selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina la vegetazione selezionata</translation>
     </message>
     <message>
         <source>&amp;Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi punto (&amp;A)</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcola le aree delle differenze</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica specificando il punto di pendenza</translation>
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta sul punto dati ODN</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
     <message>
         <source>Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi punto</translation>
     </message>
 </context>
 <context>
@@ -1167,7 +1165,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation>Disattivare utilizzando l&apos;elevazione dell&apos;acqua (&amp;W)</translation>
+        <translation>Disattivare utilizzando l'elevazione dell'acqua (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1195,8 +1193,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Modifica la sezione trasversale facendo clic con il mouse. Termina la modifica facendo doppio clic o premendo il tasto Invio. È possibile modificare con precisione la sezione trasversale inserendo i valori dalla finestra di dialogo. Accedere alla modalità di modifica della finestra di dialogo da &quot;Modifica dalla finestra di dialogo&quot; nel menu di scelta rapida.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Modifica la sezione trasversale facendo clic con il mouse. Termina la modifica facendo doppio clic o premendo il tasto Invio. È possibile modificare con precisione la sezione trasversale inserendo i valori dalla finestra di dialogo. Accedere alla modalità di modifica della finestra di dialogo da "Modifica dalla finestra di dialogo" nel menu di scelta rapida.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1212,39 +1210,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta sul punto dati ODN</translation>
     </message>
     <message>
         <source>Left Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Inizio a sinistra</translation>
     </message>
     <message>
         <source>Right Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Inizio giusto</translation>
     </message>
     <message>
         <source>Left Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinistra Centrale</translation>
     </message>
     <message>
         <source>Right Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro destro</translation>
     </message>
     <message>
         <source>Left Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinistra in basso</translation>
     </message>
     <message>
         <source>Right Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Destra in basso</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica specificando il punto di pendenza</translation>
     </message>
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Trascina la regione in cui desideri aggiungere una nuova vegetazione</translation>
     </message>
 </context>
 <context>
@@ -1278,86 +1276,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
     <message>
         <source>Edit Vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica Vegetazione</translation>
     </message>
     <message>
         <source>Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distanza:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Larghezza:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Altezza:</translation>
     </message>
     <message>
         <source>Submerged:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sommerso:</translation>
     </message>
     <message>
         <source>submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>sommerso</translation>
     </message>
     <message>
         <source>Sparse / Dense:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparso / Denso:</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparsi</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Denso</translation>
     </message>
     <message>
         <source>Dead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Morto:</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi a monte</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi veri</translation>
     </message>
     <message>
         <source>High / Low:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alto / Basso:</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi bassi</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Alberi alti</translation>
     </message>
     <message>
         <source>Low branch height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Altezza bassa dei rami:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
     <message>
         <source>Add new elevation point</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuovo punto di elevazione</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Clic del mouse</translation>
+        <translation>Clic del mouse</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizione</translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -1522,40 +1520,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Errore</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore LX non è valido</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore LX non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore LY non è valido</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore LY non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore RX non è valido</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore RX non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore RY non è valido</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore RY non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il conteggio dei punti non è valido</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 linea %2 "%3": Il conteggio dei punti non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Valore indice non valido</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 linea %2 "%3": Valore indice non valido</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linea %2 : dati della sezione trasversale per %3 non abbastanza</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore della distanza non è valido</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore della distanza non è valido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 linea %2 &quot;%3&quot;: Il valore dell&apos;elevazione non è valido</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 linea %2 "%3": Il valore dell'elevazione non è valido</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1587,23 +1585,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
         <translation>%1 Linea %2 : Errore di lettura. Ha bisogno di almeno due valori.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Linea %2 : Errore di lettura. Valore numerico non reale &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Linea %2 : Errore di lettura. Valore numerico non reale "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation>Sezione trasversale %1 non attraversa la linea centrale. Il punto centrale è impostato per essere il punto medio della via d&apos;acqua bassa.</translation>
+        <translation>Sezione trasversale %1 non attraversa la linea centrale. Il punto centrale è impostato per essere il punto medio della via d'acqua bassa.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation>Sulla sezione trasversale %1, la linea centrale non si incrocia nella via dell&apos;acqua bassa. Il punto centrale è impostato per essere il punto medio della via d&apos;acqua bassa.</translation>
+        <translation>Sulla sezione trasversale %1, la linea centrale non si incrocia nella via dell'acqua bassa. Il punto centrale è impostato per essere il punto medio della via d'acqua bassa.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
@@ -1669,7 +1667,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation>Dove l&apos;elevazione è la più piccola</translation>
+        <translation>Dove l'elevazione è la più piccola</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
@@ -1685,11 +1683,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation>Punto medio della via d&apos;acqua bassa</translation>
+        <translation>Punto medio della via d'acqua bassa</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation>Dove l&apos;elevazione è la più piccola in acque basse</translation>
+        <translation>Dove l'elevazione è la più piccola in acque basse</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
@@ -1712,67 +1710,67 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation>I problemi di cui sopra si trovano. Vuoi continuare l&apos;importazione?</translation>
+        <translation>I problemi di cui sopra si trovano. Vuoi continuare l'importazione?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Cannot open file for writing</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire il file per la scrittura</translation>
     </message>
     <message>
         <source>Overwrap found between item %1 and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovrapposizione trovata tra l'elemento %1 E %2.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informazione</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>I problemi vengono copiati negli appunti.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
     <message>
         <source>Problems of JMK data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemi dei dati JMK</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sezione trasversale</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Problema</translation>
+        <translation>Problema</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia negli appunti (&amp;C)</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sono stati riscontrati i problemi sopra indicati. Vuoi continuare a esportare?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
 </context>
 <context>
@@ -1832,36 +1830,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linea %2 : KP non è inserito</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Linea %2 &quot;%3&quot;: Il valore LX non è valido</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Linea %2 "%3": Il valore LX non è valido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Linea %2 &quot;%3&quot;: Il valore LY non è valido</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Linea %2 "%3": Il valore LY non è valido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Linea %2 &quot;%3&quot;: Il valore RX non è valido</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Linea %2 "%3": Il valore RX non è valido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Linea %2 &quot;%3&quot;: Il valore RY non è valido</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Linea %2 "%3": Il valore RY non è valido</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation>I dati dell&apos;indicatore di distanza non sono stati trovati. Verrà ignorato.</translation>
+        <translation>I dati dell'indicatore di distanza non sono stati trovati. Verrà ignorato.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 linea %2 : &quot;%3&quot;: I dati del flag non sono validi.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 linea %2 : "%3": I dati del flag non sono validi.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 linea %2 : &quot;%3&quot;: I dati sulla distanza non sono validi.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 linea %2 : "%3": I dati sulla distanza non sono validi.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 linea %2 : &quot;%3&quot;: I dati di elevazione non sono validi.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 linea %2 : "%3": I dati di elevazione non sono validi.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1873,7 +1871,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation>I dati della sezione trasversale contenevano dati con le stesse distanze. Vengono utilizzati i dati con l&apos;elevazione più bassa.: %1</translation>
+        <translation>I dati della sezione trasversale contenevano dati con le stesse distanze. Vengono utilizzati i dati con l'elevazione più bassa.: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
@@ -1901,7 +1899,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
-        <translation>%1 riga 1: l&apos;intestazione non contiene dati sufficienti.</translation>
+        <translation>%1 riga 1: l'intestazione non contiene dati sufficienti.</translation>
     </message>
 </context>
 <context>
@@ -1947,59 +1945,59 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation>I problemi di cui sopra si trovano. Vuoi continuare l&apos;importazione?</translation>
+        <translation>I problemi di cui sopra si trovano. Vuoi continuare l'importazione?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>I punti dati ODN non sono ordinati correttamente.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
     <message>
         <source>The problems above are found. Please fix them before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sono stati riscontrati i problemi sopra indicati. Si prega di risolverli prima di continuare.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informazione</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>I problemi vengono copiati negli appunti.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sezione trasversale</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Problema</translation>
+        <translation>Problema</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sono stati riscontrati i problemi sopra indicati. Vuoi continuare a esportare?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia negli appunti (&amp;C)</translation>
     </message>
     <message>
         <source>ODN data checking result</source>
-        <translation type="unfinished"></translation>
+        <translation>Risultato del controllo dei dati ODN</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati trasversali (*.odn)</translation>
     </message>
 </context>
 <context>
@@ -2020,50 +2018,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnImporter</name>
     <message>
         <source>Cross-Section data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati trasversali (*.odn)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati trasversali (*.odn)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Error occered while reading line %1. Too short.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si è verificato un errore durante la lettura della riga %1. Troppo corta.</translation>
     </message>
     <message>
         <source>Error occered while reading line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Si è verificato un errore durante la lettura della riga %1</translation>
     </message>
     <message>
         <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>I dati di elevazione non vengono letti correttamente. Forse il conteggio dei punti per %1 non è valido.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
     <message>
         <source>Position Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della posizione</translation>
     </message>
     <message>
         <source>Decided from span distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Deciso dalla distanza della campata</translation>
     </message>
     <message>
         <source>Decided from KP name</source>
-        <translation type="unfinished"></translation>
+        <translation>Deciso dal nome KP</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: se il valore della distanza span contiene 0, l'opzione "Diviso dalla distanza span" è disabilitata.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2085,7 +2083,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -2148,27 +2146,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
     <message>
         <source>Calculate Area Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcola l'impostazione dell'area</translation>
     </message>
     <message>
         <source>Compare target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Confronta target:</translation>
     </message>
     <message>
         <source>Output Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome file di output:</translation>
     </message>
     <message>
         <source>Calculation Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità di calcolo:</translation>
     </message>
     <message>
         <source>Calculate for each area enclosed by intersection points</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcola per ogni area racchiusa dai punti di intersezione</translation>
     </message>
     <message>
         <source>Statistics for each segment</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistiche per ogni segmento</translation>
     </message>
 </context>
 <context>
@@ -2190,8 +2188,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Visibile</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; puoi personalizzare il colore utilizzando la scheda Mappa colori.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; puoi personalizzare il colore utilizzando la scheda Mappa colori.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

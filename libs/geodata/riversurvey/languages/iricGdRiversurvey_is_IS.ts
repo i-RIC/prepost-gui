@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Vertical Variation (V):</source>
-        <translation type="unfinished"></translation>
+        <translation>Lóðrétt breytileiki (V):</translation>
     </message>
 </context>
 <context>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Þversniðsgögn eru búin til með punktaskýgögnum. Ef þú vilt stilla þversniðsstaðsetningu og kortapunktagögn aftur geturðu notað „Map point cloud data“</translation>
     </message>
     <message>
@@ -398,13 +396,13 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Þversniðsgögn eru mynduð með punktskýjagögnum. Ef þú vilt breyta þversniðsstöðu og kortleggja punktskýjagögn aftur geturðu notað „Kortpunktaskýjagögn“</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Þversniðsgögn eru mynduð með punktskýjagögnum. Á sumum svæðum voru gögn ekki til í punktskýjagögnum og gildi 0 var kortlagt fyrir þá punkta. Ef þú vilt breyta þversniðsstöðu og kortleggja punktskýjagögn aftur geturðu notað „Kortpunktaskýjagögn“</translation>
     </message>
     <message>
@@ -417,7 +415,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -425,13 +423,13 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Þversniðsgögn eru búin til. Ef þú vilt breyta þversniðsstöðu og korti aftur geturðu notað valmyndina „Kortapunktskýjagögn eða rastergögn“.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Þversniðsgögn eru búin til. Á sumum svæðum tókst kortlagning ekki í sumum punktum og gildið 0 var kortlagt fyrir þá punkta. Ef þú vilt breyta þversniðsstöðu og korti aftur geturðu notað valmyndina „Kortapunktskýjagögn eða rastergögn“.</translation>
     </message>
     <message>
@@ -440,127 +438,127 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu skrá til að flytja inn</translation>
     </message>
     <message>
         <source>JMK file (*.jmk)</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK skrá (*.jmk)</translation>
     </message>
     <message>
         <source>Vegetation data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gróðurgögnum hefur verið flutt inn frá %1.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu skrá til að flytja út</translation>
     </message>
     <message>
         <source>Vegetation data is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gróðurgögnum hefur verið flutt út til %1.</translation>
     </message>
     <message>
         <source>Import JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytja inn JMK skrá</translation>
     </message>
     <message>
         <source>Export JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytja út JMK skrá</translation>
     </message>
     <message>
         <source>To use this function, you need to import another river survey data for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Til að nota þessa aðgerð þarftu að flytja inn önnur árfarskönnunargögn til samanburðar.</translation>
     </message>
     <message>
         <source>Calculation result is saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Útreikningsniðurstaðan er vistuð í %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Villa</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished">Opnun %1 mistókst.</translation>
+        <translation>Opnun %1 mistókst.</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversnið</translation>
     </message>
     <message>
         <source>Start position</source>
-        <translation type="unfinished"></translation>
+        <translation>Upphafsstaða</translation>
     </message>
     <message>
         <source>End position</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokastaða</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Gerð</translation>
+        <translation>Tegund</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
+        <translation>Svæði</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilkynning</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>%1 does not have a cross section named "%2"</source>
+        <translation>%1 hefur ekki þversnið sem heitir "%2"</translation>
     </message>
     <message>
         <source>Embankment</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakki</translation>
     </message>
     <message>
         <source>Cutting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skurður</translation>
     </message>
     <message>
         <source>No difference found</source>
-        <translation type="unfinished"></translation>
+        <translation>Enginn munur fannst</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiknaðu mismunarflatarmál</translation>
     </message>
     <message>
         <source>Span name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nafn spans</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Samtals</translation>
     </message>
     <message>
         <source>Left than Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri en vinstri upphafspunktur</translation>
     </message>
     <message>
         <source>Between Left Start Point and Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Milli vinstri upphafspunkts og vinstri miðpunkts</translation>
     </message>
     <message>
         <source>Between Left Middle Point and Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Milli vinstri miðpunkts og vinstri lægsta punkts</translation>
     </message>
     <message>
         <source>Between Left Low Point and Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Milli vinstri lágpunkts og hægri lágpunkts</translation>
     </message>
     <message>
         <source>Between Right Low Point and Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Milli hægri lágpunkts og hægri miðpunkts</translation>
     </message>
     <message>
         <source>Between Right Middle Point and Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Milli hægri miðpunkts og hægri upphafspunkts</translation>
     </message>
     <message>
         <source>Right than Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri en hægri upphafspunktur</translation>
     </message>
 </context>
 <context>
@@ -770,71 +768,71 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Stillingar hæðar og halla eru ógildar.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Þegar þú tilgreinir upphækkun endapunkts getur það ekki verið það sama og upphafspunkturinn. Ef þú vilt teikna lárétta línu skaltu velja &quot;Tilgreina lárétta fjarlægð&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Þegar þú tilgreinir upphækkun endapunkts getur það ekki verið það sama og upphafspunkturinn. Ef þú vilt teikna lárétta línu skaltu velja "Tilgreina lárétta fjarlægð".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
     <message>
         <source>Edit crosssection by spefifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta þversniði með því að tilgreina hallapunkt</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stilling:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Slope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Halli:</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1 /</translation>
     </message>
     <message>
         <source>Slope start point position</source>
-        <translation type="unfinished"></translation>
+        <translation>Staðsetning upphafspunkts halla</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Músarsmellur</translation>
+        <translation>Músarsmell</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Staða</translation>
+        <translation>Staða</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Left Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri bæta við</translation>
     </message>
     <message>
         <source>Left Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri undirmaður</translation>
     </message>
     <message>
         <source>Right Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri bæta við</translation>
     </message>
     <message>
         <source>Right Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri undir</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Viðvörun</translation>
+        <translation>Viðvörun</translation>
     </message>
     <message>
         <source>Please specify the setting so that the lines crosses the original cross-section.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinsamlegast tilgreindu stillinguna þannig að línurnar skeri upprunalega þversniðinn.</translation>
     </message>
 </context>
 <context>
@@ -1021,134 +1019,134 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Altitudes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hæðir</translation>
     </message>
     <message>
         <source>Vegetations</source>
-        <translation type="unfinished"></translation>
+        <translation>Gróður</translation>
     </message>
     <message>
         <source>Edit selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta völdum gróðri</translation>
     </message>
     <message>
         <source>Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri upphafspunktur</translation>
     </message>
     <message>
         <source>Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri miðpunktur</translation>
     </message>
     <message>
         <source>Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri lágpunktur</translation>
     </message>
     <message>
         <source>Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri lágpunktur</translation>
     </message>
     <message>
         <source>Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri miðpunktur</translation>
     </message>
     <message>
         <source>Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri upphafspunktur</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breidd</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Hæð</translation>
     </message>
     <message>
         <source>Submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafinn</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Þétt</translation>
     </message>
     <message>
         <source>Dead</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauður</translation>
     </message>
     <message>
         <source>HighLow</source>
-        <translation type="unfinished"></translation>
+        <translation>HáttLágt</translation>
     </message>
     <message>
         <source>Low Branch Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Lág greinarhæð</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreifð</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Raunveruleg tré</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Tré uppstreymis</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Háir tré</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Lágt tré</translation>
     </message>
     <message>
         <source>Left Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri hliðarbæta</translation>
     </message>
     <message>
         <source>Left Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri hlið undir</translation>
     </message>
     <message>
         <source>Right Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri hlið bæta við</translation>
     </message>
     <message>
         <source>Right Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri hlið undir</translation>
     </message>
     <message>
         <source>Add vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta við gróðri</translation>
     </message>
     <message>
         <source>Delete selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Eyða völdum gróðri</translation>
     </message>
     <message>
         <source>&amp;Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta við punkti (&amp;A)</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiknaðu mismunarflatarmál</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta með því að tilgreina hallapunkt</translation>
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Stillt á ODN gagnapunkt</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
     <message>
         <source>Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta við punkti</translation>
     </message>
 </context>
 <context>
@@ -1195,7 +1193,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Breyttu þversniðinu með því að smella með músinni. Ljúktu við að breyta með því að tvísmella eða ýta á afturhnappinn. Þú getur nákvæmlega breytt þversniðinu með því að slá inn gildi úr glugganum. Vinsamlegast farðu í valmynd til að breyta valmynd frá „Breyta frá valmynd“ í hægri smellt valmyndinni.</translation>
     </message>
     <message>
@@ -1212,39 +1210,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>Stillt á ODN gagnapunkt</translation>
     </message>
     <message>
         <source>Left Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri byrjun</translation>
     </message>
     <message>
         <source>Right Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Rétt byrjun</translation>
     </message>
     <message>
         <source>Left Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri miðju</translation>
     </message>
     <message>
         <source>Right Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri miðju</translation>
     </message>
     <message>
         <source>Left Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinstri neðst</translation>
     </message>
     <message>
         <source>Right Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Hægri lágt</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta með því að tilgreina hallapunkt</translation>
     </message>
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Dragðu svæðið þar sem þú vilt bæta við nýrri gróðri</translation>
     </message>
 </context>
 <context>
@@ -1278,86 +1276,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
     <message>
         <source>Edit Vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta gróðri</translation>
     </message>
     <message>
         <source>Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarlægð:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Breidd:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hæð:</translation>
     </message>
     <message>
         <source>Submerged:</source>
-        <translation type="unfinished"></translation>
+        <translation>Í kafi:</translation>
     </message>
     <message>
         <source>submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>kafi</translation>
     </message>
     <message>
         <source>Sparse / Dense:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreifð / Þétt:</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreifð</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>Þétt</translation>
     </message>
     <message>
         <source>Dead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauður:</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Tré uppstreymis</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Raunveruleg tré</translation>
     </message>
     <message>
         <source>High / Low:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hátt / Lágt:</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Lágt tré</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>Háir tré</translation>
     </message>
     <message>
         <source>Low branch height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lág greinarhæð:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
     <message>
         <source>Add new elevation point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta við nýjum hæðarpunkti</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">Músarsmellur</translation>
+        <translation>Músarsmell</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Staða</translation>
+        <translation>Staða</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -1522,40 +1520,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Villa</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: LX gildi er ógilt</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 línu %2 "%3": LX gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: LY gildi er ógilt</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 línu %2 "%3": LY gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: RX gildi er ógilt</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 línu %2 "%3": RX gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: RY gildi er ógilt</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 línu %2 "%3": RY gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: Stigafjöldi er ógildur</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 línu %2 "%3": Stigafjöldi er ógildur</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 línu %2 &quot;%3&quot;: Ógilt vísitöluverð</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 línu %2 "%3": Ógilt vísitöluverð</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 línu %2 : þversniðsgögn fyrir %3 ekki nóg</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: Fjarlægðargildi er ógilt</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 línu %2 "%3": Fjarlægðargildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 línu %2 &quot;%3&quot;: Hæðargildi er ógilt</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 línu %2 "%3": Hæðargildi er ógilt</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1594,8 +1592,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lína %2 : Lesvillu. Þarf að minnsta kosti tvö gildi.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Lína %2 : Lesvillu. Ekki rauntöluverðmæti “ %3 &quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Lína %2 : Lesvillu. Ekki rauntöluverðmæti “ %3 ".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1719,60 +1717,60 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyJmkExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Villa</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>Cannot open file for writing</source>
-        <translation type="unfinished"></translation>
+        <translation>Get ekki opnað skrá til að skrifa í</translation>
     </message>
     <message>
         <source>Overwrap found between item %1 and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yfirhúðun fannst á milli hluta %1 og %2.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Upplýsingar</translation>
+        <translation>Upplýsingar</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamálin eru afrituð á klippiborðið.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
     <message>
         <source>Problems of JMK data</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamál með JMK gögn</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversnið</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Vandamál</translation>
+        <translation>Vandamál</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Afrita á klippiborð (&amp;C)</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamálin hér að ofan fundust. Viltu halda áfram útflutningi?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Villa</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Villa kom upp við opnun %1</translation>
+        <translation>Villa kom upp við opnun %1</translation>
     </message>
 </context>
 <context>
@@ -1832,36 +1830,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lína %2 : KP er ekki inntak</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Lína %2 &quot;%3&quot;: LX gildi er ógilt</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Lína %2 "%3": LX gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Lína %2 &quot;%3&quot;: LY gildi er ógilt</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Lína %2 "%3": LY gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Lína %2 &quot;%3&quot;: RX gildi er ógilt</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Lína %2 "%3": RX gildi er ógilt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Lína %2 &quot;%3&quot;: RY gildi er ógilt</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Lína %2 "%3": RY gildi er ógilt</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Gögn um fjarlægðarmerki finnast ekki. Verður hunsað.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 línu %2 : &quot;%3&quot;: Flaggögn eru ógild.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 línu %2 : "%3": Flaggögn eru ógild.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 línu %2 : &quot;%3&quot;: Fjarlægðargögn eru ógild.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 línu %2 : "%3": Fjarlægðargögn eru ógild.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 línu %2 : &quot;%3&quot;: Hæðargögn eru ógild.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 línu %2 : "%3": Hæðargögn eru ógild.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1954,52 +1952,52 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN gagnapunktar eru ekki rétt raðaðir.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
     <message>
         <source>The problems above are found. Please fix them before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamálin hér að ofan hafa fundist. Vinsamlegast lagfærið þau áður en haldið er áfram.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Upplýsingar</translation>
+        <translation>Upplýsingar</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamálin eru afrituð á klippiborðið.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversnið</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">Vandamál</translation>
+        <translation>Vandamál</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandamálin hér að ofan fundust. Viltu halda áfram útflutningi?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Afrita á klippiborð (&amp;C)</translation>
     </message>
     <message>
         <source>ODN data checking result</source>
-        <translation type="unfinished"></translation>
+        <translation>Niðurstaða ODN gagnaathugunar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversniðsgögn (*.odn)</translation>
     </message>
 </context>
 <context>
@@ -2020,50 +2018,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnImporter</name>
     <message>
         <source>Cross-Section data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversniðsgögn (*.odn)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>Þversniðsgögn (*.odn)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Villa</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">Villa kom upp við opnun %1</translation>
+        <translation>Villa kom upp við opnun %1</translation>
     </message>
     <message>
         <source>Error occered while reading line %1. Too short.</source>
-        <translation type="unfinished"></translation>
+        <translation>Villa kom upp við lestur línu %1 Of stutt.</translation>
     </message>
     <message>
         <source>Error occered while reading line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Villa kom upp við lestur línu %1</translation>
     </message>
     <message>
         <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hæðargögn eru ekki lesin rétt. Kannski stigafjöldi fyrir %1 er ógilt.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
     <message>
         <source>Position Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Staðsetningarstilling</translation>
     </message>
     <message>
         <source>Decided from span distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Ákveðið út frá spanfjarlægð</translation>
     </message>
     <message>
         <source>Decided from KP name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ákveðið út frá KP nafni</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið&lt;/span&gt;: Ef gildið fyrir fjarlægðarmörk inniheldur 0, þá er „Ákveðið út frá fjarlægðarmörkum“ óvirkt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2148,27 +2146,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
     <message>
         <source>Calculate Area Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Reikna út flatarmálsstillingu</translation>
     </message>
     <message>
         <source>Compare target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Berðu saman markmið:</translation>
     </message>
     <message>
         <source>Output Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Úttaksskráarnafn:</translation>
     </message>
     <message>
         <source>Calculation Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiknistilling:</translation>
     </message>
     <message>
         <source>Calculate for each area enclosed by intersection points</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiknaðu fyrir hvert svæði sem er umlukið skurðpunktum</translation>
     </message>
     <message>
         <source>Statistics for each segment</source>
-        <translation type="unfinished"></translation>
+        <translation>Tölfræði fyrir hvern hluta</translation>
     </message>
 </context>
 <context>
@@ -2190,8 +2188,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Sýnilegt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Athugið:&lt;/span&gt; Þú getur sérsniðið litinn með því að nota Colormap flipann.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið:&lt;/span&gt; Þú getur sérsniðið litinn með því að nota Colormap flipann.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

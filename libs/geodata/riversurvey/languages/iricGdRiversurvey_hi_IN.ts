@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Vertical Variation (V):</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊर्ध्वाधर भिन्नता (V):</translation>
     </message>
 </context>
 <context>
@@ -385,8 +383,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -398,14 +396,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -417,7 +415,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -425,14 +423,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा&quot; मेनू का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा" मेनू का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। कुछ क्षेत्रों में, कुछ बिंदुओं पर मैपिंग सफल नहीं हुई, और उन बिंदुओं के लिए मान 0 मैप किया गया था। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा&quot; मेनू का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। कुछ क्षेत्रों में, कुछ बिंदुओं पर मैपिंग सफल नहीं हुई, और उन बिंदुओं के लिए मान 0 मैप किया गया था। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा" मेनू का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -440,127 +438,127 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>आयात करने के लिए फ़ाइल चुनें</translation>
     </message>
     <message>
         <source>JMK file (*.jmk)</source>
-        <translation type="unfinished"></translation>
+        <translation>जेएमके फ़ाइल (*.jmk)</translation>
     </message>
     <message>
         <source>Vegetation data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>वनस्पति डेटा सफलतापूर्वक आयात किया गया है %1.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्यात करने के लिए फ़ाइल चुनें</translation>
     </message>
     <message>
         <source>Vegetation data is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>वनस्पति डेटा सफलतापूर्वक निर्यात किया गया है %1.</translation>
     </message>
     <message>
         <source>Import JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK फ़ाइल आयात करें</translation>
     </message>
     <message>
         <source>Export JMK file</source>
-        <translation type="unfinished"></translation>
+        <translation>JMK फ़ाइल निर्यात करें</translation>
     </message>
     <message>
         <source>To use this function, you need to import another river survey data for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>इस फ़ंक्शन का उपयोग करने के लिए, आपको तुलना के लिए अन्य नदी सर्वेक्षण डेटा आयात करना होगा।</translation>
     </message>
     <message>
         <source>Calculation result is saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>गणना परिणाम सहेजा जाता है %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">त्रुटि</translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished">प्रारंभिक %1 अनुत्तीर्ण होना।</translation>
+        <translation>प्रारंभिक %1 असफल।</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन</translation>
     </message>
     <message>
         <source>Start position</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रारंभिक स्थिति</translation>
     </message>
     <message>
         <source>End position</source>
-        <translation type="unfinished"></translation>
+        <translation>अंतिम स्थिति</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">प्रकार</translation>
+        <translation>प्रकार</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation type="unfinished"></translation>
+        <translation>क्षेत्र</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation type="unfinished"></translation>
+        <translation>सूचना</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>%1 does not have a cross section named "%2"</source>
+        <translation>%1 इसका कोई क्रॉस सेक्शन नहीं है जिसका नाम "%2"</translation>
     </message>
     <message>
         <source>Embankment</source>
-        <translation type="unfinished"></translation>
+        <translation>तटबंध</translation>
     </message>
     <message>
         <source>Cutting</source>
-        <translation type="unfinished"></translation>
+        <translation>काटना</translation>
     </message>
     <message>
         <source>No difference found</source>
-        <translation type="unfinished"></translation>
+        <translation>कोई अंतर नहीं मिला</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>अंतर क्षेत्रों की गणना करें</translation>
     </message>
     <message>
         <source>Span name</source>
-        <translation type="unfinished"></translation>
+        <translation>स्पैन नाम</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>कुल</translation>
     </message>
     <message>
         <source>Left than Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं से बाएं प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Between Left Start Point and Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएँ आरंभ बिंदु और बाएँ मध्य बिंदु के बीच</translation>
     </message>
     <message>
         <source>Between Left Middle Point and Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं मध्य बिंदु और बाएं निम्न बिंदु के बीच</translation>
     </message>
     <message>
         <source>Between Left Low Point and Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएँ निम्न बिंदु और दाएँ निम्न बिंदु के बीच</translation>
     </message>
     <message>
         <source>Between Right Low Point and Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दाएँ निम्न बिंदु और दाएँ मध्य बिंदु के बीच</translation>
     </message>
     <message>
         <source>Between Right Middle Point and Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दाएँ मध्य बिंदु और दाएँ आरंभ बिंदु के बीच</translation>
     </message>
     <message>
         <source>Right than Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दाएं से दाएं प्रारंभ बिंदु</translation>
     </message>
 </context>
 <context>
@@ -770,71 +768,71 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>एलिवेशन और ग्रेडिएंट की सेटिंग अमान्य हैं।</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया &quot;क्षैतिज दूरी निर्दिष्ट करें&quot; चुनें।</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया "क्षैतिज दूरी निर्दिष्ट करें" चुनें।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionSlopePointEditDialog</name>
     <message>
         <source>Edit crosssection by spefifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>ढलान बिंदु निर्दिष्ट करके क्रॉससेक्शन संपादित करें</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>तरीका:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Slope:</source>
-        <translation type="unfinished"></translation>
+        <translation>ढलान:</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1 /</translation>
     </message>
     <message>
         <source>Slope start point position</source>
-        <translation type="unfinished"></translation>
+        <translation>ढलान प्रारंभ बिंदु स्थिति</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">माउस क्लिक</translation>
+        <translation>माउस क्लिक</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">पद</translation>
+        <translation>पद</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Left Add</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ जोड़ें</translation>
     </message>
     <message>
         <source>Left Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ उप</translation>
     </message>
     <message>
         <source>Right Add</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ जोड़ें</translation>
     </message>
     <message>
         <source>Right Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ उप</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">चेतावनी</translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>Please specify the setting so that the lines crosses the original cross-section.</source>
-        <translation type="unfinished"></translation>
+        <translation>कृपया सेटिंग निर्दिष्ट करें ताकि रेखाएं मूल क्रॉस-सेक्शन को पार करें।</translation>
     </message>
 </context>
 <context>
@@ -1021,134 +1019,134 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Altitudes</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचाई</translation>
     </message>
     <message>
         <source>Vegetations</source>
-        <translation type="unfinished"></translation>
+        <translation>वनस्पति</translation>
     </message>
     <message>
         <source>Edit selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>चयनित वनस्पति संपादित करें</translation>
     </message>
     <message>
         <source>Left Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Left Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बायां मध्य बिंदु</translation>
     </message>
     <message>
         <source>Left Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ निम्नतम बिन्दु</translation>
     </message>
     <message>
         <source>Right Low Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ निम्नतम बिन्दु</translation>
     </message>
     <message>
         <source>Right Middle Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ मध्य बिन्दु</translation>
     </message>
     <message>
         <source>Right Start Point</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>चौड़ाई</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचाई</translation>
     </message>
     <message>
         <source>Submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>जलमग्न</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>घना</translation>
     </message>
     <message>
         <source>Dead</source>
-        <translation type="unfinished"></translation>
+        <translation>मृत</translation>
     </message>
     <message>
         <source>HighLow</source>
-        <translation type="unfinished"></translation>
+        <translation>कम ऊँची</translation>
     </message>
     <message>
         <source>Low Branch Height</source>
-        <translation type="unfinished"></translation>
+        <translation>कम शाखा ऊंचाई</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>विरल</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>असली पेड़</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊपर की ओर पेड़</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचे पेड़</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>कम पेड़</translation>
     </message>
     <message>
         <source>Left Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>बायीं ओर जोड़ें</translation>
     </message>
     <message>
         <source>Left Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>बायीं ओर उप</translation>
     </message>
     <message>
         <source>Right Side Add</source>
-        <translation type="unfinished"></translation>
+        <translation>दांयी ओर जोड़ें</translation>
     </message>
     <message>
         <source>Right Side Sub</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ साइड उप</translation>
     </message>
     <message>
         <source>Add vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>वनस्पति जोड़ें</translation>
     </message>
     <message>
         <source>Delete selected vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>चयनित वनस्पति हटाएं</translation>
     </message>
     <message>
         <source>&amp;Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>Calculate difference areas</source>
-        <translation type="unfinished"></translation>
+        <translation>अंतर क्षेत्रों की गणना करें</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>ढलान बिंदु निर्दिष्ट करके संपादित करें</translation>
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN डेटा बिंदु पर सेट करें</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
     <message>
         <source>Add point</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु जोड़ें</translation>
     </message>
 </context>
 <context>
@@ -1195,8 +1193,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में &quot;संवाद से संपादित करें&quot; से संवाद संपादन मोड दर्ज करें।</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में "संवाद से संपादित करें" से संवाद संपादन मोड दर्ज करें।</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1212,39 +1210,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Set to ODN data point</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN डेटा बिंदु पर सेट करें</translation>
     </message>
     <message>
         <source>Left Start</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ प्रारंभ</translation>
     </message>
     <message>
         <source>Right Start</source>
-        <translation type="unfinished"></translation>
+        <translation>सही शुरुआत</translation>
     </message>
     <message>
         <source>Left Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>बायां मध्य</translation>
     </message>
     <message>
         <source>Right Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ मध्य</translation>
     </message>
     <message>
         <source>Left Low</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ निचला</translation>
     </message>
     <message>
         <source>Right Low</source>
-        <translation type="unfinished"></translation>
+        <translation>दायाँ निचला</translation>
     </message>
     <message>
         <source>Edit by specifying slope point</source>
-        <translation type="unfinished"></translation>
+        <translation>ढलान बिंदु निर्दिष्ट करके संपादित करें</translation>
     </message>
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>उस क्षेत्र को खींचें जहां आप नई वनस्पति जोड़ना चाहते हैं</translation>
     </message>
 </context>
 <context>
@@ -1278,86 +1276,86 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyCrosssectionWindow_JmkDataEditDialog</name>
     <message>
         <source>Edit Vegetation</source>
-        <translation type="unfinished"></translation>
+        <translation>वनस्पति संपादित करें</translation>
     </message>
     <message>
         <source>Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरी:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>चौड़ाई:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचाई:</translation>
     </message>
     <message>
         <source>Submerged:</source>
-        <translation type="unfinished"></translation>
+        <translation>जलमग्न:</translation>
     </message>
     <message>
         <source>submerged</source>
-        <translation type="unfinished"></translation>
+        <translation>जलमग्न</translation>
     </message>
     <message>
         <source>Sparse / Dense:</source>
-        <translation type="unfinished"></translation>
+        <translation>विरल / सघन:</translation>
     </message>
     <message>
         <source>Sparse</source>
-        <translation type="unfinished"></translation>
+        <translation>विरल</translation>
     </message>
     <message>
         <source>Dense</source>
-        <translation type="unfinished"></translation>
+        <translation>घना</translation>
     </message>
     <message>
         <source>Dead:</source>
-        <translation type="unfinished"></translation>
+        <translation>मृत:</translation>
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊपर की ओर पेड़</translation>
     </message>
     <message>
         <source>Real trees</source>
-        <translation type="unfinished"></translation>
+        <translation>असली पेड़</translation>
     </message>
     <message>
         <source>High / Low:</source>
-        <translation type="unfinished"></translation>
+        <translation>कम ऊँची:</translation>
     </message>
     <message>
         <source>Low trees</source>
-        <translation type="unfinished"></translation>
+        <translation>कम पेड़</translation>
     </message>
     <message>
         <source>High trees</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचे पेड़</translation>
     </message>
     <message>
         <source>Low branch height:</source>
-        <translation type="unfinished"></translation>
+        <translation>कम शाखा ऊंचाई:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow_PointAddDialog</name>
     <message>
         <source>Add new elevation point</source>
-        <translation type="unfinished"></translation>
+        <translation>नया उन्नयन बिंदु जोड़ें</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished">माउस क्लिक</translation>
+        <translation>माउस क्लिक</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">पद</translation>
+        <translation>पद</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -1522,40 +1520,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: पॉइंट काउंट अमान्य है</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 रेखा %2 "%3": पॉइंट काउंट अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: अमान्य अनुक्रमणिका मान</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 रेखा %2 "%3": अमान्य अनुक्रमणिका मान</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 रेखा %2 : के लिए क्रॉस सेक्शन डेटा %3 पर्याप्त नहीं</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: दूरी मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 रेखा %2 "%3": दूरी मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: ऊंचाई मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 रेखा %2 "%3": ऊंचाई मान अमान्य है</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1594,8 +1592,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : त्रुटि पढ़ें। कम से कम दो मान चाहिए।</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1719,60 +1717,60 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyJmkExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">त्रुटि</translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Cannot open file for writing</source>
-        <translation type="unfinished"></translation>
+        <translation>लिखने के लिए फ़ाइल नहीं खोली जा सकती</translation>
     </message>
     <message>
         <source>Overwrap found between item %1 and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>आइटम के बीच ओवररैप पाया गया %1 और %2.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter::ProblemsDialog</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">जानकारी</translation>
+        <translation>जानकारी</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>समस्याएँ क्लिपबोर्ड पर कॉपी कर दी जाती हैं।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkExporter_ProblemsDialog</name>
     <message>
         <source>Problems of JMK data</source>
-        <translation type="unfinished"></translation>
+        <translation>जेएमके डेटा की समस्याएं</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">संकट</translation>
+        <translation>संकट</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>क्लिपबोर्ड पर कॉपी करें (&amp;C)</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>उपरोक्त समस्याएँ पाई गई हैं। क्या आप निर्यात जारी रखना चाहते हैं?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyJmkImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">त्रुटि</translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">खोलते समय त्रुटि हुई %1</translation>
+        <translation>खोलते समय त्रुटि हुई %1</translation>
     </message>
 </context>
 <context>
@@ -1832,36 +1830,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : केपी इनपुट नहीं है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>दूरी मार्कर डेटा नहीं मिला। नजरअंदाज किया जाएगा।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 रेखा %2 : &quot;%3&quot;: ध्वज डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 रेखा %2 : "%3": ध्वज डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: दूरी डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": दूरी डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: ऊंचाई डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": ऊंचाई डेटा अमान्य है।</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1954,52 +1952,52 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnChecker</name>
     <message>
         <source>ODN data points are not ordered correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN डेटा बिंदु सही ढंग से व्यवस्थित नहीं हैं.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker::ProblemsDialog</name>
     <message>
         <source>The problems above are found. Please fix them before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation>उपरोक्त समस्याएँ पाई गई हैं। कृपया आगे बढ़ने से पहले उन्हें ठीक करें।</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">जानकारी</translation>
+        <translation>जानकारी</translation>
     </message>
     <message>
         <source>Problems are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>समस्याएँ क्लिपबोर्ड पर कॉपी कर दी जाती हैं।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnChecker_ProblemsDialog</name>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished">संकट</translation>
+        <translation>संकट</translation>
     </message>
     <message>
         <source>The problems above are found. Do you want to continue exporting?</source>
-        <translation type="unfinished"></translation>
+        <translation>उपरोक्त समस्याएँ पाई गई हैं। क्या आप निर्यात जारी रखना चाहते हैं?</translation>
     </message>
     <message>
         <source>&amp;Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>क्लिपबोर्ड पर कॉपी करें (&amp;C)</translation>
     </message>
     <message>
         <source>ODN data checking result</source>
-        <translation type="unfinished"></translation>
+        <translation>ODN डेटा जाँच परिणाम</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस-सेक्शन डेटा (*.odn)</translation>
     </message>
 </context>
 <context>
@@ -2020,50 +2018,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyOdnImporter</name>
     <message>
         <source>Cross-Section data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस-सेक्शन डेटा (*.odn)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस-सेक्शन डेटा (*.odn)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">त्रुटि</translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished">खोलते समय त्रुटि हुई %1</translation>
+        <translation>खोलते समय त्रुटि हुई %1</translation>
     </message>
     <message>
         <source>Error occered while reading line %1. Too short.</source>
-        <translation type="unfinished"></translation>
+        <translation>पंक्ति पढ़ते समय त्रुटि हुई %1. बहुत छोटा.</translation>
     </message>
     <message>
         <source>Error occered while reading line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>पंक्ति पढ़ते समय त्रुटि हुई %1</translation>
     </message>
     <message>
         <source>Elevation data is not read correctly. Maybe point count for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊंचाई डेटा सही ढंग से नहीं पढ़ा गया है। शायद पॉइंट काउंट के लिए %1 इनवैलिड है।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnImporter_PositionSettingDialog</name>
     <message>
         <source>Position Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति सेटिंग</translation>
     </message>
     <message>
         <source>Decided from span distance</source>
-        <translation type="unfinished"></translation>
+        <translation>अवधि दूरी से तय किया गया</translation>
     </message>
     <message>
         <source>Decided from KP name</source>
-        <translation type="unfinished"></translation>
+        <translation>केपी नाम से निर्णय लिया गया</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;नोट&lt;/span&gt;: यदि स्पैन दूरी मान में 0 है, तो &amp;quot;स्पैन दूरी से निर्णय लिया गयाquot; अक्षम है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2148,27 +2146,27 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurvey_CalcAreaConditionDialog</name>
     <message>
         <source>Calculate Area Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>क्षेत्र सेटिंग की गणना करें</translation>
     </message>
     <message>
         <source>Compare target:</source>
-        <translation type="unfinished"></translation>
+        <translation>लक्ष्य की तुलना करें:</translation>
     </message>
     <message>
         <source>Output Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>आउटपुट फ़ाइल नाम:</translation>
     </message>
     <message>
         <source>Calculation Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>गणना मोड:</translation>
     </message>
     <message>
         <source>Calculate for each area enclosed by intersection points</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रतिच्छेद बिंदुओं से घिरे प्रत्येक क्षेत्र के लिए गणना करें</translation>
     </message>
     <message>
         <source>Statistics for each segment</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रत्येक खंड के लिए आंकड़े</translation>
     </message>
 </context>
 <context>
@@ -2190,8 +2188,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>दृश्यमान</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
