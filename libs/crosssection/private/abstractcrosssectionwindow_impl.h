@@ -32,6 +32,7 @@ public:
 	void setupDisplaySettings();
 
 	GraphicsView* graphicsView() const;
+	void updateGridForVis();
 	void updateColorMapValueRanges();
 	void updateAspectRatioEdit();
 

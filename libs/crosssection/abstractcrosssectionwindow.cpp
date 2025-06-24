@@ -155,6 +155,10 @@ void AbstractCrosssectionWindow::handleGridReplace()
 
 void AbstractCrosssectionWindow::update()
 {
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		impl->updateGridForVis();
+	}
+
 	impl->updateColorMapValueRanges();
 	impl->m_displaySettingTableController->updateVisible();
 	impl->m_editTableController->applyToTable();

@@ -235,6 +235,14 @@ AbstractCrosssectionWindow::GraphicsView* AbstractCrosssectionWindow::Impl::grap
 	return m_window->ui->graphicsView;
 }
 
+void AbstractCrosssectionWindow::Impl::updateGridForVis()
+{
+	if (m_mode == Mode::UnstructuredEdge) {
+		StructuredGridBuilderForUnstructuredEdge builder(this);
+		builder.build();
+	}
+}
+
 void AbstractCrosssectionWindow::Impl::updateColorMapValueRanges()
 {
 	for (auto& s : m_displaySettings) {
