@@ -75,6 +75,7 @@ HEADERS += abstractcrosssectionwindow.h \
            private/abstractcrosssectionwindow_gridattributedisplaysettingcontainer.h \
            private/abstractcrosssectionwindow_gridattributedisplaysettingeditdialog.h \
            private/abstractcrosssectionwindow_impl.h \
+           private/abstractcrosssectionwindow_impl_structuredgridbuilderforunstructurededge.h \
            private/abstractcrosssectionwindow_snapshotsavecontroller.h \
            private/abstractcrosssectionwindow_updatecommand.h \
            private/abstractcrosssectionwindow_updategraphicsviewcommand.h \
@@ -101,6 +102,7 @@ SOURCES += abstractcrosssectionwindow.cpp \
            private/abstractcrosssectionwindow_gridattributedisplaysettingcontainer.cpp \
            private/abstractcrosssectionwindow_gridattributedisplaysettingeditdialog.cpp \
            private/abstractcrosssectionwindow_impl.cpp \
+           private/abstractcrosssectionwindow_impl_structuredgridbuilderforunstructurededge.cpp \
            private/abstractcrosssectionwindow_snapshotsavecontroller.cpp \
            private/abstractcrosssectionwindow_updatecommand.cpp \
            private/abstractcrosssectionwindow_updategraphicsviewcommand.cpp \

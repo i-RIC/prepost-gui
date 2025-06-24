@@ -18,8 +18,8 @@ public:
 	void saveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QMdiSubWindow* mdiSubWindow() const override;
-	v4Structured2dGrid* grid() override;
-	v4Structured2dGrid* additionalGrid() override;
+	v4Grid* grid() override;
+	v4Grid* additionalGrid() override;
 	QString additionalGridPrefix() override;
 	void updateEdgeFocus() override;
 

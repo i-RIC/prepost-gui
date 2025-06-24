@@ -111,7 +111,7 @@ void AbstractCrosssectionWindow::Controller::handleSettingChange()
 
 void AbstractCrosssectionWindow::Controller::updateTargetRange()
 {
-	auto grid = m_window->grid();
+	auto grid = m_window->targetGrid();
 	if (grid == nullptr) {
 		ui->positionSlider->setRange(1, 0);
 		return;

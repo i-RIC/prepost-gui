@@ -135,7 +135,7 @@ void AbstractCrosssectionWindow::applyTmpTargetSetting()
 
 void AbstractCrosssectionWindow::handleGridReplace()
 {
-	auto g = grid();
+	auto g = targetGrid();
 	if (g == nullptr) {
 		setTarget(targetDirection(), 0);
 	} else {
@@ -223,7 +223,31 @@ QToolBar* AbstractCrosssectionWindow::displayToolBar() const
 	return impl->m_displayToolBar;
 }
 
-v4Structured2dGrid* AbstractCrosssectionWindow::additionalGrid()
+v4Structured2dGrid* AbstractCrosssectionWindow::targetGrid()
+{
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		return impl->m_gridForVis;
+	} else if (impl->m_mode == Mode::StructuredIJ) {
+		auto g = grid();
+		if (g == nullptr) {return nullptr;}
+
+		return dynamic_cast<v4Structured2dGrid*>(g);
+	}
+}
+
+v4Structured2dGrid* AbstractCrosssectionWindow::targetAdditionalGrid()
+{
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		return impl->m_additionalGridForVis;
+	} else if (impl->m_mode == Mode::StructuredIJ) {
+		auto g = additionalGrid();
+		if (g == nullptr) {return nullptr;}
+
+		return dynamic_cast<v4Structured2dGrid*>(g);
+	}
+}
+
+v4Grid* AbstractCrosssectionWindow::additionalGrid()
 {
 	return nullptr;
 }

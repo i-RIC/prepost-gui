@@ -46,7 +46,7 @@ bool PostCrosssectionInternalWindow::setupInitialSetting()
 	// 2d
 	for (const auto& c : info->v4ZoneContainers2D()) {
 		// TODO: currently limited to structured grid
-		if (dynamic_cast<v4Structured2dGrid*> (c->gridData()->grid()) == nullptr) {continue;}
+		// if (dynamic_cast<v4Structured2dGrid*> (c->gridData()->grid()) == nullptr) {continue;}
 
 		zones.push_back(ZoneInformation(PostSolutionInfo::dim2D, c->zoneName()));
 		items.push_back(c->caption());
@@ -80,6 +80,7 @@ bool PostCrosssectionInternalWindow::setupInitialSetting()
 	}
 
 	setupDisplaySettings();
+
 	setTarget(AbstractCrosssectionWindow::Direction::I, 0);
 
 	return true;
@@ -110,7 +111,7 @@ QMdiSubWindow* PostCrosssectionInternalWindow::mdiSubWindow() const
 	return dynamic_cast<QMdiSubWindow*> (w->parentWidget());
 }
 
-v4Structured2dGrid* PostCrosssectionInternalWindow::grid()
+v4Grid* PostCrosssectionInternalWindow::grid()
 {
 	auto info = window()->postSolutionInfo();
 	v4PostZoneDataContainer* container = nullptr;
@@ -123,11 +124,10 @@ v4Structured2dGrid* PostCrosssectionInternalWindow::grid()
 
 	if (container == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Structured2dGrid*> (container->gridData()->grid());
+	return container->gridData()->grid();
 }
 
-
-v4Structured2dGrid* PostCrosssectionInternalWindow::additionalGrid()
+v4Grid* PostCrosssectionInternalWindow::additionalGrid()
 {
 	auto info = window()->postSolutionInfo();
 	v4PostZoneDataContainer* container = nullptr;
@@ -143,7 +143,7 @@ v4Structured2dGrid* PostCrosssectionInternalWindow::additionalGrid()
 	auto ig = container->inputGridData();
 	if (ig == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Structured2dGrid*> (ig->grid());
+	return ig->grid();
 }
 
 QString PostCrosssectionInternalWindow::additionalGridPrefix()

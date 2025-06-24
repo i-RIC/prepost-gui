@@ -3,6 +3,7 @@
 #include "abstractcrosssectionwindow_displaysettingtablecontroller.h"
 #include "abstractcrosssectionwindow_edittablecontroller.h"
 #include "abstractcrosssectionwindow_impl.h"
+#include "abstractcrosssectionwindow_impl_structuredgridbuilderforunstructurededge.h"
 #include "ui_abstractcrosssectionwindow.h"
 
 #include <guibase/vtkdatasetattributestool.h>
@@ -37,11 +38,27 @@ AbstractCrosssectionWindow::Impl::Impl(AbstractCrosssectionWindow* w, QWidget* p
 	m_displayToolBar {new QToolBar(AbstractCrosssectionWindow::tr("Display Setting ToolBar"), parent)},
 	m_displaySettingTableController {nullptr},
 	m_editTableController {nullptr},
-	m_window {w}
-{}
+	m_window {w},
+	m_mode {Mode::UnstructuredEdge}, // TODO: Fix this
+	m_unstructuredNodeList {} // TODO: Fix this
+{
+	m_unstructuredNodeList.push_back(114);
+	m_unstructuredNodeList.push_back(121);
+	m_unstructuredNodeList.push_back(122);
+	m_unstructuredNodeList.push_back(123);
+
+	m_gridForVis = new v4Structured2dGrid();
+	m_additionalGridForVis = new v4Structured2dGrid();
+}
 
 AbstractCrosssectionWindow::Impl::~Impl()
-{}
+{
+	m_gridForVis->setAttributeDataProvider(nullptr);
+	m_additionalGridForVis->setAttributeDataProvider(nullptr);
+
+	delete m_gridForVis;
+	delete m_additionalGridForVis;
+}
 
 void AbstractCrosssectionWindow::Impl::setupSplitterSizes()
 {
@@ -134,6 +151,10 @@ void AbstractCrosssectionWindow::Impl::setupController(QWidget* parent)
 
 	connect(m_controller, &Controller::snapshotClicked, m_window, &AbstractCrosssectionWindow::saveSnapshots);
 	connect(m_controller, &Controller::csvExportClicked, m_window, &AbstractCrosssectionWindow::exportCsvs);
+
+	if (m_mode != Mode::StructuredIJ) {
+		m_controller->hide();
+	}
 }
 
 void AbstractCrosssectionWindow::Impl::setupDisplaySettingTableController()
@@ -148,8 +169,22 @@ void AbstractCrosssectionWindow::Impl::setupEditTableController()
 
 void AbstractCrosssectionWindow::Impl::setupDisplaySettings()
 {
-	setupDisplaySettings(m_window->grid(), "");
-	setupDisplaySettings(m_window->additionalGrid(), m_window->additionalGridPrefix());
+	if (m_mode == Mode::UnstructuredEdge) {
+		StructuredGridBuilderForUnstructuredEdge builder(this);
+		builder.build();
+
+		m_gridForVis->setAttributeDataProvider(m_window->grid()->attributeDataProvider());
+		setupDisplaySettings(m_gridForVis, "");
+
+		auto ag = m_window->additionalGrid();
+		if (ag != nullptr) {
+			m_additionalGridForVis->setAttributeDataProvider(ag->attributeDataProvider());
+			setupDisplaySettings(m_additionalGridForVis, m_window->additionalGridPrefix());
+		}
+	} else {
+		setupDisplaySettings(m_window->targetGrid(), "");
+		setupDisplaySettings(m_window->targetAdditionalGrid(), m_window->additionalGridPrefix());
+	}
 
 	for (auto& s : m_displaySettings) {
 		m_displaySettingMap.insert({s.attributeName(), &s});

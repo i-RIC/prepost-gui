@@ -67,12 +67,20 @@ public:
 
 	AbstractCrosssectionWindow* m_window;
 
+	Mode m_mode;
+	std::vector<vtkIdType> m_unstructuredNodeList;
+
 	Direction m_tmpDirection;
 	int m_tmpIndex;
 	Controller::CellSide m_tmpCellSide;
 
+	v4Structured2dGrid* m_gridForVis;
+	v4Structured2dGrid* m_additionalGridForVis;
+
 private:
 	void setupDisplaySettings(v4Structured2dGrid* grid, const QString& prefix);
+
+	class StructuredGridBuilderForUnstructuredEdge;
 };
 
 #endif // ABSTRACTCROSSSECTIONWINDOW_IMPL_H

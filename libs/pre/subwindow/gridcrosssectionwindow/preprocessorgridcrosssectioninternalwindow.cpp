@@ -32,12 +32,12 @@ QMdiSubWindow* PreProcessorGridCrosssectionInternalWindow::mdiSubWindow() const
 	return dynamic_cast<QMdiSubWindow*> (w->parentWidget());
 }
 
-v4Structured2dGrid* PreProcessorGridCrosssectionInternalWindow::grid()
+v4Grid* PreProcessorGridCrosssectionInternalWindow::grid()
 {
 	auto g = m_item->grid();
 	if (g == nullptr) {return nullptr;}
 
-	return dynamic_cast<v4Structured2dGrid*> (g->grid());
+	return g->grid();
 }
 
 void PreProcessorGridCrosssectionInternalWindow::updateEdgeFocus()

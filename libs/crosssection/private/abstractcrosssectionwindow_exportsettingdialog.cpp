@@ -16,7 +16,7 @@ AbstractCrosssectionWindow::ExportSettingDialog::ExportSettingDialog(AbstractCro
 	connect(ui->currentRadioButton, &QRadioButton::clicked, [=] (bool) {handleCurrentClicked();});
 	connect(ui->allRadioButton, &QRadioButton::clicked, [=] (bool) {handleAllClicked();});
 
-	auto grid = window->grid();
+	auto grid = window->targetGrid();
 
 	if (window->targetDirection() == Direction::I) {
 		int iDim = grid->dimensionI();

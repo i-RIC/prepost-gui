@@ -14,7 +14,7 @@ public:
 	~PreProcessorGridCrosssectionInternalWindow();
 
 	QMdiSubWindow* mdiSubWindow() const override;
-	v4Structured2dGrid* grid() override;
+	v4Grid* grid() override;
 	void updateEdgeFocus() override;
 
 private:
