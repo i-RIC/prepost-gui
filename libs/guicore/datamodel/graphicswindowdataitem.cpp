@@ -306,6 +306,8 @@ void GraphicsWindowDataItem::updateItemMap()
 void GraphicsWindowDataItem::updateActorSetting()
 {
 	if (! isAncientChecked() || ! isChecked()) {
+		updateVisibilityOfActorCollection(false);
+		updateVisibilityOfActor2DCollection(false);
 		m_isActorsReady = false;
 	} else {
 		doUpdateActorSetting();
