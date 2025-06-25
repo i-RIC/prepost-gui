@@ -461,31 +461,36 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 			// ODN data
 			auto odnFilename = filename;
 			odnFilename.append(".odn");
-			YAML::Node odn = YAML::LoadFile(iRIC::toStr(odnFilename));
+			QFile odnFile(odnFilename);
+			if (odnFile.exists()) {
+				YAML::Node odn = YAML::LoadFile(iRIC::toStr(odnFilename));
 
-			auto p = m_headPoint->nextPoint();
-			while (p != nullptr) {
-				auto pname = iRIC::toStr(p->name());
-				if (odn[pname]) {
-					auto odn_p = odn[pname];
-					p->odn().importFromYaml(odn_p);
+				auto p = m_headPoint->nextPoint();
+				while (p != nullptr) {
+					auto pname = iRIC::toStr(p->name());
+					if (odn[pname]) {
+						auto odn_p = odn[pname];
+						p->odn().importFromYaml(odn_p);
+					}
+					p = p->nextPoint();
 				}
-				p = p->nextPoint();
 			}
 
 			// JMK data
 			auto jmkFilename = filename;
 			jmkFilename.append(".jmk");
-			YAML::Node jmk = YAML::LoadFile(iRIC::toStr(jmkFilename));
-
-			p = m_headPoint->nextPoint();
-			while (p != nullptr) {
-				auto pname = iRIC::toStr(p->name());
-				if (jmk[pname]) {
-					auto jmk_p = jmk[pname];
-					p->jmk().importFromYaml(jmk_p);
+			QFile jmkFile(jmkFilename);
+			if (jmkFile.exists()) {
+				YAML::Node jmk = YAML::LoadFile(iRIC::toStr(jmkFilename));
+				auto p = m_headPoint->nextPoint();
+				while (p != nullptr) {
+					auto pname = iRIC::toStr(p->name());
+					if (jmk[pname]) {
+						auto jmk_p = jmk[pname];
+						p->jmk().importFromYaml(jmk_p);
+					}
+					p = p->nextPoint();
 				}
-				p = p->nextPoint();
 			}
 		} else if (impl->m_mode == Impl::Mode::CreateMode) {
 			// implement this
