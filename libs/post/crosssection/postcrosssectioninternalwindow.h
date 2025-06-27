@@ -13,6 +13,7 @@ class POSTCROSSSECTION_EXPORT PostCrosssectionInternalWindow : public AbstractCr
 public:
 	PostCrosssectionInternalWindow(QWidget* parent);
 	bool setupInitialSetting();
+	void setDimensionAndZone(PostSolutionInfo::Dimension dimension, const std::string& zoneName);
 
 	void loadFromProjectMainFile(const QDomNode& node) override;
 	void saveToProjectMainFile(QXmlStreamWriter& writer) override;

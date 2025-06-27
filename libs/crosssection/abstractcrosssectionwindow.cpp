@@ -112,6 +112,7 @@ void AbstractCrosssectionWindow::setupDisplaySettings()
 
 void AbstractCrosssectionWindow::setTarget(Direction dir, int index)
 {
+	impl->m_mode = Mode::StructuredIJ;
 	impl->setTargetDirection(dir);
 	impl->m_controller->setTarget(dir, index);
 	cameraFit();

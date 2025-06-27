@@ -20,6 +20,7 @@ AbstractCrosssectionWindow::Impl::StructuredGridBuilderForUnstructuredEdge::Stru
 void AbstractCrosssectionWindow::Impl::StructuredGridBuilderForUnstructuredEdge::build()
 {
 	auto g2d = dynamic_cast<v4Unstructured2dGrid*> (m_impl->m_window->grid());
+	if (g2d == nullptr) {return;}
 
 	const auto& nodeList = m_impl->m_unstructuredNodeList;
 	vtkIdType nodeCount = nodeList.size();

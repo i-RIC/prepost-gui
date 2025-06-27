@@ -45,6 +45,7 @@ class VtkGraphicsViewScaleWidget;
 class VTK2DGraphicsView;
 class GridCreatingConditionCreator;
 class CoordinateSystemBuilder;
+class PostCrosssectionWindow;
 
 class ProjectData;
 class iRICMainWindowActionManager;
@@ -178,6 +179,7 @@ public slots:
 	void create2dBirdEyePostWindow();
 	void create3dPostWindow();
 	void createPostCrosssectionWindow();
+	PostCrosssectionWindow* createPostCrosessionWindowWithNoSetting() override;
 	void createGraph2dHybridWindow();
 	void createGraph2dScatteredWindow();
 	void openVerificationDialog();

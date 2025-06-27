@@ -86,6 +86,14 @@ bool PostCrosssectionInternalWindow::setupInitialSetting()
 	return true;
 }
 
+void PostCrosssectionInternalWindow::setDimensionAndZone(PostSolutionInfo::Dimension dimension, const std::string& zoneName)
+{
+	m_dimension = dimension;
+	m_zoneName = zoneName;
+
+	setupDisplaySettings();
+}
+
 void PostCrosssectionInternalWindow::loadFromProjectMainFile(const QDomNode& node)
 {
 	auto elem = node.toElement();

@@ -39,14 +39,13 @@ AbstractCrosssectionWindow::Impl::Impl(AbstractCrosssectionWindow* w, QWidget* p
 	m_displaySettingTableController {nullptr},
 	m_editTableController {nullptr},
 	m_window {w},
-	m_mode {Mode::UnstructuredEdge}, // TODO: Fix this
-	m_unstructuredNodeList {} // TODO: Fix this
+	m_mode {Mode::StructuredIJ},
+	m_unstructuredNodeList {}
 {
-	m_unstructuredNodeList.push_back(114);
-	m_unstructuredNodeList.push_back(121);
-	m_unstructuredNodeList.push_back(122);
-	m_unstructuredNodeList.push_back(123);
-
+//	m_unstructuredNodeList.push_back(114);
+//	m_unstructuredNodeList.push_back(121);
+//	m_unstructuredNodeList.push_back(122);
+//	m_unstructuredNodeList.push_back(123);
 	m_gridForVis = new v4Structured2dGrid();
 	m_additionalGridForVis = new v4Structured2dGrid();
 }

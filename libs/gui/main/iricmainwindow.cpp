@@ -71,6 +71,7 @@
 #include <misc/xmlsupport.h>
 #include <misc/ziparchive.h>
 #include <postbase/cfshapeexportwindowi.h>
+#include <post/crosssection/postcrosssectionwindow.h>
 #include <post/crosssection/postcrosssectionwindowprojectdataitem.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
@@ -1579,6 +1580,27 @@ void iRICMainWindow::createPostCrosssectionWindow()
 	item->window()->setupDefaultGeometry(index);
 	++index;
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+}
+
+PostCrosssectionWindow* iRICMainWindow::createPostCrosessionWindowWithNoSetting()
+{
+	static int index = 1;
+	if (index == 10) {
+		index = 1;
+	}
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("postcrosssectionwindow", posts, this);
+	auto item2 = dynamic_cast<PostCrosssectionWindowProjectDataItem*>(item);
+QMdiSubWindow* container = posts->add(item);
+	container->show();
+	container->setFocus();
+	connect(item->window(), SIGNAL(closeButtonClicked()), container, SLOT(close()));
+
+	item->window()->setupDefaultGeometry(index);
+	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+
+	return dynamic_cast<PostCrosssectionWindow*> (item2->window());
 }
 
 void iRICMainWindow::createGraph2dHybridWindow()
