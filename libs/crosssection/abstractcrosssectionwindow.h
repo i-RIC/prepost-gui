@@ -5,6 +5,8 @@
 
 #include <guicore/base/edgevisualizewindowi.h>
 
+#include <vtkIdList.h>
+
 #include <QWidget>
 
 namespace Ui {
@@ -40,8 +42,10 @@ public:
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 
+	void setMode(Mode mode);
 	void setupDisplaySettings();
 	void setTarget(Direction dir, int index);
+	void setTargetLine(const std::vector<vtkIdType>& line);
 	Direction targetDirection() const;
 	int targetIndex() const;
 
