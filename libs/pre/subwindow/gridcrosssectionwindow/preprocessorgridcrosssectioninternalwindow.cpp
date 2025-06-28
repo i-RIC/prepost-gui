@@ -42,21 +42,23 @@ v4Grid* PreProcessorGridCrosssectionInternalWindow::grid()
 
 void PreProcessorGridCrosssectionInternalWindow::updateEdgeFocus()
 {
-	auto c = controller();
-	auto ti = c->targetIndex();
-	if (ti == -1) {return;}
-
 	auto zoneName = m_item->gridAndGridCreatingConditionDataItem()->zoneName();
-	vtkIdType i = 0, j = 0;
-	if (c->targetDirection() == Direction::I) {
-		i = ti;
-		j = -1;
-	} else if (c->targetDirection() == Direction::J) {
-		i = -1;
-		j = ti;
-	}
 
-	m_item->iricMainWindow()->setEdgeFocus(zoneName, i, j);
+	if (mode() == Mode::StructuredIJ) {
+		vtkIdType i = 0, j = 0;
+		auto c = controller();
+		if (c->targetDirection() == Direction::I) {
+			i = c->targetIndex();
+			j = -1;
+		} else if (c->targetDirection() == Direction::J) {
+			i = -1;
+			j = c->targetIndex();
+		}
+
+		m_item->iricMainWindow()->setEdgeFocus(zoneName, i, j);
+	} else if (mode() == Mode::UnstructuredEdge) {
+		m_item->iricMainWindow()->setEdgeFocus(zoneName, targetLine());
+	}
 }
 
 ColorMapSettingContainerI* PreProcessorGridCrosssectionInternalWindow::preColorMapSetting(const std::string& name) const

@@ -161,17 +161,21 @@ QString PostCrosssectionInternalWindow::additionalGridPrefix()
 
 void PostCrosssectionInternalWindow::updateEdgeFocus()
 {
-	vtkIdType i = 0, j = 0;
-	auto c = controller();
-	if (c->targetDirection() == Direction::I) {
-		i = c->targetIndex();
-		j = -1;
-	} else if (c->targetDirection() == Direction::J) {
-		i = -1;
-		j = c->targetIndex();
-	}
+	if (mode() == Mode::StructuredIJ) {
+		vtkIdType i = 0, j = 0;
+		auto c = controller();
+		if (c->targetDirection() == Direction::I) {
+			i = c->targetIndex();
+			j = -1;
+		} else if (c->targetDirection() == Direction::J) {
+			i = -1;
+			j = c->targetIndex();
+		}
 
-	window()->m_projectDataItem->iricMainWindow()->setEdgeFocus(m_zoneName, i, j);
+		window()->m_projectDataItem->iricMainWindow()->setEdgeFocus(m_zoneName, i, j);
+	} else if (mode() == Mode::UnstructuredEdge) {
+		window()->m_projectDataItem->iricMainWindow()->setEdgeFocus(m_zoneName, targetLine());
+	}
 }
 
 PostCrosssectionWindow* PostCrosssectionInternalWindow::window() const

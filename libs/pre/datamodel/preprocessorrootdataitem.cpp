@@ -167,6 +167,14 @@ void PreProcessorRootDataItem::setEdgeFocus(const std::string& zoneName, vtkIdTy
 	renderGraphicsView();
 }
 
+void PreProcessorRootDataItem::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->setEdgeFocus(zoneName, line);
+	}
+	renderGraphicsView();
+}
+
 void PreProcessorRootDataItem::clearEdgeFocus()
 {
 	for (auto item : m_gridTypeDataItems) {

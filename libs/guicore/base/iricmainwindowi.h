@@ -52,6 +52,7 @@ public:
 	virtual const VersionNumber& versionNumber() const = 0;
 	virtual void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) = 0;
 	virtual void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) = 0;
+	virtual void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) = 0;
 	virtual void clearEdgeFocus() = 0;
 	virtual PostCrosssectionWindow* createPostCrosessionWindowWithNoSetting() = 0;
 

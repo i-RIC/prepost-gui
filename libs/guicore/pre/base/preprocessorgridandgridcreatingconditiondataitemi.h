@@ -25,6 +25,7 @@ public:
 	virtual bool isGridEdited() const = 0;
 	virtual void setGridEdited() = 0;
 	virtual void setEdgeFocus(vtkIdType i, vtkIdType j) = 0;
+	virtual void setEdgeFocus(const std::vector<vtkIdType>& line) = 0;
 	virtual void clearEdgeFocus() = 0;
 	virtual GridAttributeContainerIoI* gridAttributeIo() = 0;
 };

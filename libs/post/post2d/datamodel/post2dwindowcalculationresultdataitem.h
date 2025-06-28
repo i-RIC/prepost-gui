@@ -36,6 +36,7 @@ public:
 	void update(bool noParticle);
 	v4Grid2d* grid() const override;
 	void setEdgeFocus(vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 
 	Post2dWindowZoneDataItem* zoneDataItem() const;

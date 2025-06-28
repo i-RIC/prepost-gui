@@ -34,6 +34,7 @@ public:
 	void applyOffset(double x, double y);
 	void initCollapseState();
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 
 	void updateTmsList();

@@ -1457,6 +1457,19 @@ void iRICMainWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkI
 	}
 }
 
+void iRICMainWindow::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+		auto e2 = dynamic_cast<Edge2dFocusWindowI*> (w->widget());
+		auto e3 = dynamic_cast<Edge3dFocusWindowI*> (w->widget());
+		if (e3 != nullptr) {
+			e3->clearEdgeFocus();
+		} else if (e2 != nullptr) {
+			e2->setEdgeFocus(zoneName, line);
+		}
+	}
+}
+
 void iRICMainWindow::clearEdgeFocus()
 {
 	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {

@@ -151,6 +151,7 @@ void Post2dWindowGridShapeDataItem::openEdgeCrossSectionWindow()
 		auto zItem = rItem->zoneDataItem();
 		iw->setDimensionAndZone(PostSolutionInfo::Dimension::dim2D, zItem->zoneName());
 		iw->update();
+		iw->updateEdgeFocus();
 	}
 
 	m_linePointIds.clear();

@@ -180,6 +180,14 @@ void PreProcessorDataModel::setEdgeFocus(const std::string& zoneName, vtkIdType 
 	r->setEdgeFocus(zoneName, i, j);
 }
 
+void PreProcessorDataModel::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	auto r = rootDataItem();
+	if (r == nullptr) {return;}
+
+	r->setEdgeFocus(zoneName, line);
+}
+
 void PreProcessorDataModel::clearEdgeFocus()
 {
 	auto r = rootDataItem();

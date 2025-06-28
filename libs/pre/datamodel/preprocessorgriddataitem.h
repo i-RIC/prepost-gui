@@ -84,6 +84,9 @@ public:
 	SelectedJEdgesController* selectedJEdgesController() const;
 	SelectedEdgesController* selectedEdgesController() const;
 
+	void setEdgeFocus(const std::vector<vtkIdType>& line);
+	void clearEdgeFocus();
+
 	// Mouse event handlers for grid edges selecting
 
 	void informSelection(VTKGraphicsView* v) override;
@@ -183,6 +186,9 @@ protected:
 	PreProcessorGridAttributeIEdgeGroupDataItem* m_iEdgeGroupDataItem;
 	PreProcessorGridAttributeJEdgeGroupDataItem* m_jEdgeGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
+
+	vtkPolyDataMapper* m_edgeMapper;
+	vtkActor* m_edgeActor;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -158,6 +158,11 @@ void Post2dWindowZoneDataItem::setEdgeFocus(vtkIdType i, vtkIdType j)
 	impl->m_resultDataItem->setEdgeFocus(i, j);
 }
 
+void Post2dWindowZoneDataItem::setEdgeFocus(const std::vector<vtkIdType>& line)
+{
+	impl->m_resultDataItem->setEdgeFocus(line);
+}
+
 void Post2dWindowZoneDataItem::clearEdgeFocus()
 {
 	impl->m_resultDataItem->clearEdgeFocus();

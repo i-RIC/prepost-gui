@@ -239,6 +239,13 @@ void PreProcessorWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, 
 	m_dataModel->setEdgeFocus(zoneName, i, j);
 }
 
+void PreProcessorWindow::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	if (m_dataModel == nullptr) { return; }
+
+	m_dataModel->setEdgeFocus(zoneName, line);
+}
+
 void PreProcessorWindow::clearEdgeFocus()
 {
 	if (m_dataModel == nullptr) {return;}

@@ -65,6 +65,7 @@ public:
 	std::vector<std::string> discreteColorDrawingZones() override;
 	bool hasTransparentPart();
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) override;
 	void clearEdgeFocus() override;
 
 	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const std::string& zonename) override;

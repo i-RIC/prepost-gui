@@ -63,6 +63,7 @@ public:
 	MouseBoundingBox* mouseBoundingBox() override;
 	const QList<QMenu*>& additionalMenus() const;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 	void addGridCreatingConditionImportMenu(QMenu* menu);
 	void addGridCreatingConditionExportMenu(QMenu* menu);

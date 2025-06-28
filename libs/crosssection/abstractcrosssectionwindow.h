@@ -42,9 +42,12 @@ public:
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 
+	Mode mode() const;
 	void setMode(Mode mode);
 	void setupDisplaySettings();
 	void setTarget(Direction dir, int index);
+
+	const std::vector<vtkIdType>& targetLine() const;
 	void setTargetLine(const std::vector<vtkIdType>& line);
 	Direction targetDirection() const;
 	int targetIndex() const;

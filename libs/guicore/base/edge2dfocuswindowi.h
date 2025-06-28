@@ -9,6 +9,7 @@ public:
 	virtual ~Edge2dFocusWindowI() {}
 
 	virtual void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) = 0;
+	virtual void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) = 0;
 	virtual void clearEdgeFocus() = 0;
 };
 

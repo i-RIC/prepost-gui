@@ -197,6 +197,26 @@ void Post2dWindowCalculationResultDataItem::setEdgeFocus(vtkIdType i, vtkIdType 
 	impl->m_edgeActor->VisibilityOn();
 }
 
+void Post2dWindowCalculationResultDataItem::setEdgeFocus(const std::vector<vtkIdType>& line)
+{
+	auto g = grid();
+	if (g == nullptr) {return;}
+
+	auto polyData = vtkSmartPointer<vtkPolyData>::New();
+	polyData->SetPoints(g->vtkData()->data()->GetPoints());
+	auto lines = vtkSmartPointer<vtkCellArray>::New();
+	vtkIdType ids[2];
+	for (int i = 0; i < line.size() - 1; ++i) {
+		ids[0] = line.at(i);
+		ids[1] = line.at(i + 1);
+		lines->InsertNextCell(2, ids);
+	}
+	polyData->SetLines(lines);
+
+	impl->m_edgeMapper->SetInputData(polyData);
+	impl->m_edgeActor->VisibilityOn();
+}
+
 void Post2dWindowCalculationResultDataItem::clearEdgeFocus()
 {
 	impl->m_edgeActor->VisibilityOff();

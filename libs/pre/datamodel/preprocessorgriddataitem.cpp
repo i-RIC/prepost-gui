@@ -32,6 +32,7 @@
 #include "public/preprocessorgriddataitem_selectedjedgescontroller.h"
 #include "public/preprocessorgriddataitem_selectednodescontroller.h"
 
+#include <guibase/vtkgridedgeutil.h>
 #include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/base/propertybrowser.h>
@@ -110,6 +111,8 @@ PreProcessorGridCrosssectionWindow* PreProcessorGridDataItem::Impl::buildCrossse
 PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridDataItemI(parent),
 	m_bcGroupDataItem {nullptr},
+	m_edgeMapper {vtkPolyDataMapper::New()},
+	m_edgeActor {vtkActor::New()},
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -141,6 +144,12 @@ PreProcessorGridDataItem::~PreProcessorGridDataItem()
 	closeCrosssectionWindows();
 
 	delete m_bcGroupDataItem;
+
+	renderer()->RemoveActor(m_edgeActor);
+
+	m_edgeMapper->Delete();
+	m_edgeActor->Delete();
+
 	delete impl;
 }
 
@@ -572,6 +581,31 @@ PreProcessorGridDataItem::SelectedEdgesController* PreProcessorGridDataItem::sel
 	return impl->m_selectedEdgesController;
 }
 
+void PreProcessorGridDataItem::setEdgeFocus(const std::vector<vtkIdType>& line)
+{
+	auto g = grid();
+	if (g == nullptr) {return;}
+
+	auto polyData = vtkSmartPointer<vtkPolyData>::New();
+	polyData->SetPoints(g->grid()->vtkData()->data()->GetPoints());
+	auto lines = vtkSmartPointer<vtkCellArray>::New();
+	vtkIdType ids[2];
+	for (int i = 0; i < line.size() - 1; ++i) {
+		ids[0] = line.at(i);
+		ids[1] = line.at(i + 1);
+		lines->InsertNextCell(2, ids);
+	}
+	polyData->SetLines(lines);
+
+	m_edgeMapper->SetInputData(polyData);
+	m_edgeActor->VisibilityOn();
+}
+
+void PreProcessorGridDataItem::clearEdgeFocus()
+{
+	m_edgeActor->VisibilityOff();
+}
+
 void PreProcessorGridDataItem::setupActors()
 {
 	auto points = vtkSmartPointer<vtkPoints>::New();
@@ -586,6 +620,11 @@ void PreProcessorGridDataItem::setupActors()
 	prop->SetColor(0, 0, 0);
 
 	renderer()->AddActor(impl->m_regionActor);
+
+	vtkGridEdgeUtil::setupActor(m_edgeActor);
+	m_edgeActor->SetMapper(m_edgeMapper);
+	m_edgeActor->VisibilityOff();
+	renderer()->AddActor(m_edgeActor);
 }
 
 void PreProcessorGridDataItem::setupActions()

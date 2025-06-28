@@ -104,6 +104,11 @@ void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
+AbstractCrosssectionWindow::Mode AbstractCrosssectionWindow::mode() const
+{
+	return impl->m_mode;
+}
+
 void AbstractCrosssectionWindow::setMode(Mode mode)
 {
 	impl->m_mode = mode;
@@ -121,6 +126,11 @@ void AbstractCrosssectionWindow::setTarget(Direction dir, int index)
 	impl->setTargetDirection(dir);
 	impl->m_controller->setTarget(dir, index);
 	cameraFit();
+}
+
+const std::vector<vtkIdType>& AbstractCrosssectionWindow::targetLine() const
+{
+	return impl->m_unstructuredNodeList;
 }
 
 void AbstractCrosssectionWindow::setTargetLine(const std::vector<vtkIdType>& line)

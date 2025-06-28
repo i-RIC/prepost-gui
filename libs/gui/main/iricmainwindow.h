@@ -73,6 +73,7 @@ public:
 	const VersionNumber& versionNumber() const override;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) override;
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) override;
 	void clearEdgeFocus() override;
 	void setDebugMode(bool debug);
 	bool isDebugMode() const;
