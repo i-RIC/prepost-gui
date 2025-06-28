@@ -37,8 +37,6 @@ AbstractCrosssectionWindow::AbstractCrosssectionWindow(QWidget *parent) :
 
 AbstractCrosssectionWindow::~AbstractCrosssectionWindow()
 {
-	// impl->m_gridDataItem->removeCrossSectionWindow(this);
-
 	delete ui;
 	delete impl;
 }
@@ -48,6 +46,15 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 	WindowGeometryContainer geometry;
 	geometry.setWidget(mdiSubWindow());
 	geometry.load(node);
+
+	impl->m_mode = static_cast<Mode> (iRIC::getIntAttribute(node, "mode"), Mode::StructuredIJ);
+	auto ids = node.toElement().attribute("unstructuredNodeList").split(",");
+
+	impl->m_unstructuredNodeList.clear();
+	for (int i = 0; i < ids.size(); ++i) {
+		auto id = ids.at(i).toInt();
+		impl->m_unstructuredNodeList.push_back(id);
+	}
 
 	impl->m_tmpDirection = static_cast<Direction> (iRIC::getIntAttribute(node, "direction"));
 	impl->m_tmpIndex = iRIC::getIntAttribute(node, "positionIndex");
@@ -82,6 +89,13 @@ void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 	WindowGeometryContainer geometry;
 	geometry.setWidget(mdiSubWindow());
 	geometry.save(writer);
+
+	iRIC::setIntAttribute(writer, "mode", static_cast<int> (impl->m_mode));
+	QStringList ids;
+	for (int i = 0; i < impl->m_unstructuredNodeList.size(); ++i) {
+		ids.push_back(QString::number(impl->m_unstructuredNodeList.at(i)));
+	}
+	writer.writeAttribute("unstructuredNodeList", ids.join(","));
 
 	iRIC::setIntAttribute(writer, "direction", static_cast<int>(impl->m_controller->targetDirection()));
 	iRIC::setIntAttribute(writer, "positionIndex", impl->m_controller->targetIndex());
@@ -137,6 +151,7 @@ void AbstractCrosssectionWindow::setTargetLine(const std::vector<vtkIdType>& lin
 {
 	impl->m_mode = Mode::UnstructuredEdge;
 	impl->m_unstructuredNodeList = line;
+	impl->m_controller->hide();
 }
 
 AbstractCrosssectionWindow::Direction AbstractCrosssectionWindow::targetDirection() const

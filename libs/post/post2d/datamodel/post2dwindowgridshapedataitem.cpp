@@ -97,10 +97,10 @@ void Post2dWindowGridShapeDataItem::setupActors()
 	m_lineController.pointsActor()->VisibilityOff();
 
 	m_pointsActor->SetMapper(m_pointsMapper);
-	m_pointsActor->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_pointsActor->GetProperty()->SetLighting(false);
 	m_pointsActor->GetProperty()->SetRepresentationToPoints();
 	m_pointsActor->GetProperty()->SetPointSize(3 * v->devicePixelRatioF());
+	m_pointsActor->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_pointsActor->VisibilityOff();
 	r->AddActor(m_pointsActor);
 
