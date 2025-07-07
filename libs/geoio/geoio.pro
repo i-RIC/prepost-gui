@@ -63,7 +63,8 @@ LIBS += \
         -lvtkCommonDataModel-$${VTK_MAJ_MIN}
 
 # Input
-HEADERS += geoio_global.h \
+HEADERS += dbfcloser.h \
+           geoio_global.h \
            io.h \
            polygoncsvexporter.h \
            polygoncsvimporter.h \
@@ -84,6 +85,7 @@ HEADERS += geoio_global.h \
            polylineio.h \
            polylineshapeexporter.h \
            polylineshapeimporter.h \
+           shpcloser.h \
            private/csvhelper.h \
            private/dbfitemselectdialog.h \
            private/polygonexporterfactory_impl.h \
@@ -91,7 +93,8 @@ HEADERS += geoio_global.h \
            private/polylineexporterfactory_impl.h \
            private/polylineimporterfactory_impl.h
 FORMS += private/dbfitemselectdialog.ui
-SOURCES += polygoncsvexporter.cpp \
+SOURCES += dbfcloser.cpp \
+           polygoncsvexporter.cpp \
            polygoncsvimporter.cpp \
            polygonexporterfactory.cpp \
            polygonimporterfactory.cpp \
@@ -106,6 +109,7 @@ SOURCES += polygoncsvexporter.cpp \
            polylineio.cpp \
            polylineshapeexporter.cpp \
            polylineshapeimporter.cpp \
+           shpcloser.cpp \
            private/csvhelper.cpp \
            private/dbfitemselectdialog.cpp
 TRANSLATIONS += languages/iricGeoIO_ar_EG.ts \

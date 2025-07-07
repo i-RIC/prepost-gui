@@ -6,6 +6,8 @@
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
+#include <geoio/dbfcloser.h>
+#include <geoio/shpcloser.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/geodata/geodataimportersetting.h>
@@ -71,6 +73,7 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 	auto filename = setting()->fileName();
 	auto fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
+	SHPCloser shphCloser(shph);
 
 	int numEntities;
 	int shapeType;
@@ -87,6 +90,7 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 	auto dbfname = iRIC::toStr(dbfFilename);
 
 	DBFHandle dbfh = DBFOpen(dbfname.c_str(), "rb");
+	DBFCloser dbhfCloser(dbfh);
 	if (dbfh == nullptr) {
 		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(dbfFilename)));
 		return false;
@@ -98,7 +102,6 @@ bool GeoDataPolyDataGroupShpImporter::doInit(int* count, SolverDefinitionGridAtt
 		QMessageBox::critical(w, tr("Error"), tr("The number of data mismatches between shp file and dbf file."));
 		return false;
 	}
-	DBFClose(dbfh);
 
 	// m_shapeInfos = buildPolygonShapeInfos(fname);
 	*count = 1;
