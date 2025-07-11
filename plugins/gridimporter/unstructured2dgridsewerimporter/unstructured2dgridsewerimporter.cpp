@@ -306,7 +306,7 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 
 	auto line = vtkSmartPointer<vtkLine>::New();
 	for (int i = 0; i < numEntities; ++i) {
-		SHPObject* shpo = SHPReadObject(manholeShph, i);
+		SHPObject* shpo = SHPReadObject(culvertShph, i);
 		if (shpo->nVertices != 2) {
 			invalidLineExists = true;
 			continue;
