@@ -98,12 +98,12 @@ void AbstractCrosssectionWindow::EditTableController::applyToTable()
 
 	m_model.setColumnCount(static_cast<int> (activeSettings.size()));
 
-	auto grid = impl->m_window->targetGrid();
-	if (grid == nullptr) {
+	if (impl->m_window->grid() == nullptr) {
 		m_model.setRowCount(0);
 		return;
 	}
 
+	auto grid = impl->m_window->targetGrid();
 	int valueCount = 0;
 
 	if (impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
@@ -141,6 +141,8 @@ void AbstractCrosssectionWindow::EditTableController::setDataToModel(int col, co
 
 	if (s.position() == GridAttributeDisplaySettingContainer::Position::Node) {
 		auto array = grid->vtkData()->data()->GetPointData()->GetArray(s.attributeName().c_str());
+		if (array == nullptr) {return;}
+
 		if (impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
 			for (int i = 0; i < valueCount; ++i) {
 				auto value = array->GetTuple1(i);
@@ -165,6 +167,8 @@ void AbstractCrosssectionWindow::EditTableController::setDataToModel(int col, co
 		}
 	} else if (s.position() == GridAttributeDisplaySettingContainer::Position::Cell) {
 		auto array = grid->vtkData()->data()->GetCellData()->GetArray(s.attributeName().c_str());
+		if (array == nullptr) {return;}
+
 		if (impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
 			m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
 			for (int i = 0; i < valueCount - 1; ++i) {

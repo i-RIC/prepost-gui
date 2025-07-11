@@ -19,6 +19,9 @@ AbstractCrosssectionWindow::Impl::StructuredGridBuilderForUnstructuredEdge::Stru
 
 void AbstractCrosssectionWindow::Impl::StructuredGridBuilderForUnstructuredEdge::build()
 {
+	m_impl->m_gridForVis->clear();
+	m_impl->m_additionalGridForVis->clear();
+
 	auto g2d = dynamic_cast<v4Unstructured2dGrid*> (m_impl->m_window->grid());
 	if (g2d == nullptr) {return;}
 

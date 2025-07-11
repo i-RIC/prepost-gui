@@ -312,6 +312,8 @@ void Post2dWindowGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 	auto pos = view->viewportToWorld(event->pos());
 
 	auto grid = gridDataItem()->grid();
+	if (grid == nullptr) {return;}
+
 	auto pointId = grid->vtkData()->findClosestPointWithinRadius(v->stdDistance(iRIC::nearRadius()), pos.x(), pos.y(), 0);
 	if (m_mode == Mode::Structured2d) {
 		if (pointId < 0) {
