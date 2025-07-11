@@ -119,8 +119,8 @@ void Post2dWindowGridShapeDataItem::doUpdateActorSetting()
 		m_setting.update(m_actorCollection, m_actor2DCollection, nullptr, nullptr, nullptr, v4GridUtil::LABEL_NAME);
 	} else {
 		m_setting.update(m_actorCollection, m_actor2DCollection, grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
+		m_pointsMapper->SetInputData(grid2d->vtkFilteredData());
 	}
-	m_pointsMapper->SetInputData(grid2d->vtkFilteredData());
 }
 
 PostCrosssectionWindow* Post2dWindowGridShapeDataItem::createCrosssectionWindow(AbstractCrosssectionWindow::Mode mode) const
