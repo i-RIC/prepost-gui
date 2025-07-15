@@ -204,7 +204,6 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 
 	auto grid2d = dynamic_cast<v4Unstructured2dGrid*> (grid->grid());
 
-	std::unordered_map<std::string, unsigned int> manholeNames;
 	std::unordered_map<std::string, std::vector<QVariant> > manholeAtts;
 	std::unordered_map<std::string, std::vector<QVariant> > culvertAtts;
 
@@ -246,24 +245,9 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 	points->SetDataTypeToDouble();
 	std::map<QPointF, int, QPointFCompare> pointIdMap;
 
-	for (int i = 0; i < numEntities; ++i) {
-		SHPObject* shpo = SHPReadObject(manholeShph, i);
-		double x = *(shpo->padfX);
-		double y = *(shpo->padfY);
-
-		points->InsertNextPoint(x, y, 0);
-		QPointF point(x, y);
-		pointIdMap.insert({point, i});
-
-		SHPDestroyObject(shpo);
-	}
-	ugrid->SetPoints(points);
-
 	int fieldCount = DBFGetFieldCount(manholeDbfh);
-
 	std::vector<QVariant> empty;
 	std::vector<std::string> columnNames;
-
 	for (int i = 0; i < fieldCount; ++i) {
 		DBFFieldType type;
 		char fieldName[12];
@@ -272,12 +256,28 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 		columnNames.push_back(fieldName);
 	}
 
-	for (int i = 0; i < recordCount; ++i) {
-		for (int j = 0; j < fieldCount; ++j) {
-			auto data = readShapefileData(manholeDbfh, i, j, codec);
-			manholeAtts.at(columnNames[j]).push_back(data);
+	int pointId = 0;
+	for (int i = 0; i < numEntities; ++i) {
+		SHPObject* shpo = SHPReadObject(manholeShph, i);
+		double x = *(shpo->padfX);
+		double y = *(shpo->padfY);
+		QPointF point(x, y);
+
+		if (pointIdMap.find(point) == pointIdMap.end()) {
+			points->InsertNextPoint(x, y, 0);
+			pointIdMap.insert({point, pointId});
+
+			for (int j = 0; j < fieldCount; ++j) {
+				auto data = readShapefileData(manholeDbfh, i, j, codec);
+				manholeAtts.at(columnNames[j]).push_back(data);
+			}
+
+			++ pointId;
 		}
+
+		SHPDestroyObject(shpo);
 	}
+	ugrid->SetPoints(points);
 
 	SHPHandle culvertShph = SHPOpen(iRIC::toStr(culvertFilename).c_str(), "rb");
 	SHPCloser culvertShphCloser(culvertShph);
@@ -303,8 +303,19 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 	}
 
 	bool invalidLineExists = false;
-
 	auto line = vtkSmartPointer<vtkLine>::New();
+
+	fieldCount = DBFGetFieldCount(culvertDbfh);
+	columnNames.clear();
+
+	for (int i = 0; i < fieldCount; ++i) {
+		DBFFieldType type;
+		char fieldName[12];
+		type = DBFGetFieldInfo(culvertDbfh, i, fieldName, NULL, NULL);
+		culvertAtts.insert({ fieldName, empty });
+		columnNames.push_back(fieldName);
+	}
+
 	for (int i = 0; i < numEntities; ++i) {
 		SHPObject* shpo = SHPReadObject(culvertShph, i);
 		if (shpo->nVertices != 2) {
@@ -329,20 +340,7 @@ bool importFromShapefile(v4InputGrid* grid, QString manholeFilename, QWidget* pa
 		ugrid->InsertNextCell(line->GetCellType(), line->GetPointIds());
 
 		SHPDestroyObject(shpo);
-	}
 
-	fieldCount = DBFGetFieldCount(culvertDbfh);
-	columnNames.clear();
-
-	for (int i = 0; i < fieldCount; ++i) {
-		DBFFieldType type;
-		char fieldName[12];
-		type = DBFGetFieldInfo(culvertDbfh, i, fieldName, NULL, NULL);
-		culvertAtts.insert({fieldName, empty});
-		columnNames.push_back(fieldName);
-	}
-
-	for (int i = 0; i < recordCount; ++i) {
 		for (int j = 0; j < fieldCount; ++j) {
 			auto data = readShapefileData(culvertDbfh, i, j, codec);
 			culvertAtts.at(columnNames[j]).push_back(data);
