@@ -348,6 +348,11 @@ void Post2dWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdT
 	m_dataModel->setEdgeFocus(zoneName, i, j);
 }
 
+void Post2dWindow::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	m_dataModel->setEdgeFocus(zoneName, line);
+}
+
 void Post2dWindow::clearEdgeFocus()
 {
 	m_dataModel->clearEdgeFocus();

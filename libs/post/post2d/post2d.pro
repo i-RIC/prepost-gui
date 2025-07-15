@@ -71,6 +71,21 @@ unix {
 }
 LIBS += -liricPostbase
 
+# iricPostCrosssection
+
+unix {
+	LIBS += -L"../crosssection"
+}
+LIBS += -liricPostCrosssection
+
+
+# iricCrosssection
+
+unix {
+        LIBS += -L"../../crosssection"
+}
+LIBS += -liricCrosssection
+
 # iricLogo
 
 unix {

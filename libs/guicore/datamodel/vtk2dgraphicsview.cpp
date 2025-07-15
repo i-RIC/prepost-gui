@@ -161,7 +161,7 @@ void VTK2DGraphicsView::viewportToWorld(double& x, double& y) const
 	r->ViewToWorld(x, y, z);
 }
 
-QPointF VTK2DGraphicsView::viewportToWorld(const QPoint p) const
+QPointF VTK2DGraphicsView::viewportToWorld(const QPoint& p) const
 {
 	double x = p.x();
 	double y = p.y();
@@ -180,7 +180,7 @@ void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 	r->NormalizedViewportToViewport(x, y);
 }
 
-QPointF VTK2DGraphicsView::worldToViewport(QPointF p) const
+QPointF VTK2DGraphicsView::worldToViewport(const QPointF& p) const
 {
 	double x = p.x();
 	double y = p.y();

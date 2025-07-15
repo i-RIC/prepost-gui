@@ -8,7 +8,7 @@
 
 class PostCrosssectionInternalWindow;
 
-class PostCrosssectionWindow : public PostProcessorWindow, public EdgeVisualizeWindowI
+class POSTCROSSSECTION_EXPORT PostCrosssectionWindow : public PostProcessorWindow, public EdgeVisualizeWindowI
 {
 	Q_OBJECT
 

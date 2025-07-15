@@ -162,6 +162,14 @@ void Post2dWindowRootDataItem::setEdgeFocus(const std::string& zoneName, vtkIdTy
 	renderGraphicsView();
 }
 
+void Post2dWindowRootDataItem::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto item : m_gridTypeDataItems) {
+		item->setEdgeFocus(zoneName, line);
+	}
+	renderGraphicsView();
+}
+
 void Post2dWindowRootDataItem::clearEdgeFocus()
 {
 	for (auto item : m_gridTypeDataItems) {

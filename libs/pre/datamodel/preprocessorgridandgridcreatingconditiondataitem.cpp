@@ -188,12 +188,14 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setEdgeFocus(vtkIdType i,
 	gItem->setEdgeFocus(i, j);
 }
 
+void PreProcessorGridAndGridCreatingConditionDataItem::setEdgeFocus(const std::vector<vtkIdType>& line)
+{
+	m_gridDataItem->setEdgeFocus(line);
+}
+
 void PreProcessorGridAndGridCreatingConditionDataItem::clearEdgeFocus()
 {
-	auto gItem = dynamic_cast<PreProcessorStructured2dGridDataItem*> (m_gridDataItem);
-	if (gItem == nullptr) {return;}
-
-	gItem->clearEdgeFocus();
+	m_gridDataItem->clearEdgeFocus();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4InputGrid* grid)

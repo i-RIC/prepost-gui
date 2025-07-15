@@ -37,8 +37,6 @@ AbstractCrosssectionWindow::AbstractCrosssectionWindow(QWidget *parent) :
 
 AbstractCrosssectionWindow::~AbstractCrosssectionWindow()
 {
-	// impl->m_gridDataItem->removeCrossSectionWindow(this);
-
 	delete ui;
 	delete impl;
 }
@@ -48,6 +46,15 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 	WindowGeometryContainer geometry;
 	geometry.setWidget(mdiSubWindow());
 	geometry.load(node);
+
+	impl->m_mode = static_cast<Mode> (iRIC::getIntAttribute(node, "mode"), Mode::StructuredIJ);
+	auto ids = node.toElement().attribute("unstructuredNodeList").split(",");
+
+	impl->m_unstructuredNodeList.clear();
+	for (int i = 0; i < ids.size(); ++i) {
+		auto id = ids.at(i).toInt();
+		impl->m_unstructuredNodeList.push_back(id);
+	}
 
 	impl->m_tmpDirection = static_cast<Direction> (iRIC::getIntAttribute(node, "direction"));
 	impl->m_tmpIndex = iRIC::getIntAttribute(node, "positionIndex");
@@ -83,6 +90,13 @@ void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 	geometry.setWidget(mdiSubWindow());
 	geometry.save(writer);
 
+	iRIC::setIntAttribute(writer, "mode", static_cast<int> (impl->m_mode));
+	QStringList ids;
+	for (int i = 0; i < impl->m_unstructuredNodeList.size(); ++i) {
+		ids.push_back(QString::number(impl->m_unstructuredNodeList.at(i)));
+	}
+	writer.writeAttribute("unstructuredNodeList", ids.join(","));
+
 	iRIC::setIntAttribute(writer, "direction", static_cast<int>(impl->m_controller->targetDirection()));
 	iRIC::setIntAttribute(writer, "positionIndex", impl->m_controller->targetIndex());
 	iRIC::setIntAttribute(writer, "cellside", static_cast<int>(impl->m_controller->cellSide()));
@@ -104,6 +118,16 @@ void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
+AbstractCrosssectionWindow::Mode AbstractCrosssectionWindow::mode() const
+{
+	return impl->m_mode;
+}
+
+void AbstractCrosssectionWindow::setMode(Mode mode)
+{
+	impl->m_mode = mode;
+}
+
 void AbstractCrosssectionWindow::setupDisplaySettings()
 {
 	impl->setupDisplaySettings();
@@ -112,9 +136,22 @@ void AbstractCrosssectionWindow::setupDisplaySettings()
 
 void AbstractCrosssectionWindow::setTarget(Direction dir, int index)
 {
+	impl->m_mode = Mode::StructuredIJ;
 	impl->setTargetDirection(dir);
 	impl->m_controller->setTarget(dir, index);
 	cameraFit();
+}
+
+const std::vector<vtkIdType>& AbstractCrosssectionWindow::targetLine() const
+{
+	return impl->m_unstructuredNodeList;
+}
+
+void AbstractCrosssectionWindow::setTargetLine(const std::vector<vtkIdType>& line)
+{
+	impl->m_mode = Mode::UnstructuredEdge;
+	impl->m_unstructuredNodeList = line;
+	impl->m_controller->hide();
 }
 
 AbstractCrosssectionWindow::Direction AbstractCrosssectionWindow::targetDirection() const
@@ -135,7 +172,7 @@ void AbstractCrosssectionWindow::applyTmpTargetSetting()
 
 void AbstractCrosssectionWindow::handleGridReplace()
 {
-	auto g = grid();
+	auto g = targetGrid();
 	if (g == nullptr) {
 		setTarget(targetDirection(), 0);
 	} else {
@@ -155,6 +192,10 @@ void AbstractCrosssectionWindow::handleGridReplace()
 
 void AbstractCrosssectionWindow::update()
 {
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		impl->updateGridForVis();
+	}
+
 	impl->updateColorMapValueRanges();
 	impl->m_displaySettingTableController->updateVisible();
 	impl->m_editTableController->applyToTable();
@@ -223,7 +264,31 @@ QToolBar* AbstractCrosssectionWindow::displayToolBar() const
 	return impl->m_displayToolBar;
 }
 
-v4Structured2dGrid* AbstractCrosssectionWindow::additionalGrid()
+v4Structured2dGrid* AbstractCrosssectionWindow::targetGrid()
+{
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		return impl->m_gridForVis;
+	} else if (impl->m_mode == Mode::StructuredIJ) {
+		auto g = grid();
+		if (g == nullptr) {return nullptr;}
+
+		return dynamic_cast<v4Structured2dGrid*>(g);
+	}
+}
+
+v4Structured2dGrid* AbstractCrosssectionWindow::targetAdditionalGrid()
+{
+	if (impl->m_mode == Mode::UnstructuredEdge) {
+		return impl->m_additionalGridForVis;
+	} else if (impl->m_mode == Mode::StructuredIJ) {
+		auto g = additionalGrid();
+		if (g == nullptr) {return nullptr;}
+
+		return dynamic_cast<v4Structured2dGrid*>(g);
+	}
+}
+
+v4Grid* AbstractCrosssectionWindow::additionalGrid()
 {
 	return nullptr;
 }

@@ -15,16 +15,12 @@ public:
 	~PreProcessorStructured2dGridDataItem();
 
 	void setEdgeFocus(vtkIdType i, vtkIdType j);
-	void clearEdgeFocus();
 
 	void updateActionStatus() override;
 
 private:
 	void setupMenu() override;
 	void assignActorZValues(const ZDepthRange& range) override;
-
-	vtkPolyDataMapper* m_edgeMapper;
-	vtkActor* m_edgeActor;
 
 	QAction* m_regionSelectAction;
 	QAction* m_showIndexAction;

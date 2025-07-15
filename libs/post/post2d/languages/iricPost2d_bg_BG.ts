@@ -644,6 +644,14 @@
         <source>Reference Information</source>
         <translation>Справочна информация</translation>
     </message>
+    <message>
+        <source>Add geographic data group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the geographic data group to add</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
@@ -1017,6 +1025,22 @@
     <message>
         <source>Grid Shape Display Setting</source>
         <translation>Настройка на дисплея на формата на мрежата</translation>
+    </message>
+    <message>
+        <source>Open &amp;Cross Section Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Информация</translation>
+    </message>
+    <message>
+        <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

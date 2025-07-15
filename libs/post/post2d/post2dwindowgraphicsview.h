@@ -17,6 +17,7 @@ public:
 	Post2dWindowGraphicsView(QWidget* parent);
 
 	void viewportToWorld(double& x, double& y) const override;
+	QPointF viewportToWorld(const QPoint& p) const override;
 	void worldToViewport(double& x, double& y) const override;
 
 private:

@@ -121,6 +121,17 @@ void PreProcessorGridTypeDataItem::setEdgeFocus(const std::string& zoneName, vtk
 	}
 }
 
+void PreProcessorGridTypeDataItem::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto cond : m_conditions) {
+		if (cond->zoneName() == zoneName) {
+			cond->setEdgeFocus(line);
+		} else {
+			cond->clearEdgeFocus();
+		}
+	}
+}
+
 void PreProcessorGridTypeDataItem::clearEdgeFocus()
 {
 	for (auto cond : m_conditions) {

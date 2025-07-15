@@ -15,9 +15,9 @@ public:
 	virtual ~VTK2DGraphicsView() {}
 	void resetCamera();
 	virtual void viewportToWorld(double& x, double& y) const;
-	QPointF viewportToWorld(const QPoint p) const;
+	virtual QPointF viewportToWorld(const QPoint& p) const;
 	virtual void worldToViewport(double& x, double& y) const;
-	QPointF worldToViewport(QPointF p) const;
+	QPointF worldToViewport(const QPointF& p) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegionWithMargin(double* xmin, double* xmax, double* ymin, double* ymax, double marginRatio = 1.0);

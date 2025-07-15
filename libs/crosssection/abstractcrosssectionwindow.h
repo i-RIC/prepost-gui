@@ -5,6 +5,8 @@
 
 #include <guicore/base/edgevisualizewindowi.h>
 
+#include <vtkIdList.h>
+
 #include <QWidget>
 
 namespace Ui {
@@ -12,6 +14,7 @@ class AbstractCrosssectionWindow;
 }
 
 class ColorMapSettingContainerI;
+class v4Grid;
 class v4Structured2dGrid;
 
 class QDomNode;
@@ -26,6 +29,11 @@ class CROSSSECTIONDLL_EXPORT AbstractCrosssectionWindow : public QWidget, public
 	Q_OBJECT
 
 public:
+	enum class Mode {
+		StructuredIJ,
+		UnstructuredEdge,
+	};
+
 	enum class Direction {I, J};
 
 	AbstractCrosssectionWindow(QWidget *parent);
@@ -34,8 +42,13 @@ public:
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 
+	Mode mode() const;
+	void setMode(Mode mode);
 	void setupDisplaySettings();
 	void setTarget(Direction dir, int index);
+
+	const std::vector<vtkIdType>& targetLine() const;
+	void setTargetLine(const std::vector<vtkIdType>& line);
 	Direction targetDirection() const;
 	int targetIndex() const;
 
@@ -48,9 +61,12 @@ public:
 	QToolBar* viewToolBar() const;
 	QToolBar* displayToolBar() const;
 
+	v4Structured2dGrid* targetGrid();
+	v4Structured2dGrid* targetAdditionalGrid();
+
 	virtual QMdiSubWindow* mdiSubWindow() const = 0;
-	virtual v4Structured2dGrid* grid() = 0;
-	virtual v4Structured2dGrid* additionalGrid();
+	virtual v4Grid* grid() = 0;
+	virtual v4Grid* additionalGrid();
 	virtual QString additionalGridPrefix();
 
 	class Controller;
@@ -73,6 +89,7 @@ protected:
 
 	class EditTableController;
 	class GridAttributeDisplaySettingContainer;
+
 	class Impl;
 	Impl* impl;
 

@@ -72,6 +72,7 @@
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
+#include <post/crosssection/postcrosssectionwindow.h>
 #include <post/crosssection/postcrosssectionwindowprojectdataitem.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
@@ -1465,6 +1466,19 @@ void iRICMainWindow::setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkI
 	}
 }
 
+void iRICMainWindow::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+		auto e2 = dynamic_cast<Edge2dFocusWindowI*> (w->widget());
+		auto e3 = dynamic_cast<Edge3dFocusWindowI*> (w->widget());
+		if (e3 != nullptr) {
+			e3->clearEdgeFocus();
+		} else if (e2 != nullptr) {
+			e2->setEdgeFocus(zoneName, line);
+		}
+	}
+}
+
 void iRICMainWindow::clearEdgeFocus()
 {
 	for (auto w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
@@ -1588,6 +1602,27 @@ void iRICMainWindow::createPostCrosssectionWindow()
 	item->window()->setupDefaultGeometry(index);
 	++index;
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+}
+
+PostCrosssectionWindow* iRICMainWindow::createPostCrosessionWindowWithNoSetting()
+{
+	static int index = 1;
+	if (index == 10) {
+		index = 1;
+	}
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("postcrosssectionwindow", posts, this);
+	auto item2 = dynamic_cast<PostCrosssectionWindowProjectDataItem*>(item);
+QMdiSubWindow* container = posts->add(item);
+	container->show();
+	container->setFocus();
+	connect(item->window(), SIGNAL(closeButtonClicked()), container, SLOT(close()));
+
+	item->window()->setupDefaultGeometry(index);
+	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+
+	return dynamic_cast<PostCrosssectionWindow*> (item2->window());
 }
 
 void iRICMainWindow::createGraph2dHybridWindow()

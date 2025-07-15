@@ -40,6 +40,7 @@ public:
 	PreProcessorInputConditionDataItem* inputConditionDataItem() const;
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 
 	void setupStandardModel(QStandardItemModel* model);

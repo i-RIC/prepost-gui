@@ -135,31 +135,43 @@ void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 
 	std::unordered_map<v4Structured2dGrid*, vtkPointSet*> outputs;
 
-	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	auto additinalExtractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	auto g = m_impl->m_window->grid();
-	auto index = m_impl->m_controller->targetIndex();
-	if (m_impl->m_controller->targetDirection() == Direction::I) {
-		extractGrid->SetVOI(index, index, 0, g->dimensionJ(), 0, 0);
-		additinalExtractGrid->SetVOI(index, index, 0, g->dimensionJ(), 0, 0);
-	} else if (m_impl->m_controller->targetDirection() == Direction::J) {
-		extractGrid->SetVOI(0, g->dimensionI(), index, index, 0, 0);
-		additinalExtractGrid->SetVOI(0, g->dimensionI(), index, index, 0, 0);
-	}
+	if (m_impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
+		auto g = m_impl->m_window->targetGrid();
+		g->vtkData()->data()->Register(nullptr);
+		outputs.insert({g, g->vtkData()->data()});
 
-	extractGrid->SetInputData(g->vtkConcreteData()->concreteData());
-	extractGrid->Update();
-	auto output = extractGrid->GetOutput();
-	output->Register(nullptr);
-	outputs.insert({g, output});
+		auto ag = m_impl->m_window->targetAdditionalGrid();
+		if (ag != nullptr) {
+			ag->vtkData()->data()->Register(nullptr);
+			outputs.insert({ag, ag->vtkData()->data()});
+		}
+	} else if (m_impl->m_window->impl->m_mode == Mode::StructuredIJ) {
+		auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
+		auto additinalExtractGrid = vtkSmartPointer<vtkExtractGrid>::New();
+		auto g = m_impl->m_window->targetGrid();
+		auto index = m_impl->m_controller->targetIndex();
+		if (m_impl->m_controller->targetDirection() == Direction::I) {
+			extractGrid->SetVOI(index, index, 0, g->dimensionJ(), 0, 0);
+			additinalExtractGrid->SetVOI(index, index, 0, g->dimensionJ(), 0, 0);
+		} else if (m_impl->m_controller->targetDirection() == Direction::J) {
+			extractGrid->SetVOI(0, g->dimensionI(), index, index, 0, 0);
+			additinalExtractGrid->SetVOI(0, g->dimensionI(), index, index, 0, 0);
+		}
 
-	auto ag = m_impl->m_window->additionalGrid();
-	if (ag != nullptr) {
-		additinalExtractGrid->SetInputData(ag->vtkConcreteData()->concreteData());
-		additinalExtractGrid->Update();
-		auto output = additinalExtractGrid->GetOutput();
+		extractGrid->SetInputData(g->vtkConcreteData()->concreteData());
+		extractGrid->Update();
+		auto output = extractGrid->GetOutput();
 		output->Register(nullptr);
-		outputs.insert({ag, output});
+		outputs.insert({g, output});
+
+		auto ag = m_impl->m_window->targetAdditionalGrid();
+		if (ag != nullptr) {
+			additinalExtractGrid->SetInputData(ag->vtkConcreteData()->concreteData());
+			additinalExtractGrid->Update();
+			auto output = additinalExtractGrid->GetOutput();
+			output->Register(nullptr);
+			outputs.insert({ag, output});
+		}
 	}
 
 	bool first = true;
@@ -552,46 +564,74 @@ void AbstractCrosssectionWindow::GraphicsView::setupRegions(
 
 std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions() const
 {
-	auto grid = m_impl->m_window->grid();
-	std::vector<double> positions;
+	if (m_impl->m_window->impl->m_mode == AbstractCrosssectionWindow::Mode::UnstructuredEdge) {
+		auto grid = m_impl->m_window->targetGrid();
+		std::vector<double> positions;
 
-	if (grid == nullptr) {return positions;}
-	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
-	auto index = m_impl->m_controller->targetIndex();
-	if (index == -1) {return positions;}
+		auto points = grid->vtkData()->data()->GetPoints();
+		QPointF point, previousPoint;
 
-	if (m_impl->m_controller->targetDirection() == Direction::I) {
-		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
-	} else if (m_impl->m_controller->targetDirection() == Direction::J) {
-		extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
+		double p[3];
+		points->GetPoint(0, p);
+		previousPoint = QPointF(p[0], p[1]);
+
+		double lastPosition = 0;
+		positions.push_back(lastPosition);
+
+		for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
+			points->GetPoint(i, p);
+			point = QPointF(p[0], p[1]);
+			double dist = iRIC::distance(point, previousPoint);
+			double position = lastPosition + dist;
+			positions.push_back(position);
+
+			lastPosition = position;
+			previousPoint = point;
+		}
+
+		return positions;
+	} else if (m_impl->m_window->impl->m_mode == AbstractCrosssectionWindow::Mode::StructuredIJ) {
+		auto grid = m_impl->m_window->targetGrid();
+		std::vector<double> positions;
+
+		if (grid == nullptr) {return positions;}
+		auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
+		extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
+		auto index = m_impl->m_controller->targetIndex();
+		if (index == -1) {return positions;}
+
+		if (m_impl->m_controller->targetDirection() == Direction::I) {
+			extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
+		} else if (m_impl->m_controller->targetDirection() == Direction::J) {
+			extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
+		}
+		extractGrid->Update();
+		auto output = extractGrid->GetOutput();
+		auto points = output->GetPoints();
+		if (points == nullptr) {return positions;}
+
+		QPointF point, previousPoint;
+
+		double p[3];
+		points->GetPoint(0, p);
+		previousPoint = QPointF(p[0], p[1]);
+
+		double lastPosition = 0;
+		positions.push_back(lastPosition);
+
+		for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
+			points->GetPoint(i, p);
+			point = QPointF(p[0], p[1]);
+			double dist = iRIC::distance(point, previousPoint);
+			double position = lastPosition + dist;
+			positions.push_back(position);
+
+			lastPosition = position;
+			previousPoint = point;
+		}
+
+		return positions;
 	}
-	extractGrid->Update();
-	auto output = extractGrid->GetOutput();
-	auto points = output->GetPoints();
-	if (points == nullptr) {return positions;}
-
-	QPointF point, previousPoint;
-
-	double p[3];
-	points->GetPoint(0, p);
-	previousPoint = QPointF(p[0], p[1]);
-
-	double lastPosition = 0;
-	positions.push_back(lastPosition);
-
-	for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
-		points->GetPoint(i, p);
-		point = QPointF(p[0], p[1]);
-		double dist = iRIC::distance(point, previousPoint);
-		double position = lastPosition + dist;
-		positions.push_back(position);
-
-		lastPosition = position;
-		previousPoint = point;
-	}
-
-	return positions;
 }
 
 void AbstractCrosssectionWindow::GraphicsView::setGridDataItem(PreProcessorGridDataItemI* item)

@@ -30,6 +30,7 @@ public:
 	std::string zoneName() const;
 	void update(bool noParticle = false);
 	void setEdgeFocus(vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;

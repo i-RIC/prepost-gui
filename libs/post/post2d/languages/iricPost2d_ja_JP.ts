@@ -668,6 +668,14 @@
         <source>Reference Information</source>
         <translation>参照情報</translation>
     </message>
+    <message>
+        <source>Add geographic data group</source>
+        <translation>地理情報グループの追加</translation>
+    </message>
+    <message>
+        <source>Select the geographic data group to add</source>
+        <translation>追加する地理情報グループの選択</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
@@ -1174,6 +1182,22 @@
     <message>
         <source>Grid Shape Display Setting</source>
         <translation>格子形状表示設定</translation>
+    </message>
+    <message>
+        <source>Open &amp;Cross Section Window</source>
+        <translation>横断面可視化ウィンドウを開く (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Open &amp;Longitudinal Cross Section Window</source>
+        <translation>縦断面可視化ウィンドウを開く (&amp;L)</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
+        <translation>格子点を順にクリックして、どの線上の計算結果を可視化するかを指定してください。ダブルクリックもしくは改行キーを押して選択操作を完了します。Escキーを押すと、操作をキャンセルできます。</translation>
     </message>
 </context>
 <context>

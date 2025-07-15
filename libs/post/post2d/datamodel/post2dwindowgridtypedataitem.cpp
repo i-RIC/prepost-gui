@@ -152,6 +152,17 @@ void Post2dWindowGridTypeDataItem::setEdgeFocus(const std::string& zoneName, vtk
 	}
 }
 
+void Post2dWindowGridTypeDataItem::setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line)
+{
+	for (auto data : m_zoneDatas) {
+		if (data->zoneName() == zoneName) {
+			data->setEdgeFocus(line);
+		} else {
+			data->clearEdgeFocus();
+		}
+	}
+}
+
 void Post2dWindowGridTypeDataItem::clearEdgeFocus()
 {
 	for (auto data : m_zoneDatas) {

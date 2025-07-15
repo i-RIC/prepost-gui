@@ -13,6 +13,13 @@ void Post2dWindowGraphicsView::viewportToWorld(double& x, double& y) const
 	y /= model()->zScale();
 }
 
+QPointF Post2dWindowGraphicsView::viewportToWorld(const QPoint& p) const
+{
+	auto ret = VTK2DGraphicsView::viewportToWorld(p);
+	ret.setY(ret.y() / model()->zScale());
+	return ret;
+}
+
 void Post2dWindowGraphicsView::worldToViewport(double& x, double& y) const
 {
 	y *= model()->zScale();

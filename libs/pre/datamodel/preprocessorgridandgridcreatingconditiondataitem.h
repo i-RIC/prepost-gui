@@ -39,6 +39,7 @@ public:
 	bool isGridEdited() const  override;
 	void setGridEdited() override;
 	void setEdgeFocus(vtkIdType i, vtkIdType j) override;
+	void setEdgeFocus(const std::vector<vtkIdType>& line) override;
 	void clearEdgeFocus() override;
 	void setupGridDataItem(v4InputGrid* grid);
 	int loadFromCgnsFile() override;

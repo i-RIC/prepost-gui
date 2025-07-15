@@ -45,6 +45,7 @@ class VtkGraphicsViewScaleWidget;
 class VTK2DGraphicsView;
 class GridCreatingConditionCreator;
 class CoordinateSystemBuilder;
+class PostCrosssectionWindow;
 
 class ProjectData;
 class iRICMainWindowActionManager;
@@ -72,6 +73,7 @@ public:
 	const VersionNumber& versionNumber() const override;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j, vtkIdType k) override;
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) override;
 	void clearEdgeFocus() override;
 	void setDebugMode(bool debug);
 	bool isDebugMode() const;
@@ -179,6 +181,7 @@ public slots:
 	void create2dBirdEyePostWindow();
 	void create3dPostWindow();
 	void createPostCrosssectionWindow();
+	PostCrosssectionWindow* createPostCrosessionWindowWithNoSetting() override;
 	void createGraph2dHybridWindow();
 	void createGraph2dScatteredWindow();
 	void openVerificationDialog();

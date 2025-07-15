@@ -39,6 +39,7 @@ public:
 	PreProcessorGridAndGridCreatingConditionDataItemI* condition(const std::string& name) const;
 
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j);
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line);
 	void clearEdgeFocus();
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemI* child) const;
 	void addCustomMenuItems(QMenu* menu) override;

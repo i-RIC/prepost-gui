@@ -80,6 +80,7 @@ public:
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
 	void setEdgeFocus(const std::string& zoneName, vtkIdType i, vtkIdType j) override;
+	void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) override;
 	void clearEdgeFocus() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
