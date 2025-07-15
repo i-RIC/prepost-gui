@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -324,7 +322,7 @@
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Grafico dell&apos;elevazione</translation>
+        <translation>Grafico dell'elevazione</translation>
     </message>
     <message>
         <source>Independent chart</source>
@@ -336,7 +334,7 @@
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Impostazione del grafico dell&apos;elevazione</translation>
+        <translation>Impostazione del grafico dell'elevazione</translation>
     </message>
     <message>
         <source>Line Color:</source>
@@ -392,11 +390,11 @@
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Colore dell&apos;asse:</translation>
+        <translation>Colore dell'asse:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Carattere dell&apos;asse:</translation>
+        <translation>Carattere dell'asse:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -407,12 +405,12 @@
         <translation>Colore del titolo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilizza la scheda Mappa colori per modificare l&apos;impostazione del colore&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; utilizza la scheda Mappa colori per modificare l'impostazione del colore&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 </TS>

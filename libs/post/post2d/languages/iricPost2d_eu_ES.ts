@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu datu geografikoen taldea</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu gehitu nahi duzun datu geografikoen taldea</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireki zeharkako sekzioaren leihoa (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireki Luzerako Zeharkako Sekzioaren Leihoa (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informazioa</translation>
+        <translation>Informazioa</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egin klik sareta-nodoetan kalkuluaren emaitza zein ertzetan bistaratu nahi duzun zehazteko. Egin klik bikoitza edo sakatu Sartu tekla hautatzea amaitzeko. Eragiketa bertan behera utzi dezakezu Ihes tekla sakatuz.</translation>
     </message>
 </context>
 <context>

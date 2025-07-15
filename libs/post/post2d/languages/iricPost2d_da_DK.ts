@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj geografisk datagruppe</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg den geografiske datagruppe, der skal tilføjes</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åbn tværsnitsvindue (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åbn vinduet for længdesnit (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klik på gitternoderne for at angive, hvilken kant beregningsresultatet skal vises på. Dobbeltklik, eller tryk på Enter-tasten for at afslutte valget. Du kan annullere handlingen ved at trykke på Escape-tasten.</translation>
     </message>
 </context>
 <context>

@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj grupu geografskih podataka</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite grupu geografskih podataka koju želite dodati</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvori prozor poprečnog presjeka (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvori prozor uzdužnog poprečnog presjeka (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacije</translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknite na čvorove mreže da biste odredili na kojoj ivici želite vizualizirati rezultat proračuna. Dvaput kliknite ili pritisnite tipku Enter da biste završili odabir. Operaciju možete otkazati pritiskom na tipku Escape.</translation>
     </message>
 </context>
 <context>

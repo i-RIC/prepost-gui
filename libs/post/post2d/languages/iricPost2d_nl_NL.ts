@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische gegevensgroep toevoegen</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer de geografische gegevensgroep die u wilt toevoegen</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Open dwarsdoorsnedevenster (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Open het venster Longitudinale dwarsdoorsnede (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informatie</translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klik op de rasterknooppunten om aan te geven op welke rand u het berekeningsresultaat wilt visualiseren. Dubbelklik of druk op Enter om de selectie te voltooien. U kunt de bewerking annuleren door op de Escape-toets te drukken.</translation>
     </message>
 </context>
 <context>

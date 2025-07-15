@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Földrajzi adatcsoport hozzáadása</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a hozzáadni kívánt földrajzi adatcsoportot</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresztmetszeti ablak megnyitása (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyissa meg a hosszanti keresztmetszeti ablakot (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Információ</translation>
+        <translation>Információ</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kattintson a rács csomópontjaira annak megadásához, hogy melyik élen szeretné megjeleníteni a számítási eredményt. Kattintson duplán, vagy nyomja meg az Enter billentyűt a kijelölés befejezéséhez. A műveletet az Escape billentyű megnyomásával megszakíthatja.</translation>
     </message>
 </context>
 <context>

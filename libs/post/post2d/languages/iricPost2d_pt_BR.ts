@@ -650,11 +650,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar grupo de dados geográficos</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o grupo de dados geográficos para adicionar</translation>
     </message>
 </context>
 <context>
@@ -1032,19 +1032,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela de seção transversal aberta (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela de seção transversal longitudinal aberta (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Em formação</translation>
+        <translation>Informação</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique nos nós da grade para especificar em qual aresta você deseja visualizar o resultado do cálculo. Clique duas vezes ou pressione a tecla Enter para finalizar a seleção. Você pode cancelar a operação pressionando a tecla Escape.</translation>
     </message>
 </context>
 <context>

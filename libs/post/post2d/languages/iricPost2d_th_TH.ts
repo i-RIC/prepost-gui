@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มกลุ่มข้อมูลทางภูมิศาสตร์</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกกลุ่มข้อมูลภูมิศาสตร์ที่จะเพิ่ม</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>เปิดหน้าต่างส่วนตัดขวาง (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>เปิดหน้าต่างหน้าตัดตามยาว (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">ข้อมูล</translation>
+        <translation>ข้อมูล</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>คลิกที่โหนดกริดเพื่อระบุขอบที่คุณต้องการแสดงผลการคำนวณ ดับเบิลคลิกหรือกดปุ่ม Enter เพื่อสิ้นสุดการเลือก คุณสามารถยกเลิกการดำเนินการได้โดยกดปุ่ม Escape</translation>
     </message>
 </context>
 <context>

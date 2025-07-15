@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot ģeogrāfisko datu grupu</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet pievienojamo ģeogrāfisko datu grupu</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvērt šķērsgriezuma logu (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvērt gareniskā šķērsgriezuma logu (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informācija</translation>
+        <translation>Informācija</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Noklikšķiniet uz režģa mezgliem, lai norādītu, kurā malā vēlaties vizualizēt aprēķina rezultātu. Veiciet dubultklikšķi vai nospiediet taustiņu Enter, lai pabeigtu atlasi. Darbību var atcelt, nospiežot taustiņu Escape.</translation>
     </message>
 </context>
 <context>

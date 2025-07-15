@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi gruppo di dati geografici</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il gruppo di dati geografici da aggiungere</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri la finestra della sezione trasversale (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri la finestra Sezione trasversale longitudinale (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informazione</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fare clic sui nodi della griglia per specificare su quale lato si desidera visualizzare il risultato del calcolo. Fare doppio clic o premere Invio per terminare la selezione. È possibile annullare l'operazione premendo Esc.</translation>
     </message>
 </context>
 <context>

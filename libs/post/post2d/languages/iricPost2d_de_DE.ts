@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische Datengruppe hinzufügen</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie die hinzuzufügende geografische Datengruppe aus</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Querschnittsfenster öffnen (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster „Längsquerschnitt öffnen“ (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klicken Sie auf die Gitterknoten, um festzulegen, an welcher Kante das Berechnungsergebnis visualisiert werden soll. Doppelklicken Sie oder drücken Sie die Eingabetaste, um die Auswahl abzuschließen. Sie können den Vorgang mit der Escape-Taste abbrechen.</translation>
     </message>
 </context>
 <context>

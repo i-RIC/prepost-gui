@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Add geographic data group</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm nhóm dữ liệu địa lý</translation>
     </message>
     <message>
         <source>Select the geographic data group to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn nhóm dữ liệu địa lý để thêm</translation>
     </message>
 </context>
 <context>
@@ -1028,19 +1028,19 @@
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ mặt cắt ngang mở (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ mặt cắt dọc mở (&amp;L)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhấp vào các nút lưới để chỉ định cạnh nào bạn muốn hiển thị kết quả tính toán. Nhấp đúp hoặc nhấn phím Enter để hoàn tất việc chọn. Bạn có thể hủy thao tác bằng cách nhấn phím Escape.</translation>
     </message>
 </context>
 <context>
