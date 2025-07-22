@@ -605,6 +605,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 	// set name and caption
 	creator->setNameAndDefaultCaption(this->childItems(), geodata, projectData());
 	geodata->setupDataItem();
+	geodata->setDataLoaded(true);
 
 	// the background item should be at the last always.
 	// update item map.
