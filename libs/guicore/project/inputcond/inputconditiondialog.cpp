@@ -391,7 +391,7 @@ void InputConditionDialog::checkImportSourceUpdate()
 	}
 }
 
-bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool* updated)
+bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool* updated, bool openProject)
 {
 	*updated = false;
 	bool allOK = true;
@@ -401,6 +401,15 @@ bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool
 	}
 	// already setup correctly
 	if (allOK) {return true;}
+
+	if (openProject) {
+		int ret = QMessageBox::warning(this, tr("Warning"), tr("Specified CGNS files are not found. Do you want to edit setting now?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
+		if (ret == QMessageBox::Cancel) {
+			return false;
+		} else if (ret == QMessageBox::No) {
+			return true;
+		}
+	}
 
 	InputConditionCgnsFileSelectDialog dialog(cgnsFileForGrid, m_widgetSet, this);
 	int ret = dialog.exec();

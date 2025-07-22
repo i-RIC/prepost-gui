@@ -10,6 +10,8 @@ InputConditionContainer::Impl::Impl(const std::string &name, const QString &capt
 
 // public interfaces
 
+QString InputConditionContainer::currentFolder = "";
+
 InputConditionContainer::InputConditionContainer() :
 	InputConditionContainer("", "")
 {}

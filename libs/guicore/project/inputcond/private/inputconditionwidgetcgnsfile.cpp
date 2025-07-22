@@ -21,10 +21,10 @@ InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(InputConditionContain
 	ui->filenameEdit->setErrorMessage(tr("File name has to consist of only English characters."));
 
 	setValue(cont->value());
-	connect(ui->filenameEdit, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
-	connect(ui->openDialogButton, SIGNAL(clicked(bool)), this, SLOT(openFileDialog()));
-	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
-	connect(file, SIGNAL(changed()), this, SLOT(handleFileChange()));
+	connect(ui->filenameEdit, &AsciiOnlyLineEdit::editingFinished, this, &InputConditionWidgetCgnsFile::handleEditingFinished);
+	connect(ui->openDialogButton, &QPushButton::clicked, this, &InputConditionWidgetCgnsFile::openFileDialog);
+	connect<void (InputConditionContainerString::*)(const QString&)>(m_container, &InputConditionContainerString::valueChanged, this, &InputConditionWidgetCgnsFile::setValue);
+	connect(file, &InputConditionCgnsFile::changed, this, &InputConditionWidgetCgnsFile::handleFileChange);
 }
 
 InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerString* cont, InputConditionCgnsFile* file) :

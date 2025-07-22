@@ -56,7 +56,7 @@ public:
 	/// Import input condition from the specified CGNS file.
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
-	bool setupCgnsFilesIfNeeded(bool readGrid);
+	bool setupCgnsFilesIfNeeded(bool readGrid, bool openProject);
 	bool isGridEdited() const;
 	void setGridEdited();
 	bool isInputConditionSet();

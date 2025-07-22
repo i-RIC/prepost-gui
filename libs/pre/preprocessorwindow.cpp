@@ -466,9 +466,9 @@ VTKGraphicsView* PreProcessorWindow::getVtkGraphicsView() const
 	return m_dataModel->graphicsView();
 }
 
-bool PreProcessorWindow::setupCgnsFilesIfNeeded(bool readGrid)
+bool PreProcessorWindow::setupCgnsFilesIfNeeded(bool readGrid, bool openProject)
 {
-	return m_dataModel->setupCgnsFilesIfNeeded(readGrid);
+	return m_dataModel->setupCgnsFilesIfNeeded(readGrid, openProject);
 }
 
 void PreProcessorWindow::updateTmsList()
