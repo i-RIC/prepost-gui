@@ -7,6 +7,7 @@
 #include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingeditwidget.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -36,8 +37,16 @@ GeoDataPointmapProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPointmap
 		auto geoData = dynamic_cast<GeoDataPointmap*> (proxy->geoData());
 		proxy->impl->m_displaySetting.displaySetting = geoData->impl->m_displaySetting;
 	}
+
 	setSetting(proxy->impl->m_displaySetting);
 	ui->displaySettingWidget->setSetting(&proxy->impl->m_displaySetting.displaySetting);
+
+	auto pm = dynamic_cast<GeoDataPointmap*> (proxy->geoData());
+	auto polygonColorMapWidget = pm->impl->m_polygonsManager.attribute()->createColorMapSettingEditWidget(this);
+	auto polygonColorMap = pm->impl->m_polygonsManager.polygonsColorMap();
+	polygonColorMapWidget->setSetting(polygonColorMap);
+	auto polygonColorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(polygonColorMapWidget, this);
+	ui->displaySettingWidget->setPolygonColorMapWidget(polygonColorMapWidget2);
 }
 
 GeoDataPointmapProxy::DisplaySettingWidget::~DisplaySettingWidget()
