@@ -51,7 +51,7 @@ int GeoDataRiverCrosssection::addPoint(double position, double height)
 	int i = 0;
 	for (
 		auto it = m_altitudeInfo.begin();
-		it != m_altitudeInfo.end() && it->position() < position;
+		it != m_altitudeInfo.end() && it->position() <= position;
 		++it, ++i
 	) {
 		// Do nothing.
