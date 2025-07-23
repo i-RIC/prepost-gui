@@ -29,16 +29,31 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 	}
 
 	for (int i = 0; i < 6; ++i) {
-		auto odnPos = before.at(m_beforeOdn.nb(i)).position();
-		auto it = std::lower_bound(posvec.begin(), posvec.end(), odnPos);
-
-		if (*it == odnPos) {
-			m_afterOdn.setNb(i, it - posvec.begin());
-		} else {
+		int index = m_beforeOdn.nb(i);
+		if (index < 0 || index >= static_cast<int> (posvec.size())) {
 			if (i < 3) {
-				m_afterOdn.setNb(i, 0);
+				index = 0;
 			} else {
-				m_afterOdn.setNb(i, posvec.size() - 1);
+				index = posvec.size() - 1;
+			}
+		}
+		int index2 = index + after.size() - before.size();
+
+		auto odnPos = before.at(index).position();
+		if (index >= 0 && index < static_cast<int> (posvec.size()) && posvec[index] == odnPos) {
+			m_afterOdn.setNb(i, index);
+		} else if (index2 >= 0 && index2 < static_cast<int> (posvec.size()) && posvec[index2] == odnPos) {
+			m_afterOdn.setNb(i, index2);
+		} else {
+			auto it = std::lower_bound(posvec.begin(), posvec.end(), odnPos);
+			if (*it == odnPos) {
+				m_afterOdn.setNb(i, it - posvec.begin());
+			} else {
+				if (i < 3) {
+					m_afterOdn.setNb(i, 0);
+				} else {
+					m_afterOdn.setNb(i, posvec.size() - 1);
+				}
 			}
 		}
 	}
