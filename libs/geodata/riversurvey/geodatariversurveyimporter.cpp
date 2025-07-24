@@ -557,6 +557,12 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 			newPoint->shiftCenter(shiftValue);
 		}
 		newPoint->InhibitInterpolatorUpdate = false;
+		for (int i = 0; i < 3; ++i) {
+			newPoint->odn().setNb(i, 0);
+		}
+		for (int i = 3; i < 6; ++i) {
+			newPoint->odn().setNb(i, newPoint->crosssection().AltitudeInfo().size() - 1);
+		}
 
 		tail->addPathPoint(newPoint);
 		tail = newPoint;
