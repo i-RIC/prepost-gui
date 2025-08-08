@@ -423,6 +423,13 @@ on_success:
         py normalize_updatexml.py
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          # run binarycreator to build offline installer
+          Set-Location \online_update_v4 -ErrorAction Stop
+          python build_and_upload_installer.py
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }
+
         # commit and push to https://github.com/i-RIC/online_update_v4.git
         git config --global credential.helper store
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
