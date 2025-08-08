@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,8 +9,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Postprocesamiento Bird&apos;s Eye (2D): %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Postprocesamiento Bird's Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -80,11 +78,11 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer como configuración predeterminada para este proyecto.</translation>
     </message>
 </context>
 <context>
@@ -267,11 +265,11 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>Set as the default setting for this project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer como configuración predeterminada para este proyecto.</translation>
     </message>
 </context>
 <context>
