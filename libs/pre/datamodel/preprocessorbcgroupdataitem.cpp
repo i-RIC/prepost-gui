@@ -390,7 +390,7 @@ void PreProcessorBCGroupDataItem::importBc()
 		importIndices = (ret == QMessageBox::Yes);
 	}
 
-	QRegExp exp("(.+)(\\d+)");
+	QRegExp exp("([A-Za-z_\\-]+)(\\d+)");
 	for (auto it = data.begin(); it != data.end(); ++it) {
 		auto name = it->first.Scalar();
 		int pos = exp.indexIn(name.c_str());
