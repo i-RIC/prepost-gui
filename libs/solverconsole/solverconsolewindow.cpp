@@ -262,6 +262,15 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 		if (status == 0) {
 			// Finished normally.
 			QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation."));
+			try {
+				bool ok = impl->m_projectData->mainWindow()->saveProject(true);
+				if (!ok) { return; }
+				QMessageBox::information(this, tr("information"), tr("Project successfully saved to %1.").arg(QDir::toNativeSeparators(impl->m_projectData->filename())));
+			}
+			catch (ErrorMessage& m) {
+				QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
+				return;
+			}
 		} else {
 			// Finished abnormally.
 			QMessageBox::warning(this, tr("Solver Finished"), tr("The solver finished abnormally."));
