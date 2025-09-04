@@ -27,7 +27,7 @@ const int DirectionSettingContainer::DEFAULT_ARROWSIZE = 8;
 
 DirectionSettingContainer::DirectionSettingContainer() :
 	CompositeContainer({&mode, &color, &wrongColor, &opacity, &lineWidth, &arrowSize}),
-	mode {"mode", Mode::Mode1to8},
+	mode {"mode", Mode::Mode1to128},
 	color {"color", Qt::blue},
 	wrongColor {"wrongColor", Qt::red},
 	lineWidth {"lineWidth", DEFAULT_LINEWIDTH},
