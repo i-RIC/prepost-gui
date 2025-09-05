@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,6 +107,14 @@
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">В этом проекте уже есть данные результатов расчета. Если вы запустите решатель, он будет отброшен.</translation>
     </message>
+    <message>
+        <source>information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project successfully saved to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -152,8 +162,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Убедитесь, что:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Если результат расчета уже существует, он удаляется.&lt;/li&gt; &lt;li&gt;Условие расчета и сетка ввода то, что вы можете видеть в окне предварительной обработки, записано в Case1.cgn.&lt;/li&gt; &lt;li&gt;Решатель прочитает данные из Case1.cgn и начнет работу.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Вы уверены, что все в порядке?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Убедитесь, что:&lt;/p&gt;&lt;ul style="margin-top: 0px; поля-дно: 0 пикселей; поля-слева: 0 пикселей; поля-права: 0 пикселей; "&gt;&lt;li style="margin-top:8px;"&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style="margin-top:8px"&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Вы уверены, что все в порядке?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Убедитесь, что:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; поля-дно: 0 пикселей; поля-слева: 0 пикселей; поля-права: 0 пикселей; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Если результат расчета уже существует, он будет удален.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проект будет сохранен.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Вы уверены, что все в порядке?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

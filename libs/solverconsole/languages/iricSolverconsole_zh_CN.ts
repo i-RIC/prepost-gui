@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -105,6 +107,14 @@
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">该项目已有计算结果数据。如果运行求解器，则会丢弃该数据。</translation>
     </message>
+    <message>
+        <source>information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project successfully saved to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
@@ -152,8 +162,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;请确保：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;如果计算结果已经存在，则删除。&lt;/li&gt; &lt;li&gt;在预处理窗口中看到的计算条件和输入网格已写入 Case1.cgn。&lt;/li&gt; &lt;li&gt;求解器将从 Case1.cgn 中读取数据并开始运行。&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;您确定没问题吗？&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请确保：&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;若计算结果已存在，则会被删除。&lt;/li&gt;&lt;li style="margin-top:8px"&gt;项目将被保存。&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;您确定没问题吗？&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请确保：&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;若计算结果已存在，则会被删除。&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;项目将被保存。&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;您确定没问题吗？&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
