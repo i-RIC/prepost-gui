@@ -26,6 +26,8 @@ PreProcessorBCSettingGroupDataItem::ShpImporter::~ShpImporter()
 
 void PreProcessorBCSettingGroupDataItem::ShpImporter::importPolygons(PreProcessorBCSettingGroupDataItem* item)
 {
+	if (m_shpHandle == nullptr) {return;}
+
 	std::unordered_map<std::string, PreProcessorBCSettingDataItem*> items;
 
 	for (auto child : item->childItems()) {
