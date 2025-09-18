@@ -652,6 +652,11 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	double min_y = mins.y();
 	double max_y = maxs.y();
 
+	if (m_impl->m_displaySetting.reverseXDirection) {
+		min_x = maxs.x();
+		max_x = mins.x();
+	}
+
 	double xoffset = 5;
 	double yoffset = 5;
 	double fontoffset = 4;
