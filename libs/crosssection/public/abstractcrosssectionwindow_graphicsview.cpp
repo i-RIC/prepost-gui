@@ -868,25 +868,41 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 
 		if (m_impl->m_controller->targetDirection() == Direction::I) {
 			// left bank
-			label = tr("Left Bank Side");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Right Bank Side");
+			} else {
+				label = tr("Left Bank Side");
+			}
 			auto rect = metrics.boundingRect(label);
 			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
 
 			// right bank side
-			label = tr("Right Bank Side");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Left Bank Side");
+			} else {
+				label = tr("Right Bank Side");
+			}
 			rect = metrics.boundingRect(label);
 			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
 		} else {
 			// Downstream side
-			label = tr("Downstream");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Upstream");
+			} else {
+				label = tr("Downstream");
+			}
 			auto rect = metrics.boundingRect(label);
 			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
 
 			// Upstream
-			label = tr("Upstream");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Downstream");
+			} else {
+				label = tr("Upstream");
+			}
 			rect = metrics.boundingRect(label);
 			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
