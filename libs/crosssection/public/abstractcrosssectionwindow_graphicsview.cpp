@@ -1131,8 +1131,14 @@ void AbstractCrosssectionWindow::GraphicsView::pushElevationEditCommand()
 
 QMatrix AbstractCrosssectionWindow::GraphicsView::matrix(int chartHeight) const
 {
+	int xReverse = 1;
+
+	if (m_impl->m_displaySetting.reverseXDirection) {
+		xReverse = -1;
+	}
+
 	QMatrix translate1(1, 0, 0, 1, - m_center.x(), - m_center.y());
-	QMatrix scale(- m_scaleX, 0, 0, - m_scaleY, 0, 0);
+	QMatrix scale(- m_scaleX * xReverse, 0, 0, - m_scaleY, 0, 0);
 	QMatrix translate2(1, 0, 0, 1, viewport()->width() * 0.5, chartHeight * 0.5);
 
 	return translate1 * scale * translate2;
