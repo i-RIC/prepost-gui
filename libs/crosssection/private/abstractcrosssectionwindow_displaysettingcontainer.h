@@ -27,6 +27,8 @@ public:
 	void applyFromWidgets(AbstractCrosssectionWindow::Impl* impl);
 	void applyToWidgets(AbstractCrosssectionWindow::Impl* impl);
 
+	BoolContainer distanceIsFromLeftOrDownstream;
+
 	BoolContainer gridVisible;
 	BoolContainer scaleVisible;
 	BoolContainer markersVisible;

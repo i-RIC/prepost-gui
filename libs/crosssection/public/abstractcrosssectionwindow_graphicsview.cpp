@@ -131,6 +131,11 @@ void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 	auto xMin = *positions.begin();
 	auto xMax = *positions.rbegin();
 
+	if (m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
+		xMin = *positions.rbegin();
+		xMax = *positions.begin();
+	}
+
 	double yMin = 0, yMax = 0;
 
 	std::unordered_map<v4Structured2dGrid*, vtkPointSet*> outputs;
@@ -630,6 +635,18 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 			previousPoint = point;
 		}
 
+		if (m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
+			double max = *positions.rbegin();
+			std::vector<double> reversePositions;
+			reversePositions.assign(positions.size(), 0);
+
+			for (int i = 0; i < positions.size(); ++i) {
+				reversePositions[i] = max - positions[i];
+			}
+
+			positions = reversePositions;
+		}
+
 		return positions;
 	}
 }
@@ -652,7 +669,8 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	double min_y = mins.y();
 	double max_y = maxs.y();
 
-	if (m_impl->m_displaySetting.reverseXDirection) {
+	bool reverse = m_impl->m_displaySetting.reverseXDirection ^ m_impl->m_displaySetting.distanceIsFromLeftOrDownstream;
+	if (reverse) {
 		min_x = maxs.x();
 		max_x = mins.x();
 	}
@@ -1159,7 +1177,7 @@ QMatrix AbstractCrosssectionWindow::GraphicsView::matrix(int chartHeight) const
 {
 	int xReverse = 1;
 
-	if (m_impl->m_displaySetting.reverseXDirection) {
+	if (m_impl->m_displaySetting.reverseXDirection ^ m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
 		xReverse = -1;
 	}
 

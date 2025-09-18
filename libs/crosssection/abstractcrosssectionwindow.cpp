@@ -316,6 +316,7 @@ void AbstractCrosssectionWindow::cameraFit()
 void AbstractCrosssectionWindow::openDisplaySettingDialog()
 {
 	auto dialog = new DisplaySettingDialog(this);
+	dialog->setControlTargetIsJ(impl->m_controller->targetDirection() == Direction::J);
 	dialog->setAttribute(Qt::WA_DeleteOnClose);
 	dialog->show();
 }

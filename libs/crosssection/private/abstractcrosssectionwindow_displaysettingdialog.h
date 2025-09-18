@@ -18,6 +18,7 @@ public:
 	explicit DisplaySettingDialog(AbstractCrosssectionWindow* window);
 	~DisplaySettingDialog();
 
+	void setControlTargetIsJ(bool isJ);
 	QUndoCommand* createModifyCommand(bool apply);
 
 	void accept() override;
