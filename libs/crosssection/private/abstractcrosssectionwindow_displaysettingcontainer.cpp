@@ -57,6 +57,7 @@ void AbstractCrosssectionWindow::DisplaySettingContainer::applyFromWidgets(Abstr
 	scaleVisible = impl->m_scaleDisplayCheckBox->isChecked();
 	markersVisible = impl->m_markersDisplayCheckBox->isChecked();
 	aspectRatioVisible = impl->m_aspectRatioDisplayCheckBox->isChecked();
+	reverseXDirection = impl->m_reverseXDirectionCheckBox->isChecked();
 
 	enableAutoRescale = impl->m_autoRescaleCheckBox->isChecked();
 	fixAspectRatio = impl->m_fixAspectRatioCheckBox->isChecked();
@@ -69,6 +70,7 @@ void AbstractCrosssectionWindow::DisplaySettingContainer::applyToWidgets(Abstrac
 	impl->m_scaleDisplayCheckBox->setChecked(scaleVisible);
 	impl->m_markersDisplayCheckBox->setChecked(markersVisible);
 	impl->m_aspectRatioDisplayCheckBox->setChecked(aspectRatioVisible);
+	impl->m_reverseXDirectionCheckBox->setChecked(reverseXDirection);
 
 	impl->m_autoRescaleCheckBox->setChecked(enableAutoRescale);
 	impl->m_fixAspectRatioCheckBox->setChecked(fixAspectRatio);

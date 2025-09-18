@@ -139,6 +139,11 @@ void AbstractCrosssectionWindow::Impl::setupToolBars()
 	connect(m_aspectRatioDisplayCheckBox, &QCheckBox::clicked, [=](bool checked){m_displaySetting.aspectRatioVisible = checked;});
 	connect(m_aspectRatioDisplayCheckBox, &QCheckBox::clicked, [=](bool){m_window->updateGraphicsView();});
 
+	m_reverseXDirectionCheckBox = new QCheckBox(tr("Reverse X direction"), w);
+	dt->addWidget(m_reverseXDirectionCheckBox);
+	connect(m_reverseXDirectionCheckBox, &QCheckBox::clicked, [=](bool checked){m_displaySetting.reverseXDirection = checked;});
+	connect(m_reverseXDirectionCheckBox, &QCheckBox::clicked, [=](bool){m_window->updateGraphicsView();});
+
 	m_displaySettingButton = new QPushButton(tr("Display Setting"), w);
 	dt->addWidget(m_displaySettingButton);
 	connect(m_displaySettingButton, &QPushButton::clicked, [=](bool){m_window->openDisplaySettingDialog();});
