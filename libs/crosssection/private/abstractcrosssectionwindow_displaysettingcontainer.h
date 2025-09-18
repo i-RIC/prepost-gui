@@ -31,6 +31,7 @@ public:
 	BoolContainer scaleVisible;
 	BoolContainer markersVisible;
 	BoolContainer aspectRatioVisible;
+	BoolContainer reverseXDirection;
 
 	BoolContainer enableAutoRescale;
 	BoolContainer fixAspectRatio;

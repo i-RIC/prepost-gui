@@ -2,7 +2,7 @@
 #include <guibase/widget/realnumbereditwidget.h>
 
 AbstractCrosssectionWindow::DisplaySettingContainer::DisplaySettingContainer() :
-	CompositeContainer({&gridVisible, &scaleVisible, &markersVisible, &aspectRatioVisible,
+	CompositeContainer({&gridVisible, &scaleVisible, &markersVisible, &aspectRatioVisible, &reverseXDirection,
 										 &enableAutoRescale, &fixAspectRatio, &fixRegion,
 										 &bgGridType, &bgGridColor,
 										 &bgHScaleAuto, &bgHScaleInterval, &bgHSubScaleInterval,
@@ -14,6 +14,7 @@ AbstractCrosssectionWindow::DisplaySettingContainer::DisplaySettingContainer() :
 	scaleVisible {"scaleVisible", true},
 	markersVisible {"markersVisible", true},
 	aspectRatioVisible {"aspectRatioVisible", true},
+	reverseXDirection {"reverseXDirection", false},
 	enableAutoRescale {"enableAutoRescale", true},
 	fixAspectRatio {"fixAspectRatio", false},
 	fixRegion {"fixRegion", false},
