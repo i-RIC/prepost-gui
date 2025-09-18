@@ -1134,13 +1134,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 	// clear the folder to output files
 	auto dir = setting.exportTargetFolder;
 
-	if (! iRIC::isDirEmpty(dir)) {
-		int ret = QMessageBox::warning(wizard, tr("Warning"), tr("All files in %1 is deleted.").arg(QDir::toNativeSeparators(dir)), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-		if (ret == QMessageBox::Cancel) {return;}
-
-		iRIC::rmdirRecursively(dir);
-	}
-
 	iRIC::mkdirRecursively(dir);
 
 	bool isAutoParticleOutput = false;
@@ -1315,7 +1308,9 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 				// specify fps
 				args << "-r" << QString("%1").arg(setting.movieFramesPerSeconds);
 			}
+			args << "-start_number" << QString("1");
 			args << "-i" << inFile;
+			args << "-vframes" << QString("%1").arg(setting.stopTimeStep - setting.startTimeStep);
 			args << profileString;
 			QSize size = sizes.at(i);
 			args << "-vf" << QString("scale=%1:%2")
