@@ -647,6 +647,11 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	mins = invMatrix.map(QPointF(w->width(), w->height()));
 	maxs = invMatrix.map(QPointF(0, 0));
 
+	double min_x = mins.x();
+	double max_x = maxs.x();
+	double min_y = mins.y();
+	double max_y = maxs.y();
+
 	double xoffset = 5;
 	double yoffset = 5;
 	double fontoffset = 4;
@@ -659,10 +664,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	double ySubScale = m_impl->m_displaySetting.bgVSubScaleInterval;
 
 	if (m_impl->m_displaySetting.bgHScaleAuto) {
-		calcAutoScale(maxs.x() - mins.x(), &xScale, &xSubScale);
+		calcAutoScale(max_x - min_x, &xScale, &xSubScale);
 	}
 	if (m_impl->m_displaySetting.bgVScaleAuto) {
-		calcAutoScale(maxs.y() - mins.y(), &yScale, &ySubScale);
+		calcAutoScale(max_y - min_y, &yScale, &ySubScale);
 	}
 
 	if (m_impl->m_displaySetting.gridVisible) {
@@ -675,18 +680,18 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			pen.setStyle(Qt::SolidLine);
 			painter->setPen(pen);
 
-			double x = std::floor(mins.x() / xScale) * xScale;
-			while (x < maxs.x()) {
-				auto from = matrix.map(QPointF(x, maxs.y()));
+			double x = std::floor(min_x / xScale) * xScale;
+			while (x < max_x) {
+				auto from = matrix.map(QPointF(x, max_y));
 				auto to = from;
 				from.setY(0);
 				to.setY(w->height());
 				painter->drawLine(from, to);
 				x += xScale;
 			}
-			double y = std::floor(mins.y() / yScale) * yScale;
-			while (y < maxs.y()) {
-				auto from = matrix.map(QPointF(mins.x(), y));
+			double y = std::floor(min_y / yScale) * yScale;
+			while (y < max_y) {
+				auto from = matrix.map(QPointF(min_x, y));
 				auto to = from;
 				from.setX(0);
 				to.setX(w->width());
@@ -698,18 +703,18 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			// subscales
 			pen.setStyle(Qt::DashLine);
 			painter->setPen(pen);
-			x = std::floor(mins.x() / xSubScale) * xSubScale;
-			while (x < maxs.x()) {
-				auto from = matrix.map(QPointF(x, maxs.y()));
+			x = std::floor(min_x / xSubScale) * xSubScale;
+			while (x < max_x) {
+				auto from = matrix.map(QPointF(x, max_y));
 				auto to = from;
 				from.setY(0);
 				to.setY(w->height());
 				painter->drawLine(from, to);
 				x += xSubScale;
 			}
-			y = std::floor(mins.y() / ySubScale) * ySubScale;
-			while (y < maxs.y()) {
-				auto from = matrix.map(QPointF(mins.x(), y));
+			y = std::floor(min_y / ySubScale) * ySubScale;
+			while (y < max_y) {
+				auto from = matrix.map(QPointF(min_x, y));
 				auto to = from;
 				from.setX(0);
 				to.setX(w->width());
@@ -726,10 +731,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			QBrush brush(m_impl->m_displaySetting.bgGridColor);
 			painter->setBrush(brush);
 
-			double x = std::floor(mins.x() / xScale) * xScale;
-			while (x < maxs.x()) {
-				double y = std::floor(mins.y() / yScale) * yScale;
-				while (y < maxs.y()) {
+			double x = std::floor(min_x / xScale) * xScale;
+			while (x < max_x) {
+				double y = std::floor(min_y / yScale) * yScale;
+				while (y < max_y) {
 					auto from = matrix.map(QPointF(x, y));
 					from.setX(from.x() - 1);
 					from.setY(from.y() - 1);
@@ -741,10 +746,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 				}
 				x += xScale;
 			}
-			x = std::floor(mins.x() / xSubScale) * xSubScale;
-			while (x < maxs.x()) {
-				double y = std::floor(mins.y() / ySubScale) * ySubScale;
-				while (y < maxs.y()) {
+			x = std::floor(min_x / xSubScale) * xSubScale;
+			while (x < max_x) {
+				double y = std::floor(min_y / ySubScale) * ySubScale;
+				while (y < max_y) {
 					auto p = matrix.map(QPointF(x, y));
 					if (p.y() < ymax) {
 						painter->drawPoint(p);
@@ -771,9 +776,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 		painter->drawLine(from, to);
 
 		// draw X scales
-		double x = std::floor(mins.x() / xScale) * xScale;
-		while (x < maxs.x()) {
-			from = matrix.map(QPointF(x, maxs.y()));
+		double x = std::floor(min_x / xScale) * xScale;
+		while (x < max_x) {
+			from = matrix.map(QPointF(x, max_y));
 			from.setY(yoffset);
 			to = from;
 			to.setY(yoffset + mainruler);
@@ -792,9 +797,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			x += xScale;
 		}
 		// draw X sub scales.
-		x = std::floor(mins.x() / xSubScale) * xSubScale;
-		while (x < maxs.x()) {
-			from = matrix.map(QPointF(x, maxs.y()));
+		x = std::floor(min_x / xSubScale) * xSubScale;
+		while (x < max_x) {
+			from = matrix.map(QPointF(x, max_y));
 			from.setY(from.y() + yoffset);
 			to = from;
 			to.setY(to.y() + yoffset + subruler);
@@ -808,9 +813,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 		painter->drawLine(from, to);
 
 		// draw Y scales
-		double y = std::floor(mins.y() / yScale) * yScale;
-		while (y < maxs.y()) {
-			from = matrix.map(QPointF(mins.x(), y));
+		double y = std::floor(min_y / yScale) * yScale;
+		while (y < max_y) {
+			from = matrix.map(QPointF(min_x, y));
 			from.setX(xoffset);
 			to.setX(xoffset + mainruler);
 			to.setY(from.y());
@@ -833,9 +838,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			y += yScale;
 		}
 		// draw Y sub scales.
-		y = std::floor(mins.y() / ySubScale) * ySubScale;
-		while (y < maxs.y()) {
-			from = matrix.map(QPointF(mins.x(), y));
+		y = std::floor(min_y / ySubScale) * ySubScale;
+		while (y < max_y) {
+			from = matrix.map(QPointF(min_x, y));
 			from.setX(xoffset);
 			to.setX(xoffset + subruler);
 			to.setY(from.y());
