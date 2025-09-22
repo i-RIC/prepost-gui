@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -73,6 +75,10 @@
         <source>Upstream/downstream markers</source>
         <translation>上流/下流</translation>
     </message>
+    <message>
+        <source>Reverse X direction</source>
+        <translation>X軸反転</translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
@@ -98,6 +104,17 @@
     <message>
         <source>Export CSV Files</source>
         <translation>CSV ファイルのエクスポート</translation>
+    </message>
+</context>
+<context>
+    <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
+    <message>
+        <source>Distance from Upstream</source>
+        <translation>上流からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from Downstream</source>
+        <translation>下流からの距離</translation>
     </message>
 </context>
 <context>
@@ -254,6 +271,18 @@
         <source>Aspect ratio</source>
         <translation>縦横比</translation>
     </message>
+    <message>
+        <source>X axis</source>
+        <translation>X軸</translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation>左岸からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from right bank</source>
+        <translation>右岸からの距離</translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
@@ -405,8 +434,8 @@
         <translation>タイトルの色</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

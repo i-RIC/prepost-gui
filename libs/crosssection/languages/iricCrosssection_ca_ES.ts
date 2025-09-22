@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -11,7 +13,7 @@
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>S'ha produït un error en fer-ho %1.</translation>
+        <translation>S&apos;ha produït un error en fer-ho %1.</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -27,11 +29,11 @@
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Veure la barra d'eines de configuració</translation>
+        <translation>Veure la barra d&apos;eines de configuració</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barra d'eines de configuració de la pantalla</translation>
+        <translation>Barra d&apos;eines de configuració de la pantalla</translation>
     </message>
     <message>
         <source>Auto rescale</source>
@@ -39,11 +41,11 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relació d'aspecte (V/H): 1/</translation>
+        <translation>Relació d&apos;aspecte (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Corregir la relació d'aspecte</translation>
+        <translation>Corregir la relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
@@ -63,7 +65,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -72,6 +74,10 @@
     <message>
         <source>Upstream/downstream markers</source>
         <translation>Marcadors aigües amunt/avall</translation>
+    </message>
+    <message>
+        <source>Reverse X direction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -98,6 +104,17 @@
     <message>
         <source>Export CSV Files</source>
         <translation>Exporta fitxers CSV</translation>
+    </message>
+</context>
+<context>
+    <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
+    <message>
+        <source>Distance from Upstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from Downstream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -139,7 +156,7 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d'aspecte (V/H): 1/ %1</translation>
+        <translation>Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
@@ -252,14 +269,26 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
+    </message>
+    <message>
+        <source>X axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right bank</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Configuració d'exportació</translation>
+        <translation>Configuració d&apos;exportació</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
@@ -291,7 +320,7 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -306,7 +335,7 @@
     <name>AbstractCrosssectionWindow_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs de quadrícula</translation>
+        <translation>Configuració de visualització d&apos;atributs de quadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -334,7 +363,7 @@
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Configuració de la carta d'elevació</translation>
+        <translation>Configuració de la carta d&apos;elevació</translation>
     </message>
     <message>
         <source>Line Color:</source>
@@ -390,11 +419,11 @@
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Color de l'eix:</translation>
+        <translation>Color de l&apos;eix:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Font de l'eix:</translation>
+        <translation>Font de l&apos;eix:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -405,8 +434,8 @@
         <translation>Color del títol</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

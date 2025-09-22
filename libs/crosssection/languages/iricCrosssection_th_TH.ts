@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -73,6 +75,10 @@
         <source>Upstream/downstream markers</source>
         <translation>เครื่องหมายต้นน้ำ/ปลายน้ำ</translation>
     </message>
+    <message>
+        <source>Reverse X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
@@ -98,6 +104,17 @@
     <message>
         <source>Export CSV Files</source>
         <translation>ส่งออกไฟล์ CSV</translation>
+    </message>
+</context>
+<context>
+    <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
+    <message>
+        <source>Distance from Upstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from Downstream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -254,6 +271,18 @@
         <source>Aspect ratio</source>
         <translation>อัตราส่วนภาพ</translation>
     </message>
+    <message>
+        <source>X axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right bank</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
@@ -405,8 +434,8 @@
         <translation>สีของชื่อเรื่อง</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
