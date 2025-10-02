@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Solverul a terminat calculul.</translation>
+        <translation type="vanished">Solverul a terminat calculul.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Acest proiect are deja date privind rezultatele calculului. Dacă rulați soluția, acesta este eliminat.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>솔버가 계산을 완료했습니다.</translation>
+        <translation type="vanished">솔버가 계산을 완료했습니다.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">이 프로젝트에는 이미 계산 결과 데이터가 있습니다. 솔버를 실행하면 삭제됩니다.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Lahendaja lõpetas arvutamise.</translation>
+        <translation type="vanished">Lahendaja lõpetas arvutamise.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Sellel projektil on arvutustulemuste andmed juba olemas. Lahendaja käivitamisel visatakse see kõrvale.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

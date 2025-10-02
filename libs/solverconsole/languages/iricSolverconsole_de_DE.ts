@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Der Solver hat die Berechnung beendet.</translation>
+        <translation type="vanished">Der Solver hat die Berechnung beendet.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Dieses Projekt enthält bereits Berechnungsergebnisdaten. Wenn Sie den Solver ausführen, werden diese verworfen.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

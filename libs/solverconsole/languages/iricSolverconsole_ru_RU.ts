@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Решатель завершил расчет.</translation>
+        <translation type="vanished">Решатель завершил расчет.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">В этом проекте уже есть данные результатов расчета. Если вы запустите решатель, он будет отброшен.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

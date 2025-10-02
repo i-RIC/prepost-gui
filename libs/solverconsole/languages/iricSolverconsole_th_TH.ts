@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>โปรแกรมแก้ปัญหาเสร็จสิ้นการคำนวณ</translation>
+        <translation type="vanished">โปรแกรมแก้ปัญหาเสร็จสิ้นการคำนวณ</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">โครงการนี้มีข้อมูลผลการคำนวณอยู่แล้ว หากคุณรันโปรแกรมแก้ปัญหา มันจะถูกละทิ้ง</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

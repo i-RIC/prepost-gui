@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Bộ giải đã hoàn thành phép tính.</translation>
+        <translation type="vanished">Bộ giải đã hoàn thành phép tính.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Dự án này đã có dữ liệu kết quả tính toán. Nếu bạn chạy bộ giải, nó sẽ bị loại bỏ.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

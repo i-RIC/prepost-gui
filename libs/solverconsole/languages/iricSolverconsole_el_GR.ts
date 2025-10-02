@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Ο λύτης τελείωσε τον υπολογισμό.</translation>
+        <translation type="vanished">Ο λύτης τελείωσε τον υπολογισμό.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Αυτό το έργο έχει ήδη δεδομένα αποτελέσματος υπολογισμού. Εάν εκτελέσετε τον λύτη, απορρίπτεται.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

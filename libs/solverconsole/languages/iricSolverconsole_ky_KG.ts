@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Чечүүчү эсептөөнү аяктады.</translation>
+        <translation type="vanished">Чечүүчү эсептөөнү аяктады.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Бул долбоордо эсептөө натыйжалары мурунтан эле бар. Эгерде сиз чечүүчүнү иштетсеңиз, ал жок кылынат.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

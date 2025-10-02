@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>सॉल्वर ने गणना समाप्त कर दी।</translation>
+        <translation type="vanished">सॉल्वर ने गणना समाप्त कर दी।</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">इस प्रोजेक्ट में पहले से ही गणना परिणाम डेटा मौजूद है। यदि आप सॉल्वर चलाते हैं, तो इसे त्याग दिया जाता है।</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

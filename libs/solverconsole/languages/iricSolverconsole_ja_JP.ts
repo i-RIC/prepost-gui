@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>ソルバーの計算が終了しました.</translation>
+        <translation type="vanished">ソルバーの計算が終了しました.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -124,11 +124,16 @@
     </message>
     <message>
         <source>information</source>
-        <translation>情報</translation>
+        <translation type="vanished">情報</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation>プロジェクトは%1に保存されました。</translation>
+        <translation type="vanished">プロジェクトは%1に保存されました。</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translatorcomment>ソルバーの計算が終了しました。プロジェクトを保存しますか?</translatorcomment>
+        <translation></translation>
     </message>
 </context>
 <context>

@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Ebazleak kalkulua amaitu du.</translation>
+        <translation type="vanished">Ebazleak kalkulua amaitu du.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -108,11 +108,7 @@
         <translation type="vanished">Proiektu honek dagoeneko baditu kalkuluen emaitzen datuak. Ebatzailea exekutatzen baduzu, baztertu egingo da.</translation>
     </message>
     <message>
-        <source>information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project successfully saved to %1.</source>
+        <source>The solver finished calculation. Do you want to save this project?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
