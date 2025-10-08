@@ -219,6 +219,8 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteLine()));
 	m_editMaxAreaAction->setDisabled(true);
 	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
+	m_exportPolygonAction->setCheckable(true);
+	m_exportPolygonAction->setDisabled(true);
 
 	updateActionStatus();
 }
