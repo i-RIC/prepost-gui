@@ -187,6 +187,8 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_coordEditAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Coordinates..."), this)},
 	m_editMaxAreaAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this)},
 	m_redivideBreaklineAction {new QAction(GridCreatingConditionTriangle::tr("&Redivide Break Line..."), this)},
+	m_importPolygonAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"),GridCreatingConditionTriangle::tr("&Import..."), this)},
+	m_exportPolygonAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),GridCreatingConditionTriangle::tr("&Export..."), this)},
 	m_rightClickingMenu {nullptr},
 	m_inhibitSelect {false},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
@@ -267,6 +269,8 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_rightClickingMenu->addSeparator();
 	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_rightClickingMenu->addAction(p->createAction());
+	m_rightClickingMenu->addAction(m_importPolygonAction);
+	m_rightClickingMenu->addAction(m_exportPolygonAction);
 }
 
 bool GridCreatingConditionTriangle::addToolBarButtons(QToolBar* tb)

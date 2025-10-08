@@ -142,6 +142,8 @@ private:
 	QAction* m_coordEditAction;
 	QAction* m_editColorSettingAction;
 	QAction* m_editMaxAreaAction;
+	QAction* m_importPolygonAction;
+	QAction* m_exportPolygonAction;
 	QAction* m_redivideBreaklineAction;
 	QMenu* m_rightClickingMenu;
 	QColor m_color;
