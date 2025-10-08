@@ -896,6 +896,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
+		m_exportPolygonAction->setDisabled(true);
 		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 			m_defineModeAction->setChecked(true);
 		} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
@@ -918,6 +919,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setDisabled(true);
 		m_divlineModeAction->setDisabled(true);
 		m_deleteAction->setDisabled(true);
+		m_exportPolygonAction->setDisabled(true);
 		break;
 
 		break;
@@ -955,6 +957,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportPolygonAction->setEnabled(true);
 			if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 				m_editMaxAreaAction->setEnabled(true);
 			}
@@ -964,12 +967,14 @@ void GridCreatingConditionTriangle::updateActionStatus()
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportPolygonAction->setEnabled(true);
 		} else {
 			m_addVertexAction->setDisabled(true);
 			m_removeVertexAction->setDisabled(true);
 			m_coordEditAction->setDisabled(true);
 			m_deleteAction->setDisabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportPolygonAction->setDisabled(true);
 		}
 		break;
 	case meAddVertexPrepare:
