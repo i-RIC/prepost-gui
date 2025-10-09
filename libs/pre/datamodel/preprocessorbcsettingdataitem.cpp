@@ -169,6 +169,11 @@ bool PreProcessorBCSettingDataItem::isMapped() const
 	return m_polygon->isMapped();
 }
 
+void PreProcessorBCSettingDataItem::setMapped(bool mapped)
+{
+	m_polygon->setMapped(mapped);
+}
+
 ColorMapSettingContainerI* PreProcessorBCSettingDataItem::colorMapSettingContainer() const
 {
 	return nullptr;

@@ -146,6 +146,24 @@ void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	}
 }
 
+const QList<PreProcessorBCSettingDataItem*> PreProcessorBCSettingGroupDataItem::conditions() const
+{
+	QList<PreProcessorBCSettingDataItem*> ret;
+	for (auto c : m_childItems) {
+		ret.push_back(dynamic_cast<PreProcessorBCSettingDataItem*> (c));
+	}
+	return ret;
+}
+
+PreProcessorBCSettingDataItem* PreProcessorBCSettingGroupDataItem::condition(const std::string& type, int num) const
+{
+	for (auto c : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*> (c);
+		if (item->bcDataItem()->condition()->name() == type && item->bcDataItem()->projectNumber() == num) {return item;}
+	}
+	return nullptr;
+}
+
 void PreProcessorBCSettingGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	for (int i = 0; i < m_addActions.count(); ++i) {
