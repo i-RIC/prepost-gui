@@ -2,6 +2,7 @@
 #include "../geodatariversurveyodnchecker.h"
 
 #include <misc/mathsupport.h>
+#include <misc/stringtool.h>
 
 #include <QFile>
 #include <QTextStream>
@@ -32,7 +33,7 @@ void addCrossSectionPoints(GeoDataRiverCrosssection::AltitudeList* before, GeoDa
 			if (it_after->position() > before_prev.position() && after_prev.position() < before_prev.position()) {
 				double r = (before_prev.position() - after_prev.position()) / (it_after->position() - after_prev.position());
 				double e = (1 - r) * after_prev.height() + r * it_after->height();
-				GeoDataRiverCrosssection::Altitude after_new(it_before->position(), e);
+				GeoDataRiverCrosssection::Altitude after_new(before_prev.position(), e);
 				after2.push_back(after_new);
 				after_prev = after_new;
 			}
@@ -45,9 +46,9 @@ void addCrossSectionPoints(GeoDataRiverCrosssection::AltitudeList* before, GeoDa
 			if (it_before->position() > after_prev.position() && before_prev.position() < after_prev.position()) {
 				double r = (after_prev.position() - before_prev.position()) / (it_before->position() - before_prev.position());
 				double e = (1 - r) * before_prev.height() + r * it_before->height();
-				GeoDataRiverCrosssection::Altitude before_new(it_after->position(), e);
-				after2.push_back(before_new);
-				after_prev = before_new;
+				GeoDataRiverCrosssection::Altitude before_new(after_prev.position(), e);
+				before2.push_back(before_new);
+				before_prev = before_new;
 			}
 			before2.push_back(*it_before);
 			before_prev = *it_before;
@@ -260,6 +261,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(QWidget* w, QTextStream* 
 		if (it == before_points.end()) {
 			*s << after_p->name() << ",,,,," << GeoDataRiverSurvey::tr("%1 does not have a cross section named \"%2\"").arg(m_before->caption()).arg(after_p->name());
 		} else {
+			auto name = iRIC::toStr(after_p->name());
 			auto before_p = it->second;
 			calculateEach(before_p, after_p, s);
 		}
@@ -290,6 +292,8 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 	GeoDataRiverCrosssection::AltitudeList before_work, after_work;
 	bool prev_equal = true;
 
+	auto ls = after_p->crosssection().leftShift();
+
 	while ((it_before != before.end()) || (it_after != after.end())) {
 		if (it_before == before.end()) {
 			++ it_after;
@@ -312,8 +316,8 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 						area = - area;
 						type = GeoDataRiverSurvey::tr("Cutting");
 					}
-					double startPos = after_work.begin()->position() + after_p->crosssection().leftShift();
-					double endPos = after_work.rbegin()->position() + after_p->crosssection().leftShift();
+					double startPos = after_work.begin()->position() + ls;
+					double endPos = after_work.rbegin()->position() + ls;
 					*s << after_p->name() << "," << startPos << "," << endPos << "," << type << "," << area << "," << "\n";
 
 					output = true;
@@ -336,11 +340,12 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 					before_work.clear();
 					after_work.clear();
 					before_work.push_back(*it_before);
-					before_work.push_back(*it_after);
+					after_work.push_back(*it_after);
 				} else if ((it_before + 1 == before.end() || it_after + 1 == after.end()) && working) {
 					working = false;
+
 					before_work.push_back(*it_before);
-					before_work.push_back(*it_after);
+					after_work.push_back(*it_after);
 
 					double area = calculateArea(before_work, after_work);
 					QString type = GeoDataRiverSurvey::tr("Embankment");
@@ -348,17 +353,30 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 						area = - area;
 						type = GeoDataRiverSurvey::tr("Cutting");
 					}
-					double startPos = after_work.begin()->position() + after_p->crosssection().leftShift();
-					double endPos = after_work.rbegin()->position() + after_p->crosssection().leftShift();
+					double startPos = after_work.begin()->position() + ls;
+					double endPos = after_work.rbegin()->position() + ls;
 					*s << after_p->name() << "," << startPos << "," << endPos << "," << type << "," << area << "," << "\n";
 
 					output = true;
+				} else if (prev_equal) {
+					working = true;
+
+					before_work.clear();
+					after_work.clear();
+					before_work.push_back(*(it_before - 1));
+					before_work.push_back(*it_before);
+					after_work.push_back(*(it_after - 1));
+					after_work.push_back(*it_after);
+				} else if (working) {
+					before_work.push_back(*it_before);
+					after_work.push_back(*it_after);
 				}
 				++it_before;
 				++it_after;
 			} else if (it_before->position() < it_after->position()) {
 				if (prev_equal) {
 					working = true;
+
 					before_work.clear();
 					after_work.clear();
 					before_work.push_back(*(it_before - 1));
@@ -371,6 +389,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 			} else {
 				if (prev_equal) {
 					working = true;
+
 					before_work.clear();
 					after_work.clear();
 					before_work.push_back(*(it_before - 1));
@@ -538,6 +557,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateStatistic(GeoDataRiverPathPoin
 	}
 
 	bool output = false;
+	auto ls = after_p->crosssection().leftShift();
 	for (int i = 0; i < 7; ++i) {
 		double start = segmentPositions[i];
 		double end = segmentPositions[i + 1];
@@ -552,7 +572,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateStatistic(GeoDataRiverPathPoin
 			}
 		}
 		if (add != 0 || sub != 0) {
-			*s << after_p->name() << "," << segmentNames.at(i) << "," << start + after_p->crosssection().leftShift() << "," << end + after_p->crosssection().leftShift() << ",";
+			*s << after_p->name() << "," << segmentNames.at(i) << "," << start + ls << "," << end + ls << ",";
 			*s << add << "," << - sub << "," << add - sub << ",\n";
 			output = true;
 		}
