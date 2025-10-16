@@ -30,11 +30,15 @@
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
+
+#include <geoio/polygonshapeimporter.h>
+#include <geoio/polygonshapeexporter.h>
 
 #include <geos/geom/CoordinateSequenceFactory.h>
 #include <geos/geom/GeometryFactory.h>
@@ -43,6 +47,7 @@
 #include <geos/util/IllegalArgumentException.h>
 
 #include <QAction>
+#include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
@@ -187,9 +192,13 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_coordEditAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Coordinates..."), this)},
 	m_editMaxAreaAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this)},
 	m_redivideBreaklineAction {new QAction(GridCreatingConditionTriangle::tr("&Redivide Break Line..."), this)},
-	m_importPolygonAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"),GridCreatingConditionTriangle::tr("&Import..."), this)},
-	m_exportPolygonAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),GridCreatingConditionTriangle::tr("&Export..."), this)},
+	m_importGridRegionPolygonAction {new QAction(GridCreatingConditionTriangle::tr("Grid Region Polygon..."), this)},
+	m_importRemeshPolygonAction{new QAction(GridCreatingConditionTriangle::tr("Remesh Polygon..."), this)},
+	m_importHolePolygonAction{new QAction(GridCreatingConditionTriangle::tr("Hole Polygon..."), this)},
+	m_importDivisionLineAction{new QAction(GridCreatingConditionTriangle::tr("Division Line..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),GridCreatingConditionTriangle::tr("&Export..."), this)},
 	m_rightClickingMenu {nullptr},
+	m_importMenu {nullptr},
 	m_inhibitSelect {false},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
@@ -219,8 +228,14 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteLine()));
 	m_editMaxAreaAction->setDisabled(true);
 	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
-	m_exportPolygonAction->setCheckable(true);
-	m_exportPolygonAction->setDisabled(true);
+	connect(m_importGridRegionPolygonAction, SIGNAL(triggered()), this, SLOT(importGridRegionPolygon()));
+	connect(m_importRemeshPolygonAction, SIGNAL(triggered()), this, SLOT(importRemeshPolygon()));
+	connect(m_importHolePolygonAction, SIGNAL(triggered()), this, SLOT(importHolePolygon()));
+	connect(m_importDivisionLineAction, SIGNAL(triggered()), this, SLOT(importDivisionLine()));
+	m_exportAction->setCheckable(true);
+	m_exportAction->setDisabled(true);
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportPolygon()));
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportLine()));
 
 	updateActionStatus();
 }
@@ -256,6 +271,14 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_menu->addAction(m_deleteAction);
 	m_menu->addSeparator();
 
+	m_importMenu = new QMenu();
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
+	m_importMenu->setTitle(tr("&Import"));
+	m_importMenu->addAction(m_importGridRegionPolygonAction);
+	m_importMenu->addAction(m_importRemeshPolygonAction);
+	m_importMenu->addAction(m_importHolePolygonAction);
+	m_importMenu->addAction(m_importDivisionLineAction);
+
 	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(m_refineModeAction);
 	m_rightClickingMenu->addAction(m_holeModeAction);
@@ -271,8 +294,8 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_rightClickingMenu->addSeparator();
 	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_rightClickingMenu->addAction(p->createAction());
-	m_rightClickingMenu->addAction(m_importPolygonAction);
-	m_rightClickingMenu->addAction(m_exportPolygonAction);
+	m_rightClickingMenu->addMenu(m_importMenu);
+	m_rightClickingMenu->addAction(m_exportAction);
 }
 
 bool GridCreatingConditionTriangle::addToolBarButtons(QToolBar* tb)
@@ -896,7 +919,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
-		m_exportPolygonAction->setDisabled(true);
+		m_exportAction->setDisabled(true);
 		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 			m_defineModeAction->setChecked(true);
 		} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
@@ -919,7 +942,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setDisabled(true);
 		m_divlineModeAction->setDisabled(true);
 		m_deleteAction->setDisabled(true);
-		m_exportPolygonAction->setDisabled(true);
+		m_exportAction->setDisabled(true);
 		break;
 
 		break;
@@ -957,7 +980,7 @@ void GridCreatingConditionTriangle::updateActionStatus()
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
-			m_exportPolygonAction->setEnabled(true);
+			m_exportAction->setEnabled(true);
 			if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 				m_editMaxAreaAction->setEnabled(true);
 			}
@@ -967,14 +990,14 @@ void GridCreatingConditionTriangle::updateActionStatus()
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
-			m_exportPolygonAction->setEnabled(true);
+			m_exportAction->setEnabled(true);
 		} else {
 			m_addVertexAction->setDisabled(true);
 			m_removeVertexAction->setDisabled(true);
 			m_coordEditAction->setDisabled(true);
 			m_deleteAction->setDisabled(true);
 			m_editMaxAreaAction->setDisabled(true);
-			m_exportPolygonAction->setDisabled(true);
+			m_exportAction->setDisabled(true);
 		}
 		break;
 	case meAddVertexPrepare:
@@ -1244,6 +1267,57 @@ void GridCreatingConditionTriangle::deleteLine(bool force)
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::importGridRegionPolygon()
+{
+
+}
+
+void GridCreatingConditionTriangle::importRemeshPolygon()
+{
+
+}
+
+void GridCreatingConditionTriangle::importHolePolygon()
+{
+
+}
+
+void GridCreatingConditionTriangle::importDivisionLine()
+{
+
+}
+
+void GridCreatingConditionTriangle::exportPolygon()
+{
+	if (m_selectedPolygon == nullptr) { return; }
+
+	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
+		PolygonShapeExporter exporter;
+		QStringList filters = exporter.fileDialogFilters();
+		QString dir = GeoLastIODirectory::get();
+		QString selectedFilter;
+
+		// Select the file to export.
+		QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
+		if (filename.isNull()) { return; }
+		
+		exporter.exportData(m_gridRegionPolygon->polygon(), filename, selectedFilter, preProcessorWindow());
+	}
+	else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
+		GridCreatingConditionTriangleRemeshPolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon);
+		// m_remeshPolygons.removeOne(tmpPoly);
+	}
+	else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr) {
+		GridCreatingConditionTriangleHolePolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon);
+		// m_holePolygons.removeOne(tmpPoly);
+	}
+}
+
+void GridCreatingConditionTriangle::exportLine()
+{
+
 }
 
 bool GridCreatingConditionTriangle::selectObject(QPoint point)
