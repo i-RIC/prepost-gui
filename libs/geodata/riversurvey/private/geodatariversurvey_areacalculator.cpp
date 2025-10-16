@@ -259,7 +259,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(QWidget* w, QTextStream* 
 	while (after_p != nullptr) {
 		auto it = before_points.find(after_p->name());
 		if (it == before_points.end()) {
-			*s << after_p->name() << ",,,,," << GeoDataRiverSurvey::tr("%1 does not have a cross section named \"%2\"").arg(m_before->caption()).arg(after_p->name());
+			*s << after_p->name() << ",,,,," << GeoDataRiverSurvey::tr("%1 does not have a cross section named \"%2\"").arg(m_before->caption()).arg(after_p->name()) << "\n";
 		} else {
 			auto name = iRIC::toStr(after_p->name());
 			auto before_p = it->second;
@@ -290,7 +290,7 @@ void GeoDataRiverSurvey::AreaCalculator::calculateEach(GeoDataRiverPathPoint* be
 
 	bool working = false;
 	GeoDataRiverCrosssection::AltitudeList before_work, after_work;
-	bool prev_equal = true;
+	bool prev_equal = false;
 
 	auto ls = after_p->crosssection().leftShift();
 
