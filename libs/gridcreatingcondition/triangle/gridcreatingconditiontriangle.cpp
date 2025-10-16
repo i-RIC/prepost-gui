@@ -1271,7 +1271,16 @@ void GridCreatingConditionTriangle::deleteLine(bool force)
 
 void GridCreatingConditionTriangle::importGridRegionPolygon()
 {
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
 
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+
+	m_gridRegionPolygon->setPolygon(importedPolygon);
 }
 
 void GridCreatingConditionTriangle::importRemeshPolygon()
