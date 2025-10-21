@@ -47,25 +47,31 @@ bool AbstractCrosssectionWindow::EditTableController::saveCsvFile(const QString&
 	if (! ok) {return false;}
 
 	QTextStream stream(&file);
-	QString originStr;
+	QString originStrFirst;
+	QString originStrLast;
 	if (impl->m_controller->targetDirection() == Direction::I) {
-		originStr = "J = 1";
-	} else if (impl->m_controller->targetDirection() == Direction::I) {
-		originStr = "I = 1";
+		originStrFirst = "Right";
+		originStrLast = "Left";
+	} else if (impl->m_controller->targetDirection() == Direction::J) {
+		originStrFirst = "Upstream";
+		originStrLast = "Downstream";
 	}
 
 	stream << AbstractCrosssectionWindow::tr("Index")
-				 << "," << AbstractCrosssectionWindow::tr("Distance(m) from %1").arg(originStr);
+				 << "," << AbstractCrosssectionWindow::tr("Distance(m) from %1").arg(originStrFirst)
+				 << "," << AbstractCrosssectionWindow::tr("Distance(m) from %1").arg(originStrLast);
 	for (auto s : activeSettings) {
 		auto attName = s->attributeName();
 		stream << "," << s->attributeDataProvider()->caption(attName);
 	}
 	stream << "\n";
 
-	auto nodePositions = impl->graphicsView()->setupNodePositions();
+	auto nodePositionsFromRightOrUpstream = impl->graphicsView()->setupNodePositionsFromRightOrUpstream();
+	auto nodePositionsFromLeftOrDownstream = impl->graphicsView()->setupNodePositionsFromLeftOrDownstream();
 	for (int i = 0; i < m_model.rowCount(); ++i) {
 		stream << (i + 1)
-					 << "," << nodePositions.at(i);
+			<< "," << nodePositionsFromRightOrUpstream.at(i)
+			<< "," << nodePositionsFromLeftOrDownstream.at(i);
 		for (unsigned int j = 0; j < converters.size(); ++j) {
 			auto converter = converters.at(j);
 			QVariant v = m_model.data(m_model.index(i, j), Qt::EditRole);

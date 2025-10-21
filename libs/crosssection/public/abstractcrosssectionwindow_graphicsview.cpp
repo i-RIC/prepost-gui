@@ -596,59 +596,75 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 
 		return positions;
 	} else if (m_impl->m_window->impl->m_mode == AbstractCrosssectionWindow::Mode::StructuredIJ) {
-		auto grid = m_impl->m_window->targetGrid();
-		std::vector<double> positions;
-
-		if (grid == nullptr) {return positions;}
-		auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-		extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
-		auto index = m_impl->m_controller->targetIndex();
-		if (index == -1) {return positions;}
-
-		if (m_impl->m_controller->targetDirection() == Direction::I) {
-			extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
-		} else if (m_impl->m_controller->targetDirection() == Direction::J) {
-			extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
-		}
-		extractGrid->Update();
-		auto output = extractGrid->GetOutput();
-		auto points = output->GetPoints();
-		if (points == nullptr) {return positions;}
-
-		QPointF point, previousPoint;
-
-		double p[3];
-		points->GetPoint(0, p);
-		previousPoint = QPointF(p[0], p[1]);
-
-		double lastPosition = 0;
-		positions.push_back(lastPosition);
-
-		for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			point = QPointF(p[0], p[1]);
-			double dist = iRIC::distance(point, previousPoint);
-			double position = lastPosition + dist;
-			positions.push_back(position);
-
-			lastPosition = position;
-			previousPoint = point;
-		}
-
-		if (m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
-			double max = *positions.rbegin();
-			std::vector<double> reversePositions;
-			reversePositions.assign(positions.size(), 0);
-
-			for (int i = 0; i < positions.size(); ++i) {
-				reversePositions[i] = max - positions[i];
-			}
-
-			positions = reversePositions;
-		}
-
-		return positions;
+		return setupNodePositions(m_impl->m_displaySetting.distanceIsFromLeftOrDownstream);
 	}
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions(const bool& fromLeftOrDownstream) const
+{
+	auto grid = m_impl->m_window->targetGrid();
+	std::vector<double> positions;
+
+	if (grid == nullptr) { return positions; }
+	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
+	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
+	auto index = m_impl->m_controller->targetIndex();
+	if (index == -1) { return positions; }
+
+	if (m_impl->m_controller->targetDirection() == Direction::I) {
+		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
+	}
+	else if (m_impl->m_controller->targetDirection() == Direction::J) {
+		extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
+	}
+	extractGrid->Update();
+	auto output = extractGrid->GetOutput();
+	auto points = output->GetPoints();
+	if (points == nullptr) { return positions; }
+
+	QPointF point, previousPoint;
+
+	double p[3];
+	points->GetPoint(0, p);
+	previousPoint = QPointF(p[0], p[1]);
+
+	double lastPosition = 0;
+	positions.push_back(lastPosition);
+
+	for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
+		points->GetPoint(i, p);
+		point = QPointF(p[0], p[1]);
+		double dist = iRIC::distance(point, previousPoint);
+		double position = lastPosition + dist;
+		positions.push_back(position);
+
+		lastPosition = position;
+		previousPoint = point;
+	}
+
+	if (fromLeftOrDownstream) {
+		double max = *positions.rbegin();
+		std::vector<double> reversePositions;
+		reversePositions.assign(positions.size(), 0);
+
+		for (int i = 0; i < positions.size(); ++i) {
+			reversePositions[i] = max - positions[i];
+		}
+
+		positions = reversePositions;
+	}
+
+	return positions;
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositionsFromRightOrUpstream() const
+{
+	return setupNodePositions(false);
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositionsFromLeftOrDownstream() const
+{
+	return setupNodePositions(true);
 }
 
 void AbstractCrosssectionWindow::GraphicsView::setGridDataItem(PreProcessorGridDataItemI* item)
