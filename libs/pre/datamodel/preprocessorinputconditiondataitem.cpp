@@ -121,7 +121,7 @@ bool PreProcessorInputConditionDataItem::importInputCondition(const QString& fil
 
 	bool ret;
 	QFileInfo finfo(filename);
-	if (finfo.suffix() == "yml") {
+	if (finfo.suffix() == "yaml" || finfo.suffix() == "yml") {
 		ret = m_dialog->importFromYaml(filename);
 	} else {
 		ret = m_dialog->importFromCgns(filename);
@@ -136,7 +136,7 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 	m_dialog->setFileName(fname);
 
 	QFileInfo finfo(filename);
-	if (finfo.suffix() == "yml") {
+	if (finfo.suffix() == "yaml" || finfo.suffix() == "yml") {
 		return m_dialog->exportToYaml(filename);
 	} else {
 		return m_dialog->exportToCgns(filename);
