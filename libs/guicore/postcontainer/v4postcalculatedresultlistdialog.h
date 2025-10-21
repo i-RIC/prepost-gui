@@ -32,6 +32,9 @@ private slots:
 	void moveUpSelected();
 	void moveDownSelected();
 
+	void importFromXML();
+	void exportToXML();
+
 private:
 	void updateTable();
 

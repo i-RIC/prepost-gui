@@ -4,6 +4,8 @@
 #include "ui_v4postcalculatedresultlistdialog.h"
 #include "v4postzonedatacontainer.h"
 
+#include <misc/projectlastiodirectory.h>
+
 #include <QMessageBox>
 
 v4PostCalculatedResultListDialog::v4PostCalculatedResultListDialog(QWidget *parent) :
@@ -17,6 +19,8 @@ v4PostCalculatedResultListDialog::v4PostCalculatedResultListDialog(QWidget *pare
 	connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteSelected()));
 	connect(ui->upButton, SIGNAL(clicked()), this, SLOT(moveUpSelected()));
 	connect(ui->downButton, SIGNAL(clicked()), this, SLOT(moveDownSelected()));
+	connect(ui->importButton, SIGNAL(clicked()), this, SLOT(importFromXML()));
+	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportToXML()));
 }
 
 v4PostCalculatedResultListDialog::~v4PostCalculatedResultListDialog()
@@ -131,6 +135,33 @@ void v4PostCalculatedResultListDialog::moveDownSelected()
 	updateTable();
 	ui->tableWidget->setCurrentCell(row + 1, 0);
 }
+
+void v4PostCalculatedResultListDialog::importFromXML()
+{
+	QString dir = ProjectLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(this, tr("Select file to import"), dir, tr("XML files(*.xml)"));
+	if (filename.isNull()) { return; }
+}
+
+void v4PostCalculatedResultListDialog::exportToXML()
+{
+	QString dir = ProjectLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getSaveFileName(this, tr("Save XML file"), dir, tr("XML files(*.xml)"), &selectedFilter);
+	if (filename.isNull()) { return; }
+	QFile f(filename);
+	f.open(QFile::WriteOnly);
+	QXmlStreamWriter w(&f);
+	w.setAutoFormatting(true);
+	// start xml
+	auto calculatedResults = m_zoneDataContainer->calculatedResults();
+	for (auto calculatedResult : calculatedResults) {
+
+	}
+	f.close();
+}
+
 
 void v4PostCalculatedResultListDialog::updateTable()
 {
