@@ -1,6 +1,7 @@
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcgroupsettingdialog.h"
+#include "preprocessorbcsettingdataitem.h"
 #include "preprocessorbcsettinggroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
@@ -417,6 +418,9 @@ void PreProcessorBCGroupDataItem::importBc()
 	auto bcsItem = gridDataItem()->gridAndGridCreatingConditionDataItem()->bcSettingGroupDataItem();
 	auto shpFileName = fname.replace(".yaml", ".shp");
 	bcsItem->importPolygons(shpFileName);
+	for (auto c : bcsItem->conditions()) {
+		c->setMapped(true);
+	}
 
 	ProjectLastIODirectory::setFromFilename(fname);
 

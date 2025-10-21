@@ -21,7 +21,7 @@ public:
 
 	void informGridUpdate();
 	const QList<PreProcessorBCSettingDataItem*> conditions() const;
-	PreProcessorBCSettingDataItem* condition(const QString& type, int num) const;
+	PreProcessorBCSettingDataItem* condition(const std::string& type, int num) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void updateZDepthRangeItemCount() override;
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
