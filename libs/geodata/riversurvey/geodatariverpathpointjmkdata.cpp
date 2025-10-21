@@ -37,16 +37,20 @@ void GeoDataRiverPathPointJmkData::importFromYaml(const YAML::Node& node)
 	for (auto it = node.begin(); it != node.end(); ++it) {
 		auto i = *it;
 
-		Item item;
-		item.distance = i["distance"].as<double>();
-		item.width = i["width"].as<double>();
-		item.height = i["height"].as<double>();
-		item.submerged = i["submerged"].as<int>();
-		item.dense = i["dense"].as<int>();
-		item.dead = i["dead"].as<int>();
-		item.highLow = i["highLow"].as<int>();
-		item.lowBranchHeight = i["lowBranchHeight"].as<double>();
-		m_items.push_back(item);
+		try {
+			Item item;
+			item.distance = i["distance"].as<double>();
+			item.width = i["width"].as<double>();
+			item.height = i["height"].as<double>();
+			item.submerged = i["submerged"].as<int>();
+			item.dense = i["dense"].as<int>();
+			item.dead = i["dead"].as<int>();
+			item.highLow = i["highLow"].as<int>();
+			item.lowBranchHeight = i["lowBranchHeight"].as<double>();
+			m_items.push_back(item);
+		} catch (...) {
+			continue;
+		}
 	}
 }
 
