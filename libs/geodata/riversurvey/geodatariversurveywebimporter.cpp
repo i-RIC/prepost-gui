@@ -27,6 +27,9 @@ GeoDataRiverSurveyWebImporter::GeoDataRiverSurveyWebImporter(GeoDataCreator* cre
 		auto mlitImporter = dynamic_cast<GeoDataRiverSurveyMlitImporter*> (importer);
 		if (mlitImporter != nullptr) {
 			m_mlitImporter = mlitImporter;
+
+			auto setting = m_mlitImporter->createSetting();
+			m_mlitImporter->setSetting(setting);
 		}
 	}
 }
