@@ -1279,6 +1279,7 @@ void GridCreatingConditionTriangle::importGridRegionPolygon()
 	if (filename.isNull()) { return; }
 
 	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
 
 	m_gridRegionPolygon->setPolygon(importedPolygon);
 }
