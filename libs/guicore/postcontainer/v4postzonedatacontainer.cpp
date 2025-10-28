@@ -210,12 +210,27 @@ void v4PostZoneDataContainer::attachCalculatedResult(const std::vector<v4PostCal
 
 void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	std::set<std::string> nameSet;
+	for (auto calculatedResult : calculatedResults()) {
+		nameSet.insert(calculatedResult->name());
+	}
+
 	for (int i = 0; i < node.childNodes().size(); ++i) {
 		auto childNode = node.childNodes().at(i);
 		if (childNode.nodeName() == "SimpleOperationResult") {
-			auto cr = new v4PostCalculatedResult(this);
-			cr->loadFromProjectMainFile(childNode);
-			impl->m_calculatedResults.push_back(cr);
+			
+			bool alreadyExists = false;
+			for (const auto name : nameSet) {
+				if (name == childNode.toElement().attribute("name").toStdString()) {
+					alreadyExists = true;
+				}
+			}
+			
+			if (!alreadyExists) {
+				auto cr = new v4PostCalculatedResult(this);
+				cr->loadFromProjectMainFile(childNode);
+				impl->m_calculatedResults.push_back(cr);
+			}
 		}
 	}
 }
