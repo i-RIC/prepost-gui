@@ -4,6 +4,7 @@
 #include "ui_v4postcalculatedresultlistdialog.h"
 #include "v4postzonedatacontainer.h"
 
+#include <misc/errormessage.h>
 #include <misc/projectlastiodirectory.h>
 
 #include <QMessageBox>
@@ -140,8 +141,27 @@ void v4PostCalculatedResultListDialog::importFromXML()
 {
 	QString dir = ProjectLastIODirectory::get();
 	QString selectedFilter;
+	v4PostCalculatedResultEditDialog dialog(this);
 	QString filename = QFileDialog::getOpenFileName(this, tr("Select file to import"), dir, tr("XML files(*.xml)"));
 	if (filename.isNull()) { return; }
+	
+	QFile f(filename);
+	QDomDocument doc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QString errorHeader = "Error occured while loading %1\n";
+	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
+	
+	if (!ok) {
+		QString msg = errorHeader;
+		msg.append("Parse error %2 at line %3, column %4");
+		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
+		throw ErrorMessage(msg);
+	}
+
+	m_zoneDataContainer->loadFromProjectMainFile(doc.documentElement());
+	updateTable();
 }
 
 void v4PostCalculatedResultListDialog::exportToXML()
@@ -154,11 +174,18 @@ void v4PostCalculatedResultListDialog::exportToXML()
 	f.open(QFile::WriteOnly);
 	QXmlStreamWriter w(&f);
 	w.setAutoFormatting(true);
-	// start xml
+	
+	// start export xml
 	auto calculatedResults = m_zoneDataContainer->calculatedResults();
+	w.writeStartDocument("1.0");
+	w.writeStartElement("Zone");
 	for (auto calculatedResult : calculatedResults) {
-
+		w.writeStartElement("SimpleOperationResult");
+		calculatedResult->saveToProjectMainFile(w);
+		w.writeEndElement();
 	}
+	w.writeEndElement();
+	w.writeEndDocument();
 	f.close();
 }
 
