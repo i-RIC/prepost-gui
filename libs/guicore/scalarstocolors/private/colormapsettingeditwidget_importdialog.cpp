@@ -2,17 +2,78 @@
 #include "colormapsettingeditwidget_importdialog_setting.h"
 #include "ui_colormapsettingeditwidget_importdialog.h"
 
+#include <misc/errormessage.h>
 #include <misc/iricrootpath.h>
 #include <misc/valuechangert.h>
+#include <misc/xmlsupport.h>
 
+#include <QColor>
 #include <QDir>
 #include <QFileInfo>
 #include <QIcon>
+#include <QSize>
 #include <QStandardItem>
 
 namespace {
 
 int PathRole = Qt::UserRole + 1;
+
+QPixmap buildColormapIcon(const QString& filename)
+{
+	QPixmap defaultPixmap = QPixmap(":/libs/guibase/images/iconPaper.svg");
+	
+	if (filename.isNull()) { return defaultPixmap; }
+
+	QFile f(filename);
+	QDomDocument doc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
+	if (!ok) { return defaultPixmap; }
+	auto node = doc.documentElement();
+	
+	
+	std::vector<std::pair<double, QColor>> pairs;
+	double maxValue = 0; 
+	for (int i = 0; i < node.childNodes().size(); ++i) {
+		auto childNode = node.childNodes().at(i);
+		if (childNode.nodeName() == "Item") {
+			const double value = iRIC::getDoubleAttribute(childNode, "value");
+			const QColor color = iRIC::getColorAttribute(childNode, "color");
+			pairs.push_back(std::make_pair(value, color));
+			if (maxValue < std::abs(value)) {
+				maxValue = value;
+			}
+		}
+	}
+	if (pairs.size() <= 1) { return defaultPixmap; }
+
+	const QSize size(32, 32);
+	QPixmap pixmap(size);
+	pixmap.fill(Qt::transparent);
+	QPainter painter;
+	painter.begin(&pixmap);
+
+	for (int i = 0; i < pairs.size() - 1; i++) {
+		// pair = (value, color)
+		auto left = pairs.at(i).first / maxValue * size.width();
+		auto right = pairs.at(i + 1).first / maxValue * size.width();
+		auto colStart = pairs.at(i).second;
+		auto colEnd = pairs.at(i + 1).second;
+
+		QLinearGradient gradient(QPointF(left, 0), QPointF(right, 0));
+		gradient.setColorAt(0, colStart);
+		gradient.setColorAt(1, colEnd);
+		QBrush brush(gradient);
+
+		QRectF rect(left, 0, right - left, size.height());
+		painter.fillRect(rect, brush);
+	}
+	
+	painter.end();
+	return pixmap;
+}
 
 bool loadModelRecursive(const QString path, QStandardItem* parent)
 {
@@ -36,7 +97,7 @@ bool loadModelRecursive(const QString path, QStandardItem* parent)
 		QFileInfo finfo(dir.absoluteFilePath(entry));
 		if (finfo.suffix() != "cmsetting") {continue;}
 
-		auto item = new QStandardItem(QIcon(":/libs/guibase/images/iconPaper.svg"), finfo.fileName());
+		auto item = new QStandardItem(QIcon(buildColormapIcon(finfo.absoluteFilePath())), finfo.fileName());
 		item->setData(finfo.absoluteFilePath(), PathRole);
 		parent->appendRow(item);
 		childExists = true;
