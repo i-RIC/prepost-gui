@@ -39,6 +39,8 @@
 
 #include <geoio/polygonshapeimporter.h>
 #include <geoio/polygonshapeexporter.h>
+#include <geoio/polylineshapeimporter.h>
+#include <geoio/polylineshapeexporter.h>
 
 #include <geos/geom/CoordinateSequenceFactory.h>
 #include <geos/geom/GeometryFactory.h>
@@ -229,8 +231,14 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_editMaxAreaAction->setDisabled(true);
 	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
 	connect(m_importGridRegionPolygonAction, SIGNAL(triggered()), this, SLOT(importGridRegionPolygon()));
+	m_importRemeshPolygonAction->setCheckable(true);
+	m_importRemeshPolygonAction->setDisabled(true);
 	connect(m_importRemeshPolygonAction, SIGNAL(triggered()), this, SLOT(importRemeshPolygon()));
+	m_importHolePolygonAction->setCheckable(true);
+	m_importHolePolygonAction->setDisabled(true);
 	connect(m_importHolePolygonAction, SIGNAL(triggered()), this, SLOT(importHolePolygon()));
+	m_importDivisionLineAction->setCheckable(true);
+	m_importDivisionLineAction->setDisabled(true);
 	connect(m_importDivisionLineAction, SIGNAL(triggered()), this, SLOT(importDivisionLine()));
 	m_exportAction->setCheckable(true);
 	m_exportAction->setDisabled(true);
@@ -919,6 +927,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_exportAction->setDisabled(true);
 		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 			m_defineModeAction->setChecked(true);
@@ -942,6 +953,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setDisabled(true);
 		m_divlineModeAction->setDisabled(true);
 		m_deleteAction->setDisabled(true);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_exportAction->setDisabled(true);
 		break;
 
@@ -974,6 +988,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setEnabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setEnabled(true);
+		m_importHolePolygonAction->setEnabled(true);
+		m_importDivisionLineAction->setEnabled(true);
 		if (m_selectedPolygon != nullptr) {
 			m_addVertexAction->setEnabled(true);
 			m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
@@ -1026,6 +1043,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_deleteAction->setEnabled(true);
 
 		break;
@@ -1044,6 +1064,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_deleteAction->setEnabled(true);
 		break;
 	case meTranslateDialog:
@@ -1282,52 +1305,128 @@ void GridCreatingConditionTriangle::importGridRegionPolygon()
 	if (importedPolygon.size() == 0) { return; }
 
 	m_gridRegionPolygon->setPolygon(importedPolygon);
+	GeoLastIODirectory::setFromFilename(filename);
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
 }
 
 void GridCreatingConditionTriangle::importRemeshPolygon()
 {
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
 
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
+
+	GridCreatingConditionTriangleRemeshPolygon* tmpPol = new GridCreatingConditionTriangleRemeshPolygon(this);
+	tmpPol->setPolygon(importedPolygon);
+	m_remeshPolygons.append(tmpPol);
+
+	GeoLastIODirectory::setFromFilename(filename);
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
 }
 
 void GridCreatingConditionTriangle::importHolePolygon()
 {
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
 
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
+
+	GridCreatingConditionTriangleHolePolygon* tmpPol = new GridCreatingConditionTriangleHolePolygon(this);
+	tmpPol->setPolygon(importedPolygon);
+	m_holePolygons.append(tmpPol);
+
+	GeoLastIODirectory::setFromFilename(filename);
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
 }
 
 void GridCreatingConditionTriangle::importDivisionLine()
 {
+	PolylineShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
 
+	const QVector<QPointF> importedPolyline = QVector<QPointF>::fromStdVector(importer.importData(filename, selectedFilter, preProcessorWindow()));
+	if (importedPolyline.size() == 0) { return; }
+
+	GridCreatingConditionTriangleDivisionLine* tmpPol = new GridCreatingConditionTriangleDivisionLine(this);
+	tmpPol->setPolyLine(importedPolyline);
+	m_divisionLines.append(tmpPol);
+
+	GeoLastIODirectory::setFromFilename(filename);
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
 }
 
 void GridCreatingConditionTriangle::exportPolygon()
 {
 	if (m_selectedPolygon == nullptr) { return; }
 
-	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
-		PolygonShapeExporter exporter;
-		QStringList filters = exporter.fileDialogFilters();
-		QString dir = GeoLastIODirectory::get();
-		QString selectedFilter;
+	PolygonShapeExporter exporter;
+	QStringList filters = exporter.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
 
-		// Select the file to export.
-		QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
-		if (filename.isNull()) { return; }
+	// Select the file to export.
+	QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
+	if (filename.isNull()) { return; }
+
+	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 		
 		exporter.exportData(m_gridRegionPolygon->polygon(), filename, selectedFilter, preProcessorWindow());
 	}
 	else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 		GridCreatingConditionTriangleRemeshPolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon);
-		// m_remeshPolygons.removeOne(tmpPoly);
+		exporter.exportData(tmpPoly->polygon(), filename, selectedFilter, preProcessorWindow());
 	}
 	else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr) {
 		GridCreatingConditionTriangleHolePolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon);
-		// m_holePolygons.removeOne(tmpPoly);
+		exporter.exportData(tmpPoly->polygon(), filename, selectedFilter, preProcessorWindow());
 	}
+	GeoLastIODirectory::setFromFilename(filename);
 }
 
 void GridCreatingConditionTriangle::exportLine()
 {
+	if (m_selectedLine == nullptr) { return; }
 
+	PolylineShapeExporter exporter;
+	QStringList filters = exporter.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+
+	// Select the file to export.
+	QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
+	if (filename.isNull()) { return; }
+
+	GridCreatingConditionTriangleDivisionLine* tmpLine = dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
+
+	exporter.exportData(tmpLine->polyLine().toStdVector(), filename, selectedFilter, preProcessorWindow());
+
+	GeoLastIODirectory::setFromFilename(filename);
 }
 
 bool GridCreatingConditionTriangle::selectObject(QPoint point)
