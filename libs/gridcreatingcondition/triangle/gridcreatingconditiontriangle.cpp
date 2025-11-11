@@ -1306,7 +1306,11 @@ void GridCreatingConditionTriangle::importGridRegionPolygon()
 
 	m_gridRegionPolygon->setPolygon(importedPolygon);
 	GeoLastIODirectory::setFromFilename(filename);
-	
+	m_mouseEventMode = meNormal;
+		
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
@@ -1327,9 +1331,13 @@ void GridCreatingConditionTriangle::importRemeshPolygon()
 	GridCreatingConditionTriangleRemeshPolygon* tmpPol = new GridCreatingConditionTriangleRemeshPolygon(this);
 	tmpPol->setPolygon(importedPolygon);
 	m_remeshPolygons.append(tmpPol);
+	m_mouseEventMode = meNormal;
 
 	GeoLastIODirectory::setFromFilename(filename);
 	
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
@@ -1350,8 +1358,12 @@ void GridCreatingConditionTriangle::importHolePolygon()
 	GridCreatingConditionTriangleHolePolygon* tmpPol = new GridCreatingConditionTriangleHolePolygon(this);
 	tmpPol->setPolygon(importedPolygon);
 	m_holePolygons.append(tmpPol);
+	m_mouseEventMode = meNormal;
 
 	GeoLastIODirectory::setFromFilename(filename);
+
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
 	
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
@@ -1375,6 +1387,9 @@ void GridCreatingConditionTriangle::importDivisionLine()
 	m_divisionLines.append(tmpPol);
 
 	GeoLastIODirectory::setFromFilename(filename);
+
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
 	
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
