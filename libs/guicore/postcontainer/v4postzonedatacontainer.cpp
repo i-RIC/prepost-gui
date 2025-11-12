@@ -210,9 +210,9 @@ void v4PostZoneDataContainer::attachCalculatedResult(const std::vector<v4PostCal
 
 void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	std::set<std::string> nameSet;
+	std::set<std::string> existingNameSet;
 	for (auto calculatedResult : calculatedResults()) {
-		nameSet.insert(calculatedResult->name());
+		existingNameSet.insert(calculatedResult->name());
 	}
 
 	for (int i = 0; i < node.childNodes().size(); ++i) {
@@ -220,12 +220,29 @@ void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 		if (childNode.nodeName() == "SimpleOperationResult") {
 			
 			bool alreadyExists = false;
-			for (const auto name : nameSet) {
-				if (name == childNode.toElement().attribute("name").toStdString()) {
-					alreadyExists = true;
+			int i = 0;
+			int maxMod = 10;
+			while (i < maxMod) {
+				std::string name = childNode.toElement().attribute("name").toStdString();
+				for (const auto existingname : existingNameSet) {
+					if (name == existingname) {
+						alreadyExists = true;
+						break;
+					}
 				}
+				if (!alreadyExists) {
+					break;
+				} else {
+					if (i == 0) {
+						childNode.toElement().setAttribute(QString::fromStdString("name"), QString::fromStdString(name + " (" + std::to_string(i + 1) + ")"));
+					} else {
+						childNode.toElement().setAttribute(QString::fromStdString("name"), QString::fromStdString(name.erase(name.size()-4) + " (" + std::to_string(i + 1) + ")"));
+					}
+					alreadyExists = false;
+				}
+				i++;
 			}
-			
+
 			if (!alreadyExists) {
 				auto cr = new v4PostCalculatedResult(this);
 				cr->loadFromProjectMainFile(childNode);
