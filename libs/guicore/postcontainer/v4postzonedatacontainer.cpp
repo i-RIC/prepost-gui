@@ -215,42 +215,47 @@ void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 		existingNameSet.insert(calculatedResult->name());
 	}
 
-	for (int i = 0; i < node.childNodes().size(); ++i) {
-		auto childNode = node.childNodes().at(i);
-		if (childNode.nodeName() == "SimpleOperationResult") {
-			
-			bool alreadyExists = false;
-			int i = 0;
-			int maxMod = 10;
-			while (i < maxMod) {
-				std::string name = childNode.toElement().attribute("name").toStdString();
-				for (const auto existingname : existingNameSet) {
-					if (name == existingname) {
-						alreadyExists = true;
-						break;
-					}
-				}
-				if (!alreadyExists) {
-					break;
-				} else {
-					if (i == 0) {
-						childNode.toElement().setAttribute(QString::fromStdString("name"), QString::fromStdString(name + " (" + std::to_string(i + 1) + ")"));
-					} else {
-						childNode.toElement().setAttribute(QString::fromStdString("name"), QString::fromStdString(name.erase(name.size()-4) + " (" + std::to_string(i + 1) + ")"));
-					}
-					alreadyExists = false;
-				}
-				i++;
-			}
+	for (int childIdx = 0; childIdx < node.childNodes().size(); ++childIdx) {
+		auto childNode = node.childNodes().at(childIdx);
+		if (childNode.nodeName() != "SimpleOperationResult") continue;
 
-			if (!alreadyExists) {
-				auto cr = new v4PostCalculatedResult(this);
-				cr->loadFromProjectMainFile(childNode);
-				impl->m_calculatedResults.push_back(cr);
-			}
+		auto elem = childNode.toElement();
+		QString originalName = elem.attribute("name");
+
+		auto exists = [&](const QString& s) {
+			return existingNameSet.find(s.toStdString()) != existingNameSet.end();
+		};
+
+		QString finalName;
+
+		if (!exists(originalName)) {
+			finalName = originalName;
 		}
+		else {
+			const int maxMod = 0; // 0:no limit
+			int k = 1;
+			QString candidate;
+
+			do {
+				candidate = QString("%1 (%2)").arg(originalName).arg(k);
+				++k;
+				if (maxMod > 0 && k > maxMod + 1) {
+					break;
+				}
+			} while (exists(candidate));
+
+			finalName = candidate;
+		}
+
+		elem.setAttribute("name", finalName);
+		existingNameSet.insert(finalName.toStdString());
+
+		auto cr = new v4PostCalculatedResult(this);
+		cr->loadFromProjectMainFile(childNode);
+		impl->m_calculatedResults.push_back(cr);
 	}
 }
+
 
 void v4PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
