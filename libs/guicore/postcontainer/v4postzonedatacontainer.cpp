@@ -210,15 +210,52 @@ void v4PostZoneDataContainer::attachCalculatedResult(const std::vector<v4PostCal
 
 void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	for (int i = 0; i < node.childNodes().size(); ++i) {
-		auto childNode = node.childNodes().at(i);
-		if (childNode.nodeName() == "SimpleOperationResult") {
-			auto cr = new v4PostCalculatedResult(this);
-			cr->loadFromProjectMainFile(childNode);
-			impl->m_calculatedResults.push_back(cr);
+	std::set<std::string> existingNameSet;
+	for (auto calculatedResult : calculatedResults()) {
+		existingNameSet.insert(calculatedResult->name());
+	}
+
+	for (int childIdx = 0; childIdx < node.childNodes().size(); ++childIdx) {
+		auto childNode = node.childNodes().at(childIdx);
+		if (childNode.nodeName() != "SimpleOperationResult") continue;
+
+		auto elem = childNode.toElement();
+		QString originalName = elem.attribute("name");
+
+		auto exists = [&](const QString& s) {
+			return existingNameSet.find(s.toStdString()) != existingNameSet.end();
+		};
+
+		QString finalName;
+
+		if (!exists(originalName)) {
+			finalName = originalName;
 		}
+		else {
+			const int maxMod = 0; // 0:no limit
+			int k = 1;
+			QString candidate;
+
+			do {
+				candidate = QString("%1 (%2)").arg(originalName).arg(k);
+				++k;
+				if (maxMod > 0 && k > maxMod + 1) {
+					break;
+				}
+			} while (exists(candidate));
+
+			finalName = candidate;
+		}
+
+		elem.setAttribute("name", finalName);
+		existingNameSet.insert(finalName.toStdString());
+
+		auto cr = new v4PostCalculatedResult(this);
+		cr->loadFromProjectMainFile(childNode);
+		impl->m_calculatedResults.push_back(cr);
 	}
 }
+
 
 void v4PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {

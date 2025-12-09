@@ -4,6 +4,9 @@
 #include "ui_v4postcalculatedresultlistdialog.h"
 #include "v4postzonedatacontainer.h"
 
+#include <misc/errormessage.h>
+#include <misc/projectlastiodirectory.h>
+
 #include <QMessageBox>
 
 v4PostCalculatedResultListDialog::v4PostCalculatedResultListDialog(QWidget *parent) :
@@ -17,6 +20,8 @@ v4PostCalculatedResultListDialog::v4PostCalculatedResultListDialog(QWidget *pare
 	connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteSelected()));
 	connect(ui->upButton, SIGNAL(clicked()), this, SLOT(moveUpSelected()));
 	connect(ui->downButton, SIGNAL(clicked()), this, SLOT(moveDownSelected()));
+	connect(ui->importButton, SIGNAL(clicked()), this, SLOT(importFromXML()));
+	connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportToXML()));
 }
 
 v4PostCalculatedResultListDialog::~v4PostCalculatedResultListDialog()
@@ -131,6 +136,59 @@ void v4PostCalculatedResultListDialog::moveDownSelected()
 	updateTable();
 	ui->tableWidget->setCurrentCell(row + 1, 0);
 }
+
+void v4PostCalculatedResultListDialog::importFromXML()
+{
+	QString dir = ProjectLastIODirectory::get();
+	QString selectedFilter;
+	v4PostCalculatedResultEditDialog dialog(this);
+	QString filename = QFileDialog::getOpenFileName(this, tr("Select file to import"), dir, tr("XML files(*.xml)"));
+	if (filename.isNull()) { return; }
+	
+	QFile f(filename);
+	QDomDocument doc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QString errorHeader = "Error occured while loading %1\n";
+	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
+	
+	if (!ok) {
+		QString msg = errorHeader;
+		msg.append("Parse error %2 at line %3, column %4");
+		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
+		throw ErrorMessage(msg);
+	}
+
+	m_zoneDataContainer->loadFromProjectMainFile(doc.documentElement());
+	updateTable();
+}
+
+void v4PostCalculatedResultListDialog::exportToXML()
+{
+	QString dir = ProjectLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getSaveFileName(this, tr("Save XML file"), dir, tr("XML files(*.xml)"), &selectedFilter);
+	if (filename.isNull()) { return; }
+	QFile f(filename);
+	f.open(QFile::WriteOnly);
+	QXmlStreamWriter w(&f);
+	w.setAutoFormatting(true);
+	
+	// start export xml
+	auto calculatedResults = m_zoneDataContainer->calculatedResults();
+	w.writeStartDocument("1.0");
+	w.writeStartElement("Zone");
+	for (auto calculatedResult : calculatedResults) {
+		w.writeStartElement("SimpleOperationResult");
+		calculatedResult->saveToProjectMainFile(w);
+		w.writeEndElement();
+	}
+	w.writeEndElement();
+	w.writeEndDocument();
+	f.close();
+}
+
 
 void v4PostCalculatedResultListDialog::updateTable()
 {
