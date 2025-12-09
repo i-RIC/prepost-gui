@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -73,6 +75,10 @@
         <source>Upstream/downstream markers</source>
         <translation>Augšējā/lejpus straumes marķieri</translation>
     </message>
+    <message>
+        <source>Reverse X direction</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow::Controller</name>
@@ -98,6 +104,17 @@
     <message>
         <source>Export CSV Files</source>
         <translation>Eksportēt CSV failus</translation>
+    </message>
+</context>
+<context>
+    <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
+    <message>
+        <source>Distance from Upstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from Downstream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -254,6 +271,18 @@
         <source>Aspect ratio</source>
         <translation>Malu attiecība</translation>
     </message>
+    <message>
+        <source>X axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right bank</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AbstractCrosssectionWindow_ExportSettingDialog</name>
@@ -405,8 +434,8 @@
         <translation>Virsraksta krāsa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

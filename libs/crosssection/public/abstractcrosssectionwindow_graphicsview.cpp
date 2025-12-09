@@ -131,6 +131,11 @@ void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 	auto xMin = *positions.begin();
 	auto xMax = *positions.rbegin();
 
+	if (m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
+		xMin = *positions.rbegin();
+		xMax = *positions.begin();
+	}
+
 	double yMin = 0, yMax = 0;
 
 	std::unordered_map<v4Structured2dGrid*, vtkPointSet*> outputs;
@@ -591,47 +596,75 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 
 		return positions;
 	} else if (m_impl->m_window->impl->m_mode == AbstractCrosssectionWindow::Mode::StructuredIJ) {
-		auto grid = m_impl->m_window->targetGrid();
-		std::vector<double> positions;
-
-		if (grid == nullptr) {return positions;}
-		auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-		extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
-		auto index = m_impl->m_controller->targetIndex();
-		if (index == -1) {return positions;}
-
-		if (m_impl->m_controller->targetDirection() == Direction::I) {
-			extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
-		} else if (m_impl->m_controller->targetDirection() == Direction::J) {
-			extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
-		}
-		extractGrid->Update();
-		auto output = extractGrid->GetOutput();
-		auto points = output->GetPoints();
-		if (points == nullptr) {return positions;}
-
-		QPointF point, previousPoint;
-
-		double p[3];
-		points->GetPoint(0, p);
-		previousPoint = QPointF(p[0], p[1]);
-
-		double lastPosition = 0;
-		positions.push_back(lastPosition);
-
-		for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
-			points->GetPoint(i, p);
-			point = QPointF(p[0], p[1]);
-			double dist = iRIC::distance(point, previousPoint);
-			double position = lastPosition + dist;
-			positions.push_back(position);
-
-			lastPosition = position;
-			previousPoint = point;
-		}
-
-		return positions;
+		return setupNodePositions(m_impl->m_displaySetting.distanceIsFromLeftOrDownstream);
 	}
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions(const bool& fromLeftOrDownstream) const
+{
+	auto grid = m_impl->m_window->targetGrid();
+	std::vector<double> positions;
+
+	if (grid == nullptr) { return positions; }
+	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
+	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
+	auto index = m_impl->m_controller->targetIndex();
+	if (index == -1) { return positions; }
+
+	if (m_impl->m_controller->targetDirection() == Direction::I) {
+		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
+	}
+	else if (m_impl->m_controller->targetDirection() == Direction::J) {
+		extractGrid->SetVOI(0, grid->dimensionI(), index, index, 0, 0);
+	}
+	extractGrid->Update();
+	auto output = extractGrid->GetOutput();
+	auto points = output->GetPoints();
+	if (points == nullptr) { return positions; }
+
+	QPointF point, previousPoint;
+
+	double p[3];
+	points->GetPoint(0, p);
+	previousPoint = QPointF(p[0], p[1]);
+
+	double lastPosition = 0;
+	positions.push_back(lastPosition);
+
+	for (vtkIdType i = 1; i < points->GetNumberOfPoints(); ++i) {
+		points->GetPoint(i, p);
+		point = QPointF(p[0], p[1]);
+		double dist = iRIC::distance(point, previousPoint);
+		double position = lastPosition + dist;
+		positions.push_back(position);
+
+		lastPosition = position;
+		previousPoint = point;
+	}
+
+	if (fromLeftOrDownstream) {
+		double max = *positions.rbegin();
+		std::vector<double> reversePositions;
+		reversePositions.assign(positions.size(), 0);
+
+		for (int i = 0; i < positions.size(); ++i) {
+			reversePositions[i] = max - positions[i];
+		}
+
+		positions = reversePositions;
+	}
+
+	return positions;
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositionsFromRightOrUpstream() const
+{
+	return setupNodePositions(false);
+}
+
+std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositionsFromLeftOrDownstream() const
+{
+	return setupNodePositions(true);
 }
 
 void AbstractCrosssectionWindow::GraphicsView::setGridDataItem(PreProcessorGridDataItemI* item)
@@ -647,6 +680,17 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	mins = invMatrix.map(QPointF(w->width(), w->height()));
 	maxs = invMatrix.map(QPointF(0, 0));
 
+	double min_x = mins.x();
+	double max_x = maxs.x();
+	double min_y = mins.y();
+	double max_y = maxs.y();
+
+	bool reverse = m_impl->m_displaySetting.reverseXDirection ^ m_impl->m_displaySetting.distanceIsFromLeftOrDownstream;
+	if (reverse) {
+		min_x = maxs.x();
+		max_x = mins.x();
+	}
+
 	double xoffset = 5;
 	double yoffset = 5;
 	double fontoffset = 4;
@@ -659,10 +703,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 	double ySubScale = m_impl->m_displaySetting.bgVSubScaleInterval;
 
 	if (m_impl->m_displaySetting.bgHScaleAuto) {
-		calcAutoScale(maxs.x() - mins.x(), &xScale, &xSubScale);
+		calcAutoScale(max_x - min_x, &xScale, &xSubScale);
 	}
 	if (m_impl->m_displaySetting.bgVScaleAuto) {
-		calcAutoScale(maxs.y() - mins.y(), &yScale, &ySubScale);
+		calcAutoScale(max_y - min_y, &yScale, &ySubScale);
 	}
 
 	if (m_impl->m_displaySetting.gridVisible) {
@@ -675,18 +719,18 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			pen.setStyle(Qt::SolidLine);
 			painter->setPen(pen);
 
-			double x = std::floor(mins.x() / xScale) * xScale;
-			while (x < maxs.x()) {
-				auto from = matrix.map(QPointF(x, maxs.y()));
+			double x = std::floor(min_x / xScale) * xScale;
+			while (x < max_x) {
+				auto from = matrix.map(QPointF(x, max_y));
 				auto to = from;
 				from.setY(0);
 				to.setY(w->height());
 				painter->drawLine(from, to);
 				x += xScale;
 			}
-			double y = std::floor(mins.y() / yScale) * yScale;
-			while (y < maxs.y()) {
-				auto from = matrix.map(QPointF(mins.x(), y));
+			double y = std::floor(min_y / yScale) * yScale;
+			while (y < max_y) {
+				auto from = matrix.map(QPointF(min_x, y));
 				auto to = from;
 				from.setX(0);
 				to.setX(w->width());
@@ -698,18 +742,18 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			// subscales
 			pen.setStyle(Qt::DashLine);
 			painter->setPen(pen);
-			x = std::floor(mins.x() / xSubScale) * xSubScale;
-			while (x < maxs.x()) {
-				auto from = matrix.map(QPointF(x, maxs.y()));
+			x = std::floor(min_x / xSubScale) * xSubScale;
+			while (x < max_x) {
+				auto from = matrix.map(QPointF(x, max_y));
 				auto to = from;
 				from.setY(0);
 				to.setY(w->height());
 				painter->drawLine(from, to);
 				x += xSubScale;
 			}
-			y = std::floor(mins.y() / ySubScale) * ySubScale;
-			while (y < maxs.y()) {
-				auto from = matrix.map(QPointF(mins.x(), y));
+			y = std::floor(min_y / ySubScale) * ySubScale;
+			while (y < max_y) {
+				auto from = matrix.map(QPointF(min_x, y));
 				auto to = from;
 				from.setX(0);
 				to.setX(w->width());
@@ -726,10 +770,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			QBrush brush(m_impl->m_displaySetting.bgGridColor);
 			painter->setBrush(brush);
 
-			double x = std::floor(mins.x() / xScale) * xScale;
-			while (x < maxs.x()) {
-				double y = std::floor(mins.y() / yScale) * yScale;
-				while (y < maxs.y()) {
+			double x = std::floor(min_x / xScale) * xScale;
+			while (x < max_x) {
+				double y = std::floor(min_y / yScale) * yScale;
+				while (y < max_y) {
 					auto from = matrix.map(QPointF(x, y));
 					from.setX(from.x() - 1);
 					from.setY(from.y() - 1);
@@ -741,10 +785,10 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 				}
 				x += xScale;
 			}
-			x = std::floor(mins.x() / xSubScale) * xSubScale;
-			while (x < maxs.x()) {
-				double y = std::floor(mins.y() / ySubScale) * ySubScale;
-				while (y < maxs.y()) {
+			x = std::floor(min_x / xSubScale) * xSubScale;
+			while (x < max_x) {
+				double y = std::floor(min_y / ySubScale) * ySubScale;
+				while (y < max_y) {
 					auto p = matrix.map(QPointF(x, y));
 					if (p.y() < ymax) {
 						painter->drawPoint(p);
@@ -771,9 +815,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 		painter->drawLine(from, to);
 
 		// draw X scales
-		double x = std::floor(mins.x() / xScale) * xScale;
-		while (x < maxs.x()) {
-			from = matrix.map(QPointF(x, maxs.y()));
+		double x = std::floor(min_x / xScale) * xScale;
+		while (x < max_x) {
+			from = matrix.map(QPointF(x, max_y));
 			from.setY(yoffset);
 			to = from;
 			to.setY(yoffset + mainruler);
@@ -792,9 +836,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			x += xScale;
 		}
 		// draw X sub scales.
-		x = std::floor(mins.x() / xSubScale) * xSubScale;
-		while (x < maxs.x()) {
-			from = matrix.map(QPointF(x, maxs.y()));
+		x = std::floor(min_x / xSubScale) * xSubScale;
+		while (x < max_x) {
+			from = matrix.map(QPointF(x, max_y));
 			from.setY(from.y() + yoffset);
 			to = from;
 			to.setY(to.y() + yoffset + subruler);
@@ -808,9 +852,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 		painter->drawLine(from, to);
 
 		// draw Y scales
-		double y = std::floor(mins.y() / yScale) * yScale;
-		while (y < maxs.y()) {
-			from = matrix.map(QPointF(mins.x(), y));
+		double y = std::floor(min_y / yScale) * yScale;
+		while (y < max_y) {
+			from = matrix.map(QPointF(min_x, y));
 			from.setX(xoffset);
 			to.setX(xoffset + mainruler);
 			to.setY(from.y());
@@ -833,9 +877,9 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 			y += yScale;
 		}
 		// draw Y sub scales.
-		y = std::floor(mins.y() / ySubScale) * ySubScale;
-		while (y < maxs.y()) {
-			from = matrix.map(QPointF(mins.x(), y));
+		y = std::floor(min_y / ySubScale) * ySubScale;
+		while (y < max_y) {
+			from = matrix.map(QPointF(min_x, y));
 			from.setX(xoffset);
 			to.setX(xoffset + subruler);
 			to.setY(from.y());
@@ -868,25 +912,41 @@ void AbstractCrosssectionWindow::GraphicsView::drawScales(QPainter* painter, con
 
 		if (m_impl->m_controller->targetDirection() == Direction::I) {
 			// left bank
-			label = tr("Left Bank Side");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Right Bank Side");
+			} else {
+				label = tr("Left Bank Side");
+			}
 			auto rect = metrics.boundingRect(label);
 			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
 
 			// right bank side
-			label = tr("Right Bank Side");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Left Bank Side");
+			} else {
+				label = tr("Right Bank Side");
+			}
 			rect = metrics.boundingRect(label);
 			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
 		} else {
 			// Downstream side
-			label = tr("Downstream");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Upstream");
+			} else {
+				label = tr("Downstream");
+			}
 			auto rect = metrics.boundingRect(label);
 			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
 
 			// Upstream
-			label = tr("Upstream");
+			if (m_impl->m_displaySetting.reverseXDirection) {
+				label = tr("Downstream");
+			} else {
+				label = tr("Upstream");
+			}
 			rect = metrics.boundingRect(label);
 			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
 			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
@@ -1131,8 +1191,14 @@ void AbstractCrosssectionWindow::GraphicsView::pushElevationEditCommand()
 
 QMatrix AbstractCrosssectionWindow::GraphicsView::matrix(int chartHeight) const
 {
+	int xReverse = 1;
+
+	if (m_impl->m_displaySetting.reverseXDirection ^ m_impl->m_displaySetting.distanceIsFromLeftOrDownstream) {
+		xReverse = -1;
+	}
+
 	QMatrix translate1(1, 0, 0, 1, - m_center.x(), - m_center.y());
-	QMatrix scale(- m_scaleX, 0, 0, - m_scaleY, 0, 0);
+	QMatrix scale(- m_scaleX * xReverse, 0, 0, - m_scaleY, 0, 0);
 	QMatrix translate2(1, 0, 0, 1, viewport()->width() * 0.5, chartHeight * 0.5);
 
 	return translate1 * scale * translate2;

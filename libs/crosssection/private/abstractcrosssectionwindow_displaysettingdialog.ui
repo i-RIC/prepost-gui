@@ -6,14 +6,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>453</height>
+    <width>459</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Grid Crosssection Window Display Setting</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <widget class="QGroupBox" name="xAxisGroupBox">
+     <property name="title">
+      <string>X axis</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QRadioButton" name="distanceFromLeftRadioButton">
+        <property name="text">
+         <string>Distance from left bank</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="distanceFromRightRadioButton">
+        <property name="text">
+         <string>Distance from right bank</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>122</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>

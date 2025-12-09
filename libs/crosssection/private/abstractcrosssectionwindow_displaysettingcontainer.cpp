@@ -2,18 +2,21 @@
 #include <guibase/widget/realnumbereditwidget.h>
 
 AbstractCrosssectionWindow::DisplaySettingContainer::DisplaySettingContainer() :
-	CompositeContainer({&gridVisible, &scaleVisible, &markersVisible, &aspectRatioVisible,
-										 &enableAutoRescale, &fixAspectRatio, &fixRegion,
-										 &bgGridType, &bgGridColor,
-										 &bgHScaleAuto, &bgHScaleInterval, &bgHSubScaleInterval,
-										 &bgVScaleAuto, &bgVScaleInterval, &bgVSubScaleInterval,
-										 &aspectRatioColor, &aspectRatioFont,
-										 &distanceMarkersColor, &distanceMarkersFont,
-										 &lbBankMarkersColor, &lbBankMarkersFont}),
+	CompositeContainer({&distanceIsFromLeftOrDownstream,
+					   &gridVisible, &scaleVisible, &markersVisible, &aspectRatioVisible, &reverseXDirection,
+					   &enableAutoRescale, &fixAspectRatio, &fixRegion,
+					   &bgGridType, &bgGridColor,
+					   &bgHScaleAuto, &bgHScaleInterval, &bgHSubScaleInterval,
+					   &bgVScaleAuto, &bgVScaleInterval, &bgVSubScaleInterval,
+					   &aspectRatioColor, &aspectRatioFont,
+					   &distanceMarkersColor, &distanceMarkersFont,
+					   &lbBankMarkersColor, &lbBankMarkersFont}),
+	distanceIsFromLeftOrDownstream {"distanceIsFromRightOrDownstream", false},
 	gridVisible {"gridVisible", true},
 	scaleVisible {"scaleVisible", true},
 	markersVisible {"markersVisible", true},
 	aspectRatioVisible {"aspectRatioVisible", true},
+	reverseXDirection {"reverseXDirection", false},
 	enableAutoRescale {"enableAutoRescale", true},
 	fixAspectRatio {"fixAspectRatio", false},
 	fixRegion {"fixRegion", false},
@@ -56,6 +59,7 @@ void AbstractCrosssectionWindow::DisplaySettingContainer::applyFromWidgets(Abstr
 	scaleVisible = impl->m_scaleDisplayCheckBox->isChecked();
 	markersVisible = impl->m_markersDisplayCheckBox->isChecked();
 	aspectRatioVisible = impl->m_aspectRatioDisplayCheckBox->isChecked();
+	reverseXDirection = impl->m_reverseXDirectionCheckBox->isChecked();
 
 	enableAutoRescale = impl->m_autoRescaleCheckBox->isChecked();
 	fixAspectRatio = impl->m_fixAspectRatioCheckBox->isChecked();
@@ -68,6 +72,7 @@ void AbstractCrosssectionWindow::DisplaySettingContainer::applyToWidgets(Abstrac
 	impl->m_scaleDisplayCheckBox->setChecked(scaleVisible);
 	impl->m_markersDisplayCheckBox->setChecked(markersVisible);
 	impl->m_aspectRatioDisplayCheckBox->setChecked(aspectRatioVisible);
+	impl->m_reverseXDirectionCheckBox->setChecked(reverseXDirection);
 
 	impl->m_autoRescaleCheckBox->setChecked(enableAutoRescale);
 	impl->m_fixAspectRatioCheckBox->setChecked(fixAspectRatio);

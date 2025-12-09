@@ -33,6 +33,9 @@ public:
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 	std::vector<double> setupNodePositions() const;
+	std::vector<double> setupNodePositions(const bool& fromLeftOrDownstream) const;
+	std::vector<double> setupNodePositionsFromRightOrUpstream() const;
+	std::vector<double> setupNodePositionsFromLeftOrDownstream() const;
 	void setGridDataItem(PreProcessorGridDataItemI* item);
 
 	QRect visualRect(const QModelIndex&) const override;

@@ -24,6 +24,14 @@ AbstractCrosssectionWindow::DisplaySettingDialog::~DisplaySettingDialog()
 	delete ui;
 }
 
+void AbstractCrosssectionWindow::DisplaySettingDialog::setControlTargetIsJ(bool isJ)
+{
+	if (! isJ) {return;}
+
+	ui->distanceFromRightRadioButton->setText(tr("Distance from Upstream"));
+	ui->distanceFromLeftRadioButton->setText(tr("Distance from Downstream"));
+}
+
 QUndoCommand* AbstractCrosssectionWindow::DisplaySettingDialog::createModifyCommand(bool apply)
 {
 	return new ValueModifyCommmand<DisplaySettingContainer> (iRIC::generateCommandId("AbstractCrosssectionWindow::DisplaySettingDialog::Modify"), apply, setting(), &m_window->impl->m_displaySetting);
@@ -60,6 +68,8 @@ AbstractCrosssectionWindow::DisplaySettingContainer AbstractCrosssectionWindow::
 {
 	DisplaySettingContainer ret = m_window->impl->m_displaySetting;
 
+	ret.distanceIsFromLeftOrDownstream = ui->distanceFromLeftRadioButton->isChecked();
+
 	if (ui->bgLinesRadioButton->isChecked()) {
 		ret.bgGridType = DisplaySettingContainer::BackgroundGridType::Lines;
 	} else {
@@ -89,6 +99,12 @@ AbstractCrosssectionWindow::DisplaySettingContainer AbstractCrosssectionWindow::
 
 void AbstractCrosssectionWindow::DisplaySettingDialog::setSetting(const DisplaySettingContainer& setting)
 {
+	if (setting.distanceIsFromLeftOrDownstream) {
+		ui->distanceFromLeftRadioButton->setChecked(true);
+	} else {
+		ui->distanceFromRightRadioButton->setChecked(true);
+	}
+
 	if (setting.bgGridType == DisplaySettingContainer::BackgroundGridType::Lines) {
 		ui->bgLinesRadioButton->setChecked(true);
 	} else {

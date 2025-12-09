@@ -49,6 +49,7 @@ public:
 	QCheckBox* m_scaleDisplayCheckBox;
 	QCheckBox* m_markersDisplayCheckBox;
 	QCheckBox* m_aspectRatioDisplayCheckBox;
+	QCheckBox* m_reverseXDirectionCheckBox;
 	QPushButton* m_displaySettingButton;
 
 	// Display Toolbar
