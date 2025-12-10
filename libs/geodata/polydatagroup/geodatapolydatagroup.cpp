@@ -644,6 +644,7 @@ void GeoDataPolyDataGroup::copy()
 		}
 	}
 
+	copyGroup->setDataLoaded(true);
 	copyGroup->updateVtkObjects();
 	copyGroup->updateIndex();
 	copyGroup->updateMenu();
