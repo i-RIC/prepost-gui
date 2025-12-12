@@ -414,7 +414,7 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 	case meAddVertexNotPossible:
 	case meRemoveVertexPrepare:
 	case meRemoveVertexNotPossible:
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
@@ -424,33 +424,33 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 	case meDefining:
 		// update the position of the last point.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, event->pos(), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		break;
 	case meMoveVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MovePolygonVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
+			iRICUndoStack::instance().push(new MovePolygonVertexCommand(false, m_currentPoint, event->pos(), m_selectedPolygon->selectedVertexId(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedLine->selectedVertexId(), this));
+			iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		break;
 	case meAddVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), event->pos(), this));
 		}
 		break;
 	case meTranslateDialog:
@@ -484,15 +484,15 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			}
 		case meDefining:
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			}
 			break;
 		case meTranslatePrepare:
@@ -505,7 +505,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			} else {
 				// start translating
 				m_mouseEventMode = meTranslate;
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseCursor(v);
 				// push the first translation command.
 				if (m_selectMode == smPolygon) {
@@ -517,7 +517,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			// push the first move command.
 			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new MovePolygonVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
@@ -528,9 +528,9 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), event->pos(), this));
 			}
 			break;
 		case meAddVertexNotPossible:
@@ -575,7 +575,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 
@@ -593,7 +593,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
