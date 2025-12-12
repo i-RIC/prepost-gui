@@ -40,6 +40,9 @@ void GridCreatingConditionTriangle::DefinePolygonNewPointCommand::undo()
 	if (m_keyDown) {
 		// decrease the number of points. i. e. remove the last point.
 		vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
+		if (numOfPoints == 1) {
+			m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
+		}
 		pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 		pol->GetPoints()->Modified();
 	} else {
