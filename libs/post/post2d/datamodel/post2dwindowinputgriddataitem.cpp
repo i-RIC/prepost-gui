@@ -1,4 +1,5 @@
 #include "post2dwindowinputgriddataitem.h"
+#include "post2dwindowbcgroupdataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridattributecellgroupdataitem.h"
@@ -40,11 +41,15 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 	impl->m_jEdgeGroupDataItem = new Post2dWindowGridAttributeJEdgeGroupDataItem(this);
 	impl->m_jEdgeGroupDataItem->setupChildren();
 
+	impl->m_bcGroupDataItem = new Post2dWindowBCGroupDataItem(this);
+	impl->m_bcGroupDataItem->setupChildren();
+
 	addChildItem(impl->m_gridShapeDataItem);
 	addChildItem(impl->m_nodeGroupDataItem);
 	addChildItem(impl->m_cellGroupDataItem);
 	addChildItem(impl->m_iEdgeGroupDataItem);
-	addChildItem(impl->m_jEdgeGroupDataItem);
+	addChildItem(impl->m_jEdgeGroupDataItem);	
+	addChildItem(impl->m_bcGroupDataItem);
 
 	if (impl->m_nodeGroupDataItem->childItems().size() == 0) {
 		m_standardItem->takeRow(impl->m_nodeGroupDataItem->standardItem()->row());
@@ -107,6 +112,11 @@ Post2dWindowGridAttributeIEdgeGroupDataItem* Post2dWindowInputGridDataItem::iEdg
 Post2dWindowGridAttributeJEdgeGroupDataItem* Post2dWindowInputGridDataItem::jEdgeGroupDataItem() const
 {
 	return impl->m_jEdgeGroupDataItem;
+}
+
+Post2dWindowBCGroupDataItem* Post2dWindowInputGridDataItem::bcGroupDataItem() const
+{
+	return impl->m_bcGroupDataItem;
 }
 
 void Post2dWindowInputGridDataItem::handleGridChange()

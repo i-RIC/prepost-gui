@@ -8,7 +8,8 @@ Post2dWindowInputGridDataItem::Impl::Impl() :
 	m_nodeGroupDataItem {nullptr},
 	m_cellGroupDataItem {nullptr},
 	m_iEdgeGroupDataItem {nullptr},
-	m_jEdgeGroupDataItem {nullptr}
+	m_jEdgeGroupDataItem {nullptr},
+	m_bcGroupDataItem {nullptr}
 {}
 
 Post2dWindowInputGridDataItem::Impl::~Impl()
