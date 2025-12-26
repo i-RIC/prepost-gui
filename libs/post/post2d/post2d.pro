@@ -151,6 +151,8 @@ win32 {
 
 # Input
 HEADERS += post2d_global.h \
+           datamodel/post2dwindowbcdataitem.h \
+           datamodel/private/post2dwindowbcdataitem_impl.h \
            datamodel/post2dwindowbcgroupdataitem.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
@@ -315,6 +317,7 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.ui
 SOURCES += post2dgridregionselectdialog.cpp \
+           datamodel/post2dwindowbcdataitem.cpp \
            datamodel/post2dwindowbcgroupdataitem.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
