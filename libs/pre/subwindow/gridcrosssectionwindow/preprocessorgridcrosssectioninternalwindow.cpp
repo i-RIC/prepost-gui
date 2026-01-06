@@ -54,6 +54,7 @@ void PreProcessorGridCrosssectionInternalWindow::updateEdgeFocus()
 			i = -1;
 			j = c->targetIndex();
 		}
+		if (i == -1 && j == -1) {return;}
 
 		m_item->iricMainWindow()->setEdgeFocus(zoneName, i, j);
 	} else if (mode() == Mode::UnstructuredEdge) {
