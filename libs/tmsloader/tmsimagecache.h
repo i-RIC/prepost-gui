@@ -10,16 +10,23 @@
 
 class QString;
 
+class TmsImageCacheItem;
+
 class TmsImageCache
 {
 public:
 	TmsImageCache();
 	~TmsImageCache();
 
+	bool lonLat() const;
+	void setLonLat(bool lonLat);
+
 	void addRequests(const QString& urlPattern, int zoomLevel, int xMin, int xMax, int yMin, int yMax, int maxZoomLevel);
 	bool exists(const QString& url) const;
-	QPixmap* load(const QString& url);
+	TmsImageCacheItem* load(const QString& url);
 	void garbageCollect();
+
+	static QString escapedUrl(const QString& url);
 
 private:
 	QString fileName(const QString& url) const;
@@ -33,6 +40,7 @@ private:
 	class Entry;
 	std::unordered_map<QString, Entry*> m_entries;
 	std::unordered_map<QString, Entry*> m_inMemoryEntries;
+	bool m_lonLat;
 
 	class NetworkAccessManager;
 	NetworkAccessManager* m_manager;

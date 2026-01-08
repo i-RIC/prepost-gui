@@ -1,15 +1,25 @@
 #include "tmsimagecache.h"
+#include "tmsimagecacheitem.h"
 #include "tmsrequesthandler.h"
 #include "../tmsutil.h"
 
 #include <cs/webmercatorutil.h>
 #include <misc/qttool.h>
+#include <misc/stringtool.h>
 
 #include <QFile>
 #include <QTextStream>
+#include <QMatrix4x4>
 #include <QMutexLocker>
 #include <QNetworkReply>
 #include <QPainter>
+
+#include <QElapsedTimer>
+#include <QFile>
+#include <QTextStream>
+
+#include <gdal_priv.h>
+#include <gdal_utils.h>
 
 using namespace tmsloader;
 
@@ -17,7 +27,7 @@ namespace {
 
 const int TIMER_MSEC_SHORT = 10;
 const int TIMER_MSEC_LONG = 200;
-const int TIMER_MSEC_LONLAT = 1000;
+const int TIMER_MSEC_LONLAT = 200;
 
 } // namespace
 
@@ -37,6 +47,8 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 {
 	// To see the view for debugging,, comment out the following line.
 	// m_webView->move(0, 0);
+
+	imageCache->setLonLat(lonLat);
 }
 
 TmsRequestHandler::~TmsRequestHandler()
@@ -104,81 +116,154 @@ void TmsRequestHandler::setup()
 
 void TmsRequestHandler::handleLoaded()
 {
+	static int index = 0;
+	++index;
+
 	if (m_terminating) {return;}
 
-	bool emitFlag = true;
-	QImage image(m_size, QImage::Format_ARGB32);
-
-	QPainter painter;
-	painter.begin(&image);
-	painter.fillRect(0, 0, image.width(), image.height(), Qt::lightGray);
-
-	double x, y;
-	WebMercatorUtil::project(m_center.x(), m_center.y(), &x, &y);
-	int s = 1;
-	for (int i = 0; i < m_zoomLevel; ++i) {
-		s *= 2;
-	}
-
-	long long scaledX = static_cast<long long> (x * s);
-	long long scaledY = static_cast<long long> (y * s);
+	bool allImagesExists = true;
 
 	auto zl = m_zoomLevel;
 	auto maxZl = m_options.at("maxNativeZoom").toInt();
 	if (zl > maxZl) {zl = maxZl;}
 
-	int s2 = 1;
-	if (m_zoomLevel > maxZl) {
-		for (int i = 0; i < (m_zoomLevel - maxZl); ++i) {
-			s2 *= 2;
+	if (m_lonLat) {
+		double x, y;
+		WebMercatorUtil::project(m_center.x(), m_center.y(), &x, &y);
+		auto zl = m_zoomLevel;
+		auto maxZl = m_options.at("maxNativeZoom").toInt();
+		if (zl > maxZl) {zl = maxZl;}
+
+		int s = 1;
+		for (int i = 0; i < m_zoomLevel; ++i) {
+			s *= 2;
 		}
-	}
 
-	bool allImagesExists = true;
-	QString url_template = m_args.at("%URL%");
-	for (int tileX = m_xMin; tileX <= m_xMax; ++tileX) {
-		for (int tileY = m_yMin; tileY <= m_yMax; ++tileY) {
-			QString url = url_template;
-			url.replace("{z}", QString::number(zl));
-			url.replace("{x}", QString::number(tileX));
-			url.replace("{y}", QString::number(tileY));
+		double lonMin, lonMax, latMin, latMax;
+		WebMercatorUtil::unproject(
+					x - m_size.width() / 2.0 / s, y + m_size.height() / 2.0 / s,
+					&lonMin, &latMin);
 
-			// auto httpUrl = url;
-			// httpUrl.replace("https", "http");
+		WebMercatorUtil::unproject(
+					x + m_size.width() / 2.0 / s, y - m_size.height() / 2.0 / s,
+					&lonMax, &latMax);
 
-			// QUrl qUrl(httpUrl);
-			QUrl qUrl(url);
+		QMatrix4x4 matrix;
+		double scale = m_size.width() / (lonMax - lonMin);
+		matrix.scale(scale, scale);
+		matrix.translate(-lonMin, +latMax);
+		int width = m_size.width();
+		int height = static_cast<int> ((latMax - latMin) / (lonMax - lonMin) * width);
 
-			auto pixmap = m_imageCache->load(qUrl.toString());
-			if (pixmap == nullptr) {
-				allImagesExists = false;
-				continue;
+		QElapsedTimer timer;
+		timer.start();
+
+		QImage image(QSize(width, height), QImage::Format_RGB888);
+
+		QPainter painter;
+		painter.begin(&image);
+		painter.fillRect(0, 0, image.width(), image.height(), Qt::lightGray);
+
+		QString url_template = m_args.at("%URL%");
+		for (int tileX = m_xMin; tileX <= m_xMax; ++tileX) {
+			for (int tileY = m_yMin; tileY <= m_yMax; ++tileY) {
+				QString url = url_template;
+				url.replace("{z}", QString::number(zl));
+				url.replace("{x}", QString::number(tileX));
+				url.replace("{y}", QString::number(tileY));
+
+				// auto httpUrl = url;
+				// httpUrl.replace("https", "http");
+
+				// QUrl qUrl(httpUrl);
+				QUrl qUrl(url);
+
+				auto item = m_imageCache->load(qUrl.toString());
+				if (item == nullptr) {
+					allImagesExists = false;
+					continue;
+				}
+				const auto& pixmap = item->wgs84();
+
+				QRectF pixmapRect = matrix.mapRect(item->wgs84Rect());
+				painter.drawPixmap(pixmapRect, pixmap, pixmap.rect());
 			}
-
-			QPoint point;
-			point.setX(tileX * 256.0 * s2 - scaledX + m_size.width() * 0.5);
-			point.setY(tileY * 256.0 * s2 - scaledY + m_size.height() * 0.5);
-			QRect pixmapRect;
-			pixmapRect.setLeft(point.x());
-			pixmapRect.setTop(point.y());
-			pixmapRect.setRight(point.x() + pixmap->width() * s2 - 1);
-			pixmapRect.setBottom(point.y() + pixmap->height() * s2 - 1);
-			painter.drawPixmap(pixmapRect, *pixmap, pixmap->rect());
 		}
-	}
-	painter.end();
+		painter.end();
 
-	m_imageMutex.lock();
-	m_image = image;
-	m_imageMutex.unlock();
+		m_imageMutex.lock();
+		m_image = image;
+		m_imageMutex.unlock();
 
-	if (emitFlag) {
+		emit imageUpdated();
+	} else {
+		int s2 = 1;
+		if (m_zoomLevel > maxZl) {
+			for (int i = 0; i < (m_zoomLevel - maxZl); ++i) {
+				s2 *= 2;
+			}
+		}
+
+		QImage image(m_size, QImage::Format_ARGB32);
+
+		QPainter painter;
+		painter.begin(&image);
+		painter.fillRect(0, 0, image.width(), image.height(), Qt::lightGray);
+
+		double x, y;
+		WebMercatorUtil::project(m_center.x(), m_center.y(), &x, &y);
+		int s = 1;
+		for (int i = 0; i < m_zoomLevel; ++i) {
+			s *= 2;
+		}
+
+		long long scaledX = static_cast<long long> (x * s);
+		long long scaledY = static_cast<long long> (y * s);
+
+		QString url_template = m_args.at("%URL%");
+		for (int tileX = m_xMin; tileX <= m_xMax; ++tileX) {
+			for (int tileY = m_yMin; tileY <= m_yMax; ++tileY) {
+				QString url = url_template;
+				url.replace("{z}", QString::number(zl));
+				url.replace("{x}", QString::number(tileX));
+				url.replace("{y}", QString::number(tileY));
+
+				// auto httpUrl = url;
+				// httpUrl.replace("https", "http");
+
+				// QUrl qUrl(httpUrl);
+				QUrl qUrl(url);
+
+				auto item = m_imageCache->load(qUrl.toString());
+				if (item == nullptr) {
+					allImagesExists = false;
+					continue;
+				}
+				const auto& pixmap = item->original();
+
+				QPoint point;
+				point.setX(tileX * 256.0 * s2 - scaledX + m_size.width() * 0.5);
+				point.setY(tileY * 256.0 * s2 - scaledY + m_size.height() * 0.5);
+				QRect pixmapRect;
+				pixmapRect.setLeft(point.x());
+				pixmapRect.setTop(point.y());
+				pixmapRect.setRight(point.x() + pixmap.width() * s2 - 1);
+				pixmapRect.setBottom(point.y() + pixmap.height() * s2 - 1);
+				painter.drawPixmap(pixmapRect, pixmap, pixmap.rect());
+			}
+		}
+		painter.end();
+
+		m_imageMutex.lock();
+		m_image = image;
+		m_imageMutex.unlock();
+
 		emit imageUpdated();
 	}
 
 	-- m_requestsLeft;
 
-	if (! allImagesExists && emitFlag && m_requestsLeft > 0) {
+	if (! allImagesExists && m_requestsLeft > 0) {
 		if (m_lonLat) {
 			m_timer.singleShot(TIMER_MSEC_LONLAT, this, &TmsRequestHandler::handleLoaded);
 		} else {

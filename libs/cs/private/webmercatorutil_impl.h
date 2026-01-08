@@ -7,7 +7,7 @@ class WebMercatorUtil::Impl
 {
 public:
 	void init(int zoomlevel);
-	void project_plxel(double lon, double lat, double* x, double* y);
+	void project_pixel(double lon, double lat, double* x, double* y);
 	void unproject_pixel(double x, double y, double* lon, double* lat);
 
 	double Bc;

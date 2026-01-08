@@ -1,7 +1,9 @@
+#include "../tmsimagecacheitem.h"
 #include "tmsimagecache_entry.h"
 #include "tmsimagecache_garbagecollectthread.h"
 
 #include <QMutexLocker>
+#include <QDataStream>
 
 #include <map>
 
@@ -61,11 +63,16 @@ void TmsImageCache::GarbageCollectThread::run()
 				m_cache->m_entriesMutex.unlock();
 
 				auto fname = m_cache->fileName(entries_it->first);
-				entries_it->second->pixmap->save(fname, "png");
+				QFile file(fname);
+				file.open(QFile::WriteOnly);
+				QDataStream stream(&file);
+				const auto& item = entries_it->second->item;
+				stream << item->original() << item->wgs84() << item->wgs84Rect();
+				file.close();
 
 				m_cache->m_entriesMutex.lock();
-				delete entries_it->second->pixmap;
-				entries_it->second->pixmap = nullptr;
+				delete entries_it->second->item;
+				entries_it->second->item = nullptr;
 				entries_it->second->status = Entry::Status::CacheInFile;
 				m_cache->m_inMemoryEntries.erase(entries_it);
 				m_cache->m_entriesMutex.unlock();

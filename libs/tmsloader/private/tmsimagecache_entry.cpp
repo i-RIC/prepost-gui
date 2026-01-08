@@ -1,18 +1,19 @@
 #include "tmsimagecache_entry.h"
 
 #include <QNetworkReply>
-#include <QPixmap>
+
+#include "../tmsimagecacheitem.h"
 
 TmsImageCache::Entry::Entry() :
 	status {Status::None},
 	url {},
 	lastAccess {0},
-	pixmap {nullptr},
+	item {nullptr},
 	reply {nullptr}
 {}
 
 TmsImageCache::Entry::~Entry()
 {
-	delete pixmap;
+	delete item;
 	delete reply;
 }

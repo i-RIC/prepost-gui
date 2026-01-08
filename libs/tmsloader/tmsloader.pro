@@ -33,6 +33,19 @@ unix {
 }
 LIBS += -liricMisc
 
+######################
+# External libraries #
+######################
+
+#gdal
+
+win32 {
+        LIBS += -lgdal_i
+}
+unix {
+        LIBS += -lgdal
+}
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
@@ -40,6 +53,7 @@ win32 {
 
 # Input
 HEADERS += tmsimagecache.h \
+           tmsimagecacheitem.h \
            tmsloader.h \
            tmsloader_api.h \
            tmsloadertester.h \
@@ -55,6 +69,7 @@ HEADERS += tmsimagecache.h \
            private/tmsrequesthandlerxyz.h \
            private/tmsrequestxyz_impl.h
 SOURCES += tmsimagecache.cpp \
+           tmsimagecacheitem.cpp \
            tmsloader.cpp \
            tmsloadertester.cpp \
            tmsrequest.cpp \

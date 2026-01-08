@@ -25,7 +25,7 @@ public:
 	Status status;
 	QString url;
 	qint64 lastAccess;
-	QPixmap* pixmap;
+	TmsImageCacheItem* item;
 	QNetworkReply* reply;
 };
 
