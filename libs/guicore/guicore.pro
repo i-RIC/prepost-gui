@@ -286,6 +286,7 @@ HEADERS += guicore_global.h \
            postcontainer/v4postcalculatedresultargumenteditdialog.h \
            postcontainer/v4postcalculatedresulteditdialog.h \
            postcontainer/v4postcalculatedresultlistdialog.h \
+           postcontainer/v4postzonedatabc.h \
            postcontainer/v4postzonedatacontainer.h \
            postcontainer/v4solutiongrid.h \
            postcontainer/v4solutiongridio.h \
@@ -883,6 +884,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/v4postcalculatedresultargumenteditdialog.cpp \
            postcontainer/v4postcalculatedresulteditdialog.cpp \
            postcontainer/v4postcalculatedresultlistdialog.cpp \
+           postcontainer/v4postzonedatabc.cpp \
            postcontainer/v4postzonedatacontainer.cpp \
            postcontainer/v4solutiongrid.cpp \
            postcontainer/v4solutiongridio.cpp \
