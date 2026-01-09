@@ -11,6 +11,7 @@ public:
 	Impl();
 	~Impl();
 
+	void clearinputGridBCs();
 	void addCalculatedResultArrays();
 	void clearParticleDataAndPolyData();
 
@@ -18,6 +19,7 @@ public:
 	SolverDefinitionGridType* m_gridType;
 
 	v4InputGrid* m_inputGridData;
+	std::vector<v4PostZoneDataBC*> m_inputGridBCs;
 	v4SolutionGrid* m_gridData;
 	v4SolutionGrid* m_particleData;
 	std::map<std::string, v4SolutionGrid*> m_particleGroupMap;

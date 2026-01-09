@@ -13,8 +13,8 @@ public:
 	void setupChildren();
 
 private:
-	void doLoadFromProjectMainFile(const QDomNode& node) override {};
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override {};
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // POST2DWINDOWBCGROUPDATAITEM_H

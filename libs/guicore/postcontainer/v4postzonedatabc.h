@@ -1,6 +1,8 @@
 #ifndef V4POSTZONEDATABC_H
 #define V4POSTZONEDATABC_H
 
+#include "../guicore_global.h"
+
 #include <misc/edge.h>
 #include <misc/opacitycontainer.h>
 
@@ -19,7 +21,7 @@ namespace iRICLib {
 
 class SolverDefinitionBoundaryCondition;
 
-class v4PostZoneDataBC
+class GUICOREDLL_EXPORT v4PostZoneDataBC
 {
 public:
 	v4PostZoneDataBC(SolverDefinitionBoundaryCondition* condition, const iRICLib::H5CgnsZone& zone, const iRICLib::H5CgnsBc& bc);

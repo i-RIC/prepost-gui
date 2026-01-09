@@ -13,6 +13,7 @@ class v4PostCalculatedResult;
 class PreProcessorGridTypeDataItemI;
 class SolverDefinitionGridType;
 class v4SolutionGrid;
+class v4PostZoneDataBC;
 
 class GUICOREDLL_EXPORT v4PostZoneDataContainer : public PostDataContainer
 {
@@ -25,6 +26,7 @@ public:
 	SolverDefinitionGridType* gridType() const;
 
 	v4InputGrid* inputGridData() const;
+	const std::vector<v4PostZoneDataBC*>& inputGridBCs() const;
 
 	v4SolutionGrid* gridData() const;
 

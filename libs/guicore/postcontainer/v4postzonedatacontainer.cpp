@@ -7,15 +7,18 @@
 #include "../pre/gridcond/base/gridattributedimensionscontainer.h"
 #include "../pre/base/preprocessorgridtypedataitemi.h"
 #include "../pre/base/preprocessorgridandgridcreatingconditiondataitemi.h"
+#include "../solverdef/solverdefinitionboundarycondition.h"
 #include "v4solutiongrid.h"
 #include "v4solutiongridio.h"
 #include "v4postcalculatedresult.h"
+#include "v4postzonedatabc.h"
 #include "v4postzonedatacontainer.h"
 #include "postsolutioninfo.h"
 #include "private/v4postzonedatacontainer_impl.h"
 
 #include <h5cgnsbase.h>
 #include <h5cgnszone.h>
+#include <h5cgnszonebc.h>
 #include <iriclib_errorcodes.h>
 
 v4PostZoneDataContainer::v4PostZoneDataContainer(const std::string& zoneName, SolverDefinitionGridType* gridType, PostSolutionInfo* parent) :
@@ -50,6 +53,11 @@ SolverDefinitionGridType* v4PostZoneDataContainer::gridType() const
 v4InputGrid* v4PostZoneDataContainer::inputGridData() const
 {
 	return impl->m_inputGridData;
+}
+
+const std::vector<v4PostZoneDataBC*>& v4PostZoneDataContainer::inputGridBCs() const
+{
+	return impl->m_inputGridBCs;
 }
 
 v4SolutionGrid* v4PostZoneDataContainer::gridData() const
@@ -119,6 +127,18 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProc
 		}
 
 		impl->m_inputGridData->setGridDataItem(gridDataItem);
+		
+		auto zoneBc = zone->zoneBc();
+		
+		impl->clearinputGridBCs();
+		for (auto bcType : gtItem->gridType()->boundaryConditions()) {
+			int count = zoneBc->bcCount(bcType->name());
+			for (int i = 1; i <= count; ++i) {
+				auto bc = zoneBc->bc(bcType->name(), i);
+				auto inputGridBC = new v4PostZoneDataBC(bcType, *zone, *bc);
+				impl->m_inputGridBCs.push_back(inputGridBC);
+			}
+		}
 	}
 
 	if (impl->m_gridData == nullptr) {

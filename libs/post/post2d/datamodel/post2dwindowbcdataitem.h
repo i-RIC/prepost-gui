@@ -17,8 +17,8 @@ public:
 
 private:
 
-	void doLoadFromProjectMainFile(const QDomNode& node) override {};
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override {};
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	class Impl;
 	Impl* impl;

@@ -31,3 +31,13 @@ Post2dWindowBCDataItem::~Post2dWindowBCDataItem()
 {
 	delete impl;
 }
+
+void Post2dWindowBCDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+
+}
+
+void Post2dWindowBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+
+}

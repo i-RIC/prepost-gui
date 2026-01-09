@@ -1,6 +1,7 @@
 #include "../../grid/v4grid.h"
 #include "../../pre/grid/v4inputgrid.h"
 #include "../v4postcalculatedresult.h"
+#include "../v4postzonedatabc.h"
 #include "../v4solutiongrid.h"
 #include "v4postzonedatacontainer_impl.h"
 
@@ -32,11 +33,20 @@ v4PostZoneDataContainer::Impl::~Impl()
 	delete m_inputGridData;
 	delete m_gridData;
 
+	clearinputGridBCs();
 	clearParticleDataAndPolyData();
 
 	for (auto result : m_calculatedResults) {
 		delete result;
 	}
+}
+
+void v4PostZoneDataContainer::Impl::clearinputGridBCs()
+{
+	for (auto bc : m_inputGridBCs) {
+		delete bc;
+	}
+	m_inputGridBCs.clear();
 }
 
 void v4PostZoneDataContainer::Impl::addCalculatedResultArrays()
