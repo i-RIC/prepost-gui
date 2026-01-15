@@ -10,6 +10,7 @@
 #include <QColor>
 
 #include <vtkIdList.h>
+#include <hdf5.h>
 
 #include <unordered_set>
 #include <string>

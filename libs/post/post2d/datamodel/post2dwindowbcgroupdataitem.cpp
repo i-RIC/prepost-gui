@@ -22,8 +22,8 @@ Post2dWindowBCGroupDataItem::Post2dWindowBCGroupDataItem(Post2dWindowDataItem* p
 
 	auto inputGridBCs = dynamic_cast<Post2dWindowInputGridDataItem*>(parent)->zoneDataItem()->v4DataContainer()->inputGridBCs();
 
-	for (const auto inputGridBc : inputGridBCs) {
-		auto item = new Post2dWindowBCDataItem(projectData()->solverDefinition(), inputGridBc->condition(), inputGridBc->caption().c_str(), this);
+	for (const auto inputGridBC : inputGridBCs) {
+		auto item = new Post2dWindowBCDataItem(projectData()->solverDefinition(), inputGridBC->condition(), inputGridBC, this);
 		m_childItems.push_back(item);
 	}
 }
