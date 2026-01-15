@@ -154,6 +154,7 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowbcdataitem.h \
            datamodel/private/post2dwindowbcdataitem_impl.h \
            datamodel/post2dwindowbcgroupdataitem.h \
+           datamodel/private/post2dwindowbcdataitem_setting.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -319,6 +320,7 @@ FORMS += post2dgridregionselectdialog.ui \
 SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowbcdataitem.cpp \
            datamodel/post2dwindowbcgroupdataitem.cpp \
+           datamodel/private/post2dwindowbcdataitem_setting.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \

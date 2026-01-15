@@ -26,6 +26,8 @@ private:
 
 	class Impl;
 	Impl* impl;
+
+	class Setting;
 };
 
 #endif // POST2DWINDOWBCDATAITEM_H
