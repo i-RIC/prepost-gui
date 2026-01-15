@@ -28,6 +28,7 @@ private:
 	Impl* impl;
 
 	class Setting;
+	class SettingEditWidget;
 };
 
 #endif // POST2DWINDOWBCDATAITEM_H
