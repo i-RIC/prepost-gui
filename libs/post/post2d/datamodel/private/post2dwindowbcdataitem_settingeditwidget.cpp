@@ -3,6 +3,8 @@
 #include "post2dwindowbcdataitem_settingeditwidget.h"
 #include "ui_post2dwindowbcdataitem_settingeditwidget.h"
 
+#include <guicore/postcontainer/v4postzonedatabc.h>
+#include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
@@ -12,6 +14,10 @@ Post2dWindowBCDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowBCDataI
 	ui(new Ui::Post2dWindowBCDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
+	ui->typeWidget->setText(item->impl->m_inputGridBC->condition()->caption());
+	ui->nameWidget->setText(item->impl->m_inputGridBC->caption().c_str());
+
+	setSetting(item->impl->m_setting);
 }
 
 Post2dWindowBCDataItem::SettingEditWidget::~SettingEditWidget()

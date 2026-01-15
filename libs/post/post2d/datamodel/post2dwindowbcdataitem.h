@@ -16,9 +16,12 @@ public:
 	Post2dWindowBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, v4PostZoneDataBC* inputGridBC, Post2dWindowDataItem* parent);
 	~Post2dWindowBCDataItem();
 
+	v4PostZoneDataBC* inputGridBC() const;
+
 private:
 	void setupActors();
 	void doUpdateActorSetting() override;
+	void updateNameActorSettings();
 	void updateElements();
 	
 	QDialog* propertyDialog(QWidget* parent) override;

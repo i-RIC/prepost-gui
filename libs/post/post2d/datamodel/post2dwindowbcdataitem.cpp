@@ -11,6 +11,7 @@
 #include <guicore/postcontainer/v4postzonedatabc.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/errormessage.h>
+#include <misc/stringtool.h>
 
 #include <vtkActor.h>
 #include <vtkActor2D.h>
@@ -51,13 +52,25 @@ Post2dWindowBCDataItem::Post2dWindowBCDataItem(SolverDefinition* def, SolverDefi
 	impl->m_condition = cond;
 	impl->m_inputGridBC = inputGridBC;
 
+	impl->m_setting.opacity = inputGridBC->defaultOpacity();
+	impl->m_setting.color = inputGridBC->defaultColor();
+	impl->m_setting.showName = inputGridBC->defaultShowName();
+	impl->m_setting.pointSize = inputGridBC->defaultPointSize();
+
 	setupActors();
 	updateElements();
+
+	updateVisibilityWithoutRendering();
 }
 
 Post2dWindowBCDataItem::~Post2dWindowBCDataItem()
 {
 	delete impl;
+}
+
+v4PostZoneDataBC* Post2dWindowBCDataItem::inputGridBC() const
+{
+	return impl->m_inputGridBC;
 }
 
 void Post2dWindowBCDataItem::setupActors()
@@ -98,7 +111,84 @@ void Post2dWindowBCDataItem::setupActors()
 
 void Post2dWindowBCDataItem::doUpdateActorSetting()
 {
+	auto prop = impl->m_actor->GetProperty();
 
+	prop->SetOpacity(impl->m_setting.opacity);
+	prop->SetColor(impl->m_setting.color);
+	prop->SetPointSize(impl->m_setting.pointSize);
+	prop->SetLineWidth(impl->m_setting.pointSize);
+	
+	updateNameActorSettings();
+}
+
+void Post2dWindowBCDataItem::updateNameActorSettings()
+{
+	actor2DCollection()->RemoveItem(impl->m_nameActor);
+	impl->m_nameActor->VisibilityOff();
+
+	if (!impl->m_setting.showName) { return; }
+
+	double centerv[3] = { 0, 0, 0 };
+	Post2dWindowInputGridDataItem* tmpparent = dynamic_cast<Post2dWindowInputGridDataItem*>(parent()->parent());
+	if (tmpparent->grid() == nullptr) { return; }
+	vtkPointSet* pset = tmpparent->grid()->vtkData()->data();
+	vtkPoints* points = pset->GetPoints();
+	int pnum = 0;
+	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+		for (auto index : impl->m_inputGridBC->indices()) {
+			double tmpv[3];
+			points->GetPoint(index, tmpv);
+			for (int i = 0; i < 3; ++i) {
+				centerv[i] += tmpv[i];
+			}
+			++pnum;
+		}
+	}
+	else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+		for (auto index : impl->m_inputGridBC->indices()) {
+			vtkCell* cell = pset->GetCell(index);
+			for (int i = 0; i < cell->GetNumberOfPoints(); ++i) {
+				double tmpv[3];
+				points->GetPoint(cell->GetPointId(i), tmpv);
+				for (int i = 0; i < 3; ++i) {
+					centerv[i] += tmpv[i];
+				}
+				++pnum;
+			}
+		}
+	}
+	else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+		for (const auto& e : impl->m_inputGridBC->edges()) {
+			double tmpv[3];
+			points->GetPoint(e.vertex1(), tmpv);
+			for (int i = 0; i < 3; ++i) {
+				centerv[i] += tmpv[i];
+			}
+			points->GetPoint(e.vertex2(), tmpv);
+			for (int i = 0; i < 3; ++i) {
+				centerv[i] += tmpv[i];
+			}
+			pnum += 2;
+		}
+	}
+
+	if (pnum == 0) {
+		return;
+	}
+
+	for (int i = 0; i < 3; ++i) {
+		centerv[i] /= pnum;
+	}
+	actor2DCollection()->AddItem(impl->m_nameActor);
+	vtkCoordinate* coord = impl->m_nameActor->GetPositionCoordinate();
+	coord->SetValue(centerv[0], centerv[1], centerv[2]);
+	impl->m_nameMapper->SetInput(impl->m_inputGridBC->caption().c_str());
+
+	auto tprop = impl->m_nameMapper->GetTextProperty();
+
+	QColor color = impl->m_setting.color;
+	tprop->SetColor(color.redF(), color.greenF(), color.blueF());
+	impl->m_nameMapper->Modified();
 }
 
 void Post2dWindowBCDataItem::updateElements()
@@ -116,16 +206,14 @@ void Post2dWindowBCDataItem::updateElements()
 			ca->InsertNextCell(1, &index);
 		}
 		d->SetVerts(ca);
-	}
-	else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		for (auto index : impl->m_inputGridBC->indices()) {
 			vtkCell* cell = grid->GetCell(index);
 			ca->InsertNextCell(cell->GetPointIds());
 		}
 		d->SetPolys(ca);
-	}
-	else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		vtkIdType nodes[2];
 		for (const auto& e : impl->m_inputGridBC->edges()) {
@@ -144,16 +232,17 @@ QDialog* Post2dWindowBCDataItem::propertyDialog(QWidget* parent)
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Display Setting"));
+	dialog->resize(200, 100);
 
 	return dialog;
 }
 
 void Post2dWindowBCDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-
+	impl->m_setting.load(node);
 }
 
 void Post2dWindowBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-
+	impl->m_setting.save(writer);
 }
