@@ -21,6 +21,8 @@ private:
 	void doUpdateActorSetting() override;
 	void updateElements();
 	
+	QDialog* propertyDialog(QWidget* parent) override;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 

@@ -2,9 +2,11 @@
 #include "post2dwindowdataitem.h"
 #include "post2dwindowinputgriddataitem.h"
 #include "private/post2dwindowbcdataitem_impl.h"
+#include "private/post2dwindowbcdataitem_settingeditwidget.h"
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/grid/v4grid2d.h>
 #include <guicore/postcontainer/v4postzonedatabc.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
@@ -134,6 +136,16 @@ void Post2dWindowBCDataItem::updateElements()
 		d->SetLines(ca);
 	}
 	d->Modified();
+}
+
+QDialog* Post2dWindowBCDataItem::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, parent);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Display Setting"));
+
+	return dialog;
 }
 
 void Post2dWindowBCDataItem::doLoadFromProjectMainFile(const QDomNode& node)

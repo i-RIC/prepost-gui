@@ -15,10 +15,16 @@ class Post2dWindowBCDataItem::SettingEditWidget : public ModifyCommandWidget
 	Q_OBJECT
 
 public:
-	explicit SettingEditWidget(QWidget *parent = nullptr);
+	explicit SettingEditWidget(Post2dWindowBCDataItem* item, QWidget *parent = nullptr);
 	~SettingEditWidget();
 
+	QUndoCommand* createModifyCommand(bool apply) override;
+	Setting setting();
+	void setSetting(const Setting& setting);
+
 private:
+	Post2dWindowBCDataItem* m_item;
+
 	Ui::Post2dWindowBCDataItem_SettingEditWidget *ui;
 };
 
