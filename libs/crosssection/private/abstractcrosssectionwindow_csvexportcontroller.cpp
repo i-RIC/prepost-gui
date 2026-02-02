@@ -60,7 +60,7 @@ void AbstractCrosssectionWindow::CsvExportController::save()
 		waitDialog.show();
 	}
 
-	for (int i = dialog.min(); i < dialog.max(); i += m_skipRate) {
+	for (int i = dialog.min(); i <= dialog.max(); i += m_skipRate) {
 		m_window->setTarget(m_window->targetDirection(), i);
 
 		auto fname = dir.absoluteFilePath(QString("%1%2.csv").arg(m_prefix).arg(i + 1));
