@@ -10,7 +10,12 @@ class AbstractCrosssectionWindow::GraphicsView::ElevationChartController
 public:
 	ElevationChartController(GraphicsView* view);
 
-	void paint(const std::vector<double>& nodePositions, const std::vector<QVariant>& values,
+	void paintNode(const std::vector<double>& nodePositions, const std::vector<QVariant>& values,
+										const std::vector<unsigned int>& selected,
+										GridAttributeDisplaySettingContainer* setting,
+										QMatrix& matrix, int elevationOffset, QPainter* painter);
+
+	void paintCell(const std::vector<double>& nodePositions, const std::vector<QVariant>& values,
 										const std::vector<unsigned int>& selected,
 										GridAttributeDisplaySettingContainer* setting,
 										QMatrix& matrix, int elevationOffset, QPainter* painter);

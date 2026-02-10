@@ -4,6 +4,7 @@
 #include "abstractcrosssectionwindow_edittablecontroller_delegate.h"
 #include "abstractcrosssectionwindow_impl.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
@@ -215,6 +216,80 @@ void AbstractCrosssectionWindow::EditTableController::setDataToModel(int col, co
 					for (int i = 0; i < valueCount; ++i) {
 						m_model.setData(m_model.index(i, col), QVariant::fromValue(nullptr), Qt::EditRole);
 					}
+				}
+			}
+		}
+	} else if (s.position() == GridAttributeDisplaySettingContainer::Position::IEdge) {
+		auto array = grid->vtkIEdgeData()->data()->GetCellData()->GetArray(s.attributeName().c_str());
+		if (array == nullptr) { return; }
+
+		if (impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
+			m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
+			for (int i = 0; i < valueCount - 1; ++i) {
+				auto value = array->GetTuple1(i);
+				m_model.setData(m_model.index(i + 1, col), value, Qt::EditRole);
+			}
+		} else if (impl->m_window->impl->m_mode == Mode::StructuredIJ) {
+			if (controller->targetDirection() == Direction::I) {
+				int i = controller->targetIndex();
+				if (i == -1) {return;}		
+				m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
+				for (int j = 0; j < valueCount - 1; ++j) {
+					auto value = array->GetTuple1(grid->iEdgeIndex(i, j));
+					m_model.setData(m_model.index(j + 1, col), value, Qt::EditRole);
+				}
+			} else if (controller->targetDirection() == Direction::J) {
+				int j = controller->targetIndex();
+				if (j == -1) { return; }
+				if (controller->cellSide() == Controller::CellSide::Previous) {
+					--j;
+				}
+				if (j >= 0 && j <= grid->dimensionJ() - 2) {
+					for (int i = 0; i < valueCount; ++i) {
+						auto value = array->GetTuple1(grid->iEdgeIndex(i, j));
+						m_model.setData(m_model.index(i, col), value, Qt::EditRole);
+					}
+				} else {
+					for (int i = 0; i < valueCount; ++i) {
+						m_model.setData(m_model.index(i, col), QVariant::fromValue(nullptr), Qt::EditRole);
+					}
+				}
+			}
+		}
+	} else if (s.position() == GridAttributeDisplaySettingContainer::Position::JEdge) {
+		auto array = grid->vtkJEdgeData()->data()->GetCellData()->GetArray(s.attributeName().c_str());
+		if (array == nullptr) { return; }
+
+		if (impl->m_window->impl->m_mode == Mode::UnstructuredEdge) {
+			m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
+			for (int i = 0; i < valueCount - 1; ++i) {
+				auto value = array->GetTuple1(i);
+				m_model.setData(m_model.index(i + 1, col), value, Qt::EditRole);
+			}
+		} else if (impl->m_window->impl->m_mode == Mode::StructuredIJ) {
+			if (controller->targetDirection() == Direction::I) {
+				int i = controller->targetIndex();
+				if (i == -1) { return; }
+				if (controller->cellSide() == Controller::CellSide::Previous) {
+					--i;
+				}
+				if (i >= 0 && i <= grid->dimensionI() - 2) {
+					for (int j = 0; j < valueCount; ++j) {
+						auto value = array->GetTuple1(grid->jEdgeIndex(i, j));
+						m_model.setData(m_model.index(j, col), value, Qt::EditRole);
+					}
+				} else {
+					for (int j = 0; j < valueCount; ++j) {
+						m_model.setData(m_model.index(j, col), QVariant::fromValue(nullptr), Qt::EditRole);
+					}
+				}
+			} else if (controller->targetDirection() == Direction::J) {
+				int j = controller->targetIndex();
+				if (j == -1) { return; }
+				m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
+				for (int i = 0; i < valueCount - 1; ++i) {
+					auto value = array->GetTuple1(grid->jEdgeIndex(i, j));
+					m_model.setData(m_model.index(i + 1, col), value, Qt::EditRole);
 				}
 			}
 		}

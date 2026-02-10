@@ -274,44 +274,71 @@ void AbstractCrosssectionWindow::GraphicsView::paintEvent(QPaintEvent* /*event*/
 		if (setting->mode == GridAttributeDisplaySettingContainer::Mode::AsElevation) {
 			ElevationChartController controller(this);
 			std::vector<QVariant> values;
-			for (int i = 0; i < model.rowCount(); ++i) {
-				values.push_back(model.data(model.index(i, column), Qt::EditRole));
-			}
 
 			std::vector<unsigned int> selected;
 			auto it = m_selectedIndices.find(column);
 			if (it != m_selectedIndices.end()) {
 				selected = it->second;
 			}
-			controller.paint(nodePositions, values, selected, setting, m, m_elevationOffset, &painter);
+			
+			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::IEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::I)
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::JEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::J)
+				) {
+				int startIndex = 1;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
+				controller.paintCell(nodePositions, values, selected, setting, m, m_elevationOffset, &painter);
+			} else {
+				int startIndex = 0;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
+				controller.paintNode(nodePositions, values, selected, setting, m, m_elevationOffset, &painter);
+			}
 		} else if (setting->mode == GridAttributeDisplaySettingContainer::Mode::Chart) {
 			IndependentChartController controller(this);
 			std::vector<QVariant> values;
-			int startIndex = 0;
-			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell) {
-				startIndex = 1;
-			}
-			for (int i = startIndex; i < model.rowCount(); ++i) {
-				values.push_back(model.data(model.index(i, column), Qt::EditRole));
-			}
-			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell) {
+			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::IEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::I)
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::JEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::J)
+				) {
+				int startIndex = 1;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
 				controller.paintCell(nodePositions, values, setting, independentChartRegions.at(setting), m, &painter);
 			} else {
+				int startIndex = 0;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
 				controller.paintNode(nodePositions, values, setting, independentChartRegions.at(setting), m, &painter);
 			}
 		} else if (setting->mode == GridAttributeDisplaySettingContainer::Mode::ColorMap) {
 			ColorMapController controller(this);
 			std::vector<QVariant> values;
-			int startIndex = 0;
-			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell) {
-				startIndex = 1;
-			}
-			for (int i = startIndex; i < model.rowCount(); ++i) {
-				values.push_back(model.data(model.index(i, column), Qt::EditRole));
-			}
-			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell) {
+			if (setting->position() == GridAttributeDisplaySettingContainer::Position::Cell
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::IEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::I)
+				|| (setting->position() == GridAttributeDisplaySettingContainer::Position::JEdge
+					&& m_impl->m_editTableController->impl->m_controller->targetDirection() == Direction::J)
+				) {
+				int startIndex = 1;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
 				controller.paintCell(nodePositions, values, setting, colorMapRegions.at(setting), m, &painter);
 			} else {
+				int startIndex = 0;
+				for (int i = startIndex; i < model.rowCount(); ++i) {
+					values.push_back(model.data(model.index(i, column), Qt::EditRole));
+				}
 				controller.paintNode(nodePositions, values, setting, colorMapRegions.at(setting), m, &painter);
 			}
 		}
