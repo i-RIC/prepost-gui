@@ -99,7 +99,11 @@ int PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iR
 	} else {
 		std::vector<double> buffer;
 		sol->readValueAsDouble(name, &buffer);
-		*value = buffer[m_pointIndex];
+		if (buffer.size() <= m_pointIndex) {
+			*value = 0;
+		} else {
+			*value = buffer[m_pointIndex];
+		}
 	}
 	return IRIC_NO_ERROR;
 }

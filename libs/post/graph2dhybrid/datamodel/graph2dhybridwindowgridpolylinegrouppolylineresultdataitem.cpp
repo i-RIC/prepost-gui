@@ -29,6 +29,11 @@ std::vector<QPointF> Graph2dHybridWindowGridPolyLineGroupPolyLineResultDataItem:
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	const GeoDataPolyLineGroupPolyLine *line = s.targetPolyLineGroupPolyLine();
 
+	if (line == nullptr) {
+		std::vector<QPointF> ret;
+		return ret;
+	}
+
 	auto* ls = line->getGeosLineString();
 	std::vector<QPointF> ret;
 	ret.reserve(ls->getNumPoints());

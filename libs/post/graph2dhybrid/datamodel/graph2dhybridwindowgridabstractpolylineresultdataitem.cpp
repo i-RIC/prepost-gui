@@ -152,7 +152,7 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesVertex(v
 	vtkSmartPointer<vtkCutter> cutter = vtkSmartPointer<vtkCutter>::New();
 	cutter->SetInputData(grid);
 
-	for (int idx = 0; idx < pts.size() - 1; ++idx) {
+	for (int idx = 0; idx < static_cast<int> (pts.size()) - 1; ++idx) {
 		// create plane from point[n] -> point[n+1]
 
 		double a[3] = { pts[idx].x(), pts[idx].y(), 0. };

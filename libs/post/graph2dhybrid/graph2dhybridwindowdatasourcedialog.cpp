@@ -525,7 +525,7 @@ void Graph2dHybridWindowDataSourceDialog::updatePolyLineComboBoxSelection()
 		const GeoDataPolyLine* line = m_setting.targetPolyLine();
 		n = ui->polyLineComboBox->findData(QVariant::fromValue(line));
 	}
-	Q_ASSERT(n != -1);
+	// Q_ASSERT(n != -1);
 	comboBoxSetCurrentIndexBlockingSignals(ui->polyLineComboBox, n);
 }
 

@@ -57,11 +57,13 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 		m_lines.clear();
 
 		auto line = setting.targetPolyLineGroupPolyLine();
-		auto group = line->group();
-		for (auto d : group->allData()) {
-			auto l = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (d);
-			m_lines.push_back(l);
-			ui->lineComboBox->addItem(l->name());
+		if (line != nullptr) {
+			auto group = line->group();
+			for (auto d : group->allData()) {
+				auto l = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (d);
+				m_lines.push_back(l);
+				ui->lineComboBox->addItem(l->name());
+			}
 		}
 	}
 
