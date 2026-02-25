@@ -4,6 +4,7 @@
 #include "../../grid/v4structured3dgrid.h"
 #include "../../grid/v4unstructured2dgrid.h"
 #include "../../project/projectdata.h"
+#include "../../solverdef/solverdefinitiongridoutput.h"
 #include "../../solverdef/solverdefinitiongridtype.h"
 #include "../postsolutioninfo.h"
 #include "../v4solutiongrid.h"
@@ -26,16 +27,29 @@
 
 namespace {
 
-void outputHeaders(const QString& name, int comps, int *dim, QTextStream& stream)
+void outputHeaders(SolverDefinitionGridOutput::Position pos, const QString& name, int comps, int *dim, QTextStream& stream)
 {
+	QString prefix = "";
+	if (pos == SolverDefinitionGridOutput::Position::Node) {
+		prefix = "N_";
+	} else if (pos == SolverDefinitionGridOutput::Position::CellCenter) {
+		prefix = "C_";
+	} else if (pos == SolverDefinitionGridOutput::Position::EdgeI) {
+		prefix = "I_";
+	} else if (pos == SolverDefinitionGridOutput::Position::EdgeJ) {
+		prefix = "J_";
+	} else if (pos == SolverDefinitionGridOutput::Position::EdgeK) {
+		prefix = "K_";
+	}
+
 	if (comps == 1){
-		stream << "," << name;
+		stream << "," << prefix << name;
 	} else if (comps == 2){
-		stream << "," << name << "X," << name << "Y";
+		stream << "," << prefix << name << "X," << prefix << name << "Y";
 	} else if (comps == 3){
-		stream << "," << name << "X," << name << "Y";
+		stream << "," << prefix << name << "X," << prefix << name << "Y";
 		if (*(dim + 2) != 1){
-			stream << "," << name << "Z";
+			stream << "," << prefix << name << "Z";
 		}
 	}
 }
@@ -61,22 +75,22 @@ void exportStructured2dGrid(v4Structured2dGrid* grid, QTextStream& stream, int i
 	vtkPointData* pData = vtkGrid->GetPointData();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::Node, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* cData = vtkGrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = cData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::CellCenter, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* ifData = grid->vtkIEdgeData()->data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::EdgeI, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* jfData = grid->vtkJEdgeData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::EdgeJ, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 
 	stream << "\r\n";
@@ -244,27 +258,27 @@ void exportStructured3dGrid(v4Structured3dGrid* grid, QTextStream& stream, int i
 	vtkPointData* pData = vtkGrid->GetPointData();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::Node, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* cData = vtkGrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = cData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::CellCenter, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* ifData = grid->vtkIFaceData()-> data()->GetCellData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::EdgeI, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* jfData = grid->vtkJFaceData()->data()->GetCellData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::EdgeJ, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* kfData = grid->vtkKFaceData()->data()->GetCellData();
 	for (int i = 0; i < kfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = kfData->GetArray(i);
-		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(SolverDefinitionGridOutput::EdgeK, array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 
 	stream << "\r\n";
@@ -460,11 +474,11 @@ void exportUnstructuredGrid(v4Unstructured2dGrid* grid, QTextStream& stream, con
 		if (array == nullptr) {continue;}
 		int comps = array->GetNumberOfComponents();
 		if (comps == 1){
-			stream << "," << array->GetName();
+			stream << "," << "N_" << array->GetName();
 		} else if (comps == 2){
-			stream << "," << array->GetName() << "X," << array->GetName() << "Y";
+			stream << "," << "N_" << array->GetName() << "X," << "N_" << array->GetName() << "Y";
 		} else if (comps == 3){
-			stream << "," << array->GetName() << "X," << array->GetName() << "Y," << array->GetName() << "Z";
+			stream << "," << "N_" << array->GetName() << "X," << "N_" << array->GetName() << "Y," << "N_" << array->GetName() << "Z";
 		}
 	}
 	stream << "\r\n";
