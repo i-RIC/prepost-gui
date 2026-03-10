@@ -17,6 +17,9 @@ public:
 	ClipDialog(PreProcessorStructured2dGridShapeDataItem* dataItem, QWidget *parent);
 	~ClipDialog();
 
+public slots:
+	void accept();
+
 private:
 	PreProcessorStructured2dGridShapeDataItem* m_dataItem;
 	Ui::PreProcessorStructured2dGridShapeDataItem_ClipDialog *ui;
