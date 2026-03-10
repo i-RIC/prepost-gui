@@ -28,7 +28,11 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 	PreProcessorDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_definingBoundingBox {false},
 	m_draggingSelectedPoints {false},
-	m_nearSelectedPoint {false}
+	m_nearSelectedPoint {false},
+	m_editAction {new QAction(PreProcessorGridShapeDataItem::tr("&Edit Coordinates..."), this)},
+	m_clipAction {new QAction(PreProcessorGridShapeDataItem::tr("&Clip..."), this)},
+	m_openXsectionWindowAction {new QAction(PreProcessorGridShapeDataItem::tr("Open &Cross Section Window"), this)},
+	m_openVXsectionWindowAction {new QAction(PreProcessorGridShapeDataItem::tr("Open &Longitudinal Cross Section Window"), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -36,10 +40,8 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 
 	m_setting.shape = GridShapeSettingContainer::Shape::Wireframe;
 
-	m_editAction = new QAction(PreProcessorGridShapeDataItem::tr("&Edit Coordinates..."), this);
-	connect(m_editAction, SIGNAL(triggered()), this, SLOT(editShape()));
+	connect(m_editAction, &QAction::triggered, this, &PreProcessorGridShapeDataItem::editShape);
 
-	m_openXsectionWindowAction = new QAction(PreProcessorGridShapeDataItem::tr("Open &Cross Section Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
 	connect(m_openXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
@@ -177,6 +179,9 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 			auto grid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
 			if (grid2d != nullptr) {
 				menu->addSeparator();
+				menu->addAction(m_clipAction);
+
+				menu->addSeparator();
 
 				menu->addAction(m_openXsectionWindowAction);
 				menu->addAction(m_openVXsectionWindowAction);
@@ -304,6 +309,11 @@ void PreProcessorGridShapeDataItem::addCustomMenuItems(QMenu* /*menu*/)
 QAction* PreProcessorGridShapeDataItem::editAction() const
 {
 	return m_editAction;
+}
+
+QAction* PreProcessorGridShapeDataItem::clipAction() const
+{
+	return m_clipAction;
 }
 
 QAction* PreProcessorGridShapeDataItem::openXsectionWindowAction() const

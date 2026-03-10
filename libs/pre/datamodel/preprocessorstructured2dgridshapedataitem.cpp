@@ -18,6 +18,8 @@ PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeData
 {
 	setupActors();
 	updateActorSetting();
+
+	connect(m_clipAction, &QAction::triggered, this, &PreProcessorStructured2dGridShapeDataItem::openClipDialog);
 }
 
 PreProcessorStructured2dGridShapeDataItem::~PreProcessorStructured2dGridShapeDataItem()
@@ -105,6 +107,11 @@ void PreProcessorStructured2dGridShapeDataItem::informDeselection(VTKGraphicsVie
 void PreProcessorStructured2dGridShapeDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);
+}
+
+void PreProcessorStructured2dGridShapeDataItem::openClipDialog()
+{
+
 }
 
 void PreProcessorStructured2dGridShapeDataItem::assignActorZValues(const ZDepthRange& range)

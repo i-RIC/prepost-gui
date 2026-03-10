@@ -32,6 +32,7 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 
 	QAction* editAction() const;
+	QAction* clipAction() const;
 	QAction* openXsectionWindowAction() const;
 	QAction* openVXsectionWindowAction() const;
 	virtual void updateActionStatus();
@@ -58,6 +59,7 @@ protected:
 	bool m_nearSelectedPoint;
 
 	QAction* m_editAction;
+	QAction* m_clipAction;
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
 

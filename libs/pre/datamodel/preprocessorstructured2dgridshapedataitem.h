@@ -20,6 +20,9 @@ public:
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override;
 
+private slots:
+	void openClipDialog();
+
 private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
