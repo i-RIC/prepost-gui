@@ -31,6 +31,8 @@ private:
 
 	void setupActors();
 	void doUpdateActorSetting() override;
+
+	class ClipDialog;
 };
 
 #endif // PREPROCESSORSTRUCTURED2DGRIDSHAPEDATAITEM_H
