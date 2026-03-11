@@ -28,10 +28,12 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 private slots:
 	void showAttributeBrowser();
+	virtual void openGraphWindow() = 0;
 
 private:
 	void addCustomMenuItems(QMenu* menu) override;
@@ -46,7 +48,12 @@ private:
 	virtual vtkPointSetExtended* data() const = 0;
 	virtual Post2dWindowAbstractCellScalarGroupDataItem* createChild(const std::string& target) = 0;
 
+	QMenu* m_rightClickingMenu;
 	QAction* m_showAttributeBrowserAction;
+	QAction* m_openGraphWindowAction;
+	QPoint m_dragStartPoint;
+	bool m_dragStarted;
+
 	class AttributeBrowserController;
 	AttributeBrowserController* m_attributeBrowserController;
 

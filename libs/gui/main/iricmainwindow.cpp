@@ -1666,7 +1666,7 @@ void iRICMainWindow::createGraph2dHybridWindowForCell(const std::string& zoneNam
 void iRICMainWindow::createGraph2dHybridWindowForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
 {
 	auto item = createGraph2dHybridWindowWithoutInit();
-	item->setupInitialSettingForCell(zoneName, index, values);
+	item->setupInitialSettingForIFace(zoneName, index, values);
 	auto w = item->window()->parentWidget();
 	w->show();
 	w->setFocus();
@@ -1675,7 +1675,7 @@ void iRICMainWindow::createGraph2dHybridWindowForIFace(const std::string& zoneNa
 void iRICMainWindow::createGraph2dHybridWindowForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
 {
 	auto item = createGraph2dHybridWindowWithoutInit();
-	item->setupInitialSettingForCell(zoneName, index, values);
+	item->setupInitialSettingForJFace(zoneName, index, values);
 	auto w = item->window()->parentWidget();
 	w->show();
 	w->setFocus();

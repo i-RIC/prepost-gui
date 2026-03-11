@@ -14,20 +14,30 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/orderedvalueselectdialog.h>
 #include <misc/stringtool.h>
 
 Post2dWindowAbstractCellScalarGroupTopDataItem::Post2dWindowAbstractCellScalarGroupTopDataItem(const QString& caption, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_rightClickingMenu {new QMenu(mainWindow())},
 	m_showAttributeBrowserAction {new QAction(tr("Show Attribute Browser"), this)},
+	m_openGraphWindowAction {new QAction(tr("Open &Graph Window"), this)},
+	m_dragStartPoint {},
+	m_dragStarted {false},
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	connect(m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::showAttributeBrowser);
+	connect(m_openGraphWindowAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::openGraphWindow);
+
+	m_rightClickingMenu->addAction(m_showAttributeBrowserAction);
+	m_rightClickingMenu->addAction(m_openGraphWindowAction);
 }
 
 Post2dWindowAbstractCellScalarGroupTopDataItem::~Post2dWindowAbstractCellScalarGroupTopDataItem()
 {
+	delete m_rightClickingMenu;
 	delete m_attributeBrowserController;
 }
 
@@ -171,9 +181,25 @@ void Post2dWindowAbstractCellScalarGroupTopDataItem::mouseMoveEvent(QMouseEvent*
 	attributeBrowserController()->update(event->pos(), v);
 }
 
+void Post2dWindowAbstractCellScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_dragStartPoint = event->pos();
+	m_dragStarted = true;
+}
+
 void Post2dWindowAbstractCellScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	attributeBrowserController()->fix(event->pos(), v);
+	if (! (m_dragStarted && iRIC::isNear(m_dragStartPoint, event->pos()))) {return;}
+
+	if (event->button() == Qt::LeftButton) {
+		attributeBrowserController()->fix(event->pos(), v);
+	} else if (event->button() == Qt::RightButton){
+		m_openGraphWindowAction->setEnabled(attributeBrowserController()->fixedIndex() >= 0);
+		m_rightClickingMenu->move(event->globalPos());
+		m_rightClickingMenu->show();
+	}
+
+	m_dragStarted = false;
 }
 
 void Post2dWindowAbstractCellScalarGroupTopDataItem::showAttributeBrowser()

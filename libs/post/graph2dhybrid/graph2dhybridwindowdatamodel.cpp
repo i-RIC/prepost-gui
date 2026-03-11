@@ -1317,17 +1317,164 @@ void Graph2dHybridWindowDataModel::setupSettingForNode(const std::string& zoneNa
 
 void Graph2dHybridWindowDataModel::setupSettingForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
 {
+	auto sInfo = postSolutionInfo();
+	sInfo->open();
+	if (! sInfo->isDataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
 
+	// initially, setup physical value settings.
+	bool loaded = m_setting.init(sInfo, projectData()->solverDefinition());
+	if (! loaded) {
+		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
+		return;
+	}
+
+	// check whether data to displayed on time window available.
+	if (! m_setting.dataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
+
+	m_setting.setXAxisMode(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	auto map = m_setting.dataTypeInfoMap().find(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	for (auto it = map->begin(); it != map->end(); ++it) {
+		const auto& list = *it;
+		for (auto item : list) {
+			if (item->zoneName == zoneName) {
+				item->gridLocation = iRICLib::H5CgnsZone::SolutionPosition::Cell;
+				m_setting.setTargetDataTypeInfo(item);
+			}
+		}
+	}
+	for (const auto& valName : values) {
+		Graph2dHybridWindowResultSetting::Setting s(valName);
+		s.setCaption(valName.c_str());
+		m_setting.targetDatas().append(s);
+	}
+
+	int dims[4];
+	getDims(dims);
+	int j = index / dims[0];
+	int i = index % dims[0];
+	m_setting.setGridIndex(index);
+	m_setting.setGridI(i);
+	m_setting.setGridJ(j);
+
+	auto rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
+	rItem->resultGroupItem()->updateChildren(m_setting);
+
+	applySettings();
+	view()->replot();
 }
 
 void Graph2dHybridWindowDataModel::setupSettingForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
 {
+	auto sInfo = postSolutionInfo();
+	sInfo->open();
+	if (! sInfo->isDataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
 
+	// initially, setup physical value settings.
+	bool loaded = m_setting.init(sInfo, projectData()->solverDefinition());
+	if (! loaded) {
+		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
+		return;
+	}
+
+	// check whether data to displayed on time window available.
+	if (! m_setting.dataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
+
+	m_setting.setXAxisMode(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	auto map = m_setting.dataTypeInfoMap().find(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	for (auto it = map->begin(); it != map->end(); ++it) {
+		const auto& list = *it;
+		for (auto item : list) {
+			if (item->zoneName == zoneName) {
+				item->gridLocation = iRICLib::H5CgnsZone::SolutionPosition::IFace;
+				m_setting.setTargetDataTypeInfo(item);
+			}
+		}
+	}
+	for (const auto& valName : values) {
+		Graph2dHybridWindowResultSetting::Setting s(valName);
+		s.setCaption(valName.c_str());
+		m_setting.targetDatas().append(s);
+	}
+
+	int dims[4];
+	getDims(dims);
+	int j = index / dims[0];
+	int i = index % dims[0];
+	m_setting.setGridIndex(index);
+	m_setting.setGridI(i);
+	m_setting.setGridJ(j);
+
+	auto rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
+	rItem->resultGroupItem()->updateChildren(m_setting);
+
+	applySettings();
+	view()->replot();
 }
 
 void Graph2dHybridWindowDataModel::setupSettingForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
 {
+	auto sInfo = postSolutionInfo();
+	sInfo->open();
+	if (! sInfo->isDataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
 
+	// initially, setup physical value settings.
+	bool loaded = m_setting.init(sInfo, projectData()->solverDefinition());
+	if (! loaded) {
+		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
+		return;
+	}
+
+	// check whether data to displayed on time window available.
+	if (! m_setting.dataAvailable()) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
+		return;
+	}
+
+	m_setting.setXAxisMode(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	auto map = m_setting.dataTypeInfoMap().find(Graph2dHybridWindowResultSetting::XAxisMode::xaTime);
+	for (auto it = map->begin(); it != map->end(); ++it) {
+		const auto& list = *it;
+		for (auto item : list) {
+			if (item->zoneName == zoneName) {
+				item->gridLocation = iRICLib::H5CgnsZone::SolutionPosition::JFace;
+				m_setting.setTargetDataTypeInfo(item);
+			}
+		}
+	}
+	for (const auto& valName : values) {
+		Graph2dHybridWindowResultSetting::Setting s(valName);
+		s.setCaption(valName.c_str());
+		m_setting.targetDatas().append(s);
+	}
+
+	int dims[4];
+	getDims(dims);
+	int j = index / dims[0];
+	int i = index % dims[0];
+	m_setting.setGridIndex(index);
+	m_setting.setGridI(i);
+	m_setting.setGridJ(j);
+
+	auto rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
+	rItem->resultGroupItem()->updateChildren(m_setting);
+
+	applySettings();
+	view()->replot();
 }
 
 void Graph2dHybridWindowDataModel::applyAxisSetting()
