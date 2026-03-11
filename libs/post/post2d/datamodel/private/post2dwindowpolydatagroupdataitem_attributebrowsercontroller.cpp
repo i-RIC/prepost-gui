@@ -25,8 +25,11 @@ bool Post2dWindowPolyDataGroupDataItem::AttributeBrowserController::doUpdate(con
 	auto cellId = polyData->vtkConcreteData()->findCell(pos.x(), pos.y(), 0, v->stdDistance(iRIC::nearRadius()), weights);
 	if (cellId < 0) {
 		propertyBrowserView()->resetAttributes();
+		m_fixedIndex = -1;
 		return false;
 	}
+	m_fixedIndex = cellId;
+
 	auto attributes = buildAttributes(cellId, polyData->vtkData()->data()->GetCellData(), polyData->attributeDataProvider());
 	vtkIdType origCellId = polyData->cellIds().at(cellId);
 	const auto& cellIds = polyData->cellIds();

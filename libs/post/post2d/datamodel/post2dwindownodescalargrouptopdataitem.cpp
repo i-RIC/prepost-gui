@@ -17,12 +17,19 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/orderedvalueselectdialog.h>
 
+#include <QMenu>
+
 Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_rightClickingMenu {new QMenu(mainWindow())},
 	m_showAttributeBrowserAction {new QAction(tr("Show Attribute Browser"), this)},
+	m_openGraphWindowAction {new QAction(tr("Open &Graph Window"), this)},
+	m_dragStartPoint {},
+	m_dragStarted {false},
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -35,10 +42,15 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	}
 
 	connect(m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowNodeScalarGroupTopDataItem::showAttributeBrowser);
+	connect(m_openGraphWindowAction, &QAction::triggered, this, &Post2dWindowNodeScalarGroupTopDataItem::openGraphWindow);
+
+	m_rightClickingMenu->addAction(m_showAttributeBrowserAction);
+	m_rightClickingMenu->addAction(m_openGraphWindowAction);
 }
 
 Post2dWindowNodeScalarGroupTopDataItem::~Post2dWindowNodeScalarGroupTopDataItem()
 {
+	delete m_rightClickingMenu;
 	delete m_attributeBrowserController;
 }
 
@@ -168,9 +180,25 @@ void Post2dWindowNodeScalarGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, 
 	attributeBrowserController()->update(event->pos(), v);
 }
 
+void Post2dWindowNodeScalarGroupTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_dragStartPoint = event->pos();
+	m_dragStarted = true;
+}
+
 void Post2dWindowNodeScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	attributeBrowserController()->fix(event->pos(), v);
+	if (! (m_dragStarted && iRIC::isNear(m_dragStartPoint, event->pos()))) {return;}
+
+	if (event->button() == Qt::LeftButton) {
+		attributeBrowserController()->fix(event->pos(), v);
+	} else if (event->button() == Qt::RightButton){
+		m_openGraphWindowAction->setEnabled(attributeBrowserController()->fixedIndex() >= 0);
+		m_rightClickingMenu->move(event->globalPos());
+		m_rightClickingMenu->show();
+	}
+
+	m_dragStarted = false;
 }
 
 std::vector<std::string> Post2dWindowNodeScalarGroupTopDataItem::scalarsDrawnInDiscreteMode() const
@@ -257,6 +285,11 @@ void Post2dWindowNodeScalarGroupTopDataItem::showAttributeBrowser()
 	attributeBrowserController()->initialize();
 	auto w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
+}
+
+void Post2dWindowNodeScalarGroupTopDataItem::openGraphWindow()
+{
+	QMessageBox::information(mainWindow(), "test", "open chart window here");
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)
