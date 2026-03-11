@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekrano nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tipas:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Vardas:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Rodyti pavadinimą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Ribinė sąlyga</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

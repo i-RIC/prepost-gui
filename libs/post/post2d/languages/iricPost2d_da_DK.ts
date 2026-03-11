@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Skærmindstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Type:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farve:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstørrelse:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Navn:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Vis navn</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Randbetingelse</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

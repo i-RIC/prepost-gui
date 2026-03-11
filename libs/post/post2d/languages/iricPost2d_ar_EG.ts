@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>إعدادات العرض</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>يكتب:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>لون:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>حجم النقطة:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>اسم:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>إظهار الاسم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>شروط الحدود</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

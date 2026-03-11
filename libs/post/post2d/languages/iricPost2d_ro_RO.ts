@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Setare afișare</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tip:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nume:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Afișați numele</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Condiție limită</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Displeja iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tips:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkta izmērs:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Vārds:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Rādīt nosaukumu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Robežnosacījums</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

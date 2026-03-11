@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Skjástilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Eyðublað</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tegund:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Litur:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Stærð punkta:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nafn:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Sýna nafn</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Jaðarskilyrði</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
