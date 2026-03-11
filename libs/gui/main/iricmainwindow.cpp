@@ -1645,6 +1645,42 @@ void iRICMainWindow::createGraph2dHybridWindow()
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
+void iRICMainWindow::createGraph2dHybridWindowForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto item = createGraph2dHybridWindowWithoutInit();
+	item->setupInitialSettingForNode(zoneName, index, values);
+	auto w = item->window()->parentWidget();
+	w->show();
+	w->setFocus();
+}
+
+void iRICMainWindow::createGraph2dHybridWindowForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto item = createGraph2dHybridWindowWithoutInit();
+	item->setupInitialSettingForCell(zoneName, index, values);
+	auto w = item->window()->parentWidget();
+	w->show();
+	w->setFocus();
+}
+
+void iRICMainWindow::createGraph2dHybridWindowForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto item = createGraph2dHybridWindowWithoutInit();
+	item->setupInitialSettingForCell(zoneName, index, values);
+	auto w = item->window()->parentWidget();
+	w->show();
+	w->setFocus();
+}
+
+void iRICMainWindow::createGraph2dHybridWindowForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto item = createGraph2dHybridWindowWithoutInit();
+	item->setupInitialSettingForCell(zoneName, index, values);
+	auto w = item->window()->parentWidget();
+	w->show();
+	w->setFocus();
+}
+
 void iRICMainWindow::createGraph2dScatteredWindow()
 {
 	static int index = 1;
@@ -2657,4 +2693,24 @@ void iRICMainWindow::updateTmsListForAllWindows()
 
 		tmsW->updateTmsList();
 	}
+}
+
+Graph2dHybridWindowProjectDataItem* iRICMainWindow::createGraph2dHybridWindowWithoutInit()
+{
+	static int index = 1;
+	if (index == 10) {
+		index = 1;
+	}
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("graph2dhybridwindow", posts, this);
+	auto item2 = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(item);
+
+	QMdiSubWindow* container = posts->add(item);
+	connect(item->window(), SIGNAL(PostProcessorWindow::closeButtonClicked()), container, SLOT(close()));
+
+	item->window()->setupDefaultGeometry(index);
+	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+
+	return item2;
 }

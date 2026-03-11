@@ -242,20 +242,19 @@ void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
-	topDataItem()->attributeBrowserController()->update(event->pos(), v);
+	topDataItem()->mouseMoveEvent(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+	topDataItem()->mousePressEvent(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
-	if (event->button() == Qt::LeftButton) {
-		topDataItem()->attributeBrowserController()->fix(event->pos(), v);
-	}
+	topDataItem()->mouseReleaseEvent(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::handleStandardItemChange()

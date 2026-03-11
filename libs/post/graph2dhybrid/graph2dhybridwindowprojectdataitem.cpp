@@ -54,6 +54,30 @@ Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDa
 	delete oldCenter;
 }
 
+void Graph2dHybridWindowProjectDataItem::setupInitialSettingForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto w = dynamic_cast<Graph2dHybridWindow*>(m_window);
+	w->m_dataModel->setupSettingForNode(zoneName, index, values);
+}
+
+void Graph2dHybridWindowProjectDataItem::setupInitialSettingForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto w = dynamic_cast<Graph2dHybridWindow*>(m_window);
+	w->m_dataModel->setupSettingForCell(zoneName, index, values);
+}
+
+void Graph2dHybridWindowProjectDataItem::setupInitialSettingForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto w = dynamic_cast<Graph2dHybridWindow*>(m_window);
+	w->m_dataModel->setupSettingForIFace(zoneName, index, values);
+}
+
+void Graph2dHybridWindowProjectDataItem::setupInitialSettingForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values)
+{
+	auto w = dynamic_cast<Graph2dHybridWindow*>(m_window);
+	w->m_dataModel->setupSettingForJFace(zoneName, index, values);
+}
+
 QString Graph2dHybridWindowProjectDataItem::windowId() const
 {
 	return QString("graph2dhybridwindow%1").arg(m_window->index());
@@ -97,6 +121,6 @@ void Graph2dHybridWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 
 bool Graph2dHybridWindowProjectDataItem::setupInitialSetting()
 {
-	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(m_window);
+	auto w = dynamic_cast<Graph2dHybridWindow*>(m_window);
 	return w->m_dataModel->setupInitialSetting();
 }

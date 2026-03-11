@@ -99,12 +99,16 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 			ui->iSlider->show();
 			ui->jLabel->show();
 			ui->jSlider->show();
+			setIValue(setting.gridI());
+			setJValue(setting.gridJ());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jLabel->show();
 			ui->jSlider->show();
+			setJValue(setting.gridJ());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iLabel->show();
 			ui->iSlider->show();
+			setIValue(setting.gridI());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
 			ui->lineLabel->show();
 			ui->lineComboBox->show();
@@ -118,21 +122,30 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 			ui->jSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
+			setIValue(setting.gridI());
+			setJValue(setting.gridJ());
+			setKValue(setting.gridK());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jLabel->show();
 			ui->jSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
+			setJValue(setting.gridJ());
+			setKValue(setting.gridK());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
+			setIValue(setting.gridI());
+			setKValue(setting.gridK());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->jLabel->show();
 			ui->jSlider->show();
+			setIValue(setting.gridI());
+			setJValue(setting.gridJ());
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
@@ -141,6 +154,7 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 		if (setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyLine && setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
 			ui->indexLabel->show();
 			ui->indexSlider->show();
+			setIndexValue(setting.gridIndex());
 		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
 			ui->lineLabel->show();
 			ui->lineComboBox->show();
@@ -158,22 +172,30 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 
 void Graph2dHybridWindowControlWidget::setIValue(int i)
 {
+	ui->iSlider->blockSignals(true);
 	ui->iSlider->setValue(i + 1);
+	ui->iSlider->blockSignals(false);
 }
 
 void Graph2dHybridWindowControlWidget::setJValue(int j)
 {
+	ui->jSlider->blockSignals(true);
 	ui->jSlider->setValue(j + 1);
+	ui->jSlider->blockSignals(false);
 }
 
 void Graph2dHybridWindowControlWidget::setKValue(int k)
 {
+	ui->kSlider->blockSignals(true);
 	ui->kSlider->setValue(k + 1);
+	ui->kSlider->blockSignals(false);
 }
 
 void Graph2dHybridWindowControlWidget::setIndexValue(int index)
 {
+	ui->indexSlider->blockSignals(true);
 	ui->indexSlider->setValue(index + 1);
+	ui->indexSlider->blockSignals(false);
 }
 
 void Graph2dHybridWindowControlWidget::setPolyline(GeoDataPolyLineGroupPolyLine* line)

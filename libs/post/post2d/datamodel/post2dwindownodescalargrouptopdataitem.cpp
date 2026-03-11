@@ -8,6 +8,7 @@
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/grid/v4grid2d.h>
@@ -289,7 +290,17 @@ void Post2dWindowNodeScalarGroupTopDataItem::showAttributeBrowser()
 
 void Post2dWindowNodeScalarGroupTopDataItem::openGraphWindow()
 {
-	QMessageBox::information(mainWindow(), "test", "open chart window here");
+	auto index = attributeBrowserController()->fixedIndex();
+	std::vector<std::string> vals;
+	for (const auto& child : m_childItems) {
+		const auto& item = dynamic_cast<const Post2dWindowNodeScalarGroupDataItem*> (child);
+		if (item->standardItem()->checkState() == Qt::Checked) {
+			vals.push_back(item->target());
+		}
+	}
+
+	auto zItem = resultDataItem()->zoneDataItem();
+	iricMainWindow()->createGraph2dHybridWindowForNode(zItem->zoneName(), index, vals);
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::addCustomMenuItems(QMenu* menu)

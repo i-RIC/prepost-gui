@@ -13,6 +13,10 @@ class GRAPH2DHYBRID_EXPORT Graph2dHybridWindowProjectDataItem : public PostProce
 public:
 	Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
+	void setupInitialSettingForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupInitialSettingForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupInitialSettingForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupInitialSettingForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
 	QString windowId() const override;
 
 private:
