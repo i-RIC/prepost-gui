@@ -59,6 +59,7 @@ void PreProcessorStructured2dGridShapeDataItem::ClipDialog::accept()
 
 	auto inputGrid = new v4InputGrid(m_dataItem->gridDataItem()->gridTypeDataItem()->gridType(), newGrid);
 	m_dataItem->gridDataItem()->setGrid(inputGrid, false);
+	m_dataItem->renderGraphicsView();
 
 	iRICUndoStack::instance().clear();
 	QDialog::accept();

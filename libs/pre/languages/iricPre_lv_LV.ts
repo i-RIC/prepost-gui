@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Režģis-putna lidojuma logs</translation>
     </message>
 </context>
@@ -832,8 +834,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 netiek kartēti pēc pēdējās rediģēšanas reizes. Vai vēlaties veikt kartēšanu tagad?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Robežnosacījumu iestatīšana "%1"nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Robežnosacījumu iestatīšana &quot;%1&quot;nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -934,8 +936,8 @@ Do you really want to import grid from this file?</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <source>Import target file "%1" does not exists.</source>
-        <translation>Importēt mērķa failu "%1"neeksistē.</translation>
+        <source>Import target file &quot;%1&quot; does not exists.</source>
+        <translation>Importēt mērķa failu &quot;%1&quot;neeksistē.</translation>
     </message>
 </context>
 <context>
@@ -1120,13 +1122,13 @@ Do you really want to import grid from this file?</source>
         <translation>Apstiprināt importēšanu kā saiti</translation>
     </message>
     <message>
-        <source>Do you want to import the geographic data in "Link mode"?
+        <source>Do you want to import the geographic data in &quot;Link mode&quot;?
 
-When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
+When geographic data is imported in &quot;Link Mode&quot;, the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with &quot;Link Mode&quot;, the project data becomes much smaller.
 
-Please note that the geographic data imported in "Link Mode" can not be edited.
+Please note that the geographic data imported in &quot;Link Mode&quot; can not be edited.
 </source>
-        <translation>Vai vēlaties importēt ģeogrāfiskos datus "Saites režīmā"? Importējot ģeogrāfiskos datus "Saites režīmā", paši ģeogrāfiskie dati projektā netiek saglabāti, bet tikai faila nosaukums un importēšanas iestatījums. Tāpēc, importējot projekta datus "Saites režīmā", tie kļūst daudz mazāki. Lūdzu, ņemiet vērā, ka ģeogrāfiskos datus, kas importēti "Saites režīmā", nevar rediģēt.</translation>
+        <translation>Vai vēlaties importēt ģeogrāfiskos datus &quot;Saites režīmā&quot;? Importējot ģeogrāfiskos datus &quot;Saites režīmā&quot;, paši ģeogrāfiskie dati projektā netiek saglabāti, bet tikai faila nosaukums un importēšanas iestatījums. Tāpēc, importējot projekta datus &quot;Saites režīmā&quot;, tie kļūst daudz mazāki. Lūdzu, ņemiet vērā, ka ģeogrāfiskos datus, kas importēti &quot;Saites režīmā&quot;, nevar rediģēt.</translation>
     </message>
 </context>
 <context>
@@ -1161,14 +1163,14 @@ Please note that the geographic data imported in "Link Mode" can not be edited.
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no "Objektu pārlūka". Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no &quot;Objektu pārlūka&quot;. Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
     </message>
 </context>
 <context>
@@ -1546,7 +1548,7 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation>Mala (J virziens)</translation>
+        <translation>Mala (J&#xa0;virziens)</translation>
     </message>
 </context>
 <context>
@@ -1567,9 +1569,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Izpildīt (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni "Režģis" -&gt; "Atribūtu kartēšana" -&gt; "Izpildīt".</translation>
+        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni &quot;Režģis&quot; -&gt; &quot;Atribūtu kartēšana&quot; -&gt; &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1588,12 +1590,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Ģeogrāfisko datu kartēšana ir pabeigta</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Režģa atribūts "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Režģa atribūts &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Robežas nosacījums "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Robežas nosacījums &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
 </context>
 <context>
@@ -1611,20 +1613,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automātiski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rokasgrāmata</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni "Izpildīt".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2391,8 +2393,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Krāsu kartes iestatījums</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2505,7 +2507,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Iestatiet Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Atveriet putna lidojuma logu (&amp;B)</translation>
     </message>
     <message>
@@ -2564,6 +2566,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Pārvietot režģa punktu (-us)</translation>
+    </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2893,6 +2899,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Režģa formas iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
