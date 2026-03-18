@@ -41,7 +41,7 @@ void PreProcessorStructured2dGridShapeDataItem::ClipDialog::accept()
 	auto s = ui->widget->setting();
 
 	auto newGrid = new v4Structured2dGrid();
-	newGrid->setDimensions(s.iMax - s.iMin, s.jMax - s.jMin);
+	newGrid->setDimensions(s.iMax - s.iMin + 1, s.jMax - s.jMin + 1);
 
 	// copy data at nodes and cells
 	auto clippedData = grid->regionFilteredNodeData(s.iMin, s.iMax, s.jMin, s.jMax);
