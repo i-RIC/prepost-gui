@@ -12,6 +12,9 @@ v4Structured2dGrid::Impl::Impl(v4Structured2dGrid* parent) :
 	m_drawnIMax {0},
 	m_drawnJMin {0},
 	m_drawnJMax {0},
+	m_cellCenterGrid {vtkStructuredGrid::New()},
+	m_iEdgeCenterGrid {vtkStructuredGrid::New()},
+	m_jEdgeCenterGrid {vtkStructuredGrid::New()},
 	m_structureChecker {new StructureChecker {}},
 	m_parent {parent}
 {
@@ -26,6 +29,11 @@ v4Structured2dGrid::Impl::~Impl()
 {
 	m_vtkIEdgeFilteredData->Delete();
 	m_vtkJEdgeFilteredData->Delete();
+
+	m_cellCenterGrid->Delete();
+	m_iEdgeCenterGrid->Delete();
+	m_jEdgeCenterGrid->Delete();
+
 	delete m_structureChecker;
 }
 

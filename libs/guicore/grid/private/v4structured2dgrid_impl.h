@@ -25,6 +25,10 @@ public:
 	vtkIdType m_drawnJMin;
 	vtkIdType m_drawnJMax;
 
+	vtkStructuredGrid* m_cellCenterGrid;
+	vtkStructuredGrid* m_iEdgeCenterGrid;
+	vtkStructuredGrid* m_jEdgeCenterGrid;
+
 	v4GridStructureCheckerI* m_structureChecker;
 
 private:

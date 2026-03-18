@@ -63,6 +63,11 @@ public:
 
 	vtkPolyData* extractEdgeData(vtkIdType i, vtkIdType j) const;
 
+	vtkStructuredGrid* cellCenterGrid() const;
+	vtkStructuredGrid* iEdgeCenterGrid() const;
+	vtkStructuredGrid* jEdgeCenterGrid() const;
+	void updateCenterGridData();
+
 	void discardCellIndex() override;
 	void updateFilteredData(double xMin, double xMax, double yMin, double yMax) override;
 
