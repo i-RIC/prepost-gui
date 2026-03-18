@@ -19,8 +19,13 @@ public:
 
 public slots:
 	void accept();
+	void preview();
 
 private:
+	vtkActor* m_actor;
+	vtkPolyDataMapper* m_mapper;
+	vtkStructuredGridOutlineFilter* m_outlineFilter;
+
 	PreProcessorStructured2dGridShapeDataItem* m_dataItem;
 	Ui::PreProcessorStructured2dGridShapeDataItem_ClipDialog *ui;
 };

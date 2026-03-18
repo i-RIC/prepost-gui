@@ -9,13 +9,22 @@
 #include <guicore/region/region2dsettingcontainer.h>
 #include <misc/iricundostack.h>
 
+#include <vtkActor.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkStructuredGridOutlineFilter.h>
+
 PreProcessorStructured2dGridShapeDataItem::ClipDialog::ClipDialog(PreProcessorStructured2dGridShapeDataItem* dataItem, QWidget *parent) :
 	QDialog(parent),
+	m_actor {vtkActor::New()},
+	m_mapper {vtkPolyDataMapper::New()},
+	m_outlineFilter {vtkStructuredGridOutlineFilter::New()},
 	m_dataItem {dataItem},
 	ui(new Ui::PreProcessorStructured2dGridShapeDataItem_ClipDialog)
 {
 	ui->setupUi(this);
 	setAttribute(Qt::WA_DeleteOnClose);
+
+	connect(ui->previewButton, &QPushButton::clicked, this, &ClipDialog::preview);
 
 	auto grid = dynamic_cast<v4Structured2dGrid*> (dataItem->gridDataItem()->grid()->grid());
 	vtkIdType dimI, dimJ;
@@ -28,10 +37,26 @@ PreProcessorStructured2dGridShapeDataItem::ClipDialog::ClipDialog(PreProcessorSt
 	setting.jMin = 0;
 	setting.jMax = dimJ;
 	ui->widget->setSetting(setting);
+
+	m_actor->SetMapper(m_mapper);
+	m_mapper->SetInputConnection(m_outlineFilter->GetOutputPort());
+
+	m_actor->GetProperty()->LightingOff();
+	m_actor->GetProperty()->SetColor(0, 0, 0);
+	m_actor->GetProperty()->SetLineWidth(5);
+	m_actor->VisibilityOff();
+
+	m_dataItem->renderer()->AddActor(m_actor);
 }
 
 PreProcessorStructured2dGridShapeDataItem::ClipDialog::~ClipDialog()
 {
+	m_dataItem->renderer()->RemoveActor(m_actor);
+
+	m_actor->Delete();
+	m_mapper->Delete();
+	m_outlineFilter->Delete();
+
 	delete ui;
 }
 
@@ -63,4 +88,17 @@ void PreProcessorStructured2dGridShapeDataItem::ClipDialog::accept()
 
 	iRICUndoStack::instance().clear();
 	QDialog::accept();
+}
+
+void PreProcessorStructured2dGridShapeDataItem::ClipDialog::preview()
+{
+	auto grid = dynamic_cast<v4Structured2dGrid*> (m_dataItem->gridDataItem()->grid()->grid());
+	auto s = ui->widget->setting();
+
+	auto clippedData = grid->regionFilteredNodeData(s.iMin, s.iMax, s.jMin, s.jMax);
+	m_outlineFilter->SetInputData(clippedData);
+	clippedData->Delete();
+	m_actor->VisibilityOn();
+
+	m_dataItem->renderGraphicsView();
 }
