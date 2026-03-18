@@ -3,6 +3,7 @@
 #include "../solverdef/solverdefinitionboundarycondition.h"
 
 #include <h5cgnsbc.h>
+#include <h5cgnszone.h>
 
 v4PostZoneDataBC::v4PostZoneDataBC(SolverDefinitionBoundaryCondition* condition, const iRICLib::H5CgnsZone& zone, const iRICLib::H5CgnsBc& bc) :
 	m_indices {},
