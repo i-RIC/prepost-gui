@@ -70,7 +70,9 @@ void PreProcessorStructured2dGridShapeDataItem::ClipDialog::accept()
 
 	// copy data at nodes and cells
 	auto clippedData = grid->regionFilteredNodeData(s.iMin, s.iMax, s.jMin, s.jMax);
-	newGrid->vtkConcreteData()->data()->DeepCopy(clippedData);
+	newGrid->vtkConcreteData()->data()->GetPoints()->DeepCopy(clippedData->GetPoints());
+	newGrid->vtkConcreteData()->data()->GetPointData()->DeepCopy(clippedData->GetPointData());
+	newGrid->vtkConcreteData()->data()->GetCellData()->DeepCopy(clippedData->GetCellData());
 	clippedData->Delete();
 
 	// copy data at iedge
