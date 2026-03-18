@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -71,7 +69,7 @@
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="vanished">S&apos;ha produït un error en importar la quadrícula.</translation>
+        <translation type="vanished">S'ha produït un error en importar la quadrícula.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -115,14 +113,14 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Finestra de visualització d&apos;ulls de quadrícula</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Finestra de visualització d'ulls de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -205,11 +203,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="vanished">Seleccioneu l&apos;atribut de quadrícula</translation>
+        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
     </message>
     <message>
         <source>Select grid attribute to use as Elevation</source>
-        <translation>Seleccioneu l&apos;atribut de quadrícula per utilitzar-lo com a elevació</translation>
+        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
@@ -251,7 +249,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="vanished">Edita l&apos;escala de direcció Z</translation>
+        <translation type="vanished">Edita l'escala de direcció Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -270,7 +268,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Edita l&apos;escala de direcció Z</translation>
+        <translation>Edita l'escala de direcció Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
@@ -351,7 +349,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Valor escalar per a l&apos;elevació</translation>
+        <translation>Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
@@ -400,18 +398,18 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="vanished">Seleccioneu l&apos;atribut de quadrícula</translation>
+        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
     </message>
     <message>
         <source>Select grid attribute to use as Elevation</source>
-        <translation>Seleccioneu l&apos;atribut de quadrícula per utilitzar-lo com a elevació</translation>
+        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
@@ -525,11 +523,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Boundar condition successfully exported to %1.</source>
-        <translation>La condició de límit s&apos;ha exportat correctament %1.</translation>
+        <translation>La condició de límit s'ha exportat correctament %1.</translation>
     </message>
     <message>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
-        <translation>La mida de la quadrícula és diferent de la quadrícula del projecte des del qual s&apos;exporten les dades de la condició de límit. Voleu importar les dades de l&apos;índex?</translation>
+        <translation>La mida de la quadrícula és diferent de la quadrícula del projecte des del qual s'exporten les dades de la condició de límit. Voleu importar les dades de l'índex?</translation>
     </message>
 </context>
 <context>
@@ -687,11 +685,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation>La condició de càlcul s&apos;ha importat amb èxit des del fitxer especificat.</translation>
+        <translation>La condició de càlcul s'ha importat amb èxit des del fitxer especificat.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation>La condició de càlcul s&apos;ha importat correctament des de %1.</translation>
+        <translation>La condició de càlcul s'ha importat correctament des de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -699,7 +697,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation>No s&apos;ha pogut importar la condició de càlcul.</translation>
+        <translation>No s'ha pogut importar la condició de càlcul.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
@@ -711,15 +709,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation>S&apos;està exportant la condició de càlcul...</translation>
+        <translation>S'està exportant la condició de càlcul...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation>La condició de càlcul s&apos;exporta correctament a %1.</translation>
+        <translation>La condició de càlcul s'exporta correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation>No s&apos;ha pogut exportar la condició de càlcul.</translation>
+        <translation>No s'ha pogut exportar la condició de càlcul.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
@@ -819,7 +817,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation>(Encara no s&apos;ha seleccionat cap algorisme)</translation>
+        <translation>(Encara no s'ha seleccionat cap algorisme)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -831,11 +829,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation>%1 no es mapen després d&apos;editar-se l&apos;última vegada. Voleu executar el mapatge ara?</translation>
+        <translation>%1 no es mapen després d'editar-se l'última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuració de la condició límit &quot;%1&quot;no es mapeja després que s&apos;hagi editat l&apos;última vegada. Voleu executar el mapatge ara?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuració de la condició límit "%1"no es mapeja després que s'hagi editat l'última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -843,7 +841,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation>Assignació de dades geogràfiques, la condició del límit s&apos;ha acabat correctament.</translation>
+        <translation>Assignació de dades geogràfiques, la condició del límit s'ha acabat correctament.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -925,7 +923,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Show &amp;import setting...</source>
-        <translation>Mostra la configuració d&apos;importació (&amp;I)...</translation>
+        <translation>Mostra la configuració d'importació (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -936,8 +934,8 @@ Do you really want to import grid from this file?</source>
         <translation>Error</translation>
     </message>
     <message>
-        <source>Import target file &quot;%1&quot; does not exists.</source>
-        <translation>Importa el fitxer de destinació &quot;%1&quot;no existeix.</translation>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importa el fitxer de destinació "%1"no existeix.</translation>
     </message>
 </context>
 <context>
@@ -955,7 +953,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataDataItem_ImportSettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation>Configuració d&apos;importació</translation>
+        <translation>Configuració d'importació</translation>
     </message>
 </context>
 <context>
@@ -998,11 +996,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation>Seleccioneu l&apos;algorisme</translation>
+        <translation>Seleccioneu l'algorisme</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation>Seleccioneu l&apos;algorisme per importar dades</translation>
+        <translation>Seleccioneu l'algorisme per importar dades</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1010,7 +1008,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -1026,7 +1024,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation>S&apos;estan important dades...</translation>
+        <translation>S'estan important dades...</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -1034,7 +1032,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation>S&apos;ha cancel·lat la importació.</translation>
+        <translation>S'ha cancel·lat la importació.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1095,7 +1093,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Importa l&apos;elevació del web (&amp;I)...</translation>
+        <translation>Importa l'elevació del web (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -1122,13 +1120,13 @@ Do you really want to import grid from this file?</source>
         <translation>Confirma la importació com a enllaç</translation>
     </message>
     <message>
-        <source>Do you want to import the geographic data in &quot;Link mode&quot;?
+        <source>Do you want to import the geographic data in "Link mode"?
 
-When geographic data is imported in &quot;Link Mode&quot;, the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with &quot;Link Mode&quot;, the project data becomes much smaller.
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
 
-Please note that the geographic data imported in &quot;Link Mode&quot; can not be edited.
+Please note that the geographic data imported in "Link Mode" can not be edited.
 </source>
-        <translation>Voleu importar les dades geogràfiques en &quot;Mode d&apos;enllaç&quot;? Quan les dades geogràfiques s&apos;importen en &quot;Mode d&apos;enllaç&quot;, les dades geogràfiques en si no s&apos;emmagatzemen al projecte, sinó només el nom del fitxer i la configuració d&apos;importació. Per això, quan s&apos;importen amb &quot;Mode d&apos;enllaç&quot;, les dades del projecte es tornen molt més petites. Tingueu en compte que les dades geogràfiques importades en &quot;Mode d&apos;enllaç&quot; no es poden editar.</translation>
+        <translation>Voleu importar les dades geogràfiques en "Mode d'enllaç"? Quan les dades geogràfiques s'importen en "Mode d'enllaç", les dades geogràfiques en si no s'emmagatzemen al projecte, sinó només el nom del fitxer i la configuració d'importació. Per això, quan s'importen amb "Mode d'enllaç", les dades del projecte es tornen molt més petites. Tingueu en compte que les dades geogràfiques importades en "Mode d'enllaç" no es poden editar.</translation>
     </message>
 </context>
 <context>
@@ -1163,14 +1161,14 @@ Please note that the geographic data imported in &quot;Link Mode&quot; can not b
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: quan la variació està activada, es crea una variació anomenada &quot;Per defecte&quot; i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del &quot;Navegador d&apos;objectes&quot;. Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l&apos;atribut de la graella creades a partir de la variació que seleccioneu amb &quot;Variació per passar al solucionador&quot; es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l&apos;efecte de la diferència.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: quan la variació està activada, es crea una variació anomenada "Per defecte" i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del "Navegador d'objectes". Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l'atribut de la graella creades a partir de la variació que seleccioneu amb "Variació per passar al solucionador" es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l'efecte de la diferència.</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1210,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation>No s&apos;ha pogut importar la quadrícula.</translation>
+        <translation>No s'ha pogut importar la quadrícula.</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1247,7 +1245,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation>Quadrícula %1 Configuració de visualització d&apos;atributs (%2)</translation>
+        <translation>Quadrícula %1 Configuració de visualització d'atributs (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1283,11 +1281,11 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
+        <translation>S'ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de la quadrícula s&apos;ha exportat correctament %1.</translation>
+        <translation>La condició de la quadrícula s'ha exportat correctament %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1322,7 +1320,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
+        <translation>Configuració de visualització d'atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
@@ -1356,11 +1354,11 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Mostra el navegador d&apos;atributs</translation>
+        <translation>Mostra el navegador d'atributs</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Canvi d&apos;atribut de cel·la</translation>
+        <translation>Canvi d'atribut de cel·la</translation>
     </message>
 </context>
 <context>
@@ -1371,7 +1369,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1427,11 +1425,11 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="vanished">S&apos;ha produït un error en obrir el fitxer.</translation>
+        <translation type="vanished">S'ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="vanished">La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation type="vanished">La condició de quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1451,7 +1449,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula (%1)</translation>
+        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula (%1)</translation>
     </message>
     <message>
         <source>Cell</source>
@@ -1462,7 +1460,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1569,9 +1567,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú &quot;Quadrícula&quot; -&gt; &quot;Assignació d&apos;atributs&quot; -&gt; &quot;Executa&quot;.</translation>
+        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú "Quadrícula" -&gt; "Assignació d'atributs" -&gt; "Executa".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1587,22 +1585,22 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation>S&apos;han acabat les assignacions de dades geogràfiques</translation>
+        <translation>S'han acabat les assignacions de dades geogràfiques</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>L&apos;atribut de la quadrícula &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>L'atribut de la quadrícula "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condició límit &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condició límit "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation>Configuració de mapatge d&apos;atributs de quadrícula</translation>
+        <translation>Configuració de mapatge d'atributs de quadrícula</translation>
     </message>
     <message>
         <source>Execute mapping</source>
@@ -1613,20 +1611,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automàtic</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d&apos;atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d'atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>El mapatge d&apos;atributs només s&apos;executa quan seleccioneu manualment el menú &quot;Executa&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>El mapatge d'atributs només s'executa quan seleccioneu manualment el menú "Executa".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1714,11 +1712,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
+        <translation>S'ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1758,14 +1756,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation>Configuració de visualització d&apos;atributs del node de quadrícula (%1)</translation>
+        <translation>Configuració de visualització d'atributs del node de quadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Configuració de visualització d&apos;atributs del node de quadrícula</translation>
+        <translation>Configuració de visualització d'atributs del node de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1823,7 +1821,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d&apos;expansions de plantilla:</translation>
+        <translation>Nombre d'expansions de plantilla:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -1889,11 +1887,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation>Esteu segur que voleu restablir l&apos;estat predeterminat de la condició de creació de quadrícula?</translation>
+        <translation>Esteu segur que voleu restablir l'estat predeterminat de la condició de creació de quadrícula?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation>Quan canvieu l&apos;algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
+        <translation>Quan canvieu l'algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -1975,11 +1973,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation type="vanished">Veure la barra d&apos;eines de configuració</translation>
+        <translation type="vanished">Veure la barra d'eines de configuració</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="vanished">Barra d&apos;eines de configuració de la pantalla</translation>
+        <translation type="vanished">Barra d'eines de configuració de la pantalla</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -1991,11 +1989,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/</translation>
+        <translation type="vanished">Relació d'aspecte (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="vanished">Corregir la relació d&apos;aspecte</translation>
+        <translation type="vanished">Corregir la relació d'aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
@@ -2015,7 +2013,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="vanished">Relació d&apos;aspecte</translation>
+        <translation type="vanished">Relació d'aspecte</translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -2035,7 +2033,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
+        <translation type="vanished">Relació d'aspecte (V/H): 1/ %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2043,7 +2041,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation type="vanished">S&apos;ha produït un error en fer-ho %1.</translation>
+        <translation type="vanished">S'ha produït un error en fer-ho %1.</translation>
     </message>
     <message>
         <source>Index</source>
@@ -2112,7 +2110,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation type="vanished">Configuració de visualització de l&apos;atribut de la quadrícula (%1)</translation>
+        <translation type="vanished">Configuració de visualització de l'atribut de la quadrícula (%1)</translation>
     </message>
 </context>
 <context>
@@ -2135,7 +2133,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
+        <translation type="vanished">Relació d'aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
@@ -2248,14 +2246,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="vanished">Relació d&apos;aspecte</translation>
+        <translation type="vanished">Relació d'aspecte</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation type="vanished">Configuració d&apos;exportació</translation>
+        <translation type="vanished">Configuració d'exportació</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
@@ -2287,7 +2285,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="vanished">M&apos;hi apunto:</translation>
+        <translation type="vanished">M'hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -2302,7 +2300,7 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d&apos;atributs de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d'atributs de quadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -2330,7 +2328,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation type="vanished">Configuració de la carta d&apos;elevació</translation>
+        <translation type="vanished">Configuració de la carta d'elevació</translation>
     </message>
     <message>
         <source>Line Color:</source>
@@ -2382,19 +2380,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation type="vanished">Color de l&apos;eix:</translation>
+        <translation type="vanished">Color de l'eix:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation type="vanished">Font de l&apos;eix:</translation>
+        <translation type="vanished">Font de l'eix:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
         <translation type="vanished">Configuració del mapa de colors</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2452,7 +2450,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation>S&apos;està exportant la quadrícula...</translation>
+        <translation>S'està exportant la quadrícula...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2460,7 +2458,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation>La quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation>La quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
@@ -2507,7 +2505,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Configureu la barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Obriu la finestra de vista d’ocell (&amp;B)</translation>
     </message>
     <message>
@@ -2537,12 +2535,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Aquest fitxer CGNS està creat per a %1 versió %2. No és compatible amb el solucionador actual. Potser només s&apos;importarà una part de la graella. Realment voleu importar la graella d&apos;aquest fitxer?</translation>
+        <translation>Aquest fitxer CGNS està creat per a %1 versió %2. No és compatible amb el solucionador actual. Potser només s'importarà una part de la graella. Realment voleu importar la graella d'aquest fitxer?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Aquest fitxer CGNS no té informació del solucionador. No podem comprovar si aquest fitxer CGNS és compatible amb el solucionador. Si no és compatible, potser només s&apos;importarà una part de la graella. Realment voleu importar la graella d&apos;aquest fitxer?</translation>
+        <translation>Aquest fitxer CGNS no té informació del solucionador. No podem comprovar si aquest fitxer CGNS és compatible amb el solucionador. Si no és compatible, potser només s'importarà una part de la graella. Realment voleu importar la graella d'aquest fitxer?</translation>
     </message>
 </context>
 <context>
@@ -2569,7 +2567,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Clip...</source>
-        <translation type="unfinished"></translation>
+        <translation>Clip (&amp;C)...</translation>
     </message>
 </context>
 <context>
@@ -2714,7 +2712,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -2850,7 +2848,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation>Canvia la configuració de mapatge d&apos;atributs</translation>
+        <translation>Canvia la configuració de mapatge d'atributs</translation>
     </message>
 </context>
 <context>
@@ -2905,11 +2903,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
     <message>
         <source>Clip Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del clip</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista prèvia (&amp;P)</translation>
     </message>
 </context>
 <context>
@@ -2942,7 +2940,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation>La quadrícula encara no s&apos;ha creat ni importat.</translation>
+        <translation>La quadrícula encara no s'ha creat ni importat.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
@@ -3008,11 +3006,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="vanished">Visualització d&apos;etiquetes</translation>
+        <translation type="vanished">Visualització d'etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="vanished">Nombre d&apos;etiquetes:</translation>
+        <translation type="vanished">Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -3044,7 +3042,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="vanished">Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -3052,7 +3050,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="vanished">Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -3137,7 +3135,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation>Mou els punts d&apos;elevació</translation>
+        <translation>Mou els punts d'elevació</translation>
     </message>
 </context>
 <context>
@@ -3172,7 +3170,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation>Edita el punt d&apos;elevació</translation>
+        <translation>Edita el punt d'elevació</translation>
     </message>
 </context>
 <context>

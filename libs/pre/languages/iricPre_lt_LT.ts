@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Tinklelio vaizdas iš paukščio skrydžio</translation>
     </message>
 </context>
@@ -834,8 +832,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 po to, kai jie buvo redaguoti paskutinį kartą, nėra susieti. Ar norite dabar atlikti kartografavimą?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Ribinės būklės nustatymas &quot;%1&quot;nėra susietas po paskutinio redagavimo. Ar norite vykdyti susiejimą dabar?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Ribinės būklės nustatymas "%1"nėra susietas po paskutinio redagavimo. Ar norite vykdyti susiejimą dabar?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -936,8 +934,8 @@ Do you really want to import grid from this file?</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <source>Import target file &quot;%1&quot; does not exists.</source>
-        <translation>Importuoti paskirties failą &quot;%1&quot;neegzistuoja.</translation>
+        <source>Import target file "%1" does not exists.</source>
+        <translation>Importuoti paskirties failą "%1"neegzistuoja.</translation>
     </message>
 </context>
 <context>
@@ -1122,11 +1120,11 @@ Do you really want to import grid from this file?</source>
         <translation>Patvirtinti importavimą kaip nuorodą</translation>
     </message>
     <message>
-        <source>Do you want to import the geographic data in &quot;Link mode&quot;?
+        <source>Do you want to import the geographic data in "Link mode"?
 
-When geographic data is imported in &quot;Link Mode&quot;, the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with &quot;Link Mode&quot;, the project data becomes much smaller.
+When geographic data is imported in "Link Mode", the geographic data itself is not stored in the project, but only the file name and import setting. Because of this, when imported with "Link Mode", the project data becomes much smaller.
 
-Please note that the geographic data imported in &quot;Link Mode&quot; can not be edited.
+Please note that the geographic data imported in "Link Mode" can not be edited.
 </source>
         <translation>Ar norite importuoti geografinius duomenis „Susiejimo režimu“? Kai geografiniai duomenys importuojami „Susiejimo režimu“, patys geografiniai duomenys projekte nėra saugomi, o tik failo pavadinimas ir importavimo nustatymai. Dėl šios priežasties, importuojant projekto duomenis „Susiejimo režimu“, jie tampa daug mažesni. Atkreipkite dėmesį, kad geografinių duomenų, importuotų „Susiejimo režimu“, redaguoti negalima.</translation>
     </message>
@@ -1163,14 +1161,14 @@ Please note that the geographic data imported in &quot;Link Mode&quot; can not b
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Pastaba: kai įgalintas variantas, sukuriamas variantas pavadinimu „Numatytasis“ ir visi geografiniai duomenys perkeliami į jį. Galite pridėti, pervardyti, pašalinti variantus iš &quot;Objektų naršyklės&quot;. Galite perkelti, kopijuoti geografinius duomenis iš vieno varianto į kitą. Tinklelio atributo duomenys, sukurti iš varianto, kurį pasirinkote su „Variantas, kurį reikia perduoti sprendėjui“, perduodami sprendėjui. Galite paruošti kelis variantus, perjungti, kuriuos perduoti sprendėjui, ir įsitikinti skirtumo poveikiu.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Pastaba: kai įgalintas variantas, sukuriamas variantas pavadinimu „Numatytasis“ ir visi geografiniai duomenys perkeliami į jį. Galite pridėti, pervardyti, pašalinti variantus iš "Objektų naršyklės". Galite perkelti, kopijuoti geografinius duomenis iš vieno varianto į kitą. Tinklelio atributo duomenys, sukurti iš varianto, kurį pasirinkote su „Variantas, kurį reikia perduoti sprendėjui“, perduodami sprendėjui. Galite paruošti kelis variantus, perjungti, kuriuos perduoti sprendėjui, ir įsitikinti skirtumo poveikiu.</translation>
     </message>
 </context>
 <context>
@@ -1569,7 +1567,7 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Vykdyti (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
         <translation>Šie atributai nebuvo susieti, nes tinklelio generatoriaus išvesties vertės jiems. Jei norite priverstinai susieti jų geografinius duomenis, sukurkite žemėlapį rankiniu būdu naudodami meniu „Tinklelis“ -&gt; „Atributų atvaizdavimas“ -&gt; „Vykdyti“.</translation>
     </message>
@@ -1590,12 +1588,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Geografinių duomenų kartografavimas baigtas</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Tinklelio atributas &quot;%1&quot;redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Tinklelio atributas "%1"redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Ribinė sąlyga &quot;%1&quot;redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Ribinė sąlyga "%1"redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
     </message>
 </context>
 <context>
@@ -1613,19 +1611,19 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automatinis</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sukūrus tinklelį, jūsų paklaus, ar kiekvieną kartą vykdyti atributų atvaizdavimą. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sukūrus tinklelį, jūsų paklaus, ar kiekvieną kartą vykdyti atributų atvaizdavimą. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rankinis</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
         <translation>Atributų susiejimas vykdomas tik rankiniu būdu pasirinkus meniu „Vykdyti“.</translation>
     </message>
     <message>
@@ -2393,8 +2391,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Spalvų žemėlapio nustatymas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2507,7 +2505,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Nustatykite „Scalarbar“ (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Atidarykite paukščio skrydžio langą (&amp;B)</translation>
     </message>
     <message>
@@ -2569,7 +2567,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Clip...</source>
-        <translation type="unfinished"></translation>
+        <translation>Klipas (&amp;C)...</translation>
     </message>
 </context>
 <context>
@@ -2905,11 +2903,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
     <message>
         <source>Clip Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Įrašo nustatymas</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Peržiūra (&amp;P)</translation>
     </message>
 </context>
 <context>

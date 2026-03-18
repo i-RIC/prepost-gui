@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Reverse X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alderantzizko X norabidea</translation>
     </message>
 </context>
 <context>
@@ -110,11 +108,11 @@
     <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
     <message>
         <source>Distance from Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Goiko ibaitik distantzia</translation>
     </message>
     <message>
         <source>Distance from Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Beheko ibaitik distantzia</translation>
     </message>
 </context>
 <context>
@@ -273,15 +271,15 @@
     </message>
     <message>
         <source>X axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatza</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerreko ertzetik distantzia</translation>
     </message>
     <message>
         <source>Distance from right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuineko ertzetik distantzia</translation>
     </message>
 </context>
 <context>
@@ -434,8 +432,8 @@
         <translation>Izenburuaren kolorea</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra:&lt;/span&gt; Erabili Kolore-mapa fitxa kolore-ezarpena editatzeko&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; Erabili Kolore-mapa fitxa kolore-ezarpena editatzeko&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
