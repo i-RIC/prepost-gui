@@ -347,6 +347,8 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::updateCheckState()
 	if (m_setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
 		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_childItems, true);
 	} else if (m_setting.mapping == ParticleDataSetting::Mapping::Value) {
+		m_isCommandExecuting = true;
 		NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
+		m_isCommandExecuting = false;
 	}
 }
