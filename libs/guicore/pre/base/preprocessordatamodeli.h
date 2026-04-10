@@ -25,6 +25,7 @@ public:
 	virtual PreProcessorHydraulicDataTopDataItemI* hydraulicDataTopDataItem(const std::string& type) const = 0;
 	virtual PreProcessorGridAndGridCreatingConditionDataItemI* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const = 0;
 	virtual PreProcessorGraphicsViewI* graphicsView() const = 0;
+	virtual void cameraFit() = 0;
 	virtual void applyOffset(double x, double y) = 0;
 };
 
