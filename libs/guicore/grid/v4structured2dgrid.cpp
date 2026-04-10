@@ -287,8 +287,13 @@ void v4Structured2dGrid::updateFilteredData(double xMin, double xMax, double yMi
 	if (cullEnable) {
 		maxcell = cullCellLimit;
 	}
+	int indicesRate = 1;
 
 	vtkPointSetRegionAndCellSizeFilter::calcExtractParameters(vtkConcreteData()->concreteData(), region, vtkData()->pointLocator(), maxcell, &outOfRegion, &iMin, &iMax, &jMin, &jMax, &rate);
+	int indicesCount = (jMax - jMin + 1) + (iMax - iMin + 1);
+	if (indicesCount > cullIndexLimit) {
+		indicesRate = indicesCount / cullIndexLimit;
+	}
 
 	if (outOfRegion) {
 		auto emptyPolyData = vtkSmartPointer<vtkPolyData>::New();
@@ -356,14 +361,14 @@ void v4Structured2dGrid::updateFilteredData(double xMin, double xMax, double yMi
 	filteredIndexGrid->SetPoints(points);
 	double p[3];
 	vtkIdType pointId = 0;
-	for (int i = tmpIMin; i <= tmpIMax; i += rate) {
+	for (int i = tmpIMin; i <= tmpIMax; i += indicesRate) {
 		grid->GetPoint(pointIndex(i, 0), p);
 		points->InsertNextPoint(p);
 		ca->InsertNextCell(1, &pointId);
 		sa->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1)));
 		++ pointId;
 	}
-	for (int j = tmpJMin; j <= tmpJMax; j += rate) {
+	for (int j = tmpJMin; j <= tmpJMax; j += indicesRate) {
 		grid->GetPoint(pointIndex(0, j), p);
 		points->InsertNextPoint(p);
 		ca->InsertNextCell(1, &pointId);
