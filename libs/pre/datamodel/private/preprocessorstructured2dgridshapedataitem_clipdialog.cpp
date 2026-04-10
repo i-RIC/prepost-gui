@@ -45,6 +45,7 @@ PreProcessorStructured2dGridShapeDataItem::ClipDialog::ClipDialog(PreProcessorSt
 	m_actor->GetProperty()->SetColor(0, 0, 0);
 	m_actor->GetProperty()->SetLineWidth(5);
 	m_actor->VisibilityOff();
+	m_actor->SetPosition(0, 0, m_dataItem->zDepthRange().max());
 
 	m_dataItem->renderer()->AddActor(m_actor);
 }
