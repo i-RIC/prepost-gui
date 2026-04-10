@@ -501,6 +501,20 @@ void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
 		}
 	}
 	double divWidth = rangeWidth / divNum;
+	// geodata gets the highest region.
+	int geoItemCount = (m_geoDataTop->zDepthRange().itemCount() - 1);
+	int geoItemCount2 = 0;
+	if (geoItemCount >= 0) {
+		geoItemCount2 = geoItemCount;
+	}
+	double min = max - geoItemCount2 * divWidth;
+	if (min < range.min()) {min = range.min();}
+	ZDepthRange r = m_geoDataTop->zDepthRange();
+	r.setMin(min);
+	r.setMax(max);
+	m_geoDataTop->setZDepthRange(r);
+	max = min - divWidth;
+
 	// assign regions to GridAndGridCreatingConditionDataItem instances.
 	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		int itemCount = ((*cit)->zDepthRange().itemCount() - 1);
@@ -516,11 +530,6 @@ void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
 		(*cit)->setZDepthRange(r);
 		max = min - divWidth;
 	}
-	// geodata gets the lowest region.
-	ZDepthRange r = m_geoDataTop->zDepthRange();
-	r.setMin(range.min());
-	r.setMax(max);
-	m_geoDataTop->setZDepthRange(r);
 }
 
 void PreProcessorGridTypeDataItem::updateNewGridActionStatus()
