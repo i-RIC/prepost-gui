@@ -71,7 +71,7 @@ void MeasuredDataFileDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	QDomNode vdNode = iRIC::getChildNode(node, "VectorData");
 	if (! vdNode.isNull()) {impl->m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
 	QDomNode vdtNode = iRIC::getChildNode(node, "VectorTopData");
-	if (! vdtNode.isNull()) {impl->m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
+	if (! vdtNode.isNull()) {impl->m_vectorGroupDataItem->loadFromProjectMainFile(vdtNode);}
 }
 
 void MeasuredDataFileDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
