@@ -871,6 +871,14 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	ModelessDialogModeChanger modeChanger(this);
 
+
+	QMdiSubWindow* maximizedWindow = nullptr;
+	for (auto w : m_centralWidget->subWindowList()) {
+		if (w->isMaximized()) {
+			maximizedWindow = w;
+		}
+	}
+
 	bool ret = true;
 	auto mainfile = m_projectData->mainfile();
 	if (m_projectData->isPostOnlyMode()) {
@@ -915,6 +923,9 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder, bool noWa
 
 		if (ret) {ret = mainfile->saveExceptCGNS();}
 		if (ret) {mainfile->setModified(false);}
+	}
+	if (maximizedWindow) {
+		maximizedWindow->showMaximized();
 	}
 
 	if (! ret) {
