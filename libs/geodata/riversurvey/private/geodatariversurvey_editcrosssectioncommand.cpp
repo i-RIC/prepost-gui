@@ -34,7 +34,7 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 			if (i < 3) {
 				index = 0;
 			} else {
-				index = posvec.size() - 1;
+				index = before.size() - 1;
 			}
 		}
 		int index2 = index + after.size() - before.size();
