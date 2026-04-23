@@ -87,7 +87,7 @@ public:
 	void applyOffset(double x, double y) override;
 
 	void updateTmsList();
-	void cameraFit();
+	void cameraFit() override;
 
 public slots:
 	void showCalcConditionDialog();

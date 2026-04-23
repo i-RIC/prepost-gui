@@ -773,7 +773,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		dataModel()->objectBrowserView()->select(item->standardItem()->index());
 		emit selectGeoData(item->standardItem()->index());
 	}
-	dataModel()->graphicsView()->cameraFit();
+	dataModel()->cameraFit();
 	setModified();
 
 	// import is not undo-able.
