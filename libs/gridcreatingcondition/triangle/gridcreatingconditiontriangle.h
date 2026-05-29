@@ -90,6 +90,12 @@ private slots:
 	void deletePolygon(bool force = false);
 	void deleteLine(bool force = false);
 	void cancel() {m_canceled = true;}
+	void importGridRegionPolygon();
+	void importRemeshPolygon();
+	void importHolePolygon();
+	void importDivisionLine();
+	void exportLine();
+	void exportPolygon();
 
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewI* v);
@@ -142,8 +148,14 @@ private:
 	QAction* m_coordEditAction;
 	QAction* m_editColorSettingAction;
 	QAction* m_editMaxAreaAction;
+	QAction* m_importGridRegionPolygonAction;
+	QAction* m_importRemeshPolygonAction;
+	QAction* m_importHolePolygonAction;
+	QAction* m_importDivisionLineAction;
+	QAction* m_exportAction;
 	QAction* m_redivideBreaklineAction;
 	QMenu* m_rightClickingMenu;
+	QMenu* m_importMenu;
 	QColor m_color;
 
 	bool m_angleConstraint;

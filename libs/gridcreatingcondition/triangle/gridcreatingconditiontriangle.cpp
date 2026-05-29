@@ -30,11 +30,17 @@
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
+#include <misc/geolastiodirectory.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
+
+#include <geoio/polygonshapeimporter.h>
+#include <geoio/polygonshapeexporter.h>
+#include <geoio/polylineshapeimporter.h>
+#include <geoio/polylineshapeexporter.h>
 
 #include <geos/geom/CoordinateSequenceFactory.h>
 #include <geos/geom/GeometryFactory.h>
@@ -43,6 +49,7 @@
 #include <geos/util/IllegalArgumentException.h>
 
 #include <QAction>
+#include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
@@ -187,7 +194,13 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_coordEditAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Coordinates..."), this)},
 	m_editMaxAreaAction {new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this)},
 	m_redivideBreaklineAction {new QAction(GridCreatingConditionTriangle::tr("&Redivide Break Line..."), this)},
+	m_importGridRegionPolygonAction {new QAction(GridCreatingConditionTriangle::tr("Grid Region Polygon..."), this)},
+	m_importRemeshPolygonAction{new QAction(GridCreatingConditionTriangle::tr("Remesh Polygon..."), this)},
+	m_importHolePolygonAction{new QAction(GridCreatingConditionTriangle::tr("Hole Polygon..."), this)},
+	m_importDivisionLineAction{new QAction(GridCreatingConditionTriangle::tr("Division Line..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),GridCreatingConditionTriangle::tr("&Export..."), this)},
 	m_rightClickingMenu {nullptr},
+	m_importMenu {nullptr},
 	m_inhibitSelect {false},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
@@ -217,6 +230,20 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteLine()));
 	m_editMaxAreaAction->setDisabled(true);
 	connect(m_redivideBreaklineAction, SIGNAL(triggered()), this, SLOT(redivideBreakline()));
+	connect(m_importGridRegionPolygonAction, SIGNAL(triggered()), this, SLOT(importGridRegionPolygon()));
+	m_importRemeshPolygonAction->setCheckable(true);
+	m_importRemeshPolygonAction->setDisabled(true);
+	connect(m_importRemeshPolygonAction, SIGNAL(triggered()), this, SLOT(importRemeshPolygon()));
+	m_importHolePolygonAction->setCheckable(true);
+	m_importHolePolygonAction->setDisabled(true);
+	connect(m_importHolePolygonAction, SIGNAL(triggered()), this, SLOT(importHolePolygon()));
+	m_importDivisionLineAction->setCheckable(true);
+	m_importDivisionLineAction->setDisabled(true);
+	connect(m_importDivisionLineAction, SIGNAL(triggered()), this, SLOT(importDivisionLine()));
+	m_exportAction->setCheckable(true);
+	m_exportAction->setDisabled(true);
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportPolygon()));
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportLine()));
 
 	updateActionStatus();
 }
@@ -252,6 +279,14 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_menu->addAction(m_deleteAction);
 	m_menu->addSeparator();
 
+	m_importMenu = new QMenu();
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
+	m_importMenu->setTitle(tr("&Import"));
+	m_importMenu->addAction(m_importGridRegionPolygonAction);
+	m_importMenu->addAction(m_importRemeshPolygonAction);
+	m_importMenu->addAction(m_importHolePolygonAction);
+	m_importMenu->addAction(m_importDivisionLineAction);
+
 	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(m_refineModeAction);
 	m_rightClickingMenu->addAction(m_holeModeAction);
@@ -267,6 +302,8 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_rightClickingMenu->addSeparator();
 	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_rightClickingMenu->addAction(p->createAction());
+	m_rightClickingMenu->addMenu(m_importMenu);
+	m_rightClickingMenu->addAction(m_exportAction);
 }
 
 bool GridCreatingConditionTriangle::addToolBarButtons(QToolBar* tb)
@@ -377,7 +414,7 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 	case meAddVertexNotPossible:
 	case meRemoveVertexPrepare:
 	case meRemoveVertexNotPossible:
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		updateMouseEventMode();
 		updateMouseCursor(v);
 		break;
@@ -387,33 +424,33 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 	case meDefining:
 		// update the position of the last point.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(false, event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(false, event->pos(), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new MovePolyLineCommand(false, m_currentPoint, event->pos(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		break;
 	case meMoveVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MovePolygonVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
+			iRICUndoStack::instance().push(new MovePolygonVertexCommand(false, m_currentPoint, event->pos(), m_selectedPolygon->selectedVertexId(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedLine->selectedVertexId(), this));
+			iRICUndoStack::instance().push(new MovePolyLineVertexCommand(false, m_currentPoint, event->pos(), m_selectedLine->selectedVertexId(), this));
 		}
-		m_currentPoint = QPoint(event->x(), event->y());
+		m_currentPoint = event->pos();
 		break;
 	case meAddVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPolygonVertexCommand(false, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 		} else if (m_selectMode == smLine) {
-			iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPolyLineVertexCommand(false, m_selectedLine->selectedEdgeId(), event->pos(), this));
 		}
 		break;
 	case meTranslateDialog:
@@ -447,15 +484,15 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			}
 		case meDefining:
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolygonNewPointCommand(true, event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefinePolyLineNewPointCommand(true, event->pos(), this));
 			}
 			break;
 		case meTranslatePrepare:
@@ -468,7 +505,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			} else {
 				// start translating
 				m_mouseEventMode = meTranslate;
-				m_currentPoint = QPoint(event->x(), event->y());
+				m_currentPoint = event->pos();
 				updateMouseCursor(v);
 				// push the first translation command.
 				if (m_selectMode == smPolygon) {
@@ -480,7 +517,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			// push the first move command.
 			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new MovePolygonVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
@@ -491,9 +528,9 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddPolygonVertexCommand(true, m_selectedPolygon->selectedEdgeId(), event->pos(), this));
 			} else if (m_selectMode == smLine) {
-				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddPolyLineVertexCommand(true, m_selectedLine->selectedEdgeId(), event->pos(), this));
 			}
 			break;
 		case meAddVertexNotPossible:
@@ -538,7 +575,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 
@@ -556,7 +593,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			m_currentPoint = QPoint(event->x(), event->y());
+			m_currentPoint = event->pos();
 			updateMouseEventMode();
 			updateMouseCursor(v);
 			updateActionStatus();
@@ -890,6 +927,10 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
+		m_exportAction->setDisabled(true);
 		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 			m_defineModeAction->setChecked(true);
 		} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
@@ -912,6 +953,10 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setDisabled(true);
 		m_divlineModeAction->setDisabled(true);
 		m_deleteAction->setDisabled(true);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
+		m_exportAction->setDisabled(true);
 		break;
 
 		break;
@@ -943,12 +988,16 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setEnabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setEnabled(true);
+		m_importHolePolygonAction->setEnabled(true);
+		m_importDivisionLineAction->setEnabled(true);
 		if (m_selectedPolygon != nullptr) {
 			m_addVertexAction->setEnabled(true);
 			m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportAction->setEnabled(true);
 			if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 				m_editMaxAreaAction->setEnabled(true);
 			}
@@ -958,12 +1007,14 @@ void GridCreatingConditionTriangle::updateActionStatus()
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportAction->setEnabled(true);
 		} else {
 			m_addVertexAction->setDisabled(true);
 			m_removeVertexAction->setDisabled(true);
 			m_coordEditAction->setDisabled(true);
 			m_deleteAction->setDisabled(true);
 			m_editMaxAreaAction->setDisabled(true);
+			m_exportAction->setDisabled(true);
 		}
 		break;
 	case meAddVertexPrepare:
@@ -992,6 +1043,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_deleteAction->setEnabled(true);
 
 		break;
@@ -1010,6 +1064,9 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
+		m_importRemeshPolygonAction->setDisabled(true);
+		m_importHolePolygonAction->setDisabled(true);
+		m_importDivisionLineAction->setDisabled(true);
 		m_deleteAction->setEnabled(true);
 		break;
 	case meTranslateDialog:
@@ -1233,6 +1290,158 @@ void GridCreatingConditionTriangle::deleteLine(bool force)
 	updateMouseCursor(graphicsView());
 	updateActionStatus();
 	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::importGridRegionPolygon()
+{
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
+
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
+
+	m_gridRegionPolygon->setPolygon(importedPolygon);
+	GeoLastIODirectory::setFromFilename(filename);
+	m_mouseEventMode = meNormal;
+		
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::importRemeshPolygon()
+{
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
+
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
+
+	GridCreatingConditionTriangleRemeshPolygon* tmpPol = new GridCreatingConditionTriangleRemeshPolygon(this);
+	tmpPol->setPolygon(importedPolygon);
+	m_remeshPolygons.append(tmpPol);
+	m_mouseEventMode = meNormal;
+
+	GeoLastIODirectory::setFromFilename(filename);
+	
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::importHolePolygon()
+{
+	PolygonShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
+
+	const QPolygonF importedPolygon = importer.importData(filename, selectedFilter, preProcessorWindow());
+	if (importedPolygon.size() == 0) { return; }
+
+	GridCreatingConditionTriangleHolePolygon* tmpPol = new GridCreatingConditionTriangleHolePolygon(this);
+	tmpPol->setPolygon(importedPolygon);
+	m_holePolygons.append(tmpPol);
+	m_mouseEventMode = meNormal;
+
+	GeoLastIODirectory::setFromFilename(filename);
+
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::importDivisionLine()
+{
+	PolylineShapeImporter importer;
+	QStringList filters = importer.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"));
+	if (filename.isNull()) { return; }
+
+	const QVector<QPointF> importedPolyline = QVector<QPointF>::fromStdVector(importer.importData(filename, selectedFilter, preProcessorWindow()));
+	if (importedPolyline.size() == 0) { return; }
+
+	GridCreatingConditionTriangleDivisionLine* tmpPol = new GridCreatingConditionTriangleDivisionLine(this);
+	tmpPol->setPolyLine(importedPolyline);
+	m_divisionLines.append(tmpPol);
+
+	GeoLastIODirectory::setFromFilename(filename);
+
+	// This operation is not undoable.
+	iRICUndoStack::instance().clear();
+	
+	updateMouseCursor(graphicsView());
+	updateActionStatus();
+	renderGraphicsView();
+}
+
+void GridCreatingConditionTriangle::exportPolygon()
+{
+	if (m_selectedPolygon == nullptr) { return; }
+
+	PolygonShapeExporter exporter;
+	QStringList filters = exporter.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+
+	// Select the file to export.
+	QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
+	if (filename.isNull()) { return; }
+
+	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
+		
+		exporter.exportData(m_gridRegionPolygon->polygon(), filename, selectedFilter, preProcessorWindow());
+	}
+	else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
+		GridCreatingConditionTriangleRemeshPolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon);
+		exporter.exportData(tmpPoly->polygon(), filename, selectedFilter, preProcessorWindow());
+	}
+	else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr) {
+		GridCreatingConditionTriangleHolePolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon);
+		exporter.exportData(tmpPoly->polygon(), filename, selectedFilter, preProcessorWindow());
+	}
+	GeoLastIODirectory::setFromFilename(filename);
+}
+
+void GridCreatingConditionTriangle::exportLine()
+{
+	if (m_selectedLine == nullptr) { return; }
+
+	PolylineShapeExporter exporter;
+	QStringList filters = exporter.fileDialogFilters();
+	QString dir = GeoLastIODirectory::get();
+	QString selectedFilter;
+
+	// Select the file to export.
+	QString filename = QFileDialog::getSaveFileName(preProcessorWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
+	if (filename.isNull()) { return; }
+
+	GridCreatingConditionTriangleDivisionLine* tmpLine = dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
+
+	exporter.exportData(tmpLine->polyLine().toStdVector(), filename, selectedFilter, preProcessorWindow());
+
+	GeoLastIODirectory::setFromFilename(filename);
 }
 
 bool GridCreatingConditionTriangle::selectObject(QPoint point)

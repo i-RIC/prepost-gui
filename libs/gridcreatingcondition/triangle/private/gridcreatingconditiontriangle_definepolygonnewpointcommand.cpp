@@ -7,7 +7,7 @@
 GridCreatingConditionTriangle::DefinePolygonNewPointCommand::DefinePolygonNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* pol) :
 	QUndoCommand {GridCreatingConditionTriangle::tr("Add New Polygon Point")},
 	m_keyDown {keyDown},
-	m_polygon {pol},
+	m_condition {pol},
 	m_targetPolygon {pol->m_selectedPolygon}
 {
 	double dx = point.x();
@@ -31,7 +31,7 @@ void GridCreatingConditionTriangle::DefinePolygonNewPointCommand::redo()
 	}
 	pol->Modified();
 	m_targetPolygon->updateShapeData();
-	m_polygon->renderGraphicsView();
+	m_condition->renderGraphicsView();
 }
 
 void GridCreatingConditionTriangle::DefinePolygonNewPointCommand::undo()
@@ -40,6 +40,9 @@ void GridCreatingConditionTriangle::DefinePolygonNewPointCommand::undo()
 	if (m_keyDown) {
 		// decrease the number of points. i. e. remove the last point.
 		vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
+		if (numOfPoints == 1) {
+			m_condition->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
+		}
 		pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 		pol->GetPoints()->Modified();
 	} else {
@@ -47,7 +50,7 @@ void GridCreatingConditionTriangle::DefinePolygonNewPointCommand::undo()
 	}
 	pol->Modified();
 	m_targetPolygon->updateShapeData();
-	m_polygon->renderGraphicsView();
+	m_condition->renderGraphicsView();
 }
 
 int GridCreatingConditionTriangle::DefinePolygonNewPointCommand::id() const
@@ -60,7 +63,7 @@ bool GridCreatingConditionTriangle::DefinePolygonNewPointCommand::mergeWith(cons
 	const DefinePolygonNewPointCommand* comm = dynamic_cast<const DefinePolygonNewPointCommand*>(other);
 	if (comm == nullptr) {return false;}
 	if (comm->m_keyDown) {return false;}
-	if (comm->m_polygon != m_polygon) {return false;}
+	if (comm->m_condition != m_condition) {return false;}
 	if (comm->m_targetPolygon != m_targetPolygon) {return false;}
 	m_newPoint = comm->m_newPoint;
 	return true;

@@ -18,7 +18,7 @@ public:
 
 private:
 	bool m_keyDown;
-	GridCreatingConditionTriangle* m_polygon;
+	GridCreatingConditionTriangle* m_condition;
 	GridCreatingConditionTriangleAbstractPolygon* m_targetPolygon;
 	QVector2D m_newPoint;
 };
