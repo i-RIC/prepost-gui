@@ -119,6 +119,10 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>グラフウィンドウを開く (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1339,6 +1343,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>グラフウィンドウを開く (&amp;G)</translation>
     </message>
 </context>
 <context>

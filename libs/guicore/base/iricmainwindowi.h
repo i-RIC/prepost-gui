@@ -55,6 +55,10 @@ public:
 	virtual void setEdgeFocus(const std::string& zoneName, const std::vector<vtkIdType>& line) = 0;
 	virtual void clearEdgeFocus() = 0;
 	virtual PostCrosssectionWindow* createPostCrosessionWindowWithNoSetting() = 0;
+	virtual void createGraph2dHybridWindowForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) = 0;
+	virtual void createGraph2dHybridWindowForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) = 0;
+	virtual void createGraph2dHybridWindowForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) = 0;
+	virtual void createGraph2dHybridWindowForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) = 0;
 
 	virtual ProjectData* projectData() const = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;

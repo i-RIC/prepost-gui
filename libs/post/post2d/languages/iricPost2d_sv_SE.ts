@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Välj Beräkningsresultat</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Öppna graffönstret (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Visa attributwebbläsare</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Öppna graffönstret (&amp;G)</translation>
     </message>
 </context>
 <context>

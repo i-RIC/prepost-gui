@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Эсептөө натыйжасын тандаңыз</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Графикалык терезени ачуу (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Атрибут браузерин көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Графикалык терезени ачуу (&amp;G)</translation>
     </message>
 </context>
 <context>

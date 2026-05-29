@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Selecione o resultado do cálculo</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Abrir janela do Graph (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1279,6 +1283,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Mostrar navegador de atributos</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Abrir janela do Graph (&amp;G)</translation>
     </message>
 </context>
 <context>

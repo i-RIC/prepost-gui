@@ -20,6 +20,7 @@ public:
 	void update(const QPoint& p, VTKGraphicsView* v);
 	void fix(const QPoint& p, VTKGraphicsView* v);
 	void clear();
+	vtkIdType fixedIndex() const;
 
 protected:
 	QPointF worldPos(const QPoint& p, VTKGraphicsView* v);
@@ -27,6 +28,7 @@ protected:
 	PropertyBrowserView* propertyBrowserView() const;
 	Post2dWindowDataItem* item() const;
 	QList<PropertyBrowserAttribute> buildAttributes(vtkIdType id, vtkDataSetAttributes* atts, v4Grid::AttributeDataProvider* provider) const;
+	vtkIdType m_fixedIndex;
 
 private:
 	virtual bool doUpdate(const QPoint& p, VTKGraphicsView* v) = 0;

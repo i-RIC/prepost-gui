@@ -34,6 +34,10 @@ public:
 	Graph2dHybridWindowView* view() const;
 	PostSolutionInfo* postSolutionInfo();
 	bool setupInitialSetting();
+	void setupSettingForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupSettingForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupSettingForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
+	void setupSettingForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values);
 	void showSettingDialog();
 	void getXAxisValueRange(double* min, double* max);
 	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;

@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Atidaryti grafiko langą (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Rodyti atributų naršyklę</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Atidaryti grafiko langą (&amp;G)</translation>
     </message>
 </context>
 <context>

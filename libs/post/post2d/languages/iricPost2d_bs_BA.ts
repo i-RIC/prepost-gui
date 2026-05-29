@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Odaberite Rezultat izračuna</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otvori prozor grafa (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Prikaži preglednik atributa</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otvori prozor grafa (&amp;G)</translation>
     </message>
 </context>
 <context>

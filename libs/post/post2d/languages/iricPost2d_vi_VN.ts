@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Chọn kết quả tính toán</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Mở cửa sổ đồ thị (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Hiển thị trình duyệt thuộc tính</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Mở cửa sổ đồ thị (&amp;G)</translation>
     </message>
 </context>
 <context>

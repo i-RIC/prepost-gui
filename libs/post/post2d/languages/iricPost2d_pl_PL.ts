@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Wybierz Wynik obliczeń</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otwórz okno wykresu (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Pokaż przeglądarkę atrybutów</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otwórz okno wykresu (&amp;G)</translation>
     </message>
 </context>
 <context>

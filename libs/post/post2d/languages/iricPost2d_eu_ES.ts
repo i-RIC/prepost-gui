@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Hautatu Kalkuluaren emaitza</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Ireki grafikoaren leihoa (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Erakutsi atributuen arakatzailea</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Ireki grafikoaren leihoa (&amp;G)</translation>
     </message>
 </context>
 <context>

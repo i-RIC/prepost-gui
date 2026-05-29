@@ -9,6 +9,7 @@
 #include <vtkDataSetAttributes.h>
 
 Post2dWindowAttributeBrowserController::Post2dWindowAttributeBrowserController(Post2dWindowDataItem* item) :
+	m_fixedIndex {-1},
 	m_item {item},
 	m_fixed {false}
 {}
@@ -18,7 +19,6 @@ Post2dWindowAttributeBrowserController::~Post2dWindowAttributeBrowserController(
 
 void Post2dWindowAttributeBrowserController::update(const QPoint& p, VTKGraphicsView* v)
 {
-	if (! propertyBrowser()->isVisible()) {return;}
 	if (m_fixed) {return;}
 
 	doUpdate(p, v);
@@ -26,7 +26,9 @@ void Post2dWindowAttributeBrowserController::update(const QPoint& p, VTKGraphics
 
 void Post2dWindowAttributeBrowserController::fix(const QPoint& p, VTKGraphicsView* v)
 {
-	if (! propertyBrowser()->isVisible()) {return;}
+	if (! propertyBrowser()->isVisible()) {
+		propertyBrowser()->show();
+	}
 
 	m_fixed = doUpdate(p, v);
 }
@@ -34,6 +36,11 @@ void Post2dWindowAttributeBrowserController::fix(const QPoint& p, VTKGraphicsVie
 void Post2dWindowAttributeBrowserController::clear()
 {
 	propertyBrowserView()->hideAll();
+}
+
+vtkIdType Post2dWindowAttributeBrowserController::fixedIndex() const
+{
+	return m_fixedIndex;
 }
 
 Post2dWindowDataItem* Post2dWindowAttributeBrowserController::item() const

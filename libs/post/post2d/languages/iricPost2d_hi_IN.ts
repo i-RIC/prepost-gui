@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>गणना परिणाम का चयन करें</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>ग्राफ़ विंडो खोलें (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>विशेषता ब्राउज़र दिखाएँ</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>ग्राफ़ विंडो खोलें (&amp;G)</translation>
     </message>
 </context>
 <context>

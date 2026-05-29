@@ -41,8 +41,10 @@ bool Post2dWindowAbstractCellScalarGroupTopDataItem::AttributeBrowserController:
 	auto cellId = topDataItem->data()->findCell(pos.x(), pos.y(), 0, v->stdDistance(iRIC::nearRadius()), weights);
 	if (cellId < 0) {
 		propertyBrowserView()->resetAttributes();
+		m_fixedIndex = -1;
 		return false;
 	}
+	m_fixedIndex = cellId;
 
 	auto polygon = vtkPointsUtil::getPolygon(topDataItem->data()->data()->GetCell(cellId));
 	auto attributes = buildAttributes(cellId, topDataItem->data()->data()->GetCellData(), grid2d->attributeDataProvider());

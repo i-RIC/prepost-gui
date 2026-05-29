@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>계산 결과 선택</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>그래프 창 열기 (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>속성 브라우저 표시</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>그래프 창 열기 (&amp;G)</translation>
     </message>
 </context>
 <context>

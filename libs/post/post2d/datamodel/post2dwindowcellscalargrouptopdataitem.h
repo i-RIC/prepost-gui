@@ -10,6 +10,9 @@ class Post2dWindowCellScalarGroupTopDataItem : public Post2dWindowAbstractCellSc
 public:
 	Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* parent);
 
+private slots:
+	void openGraphWindow() override;
+
 private:
 	void getIJIndex(vtkIdType idx, vtkIdType* i, vtkIdType* j) const override;
 	vtkPointSetExtended* data() const override;

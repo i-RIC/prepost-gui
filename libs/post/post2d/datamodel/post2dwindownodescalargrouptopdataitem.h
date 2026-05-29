@@ -31,6 +31,7 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 	std::vector<std::string> scalarsDrawnInDiscreteMode() const;
@@ -44,6 +45,7 @@ public:
 
 private slots:
 	void showAttributeBrowser();
+	void openGraphWindow();
 
 private:
 	void addCustomMenuItems(QMenu* menu) override;
@@ -53,7 +55,12 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
+	QMenu* m_rightClickingMenu;
 	QAction* m_showAttributeBrowserAction;
+	QAction* m_openGraphWindowAction;
+	QPoint m_dragStartPoint;
+	bool m_dragStarted;
+
 	class AttributeBrowserController;
 	AttributeBrowserController* m_attributeBrowserController;
 

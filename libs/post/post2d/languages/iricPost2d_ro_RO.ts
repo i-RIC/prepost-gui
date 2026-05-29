@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Selectați Rezultatul calculului</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Deschideți fereastra grafică (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Afișați browserul de atribute</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Deschideți fereastra grafică (&amp;G)</translation>
     </message>
 </context>
 <context>

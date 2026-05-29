@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Выберите результат расчета</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Открыть окно графика (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Показать браузер атрибутов</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Открыть окно графика (&amp;G)</translation>
     </message>
 </context>
 <context>

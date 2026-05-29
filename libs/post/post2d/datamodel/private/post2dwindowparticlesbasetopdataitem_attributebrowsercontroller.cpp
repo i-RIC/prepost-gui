@@ -27,8 +27,10 @@ bool Post2dWindowParticlesBaseTopDataItem::AttributeBrowserController::doUpdate(
 	auto pointId = particles->vtkConcreteData()->findClosestPointWithinRadius(v->stdDistance(iRIC::nearRadius()), pos.x(), pos.y(), 0);
 	if (pointId < 0) {
 		propertyBrowserView()->resetAttributes();
+		m_fixedIndex = -1;
 		return false;
 	}
+	m_fixedIndex = pointId;
 
 	auto pointCoords = particles->point2d(pointId);
 	auto attributes = buildAttributes(pointId, particles->vtkData()->data()->GetPointData(),

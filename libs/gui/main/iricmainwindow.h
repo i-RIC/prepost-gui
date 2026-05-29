@@ -31,6 +31,7 @@ class iRICMetaData;
 class AnimationController;
 class ContinuousSnapshotWizard;
 class CoordinateSystemDisplayWidget;
+class Graph2dHybridWindowProjectDataItem;
 class SolverConsoleWindow;
 class PostProcessorWindow;
 class PreProcessorWindow;
@@ -183,6 +184,10 @@ public slots:
 	void createPostCrosssectionWindow();
 	PostCrosssectionWindow* createPostCrosessionWindowWithNoSetting() override;
 	void createGraph2dHybridWindow();
+	void createGraph2dHybridWindowForNode(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) override;
+	void createGraph2dHybridWindowForCell(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) override;
+	void createGraph2dHybridWindowForIFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) override;
+	void createGraph2dHybridWindowForJFace(const std::string& zoneName, vtkIdType index, const std::vector<std::string>& values) override;
 	void createGraph2dScatteredWindow();
 	void openVerificationDialog();
 
@@ -254,6 +259,7 @@ private:
 	void setupProcessEnvironment();
 	void setupNetworkProxy();
 	void updateTmsListForAllWindows();
+	Graph2dHybridWindowProjectDataItem* createGraph2dHybridWindowWithoutInit();
 
 	QString timeString(int time);
 

@@ -107,6 +107,10 @@
         <source>Select Calculation Result</source>
         <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otevřít okno grafu (&amp;G)</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
@@ -1275,6 +1279,10 @@
     <message>
         <source>Show Attribute Browser</source>
         <translation>Zobrazit prohlížeč atributů</translation>
+    </message>
+    <message>
+        <source>Open &amp;Graph Window</source>
+        <translation>Otevřít okno grafu (&amp;G)</translation>
     </message>
 </context>
 <context>
