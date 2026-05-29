@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Lösaren avslutade beräkningen.</translation>
+        <translation type="vanished">Lösaren avslutade beräkningen.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Detta projekt har redan beräkningsresultatdata. Om du kör lösaren kasseras den.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Se till att:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Om beräkningsresultatet redan finns raderas det.&lt;/li&gt; &lt;li&gt;Beräkningsvillkoret och inmatningsrutnätet som du kan se i förbehandlingsfönstret skrivs till Case1.cgn.&lt;/li&gt; &lt;li&gt;Lösaren kommer att läsa data från Case1.cgn och börja köra.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Är du säker på att det är OK?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se till att:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Om beräkningsresultatet redan finns kommer det att tas bort.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Projektet kommer att sparas.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Är du säker på att det är OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se till att:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Om beräkningsresultatet redan finns kommer det att tas bort.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Projektet kommer att sparas.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Är du säker på att det är OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

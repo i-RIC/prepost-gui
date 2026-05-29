@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Çözücü hesaplamayı bitirdi.</translation>
+        <translation type="vanished">Çözücü hesaplamayı bitirdi.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Bu projede zaten hesaplama sonucu verileri var. Çözücüyü çalıştırırsanız atılır.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -149,11 +155,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Are you sure it is OK?&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Hesaplama sonucu zaten mevcutsa silinir.&lt;/li&gt; &lt;li&gt;Hesaplama koşulu ve giriş tablosu Ön işleme penceresinde görebileceğiniz Case1.cgn'ye yazılır.&lt;/li&gt; &lt;li&gt;Çözücü Case1.cgn'deki verileri okuyacak ve çalışmaya başlayacaktır.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Öyle misiniz? sorun olmadığından emin misin?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Hesaplama sonucu zaten mevcutsa silinir.&lt;/li&gt; &lt;li&gt;Hesaplama koşulu ve giriş tablosu Ön işleme penceresinde görebileceğiniz Case1.cgn&apos;ye yazılır.&lt;/li&gt; &lt;li&gt;Çözücü Case1.cgn&apos;deki verileri okuyacak ve çalışmaya başlayacaktır.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Öyle misiniz? sorun olmadığından emin misin?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt;&lt;ul style="margin-top: 0px; marj-bottom: 0px; marj-left: 0px; marj-sağ: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Hesaplama sonucu zaten mevcutsa silinecektir.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Proje kaydedilecektir.&lt;/li&gt; li&gt;&lt;/ul&gt;&lt;p&gt;İyi olduğundan emin misiniz?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lütfen şunlardan emin olun:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; marj-bottom: 0px; marj-left: 0px; marj-sağ: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Hesaplama sonucu zaten mevcutsa silinecektir.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Proje kaydedilecektir.&lt;/li&gt; li&gt;&lt;/ul&gt;&lt;p&gt;İyi olduğundan emin misiniz?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

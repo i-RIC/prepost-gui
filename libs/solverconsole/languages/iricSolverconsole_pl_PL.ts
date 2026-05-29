@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Solver zakończył obliczenia.</translation>
+        <translation type="vanished">Solver zakończył obliczenia.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Ten projekt zawiera już dane dotyczące wyników obliczeń. Jeśli uruchomisz Solver, zostanie on odrzucony.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Upewnij się, że:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Jeśli wynik obliczenia już istnieje, zostanie usunięty.&lt;/li&gt; &lt;li&gt;Warunek obliczenia i siatka wejściowa który widzisz w oknie wstępnego przetwarzania, jest zapisywany w pliku Case1.cgn.&lt;/li&gt; &lt;li&gt;Soller odczyta dane z pliku Case1.cgn i rozpocznie działanie.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Czy jesteś na pewno wszystko w porządku?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Upewnij się, że:&lt;/p&gt;&lt;ul style="margin-top: 0px; margines-dolny: 0px; margines-lewy: 0px; margines-prawy: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Jeśli wynik obliczeń już istnieje, zostanie usunięty.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Projekt zostanie zapisany.&lt;/li&gt;&lt;li style="margin-top:8px;"&gt;Projekt zostanie zapisany.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Czy na pewno wszystko jest w porządku?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Upewnij się, że:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margines-dolny: 0px; margines-lewy: 0px; margines-prawy: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Jeśli wynik obliczeń już istnieje, zostanie usunięty.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Projekt zostanie zapisany.&lt;/li&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Projekt zostanie zapisany.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Czy na pewno wszystko jest w porządku?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

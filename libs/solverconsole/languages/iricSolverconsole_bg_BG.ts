@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Решителят завърши изчислението.</translation>
+        <translation type="vanished">Решителят завърши изчислението.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Този проект вече има данни за резултатите от изчисленията. Ако стартирате решаващия инструмент, той се отхвърля.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Моля, уверете се, че:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Ако вече съществува резултат от изчислението, той се изтрива.&lt;/li&gt; &lt;li&gt;Условието за изчисление и мрежата за въвеждане което можете да видите в прозореца за предварителна обработка, е записано в Case1.cgn.&lt;/li&gt; &lt;li&gt;Солвърът ще прочете данните от Case1.cgn и ще започне да работи.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Вие ли сте сигурен ли си, че е наред?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Моля, уверете се, че:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Ако вече съществува резултат от изчислението, той ще бъде изтрит.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Проектът ще бъде записан.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Сигурни ли сте, че е наред?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Моля, уверете се, че:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Ако вече съществува резултат от изчислението, той ще бъде изтрит.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Проектът ще бъде записан.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Сигурни ли сте, че е наред?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

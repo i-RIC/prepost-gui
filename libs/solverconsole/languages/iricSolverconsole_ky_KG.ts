@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>Чечүүчү эсептөөнү аяктады.</translation>
+        <translation type="vanished">Чечүүчү эсептөөнү аяктады.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Бул долбоордо эсептөө натыйжалары мурунтан эле бар. Эгерде сиз чечүүчүнү иштетсеңиз, ал жок кылынат.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Төмөнкүлөрдү текшериңиз:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Эгер эсептөөнүн натыйжасы мурунтан эле бар болсо, ал жок кылынат.&lt;/li&gt; &lt;li&gt;Эсептөө шарты жана киргизүү торчолору Алдын ала иштетүү терезесинде көрө турган нерсе Case1.cgn дарегине жазылган.&lt;/li&gt; &lt;li&gt;Чечүүчү Case1.cgn дайындарын окуп, иштей баштайт.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Сизби бул туурабы?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Төмөнкүлөрдү текшериңиз:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Эгер эсептөөнүн натыйжасы мурунтан эле бар болсо, ал жок кылынат.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Долбоор сакталат.&lt;/li&gt;&lt;li style="margin-top:8px"&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Ал туура экенине ишенесизби?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Төмөнкүлөрдү текшериңиз:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Эгер эсептөөнүн натыйжасы мурунтан эле бар болсо, ал жок кылынат.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Долбоор сакталат.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Ал туура экенине ишенесизби?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

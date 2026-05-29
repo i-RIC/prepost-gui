@@ -261,7 +261,22 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	if (! impl->m_solverKilled) {
 		if (status == 0) {
 			// Finished normally.
-			QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation."));
+			QMessageBox::StandardButton button = QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation. Do you want to save this project?"),
+				QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+			switch (button) {
+			case QMessageBox::Yes:
+				try {
+					bool ok = impl->m_projectData->mainWindow()->saveProject(true);
+					if (!ok) { return; }
+				}
+				catch (ErrorMessage& m) {
+					QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
+					return;
+				}
+				break;
+			case QMessageBox::No:
+				break;
+			}
 		} else {
 			// Finished abnormally.
 			QMessageBox::warning(this, tr("Solver Finished"), tr("The solver finished abnormally."));

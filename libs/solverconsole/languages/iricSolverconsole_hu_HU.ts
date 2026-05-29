@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>A megoldó befejezte a számítást.</translation>
+        <translation type="vanished">A megoldó befejezte a számítást.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Ez a projekt már rendelkezik számítási eredmény adatokkal. Ha futtatja a megoldót, a rendszer eldobja.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Győződjön meg a következőkről:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Ha már létezik számítási eredmény, akkor az törlődik.&lt;/li&gt; &lt;li&gt;A számítási feltétel és a beviteli rács amelyet az előfeldolgozási ablakban láthat, az a Case1.cgn fájlba van írva.&lt;/li&gt; &lt;li&gt;A megoldó beolvassa az adatokat a Case1.cgn fájlból, és elindul a futás.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Te vagy. biztos, hogy rendben van?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kérjük, ellenőrizze a következőket:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Ha már létezik számítási eredmény, akkor az törlődik.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;A projekt mentésre kerül.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Biztos benne, hogy rendben van?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kérjük, ellenőrizze a következőket:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Ha már létezik számítási eredmény, akkor az törlődik.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;A projekt mentésre kerül.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Biztos benne, hogy rendben van?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

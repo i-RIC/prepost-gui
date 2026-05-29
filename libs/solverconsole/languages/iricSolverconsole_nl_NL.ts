@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>SolverConsoleWindow</name>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation>De oplosser voltooide de berekening.</translation>
+        <translation type="vanished">De oplosser voltooide de berekening.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
@@ -104,6 +106,10 @@
     <message>
         <source>This project already has calculation result data. If you run the solver, it is discarded.</source>
         <translation type="vanished">Dit project beschikt al over berekeningsresultaatgegevens. Als u de oplosser uitvoert, wordt deze verwijderd.</translation>
+    </message>
+    <message>
+        <source>The solver finished calculation. Do you want to save this project?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,8 +158,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Zorg ervoor dat:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Als het berekeningsresultaat al bestaat, wordt het verwijderd.&lt;/li&gt; &lt;li&gt;De berekeningsvoorwaarde en het invoerraster die u in het voorverwerkingsvenster kunt zien, is naar Case1.cgn geschreven.&lt;/li&gt; &lt;li&gt;De oplosser leest de gegevens van Case1.cgn en begint te draaien.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Bent u dat? Weet je zeker dat het goed is?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zorg ervoor dat:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Als het berekeningsresultaat al bestaat, wordt dit verwijderd.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Het project wordt opgeslagen.&lt;/li&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Weet je zeker dat het goed is?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zorg ervoor dat:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Als het berekeningsresultaat al bestaat, wordt dit verwijderd.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Het project wordt opgeslagen.&lt;/li&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Weet je zeker dat het goed is?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
