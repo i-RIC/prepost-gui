@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>การตั้งค่าการแสดงผล</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>พิมพ์:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดตัวอักษร:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>แสดงชื่อ</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>เงื่อนไขขอบเขต</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

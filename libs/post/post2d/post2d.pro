@@ -151,6 +151,11 @@ win32 {
 
 # Input
 HEADERS += post2d_global.h \
+           datamodel/post2dwindowbcdataitem.h \
+           datamodel/private/post2dwindowbcdataitem_impl.h \
+           datamodel/post2dwindowbcgroupdataitem.h \
+           datamodel/private/post2dwindowbcdataitem_setting.h \
+           datamodel/private/post2dwindowbcdataitem_settingeditwidget.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -289,6 +294,7 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowzonedataitem_impl.h
 FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindowabstractcellscalargroupdataitem_settingeditwidget.ui \
+         datamodel/private/post2dwindowbcdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.ui \
          datamodel/private/post2dwindowgraphgroupdataitem_editwidget.ui \
          datamodel/private/post2dwindowgraphgroupdataitem_editwidget_customregiondialog.ui \
@@ -314,6 +320,10 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.ui
 SOURCES += post2dgridregionselectdialog.cpp \
+           datamodel/post2dwindowbcdataitem.cpp \
+           datamodel/post2dwindowbcgroupdataitem.cpp \
+           datamodel/private/post2dwindowbcdataitem_setting.cpp \
+           datamodel/private/post2dwindowbcdataitem_settingeditwidget.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \

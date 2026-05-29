@@ -366,6 +366,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>種類:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>名前を表示</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>境界条件</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
@@ -794,6 +835,10 @@
         <source>Subtract minimum value in each line</source>
         <translation>各行の最小値を減算する</translation>
     </message>
+    <message>
+        <source>Graph Setting</source>
+        <translation type="vanished">グラフ設定</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
@@ -808,135 +853,6 @@
     <message>
         <source>&amp;Unselect All</source>
         <translation>すべて選択解除 (&amp;U)</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowGraphSettingCustomRegionDialog</name>
-    <message>
-        <source>Custom Region Setting</source>
-        <translation type="vanished">カスタム領域設定</translation>
-    </message>
-    <message>
-        <source>&amp;Select All</source>
-        <translation type="vanished">全て選択(&amp;A)</translation>
-    </message>
-    <message>
-        <source>&amp;Unselect All</source>
-        <translation type="vanished">全て選択解除(&amp;U)</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowGraphGroupDataItem_EditWidget</name>
-    <message>
-        <source>Form</source>
-        <translation>フォーム</translation>
-    </message>
-    <message>
-        <source>Graph Setting</source>
-        <translation type="vanished">グラフ設定</translation>
-    </message>
-    <message>
-        <source>Direction</source>
-        <translation type="vanished">方向</translation>
-    </message>
-    <message>
-        <source>I direction</source>
-        <translation type="vanished">I 方向</translation>
-    </message>
-    <message>
-        <source>J direction</source>
-        <translation type="vanished">J 方向</translation>
-    </message>
-    <message>
-        <source>Region</source>
-        <translation type="vanished">領域</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation type="vanished">全て</translation>
-    </message>
-    <message>
-        <source>Partial region</source>
-        <translation type="vanished">部分領域</translation>
-    </message>
-    <message>
-        <source>Start:</source>
-        <translation type="vanished">開始:</translation>
-    </message>
-    <message>
-        <source>End:</source>
-        <translation type="vanished">終了:</translation>
-    </message>
-    <message>
-        <source>Skip:</source>
-        <translation type="vanished">間引き:</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation type="vanished">カスタム</translation>
-    </message>
-    <message>
-        <source>&amp;Edit...</source>
-        <translation type="vanished">編集(&amp;E)...</translation>
-    </message>
-    <message>
-        <source>Draw Direction</source>
-        <translation type="vanished">描画方向</translation>
-    </message>
-    <message>
-        <source>Vertical to grid lines</source>
-        <translation type="vanished">格子線に垂直</translation>
-    </message>
-    <message>
-        <source>Parallel to grid lines</source>
-        <translation type="vanished">格子線方向</translation>
-    </message>
-    <message>
-        <source>Grid Lines</source>
-        <translation type="vanished">格子線</translation>
-    </message>
-    <message>
-        <source>Draw</source>
-        <translation type="vanished">描画する</translation>
-    </message>
-    <message>
-        <source>Graph Lines</source>
-        <translation type="vanished">グラフ線</translation>
-    </message>
-    <message>
-        <source>Physical Value:</source>
-        <translation type="vanished">物理量:</translation>
-    </message>
-    <message>
-        <source>Scale:</source>
-        <translation type="vanished">倍率:</translation>
-    </message>
-    <message>
-        <source>No modification</source>
-        <translation type="vanished">そのまま表示</translation>
-    </message>
-    <message>
-        <source>Subtract maximum value in each line</source>
-        <translation type="vanished">各線での最大値を引く</translation>
-    </message>
-    <message>
-        <source>Subtract minimum value in each line</source>
-        <translation type="vanished">各線での最小値を引く</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowGraphGroupDataItem_EditWidget_CustomRegionDialog</name>
-    <message>
-        <source>Custom Region Setting</source>
-        <translation>カスタム領域設定</translation>
-    </message>
-    <message>
-        <source>&amp;Select All</source>
-        <translation>全て選択(&amp;A)</translation>
-    </message>
-    <message>
-        <source>&amp;Unselect All</source>
-        <translation>全て選択解除(&amp;U)</translation>
     </message>
 </context>
 <context>

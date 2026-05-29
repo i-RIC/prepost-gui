@@ -1,4 +1,5 @@
 #include "post2dwindowinputgriddataitem.h"
+#include "post2dwindowbcgroupdataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridattributecellgroupdataitem.h"
@@ -40,11 +41,15 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 	impl->m_jEdgeGroupDataItem = new Post2dWindowGridAttributeJEdgeGroupDataItem(this);
 	impl->m_jEdgeGroupDataItem->setupChildren();
 
+	impl->m_bcGroupDataItem = new Post2dWindowBCGroupDataItem(this);
+	impl->m_bcGroupDataItem->setupChildren();
+
 	addChildItem(impl->m_gridShapeDataItem);
 	addChildItem(impl->m_nodeGroupDataItem);
 	addChildItem(impl->m_cellGroupDataItem);
 	addChildItem(impl->m_iEdgeGroupDataItem);
-	addChildItem(impl->m_jEdgeGroupDataItem);
+	addChildItem(impl->m_jEdgeGroupDataItem);	
+	addChildItem(impl->m_bcGroupDataItem);
 
 	if (impl->m_nodeGroupDataItem->childItems().size() == 0) {
 		m_standardItem->takeRow(impl->m_nodeGroupDataItem->standardItem()->row());
@@ -109,6 +114,11 @@ Post2dWindowGridAttributeJEdgeGroupDataItem* Post2dWindowInputGridDataItem::jEdg
 	return impl->m_jEdgeGroupDataItem;
 }
 
+Post2dWindowBCGroupDataItem* Post2dWindowInputGridDataItem::bcGroupDataItem() const
+{
+	return impl->m_bcGroupDataItem;
+}
+
 void Post2dWindowInputGridDataItem::handleGridChange()
 {
 	zoneDataItem()->update(true);
@@ -130,6 +140,11 @@ void Post2dWindowInputGridDataItem::doLoadFromProjectMainFile(const QDomNode& no
 
 	QDomNode jEdgeNode = iRIC::getChildNode(node, "JEdgeAttributes");
 	if (! jEdgeNode.isNull()) {impl->m_jEdgeGroupDataItem->loadFromProjectMainFile(jEdgeNode);}
+
+	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditions");
+	if (!bcNode.isNull() && impl->m_bcGroupDataItem != nullptr) {
+		impl->m_bcGroupDataItem->loadFromProjectMainFile(bcNode);
+	}
 }
 
 void Post2dWindowInputGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -153,6 +168,12 @@ void Post2dWindowInputGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wr
 	writer.writeStartElement("JEdgeAttributes");
 	impl->m_jEdgeGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
+
+	if (impl->m_bcGroupDataItem != nullptr) {
+		writer.writeStartElement("BoundaryConditions");
+		impl->m_bcGroupDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
 
 void Post2dWindowInputGridDataItem::update()

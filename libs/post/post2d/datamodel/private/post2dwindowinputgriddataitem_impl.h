@@ -7,6 +7,7 @@ class Post2dWindowGridAttributeCellGroupDataItem;
 class Post2dWindowGridAttributeIEdgeGroupDataItem;
 class Post2dWindowGridAttributeJEdgeGroupDataItem;
 class Post2dWindowGridAttributeNodeGroupDataItem;
+class Post2dWindowBCGroupDataItem;
 
 class Post2dWindowInputGridDataItem::Impl
 {
@@ -19,6 +20,7 @@ public:
 	Post2dWindowGridAttributeCellGroupDataItem* m_cellGroupDataItem;
 	Post2dWindowGridAttributeIEdgeGroupDataItem* m_iEdgeGroupDataItem;
 	Post2dWindowGridAttributeJEdgeGroupDataItem* m_jEdgeGroupDataItem;
+	Post2dWindowBCGroupDataItem* m_bcGroupDataItem;
 };
 
 #endif // POST2DWINDOWINPUTGRIDDATAITEM_IMPL_H

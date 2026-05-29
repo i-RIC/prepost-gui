@@ -6,6 +6,7 @@
 #include <memory>
 
 class v4InputGrid;
+class Post2dWindowBCGroupDataItem;
 class Post2dWindowGridAttributeNodeGroupDataItem;
 class Post2dWindowGridAttributeCellGroupDataItem;
 class Post2dWindowGridAttributeIEdgeGroupDataItem;
@@ -30,6 +31,7 @@ public:
 	Post2dWindowGridAttributeCellGroupDataItem* cellGroupDataItem() const;
 	Post2dWindowGridAttributeIEdgeGroupDataItem* iEdgeGroupDataItem() const;
 	Post2dWindowGridAttributeJEdgeGroupDataItem* jEdgeGroupDataItem() const;
+	Post2dWindowBCGroupDataItem* bcGroupDataItem() const;
 
 	void update();
 	bool colorBarShouldBeVisible(const std::string& name) const;

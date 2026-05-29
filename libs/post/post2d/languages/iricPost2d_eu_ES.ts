@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Pantailaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Inprimakia</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Mota:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolorea:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuaren tamaina:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Izena:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Erakutsi izena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Muga-baldintza</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>

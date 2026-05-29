@@ -346,6 +346,47 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowBCDataItem</name>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekran Ayarları</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tip:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Uç Boyutu:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>İsim:</translation>
+    </message>
+    <message>
+        <source>Show name</source>
+        <translation>Adını göster</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowBCGroupDataItem</name>
+    <message>
+        <source>Boundary Condition</source>
+        <translation>Sınır Koşulu</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
