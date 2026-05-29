@@ -1,3 +1,5 @@
+#include "../tmsutil.h"
+#include "../tmsimagecacheitem.h"
 #include "tmsimagecache_entry.h"
 #include "tmsimagecache_networkaccessmanager.h"
 
@@ -67,13 +69,17 @@ void TmsImageCache::NetworkAccessManager::handleReply()
 	auto reply = qobject_cast<QNetworkReply*> (sndr);
 	if (reply == nullptr) {return;}
 
-	auto pixmap = new QPixmap();
-	bool ok = pixmap->loadFromData(reply->readAll());
+	QPixmap pixmap;
+	pixmap.loadFromData(reply->readAll());
 
 	auto it = m_cache->m_entries.find(reply->url().toString());
 	if (it != m_cache->m_entries.end()) {
 		QMutexLocker entriesLocker(&m_cache->m_entriesMutex);
-		it->second->pixmap = pixmap;
+
+		int z, x, y;
+		tmsloader::TmsUtil::getXYZ(reply->url().toString(), &z, &x, &y);
+
+		it->second->item = new TmsImageCacheItem(z, x, y, pixmap, m_cache->lonLat());
 		it->second->status = Entry::Status::CacheInMemory;
 
 		m_cache->m_inMemoryEntries.insert({it->second->url, it->second});

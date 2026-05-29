@@ -1,9 +1,13 @@
 #include "tmsimagecache.h"
+#include "tmsimagecacheitem.h"
+#include "tmsutil.h"
 #include "private/tmsimagecache_entry.h"
 #include "private/tmsimagecache_garbagecollectthread.h"
 #include "private/tmsimagecache_networkaccessmanager.h"
 
 #include <misc/filesystemfunction.h>
+
+#include <gdal_priv.h>
 
 #include <QDateTime>
 #include <QUrl>
@@ -11,9 +15,12 @@
 TmsImageCache::TmsImageCache() :
 	m_tempDir {},
 	m_dir {m_tempDir.path()},
+	m_lonLat {false},
 	m_manager {new NetworkAccessManager(this)},
 	m_garbageCollectThread {new GarbageCollectThread(this)}
 {
+	GDALAllRegister();
+
 	m_garbageCollectThread->start();
 }
 
@@ -21,6 +28,16 @@ TmsImageCache::~TmsImageCache()
 {
 	delete m_manager;
 	delete m_garbageCollectThread;
+}
+
+bool TmsImageCache::lonLat() const
+{
+	return m_lonLat;
+}
+
+void TmsImageCache::setLonLat(bool lonLat)
+{
+	m_lonLat = lonLat;
 }
 
 void TmsImageCache::addRequests(const QString& urlPattern, int zoomLevel, int xMin, int xMax, int yMin, int yMax, int maxZoomLevel)
@@ -35,7 +52,7 @@ bool TmsImageCache::exists(const QString& url) const
 	return it != m_entries.end();
 }
 
-QPixmap* TmsImageCache::load(const QString& url)
+TmsImageCacheItem* TmsImageCache::load(const QString& url)
 {
 	QMutexLocker entriesLocker(&m_entriesMutex);
 
@@ -57,15 +74,21 @@ QPixmap* TmsImageCache::load(const QString& url)
 
 			return nullptr;
 		} else {
-			auto pixmap = new QPixmap();
-			pixmap->load(fname, "png");
-			it->second->pixmap = pixmap;
+			QPixmap original, wgs84;
+			QRectF wgs84Rect;
+			QFile file(fname);
+			file.open(QFile::ReadOnly);
+			QDataStream stream(&file);
+			stream >> original >> wgs84 >> wgs84Rect;
+			int z, x, y;
+			tmsloader::TmsUtil::getXYZ(url, &z, &x, &y);
+			it->second->item = new TmsImageCacheItem(z, x, y, original, wgs84, wgs84Rect);
 
 			m_inMemoryEntries.insert({url, it->second});
 		}
 	}
 	it->second->lastAccess = QDateTime::currentMSecsSinceEpoch();
-	return it->second->pixmap;
+	return it->second->item;
 }
 
 void TmsImageCache::garbageCollect()
@@ -73,12 +96,17 @@ void TmsImageCache::garbageCollect()
 	m_garbageCollectThread->collect();
 }
 
+QString TmsImageCache::escapedUrl(const QString& url)
+{
+	QString ret = url;
+	ret.replace(':', '_');
+	ret.replace('/', '_');
+	ret.replace('&', '_');
+
+	return ret;
+}
+
 QString TmsImageCache::fileName(const QString& url) const
 {
-	QString localPath = url;
-	localPath.replace(':', '_');
-	localPath.replace('/', '_');
-	localPath.replace('&', '_');
-
-	return m_dir.absoluteFilePath(localPath);
+	return m_dir.absoluteFilePath(escapedUrl(url));
 }

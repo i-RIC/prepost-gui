@@ -11,6 +11,8 @@
 #include <QString>
 
 #include <gdal_priv.h>
+#include <gdalwarper.h>
+#include <cpl_vsi.h>
 #define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H
 #include <proj_api.h>
 
@@ -18,6 +20,7 @@
 #include <math.h>
 #include <cmath>
 #include <vector>
+#include <memory>
 
 namespace {
 
@@ -28,14 +31,23 @@ CoordinateSystem webMercatorCS("WebMercator", "WebMercator",
 															 "+proj=latlong +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0", "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs");
 
 
-bool saveGeoTIFF(const std::string& fname, const QRectF& rect, const QImage& img)
+/// Convert Web Mercator georeferenced dataset to Long-Lat in-memory using GDAL VRT warping
+GDALDataset* convertToLongLatInMemory(GDALDataset* srcDataset, double pixelSize)
+{
+	GDALDatasetH dstDataset = GDALAutoCreateWarpedVRT(reinterpret_cast<GDALDatasetH> (srcDataset), EPSG3857STR, EPSG4326STR, GRA_NearestNeighbour, 1.0, NULL);
+	return reinterpret_cast<GDALDataset*> (dstDataset);
+}
+
+/// Create in-memory dataset from QImage
+GDALDataset* createInMemoryDataset(const QRectF& rect, const QImage& img)
 {
 	QImage rgbImg = img.convertToFormat(QImage::Format_RGB888);
 
-	GDALDriver* driver = GetGDALDriverManager()->GetDriverByName("GTiff");
-	char** options = NULL;
-	GDALDataset *ds = driver->Create(fname.c_str(), rgbImg.width(), rgbImg.height(), 3, GDT_Byte, options);
-	if (ds == NULL) { return false; }
+	GDALDriver* driver = GetGDALDriverManager()->GetDriverByName("MEM");
+	if (!driver) { return nullptr; }
+
+	GDALDataset* ds = driver->Create("", rgbImg.width(), rgbImg.height(), 3, GDT_Byte, nullptr);
+	if (ds == nullptr) { return nullptr; }
 
 	int bitCount = rgbImg.width() * rgbImg.height();
 	std::vector<unsigned char> rBits, gBits, bBits;
@@ -52,6 +64,7 @@ bool saveGeoTIFF(const std::string& fname, const QRectF& rect, const QImage& img
 			bBits[idx] = *(head + j * 3 + 2);
 		}
 	}
+
 	GDALRasterBand* band = nullptr;
 	band = ds->GetRasterBand(1);
 	band->RasterIO(GF_Write, 0, 0, rgbImg.width(), rgbImg.height(), (void*)(rBits.data()),
@@ -71,31 +84,43 @@ bool saveGeoTIFF(const std::string& fname, const QRectF& rect, const QImage& img
 
 	double transform[6] = { xmin, delta, 0, ymax, 0, -delta };
 	ds->SetGeoTransform(transform);
-
 	ds->SetProjection(EPSG3857STR);
-	GDALClose(static_cast<GDALDatasetH> (ds));
 
-	return true;
+	return ds;
 }
 
-bool convertGeoTiffToLongLat(const std::string& from, const std::string& to, double res)
+/// Read data from warped dataset back to QImage
+bool readWarpedDatasetToImage(GDALDataset* warpedDataset, QImage* img)
 {
-	QString exepath = iRICRootPath::get();
-	QString exeName = QDir(exepath).absoluteFilePath("gdalwarp.exe");
-	QString resstr = QString::number(res, 'g', 10);
+	int width = warpedDataset->GetRasterXSize();
+	int height = warpedDataset->GetRasterYSize();
 
-	QStringList args;
-	args << "-s_srs" << EPSG3857STR << "-t_srs" << EPSG4326STR;
-	args << "-multi";
-	args << from.c_str() << to.c_str();
+	std::vector<unsigned char> rBits(width * height);
+	std::vector<unsigned char> gBits(width * height);
+	std::vector<unsigned char> bBits(width * height);
 
-	int ret = QProcess::execute(exeName, args);
-	return (ret == 0);
-}
+	GDALRasterBand* band = nullptr;
+	band = warpedDataset->GetRasterBand(1);
+	band->RasterIO(GF_Read, 0, 0, width, height, (void*)(rBits.data()),
+		width, height, GDT_Byte, 1, width);
+	band = warpedDataset->GetRasterBand(2);
+	band->RasterIO(GF_Read, 0, 0, width, height, (void*)(gBits.data()),
+		width, height, GDT_Byte, 1, width);
+	band = warpedDataset->GetRasterBand(3);
+	band->RasterIO(GF_Read, 0, 0, width, height, (void*)(bBits.data()),
+		width, height, GDT_Byte, 1, width);
 
-bool loadGeoTIFF(const std::string& fname, QImage* img)
-{
-	*img = QImage(fname.c_str());
+	*img = QImage(width, height, QImage::Format_RGB888);
+	for (int i = 0; i < height; ++i) {
+		uchar* scanLine = img->scanLine(i);
+		for (int j = 0; j < width; ++j) {
+			int idx = j + i * width;
+			*(scanLine + j * 3) = rBits[idx];
+			*(scanLine + j * 3 + 1) = gBits[idx];
+			*(scanLine + j * 3 + 2) = bBits[idx];
+		}
+	}
+
 	return true;
 }
 
@@ -116,7 +141,7 @@ void WebMercatorUtil::Impl::init(int zoomlevel)
 	zcy = e;
 }
 
-void WebMercatorUtil::Impl::project_plxel(double lon, double lat, double* x, double* y)
+void WebMercatorUtil::Impl::project_pixel(double lon, double lat, double* x, double* y)
 {
 	*x = zcx + lon * Bc;
 	double f = std::sin(DEG_TO_RAD * lat);
@@ -159,8 +184,8 @@ void WebMercatorUtil::getTileRegion(double topLeftLon, double topLeftLat, double
 
 	double xmin, ymin, xmax, ymax;
 
-	impl->project_plxel(topLeftLon, topLeftLat, &xmin, &ymin);
-	impl->project_plxel(bottomRightLon, bottomRightLat, &xmax, &ymax);
+	impl->project_pixel(topLeftLon, topLeftLat, &xmin, &ymin);
+	impl->project_pixel(bottomRightLon, bottomRightLat, &xmax, &ymax);
 
 	xmin /= 256;
 	ymin /= 256;
@@ -182,8 +207,8 @@ void WebMercatorUtil::calcImageZoomAndSize(double lonMin, double latMin, double 
 	Impl impl;
 	impl.init(0);
 
-	impl.project_plxel(lonMin, latMin, &xmin, &ymin);
-	impl.project_plxel(lonMax, latMax, &xmax, &ymax);
+	impl.project_pixel(lonMin, latMin, &xmin, &ymin);
+	impl.project_pixel(lonMax, latMax, &xmax, &ymax);
 
 	xcenter = (xmin + xmax) * 0.5;
 	ycenter = (ymin + ymax) * 0.5;
@@ -197,29 +222,46 @@ void WebMercatorUtil::calcImageZoomAndSize(double lonMin, double latMin, double 
 		xwidth *= 2;
 		ywidth *= 2;
 	}
+	// decrement zoomlevel
+	if (*zoomLevel > 1) {
+		*zoomLevel -= 1;
+		xwidth /= 2;
+		ywidth /= 2;
+	}
 	*width = static_cast<int> (xwidth);
 	*height = static_cast<int> (ywidth);
 }
 
 QImage WebMercatorUtil::convertWebMercatorToLongLat(const QRectF& rect, const QImage& image, const QString& workDir)
 {
-	static int idx = 0;
 	GDALAllRegister();
 
-	QDir dir(workDir);
-	std::string tmpImg1 = iRIC::toStr(dir.absoluteFilePath(QString("img%1.tif").arg(++idx)));
-	std::string tmpImg2 = iRIC::toStr(dir.absoluteFilePath(QString("img%1.tif").arg(++idx)));
+	// Create in-memory georeferenced dataset from QImage
+	GDALDataset* srcDataset = createInMemoryDataset(rect, image);
+	if (!srcDataset) {
+		return image; // Return original on error
+	}
 
-	bool ok = saveGeoTIFF(tmpImg1, rect, image);
-	ok = convertGeoTiffToLongLat(tmpImg1, tmpImg2, rect.width() / image.width());
+	// Perform coordinate transformation in-memory using GDAL VRT warping
+	double pixelSize = rect.width() / image.width();
+	GDALDataset* warpedDataset = convertToLongLatInMemory(srcDataset, pixelSize);
+	if (!warpedDataset) {
+		GDALClose(static_cast<GDALDatasetH>(srcDataset));
+		return image; // Return original on error
+	}
+
+	// Read warped data back to QImage
 	QImage result;
-	ok = loadGeoTIFF(tmpImg2, &result);
-	QFile::remove(tmpImg1.c_str());
-	QFile::remove(tmpImg2.c_str());
+	readWarpedDatasetToImage(warpedDataset, &result);
 
+	// Scale result to match original image width if needed
 	int w = image.width();
 	int h = static_cast<double>(result.height()) / result.width() * w;
 	result = result.scaled(w, h);
+
+	// Clean up
+	GDALClose(static_cast<GDALDatasetH>(warpedDataset));
+	GDALClose(static_cast<GDALDatasetH>(srcDataset));
 
 	return result;
 }
@@ -229,7 +271,7 @@ void WebMercatorUtil::project(double lon, double lat, double* x, double* y)
 	Impl impl;
 	impl.init(0);
 
-	impl.project_plxel(lon, lat, x, y);
+	impl.project_pixel(lon, lat, x, y);
 }
 
 void WebMercatorUtil::unproject(double x, double y, double* lon, double* lat)

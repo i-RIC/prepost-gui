@@ -322,21 +322,14 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 	auto cs = projectData()->mainfile()->coordinateSystem();
 	if (cs == nullptr) {return;}
 
-	if (cs->isLongLat()) {
-		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
-		QRectF rect = calcRect(view, impl->m_offset);
-		rect = trimLonLatRect(rect);
-
-		impl->m_convertThread->addJob(rect, impl->m_tmsLoader.getImage(impl->m_tmsRequestId), projectData()->workDirectory());
-	} else {
-		handleImageOutput(impl->m_tmsLoader.getImage(impl->m_tmsRequestId));
-	}
+	handleImageOutput(impl->m_tmsLoader.getImage(impl->m_tmsRequestId));
 }
 
 void TmsImageGroupDataItem::handleImageOutput(const QImage& image)
 {
 	impl->m_image = image;
 	impl->m_imgToImg->Modified();
+	impl->m_imgToImg->Update();
 
 	impl->m_plane->SetPoint1(impl->m_image.width(), 0, 0);
 	impl->m_plane->SetPoint2(0, impl->m_image.height(), 0);
