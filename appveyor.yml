@@ -112,6 +112,10 @@ before_build:
               mkdir output
               Rename-Item .\languages .\input
               C:\Python311-x64\python.exe "$topdir\tools\translate_ts.py"
+              if ($LASTEXITCODE -ne 0) {
+                Write-Warning "translate_ts.py failed for $($lang.Parent) - falling back to original files"
+                Copy-Item -Path .\input\* -Destination .\output\
+              }
               Rename-Item .\output .\languages
               Remove-Item -Recurse -Force .\input
           }

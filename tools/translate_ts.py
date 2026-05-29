@@ -74,6 +74,7 @@ def translation_by_googlecloud(word, lang):
     )
 
     # Display the translation for each input text provided
+    trans = word  # fallback: return original if no translation received
     for tl in response.translations:
         trans = tl.translated_text
         trans = apply_placeholders(trans, placeholders)
@@ -261,16 +262,19 @@ def main(src_folder, tgt_folder, select_API):
 
                     # 翻訳処理
                     # Translation process
-                    trans_text = translation(before_text, lang, select_API)
-                    # print(trans_text)
+                    try:
+                        trans_text = translation(before_text, lang, select_API)
+                        # print(trans_text)
 
-                    # ml[1]のunfinished属性を消す
-                    # Remove the unfinished attribute of ml [1]
-                    ml[1].attrib.pop('type', None)
+                        # ml[1]のunfinished属性を消す
+                        # Remove the unfinished attribute of ml [1]
+                        ml[1].attrib.pop('type', None)
 
-                    # ml[1]のテキストにtrans_textを代入する
-                    # Substitute trans_text for the text of ml [1]
-                    ml[1].text = trans_text
+                        # ml[1]のテキストにtrans_textを代入する
+                        # Substitute trans_text for the text of ml [1]
+                        ml[1].text = trans_text
+                    except Exception as e:
+                        print('Translation failed for "{0}": {1}'.format(before_text, e))
                 
                 # vanished
                 elif ml[1].attrib['type'] == 'vanished':
