@@ -2637,6 +2637,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Remover ponto(s) de grade</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Grampo (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2969,6 +2973,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Configuração de formato de grade</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Configuração do clipe</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Pré-visualização (&amp;P)</translation>
     </message>
 </context>
 <context>

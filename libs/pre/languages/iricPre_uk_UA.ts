@@ -2565,6 +2565,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Перемістити точки сітки</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Кліп (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2893,6 +2897,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Налаштування форми сітки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Налаштування кліпу</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Попередній перегляд (&amp;P)</translation>
     </message>
 </context>
 <context>

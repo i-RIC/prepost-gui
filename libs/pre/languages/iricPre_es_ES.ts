@@ -2597,6 +2597,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Mover Punto(s) de Cuadricula</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Acortar (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2925,6 +2929,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Configuración de forma de cuadrícula</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Configuración del clip</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Avance (&amp;P)</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Reverse X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvirkštinė X kryptis</translation>
     </message>
 </context>
 <context>
@@ -110,11 +108,11 @@
     <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
     <message>
         <source>Distance from Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstumas nuo aukštupio</translation>
     </message>
     <message>
         <source>Distance from Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstumas nuo pasroviui</translation>
     </message>
 </context>
 <context>
@@ -273,15 +271,15 @@
     </message>
     <message>
         <source>X axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X ašis</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstumas nuo kairiojo kranto</translation>
     </message>
     <message>
         <source>Distance from right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstumas nuo dešiniojo kranto</translation>
     </message>
 </context>
 <context>
@@ -434,8 +432,8 @@
         <translation>Pavadinimo spalva</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

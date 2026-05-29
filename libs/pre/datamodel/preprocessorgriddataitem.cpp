@@ -807,6 +807,11 @@ void PreProcessorGridDataItem::updateActionStatus()
 	impl->m_cellDisplaySettingAction->setEnabled((impl->m_grid != nullptr) && (impl->m_cellDataItem != nullptr));
 
 	m_shapeDataItem->editAction()->setEnabled(impl->m_grid != nullptr && impl->m_selectedNodesController->selectedDataIds().size() > 0);
+	bool gridIsStructured = false;
+	if (impl->m_grid != nullptr && dynamic_cast<v4Structured2dGrid*> (impl->m_grid->grid()) != nullptr) {
+		gridIsStructured = true;
+	}
+	m_shapeDataItem->clipAction()->setEnabled(gridIsStructured);
 
 	PreProcessorGridAttributeMappingSettingTopDataItem* mtItem =
 		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->mappingSettingDataItem();

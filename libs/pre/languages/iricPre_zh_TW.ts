@@ -2565,6 +2565,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">移動網格點</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>夾子 (&amp;C) ……</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2893,6 +2897,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>網格形狀設定</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>剪輯設定</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>預覽 (&amp;P)</translation>
     </message>
 </context>
 <context>

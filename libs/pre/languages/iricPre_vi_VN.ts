@@ -2565,6 +2565,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Di chuyển (các) Điểm lưới</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Clip (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2893,6 +2897,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Cài đặt hình dạng lưới</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Cài đặt kẹp</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Xem trước (&amp;P)</translation>
     </message>
 </context>
 <context>

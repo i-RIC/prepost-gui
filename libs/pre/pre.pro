@@ -411,6 +411,7 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.h \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
+           datamodel/private/preprocessorstructured2dgridshapedataitem_clipdialog.h \
            datamodel/public/preprocessorgriddataitem_selectedabstractcellscontroller.h \
            datamodel/public/preprocessorgriddataitem_selectedcellscontroller.h \
            datamodel/public/preprocessorgriddataitem_selecteddatacontroller.h \
@@ -476,6 +477,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positioneditdialog.ui \
+         datamodel/private/preprocessorstructured2dgridshapedataitem_clipdialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui \
          subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.ui \
@@ -578,6 +580,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \
+           datamodel/private/preprocessorstructured2dgridshapedataitem_clipdialog.cpp \
            datamodel/public/preprocessorgriddataitem_selectedabstractcellscontroller.cpp \
            datamodel/public/preprocessorgriddataitem_selectedcellscontroller.cpp \
            datamodel/public/preprocessorgriddataitem_selecteddatacontroller.cpp \

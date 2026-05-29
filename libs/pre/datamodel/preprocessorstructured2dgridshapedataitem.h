@@ -20,6 +20,9 @@ public:
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override;
 
+private slots:
+	void openClipDialog();
+
 private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
@@ -28,6 +31,8 @@ private:
 
 	void setupActors();
 	void doUpdateActorSetting() override;
+
+	class ClipDialog;
 };
 
 #endif // PREPROCESSORSTRUCTURED2DGRIDSHAPEDATAITEM_H

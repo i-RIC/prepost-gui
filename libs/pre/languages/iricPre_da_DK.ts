@@ -2561,6 +2561,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Flyt gitterpunkter</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Klip (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2889,6 +2893,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Indstilling af gitterform</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Klipindstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Forhåndsvisning (&amp;P)</translation>
     </message>
 </context>
 <context>

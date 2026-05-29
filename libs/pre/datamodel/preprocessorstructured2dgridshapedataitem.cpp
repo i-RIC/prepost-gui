@@ -1,6 +1,7 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorstructured2dgridshapedataitem.h"
 #include "public/preprocessorgriddataitem_selectednodescontroller.h"
+#include "private/preprocessorstructured2dgridshapedataitem_clipdialog.h"
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/gridshape/gridshapesettingeditwidget.h>
@@ -9,6 +10,7 @@
 #include <guicore/grid/v4structured2dgrid.h>
 #include <guibase/gridshape/gridshapesettingeditwidget.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -18,6 +20,8 @@ PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeData
 {
 	setupActors();
 	updateActorSetting();
+
+	connect(m_clipAction, &QAction::triggered, this, &PreProcessorStructured2dGridShapeDataItem::openClipDialog);
 }
 
 PreProcessorStructured2dGridShapeDataItem::~PreProcessorStructured2dGridShapeDataItem()
@@ -105,6 +109,12 @@ void PreProcessorStructured2dGridShapeDataItem::informDeselection(VTKGraphicsVie
 void PreProcessorStructured2dGridShapeDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);
+}
+
+void PreProcessorStructured2dGridShapeDataItem::openClipDialog()
+{
+	auto dialog = new ClipDialog(this, preProcessorWindow());
+	dialog->show();
 }
 
 void PreProcessorStructured2dGridShapeDataItem::assignActorZValues(const ZDepthRange& range)

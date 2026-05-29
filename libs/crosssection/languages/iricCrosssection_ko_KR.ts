@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AbstractCrosssectionWindow</name>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Reverse X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>X 방향을 반대로</translation>
     </message>
 </context>
 <context>
@@ -110,11 +108,11 @@
     <name>AbstractCrosssectionWindow::DisplaySettingDialog</name>
     <message>
         <source>Distance from Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>상류로부터의 거리</translation>
     </message>
     <message>
         <source>Distance from Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>하류로부터의 거리</translation>
     </message>
 </context>
 <context>
@@ -273,15 +271,15 @@
     </message>
     <message>
         <source>X axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X축</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>좌안으로부터의 거리</translation>
     </message>
     <message>
         <source>Distance from right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>우안에서 거리</translation>
     </message>
 </context>
 <context>
@@ -434,8 +432,8 @@
         <translation>제목 색상</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;참고:&lt;/span&gt; 색상 설정을 편집하려면 색상표 탭을 사용하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;참고:&lt;/span&gt; 색상 설정을 편집하려면 색상표 탭을 사용하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>

@@ -2565,6 +2565,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">Siirrä ruudukkopisteet</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>Klipsi (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2893,6 +2897,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>Ruudukon muodon asetus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>Leikkeen asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>Esikatselu (&amp;P)</translation>
     </message>
 </context>
 <context>

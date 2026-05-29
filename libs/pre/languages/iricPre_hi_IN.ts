@@ -2565,6 +2565,10 @@ Do you really want to import grid from this file?</source>
         <source>Move Grid Point(s)</source>
         <translation type="vanished">ग्रिड प्वाइंट ले जाएं</translation>
     </message>
+    <message>
+        <source>&amp;Clip...</source>
+        <translation>क्लिप (&amp;C)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
@@ -2893,6 +2897,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Grid Shape Setting</source>
         <translation>ग्रिड आकार सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorStructured2dGridShapeDataItem_ClipDialog</name>
+    <message>
+        <source>Clip Setting</source>
+        <translation>क्लिप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation>पूर्व दर्शन (&amp;P)</translation>
     </message>
 </context>
 <context>

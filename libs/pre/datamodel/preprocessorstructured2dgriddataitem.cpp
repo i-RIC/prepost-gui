@@ -7,6 +7,7 @@
 #include "preprocessorstructured2dgridshapedataitem.h"
 
 #include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
@@ -50,6 +51,8 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 	m_editMenu->addAction(m_shapeDataItem->editAction());
 	m_editMenu->addAction(nodeEditAction());
 	m_editMenu->addAction(cellEditAction());
+
+	menu()->addAction(m_shapeDataItem->clipAction());
 
 	if (m_bcGroupDataItem != nullptr) {
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
