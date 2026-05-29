@@ -102,7 +102,7 @@ before_build:
         Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
 
         C:\Python311-x64\python.exe -m pip install --upgrade pip
-        C:\Python311-x64\python.exe -m pip install google-cloud-translate
+        C:\Python311-x64\python.exe -m pip install google-cloud-translate packaging
 
         $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
         foreach ($dir in $dirs) {
