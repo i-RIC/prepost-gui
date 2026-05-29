@@ -44,7 +44,6 @@
        <widget class="QLabel" name="langLabel">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -259,7 +258,7 @@
         <item row="1" column="2">
          <widget class="QSpinBox" name="cullMaxIndexSpinBox">
           <property name="minimum">
-           <number>100</number>
+           <number>2</number>
           </property>
           <property name="maximum">
            <number>10000</number>
