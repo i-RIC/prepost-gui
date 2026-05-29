@@ -108,6 +108,7 @@ void Post3dWindowContourGroupDataItem::updateColorMapVisibility()
 		auto v = dataModel()->graphicsView();
 		impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(v);
 		m_actor2DCollection->AddItem(actor);
+		updateVisibilityWithoutRendering();
 	}
 }
 
