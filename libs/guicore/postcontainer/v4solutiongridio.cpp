@@ -534,6 +534,7 @@ void v4SolutionGridIO::loadStructured2dGrid(v4Structured2dGrid* grid, iRICLib::H
 	grid->vtkData()->updateValueRangeSet();
 	grid->vtkIEdgeData()->updateValueRangeSet();
 	grid->vtkJEdgeData()->updateValueRangeSet();
+	grid->updateCenterGridData();
 }
 
 v4Unstructured2dGrid* v4SolutionGridIO::loadUnstructured2dGrid(iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)

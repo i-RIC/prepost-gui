@@ -5,6 +5,7 @@
 
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
@@ -118,12 +119,28 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues()
 	if (cont == nullptr) {return;}
 
 	auto grid = cont->gridData()->grid()->vtkData()->data();
+	auto sg2d = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 
 	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		updateValuesVertex(grid);
-	}
-	else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
-		updateValuesCellCenter(grid);
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
+		if (sg2d != nullptr) {
+			updateValuesVertex(sg2d->cellCenterGrid());
+		} else {
+			updateValuesCellCenter(grid);
+		}
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
+		if (sg2d != nullptr) {
+			updateValuesVertex(sg2d->iEdgeCenterGrid());
+		} else {
+			Q_ASSERT(false);   //   Unhandled
+		}
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+		if (sg2d != nullptr) {
+			updateValuesVertex(sg2d->jEdgeCenterGrid());
+		} else {
+			Q_ASSERT(false);   //   Unhandled
+		}
 	} else {
 		Q_ASSERT(false);   //   Unhandled GridLocation_t
 	}
