@@ -72,6 +72,9 @@ void AbstractCrosssectionWindow::GraphicsView::IndependentChartController::drawN
 	painter->setPen(pen);
 
 	for (int i = 0; i < nodePositions.size() - 1; ++i) {
+		if (values.at(i).isNull()) {
+			continue;
+		}
 		auto p1x = xMatrix.map(QPointF(nodePositions.at(i), 0));
 		auto p1y = yMatrix.map(QPointF(0, values.at(i).toDouble()));
 		auto p2x = xMatrix.map(QPointF(nodePositions.at(i + 1), 0));

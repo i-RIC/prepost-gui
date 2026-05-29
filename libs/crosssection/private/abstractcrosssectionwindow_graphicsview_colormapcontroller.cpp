@@ -49,10 +49,14 @@ void AbstractCrosssectionWindow::GraphicsView::ColorMapController::drawNodeColor
 	double y2 = info.yMax - VERTICAL_OFFSET;
 
 	for (int i = 0; i < nodePositions.size() - 1; ++i) {
+		auto v = values.at(i);
+		if (v.isNull()) {
+			continue;
+		}
 		auto p1x = matrix.map(QPointF(nodePositions.at(i), 0));
 		auto p2x = matrix.map(QPointF(nodePositions.at(i + 1), 0));
 
-		cm->paintNodeData(p1x.x(), p2x.x(), values.at(i).toDouble(), values.at(i + 1).toDouble(), y1, y2, painter);
+		cm->paintNodeData(p1x.x(), p2x.x(), v.toDouble(), values.at(i + 1).toDouble(), y1, y2, painter);
 	}
 }
 
