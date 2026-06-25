@@ -2449,6 +2449,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>面積の計算設定</translation>
     </message>
     <message>
+        <source>Base target:</source>
+        <translation>基準面:</translation>
+    </message>
+    <message>
         <source>Compare target:</source>
         <translation>比較対象:</translation>
     </message>

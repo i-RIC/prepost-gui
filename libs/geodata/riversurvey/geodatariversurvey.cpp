@@ -1791,27 +1791,35 @@ void GeoDataRiverSurvey::calcArea()
 		auto geoData = geoDataItem->geoData();
 		auto rs = dynamic_cast<GeoDataRiverSurvey*> (geoData);
 		if (rs == nullptr) {continue;}
-		if (rs == this) {continue;}
 
 		rslist.push_back(rs);
 		rsNames.push_back(rs->caption());
 	}
-	if (rsNames.size() == 0) {
+	if (rsNames.size() < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("To use this function, you need to import another river survey data for comparison."));
 		return;
 	}
 
 	CalcAreaConditionDialog dialog(preProcessorWindow());
 	dialog.setFilename(impl->m_calcAreaFilename);
-	dialog.setCompareTargets(rsNames);
+	dialog.setTargets(rsNames);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	auto before = rslist.at(dialog.compareTargetIndex());
+	int baseIndex = dialog.baseTargetIndex();
+	int compareIndex = dialog.compareTargetIndex();
+
+	if (baseIndex == compareIndex) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The base target and compare target must be different."));
+		return;
+	}
+
+	auto base = rslist.at(baseIndex);
+	auto compare = rslist.at(compareIndex);
 
 	bool statistic = (dialog.mode() == CalcAreaConditionDialog::Mode::Statistic);
-	AreaCalculator calculator(before, this, dialog.filename(), statistic);
+	AreaCalculator calculator(base, compare, dialog.filename(), statistic);
 
 	bool ok = calculator.calculate(preProcessorWindow());
 	if (ok) {
