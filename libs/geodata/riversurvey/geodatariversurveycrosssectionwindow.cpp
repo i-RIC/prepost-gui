@@ -576,10 +576,6 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 		impl->m_model->setData(impl->m_model->index(row, 2), QVariant(alt.position()));
 		impl->m_model->setData(impl->m_model->index(row, 3), QVariant(alt.height()));
 
-		QStandardItem* item = impl->m_model->item(row, 1);
-		item->setFlags(item->flags() & (~Qt::ItemIsEditable) & (~ Qt::ItemIsEnabled));
-		impl->m_model->setItem(row, 1, item);
-
 		QColor bgColor;
 		bool hasBg = false;
 		for (int p : odnPriorityOrder) {
@@ -771,11 +767,16 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 		GeoDataRiverCrosssection::Altitude alt;
 		// active
 		alt.setActive(impl->m_model->data(impl->m_model->index(i, 0)).toBool());
-		// distance from left bank
-		// position
+		// distance from left bank / position
 		double oldPos = (it + i)->position();
+		double oldLeftBankDist = oldPos + cross.leftShift();
+		double newLeftBankDist = impl->m_model->data(impl->m_model->index(i, 1)).toDouble();
 		double newPos = impl->m_model->data(impl->m_model->index(i, 2)).toDouble();
-		if (oldPos != newPos) {
+		if (newLeftBankDist != oldLeftBankDist) {
+			// Column 1 (left bank dist) was edited: back-calculate position
+			newPos = newLeftBankDist - cross.leftShift();
+		}
+		if (newPos != oldPos || newLeftBankDist != oldLeftBankDist) {
 			double min, max;
 			if (i == 0) {
 				max = (it + i + 1)->position();
