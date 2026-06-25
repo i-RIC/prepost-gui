@@ -110,6 +110,9 @@ public slots:
 	void cameraZoomOutY();
 	void update();
 
+signals:
+	void positionChangedForStatusBar(const QPointF& position);
+
 private slots:
 	void updateActionStatus();
 	void handleVegetationSelectionChange();

@@ -1452,6 +1452,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(true, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
 	}
 
+	// Emit position change signal for status bar
+	QMatrix invMatrix = m_matrix.inverted();
+	QPointF dataCoordinate = invMatrix.map(QPointF(event->pos()));
+	emit positionChangedForStatusBar(dataCoordinate);
+
 	m_oldPosition = event->pos();
 }
 

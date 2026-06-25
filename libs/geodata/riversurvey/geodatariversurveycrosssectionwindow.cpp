@@ -132,6 +132,7 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	connect(ui->wsesTableWidget, &QTableWidget::itemClicked, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemClick);
 	connect(ui->wsesTableWidget, &QTableWidget::itemChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemEdit);
 	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawnRegionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleDrawnRegionChanged);
+	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionChangedForStatusBar, this, &GeoDataRiverSurveyCrosssectionWindow::positionChangedForStatusBar);
 }
 
 

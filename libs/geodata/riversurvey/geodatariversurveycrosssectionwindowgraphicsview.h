@@ -93,6 +93,7 @@ private slots:
 signals:
 	void drawnRegionChanged();
 	void positionClicked(const QPointF& point);
+	void positionChangedForStatusBar(const QPointF& position);
 
 private:
 	int moveWidth();
