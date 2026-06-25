@@ -7,6 +7,7 @@
 #include "geodatariversurveycrosssectionslopepointeditdialog.h"
 
 #include <QAbstractItemView>
+#include <vector>
 
 class QPainter;
 class QMenu;
@@ -14,6 +15,7 @@ class QAction;
 class GeoDataRiverPathPoint;
 class GeoDataRiverSurveyCrosssectionWindow;
 class QRubberBand;
+class QRectF;
 
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView : public QAbstractItemView
 {
@@ -118,7 +120,7 @@ private:
 	void drawSelectionSquare(QPainter& painter);
 	void drawLine(GeoDataRiverPathPoint* point, const QColor& color, QPainter& painter);
 	void drawOdnNbPoints(QPainter& painter);
-	void drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter);
+	void drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter, std::vector<std::vector<QRectF>>& drawnRects);
 	void drawJmkLine(QPainter& painter);
 	void drawWaterSurfaceElevations(QPainter& painter, const QMatrix& matrix);
 	void drawWaterSurfaceElevation(int index, QPainter& painter, const QMatrix& matrix);

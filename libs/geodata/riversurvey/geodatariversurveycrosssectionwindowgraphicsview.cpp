@@ -430,18 +430,19 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter&
 	if (target == nullptr) { return; }
 
 	const auto& odn = target->odn();
+	std::vector<std::vector<QRectF>> drawnRects;
 
-	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter);
-	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter);
+	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter, drawnRects);
 
-	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter);
-	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter);
+	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter, drawnRects);
 
-	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter);
-	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter);
+	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter, drawnRects);
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter, std::vector<std::vector<QRectF>>& drawnRects)
 {
 	if (m_parentWindow->target() == nullptr) { return; }
 
@@ -466,9 +467,13 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index,
 	QFontMetricsF metrics(m_displaySetting.odnNbFont);
 
 	auto rect = metrics.boundingRect(label);
-	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	QRectF textRect(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	int row = findRowToDraw(textRect, &drawnRects);
+
+	qreal rowHeight = rect.height() + 3;
+	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET + row * rowHeight, rect.width() + 5, rect.height() + 5);
 	painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, label);
-	painter.save();
+	painter.restore();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
