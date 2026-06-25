@@ -880,6 +880,17 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 			painter.drawLine(from, to);
 			y += ySubScale;
 		}
+
+		if (m_parentWindow->target() != nullptr) {
+			double centerX = m_parentWindow->target()->crosssection().leftShift();
+			QPointF centerFrom = matrix.map(QPointF(centerX, mins.y()));
+			QPointF centerTo = matrix.map(QPointF(centerX, maxs.y()));
+			QPen centerPen(m_displaySetting.distanceMarkersColor);
+			centerPen.setStyle(Qt::DashLine);
+			painter.setPen(centerPen);
+			painter.drawLine(centerFrom, centerTo);
+		}
+
 		painter.restore();
 	}
 
