@@ -81,6 +81,7 @@ public:
 	void enterEditCrosssectionMode();
 	void enterSlopePointEditMode(GeoDataRiverSurveyCrosssectionSlopePointEditDialog::Mode mode);
 	void editDisplaySetting();
+	const GeoDataRiverSurveyCrossSectionDisplaySetting& displaySetting() const;
 
 public slots:
 	void informModelessDialogOpen();

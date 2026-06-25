@@ -2249,6 +2249,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterSlopePointEditMode(G
 	connect(dialog, &QDialog::destroyed, mainWindow, &iRICMainWindowI::exitModelessDialogMode);
 }
 
+const GeoDataRiverSurveyCrossSectionDisplaySetting& GeoDataRiverSurveyCrosssectionWindowGraphicsView::displaySetting() const
+{
+	return m_displaySetting;
+}
+
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editDisplaySetting()
 {
 	QWidget* w = viewport();

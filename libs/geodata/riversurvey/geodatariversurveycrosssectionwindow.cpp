@@ -563,6 +563,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	int row = 0;
 
+	const auto& odn = impl->m_editTargetPoint->odn();
+	const auto& ds = ui->graphicsView->displaySetting();
+	static const int odnPriorityOrder[] = {0, 5, 1, 4, 2, 3};
+
 	GeoDataRiverCrosssection::Altitude alt;
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		alt = *it;
@@ -575,6 +579,24 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 		QStandardItem* item = impl->m_model->item(row, 1);
 		item->setFlags(item->flags() & (~Qt::ItemIsEditable) & (~ Qt::ItemIsEnabled));
 		impl->m_model->setItem(row, 1, item);
+
+		QColor bgColor;
+		bool hasBg = false;
+		for (int p : odnPriorityOrder) {
+			if (odn.nb(p) == row) {
+				if (p == 0 || p == 5)      bgColor = ds.odnStartColor;
+				else if (p == 1 || p == 4) bgColor = ds.odnMiddleColor;
+				else                        bgColor = ds.odnLowColor;
+				hasBg = true;
+				break;
+			}
+		}
+		if (hasBg) {
+			for (int col = 0; col < 4; ++col) {
+				impl->m_model->setData(impl->m_model->index(row, col), bgColor, Qt::BackgroundRole);
+			}
+		}
+
 		ui->tableView->setRowHeight(row, defaultRowHeight);
 		++row;
 	}

@@ -16,6 +16,11 @@ void GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::paint(QPainter* pa
 	if (m_crosssection == nullptr) {return;}
 	QVariant dat = index.model()->data(index, Qt::EditRole);
 	if (index.column() == 0) {
+		QVariant bg = index.data(Qt::BackgroundRole);
+		if (bg.isValid()) {
+			painter->fillRect(option.rect, bg.value<QBrush>());
+		}
+
 		CenteredCheckBox checkbox(nullptr);
 		checkbox.setChecked(dat.toBool());
 		if (m_crosssection->fixedPointLSet() &&
@@ -29,6 +34,7 @@ void GeoDataRiverSurveyCrosssectionWindow::DataTableDelegate::paint(QPainter* pa
 		checkbox.resize(option.rect.size());
 
 		QPixmap pixmap(option.rect.size());
+		pixmap.fill(Qt::transparent);
 		checkbox.render(&pixmap);
 		painter->drawPixmap(option.rect, pixmap);
 	} else {
