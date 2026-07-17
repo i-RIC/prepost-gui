@@ -11,6 +11,8 @@ InputConditionWidgetLabel::InputConditionWidgetLabel(QDomNode defNode, const Sol
 	InputConditionWidget(defNode),
 	m_label {new QLabel(this)}
 {
+	m_label->setOpenExternalLinks(true);
+
 	QHBoxLayout* layout = new QHBoxLayout(this);
 	layout->setMargin(0);
 	layout->addWidget(m_label);
