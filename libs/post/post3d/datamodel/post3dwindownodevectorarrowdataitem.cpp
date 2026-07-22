@@ -179,6 +179,11 @@ void Post3dWindowNodeVectorArrowDataItem::innerUpdate2Ds()
 	updateActorSetting();
 }
 
+void Post3dWindowNodeVectorArrowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* /*v*/)
+{
+	updateActorSetting();
+}
+
 void Post3dWindowNodeVectorArrowDataItem::setupActors()
 {
 	auto r = renderer();
