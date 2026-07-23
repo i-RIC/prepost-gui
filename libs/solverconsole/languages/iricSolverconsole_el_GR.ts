@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>The solver finished calculation. Do you want to save this project?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -158,8 +156,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Βεβαιωθείτε ότι:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Εάν το αποτέλεσμα υπολογισμού υπάρχει ήδη, διαγράφεται.&lt;/li&gt; &lt;li&gt;Η συνθήκη υπολογισμού και το πλέγμα εισαγωγής. που μπορείτε να δείτε στο παράθυρο προεπεξεργασίας είναι γραμμένο στο Case1.cgn.&lt;/li&gt; &lt;li&gt;Ο λύτης θα διαβάσει τα δεδομένα από το Case1.cgn και θα ξεκινήσει να εκτελείται.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Είστε εσείς. σίγουρα είναι εντάξει;&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Βεβαιωθείτε:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Εάν το αποτέλεσμα υπολογισμού υπάρχει ήδη, θα διαγραφεί.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Το έργο θα αποθηκευτεί.&lt;/li&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Είστε βέβαιοι ότι είναι εντάξει;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Βεβαιωθείτε:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Εάν το αποτέλεσμα υπολογισμού υπάρχει ήδη, θα διαγραφεί.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Το έργο θα αποθηκευτεί.&lt;/li&gt;&lt;li style="margin-top:8px;"&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Είστε βέβαιοι ότι είναι εντάξει;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
