@@ -266,6 +266,39 @@ void ProjectPostProcessors::requestDelete(PostProcessorWindowProjectDataItem* it
 	}
 }
 
+QStringList ProjectPostProcessors::windowTitlesReferencingMeasuredData(const std::vector<MeasuredData*>& mds) const
+{
+	QStringList ret;
+
+	for (auto item : m_postProcessorWindows) {
+		auto w = item->window();
+		if (w == nullptr) {continue;}
+		for (auto md : mds) {
+			if (w->isReferencingMeasuredData(md)) {
+				ret.append(w->windowTitle());
+				break;
+			}
+		}
+	}
+	return ret;
+}
+
+void ProjectPostProcessors::deleteWindowsReferencingMeasuredData(MeasuredData* md)
+{
+	std::vector<PostProcessorWindowProjectDataItem*> targets;
+
+	for (auto item : m_postProcessorWindows) {
+		auto w = item->window();
+		if (w == nullptr) {continue;}
+		if (w->isReferencingMeasuredData(md)) {
+			targets.push_back(item);
+		}
+	}
+	for (auto item : targets) {
+		requestDelete(item);
+	}
+}
+
 int ProjectPostProcessors::windowCount() const
 {
 	return m_postProcessorWindows.count();

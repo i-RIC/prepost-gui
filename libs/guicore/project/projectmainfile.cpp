@@ -860,6 +860,10 @@ void ProjectMainFile::deleteMeasuredData(const QModelIndex& index)
 {
 	auto it = impl->m_measuredDatas.begin();
 	MeasuredData* md = *(it + index.row());
+
+	// close the windows referencing the measured data to be deleted.
+	impl->m_postProcessors->deleteWindowsReferencingMeasuredData(md);
+
 	impl->m_measuredDatas.erase(it + index.row());
 	delete md;
 	emit measuredDataDeleted(index.row());
