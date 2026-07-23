@@ -208,6 +208,9 @@ void Graph2dVerificationWindowDataModel::doLoadFromProjectMainFile(const QDomNod
 	if (! sNode.isNull()) {
 		m_setting.loadFromProjectMainFile(sNode);
 	}
+	if (m_setting.activeMeasuredData() == nullptr) {
+		throw ErrorMessage("Measured data used in this window not found.");
+	}
 	Graph2dWindowDataModel::doLoadFromProjectMainFile(node);
 
 	applySettings();
@@ -335,6 +338,9 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	}
 	auto ps = grid->vtkData()->data();
 
+	if (m_setting.activeMeasuredData() == nullptr) {
+		return;
+	}
 	vtkPolyData* pd = m_setting.activeMeasuredData()->pointData();
 	distanceVals.reserve(pd->GetNumberOfPoints());
 	measuredVals.reserve(pd->GetNumberOfPoints());

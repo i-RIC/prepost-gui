@@ -5,8 +5,11 @@
 #include "projectdataitem.h"
 #include <QList>
 
+#include <vector>
+
 class QDir;
 class QMdiSubWindow;
+class MeasuredData;
 class PostProcessorWindowProjectDataItem;
 class PostProcessorWindowFactoryI;
 
@@ -19,6 +22,8 @@ public:
 	~ProjectPostProcessors();
 	QMdiSubWindow* add(PostProcessorWindowProjectDataItem* newitem);
 	void requestDelete(PostProcessorWindowProjectDataItem* item);
+	QStringList windowTitlesReferencingMeasuredData(const std::vector<MeasuredData*>& mds) const;
+	void deleteWindowsReferencingMeasuredData(MeasuredData* md);
 	int windowCount() const;
 	void setFactory(PostProcessorWindowFactoryI* factory);
 	void applyOffset(double x_diff, double y_diff);

@@ -24,6 +24,7 @@ public:
 
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
+	bool isReferencingMeasuredData(MeasuredData* md) const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
