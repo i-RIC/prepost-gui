@@ -38,10 +38,26 @@
 #include <QPushButton>
 #include <QStandardItemModel>
 
+#include <cmath>
 #include <set>
 #include <map>
 
 namespace {
+
+const double DELTA = 1.0E-6;
+
+bool isSameCrosssectionName(const QString& n1, const QString& n2)
+{
+	bool ok1 = false;
+	bool ok2 = false;
+	double v1 = n1.toDouble(&ok1);
+	double v2 = n2.toDouble(&ok2);
+	if (ok1 && ok2) {
+		return std::abs(v1 - v2) <= DELTA;
+	}
+
+	return n1 == n2;
+}
 
 QList<QString> setupCrosssectionNames(const QList<GeoDataRiverSurvey*>& surveys)
 {
@@ -1647,7 +1663,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	for (int i = 0; i < impl->m_riverSurveys.count(); ++i) {
 		GeoDataRiverPathPoint* p = impl->m_riverSurveys.at(i)->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != impl->m_crosssectionName) {
+		while (p != nullptr && ! isSameCrosssectionName(p->name(), impl->m_crosssectionName)) {
 			p = p->nextPoint();
 		}
 		impl->m_riverPathPoints.append(p);
@@ -1655,7 +1671,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	if (impl->m_gridCreatingConditionRiverSurvey != nullptr) {
 		GeoDataRiverPathPoint* p = impl->m_gridCreatingConditionRiverSurvey->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != impl->m_crosssectionName) {
+		while (p != nullptr && ! isSameCrosssectionName(p->name(), impl->m_crosssectionName)) {
 			p = p->nextPoint();
 		}
 		impl->m_gridCreatingConditionPoint = p;
