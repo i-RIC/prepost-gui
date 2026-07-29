@@ -1220,7 +1220,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Upstream trees</source>
-        <translation>樹竜川樹木による死水域</translation>
+        <translation>上流側樹木による死水域</translation>
     </message>
     <message>
         <source>High trees</source>
