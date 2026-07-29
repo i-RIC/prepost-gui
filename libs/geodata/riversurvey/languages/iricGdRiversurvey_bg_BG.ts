@@ -1250,6 +1250,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Drag the region where you want to add a new vegetation</source>
         <translation>Плъзнете областта, където искате да добавите нова растителност</translation>
     </message>
+    <message>
+        <source>Center Point</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>

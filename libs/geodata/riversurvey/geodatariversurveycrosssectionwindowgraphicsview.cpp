@@ -889,6 +889,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 			centerPen.setStyle(Qt::DashLine);
 			painter.setPen(centerPen);
 			painter.drawLine(centerFrom, centerTo);
+
+			QString centerLabel = tr("Center Point");
+			auto centerRect = metrics.boundingRect(centerLabel);
+			QRectF centerFontRect(centerFrom.x() + bankHOffset, bankVOffset, centerRect.width() + 5, centerRect.height() + 5);
+			painter.setPen(m_displaySetting.distanceMarkersColor);
+			painter.drawText(centerFontRect, Qt::AlignLeft | Qt::AlignTop, centerLabel);
 		}
 
 		painter.restore();

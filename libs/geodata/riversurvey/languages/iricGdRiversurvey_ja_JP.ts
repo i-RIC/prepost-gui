@@ -1378,6 +1378,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Drag the region where you want to add a new vegetation</source>
         <translation>新しい植生データを追加したい領域をドラッグして指定してください</translation>
     </message>
+    <message>
+        <source>Center Point</source>
+        <translation>中心点</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
