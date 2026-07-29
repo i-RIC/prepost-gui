@@ -1371,7 +1371,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			QPointF mappedMaxs = invMatrix.map(maxs);
 
 			// find jmk data near the mouse cursor;
-			const auto& jmkItems = m_parentWindow->target()->jmk().items();
+			auto jmkItems = m_parentWindow->target()->jmk().items();
 			for (int i = 0; i < static_cast<int>(jmkItems.size()); ++i) {
 				const auto& jmkItem = jmkItems.at(i);
 				double left = jmkItem.distance;
