@@ -1804,6 +1804,19 @@ void GeoDataRiverSurvey::calcArea()
 	dialog.setFilename(impl->m_calcAreaFilename);
 	dialog.setTargets(rsNames);
 
+	// Find the index of the currently active river survey data
+	int activeIndex = -1;
+	for (int i = 0; i < rslist.size(); ++i) {
+		if (rslist[i] == this) {
+			activeIndex = i;
+			break;
+		}
+	}
+
+	if (activeIndex != -1) {
+		dialog.setCompareTargetIndex(activeIndex);
+	}
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 

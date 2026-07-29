@@ -15,7 +15,7 @@ GeoDataRiverSurvey::CalcAreaConditionDialog::~CalcAreaConditionDialog()
 
 void GeoDataRiverSurvey::CalcAreaConditionDialog::setCompareTargets(const QStringList& targets)
 {
-		setTargets(targets);
+	setTargets(targets);
 }
 
 void GeoDataRiverSurvey::CalcAreaConditionDialog::setTargets(const QStringList& targets)
@@ -29,9 +29,18 @@ void GeoDataRiverSurvey::CalcAreaConditionDialog::setTargets(const QStringList& 
 		baseComboBox->addItem(target);
 		compareComboBox->addItem(target);
 	}
-	if (targets.size() > 1) {
-		compareComboBox->setCurrentIndex(1);
-	}
+}
+
+void GeoDataRiverSurvey::CalcAreaConditionDialog::setCompareTargetIndex(int index)
+{
+	auto baseComboBox = ui->baseTargetComboBox;
+	auto compareComboBox = ui->compareTargetComboBox;
+
+	compareComboBox->setCurrentIndex(index);
+
+	// Set base combobox to the minimum index different from compare target index
+	int baseIndex = (index == 0) ? 1 : 0;
+	baseComboBox->setCurrentIndex(baseIndex);
 }
 
 int GeoDataRiverSurvey::CalcAreaConditionDialog::compareTargetIndex() const
