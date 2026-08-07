@@ -1477,6 +1477,10 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 	// Emit position change signal for status bar
 	QMatrix invMatrix = m_matrix.inverted();
 	QPointF dataCoordinate = invMatrix.map(QPointF(event->pos()));
+	if (m_displaySetting.statusBarXType == GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromCenter
+			&& m_parentWindow->target() != nullptr) {
+		dataCoordinate.setX(dataCoordinate.x() - m_parentWindow->target()->crosssection().leftShift());
+	}
 	emit positionChangedForStatusBar(dataCoordinate);
 
 	m_oldPosition = event->pos();

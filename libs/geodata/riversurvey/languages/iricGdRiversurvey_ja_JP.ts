@@ -749,6 +749,18 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Left/right bank markers font</source>
         <translation>左右岸 フォント</translation>
     </message>
+    <message>
+        <source>Status bar coordinates</source>
+        <translation>ステータスバーに表示する座標</translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation>左岸からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from center</source>
+        <translation>中心点からの距離</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
@@ -1049,6 +1061,10 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     <message>
         <source>Distance from left bank</source>
         <translation>左岸からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from center</source>
+        <translation>中心点からの距離</translation>
     </message>
     <message>
         <source>Position</source>

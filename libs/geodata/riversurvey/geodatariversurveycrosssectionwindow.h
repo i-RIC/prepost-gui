@@ -3,6 +3,7 @@
 
 #include "gd_riversurvey_global.h"
 #include "geodatarivercrosssection.h"
+#include "geodatariversurveycrosssectiondisplaysetting.h"
 
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
@@ -84,6 +85,9 @@ public:
 	void informFocusIn();
 	void toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs);
 	const QIcon& icon() const;
+
+	QString statusBarXLabel() const;
+	QString statusBarYLabel() const;
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
@@ -112,6 +116,7 @@ public slots:
 
 signals:
 	void positionChangedForStatusBar(const QPointF& position);
+	void displaySettingChanged(const GeoDataRiverSurveyCrossSectionDisplaySetting& setting);
 
 private slots:
 	void updateActionStatus();

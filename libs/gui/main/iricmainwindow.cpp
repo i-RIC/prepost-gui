@@ -756,8 +756,12 @@ void iRICMainWindow::activeSubwindowChanged(QMdiSubWindow* newActiveWindow)
 	auto cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
 	if (cw != nullptr) {
 		cw->informFocusIn();
+		m_mousePositionWidget->setAxisLabels(cw->statusBarXLabel(), cw->statusBarYLabel());
 		m_mousePositionWidget->clear();
-		connect(cw, &GeoDataRiverSurveyCrosssectionWindow::positionChangedForStatusBar, m_mousePositionWidget, &MousePositionWidget::updatePosition);
+		connect(cw, &GeoDataRiverSurveyCrosssectionWindow::positionChangedForStatusBar, m_mousePositionWidget, &MousePositionWidget::updateCrossSectionPosition);
+		connect(cw, &GeoDataRiverSurveyCrosssectionWindow::displaySettingChanged, this, [this, cw](const GeoDataRiverSurveyCrossSectionDisplaySetting&) {
+			m_mousePositionWidget->setAxisLabels(cw->statusBarXLabel(), cw->statusBarYLabel());
+		});
 	} else {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 		pre->informUnfocusRiverCrosssectionWindows();

@@ -149,6 +149,7 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	connect(ui->wsesTableWidget, &QTableWidget::itemChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemEdit);
 	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawnRegionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleDrawnRegionChanged);
 	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionChangedForStatusBar, this, &GeoDataRiverSurveyCrosssectionWindow::positionChangedForStatusBar);
+	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::displaySettingChanged, this, &GeoDataRiverSurveyCrosssectionWindow::displaySettingChanged);
 }
 
 
@@ -1584,6 +1585,20 @@ bool GeoDataRiverSurveyCrosssectionWindow::selectWSEIndex(int* index)
 void GeoDataRiverSurveyCrosssectionWindow::editDisplaySetting()
 {
 	ui->graphicsView->editDisplaySetting();
+}
+
+QString GeoDataRiverSurveyCrosssectionWindow::statusBarXLabel() const
+{
+	const auto& s = ui->graphicsView->displaySetting();
+	if (s.statusBarXType == GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromLeftBank) {
+		return tr("Distance from left bank");
+	}
+	return tr("Distance from center");
+}
+
+QString GeoDataRiverSurveyCrosssectionWindow::statusBarYLabel() const
+{
+	return tr("Elevation");
 }
 
 GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::targetRiverSurvey() const

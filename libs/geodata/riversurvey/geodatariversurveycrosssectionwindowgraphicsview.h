@@ -97,6 +97,7 @@ signals:
 	void drawnRegionChanged();
 	void positionClicked(const QPointF& point);
 	void positionChangedForStatusBar(const QPointF& position);
+	void displaySettingChanged(const GeoDataRiverSurveyCrossSectionDisplaySetting& setting);
 
 private:
 	int moveWidth();

@@ -678,6 +678,18 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Left/right bank markers font</source>
         <translation>Venstre/høyre bankmarkør skrift</translation>
     </message>
+    <message>
+        <source>Status bar coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished">Avstand fra venstre bredd</translation>
+    </message>
+    <message>
+        <source>Distance from center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
@@ -1146,6 +1158,10 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     <message>
         <source>Set to ODN data point</source>
         <translation>Sett til ODN-datapunkt</translation>
+    </message>
+    <message>
+        <source>Distance from center</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

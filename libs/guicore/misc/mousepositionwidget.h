@@ -25,13 +25,17 @@ public:
 	~MousePositionWidget();
 
 	void setProjectData(ProjectData* data);
+	void setAxisLabels(const QString& xLabel, const QString& yLabel);
 
 public slots:
 	void updatePosition(const QPointF& position);
+	void updateCrossSectionPosition(const QPointF& position);
 	void clear();
 
 private:
 	ProjectData* m_projectData;
+	QString m_xLabel;
+	QString m_yLabel;
 	Ui::MousePositionWidget* ui;
 };
 
