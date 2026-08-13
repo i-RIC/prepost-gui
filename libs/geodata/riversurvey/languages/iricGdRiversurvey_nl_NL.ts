@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -383,8 +385,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -396,14 +398,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio's bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio&apos;s bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -415,7 +417,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -423,14 +425,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
-        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu "Puntenwolkgegevens of rastergegevens in kaart brengen" gebruiken.</translation>
+If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu &quot;Puntenwolkgegevens of rastergegevens in kaart brengen&quot; gebruiken.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
-        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. In sommige regio's is het in kaart brengen op sommige punten niet gelukt en is voor die punten de waarde 0 in kaart gebracht. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu "Puntenwolkgegevens of rastergegevens in kaart brengen" gebruiken.</translation>
+If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+        <translation>Er worden dwarsdoorsnedegegevens gegenereerd. In sommige regio&apos;s is het in kaart brengen op sommige punten niet gelukt en is voor die punten de waarde 0 in kaart gebracht. Als u de dwarsprofielpositie wilt aanpassen en opnieuw in kaart wilt brengen, kunt u het menu &quot;Puntenwolkgegevens of rastergegevens in kaart brengen&quot; gebruiken.</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -505,8 +507,8 @@ If you want to adjust cross section position and map again, you can use "Map poi
         <translation>Kennisgeving</translation>
     </message>
     <message>
-        <source>%1 does not have a cross section named "%2"</source>
-        <translation>%1 heeft geen doorsnede met de naam "%2"</translation>
+        <source>%1 does not have a cross section named &quot;%2&quot;</source>
+        <translation>%1 heeft geen doorsnede met de naam &quot;%2&quot;</translation>
     </message>
     <message>
         <source>Embankment</source>
@@ -559,6 +561,10 @@ If you want to adjust cross section position and map again, you can use "Map poi
     <message>
         <source>Right than Right Start Point</source>
         <translation>Rechts dan Rechts Startpunt</translation>
+    </message>
+    <message>
+        <source>The base target and compare target must be different.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -672,6 +678,18 @@ If you want to adjust cross section position and map again, you can use "Map poi
         <source>Left/right bank markers font</source>
         <translation>Lettertype markeringen linker/rechteroever</translation>
     </message>
+    <message>
+        <source>Status bar coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left bank</source>
+        <translation type="unfinished">Afstand vanaf linkeroever</translation>
+    </message>
+    <message>
+        <source>Distance from center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
@@ -768,8 +786,8 @@ If you want to adjust cross section position and map again, you can use "Map poi
         <translation>De instellingen voor hoogte en helling zijn ongeldig.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u "Specificeer horizontale afstand".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u &quot;Specificeer horizontale afstand&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1141,6 +1159,10 @@ If you want to adjust cross section position and map again, you can use "Map poi
         <source>Set to ODN data point</source>
         <translation>Instellen op ODN-gegevenspunt</translation>
     </message>
+    <message>
+        <source>Distance from center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow::PointAddDialog</name>
@@ -1193,8 +1215,8 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via "Bewerken vanuit dialoogvenster" in het rechtsklikmenu.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via &quot;Bewerken vanuit dialoogvenster&quot; in het rechtsklikmenu.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1243,6 +1265,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Drag the region where you want to add a new vegetation</source>
         <translation>Versleep het gebied waar u een nieuwe vegetatie wilt toevoegen</translation>
+    </message>
+    <message>
+        <source>Center Point</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1520,40 +1546,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fout</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 lijn %2 "%3": LX-waarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 lijn %2 "%3": LY-waarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 lijn %2 "%3": RX-waarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 lijn %2 "%3": RY-waarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 lijn %2 "%3": Puntentelling is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: Puntentelling is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 lijn %2 "%3": Ongeldige indexwaarde</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: Ongeldige indexwaarde</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 lijn %2 : doorsnedegegevens voor %3 niet genoeg</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 lijn %2 "%3": Afstandswaarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: Afstandswaarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 lijn %2 "%3": Hoogtewaarde is ongeldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 lijn %2 &quot;%3&quot;: Hoogtewaarde is ongeldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1592,8 +1618,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : Leesfout. Heeft minimaal twee waarden nodig.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1830,36 +1856,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : KP wordt niet ingevoerd</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Lijn %2 "%3": LX-waarde is ongeldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Lijn %2 "%3": LY-waarde is ongeldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Lijn %2 "%3": RX-waarde is ongeldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Lijn %2 "%3": RY-waarde is ongeldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Afstandsmarkeringsgegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 lijn %2 : &quot;%3&quot;: Vlaggegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 lijn %2 : "%3": Afstandsgegevens zijn ongeldig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 lijn %2 : &quot;%3&quot;: Afstandsgegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 lijn %2 : "%3": Hoogtegegevens zijn ongeldig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 lijn %2 : &quot;%3&quot;: Hoogtegegevens zijn ongeldig.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -2060,8 +2086,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Besloten vanuit KP-naam</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: Als de waarde voor de spanafstand 0 bevat, is &amp;quot;Geselecteerd op basis van spanafstandquot; uitgeschakeld.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: If span distance value contains 0, &amp;quot;Dicided from span distance&amp;quot; is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: Als de waarde voor de spanafstand 0 bevat, is &amp;quot;Geselecteerd op basis van spanafstandquot; uitgeschakeld.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -2168,6 +2194,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Statistics for each segment</source>
         <translation>Statistieken voor elk segment</translation>
     </message>
+    <message>
+        <source>Base target:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
@@ -2188,8 +2218,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Zichtbaar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

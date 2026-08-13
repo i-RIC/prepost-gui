@@ -40,6 +40,12 @@ GeoDataRiverSurveyCrossSectionDisplaySetting GeoDataRiverSurveyCrossSectionDispl
 	m_setting.distanceMarkersColor = ui->distanceMarkersColorWidget->color();
 	m_setting.lbBankMarkersColor = ui->lbBankMakersColorWidget->color();
 
+	if (ui->statusBarFromLeftRadioButton->isChecked()) {
+		m_setting.statusBarXType = GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromLeftBank;
+	} else {
+		m_setting.statusBarXType = GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromCenter;
+	}
+
 	return m_setting;
 }
 
@@ -65,6 +71,12 @@ void GeoDataRiverSurveyCrossSectionDisplaySettingDialog::setSetting(const GeoDat
 	ui->aspectRatioColorWidget->setColor(m_setting.aspectRatioColor);
 	ui->distanceMarkersColorWidget->setColor(m_setting.distanceMarkersColor);
 	ui->lbBankMakersColorWidget->setColor(m_setting.lbBankMarkersColor);
+
+	if (setting.statusBarXType == GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromLeftBank) {
+		ui->statusBarFromLeftRadioButton->setChecked(true);
+	} else {
+		ui->statusBarFromCenterRadioButton->setChecked(true);
+	}
 }
 
 void GeoDataRiverSurveyCrossSectionDisplaySettingDialog::editAspectRatioFont()

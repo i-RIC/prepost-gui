@@ -38,10 +38,26 @@
 #include <QPushButton>
 #include <QStandardItemModel>
 
+#include <cmath>
 #include <set>
 #include <map>
 
 namespace {
+
+const double DELTA = 1.0E-6;
+
+bool isSameCrosssectionName(const QString& n1, const QString& n2)
+{
+	bool ok1 = false;
+	bool ok2 = false;
+	double v1 = n1.toDouble(&ok1);
+	double v2 = n2.toDouble(&ok2);
+	if (ok1 && ok2) {
+		return std::abs(v1 - v2) <= DELTA;
+	}
+
+	return n1 == n2;
+}
 
 QList<QString> setupCrosssectionNames(const QList<GeoDataRiverSurvey*>& surveys)
 {
@@ -132,6 +148,8 @@ GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PrePr
 	connect(ui->wsesTableWidget, &QTableWidget::itemClicked, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemClick);
 	connect(ui->wsesTableWidget, &QTableWidget::itemChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleWseTableItemEdit);
 	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawnRegionChanged, this, &GeoDataRiverSurveyCrosssectionWindow::handleDrawnRegionChanged);
+	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionChangedForStatusBar, this, &GeoDataRiverSurveyCrosssectionWindow::positionChangedForStatusBar);
+	connect(ui->graphicsView, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::displaySettingChanged, this, &GeoDataRiverSurveyCrosssectionWindow::displaySettingChanged);
 }
 
 
@@ -562,6 +580,10 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 	GeoDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	int row = 0;
 
+	const auto& odn = impl->m_editTargetPoint->odn();
+	const auto& ds = ui->graphicsView->displaySetting();
+	static const int odnPriorityOrder[] = {0, 5, 1, 4, 2, 3};
+
 	GeoDataRiverCrosssection::Altitude alt;
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		alt = *it;
@@ -571,9 +593,23 @@ void GeoDataRiverSurveyCrosssectionWindow::setupData()
 		impl->m_model->setData(impl->m_model->index(row, 2), QVariant(alt.position()));
 		impl->m_model->setData(impl->m_model->index(row, 3), QVariant(alt.height()));
 
-		QStandardItem* item = impl->m_model->item(row, 1);
-		item->setFlags(item->flags() & (~Qt::ItemIsEditable) & (~ Qt::ItemIsEnabled));
-		impl->m_model->setItem(row, 1, item);
+		QColor bgColor;
+		bool hasBg = false;
+		for (int p : odnPriorityOrder) {
+			if (odn.nb(p) == row) {
+				if (p == 0 || p == 5)      bgColor = ds.odnStartColor;
+				else if (p == 1 || p == 4) bgColor = ds.odnMiddleColor;
+				else                        bgColor = ds.odnLowColor;
+				hasBg = true;
+				break;
+			}
+		}
+		if (hasBg) {
+			for (int col = 0; col < 4; ++col) {
+				impl->m_model->setData(impl->m_model->index(row, col), bgColor, Qt::BackgroundRole);
+			}
+		}
+
 		ui->tableView->setRowHeight(row, defaultRowHeight);
 		++row;
 	}
@@ -748,11 +784,16 @@ bool GeoDataRiverSurveyCrosssectionWindow::syncData()
 		GeoDataRiverCrosssection::Altitude alt;
 		// active
 		alt.setActive(impl->m_model->data(impl->m_model->index(i, 0)).toBool());
-		// distance from left bank
-		// position
+		// distance from left bank / position
 		double oldPos = (it + i)->position();
+		double oldLeftBankDist = oldPos + cross.leftShift();
+		double newLeftBankDist = impl->m_model->data(impl->m_model->index(i, 1)).toDouble();
 		double newPos = impl->m_model->data(impl->m_model->index(i, 2)).toDouble();
-		if (oldPos != newPos) {
+		if (newLeftBankDist != oldLeftBankDist) {
+			// Column 1 (left bank dist) was edited: back-calculate position
+			newPos = newLeftBankDist - cross.leftShift();
+		}
+		if (newPos != oldPos || newLeftBankDist != oldLeftBankDist) {
 			double min, max;
 			if (i == 0) {
 				max = (it + i + 1)->position();
@@ -1546,6 +1587,20 @@ void GeoDataRiverSurveyCrosssectionWindow::editDisplaySetting()
 	ui->graphicsView->editDisplaySetting();
 }
 
+QString GeoDataRiverSurveyCrosssectionWindow::statusBarXLabel() const
+{
+	const auto& s = ui->graphicsView->displaySetting();
+	if (s.statusBarXType == GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromLeftBank) {
+		return tr("Distance from left bank");
+	}
+	return tr("Distance from center");
+}
+
+QString GeoDataRiverSurveyCrosssectionWindow::statusBarYLabel() const
+{
+	return tr("Elevation");
+}
+
 GeoDataRiverSurvey* GeoDataRiverSurveyCrosssectionWindow::targetRiverSurvey() const
 {
 	return impl->m_targetRiverSurvey;
@@ -1623,7 +1678,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	for (int i = 0; i < impl->m_riverSurveys.count(); ++i) {
 		GeoDataRiverPathPoint* p = impl->m_riverSurveys.at(i)->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != impl->m_crosssectionName) {
+		while (p != nullptr && ! isSameCrosssectionName(p->name(), impl->m_crosssectionName)) {
 			p = p->nextPoint();
 		}
 		impl->m_riverPathPoints.append(p);
@@ -1631,7 +1686,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	if (impl->m_gridCreatingConditionRiverSurvey != nullptr) {
 		GeoDataRiverPathPoint* p = impl->m_gridCreatingConditionRiverSurvey->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr && p->name() != impl->m_crosssectionName) {
+		while (p != nullptr && ! isSameCrosssectionName(p->name(), impl->m_crosssectionName)) {
 			p = p->nextPoint();
 		}
 		impl->m_gridCreatingConditionPoint = p;

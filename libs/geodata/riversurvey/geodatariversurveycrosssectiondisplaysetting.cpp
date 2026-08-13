@@ -18,5 +18,6 @@ GeoDataRiverSurveyCrossSectionDisplaySetting::GeoDataRiverSurveyCrossSectionDisp
 	odnStartColor {255, 128, 128},
 	odnMiddleColor {64, 180, 64},
 	odnLowColor {128, 128, 255},
-	odnNbFont {"Helvetica", 10}
+	odnNbFont {"Helvetica", 10},
+	statusBarXType {StatusBarXType::DistanceFromLeftBank}
 {}
