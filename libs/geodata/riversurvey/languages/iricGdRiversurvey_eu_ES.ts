@@ -682,7 +682,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished">Ezkerreko ertzetik distantzia</translation>
+        <translation>Ezkerreko ertzetik distantzia</translation>
     </message>
     <message>
         <source>Distance from center</source>
@@ -2194,7 +2194,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Base target:</source>
-        <translation type="unfinished" />
+        <translation>Oinarrizko helburua:</translation>
     </message>
 </context>
 <context>

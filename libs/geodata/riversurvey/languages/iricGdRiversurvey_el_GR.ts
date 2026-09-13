@@ -1266,7 +1266,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Center Point</source>
-        <translation type="unfinished" />
+        <translation>Κεντρικό Σημείο</translation>
     </message>
 </context>
 <context>

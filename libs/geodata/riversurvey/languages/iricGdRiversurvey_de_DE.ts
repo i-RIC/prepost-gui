@@ -1159,7 +1159,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Distance from center</source>
-        <translation type="unfinished" />
+        <translation>Abstand vom Zentrum</translation>
     </message>
 </context>
 <context>
@@ -1266,7 +1266,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Center Point</source>
-        <translation type="unfinished" />
+        <translation>Mittelpunkt</translation>
     </message>
 </context>
 <context>

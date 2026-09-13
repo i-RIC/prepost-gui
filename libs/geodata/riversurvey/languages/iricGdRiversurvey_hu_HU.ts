@@ -682,7 +682,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished">Távolság a bal parttól</translation>
+        <translation>Távolság a bal parttól</translation>
     </message>
     <message>
         <source>Distance from center</source>
@@ -1159,7 +1159,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Distance from center</source>
-        <translation type="unfinished" />
+        <translation>Távolság a központtól</translation>
     </message>
 </context>
 <context>

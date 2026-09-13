@@ -698,7 +698,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished">Distancia de Orilla Izquierda</translation>
+        <translation>Distancia desde la orilla izquierda</translation>
     </message>
     <message>
         <source>Distance from center</source>

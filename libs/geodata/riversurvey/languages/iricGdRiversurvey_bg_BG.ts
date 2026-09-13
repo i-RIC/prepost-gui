@@ -678,7 +678,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>Status bar coordinates</source>
-        <translation type="unfinished" />
+        <translation>Координати на лентата на състоянието</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
