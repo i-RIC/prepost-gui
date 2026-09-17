@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>InformationDialog</name>
@@ -73,6 +75,64 @@
     </message>
 </context>
 <context>
+    <name>TelemetryWidget</name>
+    <message>
+        <source>Help improve iRIC by sharing information about the environment it runs in.</source>
+        <translation>実行環境に関する情報を共有し、iRICの改善にご協力ください。</translation>
+    </message>
+    <message>
+        <source>Do not participate</source>
+        <translation>協力しない</translation>
+    </message>
+    <message>
+        <source>Participate anonymously</source>
+        <translation>匿名で協力する</translation>
+    </message>
+    <message>
+        <source>Participate signed in with iRIC ID</source>
+        <translation>iRIC ID でログインして協力する</translation>
+    </message>
+    <message>
+        <source>Sign in with iRIC ID...</source>
+        <translation>iRIC ID でログイン...</translation>
+    </message>
+    <message>
+        <source>What is sent: iRIC version, OS name and version, CPU name, GPU name, memory size, and a record of application launches and solver runs. When signed in, the data is also linked to your iRIC ID account.</source>
+        <translation>送られる情報: iRICのバージョン、OSの名前とバージョン, CPUの名前, GPUの名前, メモリサイズ, iRIC GUIの起動のタイミング, 実行したソルバ。ログインすると、これらの情報はあなたの iRIC IDに紐付けられて送信されます。</translation>
+    </message>
+    <message>
+        <source>Never sent: host name, Windows user name, IP address, serial numbers, and file paths.</source>
+        <translation>送られないもの: ホスト名, Windowsのユーザ名, IPアドレス, シリアル番号, ファイルパスなど。</translation>
+    </message>
+    <message>
+        <source>Signed in as %1.</source>
+        <translation>%1 としてログインしています。</translation>
+    </message>
+    <message>
+        <source>A sign-in page has opened in your web browser. Complete the sign-in there, then return to iRIC.</source>
+        <translation>ブラウザで署名ページが開かれました。ログイン操作を完了してから、iRIC に戻ってきてください。</translation>
+    </message>
+    <message>
+        <source>Received your sign-in. Contacting the iRIC ID service...</source>
+        <translation>あなたのログインの通知を受けました。iRIC IDサービスに接続しています...</translation>
+    </message>
+    <message>
+        <source>Sign-in failed.</source>
+        <translation>ログインが失敗しました。</translation>
+    </message>
+    <message>
+        <source>You are signed out.</source>
+        <translation>ログアウトしました。</translation>
+    </message>
+</context>
+<context>
+    <name>TooltipLabel</name>
+    <message>
+        <source>Help</source>
+        <translation>ヘルプ</translation>
+    </message>
+</context>
+<context>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
@@ -127,6 +187,56 @@
     <message>
         <source>Comment:</source>
         <translation>コメント:</translation>
+    </message>
+</context>
+<context>
+    <name>iRICAuthClient</name>
+    <message>
+        <source>Not signed in.</source>
+        <translation>ログインしていません。</translation>
+    </message>
+    <message>
+        <source>Could not start the local sign-in listener.</source>
+        <translation>ローカルログインリスナーを開始できませんでした。</translation>
+    </message>
+    <message>
+        <source>The sign-in was not completed in time.</source>
+        <translation>ログインは時間内に完了しませんでした。</translation>
+    </message>
+    <message>
+        <source>Sign-in was denied (%1).</source>
+        <translation>ログインは拒否されました (%!)。</translation>
+    </message>
+    <message>
+        <source>Sign-in response validation failed.</source>
+        <translation>ログインの応答の検証に失敗しました。</translation>
+    </message>
+    <message>
+        <source>Sign-in response did not contain an authorization code.</source>
+        <translation>ログインの応答に、認証コードがありませんでした。</translation>
+    </message>
+    <message>
+        <source>Sign-in was cancelled.</source>
+        <translation>ログインはキャンセルされました。</translation>
+    </message>
+    <message>
+        <source>Network is not available.</source>
+        <translation>ネットワークにアクセスできません。</translation>
+    </message>
+    <message>
+        <source>Could not reach the iRIC ID service (%1).</source>
+        <translation>iRIC IDサービスに接続できません (%1)。</translation>
+    </message>
+    <message>
+        <source>The iRIC ID service did not return an access token.</source>
+        <translation>iRIC ID サービスはアクセストークンを返しませんでした。</translation>
+    </message>
+</context>
+<context>
+    <name>iRICAuthDialog</name>
+    <message>
+        <source>Telemetry</source>
+        <translation>テレメトリ</translation>
     </message>
 </context>
 </TS>
