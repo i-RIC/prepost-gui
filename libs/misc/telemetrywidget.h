@@ -40,7 +40,7 @@ public:
 
 private slots:
 	void updateControls();
-	void startSignIn();
+	void onSignInButtonClicked();
 	void handleAuthorizationCodeReceived();
 	void handleLoginSucceeded();
 	void handleLoginFailed(const QString& reason);

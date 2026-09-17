@@ -124,6 +124,10 @@
         <source>You are signed out.</source>
         <translation>ログアウトしました。</translation>
     </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ログアウト</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>

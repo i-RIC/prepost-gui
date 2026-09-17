@@ -13,7 +13,7 @@ TelemetryWidget::TelemetryWidget(iRICAuthClient* client, QWidget* parent) :
 	connect(ui->noneRadio, &QRadioButton::toggled, this, &TelemetryWidget::updateControls);
 	connect(ui->anonRadio, &QRadioButton::toggled, this, &TelemetryWidget::updateControls);
 	connect(ui->loginRadio, &QRadioButton::toggled, this, &TelemetryWidget::updateControls);
-	connect(ui->signInButton, &QPushButton::clicked, this, &TelemetryWidget::startSignIn);
+	connect(ui->signInButton, &QPushButton::clicked, this, &TelemetryWidget::onSignInButtonClicked);
 
 	if (m_client != nullptr) {
 		connect(m_client, &iRICAuthClient::authorizationCodeReceived, this, &TelemetryWidget::handleAuthorizationCodeReceived);
@@ -73,7 +73,8 @@ void TelemetryWidget::updateControls()
 	const bool loggedIn = (m_client != nullptr) && m_client->isLoggedIn();
 
 	ui->signInButton->setVisible(loginChosen);
-	ui->signInButton->setEnabled(loginChosen && (m_client != nullptr) && ! loggedIn);
+	ui->signInButton->setEnabled(loginChosen && (m_client != nullptr));
+	ui->signInButton->setText(loggedIn ? tr("Sign out") : tr("Sign in with iRIC ID..."));
 
 	if (loginChosen && loggedIn) {
 		ui->statusLabel->setText(tr("Signed in as %1.").arg(m_client->email().isEmpty() ? m_client->userId() : m_client->email()));
@@ -82,9 +83,14 @@ void TelemetryWidget::updateControls()
 	}
 }
 
-void TelemetryWidget::startSignIn()
+void TelemetryWidget::onSignInButtonClicked()
 {
 	if (m_client == nullptr) {return;}
+
+	if (m_client->isLoggedIn()) {
+		m_client->logout();
+		return;
+	}
 
 	ui->signInButton->setEnabled(false);
 	ui->statusLabel->setText(tr("A sign-in page has opened in your web browser. "
