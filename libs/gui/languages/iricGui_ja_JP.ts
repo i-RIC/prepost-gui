@@ -12031,7 +12031,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Telemetry</source>
-        <translation type="unfinished"></translation>
+        <translation>テレメトリ</translation>
     </message>
 </context>
 <context>
@@ -16886,11 +16886,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Signed in to iRIC ID as %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC ID に %1 としてログインしています</translation>
     </message>
     <message>
         <source>Signed out from iRIC ID</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC ID からログアウトしています</translation>
     </message>
 </context>
 <context>
