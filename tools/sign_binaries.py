@@ -28,6 +28,10 @@ REQUIRED_ENV_VARS = (
 
 SIGNABLE_EXTENSIONS = (".exe", ".dll")
 
+# Folder name substrings that should be excluded from signing entirely
+# (e.g. third-party solver packages under packages\solver.*\...).
+EXCLUDED_DIR_MARKERS = ("solver.",)
+
 def check_credentials():
   missing = [name for name in REQUIRED_ENV_VARS if not os.environ.get(name)]
   if missing:
@@ -39,7 +43,13 @@ def collect_files(paths):
   files = []
   for path in paths:
     if os.path.isdir(path):
-      for root, _dirs, names in os.walk(path):
+      for root, dirs, names in os.walk(path):
+        # prune excluded directories (e.g. packages\solver.*\...) so os.walk
+        # doesn't descend into them
+        dirs[:] = [
+          d for d in dirs
+          if not any(marker in d.lower() for marker in EXCLUDED_DIR_MARKERS)
+        ]
         for name in names:
           if name.lower().endswith(SIGNABLE_EXTENSIONS):
             files.append(os.path.join(root, name))
