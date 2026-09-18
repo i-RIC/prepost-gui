@@ -16,12 +16,15 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <gui/main/iricmainwindow.h>
 #include <gui/misc/periodicalupdatechecker.h>
 #include <misc/errormessage.h>
+#include <misc/iricauthclient.h>
+#include <misc/iricauthdialog.h>
 #include <misc/iricrootpath.h>
 #include <misc/qttool.h>
 #include <misc/stringtool.h>
 
 #include <QApplication>
 #include <QDir>
+#include <QEventLoop>
 #include <QFileInfo>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -31,9 +34,34 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <QSplashScreen>
 #include <QTextCodec>
 #include <QtGlobal>
+#include <QTimer>
 #include <QTranslator>
+#include <QUrl>
 
 #include <cstdlib>
+
+namespace {
+
+QUrl resolveAuthBaseUrl(int argc, char* argv[], QSettings& settings)
+{
+	const QString optName = QStringLiteral("--auth-base-url");
+	for (int i = 1; i < argc; ++i) {
+		const QString arg = QString::fromLocal8Bit(argv[i]);
+		if (arg == optName && i + 1 < argc) {
+			return QUrl(QString::fromLocal8Bit(argv[i + 1]));
+		}
+		if (arg.startsWith(optName + "=")) {
+			return QUrl(arg.mid(optName.length() + 1));
+		}
+	}
+	const QString fromSettings = settings.value("auth/baseUrl").toString();
+	if (! fromSettings.isEmpty()) {
+		return QUrl(fromSettings);
+	}
+	return iRICAuthClient::defaultBaseUrl();
+}
+
+} // namespace
 
 int main(int argc, char* argv[])
 {
@@ -93,6 +121,31 @@ int main(int argc, char* argv[])
 
 	try {
 		iRICMainWindow w;
+
+		// iRIC ID authentication and telemetry. Best effort: every part of this
+		// is optional and never blocks iRIC from starting.
+		iRICAuthClient authClient(resolveAuthBaseUrl(argc, argv, settings), w.versionNumber().toString());
+		w.setAuthClient(&authClient);
+
+		const auto telemetryMode = iRICAuthClient::telemetryMode();
+		if (telemetryMode == iRICAuthClient::TelemetryMode::Login && authClient.hasStoredCredential()) {
+			// Try a silent login, but do not let a slow network hold up startup.
+			QEventLoop loop;
+			QObject::connect(&authClient, &iRICAuthClient::loginSucceeded, &loop, &QEventLoop::quit);
+			QObject::connect(&authClient, &iRICAuthClient::loginFailed, &loop, &QEventLoop::quit);
+			QTimer::singleShot(15000, &loop, &QEventLoop::quit);
+			authClient.trySilentLogin();
+			loop.exec();
+		}
+		if (telemetryMode == iRICAuthClient::TelemetryMode::Unset) {
+			// First run: ask what the user is willing to share. The dialog
+			// persists the choice; later changes go through Preferences.
+			splash.hide();
+			iRICAuthDialog dlg(&authClient, &w);
+			dlg.exec();
+			splash.show();
+		}
+
 		w.show();
 		splash.finish(&w);
 		if (w.checkWorkFolderWorks()) {
@@ -124,6 +177,12 @@ int main(int argc, char* argv[])
 				w.openStartDialog();
 			}
 		}
+		// Report the launch and the machine configuration once the event loop is
+		// running (both no-op unless the user opted in to telemetry).
+		QTimer::singleShot(0, &authClient, [&authClient]() {
+			authClient.sendAppLaunchTelemetry();
+			authClient.sendMachineTelemetry();
+		});
 		return a.exec();
 	} catch (const ErrorMessage& msg) {
 		QMessageBox::critical(&splash, iRICMainWindow::tr("Error"), msg);

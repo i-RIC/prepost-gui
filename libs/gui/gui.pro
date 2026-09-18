@@ -229,6 +229,7 @@ HEADERS += gui_api.h \
            pref/preferencepagegridcheck.h \
            pref/preferencepageproxy.h \
            pref/preferencepageriversurvey.h \
+           pref/preferencepagetelemetry.h \
            pref/preferencepagetextformat.h \
            pref/preferencepagetms.h \
            pref/preferencepagewebcsvtile.h \
@@ -283,6 +284,7 @@ FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          pref/preferencepagegridcheck.ui \
          pref/preferencepageproxy.ui \
          pref/preferencepageriversurvey.ui \
+         pref/preferencepagetelemetry.ui \
          pref/preferencepagetextformat.ui \
          pref/preferencepagetms.ui \
          pref/preferencepagewebcsvtile.ui \
@@ -331,6 +333,7 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            pref/preferencepagegridcheck.cpp \
            pref/preferencepageproxy.cpp \
            pref/preferencepageriversurvey.cpp \
+           pref/preferencepagetelemetry.cpp \
            pref/preferencepagetextformat.cpp \
            pref/preferencepagetms.cpp \
            pref/preferencepagewebcsvtile.cpp \

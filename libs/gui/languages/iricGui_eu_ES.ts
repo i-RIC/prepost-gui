@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Aukeratu ebazlea</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu "Ados" botoia.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu &quot;Ados&quot; botoia.</translation>
     </message>
 </context>
 <context>
@@ -860,6 +862,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Window Size</source>
         <translation>Leiho Tamaina</translation>
+    </message>
+    <message>
+        <source>Telemetry</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1501,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Ziur ezabatu nahi duzula"%1"?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Ziur ezabatu nahi duzula&quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1740,9 +1746,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean "%1". Konpondu honi ez zaio jaramonik egiten. %2</translation>
+        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean &quot;%1&quot;. Konpondu honi ez zaio jaramonik egiten. %2</translation>
     </message>
     <message>
         <source>The solver is older than the solver used to create the project.</source>
@@ -1924,7 +1930,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Badirudi proiektu hau iRIC GUI beste leiho batek ireki duela. Ezin duzu proiektuaren karpeta ireki GUI leiho anitzetatik.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation type="vanished">Ireki den proiektua ez da laneko direktorioan kopiatzen, eta proiektu honetan egindako aldaketak gordetzera behartuko duzu. Uneko proiektua mantendu nahi baduzu, gorde lehenago beste proiektu batean.</translation>
     </message>
     <message>
@@ -2084,8 +2090,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Une azpiatiloi aktiboak ez du onartzen sestra irudia esportatzea.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu &quot;Pantaila ezarpena&quot; &quot;Sestra irudia&quot; eta ez &quot;Kolore marjina&quot; edo &quot;Isolinak&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2210,7 +2216,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation>Fitxategi guztiak sartu %1 ezabatuta dago.</translation>
+        <translation type="vanished">Fitxategi guztiak sartu %1 ezabatuta dago.</translation>
     </message>
     <message>
         <source>%1 %2</source>
@@ -2225,8 +2231,8 @@ Option -&gt; Preferences</source>
         <translation>Ezarpen fitxategia (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Forma fitxategia esportatzeko, aldatu Kolore modua "Modu diskretua".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu Kolore modua &quot;Modu diskretua&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2237,8 +2243,8 @@ Option -&gt; Preferences</source>
         <translation>Hautatu sareta forma-fitxategiak esportatzeko.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>"Modu diskretuan" ez da sestrarik marrazten.</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>&quot;Modu diskretuan&quot; ez da sestrarik marrazten.</translation>
     </message>
     <message>
         <source>This project is modified. Do you want to save?</source>
@@ -2247,6 +2253,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Failed to load calculation result</source>
         <translation>Ezin izan da kargatu kalkuluaren emaitza</translation>
+    </message>
+    <message>
+        <source>Signed in to iRIC ID as %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out from iRIC ID</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2608,7 +2622,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2635,8 +2649,8 @@ Option -&gt; Preferences</source>
         <translation>Ireki 2D prozesatzeko ondorengo leiho berria</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Ireki 2D Bird's Eye Post-Processing Leiho berria</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Ireki 2D Bird&apos;s Eye Post-Processing Leiho berria</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

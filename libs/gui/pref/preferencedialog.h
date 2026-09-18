@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class iRICAuthClient;
+
 namespace Ui
 {
 	class PreferenceDialog;
@@ -13,7 +15,9 @@ class PreferenceDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreferenceDialog(QWidget* parent = nullptr);
+	/// @param authClient  When non-null, a "Telemetry" tab is added that lets
+	///                    the user revisit the telemetry consent choice.
+	explicit PreferenceDialog(QWidget* parent = nullptr, iRICAuthClient* authClient = nullptr);
 	~PreferenceDialog();
 
 	bool save();
