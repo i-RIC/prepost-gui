@@ -78,7 +78,7 @@
     <name>TelemetryWidget</name>
     <message>
         <source>Help improve iRIC by sharing information about the environment it runs in.</source>
-        <translation>実行環境に関する情報を共有し、iRICの改善にご協力ください。</translation>
+        <translation type="vanished">実行環境に関する情報を共有し、iRICの改善にご協力ください。</translation>
     </message>
     <message>
         <source>Do not participate</source>
@@ -127,6 +127,10 @@
     <message>
         <source>Sign out</source>
         <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Please help improve the software.</source>
+        <translation>ソフトウェアの改善にご協力ください。</translation>
     </message>
 </context>
 <context>

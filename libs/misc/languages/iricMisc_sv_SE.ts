@@ -77,10 +77,6 @@
 <context>
     <name>TelemetryWidget</name>
     <message>
-        <source>Help improve iRIC by sharing information about the environment it runs in.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Do not participate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -126,6 +122,10 @@
     </message>
     <message>
         <source>Sign out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please help improve the software.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

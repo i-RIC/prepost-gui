@@ -14,7 +14,7 @@
    <item>
     <widget class="QLabel" name="introLabel">
      <property name="text">
-      <string>Help improve iRIC by sharing information about the environment it runs in.</string>
+      <string>Please help improve the software.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
