@@ -48,9 +48,9 @@ private slots:
 private:
 	GeoDataRiverSurveyCrosssectionWindow* crosssectionWindow() const;
 	QUndoCommand* createCommand(bool apply) const;
-	static void findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec, bool* usedFallback = nullptr);
+	static void findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, Mode mode, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec, bool* usedFallback = nullptr);
 	static void findHorizontalLineIntersections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, double yValue, std::vector<std::pair<QPointF, int>>* intersections);
-	static bool selectTwoClosestIntersections(const std::vector<std::pair<QPointF, int>>& intersections, const QPointF& point, int* leftIndex, QPointF* leftXsec, int* rightIndex, QPointF* rightXsec);
+	static bool selectTwoClosestIntersections(const std::vector<std::pair<QPointF, int>>& intersections, Mode mode, const QPointF& point, int* leftIndex, QPointF* leftXsec, int* rightIndex, QPointF* rightXsec);
 
 	Mode m_mode;
 	GeoDataRiverCrosssection::AltitudeList m_original;

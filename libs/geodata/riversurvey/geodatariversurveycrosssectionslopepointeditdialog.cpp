@@ -9,6 +9,7 @@
 
 #include <QMessageBox>
 #include <algorithm>
+#include <cmath>
 
 GeoDataRiverSurveyCrosssectionSlopePointEditDialog::GeoDataRiverSurveyCrosssectionSlopePointEditDialog(GeoDataRiverSurveyCrosssectionWindow *parent) :
 	QDialog(parent),
@@ -160,7 +161,7 @@ QUndoCommand* GeoDataRiverSurveyCrosssectionSlopePointEditDialog::createCommand(
 	QPointF leftXSec, rightXSec;
 	bool usedFallback = false;
 
-	findLeftAndRightCrossSections(m_original, leftShift, point, left, right, &leftFound, &leftIndex, &leftXSec, &rightFound, &rightIndex, &rightXSec, &usedFallback);
+	findLeftAndRightCrossSections(m_original, leftShift, m_mode, point, left, right, &leftFound, &leftIndex, &leftXSec, &rightFound, &rightIndex, &rightXSec, &usedFallback);
 	if (! (leftFound && rightFound)) {
 		return nullptr;
 	}
@@ -212,22 +213,22 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findHorizontalLineInter
 	}
 }
 
-bool GeoDataRiverSurveyCrosssectionSlopePointEditDialog::selectTwoClosestIntersections(const std::vector<std::pair<QPointF, int>>& intersections, const QPointF& point, int* leftIndex, QPointF* leftXsec, int* rightIndex, QPointF* rightXsec)
+bool GeoDataRiverSurveyCrosssectionSlopePointEditDialog::selectTwoClosestIntersections(const std::vector<std::pair<QPointF, int>>& intersections, Mode mode, const QPointF& point, int* leftIndex, QPointF* leftXsec, int* rightIndex, QPointF* rightXsec)
 {
-	if (intersections.size() < 2) {
-		return false;
-	}
+	bool useRightSide = (mode == Mode::LeftAdd || mode == Mode::LeftSub);
 
-	// Calculate distances from cursor point to each intersection
+	// All intersections lie on y = point.y(), so |dx| is the distance
 	std::vector<std::pair<double, size_t>> distances;
 	for (size_t i = 0; i < intersections.size(); ++i) {
 		double dx = intersections[i].first.x() - point.x();
-		double dy = intersections[i].first.y() - point.y();
-		double dist = dx * dx + dy * dy; // Use squared distance to avoid sqrt
-		distances.push_back(std::make_pair(dist, i));
+		if (useRightSide && dx < 0) {continue;}
+		if (! useRightSide && dx > 0) {continue;}
+		distances.push_back(std::make_pair(std::abs(dx), i));
+	}
+	if (distances.size() < 2) {
+		return false;
 	}
 
-	// Sort by distance (closest first)
 	std::sort(distances.begin(), distances.end());
 
 	// Select the 2 closest intersections
@@ -250,7 +251,7 @@ bool GeoDataRiverSurveyCrosssectionSlopePointEditDialog::selectTwoClosestInterse
 	return true;
 }
 
-void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec, bool* usedFallback)
+void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSections(const GeoDataRiverCrosssection::AltitudeList& alist, double leftShift, Mode mode, const QPointF& point, const QPointF& left, const QPointF& right, bool* leftFound, int* leftIndex, QPointF* leftXsec, bool* rightFound, int* rightIndex, QPointF* rightXsec, bool* usedFallback)
 {
 	int index = -1;
 
@@ -316,7 +317,7 @@ void GeoDataRiverSurveyCrosssectionSlopePointEditDialog::findLeftAndRightCrossSe
 		std::vector<std::pair<QPointF, int>> horizontalIntersections;
 		findHorizontalLineIntersections(alist, leftShift, point.y(), &horizontalIntersections);
 
-		if (selectTwoClosestIntersections(horizontalIntersections, point, leftIndex, leftXsec, rightIndex, rightXsec)) {
+		if (selectTwoClosestIntersections(horizontalIntersections, mode, point, leftIndex, leftXsec, rightIndex, rightXsec)) {
 			*leftFound = true;
 			*rightFound = true;
 			if (usedFallback != nullptr) {
