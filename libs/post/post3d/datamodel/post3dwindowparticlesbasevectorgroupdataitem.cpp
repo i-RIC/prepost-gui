@@ -122,6 +122,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(con
 	m_setting.load(node);
 	updateCheckState();
 	updateActorSetting();
+	m_arrowsToolBarWidget->applySetting();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

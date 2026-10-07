@@ -117,6 +117,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 			it->second->load(child);
 		}
 	}
+	m_arrowsToolBarWidget->applySetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
