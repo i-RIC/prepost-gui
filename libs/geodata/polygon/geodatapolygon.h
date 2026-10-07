@@ -207,6 +207,7 @@ public:
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonGroup;
+	friend class GeoDataPolygonGroupProxy;
 	friend class GeoDataPolygonGroupPolygon;
 	friend class GeoDataPolygonImporter;
 	friend class GeoDataPolygonShapeExporter;

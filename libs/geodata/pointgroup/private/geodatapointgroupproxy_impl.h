@@ -8,7 +8,10 @@
 
 #include <QImage>
 
+class ColorMapSettingContainerI;
+
 class vtkActor2D;
+class vtkPolyData;
 
 class GeoDataPointGroupProxy::Impl
 {
@@ -16,7 +19,10 @@ public:
 	Impl();
 	~Impl();
 
+	static void setupPointsActor(vtkActor* actor, vtkPolyData* data, const GeoDataPointGroup::DisplaySetting& ds, ColorMapSettingContainerI* cm);
+
 	vtkActor* m_pointsActor;
+	vtkActor* m_editTargetPointActor;
 	std::vector<vtkActor2D*> m_imageActors;
 	QImage m_shrinkedImage;
 

@@ -454,6 +454,7 @@ void GeoDataPolyDataGroup::deleteSelectedData()
 	updateSelectedDataVtkObjects();
 	updateIndex();
 	updateMenu();
+	updateActorSetting();
 
 	impl->updateAttributeBrowser();
 	impl->updateActionStatus();
