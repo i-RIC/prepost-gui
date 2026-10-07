@@ -55,6 +55,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	impl {new Impl {mainWindow(), this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains attributes stored at grid nodes. Expand the folder to inspect or edit each attribute."));
 
 	p->standardItem()->takeRow(m_standardItem->row());
 	auto typeItem = gridTypeDataItem();

@@ -48,6 +48,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 	m_bcMenu {new QMenu(PreProcessorBCGroupDataItem::tr("&Boundary Condition"), mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains boundary conditions assigned to selected grid nodes, cells, or edges."));
 	setSubPath("bc");
 
 	// setup default setting
