@@ -52,6 +52,7 @@ public:
 	const std::string& name() const;
 	const std::string& englishCaption() const;
 	const QString& caption() const;
+	const QString& toolTip() const;
 	void setCaption(const QString& cap);
 	const QVariant& variantDefaultValue() const;
 	const QVariant& variantMaximumValue() const;

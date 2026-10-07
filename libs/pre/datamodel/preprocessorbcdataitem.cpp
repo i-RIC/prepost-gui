@@ -89,6 +89,7 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	setIsCommandExecuting(false);
 
 	impl->m_condition = cond;
+	m_standardItem->setToolTip(cond->toolTip());
 	impl->m_hideSetting = hideSetting;
 
 	try {

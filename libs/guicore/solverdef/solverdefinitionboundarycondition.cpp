@@ -16,6 +16,7 @@ void SolverDefinitionBoundaryCondition::Impl::load(const QDomElement& node, cons
 	m_name = iRIC::toStr(node.attribute("name", "default"));
 	m_englishCaption = iRIC::toStr(node.attribute("caption"));
 	m_caption = translator.translate(node.attribute("caption")), QObject::tr("Default");
+	m_toolTip = translator.translate(node.attribute("tooltips"));
 
 	m_element = node;
 
@@ -45,6 +46,11 @@ const std::string& SolverDefinitionBoundaryCondition::name() const
 const QString& SolverDefinitionBoundaryCondition::caption() const
 {
 	return impl->m_caption;
+}
+
+const QString& SolverDefinitionBoundaryCondition::toolTip() const
+{
+	return impl->m_toolTip;
 }
 
 const std::string& SolverDefinitionBoundaryCondition::englishCaption() const
