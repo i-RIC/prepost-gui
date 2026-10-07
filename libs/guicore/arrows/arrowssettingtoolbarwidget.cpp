@@ -112,7 +112,12 @@ void ArrowsSettingToolBarWidget::applySetting()
 	}
 
 	setDisabled(true);
-	if (m_setting->target == "") {return;}
+	if (m_setting->target == "") {
+		for (auto w : widgets) {
+			w->blockSignals(false);
+		}
+		return;
+	}
 
 	setEnabled(true);
 
