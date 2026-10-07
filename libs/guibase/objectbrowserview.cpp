@@ -3,10 +3,12 @@
 #include <misc/iricundostack.h>
 
 #include <QAction>
+#include <QHelpEvent>
 #include <QIcon>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QStandardItemModel>
+#include <QToolTip>
 #include <QUndoCommand>
 
 ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
@@ -162,6 +164,22 @@ void ObjectBrowserView::select(const QModelIndex& newindex)
 	selectionModel()->clear();
 	selectionModel()->setCurrentIndex(newindex, QItemSelectionModel::SelectCurrent);
 	setCommandExecution(false);
+}
+
+bool ObjectBrowserView::viewportEvent(QEvent* event)
+{
+	if (event->type() == QEvent::ToolTip) {
+		auto helpEvent = static_cast<QHelpEvent*>(event);
+		auto index = indexAt(helpEvent->pos());
+		if (index.isValid()) {
+			auto text = index.data(Qt::ToolTipRole).toString();
+			if (! text.isEmpty()) {
+				QToolTip::showText(helpEvent->globalPos(), text, viewport(), visualRect(index));
+				return true;
+			}
+		}
+	}
+	return QTreeView::viewportEvent(event);
 }
 
 void ObjectBrowserView::setCommandExecution(bool exec)

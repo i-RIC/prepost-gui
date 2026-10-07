@@ -55,6 +55,7 @@ signals:
 	void requestMoveDownMeasuredData(const QModelIndex& index);
 
 private:
+	bool viewportEvent(QEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
 	void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
 
