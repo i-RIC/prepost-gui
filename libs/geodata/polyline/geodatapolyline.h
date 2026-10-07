@@ -147,6 +147,7 @@ private:
 public:
 	friend class GeoDataPolyLineAbstractPolyLine;
 	friend class GeoDataPolyLineGroup;
+	friend class GeoDataPolyLineGroupProxy;
 	friend class GeoDataPolyLineGroupPolyLine;
 	friend class GeoDataPolyLineImporter;
 	friend class GeoDataPolyLineShapeExporter;
