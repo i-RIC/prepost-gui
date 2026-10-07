@@ -87,10 +87,13 @@ void Post3dWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 	if (ps == nullptr) {return;}
 	if (impl->m_setting.target == "") {return;}
 
-	auto caption = cont->gridType()->output(impl->m_setting.target)->caption();
+	auto output = cont->gridType()->output(impl->m_setting.target);
+	auto caption = output->caption();
 
 	m_standardItem->setText(caption);
 	m_standardItemCopy->setText(caption);
+	m_standardItem->setToolTip(output->toolTip());
+	m_standardItemCopy->setToolTip(output->toolTip());
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
