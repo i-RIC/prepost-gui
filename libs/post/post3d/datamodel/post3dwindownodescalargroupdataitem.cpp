@@ -40,6 +40,8 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	m_standardItem->setToolTip(tr("Configure the result variable and isovalue in Properties."));
+	m_standardItemCopy->setToolTip(tr("Configure the result variable and isovalue in Properties."));
 
 	setDefaultValues();
 	setupActors();
