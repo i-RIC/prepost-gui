@@ -21,6 +21,7 @@ SolverDefinitionOutput::SolverDefinitionOutput(QDomElement elem, SolverDefinitio
 	impl->m_englishCaption = iRIC::toStr(elem.attribute("caption"));
 
 	impl->m_caption = translator.translate(impl->m_englishCaption.c_str());
+	impl->m_toolTip = translator.translate(elem.attribute("tooltips"));
 }
 
 SolverDefinitionOutput::~SolverDefinitionOutput()
@@ -34,6 +35,11 @@ const std::string& SolverDefinitionOutput::name() const
 const QString& SolverDefinitionOutput::caption() const
 {
 	return impl->m_caption;
+}
+
+const QString& SolverDefinitionOutput::toolTip() const
+{
+	return impl->m_toolTip;
 }
 
 const std::string& SolverDefinitionOutput::englishCaption() const

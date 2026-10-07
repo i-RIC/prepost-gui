@@ -375,9 +375,8 @@ void Post2dWindowGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 					m_lineController.setPolyLine(m_linePoints);
 
 					m_nextNodes.clear();
-					auto s = m_edgeCounterParts.lower_bound(pointId);
-					auto e = m_edgeCounterParts.upper_bound(pointId);
-					for (auto it2 = s; it2 != e; ++it2) {
+					auto range = m_edgeCounterParts.equal_range(pointId);
+					for (auto it2 = range.first; it2 != range.second; ++it2) {
 						m_nextNodes.insert(it2->second);
 					}
 				}
