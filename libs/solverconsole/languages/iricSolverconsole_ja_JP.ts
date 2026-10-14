@@ -130,8 +130,7 @@
     </message>
     <message>
         <source>The solver finished calculation. Do you want to save this project?</source>
-        <translatorcomment>ソルバーの計算が終了しました。プロジェクトを保存しますか?</translatorcomment>
-        <translation />
+        <translation>ソルバーの計算が終了しました。プロジェクトを保存しますか?</translation>
     </message>
 </context>
 <context>
