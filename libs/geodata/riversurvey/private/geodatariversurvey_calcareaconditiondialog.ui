@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>430</width>
-    <height>136</height>
+    <height>156</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,33 +17,43 @@
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
+      <widget class="QLabel" name="baseTargetLabel">
+       <property name="text">
+        <string>Base target:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="baseTargetComboBox"/>
+     </item>
+     <item row="1" column="0">
       <widget class="QLabel" name="compareTargetLabel">
        <property name="text">
         <string>Compare target:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="1" column="1">
       <widget class="QComboBox" name="compareTargetComboBox"/>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="filenameLabel">
        <property name="text">
         <string>Output Filename:</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="FilenameEditWidget" name="filenameEdit"/>
      </item>
-     <item row="2" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="modeLabel">
        <property name="text">
         <string>Calculation Mode:</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
+     <item row="3" column="1">
       <widget class="QComboBox" name="modeComboBox">
        <item>
         <property name="text">

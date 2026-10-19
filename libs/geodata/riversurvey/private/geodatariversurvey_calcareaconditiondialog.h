@@ -19,8 +19,11 @@ public:
 	explicit CalcAreaConditionDialog(QWidget *parent = nullptr);
 	~CalcAreaConditionDialog();
 
+	void setTargets(const QStringList& targets);
 	void setCompareTargets(const QStringList& targets);
+	void setCompareTargetIndex(int index);
 
+	int baseTargetIndex() const;
 	int compareTargetIndex() const;
 
 	QString filename() const;

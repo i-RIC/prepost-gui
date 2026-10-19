@@ -430,18 +430,19 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoints(QPainter&
 	if (target == nullptr) { return; }
 
 	const auto& odn = target->odn();
+	std::vector<std::vector<QRectF>> drawnRects;
 
-	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter);
-	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter);
+	drawOdnNbPoint(odn.nb(0), tr("Left Start"), m_displaySetting.odnStartColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(5), tr("Right Start"), m_displaySetting.odnStartColor, painter, drawnRects);
 
-	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter);
-	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter);
+	drawOdnNbPoint(odn.nb(1), tr("Left Middle"), m_displaySetting.odnMiddleColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(4), tr("Right Middle"), m_displaySetting.odnMiddleColor, painter, drawnRects);
 
-	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter);
-	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter);
+	drawOdnNbPoint(odn.nb(2), tr("Left Low"), m_displaySetting.odnLowColor, painter, drawnRects);
+	drawOdnNbPoint(odn.nb(3), tr("Right Low"), m_displaySetting.odnLowColor, painter, drawnRects);
 }
 
-void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter)
+void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index, const QString& label, const QColor& color, QPainter& painter, std::vector<std::vector<QRectF>>& drawnRects)
 {
 	if (m_parentWindow->target() == nullptr) { return; }
 
@@ -466,9 +467,13 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawOdnNbPoint(int index,
 	QFontMetricsF metrics(m_displaySetting.odnNbFont);
 
 	auto rect = metrics.boundingRect(label);
-	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	QRectF textRect(point.x() - rect.width(), point.y() + ODN_VOFFSET, rect.width() + 5, rect.height() + 5);
+	int row = findRowToDraw(textRect, &drawnRects);
+
+	qreal rowHeight = rect.height() + 3;
+	QRectF fontRect = QRectF(point.x() - rect.width(), point.y() + ODN_VOFFSET + row * rowHeight, rect.width() + 5, rect.height() + 5);
 	painter.drawText(fontRect, Qt::AlignHCenter | Qt::AlignTop, label);
-	painter.save();
+	painter.restore();
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawJmkLine(QPainter& painter)
@@ -875,6 +880,23 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 			painter.drawLine(from, to);
 			y += ySubScale;
 		}
+
+		if (m_parentWindow->target() != nullptr) {
+			double centerX = m_parentWindow->target()->crosssection().leftShift();
+			QPointF centerFrom = matrix.map(QPointF(centerX, mins.y()));
+			QPointF centerTo = matrix.map(QPointF(centerX, maxs.y()));
+			QPen centerPen(m_displaySetting.distanceMarkersColor);
+			centerPen.setStyle(Qt::DashLine);
+			painter.setPen(centerPen);
+			painter.drawLine(centerFrom, centerTo);
+
+			QString centerLabel = tr("Center Point");
+			auto centerRect = metrics.boundingRect(centerLabel);
+			QRectF centerFontRect(centerFrom.x() + bankHOffset, bankVOffset, centerRect.width() + 5, centerRect.height() + 5);
+			painter.setPen(m_displaySetting.distanceMarkersColor);
+			painter.drawText(centerFontRect, Qt::AlignLeft | Qt::AlignTop, centerLabel);
+		}
+
 		painter.restore();
 	}
 
@@ -1355,7 +1377,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			QPointF mappedMaxs = invMatrix.map(maxs);
 
 			// find jmk data near the mouse cursor;
-			const auto& jmkItems = m_parentWindow->target()->jmk().items();
+			auto jmkItems = m_parentWindow->target()->jmk().items();
 			for (int i = 0; i < static_cast<int>(jmkItems.size()); ++i) {
 				const auto& jmkItem = jmkItems.at(i);
 				double left = jmkItem.distance;
@@ -1451,6 +1473,15 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 
 		iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditJmkDataByDragCommand(true, m_dragJmkItemIndex, m_dragJmkRight, newJmk, oldJmk, target, m_parentWindow));
 	}
+
+	// Emit position change signal for status bar
+	QMatrix invMatrix = m_matrix.inverted();
+	QPointF dataCoordinate = invMatrix.map(QPointF(event->pos()));
+	if (m_displaySetting.statusBarXType == GeoDataRiverSurveyCrossSectionDisplaySetting::StatusBarXType::DistanceFromCenter
+			&& m_parentWindow->target() != nullptr) {
+		dataCoordinate.setX(dataCoordinate.x() - m_parentWindow->target()->crosssection().leftShift());
+	}
+	emit positionChangedForStatusBar(dataCoordinate);
 
 	m_oldPosition = event->pos();
 }
@@ -2226,6 +2257,11 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::enterSlopePointEditMode(G
 	connect(this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::positionClicked, dialog, &GeoDataRiverSurveyCrosssectionSlopePointEditDialog::setPoint);
 	connect(dialog, &QDialog::destroyed, this, &GeoDataRiverSurveyCrosssectionWindowGraphicsView::restoreMouseEventMode);
 	connect(dialog, &QDialog::destroyed, mainWindow, &iRICMainWindowI::exitModelessDialogMode);
+}
+
+const GeoDataRiverSurveyCrossSectionDisplaySetting& GeoDataRiverSurveyCrosssectionWindowGraphicsView::displaySetting() const
+{
+	return m_displaySetting;
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::editDisplaySetting()

@@ -12,6 +12,11 @@ public:
 		Dots
 	};
 
+	enum class StatusBarXType {
+		DistanceFromLeftBank,
+		DistanceFromCenter
+	};
+
 	GeoDataRiverSurveyCrossSectionDisplaySetting();
 
 	BackgroundGridType bgGridType;
@@ -37,6 +42,8 @@ public:
 	QColor odnMiddleColor;
 	QColor odnLowColor;
 	QFont odnNbFont;
+
+	StatusBarXType statusBarXType;
 };
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONDISPLAYSETTING_H
