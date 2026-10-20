@@ -1,4 +1,5 @@
 #include "geodatariversurvey_editcrosssectioncommand.h"
+#include "../geodatarivercrosssectionlogic.h"
 #include "../geodatariversurveycrosssectionwindow.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
@@ -21,42 +22,7 @@ GeoDataRiverSurvey::EditCrosssectionCommand::EditCrosssectionCommand(bool apply,
 	m_rs {rs}
 {
 	m_beforeOdn = odn;
-	m_afterOdn = odn;
-
-	std::vector<double> posvec;
-	for (const auto& alt : after) {
-		posvec.push_back(alt.position());
-	}
-
-	for (int i = 0; i < 6; ++i) {
-		int index = m_beforeOdn.nb(i);
-		if (index < 0 || index >= static_cast<int> (posvec.size())) {
-			if (i < 3) {
-				index = 0;
-			} else {
-				index = before.size() - 1;
-			}
-		}
-		int index2 = index + after.size() - before.size();
-
-		auto odnPos = before.at(index).position();
-		if (index >= 0 && index < static_cast<int> (posvec.size()) && posvec[index] == odnPos) {
-			m_afterOdn.setNb(i, index);
-		} else if (index2 >= 0 && index2 < static_cast<int> (posvec.size()) && posvec[index2] == odnPos) {
-			m_afterOdn.setNb(i, index2);
-		} else {
-			auto it = std::lower_bound(posvec.begin(), posvec.end(), odnPos);
-			if (*it == odnPos) {
-				m_afterOdn.setNb(i, it - posvec.begin());
-			} else {
-				if (i < 3) {
-					m_afterOdn.setNb(i, 0);
-				} else {
-					m_afterOdn.setNb(i, posvec.size() - 1);
-				}
-			}
-		}
-	}
+	m_afterOdn = GeoDataRiverCrosssectionLogic::remapOdn(before, after, odn);
 }
 
 void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
@@ -66,14 +32,14 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	if (m_apply) {
-		m_window->updateView();
+		if (m_window != nullptr) {m_window->updateView();}
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_groupDataItem->updateCrossectionWindows();
 		m_rs->setMapped(false);
 	}
-	if (m_afterSelection != NO_SEL) {
+	if (m_afterSelection != NO_SEL && m_window != nullptr) {
 		m_window->setSelectedRow(m_afterSelection);
 	}
 }
@@ -85,13 +51,13 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::undo()
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	if (m_apply) {
-		m_window->updateView();
+		if (m_window != nullptr) {m_window->updateView();}
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_groupDataItem->updateCrossectionWindows();
 	}
-	if (m_beforeSelection != NO_SEL) {
+	if (m_beforeSelection != NO_SEL && m_window != nullptr) {
 		m_window->setSelectedRow(m_beforeSelection);
 	}
 }

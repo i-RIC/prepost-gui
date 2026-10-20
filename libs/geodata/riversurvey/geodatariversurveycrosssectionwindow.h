@@ -176,6 +176,7 @@ private:
 	void setupView();
 	void updateEditTargetPoint();
 	bool selectWSEIndex(int* index);
+	QString waterElevationItemName() const;
 
 	GeoDataRiverSurvey* targetRiverSurvey() const;
 	GeoDataRiverSurvey* gridCreatingConditionRiverSurvey() const;

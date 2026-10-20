@@ -4,6 +4,7 @@
 #include "../geodatarivercrosssection.h"
 #include "../geodatariversurvey.h"
 
+#include <QPointer>
 #include <QUndoCommand>
 
 class PreProcessorGeoDataGroupDataItemI;
@@ -31,7 +32,8 @@ private:
 	GeoDataRiverCrosssection::AltitudeList m_after;
 	GeoDataRiverPathPointOdnData m_afterOdn;
 	int m_afterSelection;
-	GeoDataRiverSurveyCrosssectionWindow* m_window;
+	// the window may be closed while this command remains in the undo stack
+	QPointer<GeoDataRiverSurveyCrosssectionWindow> m_window;
 	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 	GeoDataRiverSurvey* m_rs;
 };

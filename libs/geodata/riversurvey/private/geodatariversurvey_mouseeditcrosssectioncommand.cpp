@@ -20,7 +20,7 @@ void GeoDataRiverSurvey::MouseEditCrosssectionCommand::redo()
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
 	if (m_dragging) {
-		m_window->updateView();
+		if (m_window != nullptr) {m_window->updateView();}
 	} else {
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();

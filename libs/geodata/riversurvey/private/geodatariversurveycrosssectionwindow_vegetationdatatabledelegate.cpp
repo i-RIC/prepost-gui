@@ -100,6 +100,7 @@ QWidget* GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::crea
 		w->addItem(GeoDataRiverSurveyCrosssectionWindow::tr("High trees"));
 		return w;
 	}
+	return nullptr;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::setEditorData(QWidget* editor, const QModelIndex& index) const
@@ -140,7 +141,7 @@ void GeoDataRiverSurveyCrosssectionWindow::VegetationDataTableDelegate::setModel
 		if (checkBox->isChecked()) {
 			v = 1;
 		}
-		model->setData(index, 1);
+		model->setData(index, v);
 	} else if (col == 4) {
 		auto comboBox = dynamic_cast<QComboBox*> (editor);
 		model->setData(index, comboBox->currentIndex());
