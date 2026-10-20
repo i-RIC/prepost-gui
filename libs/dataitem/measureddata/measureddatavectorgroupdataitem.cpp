@@ -123,6 +123,7 @@ void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& 
 {
 	impl->m_setting.load(node);
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(impl->m_setting.arrowsSetting.target), m_childItems);
+	impl->m_arrowsToolBarWidget->applySetting();
 }
 
 void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

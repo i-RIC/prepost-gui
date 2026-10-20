@@ -129,6 +129,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(con
 	m_setting.load(node);
 	updateCheckState();
 	doUpdateActorSetting();
+	m_arrowsToolBarWidget->applySetting();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -160,6 +160,7 @@ void Post3dWindowNodeVectorArrowDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_setting.load(node);
 
 	updateActorSetting();
+	m_arrowsToolBarWidget->applySetting();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
