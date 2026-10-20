@@ -29,6 +29,10 @@ public:
 		From_Previouos,
 		From_First
 	};
+	enum CrossSectionDistance {
+		From_LeftBankOrigin,
+		From_FirstActivePoint
+	};
 
 	explicit GeoDataRiverSurveyHonryuExporterSettingDialog(QWidget *parent = nullptr);
 	~GeoDataRiverSurveyHonryuExporterSettingDialog();
@@ -39,6 +43,7 @@ public:
 	bool addHeader() const;
 	LongitudinalDistance longitudinalDistance() const;
 	Columns columns() const;
+	CrossSectionDistance crossSectionDistance() const;
 
 private:
 	Ui::GeoDataRiverSurveyHonryuExporterSettingDialog *ui;

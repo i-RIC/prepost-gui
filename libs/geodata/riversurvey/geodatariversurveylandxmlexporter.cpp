@@ -9,6 +9,8 @@
 #include <misc/mathsupport.h>
 
 #include <QFile>
+#include <QMessageBox>
+#include <QDebug>
 #include <QXmlStreamWriter>
 
 #include <vtkCell.h>
@@ -32,15 +34,46 @@ QString coordStr(const QPointF& p)
 	return coordStr(p.y(), p.x());
 }
 
+QPointF leftDistanceMark(GeoDataRiverPathPoint* point)
+{
+	return point->crosssectionPosition(- point->crosssection().leftShift());
+}
+
+bool distanceMarkHeight(GeoDataRiverPathPoint* point, double* height)
+{
+	const auto& cs = point->crosssection();
+	const double origin = - cs.leftShift();
+	const GeoDataRiverCrosssection::Altitude* previous = nullptr;
+	for (const auto& alt : cs.AltitudeInfo()) {
+		if (! alt.active()) {continue;}
+		if (alt.position() == origin) {
+			*height = alt.height();
+			return true;
+		}
+		if (previous != nullptr && previous->position() < origin && origin < alt.position()) {
+			double r = (origin - previous->position()) / (alt.position() - previous->position());
+			*height = previous->height() * (1 - r) + alt.height() * r;
+			return true;
+		}
+		previous = &alt;
+	}
+	return false;
+}
+
 } // namespace
 
 GeoDataRiverSurveyLandXmlExporter::GeoDataRiverSurveyLandXmlExporter(GeoDataCreator* creator) :
 	GeoDataExporter(tr("LandXml (*.xml)"), creator)
 {}
 
-bool GeoDataRiverSurveyLandXmlExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool GeoDataRiverSurveyLandXmlExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w, ProjectData* pd)
 {
 	auto rsData = dynamic_cast<GeoDataRiverSurvey*>(data);
+	QStringList missingHeights;
+	for (auto p = rsData->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+		double height;
+		if (! distanceMarkHeight(p, &height)) {missingHeights.push_back(p->name());}
+	}
 
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -61,13 +94,21 @@ bool GeoDataRiverSurveyLandXmlExporter::doExport(GeoData* data, const QString& f
 	LandXmlUtil::writeUnits(&writer);
 
 	const auto offset = pd->mainfile()->offset();
-	writeAlignmentsForLeftDistanceMarkAndCrossSection(&writer, rsData, offset);
+	writeAlignmentsForLeftDistanceMarkAndCrossSection(&writer, rsData, offset, missingHeights.isEmpty());
 	writeAlignmentsForRightDistanceMark(&writer, rsData, offset);
 	writeSurfaces(&writer, rsData, offset);
 
 	writer.writeEndElement(); // LandXml
 	file.close();
 
+	if (! missingHeights.isEmpty()) {
+		const auto message = tr("The left distance mark profile was omitted because the distance origin is outside the active survey points on cross sections: %1").arg(missingHeights.join(", "));
+		if (w != nullptr) {
+			QMessageBox::warning(w, tr("Warning"), message);
+		} else {
+			qWarning().noquote() << message;
+		}
+	}
 	return true;
 }
 
@@ -78,15 +119,15 @@ const QStringList GeoDataRiverSurveyLandXmlExporter::fileDialogFilters()
 	return ret;
 }
 
-void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset)
+void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset, bool writeProfile)
 {
 	// calculate length of left bank line
 	double len = 0;
 	auto point = rs->headPoint()->nextPoint();
 
-	auto prevP = point->leftBank()->interpolate(0);
+	auto prevP = leftDistanceMark(point);
 	while (point->nextPoint() != nullptr) {
-		auto p = point->leftBank()->interpolate(1);
+		auto p = leftDistanceMark(point->nextPoint());
 		len += iRIC::distance(prevP, p);
 		prevP = p;
 		point = point->nextPoint();
@@ -101,10 +142,10 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 
 	// write CoordGeom
 	point = rs->headPoint()->nextPoint();
-	prevP = point->leftBank()->interpolate(0);
+	prevP = leftDistanceMark(point);
 	writer->writeStartElement("CoordGeom");
 	while (point->nextPoint() != nullptr) {
-		auto p = point->leftBank()->interpolate(1);
+		auto p = leftDistanceMark(point->nextPoint());
 		writer->writeStartElement("Line");
 		writer->writeStartElement("Start");
 		writer->writeAttribute("name", QString("%1 L").arg(point->name()));
@@ -122,44 +163,43 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 	writer->writeEndElement(); // CoordGeom
 
 	// write Profile
-	writer->writeStartElement("Profile");
-	writer->writeStartElement("ProfAlign");
-	writer->writeAttribute("name", "left_distance_mark_profile");
-	writer->writeAttribute("staStart", "0");
+	if (writeProfile) {
+		writer->writeStartElement("Profile");
+		writer->writeStartElement("ProfAlign");
+		writer->writeAttribute("name", "left_distance_mark_profile");
+		writer->writeAttribute("staStart", "0");
 
-	len = 0;
-	point = rs->headPoint()->nextPoint();
-	prevP = point->leftBank()->interpolate(0);
-	double elev = point->crosssection().leftBank(true).height();
-	writer->writeStartElement("PVI");
-	writer->writeCharacters(coordStr(len, elev));
-	writer->writeEndElement(); // PVI
-	while (point->nextPoint() != nullptr) {
-		auto p = point->leftBank()->interpolate(1);
-		len += iRIC::distance(prevP, p);
-		double elev = point->crosssection().leftBank(true).height();
-
+		len = 0;
+		point = rs->headPoint()->nextPoint();
+		prevP = leftDistanceMark(point);
+		double elev;
+		distanceMarkHeight(point, &elev);
 		writer->writeStartElement("PVI");
 		writer->writeCharacters(coordStr(len, elev));
 		writer->writeEndElement(); // PVI
-		prevP = p;
-		point = point->nextPoint();
+		while (point->nextPoint() != nullptr) {
+			auto p = leftDistanceMark(point->nextPoint());
+			len += iRIC::distance(prevP, p);
+			double elev;
+			distanceMarkHeight(point, &elev);
+
+			writer->writeStartElement("PVI");
+			writer->writeCharacters(coordStr(len, elev));
+			writer->writeEndElement(); // PVI
+			prevP = p;
+			point = point->nextPoint();
+		}
+		writer->writeEndElement(); // ProfAlign
+		writer->writeEndElement(); // Profile
 	}
-	writer->writeEndElement(); // ProfAlign
-	writer->writeEndElement(); // Profile
 
 	// write CrossSects
 	writer->writeStartElement("CrossSects");
 	len = 0;
 	point = rs->headPoint()->nextPoint();
-	prevP = point->leftBank()->interpolate(0);
+	prevP = leftDistanceMark(point);
 	while (point != nullptr) {
-		QPointF p;
-		if (point->nextPoint() == nullptr) {
-			p = point->previousPoint()->leftBank()->interpolate(1);
-		} else {
-			p = point->leftBank()->interpolate(0);
-		}
+		QPointF p = leftDistanceMark(point);
 		len += iRIC::distance(prevP, p);
 
 		writer->writeStartElement("CrossSect");
@@ -169,13 +209,12 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 		writer->writeStartElement("CrossSectSurf");
 		writer->writeStartElement("PntList2D");
 		QString list = "";
-		auto lb = point->crosssection().leftBank(true);
 		const auto& alist = point->crosssection().AltitudeInfo();
 		bool first = true;
 		for (int i = 0; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude a = alist.at(i);
 			if (! a.active()) {continue;}
-			double pos = a.position() - lb.position();
+			double pos = a.position() + point->crosssection().leftShift();
 			double elev = a.height();
 
 			if (! first) {

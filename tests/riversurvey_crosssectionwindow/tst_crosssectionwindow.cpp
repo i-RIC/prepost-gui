@@ -56,6 +56,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QTemporaryDir>
 #include <QtTest>
 #include <vtkStructuredGrid.h>
+#include <vtkNew.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 
@@ -181,6 +182,9 @@ private slots:
 	void distanceOriginUndo();
 	void landXmlCoordinates_data();
 	void landXmlCoordinates();
+	void honryuDistanceOrigins_data();
+	void honryuDistanceOrigins();
+	void landXmlDistanceOrigins();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -374,6 +378,9 @@ void CrosssectionWindowTest::landXmlCoordinates()
 	const auto originalOffset = pd->mainfile()->offset();
 	auto restoreOffset = qScopeGuard([&]() {pd->mainfile()->setOffset(originalOffset.x(), originalOffset.y());});
 	pd->mainfile()->setOffset(offset.x(), offset.y());
+	rs->cancelBackgroundGridUpdate();
+	vtkNew<vtkStructuredGrid> grid;
+	grid->DeepCopy(rs->backgroundGrid());
 	const auto filename = m_tmpDir.filePath("coordinates.xml");
 	bool ok = exporter->doExport(rs, filename, "", m_mainWindow, pd);
 	QVERIFY(ok);
@@ -383,7 +390,7 @@ void CrosssectionWindowTest::landXmlCoordinates()
 	QVERIFY(doc.setContent(&file));
 	QMap<QString, QPointF> bankPoints;
 	for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
-		bankPoints[p->name() + " L"] = p->crosssectionPosition(p->crosssection().leftBank(true).position()) + offset;
+		bankPoints[p->name() + " L"] = p->crosssectionPosition(- p->crosssection().leftShift()) + offset;
 		bankPoints[p->name() + " R"] = p->crosssectionPosition(p->crosssection().rightBank(true).position()) + offset;
 	}
 	for (const auto& tag : {"Start", "End"}) {
@@ -399,7 +406,6 @@ void CrosssectionWindowTest::landXmlCoordinates()
 			QVERIFY(std::abs(vals[1].toDouble() - expected.x()) < 0.00051);
 		}
 	}
-	auto grid = rs->backgroundGrid();
 	auto values = vtkDoubleArray::SafeDownCast(grid->GetPointData()->GetArray("Data"));
 	QVERIFY(values != nullptr);
 	auto nodes = doc.elementsByTagName("P");
@@ -415,6 +421,128 @@ void CrosssectionWindowTest::landXmlCoordinates()
 	}
 }
 
+	void CrosssectionWindowTest::honryuDistanceOrigins_data()
+	{
+		QTest::addColumn<bool>("csv");
+		QTest::addColumn<bool>("legacy");
+		QTest::addColumn<double>("shift");
+		for (bool csv : {false, true}) {
+			for (bool legacy : {false, true}) {
+				for (double shift : {-50.0, 0.0, 50.0}) {
+					auto name = QString("%1-%2-%3").arg(csv ? "csv" : "text").arg(legacy ? "legacy" : "default").arg(shift);
+					QTest::newRow(qPrintable(name)) << csv << legacy << shift;
+				}
+			}
+		}
+	}
+
+	void CrosssectionWindowTest::honryuDistanceOrigins()
+	{
+		QFETCH(bool, csv);
+		QFETCH(bool, legacy);
+		QFETCH(double, shift);
+		auto rs = m_surveys.front();
+		QMap<GeoDataRiverPathPoint*, double> shifts;
+		for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+			shifts[p] = p->crosssection().leftShift();
+			p->crosssection().setLeftShift(shift);
+		}
+		auto first = rs->headPoint()->nextPoint();
+		const bool active = first->crosssection().AltitudeInfo().front().active();
+		first->crosssection().AltitudeInfo().front().setActive(false);
+		auto restore = qScopeGuard([&]() {
+			for (auto it = shifts.begin(); it != shifts.end(); ++it) {it.key()->crosssection().setLeftShift(it.value());}
+			first->crosssection().AltitudeInfo().front().setActive(active);
+			m_responder->clearHandler();
+		});
+		bool settingFound = false;
+		int defaultIndex = -1;
+		m_responder->setHandler([&](QWidget* dialog) {
+			if (QString(dialog->metaObject()->className()) != "GeoDataRiverSurveyHonryuExporterSettingDialog") {return false;}
+			auto combo = dialog->findChild<QComboBox*>("crossSectionDistanceComboBox");
+			if (combo != nullptr) {
+				settingFound = true;
+				defaultIndex = combo->currentIndex();
+				if (legacy) {combo->setCurrentIndex(1);}
+			}
+			qobject_cast<QDialog*>(dialog)->accept();
+			return true;
+		});
+		auto exporter = findExporter(rs, "*.csv");
+		QVERIFY(exporter != nullptr);
+		auto filename = m_tmpDir.filePath("honryu.txt");
+		QVERIFY(exporter->doExport(rs, filename, csv ? "CSV File (*.csv)" : "Text File (*.txt)", m_mainWindow, m_group->projectData()));
+		QVERIFY(settingFound);
+		QCOMPARE(defaultIndex, 0);
+		QFile file(filename);
+		QVERIFY(file.open(QFile::ReadOnly | QFile::Text));
+		QTextStream stream(&file);
+		for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+			const auto& cs = p->crosssection();
+			const double origin = legacy ? p->crosssection().leftBank(true).position() : - cs.leftShift();
+			for (const auto& alt : cs.AltitudeInfo()) {
+				if (! alt.active()) {continue;}
+				const auto vals = stream.readLine().split(csv ? "," : " ", QString::SkipEmptyParts);
+				QCOMPARE(vals.size(), 4);
+				QCOMPARE(vals[0], p->name());
+				QVERIFY(std::abs(vals[2].toDouble() - (alt.position() - origin)) < 0.00051);
+				QVERIFY(std::abs(vals[3].toDouble() - alt.height()) < 0.00051);
+			}
+			QVERIFY(stream.readLine().isEmpty());
+		}
+		QVERIFY(stream.atEnd());
+	}
+
+	void CrosssectionWindowTest::landXmlDistanceOrigins()
+	{
+		auto rs = m_surveys.front();
+		QMap<GeoDataRiverPathPoint*, double> shifts;
+		for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+			shifts[p] = p->crosssection().leftShift();
+			p->crosssection().setLeftShift(0);
+		}
+		auto restore = qScopeGuard([&]() {
+			for (auto it = shifts.begin(); it != shifts.end(); ++it) {it.key()->crosssection().setLeftShift(it.value());}
+		});
+		auto exporter = findExporter(rs, "*.xml");
+		QVERIFY(exporter != nullptr);
+		const auto filename = m_tmpDir.filePath("origin.xml");
+		for (bool outside : {false, true}) {
+			auto first = rs->headPoint()->nextPoint();
+			if (outside) {first->crosssection().setLeftShift(-first->crosssection().rightBank(true).position() - 10);}
+			m_responder->clearRecords();
+			QVERIFY(exporter->doExport(rs, filename, "", m_mainWindow, m_group->projectData()));
+			QFile file(filename);
+			QVERIFY(file.open(QFile::ReadOnly));
+			QDomDocument doc;
+			QVERIFY(doc.setContent(&file));
+			QCOMPARE(doc.elementsByTagName("Profile").size(), outside ? 0 : 1);
+			if (outside) {QVERIFY(m_responder->records().join("\n").contains("profile was omitted"));}
+			auto nodes = doc.elementsByTagName("CrossSect");
+			int index = 0;
+			double station = 0;
+			QPointF previous = first->crosssectionPosition(-first->crosssection().leftShift());
+			for (auto p = first; p != nullptr; p = p->nextPoint(), ++index) {
+				QVERIFY(index < nodes.size());
+				auto e = nodes.at(index).toElement();
+				auto mark = p->crosssectionPosition(-p->crosssection().leftShift());
+				station += QLineF(previous, mark).length();
+				previous = mark;
+				QCOMPARE(e.attribute("name"), p->name());
+				QVERIFY(std::abs(e.attribute("sta").toDouble() - station) < 0.00051);
+				auto vals = e.elementsByTagName("PntList2D").at(0).toElement().text().split(" ", QString::SkipEmptyParts);
+				int n = 0;
+				for (const auto& alt : p->crosssection().AltitudeInfo()) {
+					if (! alt.active()) {continue;}
+					QVERIFY(n + 1 < vals.size());
+					QVERIFY(std::abs(vals[n++].toDouble() - (alt.position() + p->crosssection().leftShift())) < 0.00051);
+					QVERIFY(std::abs(vals[n++].toDouble() - alt.height()) < 0.00051);
+				}
+				QCOMPARE(n, vals.size());
+			}
+			QCOMPARE(index, nodes.size());
+		}
+	}
 void CrosssectionWindowTest::refreshSurveyList()
 {
 	m_group = nullptr;

@@ -40,6 +40,11 @@ bool GeoDataRiverSurveyHonryuExporterSettingDialog::addHeader() const
 	return ui->headerCheckBox->isChecked();
 }
 
+GeoDataRiverSurveyHonryuExporterSettingDialog::CrossSectionDistance GeoDataRiverSurveyHonryuExporterSettingDialog::crossSectionDistance() const
+{
+	return ui->crossSectionDistanceComboBox->currentIndex() == 0 ? From_LeftBankOrigin : From_FirstActivePoint;
+}
+
 GeoDataRiverSurveyHonryuExporterSettingDialog::LongitudinalDistance GeoDataRiverSurveyHonryuExporterSettingDialog::longitudinalDistance() const
 {
 	if (ui->distanceComboBox->currentIndex() == 0) {

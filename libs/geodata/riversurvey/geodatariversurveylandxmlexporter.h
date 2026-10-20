@@ -15,7 +15,7 @@ public:
 	const QStringList fileDialogFilters() override;
 
 private:
-	static void writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
+	static void writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset, bool writeProfile);
 	static void writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
 	static void writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
 };

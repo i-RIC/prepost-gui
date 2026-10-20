@@ -1615,6 +1615,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
+        <source>Cross Section Distance:</source>
+        <translation>横断方向の距離:</translation>
+    </message>
+    <message>
+        <source>Distance from left bank origin (same as cross-section window)</source>
+        <translation>左岸からの距離（断面表示画面と同じ）</translation>
+    </message>
+    <message>
+        <source>Distance from first active point (legacy)</source>
+        <translation>一番左の有効な点からの距離（従来方式）</translation>
+    </message>
+    <message>
         <source>Export Format Setting</source>
         <translation>エクスポートフォーマット設定</translation>
     </message>
@@ -2029,6 +2041,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>The left distance mark profile was omitted because the distance origin is outside the active survey points on cross sections: %1</source>
+        <translation>次の断面では距離の基準点が有効な測量点の範囲外にあるため、左岸距離標の縦断データを省略しました: %1</translation>
+    </message>
     <message>
         <source>LandXml (*.xml)</source>
         <translation>LandXML (*.xml)</translation>
