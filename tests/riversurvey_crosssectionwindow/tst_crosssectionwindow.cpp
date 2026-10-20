@@ -24,6 +24,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <guicore/pre/geodata/geodataexporter.h>
 #include <guicore/pre/geodata/geodataimporter.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <geodata/riversurvey/geodatarivercrosssection.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
@@ -39,6 +40,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QComboBox>
 #include <QDir>
 #include <QDialogButtonBox>
+#include <QDomDocument>
 #include <QFile>
 #include <QFileInfo>
 #include <QItemSelectionModel>
@@ -46,12 +48,16 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QRadioButton>
 #include <QPushButton>
 #include <QSettings>
+#include <QScopeGuard>
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
 #include <QTableView>
 #include <QTableWidget>
 #include <QTemporaryDir>
 #include <QtTest>
+#include <vtkStructuredGrid.h>
+#include <vtkDoubleArray.h>
+#include <vtkPointData.h>
 
 #include <cmath>
 #include <map>
@@ -76,6 +82,14 @@ QString testProjectPath()
 {
 	// the default path is set by tools/riversurvey_tests/run_riversurvey_tests.ps1
 	return qEnvironmentVariable("IRIC_RS_TEST_PROJECT");
+}
+
+GeoDataExporter* findExporter(GeoDataRiverSurvey* rs, const QString& extension)
+{
+	for (auto e : rs->creator()->exporters()) {
+		if (e->fileDialogFilters().join(";").contains(extension)) {return e;}
+	}
+	return nullptr;
 }
 
 // gives access to the protected import function, that is used when the user imports data from the menu.
@@ -165,6 +179,8 @@ private slots:
 	void exportImportRoundTripWithCsvCenterLine();
 	void distanceOriginUndo_data();
 	void distanceOriginUndo();
+	void landXmlCoordinates_data();
+	void landXmlCoordinates();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -339,6 +355,64 @@ void CrosssectionWindowTest::distanceOriginUndo()
 	}
 	iRICUndoStack::instance().clear();
 	cs.setLeftShift(originalShift);
+}
+
+void CrosssectionWindowTest::landXmlCoordinates_data()
+{
+	QTest::addColumn<QPointF>("offset");
+	QTest::newRow("zero") << QPointF(0, 0);
+	QTest::newRow("nonzero") << QPointF(123456.125, -987654.875);
+}
+
+void CrosssectionWindowTest::landXmlCoordinates()
+{
+	QFETCH(QPointF, offset);
+	auto rs = m_surveys.front();
+	auto pd = m_group->projectData();
+	auto exporter = findExporter(rs, "*.xml");
+	QVERIFY(exporter != nullptr);
+	const auto originalOffset = pd->mainfile()->offset();
+	auto restoreOffset = qScopeGuard([&]() {pd->mainfile()->setOffset(originalOffset.x(), originalOffset.y());});
+	pd->mainfile()->setOffset(offset.x(), offset.y());
+	const auto filename = m_tmpDir.filePath("coordinates.xml");
+	bool ok = exporter->doExport(rs, filename, "", m_mainWindow, pd);
+	QVERIFY(ok);
+	QFile file(filename);
+	QVERIFY(file.open(QFile::ReadOnly));
+	QDomDocument doc;
+	QVERIFY(doc.setContent(&file));
+	QMap<QString, QPointF> bankPoints;
+	for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+		bankPoints[p->name() + " L"] = p->crosssectionPosition(p->crosssection().leftBank(true).position()) + offset;
+		bankPoints[p->name() + " R"] = p->crosssectionPosition(p->crosssection().rightBank(true).position()) + offset;
+	}
+	for (const auto& tag : {"Start", "End"}) {
+		auto nodes = doc.elementsByTagName(tag);
+		QVERIFY(nodes.size() > 0);
+		for (int i = 0; i < nodes.size(); ++i) {
+			auto e = nodes.at(i).toElement();
+			QVERIFY(bankPoints.contains(e.attribute("name")));
+			auto expected = bankPoints.value(e.attribute("name"));
+			auto vals = e.text().split(" ", QString::SkipEmptyParts);
+			QCOMPARE(vals.size(), 2);
+			QVERIFY(std::abs(vals[0].toDouble() - expected.y()) < 0.00051);
+			QVERIFY(std::abs(vals[1].toDouble() - expected.x()) < 0.00051);
+		}
+	}
+	auto grid = rs->backgroundGrid();
+	auto values = vtkDoubleArray::SafeDownCast(grid->GetPointData()->GetArray("Data"));
+	QVERIFY(values != nullptr);
+	auto nodes = doc.elementsByTagName("P");
+	QCOMPARE(nodes.size(), static_cast<int>(grid->GetNumberOfPoints()));
+	for (int i = 0; i < nodes.size(); ++i) {
+		double pos[3];
+		grid->GetPoint(i, pos);
+		auto vals = nodes.at(i).toElement().text().split(" ", QString::SkipEmptyParts);
+		QCOMPARE(vals.size(), 3);
+		QVERIFY(std::abs(vals[0].toDouble() - (pos[1] + offset.y())) < 0.00051);
+		QVERIFY(std::abs(vals[1].toDouble() - (pos[0] + offset.x())) < 0.00051);
+		QVERIFY(std::abs(vals[2].toDouble() - values->GetValue(i)) < 0.00051);
+	}
 }
 
 void CrosssectionWindowTest::refreshSurveyList()

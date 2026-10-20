@@ -60,9 +60,10 @@ bool GeoDataRiverSurveyLandXmlExporter::doExport(GeoData* data, const QString& f
 	LandXmlUtil::writeCoordinateSystem(&writer, pd->mainfile()->coordinateSystem());
 	LandXmlUtil::writeUnits(&writer);
 
-	writeAlignmentsForLeftDistanceMarkAndCrossSection(&writer, rsData);
-	writeAlignmentsForRightDistanceMark(&writer, rsData);
-	writeSurfaces(&writer, rsData);
+	const auto offset = pd->mainfile()->offset();
+	writeAlignmentsForLeftDistanceMarkAndCrossSection(&writer, rsData, offset);
+	writeAlignmentsForRightDistanceMark(&writer, rsData, offset);
+	writeSurfaces(&writer, rsData, offset);
 
 	writer.writeEndElement(); // LandXml
 	file.close();
@@ -77,7 +78,7 @@ const QStringList GeoDataRiverSurveyLandXmlExporter::fileDialogFilters()
 	return ret;
 }
 
-void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs)
+void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset)
 {
 	// calculate length of left bank line
 	double len = 0;
@@ -107,11 +108,11 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 		writer->writeStartElement("Line");
 		writer->writeStartElement("Start");
 		writer->writeAttribute("name", QString("%1 L").arg(point->name()));
-		writer->writeCharacters(coordStr(prevP));
+		writer->writeCharacters(coordStr(prevP + offset));
 		writer->writeEndElement(); // Start
 		writer->writeStartElement("End");
 		writer->writeAttribute("name", QString("%1 L").arg(point->nextPoint()->name()));
-		writer->writeCharacters(coordStr(p));
+		writer->writeCharacters(coordStr(p + offset));
 		writer->writeEndElement(); // End
 		writer->writeEndElement(); // Line
 
@@ -199,7 +200,7 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 	writer->writeEndElement(); // Alignments
 }
 
-void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs)
+void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset)
 {
 	// calculate length of right bank line
 	double len = 0;
@@ -229,11 +230,11 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForRightDistanceMark(QXml
 		writer->writeStartElement("Line");
 		writer->writeStartElement("Start");
 		writer->writeAttribute("name", QString("%1 R").arg(point->name()));
-		writer->writeCharacters(coordStr(prevP));
+		writer->writeCharacters(coordStr(prevP + offset));
 		writer->writeEndElement(); // Start
 		writer->writeStartElement("End");
 		writer->writeAttribute("name", QString("%1 R").arg(point->nextPoint()->name()));
-		writer->writeCharacters(coordStr(p));
+		writer->writeCharacters(coordStr(p + offset));
 		writer->writeEndElement(); // End
 		writer->writeEndElement(); // Line
 
@@ -246,7 +247,7 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForRightDistanceMark(QXml
 	writer->writeEndElement(); // Alignments
 }
 
-void GeoDataRiverSurveyLandXmlExporter::writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs)
+void GeoDataRiverSurveyLandXmlExporter::writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset)
 {
 	writer->writeStartElement("Surfaces");
 	writer->writeStartElement("Surface");
@@ -263,6 +264,8 @@ void GeoDataRiverSurveyLandXmlExporter::writeSurfaces(QXmlStreamWriter* writer, 
 	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		points->GetPoint(i, v);
 		val = values->GetValue(i);
+		v[0] += offset.x();
+		v[1] += offset.y();
 
 		auto xstr = QString::number(v[0], 'f', 3);
 		auto ystr = QString::number(v[1], 'f', 3);

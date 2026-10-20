@@ -4,6 +4,7 @@
 #include <guicore/pre/geodata/geodataexporter.h>
 
 class GeoDataRiverSurvey;
+class QPointF;
 class QXmlStreamWriter;
 
 class GeoDataRiverSurveyLandXmlExporter : public GeoDataExporter
@@ -14,9 +15,9 @@ public:
 	const QStringList fileDialogFilters() override;
 
 private:
-	static void writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
-	static void writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
-	static void writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs);
+	static void writeAlignmentsForLeftDistanceMarkAndCrossSection(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
+	static void writeAlignmentsForRightDistanceMark(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
+	static void writeSurfaces(QXmlStreamWriter* writer, GeoDataRiverSurvey* rs, const QPointF& offset);
 };
 
 #endif // GEODATARIVERSURVEYLANDXMLEXPORTER_H
