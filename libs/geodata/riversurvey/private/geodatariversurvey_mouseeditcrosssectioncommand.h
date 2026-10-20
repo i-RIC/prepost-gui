@@ -3,6 +3,7 @@
 
 #include "../geodatariversurvey.h"
 
+#include <QPointer>
 #include <QUndoCommand>
 
 class GeoDataRiverSurvey::MouseEditCrosssectionCommand : public QUndoCommand
@@ -21,7 +22,8 @@ private:
 	GeoDataRiverPathPoint* m_point;
 	GeoDataRiverCrosssection::AltitudeList m_before;
 	GeoDataRiverCrosssection::AltitudeList m_after;
-	GeoDataRiverSurveyCrosssectionWindow* m_window;
+	// the window may be closed while this command remains in the undo stack
+	QPointer<GeoDataRiverSurveyCrosssectionWindow> m_window;
 	GeoDataRiverSurvey* m_rs;
 };
 

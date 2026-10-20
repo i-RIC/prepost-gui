@@ -3,6 +3,7 @@
 
 #include "../geodatariversurvey.h"
 
+#include <QPointer>
 #include <QUndoCommand>
 
 class GeoDataRiverSurvey::EditJmkDataCommand : public QUndoCommand
@@ -18,7 +19,8 @@ protected:
 	GeoDataRiverPathPointJmkData m_before;
 
 	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurveyCrosssectionWindow* m_window;
+	// the window may be closed while this command remains in the undo stack
+	QPointer<GeoDataRiverSurveyCrosssectionWindow> m_window;
 };
 
 #endif // GEODATARIVERSURVEY_EDITJMKDATACOMMAND_H

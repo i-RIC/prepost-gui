@@ -4,6 +4,7 @@
 #include "../geodatariversurveycrosssectiondisplaysetting.h"
 #include "../geodatariversurveycrosssectionwindowgraphicsview.h"
 
+#include <QPointer>
 #include <QUndoCommand>
 
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView::SetDisplaySettingCommand : public QUndoCommand
@@ -18,7 +19,8 @@ private:
 	GeoDataRiverSurveyCrossSectionDisplaySetting m_newSetting;
 	GeoDataRiverSurveyCrossSectionDisplaySetting m_oldSetting;
 
-	GeoDataRiverSurveyCrosssectionWindowGraphicsView* m_view;
+	// the window may be closed while this command remains in the undo stack
+	QPointer<GeoDataRiverSurveyCrosssectionWindowGraphicsView> m_view;
 };
 
 #endif // GEODATARIVERSURVEYCROSSSECTIONWINDOWGRAPHICSVIEW_SETDISPLAYSETTINGCOMMAND_H
