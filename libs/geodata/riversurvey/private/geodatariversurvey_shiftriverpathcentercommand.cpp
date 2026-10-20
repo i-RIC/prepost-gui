@@ -13,9 +13,11 @@ GeoDataRiverSurvey::ShiftRiverPathCenterCommand::ShiftRiverPathCenterCommand(boo
 			m_points.append(p);
 			m_oldPositions.append(p->position());
 			m_oldCrosssections.append(p->crosssection().AltitudeInfo());
+			m_oldLeftShifts.append(p->crosssection().leftShift());
 			p->shiftCenter(offset);
 			m_newPositions.append(p->position());
 			m_newCrosssections.append(p->crosssection().AltitudeInfo());
+			m_newLeftShifts.append(p->crosssection().leftShift());
 		}
 		p = p->nextPoint();
 	}
@@ -27,6 +29,7 @@ void GeoDataRiverSurvey::ShiftRiverPathCenterCommand::redo()
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_newPositions[i]);
 		m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
+		m_points[i]->crosssection().setLeftShift(m_newLeftShifts[i]);
 	}
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -42,6 +45,7 @@ void GeoDataRiverSurvey::ShiftRiverPathCenterCommand::undo()
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->setPosition(m_oldPositions[i]);
 		m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
+		m_points[i]->crosssection().setLeftShift(m_oldLeftShifts[i]);
 	}
 	if (! m_apply) {
 		m_rs->headPoint()->updateAllXSecInterpolators();

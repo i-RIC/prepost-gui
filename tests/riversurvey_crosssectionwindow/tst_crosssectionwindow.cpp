@@ -13,6 +13,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 
 #include <gui/main/iricmainwindow.h>
 #include <gui/solverdef/solverdefinitionlist.h>
+#include <guibase/widget/realnumbereditwidget.h>
 #include <guicore/solverdef/solverdefinitionabstract.h>
 #include <misc/versionnumber.h>
 #include <pre/preprocessorwindow.h>
@@ -37,11 +38,13 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDir>
+#include <QDialogButtonBox>
 #include <QFile>
 #include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMdiSubWindow>
 #include <QRadioButton>
+#include <QPushButton>
 #include <QSettings>
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
@@ -160,6 +163,8 @@ private slots:
 	void referenceComboBoxWithoutSelection();
 	void vegetationSubmergedCheckboxCanBeUnchecked();
 	void exportImportRoundTripWithCsvCenterLine();
+	void distanceOriginUndo_data();
+	void distanceOriginUndo();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -219,7 +224,7 @@ void CrosssectionWindowTest::initTestCase()
 		QFAIL(qPrintable(QString("iRICMainWindow could not be created: %1").arg(e.what())));
 	}
 	m_mainWindow->resize(1600, 1000);
-	m_mainWindow->show();
+	if (! qEnvironmentVariableIsSet("IRIC_RS_TEST_HEADLESS")) {m_mainWindow->show();}
 	processEvents(200);
 	for (auto list : m_mainWindow->findChildren<SolverDefinitionList*>()) {
 		for (auto s : list->solverList()) {
@@ -253,6 +258,87 @@ void CrosssectionWindowTest::cleanup()
 {
 	m_responder->clearHandler();
 	closeAllWindows();
+}
+
+void CrosssectionWindowTest::distanceOriginUndo_data()
+{
+	QTest::addColumn<bool>("expand");
+	QTest::addColumn<bool>("apply");
+	QTest::addColumn<bool>("cancel");
+	for (bool expand : {false, true}) {
+		for (bool apply : {false, true}) {
+			for (bool cancel : {false, true}) {
+				auto name = QString("%1-%2-%3").arg(expand ? "expand" : "shift")
+					.arg(apply ? "apply" : "direct").arg(cancel ? "cancel" : "ok");
+				QTest::newRow(qPrintable(name)) << expand << apply << cancel;
+			}
+		}
+	}
+}
+
+void CrosssectionWindowTest::distanceOriginUndo()
+{
+	QFETCH(bool, expand);
+	QFETCH(bool, apply);
+	QFETCH(bool, cancel);
+	auto rs = m_surveys.front();
+	auto p = findPointWithMinimumAltitudes(rs, 3);
+	QVERIFY(p != nullptr);
+	for (auto point = rs->headPoint()->nextPoint(); point != nullptr; point = point->nextPoint()) {
+		point->IsSelected = (point == p);
+	}
+	auto& cs = p->crosssection();
+	const double originalShift = cs.leftShift();
+	cs.setLeftShift(50);
+	const auto before = positions(p);
+	const auto center = p->position();
+	const double amount = expand ? 1.1 : 1.0;
+	iRICUndoStack::instance().clear();
+	QVERIFY(QMetaObject::invokeMethod(rs, expand ? "expandSelectedPoints" : "shiftSelectedPoints", Qt::DirectConnection));
+	QDialog* dialog = nullptr;
+	const QString className = expand ? "GeoDataRiverPathPointExpandDialog" : "GeoDataRiverPathPointShiftDialog";
+	for (auto d : m_mainWindow->findChildren<QDialog*>()) {
+		if (d->metaObject()->className() == className) {dialog = d;}
+	}
+	QVERIFY(dialog != nullptr);
+	if (expand) {
+		auto radio = dialog->findChild<QRadioButton*>("ratioRadioButton");
+		QVERIFY(radio != nullptr);
+		radio->setChecked(true);
+	}
+	auto edit = dialog->findChild<RealNumberEditWidget*>(expand ? "ratioEdit" : "shiftEdit");
+	QVERIFY(edit != nullptr);
+	edit->setValue(amount);
+	if (apply) {
+		auto buttons = dialog->findChild<QDialogButtonBox*>("buttonBox");
+		QVERIFY(buttons != nullptr);
+		buttons->button(QDialogButtonBox::Apply)->click();
+	}
+	QVERIFY(QMetaObject::invokeMethod(dialog, cancel ? "reject" : "accept", Qt::DirectConnection));
+	QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+	auto check = [&](bool changed) {
+		const double shift = changed ? (expand ? 50 * amount : 50 + amount) : 50;
+		QVERIFY(std::abs(cs.leftShift() - shift) < 1E-8);
+		const auto after = positions(p);
+		QCOMPARE(after.size(), before.size());
+		for (size_t i = 0; i < before.size(); ++i) {
+			const double pos = changed ? (expand ? before[i] * amount : before[i] - amount) : before[i];
+			QVERIFY(std::abs(after[i] - pos) < 1E-8);
+			QVERIFY(std::abs(after[i] + cs.leftShift() - (pos + shift)) < 1E-8);
+		}
+		auto expectedCenter = changed && ! expand ? center + p->crosssectionDirection() * amount : center;
+		QVERIFY(QLineF(p->position(), expectedCenter).length() < 1E-8);
+	};
+	check(! cancel);
+	if (! cancel) {
+		iRICUndoStack::instance().undo();
+		check(false);
+		iRICUndoStack::instance().redo();
+		check(true);
+		iRICUndoStack::instance().undo();
+	}
+	iRICUndoStack::instance().clear();
+	cs.setLeftShift(originalShift);
 }
 
 void CrosssectionWindowTest::refreshSurveyList()
