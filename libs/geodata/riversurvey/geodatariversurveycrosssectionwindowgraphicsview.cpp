@@ -1331,6 +1331,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		}
 	} else if ((m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare || m_mouseEventMode == meDragVegetationPrepare) && ! m_modelessDialogIsOpen) {
 		m_mouseEventMode = meNormal;
+		if (! m_gridMode && m_parentWindow->target() == nullptr) {
+			// the target cross section is hidden (unchecked), so there is nothing to pick.
+			updateMouseCursor();
+			m_oldPosition = event->pos();
+			return;
+		}
 		if (m_gridMode) {
 			// find selected points near the mouse cursor.
 			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->gridCreatingConditionRiverSurvey()->gridCreatingCondition()->selectedCtrlPointInfoList();
