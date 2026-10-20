@@ -50,6 +50,9 @@ bool GeoDataRiverSurveyJmkExporter::doExport(const QString& filename, GeoDataRiv
 		++ lineNo;
 	}
 	outstream << "E" << "\n";
+	file.close();
+
+	return true;
 }
 
 bool GeoDataRiverSurveyJmkExporter::check(GeoDataRiverSurvey* rs, QWidget* w)

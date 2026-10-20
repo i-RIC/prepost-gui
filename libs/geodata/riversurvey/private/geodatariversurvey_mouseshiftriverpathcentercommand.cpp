@@ -27,6 +27,10 @@ GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::MouseShiftRiverPathCenterC
 		}
 		p = p->nextPoint();
 	}
+	if (first == nullptr) {
+		m_shiftValue = 0;
+		return;
+	}
 	m_shiftValue = QPointF::dotProduct(offset, first->crosssectionDirection());
 }
 
