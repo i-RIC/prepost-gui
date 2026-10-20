@@ -375,6 +375,18 @@ on_success:
         cmake --install $env:APPVEYOR_BUILD_FOLDER\dist\_build --config release
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
+        # Sign binaries before repogen packages them and they are pushed to online_update_v4.
+        # Credentials come from AppVeyor project Environment Variables (AZURE_*) - never hardcode them.
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          $packagesDir = "prod_v4_src\packages"
+        } else {
+          $packagesDir = "dev_v4_src\packages"
+        }
+        $env:PATH = "$env:PATH;$env:USERPROFILE\.dotnet\tools"
+        dotnet tool install --global AzureSignTool
+        python $env:APPVEYOR_BUILD_FOLDER\tools\sign_binaries.py $packagesDir
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
         # read iriclib Version from $in
         # get iriclib ReleaseDate from github releases
         #   see https://docs.github.com/en/rest/reference/releases#get-the-latest-release
