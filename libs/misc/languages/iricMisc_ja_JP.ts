@@ -242,7 +242,7 @@
     <name>iRICAuthDialog</name>
     <message>
         <source>Telemetry</source>
-        <translation>テレメトリ</translation>
+        <translation>情報送信</translation>
     </message>
 </context>
 </TS>
