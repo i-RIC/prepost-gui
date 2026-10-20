@@ -379,6 +379,7 @@ ODN エクスポートは、無効な点も含めてすべての点を書き出�
 | A-1 | シフト・拡幅コマンドで変更前後の `leftShift` を保存し、Undo/Redo で復元 | `distanceOriginUndo` の 8 ケース成功（シフト/拡幅 × 適用の有無 × OK/キャンセル。OK 後の Undo/Redo も検証） |
 | B-1 | LandXML の左右岸の平面座標と TIN の全頂点にプロジェクトのオフセットを加算 | `landXmlCoordinates` の 2 ケース成功（ゼロ/非ゼロのオフセット。左右岸線の全端点と TIN 全頂点・標高を出力 XML から照合、許容誤差 0.51 mm） |
 | B-3 | LandXML の横断距離を `position + leftShift` に変更し、左岸線形・測点距離も距離0の座標に統一。CSV/HONRYU に距離基準の選択を追加 | `honryuDistanceOrigins` の 12 ケース成功（CSV/テキスト × 新既定/従来方式 × 負/ゼロ/正の `leftShift`、無効な先頭点）。`landXmlDistanceOrigins` と B-1 のテストも成功 |
+| B-2 | PVI の測点距離に対応する次の断面の標高を使用 | `landXmlProfileElevations` 成功。断面ごとに10 m異なる標高と傾斜を設定し、全 PVI の距離・補間標高を最終断面まで照合 |
 
 B-3 の仕様はユーザー確認済み。CSV/HONRYU は画面と同じ距離を既定とし、従来の先頭有効点基準も選べる。LandXML の距離0点の標高は、有効な測量点から線形補間できる場合だけ使用する。全断面で求められない場合は Profile 全体を省略して警告する（範囲外への標高の外挿はしない）。断面データ・線形・TIN は引き続き出力する。§3.6 の共通関数抽出は、単純な `-leftShift` のため行っていない。RIV の符号制約は D-2 で解消する。
 

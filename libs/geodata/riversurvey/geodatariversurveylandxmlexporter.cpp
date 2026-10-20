@@ -181,7 +181,7 @@ void GeoDataRiverSurveyLandXmlExporter::writeAlignmentsForLeftDistanceMarkAndCro
 			auto p = leftDistanceMark(point->nextPoint());
 			len += iRIC::distance(prevP, p);
 			double elev;
-			distanceMarkHeight(point, &elev);
+			distanceMarkHeight(point->nextPoint(), &elev);
 
 			writer->writeStartElement("PVI");
 			writer->writeCharacters(coordStr(len, elev));

@@ -185,6 +185,7 @@ private slots:
 	void honryuDistanceOrigins_data();
 	void honryuDistanceOrigins();
 	void landXmlDistanceOrigins();
+	void landXmlProfileElevations();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -543,6 +544,44 @@ void CrosssectionWindowTest::landXmlCoordinates()
 			QCOMPARE(index, nodes.size());
 		}
 	}
+void CrosssectionWindowTest::landXmlProfileElevations()
+{
+	auto rs = m_surveys.front();
+	QMap<GeoDataRiverPathPoint*, GeoDataRiverCrosssection::AltitudeList> originals;
+	QMap<GeoDataRiverPathPoint*, double> shifts;
+	int index = 0;
+	for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint(), ++index) {
+		auto& cs = p->crosssection();
+		originals[p] = cs.AltitudeInfo();
+		shifts[p] = cs.leftShift();
+		cs.setLeftShift(0);
+		for (auto& alt : cs.AltitudeInfo()) {alt.setHeight(100 + index * 10 + 2 * alt.position());}
+	}
+	auto restore = qScopeGuard([&]() {
+		for (auto it = originals.begin(); it != originals.end(); ++it) {
+			it.key()->crosssection().AltitudeInfo() = it.value();
+			it.key()->crosssection().setLeftShift(shifts.value(it.key()));
+		}
+	});
+	auto exporter = findExporter(rs, "*.xml");
+	QVERIFY(exporter != nullptr);
+	auto filename = m_tmpDir.filePath("profile.xml");
+	QVERIFY(exporter->doExport(rs, filename, "", m_mainWindow, m_group->projectData()));
+	QFile file(filename);
+	QVERIFY(file.open(QFile::ReadOnly));
+	QDomDocument doc;
+	QVERIFY(doc.setContent(&file));
+	auto nodes = doc.elementsByTagName("PVI");
+	QCOMPARE(nodes.size(), index);
+	auto sections = doc.elementsByTagName("CrossSect");
+	for (int i = 0; i < nodes.size(); ++i) {
+		auto vals = nodes.at(i).toElement().text().split(" ", QString::SkipEmptyParts);
+		QCOMPARE(vals.size(), 2);
+		QVERIFY(std::abs(vals[0].toDouble() - sections.at(i).toElement().attribute("sta").toDouble()) < 0.00051);
+		QVERIFY(std::abs(vals[1].toDouble() - (100 + i * 10)) < 0.00051);
+	}
+}
+
 void CrosssectionWindowTest::refreshSurveyList()
 {
 	m_group = nullptr;
