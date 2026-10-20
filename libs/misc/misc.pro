@@ -13,10 +13,15 @@ PRECOMPILED_HEADER = misc_pch.h
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
+	# Windows Credential Manager (wincred) for iRIC ID token storage
+	LIBS += -ladvapi32
+	# EnumDisplayDevices (GPU name) for machine telemetry
+	LIBS += -luser32
 }
 
 # Input
 HEADERS += anms.h \
+           authcredentialstore.h \
            boolcontainer.h \
            colorcontainer.h \
            compositecontainer.h \
@@ -38,12 +43,15 @@ HEADERS += anms.h \
            integerrangecontainer.h \
            interpolator.h \
            intvectorcontainer.h \
+           iricauthclient.h \
+           iricauthdialog.h \
            iricrootpath.h \
            iricundostack.h \
            keyboardsupport.h \
            latitudelongitude.h \
            latitudelongitudeangle.h \
            linearinterpolator.h \
+           machineinfo.h \
            mathsupport.h \
            mergesupportedlistcommand.h \
            misc_global.h \
@@ -80,6 +88,7 @@ HEADERS += anms.h \
            standarderrormessages.h \
            stringcontainer.h \
            stringtool.h \
+           telemetrywidget.h \
            threadwithprogressinfo.h \
            tooltiplabel.h \
            tpoexporter.h \
@@ -102,6 +111,7 @@ HEADERS += anms.h \
            private/compositecontainer_impl.h \
            private/edge_detail.h \
            private/enumcontainert_detail.h \
+           private/iricauthclient_impl.h \
            private/latitudelongitude_impl.h \
            private/latitudelongitudeangle_impl.h \
            private/networksetting_impl.h \
@@ -117,15 +127,18 @@ HEADERS += anms.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui \
+         iricauthdialog.ui \
          modifycommanddialog.ui \
          orderedvalueselectdialog.ui \
          primitiveview.ui \
          qfonteditwidget.ui \
          slowmotionspeededitdialog.ui \
+         telemetrywidget.ui \
          valueselectdialog.ui \
          windowsizeeditwidget.ui \
          windowsizestandardsettingeditdialog.ui
 SOURCES += anms.cpp \
+           authcredentialstore.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
@@ -143,12 +156,15 @@ SOURCES += anms.cpp \
            integerrangecontainer.cpp \
            interpolator.cpp \
            intvectorcontainer.cpp \
+           iricauthclient.cpp \
+           iricauthdialog.cpp \
            iricrootpath.cpp \
            iricundostack.cpp \
            keyboardsupport.cpp \
            latitudelongitude.cpp \
            latitudelongitudeangle.cpp \
            linearinterpolator.cpp \
+           machineinfo.cpp \
            mathsupport.cpp \
            mergesupportedlistcommand.cpp \
            modifycommanddialog.cpp \
@@ -181,6 +197,7 @@ SOURCES += anms.cpp \
            standarderrormessages.cpp \
            stringcontainer.cpp \
            stringtool.cpp \
+           telemetrywidget.cpp \
            threadwithprogressinfo.cpp \
            tooltiplabel.cpp \
            tpoexporter.cpp \

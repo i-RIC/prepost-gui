@@ -58,6 +58,7 @@
 #include <misc/errormessage.h>
 #include <misc/filesystemfunction.h>
 #include <misc/informationdialog.h>
+#include <misc/iricauthclient.h>
 #include <misc/iricundostack.h>
 #include <misc/iricrootpath.h>
 #include <misc/projectlastiodirectory.h>
@@ -131,6 +132,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	m_continuousSnapshotInProgress {false},
 	m_cuiMode {cuiMode},
 	m_metaData {nullptr},
+	m_authClient {nullptr},
 	m_postWindowFactory {new PostProcessorWindowFactory {this}}
 {
 	// setup undo stack
@@ -149,6 +151,9 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 
 	setupNetworkProxy();
 	setupBasicSubWindows();
+
+	// Report solver runs to the iRIC ID service (no-op when not signed in).
+	connect(m_solverConsoleWindow, &SolverConsoleWindow::solverStarted, this, &iRICMainWindow::sendSolverRunTelemetry);
 
 	QDir iricDir = QDir(iRICRootPath::get());
 	iricDir.cdUp();
@@ -1776,7 +1781,7 @@ void iRICMainWindow::updateWindowList()
 
 void iRICMainWindow::showPreferenceDialog()
 {
-	PreferenceDialog dialog(this);
+	PreferenceDialog dialog(this, m_authClient);
 	dialog.exec();
 
 	setupNetworkProxy();
@@ -1907,6 +1912,35 @@ void iRICMainWindow::updatePostActionStatus()
 void iRICMainWindow::openHelp()
 {
 	QDesktopServices::openUrl(QUrl(tr("http://iric-gui-user-manual.readthedocs.io/en/latest/")));
+}
+
+void iRICMainWindow::setAuthClient(iRICAuthClient* client)
+{
+	m_authClient = client;
+
+	if (m_authClient != nullptr) {
+		connect(m_authClient, &iRICAuthClient::loginSucceeded, this, [this]() {
+			statusBar()->showMessage(tr("Signed in to iRIC ID as %1").arg(m_authClient->email()), 5000);
+		});
+		connect(m_authClient, &iRICAuthClient::loggedOut, this, [this]() {
+			statusBar()->showMessage(tr("Signed out from iRIC ID"), 5000);
+		});
+	}
+}
+
+iRICAuthClient* iRICMainWindow::authClient() const
+{
+	return m_authClient;
+}
+
+void iRICMainWindow::sendSolverRunTelemetry()
+{
+	if (m_authClient == nullptr || m_projectData == nullptr) {return;}
+
+	SolverDefinition* def = m_projectData->solverDefinition();
+	if (def == nullptr) {return;}
+
+	m_authClient->sendSolverRunTelemetry(QString::fromStdString(def->name()), def->version().toString());
 }
 
 void iRICMainWindow::setupAboutDialog()

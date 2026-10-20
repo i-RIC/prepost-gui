@@ -2,12 +2,21 @@
 
 #include "preferencedialog.h"
 #include "preferencepage.h"
+#include "preferencepagetelemetry.h"
 
-PreferenceDialog::PreferenceDialog(QWidget* parent) :
+PreferenceDialog::PreferenceDialog(QWidget* parent, iRICAuthClient* authClient) :
 	QDialog(parent),
 	ui(new Ui::PreferenceDialog)
 {
 	ui->setupUi(this);
+
+	// The Telemetry tab is added only when an auth client is available. The
+	// no-arg construction used by iRICMainWindow::initSetting() (to persist
+	// default values) must not gain this tab, otherwise it would write
+	// "telemetry/mode" before the user has been asked.
+	if (authClient != nullptr) {
+		ui->tabWidget->addTab(new PreferencePageTelemetry(authClient, this), tr("Telemetry"));
+	}
 }
 
 PreferenceDialog::~PreferenceDialog()

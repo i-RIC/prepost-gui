@@ -27,6 +27,7 @@ class QMdiSubWindow;
 class QXmlStreamWriter;
 class QDomNode;
 class iRICMetaData;
+class iRICAuthClient;
 
 class AnimationController;
 class ContinuousSnapshotWizard;
@@ -97,6 +98,10 @@ public:
 
 	ProjectData* projectData() const override;
 	void setProjectData(ProjectData* projectData) override;
+
+	/// The iRIC ID authentication client (owned by main(), may be null).
+	void setAuthClient(iRICAuthClient* client);
+	iRICAuthClient* authClient() const;
 
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
@@ -199,6 +204,7 @@ public slots:
 	void updateWindowList() override;
 
 	void setupRecentProjectsMenu();
+
 	/// Clear calculation result in the current CGNS file.
 	void clearCalculationResult();
 	/// Manage calculated results;
@@ -240,6 +246,9 @@ private slots:
 	void updatePostActionStatus();
 
 	void openHelp();
+
+	/// Send best-effort "solver_run" telemetry for the current solver.
+	void sendSolverRunTelemetry();
 
 private:
 	void updateWindowZIndices();
@@ -310,6 +319,9 @@ private:
 	bool m_cuiMode;
 
 	iRICMetaData* m_metaData;
+
+	/// iRIC ID authentication client. Not owned (set from main()).
+	iRICAuthClient* m_authClient;
 
 	PostProcessorWindowFactory* m_postWindowFactory;
 
