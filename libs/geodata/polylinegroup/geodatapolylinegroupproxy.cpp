@@ -5,11 +5,44 @@
 #include "private/geodatapolylinegroupproxy_displaysettingwidget.h"
 #include "public/geodatapolylinegroup_displaysettingwidget.h"
 
+#include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polyline/geodatapolylineimplpolyline.h>
+#include <geodata/polyline/private/geodatapolyline_impl.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/post/post2d/base/post2dwindowgridtypedataitemi.h>
 #include <misc/modifycommanddialog.h>
 #include <misc/zdepthrange.h>
+
+void GeoDataPolyLineGroupProxy::Impl::setupEdgesActor(vtkActor* actor, vtkPolyData* data, const GeoDataPolyLineGroup::DisplaySetting& ds, ColorMapSettingContainerI* cm)
+{
+	// color
+	QColor c = ds.color;
+
+	actor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+
+	// opacity
+	actor->GetProperty()->SetOpacity(ds.opacity);
+
+	// mapping
+	if (ds.mapping == GeoDataPolyLineGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
+		vtkMapper* mapper = nullptr;
+
+		mapper = cm->buildCellDataMapper(data, true);
+		actor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(data);
+		actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
+	// line width
+	actor->GetProperty()->SetLineWidth(ds.lineWidth);
+}
 
 GeoDataPolyLineGroupProxy::GeoDataPolyLineGroupProxy(GeoDataPolyLineGroup* geodata) :
 	GeoDataProxy(geodata),
@@ -23,6 +56,7 @@ GeoDataPolyLineGroupProxy::~GeoDataPolyLineGroupProxy()
 	auto r = renderer();
 
 	r->RemoveActor(impl->m_edgesActor);
+	r->RemoveActor(impl->m_editTargetActor);
 	delete impl;
 }
 
@@ -33,6 +67,10 @@ void GeoDataPolyLineGroupProxy::setupActors()
 
 	r->AddActor(impl->m_edgesActor);
 	col->AddItem(impl->m_edgesActor);
+
+	// m_editTargetActor is added to the actor collection in updateActorSetting(), only when edit target data exists
+	r->AddActor(impl->m_editTargetActor);
+	impl->m_editTargetActor->VisibilityOff();
 
 	updateActorSetting();
 }
@@ -66,33 +104,21 @@ void GeoDataPolyLineGroupProxy::updateActorSetting()
 		ds = lines->impl->m_displaySetting;
 	}
 
-	// color
-	QColor c = ds.color;
-
-	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-
-	// opacity
-	impl->m_edgesActor->GetProperty()->SetOpacity(ds.opacity);
-
-	// mapping
 	auto cm = colorMapSettingContainer();
-	if (ds.mapping == GeoDataPolyLineGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
-		vtkMapper* mapper = nullptr;
 
-		mapper = cm->buildCellDataMapper(lines->impl->m_edgesPolyData, true);
-		impl->m_edgesActor->SetMapper(mapper);
-		mapper->Delete();
-	} else {
-		vtkPolyDataMapper* mapper = nullptr;
+	Impl::setupEdgesActor(impl->m_edgesActor, lines->impl->m_edgesPolyData, ds, cm);
 
-		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		mapper->SetInputData(lines->impl->m_edgesPolyData);
-		impl->m_edgesActor->SetMapper(mapper);
-		mapper->Delete();
+	// The line selected in pre-processor is removed from m_edgesPolyData and held as edit target data,
+	// so it should be drawn separately.
+	auto col = actorCollection();
+	col->RemoveItem(impl->m_editTargetActor);
+	impl->m_editTargetActor->VisibilityOff();
+
+	auto target = dynamic_cast<GeoDataPolyLine*> (lines->editTargetData());
+	if (target != nullptr) {
+		Impl::setupEdgesActor(impl->m_editTargetActor, target->impl->m_polyLine->linePolyData(), ds, cm);
+		col->AddItem(impl->m_editTargetActor);
 	}
-
-	// line width
-	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
 
 	updateVisibilityWithoutRendering();
 }
@@ -100,6 +126,7 @@ void GeoDataPolyLineGroupProxy::updateActorSetting()
 void GeoDataPolyLineGroupProxy::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_edgesActor->SetPosition(0, 0, range.min());
+	impl->m_editTargetActor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPolyLineGroupProxy::doLoadFromProjectMainFile(const QDomNode& node)

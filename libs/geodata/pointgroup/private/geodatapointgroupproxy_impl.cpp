@@ -10,9 +10,15 @@ GeoDataPointGroupProxy::Impl::Impl()
 
 	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_pointsActor->SetMapper(mapper);
+
+	m_editTargetPointActor = vtkActor::New();
+
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	m_editTargetPointActor->SetMapper(mapper);
 }
 
 GeoDataPointGroupProxy::Impl::~Impl()
 {
 	m_pointsActor->Delete();
+	m_editTargetPointActor->Delete();
 }

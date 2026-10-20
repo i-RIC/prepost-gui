@@ -89,6 +89,8 @@ LIBS += -liricGdPolydataGroup
 LIBS += \
 	-lvtkCommonCore-$${VTK_MAJ_MIN} \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkRenderingCore-$${VTK_MAJ_MIN}
 
 # shapelib

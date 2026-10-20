@@ -95,6 +95,7 @@ private:
 
 public:
 	friend class GeoDataPointGroup;
+	friend class GeoDataPointGroupProxy;
 	friend class GeoDataPointGroupPoint;
 	friend class GeoDataPointProxy;
 };

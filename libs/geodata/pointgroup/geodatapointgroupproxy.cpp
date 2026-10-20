@@ -7,6 +7,8 @@
 #include "private/geodatapointgroupproxy_displaysettingwidget.h"
 #include "private/geodatapointgroupproxy_impl.h"
 
+#include <geodata/point/geodatapoint.h>
+#include <geodata/point/private/geodatapoint_impl.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
@@ -20,6 +22,36 @@
 #include <vtkImageMapper.h>
 #include <vtkQImageToImageSource.h>
 #include <vtkProperty2D.h>
+
+void GeoDataPointGroupProxy::Impl::setupPointsActor(vtkActor* actor, vtkPolyData* data, const GeoDataPointGroup::DisplaySetting& ds, ColorMapSettingContainerI* cm)
+{
+	// color
+	QColor c = ds.color;
+
+	actor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+
+	// mapping
+	if (ds.mapping == GeoDataPointGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
+		vtkMapper* mapper = nullptr;
+
+		mapper = cm->buildCellDataMapper(data, true);
+		actor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(data);
+		actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
+	// opacity
+	actor->GetProperty()->SetOpacity(ds.opacity);
+
+	// pointSize
+	actor->GetProperty()->SetPointSize(ds.pointSize);
+}
 
 GeoDataPointGroupProxy::GeoDataPointGroupProxy(GeoDataPointGroup* geodata) :
 	GeoDataProxy(geodata),
@@ -36,6 +68,7 @@ GeoDataPointGroupProxy::~GeoDataPointGroupProxy()
 		r->RemoveActor2D(actor);
 	}
 	r->RemoveActor(impl->m_pointsActor);
+	r->RemoveActor(impl->m_editTargetPointActor);
 
 	delete impl;
 }
@@ -47,6 +80,10 @@ void GeoDataPointGroupProxy::setupActors()
 
 	r->AddActor(impl->m_pointsActor);
 	col->AddItem(impl->m_pointsActor);
+
+	// m_editTargetPointActor is added to the actor collection in updateActorSetting(), only when edit target data exists
+	r->AddActor(impl->m_editTargetPointActor);
+	impl->m_editTargetPointActor->VisibilityOff();
 
 	updateActorSetting();
 }
@@ -85,6 +122,7 @@ void GeoDataPointGroupProxy::updateActorSetting()
 	}
 	impl->m_imageActors.clear();
 	impl->m_pointsActor->VisibilityOff();
+	impl->m_editTargetPointActor->VisibilityOff();
 
 	actorCollection()->RemoveAllItems();
 	actor2DCollection()->RemoveAllItems();
@@ -94,36 +132,23 @@ void GeoDataPointGroupProxy::updateActorSetting()
 		ds = points->impl->m_displaySetting;
 	}
 
+	// The point selected in pre-processor is removed from m_pointsPolyData and data(), and held as edit target data,
+	// so it should be drawn separately.
+	auto target = dynamic_cast<GeoDataPoint*> (points->editTargetData());
+	if (target != nullptr && ! target->isDefined()) {
+		target = nullptr;
+	}
+
 	if (ds.shape == GeoDataPointGroup::DisplaySetting::Shape::Point || ds.image.isNull()) {
-		// color
-		QColor c = ds.color;
-
-		impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-
-		// mapping
 		auto cm = colorMapSettingContainer();
-		if (ds.mapping == GeoDataPointGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
-			vtkMapper* mapper = nullptr;
 
-			mapper = cm->buildCellDataMapper(points->impl->m_pointsPolyData, true);
-			impl->m_pointsActor->SetMapper(mapper);
-			mapper->Delete();
-		} else {
-			vtkPolyDataMapper* mapper = nullptr;
-
-			mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-			mapper->SetInputData(points->impl->m_pointsPolyData);
-			impl->m_pointsActor->SetMapper(mapper);
-			mapper->Delete();
-		}
-
-		// opacity
-		impl->m_pointsActor->GetProperty()->SetOpacity(ds.opacity);
-
-		// pointSize
-		impl->m_pointsActor->GetProperty()->SetPointSize(ds.pointSize);
-
+		Impl::setupPointsActor(impl->m_pointsActor, points->impl->m_pointsPolyData, ds, cm);
 		actorCollection()->AddItem(impl->m_pointsActor);
+
+		if (target != nullptr) {
+			Impl::setupPointsActor(impl->m_editTargetPointActor, target->impl->m_pointController.polyData(), ds, cm);
+			actorCollection()->AddItem(impl->m_editTargetPointActor);
+		}
 	} else {
 		auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 		auto pixmap = QPixmap::fromImage(ds.image);
@@ -137,9 +162,16 @@ void GeoDataPointGroupProxy::updateActorSetting()
 		auto col = actor2DCollection();
 		const auto& data = points->data();
 
+		std::vector<QPointF> positions;
 		for (auto it = data.rbegin(); it != data.rend(); ++it) {
 			auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
-			auto p = point->point();
+			positions.push_back(point->point());
+		}
+		if (target != nullptr) {
+			positions.push_back(target->impl->m_pointController.point());
+		}
+
+		for (const auto& p : positions) {
 			auto p2 = GeoDataPointGroup::Impl::buildBottomLeftCorner(p, shrinkedPixmap, ds.anchorPosition, view);
 
 			auto mapper = vtkSmartPointer<vtkImageMapper>::New();
@@ -166,6 +198,7 @@ void GeoDataPointGroupProxy::updateActorSetting()
 void GeoDataPointGroupProxy::assignActorZValues(const ZDepthRange& range)
 {
 	impl->m_pointsActor->SetPosition(0, 0, range.min());
+	impl->m_editTargetPointActor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPointGroupProxy::doLoadFromProjectMainFile(const QDomNode& node)
