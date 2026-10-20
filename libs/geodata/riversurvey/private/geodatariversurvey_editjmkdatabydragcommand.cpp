@@ -1,3 +1,4 @@
+#include "../geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurvey_editjmkdatabydragcommand.h"
 
 #include <misc/qundocommandhelper.h>

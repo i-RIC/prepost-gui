@@ -1,4 +1,5 @@
 #include "geodatarivercrosssection.h"
+#include "geodatarivercrosssectionlogic.h"
 #include "geodatariverpathpoint.h"
 
 #include <misc/interpolator.h>
@@ -87,8 +88,12 @@ void GeoDataRiverCrosssection::removePoint(int index) /*throw (ErrorCodes)*/
 
 void GeoDataRiverCrosssection::removePoint(const std::vector<int>& indices) /*throw (ErrorCodes)*/
 {
-	for (auto it = indices.begin(); it != indices.end(); ++it) {
-		int index = *it;
+	// indices may be in any order (e.g. the order the user selected rows)
+	auto sortedIndices = GeoDataRiverCrosssectionLogic::sortedUniqueIndices(indices);
+	for (int index : sortedIndices) {
+		if (index < 0 || index >= static_cast<int> (m_altitudeInfo.size())) {
+			throw ec_OutOfIndex;
+		}
 		if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)) {
 			throw ec_FixDelete;
 		}
@@ -97,20 +102,36 @@ void GeoDataRiverCrosssection::removePoint(const std::vector<int>& indices) /*th
 		}
 	}
 
-	int offset = 0;
-	for (auto it = indices.begin(); it != indices.end(); ++it) {
-		int index = *it - offset;
+	auto oldAltitudes = m_altitudeInfo;
+	int oldFixedPointL = m_fixedPointL;
+	int oldFixedPointR = m_fixedPointR;
+
+	int removedBeforeL = 0;
+	int removedBeforeR = 0;
+	for (auto it = sortedIndices.rbegin(); it != sortedIndices.rend(); ++it) {
+		int index = *it;
 		m_altitudeInfo.erase(m_altitudeInfo.begin() + index);
-		++ offset;
+		if (m_fixedPointLSet && index < m_fixedPointL) {++ removedBeforeL;}
+		if (m_fixedPointRSet && index < m_fixedPointR) {++ removedBeforeR;}
 	}
+	m_fixedPointL -= removedBeforeL;
+	m_fixedPointR -= removedBeforeR;
+
+	auto rollback = [&]() {
+		m_altitudeInfo = oldAltitudes;
+		m_fixedPointL = oldFixedPointL;
+		m_fixedPointR = oldFixedPointR;
+	};
 
 	if (! enoughActivePoints()) {
+		rollback();
 		throw ec_AltitudesMustExistTwo;
 	}
 
 	int l = leftBankIndex(true);
 	int r = rightBankIndex(true);
 	if (m_altitudeInfo[l].position() > 0 || m_altitudeInfo[r].position() < 0) {
+		rollback();
 		throw ec_AltitudesBiased;
 	}
 //	m_Parent->UpdateRiverShapeInterpolators();

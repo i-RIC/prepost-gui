@@ -4,6 +4,7 @@
 #include "../geodatariverpathpointodndata.h"
 #include "../geodatariversurvey.h"
 
+#include <QPointer>
 #include <QUndoCommand>
 
 class GeoDataRiverSurvey::EditSlopePointCommand : public QUndoCommand
@@ -28,7 +29,8 @@ private:
 
 	bool m_apply;
 	GeoDataRiverPathPoint* m_point;
-	GeoDataRiverSurveyCrosssectionWindow* m_window;
+	// the window may be closed while this command remains in the undo stack
+	QPointer<GeoDataRiverSurveyCrosssectionWindow> m_window;
 };
 
 #endif // GEODATARIVERSURVEY_EDITSLOPEPOINTCOMMAND_H

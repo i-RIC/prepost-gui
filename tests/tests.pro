@@ -8,4 +8,6 @@ CONFIG += ordered
 
 SUBDIRS = \
 	geometry \
-	iricpython
+	iricpython \
+	riversurvey_logic \
+	riversurvey_crosssectionwindow

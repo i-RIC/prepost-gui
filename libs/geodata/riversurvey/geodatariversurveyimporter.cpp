@@ -91,7 +91,7 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 	QFileInfo finfo(f);
 
 	*allNamesAreNumber = true;
-	int mode;
+	int mode = 0;
 	*with4points = true;
 
 	// open file

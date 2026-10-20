@@ -1,3 +1,4 @@
+#include "../geodatarivercrosssectionlogic.h"
 #include "../geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurvey_editslopepointcommand.h"
 
@@ -12,27 +13,7 @@ GeoDataRiverSurvey::EditSlopePointCommand::EditSlopePointCommand(bool apply, Geo
 	m_window {w}
 {
 	m_beforeOdn = odn;
-	m_afterOdn = odn;
-
-	std::vector<double> posvec;
-	for (const auto& alt : m_after) {
-		posvec.push_back(alt.position());
-	}
-
-	for (int i = 0; i < 6; ++i) {
-		auto odnPos = oldAlist.at(m_beforeOdn.nb(i)).position();
-		auto it = std::lower_bound(posvec.begin(), posvec.end(), odnPos);
-
-		if (*it == odnPos) {
-			m_afterOdn.setNb(i, it - posvec.begin());
-		} else {
-			if (i < 3) {
-				m_afterOdn.setNb(i, 0);
-			} else {
-				m_afterOdn.setNb(i, posvec.size() - 1);
-			}
-		}
-	}
+	m_afterOdn = GeoDataRiverCrosssectionLogic::remapOdn(oldAlist, newAlist, odn);
 }
 
 void GeoDataRiverSurvey::EditSlopePointCommand::redo()
@@ -61,6 +42,7 @@ bool GeoDataRiverSurvey::EditSlopePointCommand::mergeWith(const QUndoCommand *ot
 
 	m_apply = com->m_apply;
 	m_after = com->m_after;
+	m_afterOdn = com->m_afterOdn;
 
 	return true;
 }
@@ -71,6 +53,6 @@ void GeoDataRiverSurvey::EditSlopePointCommand::apply(const GeoDataRiverCrosssec
 	m_point->odn() = odn;
 	m_point->updateXSecInterpolators();
 	m_point->updateRiverShapeInterpolators();
-	m_window->updateView();
+	if (m_window != nullptr) {m_window->updateView();}
 	m_point->riverSurvey()->setMapped(false);
 }

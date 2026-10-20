@@ -9,6 +9,8 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::SetDisplaySettingCommand::SetD
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::SetDisplaySettingCommand::redo()
 {
+	if (m_view == nullptr) {return;}
+
 	m_view->m_displaySetting = m_newSetting;
 	emit m_view->displaySettingChanged(m_view->m_displaySetting);
 	m_view->viewport()->update();
@@ -16,6 +18,8 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::SetDisplaySettingCommand:
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::SetDisplaySettingCommand::undo()
 {
+	if (m_view == nullptr) {return;}
+
 	m_view->m_displaySetting = m_oldSetting;
 	emit m_view->displaySettingChanged(m_view->m_displaySetting);
 	m_view->viewport()->update();

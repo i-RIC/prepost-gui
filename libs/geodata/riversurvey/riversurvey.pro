@@ -152,6 +152,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariverpathpointinsertdialog.h \
            geodatariverpathpointjmkdata.h \
            geodatariverpathpointmovedialog.h \
+           geodatarivercrosssectionlogic.h \
            geodatariverpathpointodndata.h \
            geodatariverpathpointrenamedialog.h \
            geodatariverpathpointrotatedialog.h \
@@ -277,6 +278,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariverpathpointinsertdialog.cpp \
            geodatariverpathpointjmkdata.cpp \
            geodatariverpathpointmovedialog.cpp \
+           geodatarivercrosssectionlogic.cpp \
            geodatariverpathpointodndata.cpp \
            geodatariverpathpointrenamedialog.cpp \
            geodatariverpathpointrotatedialog.cpp \

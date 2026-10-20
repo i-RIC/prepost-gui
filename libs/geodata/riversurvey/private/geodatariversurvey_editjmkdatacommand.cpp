@@ -11,13 +11,13 @@ GeoDataRiverSurvey::EditJmkDataCommand::EditJmkDataCommand(const GeoDataRiverPat
 void GeoDataRiverSurvey::EditJmkDataCommand::redo()
 {
 	m_point->jmk() = m_after;
-	m_window->updateRiverSurveys();
+	if (m_window != nullptr) {m_window->updateRiverSurveys();}
 	m_point->riverSurvey()->setMapped(false);
 }
 
 void GeoDataRiverSurvey::EditJmkDataCommand::undo()
 {
 	m_point->jmk() = m_before;
-	m_window->updateRiverSurveys();
+	if (m_window != nullptr) {m_window->updateRiverSurveys();}
 	m_point->riverSurvey()->setMapped(false);
 }
