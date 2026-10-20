@@ -12031,7 +12031,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Telemetry</source>
-        <translation>テレメトリ</translation>
+        <translation>情報送信</translation>
     </message>
 </context>
 <context>
