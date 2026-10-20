@@ -7,13 +7,33 @@
 #include <guicore/project/projectmainfile.h>
 
 #include <QFile>
+#include <QMessageBox>
 #include <QTextStream>
+
+namespace {
+
+/// Returns the position (distance from the center) that is used as the origin of distances in *.riv files.
+/**
+ * The origin is the point where "distance from left bank" is zero (-leftShift), so that the
+ * "distance from left bank" is kept when the file is imported with the center line CSV file.
+ * When that point is on the right side of the center, the left bank is used, because the line
+ * between the origin and the right bank must cross the center line.
+ */
+double distanceOrigin(GeoDataRiverCrosssection& cs)
+{
+	double origin = - cs.leftShift();
+	if (origin > 0) {return cs.leftBank(true).position();}
+
+	return origin;
+}
+
+} // namespace
 
 GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator) :
 	GeoDataExporter(tr("Cross-Section Data (*.riv)"), creator)
 {}
 
-bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w, ProjectData* pd)
 {
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
@@ -28,16 +48,22 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	auto offset = pd->mainfile()->offset();
 
+	QStringList sectionsWithInactivePoints;
+	QStringList sectionsWithExtensions;
+
 	// now, export from the first one.
 	GeoDataRiverPathPoint* tmpp = rs->headPoint()->nextPoint();
 	outstream << "#survey" << endl;
 	while (1) {
-		QPointF leftBank  = tmpp->crosssectionPosition(tmpp->crosssection().leftBank(true).position());
-		QPointF rightBank = tmpp->crosssectionPosition(tmpp->crosssection().rightBank(true).position());
+		auto& cs = tmpp->crosssection();
+		QPointF leftBank  = tmpp->crosssectionPosition(distanceOrigin(cs));
+		QPointF rightBank = tmpp->crosssectionPosition(cs.rightBank(true).position());
 		outstream
 				<< tmpp->name()
 				<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()
 				<< "\t" << rightBank.x() + offset.x() << "\t" << rightBank.y()  + offset.y() << endl;
+		if (cs.numOfAltitudes(true) != cs.numOfAltitudes(false)) {sectionsWithInactivePoints.push_back(tmpp->name());}
+		if (cs.fixedPointLSet() || cs.fixedPointRSet()) {sectionsWithExtensions.push_back(tmpp->name());}
 		tmpp = tmpp->nextPoint();
 		if (tmpp == nullptr) {break;}
 	}
@@ -49,7 +75,7 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 		outstream
 				<< tmpp->name() << "\t" << tmpp->crosssection().numOfAltitudes(true) << endl;
 		int i = 0;
-		double left = tmpp->crosssection().leftBank(true).position();
+		double left = distanceOrigin(tmpp->crosssection());
 		for (GeoDataRiverCrosssection::Altitude& alt : tmpp->crosssection().AltitudeInfo()) {
 			if (alt.active()) {
 				outstream << alt.position() - left << "\t" << alt.height() << "\t";
@@ -87,6 +113,17 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 		if (tmpp == nullptr) {break;}
 	}
 	csvFile.close();
+
+	if (w != nullptr && (sectionsWithInactivePoints.size() > 0 || sectionsWithExtensions.size() > 0)) {
+		QStringList msgs;
+		if (sectionsWithInactivePoints.size() > 0) {
+			msgs.push_back(tr("Inactive points are not exported, because *.riv files can not hold them. Cross sections with inactive points: %1").arg(sectionsWithInactivePoints.join(", ")));
+		}
+		if (sectionsWithExtensions.size() > 0) {
+			msgs.push_back(tr("Extension lines are exported as straight lines, because *.riv files can not hold them. Cross sections with extension lines: %1").arg(sectionsWithExtensions.join(", ")));
+		}
+		QMessageBox::warning(w, tr("Warning"), msgs.join("\n\n"));
+	}
 
 	return true;
 }
