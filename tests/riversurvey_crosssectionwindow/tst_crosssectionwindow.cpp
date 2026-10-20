@@ -23,6 +23,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataexporter.h>
 #include <guicore/pre/geodata/geodataimporter.h>
+#include <guicore/pre/geodata/geodataimportersetting.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <geodata/riversurvey/geodatarivercrosssection.h>
@@ -186,6 +187,8 @@ private slots:
 	void honryuDistanceOrigins();
 	void landXmlDistanceOrigins();
 	void landXmlProfileElevations();
+	void rivInputValidation_data();
+	void rivInputValidation();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -579,6 +582,65 @@ void CrosssectionWindowTest::landXmlProfileElevations()
 		QCOMPARE(vals.size(), 2);
 		QVERIFY(std::abs(vals[0].toDouble() - sections.at(i).toElement().attribute("sta").toDouble()) < 0.00051);
 		QVERIFY(std::abs(vals[1].toDouble() - (100 + i * 10)) < 0.00051);
+	}
+}
+
+void CrosssectionWindowTest::rivInputValidation_data()
+{
+	QTest::addColumn<QByteArray>("content");
+	QTest::addColumn<bool>("valid");
+	const QByteArray survey = "#survey\nA 0 0 100 0\n";
+	QTest::newRow("short-survey") << QByteArray("#survey\nA 0 0\n") << false;
+	QTest::newRow("missing-count") << survey + "#x-section\nA\n" << false;
+	QTest::newRow("negative-count") << survey + "#x-section\nA -1\n" << false;
+	QTest::newRow("fractional-count") << survey + "#x-section\nA 2.5\n0 0 100 1\n" << false;
+	QTest::newRow("huge-count") << survey + "#x-section\nA 1e100\n" << false;
+	QTest::newRow("zero-count") << survey + "#x-section\nA 0\n" << false;
+	QTest::newRow("partial-indices") << survey + "#x-section\nA 2 1 2\n0 0 100 1\n" << false;
+	QTest::newRow("zero-index") << survey + "#x-section\nA 2 0 1 2 2\n0 0 100 1\n" << false;
+	QTest::newRow("large-index") << survey + "#x-section\nA 2 1 1 2 3\n0 0 100 1\n" << false;
+	QTest::newRow("unordered-indices") << survey + "#x-section\nA 2 1 2 1 2\n0 0 100 1\n" << false;
+	QTest::newRow("odd-values") << survey + "#x-section\nA 2\n0 0 100\n" << false;
+	QTest::newRow("too-many-points") << survey + "#x-section\nA 2\n0 0 50 1 100 2\n" << false;
+	QTest::newRow("truncated") << survey + "#x-section\nA 2\n0 0\n" << false;
+	QTest::newRow("nonfinite-coordinate") << QByteArray("#survey\nA nan 0 100 0\n") << false;
+	QTest::newRow("coincident-banks") << QByteArray("#survey\nA 0 0 0 0\n") << false;
+	QTest::newRow("nonfinite-distance") << survey + "#x-section\nA 2\n0 0 inf 1\n" << false;
+	QTest::newRow("nonfinite-height") << survey + "#x-section\nA 2\n0 nan 100 1\n" << false;
+	QTest::newRow("empty") << QByteArray() << false;
+	QTest::newRow("missing-file") << QByteArray() << false;
+	QTest::newRow("normal") << survey + "#x-section\nA 2\n10 1 90 2\n" << true;
+	QTest::newRow("four-indices") << survey + "#x-section\nA 2 1 1 2 2\n10 1 90 2\n" << true;
+	QTest::newRow("survey-only") << survey << true;
+	QTest::newRow("blank-lines") << survey + "#x-section\nA 2\n\n10 1\n\n90 2\n\n" << true;
+}
+
+void CrosssectionWindowTest::rivInputValidation()
+{
+	QFETCH(QByteArray, content);
+	QFETCH(bool, valid);
+	const auto filename = m_tmpDir.filePath("validation.riv");
+	QFile file(filename);
+	if (QByteArray(QTest::currentDataTag()) == "missing-file") {
+		if (file.exists()) {QVERIFY(file.remove());}
+	} else {
+		QVERIFY(file.open(QFile::WriteOnly));
+		QCOMPARE(file.write(content), static_cast<qint64>(content.size()));
+		file.close();
+	}
+	auto importer = m_group->importer("riversurvey");
+	QVERIFY(importer != nullptr);
+	auto previous = importer->setting();
+	std::unique_ptr<GeoDataImporterSetting> setting(importer->createSetting());
+	setting->setFileName(filename);
+	importer->setSetting(setting.get());
+	auto restore = qScopeGuard([&]() {importer->setSetting(previous);});
+	m_responder->clearRecords();
+	int count = 0;
+	QCOMPARE(importer->importInit(&count, nullptr, m_group, m_mainWindow, false), valid);
+	if (! valid) {
+		QVERIFY(m_responder->records().join("\n").contains("validation.riv"));
+		QVERIFY(! m_responder->records().join("\n").contains("GeoDataRiverSurveyImporterSettingDialog"));
 	}
 }
 

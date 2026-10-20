@@ -16,11 +16,13 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QMultiMap>
+#include <QScopeGuard>
 #include <QTextStream>
 #include <QVector2D>
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <vector>
 
 namespace {
@@ -89,6 +91,12 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 {
 	QFile f(fname);
 	QFileInfo finfo(f);
+	auto cleanup = qScopeGuard([&]() {GeoDataRiverSurveyImporter::clearPoints(points);});
+	auto invalidRecord = [&](int line, const QString& detail) {
+		QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"),
+			GeoDataRiverSurveyImporter::tr("%1 line %2: %3").arg(finfo.fileName()).arg(line).arg(detail));
+		return false;
+	};
 
 	*allNamesAreNumber = true;
 	int mode = 0;
@@ -96,7 +104,9 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 
 	// open file
 	int linenum = 1;
-	f.open(QIODevice::ReadOnly | QIODevice::Text);
+	if (! f.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("Could not open the file: %1").arg(f.errorString()));
+	}
 	while (! f.atEnd()) {
 		QString line = f.readLine();
 		QRegExp sep("\\s+");
@@ -121,49 +131,59 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 
 			bool ok;
 			if (mode == 1) {
+				if (tokens.size() < 5) {
+					return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("Survey data requires a name and four coordinates."));
+				}
 				parseKP(tokens.at(0), &realKP, &strKP, allNamesAreNumber);
 				double leftx = tokens.at(1).toDouble(&ok);
-				if (! ok) {
+				if (! ok || ! std::isfinite(leftx)) {
 					QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": LX value is invalid")
 																.arg(finfo.fileName()).arg(linenum).arg(tokens.at(1)));
 					return false;
 				}
 				double lefty = tokens.at(2).toDouble(&ok);
-				if (! ok) {
+				if (! ok || ! std::isfinite(lefty)) {
 					QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": LY value is invalid")
 																.arg(finfo.fileName()).arg(linenum).arg(tokens.at(2)));
 					return false;
 				}
 				double rightx = tokens.at(3).toDouble(&ok);
-				if (! ok) {
+				if (! ok || ! std::isfinite(rightx)) {
 					QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": RX value is invalid")
 																.arg(finfo.fileName()).arg(linenum).arg(tokens.at(3)));
 					return false;
 				}
 				double righty = tokens.at(4).toDouble(&ok);
-				if (! ok) {
+				if (! ok || ! std::isfinite(righty)) {
 					QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": RY value is invalid")
 																.arg(finfo.fileName()).arg(linenum).arg(tokens.at(4)));
 					return false;
 				}
 
+				if (leftx == rightx && lefty == righty) {
+					return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("Left and right survey coordinates must be different."));
+				}
 				p = getPoint(realKP, strKP, points);
 				setBanks(p, leftx, lefty, rightx, righty);
 			} else if (mode == 2) {
 				parseKP(tokens.at(0), &realKP, &strKP, allNamesAreNumber);
 
-				if (tokens.length() < 2) {break;}
-				np = static_cast<int>(tokens.at(1).toDouble(&ok));
-				if (! ok) {
+				if (tokens.size() < 2 || (tokens.size() > 2 && tokens.size() < 6)) {
+					return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("Cross-section header requires a name, point count and optionally four indices."));
+				}
+				const double count = tokens.at(1).toDouble(&ok);
+				if (! ok || ! std::isfinite(count) || count < 2 || count > std::numeric_limits<int>::max() || std::floor(count) != count) {
 					QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": Point count is invalid")
 																.arg(finfo.fileName()).arg(linenum).arg(tokens.at(1)));
 					return false;
 				}
+				np = static_cast<int>(count);
 				// Tries to read four indices values.
 				if (tokens.length() >= 6) {
 					for (int k = 0; k < 4; ++k) {
 						divIndices[k] = tokens.at(k + 2).toInt(&ok);
-						if (! ok) {
+						if (! ok || divIndices[k] < 1 || divIndices[k] > np ||
+							(k > 0 && divIndices[k] < divIndices[k - 1])) {
 							QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": Invalid index value")
 																		.arg(finfo.fileName()).arg(linenum).arg(tokens.at(k + 2)));
 							return false;
@@ -183,19 +203,22 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 					line = f.readLine();
 					++linenum;
 					tokens = line.split(sep, QString::SkipEmptyParts);
+					if (tokens.size() % 2 != 0 || tokens.size() / 2 > np - i) {
+						return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("Elevation data must contain distance/elevation pairs matching the point count."));
+					}
 
 					int k = 0;
 					while (k < tokens.length() - 1) {
 						GeoDataRiverSurveyImporter::Alt alt;
 						alt.originalOrder = i;
 						alt.distance = tokens.at(k++).toDouble(&ok);
-						if (! ok) {
+						if (! ok || ! std::isfinite(alt.distance)) {
 							QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": Distance value is invalid")
 																		.arg(finfo.fileName()).arg(linenum).arg(tokens.at(k - 1)));
 							return false;
 						}
 						alt.elevation = tokens.at(k++).toDouble(&ok);
-						if (! ok) {
+						if (! ok || ! std::isfinite(alt.elevation)) {
 							QMessageBox::critical(w, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 line %2 \"%3\": Elevation value is invalid")
 																		.arg(finfo.fileName()).arg(linenum).arg(tokens.at(k - 1)));
 							return false;
@@ -267,6 +290,10 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 	GeoDataRiverSurveyImporter::removePointsWithoutBanks(points);
 	GeoDataRiverSurveyImporter::removePointsWithoutAltitudes(points);
 
+	if (points->empty()) {
+		return invalidRecord(linenum, GeoDataRiverSurveyImporter::tr("No usable cross-section data was found."));
+	}
+	cleanup.dismiss();
 	return true;
 }
 

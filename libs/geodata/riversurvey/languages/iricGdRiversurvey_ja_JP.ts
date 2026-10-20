@@ -1702,6 +1702,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
+        <source>%1 line %2: %3</source>
+        <translation>%1 %2行目: %3</translation>
+    </message>
+    <message>
+        <source>Could not open the file: %1</source>
+        <translation>ファイルを開けませんでした: %1</translation>
+    </message>
+    <message>
+        <source>Survey data requires a name and four coordinates.</source>
+        <translation>測線データには名前と4つの座標値が必要です。</translation>
+    </message>
+    <message>
+        <source>Left and right survey coordinates must be different.</source>
+        <translation>左右岸の測線座標は異なる座標である必要があります。</translation>
+    </message>
+    <message>
+        <source>Cross-section header requires a name, point count and optionally four indices.</source>
+        <translation>断面ヘッダーには名前と点数が必要です。点番号を指定する場合は4つ必要です。</translation>
+    </message>
+    <message>
+        <source>Elevation data must contain distance/elevation pairs matching the point count.</source>
+        <translation>標高データは指定された点数と一致する距離と標高の組である必要があります。</translation>
+    </message>
+    <message>
+        <source>No usable cross-section data was found.</source>
+        <translation>読み込み可能な横断測量データがありません。</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
