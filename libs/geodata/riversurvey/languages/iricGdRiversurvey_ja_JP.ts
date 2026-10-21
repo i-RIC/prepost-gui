@@ -2346,6 +2346,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
     <message>
+        <source>Cross section %1 cannot be exported in ODN format. A name, point count, point index or numeric value exceeds its fixed-width field, or contains a non-finite value. No file was written.</source>
+        <translation>断面 %1 はODN形式で出力できません。名前・点数・点番号・数値が固定幅の制限を超えているか、非有限の数値が含まれています。ファイルは書き込まれていません。</translation>
+    </message>
+    <message>
         <source>Cross-Section Data (*.odn)</source>
         <translation>横断測量データ (*.odn)</translation>
     </message>

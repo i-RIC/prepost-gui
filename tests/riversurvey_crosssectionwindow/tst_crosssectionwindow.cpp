@@ -64,6 +64,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 
 #include <cmath>
 #include <map>
+#include <limits>
 #include <vector>
 
 namespace {
@@ -192,6 +193,8 @@ private slots:
 	void rivInputValidation();
 	void odnInactivePoints_data();
 	void odnInactivePoints();
+	void odnFieldWidths_data();
+	void odnFieldWidths();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -701,6 +704,89 @@ void CrosssectionWindowTest::odnInactivePoints()
 		QVERIFY(values.isEmpty());
 	}
 	QVERIFY(stream.atEnd());
+}
+
+void CrosssectionWindowTest::odnFieldWidths_data()
+{
+	QTest::addColumn<QString>("field");
+	QTest::addColumn<double>("value");
+	QTest::addColumn<bool>("valid");
+	QTest::newRow("distance-max") << QString("distance") << 9999.99 << true;
+	QTest::newRow("distance-min") << QString("distance") << -999.99 << true;
+	QTest::newRow("distance-rounded-overflow") << QString("distance") << 9999.999 << false;
+	QTest::newRow("distance-negative-overflow") << QString("distance") << -1000.0 << false;
+	QTest::newRow("height-max") << QString("height") << 9999.99 << true;
+	QTest::newRow("height-overflow") << QString("height") << 10000.0 << false;
+	QTest::newRow("height-nan") << QString("height") << std::numeric_limits<double>::quiet_NaN() << false;
+	QTest::newRow("distance-infinity") << QString("distance") << std::numeric_limits<double>::infinity() << false;
+	QTest::newRow("span-max") << QString("span") << 9999999.99 << true;
+	QTest::newRow("span-overflow") << QString("span") << 10000000.0 << false;
+	QTest::newRow("name-max") << QString("name") << 10.0 << true;
+	QTest::newRow("name-overflow") << QString("name") << 11.0 << false;
+}
+
+void CrosssectionWindowTest::odnFieldWidths()
+{
+	QFETCH(QString, field);
+	QFETCH(double, value);
+	QFETCH(bool, valid);
+	auto rs = m_surveys.front();
+	auto p = rs->headPoint()->nextPoint();
+	auto& cs = p->crosssection();
+	const auto originalAltitudes = cs.AltitudeInfo();
+	const double shift = cs.leftShift();
+	const double span = p->odn().spanDistance();
+	const auto name = p->name();
+	auto restore = qScopeGuard([&]() {
+		cs.AltitudeInfo() = originalAltitudes;
+		cs.setLeftShift(shift);
+		p->odn().setSpanDistance(span);
+		p->setName(name);
+		m_responder->clearHandler();
+	});
+	if (field == "distance") {cs.AltitudeInfo().front().setPosition(value - shift);}
+	if (field == "height") {cs.AltitudeInfo().front().setHeight(value);}
+	if (field == "span") {p->odn().setSpanDistance(value);}
+	if (field == "name") {p->setName(QString(static_cast<int>(value), '1'));}
+	bool rejected = false;
+	m_responder->setHandler([&](QWidget* widget) {
+		auto box = qobject_cast<QMessageBox*>(widget);
+		if (box == nullptr || ! box->text().contains("fixed-width")) {return false;}
+		rejected = true;
+		box->accept();
+		return true;
+	});
+	auto filename = m_tmpDir.filePath("width.odn");
+	QFile file(filename);
+	QVERIFY(file.open(QFile::WriteOnly));
+	QCOMPARE(file.write("unchanged"), qint64(9));
+	file.close();
+	auto exporter = findExporter(rs, "*.odn");
+	QVERIFY(exporter != nullptr);
+	QCOMPARE(exporter->doExport(rs, filename, "", m_mainWindow, m_group->projectData()), valid);
+	QCOMPARE(rejected, ! valid);
+	QVERIFY(file.open(QFile::ReadOnly));
+	if (! valid) {QCOMPARE(file.readAll(), QByteArray("unchanged")); return;}
+	QTextStream stream(&file);
+	while (! stream.atEnd()) {
+		const auto header = stream.readLine();
+		QCOMPARE(header.size(), 65);
+		int count = header.mid(10, 5).toInt();
+		QVERIFY(count > 0);
+		int read = 0;
+		while (read < count) {
+			auto vals = stream.readLine().split(" ", QString::SkipEmptyParts);
+			QVERIFY(! vals.isEmpty());
+			QCOMPARE(vals.size() % 2, 0);
+			for (const auto& val : vals) {
+				bool ok;
+				val.toDouble(&ok);
+				QVERIFY(ok);
+			}
+			read += vals.size() / 2;
+		}
+		QCOMPARE(read, count);
+	}
 }
 
 void CrosssectionWindowTest::refreshSurveyList()
