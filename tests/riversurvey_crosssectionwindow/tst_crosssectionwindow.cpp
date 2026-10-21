@@ -46,6 +46,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QMdiSubWindow>
+#include <QMessageBox>
 #include <QRadioButton>
 #include <QPushButton>
 #include <QSettings>
@@ -189,6 +190,8 @@ private slots:
 	void landXmlProfileElevations();
 	void rivInputValidation_data();
 	void rivInputValidation();
+	void odnInactivePoints_data();
+	void odnInactivePoints();
 
 private:
 	GeoDataRiverSurveyCrosssectionWindow* openWindow(GeoDataRiverSurvey* rs, const QString& crosssection);
@@ -642,6 +645,62 @@ void CrosssectionWindowTest::rivInputValidation()
 		QVERIFY(m_responder->records().join("\n").contains("validation.riv"));
 		QVERIFY(! m_responder->records().join("\n").contains("GeoDataRiverSurveyImporterSettingDialog"));
 	}
+}
+
+void CrosssectionWindowTest::odnInactivePoints_data()
+{
+	QTest::addColumn<bool>("proceed");
+	QTest::newRow("cancel") << false;
+	QTest::newRow("continue") << true;
+}
+
+void CrosssectionWindowTest::odnInactivePoints()
+{
+	QFETCH(bool, proceed);
+	auto rs = m_surveys.front();
+	auto p = findPointWithMinimumAltitudes(rs, 3);
+	QVERIFY(p != nullptr);
+	auto& alt = p->crosssection().AltitudeInfo().front();
+	const bool active = alt.active();
+	alt.setActive(false);
+	auto restore = qScopeGuard([&]() {alt.setActive(active); m_responder->clearHandler();});
+	bool warned = false;
+	m_responder->setHandler([&](QWidget* widget) {
+		auto box = qobject_cast<QMessageBox*>(widget);
+		if (box == nullptr || ! box->text().contains("inactive point flags")) {return false;}
+		warned = box->text().contains(p->name());
+		box->button(proceed ? QMessageBox::Yes : QMessageBox::No)->click();
+		return true;
+	});
+	auto exporter = findExporter(rs, "*.odn");
+	QVERIFY(exporter != nullptr);
+	auto filename = m_tmpDir.filePath("inactive.odn");
+	if (QFile::exists(filename)) {QVERIFY(QFile::remove(filename));}
+	QCOMPARE(exporter->doExport(rs, filename, "", m_mainWindow, m_group->projectData()), proceed);
+	QVERIFY(warned);
+	QCOMPARE(QFile::exists(filename), proceed);
+	if (! proceed) {return;}
+	QFile file(filename);
+	QVERIFY(file.open(QFile::ReadOnly | QFile::Text));
+	QTextStream stream(&file);
+	std::vector<GeoDataRiverPathPoint*> points;
+	for (auto point = rs->headPoint()->nextPoint(); point != nullptr; point = point->nextPoint()) {points.push_back(point);}
+	for (auto it = points.rbegin(); it != points.rend(); ++it) {
+		auto point = *it;
+		const auto header = stream.readLine();
+		QCOMPARE(header.mid(10, 5).toInt(), static_cast<int>(point->crosssection().AltitudeInfo().size()));
+		QCOMPARE(header.mid(0, 5).toInt(), point->odn().nb(2) + 1);
+		QCOMPARE(header.mid(5, 5).toInt(), point->odn().nb(3) + 1);
+		QStringList values;
+		for (const auto& a : point->crosssection().AltitudeInfo()) {
+			if (values.isEmpty()) {values = stream.readLine().split(" ", QString::SkipEmptyParts);}
+			QVERIFY(values.size() >= 2);
+			QVERIFY(std::abs(values.takeFirst().toDouble() - (a.position() + point->crosssection().leftShift())) < 0.0051);
+			QVERIFY(std::abs(values.takeFirst().toDouble() - a.height()) < 0.0051);
+		}
+		QVERIFY(values.isEmpty());
+	}
+	QVERIFY(stream.atEnd());
 }
 
 void CrosssectionWindowTest::refreshSurveyList()

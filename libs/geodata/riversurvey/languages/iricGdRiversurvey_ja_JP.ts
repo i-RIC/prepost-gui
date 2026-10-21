@@ -3163,4 +3163,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">VTKファイル (*.vtk)</translation>
     </message>
 </context>
+<context>
+    <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>ODN files cannot store inactive point flags. Inactive points will be exported and become active when imported again. Cross sections: %1
+
+Continue exporting?</source>
+        <translation>ODN形式には無効点のフラグを保存できません。無効点も出力され、再インポートすると有効になります。対象断面: %1
+
+エクスポートを続行しますか？</translation>
+    </message>
+</context>
 </TS>

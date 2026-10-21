@@ -8,6 +8,8 @@
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
 
 #include <vector>
+#include <QDebug>
+#include <QMessageBox>
 
 GeoDataRiverSurveyOdnExporter::GeoDataRiverSurveyOdnExporter(GeoDataCreator* creator) :
 	GeoDataExporter(tr("Cross-Section Data (*.odn)"), creator)
@@ -18,6 +20,22 @@ bool GeoDataRiverSurveyOdnExporter::doExport(GeoData* data, const QString& filen
 	auto rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	auto ok = check(rs, w);
 	if (! ok) {return false;}
+	QStringList sectionsWithInactivePoints;
+	for (auto p = rs->headPoint()->nextPoint(); p != nullptr; p = p->nextPoint()) {
+		if (p->crosssection().numOfAltitudes(true) != p->crosssection().numOfAltitudes(false)) {
+			sectionsWithInactivePoints.push_back(p->name());
+		}
+	}
+	if (! sectionsWithInactivePoints.isEmpty()) {
+		const auto message = tr("ODN files cannot store inactive point flags. Inactive points will be exported and become active when imported again. Cross sections: %1\n\nContinue exporting?").arg(sectionsWithInactivePoints.join(", "));
+		if (w == nullptr) {
+			qWarning().noquote() << message;
+			return false;
+		}
+		if (QMessageBox::warning(w, tr("Warning"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) != QMessageBox::Yes) {
+			return false;
+		}
+	}
 
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
