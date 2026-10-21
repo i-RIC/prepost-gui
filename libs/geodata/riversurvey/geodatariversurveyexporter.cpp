@@ -9,25 +9,8 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
-
-namespace {
-
-/// Returns the position (distance from the center) that is used as the origin of distances in *.riv files.
-/**
- * The origin is the point where "distance from left bank" is zero (-leftShift), so that the
- * "distance from left bank" is kept when the file is imported with the center line CSV file.
- * When that point is on the right side of the center, the left bank is used, because the line
- * between the origin and the right bank must cross the center line.
- */
-double distanceOrigin(GeoDataRiverCrosssection& cs)
-{
-	double origin = - cs.leftShift();
-	if (origin > 0) {return cs.leftBank(true).position();}
-
-	return origin;
-}
-
-} // namespace
+#include <algorithm>
+#include <limits>
 
 GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator) :
 	GeoDataExporter(tr("Cross-Section Data (*.riv)"), creator)
@@ -43,7 +26,7 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	}
 	QTextStream outstream(&file);
 	outstream.setRealNumberNotation(QTextStream::SmartNotation);
-	outstream.setRealNumberPrecision(10);
+	outstream.setRealNumberPrecision(std::numeric_limits<double>::max_digits10);
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	auto offset = pd->mainfile()->offset();
@@ -56,8 +39,14 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	outstream << "#survey" << endl;
 	while (1) {
 		auto& cs = tmpp->crosssection();
-		QPointF leftBank  = tmpp->crosssectionPosition(distanceOrigin(cs));
-		QPointF rightBank = tmpp->crosssectionPosition(cs.rightBank(true).position());
+		const double origin = - cs.leftShift();
+		double right = cs.rightBank(true).position();
+		if (right <= origin) {
+			// Keep the reference direction left-to-right even when all distances are negative.
+			right = origin + std::max(1.0, cs.rightBank(true).position() - cs.leftBank(true).position());
+		}
+		QPointF leftBank  = tmpp->crosssectionPosition(origin);
+		QPointF rightBank = tmpp->crosssectionPosition(right);
 		outstream
 				<< tmpp->name()
 				<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()
@@ -75,7 +64,7 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 		outstream
 				<< tmpp->name() << "\t" << tmpp->crosssection().numOfAltitudes(true) << endl;
 		int i = 0;
-		double left = distanceOrigin(tmpp->crosssection());
+		double left = - tmpp->crosssection().leftShift();
 		for (GeoDataRiverCrosssection::Altitude& alt : tmpp->crosssection().AltitudeInfo()) {
 			if (alt.active()) {
 				outstream << alt.position() - left << "\t" << alt.height() << "\t";
@@ -101,7 +90,7 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	}
 	QTextStream csvOutstream(&csvFile);
 	csvOutstream.setRealNumberNotation(QTextStream::SmartNotation);
-	csvOutstream.setRealNumberPrecision(10);
+	csvOutstream.setRealNumberPrecision(std::numeric_limits<double>::max_digits10);
 	csvOutstream << "x" << "," << "y" << "," << "name" << endl;
 
 	tmpp = rs->headPoint()->nextPoint();

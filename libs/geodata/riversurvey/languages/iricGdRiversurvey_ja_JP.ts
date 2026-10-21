@@ -1702,6 +1702,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
+        <source>%1 Line %2: Duplicate cross-section name "%3".</source>
+        <translation>%1 %2行目: 断面名「%3」が重複しています。</translation>
+    </message>
+    <message>
+        <source>No center line points were found in %1.</source>
+        <translation>%1 に中心線の点がありません。</translation>
+    </message>
+    <message>
         <source>%1 line %2: %3</source>
         <translation>%1 %2行目: %3</translation>
     </message>
@@ -2345,6 +2353,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>ODN files cannot store inactive point flags. Inactive points will be exported and become active when imported again. Cross sections: %1
+
+Continue exporting?</source>
+        <translation>ODN形式には無効点のフラグを保存できません。無効点も出力され、再インポートすると有効になります。対象断面: %1
+
+エクスポートを続行しますか？</translation>
+    </message>
     <message>
         <source>Cross section %1 cannot be exported in ODN format. A name, point count, point index or numeric value exceeds its fixed-width field, or contains a non-finite value. No file was written.</source>
         <translation>断面 %1 はODN形式で出力できません。名前・点数・点番号・数値が固定幅の制限を超えているか、非有限の数値が含まれています。ファイルは書き込まれていません。</translation>
@@ -3165,17 +3181,6 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation type="vanished">VTKファイル (*.vtk)</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataRiverSurveyOdnExporter</name>
-    <message>
-        <source>ODN files cannot store inactive point flags. Inactive points will be exported and become active when imported again. Cross sections: %1
-
-Continue exporting?</source>
-        <translation>ODN形式には無効点のフラグを保存できません。無効点も出力され、再インポートすると有効になります。対象断面: %1
-
-エクスポートを続行しますか？</translation>
     </message>
 </context>
 </TS>
