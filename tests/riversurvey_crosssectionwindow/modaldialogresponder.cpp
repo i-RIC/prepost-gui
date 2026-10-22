@@ -37,6 +37,7 @@ const QStringList& ModalDialogResponder::records() const
 void ModalDialogResponder::clearRecords()
 {
 	m_records.clear();
+	m_lastDialog = nullptr;
 }
 
 void ModalDialogResponder::check()

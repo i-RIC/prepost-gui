@@ -62,6 +62,7 @@ bool GeoDataRiverSurveyHonryuExporter::doExport(GeoData* data, const QString& fi
 	bool addHeader = dialog.addHeader();
 	auto ldistance = dialog.longitudinalDistance();
 	auto columns = dialog.columns();
+	auto crossSectionDistance = dialog.crossSectionDistance();
 
 	GeoDataRiverSurvey* rsurvey = dynamic_cast<GeoDataRiverSurvey*> (data);
 
@@ -90,7 +91,10 @@ bool GeoDataRiverSurveyHonryuExporter::doExport(GeoData* data, const QString& fi
 		double len = iRIC::distance(prevP->position(), p->position());
 		lenFromFirst += len;
 
-		double leftPos = p->crosssection().leftBank(true).position();
+		double leftPos = - p->crosssection().leftShift();
+		if (crossSectionDistance == GeoDataRiverSurveyHonryuExporterSettingDialog::From_FirstActivePoint) {
+			leftPos = p->crosssection().leftBank(true).position();
+		}
 		const auto& alist = p->crosssection().AltitudeInfo();
 
 		if (ldistance == GeoDataRiverSurveyHonryuExporterSettingDialog::From_First) {

@@ -17,6 +17,8 @@ private:
 	QList<GeoDataRiverPathPoint*> m_points;
 	QList<GeoDataRiverCrosssection::AltitudeList> m_newCrosssections;
 	QList<GeoDataRiverCrosssection::AltitudeList> m_oldCrosssections;
+	QList<double> m_oldLeftShifts;
+	QList<double> m_newLeftShifts;
 	GeoDataRiverSurvey* m_rs;
 };
 
