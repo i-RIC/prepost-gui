@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>SolverConsoleWindow</name>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>The solver finished calculation. Do you want to save this project?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -158,8 +156,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Veenduge:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Kui arvutustulemus on juba olemas, siis see kustutatakse.&lt;/li&gt; &lt;li&gt;Arvutustingimus ja sisendruudustik mida näete eeltöötlusaknas, kirjutatakse faili Case1.cgn.&lt;/li&gt; &lt;li&gt;Lahendaja loeb failist Case1.cgn andmed ja hakkab tööle.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Kas olete kas see on kindel?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Veenduge, et:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Kui arvutustulemus on juba olemas, siis see kustutatakse.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Projekt salvestatakse.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Kas olete kindel, et see on korras?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Veenduge, et:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Kui arvutustulemus on juba olemas, siis see kustutatakse.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Projekt salvestatakse.&lt;/ li&gt;&lt;/ul&gt;&lt;p&gt;Kas olete kindel, et see on korras?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
