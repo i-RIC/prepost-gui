@@ -19,6 +19,7 @@ public:
 
 	std::string m_name;
 	QString m_caption;
+	QString m_toolTip;
 	std::string m_englishCaption;
 	Position m_position;
 	QDomElement m_element;

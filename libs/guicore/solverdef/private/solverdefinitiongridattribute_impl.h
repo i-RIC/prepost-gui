@@ -21,6 +21,7 @@ public:
 
 	std::string m_name;
 	QString m_caption;
+	QString m_toolTip;
 	std::string m_englishCaption;
 	bool m_isOption {false};
 	bool m_isDirection;

@@ -543,6 +543,10 @@ Do you really want to import grid from this file?</source>
         <source>Grid size is different from the grid in the project from which the boundary condition data is exported. Do you want to import the index data?</source>
         <translation>格子のサイズが、この境界条件がエクスポートされたプロジェクトの格子と異なります。インデックスデータをインポートしますか?</translation>
     </message>
+    <message>
+        <source>Contains boundary conditions assigned to selected grid nodes, cells, or edges.</source>
+        <translation>選択した格子点、セルまたはエッジへ割り当てた境界条件を格納します。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
@@ -1304,6 +1308,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Reference Information</source>
         <translation>参照情報</translation>
     </message>
+    <message>
+        <source>Contains geographic data used to generate and map grid attributes, such as elevation and initial water level.</source>
+        <translation>標高や初期水位など、格子属性の生成とマッピングに使う地理情報を格納します。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
@@ -1482,6 +1490,10 @@ The grid attribute data created from the variation that you select with "Variati
     <message>
         <source>Cell Attribute Change</source>
         <translation>セル属性の変更</translation>
+    </message>
+    <message>
+        <source>Contains attributes stored on grid cells or edges. Expand the folder to inspect or edit each attribute.</source>
+        <translation>格子セルまたはエッジに保存される属性です。フォルダーを展開すると、各属性を確認・編集できます。</translation>
     </message>
 </context>
 <context>
@@ -1980,6 +1992,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Node Attribute Change</source>
         <translation>格子点属性の選択変更</translation>
+    </message>
+    <message>
+        <source>Contains attributes stored at grid nodes. Expand the folder to inspect or edit each attribute.</source>
+        <translation>格子点に保存される属性です。フォルダーを展開すると、各属性を確認・編集できます。</translation>
     </message>
 </context>
 <context>
@@ -2922,6 +2938,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Clip...</source>
         <translation>切り出し (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Displays the calculation grid shape. Open its properties to change line and surface display settings.</source>
+        <translation>計算格子の形状を表示します。線や面の表示方法は、プロパティを開いて設定します。</translation>
     </message>
 </context>
 <context>

@@ -46,9 +46,13 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 	m_name = iRIC::toStr(elem.attribute("name"));
 	m_englishCaption = iRIC::toStr(elem.attribute("caption"));
 	m_caption = translator.translate(elem.attribute("caption"));
+	m_toolTip = translator.translate(elem.attribute("tooltips"));
 	QDomNode defNode = iRIC::getChildNode(elem, "Definition");
 	if (! defNode.isNull()) {
 		QDomElement e = defNode.toElement();
+		if (m_toolTip.isEmpty()) {
+			m_toolTip = translator.translate(e.attribute("tooltips"));
+		}
 		m_isDirection = iRIC::getBooleanAttribute(e, "direction");
 		m_variantDefaultValue = e.attribute("default", "");
 		m_variantMaximumValue = e.attribute("max", "");
@@ -103,6 +107,11 @@ const std::string& SolverDefinitionGridAttribute::englishCaption() const
 const QString& SolverDefinitionGridAttribute::caption() const
 {
 	return impl->m_caption;
+}
+
+const QString& SolverDefinitionGridAttribute::toolTip() const
+{
+	return impl->m_toolTip;
 }
 
 void SolverDefinitionGridAttribute::setCaption(const QString& cap)
