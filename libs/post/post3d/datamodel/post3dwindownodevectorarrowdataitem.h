@@ -55,6 +55,7 @@ private:
 
 	void innerUpdateZScale(double scale) override;
 	void innerUpdate2Ds() override;
+	void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
 
 	void setupActors();
 	void doUpdateActorSetting() override;
