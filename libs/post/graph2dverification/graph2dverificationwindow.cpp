@@ -87,6 +87,11 @@ QWidget* Graph2dVerificationWindow::snapshotArea() const
 	return centralWidget();
 }
 
+bool Graph2dVerificationWindow::isReferencingMeasuredData(MeasuredData* md) const
+{
+	return m_dataModel->setting().activeMeasuredData() == md;
+}
+
 QList<QMenu*> Graph2dVerificationWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;

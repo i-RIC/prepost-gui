@@ -11,6 +11,7 @@
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/project/projectpostprocessors.h>
 #include <misc/stringtool.h>
 
 #include <QAction>
@@ -157,6 +158,21 @@ void Post2dWindowMeasuredDataTopDataItem::deleteSelected()
 
 	auto settings = dialog.selectSettings();
 	auto mainfile = projectData()->mainfile();
+
+	std::vector<MeasuredData*> targets;
+	for (int i = 0; i < settings.size(); ++i) {
+		if (! settings.at(i)) {continue;}
+		auto fItem = dynamic_cast<MeasuredDataFileDataItem*>(items.at(i));
+		targets.push_back(fItem->measuredData());
+	}
+	auto titles = mainfile->postProcessors()->windowTitlesReferencingMeasuredData(targets);
+	if (! titles.isEmpty()) {
+		int ret2 = QMessageBox::warning(mainWindow(), tr("Warning"),
+			tr("The following windows are using the measured data to be deleted, and will be closed at the same time.\n\n%1\n\nAre you sure you want to continue?").arg(titles.join("\n")),
+			QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret2 == QMessageBox::No) {return;}
+	}
+
 	for (int i = 0; i < settings.size(); ++i) {
 		if (settings.at(i)) {
 			// delete the item
@@ -167,7 +183,13 @@ void Post2dWindowMeasuredDataTopDataItem::deleteSelected()
 
 void Post2dWindowMeasuredDataTopDataItem::deleteAll()
 {
-	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all measured data?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	auto mainfile = projectData()->mainfile();
+	QString msg = tr("Are you sure you want to delete all measured data?");
+	auto titles = mainfile->postProcessors()->windowTitlesReferencingMeasuredData(mainfile->measuredDatas());
+	if (! titles.isEmpty()) {
+		msg += tr("\n\nThe following windows are using the measured data, and will be closed at the same time.\n\n%1").arg(titles.join("\n"));
+	}
+	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No) {return;}
 
 	while (m_childItems.size() > 0) {

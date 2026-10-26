@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QIcon>
 
+class MeasuredData;
 class PostSolutionInfo;
 class PostProcessorWindowProjectDataItem;
 class PreProcessorGeoDataGroupDataItemI;
@@ -28,6 +29,7 @@ public:
 	void setIndex(int index);
 	virtual void setupDefaultGeometry(int index) = 0;
 	virtual void applyOffset(double x_diff, double y_diff);
+	virtual bool isReferencingMeasuredData(MeasuredData* /*md*/) const { return false; }
 
 public slots:
 	// data is updated. re-render the graphics etc.
