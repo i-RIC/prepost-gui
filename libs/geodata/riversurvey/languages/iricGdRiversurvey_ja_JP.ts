@@ -1615,6 +1615,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
+        <source>Cross Section Distance:</source>
+        <translation>横断方向の距離:</translation>
+    </message>
+    <message>
+        <source>Distance from left bank origin (same as cross-section window)</source>
+        <translation>左岸からの距離（断面表示画面と同じ）</translation>
+    </message>
+    <message>
+        <source>Distance from first active point (legacy)</source>
+        <translation>一番左の有効な点からの距離（従来方式）</translation>
+    </message>
+    <message>
         <source>Export Format Setting</source>
         <translation>エクスポートフォーマット設定</translation>
     </message>
@@ -1689,6 +1701,42 @@ You can precisely edit the cross section by inputting values from dialog. Please
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
+    <message>
+        <source>%1 Line %2: Duplicate cross-section name "%3".</source>
+        <translation>%1 %2行目: 断面名「%3」が重複しています。</translation>
+    </message>
+    <message>
+        <source>No center line points were found in %1.</source>
+        <translation>%1 に中心線の点がありません。</translation>
+    </message>
+    <message>
+        <source>%1 line %2: %3</source>
+        <translation>%1 %2行目: %3</translation>
+    </message>
+    <message>
+        <source>Could not open the file: %1</source>
+        <translation>ファイルを開けませんでした: %1</translation>
+    </message>
+    <message>
+        <source>Survey data requires a name and four coordinates.</source>
+        <translation>測線データには名前と4つの座標値が必要です。</translation>
+    </message>
+    <message>
+        <source>Left and right survey coordinates must be different.</source>
+        <translation>左右岸の測線座標は異なる座標である必要があります。</translation>
+    </message>
+    <message>
+        <source>Cross-section header requires a name, point count and optionally four indices.</source>
+        <translation>断面ヘッダーには名前と点数が必要です。点番号を指定する場合は4つ必要です。</translation>
+    </message>
+    <message>
+        <source>Elevation data must contain distance/elevation pairs matching the point count.</source>
+        <translation>標高データは指定された点数と一致する距離と標高の組である必要があります。</translation>
+    </message>
+    <message>
+        <source>No usable cross-section data was found.</source>
+        <translation>読み込み可能な横断測量データがありません。</translation>
+    </message>
     <message>
         <source>Error</source>
         <translation>エラー</translation>
@@ -2030,6 +2078,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>The left distance mark profile was omitted because the distance origin is outside the active survey points on cross sections: %1</source>
+        <translation>次の断面では距離の基準点が有効な測量点の範囲外にあるため、左岸距離標の縦断データを省略しました: %1</translation>
+    </message>
+    <message>
         <source>LandXml (*.xml)</source>
         <translation>LandXML (*.xml)</translation>
     </message>
@@ -2297,6 +2353,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
 </context>
 <context>
     <name>GeoDataRiverSurveyOdnExporter</name>
+    <message>
+        <source>ODN files cannot store inactive point flags. Inactive points will be exported and become active when imported again. Cross sections: %1
+
+Continue exporting?</source>
+        <translation>ODN形式には無効点のフラグを保存できません。無効点も出力され、再インポートすると有効になります。対象断面: %1
+
+エクスポートを続行しますか？</translation>
+    </message>
+    <message>
+        <source>Cross section %1 cannot be exported in ODN format. A name, point count, point index or numeric value exceeds its fixed-width field, or contains a non-finite value. No file was written.</source>
+        <translation>断面 %1 はODN形式で出力できません。名前・点数・点番号・数値が固定幅の制限を超えているか、非有限の数値が含まれています。ファイルは書き込まれていません。</translation>
+    </message>
     <message>
         <source>Cross-Section Data (*.odn)</source>
         <translation>横断測量データ (*.odn)</translation>

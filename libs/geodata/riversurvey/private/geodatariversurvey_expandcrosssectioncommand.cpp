@@ -9,8 +9,10 @@ GeoDataRiverSurvey::ExpandCrosssectionCommand::ExpandCrosssectionCommand(bool ap
 {
 	for (int i = 0; i < points.count(); ++i) {
 		m_oldCrosssections.append(points[i]->crosssection().AltitudeInfo());
+		m_oldLeftShifts.append(points[i]->crosssection().leftShift());
 		m_points[i]->crosssection().expand(ratios[i]);
 		m_newCrosssections.append(points[i]->crosssection().AltitudeInfo());
+		m_newLeftShifts.append(points[i]->crosssection().leftShift());
 	}
 }
 
@@ -19,6 +21,7 @@ void GeoDataRiverSurvey::ExpandCrosssectionCommand::redo()
 	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
+		m_points[i]->crosssection().setLeftShift(m_newLeftShifts[i]);
 	}
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -33,6 +36,7 @@ void GeoDataRiverSurvey::ExpandCrosssectionCommand::undo()
 	m_rs->cancelBackgroundGridUpdate();
 	for (int i = 0; i < m_points.count(); ++i) {
 		m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
+		m_points[i]->crosssection().setLeftShift(m_oldLeftShifts[i]);
 	}
 	if (! m_apply) {
 		m_rs->headPoint()->updateAllXSecInterpolators();
