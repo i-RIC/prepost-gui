@@ -39,6 +39,7 @@ VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #include <QApplication>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDialog>
 #include <QDir>
 #include <QDialogButtonBox>
 #include <QDomDocument>
