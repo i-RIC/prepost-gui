@@ -116,13 +116,16 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateLegendsVisibility()
 		}
 	}
 	auto v = dataModel()->graphicsView();
-	if (visible) {
+	if (visible && m_setting.legend.visible) {
 		m_setting.legend.imageSetting.apply(v);
 		m_actor2DCollection->AddItem(m_legendActor);
+		m_legendActor->VisibilityOn();
 	}
 	for (auto cm : activeColorMaps()) {
-		cm->legendSetting()->imgSetting()->apply(v);
-		m_actor2DCollection->AddItem(cm->legendSetting()->imgSetting()->actor());
+		auto imgSetting = cm->legendSetting()->imgSetting();
+		imgSetting->apply(v);
+		m_actor2DCollection->AddItem(imgSetting->actor());
+		imgSetting->actor()->VisibilityOn();
 	}
 }
 
