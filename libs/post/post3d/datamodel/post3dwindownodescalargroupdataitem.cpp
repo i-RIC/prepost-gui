@@ -40,6 +40,8 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	m_standardItem->setToolTip(tr("Configure the result variable and isovalue in Properties."));
+	m_standardItemCopy->setToolTip(tr("Configure the result variable and isovalue in Properties."));
 
 	setDefaultValues();
 	setupActors();
@@ -87,10 +89,13 @@ void Post3dWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 	if (ps == nullptr) {return;}
 	if (impl->m_setting.target == "") {return;}
 
-	auto caption = cont->gridType()->output(impl->m_setting.target)->caption();
+	auto output = cont->gridType()->output(impl->m_setting.target);
+	auto caption = output->caption();
 
 	m_standardItem->setText(caption);
 	m_standardItemCopy->setText(caption);
+	m_standardItem->setToolTip(output->toolTip());
+	m_standardItemCopy->setToolTip(output->toolTip());
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();

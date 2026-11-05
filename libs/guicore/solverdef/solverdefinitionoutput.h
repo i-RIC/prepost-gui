@@ -15,6 +15,7 @@ public:
 
 	const std::string& name() const;
 	const QString& caption() const;
+	const QString& toolTip() const;
 
 	const std::string& englishCaption() const;
 

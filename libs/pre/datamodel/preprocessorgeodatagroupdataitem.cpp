@@ -93,6 +93,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_variationSetting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(cond->toolTip());
 	setSubPath(cond->name().c_str());
 
 	m_webImportAction->setEnabled(webImportAvailable());
