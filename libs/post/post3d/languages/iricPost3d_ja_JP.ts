@@ -918,6 +918,10 @@
         <source>Isosurface Setting</source>
         <translation>等値面設定</translation>
     </message>
+    <message>
+        <source>Configure the result variable and isovalue in Properties.</source>
+        <translation>プロパティで、結果の変数と等値面の値を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
