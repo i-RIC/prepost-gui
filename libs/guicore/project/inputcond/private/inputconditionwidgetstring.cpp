@@ -17,9 +17,17 @@ InputConditionWidgetString::InputConditionWidgetString(QDomNode defnode, const S
 	m_container {cont},
 	m_sourceComboBox {nullptr}
 {
-	auto layout = new QVBoxLayout(this);
+	bool multiline = (defnode.toElement().attribute("multiline") == "true");
+	// multiline: vertical layout (template combo box above the text edit)
+	// single line: horizontal layout (tooltip icon on the left of the line edit)
+	QBoxLayout* layout = nullptr;
+	if (multiline) {
+		layout = new QVBoxLayout(this);
+	} else {
+		layout = new QHBoxLayout(this);
+	}
 	layout->setMargin(InputConditionWidget::margin);
-	if (defnode.toElement().attribute("multiline") == "true") {
+	if (multiline) {
 		AsciiOnlyTextEdit* te = new AsciiOnlyTextEdit(this);
 		connect(te, SIGNAL(textChanged()), this, SLOT(handleEditingFinished()));
 
@@ -44,8 +52,17 @@ void InputConditionWidgetString::addTooltip(const QString& tooltip)
 {
 	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
 
-	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
-	l->insertWidget(0, tt);
+	// layout() is QVBoxLayout for multiline, QHBoxLayout for single line
+	auto l = dynamic_cast<QBoxLayout*>(layout());
+	if (l == nullptr) {
+		delete tt;
+		return;
+	}
+	if (dynamic_cast<QVBoxLayout*>(l) != nullptr) {
+		l->insertWidget(0, tt, 0, Qt::AlignLeft);
+	} else {
+		l->insertWidget(0, tt);
+	}
 }
 
 void InputConditionWidgetString::setValue(const QString& newvalue)
@@ -93,7 +110,7 @@ void InputConditionWidgetString::setupComboBoxIfNeeded(QDomNode defnode, const S
 		}
 		connect<void (QComboBox::*)(int)>(m_sourceComboBox, &QComboBox::currentIndexChanged, this, &InputConditionWidgetString::applyTemplate);
 
-		auto l2 = new QHBoxLayout(this);
+		auto l2 = new QHBoxLayout();
 		l2->addWidget(m_sourceComboBox);
 		l2->addStretch(1);
 		l->addItem(l2);
