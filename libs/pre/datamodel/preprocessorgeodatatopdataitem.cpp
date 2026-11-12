@@ -169,6 +169,7 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	m_referenceInformationAttribute {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains geographic data used to generate and map grid attributes, such as elevation and initial water level."));
 	setSubPath("geographicdata");
 	buildReferenceInformationAttribute();
 

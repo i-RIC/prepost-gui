@@ -57,6 +57,7 @@ PreProcessorGridAttributeAbstractCellGroupDataItem::PreProcessorGridAttributeAbs
 	impl {new Impl {mainWindow(), this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains attributes stored on grid cells or edges. Expand the folder to inspect or edit each attribute."));
 
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellGroupDataItem::showAttributeBrowser);
 

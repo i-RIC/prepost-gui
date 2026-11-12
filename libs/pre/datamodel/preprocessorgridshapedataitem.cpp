@@ -35,6 +35,7 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 	m_openVXsectionWindowAction {new QAction(PreProcessorGridShapeDataItem::tr("Open &Longitudinal Cross Section Window"), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays the calculation grid shape. Open its properties to change line and surface display settings."));
 
 	parent->standardItem()->takeRow(m_standardItem->row());
 
