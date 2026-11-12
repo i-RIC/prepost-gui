@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>SolverConsoleWindow</name>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>The solver finished calculation. Do you want to save this project?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -158,8 +156,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt;Hãy đảm bảo:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Nếu kết quả tính toán đã tồn tại thì nó sẽ bị xóa.&lt;/li&gt; &lt;li&gt;Điều kiện tính toán và lưới đầu vào mà bạn có thể thấy trên cửa sổ tiền xử lý được ghi vào Case1.cgn.&lt;/li&gt; &lt;li&gt;Bộ giải sẽ đọc dữ liệu từ Case1.cgn và bắt đầu chạy.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Bạn có phải là chắc là ổn chứ?&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;&quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hãy đảm bảo:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; lề-dưới: 0px; lề trái: 0px; lề-phải: 0px; &quot;&gt;&lt;li style=&quot;margin-top:8px;&quot;&gt;Nếu kết quả tính toán đã tồn tại thì kết quả đó sẽ bị xóa.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt;Dự án sẽ được lưu.&lt;/li&gt;&lt;li style=&quot;margin-top:8px&quot;&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Bạn có chắc là ổn không?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please make sure:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"&gt;&lt;li style="margin-top:8px;"&gt;If calculation result already exists, it will be deleted.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;The project will be saved.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Are you sure it is OK?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hãy đảm bảo:&lt;/p&gt;&lt;ul style="margin-top: 0px; lề-dưới: 0px; lề trái: 0px; lề-phải: 0px; "&gt;&lt;li style="margin-top:8px;"&gt;Nếu kết quả tính toán đã tồn tại thì kết quả đó sẽ bị xóa.&lt;/li&gt;&lt;li style="margin-top:8px"&gt;Dự án sẽ được lưu.&lt;/li&gt;&lt;li style="margin-top:8px"&gt; li&gt;&lt;/ul&gt;&lt;p&gt;Bạn có chắc là ổn không?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
