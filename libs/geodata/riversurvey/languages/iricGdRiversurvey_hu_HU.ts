@@ -562,7 +562,7 @@ If you want to adjust cross section position and map again, you can use "Map poi
     </message>
     <message>
         <source>The base target and compare target must be different.</source>
-        <translation type="unfinished" />
+        <translation>Az alapcélnak és az összehasonlítási célnak eltérőnek kell lennie.</translation>
     </message>
 </context>
 <context>
