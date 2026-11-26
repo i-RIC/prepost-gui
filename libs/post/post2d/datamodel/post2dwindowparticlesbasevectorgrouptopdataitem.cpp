@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowparticlesbasevectorgroupdataitem.h"
@@ -15,6 +16,8 @@ Post2dWindowParticlesBaseVectorGroupTopDataItem::Post2dWindowParticlesBaseVector
 	Post2dWindowDataItem(tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains arrow displays of particle vector results."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->vtkData()->data()->GetPointData())) {
 		auto item = new Post2dWindowParticlesBaseVectorGroupDataItem(name, this);

@@ -108,6 +108,11 @@
         <source>Translate Distance Measure</source>
         <translation>距離計測の移動</translation>
     </message>
+
+    <message>
+        <source>Displays a distance measure. Move its endpoints to change the measured segment.</source>
+        <translation>距離を表示します。端点を移動して計測する区間を変更します。</translation>
+    </message>
 </context>
 <context>
     <name>DistanceMeasureDataItem_EditWidget</name>
@@ -229,6 +234,11 @@
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
         <translation>本当に全ての距離計測を削除していいですか?</translation>
+    </message>
+
+    <message>
+        <source>Contains distance measures. Add a measure to display a distance on the view.</source>
+        <translation>距離計測の項目をまとめています。計測を追加して画面内の距離を表示します。</translation>
     </message>
 </context>
 <context>

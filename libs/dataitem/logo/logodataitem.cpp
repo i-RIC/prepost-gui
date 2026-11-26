@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "logosettingeditwidget.h"
 #include "logodataitem.h"
 #include "private/logodataitem_impl.h"
@@ -10,6 +11,10 @@ LogoDataItem::LogoDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl {}}
 {
 	m_isDeletable = false;
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays the logo. Open Properties to configure its size and position."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	renderer()->AddActor2D(impl->m_actor);
 	impl->m_setting.imageSetting.setActor(impl->m_actor);

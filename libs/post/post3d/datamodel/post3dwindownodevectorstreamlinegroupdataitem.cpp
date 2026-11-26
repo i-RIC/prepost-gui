@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post3dwindownodevectorstreamlinedataitem.h"
 #include "post3dwindownodevectorstreamlinegroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -41,6 +42,8 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays streamlines of the selected vector field at the current time. Streamlines are not particle trajectories over time."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();

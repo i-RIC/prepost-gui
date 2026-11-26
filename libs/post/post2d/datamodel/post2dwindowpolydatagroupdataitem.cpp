@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowpolydatagroupdataitem.h"
@@ -57,6 +58,8 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays polygon results. Open Properties to configure colors and display settings."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = zoneDataItem()->v4DataContainer();
 

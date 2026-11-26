@@ -164,6 +164,10 @@
         <source>Range</source>
         <translation>範囲</translation>
     </message>
+    <message>
+        <source>Displays the selected range of cell-center results using colors.</source>
+        <translation>選択した範囲のセル中心の計算結果を色で表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellContourGroupDataItem</name>
@@ -174,6 +178,10 @@
     <message>
         <source>Contour Setting (cell center) (%1)</source>
         <translation>コンター設定 (セル中心) (%1)</translation>
+    </message>
+    <message>
+        <source>Displays a cell-center result using colors. Open Properties to configure the color scale and range.</source>
+        <translation>セル中心の結果を色で表示します。プロパティでカラースケールと表示範囲を設定します。</translation>
     </message>
 </context>
 <context>
@@ -278,6 +286,10 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Contains colored displays of results stored at cell centers.</source>
+        <translation>セル中心の計算結果を色で表示する項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -343,6 +355,10 @@
         <source>Face</source>
         <translation>面</translation>
     </message>
+    <message>
+        <source>Displays the selected grid face using colors for the result values.</source>
+        <translation>選択した格子面を計算結果の値に応じた色で表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
@@ -361,6 +377,10 @@
     <message>
         <source>Face%1</source>
         <translation>面%1</translation>
+    </message>
+    <message>
+        <source>Displays a grid-node result using colors. Open Properties to configure the color scale and displayed grid faces.</source>
+        <translation>格子点の結果を色で表示します。プロパティでカラースケールと表示する格子面を設定します。</translation>
     </message>
 </context>
 <context>
@@ -477,6 +497,10 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Contains colored displays of results stored at grid nodes. Add a result and configure its display range in Properties.</source>
+        <translation>格子点の計算結果を色で表示します。結果を追加し、プロパティで表示範囲を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowDataModel</name>
@@ -495,6 +519,10 @@
         <source>Range</source>
         <translation>範囲</translation>
     </message>
+    <message>
+        <source>Displays the selected range of grid-face results using colors.</source>
+        <translation>選択した範囲の格子面の計算結果を色で表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowFaceContourGroupDataItem</name>
@@ -505,6 +533,10 @@
     <message>
         <source>Range%1</source>
         <translation>範囲%1</translation>
+    </message>
+    <message>
+        <source>Displays a grid-face result using colors. Open Properties to configure the color scale and range.</source>
+        <translation>格子面の結果を色で表示します。プロパティでカラースケールと表示範囲を設定します。</translation>
     </message>
 </context>
 <context>
@@ -539,12 +571,20 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Contains colored displays of results stored on grid faces.</source>
+        <translation>格子面の計算結果を色で表示する項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
+    </message>
+    <message>
+        <source>Displays this grid face. Open Properties to configure its range and appearance.</source>
+        <translation>この格子面を表示します。プロパティで範囲と表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -685,6 +725,10 @@
     <message>
         <source>Grid Shape Display Setting</source>
         <translation>格子形状の表示設定</translation>
+    </message>
+    <message>
+        <source>Displays the three-dimensional grid shape.</source>
+        <translation>三次元の格子形状を表示します。</translation>
     </message>
 </context>
 <context>
@@ -996,12 +1040,20 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Contains isosurfaces: surfaces where a selected scalar result equals a specified value.</source>
+        <translation>選択したスカラー量が指定値となる面（等値面）を表示する項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
         <translation type="vanished">面</translation>
+    </message>
+    <message>
+        <source>Displays arrows on the selected grid face. Open Properties to configure the face.</source>
+        <translation>選択した格子面に矢印を表示します。プロパティで対象の面を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1017,6 +1069,10 @@
     <message>
         <source>Arrows Setting</source>
         <translation>ベクトル設定</translation>
+    </message>
+    <message>
+        <source>Displays a vector result as arrows. Open Properties to configure arrow length, spacing, color, and range.</source>
+        <translation>ベクトル量を矢印で表示します。プロパティで矢印の長さ、間隔、色、表示範囲を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1168,6 +1224,10 @@
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
     </message>
+    <message>
+        <source>Contains arrow displays of vector results, such as velocity.</source>
+        <translation>流速などのベクトル量を矢印で表示する項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -1182,6 +1242,10 @@
     <message>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
+    </message>
+    <message>
+        <source>Displays automatically generated particles moving with the selected vector field.</source>
+        <translation>選択したベクトル場に従って移動する、自動生成された粒子を表示します。</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1323,10 @@
         <source>Streamline Physical Value Change</source>
         <translation>流線 物理量の変更</translation>
     </message>
+    <message>
+        <source>Displays streamlines of the selected vector field at the current time. Streamlines are not particle trajectories over time.</source>
+        <translation>現在時刻のベクトル場に沿った流線を表示します。時間とともに移動する粒子の軌跡とは異なります。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
@@ -1330,6 +1398,10 @@
     <message>
         <source>Particles</source>
         <translation>パーティクル</translation>
+    </message>
+    <message>
+        <source>Contains particle visualization items.</source>
+        <translation>粒子の表示項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1510,6 +1582,10 @@ p, li { white-space: pre-wrap; }
         <source>Particles Scalar Setting</source>
         <translation>パーティクルのスカラー設定</translation>
     </message>
+    <message>
+        <source>Colors particles by a selected scalar result. Open Properties to configure the color scale.</source>
+        <translation>選択したスカラー量で粒子を色分けします。プロパティでカラースケールを設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
@@ -1582,6 +1658,10 @@ p, li { white-space: pre-wrap; }
         <source>Edit Particle Setting</source>
         <translation type="vanished">パーティクル設定の編集</translation>
     </message>
+    <message>
+        <source>Contains particle results saved by the solver. Expand to configure their display.</source>
+        <translation>ソルバーが保存した粒子の計算結果です。展開して表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem</name>
@@ -1609,6 +1689,10 @@ p, li { white-space: pre-wrap; }
         <source>Particles Vector Setting (%1)</source>
         <translation>パーティクルのベクトル設定 (%1)</translation>
     </message>
+    <message>
+        <source>Displays a particle vector result as arrows. Open Properties to configure the arrows.</source>
+        <translation>粒子のベクトル量を矢印で表示します。プロパティで矢印の表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
@@ -1629,6 +1713,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Arrows</source>
         <translation>ベクトル</translation>
+    </message>
+    <message>
+        <source>Contains arrow displays of vector results stored on particles.</source>
+        <translation>粒子に保存されたベクトル量を矢印で表示する項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1846,6 +1934,41 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Delete Isosurface</source>
         <translation type="vanished">等値面の削除</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleDataItem</name>
+    <message>
+        <source>Selects the vector field used to move the visualization particles.</source>
+        <translation>表示用粒子の移動に使用するベクトル場を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineDataItem</name>
+    <message>
+        <source>Selects the vector field used to draw streamlines at the current time.</source>
+        <translation>現在時刻の流線を描くためのベクトル場を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarDataItem</name>
+    <message>
+        <source>Selects the scalar result used to color particles.</source>
+        <translation>粒子の色分けに使用するスカラー量を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridTypeDataItem</name>
+    <message>
+        <source>Contains three-dimensional grids and results of this grid type.</source>
+        <translation>この格子種類の三次元格子と計算結果をまとめています。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowZoneDataItem</name>
+    <message>
+        <source>Contains the three-dimensional grid and results for this zone.</source>
+        <translation>このゾーンの三次元格子と計算結果をまとめています。</translation>
     </message>
 </context>
 </TS>

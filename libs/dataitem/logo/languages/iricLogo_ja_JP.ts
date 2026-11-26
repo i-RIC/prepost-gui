@@ -9,6 +9,11 @@
         <source>Logo Setting</source>
         <translation>ロゴ設定</translation>
     </message>
+
+    <message>
+        <source>Displays the logo. Open Properties to configure its size and position.</source>
+        <translation>ロゴを表示します。プロパティで大きさと位置を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>LogoSettingEditWidget</name>

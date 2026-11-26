@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridattributeabstractcelldataitem.h"
@@ -63,6 +64,8 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 	impl {new Impl {this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays input-grid attributes stored on cells or edges."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowGridAttributeAbstractCellGroupDataItem::showAttributeBrowser);
 

@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowparticlesbasescalardataitem.h"
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
@@ -20,6 +21,9 @@ Post3dWindowParticlesBaseScalarDataItem::Post3dWindowParticlesBaseScalarDataItem
 	m_colorMapSetting {nullptr},
 	m_legendActor {vtkActor2D::New()}
 {
+	m_standardItem->setToolTip(tr("Selects the scalar result used to color particles."));
+	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+
 	renderer()->AddActor2D(m_legendActor);
 
 	auto gtItem = groupDataItem()->topDataItem()->zoneDataItem()->gridTypeDataItem();

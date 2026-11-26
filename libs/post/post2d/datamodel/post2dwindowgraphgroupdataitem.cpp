@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgraphdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
@@ -199,6 +200,8 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	impl {new Impl()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays result values as graphs in the two-dimensional view. Open Properties to configure the graphs."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto grid = zoneDataItem()->v4DataContainer()->gridData();
 	auto adProvider = grid->grid()->attributeDataProvider();

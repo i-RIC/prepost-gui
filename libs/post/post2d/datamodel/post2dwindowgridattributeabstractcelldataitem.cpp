@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post2dwindowinputgriddataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
@@ -32,6 +33,9 @@ Post2dWindowGridAttributeAbstractCellDataItem::Post2dWindowGridAttributeAbstract
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
 	m_condition {cond}
 {
+	m_standardItem->setToolTip(cond->toolTip().isEmpty() ? tr("Displays this input-grid cell or edge attribute.") : cond->toolTip());
+	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 

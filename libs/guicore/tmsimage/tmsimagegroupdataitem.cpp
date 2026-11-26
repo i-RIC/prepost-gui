@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "tmsimagegroupdataitem.h"
 #include "tmsimagedataitem.h"
 #include "private/tmsimagegroupdataitem_impl.h"
@@ -213,6 +214,10 @@ TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays background maps downloaded from a selected internet map service. A coordinate system is required to position the maps."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	renderer()->AddActor(impl->m_actor);
 	m_actorCollection->AddItem(impl->m_actor);

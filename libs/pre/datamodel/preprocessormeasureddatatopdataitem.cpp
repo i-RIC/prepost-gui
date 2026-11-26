@@ -35,6 +35,10 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorMeasuredDataTopDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Contains measured values used as a reference when preparing the model."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 	setSubPath("measureddata");
 
 	setIsCommandExecuting(true);

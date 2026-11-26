@@ -25,6 +25,11 @@
         <source>Error</source>
         <translation>エラー</translation>
     </message>
+
+    <message>
+        <source>Contains the points and vectors imported from a measured-data file.</source>
+        <translation>実測値ファイルから読み込んだ点とベクトルをまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
@@ -39,6 +44,11 @@
     <message>
         <source>Points Display Setting</source>
         <translation>点の表示設定</translation>
+    </message>
+
+    <message>
+        <source>Displays measured points. Open Properties to configure symbols and colors.</source>
+        <translation>実測点を表示します。プロパティで記号と色を設定します。</translation>
     </message>
 </context>
 <context>
@@ -199,6 +209,11 @@
         <source>Arrows Display Setting (%1)</source>
         <translation>ベクトル表示設定 (%1)</translation>
     </message>
+
+    <message>
+        <source>Displays measured vectors as arrows. Open Properties to configure the arrows.</source>
+        <translation>実測ベクトルを矢印で表示します。プロパティで表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
@@ -219,6 +234,11 @@
     <message>
         <source>Arrows</source>
         <translation>ベクトル</translation>
+    </message>
+
+    <message>
+        <source>Contains vector displays of measured values.</source>
+        <translation>実測値のベクトル表示をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -274,6 +294,20 @@
     <message>
         <source>&amp;Color Bar Setting</source>
         <translation type="vanished">カラーバー設定(&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointDataItem</name>
+    <message>
+        <source>Measured scalar values used to color the observation points.</source>
+        <translation>観測点の色分けに使用する実測スカラー値です。</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorDataItem</name>
+    <message>
+        <source>Selects the measured vector quantity used for arrow display.</source>
+        <translation>矢印で表示する実測ベクトル量を選択します。</translation>
     </message>
 </context>
 </TS>

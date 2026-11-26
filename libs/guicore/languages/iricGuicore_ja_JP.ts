@@ -4706,6 +4706,11 @@ Do you really want to import this file?</source>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>
+
+    <message>
+        <source>Displays background maps downloaded from a selected internet map service. A coordinate system is required to position the maps.</source>
+        <translation>選択したインターネット地図サービスの背景地図を表示します。位置合わせには座標系の設定が必要です。</translation>
+    </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
@@ -5157,6 +5162,13 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
+    </message>
+</context>
+<context>
+    <name>TmsImageDataItem</name>
+    <message>
+        <source>Selects this internet map service as the background map source.</source>
+        <translation>このインターネット地図サービスを背景地図の取得元として選択します。</translation>
     </message>
 </context>
 </TS>

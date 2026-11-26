@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../bc/boundaryconditiondialog.h"
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
@@ -89,7 +90,8 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	setIsCommandExecuting(false);
 
 	impl->m_condition = cond;
-	m_standardItem->setToolTip(cond->toolTip());
+	m_standardItem->setToolTip(cond->toolTip().isEmpty() ?
+		tr("Contains assigned regions for this boundary condition. Select a region to inspect its settings.") : cond->toolTip());
 	impl->m_hideSetting = hideSetting;
 
 	try {

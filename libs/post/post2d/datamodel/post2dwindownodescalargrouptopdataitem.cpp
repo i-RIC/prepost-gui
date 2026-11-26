@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodescalargroupdataitem.h"
@@ -34,6 +35,8 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains scalar results stored at grid nodes."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {

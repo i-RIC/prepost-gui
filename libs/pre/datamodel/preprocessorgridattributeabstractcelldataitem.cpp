@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../preprocessorgraphicsview.h"
 #include "attributebrowserhelper.h"
 #include "preprocessorgridattributeabstractcelldataitem.h"
@@ -67,7 +68,8 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 	m_findWrongPointsAction {new QAction(tr("Find wrong direction points"), this)},
 	m_colorMapToolBarWidgetController {nullptr}
 {
-	m_standardItem->setToolTip(cond->toolTip());
+	m_standardItem->setToolTip(cond->toolTip().isEmpty() ?
+		tr("Displays an attribute stored on grid cells or edges. Open Properties to configure its display.") : cond->toolTip());
 	m_editValueAction->setDisabled(true);
 	m_editDifferenceAction->setDisabled(true);
 	m_editRatioAction->setDisabled(true);

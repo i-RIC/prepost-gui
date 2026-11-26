@@ -77,6 +77,10 @@ PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent) :
 
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays the current result time. Open Properties to configure the time format and text."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	setupActors();
 	updateActorSetting();

@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindow.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowinputgriddataitem.h"
@@ -67,6 +68,8 @@ Post2dWindowGridAttributeNodeGroupDataItem::Post2dWindowGridAttributeNodeGroupDa
 	impl {new Impl {this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays input-grid attributes stored at grid nodes."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto typeItem = gridTypeDataItem();
 	const auto& conds = typeItem->gridType()->gridAttributes();

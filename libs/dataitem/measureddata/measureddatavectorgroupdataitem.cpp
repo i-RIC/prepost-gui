@@ -80,6 +80,10 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(const std::stri
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays measured vectors as arrows. Open Properties to configure the arrows."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 	impl->m_setting.arrowsSetting.target = target.c_str();
 	impl->m_setting.arrowsSetting.legend.title = target.c_str();
 

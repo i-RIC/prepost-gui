@@ -692,6 +692,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <source>Time Setting</source>
         <translation>時間設定</translation>
     </message>
+
+    <message>
+        <source>Displays the current result time. Open Properties to configure the time format and text.</source>
+        <translation>現在の計算結果の時刻を表示します。プロパティで時刻の形式と文字の表示を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>PostTimeDataItem_EditWidget</name>
@@ -760,6 +765,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     <message>
         <source>Title Setting</source>
         <translation>タイトル設定</translation>
+    </message>
+
+    <message>
+        <source>Displays a title on the result view. Open Properties to edit the text and appearance.</source>
+        <translation>計算結果の画面にタイトルを表示します。プロパティで文字と表示方法を設定します。</translation>
     </message>
 </context>
 <context>

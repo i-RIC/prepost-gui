@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowabstractcellscalargroupdataitem.h"
@@ -29,12 +30,18 @@ Post2dWindowAbstractCellScalarGroupDataItem::Post2dWindowAbstractCellScalarGroup
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	m_standardItem->setToolTip(tr("Displays a scalar result on cells or edges. Open Properties to configure colors and display settings."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	impl->m_target = target;
 
 	auto gType = topDataItem()->zoneDataItem()->v4DataContainer()->gridType();
 	QString caption = gType->outputCaption(target);
 	SolverDefinitionGridOutput* output = gType->output(target);
+	if (output != nullptr && ! output->toolTip().isEmpty()) {
+		m_standardItem->setToolTip(output->toolTip() + "\n\n" + m_standardItem->toolTip());
+		m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	}
 
 	standardItem()->setText(caption);
 	ColorMapSettingContainerI* cs = output->createColorMapSettingContainer();

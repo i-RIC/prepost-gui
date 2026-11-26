@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowcontourdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
@@ -31,6 +32,8 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	m_standardItem->setToolTip(tr("Displays a grid-node result using colors. Open Properties to configure the color scale and displayed grid faces."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	impl->m_target = target;
 
@@ -48,6 +51,10 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	}
 
 	m_standardItem->setText(caption);
+	if (! output->toolTip().isEmpty()) {
+		m_standardItem->setToolTip(output->toolTip() + "\n\n" + m_standardItem->toolTip());
+		m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	}
 	auto cs = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {

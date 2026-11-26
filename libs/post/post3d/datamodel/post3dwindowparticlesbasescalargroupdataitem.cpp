@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowparticlesbasescalardataitem.h"
@@ -35,6 +36,8 @@ Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGro
 	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Colors particles by a selected scalar result. Open Properties to configure the color scale."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	QSettings settings;
 	m_setting.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();

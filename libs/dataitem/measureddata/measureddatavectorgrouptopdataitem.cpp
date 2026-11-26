@@ -14,6 +14,10 @@ MeasuredDataVectorGroupTopDataItem::MeasuredDataVectorGroupTopDataItem(GraphicsW
 	GraphicsWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Contains vector displays of measured values."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent)->measuredData();
 
 	for (const auto& name : md->vectorNames()) {

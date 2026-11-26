@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../../../guibase/objectbrowserview.h"
 #include "../post3dwindowdatamodel.h"
 #include "post3dwindowgridtypedataitem.h"
@@ -94,8 +95,10 @@ void Post3dWindowNodeScalarGroupDataItem::doUpdateActorSetting()
 
 	m_standardItem->setText(caption);
 	m_standardItemCopy->setText(caption);
-	m_standardItem->setToolTip(output->toolTip());
-	m_standardItemCopy->setToolTip(output->toolTip());
+	auto help = tr("Configure the result variable and isovalue in Properties.");
+	if (! output->toolTip().isEmpty()) {help = output->toolTip() + "\n\n" + help;}
+	m_standardItem->setToolTip(help);
+	m_standardItemCopy->setToolTip(help);
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();

@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../preobjectbrowserview.h"
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
@@ -31,6 +32,10 @@ PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* p
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Geographic data used to assign this grid attribute. Use its context menu to edit, import, export, or configure the data."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	connect(m_importAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::importGeoData);
 	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::exportGeoData);

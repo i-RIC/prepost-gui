@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "preprocessorbackgroundimagedataitem.h"
 
 #include <guibase/objectbrowserview.h>
@@ -12,6 +13,10 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 	m_imageInfo {image}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays a background image. Open Properties to configure its position and appearance."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	image->setupActor(m_actor.actor());
 	image->setupMapper(m_actor.mapper());

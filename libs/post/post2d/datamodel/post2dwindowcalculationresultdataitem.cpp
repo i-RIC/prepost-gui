@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowcellscalargrouptopdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
@@ -29,6 +30,8 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains the calculation results available for this grid."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto grid = cont->gridData();

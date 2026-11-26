@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgridshapedataitem.h"
@@ -33,6 +34,8 @@ Post2dWindowGridShapeDataItem::Post2dWindowGridShapeDataItem(Post2dWindowDataIte
 	m_openEdgeXsectionWindowAction {new QAction(tr("Open &Cross Section Window"), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays the grid shape. Open Properties to configure grid lines and surfaces."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	setupActors();
 

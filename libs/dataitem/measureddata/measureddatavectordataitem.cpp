@@ -12,7 +12,12 @@
 
 MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem {name, caption, parent}
-{}
+{
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Selects the measured vector quantity used for arrow display."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
+}
 
 void MeasuredDataVectorDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {

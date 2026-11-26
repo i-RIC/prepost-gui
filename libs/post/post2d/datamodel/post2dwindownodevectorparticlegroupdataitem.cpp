@@ -43,6 +43,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays automatically generated particles moving with the selected vector field."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	informGridUpdate();
 

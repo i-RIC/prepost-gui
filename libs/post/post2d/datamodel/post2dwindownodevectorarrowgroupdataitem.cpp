@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcalculationresultdataitem.h"
@@ -42,6 +43,8 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	m_standardItem->setToolTip(tr("Displays a vector result as arrows. Open Properties to configure arrow length, spacing, and color."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();

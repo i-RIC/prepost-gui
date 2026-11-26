@@ -1,10 +1,13 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatavariationdataitem.h"
+#include <QStandardItem>
 
 PreProcessorGeoDataVariationDataItem::PreProcessorGeoDataVariationDataItem(PreProcessorGeoDataGroupDataItem* item) :
 	PreProcessorGeoDataGroupDataItemI {
 		dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item)->condition(),item}
-{}
+{
+	m_standardItem->setToolTip(item->standardItem()->toolTip());
+}
 
 PreProcessorGeoDataVariationDataItem::~PreProcessorGeoDataVariationDataItem()
 {}

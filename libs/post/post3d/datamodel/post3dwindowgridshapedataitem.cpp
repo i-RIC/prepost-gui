@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -14,6 +15,10 @@ Post3dWindowGridShapeDataItem::Post3dWindowGridShapeDataItem(Post3dWindowDataIte
 	Post3dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Displays the three-dimensional grid shape."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 
 	setupActors();
 }

@@ -1,3 +1,6 @@
+#include <QStandardItem>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -49,6 +52,8 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	m_standardItem->setToolTip(tr("Displays a scalar result at grid nodes. Open Properties to configure colors and display settings."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	impl->m_target = target;
 
@@ -57,6 +62,11 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	QString caption = adProvider->caption(target);
 
 	standardItem()->setText(caption);
+	auto output = grid->gridType()->output(target);
+	if (output != nullptr && ! output->toolTip().isEmpty()) {
+		m_standardItem->setToolTip(output->toolTip() + "\n\n" + m_standardItem->toolTip());
+		m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	}
 	auto cs = adProvider->createColorMapSetting(target);
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {

@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post3dwindownodevectorarrowgroupdataitem.h"
 #include "post3dwindownodevectorarrowtopdataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -19,6 +20,8 @@ Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(P
 	m_zScale {1.0}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Contains arrow displays of vector results, such as velocity."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto gType = cont->gridType();

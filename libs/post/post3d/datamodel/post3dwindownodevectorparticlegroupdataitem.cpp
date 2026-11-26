@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindownodevectorparticledataitem.h"
 #include "post3dwindownodevectorparticlegroupdataitem.h"
@@ -38,6 +39,8 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_standardItem->setToolTip(tr("Displays automatically generated particles moving with the selected vector field."));
+	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	informGridUpdate();
 

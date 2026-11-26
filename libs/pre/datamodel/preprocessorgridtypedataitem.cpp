@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "preprocessorbackgroundimagesdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
@@ -32,6 +33,10 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	m_geoDataTop {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Contains geographic data and grids belonging to this grid type."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 	setSubPath(type->name().c_str());
 
 	setupColorMapSettingContainers();

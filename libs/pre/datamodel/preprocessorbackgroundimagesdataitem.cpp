@@ -1,3 +1,4 @@
+#include <QStandardItem>
 #include "../preprocessorgraphicsview.h"
 #include "preprocessorbackgroundimagedataitem.h"
 #include "preprocessorbackgroundimagesdataitem.h"
@@ -18,6 +19,10 @@ PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(Graph
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBackgroundImagesDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	if (m_standardItem != nullptr) {
+		m_standardItem->setToolTip(tr("Contains imported background images used as a reference for preparing the grid."));
+		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	}
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);
 
 	connect(m_addAction, SIGNAL(triggered()), projectData()->mainfile(), SLOT(addBackgroundImage()));
