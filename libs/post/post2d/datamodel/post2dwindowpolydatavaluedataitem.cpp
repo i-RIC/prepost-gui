@@ -10,7 +10,9 @@
 
 Post2dWindowPolyDataValueDataItem::Post2dWindowPolyDataValueDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
-{}
+{
+	setStandardItemToolTip(tr("Selects the result used to color polygon data."));
+}
 
 Post2dWindowPolyDataValueDataItem::~Post2dWindowPolyDataValueDataItem()
 {}

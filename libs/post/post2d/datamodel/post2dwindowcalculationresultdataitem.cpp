@@ -29,6 +29,7 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the calculation results available for this grid."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto grid = cont->gridData();

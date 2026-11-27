@@ -213,6 +213,7 @@ TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays background maps downloaded from a selected internet map service. A coordinate system is required to position the maps."));
 
 	renderer()->AddActor(impl->m_actor);
 	m_actorCollection->AddItem(impl->m_actor);

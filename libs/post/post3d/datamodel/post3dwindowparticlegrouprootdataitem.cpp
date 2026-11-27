@@ -12,6 +12,7 @@ Post3dWindowParticleGroupRootDataItem::Post3dWindowParticleGroupRootDataItem(Pos
 	Post3dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains particle visualization items."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupMap();

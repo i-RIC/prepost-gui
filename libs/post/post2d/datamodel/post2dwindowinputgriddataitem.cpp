@@ -26,6 +26,7 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 	impl {new Impl {}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the input grid, its attributes, and boundary-condition regions."));
 
 	connect(inputGrid()->grid(), &v4Grid::changed, this, &Post2dWindowInputGridDataItem::handleGridChange);
 

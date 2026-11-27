@@ -13,6 +13,7 @@ Post2dWindowGeoDataDataItem::Post2dWindowGeoDataDataItem(GraphicsWindowDataItem*
 	m_geoDataProxy {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays reference geographic data together with the calculation results."));
 }
 
 Post2dWindowGeoDataDataItem::~Post2dWindowGeoDataDataItem()

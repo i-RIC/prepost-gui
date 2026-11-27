@@ -46,6 +46,9 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 		output = gType->output(target);
 	}
 
+	setStandardItemToolTip(
+		tr("Displays a cell-center result using colors. Open Properties to configure the color scale and range."),
+		output->toolTip());
 	m_colorMapSetting = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {

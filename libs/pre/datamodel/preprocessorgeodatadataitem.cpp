@@ -31,6 +31,7 @@ PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* p
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	setStandardItemToolTip(tr("Geographic data used to assign this grid attribute. Use its context menu to edit, import, export, or configure the data."));
 
 	connect(m_importAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::importGeoData);
 	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGeoDataDataItem::exportGeoData);

@@ -23,6 +23,7 @@ Post2dWindowNodeVectorArrowGroupTopDataItem::Post2dWindowNodeVectorArrowGroupTop
 	Post2dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains arrow displays of vector results, such as velocity."));
 
 	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(resultDataItem()->grid()->vtkData()->data()->GetPointData())) {
 		auto item = createChild(val);

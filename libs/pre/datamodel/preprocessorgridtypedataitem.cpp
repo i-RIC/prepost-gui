@@ -32,6 +32,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	m_geoDataTop {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains geographic data and grids belonging to this grid type."));
 	setSubPath(type->name().c_str());
 
 	setupColorMapSettingContainers();

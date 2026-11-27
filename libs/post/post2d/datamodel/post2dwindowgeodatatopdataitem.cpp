@@ -162,6 +162,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	m_preGeoDataTopDataItem {ditem}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains reference geographic data displayed with the results."));
 	buildReferenceInformationAttribute();
 
 	// auto gType = ditem->gridType();

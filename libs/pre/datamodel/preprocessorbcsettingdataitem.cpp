@@ -27,6 +27,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 		m_standardItem = nullptr;
 	} else {
 		setupStandardItem(Checked, NotReorderable, Deletable);
+		setStandardItemToolTip(tr("Defines a boundary-condition region. Edit its polygon and condition values before mapping to the grid."));
 		setIsCommandExecuting(true);
 		m_standardItem->setEditable(true);
 		setIsCommandExecuting(false);

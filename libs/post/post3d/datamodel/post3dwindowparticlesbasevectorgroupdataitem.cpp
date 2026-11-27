@@ -38,6 +38,7 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays a particle vector result as arrows. Open Properties to configure the arrows."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();

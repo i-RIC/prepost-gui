@@ -174,6 +174,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
+        <source>Displays the grid in the bird's-eye view, using this cell attribute as elevation. Open Properties to configure the colors.</source>
+        <translation>このセル属性を標高として、鳥瞰図で格子を表示します。プロパティを開くと、色を設定できます。</translation>
+    </message>
+    <message>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
@@ -211,6 +215,10 @@ Do you really want to import grid from this file?</source>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Contains bird's-eye displays that use a cell attribute as elevation. Add one to select the attribute.</source>
+        <translation>セル属性を標高として使用する鳥瞰表示を含みます。追加すると、使用する属性を選択できます。</translation>
+    </message>
     <message>
         <source>Scalar (cell)</source>
         <translation>スカラー (セル)</translation>
@@ -347,6 +355,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
+        <source>Displays the grid shape in the bird's-eye view. Open Properties to configure grid lines and surfaces.</source>
+        <translation>鳥瞰図で格子形状を表示します。プロパティを開くと、格子線や面の表示を設定できます。</translation>
+    </message>
+    <message>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -368,6 +380,10 @@ Do you really want to import grid from this file?</source>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Displays the grid in the bird's-eye view, using this node attribute as elevation. Open Properties to configure the colors.</source>
+        <translation>この格子点属性を標高として、鳥瞰図で格子を表示します。プロパティを開くと、色を設定できます。</translation>
+    </message>
     <message>
         <source>Scalar</source>
         <translation>スカラー</translation>
@@ -407,6 +423,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
+        <source>Contains bird's-eye displays that use a node attribute as elevation. Add one to select the attribute.</source>
+        <translation>格子点属性を標高として使用する鳥瞰表示を含みます。追加すると、使用する属性を選択できます。</translation>
+    </message>
+    <message>
         <source>Scalar (node)</source>
         <translation>スカラー (格子点)</translation>
     </message>
@@ -417,6 +437,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Select grid attribute to use as Elevation</source>
         <translation>標高として使用する格子属性の選択</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowZoneDataItem</name>
+    <message>
+        <source>Contains the bird's-eye view of the grid and its attributes.</source>
+        <translation>格子とその属性の鳥瞰表示を含みます。</translation>
     </message>
 </context>
 <context>
@@ -443,6 +470,11 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Release Condition</source>
         <translation>削除(&amp;R)</translation>
+    </message>
+
+    <message>
+        <source>Contains assigned regions for this boundary condition. Select a region to inspect its settings.</source>
+        <translation>この境界条件に割り当てられた領域です。領域を選択して設定を確認します。</translation>
     </message>
 </context>
 <context>
@@ -566,6 +598,11 @@ Do you really want to import grid from this file?</source>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>マッピングは、格子がない時は実行できません。</translation>
     </message>
+
+    <message>
+        <source>Defines a boundary-condition region. Edit its polygon and condition values before mapping to the grid.</source>
+        <translation>境界条件を設定する領域です。格子へのマッピング前に領域の形状と条件値を編集します。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
@@ -601,12 +638,22 @@ Do you really want to import grid from this file?</source>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>マッピングは、格子がない時は実行できません。</translation>
     </message>
+
+    <message>
+        <source>Contains boundary-condition regions to be mapped to the grid.</source>
+        <translation>格子にマッピングする境界条件の領域をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
         <translation>ジオレファレンス (&amp;G)...</translation>
+    </message>
+
+    <message>
+        <source>Displays a background image. Open Properties to configure its position and appearance.</source>
+        <translation>背景画像を表示します。プロパティで位置と表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -650,6 +697,11 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>本当に全ての背景画像を削除していいですか?</translation>
+    </message>
+
+    <message>
+        <source>Contains imported background images used as a reference for preparing the grid.</source>
+        <translation>格子作成の参考として読み込んだ背景画像をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1027,6 +1079,11 @@ Do you really want to import grid from this file?</source>
         <source>Import target file "%1" does not exists.</source>
         <translation>インポート対象ファイル "%1" がありません。</translation>
     </message>
+
+    <message>
+        <source>Geographic data used to assign this grid attribute. Use its context menu to edit, import, export, or configure the data.</source>
+        <translation>この格子属性の設定に用いる地理情報です。右クリックメニューから編集、インポート、エクスポートや表示設定を行います。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem::ImportSettingDialog</name>
@@ -1247,6 +1304,11 @@ Please note that the geographic data imported in "Link Mode" can not be edited.
 
 注意: 「リンクモード」でインポートした地理情報は編集できません。</translation>
     </message>
+
+    <message>
+        <source>Contains geographic data for this grid attribute. These data can be mapped to the calculation grid.</source>
+        <translation>この格子属性に対応する地理情報です。計算格子へマッピングできます。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1351,6 +1413,11 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation>地理情報の格子属性へのマッピングを実行しますか?</translation>
     </message>
+
+    <message>
+        <source>Contains the grid and its grid-generation settings.</source>
+        <translation>格子と、その格子を生成するための設定をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
@@ -1445,6 +1512,11 @@ The grid attribute data created from the variation that you select with "Variati
     <message>
         <source>To use this function, please select the most downstream point first.</source>
         <translation>この機能を使用するには、先に最下流点を選択してください。</translation>
+    </message>
+
+    <message>
+        <source>Displays an attribute stored on grid cells or edges. Open Properties to configure its display.</source>
+        <translation>セルまたは格子辺に保存された属性です。プロパティで表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1959,6 +2031,11 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Node Attribute Display Setting (%1)</source>
         <translation>格子点属性の表示設定 (%1)</translation>
     </message>
+
+    <message>
+        <source>Displays an attribute stored at grid nodes. Open Properties to configure its display.</source>
+        <translation>格子点に保存された属性です。プロパティで表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
@@ -2125,6 +2202,11 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>&amp;Show Grid Creating Condition...</source>
         <translation>格子生成条件の表示(S)...</translation>
+    </message>
+
+    <message>
+        <source>Contains the settings and geometry used to generate the calculation grid.</source>
+        <translation>計算格子を生成するための条件と形状を設定します。</translation>
     </message>
 </context>
 <context>
@@ -2761,6 +2843,11 @@ Do you really want to import grid from this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
 この CGNS ファイルから格子をインポートしますか?</translation>
     </message>
+
+    <message>
+        <source>Contains the calculation grid, its attributes, and mapped boundary conditions.</source>
+        <translation>計算格子、格子属性、マッピング済みの境界条件をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridRelatedConditionCellDataItem</name>
@@ -3069,6 +3156,11 @@ Do you really want to import grid from this file?</source>
         <source>Region%1</source>
         <translation>領域%1</translation>
     </message>
+
+    <message>
+        <source>Contains geographic data and grids belonging to this grid type.</source>
+        <translation>この格子種類に属する地理情報と格子をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorHydraulicDataGroupDataItem</name>
@@ -3199,6 +3291,11 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
+    </message>
+
+    <message>
+        <source>Contains measured values used as a reference when preparing the model.</source>
+        <translation>モデル作成時の参考に用いる実測値をまとめています。</translation>
     </message>
 </context>
 <context>

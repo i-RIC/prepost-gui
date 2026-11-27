@@ -35,6 +35,9 @@ Post2dWindowAbstractCellScalarGroupDataItem::Post2dWindowAbstractCellScalarGroup
 	auto gType = topDataItem()->zoneDataItem()->v4DataContainer()->gridType();
 	QString caption = gType->outputCaption(target);
 	SolverDefinitionGridOutput* output = gType->output(target);
+	setStandardItemToolTip(
+		tr("Displays a scalar result on cells or edges. Open Properties to configure colors and display settings."),
+		output != nullptr ? output->toolTip() : QString());
 
 	standardItem()->setText(caption);
 	ColorMapSettingContainerI* cs = output->createColorMapSettingContainer();

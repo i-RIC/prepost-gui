@@ -4,7 +4,9 @@
 PreProcessorGeoDataVariationDataItem::PreProcessorGeoDataVariationDataItem(PreProcessorGeoDataGroupDataItem* item) :
 	PreProcessorGeoDataGroupDataItemI {
 		dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item)->condition(),item}
-{}
+{
+	setStandardItemToolTip(item->standardItem()->toolTip());
+}
 
 PreProcessorGeoDataVariationDataItem::~PreProcessorGeoDataVariationDataItem()
 {}

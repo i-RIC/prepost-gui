@@ -10,6 +10,7 @@ LogoDataItem::LogoDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl {}}
 {
 	m_isDeletable = false;
+	setStandardItemToolTip(tr("Displays the logo. Open Properties to configure its size and position."));
 
 	renderer()->AddActor2D(impl->m_actor);
 	impl->m_setting.imageSetting.setActor(impl->m_actor);

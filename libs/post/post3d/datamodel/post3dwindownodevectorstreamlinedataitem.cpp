@@ -3,7 +3,9 @@
 
 Post3dWindowNodeVectorStreamlineDataItem::Post3dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
-{}
+{
+	setStandardItemToolTip(tr("Selects the vector field used to draw streamlines at the current time."));
+}
 
 Post3dWindowNodeVectorStreamlineDataItem::~Post3dWindowNodeVectorStreamlineDataItem()
 {}

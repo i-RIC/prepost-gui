@@ -19,6 +19,7 @@ Post3dWindowCellContourGroupTopDataItem::Post3dWindowCellContourGroupTopDataItem
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains colored displays of results stored at cell centers."));
 }
 
 double Post3dWindowCellContourGroupTopDataItem::zScale() const

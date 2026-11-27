@@ -46,6 +46,10 @@ Post3dWindowFaceContourGroupDataItem::Post3dWindowFaceContourGroupDataItem(const
 		output = gType->output(target);
 	}
 
+	setStandardItemToolTip(
+		tr("Displays a grid-face result using colors. Open Properties to configure the color scale and range."),
+		output->toolTip());
+
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {
 		m_colorMapSetting = defaultCs->copy();

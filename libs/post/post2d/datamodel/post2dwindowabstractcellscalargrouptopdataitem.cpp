@@ -28,6 +28,7 @@ Post2dWindowAbstractCellScalarGroupTopDataItem::Post2dWindowAbstractCellScalarGr
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains scalar results stored on cells or edges."));
 	connect(m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::showAttributeBrowser);
 	connect(m_openGraphWindowAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::openGraphWindow);
 

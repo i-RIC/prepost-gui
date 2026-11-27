@@ -10,6 +10,7 @@ Post2dWindowParticleImageTopDataItem::Post2dWindowParticleImageTopDataItem(Post2
 	Post2dWindowDataItem {tr("Particles (image)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains image-based particle displays."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupImageMap();

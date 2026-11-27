@@ -33,6 +33,7 @@ Post2dWindowGridShapeDataItem::Post2dWindowGridShapeDataItem(Post2dWindowDataIte
 	m_openEdgeXsectionWindowAction {new QAction(tr("Open &Cross Section Window"), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays the grid shape. Open Properties to configure grid lines and surfaces."));
 
 	setupActors();
 

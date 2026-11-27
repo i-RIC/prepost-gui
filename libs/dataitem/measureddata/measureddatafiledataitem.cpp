@@ -45,6 +45,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 {
 	setSubPath("file");
 	setupStandardItem(Checked, NotReorderable, Deletable, md->name());
+	setStandardItemToolTip(tr("Contains the points and vectors imported from a measured-data file."));
 
 	impl->m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
 	impl->m_vectorGroupDataItem = new MeasuredDataVectorGroupTopDataItem(this);

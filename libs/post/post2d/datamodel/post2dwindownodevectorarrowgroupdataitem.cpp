@@ -42,6 +42,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays a vector result as arrows. Open Properties to configure arrow length, spacing, and color."));
 
 	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();

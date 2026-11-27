@@ -34,6 +34,7 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains scalar results stored at grid nodes."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {

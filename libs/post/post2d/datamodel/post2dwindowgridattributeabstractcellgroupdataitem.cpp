@@ -63,6 +63,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 	impl {new Impl {this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays input-grid attributes stored on cells or edges."));
 
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowGridAttributeAbstractCellGroupDataItem::showAttributeBrowser);
 

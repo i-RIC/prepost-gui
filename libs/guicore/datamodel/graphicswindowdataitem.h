@@ -139,6 +139,11 @@ public slots:
 
 protected:
 	void setupStandardItem(CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, const QString& text = "");
+	/// Set the tooltip of the object browser item (and its copy)
+	void setStandardItemToolTip(const QString& text);
+	/// Set the tooltip of the object browser item (and its copy).
+	/// When solverDescription is not empty, it is shown above text.
+	void setStandardItemToolTip(const QString& text, const QString& solverDescription);
 
 	PostSolutionInfo* postSolutionInfo();
 	void assignActorZValues(const ZDepthRange& range, const std::vector<GraphicsWindowDataItem*>& items);

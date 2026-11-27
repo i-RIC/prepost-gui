@@ -199,6 +199,7 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	impl {new Impl()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays result values as graphs in the two-dimensional view. Open Properties to configure the graphs."));
 
 	auto grid = zoneDataItem()->v4DataContainer()->gridData();
 	auto adProvider = grid->grid()->attributeDataProvider();

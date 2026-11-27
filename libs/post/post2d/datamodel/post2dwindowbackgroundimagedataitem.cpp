@@ -20,6 +20,7 @@ Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(Backgro
 	m_imageInfo {image}
 {
 	setupStandardItem(NotChecked, Reorderable, Deletable, image->fileName());
+	setStandardItemToolTip(tr("Displays a background image. Open Properties to configure its display."));
 
 	image->setupActor(m_actor.actor());
 	image->setupMapper(m_actor.mapper());

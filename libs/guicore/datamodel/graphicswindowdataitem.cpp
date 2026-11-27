@@ -117,6 +117,21 @@ void GraphicsWindowDataItem::setupStandardItem(CheckFlag cflag, ReorderFlag rfla
 	setIsCommandExecuting(false);
 }
 
+void GraphicsWindowDataItem::setStandardItemToolTip(const QString& text)
+{
+	if (m_standardItem != nullptr) {m_standardItem->setToolTip(text);}
+	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(text);}
+}
+
+void GraphicsWindowDataItem::setStandardItemToolTip(const QString& text, const QString& solverDescription)
+{
+	if (solverDescription.isEmpty()) {
+		setStandardItemToolTip(text);
+	} else {
+		setStandardItemToolTip(solverDescription + "\n\n" + text);
+	}
+}
+
 bool GraphicsWindowDataItem::isEnabled() const
 {
 	if (m_standardItem == nullptr) {return false;}

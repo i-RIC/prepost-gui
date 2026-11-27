@@ -75,6 +75,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	impl {new Impl {zoneName}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the three-dimensional grid and results for this zone."));
 
 	renderer()->AddActor(impl->m_edgeActor);
 

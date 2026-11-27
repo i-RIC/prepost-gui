@@ -28,6 +28,7 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the settings and geometry used to generate the calculation grid."));
 
 	// create default condition.
 	// @todo Currently, the default condition is the algorithm

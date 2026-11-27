@@ -3,7 +3,9 @@
 
 Post3dWindowNodeVectorParticleDataItem::Post3dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
-{}
+{
+	setStandardItemToolTip(tr("Selects the vector field used to move the visualization particles."));
+}
 
 void Post3dWindowNodeVectorParticleDataItem::showPropertyDialog()
 {

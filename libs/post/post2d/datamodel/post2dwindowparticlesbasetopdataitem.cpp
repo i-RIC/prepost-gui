@@ -33,6 +33,7 @@ Post2dWindowParticlesBaseTopDataItem::Post2dWindowParticlesBaseTopDataItem(const
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains particle results saved by the solver."));
 
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser);
 }

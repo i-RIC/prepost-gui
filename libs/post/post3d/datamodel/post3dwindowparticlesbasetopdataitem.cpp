@@ -26,6 +26,7 @@ Post3dWindowParticlesBaseTopDataItem::Post3dWindowParticlesBaseTopDataItem(const
 	m_vectorGroupDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains particle results saved by the solver. Expand to configure their display."));
 }
 
 Post3dWindowParticlesBaseTopDataItem::~Post3dWindowParticlesBaseTopDataItem()

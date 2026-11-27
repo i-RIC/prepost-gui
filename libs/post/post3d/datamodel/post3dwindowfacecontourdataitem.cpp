@@ -12,6 +12,7 @@ Post3dWindowFaceContourDataItem::Post3dWindowFaceContourDataItem(const QString& 
 	m_actor {vtkActor::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays the selected range of grid-face results using colors."));
 
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);

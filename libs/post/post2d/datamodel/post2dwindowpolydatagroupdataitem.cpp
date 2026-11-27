@@ -57,6 +57,7 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays polygon results. Open Properties to configure colors and display settings."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 

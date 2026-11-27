@@ -20,6 +20,7 @@ GridBirdEyeWindowCellScalarGroupTopDataItem::GridBirdEyeWindowCellScalarGroupTop
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains bird's-eye displays that use a cell attribute as elevation. Add one to select the attribute."));
 
 	auto model = dynamic_cast<GridBirdEyeWindowDataModel*> (dataModel());
 	auto gridType = model->gridTypeDataItem()->gridType();

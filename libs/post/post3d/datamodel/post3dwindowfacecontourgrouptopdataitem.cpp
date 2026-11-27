@@ -21,6 +21,7 @@ Post3dWindowFaceContourGroupTopDataItem::Post3dWindowFaceContourGroupTopDataItem
 	m_position {pos}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains colored displays of results stored on grid faces."));
 }
 
 double Post3dWindowFaceContourGroupTopDataItem::zScale() const

@@ -14,6 +14,7 @@ Post3dWindowGridShapeDataItem::Post3dWindowGridShapeDataItem(Post3dWindowDataIte
 	Post3dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays the three-dimensional grid shape."));
 
 	setupActors();
 }

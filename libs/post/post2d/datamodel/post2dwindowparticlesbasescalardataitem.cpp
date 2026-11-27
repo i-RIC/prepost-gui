@@ -18,6 +18,8 @@ Post2dWindowParticlesBaseScalarDataItem::Post2dWindowParticlesBaseScalarDataItem
 	m_colorMapSetting {nullptr},
 	m_legendActor {vtkActor2D::New()}
 {
+	setStandardItemToolTip(tr("Selects the scalar result used to color particles."));
+
 	renderer()->AddActor2D(m_legendActor);
 
 	auto gtItem = groupDataItem()->topDataItem()->zoneDataItem()->gridTypeDataItem();

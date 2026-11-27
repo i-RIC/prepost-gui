@@ -12,6 +12,7 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 	m_imageInfo {image}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
+	setStandardItemToolTip(tr("Displays a background image. Open Properties to configure its position and appearance."));
 
 	image->setupActor(m_actor.actor());
 	image->setupMapper(m_actor.mapper());

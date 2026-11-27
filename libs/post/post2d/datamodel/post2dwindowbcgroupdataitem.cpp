@@ -16,6 +16,7 @@ Post2dWindowBCGroupDataItem::Post2dWindowBCGroupDataItem(Post2dWindowDataItem* p
 	Post2dWindowDataItem{ tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains boundary-condition regions from the input grid."));
 
 	setSubPath("bc");
 }

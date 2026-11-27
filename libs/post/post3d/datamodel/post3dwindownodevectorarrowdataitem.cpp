@@ -48,6 +48,7 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const Q
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays arrows on the selected grid face. Open Properties to configure the face."));
 	m_standardItem->setText(label);
 
 	m_arrowsToolBarWidget->hideLegendCheckbox();

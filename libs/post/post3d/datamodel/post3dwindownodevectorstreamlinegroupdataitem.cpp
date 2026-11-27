@@ -41,6 +41,7 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays streamlines of the selected vector field at the current time. Streamlines are not particle trajectories over time."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();

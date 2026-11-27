@@ -48,6 +48,9 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	}
 
 	m_standardItem->setText(caption);
+	setStandardItemToolTip(
+		tr("Displays a grid-node result using colors. Open Properties to configure the color scale and displayed grid faces."),
+		output->toolTip());
 	auto cs = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {

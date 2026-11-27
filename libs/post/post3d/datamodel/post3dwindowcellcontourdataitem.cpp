@@ -11,6 +11,7 @@ Post3dWindowCellContourDataItem::Post3dWindowCellContourDataItem(const QString& 
 	m_actor {vtkActor::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays the selected range of cell-center results using colors."));
 
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);

@@ -35,6 +35,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_lengthLegendVisibilityWidget {new BoolContainerWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays a vector result as arrows. Open Properties to configure arrow length, spacing, color, and range."));
 
 	auto r = renderer();
 	r->AddActor2D(m_legendActor);

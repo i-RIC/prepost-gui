@@ -19,6 +19,7 @@ Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(P
 	m_zScale {1.0}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains arrow displays of vector results, such as velocity."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	auto gType = cont->gridType();

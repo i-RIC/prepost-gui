@@ -14,6 +14,7 @@ MeasuredDataVectorGroupTopDataItem::MeasuredDataVectorGroupTopDataItem(GraphicsW
 	GraphicsWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains vector displays of measured values."));
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent)->measuredData();
 
 	for (const auto& name : md->vectorNames()) {

@@ -57,6 +57,7 @@ Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, Graphic
 	m_actor {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays this grid face. Open Properties to configure its range and appearance."));
 
 	m_filter = vtkSmartPointer<vtkExtractGrid>::New();
 }

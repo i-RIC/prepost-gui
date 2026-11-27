@@ -31,6 +31,8 @@
 Post2dWindowGridAttributeNodeDataItem::Post2dWindowGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent)
 {
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays this input-grid node attribute.") : cond->toolTip());
+
 	m_condition = cond;
 
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());

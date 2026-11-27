@@ -20,6 +20,7 @@ Post2dWindowParticleImageDataItem::Post2dWindowParticleImageDataItem(const std::
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays particles using images. Open Properties to configure their appearance."));
 }
 
 Post2dWindowParticleImageDataItem::~Post2dWindowParticleImageDataItem()

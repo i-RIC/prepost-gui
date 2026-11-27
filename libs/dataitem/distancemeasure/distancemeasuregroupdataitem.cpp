@@ -29,6 +29,7 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
+	setStandardItemToolTip(tr("Contains distance measures. Add a measure to display a distance on the view."));
 
 	connect(impl->m_addAction, &QAction::triggered, this, &DistanceMeasureGroupDataItem::addMeasure);
 	connect(impl->m_deleteSelectedAction, &QAction::triggered, this, &DistanceMeasureGroupDataItem::deleteSelected);

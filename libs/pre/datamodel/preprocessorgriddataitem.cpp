@@ -116,6 +116,7 @@ PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent)
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the calculation grid, its attributes, and mapped boundary conditions."));
 
 	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
 	m_childItems.push_back(m_nodeGroupDataItem);

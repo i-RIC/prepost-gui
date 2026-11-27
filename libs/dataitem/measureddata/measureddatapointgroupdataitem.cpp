@@ -82,6 +82,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays measured points. Open Properties to configure symbols and colors."));
 
 	impl->setupActors();
 

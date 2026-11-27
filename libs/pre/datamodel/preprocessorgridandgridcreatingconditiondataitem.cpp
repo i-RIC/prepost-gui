@@ -57,6 +57,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_gridSetting {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the grid and its grid-generation settings."));
 
 	QDir workdir(projectData()->workDirectory());
 	setSubPath("gridandgridcreatingconditiondataitem");

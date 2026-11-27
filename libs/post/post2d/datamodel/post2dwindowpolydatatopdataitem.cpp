@@ -13,6 +13,7 @@ Post2dWindowPolyDataTopDataItem::Post2dWindowPolyDataTopDataItem(Post2dWindowDat
 	Post2dWindowDataItem {tr("Polygon"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains polygon results saved by the solver."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->polyDataMap();

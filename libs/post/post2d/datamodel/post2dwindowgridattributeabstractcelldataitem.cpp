@@ -32,6 +32,8 @@ Post2dWindowGridAttributeAbstractCellDataItem::Post2dWindowGridAttributeAbstract
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
 	m_condition {cond}
 {
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays this input-grid cell or edge attribute.") : cond->toolTip());
+
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 

@@ -5,7 +5,9 @@
 
 MeasuredDataPointDataItem::MeasuredDataPointDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
-{}
+{
+	setStandardItemToolTip(tr("Measured scalar values used to color the observation points."));
+}
 
 void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {

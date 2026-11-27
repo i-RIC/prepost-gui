@@ -27,6 +27,7 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), "&Delete...", this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains boundary-condition regions to be mapped to the grid."));
 
 	setSubPath("bcsetting");
 

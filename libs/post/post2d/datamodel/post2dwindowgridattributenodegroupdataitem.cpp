@@ -67,6 +67,7 @@ Post2dWindowGridAttributeNodeGroupDataItem::Post2dWindowGridAttributeNodeGroupDa
 	impl {new Impl {this}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays input-grid attributes stored at grid nodes."));
 
 	auto typeItem = gridTypeDataItem();
 	const auto& conds = typeItem->gridType()->gridAttributes();

@@ -48,6 +48,7 @@ Post2dWindowBCDataItem::Post2dWindowBCDataItem(SolverDefinition* def, SolverDefi
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays a boundary-condition region from the input grid.") : cond->toolTip());
 
 	impl->m_condition = cond;
 	impl->m_inputGridBC = inputGridBC;

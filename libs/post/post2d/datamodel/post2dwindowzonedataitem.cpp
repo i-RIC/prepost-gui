@@ -49,6 +49,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	impl {new Impl {zoneName}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the input grid and calculation results for this zone."));
 
 	auto cont = v4DataContainer();
 

@@ -78,6 +78,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isZoneDataItemsSetup {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains grids and results belonging to this grid type."));
 
 	setSubPath(type->name().c_str());
 

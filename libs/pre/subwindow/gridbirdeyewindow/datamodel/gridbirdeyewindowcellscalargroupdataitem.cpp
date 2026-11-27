@@ -44,6 +44,7 @@ GridBirdEyeWindowCellScalarGroupDataItem::GridBirdEyeWindowCellScalarGroupDataIt
 	impl {new Impl {elevationTarget, this}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	setStandardItemToolTip(tr("Displays the grid in the bird's-eye view, using this cell attribute as elevation. Open Properties to configure the colors."));
 
 	impl->m_setting.colorMode = Setting::ColorMode::ByCellScalar;
 	impl->m_setting.colorTarget = elevationTarget.c_str();

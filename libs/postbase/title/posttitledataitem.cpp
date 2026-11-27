@@ -15,6 +15,7 @@ PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays a title on the result view. Open Properties to edit the text and appearance."));
 	setupActors();
 }
 

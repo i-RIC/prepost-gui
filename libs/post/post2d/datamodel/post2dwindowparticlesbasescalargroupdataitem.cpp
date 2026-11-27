@@ -35,6 +35,7 @@ Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGro
 	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Colors particles by a selected scalar result."));
 
 	QSettings settings;
 	m_setting.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();

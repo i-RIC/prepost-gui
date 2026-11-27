@@ -78,6 +78,11 @@
         <source>Scalar Setting (%1)</source>
         <translation>スカラー設定 (%1)</translation>
     </message>
+
+    <message>
+        <source>Displays a scalar result on cells or edges. Open Properties to configure colors and display settings.</source>
+        <translation>セルまたは格子辺のスカラー量を表示します。プロパティで色と表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowAbstractCellScalarGroupDataItem::SettingEditWidget</name>
@@ -122,6 +127,11 @@
     <message>
         <source>Open &amp;Graph Window</source>
         <translation>グラフウィンドウを開く (&amp;G)</translation>
+    </message>
+
+    <message>
+        <source>Contains scalar results stored on cells or edges.</source>
+        <translation>セルまたは格子辺のスカラー量を表示する項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -375,6 +385,11 @@
         <source>Display Setting</source>
         <translation>表示設定</translation>
     </message>
+
+    <message>
+        <source>Displays a boundary-condition region from the input grid.</source>
+        <translation>入力格子に割り当てられた境界条件の領域を表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowBCDataItem_SettingEditWidget</name>
@@ -409,12 +424,22 @@
         <source>Boundary Condition</source>
         <translation>境界条件</translation>
     </message>
+
+    <message>
+        <source>Contains boundary-condition regions from the input grid.</source>
+        <translation>入力格子の境界条件領域をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
         <translation>ジオレファレンス (&amp;G)...</translation>
+    </message>
+
+    <message>
+        <source>Displays a background image. Open Properties to configure its display.</source>
+        <translation>背景画像を表示します。プロパティで表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -459,12 +484,22 @@
         <source>Are you sure you want to delete all background images?</source>
         <translation>本当に全ての背景画像を削除していいですか?</translation>
     </message>
+
+    <message>
+        <source>Contains background images used as a reference behind the results.</source>
+        <translation>計算結果の背景として参照する画像をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowCalculationResultDataItem</name>
     <message>
         <source>Calculation Result</source>
         <translation>計算結果</translation>
+    </message>
+
+    <message>
+        <source>Contains the calculation results available for this grid.</source>
+        <translation>この格子で利用できる計算結果をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -695,6 +730,11 @@
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
+
+    <message>
+        <source>Contains reference geographic data for the selected attribute.</source>
+        <translation>選択した属性の参照用地理情報をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGeoDataGroupDataItem_ScalarsToColorsEditDialog</name>
@@ -721,6 +761,11 @@
         <source>Select the geographic data group to add</source>
         <translation>追加する地理情報グループの選択</translation>
     </message>
+
+    <message>
+        <source>Contains reference geographic data displayed with the results.</source>
+        <translation>計算結果と重ねて表示する参照用地理情報をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
@@ -743,6 +788,11 @@
     <message>
         <source>Graph Setting</source>
         <translation>グラフ設定</translation>
+    </message>
+
+    <message>
+        <source>Displays result values as graphs in the two-dimensional view. Open Properties to configure the graphs.</source>
+        <translation>二次元画面内に計算結果のグラフを表示します。プロパティで表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -975,6 +1025,11 @@
         <source>Grid %1 Attribute Display Setting (%2)</source>
         <translation>格子 %1属性 表示設定 (%2)</translation>
     </message>
+
+    <message>
+        <source>Displays this input-grid cell or edge attribute.</source>
+        <translation>入力格子のこのセルまたは格子辺の属性を表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGridAttributeAbstractCellDataItem_PropertyDialog</name>
@@ -1008,6 +1063,11 @@
     <message>
         <source>Cell Attribute Change</source>
         <translation>セル属性の変更</translation>
+    </message>
+
+    <message>
+        <source>Displays input-grid attributes stored on cells or edges.</source>
+        <translation>入力格子のセルまたは格子辺に保存された属性を表示します。</translation>
     </message>
 </context>
 <context>
@@ -1058,6 +1118,11 @@
         <source>Grid Node Attribute Display Setting (%1)</source>
         <translation>格子点属性 表示設定 (%1)</translation>
     </message>
+
+    <message>
+        <source>Displays this input-grid node attribute.</source>
+        <translation>入力格子のこの格子点属性を表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGridAttributeNodeDataItem_PropertyDialog</name>
@@ -1092,6 +1157,11 @@
         <source>Node Attribute Change</source>
         <translation>格子点属性の変更</translation>
     </message>
+
+    <message>
+        <source>Displays input-grid attributes stored at grid nodes.</source>
+        <translation>入力格子の格子点に保存された属性を表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGridShapeDataItem</name>
@@ -1118,6 +1188,11 @@
     <message>
         <source>Click on grid nodes to specify on which edge you want to visualize calculation result. Double click or press Enter key to finish selecting. You can cancel the operation, by pressing Escape key.</source>
         <translation>格子点を順にクリックして、どの線上の計算結果を可視化するかを指定してください。ダブルクリックもしくは改行キーを押して選択操作を完了します。Escキーを押すと、操作をキャンセルできます。</translation>
+    </message>
+
+    <message>
+        <source>Displays the grid shape. Open Properties to configure grid lines and surfaces.</source>
+        <translation>格子形状を表示します。プロパティで格子線や面の表示を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1146,6 +1221,11 @@
     <message>
         <source>Input Grid</source>
         <translation>入力格子</translation>
+    </message>
+
+    <message>
+        <source>Contains the input grid, its attributes, and boundary-condition regions.</source>
+        <translation>入力格子、格子属性、境界条件領域をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1196,6 +1276,11 @@
     <message>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
+    </message>
+
+    <message>
+        <source>Contains measured values for comparison with calculation results.</source>
+        <translation>計算結果との比較に用いる実測値をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1251,6 +1336,11 @@
     <message>
         <source>To export KML for street view, Color mode needs to be "Discrete Mode"</source>
         <translation>ストリートビュー用のKML をエクスポートするには、"区間別モード" に切り替えて描画してください。</translation>
+    </message>
+
+    <message>
+        <source>Displays a scalar result at grid nodes. Open Properties to configure colors and display settings.</source>
+        <translation>格子点のスカラー量を表示します。プロパティで色と表示方法を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1348,6 +1438,11 @@
         <source>Open &amp;Graph Window</source>
         <translation>グラフウィンドウを開く (&amp;G)</translation>
     </message>
+
+    <message>
+        <source>Contains scalar results stored at grid nodes.</source>
+        <translation>格子点のスカラー量を表示する項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
@@ -1362,6 +1457,11 @@
     <message>
         <source>Arrows</source>
         <translation>ベクトル</translation>
+    </message>
+
+    <message>
+        <source>Displays a vector result as arrows. Open Properties to configure arrow length, spacing, and color.</source>
+        <translation>ベクトル量を矢印で表示します。プロパティで長さ、間隔、色を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1424,6 +1524,11 @@
     <message>
         <source>Select Calculation Result</source>
         <translation>計算結果の選択</translation>
+    </message>
+
+    <message>
+        <source>Contains arrow displays of vector results, such as velocity.</source>
+        <translation>流速などのベクトル量を矢印で表示する項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -1490,6 +1595,11 @@
     <message>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
+    </message>
+
+    <message>
+        <source>Displays automatically generated particles moving with the selected vector field.</source>
+        <translation>選択したベクトル場に従って移動する、自動生成された粒子を表示します。</translation>
     </message>
 </context>
 <context>
@@ -1652,6 +1762,11 @@
         <source>Streamline Physical Value Change</source>
         <translation>流線 物理量の変更</translation>
     </message>
+
+    <message>
+        <source>Displays streamlines at the current time, not particle trajectories over time.</source>
+        <translation>現在時刻のベクトル場に沿った流線を表示します。時間とともに移動する粒子の軌跡とは異なります。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
@@ -1813,12 +1928,22 @@
         <source>Particles</source>
         <translation>パーティクル</translation>
     </message>
+
+    <message>
+        <source>Contains particle visualization items.</source>
+        <translation>粒子の表示項目をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowParticleImageDataItem</name>
     <message>
         <source>Particles (image) setting</source>
         <translation>パーティクル (画像) 設定</translation>
+    </message>
+
+    <message>
+        <source>Displays particles using images. Open Properties to configure their appearance.</source>
+        <translation>粒子を画像で表示します。プロパティで見た目を設定します。</translation>
     </message>
 </context>
 <context>
@@ -1916,6 +2041,11 @@
     <message>
         <source>Particles (image)</source>
         <translation>パーティクル (画像)</translation>
+    </message>
+
+    <message>
+        <source>Contains image-based particle displays.</source>
+        <translation>粒子を画像で表示する項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -2232,6 +2362,11 @@ p, li { white-space: pre-wrap; }
         <source>Particles Scalar Setting</source>
         <translation>パーティクルのスカラー設定</translation>
     </message>
+
+    <message>
+        <source>Colors particles by a selected scalar result.</source>
+        <translation>選択したスカラー量で粒子を色分けします。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
@@ -2308,6 +2443,11 @@ p, li { white-space: pre-wrap; }
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
+
+    <message>
+        <source>Contains particle results saved by the solver.</source>
+        <translation>ソルバーが保存した粒子の計算結果をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
@@ -2335,6 +2475,11 @@ p, li { white-space: pre-wrap; }
         <source>Particles Vector Setting (%1)</source>
         <translation>パーティクルのベクトル設定 (%1)</translation>
     </message>
+
+    <message>
+        <source>Displays a particle vector result as arrows.</source>
+        <translation>粒子のベクトル量を矢印で表示します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
@@ -2359,6 +2504,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Arrows</source>
         <translation>ベクトル</translation>
+    </message>
+
+    <message>
+        <source>Contains arrow displays of particle vector results.</source>
+        <translation>粒子のベクトル量を矢印で表示する項目をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -2424,6 +2574,11 @@ p, li { white-space: pre-wrap; }
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
+
+    <message>
+        <source>Displays polygon results. Open Properties to configure colors and display settings.</source>
+        <translation>ポリゴンの計算結果を表示します。プロパティで色と表示方法を設定します。</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
@@ -2480,6 +2635,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Polygon</source>
         <translation>ポリゴン</translation>
+    </message>
+
+    <message>
+        <source>Contains polygon results saved by the solver.</source>
+        <translation>ソルバーが保存したポリゴンの計算結果をまとめています。</translation>
     </message>
 </context>
 <context>
@@ -2698,6 +2858,11 @@ p, li { white-space: pre-wrap; }
         <source>Show Attribute Browser</source>
         <translation type="vanished">属性ブラウザの表示</translation>
     </message>
+
+    <message>
+        <source>Contains the input grid and calculation results for this zone.</source>
+        <translation>このゾーンの入力格子と計算結果をまとめています。</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -2760,6 +2925,55 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGeoDataDataItem</name>
+    <message>
+        <source>Displays reference geographic data together with the calculation results.</source>
+        <translation>参照用の地理情報を計算結果と重ねて表示します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGridTypeDataItem</name>
+    <message>
+        <source>Contains grids and results belonging to this grid type.</source>
+        <translation>この格子種類に属する格子と計算結果をまとめています。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphDataItem</name>
+    <message>
+        <source>Selects the result used for the graph display.</source>
+        <translation>グラフ表示に使用する計算結果を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleDataItem</name>
+    <message>
+        <source>Selects the vector field used to move the visualization particles.</source>
+        <translation>表示用粒子の移動に使用するベクトル場を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineDataItem</name>
+    <message>
+        <source>Selects the vector field used to draw streamlines at the current time.</source>
+        <translation>現在時刻の流線を描くためのベクトル場を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarDataItem</name>
+    <message>
+        <source>Selects the scalar result used to color particles.</source>
+        <translation>粒子の色分けに使用するスカラー量を選択します。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataValueDataItem</name>
+    <message>
+        <source>Selects the result used to color polygon data.</source>
+        <translation>ポリゴンデータの色分けに使用する計算結果を選択します。</translation>
     </message>
 </context>
 </TS>

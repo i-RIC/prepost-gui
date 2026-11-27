@@ -59,6 +59,7 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isZoneDataItemsSetup {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains three-dimensional grids and results of this grid type."));
 
 	setSubPath(type->name().c_str());
 
