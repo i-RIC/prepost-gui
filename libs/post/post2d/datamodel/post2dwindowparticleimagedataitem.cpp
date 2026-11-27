@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowparticleimagedataitem.h"
 #include "post2dwindowparticleimagetopdataitem.h"
 #include "post2dwindowzonedataitem.h"
@@ -21,8 +20,7 @@ Post2dWindowParticleImageDataItem::Post2dWindowParticleImageDataItem(const std::
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Displays particles using images. Open Properties to configure their appearance."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Displays particles using images. Open Properties to configure their appearance."));
 }
 
 Post2dWindowParticleImageDataItem::~Post2dWindowParticleImageDataItem()

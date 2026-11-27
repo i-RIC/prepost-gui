@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowbcdataitem.h"
 #include "post2dwindowbcgroupdataitem.h"
 #include "post2dwindowdataitem.h"
@@ -17,8 +16,7 @@ Post2dWindowBCGroupDataItem::Post2dWindowBCGroupDataItem(Post2dWindowDataItem* p
 	Post2dWindowDataItem{ tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains boundary-condition regions from the input grid."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains boundary-condition regions from the input grid."));
 
 	setSubPath("bc");
 }

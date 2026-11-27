@@ -17,6 +17,7 @@ GridBirdEyeWindowZoneDataItem::GridBirdEyeWindowZoneDataItem(GraphicsWindowDataI
 	m_cellScalarGroupTopDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Contains the bird's-eye view of the grid and its attributes."));
 
 	auto gridType = gridTypeDataItem()->gridType();
 

@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindow.h"
 #include "../post2dwindowdatamodel.h"
 #include "../post2dwindowgraphicsview.h"
@@ -50,8 +49,7 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	impl {new Impl {zoneName}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains the input grid and calculation results for this zone."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains the input grid and calculation results for this zone."));
 
 	auto cont = v4DataContainer();
 

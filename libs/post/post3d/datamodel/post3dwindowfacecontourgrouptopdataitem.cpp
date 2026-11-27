@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post3dwindowfacecontourgroupdataitem.h"
 #include "post3dwindowfacecontourgrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -22,8 +21,7 @@ Post3dWindowFaceContourGroupTopDataItem::Post3dWindowFaceContourGroupTopDataItem
 	m_position {pos}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains colored displays of results stored on grid faces."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains colored displays of results stored on grid faces."));
 }
 
 double Post3dWindowFaceContourGroupTopDataItem::zScale() const

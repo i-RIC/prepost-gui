@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridattributenodedataitem.h"
 #include "post2dwindowgridattributenodegroupdataitem.h"
@@ -32,8 +31,7 @@
 Post2dWindowGridAttributeNodeDataItem::Post2dWindowGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent)
 {
-	m_standardItem->setToolTip(cond->toolTip().isEmpty() ? tr("Displays this input-grid node attribute.") : cond->toolTip());
-	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays this input-grid node attribute.") : cond->toolTip());
 
 	m_condition = cond;
 

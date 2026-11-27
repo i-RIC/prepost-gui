@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
@@ -34,8 +33,7 @@ Post2dWindowParticlesBaseTopDataItem::Post2dWindowParticlesBaseTopDataItem(const
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains particle results saved by the solver."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains particle results saved by the solver."));
 
 	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser);
 }

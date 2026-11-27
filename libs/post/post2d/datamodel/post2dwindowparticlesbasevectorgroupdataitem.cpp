@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -36,8 +35,7 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Displays a particle vector result as arrows."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Displays a particle vector result as arrows."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();

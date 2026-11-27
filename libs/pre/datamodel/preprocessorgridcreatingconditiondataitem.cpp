@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../factory/gridcreatingconditionfactory.h"
 #include "../preprocessordatamodel.h"
 #include "../preprocessorgraphicsview.h"
@@ -29,10 +28,7 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Contains the settings and geometry used to generate the calculation grid."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Contains the settings and geometry used to generate the calculation grid."));
 
 	// create default condition.
 	// @todo Currently, the default condition is the algorithm

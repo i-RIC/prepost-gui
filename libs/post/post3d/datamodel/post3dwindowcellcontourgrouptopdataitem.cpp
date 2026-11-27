@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post3dwindowcellcontourgroupdataitem.h"
 #include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -20,8 +19,7 @@ Post3dWindowCellContourGroupTopDataItem::Post3dWindowCellContourGroupTopDataItem
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains colored displays of results stored at cell centers."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains colored displays of results stored at cell centers."));
 }
 
 double Post3dWindowCellContourGroupTopDataItem::zScale() const

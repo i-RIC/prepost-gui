@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowbcdataitem.h"
 #include "post2dwindowdataitem.h"
 #include "post2dwindowinputgriddataitem.h"
@@ -49,8 +48,7 @@ Post2dWindowBCDataItem::Post2dWindowBCDataItem(SolverDefinition* def, SolverDefi
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(cond->toolTip().isEmpty() ? tr("Displays a boundary-condition region from the input grid.") : cond->toolTip());
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays a boundary-condition region from the input grid.") : cond->toolTip());
 
 	impl->m_condition = cond;
 	impl->m_inputGridBC = inputGridBC;

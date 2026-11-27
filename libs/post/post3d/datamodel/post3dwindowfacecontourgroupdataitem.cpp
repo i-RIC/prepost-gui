@@ -1,5 +1,3 @@
-#include <QStandardItem>
-#include <QCoreApplication>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowfacecontourdataitem.h"
 #include "post3dwindowfacecontourgroupdataitem.h"
@@ -34,8 +32,6 @@ Post3dWindowFaceContourGroupDataItem::Post3dWindowFaceContourGroupDataItem(const
 	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	m_standardItem->setToolTip(QCoreApplication::translate("Post3dWindowFaceContourGroupDataItem", "Displays a grid-face result using colors. Open Properties to configure the color scale and range."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	renderer()->AddActor2D(m_legendActor);
 
@@ -50,15 +46,15 @@ Post3dWindowFaceContourGroupDataItem::Post3dWindowFaceContourGroupDataItem(const
 		output = gType->output(target);
 	}
 
+	setStandardItemToolTip(
+		tr("Displays a grid-face result using colors. Open Properties to configure the color scale and range."),
+		output->toolTip());
+
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {
 		m_colorMapSetting = defaultCs->copy();
 	} else {
-		if (! output->toolTip().isEmpty()) {
-		m_standardItem->setToolTip(output->toolTip() + "\n\n" + m_standardItem->toolTip());
-		m_standardItemCopy->setToolTip(m_standardItem->toolTip());
-	}
-	m_colorMapSetting = output->createColorMapSettingContainer();
+		m_colorMapSetting = output->createColorMapSettingContainer();
 	}
 
 	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);

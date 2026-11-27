@@ -16,6 +16,8 @@ class vtkActor2D;
 
 class Post3dWindowCellContourGroupDataItem : public Post3dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post3dWindowCellContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p);
 	~Post3dWindowCellContourGroupDataItem();

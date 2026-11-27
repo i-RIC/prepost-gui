@@ -42,10 +42,7 @@ Axis3dDataItem::Axis3dDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays the three-dimensional coordinate axes."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays the three-dimensional coordinate axes."));
 
 	impl->setupActors();
 }

@@ -33,8 +33,7 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	m_condition {cond}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	m_standardItem->setToolTip(tr("Contains reference geographic data for the selected attribute."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains reference geographic data for the selected attribute."));
 
 	applyColorMapSetting();
 

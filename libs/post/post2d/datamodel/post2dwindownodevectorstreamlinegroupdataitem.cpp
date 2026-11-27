@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -48,8 +47,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Displays streamlines at the current time, not particle trajectories over time."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Displays streamlines at the current time, not particle trajectories over time."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();

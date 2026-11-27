@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../factory/gridimporterfactory.h"
 #include "../factory/preprocessorgriddataitemfactory.h"
 #include "../gridimporter/cgnsgridimporter.h"
@@ -58,10 +57,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_gridSetting {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Contains the grid and its grid-generation settings."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Contains the grid and its grid-generation settings."));
 
 	QDir workdir(projectData()->workDirectory());
 	setSubPath("gridandgridcreatingconditiondataitem");

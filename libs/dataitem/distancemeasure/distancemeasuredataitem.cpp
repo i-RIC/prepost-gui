@@ -68,10 +68,7 @@ DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWi
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays a distance measure. Move its endpoints to change the measured segment."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays a distance measure. Move its endpoints to change the measured segment."));
 
 	connect(impl->m_propertyAction, &QAction::triggered, this, &DistanceMeasureDataItem::showPropertyDialog);
 	connect(impl->m_redefineAction, &QAction::triggered, this, &DistanceMeasureDataItem::redefine);

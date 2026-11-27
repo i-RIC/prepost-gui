@@ -33,8 +33,7 @@ Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(Graphic
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), Post2dWindowMeasuredDataTopDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains measured values for comparison with calculation results."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains measured values for comparison with calculation results."));
 	m_standardItem->setData(QVariant("MEASUREDDATAS"), Qt::UserRole + 10);
 	setSubPath("measureddata");
 

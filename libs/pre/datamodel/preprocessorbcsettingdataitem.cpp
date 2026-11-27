@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../preprocessorgraphicsview.h"
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcsettingdataitem.h"
@@ -28,10 +27,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 		m_standardItem = nullptr;
 	} else {
 		setupStandardItem(Checked, NotReorderable, Deletable);
-		if (m_standardItem != nullptr) {
-			m_standardItem->setToolTip(tr("Defines a boundary-condition region. Edit its polygon and condition values before mapping to the grid."));
-			if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-		}
+		setStandardItemToolTip(tr("Defines a boundary-condition region. Edit its polygon and condition values before mapping to the grid."));
 		setIsCommandExecuting(true);
 		m_standardItem->setEditable(true);
 		setIsCommandExecuting(false);

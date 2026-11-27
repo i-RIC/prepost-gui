@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindownodevectorarrowdataitem.h"
 #include "post3dwindownodevectorarrowgroupdataitem.h"
@@ -36,8 +35,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_lengthLegendVisibilityWidget {new BoolContainerWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	m_standardItem->setToolTip(tr("Displays a vector result as arrows. Open Properties to configure arrow length, spacing, color, and range."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Displays a vector result as arrows. Open Properties to configure arrow length, spacing, color, and range."));
 
 	auto r = renderer();
 	r->AddActor2D(m_legendActor);

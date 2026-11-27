@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 
@@ -163,8 +162,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	m_preGeoDataTopDataItem {ditem}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains reference geographic data displayed with the results."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains reference geographic data displayed with the results."));
 	buildReferenceInformationAttribute();
 
 	// auto gType = ditem->gridType();

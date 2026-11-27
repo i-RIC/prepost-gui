@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post3dwindowfacecontourdataitem.h"
 #include "post3dwindowfacecontourgroupdataitem.h"
 #include "post3dwindowfacecontourgrouptopdataitem.h"
@@ -13,10 +12,7 @@ Post3dWindowFaceContourDataItem::Post3dWindowFaceContourDataItem(const QString& 
 	m_actor {vtkActor::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays the selected range of grid-face results using colors."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays the selected range of grid-face results using colors."));
 
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);

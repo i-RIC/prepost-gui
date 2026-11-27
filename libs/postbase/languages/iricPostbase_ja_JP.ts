@@ -449,6 +449,10 @@ p {margin-top: 3px; margin-bottom: 3px;}
 <context>
     <name>PostStringResultDataItem</name>
     <message>
+        <source>Displays a label on the result view. Open Properties to edit the text and appearance.</source>
+        <translation>結果の表示領域にラベルを表示します。プロパティを開くと、文字列や外観を設定できます。</translation>
+    </message>
+    <message>
         <source>Label</source>
         <translation>ラベル</translation>
     </message>

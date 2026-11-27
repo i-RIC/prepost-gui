@@ -1,12 +1,10 @@
-#include <QStandardItem>
 #include "post3dwindownodevectorparticledataitem.h"
 #include "post3dwindownodevectorparticlegroupdataitem.h"
 
 Post3dWindowNodeVectorParticleDataItem::Post3dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {
-	m_standardItem->setToolTip(tr("Selects the vector field used to move the visualization particles."));
-	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	setStandardItemToolTip(tr("Selects the vector field used to move the visualization particles."));
 }
 
 void Post3dWindowNodeVectorParticleDataItem::showPropertyDialog()

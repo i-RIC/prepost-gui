@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../factory/gridexporterfactory.h"
 #include "../factory/gridimporterfactory.h"
 #include "../gridexporter/cgnsgridexporter.h"
@@ -117,10 +116,7 @@ PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent)
 	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Contains the calculation grid, its attributes, and mapped boundary conditions."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Contains the calculation grid, its attributes, and mapped boundary conditions."));
 
 	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
 	m_childItems.push_back(m_nodeGroupDataItem);

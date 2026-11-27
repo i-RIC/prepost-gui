@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../../../guibase/objectbrowserview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowabstractcellscalargrouptopdataitem.h"
@@ -29,8 +28,7 @@ Post2dWindowAbstractCellScalarGroupTopDataItem::Post2dWindowAbstractCellScalarGr
 	m_attributeBrowserController {new AttributeBrowserController {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains scalar results stored on cells or edges."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains scalar results stored on cells or edges."));
 	connect(m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::showAttributeBrowser);
 	connect(m_openGraphWindowAction, &QAction::triggered, this, &Post2dWindowAbstractCellScalarGroupTopDataItem::openGraphWindow);
 

@@ -15,8 +15,7 @@
 Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {
-	m_standardItem->setToolTip(tr("Selects the vector field used to move the visualization particles."));
-	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	setStandardItemToolTip(tr("Selects the vector field used to move the visualization particles."));
 }
 
 void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView* /*v*/)

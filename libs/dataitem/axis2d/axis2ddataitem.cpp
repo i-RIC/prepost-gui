@@ -49,10 +49,7 @@ Axis2dDataItem::Axis2dDataItem(GraphicsWindowDataItem* parent) :
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays the two-dimensional coordinate axes. Open Properties to configure their appearance."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays the two-dimensional coordinate axes. Open Properties to configure their appearance."));
 
 	impl->setupActors();
 }

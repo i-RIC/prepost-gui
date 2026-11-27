@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../../../guibase/objectbrowserview.h"
 #include "../post3dwindowdatamodel.h"
 #include "post3dwindowgridtypedataitem.h"
@@ -24,8 +23,7 @@ Post3dWindowNodeScalarGroupTopDataItem::Post3dWindowNodeScalarGroupTopDataItem(P
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains isosurfaces: surfaces where a selected scalar result equals a specified value."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains isosurfaces: surfaces where a selected scalar result equals a specified value."));
 }
 
 Post3dWindowNodeScalarGroupTopDataItem::~Post3dWindowNodeScalarGroupTopDataItem()

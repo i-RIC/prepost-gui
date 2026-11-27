@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
@@ -27,8 +26,7 @@ Post3dWindowParticlesBaseTopDataItem::Post3dWindowParticlesBaseTopDataItem(const
 	m_vectorGroupDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains particle results saved by the solver. Expand to configure their display."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains particle results saved by the solver. Expand to configure their display."));
 }
 
 Post3dWindowParticlesBaseTopDataItem::~Post3dWindowParticlesBaseTopDataItem()

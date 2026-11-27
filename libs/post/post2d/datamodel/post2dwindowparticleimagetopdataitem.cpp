@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowparticleimagetopdataitem.h"
 #include "post2dwindowparticleimagedataitem.h"
@@ -11,8 +10,7 @@ Post2dWindowParticleImageTopDataItem::Post2dWindowParticleImageTopDataItem(Post2
 	Post2dWindowDataItem {tr("Particles (image)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains image-based particle displays."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains image-based particle displays."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupImageMap();

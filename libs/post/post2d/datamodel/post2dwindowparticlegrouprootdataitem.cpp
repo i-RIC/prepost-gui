@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowparticlegrouprootdataitem.h"
 #include "post2dwindowparticlegrouptopdataitem.h"
@@ -14,8 +13,7 @@ Post2dWindowParticleGroupRootDataItem::Post2dWindowParticleGroupRootDataItem(Pos
 	Post2dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains particle visualization items."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains particle visualization items."));
 
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupMap();

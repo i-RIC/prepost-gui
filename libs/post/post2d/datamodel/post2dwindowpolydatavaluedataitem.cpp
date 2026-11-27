@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowpolydatagroupdataitem.h"
 #include "post2dwindowpolydatavaluedataitem.h"
@@ -12,8 +11,7 @@
 Post2dWindowPolyDataValueDataItem::Post2dWindowPolyDataValueDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {
-	m_standardItem->setToolTip(tr("Selects the result used to color polygon data."));
-	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	setStandardItemToolTip(tr("Selects the result used to color polygon data."));
 }
 
 Post2dWindowPolyDataValueDataItem::~Post2dWindowPolyDataValueDataItem()

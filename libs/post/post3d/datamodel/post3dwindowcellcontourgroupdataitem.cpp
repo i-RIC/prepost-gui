@@ -1,5 +1,3 @@
-#include <QStandardItem>
-#include <QCoreApplication>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowcellcontourdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
@@ -34,8 +32,6 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	m_standardItem->setToolTip(QCoreApplication::translate("Post3dWindowCellContourGroupDataItem", "Displays a cell-center result using colors. Open Properties to configure the color scale and range."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
 
 	renderer()->AddActor2D(m_legendActor);
 
@@ -50,10 +46,9 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 		output = gType->output(target);
 	}
 
-	if (! output->toolTip().isEmpty()) {
-		m_standardItem->setToolTip(output->toolTip() + "\n\n" + m_standardItem->toolTip());
-		m_standardItemCopy->setToolTip(m_standardItem->toolTip());
-	}
+	setStandardItemToolTip(
+		tr("Displays a cell-center result using colors. Open Properties to configure the color scale and range."),
+		output->toolTip());
 	m_colorMapSetting = output->createColorMapSettingContainer();
 	auto defaultCs = projectData()->mainfile()->defaultColorMapSettings()->colorMap(target);
 	if (defaultCs != nullptr) {

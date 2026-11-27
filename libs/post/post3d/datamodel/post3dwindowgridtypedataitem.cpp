@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post3dwindow.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -60,10 +59,7 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isZoneDataItemsSetup {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Contains three-dimensional grids and results of this grid type."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Contains three-dimensional grids and results of this grid type."));
 
 	setSubPath(type->name().c_str());
 

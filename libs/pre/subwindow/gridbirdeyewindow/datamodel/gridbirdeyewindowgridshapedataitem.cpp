@@ -23,6 +23,7 @@ GridBirdEyeWindowGridShapeDataItem::GridBirdEyeWindowGridShapeDataItem(GridBirdE
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays the grid shape in the bird's-eye view. Open Properties to configure grid lines and surfaces."));
 
 	auto grid = zoneDataItem()->grid();
 	if (grid != nullptr) {

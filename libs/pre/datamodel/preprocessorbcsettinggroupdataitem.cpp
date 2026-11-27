@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcsettingdataitem.h"
@@ -28,10 +27,7 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), "&Delete...", this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Contains boundary-condition regions to be mapped to the grid."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Contains boundary-condition regions to be mapped to the grid."));
 
 	setSubPath("bcsetting");
 

@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "posttitledataitem.h"
 #include "private/posttitledataitem_editwidget.h"
 
@@ -16,10 +15,7 @@ PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays a title on the result view. Open Properties to edit the text and appearance."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays a title on the result view. Open Properties to edit the text and appearance."));
 	setupActors();
 }
 

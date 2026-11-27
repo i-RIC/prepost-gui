@@ -174,6 +174,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
+        <source>Displays the grid in the bird's-eye view, using this cell attribute as elevation. Open Properties to configure the colors.</source>
+        <translation>このセル属性を標高として、鳥瞰図で格子を表示します。プロパティを開くと、色を設定できます。</translation>
+    </message>
+    <message>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
@@ -211,6 +215,10 @@ Do you really want to import grid from this file?</source>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Contains bird's-eye displays that use a cell attribute as elevation. Add one to select the attribute.</source>
+        <translation>セル属性を標高として使用する鳥瞰表示を含みます。追加すると、使用する属性を選択できます。</translation>
+    </message>
     <message>
         <source>Scalar (cell)</source>
         <translation>スカラー (セル)</translation>
@@ -347,6 +355,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
+        <source>Displays the grid shape in the bird's-eye view. Open Properties to configure grid lines and surfaces.</source>
+        <translation>鳥瞰図で格子形状を表示します。プロパティを開くと、格子線や面の表示を設定できます。</translation>
+    </message>
+    <message>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -368,6 +380,10 @@ Do you really want to import grid from this file?</source>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Displays the grid in the bird's-eye view, using this node attribute as elevation. Open Properties to configure the colors.</source>
+        <translation>この格子点属性を標高として、鳥瞰図で格子を表示します。プロパティを開くと、色を設定できます。</translation>
+    </message>
     <message>
         <source>Scalar</source>
         <translation>スカラー</translation>
@@ -407,6 +423,10 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
+        <source>Contains bird's-eye displays that use a node attribute as elevation. Add one to select the attribute.</source>
+        <translation>格子点属性を標高として使用する鳥瞰表示を含みます。追加すると、使用する属性を選択できます。</translation>
+    </message>
+    <message>
         <source>Scalar (node)</source>
         <translation>スカラー (格子点)</translation>
     </message>
@@ -417,6 +437,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Select grid attribute to use as Elevation</source>
         <translation>標高として使用する格子属性の選択</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowZoneDataItem</name>
+    <message>
+        <source>Contains the bird's-eye view of the grid and its attributes.</source>
+        <translation>格子とその属性の鳥瞰表示を含みます。</translation>
     </message>
 </context>
 <context>

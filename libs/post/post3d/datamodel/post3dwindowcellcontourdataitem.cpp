@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post3dwindowcellcontourdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
 
@@ -12,10 +11,7 @@ Post3dWindowCellContourDataItem::Post3dWindowCellContourDataItem(const QString& 
 	m_actor {vtkActor::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays the selected range of cell-center results using colors."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays the selected range of cell-center results using colors."));
 
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);

@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
@@ -79,8 +78,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isZoneDataItemsSetup {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains grids and results belonging to this grid type."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains grids and results belonging to this grid type."));
 
 	setSubPath(type->name().c_str());
 

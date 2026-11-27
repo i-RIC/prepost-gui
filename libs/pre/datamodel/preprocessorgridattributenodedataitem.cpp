@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../preprocessorgraphicsview.h"
 #include "attributebrowserhelper.h"
 #include "preprocessorgridattributenodedataitem.h"
@@ -64,8 +63,7 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_openXsectionWindowAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Cross Section Window"), this)},
 	m_openVXsectionWindowAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Longitudinal Cross Section Window"), this)}
 {
-	m_standardItem->setToolTip(cond->toolTip().isEmpty() ?
-		tr("Displays an attribute stored at grid nodes. Open Properties to configure its display.") : cond->toolTip());
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Displays an attribute stored at grid nodes. Open Properties to configure its display.") : cond->toolTip());
 	m_editValueAction->setDisabled(true);
 	m_editDifferenceAction->setDisabled(true);
 	m_editRatioAction->setDisabled(true);

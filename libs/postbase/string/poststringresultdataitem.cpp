@@ -21,6 +21,7 @@ PostStringResultDataItem::PostStringResultDataItem(GraphicsWindowDataItem* paren
 	GraphicsWindowDataItem(tr("Label"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setStandardItemToolTip(tr("Displays a label on the result view. Open Properties to edit the text and appearance."));
 	setupActors();
 }
 

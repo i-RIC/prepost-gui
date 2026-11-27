@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowparticlesbasevectorgroupdataitem.h"
 #include "post3dwindowparticlesbasevectorgrouptopdataitem.h"
@@ -15,8 +14,7 @@ Post3dWindowParticlesBaseVectorGroupTopDataItem::Post3dWindowParticlesBaseVector
 	Post3dWindowDataItem(tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains arrow displays of vector results stored on particles."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains arrow displays of vector results stored on particles."));
 
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->vtkConcreteData()->concreteData()->GetPointData())) {
 		auto item = new Post3dWindowParticlesBaseVectorGroupDataItem(name, this);

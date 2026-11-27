@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "measureddatapointdataitem.h"
 #include "measureddatapointgroupdataitem.h"
 
@@ -7,10 +6,7 @@
 MeasuredDataPointDataItem::MeasuredDataPointDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Measured scalar values used to color the observation points."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Measured scalar values used to color the observation points."));
 }
 
 void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

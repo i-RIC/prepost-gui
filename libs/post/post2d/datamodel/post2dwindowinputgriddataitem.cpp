@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "post2dwindowinputgriddataitem.h"
 #include "post2dwindowbcgroupdataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
@@ -27,8 +26,7 @@ Post2dWindowInputGridDataItem::Post2dWindowInputGridDataItem(Post2dWindowDataIte
 	impl {new Impl {}}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains the input grid, its attributes, and boundary-condition regions."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains the input grid, its attributes, and boundary-condition regions."));
 
 	connect(inputGrid()->grid(), &v4Grid::changed, this, &Post2dWindowInputGridDataItem::handleGridChange);
 

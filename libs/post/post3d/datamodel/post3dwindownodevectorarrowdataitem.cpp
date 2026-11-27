@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindownodevectorarrowdataitem.h"
@@ -49,10 +48,7 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const Q
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-	if (m_standardItem != nullptr) {
-		m_standardItem->setToolTip(tr("Displays arrows on the selected grid face. Open Properties to configure the face."));
-		if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
-	}
+	setStandardItemToolTip(tr("Displays arrows on the selected grid face. Open Properties to configure the face."));
 	m_standardItem->setText(label);
 
 	m_arrowsToolBarWidget->hideLegendCheckbox();

@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindownodescalargrouptopdataitem.h"
@@ -11,8 +10,7 @@
 Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {
-	m_standardItem->setToolTip(tr("Selects the vector field used to draw streamlines at the current time."));
-	if (m_standardItemCopy != nullptr) {m_standardItemCopy->setToolTip(m_standardItem->toolTip());}
+	setStandardItemToolTip(tr("Selects the vector field used to draw streamlines at the current time."));
 }
 
 Post2dWindowNodeVectorStreamlineDataItem::~Post2dWindowNodeVectorStreamlineDataItem()

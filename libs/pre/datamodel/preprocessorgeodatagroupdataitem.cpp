@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../misc/preprocessorlegendboxeditdialog.h"
 #include "../preobjectbrowserview.h"
 #include "../preprocessordatamodel.h"
@@ -94,8 +93,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_variationSetting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(cond->toolTip().isEmpty() ?
-		tr("Contains geographic data for this grid attribute. These data can be mapped to the calculation grid.") : cond->toolTip());
+	setStandardItemToolTip(cond->toolTip().isEmpty() ? tr("Contains geographic data for this grid attribute. These data can be mapped to the calculation grid.") : cond->toolTip());
 	setSubPath(cond->name().c_str());
 
 	m_webImportAction->setEnabled(webImportAvailable());

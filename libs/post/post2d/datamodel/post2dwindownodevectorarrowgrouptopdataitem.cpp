@@ -1,4 +1,3 @@
-#include <QStandardItem>
 #include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindownodescalargrouptopdataitem.h"
@@ -24,8 +23,7 @@ Post2dWindowNodeVectorArrowGroupTopDataItem::Post2dWindowNodeVectorArrowGroupTop
 	Post2dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setToolTip(tr("Contains arrow displays of vector results, such as velocity."));
-	m_standardItemCopy->setToolTip(m_standardItem->toolTip());
+	setStandardItemToolTip(tr("Contains arrow displays of vector results, such as velocity."));
 
 	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(resultDataItem()->grid()->vtkData()->data()->GetPointData())) {
 		auto item = createChild(val);
