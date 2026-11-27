@@ -454,6 +454,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemI *
 	m_childItems.insert(m_childItems.begin(), geoData);
 	setupConnectionToGeoData(geoData->geoData());
 	geoData->geoData()->setupDataItem();
+	geoData->geoData()->setDataLoaded(true);
 
 	// the background item should be at the last always.
 	// update item map.
